@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message Anti {
+    string tbs = 1;
+    int32 ifpost = 2;
+    int32 ifposta = 3;
+    int32 forbid_flag = 4;
+    string forbid_info = 5;
+    int32 block_stat = 6;
+    int32 hide_stat = 7;
+    int32 vcode_stat = 8;
+    int32 days_tofree = 9;
+    int32 has_chance = 10;
+    int32 ifvoice = 11;
+    string voice_message = 12;
+    int32 ifaddition = 13;
+    int32 need_vcode = 14;
+    string vcode_md5 = 15;
+    string vcode_pic_url = 16;
+}

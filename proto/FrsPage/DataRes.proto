@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "AnchorInfo.proto";
+import "Anti.proto";
+import "FrsPage/ForumInfo.proto";
+import "FrsPage/Group.proto";
+import "FrsPage/Info.proto";
+import "FrsPage/StarInfo.proto";
+import "Page.proto";
+import "ThreadInfo.proto";
+import "User.proto";
+
+message DataRes {
+    User user = 1;
+    ForumInfo forum = 2;
+    StarInfo frs_star = 3;
+    Page page = 4;
+    Anti anti = 5;
+    Group group = 6;
+    repeated ThreadInfo thread_list = 7;
+    repeated int64 thread_id_list = 8;
+    int32 is_new_url = 9;
+    int32 fortune_bag = 10;
+    int32 time = 11;
+    int32 ctime = 12;
+    int64 logid = 13;
+    int32 server_time = 14;
+    Info info = 15;
+    repeated AnchorInfo forum_livegroup_list = 16;
+    repeated User user_list = 17;
+}

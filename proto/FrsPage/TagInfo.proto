@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message TagInfo {
+    int64 forum_id = 1;
+    int32 tag_id = 2;
+    string tag_name = 3;
+    int32 color = 4;
+    int32 hot_value = 5;
+    int32 tag_type = 6;
+    int32 tag_level = 7;
+    int32 influence = 8;
+    int32 relation_weight = 9;
+    int32 op_time = 10;
+}

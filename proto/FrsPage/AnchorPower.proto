@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message AnchorPower {
+    int32 have_power = 1;
+    string anchor_message = 2;
+}

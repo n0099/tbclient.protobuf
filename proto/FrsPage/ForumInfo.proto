@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+import "FrsPage/AnchorPower.proto";
+import "FrsPage/Badges.proto";
+import "FrsPage/BannerList.proto";
+import "FrsPage/Calendar.proto";
+import "FrsPage/ForumButton.proto";
+import "FrsPage/Manager.proto";
+import "FrsPage/PostPrefix.proto";
+import "FrsPage/RecommendForum.proto";
+import "FrsPage/SignInfo.proto";
+import "FrsPage/TagInfo.proto";
+import "FrsPage/TopNotice.proto";
+import "FrsPage/Zhibo.proto";
+
+message ForumInfo {
+    int64 id = 1;
+    string name = 2;
+    string first_class = 3;
+    string second_class = 4;
+    int32 is_exists = 5;
+    int32 is_like = 6;
+    int32 user_level = 7;
+    string level_name = 8;
+    int32 member_num = 9;
+    int32 thread_num = 10;
+    int32 post_num = 11;
+    int32 has_frs_star = 12;
+    int32 cur_score = 13;
+    int32 levelup_score = 14;
+    SignInfo sign_in_info = 15;
+    Zhibo zhibo = 16;
+    repeated Manager managers = 17;
+    repeated Calendar forum_sign_calendar = 18;
+    int32 is_search_people = 19;
+    string tids = 20;
+    string is_readonly = 22;
+    int32 album_open_photo_frs = 23;
+    string slogan = 25;
+    int32 has_postpre = 26;
+    ForumButton forum_button = 27;
+    TopNotice top_notice = 28;
+    int32 has_paper = 29;
+    int32 meizhi_tag = 31;
+    BannerList banner_list = 33;
+    repeated Badges badges = 34;
+    int32 level_id = 35;
+    int32 is_forbidden = 36;
+    int32 favo_type = 37;
+    TagInfo tag_info = 38;
+    PostPrefix post_prefix = 39;
+    string superboy = 40;
+    int32 is_support_local = 41;
+    int32 is_local_effect = 42;
+    repeated RecommendForum recommend_forum = 43;
+    AnchorPower anchor_power = 44;
+}

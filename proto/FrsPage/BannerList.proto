@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "FrsPage/App.proto";
+
+message BannerList {
+    repeated App app = 1;
+}

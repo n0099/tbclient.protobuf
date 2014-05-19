@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Info {
+    int32 user_num = 1;
+    int32 post_num = 2;
+}

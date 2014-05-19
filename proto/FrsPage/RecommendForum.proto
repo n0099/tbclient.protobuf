@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message RecommendForum {
+    string name = 1;
+    string avatar = 2;
+    string link = 3;
+    string st_param = 4;
+}
