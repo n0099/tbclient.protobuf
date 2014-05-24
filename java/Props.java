@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -29,7 +30,7 @@ public final class Props extends Message {
     public final Integer num;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String open_status;
-    @ProtoField(label = Message.Label.REPEATED, tag = 14, type = Message.Datatype.STRING)
+    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
     public final List<String> optional_word;
     @ProtoField(label = Message.Label.REPEATED, tag = 15, type = Message.Datatype.STRING)
     public final List<String> pattern;

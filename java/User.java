@@ -3,6 +3,7 @@ package tbclient;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -46,7 +47,7 @@ public final class User extends Message {
     public final String ios_bimg_format;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String ip;
-    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_coreuser;
@@ -54,7 +55,7 @@ public final class User extends Message {
     public final Integer is_huinibuke;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_interestman;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_like;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_login;
@@ -64,7 +65,7 @@ public final class User extends Message {
     public final Integer is_verify;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer level_id;
-    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer my_like_num;

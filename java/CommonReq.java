@@ -1,7 +1,7 @@
 package tbclient;
 
-import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -37,7 +37,7 @@ public final class CommonReq extends Message {
     public final String _client_version;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String _phone_imei;
-    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
     public final String _phone_newimei;
     @ProtoField(tag = 8, type = Message.Datatype.INT64)
     public final Long _timestamp;
@@ -65,7 +65,7 @@ public final class CommonReq extends Message {
     public final String model;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer net_type;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String pversion;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String sign;

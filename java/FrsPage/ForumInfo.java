@@ -3,6 +3,7 @@ package tbclient.FrsPage;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -22,7 +23,7 @@ public final class ForumInfo extends Message {
     public final Integer album_open_photo_frs;
     @ProtoField(tag = 44)
     public final AnchorPower anchor_power;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String avatar;
     @ProtoField(label = Message.Label.REPEATED, tag = 34)
     public final List<Badges> badges;
@@ -70,7 +71,7 @@ public final class ForumInfo extends Message {
     public final Integer level_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String level_name;
-    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer levelup_score;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Manager> managers;
@@ -90,7 +91,7 @@ public final class ForumInfo extends Message {
     public final String second_class;
     @ProtoField(tag = 15)
     public final SignInfo sign_in_info;
-    @ProtoField(tag = 25, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
     public final String slogan;
     @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String superboy;
@@ -104,6 +105,8 @@ public final class ForumInfo extends Message {
     public final TopNotice top_notice;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer user_level;
+    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
+    public final WorldCup worldcupinfo;
     @ProtoField(tag = 16)
     public final Zhibo zhibo;
     public static final Long DEFAULT_ID = 0L;
@@ -324,6 +327,7 @@ public final class ForumInfo extends Message {
                 this.recommend_forum = immutableCopyOf(builder.recommend_forum);
             }
             this.anchor_power = builder.anchor_power;
+            this.worldcupinfo = builder.worldcupinfo;
             return;
         }
         this.id = builder.id;
@@ -370,6 +374,7 @@ public final class ForumInfo extends Message {
         this.is_local_effect = builder.is_local_effect;
         this.recommend_forum = immutableCopyOf(builder.recommend_forum);
         this.anchor_power = builder.anchor_power;
+        this.worldcupinfo = builder.worldcupinfo;
     }
 
     /* loaded from: classes.dex */
@@ -417,6 +422,7 @@ public final class ForumInfo extends Message {
         public String tids;
         public TopNotice top_notice;
         public Integer user_level;
+        public WorldCup worldcupinfo;
         public Zhibo zhibo;
 
         public Builder(ForumInfo forumInfo) {
@@ -466,6 +472,7 @@ public final class ForumInfo extends Message {
                 this.is_local_effect = forumInfo.is_local_effect;
                 this.recommend_forum = ForumInfo.copyOf(forumInfo.recommend_forum);
                 this.anchor_power = forumInfo.anchor_power;
+                this.worldcupinfo = forumInfo.worldcupinfo;
             }
         }
 

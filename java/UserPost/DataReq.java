@@ -2,6 +2,7 @@ package tbclient.UserPost;
 
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -20,9 +21,9 @@ public final class DataReq extends Message {
     public final Integer check_login;
     @ProtoField(tag = 27)
     public final CommonReq common;
-    @ProtoField(tag = 25, type = Message.Datatype.STRING)
-    public final String cookie;
     @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    public final String cookie;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String email;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer end_time;
@@ -56,7 +57,7 @@ public final class DataReq extends Message {
     public final Integer smile_grade;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer st_param;
-    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.UINT32)
     public final Integer st_type;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer subtype;

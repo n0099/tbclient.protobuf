@@ -3,6 +3,7 @@ package tbclient;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -47,9 +48,9 @@ public final class NewUser extends Message {
     public final Integer is_hardworking;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String is_interestman;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_member;
-    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer is_passer;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer is_qun_spring;
@@ -89,7 +90,7 @@ public final class NewUser extends Message {
     public final Integer user_sex;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer user_status;
-    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer user_type;
     @ProtoField(tag = 10)
     public final WapRn wap_rn;

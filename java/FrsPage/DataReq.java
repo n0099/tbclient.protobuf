@@ -3,6 +3,7 @@ package tbclient.FrsPage;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -40,9 +41,9 @@ public final class DataReq extends Message {
     public final String forum_name;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer frs_rn;
-    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer ip_int;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
@@ -66,7 +67,7 @@ public final class DataReq extends Message {
     public final Integer pn;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String portrait;
-    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer q_type;
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer result_num;

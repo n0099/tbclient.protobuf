@@ -1,7 +1,7 @@
 package tbclient.UserPost;
 
-import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -21,11 +21,11 @@ public final class PostList extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_USER_PORTRAIT = "";
-    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE)
+    @ProtoField(tag = 24)
     public final AnchorInfo anchor_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<Content> content;

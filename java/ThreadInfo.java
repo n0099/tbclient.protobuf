@@ -4,6 +4,7 @@ import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.TbadkApplication;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -65,7 +66,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_good;
     @ProtoField(tag = TbConfig.MAX_PRELOAD_PHOTO_NUM, type = Message.Datatype.INT32)
     public final Integer is_livepost;
-    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer is_membertop;
@@ -93,9 +94,9 @@ public final class ThreadInfo extends Message {
     public final String live_post_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Media> media;
-    @ProtoField(label = Message.Label.REPEATED, tag = 25)
+    @ProtoField(label = Message.Label.REPEATED, tag = SapiAccountManager.VERSION_CODE)
     public final List<MediaNum> media_num;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String meizhi_pic;
     @ProtoField(tag = 52, type = Message.Datatype.INT64)
     public final Long post_id;
