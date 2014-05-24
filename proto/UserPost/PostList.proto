@@ -21,7 +21,6 @@ message PostList {
     string ip = 11;
     uint32 is_post_deleted = 12;
     string ptype = 13;
-    string _abstract = 14;
     repeated Abstract abstract_thread = 15;
     repeated Media media = 16;
     uint32 reply_num = 17;
@@ -30,4 +29,5 @@ message PostList {
     string post_type = 20;
     Quote quote = 22;
     repeated Voice voice_info = 23;
+    AnchorInfo anchor_info = 24;
 }

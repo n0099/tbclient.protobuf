@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FrsPage/WorldCupGameTeam.proto";
+
+message WorldCupGame {
+    string title = 1;
+    string status = 2;
+    string url = 3;
+    repeated WorldCupGameTeam team = 4;
+}

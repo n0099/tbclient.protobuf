@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message WorldCupPk {
+    string sum_game = 1;
+    string sum_bonus = 2;
+    string prize_url = 3;
+    string url = 4;
+}

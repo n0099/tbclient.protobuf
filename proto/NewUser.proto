@@ -25,7 +25,6 @@ message NewUser {
     int32 is_tenyear = 11;
     int32 is_group_owner = 12;
     ParrScores parr_scores = 13;
-    int32 user_type = 14;
     int32 use_sig = 15;
     string paper = 16;
     string bg_id = 17;
@@ -34,7 +33,7 @@ message NewUser {
     string billboard = 20;
     repeated Props appraise = 22;
     string tbscore_repeate_finish_time = 23;
-    int32 is_passer = 25;
+    int32 is_member = 24;
     int32 is_qun_spring = 26;
     repeated NoticeMask notice_mask = 27;
     repeated Rpgoldicon rpgoldicon = 28;

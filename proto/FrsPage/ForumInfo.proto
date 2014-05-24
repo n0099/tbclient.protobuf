@@ -27,7 +27,6 @@ message ForumInfo {
     int32 post_num = 11;
     int32 has_frs_star = 12;
     int32 cur_score = 13;
-    int32 levelup_score = 14;
     SignInfo sign_in_info = 15;
     Zhibo zhibo = 16;
     repeated Manager managers = 17;
@@ -36,7 +35,7 @@ message ForumInfo {
     string tids = 20;
     string is_readonly = 22;
     int32 album_open_photo_frs = 23;
-    string slogan = 25;
+    string avatar = 24;
     int32 has_postpre = 26;
     ForumButton forum_button = 27;
     TopNotice top_notice = 28;

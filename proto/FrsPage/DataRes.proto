@@ -24,7 +24,6 @@ message DataRes {
     int32 time = 11;
     int32 ctime = 12;
     int64 logid = 13;
-    int32 server_time = 14;
     Info info = 15;
     repeated AnchorInfo forum_livegroup_list = 16;
     repeated User user_list = 17;

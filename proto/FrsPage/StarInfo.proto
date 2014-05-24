@@ -24,6 +24,5 @@ message StarInfo {
     Music mv = 11;
     Good good = 12;
     Identify identify = 13;
-    Size top_size = 14;
     Size head_size = 15;
 }

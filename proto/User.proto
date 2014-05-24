@@ -19,7 +19,6 @@ message User {
     int32 is_manager = 11;
     string rank = 12;
     string bimg_url = 13;
-    int32 meizhi_level = 14;
     int32 is_verify = 15;
     int32 is_interestman = 16;
     repeated Icon iconinfo = 17;
@@ -28,7 +27,7 @@ message User {
     int32 is_coreuser = 20;
     string ios_bimg_format = 22;
     int32 level_id = 23;
-    int32 is_bawu = 25;
+    int32 is_like = 24;
     string bawu_type = 26;
     string portraith = 27;
     string ip = 28;

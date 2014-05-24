@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message WorldCupGameTeam {
+    string name = 1;
+    string logo_url = 2;
+}

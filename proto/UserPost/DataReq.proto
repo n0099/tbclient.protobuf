@@ -16,7 +16,6 @@ message DataReq {
     string ip_str = 11;
     uint32 ip_int = 12;
     string module_name = 13;
-    uint32 st_type = 14;
     uint32 st_param = 15;
     uint32 smile_grade = 16;
     uint32 support_noun = 17;
@@ -25,7 +24,7 @@ message DataReq {
     string user_name = 20;
     string portrait = 22;
     string mobile = 23;
-    string cookie = 25;
+    string email = 24;
     uint32 pn = 26;
     CommonReq common = 27;
 }
