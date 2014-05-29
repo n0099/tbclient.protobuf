@@ -92,7 +92,7 @@ public final class ThreadInfo extends Message {
     public final Integer last_time_int;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String live_post_type;
-    @ProtoField(label = Message.Label.REPEATED, tag = 22)
+    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT)
     public final List<Media> media;
     @ProtoField(label = Message.Label.REPEATED, tag = SapiAccountManager.VERSION_CODE)
     public final List<MediaNum> media_num;

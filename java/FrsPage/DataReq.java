@@ -69,7 +69,7 @@ public final class DataReq extends Message {
     public final String portrait;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer q_type;
-    @ProtoField(tag = 22, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.INT32)
     public final Integer result_num;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer rn;

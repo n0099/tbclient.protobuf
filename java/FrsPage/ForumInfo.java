@@ -59,7 +59,7 @@ public final class ForumInfo extends Message {
     public final Integer is_like;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_local_effect;
-    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.STRING)
     public final String is_readonly;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer is_search_people;

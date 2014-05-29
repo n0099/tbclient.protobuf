@@ -53,7 +53,7 @@ public final class PostList extends Message {
     public final String post_type;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String ptype;
-    @ProtoField(tag = 22)
+    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT)
     public final Quote quote;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer reply_num;

@@ -43,7 +43,7 @@ public final class User extends Message {
     public final Integer id;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String intro;
-    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.STRING)
     public final String ios_bimg_format;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String ip;

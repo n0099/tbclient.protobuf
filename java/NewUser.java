@@ -22,7 +22,7 @@ public final class NewUser extends Message {
     public static final String DEFAULT_PORTRAIT_TIME = "";
     public static final String DEFAULT_TBSCORE_REPEATE_FINISH_TIME = "";
     public static final String DEFAULT_USER_NAME = "";
-    @ProtoField(label = Message.Label.REPEATED, tag = 22)
+    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT)
     public final List<Props> appraise;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String bg_id;

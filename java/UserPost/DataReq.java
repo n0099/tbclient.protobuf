@@ -49,7 +49,7 @@ public final class DataReq extends Message {
     public final Integer offset;
     @ProtoField(tag = 26, type = Message.Datatype.UINT32)
     public final Integer pn;
-    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer rn;
