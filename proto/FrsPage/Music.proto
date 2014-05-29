@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message Music {
+    string pic = 1;
+    int32 num = 2;
+    int32 sid = 3;
+    int32 isopen = 4;
+}

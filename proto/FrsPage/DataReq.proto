@@ -22,7 +22,6 @@ message DataReq {
     int32 data_size = 18;
     int32 net_error = 19;
     bool check_login = 20;
-    int32 result_num = 22;
     int32 class_id = 23;
     string ip_str = 24;
     string module_name = 26;

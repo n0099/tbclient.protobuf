@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "FrsPage/Forum.proto";
+import "FrsPage/RankInfo.proto";
+
+message SignForum {
+    int32 is_on = 1;
+    int32 is_filter = 2;
+    Forum forum_info = 3;
+    RankInfo current_rank_info = 4;
+    RankInfo yesterday_rank_info = 5;
+    RankInfo weekly_rank_info = 6;
+    string level1_dir_name = 7;
+    string level2_dir_name = 8;
+    RankInfo monthly_rank_info = 9;
+    int64 forum_id = 10;
+}

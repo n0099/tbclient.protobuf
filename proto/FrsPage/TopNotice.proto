@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message TopNotice {
+    string title = 1;
+    string title_link = 2;
+    string author = 3;
+    int32 id = 4;
+}

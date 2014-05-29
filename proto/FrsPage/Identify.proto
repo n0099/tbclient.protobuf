@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Identify {
+    int32 is_identify = 1;
+    string id = 2;
+}

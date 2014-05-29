@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Forum {
+    int64 forum_id = 1;
+    string level1_dir_name = 2;
+}

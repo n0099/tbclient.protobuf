@@ -22,7 +22,6 @@ message DataReq {
     uint32 login = 18;
     uint32 user_id = 19;
     string user_name = 20;
-    string portrait = 22;
     string mobile = 23;
     string email = 24;
     uint32 pn = 26;

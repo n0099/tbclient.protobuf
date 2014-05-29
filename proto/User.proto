@@ -25,7 +25,6 @@ message User {
     repeated TshowInfo tshow_icon = 18;
     int32 user_type = 19;
     int32 is_coreuser = 20;
-    string ios_bimg_format = 22;
     int32 level_id = 23;
     int32 is_like = 24;
     string bawu_type = 26;

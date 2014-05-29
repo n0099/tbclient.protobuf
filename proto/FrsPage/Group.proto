@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Group {
+    int32 hide_recommend_group = 1;
+    int32 group_count = 2;
+}

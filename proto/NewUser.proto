@@ -6,7 +6,6 @@ import "MparrProps.proto";
 import "NoticeMask.proto";
 import "ParrProps.proto";
 import "ParrScores.proto";
-import "Props.proto";
 import "Rpgoldicon.proto";
 import "TbmallMonthIcon.proto";
 import "WapRn.proto";
@@ -31,7 +30,6 @@ message NewUser {
     int32 is_shengyou = 18;
     int32 is_hardworking = 19;
     string billboard = 20;
-    repeated Props appraise = 22;
     string tbscore_repeate_finish_time = 23;
     int32 is_member = 24;
     int32 is_qun_spring = 26;

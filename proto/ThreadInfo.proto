@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 import "AnchorInfo.proto";
-import "Media.proto";
 import "PostList.proto";
 import "Topic.proto";
 import "User.proto";
@@ -28,7 +27,6 @@ message ThreadInfo {
     User author = 18;
     User last_replyer = 19;
     int32 comment_num = 20;
-    repeated Media media = 22;
     repeated Voice voice_info = 23;
     string meizhi_pic = 24;
     int32 thread_type = 26;

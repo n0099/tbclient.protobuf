@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message Zhibo {
+    int64 forum = 1;
+    int64 tid = 2;
+    int32 status = 3;
+    int32 type = 4;
+    int32 int1 = 5;
+    int32 has_lpost = 6;
+    int32 lpost_type = 7;
+}

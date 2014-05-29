@@ -20,7 +20,6 @@ message CommonReq {
     string m_cost = 18;
     string m_result = 19;
     string m_size_u = 20;
-    string smallflow = 22;
     string sign = 23;
     string pversion = 24;
 }

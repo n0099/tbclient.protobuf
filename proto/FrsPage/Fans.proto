@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message Fans {
+    int32 start_time = 1;
+    int32 left_time = 2;
+    int32 open = 3;
+    int32 is_get = 4;
+    int32 num = 5;
+}
