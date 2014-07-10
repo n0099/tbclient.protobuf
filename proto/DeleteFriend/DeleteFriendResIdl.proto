@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "DeleteFriend/DataRes.proto";
+import "Error.proto";
+
+message DeleteFriendResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

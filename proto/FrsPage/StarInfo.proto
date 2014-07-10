@@ -8,6 +8,7 @@ import "FrsPage/Info.proto";
 import "FrsPage/Music.proto";
 import "FrsPage/PhotoInfo.proto";
 import "FrsPage/Size.proto";
+import "FrsPage/Ticket.proto";
 import "FrsPage/Video.proto";
 
 message StarInfo {
@@ -25,4 +26,5 @@ message StarInfo {
     Good good = 12;
     Identify identify = 13;
     Size head_size = 15;
+    Ticket trade = 16;
 }

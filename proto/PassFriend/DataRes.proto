@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PassFriend/friendInfo.proto";
+
+message DataRes {
+    friendInfo friend_info = 1;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "AddPostList.proto";
+import "Lbs.proto";
+import "PbContent.proto";
+import "SubPost.proto";
+
+message Post {
+    uint64 id = 1;
+    string title = 2;
+    uint32 floor = 3;
+    uint32 time = 4;
+    repeated PbContent content = 5;
+    repeated string arr_video = 6;
+    Lbs lbs_info = 7;
+    uint32 is_vote = 8;
+    uint32 is_voice = 9;
+    uint32 is_ntitle = 10;
+    uint32 is_bub = 11;
+    string vote_crypt = 12;
+    uint32 sub_post_number = 13;
+    SubPost sub_post_list = 15;
+    repeated AddPostList add_post_list = 16;
+    string bimg_url = 17;
+    string ios_bimg_format = 18;
+}

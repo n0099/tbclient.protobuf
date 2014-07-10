@@ -22,12 +22,14 @@ message DataReq {
     int32 data_size = 18;
     int32 net_error = 19;
     bool check_login = 20;
+    string forum_name = 21;
+    int32 result_num = 22;
     int32 class_id = 23;
     string ip_str = 24;
+    int32 ip_int = 25;
     string module_name = 26;
     int32 st_param = 27;
     int32 smile_grade = 28;
-    bool support_noun = 29;
     int32 user_id = 31;
     int32 no_un = 33;
     string portrait = 34;

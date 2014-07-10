@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ReqData {
+    int32 timestamp = 1;
+}

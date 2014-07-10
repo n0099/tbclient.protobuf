@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message ReqData {
+    uint64 friend_id = 1;
+    string message = 2;
+    string st_type = 3;
+}

@@ -3,6 +3,7 @@ syntax = "proto3";
 import "AnchorInfo.proto";
 import "Anti.proto";
 import "FrsPage/ForumInfo.proto";
+import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
 import "FrsPage/Info.proto";
 import "FrsPage/StarInfo.proto";
@@ -27,4 +28,6 @@ message DataRes {
     Info info = 15;
     repeated AnchorInfo forum_livegroup_list = 16;
     repeated User user_list = 17;
+    GconAccount gcon_account = 18;
+    string fortune_desc = 19;
 }

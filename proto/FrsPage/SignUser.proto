@@ -11,4 +11,5 @@ message SignUser {
     int32 c_sign_num = 8;
     int32 hun_sign_num = 9;
     int32 total_resign_num = 10;
+    int32 miss_sign_num = 11;
 }

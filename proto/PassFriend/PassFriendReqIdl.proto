@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PassFriend/ReqData.proto";
+
+message PassFriendReqIdl {
+    ReqData data = 1;
+}

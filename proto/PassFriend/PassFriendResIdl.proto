@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "PassFriend/DataRes.proto";
+
+message PassFriendResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message App {
+    int32 type = 1;
+    int32 pos = 2;
+    string icon_url = 3;
+    string icon_link = 4;
+    string app_name = 5;
+    string app_desc = 6;
+    string p_name = 7;
+    string p_url = 8;
+    string img_url = 9;
+    int32 app_time = 10;
+    string web_url = 11;
+    string ad_id = 12;
+}

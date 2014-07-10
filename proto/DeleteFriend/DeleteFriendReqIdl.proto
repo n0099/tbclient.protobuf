@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "DeleteFriend/ReqData.proto";
+
+message DeleteFriendReqIdl {
+    ReqData data = 1;
+}

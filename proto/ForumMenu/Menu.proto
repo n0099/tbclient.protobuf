@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "ForumMenu/SubMenu.proto";
+
+message Menu {
+    int32 id = 1;
+    int32 forum_id = 2;
+    int32 level = 3;
+    string name = 4;
+    int32 action_type = 5;
+    int32 create_time = 6;
+    string content = 7;
+    repeated SubMenu sub_menu = 8;
+}

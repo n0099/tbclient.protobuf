@@ -4,4 +4,6 @@ message Banner {
     string banner_url = 1;
     int32 banner_type = 2;
     string value = 3;
+    int32 type = 4;
+    string desc = 5;
 }

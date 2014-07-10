@@ -1,9 +1,10 @@
 syntax = "proto3";
 
+import "BannerList.proto";
 import "FrsPage/AnchorPower.proto";
 import "FrsPage/Badges.proto";
-import "FrsPage/BannerList.proto";
 import "FrsPage/Calendar.proto";
+import "FrsPage/Classify.proto";
 import "FrsPage/ForumButton.proto";
 import "FrsPage/Manager.proto";
 import "FrsPage/PostPrefix.proto";
@@ -33,12 +34,14 @@ message ForumInfo {
     repeated Calendar forum_sign_calendar = 18;
     int32 is_search_people = 19;
     string tids = 20;
+    repeated Classify good_classify = 21;
+    string is_readonly = 22;
     int32 album_open_photo_frs = 23;
     string avatar = 24;
+    string slogan = 25;
     int32 has_postpre = 26;
     ForumButton forum_button = 27;
     TopNotice top_notice = 28;
-    int32 has_paper = 29;
     int32 meizhi_tag = 31;
     BannerList banner_list = 33;
     repeated Badges badges = 34;

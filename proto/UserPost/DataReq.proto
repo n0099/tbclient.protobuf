@@ -22,8 +22,11 @@ message DataReq {
     uint32 login = 18;
     uint32 user_id = 19;
     string user_name = 20;
+    uint32 no_un = 21;
+    string portrait = 22;
     string mobile = 23;
     string email = 24;
+    string cookie = 25;
     uint32 pn = 26;
     CommonReq common = 27;
 }

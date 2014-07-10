@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message GconAccount {
+    int32 has_account = 1;
+    string menu_name = 2;
+}

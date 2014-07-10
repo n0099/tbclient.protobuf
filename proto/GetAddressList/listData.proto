@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetAddressList/friendList.proto";
+
+message listData {
+    string key = 1;
+    repeated friendList friend_list = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "AddFriend/ResData.proto";
+import "Error.proto";
+
+message AddFriendResIdl {
+    ResData data = 1;
+    Error error = 2;
+}
