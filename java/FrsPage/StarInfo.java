@@ -37,6 +37,8 @@ public final class StarInfo extends Message {
     public final String top;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT)
     public final Size top_size;
+    @ProtoField(tag = 16)
+    public final Ticket trade;
     @ProtoField(tag = 9)
     public final Video video;
     public static final Integer DEFAULT_HAS_FRS_STAR = 0;
@@ -85,6 +87,7 @@ public final class StarInfo extends Message {
             this.identify = builder.identify;
             this.top_size = builder.top_size;
             this.head_size = builder.head_size;
+            this.trade = builder.trade;
             return;
         }
         this.has_frs_star = builder.has_frs_star;
@@ -102,6 +105,7 @@ public final class StarInfo extends Message {
         this.identify = builder.identify;
         this.top_size = builder.top_size;
         this.head_size = builder.head_size;
+        this.trade = builder.trade;
     }
 
     /* loaded from: classes.dex */
@@ -120,6 +124,7 @@ public final class StarInfo extends Message {
         public PhotoInfo photo;
         public String top;
         public Size top_size;
+        public Ticket trade;
         public Video video;
 
         public Builder(StarInfo starInfo) {
@@ -140,6 +145,7 @@ public final class StarInfo extends Message {
                 this.identify = starInfo.identify;
                 this.top_size = starInfo.top_size;
                 this.head_size = starInfo.head_size;
+                this.trade = starInfo.trade;
             }
         }
 

@@ -1,7 +1,5 @@
 package tbclient.UserPost;
 
-import com.baidu.sapi2.SapiAccountManager;
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -21,7 +19,7 @@ public final class DataReq extends Message {
     public final Integer check_login;
     @ProtoField(tag = 27)
     public final CommonReq common;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String email;
@@ -43,13 +41,13 @@ public final class DataReq extends Message {
     public final String module_name;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer need_content;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_NOTIFY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 21, type = Message.Datatype.UINT32)
     public final Integer no_un;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer offset;
     @ProtoField(tag = 26, type = Message.Datatype.UINT32)
     public final Integer pn;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer rn;

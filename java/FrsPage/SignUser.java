@@ -16,6 +16,8 @@ public final class SignUser extends Message {
     public final Integer is_org_disabled;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_sign_in;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer miss_sign_num;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer sign_time;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -34,6 +36,7 @@ public final class SignUser extends Message {
     public static final Integer DEFAULT_C_SIGN_NUM = 0;
     public static final Integer DEFAULT_HUN_SIGN_NUM = 0;
     public static final Integer DEFAULT_TOTAL_RESIGN_NUM = 0;
+    public static final Integer DEFAULT_MISS_SIGN_NUM = 0;
 
     /* synthetic */ SignUser(Builder builder, boolean z, SignUser signUser) {
         this(builder, z);
@@ -89,9 +92,14 @@ public final class SignUser extends Message {
             }
             if (builder.total_resign_num == null) {
                 this.total_resign_num = DEFAULT_TOTAL_RESIGN_NUM;
-                return;
             } else {
                 this.total_resign_num = builder.total_resign_num;
+            }
+            if (builder.miss_sign_num == null) {
+                this.miss_sign_num = DEFAULT_MISS_SIGN_NUM;
+                return;
+            } else {
+                this.miss_sign_num = builder.miss_sign_num;
                 return;
             }
         }
@@ -105,6 +113,7 @@ public final class SignUser extends Message {
         this.c_sign_num = builder.c_sign_num;
         this.hun_sign_num = builder.hun_sign_num;
         this.total_resign_num = builder.total_resign_num;
+        this.miss_sign_num = builder.miss_sign_num;
     }
 
     /* loaded from: classes.dex */
@@ -115,6 +124,7 @@ public final class SignUser extends Message {
         public Integer hun_sign_num;
         public Integer is_org_disabled;
         public Integer is_sign_in;
+        public Integer miss_sign_num;
         public Integer sign_time;
         public Integer total_resign_num;
         public Integer user_id;
@@ -133,6 +143,7 @@ public final class SignUser extends Message {
                 this.c_sign_num = signUser.c_sign_num;
                 this.hun_sign_num = signUser.hun_sign_num;
                 this.total_resign_num = signUser.total_resign_num;
+                this.miss_sign_num = signUser.miss_sign_num;
             }
         }
 

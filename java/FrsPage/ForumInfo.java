@@ -30,7 +30,7 @@ public final class ForumInfo extends Message {
     @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK)
     public final Banner banner;
     @ProtoField(tag = 33)
-    public final BannerList banner_list;
+    public final tbclient.BannerList banner_list;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
     @ProtoField(tag = 37, type = Message.Datatype.INT32)
@@ -41,11 +41,11 @@ public final class ForumInfo extends Message {
     public final ForumButton forum_button;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<Calendar> forum_sign_calendar;
-    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.NOTIFY_LIVE_NOTIFY)
+    @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Classify> good_classify;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer has_frs_star;
-    @ProtoField(tag = 29, type = Message.Datatype.INT32)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer has_paper;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer has_postpre;
@@ -59,7 +59,7 @@ public final class ForumInfo extends Message {
     public final Integer is_like;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_local_effect;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String is_readonly;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer is_search_people;
@@ -91,7 +91,7 @@ public final class ForumInfo extends Message {
     public final String second_class;
     @ProtoField(tag = 15)
     public final SignInfo sign_in_info;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
     @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String superboy;
@@ -384,7 +384,7 @@ public final class ForumInfo extends Message {
         public String avatar;
         public List<Badges> badges;
         public Banner banner;
-        public BannerList banner_list;
+        public tbclient.BannerList banner_list;
         public Integer cur_score;
         public Integer favo_type;
         public String first_class;

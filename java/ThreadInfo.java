@@ -1,9 +1,9 @@
 package tbclient;
 
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import com.baidu.location.BDLocation;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.TbadkApplication;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -13,18 +13,20 @@ import java.util.List;
 public final class ThreadInfo extends Message {
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
+    public static final String DEFAULT_ECOM = "";
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_LAST_TIME = "";
     public static final String DEFAULT_LIVE_POST_TYPE = "";
     public static final String DEFAULT_MEIZHI_PIC = "";
+    public static final String DEFAULT_PIDS = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VIDEO = "";
     public static final String DEFAULT_VIDEO_COVER = "";
     public static final String DEFAULT_VIDEO_ID = "";
     public static final String DEFAULT_VIDEO_MOBILE_URL = "";
     public static final String DEFAULT_VIDEO_SWF = "";
-    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.NOTIFY_LIVE_NOTIFY)
+    @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
     @ProtoField(tag = 55)
     public final AnchorInfo anchor_info;
@@ -36,12 +38,14 @@ public final class ThreadInfo extends Message {
     public final String click_url;
     @ProtoField(tag = 51, type = Message.Datatype.STRING)
     public final String collect_mark_pid;
-    @ProtoField(tag = TbadkApplication.MEMORY_FOURM_COUNT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 50, type = Message.Datatype.INT32)
     public final Integer collect_status;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer comment_num;
     @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.INT32)
     public final Integer create_time;
+    @ProtoField(tag = 60, type = Message.Datatype.STRING)
+    public final String ecom;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 40, type = Message.Datatype.INT64)
@@ -50,12 +54,18 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = 49, type = Message.Datatype.STRING)
     public final String from;
+    @ProtoField(tag = BDLocation.TypeNetWorkException)
+    public final Guess guess;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer has_commented;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
+    @ProtoField(tag = 58, type = Message.Datatype.UINT32)
+    public final Integer isLzDeleteAll;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_activity;
+    @ProtoField(tag = 59, type = Message.Datatype.UINT32)
+    public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
@@ -90,14 +100,18 @@ public final class ThreadInfo extends Message {
     public final String last_time;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer last_time_int;
-    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
     public final String live_post_type;
-    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT)
+    @ProtoField(tag = BDLocation.TypeCriteriaException)
+    public final Lbs location;
+    @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Media> media;
-    @ProtoField(label = Message.Label.REPEATED, tag = SapiAccountManager.VERSION_CODE)
+    @ProtoField(label = Message.Label.REPEATED, tag = 25)
     public final List<MediaNum> media_num;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String meizhi_pic;
+    @ProtoField(tag = BDLocation.TypeGpsLocation, type = Message.Datatype.STRING)
+    public final String pids;
     @ProtoField(tag = 52, type = Message.Datatype.INT64)
     public final Long post_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 44)
@@ -120,6 +134,8 @@ public final class ThreadInfo extends Message {
     public final String title;
     @ProtoField(tag = 47)
     public final Topic topic;
+    @ProtoField(tag = 57, type = Message.Datatype.UINT32)
+    public final Integer valid_post_num;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
@@ -174,6 +190,9 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_TIME = 0;
     public static final Integer DEFAULT_IS_MEMBERTOP = 0;
     public static final Integer DEFAULT_AUTHOR_ID = 0;
+    public static final Integer DEFAULT_VALID_POST_NUM = 0;
+    public static final Integer DEFAULT_ISLZDELETEALL = 0;
+    public static final Integer DEFAULT_IS_AD = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -439,11 +458,37 @@ public final class ThreadInfo extends Message {
             this.anchor_info = builder.anchor_info;
             if (builder.author_id == null) {
                 this.author_id = DEFAULT_AUTHOR_ID;
-                return;
             } else {
                 this.author_id = builder.author_id;
-                return;
             }
+            if (builder.valid_post_num == null) {
+                this.valid_post_num = DEFAULT_VALID_POST_NUM;
+            } else {
+                this.valid_post_num = builder.valid_post_num;
+            }
+            if (builder.isLzDeleteAll == null) {
+                this.isLzDeleteAll = DEFAULT_ISLZDELETEALL;
+            } else {
+                this.isLzDeleteAll = builder.isLzDeleteAll;
+            }
+            if (builder.is_ad == null) {
+                this.is_ad = DEFAULT_IS_AD;
+            } else {
+                this.is_ad = builder.is_ad;
+            }
+            if (builder.ecom == null) {
+                this.ecom = "";
+            } else {
+                this.ecom = builder.ecom;
+            }
+            if (builder.pids == null) {
+                this.pids = "";
+            } else {
+                this.pids = builder.pids;
+            }
+            this.location = builder.location;
+            this.guess = builder.guess;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -501,6 +546,13 @@ public final class ThreadInfo extends Message {
         this.is_membertop = builder.is_membertop;
         this.anchor_info = builder.anchor_info;
         this.author_id = builder.author_id;
+        this.valid_post_num = builder.valid_post_num;
+        this.isLzDeleteAll = builder.isLzDeleteAll;
+        this.is_ad = builder.is_ad;
+        this.ecom = builder.ecom;
+        this.pids = builder.pids;
+        this.location = builder.location;
+        this.guess = builder.guess;
     }
 
     /* loaded from: classes.dex */
@@ -514,13 +566,17 @@ public final class ThreadInfo extends Message {
         public Integer collect_status;
         public Integer comment_num;
         public Integer create_time;
+        public String ecom;
         public Long fid;
         public Long first_post_id;
         public String fname;
         public String from;
+        public Guess guess;
         public Integer has_commented;
         public Long id;
+        public Integer isLzDeleteAll;
         public Integer is_activity;
+        public Integer is_ad;
         public Integer is_bakan;
         public Integer is_bub;
         public Integer is_global_top;
@@ -539,9 +595,11 @@ public final class ThreadInfo extends Message {
         public String last_time;
         public Integer last_time_int;
         public String live_post_type;
+        public Lbs location;
         public List<Media> media;
         public List<MediaNum> media_num;
         public String meizhi_pic;
+        public String pids;
         public Long post_id;
         public List<PostList> post_list;
         public Integer reply_num;
@@ -553,6 +611,7 @@ public final class ThreadInfo extends Message {
         public Integer time;
         public String title;
         public Topic topic;
+        public Integer valid_post_num;
         public String video;
         public String video_cover;
         public String video_id;
@@ -621,6 +680,13 @@ public final class ThreadInfo extends Message {
                 this.is_membertop = threadInfo.is_membertop;
                 this.anchor_info = threadInfo.anchor_info;
                 this.author_id = threadInfo.author_id;
+                this.valid_post_num = threadInfo.valid_post_num;
+                this.isLzDeleteAll = threadInfo.isLzDeleteAll;
+                this.is_ad = threadInfo.is_ad;
+                this.ecom = threadInfo.ecom;
+                this.pids = threadInfo.pids;
+                this.location = threadInfo.location;
+                this.guess = threadInfo.guess;
             }
         }
 

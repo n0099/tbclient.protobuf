@@ -23,12 +23,14 @@ public final class User extends Message {
     public static final String DEFAULT_PORTRAITH = "";
     public static final String DEFAULT_RANK = "";
     public static final String DEFAULT_TB_AGE = "";
-    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
     public final String BDUSS;
     @ProtoField(tag = 10)
     public final Balv balv;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String bawu_type;
+    @ProtoField(tag = 40, type = Message.Datatype.INT32)
+    public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
@@ -43,15 +45,15 @@ public final class User extends Message {
     public final Integer id;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String intro;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String ios_bimg_format;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String ip;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_coreuser;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_NOTIFY, type = Message.Datatype.INT32)
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer is_huinibuke;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_interestman;
@@ -61,6 +63,8 @@ public final class User extends Message {
     public final Integer is_login;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_manager;
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    public final Integer is_mem;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
@@ -79,6 +83,8 @@ public final class User extends Message {
     public final Integer no_un;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
+    @ProtoField(tag = 41)
+    public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
@@ -122,6 +128,8 @@ public final class User extends Message {
     public static final Integer DEFAULT_MY_LIKE_NUM = 0;
     public static final Integer DEFAULT_HAS_CONCERNED = 0;
     public static final Integer DEFAULT_POST_NUM = 0;
+    public static final Integer DEFAULT_IS_MEM = 0;
+    public static final Integer DEFAULT_BIMG_END_TIME = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -309,11 +317,21 @@ public final class User extends Message {
             }
             if (builder.tb_age == null) {
                 this.tb_age = "";
-                return;
             } else {
                 this.tb_age = builder.tb_age;
-                return;
             }
+            if (builder.is_mem == null) {
+                this.is_mem = DEFAULT_IS_MEM;
+            } else {
+                this.is_mem = builder.is_mem;
+            }
+            if (builder.bimg_end_time == null) {
+                this.bimg_end_time = DEFAULT_BIMG_END_TIME;
+            } else {
+                this.bimg_end_time = builder.bimg_end_time;
+            }
+            this.pay_member_info = builder.pay_member_info;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -353,6 +371,9 @@ public final class User extends Message {
         this.passwd = builder.passwd;
         this.post_num = builder.post_num;
         this.tb_age = builder.tb_age;
+        this.is_mem = builder.is_mem;
+        this.bimg_end_time = builder.bimg_end_time;
+        this.pay_member_info = builder.pay_member_info;
     }
 
     /* loaded from: classes.dex */
@@ -360,6 +381,7 @@ public final class User extends Message {
         public String BDUSS;
         public Balv balv;
         public String bawu_type;
+        public Integer bimg_end_time;
         public String bimg_url;
         public Integer concern_num;
         public Integer fans_num;
@@ -376,6 +398,7 @@ public final class User extends Message {
         public Integer is_like;
         public Integer is_login;
         public Integer is_manager;
+        public Integer is_mem;
         public Integer is_verify;
         public Integer level_id;
         public Integer meizhi_level;
@@ -385,6 +408,7 @@ public final class User extends Message {
         public NewUser new_user_info;
         public Integer no_un;
         public String passwd;
+        public PayMemberInfo pay_member_info;
         public String portrait;
         public String portraith;
         public Integer post_num;
@@ -437,6 +461,9 @@ public final class User extends Message {
                 this.passwd = user.passwd;
                 this.post_num = user.post_num;
                 this.tb_age = user.tb_age;
+                this.is_mem = user.is_mem;
+                this.bimg_end_time = user.bimg_end_time;
+                this.pay_member_info = user.pay_member_info;
             }
         }
 

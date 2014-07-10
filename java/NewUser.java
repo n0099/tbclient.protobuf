@@ -22,7 +22,7 @@ public final class NewUser extends Message {
     public static final String DEFAULT_PORTRAIT_TIME = "";
     public static final String DEFAULT_TBSCORE_REPEATE_FINISH_TIME = "";
     public static final String DEFAULT_USER_NAME = "";
-    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT)
+    @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Props> appraise;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String bg_id;
@@ -40,7 +40,7 @@ public final class NewUser extends Message {
     public final Global global;
     @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK, type = Message.Datatype.STRING)
     public final String is_coreuser;
-    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
     public final String is_doudizhu;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_group_owner;
@@ -50,7 +50,7 @@ public final class NewUser extends Message {
     public final String is_interestman;
     @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_member;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer is_passer;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer is_qun_spring;
@@ -70,7 +70,7 @@ public final class NewUser extends Message {
     public final ParrProps parr_props;
     @ProtoField(tag = 13)
     public final ParrScores parr_scores;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_NOTIFY, type = Message.Datatype.STRING)
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String portrait_time;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<Rpgoldicon> rpgoldicon;

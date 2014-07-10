@@ -12,18 +12,23 @@ import tbclient.ThreadInfo;
 import tbclient.User;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    public static final String DEFAULT_FORTUNE_DESC = "";
     @ProtoField(tag = 5)
     public final Anti anti;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer ctime;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer fortune_bag;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String fortune_desc;
     @ProtoField(tag = 2)
     public final ForumInfo forum;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<AnchorInfo> forum_livegroup_list;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
+    @ProtoField(tag = 18)
+    public final GconAccount gcon_account;
     @ProtoField(tag = 6)
     public final Group group;
     @ProtoField(tag = 15)
@@ -118,9 +123,15 @@ public final class DataRes extends Message {
             }
             if (builder.user_list == null) {
                 this.user_list = DEFAULT_USER_LIST;
-                return;
             } else {
                 this.user_list = immutableCopyOf(builder.user_list);
+            }
+            this.gcon_account = builder.gcon_account;
+            if (builder.fortune_desc == null) {
+                this.fortune_desc = "";
+                return;
+            } else {
+                this.fortune_desc = builder.fortune_desc;
                 return;
             }
         }
@@ -141,6 +152,8 @@ public final class DataRes extends Message {
         this.info = builder.info;
         this.forum_livegroup_list = immutableCopyOf(builder.forum_livegroup_list);
         this.user_list = immutableCopyOf(builder.user_list);
+        this.gcon_account = builder.gcon_account;
+        this.fortune_desc = builder.fortune_desc;
     }
 
     /* loaded from: classes.dex */
@@ -148,9 +161,11 @@ public final class DataRes extends Message {
         public Anti anti;
         public Integer ctime;
         public Integer fortune_bag;
+        public String fortune_desc;
         public ForumInfo forum;
         public List<AnchorInfo> forum_livegroup_list;
         public StarInfo frs_star;
+        public GconAccount gcon_account;
         public Group group;
         public Info info;
         public Integer is_new_url;
@@ -183,6 +198,8 @@ public final class DataRes extends Message {
                 this.info = dataRes.info;
                 this.forum_livegroup_list = DataRes.copyOf(dataRes.forum_livegroup_list);
                 this.user_list = DataRes.copyOf(dataRes.user_list);
+                this.gcon_account = dataRes.gcon_account;
+                this.fortune_desc = dataRes.fortune_desc;
             }
         }
 

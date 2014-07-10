@@ -37,11 +37,11 @@ public final class DataReq extends Message {
     public final Boolean debug;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String email;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_NOTIFY, type = Message.Datatype.STRING)
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String forum_name;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer frs_rn;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer ip_int;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String ip_str;
@@ -69,7 +69,7 @@ public final class DataReq extends Message {
     public final String portrait;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer q_type;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer result_num;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer rn;
@@ -87,7 +87,7 @@ public final class DataReq extends Message {
     public final Integer st_param;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String st_type;
-    @ProtoField(tag = 29, type = Message.Datatype.BOOL)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer user_id;

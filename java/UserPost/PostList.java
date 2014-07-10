@@ -1,6 +1,5 @@
 package tbclient.UserPost;
 
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -43,7 +42,7 @@ public final class PostList extends Message {
     public final Integer is_post_deleted;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer is_thread;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_NOTIFY)
+    @ProtoField(tag = 21)
     public final LbsInfo lbs_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<Media> media;
@@ -53,7 +52,7 @@ public final class PostList extends Message {
     public final String post_type;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String ptype;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT)
+    @ProtoField(tag = 22)
     public final Quote quote;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer reply_num;

@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -57,7 +56,7 @@ public final class CommonReq extends Message {
     public final String m_logid;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String m_result;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_NOTIFY, type = Message.Datatype.STRING)
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String m_size_d;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String m_size_u;
@@ -69,7 +68,7 @@ public final class CommonReq extends Message {
     public final String pversion;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String sign;
-    @ProtoField(tag = TbConfig.NOTIFY_LIVE_GROUP_END_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String smallflow;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String subapp_type;
