@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CheckPost/ResData.proto";
+import "Error.proto";
+
+message CheckPostResIdl {
+    ResData data = 1;
+    Error error = 2;
+}

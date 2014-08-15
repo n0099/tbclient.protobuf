@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ResData {
+    uint64 friend_id = 1;
+    string message = 2;
+}

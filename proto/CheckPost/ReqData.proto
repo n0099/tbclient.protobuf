@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message ReqData {
+    uint64 pid = 1;
+    uint32 postType = 2;
+    string forumName = 3;
+}

@@ -4,7 +4,9 @@ import "Balv.proto";
 import "Icon.proto";
 import "NewUser.proto";
 import "PayMemberInfo.proto";
+import "PrivSets.proto";
 import "TshowInfo.proto";
+import "UserPics.proto";
 
 message User {
     int32 is_login = 1;
@@ -28,7 +30,6 @@ message User {
     int32 is_coreuser = 20;
     int32 is_huinibuke = 21;
     string ios_bimg_format = 22;
-    int32 level_id = 23;
     int32 is_like = 24;
     int32 is_bawu = 25;
     string bawu_type = 26;
@@ -44,4 +45,9 @@ message User {
     int32 is_mem = 39;
     int32 bimg_end_time = 40;
     PayMemberInfo pay_member_info = 41;
+    int32 gender = 42;
+    int32 is_mask = 43;
+    UserPics user_pics = 44;
+    PrivSets priv_sets = 45;
+    int32 is_friend = 46;
 }

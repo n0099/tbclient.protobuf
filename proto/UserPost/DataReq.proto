@@ -24,7 +24,6 @@ message DataReq {
     string user_name = 20;
     uint32 no_un = 21;
     string portrait = 22;
-    string mobile = 23;
     string email = 24;
     string cookie = 25;
     uint32 pn = 26;

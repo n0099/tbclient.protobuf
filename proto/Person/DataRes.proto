@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Person/UserInfos.proto";
+
+message DataRes {
+    repeated UserInfos user_infos = 1;
+    int32 geo = 2;
+    int32 offset = 3;
+    int32 has_more = 4;
+}

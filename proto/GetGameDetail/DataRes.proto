@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GameInfo.proto";
+
+message DataRes {
+    GameInfo game_info = 1;
+}

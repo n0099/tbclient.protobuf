@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    int32 pb_rn = 1;
+    int32 mark = 2;
+    int32 back = 3;
+    int64 kz = 4;
+    int32 lz = 5;
+    int32 r = 6;
+    int64 pid = 7;
+    int32 with_floor = 8;
+    int32 floor_rn = 9;
+    int32 weipost = 10;
+    int32 message_id = 11;
+    int32 s_model = 12;
+    int32 rn = 13;
+    int32 scr_h = 15;
+    double scr_dip = 16;
+    int32 q_type = 17;
+    int32 pn = 18;
+    string st_type = 19;
+    int32 thread_type = 20;
+    int32 banner = 21;
+    int32 arround = 22;
+    string msg_click = 24;
+    CommonReq common = 25;
+}

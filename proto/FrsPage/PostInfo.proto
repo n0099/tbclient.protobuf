@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message PostInfo {
+    string common_post_pic = 1;
+}

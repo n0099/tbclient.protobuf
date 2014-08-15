@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DataReq {
+    int32 page_num = 1;
+    int32 res_num = 2;
+}

@@ -3,7 +3,7 @@ syntax = "proto3";
 import "SubPostList.proto";
 
 message AddPostList {
-    uint32 pid = 1;
+    uint64 pid = 1;
     uint32 total_num = 2;
     uint32 total_count = 3;
     repeated SubPostList add_post_list = 4;

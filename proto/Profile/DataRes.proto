@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "Anti.proto";
+import "PostInfoList.proto";
+import "Profile/TAInfo.proto";
+import "User.proto";
+
+message DataRes {
+    User user = 1;
+    Anti anti_stat = 2;
+    TAInfo tainfo = 3;
+    repeated PostInfoList post_list = 4;
+}

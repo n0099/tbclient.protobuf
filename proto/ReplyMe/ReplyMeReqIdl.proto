@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ReplyMe/DataReq.proto";
+
+message ReplyMeReqIdl {
+    DataReq data = 1;
+}

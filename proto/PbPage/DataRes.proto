@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "Anti.proto";
+import "BannerList.proto";
+import "Lbs.proto";
+import "Page.proto";
+import "PbPage/AddPost.proto";
+import "PbPage/PostBanner.proto";
+import "Post.proto";
+import "SimpleForum.proto";
+import "ThreadInfo.proto";
+import "User.proto";
+
+message DataRes {
+    User user = 1;
+    SimpleForum forum = 2;
+    Page page = 3;
+    Anti anti = 4;
+    AddPost add_post = 5;
+    repeated Post post_list = 6;
+    int32 has_floor = 7;
+    ThreadInfo thread = 8;
+    Lbs location = 9;
+    int32 is_new_url = 10;
+    repeated PostBanner post_banner = 11;
+    BannerList banner_list = 12;
+    repeated User user_list = 13;
+}

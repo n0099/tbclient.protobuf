@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Person/DataReq.proto";
+
+message PersonReqIdl {
+    DataReq data = 1;
+}

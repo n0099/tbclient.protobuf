@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message DataReq {
+    uint32 uid = 1;
+    uint32 need_post_count = 2;
+    uint64 friend_uid = 3;
+    uint32 is_guest = 4;
+    uint32 st_type = 5;
+    uint32 pn = 6;
+    uint32 rn = 7;
+    uint32 has_plist = 8;
+}

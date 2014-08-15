@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GameInfo.proto";
+
+message GameList {
+    repeated GameInfo game_info = 1;
+    uint32 has_more = 2;
+}

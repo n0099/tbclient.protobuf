@@ -24,7 +24,6 @@ message DataReq {
     bool check_login = 20;
     string forum_name = 21;
     int32 result_num = 22;
-    int32 class_id = 23;
     string ip_str = 24;
     int32 ip_int = 25;
     string module_name = 26;
@@ -38,4 +37,5 @@ message DataReq {
     bool debug = 37;
     string cookie = 38;
     CommonReq common = 39;
+    string lastids = 40;
 }

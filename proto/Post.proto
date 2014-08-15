@@ -3,7 +3,9 @@ syntax = "proto3";
 import "AddPostList.proto";
 import "Lbs.proto";
 import "PbContent.proto";
+import "SignatureData.proto";
 import "SubPost.proto";
+import "TailInfo.proto";
 
 message Post {
     uint64 id = 1;
@@ -20,7 +22,11 @@ message Post {
     string vote_crypt = 12;
     uint32 sub_post_number = 13;
     SubPost sub_post_list = 15;
-    repeated AddPostList add_post_list = 16;
+    AddPostList add_post_list = 16;
     string bimg_url = 17;
     string ios_bimg_format = 18;
+    int32 author_id = 19;
+    uint32 add_post_number = 20;
+    SignatureData signature = 21;
+    TailInfo tail_info = 22;
 }

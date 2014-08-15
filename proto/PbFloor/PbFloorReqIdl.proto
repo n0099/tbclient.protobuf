@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PbFloor/DataReq.proto";
+
+message PbFloorReqIdl {
+    DataReq data = 1;
+}

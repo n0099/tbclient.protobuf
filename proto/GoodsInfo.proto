@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message GoodsInfo {
+    int32 id = 1;
+    string user_name = 2;
+    string user_portrait = 3;
+    string thread_title = 4;
+    string thread_pic = 5;
+    string pop_window_text = 6;
+    int32 goods_style = 7;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "LogTogether/AdReq.proto";
+
+message DataReq {
+    repeated AdReq Ad = 1;
+}

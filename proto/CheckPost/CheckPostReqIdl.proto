@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "CheckPost/ReqData.proto";
+
+message CheckPostReqIdl {
+    ReqData data = 1;
+}

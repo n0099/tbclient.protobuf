@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message PrivSets {
+    int32 location = 1;
+    int32 like = 2;
+    int32 group = 3;
+    int32 post = 4;
+    int32 friend = 5;
+}

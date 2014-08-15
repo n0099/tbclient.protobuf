@@ -33,7 +33,6 @@ message NewUser {
     string billboard = 20;
     string portrait_time = 21;
     repeated Props appraise = 22;
-    string tbscore_repeate_finish_time = 23;
     int32 is_member = 24;
     int32 is_passer = 25;
     int32 is_qun_spring = 26;

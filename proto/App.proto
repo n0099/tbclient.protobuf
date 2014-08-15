@@ -13,4 +13,18 @@ message App {
     int32 app_time = 10;
     string web_url = 11;
     string ad_id = 12;
+    string id = 13;
+    int32 url_type = 15;
+    string url = 16;
+    string ios_url = 17;
+    string apk_url = 18;
+    string apk_name = 19;
+    string pos_name = 20;
+    string first_name = 21;
+    string second_name = 22;
+    string abtest = 24;
+    int32 plan_id = 25;
+    string user_id = 26;
+    string price = 27;
+    string verify = 28;
 }
