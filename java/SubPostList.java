@@ -7,19 +7,21 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class SubPostList extends Message {
     public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 7)
+    public final User author;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer author_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<PbContent> content;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer floor;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer id;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer time;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String title;
-    public static final Integer DEFAULT_ID = 0;
+    public static final Long DEFAULT_ID = 0L;
     public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
     public static final Integer DEFAULT_TIME = 0;
     public static final Integer DEFAULT_AUTHOR_ID = 0;
@@ -59,11 +61,11 @@ public final class SubPostList extends Message {
             }
             if (builder.floor == null) {
                 this.floor = DEFAULT_FLOOR;
-                return;
             } else {
                 this.floor = builder.floor;
-                return;
             }
+            this.author = builder.author;
+            return;
         }
         this.id = builder.id;
         this.content = immutableCopyOf(builder.content);
@@ -71,14 +73,16 @@ public final class SubPostList extends Message {
         this.author_id = builder.author_id;
         this.title = builder.title;
         this.floor = builder.floor;
+        this.author = builder.author;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<SubPostList> {
+        public User author;
         public Integer author_id;
         public List<PbContent> content;
         public Integer floor;
-        public Integer id;
+        public Long id;
         public Integer time;
         public String title;
 
@@ -91,6 +95,7 @@ public final class SubPostList extends Message {
                 this.author_id = subPostList.author_id;
                 this.title = subPostList.title;
                 this.floor = subPostList.floor;
+                this.author = subPostList.author;
             }
         }
 

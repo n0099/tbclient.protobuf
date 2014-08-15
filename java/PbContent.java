@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -8,12 +9,19 @@ public final class PbContent extends Message {
     public static final String DEFAULT_BIG_SIZE = "";
     public static final String DEFAULT_BIG_SRC = "";
     public static final String DEFAULT_BSIZE = "";
+    public static final String DEFAULT_C = "";
     public static final String DEFAULT_CDN_SRC = "";
+    public static final String DEFAULT_DYNAMIC = "";
     public static final String DEFAULT_IMGTYPE = "";
     public static final String DEFAULT_LINK = "";
+    public static final String DEFAULT_PACKET_NAME = "";
+    public static final String DEFAULT_PHONETYPE = "";
     public static final String DEFAULT_SRC = "";
+    public static final String DEFAULT_STATIC = "";
     public static final String DEFAULT_TEXT = "";
-    public static final Integer DEFAULT_TYPE = 0;
+    public static final String DEFAULT_VOICE_MD5 = "";
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String _static;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String big_cdn_src;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -22,18 +30,44 @@ public final class PbContent extends Message {
     public final String big_src;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String bsize;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
+    @ProtoField(tag = 13, type = Message.Datatype.UINT32)
+    public final Integer during_time;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String dynamic;
+    @ProtoField(tag = 19, type = Message.Datatype.UINT32)
+    public final Integer height;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String imgtype;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.UINT32)
+    public final Integer is_sub;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String packet_name;
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
+    public final String phonetype;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String src;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String text;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer type;
+    @ProtoField(tag = 15, type = Message.Datatype.UINT64)
+    public final Long uid;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String voice_md5;
+    @ProtoField(tag = 18, type = Message.Datatype.UINT32)
+    public final Integer width;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_DURING_TIME = 0;
+    public static final Integer DEFAULT_IS_SUB = 0;
+    public static final Long DEFAULT_UID = 0L;
+    public static final Integer DEFAULT_WIDTH = 0;
+    public static final Integer DEFAULT_HEIGHT = 0;
 
     /* synthetic */ PbContent(Builder builder, boolean z, PbContent pbContent) {
         this(builder, z);
@@ -89,9 +123,64 @@ public final class PbContent extends Message {
             }
             if (builder.imgtype == null) {
                 this.imgtype = "";
-                return;
             } else {
                 this.imgtype = builder.imgtype;
+            }
+            if (builder.c == null) {
+                this.c = "";
+            } else {
+                this.c = builder.c;
+            }
+            if (builder.voice_md5 == null) {
+                this.voice_md5 = "";
+            } else {
+                this.voice_md5 = builder.voice_md5;
+            }
+            if (builder.during_time == null) {
+                this.during_time = DEFAULT_DURING_TIME;
+            } else {
+                this.during_time = builder.during_time;
+            }
+            if (builder.is_sub == null) {
+                this.is_sub = DEFAULT_IS_SUB;
+            } else {
+                this.is_sub = builder.is_sub;
+            }
+            if (builder.uid == null) {
+                this.uid = DEFAULT_UID;
+            } else {
+                this.uid = builder.uid;
+            }
+            if (builder.dynamic == null) {
+                this.dynamic = "";
+            } else {
+                this.dynamic = builder.dynamic;
+            }
+            if (builder._static == null) {
+                this._static = "";
+            } else {
+                this._static = builder._static;
+            }
+            if (builder.width == null) {
+                this.width = DEFAULT_WIDTH;
+            } else {
+                this.width = builder.width;
+            }
+            if (builder.height == null) {
+                this.height = DEFAULT_HEIGHT;
+            } else {
+                this.height = builder.height;
+            }
+            if (builder.packet_name == null) {
+                this.packet_name = "";
+            } else {
+                this.packet_name = builder.packet_name;
+            }
+            if (builder.phonetype == null) {
+                this.phonetype = "";
+                return;
+            } else {
+                this.phonetype = builder.phonetype;
                 return;
             }
         }
@@ -105,20 +194,42 @@ public final class PbContent extends Message {
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
         this.imgtype = builder.imgtype;
+        this.c = builder.c;
+        this.voice_md5 = builder.voice_md5;
+        this.during_time = builder.during_time;
+        this.is_sub = builder.is_sub;
+        this.uid = builder.uid;
+        this.dynamic = builder.dynamic;
+        this._static = builder._static;
+        this.width = builder.width;
+        this.height = builder.height;
+        this.packet_name = builder.packet_name;
+        this.phonetype = builder.phonetype;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<PbContent> {
+        public String _static;
         public String big_cdn_src;
         public String big_size;
         public String big_src;
         public String bsize;
+        public String c;
         public String cdn_src;
+        public Integer during_time;
+        public String dynamic;
+        public Integer height;
         public String imgtype;
+        public Integer is_sub;
         public String link;
+        public String packet_name;
+        public String phonetype;
         public String src;
         public String text;
         public Integer type;
+        public Long uid;
+        public String voice_md5;
+        public Integer width;
 
         public Builder(PbContent pbContent) {
             super(pbContent);
@@ -133,6 +244,17 @@ public final class PbContent extends Message {
                 this.cdn_src = pbContent.cdn_src;
                 this.big_cdn_src = pbContent.big_cdn_src;
                 this.imgtype = pbContent.imgtype;
+                this.c = pbContent.c;
+                this.voice_md5 = pbContent.voice_md5;
+                this.during_time = pbContent.during_time;
+                this.is_sub = pbContent.is_sub;
+                this.uid = pbContent.uid;
+                this.dynamic = pbContent.dynamic;
+                this._static = pbContent._static;
+                this.width = pbContent.width;
+                this.height = pbContent.height;
+                this.packet_name = pbContent.packet_name;
+                this.phonetype = pbContent.phonetype;
             }
         }
 

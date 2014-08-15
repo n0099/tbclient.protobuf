@@ -8,13 +8,13 @@ import java.util.List;
 public final class AddPostList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<SubPostList> add_post_list;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer pid;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long pid;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer total_count;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer total_num;
-    public static final Integer DEFAULT_PID = 0;
+    public static final Long DEFAULT_PID = 0L;
     public static final Integer DEFAULT_TOTAL_NUM = 0;
     public static final Integer DEFAULT_TOTAL_COUNT = 0;
     public static final List<SubPostList> DEFAULT_ADD_POST_LIST = Collections.emptyList();
@@ -58,7 +58,7 @@ public final class AddPostList extends Message {
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<AddPostList> {
         public List<SubPostList> add_post_list;
-        public Integer pid;
+        public Long pid;
         public Integer total_count;
         public Integer total_num;
 

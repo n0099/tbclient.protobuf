@@ -4,11 +4,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class SimpleForum extends Message {
-    public static final Integer DEFAULT_ID = 0;
+    public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_IS_EXISTS = 0;
     public static final String DEFAULT_NAME = "";
-    @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer id;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long id;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer is_exists;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -46,7 +46,7 @@ public final class SimpleForum extends Message {
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<SimpleForum> {
-        public Integer id;
+        public Long id;
         public Integer is_exists;
         public String name;
 

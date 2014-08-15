@@ -14,6 +14,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_IP_STR = "";
     public static final String DEFAULT_KW = "";
+    public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MOBILE = "";
     public static final String DEFAULT_MODULE_NAME = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -23,7 +24,7 @@ public final class DataReq extends Message {
     public final Boolean check_login;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer cid;
-    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.INT32)
     public final Integer class_id;
     @ProtoField(tag = 39)
     public final CommonReq common;
@@ -49,6 +50,8 @@ public final class DataReq extends Message {
     public final Integer is_good;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
+    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    public final String lastids;
     @ProtoField(tag = TbConfig.MAX_PRELOAD_PHOTO_NUM, type = Message.Datatype.BOOL)
     public final Boolean login;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
@@ -324,7 +327,13 @@ public final class DataReq extends Message {
                 this.cookie = builder.cookie;
             }
             this.common = builder.common;
-            return;
+            if (builder.lastids == null) {
+                this.lastids = "";
+                return;
+            } else {
+                this.lastids = builder.lastids;
+                return;
+            }
         }
         this.kw = builder.kw;
         this.rn = builder.rn;
@@ -365,6 +374,7 @@ public final class DataReq extends Message {
         this.debug = builder.debug;
         this.cookie = builder.cookie;
         this.common = builder.common;
+        this.lastids = builder.lastids;
     }
 
     /* loaded from: classes.dex */
@@ -384,6 +394,7 @@ public final class DataReq extends Message {
         public String ip_str;
         public Integer is_good;
         public String kw;
+        public String lastids;
         public Boolean login;
         public String mobile;
         public String module_name;
@@ -451,6 +462,7 @@ public final class DataReq extends Message {
                 this.debug = dataReq.debug;
                 this.cookie = dataReq.cookie;
                 this.common = dataReq.common;
+                this.lastids = dataReq.lastids;
             }
         }
 

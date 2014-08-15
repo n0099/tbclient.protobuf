@@ -66,7 +66,7 @@ public final class PostList extends Message {
     public final String user_name;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String user_portrait;
-    @ProtoField(label = Message.Label.REPEATED, tag = 23)
+    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_NATIVE_PAY)
     public final List<Voice> voice_info;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Long DEFAULT_THREAD_ID = 0L;

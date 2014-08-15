@@ -12,10 +12,16 @@ public final class Post extends Message {
     public static final String DEFAULT_TIME_EX = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VOTE_CRYPT = "";
-    @ProtoField(label = Message.Label.REPEATED, tag = 16)
-    public final List<AddPostList> add_post_list;
+    @ProtoField(tag = 16)
+    public final AddPostList add_post_list;
+    @ProtoField(tag = 20, type = Message.Datatype.UINT32)
+    public final Integer add_post_number;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
     public final List<String> arr_video;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY)
+    public final User author;
+    @ProtoField(tag = 19, type = Message.Datatype.INT32)
+    public final Integer author_id;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String bimg_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
@@ -36,10 +42,14 @@ public final class Post extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
+    @ProtoField(tag = 21)
+    public final SignatureData signature;
     @ProtoField(tag = 15)
     public final SubPost sub_post_list;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer sub_post_number;
+    @ProtoField(tag = 22)
+    public final TailInfo tail_info;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer time;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
@@ -58,7 +68,8 @@ public final class Post extends Message {
     public static final Integer DEFAULT_IS_NTITLE = 0;
     public static final Integer DEFAULT_IS_BUB = 0;
     public static final Integer DEFAULT_SUB_POST_NUMBER = 0;
-    public static final List<AddPostList> DEFAULT_ADD_POST_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_AUTHOR_ID = 0;
+    public static final Integer DEFAULT_ADD_POST_NUMBER = 0;
 
     /* synthetic */ Post(Builder builder, boolean z, Post post) {
         this(builder, z);
@@ -134,11 +145,7 @@ public final class Post extends Message {
                 this.time_ex = builder.time_ex;
             }
             this.sub_post_list = builder.sub_post_list;
-            if (builder.add_post_list == null) {
-                this.add_post_list = DEFAULT_ADD_POST_LIST;
-            } else {
-                this.add_post_list = immutableCopyOf(builder.add_post_list);
-            }
+            this.add_post_list = builder.add_post_list;
             if (builder.bimg_url == null) {
                 this.bimg_url = "";
             } else {
@@ -146,11 +153,23 @@ public final class Post extends Message {
             }
             if (builder.ios_bimg_format == null) {
                 this.ios_bimg_format = "";
-                return;
             } else {
                 this.ios_bimg_format = builder.ios_bimg_format;
-                return;
             }
+            if (builder.author_id == null) {
+                this.author_id = DEFAULT_AUTHOR_ID;
+            } else {
+                this.author_id = builder.author_id;
+            }
+            if (builder.add_post_number == null) {
+                this.add_post_number = DEFAULT_ADD_POST_NUMBER;
+            } else {
+                this.add_post_number = builder.add_post_number;
+            }
+            this.signature = builder.signature;
+            this.tail_info = builder.tail_info;
+            this.author = builder.author;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -167,15 +186,23 @@ public final class Post extends Message {
         this.sub_post_number = builder.sub_post_number;
         this.time_ex = builder.time_ex;
         this.sub_post_list = builder.sub_post_list;
-        this.add_post_list = immutableCopyOf(builder.add_post_list);
+        this.add_post_list = builder.add_post_list;
         this.bimg_url = builder.bimg_url;
         this.ios_bimg_format = builder.ios_bimg_format;
+        this.author_id = builder.author_id;
+        this.add_post_number = builder.add_post_number;
+        this.signature = builder.signature;
+        this.tail_info = builder.tail_info;
+        this.author = builder.author;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<Post> {
-        public List<AddPostList> add_post_list;
+        public AddPostList add_post_list;
+        public Integer add_post_number;
         public List<String> arr_video;
+        public User author;
+        public Integer author_id;
         public String bimg_url;
         public List<PbContent> content;
         public Integer floor;
@@ -186,8 +213,10 @@ public final class Post extends Message {
         public Integer is_voice;
         public Integer is_vote;
         public Lbs lbs_info;
+        public SignatureData signature;
         public SubPost sub_post_list;
         public Integer sub_post_number;
+        public TailInfo tail_info;
         public Integer time;
         public String time_ex;
         public String title;
@@ -211,9 +240,14 @@ public final class Post extends Message {
                 this.sub_post_number = post.sub_post_number;
                 this.time_ex = post.time_ex;
                 this.sub_post_list = post.sub_post_list;
-                this.add_post_list = Post.copyOf(post.add_post_list);
+                this.add_post_list = post.add_post_list;
                 this.bimg_url = post.bimg_url;
                 this.ios_bimg_format = post.ios_bimg_format;
+                this.author_id = post.author_id;
+                this.add_post_number = post.add_post_number;
+                this.signature = post.signature;
+                this.tail_info = post.tail_info;
+                this.author = post.author;
             }
         }
 

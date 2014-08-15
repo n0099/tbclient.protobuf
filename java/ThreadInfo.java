@@ -42,7 +42,7 @@ public final class ThreadInfo extends Message {
     public final Integer collect_status;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer comment_num;
-    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
@@ -130,6 +130,8 @@ public final class ThreadInfo extends Message {
     public final Long tid;
     @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer time;
+    @ProtoField(tag = 64, type = Message.Datatype.UINT32)
+    public final Integer timeline;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
     @ProtoField(tag = 47)
@@ -148,7 +150,7 @@ public final class ThreadInfo extends Message {
     public final String video_swf;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer view_num;
-    @ProtoField(label = Message.Label.REPEATED, tag = 23)
+    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_NATIVE_PAY)
     public final List<Voice> voice_info;
     @ProtoField(tag = 41)
     public final Zan zan;
@@ -193,6 +195,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_VALID_POST_NUM = 0;
     public static final Integer DEFAULT_ISLZDELETEALL = 0;
     public static final Integer DEFAULT_IS_AD = 0;
+    public static final Integer DEFAULT_TIMELINE = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -488,7 +491,13 @@ public final class ThreadInfo extends Message {
             }
             this.location = builder.location;
             this.guess = builder.guess;
-            return;
+            if (builder.timeline == null) {
+                this.timeline = DEFAULT_TIMELINE;
+                return;
+            } else {
+                this.timeline = builder.timeline;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -553,6 +562,7 @@ public final class ThreadInfo extends Message {
         this.pids = builder.pids;
         this.location = builder.location;
         this.guess = builder.guess;
+        this.timeline = builder.timeline;
     }
 
     /* loaded from: classes.dex */
@@ -609,6 +619,7 @@ public final class ThreadInfo extends Message {
         public Integer thread_types;
         public Long tid;
         public Integer time;
+        public Integer timeline;
         public String title;
         public Topic topic;
         public Integer valid_post_num;
@@ -687,6 +698,7 @@ public final class ThreadInfo extends Message {
                 this.pids = threadInfo.pids;
                 this.location = threadInfo.location;
                 this.guess = threadInfo.guess;
+                this.timeline = threadInfo.timeline;
             }
         }
 

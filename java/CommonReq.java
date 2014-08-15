@@ -66,7 +66,7 @@ public final class CommonReq extends Message {
     public final Integer net_type;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String pversion;
-    @ProtoField(tag = 23, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.STRING)
     public final String sign;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String smallflow;

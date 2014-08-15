@@ -37,6 +37,8 @@ public final class User extends Message {
     public final Integer concern_num;
     @ProtoField(tag = TbConfig.MAX_PRELOAD_PHOTO_NUM, type = Message.Datatype.INT32)
     public final Integer fans_num;
+    @ProtoField(tag = 42, type = Message.Datatype.INT32)
+    public final Integer gender;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer has_concerned;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
@@ -53,6 +55,8 @@ public final class User extends Message {
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_coreuser;
+    @ProtoField(tag = 46, type = Message.Datatype.INT32)
+    public final Integer is_friend;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer is_huinibuke;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
@@ -63,11 +67,13 @@ public final class User extends Message {
     public final Integer is_login;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_manager;
+    @ProtoField(tag = 43, type = Message.Datatype.INT32)
+    public final Integer is_mask;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_mem;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
-    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.INT32)
     public final Integer level_id;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
@@ -91,6 +97,8 @@ public final class User extends Message {
     public final String portraith;
     @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer post_num;
+    @ProtoField(tag = 45)
+    public final PrivSets priv_sets;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String rank;
     @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK, type = Message.Datatype.INT32)
@@ -101,6 +109,8 @@ public final class User extends Message {
     public final List<TshowInfo> tshow_icon;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer type;
+    @ProtoField(tag = 44)
+    public final UserPics user_pics;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer user_type;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -130,6 +140,9 @@ public final class User extends Message {
     public static final Integer DEFAULT_POST_NUM = 0;
     public static final Integer DEFAULT_IS_MEM = 0;
     public static final Integer DEFAULT_BIMG_END_TIME = 0;
+    public static final Integer DEFAULT_GENDER = 0;
+    public static final Integer DEFAULT_IS_MASK = 0;
+    public static final Integer DEFAULT_IS_FRIEND = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -331,7 +344,25 @@ public final class User extends Message {
                 this.bimg_end_time = builder.bimg_end_time;
             }
             this.pay_member_info = builder.pay_member_info;
-            return;
+            if (builder.gender == null) {
+                this.gender = DEFAULT_GENDER;
+            } else {
+                this.gender = builder.gender;
+            }
+            if (builder.is_mask == null) {
+                this.is_mask = DEFAULT_IS_MASK;
+            } else {
+                this.is_mask = builder.is_mask;
+            }
+            this.user_pics = builder.user_pics;
+            this.priv_sets = builder.priv_sets;
+            if (builder.is_friend == null) {
+                this.is_friend = DEFAULT_IS_FRIEND;
+                return;
+            } else {
+                this.is_friend = builder.is_friend;
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -374,6 +405,11 @@ public final class User extends Message {
         this.is_mem = builder.is_mem;
         this.bimg_end_time = builder.bimg_end_time;
         this.pay_member_info = builder.pay_member_info;
+        this.gender = builder.gender;
+        this.is_mask = builder.is_mask;
+        this.user_pics = builder.user_pics;
+        this.priv_sets = builder.priv_sets;
+        this.is_friend = builder.is_friend;
     }
 
     /* loaded from: classes.dex */
@@ -385,6 +421,7 @@ public final class User extends Message {
         public String bimg_url;
         public Integer concern_num;
         public Integer fans_num;
+        public Integer gender;
         public Integer has_concerned;
         public List<Icon> iconinfo;
         public Integer id;
@@ -393,11 +430,13 @@ public final class User extends Message {
         public String ip;
         public Integer is_bawu;
         public Integer is_coreuser;
+        public Integer is_friend;
         public Integer is_huinibuke;
         public Integer is_interestman;
         public Integer is_like;
         public Integer is_login;
         public Integer is_manager;
+        public Integer is_mask;
         public Integer is_mem;
         public Integer is_verify;
         public Integer level_id;
@@ -412,11 +451,13 @@ public final class User extends Message {
         public String portrait;
         public String portraith;
         public Integer post_num;
+        public PrivSets priv_sets;
         public String rank;
         public Integer sex;
         public String tb_age;
         public List<TshowInfo> tshow_icon;
         public Integer type;
+        public UserPics user_pics;
         public Integer user_type;
         public Integer userhide;
 
@@ -464,6 +505,11 @@ public final class User extends Message {
                 this.is_mem = user.is_mem;
                 this.bimg_end_time = user.bimg_end_time;
                 this.pay_member_info = user.pay_member_info;
+                this.gender = user.gender;
+                this.is_mask = user.is_mask;
+                this.user_pics = user.user_pics;
+                this.priv_sets = user.priv_sets;
+                this.is_friend = user.is_friend;
             }
         }
 

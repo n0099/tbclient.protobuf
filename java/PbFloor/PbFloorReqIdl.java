@@ -1,0 +1,40 @@
+package tbclient.PbFloor;
+
+import com.squareup.wire.Message;
+import com.squareup.wire.ProtoField;
+/* loaded from: classes.dex */
+public final class PbFloorReqIdl extends Message {
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* synthetic */ PbFloorReqIdl(Builder builder, boolean z, PbFloorReqIdl pbFloorReqIdl) {
+        this(builder, z);
+    }
+
+    private PbFloorReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
+    }
+
+    /* loaded from: classes.dex */
+    public final class Builder extends Message.Builder<PbFloorReqIdl> {
+        public DataReq data;
+
+        public Builder(PbFloorReqIdl pbFloorReqIdl) {
+            super(pbFloorReqIdl);
+            if (pbFloorReqIdl != null) {
+                this.data = pbFloorReqIdl.data;
+            }
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PbFloorReqIdl build(boolean z) {
+            return new PbFloorReqIdl(this, z, null);
+        }
+    }
+}

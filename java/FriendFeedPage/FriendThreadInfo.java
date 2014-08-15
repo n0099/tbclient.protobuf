@@ -20,7 +20,7 @@ public final class FriendThreadInfo extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_GROUP_EVENT)
     public final List<Abstract> _abstract;
-    @ProtoField(tag = 23)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 20)
     public final Anti anti;

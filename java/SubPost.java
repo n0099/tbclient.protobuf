@@ -6,10 +6,10 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class SubPost extends Message {
-    public static final Integer DEFAULT_PID = 0;
+    public static final Long DEFAULT_PID = 0L;
     public static final List<SubPostList> DEFAULT_SUB_POST_LIST = Collections.emptyList();
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer pid;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long pid;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<SubPostList> sub_post_list;
 
@@ -39,7 +39,7 @@ public final class SubPost extends Message {
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<SubPost> {
-        public Integer pid;
+        public Long pid;
         public List<SubPostList> sub_post_list;
 
         public Builder(SubPost subPost) {
