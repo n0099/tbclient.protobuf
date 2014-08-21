@@ -26,4 +26,5 @@ message DataReq {
     int32 arround = 22;
     string msg_click = 24;
     CommonReq common = 25;
+    string lastids = 26;
 }
