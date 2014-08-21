@@ -6,6 +6,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MSG_CLICK = "";
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
@@ -22,6 +23,8 @@ public final class DataReq extends Message {
     public final Long kz;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.INT32)
     public final Integer last;
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    public final String lastids;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer lz;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -209,7 +212,13 @@ public final class DataReq extends Message {
                 this.msg_click = builder.msg_click;
             }
             this.common = builder.common;
-            return;
+            if (builder.lastids == null) {
+                this.lastids = "";
+                return;
+            } else {
+                this.lastids = builder.lastids;
+                return;
+            }
         }
         this.pb_rn = builder.pb_rn;
         this.mark = builder.mark;
@@ -236,6 +245,7 @@ public final class DataReq extends Message {
         this.last = builder.last;
         this.msg_click = builder.msg_click;
         this.common = builder.common;
+        this.lastids = builder.lastids;
     }
 
     /* loaded from: classes.dex */
@@ -247,6 +257,7 @@ public final class DataReq extends Message {
         public Integer floor_rn;
         public Long kz;
         public Integer last;
+        public String lastids;
         public Integer lz;
         public Integer mark;
         public Integer message_id;
@@ -294,6 +305,7 @@ public final class DataReq extends Message {
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
                 this.common = dataReq.common;
+                this.lastids = dataReq.lastids;
             }
         }
 
