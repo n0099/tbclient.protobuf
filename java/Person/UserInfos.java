@@ -17,6 +17,8 @@ public final class UserInfos extends Message {
     public final List<Icon> iconinfo;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer lastest_time;
+    @ProtoField(tag = 9)
+    public final LbsInfo location;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -76,11 +78,11 @@ public final class UserInfos extends Message {
             }
             if (builder.userdetail == null) {
                 this.userdetail = "";
-                return;
             } else {
                 this.userdetail = builder.userdetail;
-                return;
             }
+            this.location = builder.location;
+            return;
         }
         this.user_id = builder.user_id;
         this.user_name = builder.user_name;
@@ -90,6 +92,7 @@ public final class UserInfos extends Message {
         this.lastest_time = builder.lastest_time;
         this.iconinfo = immutableCopyOf(builder.iconinfo);
         this.userdetail = builder.userdetail;
+        this.location = builder.location;
     }
 
     /* loaded from: classes.dex */
@@ -97,6 +100,7 @@ public final class UserInfos extends Message {
         public Double distance;
         public List<Icon> iconinfo;
         public Integer lastest_time;
+        public LbsInfo location;
         public String portrait;
         public String sex;
         public Integer user_id;
@@ -114,6 +118,7 @@ public final class UserInfos extends Message {
                 this.lastest_time = userInfos.lastest_time;
                 this.iconinfo = UserInfos.copyOf(userInfos.iconinfo);
                 this.userdetail = userInfos.userdetail;
+                this.location = userInfos.location;
             }
         }
 

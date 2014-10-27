@@ -8,6 +8,8 @@ import tbclient.CommonReq;
 public final class DataReq extends Message {
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MSG_CLICK = "";
+    public static final String DEFAULT_ST_FROM = "";
+    public static final String DEFAULT_ST_LINK = "";
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer arround;
@@ -15,13 +17,13 @@ public final class DataReq extends Message {
     public final Integer back;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer banner;
-    @ProtoField(tag = 25)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN)
     public final CommonReq common;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long kz;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.INT32)
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer last;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String lastids;
@@ -31,7 +33,7 @@ public final class DataReq extends Message {
     public final Integer mark;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer message_id;
-    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
     public final String msg_click;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pb_rn;
@@ -53,6 +55,14 @@ public final class DataReq extends Message {
     public final Integer scr_h;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer scr_w;
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
+    public final String st_from;
+    @ProtoField(tag = 28, type = Message.Datatype.STRING)
+    public final String st_link;
+    @ProtoField(tag = 29, type = Message.Datatype.INT32)
+    public final Integer st_stat;
+    @ProtoField(tag = 30, type = Message.Datatype.INT64)
+    public final Long st_task;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String st_type;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
@@ -83,6 +93,8 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_BANNER = 0;
     public static final Integer DEFAULT_ARROUND = 0;
     public static final Integer DEFAULT_LAST = 0;
+    public static final Integer DEFAULT_ST_STAT = 0;
+    public static final Long DEFAULT_ST_TASK = 0L;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -214,9 +226,29 @@ public final class DataReq extends Message {
             this.common = builder.common;
             if (builder.lastids == null) {
                 this.lastids = "";
-                return;
             } else {
                 this.lastids = builder.lastids;
+            }
+            if (builder.st_from == null) {
+                this.st_from = "";
+            } else {
+                this.st_from = builder.st_from;
+            }
+            if (builder.st_link == null) {
+                this.st_link = "";
+            } else {
+                this.st_link = builder.st_link;
+            }
+            if (builder.st_stat == null) {
+                this.st_stat = DEFAULT_ST_STAT;
+            } else {
+                this.st_stat = builder.st_stat;
+            }
+            if (builder.st_task == null) {
+                this.st_task = DEFAULT_ST_TASK;
+                return;
+            } else {
+                this.st_task = builder.st_task;
                 return;
             }
         }
@@ -246,6 +278,10 @@ public final class DataReq extends Message {
         this.msg_click = builder.msg_click;
         this.common = builder.common;
         this.lastids = builder.lastids;
+        this.st_from = builder.st_from;
+        this.st_link = builder.st_link;
+        this.st_stat = builder.st_stat;
+        this.st_task = builder.st_task;
     }
 
     /* loaded from: classes.dex */
@@ -272,6 +308,10 @@ public final class DataReq extends Message {
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
+        public String st_from;
+        public String st_link;
+        public Integer st_stat;
+        public Long st_task;
         public String st_type;
         public Integer thread_type;
         public Integer weipost;
@@ -306,6 +346,10 @@ public final class DataReq extends Message {
                 this.msg_click = dataReq.msg_click;
                 this.common = dataReq.common;
                 this.lastids = dataReq.lastids;
+                this.st_from = dataReq.st_from;
+                this.st_link = dataReq.st_link;
+                this.st_stat = dataReq.st_stat;
+                this.st_task = dataReq.st_task;
             }
         }
 

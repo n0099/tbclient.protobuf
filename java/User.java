@@ -2,7 +2,6 @@ package tbclient;
 
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.sapi2.SapiAccountManager;
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -23,22 +22,28 @@ public final class User extends Message {
     public static final String DEFAULT_PORTRAITH = "";
     public static final String DEFAULT_RANK = "";
     public static final String DEFAULT_TB_AGE = "";
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String BDUSS;
     @ProtoField(tag = 10)
     public final Balv balv;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String bawu_type;
-    @ProtoField(tag = 40, type = Message.Datatype.INT32)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer concern_num;
-    @ProtoField(tag = TbConfig.MAX_PRELOAD_PHOTO_NUM, type = Message.Datatype.INT32)
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer gender;
+    @ProtoField(label = Message.Label.REPEATED, tag = 50)
+    public final List<GiftInfo> gift_list;
+    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    public final Integer gift_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 48)
+    public final List<MyGroupInfo> groupList;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer has_concerned;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
@@ -51,7 +56,7 @@ public final class User extends Message {
     public final String ios_bimg_format;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String ip;
-    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_coreuser;
@@ -61,7 +66,7 @@ public final class User extends Message {
     public final Integer is_huinibuke;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_interestman;
-    @ProtoField(tag = 24, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.INT32)
     public final Integer is_like;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_login;
@@ -71,10 +76,14 @@ public final class User extends Message {
     public final Integer is_mask;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_mem;
+    @ProtoField(tag = 51, type = Message.Datatype.INT32)
+    public final Integer is_select_tail;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.INT32)
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer level_id;
+    @ProtoField(label = Message.Label.REPEATED, tag = 47)
+    public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
@@ -109,8 +118,8 @@ public final class User extends Message {
     public final List<TshowInfo> tshow_icon;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer type;
-    @ProtoField(tag = 44)
-    public final UserPics user_pics;
+    @ProtoField(label = Message.Label.REPEATED, tag = 44)
+    public final List<UserPics> user_pics;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer user_type;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -142,7 +151,13 @@ public final class User extends Message {
     public static final Integer DEFAULT_BIMG_END_TIME = 0;
     public static final Integer DEFAULT_GENDER = 0;
     public static final Integer DEFAULT_IS_MASK = 0;
+    public static final List<UserPics> DEFAULT_USER_PICS = Collections.emptyList();
     public static final Integer DEFAULT_IS_FRIEND = 0;
+    public static final List<LikeForumInfo> DEFAULT_LIKEFORUM = Collections.emptyList();
+    public static final List<MyGroupInfo> DEFAULT_GROUPLIST = Collections.emptyList();
+    public static final Integer DEFAULT_GIFT_NUM = 0;
+    public static final List<GiftInfo> DEFAULT_GIFT_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SELECT_TAIL = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -354,13 +369,42 @@ public final class User extends Message {
             } else {
                 this.is_mask = builder.is_mask;
             }
-            this.user_pics = builder.user_pics;
+            if (builder.user_pics == null) {
+                this.user_pics = DEFAULT_USER_PICS;
+            } else {
+                this.user_pics = immutableCopyOf(builder.user_pics);
+            }
             this.priv_sets = builder.priv_sets;
             if (builder.is_friend == null) {
                 this.is_friend = DEFAULT_IS_FRIEND;
-                return;
             } else {
                 this.is_friend = builder.is_friend;
+            }
+            if (builder.likeForum == null) {
+                this.likeForum = DEFAULT_LIKEFORUM;
+            } else {
+                this.likeForum = immutableCopyOf(builder.likeForum);
+            }
+            if (builder.groupList == null) {
+                this.groupList = DEFAULT_GROUPLIST;
+            } else {
+                this.groupList = immutableCopyOf(builder.groupList);
+            }
+            if (builder.gift_num == null) {
+                this.gift_num = DEFAULT_GIFT_NUM;
+            } else {
+                this.gift_num = builder.gift_num;
+            }
+            if (builder.gift_list == null) {
+                this.gift_list = DEFAULT_GIFT_LIST;
+            } else {
+                this.gift_list = immutableCopyOf(builder.gift_list);
+            }
+            if (builder.is_select_tail == null) {
+                this.is_select_tail = DEFAULT_IS_SELECT_TAIL;
+                return;
+            } else {
+                this.is_select_tail = builder.is_select_tail;
                 return;
             }
         }
@@ -407,9 +451,14 @@ public final class User extends Message {
         this.pay_member_info = builder.pay_member_info;
         this.gender = builder.gender;
         this.is_mask = builder.is_mask;
-        this.user_pics = builder.user_pics;
+        this.user_pics = immutableCopyOf(builder.user_pics);
         this.priv_sets = builder.priv_sets;
         this.is_friend = builder.is_friend;
+        this.likeForum = immutableCopyOf(builder.likeForum);
+        this.groupList = immutableCopyOf(builder.groupList);
+        this.gift_num = builder.gift_num;
+        this.gift_list = immutableCopyOf(builder.gift_list);
+        this.is_select_tail = builder.is_select_tail;
     }
 
     /* loaded from: classes.dex */
@@ -422,6 +471,9 @@ public final class User extends Message {
         public Integer concern_num;
         public Integer fans_num;
         public Integer gender;
+        public List<GiftInfo> gift_list;
+        public Integer gift_num;
+        public List<MyGroupInfo> groupList;
         public Integer has_concerned;
         public List<Icon> iconinfo;
         public Integer id;
@@ -438,8 +490,10 @@ public final class User extends Message {
         public Integer is_manager;
         public Integer is_mask;
         public Integer is_mem;
+        public Integer is_select_tail;
         public Integer is_verify;
         public Integer level_id;
+        public List<LikeForumInfo> likeForum;
         public Integer meizhi_level;
         public Integer my_like_num;
         public String name;
@@ -457,7 +511,7 @@ public final class User extends Message {
         public String tb_age;
         public List<TshowInfo> tshow_icon;
         public Integer type;
-        public UserPics user_pics;
+        public List<UserPics> user_pics;
         public Integer user_type;
         public Integer userhide;
 
@@ -507,9 +561,14 @@ public final class User extends Message {
                 this.pay_member_info = user.pay_member_info;
                 this.gender = user.gender;
                 this.is_mask = user.is_mask;
-                this.user_pics = user.user_pics;
+                this.user_pics = User.copyOf(user.user_pics);
                 this.priv_sets = user.priv_sets;
                 this.is_friend = user.is_friend;
+                this.likeForum = User.copyOf(user.likeForum);
+                this.groupList = User.copyOf(user.groupList);
+                this.gift_num = user.gift_num;
+                this.gift_list = User.copyOf(user.gift_list);
+                this.is_select_tail = user.is_select_tail;
             }
         }
 

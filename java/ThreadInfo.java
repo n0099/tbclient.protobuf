@@ -3,7 +3,6 @@ package tbclient;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.location.BDLocation;
 import com.baidu.sapi2.SapiAccountManager;
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -48,7 +47,7 @@ public final class ThreadInfo extends Message {
     public final String ecom;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = 40, type = Message.Datatype.INT64)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
@@ -74,7 +73,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_global_top;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = TbConfig.MAX_PRELOAD_PHOTO_NUM, type = Message.Datatype.INT32)
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_livepost;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
@@ -100,15 +99,15 @@ public final class ThreadInfo extends Message {
     public final String last_time;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer last_time_int;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String live_post_type;
     @ProtoField(tag = BDLocation.TypeCriteriaException)
     public final Lbs location;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Media> media;
-    @ProtoField(label = Message.Label.REPEATED, tag = 25)
+    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN)
     public final List<MediaNum> media_num;
-    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
     public final String meizhi_pic;
     @ProtoField(tag = BDLocation.TypeGpsLocation, type = Message.Datatype.STRING)
     public final String pids;
@@ -150,7 +149,7 @@ public final class ThreadInfo extends Message {
     public final String video_swf;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer view_num;
-    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_NATIVE_PAY)
+    @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
     @ProtoField(tag = 41)
     public final Zan zan;

@@ -8,25 +8,27 @@ import java.util.List;
 public final class TAInfo extends Message {
     @ProtoField(tag = 4)
     public final CommonDistance distanceinfo;
-    @ProtoField(label = Message.Label.REPEATED, tag = 1)
-    public final List<CommonForum> foruminfo;
-    @ProtoField(label = Message.Label.REPEATED, tag = 3)
-    public final List<CommonFriend> friendinfo;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
+    public final List<String> foruminfo;
+    @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.STRING)
+    public final List<String> friendinfo;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer friendnum;
-    @ProtoField(label = Message.Label.REPEATED, tag = 2)
-    public final List<CommonGroup> groupinfo;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
+    public final List<String> groupinfo;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer groupnum;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer is_friend;
+    @ProtoField(tag = 10)
+    public final CommonLocation location;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<ReplyList> reply_list;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer userClientVersionIsLower;
-    public static final List<CommonForum> DEFAULT_FORUMINFO = Collections.emptyList();
-    public static final List<CommonGroup> DEFAULT_GROUPINFO = Collections.emptyList();
-    public static final List<CommonFriend> DEFAULT_FRIENDINFO = Collections.emptyList();
+    public static final List<String> DEFAULT_FORUMINFO = Collections.emptyList();
+    public static final List<String> DEFAULT_GROUPINFO = Collections.emptyList();
+    public static final List<String> DEFAULT_FRIENDINFO = Collections.emptyList();
     public static final Integer DEFAULT_GROUPNUM = 0;
     public static final Integer DEFAULT_FRIENDNUM = 0;
     public static final Integer DEFAULT_IS_FRIEND = 0;
@@ -78,11 +80,11 @@ public final class TAInfo extends Message {
             }
             if (builder.userClientVersionIsLower == null) {
                 this.userClientVersionIsLower = DEFAULT_USERCLIENTVERSIONISLOWER;
-                return;
             } else {
                 this.userClientVersionIsLower = builder.userClientVersionIsLower;
-                return;
             }
+            this.location = builder.location;
+            return;
         }
         this.foruminfo = immutableCopyOf(builder.foruminfo);
         this.groupinfo = immutableCopyOf(builder.groupinfo);
@@ -93,17 +95,19 @@ public final class TAInfo extends Message {
         this.is_friend = builder.is_friend;
         this.reply_list = immutableCopyOf(builder.reply_list);
         this.userClientVersionIsLower = builder.userClientVersionIsLower;
+        this.location = builder.location;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<TAInfo> {
         public CommonDistance distanceinfo;
-        public List<CommonForum> foruminfo;
-        public List<CommonFriend> friendinfo;
+        public List<String> foruminfo;
+        public List<String> friendinfo;
         public Integer friendnum;
-        public List<CommonGroup> groupinfo;
+        public List<String> groupinfo;
         public Integer groupnum;
         public Integer is_friend;
+        public CommonLocation location;
         public List<ReplyList> reply_list;
         public Integer userClientVersionIsLower;
 
@@ -119,6 +123,7 @@ public final class TAInfo extends Message {
                 this.is_friend = tAInfo.is_friend;
                 this.reply_list = TAInfo.copyOf(tAInfo.reply_list);
                 this.userClientVersionIsLower = tAInfo.userClientVersionIsLower;
+                this.location = tAInfo.location;
             }
         }
 

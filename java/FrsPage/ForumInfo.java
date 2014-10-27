@@ -2,7 +2,6 @@ package tbclient.FrsPage;
 
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.sapi2.SapiAccountManager;
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -23,11 +22,11 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_TIDS = "";
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.INT32)
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer album_open_photo_frs;
     @ProtoField(tag = 44)
     public final AnchorPower anchor_power;
-    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
     public final String avatar;
     @ProtoField(label = Message.Label.REPEATED, tag = 34)
     public final List<Badges> badges;
@@ -55,7 +54,7 @@ public final class ForumInfo extends Message {
     public final Integer has_frs_star;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer has_game;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer has_paper;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer has_postpre;
@@ -73,7 +72,7 @@ public final class ForumInfo extends Message {
     public final String is_readonly;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer is_search_people;
-    @ProtoField(tag = TbConfig.MAX_PRELOAD_PHOTO_NUM, type = Message.Datatype.INT32)
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_support_local;
@@ -91,6 +90,8 @@ public final class ForumInfo extends Message {
     public final Integer member_num;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
+    @ProtoField(tag = 52)
+    public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
     @ProtoField(tag = 39)
@@ -103,9 +104,9 @@ public final class ForumInfo extends Message {
     public final String second_class;
     @ProtoField(tag = 15)
     public final SignInfo sign_in_info;
-    @ProtoField(tag = 25, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
     public final String superboy;
     @ProtoField(tag = 38)
     public final TagInfo tag_info;
@@ -113,6 +114,8 @@ public final class ForumInfo extends Message {
     public final Integer thread_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String tids;
+    @ProtoField(tag = 51)
+    public final TopCode top_code;
     @ProtoField(tag = 28)
     public final TopNotice top_notice;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -360,11 +363,12 @@ public final class ForumInfo extends Message {
             }
             if (builder.accelerate_cotent == null) {
                 this.accelerate_cotent = "";
-                return;
             } else {
                 this.accelerate_cotent = builder.accelerate_cotent;
-                return;
             }
+            this.top_code = builder.top_code;
+            this.news_info = builder.news_info;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -416,6 +420,8 @@ public final class ForumInfo extends Message {
         this.recommend_user_info = builder.recommend_user_info;
         this.can_use_accelerate = builder.can_use_accelerate;
         this.accelerate_cotent = builder.accelerate_cotent;
+        this.top_code = builder.top_code;
+        this.news_info = builder.news_info;
     }
 
     /* loaded from: classes.dex */
@@ -455,6 +461,7 @@ public final class ForumInfo extends Message {
         public Integer meizhi_tag;
         public Integer member_num;
         public String name;
+        public TopNews news_info;
         public Integer post_num;
         public PostPrefix post_prefix;
         public List<RecommendForum> recommend_forum;
@@ -466,6 +473,7 @@ public final class ForumInfo extends Message {
         public TagInfo tag_info;
         public Integer thread_num;
         public String tids;
+        public TopCode top_code;
         public TopNotice top_notice;
         public Integer user_level;
         public WorldCup worldcupinfo;
@@ -524,6 +532,8 @@ public final class ForumInfo extends Message {
                 this.recommend_user_info = forumInfo.recommend_user_info;
                 this.can_use_accelerate = forumInfo.can_use_accelerate;
                 this.accelerate_cotent = forumInfo.accelerate_cotent;
+                this.top_code = forumInfo.top_code;
+                this.news_info = forumInfo.news_info;
             }
         }
 

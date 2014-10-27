@@ -20,7 +20,7 @@ public final class PostInfoList extends Message {
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
-    @ProtoField(tag = 24)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO)
     public final AnchorInfo anchor_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<PostInfoContent> content;
@@ -32,7 +32,7 @@ public final class PostInfoList extends Message {
     public final Long forum_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String forum_name;
-    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
     public final Integer hide_post;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String ip;
@@ -64,7 +64,7 @@ public final class PostInfoList extends Message {
     public final String user_name;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String user_portrait;
-    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_NATIVE_PAY)
+    @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Long DEFAULT_THREAD_ID = 0L;

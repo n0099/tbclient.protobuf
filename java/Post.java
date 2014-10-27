@@ -18,7 +18,7 @@ public final class Post extends Message {
     public final Integer add_post_number;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
     public final List<String> arr_video;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY)
+    @ProtoField(tag = 23)
     public final User author;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer author_id;

@@ -2,8 +2,12 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_ST_TYPE = "";
+    @ProtoField(tag = 9)
+    public final CommonReq common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long friend_uid;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
@@ -16,15 +20,14 @@ public final class DataReq extends Message {
     public final Integer pn;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer rn;
-    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-    public final Integer st_type;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String st_type;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer uid;
     public static final Integer DEFAULT_UID = 0;
     public static final Integer DEFAULT_NEED_POST_COUNT = 0;
     public static final Long DEFAULT_FRIEND_UID = 0L;
     public static final Integer DEFAULT_IS_GUEST = 0;
-    public static final Integer DEFAULT_ST_TYPE = 0;
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
     public static final Integer DEFAULT_HAS_PLIST = 0;
@@ -57,7 +60,7 @@ public final class DataReq extends Message {
                 this.is_guest = builder.is_guest;
             }
             if (builder.st_type == null) {
-                this.st_type = DEFAULT_ST_TYPE;
+                this.st_type = "";
             } else {
                 this.st_type = builder.st_type;
             }
@@ -73,11 +76,11 @@ public final class DataReq extends Message {
             }
             if (builder.has_plist == null) {
                 this.has_plist = DEFAULT_HAS_PLIST;
-                return;
             } else {
                 this.has_plist = builder.has_plist;
-                return;
             }
+            this.common = builder.common;
+            return;
         }
         this.uid = builder.uid;
         this.need_post_count = builder.need_post_count;
@@ -87,17 +90,19 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
+        this.common = builder.common;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<DataReq> {
+        public CommonReq common;
         public Long friend_uid;
         public Integer has_plist;
         public Integer is_guest;
         public Integer need_post_count;
         public Integer pn;
         public Integer rn;
-        public Integer st_type;
+        public String st_type;
         public Integer uid;
 
         public Builder(DataReq dataReq) {
@@ -111,6 +116,7 @@ public final class DataReq extends Message {
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;
                 this.has_plist = dataReq.has_plist;
+                this.common = dataReq.common;
             }
         }
 

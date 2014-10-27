@@ -1,8 +1,6 @@
 package tbclient;
 
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
-import com.baidu.sapi2.SapiAccountManager;
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -30,7 +28,7 @@ public final class NewUser extends Message {
     public final String billboard;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String card;
-    @ProtoField(tag = TbConfig.MAX_PRELOAD_PHOTO_NUM, type = Message.Datatype.STRING)
+    @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String cdn_error;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String free_flag;
@@ -40,7 +38,7 @@ public final class NewUser extends Message {
     public final Global global;
     @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK, type = Message.Datatype.STRING)
     public final String is_coreuser;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String is_doudizhu;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_group_owner;
@@ -48,9 +46,9 @@ public final class NewUser extends Message {
     public final Integer is_hardworking;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String is_interestman;
-    @ProtoField(tag = 24, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.INT32)
     public final Integer is_member;
-    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
     public final Integer is_passer;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer is_qun_spring;
@@ -78,7 +76,7 @@ public final class NewUser extends Message {
     public final Integer superboy;
     @ProtoField(label = Message.Label.REPEATED, tag = 31)
     public final List<TbmallMonthIcon> tbmall_month_icon;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.STRING)
+    @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String tbscore_repeate_finish_time;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer use_sig;

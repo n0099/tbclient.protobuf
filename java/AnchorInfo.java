@@ -1,10 +1,12 @@
 package tbclient;
 
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class AnchorInfo extends Message {
     public static final String DEFAULT_AUTHOR_NAME = "";
+    public static final String DEFAULT_FORUMNAME = "";
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -14,6 +16,8 @@ public final class AnchorInfo extends Message {
     public final Integer author_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String author_name;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
+    public final String forumName;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer group_id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -113,9 +117,14 @@ public final class AnchorInfo extends Message {
             }
             if (builder.publisherId == null) {
                 this.publisherId = DEFAULT_PUBLISHERID;
-                return;
             } else {
                 this.publisherId = builder.publisherId;
+            }
+            if (builder.forumName == null) {
+                this.forumName = "";
+                return;
+            } else {
+                this.forumName = builder.forumName;
                 return;
             }
         }
@@ -132,12 +141,14 @@ public final class AnchorInfo extends Message {
         this.publisherPortrait = builder.publisherPortrait;
         this.publisherName = builder.publisherName;
         this.publisherId = builder.publisherId;
+        this.forumName = builder.forumName;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<AnchorInfo> {
         public Integer author_id;
         public String author_name;
+        public String forumName;
         public Integer group_id;
         public String intro;
         public Integer likers;
@@ -166,6 +177,7 @@ public final class AnchorInfo extends Message {
                 this.publisherPortrait = anchorInfo.publisherPortrait;
                 this.publisherName = anchorInfo.publisherName;
                 this.publisherId = anchorInfo.publisherId;
+                this.forumName = anchorInfo.forumName;
             }
         }
 

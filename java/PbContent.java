@@ -42,10 +42,14 @@ public final class PbContent extends Message {
     public final Integer height;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String imgtype;
+    @ProtoField(tag = 22, type = Message.Datatype.UINT32)
+    public final Integer is_native_app;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.UINT32)
     public final Integer is_sub;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
+    @ProtoField(tag = 23)
+    public final NativeApp native_app;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String packet_name;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -68,6 +72,7 @@ public final class PbContent extends Message {
     public static final Long DEFAULT_UID = 0L;
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
+    public static final Integer DEFAULT_IS_NATIVE_APP = 0;
 
     /* synthetic */ PbContent(Builder builder, boolean z, PbContent pbContent) {
         this(builder, z);
@@ -178,11 +183,16 @@ public final class PbContent extends Message {
             }
             if (builder.phonetype == null) {
                 this.phonetype = "";
-                return;
             } else {
                 this.phonetype = builder.phonetype;
-                return;
             }
+            if (builder.is_native_app == null) {
+                this.is_native_app = DEFAULT_IS_NATIVE_APP;
+            } else {
+                this.is_native_app = builder.is_native_app;
+            }
+            this.native_app = builder.native_app;
+            return;
         }
         this.type = builder.type;
         this.text = builder.text;
@@ -205,6 +215,8 @@ public final class PbContent extends Message {
         this.height = builder.height;
         this.packet_name = builder.packet_name;
         this.phonetype = builder.phonetype;
+        this.is_native_app = builder.is_native_app;
+        this.native_app = builder.native_app;
     }
 
     /* loaded from: classes.dex */
@@ -220,8 +232,10 @@ public final class PbContent extends Message {
         public String dynamic;
         public Integer height;
         public String imgtype;
+        public Integer is_native_app;
         public Integer is_sub;
         public String link;
+        public NativeApp native_app;
         public String packet_name;
         public String phonetype;
         public String src;
@@ -255,6 +269,8 @@ public final class PbContent extends Message {
                 this.height = pbContent.height;
                 this.packet_name = pbContent.packet_name;
                 this.phonetype = pbContent.phonetype;
+                this.is_native_app = pbContent.is_native_app;
+                this.native_app = pbContent.native_app;
             }
         }
 

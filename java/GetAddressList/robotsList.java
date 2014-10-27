@@ -1,0 +1,59 @@
+package tbclient.GetAddressList;
+
+import com.squareup.wire.Message;
+import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
+/* loaded from: classes.dex */
+public final class robotsList extends Message {
+    public static final List<friendList> DEFAULT_FRIEND_LIST = Collections.emptyList();
+    public static final String DEFAULT_KEY = "";
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<friendList> friend_list;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String key;
+
+    /* synthetic */ robotsList(Builder builder, boolean z, robotsList robotslist) {
+        this(builder, z);
+    }
+
+    private robotsList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            if (builder.key == null) {
+                this.key = "";
+            } else {
+                this.key = builder.key;
+            }
+            if (builder.friend_list == null) {
+                this.friend_list = DEFAULT_FRIEND_LIST;
+                return;
+            } else {
+                this.friend_list = immutableCopyOf(builder.friend_list);
+                return;
+            }
+        }
+        this.key = builder.key;
+        this.friend_list = immutableCopyOf(builder.friend_list);
+    }
+
+    /* loaded from: classes.dex */
+    public final class Builder extends Message.Builder<robotsList> {
+        public List<friendList> friend_list;
+        public String key;
+
+        public Builder(robotsList robotslist) {
+            super(robotslist);
+            if (robotslist != null) {
+                this.key = robotslist.key;
+                this.friend_list = robotsList.copyOf(robotslist.friend_list);
+            }
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public robotsList build(boolean z) {
+            return new robotsList(this, z, null);
+        }
+    }
+}

@@ -2,7 +2,6 @@ package tbclient.FrsPage;
 
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import com.baidu.sapi2.SapiAccountManager;
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -24,7 +23,7 @@ public final class DataReq extends Message {
     public final Boolean check_login;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer cid;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.INT32)
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer class_id;
     @ProtoField(tag = 39)
     public final CommonReq common;
@@ -42,17 +41,17 @@ public final class DataReq extends Message {
     public final String forum_name;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer frs_rn;
-    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
     public final Integer ip_int;
-    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
-    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
     public final String lastids;
-    @ProtoField(tag = TbConfig.MAX_PRELOAD_PHOTO_NUM, type = Message.Datatype.BOOL)
+    @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean login;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String mobile;
@@ -90,7 +89,7 @@ public final class DataReq extends Message {
     public final Integer st_param;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String st_type;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.BOOL)
+    @ProtoField(tag = 29, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer user_id;

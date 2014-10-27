@@ -19,9 +19,9 @@ public final class DataReq extends Message {
     public final Integer check_login;
     @ProtoField(tag = 27)
     public final CommonReq common;
-    @ProtoField(tag = 25, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
     public final String cookie;
-    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
     public final String email;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer end_time;
@@ -35,7 +35,7 @@ public final class DataReq extends Message {
     public final Integer is_thread;
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer login;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.STRING)
+    @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String mobile;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String module_name;

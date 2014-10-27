@@ -7,6 +7,8 @@ import tbclient.GameInfo;
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final GameInfo game_info;
+    @ProtoField(tag = 2)
+    public final RankInfo rank_info;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -16,19 +18,23 @@ public final class DataRes extends Message {
         super(builder);
         if (z) {
             this.game_info = builder.game_info;
-        } else {
-            this.game_info = builder.game_info;
+            this.rank_info = builder.rank_info;
+            return;
         }
+        this.game_info = builder.game_info;
+        this.rank_info = builder.rank_info;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<DataRes> {
         public GameInfo game_info;
+        public RankInfo rank_info;
 
         public Builder(DataRes dataRes) {
             super(dataRes);
             if (dataRes != null) {
                 this.game_info = dataRes.game_info;
+                this.rank_info = dataRes.rank_info;
             }
         }
 

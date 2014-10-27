@@ -1,7 +1,5 @@
 package tbclient;
 
-import com.baidu.sapi2.SapiAccountManager;
-import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -32,7 +30,7 @@ public final class App extends Message {
     public static final String DEFAULT_USER_ID = "";
     public static final String DEFAULT_VERIFY = "";
     public static final String DEFAULT_WEB_URL = "";
-    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
     public final String abtest;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String ad_id;
@@ -46,13 +44,13 @@ public final class App extends Message {
     public final String app_name;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer app_time;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_PAY, type = Message.Datatype.INT32)
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer cpid;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String ext_info;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String first_name;
-    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.MAX_PRELOAD_PHOTO_NUM)
+    @ProtoField(label = Message.Label.REPEATED, tag = 30)
     public final List<GoodsInfo> goods_info;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String icon_link;
@@ -70,7 +68,7 @@ public final class App extends Message {
     public final String p_name;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String p_url;
-    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
     public final Integer plan_id;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer pos;
