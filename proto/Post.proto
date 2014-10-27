@@ -6,6 +6,7 @@ import "PbContent.proto";
 import "SignatureData.proto";
 import "SubPost.proto";
 import "TailInfo.proto";
+import "User.proto";
 
 message Post {
     uint64 id = 1;
@@ -29,4 +30,5 @@ message Post {
     uint32 add_post_number = 20;
     SignatureData signature = 21;
     TailInfo tail_info = 22;
+    User author = 23;
 }

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ForumRecommend/DataReq.proto";
+
+message ForumRecommendReqIdl {
+    DataReq data = 1;
+}

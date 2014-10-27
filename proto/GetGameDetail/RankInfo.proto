@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetGameDetail/RankItem.proto";
+
+message RankInfo {
+    repeated RankItem rank_list = 1;
+}

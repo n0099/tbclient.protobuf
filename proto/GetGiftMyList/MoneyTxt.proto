@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message MoneyTxt {
+    string txt = 1;
+    string url = 2;
+}

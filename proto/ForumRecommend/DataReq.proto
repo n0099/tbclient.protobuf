@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    uint32 like_forum = 1;
+    uint32 topic = 2;
+    uint32 recommend = 3;
+    CommonReq common = 4;
+}

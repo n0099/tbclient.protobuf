@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "NativeApp.proto";
+
 message PbContent {
     uint32 type = 1;
     string text = 2;
@@ -21,4 +23,6 @@ message PbContent {
     uint32 height = 19;
     string packet_name = 20;
     string phonetype = 21;
+    uint32 is_native_app = 22;
+    NativeApp native_app = 23;
 }

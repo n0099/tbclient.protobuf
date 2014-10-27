@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetGameCategoryDetail/ResData.proto";
+
+message GetGameCategoryDetailResIdl {
+    Error error = 1;
+    ResData data = 2;
+}

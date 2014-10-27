@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    int32 recommend_platform = 1;
+    int32 type = 2;
+    int32 pn = 3;
+    int32 rn = 4;
+    CommonReq common = 5;
+}

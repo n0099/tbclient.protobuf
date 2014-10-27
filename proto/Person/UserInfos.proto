@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "Icon.proto";
+import "LbsInfo.proto";
 
 message UserInfos {
     int32 user_id = 1;
@@ -11,4 +12,5 @@ message UserInfos {
     int32 lastest_time = 6;
     repeated Icon iconinfo = 7;
     string userdetail = 8;
+    LbsInfo location = 9;
 }

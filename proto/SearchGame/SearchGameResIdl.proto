@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "SearchGame/DataRes.proto";
+
+message SearchGameResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

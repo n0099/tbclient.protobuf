@@ -31,5 +31,5 @@ message FriendThreadInfo {
     Anti anti = 20;
     int64 fid = 21;
     string fname = 22;
-    int32 is_voice_thread = 24;
+    AnchorInfo anchor_info = 23;
 }

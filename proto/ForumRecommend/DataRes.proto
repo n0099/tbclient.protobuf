@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "ForumRecommend/Banner.proto";
+import "ForumRecommend/LikeForum.proto";
+import "ForumRecommend/NewRecommend.proto";
+
+message DataRes {
+    repeated LikeForum like_forum = 1;
+    repeated Banner banner = 2;
+    repeated NewRecommend new_recommend = 3;
+    int32 is_login = 4;
+    int32 msign_valid = 5;
+    string msign_text = 6;
+    int32 msign_level = 7;
+    int32 time = 8;
+    int32 is_mem = 9;
+}

@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message CommonFriend {
-    string friendname = 1;
-}

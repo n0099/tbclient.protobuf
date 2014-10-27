@@ -22,5 +22,5 @@ message CommonReq {
     string m_size_u = 20;
     string m_size_d = 21;
     string smallflow = 22;
-    string pversion = 24;
+    string sign = 23;
 }

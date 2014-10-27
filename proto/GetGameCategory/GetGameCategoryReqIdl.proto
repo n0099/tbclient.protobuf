@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetGameCategory/DataReq.proto";
+
+message GetGameCategoryReqIdl {
+    DataReq data = 1;
+}

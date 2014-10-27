@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message MyGroupInfo {
+    uint64 group_id = 1;
+    string group_name = 2;
+    string portrait = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetIconList/IconInfo.proto";
+import "GetIconList/UserInfo.proto";
+
+message DataRes {
+    UserInfo user_info = 1;
+    repeated IconInfo icon_info = 2;
+}

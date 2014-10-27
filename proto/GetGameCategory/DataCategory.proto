@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetGameCategory/CategoryList.proto";
+
+message DataCategory {
+    repeated CategoryList category_list = 1;
+}

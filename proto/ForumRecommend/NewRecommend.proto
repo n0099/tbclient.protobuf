@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message NewRecommend {
+    int64 forum_id = 1;
+    string forum_name = 2;
+    int32 member_count = 3;
+    string avatar = 4;
+}

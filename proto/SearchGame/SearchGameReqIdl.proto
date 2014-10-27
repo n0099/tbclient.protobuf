@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "SearchGame/DataReq.proto";
+
+message SearchGameReqIdl {
+    DataReq data = 1;
+}

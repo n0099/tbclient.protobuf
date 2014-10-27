@@ -1,11 +1,11 @@
 syntax = "proto3";
 
 import "Abstract.proto";
-import "AnchorInfo.proto";
 import "LbsInfo.proto";
 import "Media.proto";
 import "PostInfoContent.proto";
 import "Quote.proto";
+import "Voice.proto";
 
 message PostInfoList {
     uint64 forum_id = 1;
@@ -29,6 +29,5 @@ message PostInfoList {
     string post_type = 20;
     LbsInfo lbs_info = 21;
     Quote quote = 22;
-    AnchorInfo anchor_info = 24;
-    int32 hide_post = 25;
+    repeated Voice voice_info = 23;
 }

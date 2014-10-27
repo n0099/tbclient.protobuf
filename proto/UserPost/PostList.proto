@@ -30,5 +30,5 @@ message PostList {
     string post_type = 20;
     LbsInfo lbs_info = 21;
     Quote quote = 22;
-    AnchorInfo anchor_info = 24;
+    repeated Voice voice_info = 23;
 }

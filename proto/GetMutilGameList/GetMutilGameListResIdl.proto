@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetMutilGameList/DataRes.proto";
+
+message GetMutilGameListResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

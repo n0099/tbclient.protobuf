@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message RecommendGame {
+    string game_id = 1;
+    string game_name = 2;
+    uint32 game_type = 3;
+    string icon_url = 4;
+    string secret_key = 5;
+    uint32 player_num = 6;
+    string package_link = 7;
+    string package_size = 8;
+    string game_link = 9;
+    uint32 mark = 10;
+    string apple_id = 11;
+    string bundle_id = 12;
+    string schema_url = 13;
+    string introduce = 15;
+    string launch_component = 16;
+    string andr_pk_name = 17;
+}

@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ForumInfo {
+    string common_forum = 1;
+}

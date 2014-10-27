@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message TopCode {
+    string img_url = 1;
+    string game_link = 2;
+    string summary = 3;
+    string code_link = 4;
+    int32 get_type = 5;
+    string surplusgift = 6;
+    int64 giftworth = 7;
+}

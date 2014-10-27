@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DataReq {
+    string lat = 1;
+    string lng = 2;
+}

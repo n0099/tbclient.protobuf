@@ -9,4 +9,5 @@ message RecomUserInfo {
     repeated CommonForum common_forum = 2;
     repeated PostInfo post_info = 3;
     string pos_name = 4;
+    string message = 5;
 }

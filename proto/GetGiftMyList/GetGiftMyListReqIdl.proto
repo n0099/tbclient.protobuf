@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+import "GetGiftMyList/DataReq.proto";
+
+message GetGiftMyListReqIdl {
+    DataReq data = 1;
+    CommonReq common = 2;
+}

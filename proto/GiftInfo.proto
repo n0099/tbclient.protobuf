@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message GiftInfo {
+    string icon = 1;
+    int32 num = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GameCategory.proto";
+
+message ResData {
+    repeated GameCategory category_list = 1;
+}

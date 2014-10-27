@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message CommonGroup {
-    string groupname = 1;
-}

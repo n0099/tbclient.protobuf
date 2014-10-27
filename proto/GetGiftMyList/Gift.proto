@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message Gift {
+    uint32 gift_id = 1;
+    string name = 2;
+    string play_url = 3;
+    string thumbnail_url = 4;
+    uint32 send_time = 5;
+    uint32 num = 6;
+}

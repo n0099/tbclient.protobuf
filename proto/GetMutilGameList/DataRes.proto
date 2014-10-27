@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "GameInfo.proto";
+import "GetMutilGameList/AdvInfo.proto";
+
+message DataRes {
+    repeated GameInfo game_list = 1;
+    repeated AdvInfo adv_list = 2;
+    int32 has_more = 3;
+}

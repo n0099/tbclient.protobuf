@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetPoisByLocation/PoiInfo.proto";
+
+message DataRes {
+    string formatted_address = 1;
+    repeated PoiInfo poi_info = 2;
+}
