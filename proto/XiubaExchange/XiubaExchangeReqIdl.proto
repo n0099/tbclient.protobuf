@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "XiubaExchange/DataReq.proto";
+
+message XiubaExchangeReqIdl {
+    DataReq data = 1;
+}
