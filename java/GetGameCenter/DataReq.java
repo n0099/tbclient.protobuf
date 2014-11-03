@@ -2,11 +2,14 @@ package tbclient.GetGameCenter;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PAGE_NUM = 0;
     public static final Integer DEFAULT_RES_NUM = 0;
     public static final String DEFAULT_ST_TYPE = "";
+    @ProtoField(tag = 4)
+    public final CommonReq common;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer page_num;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -33,19 +36,21 @@ public final class DataReq extends Message {
             }
             if (builder.st_type == null) {
                 this.st_type = "";
-                return;
             } else {
                 this.st_type = builder.st_type;
-                return;
             }
+            this.common = builder.common;
+            return;
         }
         this.page_num = builder.page_num;
         this.res_num = builder.res_num;
         this.st_type = builder.st_type;
+        this.common = builder.common;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<DataReq> {
+        public CommonReq common;
         public Integer page_num;
         public Integer res_num;
         public String st_type;
@@ -56,6 +61,7 @@ public final class DataReq extends Message {
                 this.page_num = dataReq.page_num;
                 this.res_num = dataReq.res_num;
                 this.st_type = dataReq.st_type;
+                this.common = dataReq.common;
             }
         }
 
