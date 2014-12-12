@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -52,7 +51,7 @@ public final class Post extends Message {
     public final TailInfo tail_info;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer time;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String time_ex;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;

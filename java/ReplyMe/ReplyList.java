@@ -1,6 +1,5 @@
 package tbclient.ReplyMe;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.User;
@@ -24,7 +23,7 @@ public final class ReplyList extends Message {
     public final Long post_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String quote_content;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 14, type = Message.Datatype.UINT64)
     public final Long quote_pid;
     @ProtoField(tag = 15)
     public final User quote_user;

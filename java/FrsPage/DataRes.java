@@ -1,6 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -39,8 +38,10 @@ public final class DataRes extends Message {
     public final Long logid;
     @ProtoField(tag = 4)
     public final Page page;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
+    @ProtoField(label = Message.Label.REPEATED, tag = 20)
+    public final List<StarEnter> star_enter;
     @ProtoField(label = Message.Label.REPEATED, tag = 8, type = Message.Datatype.INT64)
     public final List<Long> thread_id_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
@@ -61,6 +62,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SERVER_TIME = 0;
     public static final List<AnchorInfo> DEFAULT_FORUM_LIVEGROUP_LIST = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    public static final List<StarEnter> DEFAULT_STAR_ENTER = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -129,9 +131,14 @@ public final class DataRes extends Message {
             this.gcon_account = builder.gcon_account;
             if (builder.fortune_desc == null) {
                 this.fortune_desc = "";
-                return;
             } else {
                 this.fortune_desc = builder.fortune_desc;
+            }
+            if (builder.star_enter == null) {
+                this.star_enter = DEFAULT_STAR_ENTER;
+                return;
+            } else {
+                this.star_enter = immutableCopyOf(builder.star_enter);
                 return;
             }
         }
@@ -154,6 +161,7 @@ public final class DataRes extends Message {
         this.user_list = immutableCopyOf(builder.user_list);
         this.gcon_account = builder.gcon_account;
         this.fortune_desc = builder.fortune_desc;
+        this.star_enter = immutableCopyOf(builder.star_enter);
     }
 
     /* loaded from: classes.dex */
@@ -172,6 +180,7 @@ public final class DataRes extends Message {
         public Long logid;
         public Page page;
         public Integer server_time;
+        public List<StarEnter> star_enter;
         public List<Long> thread_id_list;
         public List<ThreadInfo> thread_list;
         public Integer time;
@@ -200,6 +209,7 @@ public final class DataRes extends Message {
                 this.user_list = DataRes.copyOf(dataRes.user_list);
                 this.gcon_account = dataRes.gcon_account;
                 this.fortune_desc = dataRes.fortune_desc;
+                this.star_enter = DataRes.copyOf(dataRes.star_enter);
             }
         }
 

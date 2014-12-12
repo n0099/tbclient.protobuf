@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public final Integer begin_time;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer check_login;
-    @ProtoField(tag = 27)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL)
     public final CommonReq common;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
     public final String cookie;
@@ -45,7 +45,7 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer offset;
-    @ProtoField(tag = 26, type = Message.Datatype.UINT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String portrait;
@@ -55,7 +55,7 @@ public final class DataReq extends Message {
     public final Integer smile_grade;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer st_param;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer st_type;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer subtype;

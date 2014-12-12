@@ -1,6 +1,5 @@
 package tbclient.PbPage;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -35,7 +34,7 @@ public final class DataRes extends Message {
     public final List<PostBanner> post_banner;
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
     public final List<Post> post_list;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
     @ProtoField(tag = 8)
     public final ThreadInfo thread;

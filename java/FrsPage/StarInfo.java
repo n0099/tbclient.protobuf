@@ -1,6 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -35,7 +34,7 @@ public final class StarInfo extends Message {
     public final PhotoInfo photo;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String top;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT)
+    @ProtoField(tag = 14)
     public final Size top_size;
     @ProtoField(tag = 16)
     public final Ticket trade;

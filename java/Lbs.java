@@ -7,12 +7,15 @@ public final class Lbs extends Message {
     public static final String DEFAULT_LAT = "";
     public static final String DEFAULT_LNG = "";
     public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_SN = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String lat;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String lng;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String name;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String sn;
 
     /* synthetic */ Lbs(Builder builder, boolean z, Lbs lbs) {
         this(builder, z);
@@ -33,15 +36,21 @@ public final class Lbs extends Message {
             }
             if (builder.name == null) {
                 this.name = "";
-                return;
             } else {
                 this.name = builder.name;
+            }
+            if (builder.sn == null) {
+                this.sn = "";
+                return;
+            } else {
+                this.sn = builder.sn;
                 return;
             }
         }
         this.lat = builder.lat;
         this.lng = builder.lng;
         this.name = builder.name;
+        this.sn = builder.sn;
     }
 
     /* loaded from: classes.dex */
@@ -49,6 +58,7 @@ public final class Lbs extends Message {
         public String lat;
         public String lng;
         public String name;
+        public String sn;
 
         public Builder(Lbs lbs) {
             super(lbs);
@@ -56,6 +66,7 @@ public final class Lbs extends Message {
                 this.lat = lbs.lat;
                 this.lng = lbs.lng;
                 this.name = lbs.name;
+                this.sn = lbs.sn;
             }
         }
 

@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -44,7 +43,7 @@ public final class PbContent extends Message {
     public final String imgtype;
     @ProtoField(tag = 22, type = Message.Datatype.UINT32)
     public final Integer is_native_app;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer is_sub;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;

@@ -20,7 +20,7 @@ public final class PostList extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_USER_PORTRAIT = "";
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;

@@ -10,6 +10,8 @@ public final class RecomUserInfo extends Message {
     public static final String DEFAULT_POS_NAME = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<CommonForum> common_forum;
+    @ProtoField(tag = 6)
+    public final CommonDistance distanceinfo;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String message;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -46,22 +48,24 @@ public final class RecomUserInfo extends Message {
             }
             if (builder.message == null) {
                 this.message = "";
-                return;
             } else {
                 this.message = builder.message;
-                return;
             }
+            this.distanceinfo = builder.distanceinfo;
+            return;
         }
         this.user_info = builder.user_info;
         this.common_forum = immutableCopyOf(builder.common_forum);
         this.post_info = immutableCopyOf(builder.post_info);
         this.pos_name = builder.pos_name;
         this.message = builder.message;
+        this.distanceinfo = builder.distanceinfo;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<RecomUserInfo> {
         public List<CommonForum> common_forum;
+        public CommonDistance distanceinfo;
         public String message;
         public String pos_name;
         public List<PostInfo> post_info;
@@ -75,6 +79,7 @@ public final class RecomUserInfo extends Message {
                 this.post_info = RecomUserInfo.copyOf(recomUserInfo.post_info);
                 this.pos_name = recomUserInfo.pos_name;
                 this.message = recomUserInfo.message;
+                this.distanceinfo = recomUserInfo.distanceinfo;
             }
         }
 

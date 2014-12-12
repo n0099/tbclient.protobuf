@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class TAInfo extends Message {
+    public static final String DEFAULT_HIDE_USER_FEED = "";
     @ProtoField(tag = 4)
     public final CommonDistance distanceinfo;
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
@@ -18,6 +19,8 @@ public final class TAInfo extends Message {
     public final List<String> groupinfo;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer groupnum;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String hide_user_feed;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer is_friend;
     @ProtoField(tag = 10)
@@ -84,7 +87,13 @@ public final class TAInfo extends Message {
                 this.userClientVersionIsLower = builder.userClientVersionIsLower;
             }
             this.location = builder.location;
-            return;
+            if (builder.hide_user_feed == null) {
+                this.hide_user_feed = "";
+                return;
+            } else {
+                this.hide_user_feed = builder.hide_user_feed;
+                return;
+            }
         }
         this.foruminfo = immutableCopyOf(builder.foruminfo);
         this.groupinfo = immutableCopyOf(builder.groupinfo);
@@ -96,6 +105,7 @@ public final class TAInfo extends Message {
         this.reply_list = immutableCopyOf(builder.reply_list);
         this.userClientVersionIsLower = builder.userClientVersionIsLower;
         this.location = builder.location;
+        this.hide_user_feed = builder.hide_user_feed;
     }
 
     /* loaded from: classes.dex */
@@ -106,6 +116,7 @@ public final class TAInfo extends Message {
         public Integer friendnum;
         public List<String> groupinfo;
         public Integer groupnum;
+        public String hide_user_feed;
         public Integer is_friend;
         public CommonLocation location;
         public List<ReplyList> reply_list;
@@ -124,6 +135,7 @@ public final class TAInfo extends Message {
                 this.reply_list = TAInfo.copyOf(tAInfo.reply_list);
                 this.userClientVersionIsLower = tAInfo.userClientVersionIsLower;
                 this.location = tAInfo.location;
+                this.hide_user_feed = tAInfo.hide_user_feed;
             }
         }
 

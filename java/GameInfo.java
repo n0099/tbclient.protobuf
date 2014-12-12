@@ -1,5 +1,7 @@
 package tbclient;
 
+import com.baidu.channelrtc.medialivesender.Constants;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -7,25 +9,38 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class GameInfo extends Message {
+    public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ANDR_PK_NAME = "";
     public static final String DEFAULT_APPLE_ID = "";
     public static final String DEFAULT_BUNDLE_ID = "";
     public static final String DEFAULT_CATEGORY_NAME = "";
+    public static final String DEFAULT_CATEGORY_NAME_SIM = "";
     public static final String DEFAULT_EDITOR_REC = "";
+    public static final String DEFAULT_GAME_DESC = "";
+    public static final String DEFAULT_GAME_DETAILS_URL = "";
     public static final String DEFAULT_GAME_ID = "";
     public static final String DEFAULT_GAME_LINK = "";
     public static final String DEFAULT_GAME_NAME = "";
+    public static final String DEFAULT_ICON_PIC1 = "";
+    public static final String DEFAULT_ICON_PIC2 = "";
+    public static final String DEFAULT_ICON_PIC3 = "";
     public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_INTRODUCE = "";
+    public static final String DEFAULT_LAUNCHCOMPONENT = "";
     public static final String DEFAULT_LAUNCH_COMPONENT = "";
     public static final String DEFAULT_PACKAGE_LINK = "";
     public static final String DEFAULT_PACKAGE_SIZE = "";
     public static final String DEFAULT_SCHEMA_URL = "";
     public static final String DEFAULT_SECRET_KEY = "";
+    public static final String DEFAULT_SUBSCRIPT_COLOR = "";
     public static final String DEFAULT_SUPERSCRIPT_COLOR = "";
     public static final String DEFAULT_VERSION = "";
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
+    public final String _abstract;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String andr_pk_name;
+    @ProtoField(tag = 28, type = Message.Datatype.UINT32)
+    public final Integer app_id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String apple_id;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -34,12 +49,18 @@ public final class GameInfo extends Message {
     public final Integer category_id;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String category_name;
+    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
+    public final String category_name_sim;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer day_downloads;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.UINT64)
     public final Long deadline;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
     public final String editor_rec;
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
+    public final String game_desc;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
+    public final String game_details_url;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String game_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -50,10 +71,18 @@ public final class GameInfo extends Message {
     public final List<String> game_pic;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer game_type;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String icon_pic1;
+    @ProtoField(tag = 30, type = Message.Datatype.STRING)
+    public final String icon_pic2;
+    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.STRING)
+    public final String icon_pic3;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String icon_url;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String introduce;
+    @ProtoField(tag = 34, type = Message.Datatype.STRING)
+    public final String launchComponent;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String launch_component;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
@@ -70,6 +99,8 @@ public final class GameInfo extends Message {
     public final String secret_key;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer star;
+    @ProtoField(tag = 33, type = Message.Datatype.STRING)
+    public final String subscript_color;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String superscript_color;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
@@ -82,6 +113,7 @@ public final class GameInfo extends Message {
     public static final Integer DEFAULT_STAR = 0;
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final Long DEFAULT_DEADLINE = 0L;
+    public static final Integer DEFAULT_APP_ID = 0;
 
     /* synthetic */ GameInfo(Builder builder, boolean z, GameInfo gameInfo) {
         this(builder, z);
@@ -212,9 +244,59 @@ public final class GameInfo extends Message {
             }
             if (builder.editor_rec == null) {
                 this.editor_rec = "";
-                return;
             } else {
                 this.editor_rec = builder.editor_rec;
+            }
+            if (builder._abstract == null) {
+                this._abstract = "";
+            } else {
+                this._abstract = builder._abstract;
+            }
+            if (builder.game_details_url == null) {
+                this.game_details_url = "";
+            } else {
+                this.game_details_url = builder.game_details_url;
+            }
+            if (builder.app_id == null) {
+                this.app_id = DEFAULT_APP_ID;
+            } else {
+                this.app_id = builder.app_id;
+            }
+            if (builder.icon_pic1 == null) {
+                this.icon_pic1 = "";
+            } else {
+                this.icon_pic1 = builder.icon_pic1;
+            }
+            if (builder.icon_pic2 == null) {
+                this.icon_pic2 = "";
+            } else {
+                this.icon_pic2 = builder.icon_pic2;
+            }
+            if (builder.icon_pic3 == null) {
+                this.icon_pic3 = "";
+            } else {
+                this.icon_pic3 = builder.icon_pic3;
+            }
+            if (builder.game_desc == null) {
+                this.game_desc = "";
+            } else {
+                this.game_desc = builder.game_desc;
+            }
+            if (builder.subscript_color == null) {
+                this.subscript_color = "";
+            } else {
+                this.subscript_color = builder.subscript_color;
+            }
+            if (builder.launchComponent == null) {
+                this.launchComponent = "";
+            } else {
+                this.launchComponent = builder.launchComponent;
+            }
+            if (builder.category_name_sim == null) {
+                this.category_name_sim = "";
+                return;
+            } else {
+                this.category_name_sim = builder.category_name_sim;
                 return;
             }
         }
@@ -243,25 +325,44 @@ public final class GameInfo extends Message {
         this.version = builder.version;
         this.deadline = builder.deadline;
         this.editor_rec = builder.editor_rec;
+        this._abstract = builder._abstract;
+        this.game_details_url = builder.game_details_url;
+        this.app_id = builder.app_id;
+        this.icon_pic1 = builder.icon_pic1;
+        this.icon_pic2 = builder.icon_pic2;
+        this.icon_pic3 = builder.icon_pic3;
+        this.game_desc = builder.game_desc;
+        this.subscript_color = builder.subscript_color;
+        this.launchComponent = builder.launchComponent;
+        this.category_name_sim = builder.category_name_sim;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<GameInfo> {
+        public String _abstract;
         public String andr_pk_name;
+        public Integer app_id;
         public String apple_id;
         public String bundle_id;
         public Integer category_id;
         public String category_name;
+        public String category_name_sim;
         public Integer day_downloads;
         public Long deadline;
         public String editor_rec;
+        public String game_desc;
+        public String game_details_url;
         public String game_id;
         public String game_link;
         public String game_name;
         public List<String> game_pic;
         public Integer game_type;
+        public String icon_pic1;
+        public String icon_pic2;
+        public String icon_pic3;
         public String icon_url;
         public String introduce;
+        public String launchComponent;
         public String launch_component;
         public Integer mark;
         public String package_link;
@@ -270,6 +371,7 @@ public final class GameInfo extends Message {
         public String schema_url;
         public String secret_key;
         public Integer star;
+        public String subscript_color;
         public String superscript_color;
         public String version;
 
@@ -301,6 +403,16 @@ public final class GameInfo extends Message {
                 this.version = gameInfo.version;
                 this.deadline = gameInfo.deadline;
                 this.editor_rec = gameInfo.editor_rec;
+                this._abstract = gameInfo._abstract;
+                this.game_details_url = gameInfo.game_details_url;
+                this.app_id = gameInfo.app_id;
+                this.icon_pic1 = gameInfo.icon_pic1;
+                this.icon_pic2 = gameInfo.icon_pic2;
+                this.icon_pic3 = gameInfo.icon_pic3;
+                this.game_desc = gameInfo.game_desc;
+                this.subscript_color = gameInfo.subscript_color;
+                this.launchComponent = gameInfo.launchComponent;
+                this.category_name_sim = gameInfo.category_name_sim;
             }
         }
 

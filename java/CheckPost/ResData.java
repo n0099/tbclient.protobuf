@@ -8,8 +8,14 @@ public final class ResData extends Message {
     public final Long forumId;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long postState;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
+    public final Long quoteId;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT64)
+    public final Long repostId;
     public static final Long DEFAULT_POSTSTATE = 0L;
     public static final Long DEFAULT_FORUMID = 0L;
+    public static final Long DEFAULT_QUOTEID = 0L;
+    public static final Long DEFAULT_REPOSTID = 0L;
 
     /* synthetic */ ResData(Builder builder, boolean z, ResData resData) {
         this(builder, z);
@@ -25,26 +31,42 @@ public final class ResData extends Message {
             }
             if (builder.forumId == null) {
                 this.forumId = DEFAULT_FORUMID;
-                return;
             } else {
                 this.forumId = builder.forumId;
+            }
+            if (builder.quoteId == null) {
+                this.quoteId = DEFAULT_QUOTEID;
+            } else {
+                this.quoteId = builder.quoteId;
+            }
+            if (builder.repostId == null) {
+                this.repostId = DEFAULT_REPOSTID;
+                return;
+            } else {
+                this.repostId = builder.repostId;
                 return;
             }
         }
         this.postState = builder.postState;
         this.forumId = builder.forumId;
+        this.quoteId = builder.quoteId;
+        this.repostId = builder.repostId;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<ResData> {
         public Long forumId;
         public Long postState;
+        public Long quoteId;
+        public Long repostId;
 
         public Builder(ResData resData) {
             super(resData);
             if (resData != null) {
                 this.postState = resData.postState;
                 this.forumId = resData.forumId;
+                this.quoteId = resData.quoteId;
+                this.repostId = resData.repostId;
             }
         }
 

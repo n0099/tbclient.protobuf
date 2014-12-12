@@ -6,10 +6,13 @@ import com.squareup.wire.ProtoField;
 public final class PoiInfo extends Message {
     public static final String DEFAULT_ADDR = "";
     public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_SN = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String addr;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String sn;
 
     /* synthetic */ PoiInfo(Builder builder, boolean z, PoiInfo poiInfo) {
         this(builder, z);
@@ -25,26 +28,34 @@ public final class PoiInfo extends Message {
             }
             if (builder.addr == null) {
                 this.addr = "";
-                return;
             } else {
                 this.addr = builder.addr;
+            }
+            if (builder.sn == null) {
+                this.sn = "";
+                return;
+            } else {
+                this.sn = builder.sn;
                 return;
             }
         }
         this.name = builder.name;
         this.addr = builder.addr;
+        this.sn = builder.sn;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<PoiInfo> {
         public String addr;
         public String name;
+        public String sn;
 
         public Builder(PoiInfo poiInfo) {
             super(poiInfo);
             if (poiInfo != null) {
                 this.name = poiInfo.name;
                 this.addr = poiInfo.addr;
+                this.sn = poiInfo.sn;
             }
         }
 

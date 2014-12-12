@@ -1,7 +1,8 @@
 package tbclient;
 
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -26,13 +27,13 @@ public final class User extends Message {
     public final String BDUSS;
     @ProtoField(tag = 10)
     public final Balv balv;
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
     public final String bawu_type;
     @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
-    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.INT32)
     public final Integer concern_num;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
@@ -44,7 +45,7 @@ public final class User extends Message {
     public final Integer gift_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 48)
     public final List<MyGroupInfo> groupList;
-    @ProtoField(tag = 35, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer has_concerned;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Icon> iconinfo;
@@ -62,6 +63,8 @@ public final class User extends Message {
     public final Integer is_coreuser;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer is_friend;
+    @ProtoField(tag = 52, type = Message.Datatype.INT32)
+    public final Integer is_guanfang;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer is_huinibuke;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
@@ -84,7 +87,7 @@ public final class User extends Message {
     public final Integer level_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 47)
     public final List<LikeForumInfo> likeForum;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer my_like_num;
@@ -102,7 +105,7 @@ public final class User extends Message {
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
-    @ProtoField(tag = 27, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
     public final String portraith;
     @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer post_num;
@@ -110,7 +113,7 @@ public final class User extends Message {
     public final PrivSets priv_sets;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String rank;
-    @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK, type = Message.Datatype.INT32)
+    @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer sex;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String tb_age;
@@ -158,6 +161,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_GIFT_NUM = 0;
     public static final List<GiftInfo> DEFAULT_GIFT_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_SELECT_TAIL = 0;
+    public static final Integer DEFAULT_IS_GUANFANG = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -402,9 +406,14 @@ public final class User extends Message {
             }
             if (builder.is_select_tail == null) {
                 this.is_select_tail = DEFAULT_IS_SELECT_TAIL;
-                return;
             } else {
                 this.is_select_tail = builder.is_select_tail;
+            }
+            if (builder.is_guanfang == null) {
+                this.is_guanfang = DEFAULT_IS_GUANFANG;
+                return;
+            } else {
+                this.is_guanfang = builder.is_guanfang;
                 return;
             }
         }
@@ -459,6 +468,7 @@ public final class User extends Message {
         this.gift_num = builder.gift_num;
         this.gift_list = immutableCopyOf(builder.gift_list);
         this.is_select_tail = builder.is_select_tail;
+        this.is_guanfang = builder.is_guanfang;
     }
 
     /* loaded from: classes.dex */
@@ -483,6 +493,7 @@ public final class User extends Message {
         public Integer is_bawu;
         public Integer is_coreuser;
         public Integer is_friend;
+        public Integer is_guanfang;
         public Integer is_huinibuke;
         public Integer is_interestman;
         public Integer is_like;
@@ -569,6 +580,7 @@ public final class User extends Message {
                 this.gift_num = user.gift_num;
                 this.gift_list = User.copyOf(user.gift_list);
                 this.is_select_tail = user.is_select_tail;
+                this.is_guanfang = user.is_guanfang;
             }
         }
 

@@ -1,17 +1,20 @@
 package tbclient.FrsPage;
 
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.GameInfo;
 /* loaded from: classes.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FIRST_CLASS = "";
+    public static final String DEFAULT_GAME_NAME = "";
     public static final String DEFAULT_GAME_URL = "";
     public static final String DEFAULT_IS_READONLY = "";
     public static final String DEFAULT_LEVEL_NAME = "";
@@ -30,7 +33,7 @@ public final class ForumInfo extends Message {
     public final String avatar;
     @ProtoField(label = Message.Label.REPEATED, tag = 34)
     public final List<Badges> badges;
-    @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK)
+    @ProtoField(tag = 32)
     public final Banner banner;
     @ProtoField(tag = 33)
     public final tbclient.BannerList banner_list;
@@ -42,10 +45,14 @@ public final class ForumInfo extends Message {
     public final Integer favo_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String first_class;
-    @ProtoField(tag = 27)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL)
     public final ForumButton forum_button;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<Calendar> forum_sign_calendar;
+    @ProtoField(tag = 53)
+    public final GameInfo game_card;
+    @ProtoField(tag = 54, type = Message.Datatype.STRING)
+    public final String game_name;
     @ProtoField(tag = 47, type = Message.Datatype.STRING)
     public final String game_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
@@ -56,7 +63,7 @@ public final class ForumInfo extends Message {
     public final Integer has_game;
     @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer has_paper;
-    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.INT32)
     public final Integer has_postpre;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
@@ -76,15 +83,15 @@ public final class ForumInfo extends Message {
     public final Integer is_stage_forum;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_support_local;
-    @ProtoField(tag = 35, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer level_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String level_name;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer levelup_score;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Manager> managers;
-    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.INT32)
     public final Integer meizhi_tag;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer member_num;
@@ -368,7 +375,14 @@ public final class ForumInfo extends Message {
             }
             this.top_code = builder.top_code;
             this.news_info = builder.news_info;
-            return;
+            this.game_card = builder.game_card;
+            if (builder.game_name == null) {
+                this.game_name = "";
+                return;
+            } else {
+                this.game_name = builder.game_name;
+                return;
+            }
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -422,6 +436,8 @@ public final class ForumInfo extends Message {
         this.accelerate_cotent = builder.accelerate_cotent;
         this.top_code = builder.top_code;
         this.news_info = builder.news_info;
+        this.game_card = builder.game_card;
+        this.game_name = builder.game_name;
     }
 
     /* loaded from: classes.dex */
@@ -439,6 +455,8 @@ public final class ForumInfo extends Message {
         public String first_class;
         public ForumButton forum_button;
         public List<Calendar> forum_sign_calendar;
+        public GameInfo game_card;
+        public String game_name;
         public String game_url;
         public List<Classify> good_classify;
         public Integer has_frs_star;
@@ -534,6 +552,8 @@ public final class ForumInfo extends Message {
                 this.accelerate_cotent = forumInfo.accelerate_cotent;
                 this.top_code = forumInfo.top_code;
                 this.news_info = forumInfo.news_info;
+                this.game_card = forumInfo.game_card;
+                this.game_name = forumInfo.game_name;
             }
         }
 

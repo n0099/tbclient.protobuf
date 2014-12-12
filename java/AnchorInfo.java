@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -16,7 +15,7 @@ public final class AnchorInfo extends Message {
     public final Integer author_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String author_name;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String forumName;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer group_id;

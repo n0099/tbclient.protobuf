@@ -7,6 +7,8 @@ import com.squareup.wire.ProtoField;
 public final class CommonReq extends Message {
     public static final String DEFAULT_APID = "";
     public static final String DEFAULT_BDUSS = "";
+    public static final String DEFAULT_BRAND = "";
+    public static final String DEFAULT_BRAND_TYPE = "";
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_KA = "";
@@ -24,6 +26,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT__CLIENT_ID = "";
     public static final String DEFAULT__CLIENT_VERSION = "";
+    public static final String DEFAULT__OS_VERSION = "";
     public static final String DEFAULT__PHONE_IMEI = "";
     public static final String DEFAULT__PHONE_NEWIMEI = "";
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -34,14 +37,20 @@ public final class CommonReq extends Message {
     public final Integer _client_type;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String _client_version;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
+    public final String _os_version;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String _phone_imei;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String _phone_newimei;
     @ProtoField(tag = 8, type = Message.Datatype.INT64)
     public final Long _timestamp;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String apid;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
+    public final String brand;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
+    public final String brand_type;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String cuid;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -202,9 +211,24 @@ public final class CommonReq extends Message {
             }
             if (builder.pversion == null) {
                 this.pversion = "";
-                return;
             } else {
                 this.pversion = builder.pversion;
+            }
+            if (builder._os_version == null) {
+                this._os_version = "";
+            } else {
+                this._os_version = builder._os_version;
+            }
+            if (builder.brand == null) {
+                this.brand = "";
+            } else {
+                this.brand = builder.brand;
+            }
+            if (builder.brand_type == null) {
+                this.brand_type = "";
+                return;
+            } else {
+                this.brand_type = builder.brand_type;
                 return;
             }
         }
@@ -232,6 +256,9 @@ public final class CommonReq extends Message {
         this.smallflow = builder.smallflow;
         this.sign = builder.sign;
         this.pversion = builder.pversion;
+        this._os_version = builder._os_version;
+        this.brand = builder.brand;
+        this.brand_type = builder.brand_type;
     }
 
     /* loaded from: classes.dex */
@@ -240,10 +267,13 @@ public final class CommonReq extends Message {
         public String _client_id;
         public Integer _client_type;
         public String _client_version;
+        public String _os_version;
         public String _phone_imei;
         public String _phone_newimei;
         public Long _timestamp;
         public String apid;
+        public String brand;
+        public String brand_type;
         public String cuid;
         public String from;
         public String ka;
@@ -288,6 +318,9 @@ public final class CommonReq extends Message {
                 this.smallflow = commonReq.smallflow;
                 this.sign = commonReq.sign;
                 this.pversion = commonReq.pversion;
+                this._os_version = commonReq._os_version;
+                this.brand = commonReq.brand;
+                this.brand_type = commonReq.brand_type;
             }
         }
 

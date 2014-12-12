@@ -1,6 +1,7 @@
 package tbclient;
 
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import com.baidu.channelrtc.medialivesender.Constants;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -34,9 +35,9 @@ public final class NewUser extends Message {
     public final String free_flag;
     @ProtoField(tag = 33)
     public final GameAttr game_attr;
-    @ProtoField(tag = 35)
+    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
     public final Global global;
-    @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK, type = Message.Datatype.STRING)
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String is_coreuser;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String is_doudizhu;
@@ -50,7 +51,7 @@ public final class NewUser extends Message {
     public final Integer is_member;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
     public final Integer is_passer;
-    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.INT32)
     public final Integer is_qun_spring;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer is_shengyou;
@@ -60,7 +61,7 @@ public final class NewUser extends Message {
     public final MparrProps m_parr_props;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
-    @ProtoField(label = Message.Label.REPEATED, tag = 27)
+    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL)
     public final List<NoticeMask> notice_mask;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String paper;
@@ -74,7 +75,7 @@ public final class NewUser extends Message {
     public final List<Rpgoldicon> rpgoldicon;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer superboy;
-    @ProtoField(label = Message.Label.REPEATED, tag = 31)
+    @ProtoField(label = Message.Label.REPEATED, tag = Constants.SOURCE_ALL)
     public final List<TbmallMonthIcon> tbmall_month_icon;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String tbscore_repeate_finish_time;
@@ -88,7 +89,7 @@ public final class NewUser extends Message {
     public final Integer user_sex;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer user_status;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer user_type;
     @ProtoField(tag = 10)
     public final WapRn wap_rn;

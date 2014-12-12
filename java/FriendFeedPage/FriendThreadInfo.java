@@ -18,7 +18,7 @@ public final class FriendThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_TIMELINE = "";
     public static final String DEFAULT_TITLE = "";
-    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_GROUP_EVENT)
+    @ProtoField(label = Message.Label.REPEATED, tag = 14)
     public final List<Abstract> _abstract;
     @ProtoField(tag = 23)
     public final AnchorInfo anchor_info;

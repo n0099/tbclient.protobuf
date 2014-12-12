@@ -46,7 +46,7 @@ public final class RecommendGame extends Message {
     public final String game_link;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String game_name;
-    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.STRING)
+    @ProtoField(label = Message.Label.REPEATED, tag = 14, type = Message.Datatype.STRING)
     public final List<String> game_pic;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer game_type;

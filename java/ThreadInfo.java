@@ -1,8 +1,9 @@
 package tbclient;
 
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.location.BDLocation;
 import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -27,13 +28,15 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_VIDEO_SWF = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
+    @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
+    public final List<ActInfo> act_info;
     @ProtoField(tag = 55)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 18)
     public final User author;
     @ProtoField(tag = 56, type = Message.Datatype.INT32)
     public final Integer author_id;
-    @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK, type = Message.Datatype.STRING)
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
     @ProtoField(tag = 51, type = Message.Datatype.STRING)
     public final String collect_mark_pid;
@@ -45,7 +48,7 @@ public final class ThreadInfo extends Message {
     public final Integer create_time;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
-    @ProtoField(tag = 27, type = Message.Datatype.INT64)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT64)
     public final Long first_post_id;
@@ -75,7 +78,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_good;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_livepost;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer is_membertop;
@@ -119,9 +122,9 @@ public final class ThreadInfo extends Message {
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer repost_num;
-    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.INT32)
     public final Integer show_commented;
-    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer thread_types;
@@ -139,7 +142,7 @@ public final class ThreadInfo extends Message {
     public final Integer valid_post_num;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
-    @ProtoField(tag = 35, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
     public final String video_cover;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String video_id;
@@ -195,6 +198,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_ISLZDELETEALL = 0;
     public static final Integer DEFAULT_IS_AD = 0;
     public static final Integer DEFAULT_TIMELINE = 0;
+    public static final List<ActInfo> DEFAULT_ACT_INFO = Collections.emptyList();
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -492,9 +496,14 @@ public final class ThreadInfo extends Message {
             this.guess = builder.guess;
             if (builder.timeline == null) {
                 this.timeline = DEFAULT_TIMELINE;
-                return;
             } else {
                 this.timeline = builder.timeline;
+            }
+            if (builder.act_info == null) {
+                this.act_info = DEFAULT_ACT_INFO;
+                return;
+            } else {
+                this.act_info = immutableCopyOf(builder.act_info);
                 return;
             }
         }
@@ -562,11 +571,13 @@ public final class ThreadInfo extends Message {
         this.location = builder.location;
         this.guess = builder.guess;
         this.timeline = builder.timeline;
+        this.act_info = immutableCopyOf(builder.act_info);
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
+        public List<ActInfo> act_info;
         public AnchorInfo anchor_info;
         public User author;
         public Integer author_id;
@@ -698,6 +709,7 @@ public final class ThreadInfo extends Message {
                 this.location = threadInfo.location;
                 this.guess = threadInfo.guess;
                 this.timeline = threadInfo.timeline;
+                this.act_info = ThreadInfo.copyOf(threadInfo.act_info);
             }
         }
 

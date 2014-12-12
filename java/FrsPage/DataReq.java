@@ -1,7 +1,8 @@
 package tbclient.FrsPage;
 
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -47,15 +48,17 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
+    @ProtoField(tag = 41, type = Message.Datatype.INT32)
+    public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
     @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean login;
-    @ProtoField(tag = 35, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
     public final String mobile;
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
     public final String module_name;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer need_badge;
@@ -69,7 +72,7 @@ public final class DataReq extends Message {
     public final Integer pn;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String portrait;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer q_type;
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer result_num;
@@ -85,15 +88,15 @@ public final class DataReq extends Message {
     public final Integer scr_w;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer smile_grade;
-    @ProtoField(tag = 27, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.INT32)
     public final Integer st_param;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String st_type;
     @ProtoField(tag = 29, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
-    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.INT32)
     public final Integer user_id;
-    @ProtoField(tag = AccessibilityNodeInfoCompat.ACTION_LONG_CLICK, type = Message.Datatype.STRING)
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String user_name;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer with_group;
@@ -127,6 +130,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_USER_ID = 0;
     public static final Integer DEFAULT_NO_UN = 0;
     public static final Boolean DEFAULT_DEBUG = false;
+    public static final Integer DEFAULT_ISSDK = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -328,9 +332,14 @@ public final class DataReq extends Message {
             this.common = builder.common;
             if (builder.lastids == null) {
                 this.lastids = "";
-                return;
             } else {
                 this.lastids = builder.lastids;
+            }
+            if (builder.issdk == null) {
+                this.issdk = DEFAULT_ISSDK;
+                return;
+            } else {
+                this.issdk = builder.issdk;
                 return;
             }
         }
@@ -374,6 +383,7 @@ public final class DataReq extends Message {
         this.cookie = builder.cookie;
         this.common = builder.common;
         this.lastids = builder.lastids;
+        this.issdk = builder.issdk;
     }
 
     /* loaded from: classes.dex */
@@ -392,6 +402,7 @@ public final class DataReq extends Message {
         public Integer ip_int;
         public String ip_str;
         public Integer is_good;
+        public Integer issdk;
         public String kw;
         public String lastids;
         public Boolean login;
@@ -462,6 +473,7 @@ public final class DataReq extends Message {
                 this.cookie = dataReq.cookie;
                 this.common = dataReq.common;
                 this.lastids = dataReq.lastids;
+                this.issdk = dataReq.issdk;
             }
         }
 

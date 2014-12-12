@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     public final Long kz;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer last;
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer lz;
@@ -53,9 +53,9 @@ public final class DataReq extends Message {
     public final Double scr_dip;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer scr_h;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GROUP_EVENT, type = Message.Datatype.INT32)
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer scr_w;
-    @ProtoField(tag = 27, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
     public final String st_from;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String st_link;
