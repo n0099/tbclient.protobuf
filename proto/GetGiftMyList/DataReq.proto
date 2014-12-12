@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message DataReq {
-    uint32 pn = 1;
-    uint64 uid = 2;
-    string st_type = 3;
-}

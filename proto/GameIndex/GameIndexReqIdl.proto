@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GameIndex/DataReq.proto";
+
+message GameIndexReqIdl {
+    DataReq data = 1;
+}

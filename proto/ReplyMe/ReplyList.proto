@@ -17,6 +17,7 @@ message ReplyList {
     uint32 unread = 11;
     string item_type = 12;
     Zan zan = 13;
+    uint64 quote_pid = 14;
     User quote_user = 15;
     int32 server_time = 16;
 }

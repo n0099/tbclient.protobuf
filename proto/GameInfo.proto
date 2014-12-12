@@ -14,6 +14,7 @@ message GameInfo {
     string bundle_id = 11;
     string schema_url = 12;
     repeated string game_pic = 13;
+    string introduce = 14;
     string launch_component = 15;
     string andr_pk_name = 16;
     uint32 day_downloads = 17;
@@ -23,4 +24,10 @@ message GameInfo {
     uint32 category_id = 21;
     string category_name = 22;
     string version = 23;
+    uint32 app_id = 28;
+    string icon_pic1 = 29;
+    string icon_pic2 = 30;
+    string game_desc = 32;
+    string subscript_color = 33;
+    string launchComponent = 34;
 }

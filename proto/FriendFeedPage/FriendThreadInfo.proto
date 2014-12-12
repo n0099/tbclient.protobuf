@@ -23,6 +23,7 @@ message FriendThreadInfo {
     User author = 11;
     int32 is_ntitle = 12;
     string timeline = 13;
+    repeated Abstract _abstract = 14;
     repeated Media media = 15;
     repeated MediaNum media_num = 16;
     repeated Voice voice_info = 17;

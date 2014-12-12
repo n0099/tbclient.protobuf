@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message ActInfo {
+    int32 activity_type = 1;
+    int32 status = 2;
+    int32 begin_time = 3;
+    int32 end_time = 4;
+    string url = 5;
+    int32 total_num = 6;
+}

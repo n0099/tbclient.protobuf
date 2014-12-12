@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FrsPage/CommonDistance.proto";
 import "FrsPage/CommonForum.proto";
 import "FrsPage/PostInfo.proto";
 import "FrsPage/UserInfo.proto";
@@ -10,4 +11,5 @@ message RecomUserInfo {
     repeated PostInfo post_info = 3;
     string pos_name = 4;
     string message = 5;
+    CommonDistance distanceinfo = 6;
 }

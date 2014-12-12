@@ -22,6 +22,7 @@ message Post {
     uint32 is_bub = 11;
     string vote_crypt = 12;
     uint32 sub_post_number = 13;
+    string time_ex = 14;
     SubPost sub_post_list = 15;
     AddPostList add_post_list = 16;
     string bimg_url = 17;

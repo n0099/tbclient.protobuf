@@ -23,6 +23,7 @@ message ThreadInfo {
     int32 is_vote = 11;
     int32 is_bakan = 12;
     int32 is_protal = 13;
+    int32 is_meizhi = 14;
     int32 is_voice_thread = 15;
     int32 is_activity = 16;
     int32 is_notice = 17;
@@ -32,15 +33,12 @@ message ThreadInfo {
     repeated Abstract _abstract = 21;
     repeated Media media = 22;
     repeated Voice voice_info = 23;
-    int32 thread_type = 26;
-    int64 fid = 27;
     string fname = 28;
     string live_post_type = 29;
     int32 is_livepost = 30;
-    int32 show_commented = 31;
+    string click_url = 32;
     string video = 33;
     string video_swf = 34;
-    string video_cover = 35;
     string video_id = 36;
     string video_mobile_url = 37;
     int32 is_ntitle = 38;

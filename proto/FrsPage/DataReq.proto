@@ -16,6 +16,7 @@ message DataReq {
     int32 scr_w = 11;
     int32 scr_h = 12;
     double scr_dip = 13;
+    int32 q_type = 14;
     int32 pn = 15;
     string st_type = 16;
     int32 ctime = 17;
@@ -25,17 +26,15 @@ message DataReq {
     string forum_name = 21;
     int32 result_num = 22;
     int32 class_id = 23;
-    string module_name = 26;
-    int32 st_param = 27;
     int32 smile_grade = 28;
     bool support_noun = 29;
     bool login = 30;
-    int32 user_id = 31;
+    string user_name = 32;
     int32 no_un = 33;
     string portrait = 34;
-    string mobile = 35;
     string email = 36;
     bool debug = 37;
     string cookie = 38;
     CommonReq common = 39;
+    int32 issdk = 41;
 }

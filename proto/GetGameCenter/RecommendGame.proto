@@ -14,6 +14,7 @@ message RecommendGame {
     string apple_id = 11;
     string bundle_id = 12;
     string schema_url = 13;
+    repeated string game_pic = 14;
     string introduce = 15;
     string launch_component = 16;
     string andr_pk_name = 17;

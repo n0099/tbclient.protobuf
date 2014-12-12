@@ -14,6 +14,7 @@ message AdReq {
     string da_verify = 11;
     string da_cpid = 12;
     string ext = 13;
+    string da_task = 14;
     string da_type = 15;
     int64 da_threadid = 16;
 }

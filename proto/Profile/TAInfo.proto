@@ -15,4 +15,5 @@ message TAInfo {
     repeated ReplyList reply_list = 8;
     uint32 userClientVersionIsLower = 9;
     CommonLocation location = 10;
+    string hide_user_feed = 11;
 }

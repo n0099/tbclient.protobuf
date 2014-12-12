@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "GameIndex/AdList.proto";
+import "GameIndex/CategoryList.proto";
+import "GameInfo.proto";
+
+message ResData {
+    repeated GameInfo hot_rank = 1;
+    repeated GameInfo recommend_list = 2;
+    repeated GameInfo new_list = 3;
+    repeated CategoryList category_list = 4;
+    repeated AdList ad_list = 5;
+}

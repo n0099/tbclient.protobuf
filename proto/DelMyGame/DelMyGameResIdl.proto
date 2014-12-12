@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "DelMyGame/ResData.proto";
+import "Error.proto";
+
+message DelMyGameResIdl {
+    Error error = 1;
+    ResData data = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "User.proto";
+
+message DataRes {
+    User user = 1;
+}

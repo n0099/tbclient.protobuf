@@ -16,6 +16,7 @@ message PbContent {
     string c = 11;
     string voice_md5 = 12;
     uint32 during_time = 13;
+    uint32 is_sub = 14;
     uint64 uid = 15;
     string dynamic = 16;
     string _static = 17;

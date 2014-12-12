@@ -7,4 +7,5 @@ message DataReq {
     int32 res_num = 2;
     string st_type = 3;
     CommonReq common = 4;
+    int32 recommend_platform = 5;
 }

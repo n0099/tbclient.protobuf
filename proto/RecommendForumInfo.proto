@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "PbContent.proto";
+
+message RecommendForumInfo {
+    string avatar = 1;
+    uint64 forum_id = 2;
+    string forum_name = 3;
+    uint32 is_like = 4;
+    uint32 member_count = 5;
+    uint32 thread_count = 6;
+    string slogan = 7;
+    repeated PbContent content = 8;
+    uint32 forum_type = 9;
+    string authen = 10;
+}

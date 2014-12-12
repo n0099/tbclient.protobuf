@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FoundNew/Banner.proto";
+import "FoundNew/Module.proto";
+
+message DataRes {
+    repeated Module module = 1;
+    Banner banner = 2;
+    int64 timestamp = 3;
+}

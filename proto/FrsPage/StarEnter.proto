@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message StarEnter {
+    string icon = 1;
+    string title = 2;
+    int32 weight = 3;
+    int32 type = 4;
+    string url = 5;
+    int32 time = 6;
+}

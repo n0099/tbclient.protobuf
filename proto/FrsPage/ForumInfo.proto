@@ -3,9 +3,9 @@ syntax = "proto3";
 import "BannerList.proto";
 import "FrsPage/AnchorPower.proto";
 import "FrsPage/Badges.proto";
+import "FrsPage/Banner.proto";
 import "FrsPage/Calendar.proto";
 import "FrsPage/Classify.proto";
-import "FrsPage/ForumButton.proto";
 import "FrsPage/Manager.proto";
 import "FrsPage/PostPrefix.proto";
 import "FrsPage/RecomUserInfo.proto";
@@ -17,6 +17,7 @@ import "FrsPage/TopNews.proto";
 import "FrsPage/TopNotice.proto";
 import "FrsPage/WorldCup.proto";
 import "FrsPage/Zhibo.proto";
+import "GameInfo.proto";
 
 message ForumInfo {
     int64 id = 1;
@@ -32,6 +33,7 @@ message ForumInfo {
     int32 post_num = 11;
     int32 has_frs_star = 12;
     int32 cur_score = 13;
+    int32 levelup_score = 14;
     SignInfo sign_in_info = 15;
     Zhibo zhibo = 16;
     repeated Manager managers = 17;
@@ -41,15 +43,12 @@ message ForumInfo {
     repeated Classify good_classify = 21;
     string is_readonly = 22;
     int32 album_open_photo_frs = 23;
-    int32 has_postpre = 26;
-    ForumButton forum_button = 27;
     TopNotice top_notice = 28;
     int32 has_paper = 29;
     int32 is_stage_forum = 30;
-    int32 meizhi_tag = 31;
+    Banner banner = 32;
     BannerList banner_list = 33;
     repeated Badges badges = 34;
-    int32 level_id = 35;
     int32 is_forbidden = 36;
     int32 favo_type = 37;
     TagInfo tag_info = 38;
@@ -66,4 +65,6 @@ message ForumInfo {
     string accelerate_cotent = 50;
     TopCode top_code = 51;
     TopNews news_info = 52;
+    GameInfo game_card = 53;
+    string game_name = 54;
 }

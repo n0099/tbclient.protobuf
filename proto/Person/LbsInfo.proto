@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message LbsInfo {
-    string distance = 1;
-    int64 time = 2;
-    int32 is_hide = 3;
-}

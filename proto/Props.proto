@@ -14,5 +14,6 @@ message Props {
     string expiring_notify = 11;
     string expired_notify = 12;
     string title = 13;
+    repeated string optional_word = 14;
     repeated string pattern = 15;
 }

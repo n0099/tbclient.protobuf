@@ -25,4 +25,5 @@ message DataRes {
     repeated PostBanner post_banner = 11;
     BannerList banner_list = 12;
     repeated User user_list = 13;
+    int32 server_time = 14;
 }

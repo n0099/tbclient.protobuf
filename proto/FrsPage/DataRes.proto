@@ -6,6 +6,7 @@ import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
 import "FrsPage/Info.proto";
+import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
 import "Page.proto";
 import "ThreadInfo.proto";
@@ -25,9 +26,11 @@ message DataRes {
     int32 time = 11;
     int32 ctime = 12;
     int64 logid = 13;
+    int32 server_time = 14;
     Info info = 15;
     repeated AnchorInfo forum_livegroup_list = 16;
     repeated User user_list = 17;
     GconAccount gcon_account = 18;
     string fortune_desc = 19;
+    repeated StarEnter star_enter = 20;
 }

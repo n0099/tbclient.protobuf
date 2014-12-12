@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "AddMyGameBatch/ResData.proto";
+import "Error.proto";
+
+message AddMyGameBatchResIdl {
+    Error error = 1;
+    ResData data = 2;
+}

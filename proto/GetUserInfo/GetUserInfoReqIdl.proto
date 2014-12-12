@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetUserInfo/DataReq.proto";
+
+message GetUserInfoReqIdl {
+    DataReq data = 1;
+}

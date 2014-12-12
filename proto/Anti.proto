@@ -14,6 +14,7 @@ message Anti {
     int32 ifvoice = 11;
     string voice_message = 12;
     int32 ifaddition = 13;
+    int32 need_vcode = 14;
     string vcode_md5 = 15;
     string vcode_pic_url = 16;
 }
