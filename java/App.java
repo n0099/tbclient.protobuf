@@ -30,7 +30,7 @@ public final class App extends Message {
     public static final String DEFAULT_USER_ID = "";
     public static final String DEFAULT_VERIFY = "";
     public static final String DEFAULT_WEB_URL = "";
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String abtest;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String ad_id;
@@ -68,7 +68,7 @@ public final class App extends Message {
     public final String p_name;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String p_url;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer plan_id;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer pos;

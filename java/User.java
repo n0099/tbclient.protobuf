@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
@@ -29,11 +28,11 @@ public final class User extends Message {
     public final Balv balv;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
     public final String bawu_type;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 40, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
-    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.INT32)
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer concern_num;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
@@ -57,7 +56,7 @@ public final class User extends Message {
     public final String ios_bimg_format;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String ip;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_coreuser;
@@ -69,7 +68,7 @@ public final class User extends Message {
     public final Integer is_huinibuke;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_interestman;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.INT32)
+    @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_like;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_login;
@@ -101,7 +100,7 @@ public final class User extends Message {
     public final Integer no_un;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = 41)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE)
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;

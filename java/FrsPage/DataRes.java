@@ -14,6 +14,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_FORTUNE_DESC = "";
     @ProtoField(tag = 5)
     public final Anti anti;
+    @ProtoField(label = Message.Label.REPEATED, tag = 21)
+    public final List<ColorEgg> color_egg;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer ctime;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -63,6 +65,7 @@ public final class DataRes extends Message {
     public static final List<AnchorInfo> DEFAULT_FORUM_LIVEGROUP_LIST = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
     public static final List<StarEnter> DEFAULT_STAR_ENTER = Collections.emptyList();
+    public static final List<ColorEgg> DEFAULT_COLOR_EGG = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -136,9 +139,14 @@ public final class DataRes extends Message {
             }
             if (builder.star_enter == null) {
                 this.star_enter = DEFAULT_STAR_ENTER;
-                return;
             } else {
                 this.star_enter = immutableCopyOf(builder.star_enter);
+            }
+            if (builder.color_egg == null) {
+                this.color_egg = DEFAULT_COLOR_EGG;
+                return;
+            } else {
+                this.color_egg = immutableCopyOf(builder.color_egg);
                 return;
             }
         }
@@ -162,11 +170,13 @@ public final class DataRes extends Message {
         this.gcon_account = builder.gcon_account;
         this.fortune_desc = builder.fortune_desc;
         this.star_enter = immutableCopyOf(builder.star_enter);
+        this.color_egg = immutableCopyOf(builder.color_egg);
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<DataRes> {
         public Anti anti;
+        public List<ColorEgg> color_egg;
         public Integer ctime;
         public Integer fortune_bag;
         public String fortune_desc;
@@ -210,6 +220,7 @@ public final class DataRes extends Message {
                 this.gcon_account = dataRes.gcon_account;
                 this.fortune_desc = dataRes.fortune_desc;
                 this.star_enter = DataRes.copyOf(dataRes.star_enter);
+                this.color_egg = DataRes.copyOf(dataRes.color_egg);
             }
         }
 

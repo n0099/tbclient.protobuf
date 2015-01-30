@@ -19,9 +19,9 @@ public final class DataReq extends Message {
     public final Integer check_login;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL)
     public final CommonReq common;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String cookie;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String email;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer end_time;

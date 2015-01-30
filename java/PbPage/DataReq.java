@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public final Integer back;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer banner;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN)
+    @ProtoField(tag = 25)
     public final CommonReq common;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     public final Integer mark;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer message_id;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String msg_click;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pb_rn;

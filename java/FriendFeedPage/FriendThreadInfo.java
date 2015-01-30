@@ -1,6 +1,5 @@
 package tbclient.FriendFeedPage;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -46,7 +45,7 @@ public final class FriendThreadInfo extends Message {
     public final Integer is_ntitle;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_top;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.INT32)
+    @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_voice_thread;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer last_time_int;

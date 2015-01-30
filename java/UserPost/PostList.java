@@ -1,6 +1,5 @@
 package tbclient.UserPost;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -24,7 +23,7 @@ public final class PostList extends Message {
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO)
+    @ProtoField(tag = 24)
     public final AnchorInfo anchor_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<Content> content;

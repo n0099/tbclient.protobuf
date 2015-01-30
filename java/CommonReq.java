@@ -37,7 +37,7 @@ public final class CommonReq extends Message {
     public final Integer _client_type;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String _client_version;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String _os_version;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String _phone_imei;
@@ -73,7 +73,7 @@ public final class CommonReq extends Message {
     public final String model;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer net_type;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String pversion;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String sign;

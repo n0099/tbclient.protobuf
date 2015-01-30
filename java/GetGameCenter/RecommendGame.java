@@ -1,6 +1,5 @@
 package tbclient.GetGameCenter;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -36,9 +35,9 @@ public final class RecommendGame extends Message {
     public final String category_name;
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer day_downloads;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 24, type = Message.Datatype.UINT64)
     public final Long deadline;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String editor_rec;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String game_id;

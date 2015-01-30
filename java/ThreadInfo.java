@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.location.BDLocation;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
@@ -50,7 +49,7 @@ public final class ThreadInfo extends Message {
     public final String ecom;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT64)
+    @ProtoField(tag = 40, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
@@ -108,9 +107,9 @@ public final class ThreadInfo extends Message {
     public final Lbs location;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Media> media;
-    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN)
+    @ProtoField(label = Message.Label.REPEATED, tag = 25)
     public final List<MediaNum> media_num;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String meizhi_pic;
     @ProtoField(tag = BDLocation.TypeGpsLocation, type = Message.Datatype.STRING)
     public final String pids;
@@ -122,7 +121,7 @@ public final class ThreadInfo extends Message {
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer repost_num;
-    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.INT32)
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer show_commented;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.INT32)
     public final Integer thread_type;
@@ -154,7 +153,7 @@ public final class ThreadInfo extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
-    @ProtoField(tag = 41)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;

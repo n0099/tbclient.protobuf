@@ -1,6 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
@@ -29,7 +28,7 @@ public final class ForumInfo extends Message {
     public final Integer album_open_photo_frs;
     @ProtoField(tag = 44)
     public final AnchorPower anchor_power;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String avatar;
     @ProtoField(label = Message.Label.REPEATED, tag = 34)
     public final List<Badges> badges;
@@ -49,8 +48,8 @@ public final class ForumInfo extends Message {
     public final ForumButton forum_button;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<Calendar> forum_sign_calendar;
-    @ProtoField(tag = 53)
-    public final GameInfo game_card;
+    @ProtoField(label = Message.Label.REPEATED, tag = 53)
+    public final List<GameInfo> game_card;
     @ProtoField(tag = 54, type = Message.Datatype.STRING)
     public final String game_name;
     @ProtoField(tag = 47, type = Message.Datatype.STRING)
@@ -81,7 +80,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = 41, type = Message.Datatype.INT32)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -91,7 +90,7 @@ public final class ForumInfo extends Message {
     public final Integer levelup_score;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Manager> managers;
-    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.INT32)
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer meizhi_tag;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer member_num;
@@ -111,9 +110,9 @@ public final class ForumInfo extends Message {
     public final String second_class;
     @ProtoField(tag = 15)
     public final SignInfo sign_in_info;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String superboy;
     @ProtoField(tag = 38)
     public final TagInfo tag_info;
@@ -159,6 +158,7 @@ public final class ForumInfo extends Message {
     public static final List<RecommendForum> DEFAULT_RECOMMEND_FORUM = Collections.emptyList();
     public static final Integer DEFAULT_HAS_GAME = 0;
     public static final Integer DEFAULT_CAN_USE_ACCELERATE = 0;
+    public static final List<GameInfo> DEFAULT_GAME_CARD = Collections.emptyList();
 
     /* synthetic */ ForumInfo(Builder builder, boolean z, ForumInfo forumInfo) {
         this(builder, z);
@@ -375,7 +375,11 @@ public final class ForumInfo extends Message {
             }
             this.top_code = builder.top_code;
             this.news_info = builder.news_info;
-            this.game_card = builder.game_card;
+            if (builder.game_card == null) {
+                this.game_card = DEFAULT_GAME_CARD;
+            } else {
+                this.game_card = immutableCopyOf(builder.game_card);
+            }
             if (builder.game_name == null) {
                 this.game_name = "";
                 return;
@@ -436,7 +440,7 @@ public final class ForumInfo extends Message {
         this.accelerate_cotent = builder.accelerate_cotent;
         this.top_code = builder.top_code;
         this.news_info = builder.news_info;
-        this.game_card = builder.game_card;
+        this.game_card = immutableCopyOf(builder.game_card);
         this.game_name = builder.game_name;
     }
 
@@ -455,7 +459,7 @@ public final class ForumInfo extends Message {
         public String first_class;
         public ForumButton forum_button;
         public List<Calendar> forum_sign_calendar;
-        public GameInfo game_card;
+        public List<GameInfo> game_card;
         public String game_name;
         public String game_url;
         public List<Classify> good_classify;
@@ -552,7 +556,7 @@ public final class ForumInfo extends Message {
                 this.accelerate_cotent = forumInfo.accelerate_cotent;
                 this.top_code = forumInfo.top_code;
                 this.news_info = forumInfo.news_info;
-                this.game_card = forumInfo.game_card;
+                this.game_card = ForumInfo.copyOf(forumInfo.game_card);
                 this.game_name = forumInfo.game_name;
             }
         }

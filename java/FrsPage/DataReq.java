@@ -1,6 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
@@ -10,6 +9,7 @@ import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COOKIE = "";
+    public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_EMAIL = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_IP_STR = "";
@@ -17,6 +17,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MOBILE = "";
     public static final String DEFAULT_MODULE_NAME = "";
+    public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -32,6 +33,8 @@ public final class DataReq extends Message {
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
+    @ProtoField(tag = 42, type = Message.Datatype.STRING)
+    public final String da_idfa;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer data_size;
     @ProtoField(tag = 37, type = Message.Datatype.BOOL)
@@ -42,17 +45,17 @@ public final class DataReq extends Message {
     public final String forum_name;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer frs_rn;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer ip_int;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.STRING)
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = 41, type = Message.Datatype.INT32)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean login;
@@ -68,6 +71,8 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;
+    @ProtoField(tag = 43, type = Message.Datatype.STRING)
+    public final String platform;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -94,7 +99,7 @@ public final class DataReq extends Message {
     public final String st_type;
     @ProtoField(tag = 29, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
-    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.INT32)
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer user_id;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String user_name;
@@ -337,9 +342,19 @@ public final class DataReq extends Message {
             }
             if (builder.issdk == null) {
                 this.issdk = DEFAULT_ISSDK;
-                return;
             } else {
                 this.issdk = builder.issdk;
+            }
+            if (builder.da_idfa == null) {
+                this.da_idfa = "";
+            } else {
+                this.da_idfa = builder.da_idfa;
+            }
+            if (builder.platform == null) {
+                this.platform = "";
+                return;
+            } else {
+                this.platform = builder.platform;
                 return;
             }
         }
@@ -384,6 +399,8 @@ public final class DataReq extends Message {
         this.common = builder.common;
         this.lastids = builder.lastids;
         this.issdk = builder.issdk;
+        this.da_idfa = builder.da_idfa;
+        this.platform = builder.platform;
     }
 
     /* loaded from: classes.dex */
@@ -394,6 +411,7 @@ public final class DataReq extends Message {
         public CommonReq common;
         public String cookie;
         public Integer ctime;
+        public String da_idfa;
         public Integer data_size;
         public Boolean debug;
         public String email;
@@ -412,6 +430,7 @@ public final class DataReq extends Message {
         public Integer net_error;
         public Integer no_un;
         public Integer noval;
+        public String platform;
         public Integer pn;
         public String portrait;
         public Integer q_type;
@@ -474,6 +493,8 @@ public final class DataReq extends Message {
                 this.common = dataReq.common;
                 this.lastids = dataReq.lastids;
                 this.issdk = dataReq.issdk;
+                this.da_idfa = dataReq.da_idfa;
+                this.platform = dataReq.platform;
             }
         }
 

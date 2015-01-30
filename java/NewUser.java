@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -47,9 +46,9 @@ public final class NewUser extends Message {
     public final Integer is_hardworking;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String is_interestman;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.INT32)
+    @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_member;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer is_passer;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.INT32)
     public final Integer is_qun_spring;
@@ -75,7 +74,7 @@ public final class NewUser extends Message {
     public final List<Rpgoldicon> rpgoldicon;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer superboy;
-    @ProtoField(label = Message.Label.REPEATED, tag = Constants.SOURCE_ALL)
+    @ProtoField(label = Message.Label.REPEATED, tag = 31)
     public final List<TbmallMonthIcon> tbmall_month_icon;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String tbscore_repeate_finish_time;

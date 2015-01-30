@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -20,7 +19,7 @@ public final class PostInfoList extends Message {
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO)
+    @ProtoField(tag = 24)
     public final AnchorInfo anchor_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<PostInfoContent> content;
@@ -32,7 +31,7 @@ public final class PostInfoList extends Message {
     public final Long forum_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String forum_name;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.INT32)
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer hide_post;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String ip;

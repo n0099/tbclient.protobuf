@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.channelrtc.medialivesender.Constants;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -53,9 +52,9 @@ public final class GameInfo extends Message {
     public final String category_name_sim;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer day_downloads;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_GIFT_INFO, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 24, type = Message.Datatype.UINT64)
     public final Long deadline;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_NATIVE_BUY_TBEAN, type = Message.Datatype.STRING)
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String editor_rec;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String game_desc;
@@ -75,7 +74,7 @@ public final class GameInfo extends Message {
     public final String icon_pic1;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic2;
-    @ProtoField(tag = Constants.SOURCE_ALL, type = Message.Datatype.STRING)
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String icon_pic3;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String icon_url;
