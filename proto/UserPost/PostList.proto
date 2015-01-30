@@ -32,4 +32,5 @@ message PostList {
     LbsInfo lbs_info = 21;
     Quote quote = 22;
     repeated Voice voice_info = 23;
+    AnchorInfo anchor_info = 24;
 }

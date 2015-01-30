@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "AnchorInfo.proto";
 import "Anti.proto";
+import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
@@ -33,4 +34,5 @@ message DataRes {
     GconAccount gcon_account = 18;
     string fortune_desc = 19;
     repeated StarEnter star_enter = 20;
+    repeated ColorEgg color_egg = 21;
 }

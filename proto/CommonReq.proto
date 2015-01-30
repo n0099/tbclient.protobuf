@@ -24,4 +24,6 @@ message CommonReq {
     string m_size_d = 21;
     string smallflow = 22;
     string sign = 23;
+    string pversion = 24;
+    string _os_version = 25;
 }

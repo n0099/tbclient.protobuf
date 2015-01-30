@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ColorEgg {
+    repeated string holiday_words = 1;
+    int32 style_flag = 2;
+}

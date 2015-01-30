@@ -26,9 +26,12 @@ message DataReq {
     string forum_name = 21;
     int32 result_num = 22;
     int32 class_id = 23;
+    string ip_str = 24;
+    int32 ip_int = 25;
     int32 smile_grade = 28;
     bool support_noun = 29;
     bool login = 30;
+    int32 user_id = 31;
     string user_name = 32;
     int32 no_un = 33;
     string portrait = 34;
@@ -36,5 +39,7 @@ message DataReq {
     bool debug = 37;
     string cookie = 38;
     CommonReq common = 39;
-    int32 issdk = 41;
+    string lastids = 40;
+    string da_idfa = 42;
+    string platform = 43;
 }

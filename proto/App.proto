@@ -26,6 +26,8 @@ message App {
     string first_name = 21;
     string second_name = 22;
     int32 cpid = 23;
+    string abtest = 24;
+    int32 plan_id = 25;
     string verify = 28;
     string ext_info = 29;
     repeated GoodsInfo goods_info = 30;

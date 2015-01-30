@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "Abstract.proto";
+import "AnchorInfo.proto";
 import "LbsInfo.proto";
 import "Media.proto";
 import "PostInfoContent.proto";
@@ -31,4 +32,6 @@ message PostInfoList {
     LbsInfo lbs_info = 21;
     Quote quote = 22;
     repeated Voice voice_info = 23;
+    AnchorInfo anchor_info = 24;
+    int32 hide_post = 25;
 }

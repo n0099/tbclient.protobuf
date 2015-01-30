@@ -24,4 +24,6 @@ message RecommendGame {
     uint32 category_id = 21;
     string category_name = 22;
     string version = 23;
+    uint64 deadline = 24;
+    string editor_rec = 25;
 }

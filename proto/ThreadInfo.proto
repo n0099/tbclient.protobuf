@@ -3,11 +3,11 @@ syntax = "proto3";
 import "Abstract.proto";
 import "AnchorInfo.proto";
 import "Media.proto";
+import "MediaNum.proto";
 import "PostList.proto";
 import "Topic.proto";
 import "User.proto";
 import "Voice.proto";
-import "Zan.proto";
 
 message ThreadInfo {
     int64 id = 1;
@@ -33,9 +33,12 @@ message ThreadInfo {
     repeated Abstract _abstract = 21;
     repeated Media media = 22;
     repeated Voice voice_info = 23;
+    string meizhi_pic = 24;
+    repeated MediaNum media_num = 25;
     string fname = 28;
     string live_post_type = 29;
     int32 is_livepost = 30;
+    int32 show_commented = 31;
     string click_url = 32;
     string video = 33;
     string video_swf = 34;
@@ -43,7 +46,7 @@ message ThreadInfo {
     string video_mobile_url = 37;
     int32 is_ntitle = 38;
     int32 is_bub = 39;
-    Zan zan = 41;
+    int64 first_post_id = 40;
     int32 is_global_top = 42;
     int32 is_pic = 43;
     repeated PostList post_list = 44;

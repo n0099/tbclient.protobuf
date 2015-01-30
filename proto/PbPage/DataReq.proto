@@ -26,6 +26,8 @@ message DataReq {
     int32 banner = 21;
     int32 arround = 22;
     int32 last = 23;
+    string msg_click = 24;
+    CommonReq common = 25;
     string st_link = 28;
     int32 st_stat = 29;
     int64 st_task = 30;

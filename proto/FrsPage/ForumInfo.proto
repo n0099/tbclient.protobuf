@@ -43,9 +43,12 @@ message ForumInfo {
     repeated Classify good_classify = 21;
     string is_readonly = 22;
     int32 album_open_photo_frs = 23;
+    string avatar = 24;
+    string slogan = 25;
     TopNotice top_notice = 28;
     int32 has_paper = 29;
     int32 is_stage_forum = 30;
+    int32 meizhi_tag = 31;
     Banner banner = 32;
     BannerList banner_list = 33;
     repeated Badges badges = 34;
@@ -53,7 +56,7 @@ message ForumInfo {
     int32 favo_type = 37;
     TagInfo tag_info = 38;
     PostPrefix post_prefix = 39;
-    int32 is_support_local = 41;
+    string superboy = 40;
     int32 is_local_effect = 42;
     repeated RecommendForum recommend_forum = 43;
     AnchorPower anchor_power = 44;
@@ -65,6 +68,6 @@ message ForumInfo {
     string accelerate_cotent = 50;
     TopCode top_code = 51;
     TopNews news_info = 52;
-    GameInfo game_card = 53;
+    repeated GameInfo game_card = 53;
     string game_name = 54;
 }
