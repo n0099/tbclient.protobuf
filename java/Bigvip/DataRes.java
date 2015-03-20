@@ -1,11 +1,11 @@
-package tbclient.GetGameCategory;
+package tbclient.Bigvip;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
-    public final ResData data;
+    public final UserInfoBigVip user_info;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -14,20 +14,20 @@ public final class DataRes extends Message {
     private DataRes(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.data = builder.data;
+            this.user_info = builder.user_info;
         } else {
-            this.data = builder.data;
+            this.user_info = builder.user_info;
         }
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<DataRes> {
-        public ResData data;
+        public UserInfoBigVip user_info;
 
         public Builder(DataRes dataRes) {
             super(dataRes);
             if (dataRes != null) {
-                this.data = dataRes.data;
+                this.user_info = dataRes.user_info;
             }
         }
 

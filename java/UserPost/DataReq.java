@@ -1,6 +1,5 @@
 package tbclient.UserPost;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -17,7 +16,7 @@ public final class DataReq extends Message {
     public final Integer begin_time;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer check_login;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL)
+    @ProtoField(tag = 27)
     public final CommonReq common;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String cookie;
@@ -45,7 +44,7 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer offset;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 26, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String portrait;

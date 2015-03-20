@@ -1,13 +1,15 @@
 package tbclient.PbPage;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.location.a0;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MSG_CLICK = "";
+    public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_ST_FROM = "";
     public static final String DEFAULT_ST_LINK = "";
     public static final String DEFAULT_ST_TYPE = "";
@@ -19,13 +21,17 @@ public final class DataReq extends Message {
     public final Integer banner;
     @ProtoField(tag = 25)
     public final CommonReq common;
+    @ProtoField(tag = a0.e, type = Message.Datatype.STRING)
+    public final String da_idfa;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
+    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
+    public final Integer issdk;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long kz;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer last;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer lz;
@@ -39,6 +45,8 @@ public final class DataReq extends Message {
     public final Integer pb_rn;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long pid;
+    @ProtoField(tag = a0.f29case, type = Message.Datatype.STRING)
+    public final String platform;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -55,7 +63,7 @@ public final class DataReq extends Message {
     public final Integer scr_h;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer scr_w;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String st_from;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String st_link;
@@ -95,6 +103,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_LAST = 0;
     public static final Integer DEFAULT_ST_STAT = 0;
     public static final Long DEFAULT_ST_TASK = 0L;
+    public static final Integer DEFAULT_ISSDK = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -246,9 +255,24 @@ public final class DataReq extends Message {
             }
             if (builder.st_task == null) {
                 this.st_task = DEFAULT_ST_TASK;
-                return;
             } else {
                 this.st_task = builder.st_task;
+            }
+            if (builder.issdk == null) {
+                this.issdk = DEFAULT_ISSDK;
+            } else {
+                this.issdk = builder.issdk;
+            }
+            if (builder.da_idfa == null) {
+                this.da_idfa = "";
+            } else {
+                this.da_idfa = builder.da_idfa;
+            }
+            if (builder.platform == null) {
+                this.platform = "";
+                return;
+            } else {
+                this.platform = builder.platform;
                 return;
             }
         }
@@ -282,6 +306,9 @@ public final class DataReq extends Message {
         this.st_link = builder.st_link;
         this.st_stat = builder.st_stat;
         this.st_task = builder.st_task;
+        this.issdk = builder.issdk;
+        this.da_idfa = builder.da_idfa;
+        this.platform = builder.platform;
     }
 
     /* loaded from: classes.dex */
@@ -290,7 +317,9 @@ public final class DataReq extends Message {
         public Integer back;
         public Integer banner;
         public CommonReq common;
+        public String da_idfa;
         public Integer floor_rn;
+        public Integer issdk;
         public Long kz;
         public Integer last;
         public String lastids;
@@ -300,6 +329,7 @@ public final class DataReq extends Message {
         public String msg_click;
         public Integer pb_rn;
         public Long pid;
+        public String platform;
         public Integer pn;
         public Integer q_type;
         public Integer r;
@@ -350,6 +380,9 @@ public final class DataReq extends Message {
                 this.st_link = dataReq.st_link;
                 this.st_stat = dataReq.st_stat;
                 this.st_task = dataReq.st_task;
+                this.issdk = dataReq.issdk;
+                this.da_idfa = dataReq.da_idfa;
+                this.platform = dataReq.platform;
             }
         }
 

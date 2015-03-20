@@ -1,12 +1,12 @@
 package tbclient.FrsPage;
 
-import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.BannerList;
 import tbclient.GameInfo;
 /* loaded from: classes.dex */
 public final class ForumInfo extends Message {
@@ -35,7 +35,7 @@ public final class ForumInfo extends Message {
     @ProtoField(tag = 32)
     public final Banner banner;
     @ProtoField(tag = 33)
-    public final tbclient.BannerList banner_list;
+    public final BannerList banner_list;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
@@ -44,13 +44,13 @@ public final class ForumInfo extends Message {
     public final Integer favo_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String first_class;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL)
+    @ProtoField(tag = 27)
     public final ForumButton forum_button;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<Calendar> forum_sign_calendar;
-    @ProtoField(label = Message.Label.REPEATED, tag = 53)
+    @ProtoField(label = Message.Label.REPEATED, tag = a0.D)
     public final List<GameInfo> game_card;
-    @ProtoField(tag = 54, type = Message.Datatype.STRING)
+    @ProtoField(tag = a0.A, type = Message.Datatype.STRING)
     public final String game_name;
     @ProtoField(tag = 47, type = Message.Datatype.STRING)
     public final String game_url;
@@ -62,7 +62,7 @@ public final class ForumInfo extends Message {
     public final Integer has_game;
     @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer has_paper;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.INT32)
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer has_postpre;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
@@ -72,7 +72,7 @@ public final class ForumInfo extends Message {
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
-    @ProtoField(tag = 42, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
     public final Integer is_local_effect;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String is_readonly;
@@ -80,7 +80,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.x, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -90,7 +90,7 @@ public final class ForumInfo extends Message {
     public final Integer levelup_score;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Manager> managers;
-    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
     public final Integer meizhi_tag;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer member_num;
@@ -102,7 +102,7 @@ public final class ForumInfo extends Message {
     public final Integer post_num;
     @ProtoField(tag = 39)
     public final PostPrefix post_prefix;
-    @ProtoField(label = Message.Label.REPEATED, tag = 43)
+    @ProtoField(label = Message.Label.REPEATED, tag = a0.f29case)
     public final List<RecommendForum> recommend_forum;
     @ProtoField(tag = 48)
     public final RecomUserInfo recommend_user_info;
@@ -120,7 +120,7 @@ public final class ForumInfo extends Message {
     public final Integer thread_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String tids;
-    @ProtoField(tag = 51)
+    @ProtoField(tag = a0.C)
     public final TopCode top_code;
     @ProtoField(tag = 28)
     public final TopNotice top_notice;
@@ -452,7 +452,7 @@ public final class ForumInfo extends Message {
         public String avatar;
         public List<Badges> badges;
         public Banner banner;
-        public tbclient.BannerList banner_list;
+        public BannerList banner_list;
         public Integer can_use_accelerate;
         public Integer cur_score;
         public Integer favo_type;

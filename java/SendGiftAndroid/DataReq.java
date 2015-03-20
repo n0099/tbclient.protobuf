@@ -1,4 +1,4 @@
-package tbclient.SendGift;
+package tbclient.SendGiftAndroid;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;

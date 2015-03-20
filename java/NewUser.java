@@ -1,7 +1,7 @@
 package tbclient;
 
+import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -50,7 +50,7 @@ public final class NewUser extends Message {
     public final Integer is_member;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer is_passer;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.INT32)
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer is_qun_spring;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer is_shengyou;
@@ -60,7 +60,7 @@ public final class NewUser extends Message {
     public final MparrProps m_parr_props;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
-    @ProtoField(label = Message.Label.REPEATED, tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL)
+    @ProtoField(label = Message.Label.REPEATED, tag = 27)
     public final List<NoticeMask> notice_mask;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String paper;
@@ -74,7 +74,7 @@ public final class NewUser extends Message {
     public final List<Rpgoldicon> rpgoldicon;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer superboy;
-    @ProtoField(label = Message.Label.REPEATED, tag = 31)
+    @ProtoField(label = Message.Label.REPEATED, tag = a0.h)
     public final List<TbmallMonthIcon> tbmall_month_icon;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String tbscore_repeate_finish_time;

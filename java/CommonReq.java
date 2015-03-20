@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -47,9 +46,9 @@ public final class CommonReq extends Message {
     public final Long _timestamp;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String apid;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String brand;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String brand_type;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String cuid;

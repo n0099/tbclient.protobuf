@@ -1,8 +1,7 @@
 package tbclient.FrsPage;
 
-import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -33,7 +32,7 @@ public final class DataReq extends Message {
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
-    @ProtoField(tag = 42, type = Message.Datatype.STRING)
+    @ProtoField(tag = a0.e, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer data_size;
@@ -51,7 +50,7 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.x, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
@@ -61,7 +60,7 @@ public final class DataReq extends Message {
     public final Boolean login;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
     public final String mobile;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String module_name;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer need_badge;
@@ -71,7 +70,7 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;
-    @ProtoField(tag = 43, type = Message.Datatype.STRING)
+    @ProtoField(tag = a0.f29case, type = Message.Datatype.STRING)
     public final String platform;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer pn;
@@ -93,13 +92,13 @@ public final class DataReq extends Message {
     public final Integer scr_w;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer smile_grade;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.INT32)
+    @ProtoField(tag = 27, type = Message.Datatype.INT32)
     public final Integer st_param;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String st_type;
     @ProtoField(tag = 29, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
-    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
     public final Integer user_id;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String user_name;

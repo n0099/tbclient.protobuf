@@ -1,9 +1,7 @@
 package tbclient;
 
-import com.baidu.location.BDLocation;
-import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -27,17 +25,17 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_VIDEO_SWF = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
-    @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
+    @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<ActInfo> act_info;
-    @ProtoField(tag = 55)
+    @ProtoField(tag = a0.B)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 18)
     public final User author;
-    @ProtoField(tag = 56, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.z, type = Message.Datatype.INT32)
     public final Integer author_id;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
-    @ProtoField(tag = 51, type = Message.Datatype.STRING)
+    @ProtoField(tag = a0.C, type = Message.Datatype.STRING)
     public final String collect_mark_pid;
     @ProtoField(tag = 50, type = Message.Datatype.INT32)
     public final Integer collect_status;
@@ -47,7 +45,7 @@ public final class ThreadInfo extends Message {
     public final Integer create_time;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.INT64)
+    @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 40, type = Message.Datatype.INT64)
     public final Long first_post_id;
@@ -55,7 +53,7 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = 49, type = Message.Datatype.STRING)
     public final String from;
-    @ProtoField(tag = BDLocation.TypeNetWorkException)
+    @ProtoField(tag = 63)
     public final Guess guess;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer has_commented;
@@ -71,7 +69,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_bub;
-    @ProtoField(tag = 42, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
@@ -79,13 +77,13 @@ public final class ThreadInfo extends Message {
     public final Integer is_livepost;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
-    @ProtoField(tag = 54, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.A, type = Message.Datatype.INT32)
     public final Integer is_membertop;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_notice;
     @ProtoField(tag = 38, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
-    @ProtoField(tag = 43, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.f29case, type = Message.Datatype.INT32)
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
@@ -103,7 +101,7 @@ public final class ThreadInfo extends Message {
     public final Integer last_time_int;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String live_post_type;
-    @ProtoField(tag = BDLocation.TypeCriteriaException)
+    @ProtoField(tag = 62)
     public final Lbs location;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Media> media;
@@ -111,7 +109,7 @@ public final class ThreadInfo extends Message {
     public final List<MediaNum> media_num;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String meizhi_pic;
-    @ProtoField(tag = BDLocation.TypeGpsLocation, type = Message.Datatype.STRING)
+    @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String pids;
     @ProtoField(tag = 52, type = Message.Datatype.INT64)
     public final Long post_id;
@@ -121,15 +119,15 @@ public final class ThreadInfo extends Message {
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer repost_num;
-    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
     public final Integer show_commented;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.INT32)
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer thread_types;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
-    @ProtoField(tag = 53, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.D, type = Message.Datatype.INT32)
     public final Integer time;
     @ProtoField(tag = 64, type = Message.Datatype.UINT32)
     public final Integer timeline;
@@ -137,7 +135,7 @@ public final class ThreadInfo extends Message {
     public final String title;
     @ProtoField(tag = 47)
     public final Topic topic;
-    @ProtoField(tag = 57, type = Message.Datatype.UINT32)
+    @ProtoField(tag = a0.m, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
@@ -153,7 +151,7 @@ public final class ThreadInfo extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE)
+    @ProtoField(tag = a0.x)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;

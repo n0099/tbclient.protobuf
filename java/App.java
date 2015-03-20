@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -74,7 +73,7 @@ public final class App extends Message {
     public final Integer pos;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String pos_name;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String price;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String second_name;
@@ -84,7 +83,7 @@ public final class App extends Message {
     public final String url;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer url_type;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String user_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String verify;

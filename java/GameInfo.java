@@ -1,7 +1,7 @@
 package tbclient;
 
+import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -34,7 +34,7 @@ public final class GameInfo extends Message {
     public static final String DEFAULT_SUBSCRIPT_COLOR = "";
     public static final String DEFAULT_SUPERSCRIPT_COLOR = "";
     public static final String DEFAULT_VERSION = "";
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String andr_pk_name;
@@ -58,7 +58,7 @@ public final class GameInfo extends Message {
     public final String editor_rec;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String game_desc;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String game_details_url;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String game_id;
@@ -74,7 +74,7 @@ public final class GameInfo extends Message {
     public final String icon_pic1;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic2;
-    @ProtoField(tag = 31, type = Message.Datatype.STRING)
+    @ProtoField(tag = a0.h, type = Message.Datatype.STRING)
     public final String icon_pic3;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String icon_url;
@@ -94,6 +94,8 @@ public final class GameInfo extends Message {
     public final Integer player_num;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String schema_url;
+    @ProtoField(tag = 36, type = Message.Datatype.UINT32)
+    public final Integer score;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String secret_key;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
@@ -113,6 +115,7 @@ public final class GameInfo extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final Long DEFAULT_DEADLINE = 0L;
     public static final Integer DEFAULT_APP_ID = 0;
+    public static final Integer DEFAULT_SCORE = 0;
 
     /* synthetic */ GameInfo(Builder builder, boolean z, GameInfo gameInfo) {
         this(builder, z);
@@ -293,9 +296,14 @@ public final class GameInfo extends Message {
             }
             if (builder.category_name_sim == null) {
                 this.category_name_sim = "";
-                return;
             } else {
                 this.category_name_sim = builder.category_name_sim;
+            }
+            if (builder.score == null) {
+                this.score = DEFAULT_SCORE;
+                return;
+            } else {
+                this.score = builder.score;
                 return;
             }
         }
@@ -334,6 +342,7 @@ public final class GameInfo extends Message {
         this.subscript_color = builder.subscript_color;
         this.launchComponent = builder.launchComponent;
         this.category_name_sim = builder.category_name_sim;
+        this.score = builder.score;
     }
 
     /* loaded from: classes.dex */
@@ -368,6 +377,7 @@ public final class GameInfo extends Message {
         public String package_size;
         public Integer player_num;
         public String schema_url;
+        public Integer score;
         public String secret_key;
         public Integer star;
         public String subscript_color;
@@ -412,6 +422,7 @@ public final class GameInfo extends Message {
                 this.subscript_color = gameInfo.subscript_color;
                 this.launchComponent = gameInfo.launchComponent;
                 this.category_name_sim = gameInfo.category_name_sim;
+                this.score = gameInfo.score;
             }
         }
 

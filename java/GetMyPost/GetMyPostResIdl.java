@@ -1,20 +1,20 @@
-package tbclient.SendGift;
+package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
 /* loaded from: classes.dex */
-public final class SendGiftResIdl extends Message {
+public final class GetMyPostResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ SendGiftResIdl(Builder builder, boolean z, SendGiftResIdl sendGiftResIdl) {
+    /* synthetic */ GetMyPostResIdl(Builder builder, boolean z, GetMyPostResIdl getMyPostResIdl) {
         this(builder, z);
     }
 
-    private SendGiftResIdl(Builder builder, boolean z) {
+    private GetMyPostResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -26,22 +26,22 @@ public final class SendGiftResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SendGiftResIdl> {
+    public final class Builder extends Message.Builder<GetMyPostResIdl> {
         public DataRes data;
         public Error error;
 
-        public Builder(SendGiftResIdl sendGiftResIdl) {
-            super(sendGiftResIdl);
-            if (sendGiftResIdl != null) {
-                this.error = sendGiftResIdl.error;
-                this.data = sendGiftResIdl.data;
+        public Builder(GetMyPostResIdl getMyPostResIdl) {
+            super(getMyPostResIdl);
+            if (getMyPostResIdl != null) {
+                this.error = getMyPostResIdl.error;
+                this.data = getMyPostResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public SendGiftResIdl build(boolean z) {
-            return new SendGiftResIdl(this, z, null);
+        public GetMyPostResIdl build(boolean z) {
+            return new GetMyPostResIdl(this, z, null);
         }
     }
 }

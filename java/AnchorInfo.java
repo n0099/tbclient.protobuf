@@ -17,6 +17,8 @@ public final class AnchorInfo extends Message {
     public final String author_name;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String forumName;
+    @ProtoField(tag = 15, type = Message.Datatype.INT32)
+    public final Integer from_type;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer group_id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -46,6 +48,7 @@ public final class AnchorInfo extends Message {
     public static final Integer DEFAULT_LIKERS = 0;
     public static final Integer DEFAULT_GROUP_ID = 0;
     public static final Integer DEFAULT_PUBLISHERID = 0;
+    public static final Integer DEFAULT_FROM_TYPE = 0;
 
     /* synthetic */ AnchorInfo(Builder builder, boolean z, AnchorInfo anchorInfo) {
         this(builder, z);
@@ -121,9 +124,14 @@ public final class AnchorInfo extends Message {
             }
             if (builder.forumName == null) {
                 this.forumName = "";
-                return;
             } else {
                 this.forumName = builder.forumName;
+            }
+            if (builder.from_type == null) {
+                this.from_type = DEFAULT_FROM_TYPE;
+                return;
+            } else {
+                this.from_type = builder.from_type;
                 return;
             }
         }
@@ -141,6 +149,7 @@ public final class AnchorInfo extends Message {
         this.publisherName = builder.publisherName;
         this.publisherId = builder.publisherId;
         this.forumName = builder.forumName;
+        this.from_type = builder.from_type;
     }
 
     /* loaded from: classes.dex */
@@ -148,6 +157,7 @@ public final class AnchorInfo extends Message {
         public Integer author_id;
         public String author_name;
         public String forumName;
+        public Integer from_type;
         public Integer group_id;
         public String intro;
         public Integer likers;
@@ -177,6 +187,7 @@ public final class AnchorInfo extends Message {
                 this.publisherName = anchorInfo.publisherName;
                 this.publisherId = anchorInfo.publisherId;
                 this.forumName = anchorInfo.forumName;
+                this.from_type = anchorInfo.from_type;
             }
         }
 

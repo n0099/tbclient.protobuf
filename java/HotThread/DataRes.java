@@ -1,15 +1,14 @@
-package tbclient.SendGift;
+package tbclient.HotThread;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
-    public static final Integer DEFAULT_MONEY = 0;
-    public static final String DEFAULT_PUBLIC_KEY = "";
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer money;
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String public_key;
+    public static final List<tinfo> DEFAULT_HOT_THREAD = Collections.emptyList();
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<tinfo> hot_thread;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -18,33 +17,25 @@ public final class DataRes extends Message {
     private DataRes(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            if (builder.money == null) {
-                this.money = DEFAULT_MONEY;
-            } else {
-                this.money = builder.money;
-            }
-            if (builder.public_key == null) {
-                this.public_key = "";
+            if (builder.hot_thread == null) {
+                this.hot_thread = DEFAULT_HOT_THREAD;
                 return;
             } else {
-                this.public_key = builder.public_key;
+                this.hot_thread = immutableCopyOf(builder.hot_thread);
                 return;
             }
         }
-        this.money = builder.money;
-        this.public_key = builder.public_key;
+        this.hot_thread = immutableCopyOf(builder.hot_thread);
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<DataRes> {
-        public Integer money;
-        public String public_key;
+        public List<tinfo> hot_thread;
 
         public Builder(DataRes dataRes) {
             super(dataRes);
             if (dataRes != null) {
-                this.money = dataRes.money;
-                this.public_key = dataRes.public_key;
+                this.hot_thread = DataRes.copyOf(dataRes.hot_thread);
             }
         }
 

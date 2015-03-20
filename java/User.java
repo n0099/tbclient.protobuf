@@ -1,8 +1,7 @@
 package tbclient;
 
-import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -26,17 +25,17 @@ public final class User extends Message {
     public final String BDUSS;
     @ProtoField(tag = 10)
     public final Balv balv;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_XIUBA, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String bawu_type;
     @ProtoField(tag = 40, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
-    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
     public final Integer concern_num;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
-    @ProtoField(tag = 42, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
     public final Integer gender;
     @ProtoField(label = Message.Label.REPEATED, tag = 50)
     public final List<GiftInfo> gift_list;
@@ -74,11 +73,11 @@ public final class User extends Message {
     public final Integer is_login;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_manager;
-    @ProtoField(tag = 43, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.f29case, type = Message.Datatype.INT32)
     public final Integer is_mask;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_mem;
-    @ProtoField(tag = 51, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.C, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
@@ -100,11 +99,11 @@ public final class User extends Message {
     public final Integer no_un;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE)
+    @ProtoField(tag = a0.x)
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_ENTER_OFFICIAL, type = Message.Datatype.STRING)
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String portraith;
     @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer post_num;

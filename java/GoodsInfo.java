@@ -7,6 +7,8 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class GoodsInfo extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
+    public static final String DEFAULT_CARD_DESC = "";
+    public static final String DEFAULT_CARD_TAG = "";
     public static final String DEFAULT_LABEL_TEXT = "";
     public static final String DEFAULT_POP_WINDOW_TEXT = "";
     public static final String DEFAULT_THREAD_PIC = "";
@@ -16,6 +18,10 @@ public final class GoodsInfo extends Message {
     public static final String DEFAULT_USER_PORTRAIT = "";
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String button_text;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String card_desc;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String card_tag;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer goods_style;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -115,9 +121,19 @@ public final class GoodsInfo extends Message {
             }
             if (builder.button_text == null) {
                 this.button_text = "";
-                return;
             } else {
                 this.button_text = builder.button_text;
+            }
+            if (builder.card_desc == null) {
+                this.card_desc = "";
+            } else {
+                this.card_desc = builder.card_desc;
+            }
+            if (builder.card_tag == null) {
+                this.card_tag = "";
+                return;
+            } else {
+                this.card_tag = builder.card_tag;
                 return;
             }
         }
@@ -134,11 +150,15 @@ public final class GoodsInfo extends Message {
         this.rank_level = builder.rank_level;
         this.thread_type = builder.thread_type;
         this.button_text = builder.button_text;
+        this.card_desc = builder.card_desc;
+        this.card_tag = builder.card_tag;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<GoodsInfo> {
         public String button_text;
+        public String card_desc;
+        public String card_tag;
         public Integer goods_style;
         public Integer id;
         public String label_text;
@@ -168,6 +188,8 @@ public final class GoodsInfo extends Message {
                 this.rank_level = goodsInfo.rank_level;
                 this.thread_type = goodsInfo.thread_type;
                 this.button_text = goodsInfo.button_text;
+                this.card_desc = goodsInfo.card_desc;
+                this.card_tag = goodsInfo.card_tag;
             }
         }
 

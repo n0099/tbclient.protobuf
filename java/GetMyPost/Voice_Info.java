@@ -1,0 +1,90 @@
+package tbclient.GetMyPost;
+
+import com.squareup.wire.Message;
+import com.squareup.wire.ProtoField;
+/* loaded from: classes.dex */
+public final class Voice_Info extends Message {
+    public static final String DEFAULT_MD5 = "";
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer durning_time;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String md5;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer pid;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer tid;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer type;
+    public static final Integer DEFAULT_TID = 0;
+    public static final Integer DEFAULT_PID = 0;
+    public static final Integer DEFAULT_DURNING_TIME = 0;
+    public static final Integer DEFAULT_TYPE = 0;
+
+    /* synthetic */ Voice_Info(Builder builder, boolean z, Voice_Info voice_Info) {
+        this(builder, z);
+    }
+
+    private Voice_Info(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            if (builder.tid == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = builder.tid;
+            }
+            if (builder.pid == null) {
+                this.pid = DEFAULT_PID;
+            } else {
+                this.pid = builder.pid;
+            }
+            if (builder.durning_time == null) {
+                this.durning_time = DEFAULT_DURNING_TIME;
+            } else {
+                this.durning_time = builder.durning_time;
+            }
+            if (builder.md5 == null) {
+                this.md5 = "";
+            } else {
+                this.md5 = builder.md5;
+            }
+            if (builder.type == null) {
+                this.type = DEFAULT_TYPE;
+                return;
+            } else {
+                this.type = builder.type;
+                return;
+            }
+        }
+        this.tid = builder.tid;
+        this.pid = builder.pid;
+        this.durning_time = builder.durning_time;
+        this.md5 = builder.md5;
+        this.type = builder.type;
+    }
+
+    /* loaded from: classes.dex */
+    public final class Builder extends Message.Builder<Voice_Info> {
+        public Integer durning_time;
+        public String md5;
+        public Integer pid;
+        public Integer tid;
+        public Integer type;
+
+        public Builder(Voice_Info voice_Info) {
+            super(voice_Info);
+            if (voice_Info != null) {
+                this.tid = voice_Info.tid;
+                this.pid = voice_Info.pid;
+                this.durning_time = voice_Info.durning_time;
+                this.md5 = voice_Info.md5;
+                this.type = voice_Info.type;
+            }
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Voice_Info build(boolean z) {
+            return new Voice_Info(this, z, null);
+        }
+    }
+}

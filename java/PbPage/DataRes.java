@@ -28,6 +28,8 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 9)
     public final Lbs location;
+    @ProtoField(tag = 15)
+    public final NewsInfo news_info;
     @ProtoField(tag = 3)
     public final Page page;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
@@ -91,11 +93,11 @@ public final class DataRes extends Message {
             }
             if (builder.server_time == null) {
                 this.server_time = DEFAULT_SERVER_TIME;
-                return;
             } else {
                 this.server_time = builder.server_time;
-                return;
             }
+            this.news_info = builder.news_info;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -111,6 +113,7 @@ public final class DataRes extends Message {
         this.banner_list = builder.banner_list;
         this.user_list = immutableCopyOf(builder.user_list);
         this.server_time = builder.server_time;
+        this.news_info = builder.news_info;
     }
 
     /* loaded from: classes.dex */
@@ -122,6 +125,7 @@ public final class DataRes extends Message {
         public Integer has_floor;
         public Integer is_new_url;
         public Lbs location;
+        public NewsInfo news_info;
         public Page page;
         public List<PostBanner> post_banner;
         public List<Post> post_list;
@@ -147,6 +151,7 @@ public final class DataRes extends Message {
                 this.banner_list = dataRes.banner_list;
                 this.user_list = DataRes.copyOf(dataRes.user_list);
                 this.server_time = dataRes.server_time;
+                this.news_info = dataRes.news_info;
             }
         }
 
