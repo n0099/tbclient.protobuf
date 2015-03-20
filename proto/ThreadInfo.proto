@@ -1,7 +1,9 @@
 syntax = "proto3";
 
 import "Abstract.proto";
-import "AnchorInfo.proto";
+import "ActInfo.proto";
+import "Guess.proto";
+import "Lbs.proto";
 import "Media.proto";
 import "MediaNum.proto";
 import "PostList.proto";
@@ -35,10 +37,11 @@ message ThreadInfo {
     repeated Voice voice_info = 23;
     string meizhi_pic = 24;
     repeated MediaNum media_num = 25;
+    int32 thread_type = 26;
+    int64 fid = 27;
     string fname = 28;
     string live_post_type = 29;
     int32 is_livepost = 30;
-    int32 show_commented = 31;
     string click_url = 32;
     string video = 33;
     string video_swf = 34;
@@ -47,8 +50,6 @@ message ThreadInfo {
     int32 is_ntitle = 38;
     int32 is_bub = 39;
     int64 first_post_id = 40;
-    int32 is_global_top = 42;
-    int32 is_pic = 43;
     repeated PostList post_list = 44;
     int32 create_time = 45;
     int32 repost_num = 46;
@@ -56,15 +57,13 @@ message ThreadInfo {
     int32 has_commented = 48;
     string from = 49;
     int32 collect_status = 50;
-    string collect_mark_pid = 51;
     int64 post_id = 52;
-    int32 time = 53;
-    int32 is_membertop = 54;
-    AnchorInfo anchor_info = 55;
-    int32 author_id = 56;
-    uint32 valid_post_num = 57;
     uint32 isLzDeleteAll = 58;
     uint32 is_ad = 59;
     string ecom = 60;
+    string pids = 61;
+    Lbs location = 62;
+    Guess guess = 63;
     uint32 timeline = 64;
+    repeated ActInfo act_info = 65;
 }

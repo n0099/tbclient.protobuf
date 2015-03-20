@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message NewsInfo {
+    string news_link = 1;
+    string summary = 2;
+    uint32 position = 3;
+}

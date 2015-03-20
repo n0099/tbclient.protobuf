@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message FineThreadInfo {
+    int64 ftid = 1;
+    string title = 2;
+    int32 type = 3;
+    string _abstract = 4;
+    repeated string thumbnail = 5;
+    int32 publish_time = 6;
+    string tag = 7;
+}

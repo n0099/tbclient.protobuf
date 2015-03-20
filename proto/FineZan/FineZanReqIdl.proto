@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "FineZan/DataReq.proto";
+
+message FineZanReqIdl {
+    DataReq data = 1;
+}

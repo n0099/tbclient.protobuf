@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 import "Error.proto";
-import "SendGift/DataRes.proto";
+import "SendGiftAndroid/DataRes.proto";
 
-message SendGiftResIdl {
+message SendGiftAndroidResIdl {
     Error error = 1;
     DataRes data = 2;
 }

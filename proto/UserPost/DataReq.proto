@@ -28,4 +28,6 @@ message DataReq {
     string mobile = 23;
     string email = 24;
     string cookie = 25;
+    uint32 pn = 26;
+    CommonReq common = 27;
 }

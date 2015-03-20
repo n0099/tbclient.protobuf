@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "HotForum/ForumInfo.proto";
+
+message DataRes {
+    repeated ForumInfo forum_info = 1;
+}

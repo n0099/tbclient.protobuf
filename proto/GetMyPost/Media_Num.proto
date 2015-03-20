@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message Media_Num {
+    int32 pic = 1;
+}

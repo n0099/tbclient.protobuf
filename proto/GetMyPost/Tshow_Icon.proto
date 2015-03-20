@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message Tshow_Icon {
+    string icon = 1;
+    string name = 2;
+    string url = 3;
+}

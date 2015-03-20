@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "FineFrsPage/DataRes.proto";
+
+message FineFrsPageResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

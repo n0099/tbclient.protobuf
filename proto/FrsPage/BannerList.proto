@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "App.proto";
-
-message BannerList {
-    repeated App app = 1;
-}

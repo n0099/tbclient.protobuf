@@ -15,4 +15,5 @@ message AnchorInfo {
     string publisherName = 12;
     int32 publisherId = 13;
     string forumName = 14;
+    int32 from_type = 15;
 }

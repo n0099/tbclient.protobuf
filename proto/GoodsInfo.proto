@@ -16,4 +16,6 @@ message GoodsInfo {
     int32 rank_level = 11;
     string thread_type = 12;
     string button_text = 13;
+    string card_desc = 14;
+    string card_tag = 15;
 }

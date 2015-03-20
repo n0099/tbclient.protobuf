@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetGameCategory/ResData.proto";
-
-message DataRes {
-    ResData data = 1;
-}

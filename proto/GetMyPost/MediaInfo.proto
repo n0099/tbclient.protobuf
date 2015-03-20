@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message MediaInfo {
+    int32 type = 1;
+    string pic_url = 2;
+}

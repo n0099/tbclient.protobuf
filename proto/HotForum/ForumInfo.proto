@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message ForumInfo {
+    int64 forum_id = 1;
+    string forum_name = 2;
+    string avatar = 3;
+    int64 time_out = 4;
+}

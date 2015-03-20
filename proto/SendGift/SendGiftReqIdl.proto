@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "SendGift/DataReq.proto";
-
-message SendGiftReqIdl {
-    DataReq data = 1;
-}
