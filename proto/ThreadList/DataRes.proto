@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+import "User.proto";
+
+message DataRes {
+    repeated ThreadInfo thread_list = 1;
+    repeated User user_list = 2;
+}
