@@ -2,6 +2,7 @@ package tbclient.FrsPage;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -96,7 +97,7 @@ public final class DataReq extends Message {
     public final Integer st_param;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String st_type;
-    @ProtoField(tag = 29, type = Message.Datatype.BOOL)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
     @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
     public final Integer user_id;

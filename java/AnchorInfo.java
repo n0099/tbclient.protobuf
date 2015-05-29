@@ -7,6 +7,7 @@ public final class AnchorInfo extends Message {
     public static final String DEFAULT_AUTHOR_NAME = "";
     public static final String DEFAULT_FORUMNAME = "";
     public static final String DEFAULT_INTRO = "";
+    public static final String DEFAULT_LABEL_NAME = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_PUBLISHERNAME = "";
@@ -23,6 +24,12 @@ public final class AnchorInfo extends Message {
     public final Integer group_id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String intro;
+    @ProtoField(tag = 16, type = Message.Datatype.INT32)
+    public final Integer is_vip;
+    @ProtoField(tag = 17, type = Message.Datatype.INT32)
+    public final Integer label_id;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String label_name;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer likers;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -49,6 +56,8 @@ public final class AnchorInfo extends Message {
     public static final Integer DEFAULT_GROUP_ID = 0;
     public static final Integer DEFAULT_PUBLISHERID = 0;
     public static final Integer DEFAULT_FROM_TYPE = 0;
+    public static final Integer DEFAULT_IS_VIP = 0;
+    public static final Integer DEFAULT_LABEL_ID = 0;
 
     /* synthetic */ AnchorInfo(Builder builder, boolean z, AnchorInfo anchorInfo) {
         this(builder, z);
@@ -129,9 +138,24 @@ public final class AnchorInfo extends Message {
             }
             if (builder.from_type == null) {
                 this.from_type = DEFAULT_FROM_TYPE;
-                return;
             } else {
                 this.from_type = builder.from_type;
+            }
+            if (builder.is_vip == null) {
+                this.is_vip = DEFAULT_IS_VIP;
+            } else {
+                this.is_vip = builder.is_vip;
+            }
+            if (builder.label_id == null) {
+                this.label_id = DEFAULT_LABEL_ID;
+            } else {
+                this.label_id = builder.label_id;
+            }
+            if (builder.label_name == null) {
+                this.label_name = "";
+                return;
+            } else {
+                this.label_name = builder.label_name;
                 return;
             }
         }
@@ -150,6 +174,9 @@ public final class AnchorInfo extends Message {
         this.publisherId = builder.publisherId;
         this.forumName = builder.forumName;
         this.from_type = builder.from_type;
+        this.is_vip = builder.is_vip;
+        this.label_id = builder.label_id;
+        this.label_name = builder.label_name;
     }
 
     /* loaded from: classes.dex */
@@ -160,6 +187,9 @@ public final class AnchorInfo extends Message {
         public Integer from_type;
         public Integer group_id;
         public String intro;
+        public Integer is_vip;
+        public Integer label_id;
+        public String label_name;
         public Integer likers;
         public Integer listeners;
         public String name;
@@ -188,6 +218,9 @@ public final class AnchorInfo extends Message {
                 this.publisherId = anchorInfo.publisherId;
                 this.forumName = anchorInfo.forumName;
                 this.from_type = anchorInfo.from_type;
+                this.is_vip = anchorInfo.is_vip;
+                this.label_id = anchorInfo.label_id;
+                this.label_name = anchorInfo.label_name;
             }
         }
 

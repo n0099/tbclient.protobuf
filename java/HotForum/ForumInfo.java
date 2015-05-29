@@ -12,10 +12,16 @@ public final class ForumInfo extends Message {
     public final Long forum_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 5, type = Message.Datatype.INT64)
+    public final Long member_count;
+    @ProtoField(tag = 6, type = Message.Datatype.INT64)
+    public final Long thread_count;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long time_out;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Long DEFAULT_TIME_OUT = 0L;
+    public static final Long DEFAULT_MEMBER_COUNT = 0L;
+    public static final Long DEFAULT_THREAD_COUNT = 0L;
 
     /* synthetic */ ForumInfo(Builder builder, boolean z, ForumInfo forumInfo) {
         this(builder, z);
@@ -41,9 +47,19 @@ public final class ForumInfo extends Message {
             }
             if (builder.time_out == null) {
                 this.time_out = DEFAULT_TIME_OUT;
-                return;
             } else {
                 this.time_out = builder.time_out;
+            }
+            if (builder.member_count == null) {
+                this.member_count = DEFAULT_MEMBER_COUNT;
+            } else {
+                this.member_count = builder.member_count;
+            }
+            if (builder.thread_count == null) {
+                this.thread_count = DEFAULT_THREAD_COUNT;
+                return;
+            } else {
+                this.thread_count = builder.thread_count;
                 return;
             }
         }
@@ -51,6 +67,8 @@ public final class ForumInfo extends Message {
         this.forum_name = builder.forum_name;
         this.avatar = builder.avatar;
         this.time_out = builder.time_out;
+        this.member_count = builder.member_count;
+        this.thread_count = builder.thread_count;
     }
 
     /* loaded from: classes.dex */
@@ -58,6 +76,8 @@ public final class ForumInfo extends Message {
         public String avatar;
         public Long forum_id;
         public String forum_name;
+        public Long member_count;
+        public Long thread_count;
         public Long time_out;
 
         public Builder(ForumInfo forumInfo) {
@@ -67,6 +87,8 @@ public final class ForumInfo extends Message {
                 this.forum_name = forumInfo.forum_name;
                 this.avatar = forumInfo.avatar;
                 this.time_out = forumInfo.time_out;
+                this.member_count = forumInfo.member_count;
+                this.thread_count = forumInfo.thread_count;
             }
         }
 

@@ -5,6 +5,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_TAG = "";
     @ProtoField(tag = 1)
     public final CommonReq common;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -17,6 +18,8 @@ public final class DataReq extends Message {
     public final Integer scr_h;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer scr_w;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String tag;
     public static final Integer DEFAULT_SCR_W = 0;
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
@@ -53,9 +56,14 @@ public final class DataReq extends Message {
             }
             if (builder.publish_time == null) {
                 this.publish_time = DEFAULT_PUBLISH_TIME;
-                return;
             } else {
                 this.publish_time = builder.publish_time;
+            }
+            if (builder.tag == null) {
+                this.tag = "";
+                return;
+            } else {
+                this.tag = builder.tag;
                 return;
             }
         }
@@ -65,6 +73,7 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
         this.q_type = builder.q_type;
         this.publish_time = builder.publish_time;
+        this.tag = builder.tag;
     }
 
     /* loaded from: classes.dex */
@@ -75,6 +84,7 @@ public final class DataReq extends Message {
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
+        public String tag;
 
         public Builder(DataReq dataReq) {
             super(dataReq);
@@ -85,6 +95,7 @@ public final class DataReq extends Message {
                 this.scr_dip = dataReq.scr_dip;
                 this.q_type = dataReq.q_type;
                 this.publish_time = dataReq.publish_time;
+                this.tag = dataReq.tag;
             }
         }
 

@@ -9,6 +9,8 @@ import tbclient.RecommendForumInfo;
 import tbclient.SimpleThreadInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    @ProtoField(tag = 7)
+    public final CodeInfo code_info;
     @ProtoField(tag = 6)
     public final RecommendForumInfo forum_info;
     @ProtoField(tag = 1)
@@ -45,6 +47,7 @@ public final class DataRes extends Message {
                 this.relate_thread = immutableCopyOf(builder.relate_thread);
             }
             this.forum_info = builder.forum_info;
+            this.code_info = builder.code_info;
             return;
         }
         this.game_info = builder.game_info;
@@ -53,10 +56,12 @@ public final class DataRes extends Message {
         this.user_recommend = immutableCopyOf(builder.user_recommend);
         this.relate_thread = immutableCopyOf(builder.relate_thread);
         this.forum_info = builder.forum_info;
+        this.code_info = builder.code_info;
     }
 
     /* loaded from: classes.dex */
     public final class Builder extends Message.Builder<DataRes> {
+        public CodeInfo code_info;
         public RecommendForumInfo forum_info;
         public GameInfo game_info;
         public RankInfo rank_info;
@@ -73,6 +78,7 @@ public final class DataRes extends Message {
                 this.user_recommend = DataRes.copyOf(dataRes.user_recommend);
                 this.relate_thread = DataRes.copyOf(dataRes.relate_thread);
                 this.forum_info = dataRes.forum_info;
+                this.code_info = dataRes.code_info;
             }
         }
 

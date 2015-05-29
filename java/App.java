@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -45,7 +46,7 @@ public final class App extends Message {
     public final Integer app_time;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer cpid;
-    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
     public final String ext_info;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String first_name;

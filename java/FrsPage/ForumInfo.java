@@ -2,6 +2,7 @@ package tbclient.FrsPage;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -60,7 +61,7 @@ public final class ForumInfo extends Message {
     public final Integer has_frs_star;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer has_game;
-    @ProtoField(tag = 29, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.INT32)
     public final Integer has_paper;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer has_postpre;
@@ -96,7 +97,7 @@ public final class ForumInfo extends Message {
     public final Integer member_num;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
-    @ProtoField(tag = 52)
+    @ProtoField(tag = a0.f)
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;

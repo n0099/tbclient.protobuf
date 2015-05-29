@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -38,7 +39,7 @@ public final class NewUser extends Message {
     public final Global global;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String is_coreuser;
-    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
     public final String is_doudizhu;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_group_owner;

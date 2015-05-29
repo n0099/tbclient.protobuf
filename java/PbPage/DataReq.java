@@ -1,6 +1,7 @@
 package tbclient.PbPage;
 
 import com.baidu.location.a0;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -67,7 +68,7 @@ public final class DataReq extends Message {
     public final String st_from;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String st_link;
-    @ProtoField(tag = 29, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.INT32)
     public final Integer st_stat;
     @ProtoField(tag = 30, type = Message.Datatype.INT64)
     public final Long st_task;

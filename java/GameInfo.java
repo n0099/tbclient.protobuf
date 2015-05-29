@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -70,7 +71,7 @@ public final class GameInfo extends Message {
     public final List<String> game_pic;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer game_type;
-    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
     public final String icon_pic1;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic2;

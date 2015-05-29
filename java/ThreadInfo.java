@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -27,7 +28,7 @@ public final class ThreadInfo extends Message {
     public final List<Abstract> _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<ActInfo> act_info;
-    @ProtoField(tag = a0.B)
+    @ProtoField(tag = 55)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 18)
     public final User author;
@@ -99,7 +100,7 @@ public final class ThreadInfo extends Message {
     public final String last_time;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer last_time_int;
-    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
     public final String live_post_type;
     @ProtoField(tag = 62)
     public final Lbs location;
@@ -111,7 +112,7 @@ public final class ThreadInfo extends Message {
     public final String meizhi_pic;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String pids;
-    @ProtoField(tag = 52, type = Message.Datatype.INT64)
+    @ProtoField(tag = a0.f, type = Message.Datatype.INT64)
     public final Long post_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 44)
     public final List<PostList> post_list;

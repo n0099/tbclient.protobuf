@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -21,7 +22,7 @@ public final class User extends Message {
     public static final String DEFAULT_PORTRAITH = "";
     public static final String DEFAULT_RANK = "";
     public static final String DEFAULT_TB_AGE = "";
-    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
     public final String BDUSS;
     @ProtoField(tag = 10)
     public final Balv balv;
@@ -31,6 +32,10 @@ public final class User extends Message {
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
+    @ProtoField(tag = a0.D, type = Message.Datatype.INT32)
+    public final Integer bookmark_count;
+    @ProtoField(tag = a0.A, type = Message.Datatype.INT32)
+    public final Integer bookmark_new_count;
     @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
     public final Integer concern_num;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
@@ -61,7 +66,7 @@ public final class User extends Message {
     public final Integer is_coreuser;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer is_friend;
-    @ProtoField(tag = 52, type = Message.Datatype.INT32)
+    @ProtoField(tag = a0.f, type = Message.Datatype.INT32)
     public final Integer is_guanfang;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer is_huinibuke;
@@ -160,6 +165,8 @@ public final class User extends Message {
     public static final List<GiftInfo> DEFAULT_GIFT_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_SELECT_TAIL = 0;
     public static final Integer DEFAULT_IS_GUANFANG = 0;
+    public static final Integer DEFAULT_BOOKMARK_COUNT = 0;
+    public static final Integer DEFAULT_BOOKMARK_NEW_COUNT = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -409,9 +416,19 @@ public final class User extends Message {
             }
             if (builder.is_guanfang == null) {
                 this.is_guanfang = DEFAULT_IS_GUANFANG;
-                return;
             } else {
                 this.is_guanfang = builder.is_guanfang;
+            }
+            if (builder.bookmark_count == null) {
+                this.bookmark_count = DEFAULT_BOOKMARK_COUNT;
+            } else {
+                this.bookmark_count = builder.bookmark_count;
+            }
+            if (builder.bookmark_new_count == null) {
+                this.bookmark_new_count = DEFAULT_BOOKMARK_NEW_COUNT;
+                return;
+            } else {
+                this.bookmark_new_count = builder.bookmark_new_count;
                 return;
             }
         }
@@ -467,6 +484,8 @@ public final class User extends Message {
         this.gift_list = immutableCopyOf(builder.gift_list);
         this.is_select_tail = builder.is_select_tail;
         this.is_guanfang = builder.is_guanfang;
+        this.bookmark_count = builder.bookmark_count;
+        this.bookmark_new_count = builder.bookmark_new_count;
     }
 
     /* loaded from: classes.dex */
@@ -476,6 +495,8 @@ public final class User extends Message {
         public String bawu_type;
         public Integer bimg_end_time;
         public String bimg_url;
+        public Integer bookmark_count;
+        public Integer bookmark_new_count;
         public Integer concern_num;
         public Integer fans_num;
         public Integer gender;
@@ -579,6 +600,8 @@ public final class User extends Message {
                 this.gift_list = User.copyOf(user.gift_list);
                 this.is_select_tail = user.is_select_tail;
                 this.is_guanfang = user.is_guanfang;
+                this.bookmark_count = user.bookmark_count;
+                this.bookmark_new_count = user.bookmark_new_count;
             }
         }
 
