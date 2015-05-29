@@ -29,7 +29,6 @@ message GameInfo {
     string _abstract = 26;
     string game_details_url = 27;
     uint32 app_id = 28;
-    string icon_pic1 = 29;
     string icon_pic2 = 30;
     string game_desc = 32;
     string subscript_color = 33;

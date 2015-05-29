@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ApplyGameCard/DataRes.proto";
+import "Error.proto";
+
+message ApplyGameCardResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    uint64 user_id = 1;
+    string game_id = 2;
+    int64 kaifu_id = 3;
+    CommonReq common = 4;
+}

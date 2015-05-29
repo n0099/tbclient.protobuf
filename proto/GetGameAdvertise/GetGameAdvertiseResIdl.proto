@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetGameAdvertise/DataRes.proto";
+
+message GetGameAdvertiseResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

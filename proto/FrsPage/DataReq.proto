@@ -31,7 +31,6 @@ message DataReq {
     string module_name = 26;
     int32 st_param = 27;
     int32 smile_grade = 28;
-    bool support_noun = 29;
     bool login = 30;
     string user_name = 32;
     int32 no_un = 33;

@@ -5,4 +5,6 @@ message ForumInfo {
     string forum_name = 2;
     string avatar = 3;
     int64 time_out = 4;
+    int64 member_count = 5;
+    int64 thread_count = 6;
 }

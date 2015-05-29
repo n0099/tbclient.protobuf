@@ -39,7 +39,6 @@ message User {
     string bawu_type = 26;
     string portraith = 27;
     string ip = 28;
-    string BDUSS = 29;
     int32 fans_num = 30;
     int32 sex = 32;
     int32 my_like_num = 33;
@@ -56,5 +55,4 @@ message User {
     repeated MyGroupInfo groupList = 48;
     int32 gift_num = 49;
     repeated GiftInfo gift_list = 50;
-    int32 is_guanfang = 52;
 }

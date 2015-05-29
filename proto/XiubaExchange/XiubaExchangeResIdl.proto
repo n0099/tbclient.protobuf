@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-
-message XiubaExchangeResIdl {
-    Error error = 1;
-    string publicKey = 2;
-}

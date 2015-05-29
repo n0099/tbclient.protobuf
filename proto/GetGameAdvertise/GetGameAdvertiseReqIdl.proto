@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetGameAdvertise/DataReq.proto";
+
+message GetGameAdvertiseReqIdl {
+    DataReq data = 1;
+}

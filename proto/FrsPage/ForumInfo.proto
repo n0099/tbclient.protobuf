@@ -12,7 +12,6 @@ import "FrsPage/PostPrefix.proto";
 import "FrsPage/RecomUserInfo.proto";
 import "FrsPage/SignInfo.proto";
 import "FrsPage/TagInfo.proto";
-import "FrsPage/TopNews.proto";
 import "FrsPage/TopNotice.proto";
 import "FrsPage/WorldCup.proto";
 import "FrsPage/Zhibo.proto";
@@ -47,7 +46,6 @@ message ForumInfo {
     int32 has_postpre = 26;
     ForumButton forum_button = 27;
     TopNotice top_notice = 28;
-    int32 has_paper = 29;
     int32 is_stage_forum = 30;
     Banner banner = 32;
     BannerList banner_list = 33;
@@ -64,5 +62,4 @@ message ForumInfo {
     RecomUserInfo recommend_user_info = 48;
     int32 can_use_accelerate = 49;
     string accelerate_cotent = 50;
-    TopNews news_info = 52;
 }

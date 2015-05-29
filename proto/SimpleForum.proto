@@ -4,4 +4,5 @@ message SimpleForum {
     int64 id = 1;
     string name = 2;
     int32 is_exists = 3;
+    string avatar = 4;
 }

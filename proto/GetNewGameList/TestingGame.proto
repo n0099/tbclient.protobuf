@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetNewGameList/NewGameInfo.proto";
+
+message TestingGame {
+    repeated NewGameInfo today = 1;
+    repeated NewGameInfo tomorrow = 2;
+    repeated NewGameInfo future = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PostGameCodeInfo/DataReq.proto";
+
+message PostCodeInfoReqIdl {
+    DataReq data = 1;
+}

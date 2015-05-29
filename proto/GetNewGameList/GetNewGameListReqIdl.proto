@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetNewGameList/DataReq.proto";
+
+message GetNewGameListReqIdl {
+    DataReq data = 1;
+}

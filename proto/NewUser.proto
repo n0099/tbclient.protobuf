@@ -38,7 +38,6 @@ message NewUser {
     int32 is_qun_spring = 26;
     repeated NoticeMask notice_mask = 27;
     repeated Rpgoldicon rpgoldicon = 28;
-    string is_doudizhu = 29;
     string cdn_error = 30;
     string is_coreuser = 32;
     GameAttr game_attr = 33;
