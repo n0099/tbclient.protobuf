@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 message SignUser {
-    int32 user_id = 1;
+    int64 user_id = 1;
     int32 is_sign_in = 2;
     int32 user_sign_rank = 3;
     int32 sign_time = 4;

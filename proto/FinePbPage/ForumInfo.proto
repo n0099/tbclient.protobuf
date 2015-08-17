@@ -14,4 +14,11 @@ message ForumInfo {
     string fromfname = 8;
     uint64 fromfid = 9;
     uint64 threadsnum = 10;
+    uint64 member_num = 11;
+    string avatar = 12;
+    uint32 is_like = 13;
+    string tagabstract = 14;
+    string authorremark = 15;
+    uint64 tid = 16;
+    uint64 pid = 17;
 }

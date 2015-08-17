@@ -1,8 +1,12 @@
 syntax = "proto3";
 
+import "ZhiBoInfoTW.proto";
+
 message FineBanner {
     int64 ftid = 1;
     string title = 2;
     string pic_url = 3;
     string link_url = 4;
+    int32 type = 5;
+    ZhiBoInfoTW twzhibo_info = 6;
 }

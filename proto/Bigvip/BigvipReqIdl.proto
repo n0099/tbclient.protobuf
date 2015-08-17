@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Bigvip/DataReq.proto";
-
-message BigvipReqIdl {
-    DataReq data = 1;
-}

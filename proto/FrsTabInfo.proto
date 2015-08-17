@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message FrsTabInfo {
+    int32 tab_id = 1;
+    int32 tab_type = 2;
+    string tab_name = 3;
+    string tab_url = 4;
+}

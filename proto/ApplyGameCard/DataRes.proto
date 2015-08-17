@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message DataRes {
-    int32 status_code = 1;
-    string game_code = 2;
-    string gift_code = 3;
-}

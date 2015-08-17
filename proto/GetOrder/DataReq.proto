@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+import "Wares.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    uint32 pay_type = 2;
+    uint32 is_left = 3;
+    string order_url = 4;
+    string mobile = 5;
+    Wares wares = 6;
+}

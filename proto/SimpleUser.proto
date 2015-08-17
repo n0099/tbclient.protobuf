@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message SimpleUser {
+    int64 user_id = 1;
+    int32 user_status = 2;
+    string secureemail = 3;
+    string securemobil = 4;
+    string user_name = 5;
+    string user_nickname = 6;
+}

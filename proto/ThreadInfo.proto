@@ -2,7 +2,6 @@ syntax = "proto3";
 
 import "Abstract.proto";
 import "ActInfo.proto";
-import "AnchorInfo.proto";
 import "Guess.proto";
 import "Lbs.proto";
 import "Media.proto";
@@ -43,7 +42,6 @@ message ThreadInfo {
     string fname = 28;
     int32 is_livepost = 30;
     string click_url = 32;
-    string video = 33;
     string video_swf = 34;
     string video_id = 36;
     string video_mobile_url = 37;
@@ -57,7 +55,6 @@ message ThreadInfo {
     int32 has_commented = 48;
     string from = 49;
     int32 collect_status = 50;
-    AnchorInfo anchor_info = 55;
     uint32 isLzDeleteAll = 58;
     uint32 is_ad = 59;
     string ecom = 60;
@@ -66,4 +63,5 @@ message ThreadInfo {
     Guess guess = 63;
     uint32 timeline = 64;
     repeated ActInfo act_info = 65;
+    int32 post_num = 69;
 }

@@ -31,7 +31,6 @@ message GameInfo {
     uint32 app_id = 28;
     string icon_pic2 = 30;
     string game_desc = 32;
-    string subscript_color = 33;
     string launchComponent = 34;
     uint32 score = 36;
 }

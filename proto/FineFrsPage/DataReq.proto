@@ -10,4 +10,5 @@ message DataReq {
     int32 q_type = 5;
     int32 publish_time = 6;
     string tag = 7;
+    int32 forder = 8;
 }

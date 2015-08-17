@@ -4,6 +4,6 @@ message Zan {
     int32 num = 1;
     int32 is_liked = 2;
     int32 last_time = 3;
-    repeated int32 liker_id = 4;
-    int32 author_id = 5;
+    repeated int64 liker_id = 4;
+    int64 author_id = 5;
 }

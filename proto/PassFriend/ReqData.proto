@@ -1,6 +1,9 @@
 syntax = "proto3";
 
+import "CommonReq.proto";
+
 message ReqData {
-    uint64 friend_id = 1;
+    int64 friend_id = 1;
     string st_type = 2;
+    CommonReq common = 3;
 }

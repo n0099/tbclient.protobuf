@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message ResData {
-    string game_id = 1;
-}

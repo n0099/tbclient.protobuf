@@ -2,12 +2,14 @@ syntax = "proto3";
 
 import "Anti.proto";
 import "BannerList.proto";
+import "FineBannerPb.proto";
 import "Lbs.proto";
 import "Page.proto";
 import "PbPage/AddPost.proto";
 import "PbPage/NewsInfo.proto";
 import "PbPage/PostBanner.proto";
 import "Post.proto";
+import "RecommendThread.proto";
 import "SimpleForum.proto";
 import "ThreadInfo.proto";
 import "User.proto";
@@ -28,4 +30,6 @@ message DataRes {
     repeated User user_list = 13;
     int32 server_time = 14;
     NewsInfo news_info = 15;
+    repeated RecommendThread recommend_threads = 16;
+    repeated FineBannerPb fine_banner = 17;
 }

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FrsPage/HeadImgs.proto";
+import "FrsPage/Size.proto";
+
+message ActivityHead {
+    int32 activity_type = 1;
+    string activity_title = 2;
+    repeated HeadImgs head_imgs = 3;
+    Size top_size = 4;
+}

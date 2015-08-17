@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GameIndex/ResData.proto";
-
-message GameIndexResIdl {
-    Error error = 1;
-    ResData data = 2;
-}

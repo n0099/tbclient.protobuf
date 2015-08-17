@@ -1,7 +1,9 @@
 syntax = "proto3";
 
 import "App.proto";
+import "FeedForumInfo.proto";
 
 message BannerList {
     repeated App app = 1;
+    repeated FeedForumInfo feed_forum = 2;
 }

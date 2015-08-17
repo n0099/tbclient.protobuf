@@ -48,7 +48,6 @@ message ForumInfo {
     TopNotice top_notice = 28;
     int32 is_stage_forum = 30;
     Banner banner = 32;
-    BannerList banner_list = 33;
     repeated Badges badges = 34;
     int32 is_forbidden = 36;
     int32 favo_type = 37;

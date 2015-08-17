@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-import "PostList.proto";
+import "PostInfoList.proto";
 
 message DataRes {
-    repeated PostList post_list = 1;
+    repeated PostInfoList post_list = 1;
     uint32 hide_post = 2;
     uint64 time = 3;
     uint64 ctime = 4;

@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message ResData {
-    uint32 init = 1;
-}

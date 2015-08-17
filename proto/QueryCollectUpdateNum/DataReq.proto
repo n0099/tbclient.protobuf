@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message DataReq {
-    uint32 collect_mark = 1;
-}

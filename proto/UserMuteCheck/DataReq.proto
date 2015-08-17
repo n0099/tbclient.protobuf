@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    int64 user_id_f = 2;
+    int64 user_id_t = 3;
+    int32 mute_type = 4;
+}

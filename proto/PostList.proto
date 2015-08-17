@@ -13,5 +13,5 @@ message PostList {
     repeated Media media = 4;
     repeated MediaNum media_num = 5;
     repeated Voice voice_info = 6;
-    int32 author_id = 7;
+    int64 author_id = 7;
 }

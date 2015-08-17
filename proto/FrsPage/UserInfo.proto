@@ -3,7 +3,7 @@ syntax = "proto3";
 import "FrsPage/ShowIcon.proto";
 
 message UserInfo {
-    int32 user_id = 1;
+    int64 user_id = 1;
     string portrait = 2;
     string user_name = 3;
     int32 gender = 4;

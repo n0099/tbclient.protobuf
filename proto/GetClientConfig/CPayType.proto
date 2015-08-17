@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message CPayType {
+    int32 pay_type = 1;
+}

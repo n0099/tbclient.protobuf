@@ -17,4 +17,5 @@ message Anti {
     int32 need_vcode = 14;
     string vcode_md5 = 15;
     string vcode_pic_url = 16;
+    string user_mute = 17;
 }

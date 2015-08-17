@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetClientConfig/CPayType.proto";
+
+message DataRes {
+    CPayType payType = 1;
+}

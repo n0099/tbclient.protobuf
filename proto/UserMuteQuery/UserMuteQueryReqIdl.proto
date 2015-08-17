@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "UserMuteQuery/DataReq.proto";
+
+message UserMuteQueryReqIdl {
+    DataReq data = 1;
+}

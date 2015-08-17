@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message HeadImgs {
+    string img_url = 1;
+    string pc_url = 2;
+    string title = 3;
+    string subtitle = 4;
+    string btn_text = 5;
+}

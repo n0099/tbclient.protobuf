@@ -33,7 +33,6 @@ message DataReq {
     int32 smile_grade = 28;
     bool login = 30;
     string user_name = 32;
-    int32 no_un = 33;
     string portrait = 34;
     string email = 36;
     bool debug = 37;

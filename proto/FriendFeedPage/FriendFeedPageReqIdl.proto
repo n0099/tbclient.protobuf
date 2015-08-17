@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "FriendFeedPage/DataReq.proto";
-
-message FriendFeedPageReqIdl {
-    DataReq data = 1;
-}

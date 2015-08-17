@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message DataRes {
-    string ad_link_android = 1;
-    string ad_link_webview = 2;
-    string ad_link_ios = 3;
-    repeated string ad_pic = 4;
-}

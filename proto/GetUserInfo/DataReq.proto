@@ -4,5 +4,5 @@ import "CommonReq.proto";
 
 message DataReq {
     CommonReq common = 1;
-    uint64 uid = 2;
+    int64 uid = 2;
 }

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "ApplyGameCard/DataReq.proto";
-
-message ApplyGameCardReqIdl {
-    DataReq data = 1;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "FriendFeedPage/DataRes.proto";
-
-message FriendFeedPageResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

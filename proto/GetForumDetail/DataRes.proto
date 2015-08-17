@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "RecommendForumInfo.proto";
-import "SimpleThreadInfo.proto";
-
-message DataRes {
-    RecommendForumInfo forum_info = 1;
-    repeated SimpleThreadInfo thread_list = 2;
-}

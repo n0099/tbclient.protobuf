@@ -3,4 +3,6 @@ syntax = "proto3";
 message AnchorPower {
     int32 have_power = 1;
     string anchor_message = 2;
+    int32 can_add_live_post = 3;
+    int32 can_del_live_post = 4;
 }

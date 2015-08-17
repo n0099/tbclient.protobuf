@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "GameInfo.proto";
-
-message DataRes {
-    int32 has_more = 1;
-    repeated GameInfo game_list = 2;
-}

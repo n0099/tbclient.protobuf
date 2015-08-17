@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GiftInfo.proto";
-
-message DataRes {
-    GiftInfo gift_info = 1;
-}

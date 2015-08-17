@@ -5,4 +5,6 @@ message RecommendForum {
     string avatar = 2;
     string link = 3;
     string st_param = 4;
+    int32 member_num = 5;
+    int32 thread_num = 6;
 }

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "AddMyGameBatch/DataReq.proto";
-
-message AddMyGameBatchReqIdl {
-    DataReq data = 1;
-}

@@ -10,4 +10,9 @@ message Media {
     string vhsrc = 7;
     string src_pic = 8;
     string text = 9;
+    uint32 width = 10;
+    uint32 height = 11;
+    string bsize = 12;
+    uint32 during_time = 13;
+    uint32 e_type = 14;
 }

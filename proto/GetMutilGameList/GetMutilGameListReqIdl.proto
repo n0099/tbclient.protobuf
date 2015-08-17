@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetMutilGameList/DataReq.proto";
-
-message GetMutilGameListReqIdl {
-    DataReq data = 1;
-}

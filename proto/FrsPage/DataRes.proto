@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "AnchorInfo.proto";
 import "Anti.proto";
+import "FrsPage/ActivityHead.proto";
 import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
@@ -9,9 +10,12 @@ import "FrsPage/Group.proto";
 import "FrsPage/Info.proto";
 import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
+import "FrsTabInfo.proto";
+import "Novel.proto";
 import "Page.proto";
 import "ThreadInfo.proto";
 import "User.proto";
+import "ZhiBoInfoTW.proto";
 
 message DataRes {
     User user = 1;
@@ -35,4 +39,8 @@ message DataRes {
     string fortune_desc = 19;
     repeated StarEnter star_enter = 20;
     repeated ColorEgg color_egg = 21;
+    repeated FrsTabInfo frs_tab_info = 22;
+    ActivityHead activityhead = 23;
+    repeated ZhiBoInfoTW twzhibo_info = 24;
+    Novel novel = 25;
 }

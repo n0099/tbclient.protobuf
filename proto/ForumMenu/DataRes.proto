@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "ForumMenu/Menu.proto";
-
-message DataRes {
-    repeated Menu parent_menu = 1;
-    int32 update_time = 2;
-    int32 has_menu = 3;
-}

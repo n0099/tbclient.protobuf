@@ -1,5 +1,5 @@
 syntax = "proto3";
 
 message DataRes {
-    uint64 friend_id = 1;
+    int64 friend_id = 1;
 }

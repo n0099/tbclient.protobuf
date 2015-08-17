@@ -7,6 +7,7 @@ import "Media.proto";
 import "PostInfoContent.proto";
 import "Quote.proto";
 import "Voice.proto";
+import "ZhiBoInfoTW.proto";
 
 message PostInfoList {
     uint64 forum_id = 1;
@@ -26,7 +27,7 @@ message PostInfoList {
     repeated Abstract abstract_thread = 15;
     repeated Media media = 16;
     uint32 reply_num = 17;
-    uint64 user_id = 18;
+    int64 user_id = 18;
     string user_portrait = 19;
     string post_type = 20;
     LbsInfo lbs_info = 21;
@@ -34,4 +35,6 @@ message PostInfoList {
     repeated Voice voice_info = 23;
     AnchorInfo anchor_info = 24;
     int32 hide_post = 25;
+    uint64 thread_type = 26;
+    ZhiBoInfoTW twzhibo_info = 27;
 }

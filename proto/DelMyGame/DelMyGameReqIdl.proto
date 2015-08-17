@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "DelMyGame/DataReq.proto";
-
-message DelMyGameReqIdl {
-    DataReq data = 1;
-}

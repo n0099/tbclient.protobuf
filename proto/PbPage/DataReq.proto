@@ -32,4 +32,5 @@ message DataReq {
     string st_from = 27;
     string st_link = 28;
     int64 st_task = 30;
+    string query_word = 32;
 }

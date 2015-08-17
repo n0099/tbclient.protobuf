@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "GameAttr.proto";
 import "MparrProps.proto";
 import "NoticeMask.proto";
 import "ParrProps.proto";
@@ -10,7 +9,7 @@ import "Rpgoldicon.proto";
 import "WapRn.proto";
 
 message NewUser {
-    int32 user_id = 1;
+    int64 user_id = 1;
     string user_name = 2;
     int32 user_sex = 3;
     int32 user_status = 4;
@@ -40,7 +39,6 @@ message NewUser {
     repeated Rpgoldicon rpgoldicon = 28;
     string cdn_error = 30;
     string is_coreuser = 32;
-    GameAttr game_attr = 33;
     string is_interestman = 34;
     string free_flag = 36;
 }
