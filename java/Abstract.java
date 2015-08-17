@@ -81,7 +81,7 @@ public final class Abstract extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Abstract> {
+    public static final class Builder extends Message.Builder<Abstract> {
         public String during_time;
         public String link;
         public String src;
@@ -89,6 +89,9 @@ public final class Abstract extends Message {
         public Integer type;
         public String un;
         public String voice_md5;
+
+        public Builder() {
+        }
 
         public Builder(Abstract r2) {
             super(r2);

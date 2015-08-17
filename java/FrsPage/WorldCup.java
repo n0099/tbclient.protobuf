@@ -33,11 +33,14 @@ public final class WorldCup extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<WorldCup> {
+    public static final class Builder extends Message.Builder<WorldCup> {
         public WorldCupGame game;
         public WorldCupLottery lottery;
         public WorldCupNews news;
         public WorldCupPk pk;
+
+        public Builder() {
+        }
 
         public Builder(WorldCup worldCup) {
             super(worldCup);

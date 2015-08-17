@@ -21,8 +21,11 @@ public final class PbFloorReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PbFloorReqIdl> {
+    public static final class Builder extends Message.Builder<PbFloorReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(PbFloorReqIdl pbFloorReqIdl) {
             super(pbFloorReqIdl);

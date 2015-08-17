@@ -81,7 +81,7 @@ public final class TopCode extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<TopCode> {
+    public static final class Builder extends Message.Builder<TopCode> {
         public String code_link;
         public String game_link;
         public Integer get_type;
@@ -89,6 +89,9 @@ public final class TopCode extends Message {
         public String img_url;
         public String summary;
         public String surplusgift;
+
+        public Builder() {
+        }
 
         public Builder(TopCode topCode) {
             super(topCode);

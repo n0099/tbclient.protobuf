@@ -25,9 +25,12 @@ public final class SignInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SignInfo> {
+    public static final class Builder extends Message.Builder<SignInfo> {
         public SignForum forum_info;
         public SignUser user_info;
+
+        public Builder() {
+        }
 
         public Builder(SignInfo signInfo) {
             super(signInfo);

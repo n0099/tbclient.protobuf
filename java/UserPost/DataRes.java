@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.PostInfoList;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
@@ -13,10 +14,10 @@ public final class DataRes extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT64)
     public final Long logid;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
-    public final List<PostList> post_list;
+    public final List<PostInfoList> post_list;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long time;
-    public static final List<PostList> DEFAULT_POST_LIST = Collections.emptyList();
+    public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HIDE_POST = 0;
     public static final Long DEFAULT_TIME = 0L;
     public static final Long DEFAULT_CTIME = 0L;
@@ -65,12 +66,15 @@ public final class DataRes extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
         public Long ctime;
         public Integer hide_post;
         public Long logid;
-        public List<PostList> post_list;
+        public List<PostInfoList> post_list;
         public Long time;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);

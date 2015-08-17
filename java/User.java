@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -40,6 +41,8 @@ public final class User extends Message {
     public final Integer concern_num;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
+    @ProtoField(tag = a0.z, type = Message.Datatype.INT64)
+    public final Long friend_num;
     @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
     public final Integer gender;
     @ProtoField(label = Message.Label.REPEATED, tag = 50)
@@ -52,8 +55,8 @@ public final class User extends Message {
     public final Integer has_concerned;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Icon> iconinfo;
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer id;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long id;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String intro;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
@@ -92,7 +95,9 @@ public final class User extends Message {
     public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
-    @ProtoField(tag = 33, type = Message.Datatype.INT32)
+    @ProtoField(label = Message.Label.REPEATED, tag = a0.B)
+    public final List<SimpleUser> mute_user;
+    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.INT32)
     public final Integer my_like_num;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String name;
@@ -131,7 +136,7 @@ public final class User extends Message {
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer userhide;
     public static final Integer DEFAULT_IS_LOGIN = 0;
-    public static final Integer DEFAULT_ID = 0;
+    public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_NO_UN = 0;
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_USERHIDE = 0;
@@ -167,6 +172,8 @@ public final class User extends Message {
     public static final Integer DEFAULT_IS_GUANFANG = 0;
     public static final Integer DEFAULT_BOOKMARK_COUNT = 0;
     public static final Integer DEFAULT_BOOKMARK_NEW_COUNT = 0;
+    public static final List<SimpleUser> DEFAULT_MUTE_USER = Collections.emptyList();
+    public static final Long DEFAULT_FRIEND_NUM = 0L;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -426,9 +433,19 @@ public final class User extends Message {
             }
             if (builder.bookmark_new_count == null) {
                 this.bookmark_new_count = DEFAULT_BOOKMARK_NEW_COUNT;
-                return;
             } else {
                 this.bookmark_new_count = builder.bookmark_new_count;
+            }
+            if (builder.mute_user == null) {
+                this.mute_user = DEFAULT_MUTE_USER;
+            } else {
+                this.mute_user = immutableCopyOf(builder.mute_user);
+            }
+            if (builder.friend_num == null) {
+                this.friend_num = DEFAULT_FRIEND_NUM;
+                return;
+            } else {
+                this.friend_num = builder.friend_num;
                 return;
             }
         }
@@ -486,10 +503,12 @@ public final class User extends Message {
         this.is_guanfang = builder.is_guanfang;
         this.bookmark_count = builder.bookmark_count;
         this.bookmark_new_count = builder.bookmark_new_count;
+        this.mute_user = immutableCopyOf(builder.mute_user);
+        this.friend_num = builder.friend_num;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<User> {
+    public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public Balv balv;
         public String bawu_type;
@@ -499,13 +518,14 @@ public final class User extends Message {
         public Integer bookmark_new_count;
         public Integer concern_num;
         public Integer fans_num;
+        public Long friend_num;
         public Integer gender;
         public List<GiftInfo> gift_list;
         public Integer gift_num;
         public List<MyGroupInfo> groupList;
         public Integer has_concerned;
         public List<Icon> iconinfo;
-        public Integer id;
+        public Long id;
         public String intro;
         public String ios_bimg_format;
         public String ip;
@@ -525,6 +545,7 @@ public final class User extends Message {
         public Integer level_id;
         public List<LikeForumInfo> likeForum;
         public Integer meizhi_level;
+        public List<SimpleUser> mute_user;
         public Integer my_like_num;
         public String name;
         public String name_show;
@@ -544,6 +565,9 @@ public final class User extends Message {
         public List<UserPics> user_pics;
         public Integer user_type;
         public Integer userhide;
+
+        public Builder() {
+        }
 
         public Builder(User user) {
             super(user);
@@ -602,6 +626,8 @@ public final class User extends Message {
                 this.is_guanfang = user.is_guanfang;
                 this.bookmark_count = user.bookmark_count;
                 this.bookmark_new_count = user.bookmark_new_count;
+                this.mute_user = User.copyOf(user.mute_user);
+                this.friend_num = user.friend_num;
             }
         }
 

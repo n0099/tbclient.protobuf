@@ -21,8 +21,11 @@ public final class FineZanReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FineZanReqIdl> {
+    public static final class Builder extends Message.Builder<FineZanReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(FineZanReqIdl fineZanReqIdl) {
             super(fineZanReqIdl);

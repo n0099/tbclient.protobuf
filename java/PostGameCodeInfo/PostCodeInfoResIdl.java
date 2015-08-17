@@ -26,9 +26,12 @@ public final class PostCodeInfoResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PostCodeInfoResIdl> {
+    public static final class Builder extends Message.Builder<PostCodeInfoResIdl> {
         public ResData data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(PostCodeInfoResIdl postCodeInfoResIdl) {
             super(postCodeInfoResIdl);

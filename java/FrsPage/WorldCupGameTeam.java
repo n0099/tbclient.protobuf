@@ -36,9 +36,12 @@ public final class WorldCupGameTeam extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<WorldCupGameTeam> {
+    public static final class Builder extends Message.Builder<WorldCupGameTeam> {
         public String logo_url;
         public String name;
+
+        public Builder() {
+        }
 
         public Builder(WorldCupGameTeam worldCupGameTeam) {
             super(worldCupGameTeam);

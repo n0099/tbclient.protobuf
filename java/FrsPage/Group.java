@@ -36,9 +36,12 @@ public final class Group extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Group> {
+    public static final class Builder extends Message.Builder<Group> {
         public Integer group_count;
         public Integer hide_recommend_group;
+
+        public Builder() {
+        }
 
         public Builder(Group group) {
             super(group);

@@ -56,11 +56,14 @@ public final class SignatureData extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SignatureData> {
+    public static final class Builder extends Message.Builder<SignatureData> {
         public List<SignatureContent> content;
         public String fontColor;
         public String fontKeyName;
         public Integer signature_id;
+
+        public Builder() {
+        }
 
         public Builder(SignatureData signatureData) {
             super(signatureData);

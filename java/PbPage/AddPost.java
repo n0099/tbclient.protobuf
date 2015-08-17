@@ -81,7 +81,7 @@ public final class AddPost extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<AddPost> {
+    public static final class Builder extends Message.Builder<AddPost> {
         public Integer already_count;
         public Integer create_time;
         public String last_addition_content;
@@ -89,6 +89,9 @@ public final class AddPost extends Message {
         public String post_id;
         public Integer total_count;
         public String warn_msg;
+
+        public Builder() {
+        }
 
         public Builder(AddPost addPost) {
             super(addPost);

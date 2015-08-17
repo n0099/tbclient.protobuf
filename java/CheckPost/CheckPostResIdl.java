@@ -26,9 +26,12 @@ public final class CheckPostResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<CheckPostResIdl> {
+    public static final class Builder extends Message.Builder<CheckPostResIdl> {
         public ResData data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(CheckPostResIdl checkPostResIdl) {
             super(checkPostResIdl);

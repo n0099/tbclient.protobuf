@@ -36,9 +36,12 @@ public final class LikeForumInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<LikeForumInfo> {
+    public static final class Builder extends Message.Builder<LikeForumInfo> {
         public Long forum_id;
         public String forum_name;
+
+        public Builder() {
+        }
 
         public Builder(LikeForumInfo likeForumInfo) {
             super(likeForumInfo);

@@ -36,9 +36,12 @@ public final class CommonLocation extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<CommonLocation> {
+    public static final class Builder extends Message.Builder<CommonLocation> {
         public String distance;
         public Long time;
+
+        public Builder() {
+        }
 
         public Builder(CommonLocation commonLocation) {
             super(commonLocation);

@@ -21,8 +21,11 @@ public final class ReplyFriendReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ReplyFriendReqIdl> {
+    public static final class Builder extends Message.Builder<ReplyFriendReqIdl> {
         public ReqData data;
+
+        public Builder() {
+        }
 
         public Builder(ReplyFriendReqIdl replyFriendReqIdl) {
             super(replyFriendReqIdl);

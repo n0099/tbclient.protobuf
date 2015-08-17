@@ -26,9 +26,12 @@ public final class GetMyPostResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetMyPostResIdl> {
+    public static final class Builder extends Message.Builder<GetMyPostResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(GetMyPostResIdl getMyPostResIdl) {
             super(getMyPostResIdl);

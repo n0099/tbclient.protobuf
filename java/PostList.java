@@ -10,8 +10,8 @@ public final class PostList extends Message {
     public final List<Abstract> _abstract;
     @ProtoField(tag = 2)
     public final User author;
-    @ProtoField(tag = 7, type = Message.Datatype.INT32)
-    public final Integer author_id;
+    @ProtoField(tag = 7, type = Message.Datatype.INT64)
+    public final Long author_id;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
@@ -25,7 +25,7 @@ public final class PostList extends Message {
     public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
     public static final List<MediaNum> DEFAULT_MEDIA_NUM = Collections.emptyList();
     public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
-    public static final Integer DEFAULT_AUTHOR_ID = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
 
     /* synthetic */ PostList(Builder builder, boolean z, PostList postList) {
         this(builder, z);
@@ -78,14 +78,17 @@ public final class PostList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PostList> {
+    public static final class Builder extends Message.Builder<PostList> {
         public List<Abstract> _abstract;
         public User author;
-        public Integer author_id;
+        public Long author_id;
         public Long id;
         public List<Media> media;
         public List<MediaNum> media_num;
         public List<Voice> voice_info;
+
+        public Builder() {
+        }
 
         public Builder(PostList postList) {
             super(postList);

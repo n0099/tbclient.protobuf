@@ -63,12 +63,15 @@ public final class Fans extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Fans> {
+    public static final class Builder extends Message.Builder<Fans> {
         public Integer is_get;
         public Integer left_time;
         public Integer num;
         public Integer open;
         public Integer start_time;
+
+        public Builder() {
+        }
 
         public Builder(Fans fans) {
             super(fans);

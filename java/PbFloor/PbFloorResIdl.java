@@ -26,9 +26,12 @@ public final class PbFloorResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PbFloorResIdl> {
+    public static final class Builder extends Message.Builder<PbFloorResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(PbFloorResIdl pbFloorResIdl) {
             super(pbFloorResIdl);

@@ -36,9 +36,12 @@ public final class Rpgoldicon extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Rpgoldicon> {
+    public static final class Builder extends Message.Builder<Rpgoldicon> {
         public String key;
         public String value;
+
+        public Builder() {
+        }
 
         public Builder(Rpgoldicon rpgoldicon) {
             super(rpgoldicon);

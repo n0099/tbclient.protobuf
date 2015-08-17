@@ -245,7 +245,7 @@ public final class RecommendGame extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<RecommendGame> {
+    public static final class Builder extends Message.Builder<RecommendGame> {
         public String andr_pk_name;
         public String apple_id;
         public String bundle_id;
@@ -271,6 +271,9 @@ public final class RecommendGame extends Message {
         public Integer star;
         public String superscript_color;
         public String version;
+
+        public Builder() {
+        }
 
         public Builder(RecommendGame recommendGame) {
             super(recommendGame);

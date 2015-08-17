@@ -261,7 +261,7 @@ public final class CommonReq extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<CommonReq> {
+    public static final class Builder extends Message.Builder<CommonReq> {
         public String BDUSS;
         public String _client_id;
         public Integer _client_type;
@@ -289,6 +289,9 @@ public final class CommonReq extends Message {
         public String smallflow;
         public String subapp_type;
         public String tbs;
+
+        public Builder() {
+        }
 
         public Builder(CommonReq commonReq) {
             super(commonReq);

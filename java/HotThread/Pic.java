@@ -45,10 +45,13 @@ public final class Pic extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Pic> {
+    public static final class Builder extends Message.Builder<Pic> {
         public String big_pic;
         public String small_pic;
         public String water_pic;
+
+        public Builder() {
+        }
 
         public Builder(Pic pic) {
             super(pic);

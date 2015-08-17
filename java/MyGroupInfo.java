@@ -45,10 +45,13 @@ public final class MyGroupInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<MyGroupInfo> {
+    public static final class Builder extends Message.Builder<MyGroupInfo> {
         public Long group_id;
         public String group_name;
         public String portrait;
+
+        public Builder() {
+        }
 
         public Builder(MyGroupInfo myGroupInfo) {
             super(myGroupInfo);

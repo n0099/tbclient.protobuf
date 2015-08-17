@@ -26,9 +26,12 @@ public final class ProfileResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ProfileResIdl> {
+    public static final class Builder extends Message.Builder<ProfileResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(ProfileResIdl profileResIdl) {
             super(profileResIdl);

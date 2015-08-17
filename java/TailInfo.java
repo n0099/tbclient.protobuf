@@ -54,11 +54,14 @@ public final class TailInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<TailInfo> {
+    public static final class Builder extends Message.Builder<TailInfo> {
         public String content;
         public String icon_link;
         public String icon_url;
         public Integer tail_type;
+
+        public Builder() {
+        }
 
         public Builder(TailInfo tailInfo) {
             super(tailInfo);

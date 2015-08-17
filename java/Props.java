@@ -155,7 +155,7 @@ public final class Props extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Props> {
+    public static final class Builder extends Message.Builder<Props> {
         public String end_time;
         public String expired_notify;
         public String expiring_notify;
@@ -171,6 +171,9 @@ public final class Props extends Message {
         public String title;
         public Integer update_time;
         public String used_status;
+
+        public Builder() {
+        }
 
         public Builder(Props props) {
             super(props);

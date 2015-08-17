@@ -54,11 +54,14 @@ public final class Position extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Position> {
+    public static final class Builder extends Message.Builder<Position> {
         public Integer card;
         public Integer frs;
         public Integer home;
         public Integer pb;
+
+        public Builder() {
+        }
 
         public Builder(Position position) {
             super(position);

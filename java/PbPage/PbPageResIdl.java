@@ -26,9 +26,12 @@ public final class PbPageResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PbPageResIdl> {
+    public static final class Builder extends Message.Builder<PbPageResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(PbPageResIdl pbPageResIdl) {
             super(pbPageResIdl);

@@ -36,9 +36,12 @@ public final class WorldCupNews extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<WorldCupNews> {
+    public static final class Builder extends Message.Builder<WorldCupNews> {
         public String title;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(WorldCupNews worldCupNews) {
             super(worldCupNews);

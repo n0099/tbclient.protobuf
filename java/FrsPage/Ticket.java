@@ -36,9 +36,12 @@ public final class Ticket extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Ticket> {
+    public static final class Builder extends Message.Builder<Ticket> {
         public Integer time;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(Ticket ticket) {
             super(ticket);

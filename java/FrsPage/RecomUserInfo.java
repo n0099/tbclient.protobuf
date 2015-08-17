@@ -63,13 +63,16 @@ public final class RecomUserInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<RecomUserInfo> {
+    public static final class Builder extends Message.Builder<RecomUserInfo> {
         public List<CommonForum> common_forum;
         public CommonDistance distanceinfo;
         public String message;
         public String pos_name;
         public List<PostInfo> post_info;
         public UserInfo user_info;
+
+        public Builder() {
+        }
 
         public Builder(RecomUserInfo recomUserInfo) {
             super(recomUserInfo);

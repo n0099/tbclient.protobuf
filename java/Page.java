@@ -126,7 +126,7 @@ public final class Page extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Page> {
+    public static final class Builder extends Message.Builder<Page> {
         public Integer cur_good_id;
         public Integer current_page;
         public Integer has_more;
@@ -139,6 +139,9 @@ public final class Page extends Message {
         public Integer total_count;
         public Integer total_num;
         public Integer total_page;
+
+        public Builder() {
+        }
 
         public Builder(Page page) {
             super(page);

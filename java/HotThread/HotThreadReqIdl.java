@@ -21,8 +21,11 @@ public final class HotThreadReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<HotThreadReqIdl> {
+    public static final class Builder extends Message.Builder<HotThreadReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(HotThreadReqIdl hotThreadReqIdl) {
             super(hotThreadReqIdl);

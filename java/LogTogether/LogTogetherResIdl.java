@@ -22,8 +22,11 @@ public final class LogTogetherResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<LogTogetherResIdl> {
+    public static final class Builder extends Message.Builder<LogTogetherResIdl> {
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(LogTogetherResIdl logTogetherResIdl) {
             super(logTogetherResIdl);

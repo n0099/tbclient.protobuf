@@ -36,9 +36,12 @@ public final class SignatureContent extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SignatureContent> {
+    public static final class Builder extends Message.Builder<SignatureContent> {
         public String text;
         public Integer type;
+
+        public Builder() {
+        }
 
         public Builder(SignatureContent signatureContent) {
             super(signatureContent);

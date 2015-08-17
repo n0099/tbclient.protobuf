@@ -5,16 +5,24 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class Media extends Message {
     public static final String DEFAULT_BIG_PIC = "";
+    public static final String DEFAULT_BSIZE = "";
     public static final String DEFAULT_SMALL_PIC = "";
     public static final String DEFAULT_SRC_PIC = "";
     public static final String DEFAULT_TEXT = "";
-    public static final Integer DEFAULT_TYPE = 0;
     public static final String DEFAULT_VHSRC = "";
     public static final String DEFAULT_VPIC = "";
     public static final String DEFAULT_VSRC = "";
     public static final String DEFAULT_WATER_PIC = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String big_pic;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String bsize;
+    @ProtoField(tag = 13, type = Message.Datatype.UINT32)
+    public final Integer during_time;
+    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
+    public final Integer e_type;
+    @ProtoField(tag = 11, type = Message.Datatype.UINT32)
+    public final Integer height;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String small_pic;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -31,6 +39,13 @@ public final class Media extends Message {
     public final String vsrc;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String water_pic;
+    @ProtoField(tag = 10, type = Message.Datatype.UINT32)
+    public final Integer width;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_WIDTH = 0;
+    public static final Integer DEFAULT_HEIGHT = 0;
+    public static final Integer DEFAULT_DURING_TIME = 0;
+    public static final Integer DEFAULT_E_TYPE = 0;
 
     /* synthetic */ Media(Builder builder, boolean z, Media media) {
         this(builder, z);
@@ -81,9 +96,34 @@ public final class Media extends Message {
             }
             if (builder.text == null) {
                 this.text = "";
-                return;
             } else {
                 this.text = builder.text;
+            }
+            if (builder.width == null) {
+                this.width = DEFAULT_WIDTH;
+            } else {
+                this.width = builder.width;
+            }
+            if (builder.height == null) {
+                this.height = DEFAULT_HEIGHT;
+            } else {
+                this.height = builder.height;
+            }
+            if (builder.bsize == null) {
+                this.bsize = "";
+            } else {
+                this.bsize = builder.bsize;
+            }
+            if (builder.during_time == null) {
+                this.during_time = DEFAULT_DURING_TIME;
+            } else {
+                this.during_time = builder.during_time;
+            }
+            if (builder.e_type == null) {
+                this.e_type = DEFAULT_E_TYPE;
+                return;
+            } else {
+                this.e_type = builder.e_type;
                 return;
             }
         }
@@ -96,11 +136,20 @@ public final class Media extends Message {
         this.vhsrc = builder.vhsrc;
         this.src_pic = builder.src_pic;
         this.text = builder.text;
+        this.width = builder.width;
+        this.height = builder.height;
+        this.bsize = builder.bsize;
+        this.during_time = builder.during_time;
+        this.e_type = builder.e_type;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Media> {
+    public static final class Builder extends Message.Builder<Media> {
         public String big_pic;
+        public String bsize;
+        public Integer during_time;
+        public Integer e_type;
+        public Integer height;
         public String small_pic;
         public String src_pic;
         public String text;
@@ -109,6 +158,10 @@ public final class Media extends Message {
         public String vpic;
         public String vsrc;
         public String water_pic;
+        public Integer width;
+
+        public Builder() {
+        }
 
         public Builder(Media media) {
             super(media);
@@ -122,6 +175,11 @@ public final class Media extends Message {
                 this.vhsrc = media.vhsrc;
                 this.src_pic = media.src_pic;
                 this.text = media.text;
+                this.width = media.width;
+                this.height = media.height;
+                this.bsize = media.bsize;
+                this.during_time = media.during_time;
+                this.e_type = media.e_type;
             }
         }
 

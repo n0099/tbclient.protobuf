@@ -8,7 +8,7 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_UID = 0L;
     @ProtoField(tag = 1)
     public final CommonReq common;
-    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long uid;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
@@ -32,9 +32,12 @@ public final class DataReq extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long uid;
+
+        public Builder() {
+        }
 
         public Builder(DataReq dataReq) {
             super(dataReq);

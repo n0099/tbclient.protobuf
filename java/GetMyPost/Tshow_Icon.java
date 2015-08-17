@@ -45,10 +45,13 @@ public final class Tshow_Icon extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Tshow_Icon> {
+    public static final class Builder extends Message.Builder<Tshow_Icon> {
         public String icon;
         public String name;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(Tshow_Icon tshow_Icon) {
             super(tshow_Icon);

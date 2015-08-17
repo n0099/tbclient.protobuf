@@ -37,6 +37,8 @@ public final class PbContent extends Message {
     public final Integer during_time;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String dynamic;
+    @ProtoField(tag = 24, type = Message.Datatype.UINT32)
+    public final Integer e_type;
     @ProtoField(tag = 19, type = Message.Datatype.UINT32)
     public final Integer height;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -59,7 +61,7 @@ public final class PbContent extends Message {
     public final String text;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer type;
-    @ProtoField(tag = 15, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 15, type = Message.Datatype.INT64)
     public final Long uid;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String voice_md5;
@@ -72,6 +74,7 @@ public final class PbContent extends Message {
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
     public static final Integer DEFAULT_IS_NATIVE_APP = 0;
+    public static final Integer DEFAULT_E_TYPE = 0;
 
     /* synthetic */ PbContent(Builder builder, boolean z, PbContent pbContent) {
         this(builder, z);
@@ -191,7 +194,13 @@ public final class PbContent extends Message {
                 this.is_native_app = builder.is_native_app;
             }
             this.native_app = builder.native_app;
-            return;
+            if (builder.e_type == null) {
+                this.e_type = DEFAULT_E_TYPE;
+                return;
+            } else {
+                this.e_type = builder.e_type;
+                return;
+            }
         }
         this.type = builder.type;
         this.text = builder.text;
@@ -216,10 +225,11 @@ public final class PbContent extends Message {
         this.phonetype = builder.phonetype;
         this.is_native_app = builder.is_native_app;
         this.native_app = builder.native_app;
+        this.e_type = builder.e_type;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PbContent> {
+    public static final class Builder extends Message.Builder<PbContent> {
         public String _static;
         public String big_cdn_src;
         public String big_size;
@@ -229,6 +239,7 @@ public final class PbContent extends Message {
         public String cdn_src;
         public Integer during_time;
         public String dynamic;
+        public Integer e_type;
         public Integer height;
         public String imgtype;
         public Integer is_native_app;
@@ -243,6 +254,9 @@ public final class PbContent extends Message {
         public Long uid;
         public String voice_md5;
         public Integer width;
+
+        public Builder() {
+        }
 
         public Builder(PbContent pbContent) {
             super(pbContent);
@@ -270,6 +284,7 @@ public final class PbContent extends Message {
                 this.phonetype = pbContent.phonetype;
                 this.is_native_app = pbContent.is_native_app;
                 this.native_app = pbContent.native_app;
+                this.e_type = pbContent.e_type;
             }
         }
 

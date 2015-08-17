@@ -68,13 +68,16 @@ public final class SimpleThreadInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SimpleThreadInfo> {
+    public static final class Builder extends Message.Builder<SimpleThreadInfo> {
         public List<Abstract> _abstract;
         public Integer last_time_int;
         public Integer reply_num;
         public Long tid;
         public String title;
         public Zan zan;
+
+        public Builder() {
+        }
 
         public Builder(SimpleThreadInfo simpleThreadInfo) {
             super(simpleThreadInfo);

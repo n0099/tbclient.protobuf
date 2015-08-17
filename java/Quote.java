@@ -63,12 +63,15 @@ public final class Quote extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Quote> {
+    public static final class Builder extends Message.Builder<Quote> {
         public String content;
         public String ip;
         public Long post_id;
         public Long user_id;
         public String user_name;
+
+        public Builder() {
+        }
 
         public Builder(Quote quote) {
             super(quote);

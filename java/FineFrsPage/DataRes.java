@@ -65,12 +65,15 @@ public final class DataRes extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
         public List<EverydayThread> everyday_thread;
         public List<FineBanner> fine_banner;
         public Integer has_more;
         public List<Hot_Thread> hot_thread;
         public List<String> tag_list;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);

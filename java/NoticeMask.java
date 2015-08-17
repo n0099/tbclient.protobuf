@@ -36,9 +36,12 @@ public final class NoticeMask extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<NoticeMask> {
+    public static final class Builder extends Message.Builder<NoticeMask> {
         public Integer attr_type;
         public String attr_value;
+
+        public Builder() {
+        }
 
         public Builder(NoticeMask noticeMask) {
             super(noticeMask);

@@ -63,12 +63,15 @@ public final class friendInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<friendInfo> {
+    public static final class Builder extends Message.Builder<friendInfo> {
         public String key;
         public String portrait;
         public String quanpin;
         public Long user_id;
         public String user_name;
+
+        public Builder() {
+        }
 
         public Builder(friendInfo friendinfo) {
             super(friendinfo);

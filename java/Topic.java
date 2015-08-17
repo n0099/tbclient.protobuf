@@ -45,10 +45,13 @@ public final class Topic extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Topic> {
+    public static final class Builder extends Message.Builder<Topic> {
         public Integer is_lpost;
         public String link;
         public Integer topic_type;
+
+        public Builder() {
+        }
 
         public Builder(Topic topic) {
             super(topic);

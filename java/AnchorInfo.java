@@ -12,8 +12,8 @@ public final class AnchorInfo extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_PUBLISHERNAME = "";
     public static final String DEFAULT_PUBLISHERPORTRAIT = "";
-    @ProtoField(tag = 5, type = Message.Datatype.INT32)
-    public final Integer author_id;
+    @ProtoField(tag = 5, type = Message.Datatype.INT64)
+    public final Long author_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String author_name;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
@@ -38,8 +38,8 @@ public final class AnchorInfo extends Message {
     public final String name;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String portrait;
-    @ProtoField(tag = 13, type = Message.Datatype.INT32)
-    public final Integer publisherId;
+    @ProtoField(tag = 13, type = Message.Datatype.INT64)
+    public final Long publisherId;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String publisherName;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -48,16 +48,21 @@ public final class AnchorInfo extends Message {
     public final Integer start_time;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer status;
+    @ProtoField(tag = 20)
+    public final ZhiBoInfoTW twzhibo_info;
+    @ProtoField(tag = 19, type = Message.Datatype.INT32)
+    public final Integer type;
     public static final Integer DEFAULT_START_TIME = 0;
     public static final Integer DEFAULT_STATUS = 0;
-    public static final Integer DEFAULT_AUTHOR_ID = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
     public static final Integer DEFAULT_LISTENERS = 0;
     public static final Integer DEFAULT_LIKERS = 0;
     public static final Integer DEFAULT_GROUP_ID = 0;
-    public static final Integer DEFAULT_PUBLISHERID = 0;
+    public static final Long DEFAULT_PUBLISHERID = 0L;
     public static final Integer DEFAULT_FROM_TYPE = 0;
     public static final Integer DEFAULT_IS_VIP = 0;
     public static final Integer DEFAULT_LABEL_ID = 0;
+    public static final Integer DEFAULT_TYPE = 0;
 
     /* synthetic */ AnchorInfo(Builder builder, boolean z, AnchorInfo anchorInfo) {
         this(builder, z);
@@ -153,11 +158,16 @@ public final class AnchorInfo extends Message {
             }
             if (builder.label_name == null) {
                 this.label_name = "";
-                return;
             } else {
                 this.label_name = builder.label_name;
-                return;
             }
+            if (builder.type == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = builder.type;
+            }
+            this.twzhibo_info = builder.twzhibo_info;
+            return;
         }
         this.portrait = builder.portrait;
         this.name = builder.name;
@@ -177,11 +187,13 @@ public final class AnchorInfo extends Message {
         this.is_vip = builder.is_vip;
         this.label_id = builder.label_id;
         this.label_name = builder.label_name;
+        this.type = builder.type;
+        this.twzhibo_info = builder.twzhibo_info;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<AnchorInfo> {
-        public Integer author_id;
+    public static final class Builder extends Message.Builder<AnchorInfo> {
+        public Long author_id;
         public String author_name;
         public String forumName;
         public Integer from_type;
@@ -194,11 +206,16 @@ public final class AnchorInfo extends Message {
         public Integer listeners;
         public String name;
         public String portrait;
-        public Integer publisherId;
+        public Long publisherId;
         public String publisherName;
         public String publisherPortrait;
         public Integer start_time;
         public Integer status;
+        public ZhiBoInfoTW twzhibo_info;
+        public Integer type;
+
+        public Builder() {
+        }
 
         public Builder(AnchorInfo anchorInfo) {
             super(anchorInfo);
@@ -221,6 +238,8 @@ public final class AnchorInfo extends Message {
                 this.is_vip = anchorInfo.is_vip;
                 this.label_id = anchorInfo.label_id;
                 this.label_name = anchorInfo.label_name;
+                this.type = anchorInfo.type;
+                this.twzhibo_info = anchorInfo.twzhibo_info;
             }
         }
 

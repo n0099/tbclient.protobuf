@@ -21,8 +21,11 @@ public final class ProfileReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ProfileReqIdl> {
+    public static final class Builder extends Message.Builder<ProfileReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(ProfileReqIdl profileReqIdl) {
             super(profileReqIdl);

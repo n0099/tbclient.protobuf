@@ -45,10 +45,13 @@ public final class Portrait extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Portrait> {
+    public static final class Builder extends Message.Builder<Portrait> {
         public Integer end_time;
         public Integer props_id;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(Portrait portrait) {
             super(portrait);

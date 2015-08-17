@@ -21,8 +21,11 @@ public final class GetSuggestionByAddrNameReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetSuggestionByAddrNameReqIdl> {
+    public static final class Builder extends Message.Builder<GetSuggestionByAddrNameReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(GetSuggestionByAddrNameReqIdl getSuggestionByAddrNameReqIdl) {
             super(getSuggestionByAddrNameReqIdl);

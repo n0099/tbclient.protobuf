@@ -57,11 +57,14 @@ public final class ResData extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ResData> {
+    public static final class Builder extends Message.Builder<ResData> {
         public List<AdList> ad_list;
         public Integer count;
         public Integer has_more;
         public List<GameInfo> single_game_list;
+
+        public Builder() {
+        }
 
         public Builder(ResData resData) {
             super(resData);

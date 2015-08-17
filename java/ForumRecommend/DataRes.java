@@ -111,7 +111,7 @@ public final class DataRes extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public Integer is_login;
         public Integer is_mem;
@@ -122,6 +122,9 @@ public final class DataRes extends Message {
         public List<NewRecommend> new_recommend;
         public List<RecommendForumInfo> recommend_forum_info;
         public Integer time;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);

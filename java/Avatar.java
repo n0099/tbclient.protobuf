@@ -36,9 +36,12 @@ public final class Avatar extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Avatar> {
+    public static final class Builder extends Message.Builder<Avatar> {
         public String pic;
         public String pos;
+
+        public Builder() {
+        }
 
         public Builder(Avatar avatar) {
             super(avatar);

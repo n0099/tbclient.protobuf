@@ -36,9 +36,12 @@ public final class TopNews extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<TopNews> {
+    public static final class Builder extends Message.Builder<TopNews> {
         public String news_link;
         public String summary;
+
+        public Builder() {
+        }
 
         public Builder(TopNews topNews) {
             super(topNews);

@@ -26,9 +26,12 @@ public final class ForumRecommendResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ForumRecommendResIdl> {
+    public static final class Builder extends Message.Builder<ForumRecommendResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(ForumRecommendResIdl forumRecommendResIdl) {
             super(forumRecommendResIdl);

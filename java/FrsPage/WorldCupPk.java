@@ -54,11 +54,14 @@ public final class WorldCupPk extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<WorldCupPk> {
+    public static final class Builder extends Message.Builder<WorldCupPk> {
         public String prize_url;
         public String sum_bonus;
         public String sum_game;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(WorldCupPk worldCupPk) {
             super(worldCupPk);

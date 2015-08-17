@@ -243,7 +243,7 @@ public final class Thread_Info extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Thread_Info> {
+    public static final class Builder extends Message.Builder<Thread_Info> {
         public String _abstract;
         public Integer comment_num;
         public Integer hotcount;
@@ -270,6 +270,9 @@ public final class Thread_Info extends Message {
         public Integer view_num;
         public Voice_Info voice_info;
         public Zan zan;
+
+        public Builder() {
+        }
 
         public Builder(Thread_Info thread_Info) {
             super(thread_Info);

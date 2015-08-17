@@ -36,9 +36,12 @@ public final class Size extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Size> {
+    public static final class Builder extends Message.Builder<Size> {
         public Integer height;
         public Integer width;
+
+        public Builder() {
+        }
 
         public Builder(Size size) {
             super(size);

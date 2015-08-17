@@ -11,8 +11,8 @@ public final class User_Info extends Message {
     public final Balv balv;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer gender;
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer id;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long id;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_login;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -32,7 +32,7 @@ public final class User_Info extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer userhide;
     public static final Integer DEFAULT_IS_LOGIN = 0;
-    public static final Integer DEFAULT_ID = 0;
+    public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_GENDER = 0;
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_IS_MANAGER = 0;
@@ -120,10 +120,10 @@ public final class User_Info extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<User_Info> {
+    public static final class Builder extends Message.Builder<User_Info> {
         public Balv balv;
         public Integer gender;
-        public Integer id;
+        public Long id;
         public Integer is_login;
         public Integer is_manager;
         public Integer is_mem;
@@ -133,6 +133,9 @@ public final class User_Info extends Message {
         public String portrait;
         public Integer type;
         public Integer userhide;
+
+        public Builder() {
+        }
 
         public Builder(User_Info user_Info) {
             super(user_Info);

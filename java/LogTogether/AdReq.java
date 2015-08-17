@@ -162,7 +162,7 @@ public final class AdReq extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<AdReq> {
+    public static final class Builder extends Message.Builder<AdReq> {
         public String da_cpid;
         public String da_ext_info;
         public Integer da_fid;
@@ -179,6 +179,9 @@ public final class AdReq extends Message {
         public String da_user_id;
         public String da_verify;
         public String ext;
+
+        public Builder() {
+        }
 
         public Builder(AdReq adReq) {
             super(adReq);

@@ -56,11 +56,14 @@ public final class GameCategory extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GameCategory> {
+    public static final class Builder extends Message.Builder<GameCategory> {
         public List<String> game_list;
         public String icon_url;
         public Integer id;
         public String name;
+
+        public Builder() {
+        }
 
         public Builder(GameCategory gameCategory) {
             super(gameCategory);

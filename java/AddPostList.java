@@ -56,11 +56,14 @@ public final class AddPostList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<AddPostList> {
+    public static final class Builder extends Message.Builder<AddPostList> {
         public List<SubPostList> add_post_list;
         public Long pid;
         public Integer total_count;
         public Integer total_num;
+
+        public Builder() {
+        }
 
         public Builder(AddPostList addPostList) {
             super(addPostList);

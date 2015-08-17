@@ -72,13 +72,16 @@ public final class StarEnter extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<StarEnter> {
+    public static final class Builder extends Message.Builder<StarEnter> {
         public String icon;
         public Integer time;
         public String title;
         public Integer type;
         public String url;
         public Integer weight;
+
+        public Builder() {
+        }
 
         public Builder(StarEnter starEnter) {
             super(starEnter);

@@ -36,9 +36,12 @@ public final class AdList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<AdList> {
+    public static final class Builder extends Message.Builder<AdList> {
         public String img_url;
         public String link_url;
+
+        public Builder() {
+        }
 
         public Builder(AdList adList) {
             super(adList);

@@ -26,9 +26,12 @@ public final class ReplyFriendResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ReplyFriendResIdl> {
+    public static final class Builder extends Message.Builder<ReplyFriendResIdl> {
         public ResData data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(ReplyFriendResIdl replyFriendResIdl) {
             super(replyFriendResIdl);

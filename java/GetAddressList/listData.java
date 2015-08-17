@@ -38,9 +38,12 @@ public final class listData extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<listData> {
+    public static final class Builder extends Message.Builder<listData> {
         public List<friendList> friend_list;
         public String key;
+
+        public Builder() {
+        }
 
         public Builder(listData listdata) {
             super(listdata);

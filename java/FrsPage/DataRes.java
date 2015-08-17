@@ -6,12 +6,17 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.AnchorInfo;
 import tbclient.Anti;
+import tbclient.FrsTabInfo;
+import tbclient.Novel;
 import tbclient.Page;
 import tbclient.ThreadInfo;
 import tbclient.User;
+import tbclient.ZhiBoInfoTW;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_FORTUNE_DESC = "";
+    @ProtoField(tag = 23)
+    public final ActivityHead activityhead;
     @ProtoField(tag = 5)
     public final Anti anti;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
@@ -28,6 +33,8 @@ public final class DataRes extends Message {
     public final List<AnchorInfo> forum_livegroup_list;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
+    @ProtoField(label = Message.Label.REPEATED, tag = 22)
+    public final List<FrsTabInfo> frs_tab_info;
     @ProtoField(tag = 18)
     public final GconAccount gcon_account;
     @ProtoField(tag = 6)
@@ -38,6 +45,8 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
     public final Long logid;
+    @ProtoField(tag = 25)
+    public final Novel novel;
     @ProtoField(tag = 4)
     public final Page page;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -50,6 +59,8 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> thread_list;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer time;
+    @ProtoField(label = Message.Label.REPEATED, tag = 24)
+    public final List<ZhiBoInfoTW> twzhibo_info;
     @ProtoField(tag = 1)
     public final User user;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
@@ -66,6 +77,8 @@ public final class DataRes extends Message {
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
     public static final List<StarEnter> DEFAULT_STAR_ENTER = Collections.emptyList();
     public static final List<ColorEgg> DEFAULT_COLOR_EGG = Collections.emptyList();
+    public static final List<FrsTabInfo> DEFAULT_FRS_TAB_INFO = Collections.emptyList();
+    public static final List<ZhiBoInfoTW> DEFAULT_TWZHIBO_INFO = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -144,11 +157,22 @@ public final class DataRes extends Message {
             }
             if (builder.color_egg == null) {
                 this.color_egg = DEFAULT_COLOR_EGG;
-                return;
             } else {
                 this.color_egg = immutableCopyOf(builder.color_egg);
-                return;
             }
+            if (builder.frs_tab_info == null) {
+                this.frs_tab_info = DEFAULT_FRS_TAB_INFO;
+            } else {
+                this.frs_tab_info = immutableCopyOf(builder.frs_tab_info);
+            }
+            this.activityhead = builder.activityhead;
+            if (builder.twzhibo_info == null) {
+                this.twzhibo_info = DEFAULT_TWZHIBO_INFO;
+            } else {
+                this.twzhibo_info = immutableCopyOf(builder.twzhibo_info);
+            }
+            this.novel = builder.novel;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -171,10 +195,15 @@ public final class DataRes extends Message {
         this.fortune_desc = builder.fortune_desc;
         this.star_enter = immutableCopyOf(builder.star_enter);
         this.color_egg = immutableCopyOf(builder.color_egg);
+        this.frs_tab_info = immutableCopyOf(builder.frs_tab_info);
+        this.activityhead = builder.activityhead;
+        this.twzhibo_info = immutableCopyOf(builder.twzhibo_info);
+        this.novel = builder.novel;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
+        public ActivityHead activityhead;
         public Anti anti;
         public List<ColorEgg> color_egg;
         public Integer ctime;
@@ -183,19 +212,25 @@ public final class DataRes extends Message {
         public ForumInfo forum;
         public List<AnchorInfo> forum_livegroup_list;
         public StarInfo frs_star;
+        public List<FrsTabInfo> frs_tab_info;
         public GconAccount gcon_account;
         public Group group;
         public Info info;
         public Integer is_new_url;
         public Long logid;
+        public Novel novel;
         public Page page;
         public Integer server_time;
         public List<StarEnter> star_enter;
         public List<Long> thread_id_list;
         public List<ThreadInfo> thread_list;
         public Integer time;
+        public List<ZhiBoInfoTW> twzhibo_info;
         public User user;
         public List<User> user_list;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);
@@ -221,6 +256,10 @@ public final class DataRes extends Message {
                 this.fortune_desc = dataRes.fortune_desc;
                 this.star_enter = DataRes.copyOf(dataRes.star_enter);
                 this.color_egg = DataRes.copyOf(dataRes.color_egg);
+                this.frs_tab_info = DataRes.copyOf(dataRes.frs_tab_info);
+                this.activityhead = dataRes.activityhead;
+                this.twzhibo_info = DataRes.copyOf(dataRes.twzhibo_info);
+                this.novel = dataRes.novel;
             }
         }
 

@@ -45,10 +45,13 @@ public final class LbsInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<LbsInfo> {
+    public static final class Builder extends Message.Builder<LbsInfo> {
         public String distance;
         public Integer is_hide;
         public Long time;
+
+        public Builder() {
+        }
 
         public Builder(LbsInfo lbsInfo) {
             super(lbsInfo);

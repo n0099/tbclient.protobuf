@@ -54,11 +54,14 @@ public final class RankInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<RankInfo> {
+    public static final class Builder extends Message.Builder<RankInfo> {
         public Double dir_rate;
         public Integer member_count;
         public Integer sign_count;
         public Integer sign_rank;
+
+        public Builder() {
+        }
 
         public Builder(RankInfo rankInfo) {
             super(rankInfo);

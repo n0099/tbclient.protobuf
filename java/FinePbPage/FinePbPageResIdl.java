@@ -26,9 +26,12 @@ public final class FinePbPageResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FinePbPageResIdl> {
+    public static final class Builder extends Message.Builder<FinePbPageResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(FinePbPageResIdl finePbPageResIdl) {
             super(finePbPageResIdl);

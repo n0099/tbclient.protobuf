@@ -126,7 +126,7 @@ public final class Level extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Level> {
+    public static final class Builder extends Message.Builder<Level> {
         public Integer end_time;
         public String expired_notify;
         public String expiring_notify;
@@ -139,6 +139,9 @@ public final class Level extends Message {
         public String props_type;
         public Integer update_time;
         public String used_status;
+
+        public Builder() {
+        }
 
         public Builder(Level level) {
             super(level);

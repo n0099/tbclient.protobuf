@@ -19,8 +19,8 @@ public final class Post extends Message {
     public final List<String> arr_video;
     @ProtoField(tag = 23)
     public final User author;
-    @ProtoField(tag = 19, type = Message.Datatype.INT32)
-    public final Integer author_id;
+    @ProtoField(tag = 19, type = Message.Datatype.INT64)
+    public final Long author_id;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String bimg_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
@@ -43,6 +43,8 @@ public final class Post extends Message {
     public final Lbs lbs_info;
     @ProtoField(tag = 21)
     public final SignatureData signature;
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    public final Integer storecount;
     @ProtoField(tag = 15)
     public final SubPost sub_post_list;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
@@ -57,6 +59,8 @@ public final class Post extends Message {
     public final String title;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String vote_crypt;
+    @ProtoField(tag = 24)
+    public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_FLOOR = 0;
     public static final Integer DEFAULT_TIME = 0;
@@ -67,8 +71,9 @@ public final class Post extends Message {
     public static final Integer DEFAULT_IS_NTITLE = 0;
     public static final Integer DEFAULT_IS_BUB = 0;
     public static final Integer DEFAULT_SUB_POST_NUMBER = 0;
-    public static final Integer DEFAULT_AUTHOR_ID = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
     public static final Integer DEFAULT_ADD_POST_NUMBER = 0;
+    public static final Integer DEFAULT_STORECOUNT = 0;
 
     /* synthetic */ Post(Builder builder, boolean z, Post post) {
         this(builder, z);
@@ -168,7 +173,14 @@ public final class Post extends Message {
             this.signature = builder.signature;
             this.tail_info = builder.tail_info;
             this.author = builder.author;
-            return;
+            this.zan = builder.zan;
+            if (builder.storecount == null) {
+                this.storecount = DEFAULT_STORECOUNT;
+                return;
+            } else {
+                this.storecount = builder.storecount;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -193,15 +205,17 @@ public final class Post extends Message {
         this.signature = builder.signature;
         this.tail_info = builder.tail_info;
         this.author = builder.author;
+        this.zan = builder.zan;
+        this.storecount = builder.storecount;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Post> {
+    public static final class Builder extends Message.Builder<Post> {
         public AddPostList add_post_list;
         public Integer add_post_number;
         public List<String> arr_video;
         public User author;
-        public Integer author_id;
+        public Long author_id;
         public String bimg_url;
         public List<PbContent> content;
         public Integer floor;
@@ -213,6 +227,7 @@ public final class Post extends Message {
         public Integer is_vote;
         public Lbs lbs_info;
         public SignatureData signature;
+        public Integer storecount;
         public SubPost sub_post_list;
         public Integer sub_post_number;
         public TailInfo tail_info;
@@ -220,6 +235,10 @@ public final class Post extends Message {
         public String time_ex;
         public String title;
         public String vote_crypt;
+        public Zan zan;
+
+        public Builder() {
+        }
 
         public Builder(Post post) {
             super(post);
@@ -247,6 +266,8 @@ public final class Post extends Message {
                 this.signature = post.signature;
                 this.tail_info = post.tail_info;
                 this.author = post.author;
+                this.zan = post.zan;
+                this.storecount = post.storecount;
             }
         }
 

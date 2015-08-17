@@ -42,10 +42,13 @@ public final class ParrProps extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ParrProps> {
+    public static final class Builder extends Message.Builder<ParrProps> {
         public Level level;
         public Integer portrait_time;
         public List<Props> props;
+
+        public Builder() {
+        }
 
         public Builder(ParrProps parrProps) {
             super(parrProps);

@@ -45,10 +45,13 @@ public final class Balv extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Balv> {
+    public static final class Builder extends Message.Builder<Balv> {
         public Integer days_tofree;
         public Integer is_black;
         public Integer is_block;
+
+        public Builder() {
+        }
 
         public Builder(Balv balv) {
             super(balv);

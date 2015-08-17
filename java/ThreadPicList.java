@@ -27,8 +27,11 @@ public final class ThreadPicList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ThreadPicList> {
+    public static final class Builder extends Message.Builder<ThreadPicList> {
         public String pic;
+
+        public Builder() {
+        }
 
         public Builder(ThreadPicList threadPicList) {
             super(threadPicList);

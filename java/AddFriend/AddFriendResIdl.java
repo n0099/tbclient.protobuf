@@ -26,9 +26,12 @@ public final class AddFriendResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<AddFriendResIdl> {
+    public static final class Builder extends Message.Builder<AddFriendResIdl> {
         public ResData data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(AddFriendResIdl addFriendResIdl) {
             super(addFriendResIdl);

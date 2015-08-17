@@ -54,11 +54,14 @@ public final class Music extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Music> {
+    public static final class Builder extends Message.Builder<Music> {
         public Integer isopen;
         public Integer num;
         public String pic;
         public Integer sid;
+
+        public Builder() {
+        }
 
         public Builder(Music music) {
             super(music);

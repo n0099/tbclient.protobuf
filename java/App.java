@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.location.a0;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -20,6 +21,7 @@ public final class App extends Message {
     public static final String DEFAULT_ID = "";
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_IOS_URL = "";
+    public static final String DEFAULT_LOC_CODE = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_POS_NAME = "";
     public static final String DEFAULT_PRICE = "";
@@ -62,6 +64,8 @@ public final class App extends Message {
     public final String img_url;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String ios_url;
+    @ProtoField(tag = a0.h, type = Message.Datatype.STRING)
+    public final String loc_code;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -252,9 +256,14 @@ public final class App extends Message {
             }
             if (builder.goods_info == null) {
                 this.goods_info = DEFAULT_GOODS_INFO;
-                return;
             } else {
                 this.goods_info = immutableCopyOf(builder.goods_info);
+            }
+            if (builder.loc_code == null) {
+                this.loc_code = "";
+                return;
+            } else {
+                this.loc_code = builder.loc_code;
                 return;
             }
         }
@@ -288,10 +297,11 @@ public final class App extends Message {
         this.verify = builder.verify;
         this.ext_info = builder.ext_info;
         this.goods_info = immutableCopyOf(builder.goods_info);
+        this.loc_code = builder.loc_code;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<App> {
+    public static final class Builder extends Message.Builder<App> {
         public String abtest;
         public String ad_id;
         public String apk_name;
@@ -308,6 +318,7 @@ public final class App extends Message {
         public String id;
         public String img_url;
         public String ios_url;
+        public String loc_code;
         public String name;
         public String p_name;
         public String p_url;
@@ -322,6 +333,9 @@ public final class App extends Message {
         public String user_id;
         public String verify;
         public String web_url;
+
+        public Builder() {
+        }
 
         public Builder(App app) {
             super(app);
@@ -356,6 +370,7 @@ public final class App extends Message {
                 this.verify = app.verify;
                 this.ext_info = app.ext_info;
                 this.goods_info = App.copyOf(app.goods_info);
+                this.loc_code = app.loc_code;
             }
         }
 

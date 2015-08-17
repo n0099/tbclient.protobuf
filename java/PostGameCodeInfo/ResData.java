@@ -36,9 +36,12 @@ public final class ResData extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ResData> {
+    public static final class Builder extends Message.Builder<ResData> {
         public String code;
         public Integer money;
+
+        public Builder() {
+        }
 
         public Builder(ResData resData) {
             super(resData);

@@ -36,9 +36,12 @@ public final class Video extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Video> {
+    public static final class Builder extends Message.Builder<Video> {
         public Integer num;
         public String pic;
+
+        public Builder() {
+        }
 
         public Builder(Video video) {
             super(video);

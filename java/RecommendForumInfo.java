@@ -110,7 +110,7 @@ public final class RecommendForumInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<RecommendForumInfo> {
+    public static final class Builder extends Message.Builder<RecommendForumInfo> {
         public String authen;
         public String avatar;
         public List<PbContent> content;
@@ -121,6 +121,9 @@ public final class RecommendForumInfo extends Message {
         public Integer member_count;
         public String slogan;
         public Integer thread_count;
+
+        public Builder() {
+        }
 
         public Builder(RecommendForumInfo recommendForumInfo) {
             super(recommendForumInfo);

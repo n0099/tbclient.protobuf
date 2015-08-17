@@ -45,10 +45,13 @@ public final class Focus extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Focus> {
+    public static final class Builder extends Message.Builder<Focus> {
         public String link;
         public Integer time;
         public String title;
+
+        public Builder() {
+        }
 
         public Builder(Focus focus) {
             super(focus);

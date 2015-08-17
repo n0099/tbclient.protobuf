@@ -56,11 +56,14 @@ public final class RecommendThread extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<RecommendThread> {
+    public static final class Builder extends Message.Builder<RecommendThread> {
         public Long post_num;
         public List<String> term_list;
         public Long tid;
         public String title;
+
+        public Builder() {
+        }
 
         public Builder(RecommendThread recommendThread) {
             super(recommendThread);

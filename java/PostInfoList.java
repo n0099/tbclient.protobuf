@@ -55,9 +55,13 @@ public final class PostInfoList extends Message {
     public final Integer reply_num;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
+    @ProtoField(tag = 26, type = Message.Datatype.UINT64)
+    public final Long thread_type;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String title;
-    @ProtoField(tag = 18, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 27)
+    public final ZhiBoInfoTW twzhibo_info;
+    @ProtoField(tag = 18, type = Message.Datatype.INT64)
     public final Long user_id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String user_name;
@@ -78,6 +82,7 @@ public final class PostInfoList extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
     public static final Integer DEFAULT_HIDE_POST = 0;
+    public static final Long DEFAULT_THREAD_TYPE = 0L;
 
     /* synthetic */ PostInfoList(Builder builder, boolean z, PostInfoList postInfoList) {
         this(builder, z);
@@ -196,11 +201,16 @@ public final class PostInfoList extends Message {
             this.anchor_info = builder.anchor_info;
             if (builder.hide_post == null) {
                 this.hide_post = DEFAULT_HIDE_POST;
-                return;
             } else {
                 this.hide_post = builder.hide_post;
-                return;
             }
+            if (builder.thread_type == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+            } else {
+                this.thread_type = builder.thread_type;
+            }
+            this.twzhibo_info = builder.twzhibo_info;
+            return;
         }
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
@@ -227,10 +237,12 @@ public final class PostInfoList extends Message {
         this.voice_info = immutableCopyOf(builder.voice_info);
         this.anchor_info = builder.anchor_info;
         this.hide_post = builder.hide_post;
+        this.thread_type = builder.thread_type;
+        this.twzhibo_info = builder.twzhibo_info;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PostInfoList> {
+    public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;
         public AnchorInfo anchor_info;
@@ -251,11 +263,16 @@ public final class PostInfoList extends Message {
         public Quote quote;
         public Integer reply_num;
         public Long thread_id;
+        public Long thread_type;
         public String title;
+        public ZhiBoInfoTW twzhibo_info;
         public Long user_id;
         public String user_name;
         public String user_portrait;
         public List<Voice> voice_info;
+
+        public Builder() {
+        }
 
         public Builder(PostInfoList postInfoList) {
             super(postInfoList);
@@ -285,6 +302,8 @@ public final class PostInfoList extends Message {
                 this.voice_info = PostInfoList.copyOf(postInfoList.voice_info);
                 this.anchor_info = postInfoList.anchor_info;
                 this.hide_post = postInfoList.hide_post;
+                this.thread_type = postInfoList.thread_type;
+                this.twzhibo_info = postInfoList.twzhibo_info;
             }
         }
 

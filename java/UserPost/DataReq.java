@@ -1,5 +1,7 @@
 package tbclient.UserPost;
 
+import com.baidu.location.a0;
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -32,6 +34,8 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer is_thread;
+    @ProtoField(tag = 28, type = Message.Datatype.UINT32)
+    public final Integer is_twzhibo;
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer login;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
@@ -48,8 +52,16 @@ public final class DataReq extends Message {
     public final Integer pn;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String portrait;
+    @ProtoField(tag = 32, type = Message.Datatype.INT32)
+    public final Integer q_type;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer rn;
+    @ProtoField(tag = a0.h, type = Message.Datatype.DOUBLE)
+    public final Double scr_dip;
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
+    public final Integer scr_h;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.INT32)
+    public final Integer scr_w;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer smile_grade;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
@@ -60,10 +72,10 @@ public final class DataReq extends Message {
     public final Integer subtype;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer support_noun;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long uid;
-    @ProtoField(tag = 19, type = Message.Datatype.UINT32)
-    public final Integer user_id;
+    @ProtoField(tag = 19, type = Message.Datatype.INT64)
+    public final Long user_id;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String user_name;
     public static final Long DEFAULT_UID = 0L;
@@ -82,9 +94,14 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SMILE_GRADE = 0;
     public static final Integer DEFAULT_SUPPORT_NOUN = 0;
     public static final Integer DEFAULT_LOGIN = 0;
-    public static final Integer DEFAULT_USER_ID = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_NO_UN = 0;
     public static final Integer DEFAULT_PN = 0;
+    public static final Integer DEFAULT_IS_TWZHIBO = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_Q_TYPE = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -224,7 +241,33 @@ public final class DataReq extends Message {
                 this.pn = builder.pn;
             }
             this.common = builder.common;
-            return;
+            if (builder.is_twzhibo == null) {
+                this.is_twzhibo = DEFAULT_IS_TWZHIBO;
+            } else {
+                this.is_twzhibo = builder.is_twzhibo;
+            }
+            if (builder.scr_w == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = builder.scr_w;
+            }
+            if (builder.scr_h == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = builder.scr_h;
+            }
+            if (builder.scr_dip == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = builder.scr_dip;
+            }
+            if (builder.q_type == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+                return;
+            } else {
+                this.q_type = builder.q_type;
+                return;
+            }
         }
         this.uid = builder.uid;
         this.rn = builder.rn;
@@ -253,10 +296,15 @@ public final class DataReq extends Message {
         this.cookie = builder.cookie;
         this.pn = builder.pn;
         this.common = builder.common;
+        this.is_twzhibo = builder.is_twzhibo;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<DataReq> {
         public Integer begin_time;
         public Integer check_login;
         public CommonReq common;
@@ -267,6 +315,7 @@ public final class DataReq extends Message {
         public Integer ip_int;
         public String ip_str;
         public Integer is_thread;
+        public Integer is_twzhibo;
         public Integer login;
         public String mobile;
         public String module_name;
@@ -275,15 +324,22 @@ public final class DataReq extends Message {
         public Integer offset;
         public Integer pn;
         public String portrait;
+        public Integer q_type;
         public Integer rn;
+        public Double scr_dip;
+        public Integer scr_h;
+        public Integer scr_w;
         public Integer smile_grade;
         public Integer st_param;
         public Integer st_type;
         public Integer subtype;
         public Integer support_noun;
         public Long uid;
-        public Integer user_id;
+        public Long user_id;
         public String user_name;
+
+        public Builder() {
+        }
 
         public Builder(DataReq dataReq) {
             super(dataReq);
@@ -315,6 +371,11 @@ public final class DataReq extends Message {
                 this.cookie = dataReq.cookie;
                 this.pn = dataReq.pn;
                 this.common = dataReq.common;
+                this.is_twzhibo = dataReq.is_twzhibo;
+                this.scr_w = dataReq.scr_w;
+                this.scr_h = dataReq.scr_h;
+                this.scr_dip = dataReq.scr_dip;
+                this.q_type = dataReq.q_type;
             }
         }
 

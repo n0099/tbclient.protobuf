@@ -21,8 +21,11 @@ public final class GetAddressListReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetAddressListReqIdl> {
+    public static final class Builder extends Message.Builder<GetAddressListReqIdl> {
         public ReqData data;
+
+        public Builder() {
+        }
 
         public Builder(GetAddressListReqIdl getAddressListReqIdl) {
             super(getAddressListReqIdl);

@@ -21,8 +21,11 @@ public final class HotForumReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<HotForumReqIdl> {
+    public static final class Builder extends Message.Builder<HotForumReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(HotForumReqIdl hotForumReqIdl) {
             super(hotForumReqIdl);

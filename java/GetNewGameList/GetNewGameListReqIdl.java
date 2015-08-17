@@ -21,8 +21,11 @@ public final class GetNewGameListReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetNewGameListReqIdl> {
+    public static final class Builder extends Message.Builder<GetNewGameListReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(GetNewGameListReqIdl getNewGameListReqIdl) {
             super(getNewGameListReqIdl);

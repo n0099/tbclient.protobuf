@@ -54,11 +54,14 @@ public final class PostPrefix extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PostPrefix> {
+    public static final class Builder extends Message.Builder<PostPrefix> {
         public Integer mode;
         public String text;
         public String time;
         public String type;
+
+        public Builder() {
+        }
 
         public Builder(PostPrefix postPrefix) {
             super(postPrefix);

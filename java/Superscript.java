@@ -36,9 +36,12 @@ public final class Superscript extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Superscript> {
+    public static final class Builder extends Message.Builder<Superscript> {
         public String color;
         public String desc;
+
+        public Builder() {
+        }
 
         public Builder(Superscript superscript) {
             super(superscript);

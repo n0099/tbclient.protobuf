@@ -26,9 +26,12 @@ public final class UnlikeResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<UnlikeResIdl> {
+    public static final class Builder extends Message.Builder<UnlikeResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(UnlikeResIdl unlikeResIdl) {
             super(unlikeResIdl);

@@ -63,12 +63,15 @@ public final class Banner extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Banner> {
+    public static final class Builder extends Message.Builder<Banner> {
         public Integer banner_type;
         public String banner_url;
         public String desc;
         public Integer type;
         public String value;
+
+        public Builder() {
+        }
 
         public Builder(Banner banner) {
             super(banner);

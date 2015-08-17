@@ -85,7 +85,7 @@ public final class DataReq extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long forum_id;
         public Integer need_abstract;
@@ -94,6 +94,9 @@ public final class DataReq extends Message {
         public Integer scr_w;
         public Integer st_type;
         public String thread_ids;
+
+        public Builder() {
+        }
 
         public Builder(DataReq dataReq) {
             super(dataReq);

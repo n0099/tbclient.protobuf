@@ -108,7 +108,7 @@ public final class TagInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<TagInfo> {
+    public static final class Builder extends Message.Builder<TagInfo> {
         public Integer color;
         public Long forum_id;
         public Integer hot_value;
@@ -119,6 +119,9 @@ public final class TagInfo extends Message {
         public Integer tag_level;
         public String tag_name;
         public Integer tag_type;
+
+        public Builder() {
+        }
 
         public Builder(TagInfo tagInfo) {
             super(tagInfo);

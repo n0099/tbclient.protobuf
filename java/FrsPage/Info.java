@@ -36,9 +36,12 @@ public final class Info extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Info> {
+    public static final class Builder extends Message.Builder<Info> {
         public Integer post_num;
         public Integer user_num;
+
+        public Builder() {
+        }
 
         public Builder(Info info) {
             super(info);

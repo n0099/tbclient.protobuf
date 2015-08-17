@@ -26,9 +26,12 @@ public final class GetNewGameListResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetNewGameListResIdl> {
+    public static final class Builder extends Message.Builder<GetNewGameListResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(GetNewGameListResIdl getNewGameListResIdl) {
             super(getNewGameListResIdl);

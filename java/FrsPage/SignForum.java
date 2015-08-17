@@ -83,7 +83,7 @@ public final class SignForum extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SignForum> {
+    public static final class Builder extends Message.Builder<SignForum> {
         public RankInfo current_rank_info;
         public Long forum_id;
         public Forum forum_info;
@@ -94,6 +94,9 @@ public final class SignForum extends Message {
         public RankInfo monthly_rank_info;
         public RankInfo weekly_rank_info;
         public RankInfo yesterday_rank_info;
+
+        public Builder() {
+        }
 
         public Builder(SignForum signForum) {
             super(signForum);

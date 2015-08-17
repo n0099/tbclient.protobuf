@@ -10,8 +10,8 @@ public final class Zan extends Message {
     public final Integer is_liked;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer last_time;
-    @ProtoField(label = Message.Label.REPEATED, tag = 5, type = Message.Datatype.INT32)
-    public final List<Integer> liker_id;
+    @ProtoField(label = Message.Label.REPEATED, tag = 5, type = Message.Datatype.INT64)
+    public final List<Long> liker_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<User> liker_list;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -20,7 +20,7 @@ public final class Zan extends Message {
     public static final List<User> DEFAULT_LIKER_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_LIKED = 0;
     public static final Integer DEFAULT_LAST_TIME = 0;
-    public static final List<Integer> DEFAULT_LIKER_ID = Collections.emptyList();
+    public static final List<Long> DEFAULT_LIKER_ID = Collections.emptyList();
 
     /* synthetic */ Zan(Builder builder, boolean z, Zan zan) {
         this(builder, z);
@@ -65,12 +65,15 @@ public final class Zan extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Zan> {
+    public static final class Builder extends Message.Builder<Zan> {
         public Integer is_liked;
         public Integer last_time;
-        public List<Integer> liker_id;
+        public List<Long> liker_id;
         public List<User> liker_list;
         public Integer num;
+
+        public Builder() {
+        }
 
         public Builder(Zan zan) {
             super(zan);

@@ -6,6 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class Anti extends Message {
     public static final String DEFAULT_FORBID_INFO = "";
     public static final String DEFAULT_TBS = "";
+    public static final String DEFAULT_USER_MUTE = "";
     public static final String DEFAULT_VCODE_MD5 = "";
     public static final String DEFAULT_VCODE_PIC_URL = "";
     public static final String DEFAULT_VOICE_MESSAGE = "";
@@ -33,6 +34,8 @@ public final class Anti extends Message {
     public final Integer need_vcode;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tbs;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String user_mute;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String vcode_md5;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -137,9 +140,14 @@ public final class Anti extends Message {
             }
             if (builder.vcode_pic_url == null) {
                 this.vcode_pic_url = "";
-                return;
             } else {
                 this.vcode_pic_url = builder.vcode_pic_url;
+            }
+            if (builder.user_mute == null) {
+                this.user_mute = "";
+                return;
+            } else {
+                this.user_mute = builder.user_mute;
                 return;
             }
         }
@@ -159,10 +167,11 @@ public final class Anti extends Message {
         this.need_vcode = builder.need_vcode;
         this.vcode_md5 = builder.vcode_md5;
         this.vcode_pic_url = builder.vcode_pic_url;
+        this.user_mute = builder.user_mute;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Anti> {
+    public static final class Builder extends Message.Builder<Anti> {
         public Integer block_stat;
         public Integer days_tofree;
         public Integer forbid_flag;
@@ -175,10 +184,14 @@ public final class Anti extends Message {
         public Integer ifvoice;
         public Integer need_vcode;
         public String tbs;
+        public String user_mute;
         public String vcode_md5;
         public String vcode_pic_url;
         public Integer vcode_stat;
         public String voice_message;
+
+        public Builder() {
+        }
 
         public Builder(Anti anti) {
             super(anti);
@@ -199,6 +212,7 @@ public final class Anti extends Message {
                 this.need_vcode = anti.need_vcode;
                 this.vcode_md5 = anti.vcode_md5;
                 this.vcode_pic_url = anti.vcode_pic_url;
+                this.user_mute = anti.user_mute;
             }
         }
 

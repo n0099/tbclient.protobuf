@@ -45,10 +45,13 @@ public final class LbsInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<LbsInfo> {
+    public static final class Builder extends Message.Builder<LbsInfo> {
         public String lat;
         public String lon;
         public String town;
+
+        public Builder() {
+        }
 
         public Builder(LbsInfo lbsInfo) {
             super(lbsInfo);

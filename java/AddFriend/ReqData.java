@@ -45,10 +45,13 @@ public final class ReqData extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ReqData> {
+    public static final class Builder extends Message.Builder<ReqData> {
         public Long friend_id;
         public String message;
         public String st_type;
+
+        public Builder() {
+        }
 
         public Builder(ReqData reqData) {
             super(reqData);

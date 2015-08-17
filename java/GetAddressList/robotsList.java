@@ -38,9 +38,12 @@ public final class robotsList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<robotsList> {
+    public static final class Builder extends Message.Builder<robotsList> {
         public List<friendList> friend_list;
         public String key;
+
+        public Builder() {
+        }
 
         public Builder(robotsList robotslist) {
             super(robotslist);

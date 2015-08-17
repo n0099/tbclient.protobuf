@@ -21,8 +21,11 @@ public final class FrsPageReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FrsPageReqIdl> {
+    public static final class Builder extends Message.Builder<FrsPageReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(FrsPageReqIdl frsPageReqIdl) {
             super(frsPageReqIdl);

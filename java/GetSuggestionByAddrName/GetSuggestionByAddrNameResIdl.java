@@ -26,9 +26,12 @@ public final class GetSuggestionByAddrNameResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetSuggestionByAddrNameResIdl> {
+    public static final class Builder extends Message.Builder<GetSuggestionByAddrNameResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(GetSuggestionByAddrNameResIdl getSuggestionByAddrNameResIdl) {
             super(getSuggestionByAddrNameResIdl);

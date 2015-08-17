@@ -60,7 +60,7 @@ public final class DataRes extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
         public CodeInfo code_info;
         public RecommendForumInfo forum_info;
         public GameInfo game_info;
@@ -68,6 +68,9 @@ public final class DataRes extends Message {
         public RelateGame relate_game;
         public List<SimpleThreadInfo> relate_thread;
         public List<GameInfo> user_recommend;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);

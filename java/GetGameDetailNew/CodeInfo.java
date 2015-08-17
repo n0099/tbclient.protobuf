@@ -72,13 +72,16 @@ public final class CodeInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<CodeInfo> {
+    public static final class Builder extends Message.Builder<CodeInfo> {
         public Integer code_status;
         public Integer code_type;
         public String game_code;
         public String gift_code;
         public Integer kaifu_id;
         public Integer user_status;
+
+        public Builder() {
+        }
 
         public Builder(CodeInfo codeInfo) {
             super(codeInfo);

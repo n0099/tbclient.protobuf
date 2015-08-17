@@ -81,7 +81,7 @@ public final class Menu extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Menu> {
+    public static final class Builder extends Message.Builder<Menu> {
         public String describe;
         public String icon_url;
         public Integer is_new;
@@ -89,6 +89,9 @@ public final class Menu extends Message {
         public String link_url;
         public String statistics;
         public String title;
+
+        public Builder() {
+        }
 
         public Builder(Menu menu) {
             super(menu);

@@ -63,12 +63,15 @@ public final class Voice_Info extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Voice_Info> {
+    public static final class Builder extends Message.Builder<Voice_Info> {
         public Integer durning_time;
         public String md5;
         public Integer pid;
         public Integer tid;
         public Integer type;
+
+        public Builder() {
+        }
 
         public Builder(Voice_Info voice_Info) {
             super(voice_Info);

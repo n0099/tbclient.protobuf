@@ -39,9 +39,12 @@ public final class GameList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GameList> {
+    public static final class Builder extends Message.Builder<GameList> {
         public List<GameInfo> game_info;
         public Integer has_more;
+
+        public Builder() {
+        }
 
         public Builder(GameList gameList) {
             super(gameList);

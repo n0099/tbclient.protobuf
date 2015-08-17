@@ -8,7 +8,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 9)
     public final CommonReq common;
-    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer has_plist;
@@ -22,9 +22,9 @@ public final class DataReq extends Message {
     public final Integer rn;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String st_type;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer uid;
-    public static final Integer DEFAULT_UID = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long uid;
+    public static final Long DEFAULT_UID = 0L;
     public static final Integer DEFAULT_NEED_POST_COUNT = 0;
     public static final Long DEFAULT_FRIEND_UID = 0L;
     public static final Integer DEFAULT_IS_GUEST = 0;
@@ -94,7 +94,7 @@ public final class DataReq extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long friend_uid;
         public Integer has_plist;
@@ -103,7 +103,10 @@ public final class DataReq extends Message {
         public Integer pn;
         public Integer rn;
         public String st_type;
-        public Integer uid;
+        public Long uid;
+
+        public Builder() {
+        }
 
         public Builder(DataReq dataReq) {
             super(dataReq);

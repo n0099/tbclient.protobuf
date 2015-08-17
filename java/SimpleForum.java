@@ -54,11 +54,14 @@ public final class SimpleForum extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SimpleForum> {
+    public static final class Builder extends Message.Builder<SimpleForum> {
         public String avatar;
         public Long id;
         public Integer is_exists;
         public String name;
+
+        public Builder() {
+        }
 
         public Builder(SimpleForum simpleForum) {
             super(simpleForum);

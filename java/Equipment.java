@@ -36,9 +36,12 @@ public final class Equipment extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Equipment> {
+    public static final class Builder extends Message.Builder<Equipment> {
         public String name;
         public String portrait;
+
+        public Builder() {
+        }
 
         public Builder(Equipment equipment) {
             super(equipment);

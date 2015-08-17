@@ -64,7 +64,7 @@ public final class DataRes extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
         public Anti anti;
         public SimpleForum forum;
         public Page page;
@@ -72,6 +72,9 @@ public final class DataRes extends Message {
         public Integer server_time;
         public List<SubPostList> subpost_list;
         public ThreadInfo thread;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);

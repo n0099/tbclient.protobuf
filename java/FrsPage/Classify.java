@@ -10,11 +10,11 @@ public final class Classify extends Message {
     public final Integer class_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String class_name;
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer id;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long id;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
-    public static final Integer DEFAULT_ID = 0;
+    public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_CLASS_ID = 0;
 
     /* synthetic */ Classify(Builder builder, boolean z, Classify classify) {
@@ -54,11 +54,14 @@ public final class Classify extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Classify> {
+    public static final class Builder extends Message.Builder<Classify> {
         public Integer class_id;
         public String class_name;
-        public Integer id;
+        public Long id;
         public String name;
+
+        public Builder() {
+        }
 
         public Builder(Classify classify) {
             super(classify);

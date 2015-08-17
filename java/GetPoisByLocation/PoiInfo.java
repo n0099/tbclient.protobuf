@@ -45,10 +45,13 @@ public final class PoiInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PoiInfo> {
+    public static final class Builder extends Message.Builder<PoiInfo> {
         public String addr;
         public String name;
         public String sn;
+
+        public Builder() {
+        }
 
         public Builder(PoiInfo poiInfo) {
             super(poiInfo);

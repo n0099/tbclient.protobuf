@@ -38,9 +38,12 @@ public final class SubPost extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SubPost> {
+    public static final class Builder extends Message.Builder<SubPost> {
         public Long pid;
         public List<SubPostList> sub_post_list;
+
+        public Builder() {
+        }
 
         public Builder(SubPost subPost) {
             super(subPost);

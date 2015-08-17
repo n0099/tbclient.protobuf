@@ -10,7 +10,7 @@ public final class RankItem extends Message {
     public final Long grade;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String portrait;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long user_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
@@ -54,11 +54,14 @@ public final class RankItem extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<RankItem> {
+    public static final class Builder extends Message.Builder<RankItem> {
         public Long grade;
         public String portrait;
         public Long user_id;
         public String user_name;
+
+        public Builder() {
+        }
 
         public Builder(RankItem rankItem) {
             super(rankItem);

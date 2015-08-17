@@ -39,9 +39,12 @@ public final class RelateGame extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<RelateGame> {
+    public static final class Builder extends Message.Builder<RelateGame> {
         public List<GameInfo> game_list;
         public Integer relate_type;
+
+        public Builder() {
+        }
 
         public Builder(RelateGame relateGame) {
             super(relateGame);

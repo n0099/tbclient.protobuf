@@ -21,8 +21,11 @@ public final class ForumRecommendReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ForumRecommendReqIdl> {
+    public static final class Builder extends Message.Builder<ForumRecommendReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(ForumRecommendReqIdl forumRecommendReqIdl) {
             super(forumRecommendReqIdl);

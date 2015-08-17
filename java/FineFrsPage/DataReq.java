@@ -8,6 +8,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_TAG = "";
     @ProtoField(tag = 1)
     public final CommonReq common;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer forder;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer publish_time;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -25,6 +27,7 @@ public final class DataReq extends Message {
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
     public static final Integer DEFAULT_Q_TYPE = 0;
     public static final Integer DEFAULT_PUBLISH_TIME = 0;
+    public static final Integer DEFAULT_FORDER = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -61,9 +64,14 @@ public final class DataReq extends Message {
             }
             if (builder.tag == null) {
                 this.tag = "";
-                return;
             } else {
                 this.tag = builder.tag;
+            }
+            if (builder.forder == null) {
+                this.forder = DEFAULT_FORDER;
+                return;
+            } else {
+                this.forder = builder.forder;
                 return;
             }
         }
@@ -74,17 +82,22 @@ public final class DataReq extends Message {
         this.q_type = builder.q_type;
         this.publish_time = builder.publish_time;
         this.tag = builder.tag;
+        this.forder = builder.forder;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
+        public Integer forder;
         public Integer publish_time;
         public Integer q_type;
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
         public String tag;
+
+        public Builder() {
+        }
 
         public Builder(DataReq dataReq) {
             super(dataReq);
@@ -96,6 +109,7 @@ public final class DataReq extends Message {
                 this.q_type = dataReq.q_type;
                 this.publish_time = dataReq.publish_time;
                 this.tag = dataReq.tag;
+                this.forder = dataReq.forder;
             }
         }
 

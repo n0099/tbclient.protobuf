@@ -45,10 +45,13 @@ public final class NewsInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<NewsInfo> {
+    public static final class Builder extends Message.Builder<NewsInfo> {
         public String news_link;
         public Integer position;
         public String summary;
+
+        public Builder() {
+        }
 
         public Builder(NewsInfo newsInfo) {
             super(newsInfo);

@@ -36,9 +36,12 @@ public final class GconAccount extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GconAccount> {
+    public static final class Builder extends Message.Builder<GconAccount> {
         public Integer has_account;
         public String menu_name;
+
+        public Builder() {
+        }
 
         public Builder(GconAccount gconAccount) {
             super(gconAccount);

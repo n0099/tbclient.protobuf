@@ -26,9 +26,12 @@ public final class ThreadListResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ThreadListResIdl> {
+    public static final class Builder extends Message.Builder<ThreadListResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(ThreadListResIdl threadListResIdl) {
             super(threadListResIdl);

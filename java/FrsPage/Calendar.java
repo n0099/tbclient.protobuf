@@ -54,11 +54,14 @@ public final class Calendar extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Calendar> {
+    public static final class Builder extends Message.Builder<Calendar> {
         public Integer d;
         public Integer rank;
         public Integer sign_type;
         public String t;
+
+        public Builder() {
+        }
 
         public Builder(Calendar calendar) {
             super(calendar);

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
@@ -27,8 +27,11 @@ public final class DataRes extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
         public Long friend_id;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);

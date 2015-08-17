@@ -56,11 +56,14 @@ public final class WorldCupGame extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<WorldCupGame> {
+    public static final class Builder extends Message.Builder<WorldCupGame> {
         public String status;
         public List<WorldCupGameTeam> team;
         public String title;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(WorldCupGame worldCupGame) {
             super(worldCupGame);

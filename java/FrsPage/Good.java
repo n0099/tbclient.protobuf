@@ -27,8 +27,11 @@ public final class Good extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Good> {
+    public static final class Builder extends Message.Builder<Good> {
         public Integer num;
+
+        public Builder() {
+        }
 
         public Builder(Good good) {
             super(good);

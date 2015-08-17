@@ -22,11 +22,11 @@ public final class SignUser extends Message {
     public final Integer sign_time;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer total_resign_num;
-    @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer user_id;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long user_id;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer user_sign_rank;
-    public static final Integer DEFAULT_USER_ID = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_IS_SIGN_IN = 0;
     public static final Integer DEFAULT_USER_SIGN_RANK = 0;
     public static final Integer DEFAULT_SIGN_TIME = 0;
@@ -117,7 +117,7 @@ public final class SignUser extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SignUser> {
+    public static final class Builder extends Message.Builder<SignUser> {
         public Integer c_sign_num;
         public Integer cont_sign_num;
         public Integer cout_total_sign_num;
@@ -127,8 +127,11 @@ public final class SignUser extends Message {
         public Integer miss_sign_num;
         public Integer sign_time;
         public Integer total_resign_num;
-        public Integer user_id;
+        public Long user_id;
         public Integer user_sign_rank;
+
+        public Builder() {
+        }
 
         public Builder(SignUser signUser) {
             super(signUser);

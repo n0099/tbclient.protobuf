@@ -38,9 +38,12 @@ public final class EverydayThread extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<EverydayThread> {
+    public static final class Builder extends Message.Builder<EverydayThread> {
         public List<FineThreadInfo> fine_thread_list;
         public Integer show_time;
+
+        public Builder() {
+        }
 
         public Builder(EverydayThread everydayThread) {
             super(everydayThread);

@@ -54,11 +54,14 @@ public final class NativeApp extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<NativeApp> {
+    public static final class Builder extends Message.Builder<NativeApp> {
         public String download_and;
         public String download_ios;
         public String jump_and;
         public String jump_ios;
+
+        public Builder() {
+        }
 
         public Builder(NativeApp nativeApp) {
             super(nativeApp);

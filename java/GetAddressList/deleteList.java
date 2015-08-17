@@ -38,9 +38,12 @@ public final class deleteList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<deleteList> {
+    public static final class Builder extends Message.Builder<deleteList> {
         public List<friendList> friend_list;
         public String key;
+
+        public Builder() {
+        }
 
         public Builder(deleteList deletelist) {
             super(deletelist);

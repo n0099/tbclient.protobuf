@@ -27,8 +27,11 @@ public final class CommonForum extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<CommonForum> {
+    public static final class Builder extends Message.Builder<CommonForum> {
         public String common_forum;
+
+        public Builder() {
+        }
 
         public Builder(CommonForum commonForum) {
             super(commonForum);

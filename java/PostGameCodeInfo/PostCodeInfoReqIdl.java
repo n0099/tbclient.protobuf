@@ -21,8 +21,11 @@ public final class PostCodeInfoReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PostCodeInfoReqIdl> {
+    public static final class Builder extends Message.Builder<PostCodeInfoReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(PostCodeInfoReqIdl postCodeInfoReqIdl) {
             super(postCodeInfoReqIdl);

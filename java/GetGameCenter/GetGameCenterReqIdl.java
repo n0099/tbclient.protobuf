@@ -21,8 +21,11 @@ public final class GetGameCenterReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetGameCenterReqIdl> {
+    public static final class Builder extends Message.Builder<GetGameCenterReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(GetGameCenterReqIdl getGameCenterReqIdl) {
             super(getGameCenterReqIdl);

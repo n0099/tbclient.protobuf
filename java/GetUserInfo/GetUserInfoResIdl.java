@@ -26,9 +26,12 @@ public final class GetUserInfoResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetUserInfoResIdl> {
+    public static final class Builder extends Message.Builder<GetUserInfoResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(GetUserInfoResIdl getUserInfoResIdl) {
             super(getUserInfoResIdl);

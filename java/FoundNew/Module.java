@@ -38,9 +38,12 @@ public final class Module extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Module> {
+    public static final class Builder extends Message.Builder<Module> {
         public List<Menu> menu_list;
         public Integer type;
+
+        public Builder() {
+        }
 
         public Builder(Module module) {
             super(module);

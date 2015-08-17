@@ -72,13 +72,16 @@ public final class ActInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ActInfo> {
+    public static final class Builder extends Message.Builder<ActInfo> {
         public Integer activity_type;
         public Integer begin_time;
         public Integer end_time;
         public Integer status;
         public Integer total_num;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(ActInfo actInfo) {
             super(actInfo);

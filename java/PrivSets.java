@@ -63,12 +63,15 @@ public final class PrivSets extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PrivSets> {
+    public static final class Builder extends Message.Builder<PrivSets> {
         public Integer friend;
         public Integer group;
         public Integer like;
         public Integer location;
         public Integer post;
+
+        public Builder() {
+        }
 
         public Builder(PrivSets privSets) {
             super(privSets);

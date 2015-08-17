@@ -26,9 +26,12 @@ public final class FoundNewResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FoundNewResIdl> {
+    public static final class Builder extends Message.Builder<FoundNewResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(FoundNewResIdl foundNewResIdl) {
             super(foundNewResIdl);

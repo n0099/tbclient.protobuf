@@ -36,9 +36,12 @@ public final class WapRn extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<WapRn> {
+    public static final class Builder extends Message.Builder<WapRn> {
         public Integer frsrn;
         public Integer pbrn;
+
+        public Builder() {
+        }
 
         public Builder(WapRn wapRn) {
             super(wapRn);

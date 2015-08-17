@@ -82,7 +82,7 @@ public final class Icon extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Icon> {
+    public static final class Builder extends Message.Builder<Icon> {
         public String icon;
         public String name;
         public Position position;
@@ -91,6 +91,9 @@ public final class Icon extends Message {
         public String url;
         public Integer value;
         public Integer weight;
+
+        public Builder() {
+        }
 
         public Builder(Icon icon) {
             super(icon);

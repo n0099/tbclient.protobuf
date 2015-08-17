@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -33,7 +34,7 @@ public final class NewUser extends Message {
     public final String cdn_error;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String free_flag;
-    @ProtoField(tag = 33)
+    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE)
     public final GameAttr game_attr;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
     public final Global global;
@@ -81,8 +82,8 @@ public final class NewUser extends Message {
     public final String tbscore_repeate_finish_time;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer use_sig;
-    @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer user_id;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long user_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -93,7 +94,7 @@ public final class NewUser extends Message {
     public final Integer user_type;
     @ProtoField(tag = 10)
     public final WapRn wap_rn;
-    public static final Integer DEFAULT_USER_ID = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_USER_SEX = 0;
     public static final Integer DEFAULT_USER_STATUS = 0;
     public static final Integer DEFAULT_MEIZHI_LEVEL = 0;
@@ -317,7 +318,7 @@ public final class NewUser extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<NewUser> {
+    public static final class Builder extends Message.Builder<NewUser> {
         public List<Props> appraise;
         public String bg_id;
         public String billboard;
@@ -348,12 +349,15 @@ public final class NewUser extends Message {
         public List<TbmallMonthIcon> tbmall_month_icon;
         public String tbscore_repeate_finish_time;
         public Integer use_sig;
-        public Integer user_id;
+        public Long user_id;
         public String user_name;
         public Integer user_sex;
         public Integer user_status;
         public Integer user_type;
         public WapRn wap_rn;
+
+        public Builder() {
+        }
 
         public Builder(NewUser newUser) {
             super(newUser);

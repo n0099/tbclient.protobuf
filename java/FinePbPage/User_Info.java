@@ -8,7 +8,7 @@ public final class User_Info extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long gender;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
@@ -54,11 +54,14 @@ public final class User_Info extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<User_Info> {
+    public static final class Builder extends Message.Builder<User_Info> {
         public Long gender;
         public Long id;
         public String name;
         public String portrait;
+
+        public Builder() {
+        }
 
         public Builder(User_Info user_Info) {
             super(user_Info);

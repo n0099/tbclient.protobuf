@@ -27,8 +27,11 @@ public final class ForumButton extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ForumButton> {
+    public static final class Builder extends Message.Builder<ForumButton> {
         public Integer is_blueV;
+
+        public Builder() {
+        }
 
         public Builder(ForumButton forumButton) {
             super(forumButton);

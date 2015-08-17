@@ -81,7 +81,7 @@ public final class Zhibo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Zhibo> {
+    public static final class Builder extends Message.Builder<Zhibo> {
         public Long forum;
         public Integer has_lpost;
         public Integer int1;
@@ -89,6 +89,9 @@ public final class Zhibo extends Message {
         public Integer status;
         public Long tid;
         public Integer type;
+
+        public Builder() {
+        }
 
         public Builder(Zhibo zhibo) {
             super(zhibo);

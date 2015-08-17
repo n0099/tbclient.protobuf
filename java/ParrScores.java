@@ -81,7 +81,7 @@ public final class ParrScores extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ParrScores> {
+    public static final class Builder extends Message.Builder<ParrScores> {
         public Integer level;
         public Integer limit;
         public Integer scores_fetch;
@@ -89,6 +89,9 @@ public final class ParrScores extends Message {
         public Integer scores_other;
         public Integer scores_total;
         public Integer update_time;
+
+        public Builder() {
+        }
 
         public Builder(ParrScores parrScores) {
             super(parrScores);

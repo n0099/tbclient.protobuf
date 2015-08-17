@@ -26,9 +26,12 @@ public final class PassFriendResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PassFriendResIdl> {
+    public static final class Builder extends Message.Builder<PassFriendResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(PassFriendResIdl passFriendResIdl) {
             super(passFriendResIdl);

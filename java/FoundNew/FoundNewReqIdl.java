@@ -21,8 +21,11 @@ public final class FoundNewReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FoundNewReqIdl> {
+    public static final class Builder extends Message.Builder<FoundNewReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(FoundNewReqIdl foundNewReqIdl) {
             super(foundNewReqIdl);

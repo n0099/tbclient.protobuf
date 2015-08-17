@@ -26,9 +26,12 @@ public final class HotForumResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<HotForumResIdl> {
+    public static final class Builder extends Message.Builder<HotForumResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(HotForumResIdl hotForumResIdl) {
             super(hotForumResIdl);

@@ -72,13 +72,16 @@ public final class PostBanner extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PostBanner> {
+    public static final class Builder extends Message.Builder<PostBanner> {
         public String banner_name;
         public String banner_pic;
         public Integer banner_position;
         public String banner_url;
         public Integer client_type;
         public Integer link_type;
+
+        public Builder() {
+        }
 
         public Builder(PostBanner postBanner) {
             super(postBanner);

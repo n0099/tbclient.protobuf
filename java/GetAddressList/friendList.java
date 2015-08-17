@@ -57,12 +57,15 @@ public final class friendList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<friendList> {
+    public static final class Builder extends Message.Builder<friendList> {
         public LbsInfo location;
         public String portrait;
         public String quanpin;
         public Long user_id;
         public String user_name;
+
+        public Builder() {
+        }
 
         public Builder(friendList friendlist) {
             super(friendlist);

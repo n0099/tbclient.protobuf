@@ -36,9 +36,12 @@ public final class TbmallMonthIcon extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<TbmallMonthIcon> {
+    public static final class Builder extends Message.Builder<TbmallMonthIcon> {
         public String icon;
         public String mon;
+
+        public Builder() {
+        }
 
         public Builder(TbmallMonthIcon tbmallMonthIcon) {
             super(tbmallMonthIcon);

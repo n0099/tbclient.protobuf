@@ -1,7 +1,9 @@
 package tbclient;
 
+import com.baidu.location.BDLocation;
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -15,6 +17,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_LAST_TIME = "";
+    public static final String DEFAULT_LIVECOVER_SRC = "";
     public static final String DEFAULT_LIVE_POST_TYPE = "";
     public static final String DEFAULT_MEIZHI_PIC = "";
     public static final String DEFAULT_PIDS = "";
@@ -28,12 +31,12 @@ public final class ThreadInfo extends Message {
     public final List<Abstract> _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<ActInfo> act_info;
-    @ProtoField(tag = 55)
+    @ProtoField(tag = a0.B)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 18)
     public final User author;
-    @ProtoField(tag = a0.z, type = Message.Datatype.INT32)
-    public final Integer author_id;
+    @ProtoField(tag = a0.z, type = Message.Datatype.INT64)
+    public final Long author_id;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
     @ProtoField(tag = a0.C, type = Message.Datatype.STRING)
@@ -58,6 +61,8 @@ public final class ThreadInfo extends Message {
     public final Guess guess;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer has_commented;
+    @ProtoField(tag = BDLocation.TypeOffLineLocation, type = Message.Datatype.INT32)
+    public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(tag = 58, type = Message.Datatype.UINT32)
@@ -102,6 +107,8 @@ public final class ThreadInfo extends Message {
     public final Integer last_time_int;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
     public final String live_post_type;
+    @ProtoField(tag = BDLocation.TypeOffLineLocationFail, type = Message.Datatype.STRING)
+    public final String livecover_src;
     @ProtoField(tag = 62)
     public final Lbs location;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
@@ -116,12 +123,16 @@ public final class ThreadInfo extends Message {
     public final Long post_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 44)
     public final List<PostList> post_list;
+    @ProtoField(tag = 69, type = Message.Datatype.INT32)
+    public final Integer post_num;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer repost_num;
     @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
     public final Integer show_commented;
+    @ProtoField(tag = BDLocation.TypeOffLineLocationNetworkFail, type = Message.Datatype.INT32)
+    public final Integer storecount;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -138,7 +149,7 @@ public final class ThreadInfo extends Message {
     public final Topic topic;
     @ProtoField(tag = a0.m, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
-    @ProtoField(tag = 33, type = Message.Datatype.STRING)
+    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.STRING)
     public final String video;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
     public final String video_cover;
@@ -191,12 +202,15 @@ public final class ThreadInfo extends Message {
     public static final Long DEFAULT_POST_ID = 0L;
     public static final Integer DEFAULT_TIME = 0;
     public static final Integer DEFAULT_IS_MEMBERTOP = 0;
-    public static final Integer DEFAULT_AUTHOR_ID = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
     public static final Integer DEFAULT_VALID_POST_NUM = 0;
     public static final Integer DEFAULT_ISLZDELETEALL = 0;
     public static final Integer DEFAULT_IS_AD = 0;
     public static final Integer DEFAULT_TIMELINE = 0;
     public static final List<ActInfo> DEFAULT_ACT_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_HOT_WEIGHT = 0;
+    public static final Integer DEFAULT_STORECOUNT = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -499,9 +513,29 @@ public final class ThreadInfo extends Message {
             }
             if (builder.act_info == null) {
                 this.act_info = DEFAULT_ACT_INFO;
-                return;
             } else {
                 this.act_info = immutableCopyOf(builder.act_info);
+            }
+            if (builder.hot_weight == null) {
+                this.hot_weight = DEFAULT_HOT_WEIGHT;
+            } else {
+                this.hot_weight = builder.hot_weight;
+            }
+            if (builder.livecover_src == null) {
+                this.livecover_src = "";
+            } else {
+                this.livecover_src = builder.livecover_src;
+            }
+            if (builder.storecount == null) {
+                this.storecount = DEFAULT_STORECOUNT;
+            } else {
+                this.storecount = builder.storecount;
+            }
+            if (builder.post_num == null) {
+                this.post_num = DEFAULT_POST_NUM;
+                return;
+            } else {
+                this.post_num = builder.post_num;
                 return;
             }
         }
@@ -570,15 +604,19 @@ public final class ThreadInfo extends Message {
         this.guess = builder.guess;
         this.timeline = builder.timeline;
         this.act_info = immutableCopyOf(builder.act_info);
+        this.hot_weight = builder.hot_weight;
+        this.livecover_src = builder.livecover_src;
+        this.storecount = builder.storecount;
+        this.post_num = builder.post_num;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ThreadInfo> {
+    public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
         public List<ActInfo> act_info;
         public AnchorInfo anchor_info;
         public User author;
-        public Integer author_id;
+        public Long author_id;
         public String click_url;
         public String collect_mark_pid;
         public Integer collect_status;
@@ -591,6 +629,7 @@ public final class ThreadInfo extends Message {
         public String from;
         public Guess guess;
         public Integer has_commented;
+        public Integer hot_weight;
         public Long id;
         public Integer isLzDeleteAll;
         public Integer is_activity;
@@ -613,6 +652,7 @@ public final class ThreadInfo extends Message {
         public String last_time;
         public Integer last_time_int;
         public String live_post_type;
+        public String livecover_src;
         public Lbs location;
         public List<Media> media;
         public List<MediaNum> media_num;
@@ -620,9 +660,11 @@ public final class ThreadInfo extends Message {
         public String pids;
         public Long post_id;
         public List<PostList> post_list;
+        public Integer post_num;
         public Integer reply_num;
         public Integer repost_num;
         public Integer show_commented;
+        public Integer storecount;
         public Integer thread_type;
         public Integer thread_types;
         public Long tid;
@@ -639,6 +681,9 @@ public final class ThreadInfo extends Message {
         public Integer view_num;
         public List<Voice> voice_info;
         public Zan zan;
+
+        public Builder() {
+        }
 
         public Builder(ThreadInfo threadInfo) {
             super(threadInfo);
@@ -708,6 +753,10 @@ public final class ThreadInfo extends Message {
                 this.guess = threadInfo.guess;
                 this.timeline = threadInfo.timeline;
                 this.act_info = ThreadInfo.copyOf(threadInfo.act_info);
+                this.hot_weight = threadInfo.hot_weight;
+                this.livecover_src = threadInfo.livecover_src;
+                this.storecount = threadInfo.storecount;
+                this.post_num = threadInfo.post_num;
             }
         }
 

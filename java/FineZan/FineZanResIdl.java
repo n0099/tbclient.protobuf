@@ -26,9 +26,12 @@ public final class FineZanResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FineZanResIdl> {
+    public static final class Builder extends Message.Builder<FineZanResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(FineZanResIdl fineZanResIdl) {
             super(fineZanResIdl);

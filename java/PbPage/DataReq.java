@@ -1,6 +1,7 @@
 package tbclient.PbPage;
 
 import com.baidu.location.a0;
+import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -11,6 +12,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MSG_CLICK = "";
     public static final String DEFAULT_PLATFORM = "";
+    public static final String DEFAULT_QUERY_WORD = "";
     public static final String DEFAULT_ST_FROM = "";
     public static final String DEFAULT_ST_LINK = "";
     public static final String DEFAULT_ST_TYPE = "";
@@ -26,6 +28,8 @@ public final class DataReq extends Message {
     public final String da_idfa;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
+    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.INT32)
+    public final Integer is_comm_reverse;
     @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -52,6 +56,8 @@ public final class DataReq extends Message {
     public final Integer pn;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer q_type;
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
+    public final String query_word;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer r;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
@@ -105,6 +111,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_ST_STAT = 0;
     public static final Long DEFAULT_ST_TASK = 0L;
     public static final Integer DEFAULT_ISSDK = 0;
+    public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -264,6 +271,16 @@ public final class DataReq extends Message {
             } else {
                 this.issdk = builder.issdk;
             }
+            if (builder.query_word == null) {
+                this.query_word = "";
+            } else {
+                this.query_word = builder.query_word;
+            }
+            if (builder.is_comm_reverse == null) {
+                this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
+            } else {
+                this.is_comm_reverse = builder.is_comm_reverse;
+            }
             if (builder.da_idfa == null) {
                 this.da_idfa = "";
             } else {
@@ -308,18 +325,21 @@ public final class DataReq extends Message {
         this.st_stat = builder.st_stat;
         this.st_task = builder.st_task;
         this.issdk = builder.issdk;
+        this.query_word = builder.query_word;
+        this.is_comm_reverse = builder.is_comm_reverse;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<DataReq> {
         public Integer arround;
         public Integer back;
         public Integer banner;
         public CommonReq common;
         public String da_idfa;
         public Integer floor_rn;
+        public Integer is_comm_reverse;
         public Integer issdk;
         public Long kz;
         public Integer last;
@@ -333,6 +353,7 @@ public final class DataReq extends Message {
         public String platform;
         public Integer pn;
         public Integer q_type;
+        public String query_word;
         public Integer r;
         public Integer rn;
         public Integer s_model;
@@ -347,6 +368,9 @@ public final class DataReq extends Message {
         public Integer thread_type;
         public Integer weipost;
         public Integer with_floor;
+
+        public Builder() {
+        }
 
         public Builder(DataReq dataReq) {
             super(dataReq);
@@ -382,6 +406,8 @@ public final class DataReq extends Message {
                 this.st_stat = dataReq.st_stat;
                 this.st_task = dataReq.st_task;
                 this.issdk = dataReq.issdk;
+                this.query_word = dataReq.query_word;
+                this.is_comm_reverse = dataReq.is_comm_reverse;
                 this.da_idfa = dataReq.da_idfa;
                 this.platform = dataReq.platform;
             }

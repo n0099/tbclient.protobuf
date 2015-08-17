@@ -155,7 +155,7 @@ public final class GoodsInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GoodsInfo> {
+    public static final class Builder extends Message.Builder<GoodsInfo> {
         public String button_text;
         public String card_desc;
         public String card_tag;
@@ -171,6 +171,9 @@ public final class GoodsInfo extends Message {
         public String thread_type;
         public String user_name;
         public String user_portrait;
+
+        public Builder() {
+        }
 
         public Builder(GoodsInfo goodsInfo) {
             super(goodsInfo);

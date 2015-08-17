@@ -36,9 +36,12 @@ public final class MediaInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<MediaInfo> {
+    public static final class Builder extends Message.Builder<MediaInfo> {
         public String pic_url;
         public Integer type;
+
+        public Builder() {
+        }
 
         public Builder(MediaInfo mediaInfo) {
             super(mediaInfo);

@@ -21,8 +21,11 @@ public final class CheckPostReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<CheckPostReqIdl> {
+    public static final class Builder extends Message.Builder<CheckPostReqIdl> {
         public ReqData data;
+
+        public Builder() {
+        }
 
         public Builder(CheckPostReqIdl checkPostReqIdl) {
             super(checkPostReqIdl);

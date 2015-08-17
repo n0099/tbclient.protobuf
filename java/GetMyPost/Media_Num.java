@@ -27,8 +27,11 @@ public final class Media_Num extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Media_Num> {
+    public static final class Builder extends Message.Builder<Media_Num> {
         public Integer pic;
+
+        public Builder() {
+        }
 
         public Builder(Media_Num media_Num) {
             super(media_Num);

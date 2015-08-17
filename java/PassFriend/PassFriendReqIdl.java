@@ -21,8 +21,11 @@ public final class PassFriendReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PassFriendReqIdl> {
+    public static final class Builder extends Message.Builder<PassFriendReqIdl> {
         public ReqData data;
+
+        public Builder() {
+        }
 
         public Builder(PassFriendReqIdl passFriendReqIdl) {
             super(passFriendReqIdl);

@@ -45,10 +45,13 @@ public final class Voice extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Voice> {
+    public static final class Builder extends Message.Builder<Voice> {
         public Integer during_time;
         public Integer type;
         public String voice_md5;
+
+        public Builder() {
+        }
 
         public Builder(Voice voice) {
             super(voice);

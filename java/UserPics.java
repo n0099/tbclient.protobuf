@@ -36,9 +36,12 @@ public final class UserPics extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<UserPics> {
+    public static final class Builder extends Message.Builder<UserPics> {
         public String big;
         public String small;
+
+        public Builder() {
+        }
 
         public Builder(UserPics userPics) {
             super(userPics);

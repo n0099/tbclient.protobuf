@@ -63,12 +63,15 @@ public final class LikeForum extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<LikeForum> {
+    public static final class Builder extends Message.Builder<LikeForum> {
         public String avatar;
         public Long forum_id;
         public String forum_name;
         public Integer is_sign;
         public Integer level_id;
+
+        public Builder() {
+        }
 
         public Builder(LikeForum likeForum) {
             super(likeForum);

@@ -6,9 +6,11 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Anti;
 import tbclient.BannerList;
+import tbclient.FineBannerPb;
 import tbclient.Lbs;
 import tbclient.Page;
 import tbclient.Post;
+import tbclient.RecommendThread;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
 import tbclient.User;
@@ -20,6 +22,8 @@ public final class DataRes extends Message {
     public final Anti anti;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 17)
+    public final List<FineBannerPb> fine_banner;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -36,6 +40,8 @@ public final class DataRes extends Message {
     public final List<PostBanner> post_banner;
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
     public final List<Post> post_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 16)
+    public final List<RecommendThread> recommend_threads;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
     @ProtoField(tag = 8)
@@ -50,6 +56,8 @@ public final class DataRes extends Message {
     public static final List<PostBanner> DEFAULT_POST_BANNER = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
     public static final Integer DEFAULT_SERVER_TIME = 0;
+    public static final List<RecommendThread> DEFAULT_RECOMMEND_THREADS = Collections.emptyList();
+    public static final List<FineBannerPb> DEFAULT_FINE_BANNER = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -97,7 +105,18 @@ public final class DataRes extends Message {
                 this.server_time = builder.server_time;
             }
             this.news_info = builder.news_info;
-            return;
+            if (builder.recommend_threads == null) {
+                this.recommend_threads = DEFAULT_RECOMMEND_THREADS;
+            } else {
+                this.recommend_threads = immutableCopyOf(builder.recommend_threads);
+            }
+            if (builder.fine_banner == null) {
+                this.fine_banner = DEFAULT_FINE_BANNER;
+                return;
+            } else {
+                this.fine_banner = immutableCopyOf(builder.fine_banner);
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -114,13 +133,16 @@ public final class DataRes extends Message {
         this.user_list = immutableCopyOf(builder.user_list);
         this.server_time = builder.server_time;
         this.news_info = builder.news_info;
+        this.recommend_threads = immutableCopyOf(builder.recommend_threads);
+        this.fine_banner = immutableCopyOf(builder.fine_banner);
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
         public Anti anti;
         public BannerList banner_list;
+        public List<FineBannerPb> fine_banner;
         public SimpleForum forum;
         public Integer has_floor;
         public Integer is_new_url;
@@ -129,10 +151,14 @@ public final class DataRes extends Message {
         public Page page;
         public List<PostBanner> post_banner;
         public List<Post> post_list;
+        public List<RecommendThread> recommend_threads;
         public Integer server_time;
         public ThreadInfo thread;
         public User user;
         public List<User> user_list;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);
@@ -152,6 +178,8 @@ public final class DataRes extends Message {
                 this.user_list = DataRes.copyOf(dataRes.user_list);
                 this.server_time = dataRes.server_time;
                 this.news_info = dataRes.news_info;
+                this.recommend_threads = DataRes.copyOf(dataRes.recommend_threads);
+                this.fine_banner = DataRes.copyOf(dataRes.fine_banner);
             }
         }
 

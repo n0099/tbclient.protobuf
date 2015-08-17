@@ -26,9 +26,12 @@ public final class ReplyMeResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ReplyMeResIdl> {
+    public static final class Builder extends Message.Builder<ReplyMeResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(ReplyMeResIdl replyMeResIdl) {
             super(replyMeResIdl);

@@ -15,11 +15,11 @@ public final class UserInfo extends Message {
     public final String portrait;
     @ProtoField(tag = 7)
     public final ShowIcon tshow_icon;
-    @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer user_id;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long user_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String user_name;
-    public static final Integer DEFAULT_USER_ID = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_GENDER = 0;
 
     /* synthetic */ UserInfo(Builder builder, boolean z, UserInfo userInfo) {
@@ -66,13 +66,16 @@ public final class UserInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<UserInfo> {
+    public static final class Builder extends Message.Builder<UserInfo> {
         public Integer gender;
         public String intro;
         public String portrait;
         public ShowIcon tshow_icon;
-        public Integer user_id;
+        public Long user_id;
         public String user_name;
+
+        public Builder() {
+        }
 
         public Builder(UserInfo userInfo) {
             super(userInfo);

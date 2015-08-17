@@ -36,9 +36,12 @@ public final class PostInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PostInfo> {
+    public static final class Builder extends Message.Builder<PostInfo> {
         public String common_post_pic;
         public String large_post_pic;
+
+        public Builder() {
+        }
 
         public Builder(PostInfo postInfo) {
             super(postInfo);

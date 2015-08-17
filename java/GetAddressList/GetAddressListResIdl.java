@@ -26,9 +26,12 @@ public final class GetAddressListResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetAddressListResIdl> {
+    public static final class Builder extends Message.Builder<GetAddressListResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(GetAddressListResIdl getAddressListResIdl) {
             super(getAddressListResIdl);

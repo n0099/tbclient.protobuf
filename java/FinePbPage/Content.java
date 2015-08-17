@@ -10,10 +10,12 @@ public final class Content extends Message {
     public static final String DEFAULT_BSIZE = "";
     public static final String DEFAULT_C = "";
     public static final String DEFAULT_CDN_SRC = "";
+    public static final String DEFAULT_COLOR = "";
     public static final String DEFAULT_LINK = "";
     public static final String DEFAULT_SRC = "";
     public static final String DEFAULT_TEXT = "";
-    public static final Long DEFAULT_TYPE = 0L;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer align;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String big_cdn_src;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -26,14 +28,21 @@ public final class Content extends Message {
     public final String c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String color;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer size;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String src;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String text;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long type;
+    public static final Long DEFAULT_TYPE = 0L;
+    public static final Integer DEFAULT_ALIGN = 0;
+    public static final Integer DEFAULT_SIZE = 0;
 
     /* synthetic */ Content(Builder builder, boolean z, Content content) {
         this(builder, z);
@@ -89,9 +98,24 @@ public final class Content extends Message {
             }
             if (builder.c == null) {
                 this.c = "";
-                return;
             } else {
                 this.c = builder.c;
+            }
+            if (builder.align == null) {
+                this.align = DEFAULT_ALIGN;
+            } else {
+                this.align = builder.align;
+            }
+            if (builder.color == null) {
+                this.color = "";
+            } else {
+                this.color = builder.color;
+            }
+            if (builder.size == null) {
+                this.size = DEFAULT_SIZE;
+                return;
+            } else {
+                this.size = builder.size;
                 return;
             }
         }
@@ -105,20 +129,29 @@ public final class Content extends Message {
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
         this.c = builder.c;
+        this.align = builder.align;
+        this.color = builder.color;
+        this.size = builder.size;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Content> {
+    public static final class Builder extends Message.Builder<Content> {
+        public Integer align;
         public String big_cdn_src;
         public String big_size;
         public String big_src;
         public String bsize;
         public String c;
         public String cdn_src;
+        public String color;
         public String link;
+        public Integer size;
         public String src;
         public String text;
         public Long type;
+
+        public Builder() {
+        }
 
         public Builder(Content content) {
             super(content);
@@ -133,6 +166,9 @@ public final class Content extends Message {
                 this.cdn_src = content.cdn_src;
                 this.big_cdn_src = content.big_cdn_src;
                 this.c = content.c;
+                this.align = content.align;
+                this.color = content.color;
+                this.size = content.size;
             }
         }
 

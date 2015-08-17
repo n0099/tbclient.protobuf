@@ -36,9 +36,12 @@ public final class Guess extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Guess> {
+    public static final class Builder extends Message.Builder<Guess> {
         public String title;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(Guess guess) {
             super(guess);

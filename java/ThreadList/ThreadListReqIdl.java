@@ -21,8 +21,11 @@ public final class ThreadListReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ThreadListReqIdl> {
+    public static final class Builder extends Message.Builder<ThreadListReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(ThreadListReqIdl threadListReqIdl) {
             super(threadListReqIdl);

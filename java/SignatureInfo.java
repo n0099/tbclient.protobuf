@@ -71,7 +71,7 @@ public final class SignatureInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<SignatureInfo> {
+    public static final class Builder extends Message.Builder<SignatureInfo> {
         public Avatar avatar;
         public Equipment equipment;
         public String game_id;
@@ -79,6 +79,9 @@ public final class SignatureInfo extends Message {
         public String player;
         public String power;
         public String server;
+
+        public Builder() {
+        }
 
         public Builder(SignatureInfo signatureInfo) {
             super(signatureInfo);

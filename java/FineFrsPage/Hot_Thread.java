@@ -155,7 +155,7 @@ public final class Hot_Thread extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Hot_Thread> {
+    public static final class Builder extends Message.Builder<Hot_Thread> {
         public String _abstract;
         public Long create_time;
         public Long forum_id;
@@ -171,6 +171,9 @@ public final class Hot_Thread extends Message {
         public String title;
         public Integer type;
         public Integer zan_num;
+
+        public Builder() {
+        }
 
         public Builder(Hot_Thread hot_Thread) {
             super(hot_Thread);

@@ -149,7 +149,7 @@ public final class ReplyList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ReplyList> {
+    public static final class Builder extends Message.Builder<ReplyList> {
         public String content;
         public String fname;
         public Integer is_floor;
@@ -166,6 +166,9 @@ public final class ReplyList extends Message {
         public Integer type;
         public Integer unread;
         public Zan zan;
+
+        public Builder() {
+        }
 
         public Builder(ReplyList replyList) {
             super(replyList);

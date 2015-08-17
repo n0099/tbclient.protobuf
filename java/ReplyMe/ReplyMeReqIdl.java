@@ -21,8 +21,11 @@ public final class ReplyMeReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ReplyMeReqIdl> {
+    public static final class Builder extends Message.Builder<ReplyMeReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(ReplyMeReqIdl replyMeReqIdl) {
             super(replyMeReqIdl);

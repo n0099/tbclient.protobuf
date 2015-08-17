@@ -21,8 +21,11 @@ public final class LogTogetherReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<LogTogetherReqIdl> {
+    public static final class Builder extends Message.Builder<LogTogetherReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(LogTogetherReqIdl logTogetherReqIdl) {
             super(logTogetherReqIdl);

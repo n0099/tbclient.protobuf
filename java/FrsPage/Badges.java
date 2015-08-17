@@ -45,10 +45,13 @@ public final class Badges extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Badges> {
+    public static final class Builder extends Message.Builder<Badges> {
         public Integer badge_id;
         public String badge_url;
         public String webview;
+
+        public Builder() {
+        }
 
         public Builder(Badges badges) {
             super(badges);

@@ -45,10 +45,13 @@ public final class Error extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Error> {
+    public static final class Builder extends Message.Builder<Error> {
         public String errmsg;
         public Integer errorno;
         public String usermsg;
+
+        public Builder() {
+        }
 
         public Builder(Error error) {
             super(error);

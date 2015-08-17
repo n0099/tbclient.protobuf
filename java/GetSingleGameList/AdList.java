@@ -56,11 +56,14 @@ public final class AdList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<AdList> {
+    public static final class Builder extends Message.Builder<AdList> {
         public String ad_link_android;
         public String ad_link_ios;
         public String ad_link_webview;
         public List<String> ad_pic;
+
+        public Builder() {
+        }
 
         public Builder(AdList adList) {
             super(adList);

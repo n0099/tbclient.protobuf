@@ -2,6 +2,7 @@ package tbclient.GetNewGameList;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -143,7 +144,7 @@ public final class NewGameInfo extends Message {
     public final String test_userids;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String thread_forum_name;
-    @ProtoField(tag = 33, type = Message.Datatype.UINT64)
+    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.UINT64)
     public final Long thread_id;
     @ProtoField(tag = 32, type = Message.Datatype.UINT64)
     public final Long thread_theme_id;
@@ -509,7 +510,7 @@ public final class NewGameInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<NewGameInfo> {
+    public static final class Builder extends Message.Builder<NewGameInfo> {
         public String andr_pk_name;
         public String api_key;
         public String app_id;
@@ -564,6 +565,9 @@ public final class NewGameInfo extends Message {
         public Integer time;
         public String version;
         public String version_ios;
+
+        public Builder() {
+        }
 
         public Builder(NewGameInfo newGameInfo) {
             super(newGameInfo);

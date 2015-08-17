@@ -38,9 +38,12 @@ public final class ColorEgg extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ColorEgg> {
+    public static final class Builder extends Message.Builder<ColorEgg> {
         public List<String> holiday_words;
         public Integer style_flag;
+
+        public Builder() {
+        }
 
         public Builder(ColorEgg colorEgg) {
             super(colorEgg);

@@ -2,9 +2,9 @@ package tbclient.FineFrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.ZhiBoInfoTW;
 /* loaded from: classes.dex */
 public final class FineBanner extends Message {
-    public static final Long DEFAULT_FTID = 0L;
     public static final String DEFAULT_LINK_URL = "";
     public static final String DEFAULT_PIC_URL = "";
     public static final String DEFAULT_TITLE = "";
@@ -16,6 +16,12 @@ public final class FineBanner extends Message {
     public final String pic_url;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 6)
+    public final ZhiBoInfoTW twzhibo_info;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer type;
+    public static final Long DEFAULT_FTID = 0L;
+    public static final Integer DEFAULT_TYPE = 0;
 
     /* synthetic */ FineBanner(Builder builder, boolean z, FineBanner fineBanner) {
         this(builder, z);
@@ -41,24 +47,36 @@ public final class FineBanner extends Message {
             }
             if (builder.link_url == null) {
                 this.link_url = "";
-                return;
             } else {
                 this.link_url = builder.link_url;
-                return;
             }
+            if (builder.type == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = builder.type;
+            }
+            this.twzhibo_info = builder.twzhibo_info;
+            return;
         }
         this.ftid = builder.ftid;
         this.title = builder.title;
         this.pic_url = builder.pic_url;
         this.link_url = builder.link_url;
+        this.type = builder.type;
+        this.twzhibo_info = builder.twzhibo_info;
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FineBanner> {
+    public static final class Builder extends Message.Builder<FineBanner> {
         public Long ftid;
         public String link_url;
         public String pic_url;
         public String title;
+        public ZhiBoInfoTW twzhibo_info;
+        public Integer type;
+
+        public Builder() {
+        }
 
         public Builder(FineBanner fineBanner) {
             super(fineBanner);
@@ -67,6 +85,8 @@ public final class FineBanner extends Message {
                 this.title = fineBanner.title;
                 this.pic_url = fineBanner.pic_url;
                 this.link_url = fineBanner.link_url;
+                this.type = fineBanner.type;
+                this.twzhibo_info = fineBanner.twzhibo_info;
             }
         }
 

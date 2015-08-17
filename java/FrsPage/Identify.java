@@ -36,9 +36,12 @@ public final class Identify extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Identify> {
+    public static final class Builder extends Message.Builder<Identify> {
         public String id;
         public Integer is_identify;
+
+        public Builder() {
+        }
 
         public Builder(Identify identify) {
             super(identify);

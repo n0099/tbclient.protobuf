@@ -5,16 +5,16 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class ReplyList extends Message {
     public static final String DEFAULT_MESSAGE = "";
-    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public final Integer friend_id;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long friend_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String message;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer time;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer user_id;
-    public static final Integer DEFAULT_USER_ID = 0;
-    public static final Integer DEFAULT_FRIEND_ID = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long user_id;
+    public static final Long DEFAULT_USER_ID = 0L;
+    public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final Integer DEFAULT_TIME = 0;
 
     /* synthetic */ ReplyList(Builder builder, boolean z, ReplyList replyList) {
@@ -54,11 +54,14 @@ public final class ReplyList extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ReplyList> {
-        public Integer friend_id;
+    public static final class Builder extends Message.Builder<ReplyList> {
+        public Long friend_id;
         public String message;
         public Integer time;
-        public Integer user_id;
+        public Long user_id;
+
+        public Builder() {
+        }
 
         public Builder(ReplyList replyList) {
             super(replyList);

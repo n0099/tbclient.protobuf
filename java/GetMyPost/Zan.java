@@ -6,21 +6,21 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class Zan extends Message {
-    @ProtoField(tag = 5, type = Message.Datatype.INT32)
-    public final Integer author_id;
+    @ProtoField(tag = 5, type = Message.Datatype.INT64)
+    public final Long author_id;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_liked;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer last_time;
-    @ProtoField(label = Message.Label.REPEATED, tag = 4, type = Message.Datatype.INT32)
-    public final List<Integer> liker_id;
+    @ProtoField(label = Message.Label.REPEATED, tag = 4, type = Message.Datatype.INT64)
+    public final List<Long> liker_id;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer num;
     public static final Integer DEFAULT_NUM = 0;
     public static final Integer DEFAULT_IS_LIKED = 0;
     public static final Integer DEFAULT_LAST_TIME = 0;
-    public static final List<Integer> DEFAULT_LIKER_ID = Collections.emptyList();
-    public static final Integer DEFAULT_AUTHOR_ID = 0;
+    public static final List<Long> DEFAULT_LIKER_ID = Collections.emptyList();
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
 
     /* synthetic */ Zan(Builder builder, boolean z, Zan zan) {
         this(builder, z);
@@ -65,12 +65,15 @@ public final class Zan extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Zan> {
-        public Integer author_id;
+    public static final class Builder extends Message.Builder<Zan> {
+        public Long author_id;
         public Integer is_liked;
         public Integer last_time;
-        public List<Integer> liker_id;
+        public List<Long> liker_id;
         public Integer num;
+
+        public Builder() {
+        }
 
         public Builder(Zan zan) {
             super(zan);

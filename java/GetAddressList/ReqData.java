@@ -27,8 +27,11 @@ public final class ReqData extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ReqData> {
+    public static final class Builder extends Message.Builder<ReqData> {
         public Integer timestamp;
+
+        public Builder() {
+        }
 
         public Builder(ReqData reqData) {
             super(reqData);

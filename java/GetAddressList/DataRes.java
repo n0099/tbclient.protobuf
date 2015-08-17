@@ -56,11 +56,14 @@ public final class DataRes extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<DataRes> {
         public List<listData> address_list;
         public List<deleteList> deleted_list;
         public List<robotsList> robots_list;
         public Long timestamp;
+
+        public Builder() {
+        }
 
         public Builder(DataRes dataRes) {
             super(dataRes);

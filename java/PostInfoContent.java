@@ -56,11 +56,14 @@ public final class PostInfoContent extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PostInfoContent> {
+    public static final class Builder extends Message.Builder<PostInfoContent> {
         public Long create_time;
         public List<Abstract> post_content;
         public Long post_id;
         public Long post_type;
+
+        public Builder() {
+        }
 
         public Builder(PostInfoContent postInfoContent) {
             super(postInfoContent);

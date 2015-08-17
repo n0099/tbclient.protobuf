@@ -109,7 +109,7 @@ public final class TAInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<TAInfo> {
+    public static final class Builder extends Message.Builder<TAInfo> {
         public CommonDistance distanceinfo;
         public List<String> foruminfo;
         public List<String> friendinfo;
@@ -121,6 +121,9 @@ public final class TAInfo extends Message {
         public CommonLocation location;
         public List<ReplyList> reply_list;
         public Integer userClientVersionIsLower;
+
+        public Builder() {
+        }
 
         public Builder(TAInfo tAInfo) {
             super(tAInfo);

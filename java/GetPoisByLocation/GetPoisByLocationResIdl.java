@@ -26,9 +26,12 @@ public final class GetPoisByLocationResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetPoisByLocationResIdl> {
+    public static final class Builder extends Message.Builder<GetPoisByLocationResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(GetPoisByLocationResIdl getPoisByLocationResIdl) {
             super(getPoisByLocationResIdl);

@@ -36,9 +36,12 @@ public final class ZanInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ZanInfo> {
+    public static final class Builder extends Message.Builder<ZanInfo> {
         public Boolean is_zan;
         public Long zansum;
+
+        public Builder() {
+        }
 
         public Builder(ZanInfo zanInfo) {
             super(zanInfo);

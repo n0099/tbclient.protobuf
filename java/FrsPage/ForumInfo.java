@@ -2,6 +2,7 @@ package tbclient.FrsPage;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -35,7 +36,7 @@ public final class ForumInfo extends Message {
     public final List<Badges> badges;
     @ProtoField(tag = 32)
     public final Banner banner;
-    @ProtoField(tag = 33)
+    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE)
     public final BannerList banner_list;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer can_use_accelerate;
@@ -446,7 +447,7 @@ public final class ForumInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ForumInfo> {
+    public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
         public Integer album_open_photo_frs;
         public AnchorPower anchor_power;
@@ -501,6 +502,9 @@ public final class ForumInfo extends Message {
         public Integer user_level;
         public WorldCup worldcupinfo;
         public Zhibo zhibo;
+
+        public Builder() {
+        }
 
         public Builder(ForumInfo forumInfo) {
             super(forumInfo);

@@ -26,9 +26,12 @@ public final class HotThreadResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<HotThreadResIdl> {
+    public static final class Builder extends Message.Builder<HotThreadResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(HotThreadResIdl hotThreadResIdl) {
             super(hotThreadResIdl);

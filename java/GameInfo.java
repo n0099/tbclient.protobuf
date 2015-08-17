@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -101,7 +102,7 @@ public final class GameInfo extends Message {
     public final String secret_key;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer star;
-    @ProtoField(tag = 33, type = Message.Datatype.STRING)
+    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.STRING)
     public final String subscript_color;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String superscript_color;
@@ -347,7 +348,7 @@ public final class GameInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GameInfo> {
+    public static final class Builder extends Message.Builder<GameInfo> {
         public String _abstract;
         public String andr_pk_name;
         public Integer app_id;
@@ -384,6 +385,9 @@ public final class GameInfo extends Message {
         public String subscript_color;
         public String superscript_color;
         public String version;
+
+        public Builder() {
+        }
 
         public Builder(GameInfo gameInfo) {
             super(gameInfo);

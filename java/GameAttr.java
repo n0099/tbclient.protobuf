@@ -40,10 +40,13 @@ public final class GameAttr extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GameAttr> {
+    public static final class Builder extends Message.Builder<GameAttr> {
         public String is_open;
         public SignatureInfo signature_info;
         public String user_id;
+
+        public Builder() {
+        }
 
         public Builder(GameAttr gameAttr) {
             super(gameAttr);

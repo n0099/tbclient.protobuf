@@ -27,8 +27,11 @@ public final class Global extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Global> {
+    public static final class Builder extends Message.Builder<Global> {
         public String tbmall_newprops;
+
+        public Builder() {
+        }
 
         public Builder(Global global) {
             super(global);

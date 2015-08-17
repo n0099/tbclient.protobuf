@@ -108,7 +108,7 @@ public final class StarInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<StarInfo> {
+    public static final class Builder extends Message.Builder<StarInfo> {
         public Fans fans;
         public List<Focus> focus;
         public Integer gender;
@@ -125,6 +125,9 @@ public final class StarInfo extends Message {
         public Size top_size;
         public Ticket trade;
         public Video video;
+
+        public Builder() {
+        }
 
         public Builder(StarInfo starInfo) {
             super(starInfo);

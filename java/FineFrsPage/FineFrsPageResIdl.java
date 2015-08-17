@@ -26,9 +26,12 @@ public final class FineFrsPageResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FineFrsPageResIdl> {
+    public static final class Builder extends Message.Builder<FineFrsPageResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(FineFrsPageResIdl fineFrsPageResIdl) {
             super(fineFrsPageResIdl);

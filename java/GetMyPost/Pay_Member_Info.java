@@ -54,11 +54,14 @@ public final class Pay_Member_Info extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Pay_Member_Info> {
+    public static final class Builder extends Message.Builder<Pay_Member_Info> {
         public Integer end_time;
         public String expire_remind;
         public Integer props_id;
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(Pay_Member_Info pay_Member_Info) {
             super(pay_Member_Info);

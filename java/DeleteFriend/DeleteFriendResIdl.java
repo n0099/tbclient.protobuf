@@ -26,9 +26,12 @@ public final class DeleteFriendResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DeleteFriendResIdl> {
+    public static final class Builder extends Message.Builder<DeleteFriendResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(DeleteFriendResIdl deleteFriendResIdl) {
             super(deleteFriendResIdl);

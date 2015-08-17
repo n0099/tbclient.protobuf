@@ -54,11 +54,14 @@ public final class NewRecommend extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<NewRecommend> {
+    public static final class Builder extends Message.Builder<NewRecommend> {
         public String avatar;
         public Long forum_id;
         public String forum_name;
         public Integer member_count;
+
+        public Builder() {
+        }
 
         public Builder(NewRecommend newRecommend) {
             super(newRecommend);

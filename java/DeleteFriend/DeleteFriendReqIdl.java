@@ -21,8 +21,11 @@ public final class DeleteFriendReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DeleteFriendReqIdl> {
+    public static final class Builder extends Message.Builder<DeleteFriendReqIdl> {
         public ReqData data;
+
+        public Builder() {
+        }
 
         public Builder(DeleteFriendReqIdl deleteFriendReqIdl) {
             super(deleteFriendReqIdl);

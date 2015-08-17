@@ -21,8 +21,11 @@ public final class UnlikeReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<UnlikeReqIdl> {
+    public static final class Builder extends Message.Builder<UnlikeReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(UnlikeReqIdl unlikeReqIdl) {
             super(unlikeReqIdl);

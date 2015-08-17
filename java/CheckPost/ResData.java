@@ -54,11 +54,14 @@ public final class ResData extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<ResData> {
+    public static final class Builder extends Message.Builder<ResData> {
         public Long forumId;
         public Long postState;
         public Long quoteId;
         public Long repostId;
+
+        public Builder() {
+        }
 
         public Builder(ResData resData) {
             super(resData);

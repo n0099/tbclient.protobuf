@@ -36,9 +36,12 @@ public final class PhotoInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<PhotoInfo> {
+    public static final class Builder extends Message.Builder<PhotoInfo> {
         public Integer num;
         public String pic;
+
+        public Builder() {
+        }
 
         public Builder(PhotoInfo photoInfo) {
             super(photoInfo);

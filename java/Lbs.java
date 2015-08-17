@@ -54,11 +54,14 @@ public final class Lbs extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Lbs> {
+    public static final class Builder extends Message.Builder<Lbs> {
         public String lat;
         public String lng;
         public String name;
         public String sn;
+
+        public Builder() {
+        }
 
         public Builder(Lbs lbs) {
             super(lbs);

@@ -4,10 +4,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class Manager extends Message {
-    public static final Integer DEFAULT_ID = 0;
+    public static final Long DEFAULT_ID = 0L;
     public static final String DEFAULT_NAME = "";
-    @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer id;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
 
@@ -36,9 +36,12 @@ public final class Manager extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Manager> {
-        public Integer id;
+    public static final class Builder extends Message.Builder<Manager> {
+        public Long id;
         public String name;
+
+        public Builder() {
+        }
 
         public Builder(Manager manager) {
             super(manager);

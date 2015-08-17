@@ -27,8 +27,11 @@ public final class WorldCupLottery extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<WorldCupLottery> {
+    public static final class Builder extends Message.Builder<WorldCupLottery> {
         public String url;
+
+        public Builder() {
+        }
 
         public Builder(WorldCupLottery worldCupLottery) {
             super(worldCupLottery);

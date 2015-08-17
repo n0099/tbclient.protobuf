@@ -2,6 +2,7 @@ package tbclient.FrsPage;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -67,7 +68,7 @@ public final class DataReq extends Message {
     public final Integer need_badge;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer net_error;
-    @ProtoField(tag = 33, type = Message.Datatype.INT32)
+    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.INT32)
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;
@@ -99,8 +100,8 @@ public final class DataReq extends Message {
     public final String st_type;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
-    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
-    public final Integer user_id;
+    @ProtoField(tag = a0.h, type = Message.Datatype.INT64)
+    public final Long user_id;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String user_name;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -132,7 +133,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SMILE_GRADE = 0;
     public static final Boolean DEFAULT_SUPPORT_NOUN = false;
     public static final Boolean DEFAULT_LOGIN = false;
-    public static final Integer DEFAULT_USER_ID = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_NO_UN = 0;
     public static final Boolean DEFAULT_DEBUG = false;
     public static final Integer DEFAULT_ISSDK = 0;
@@ -404,7 +405,7 @@ public final class DataReq extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<DataReq> {
         public Boolean check_login;
         public Integer cid;
         public Integer class_id;
@@ -444,10 +445,13 @@ public final class DataReq extends Message {
         public Integer st_param;
         public String st_type;
         public Boolean support_noun;
-        public Integer user_id;
+        public Long user_id;
         public String user_name;
         public Integer with_group;
         public Integer withcal;
+
+        public Builder() {
+        }
 
         public Builder(DataReq dataReq) {
             super(dataReq);

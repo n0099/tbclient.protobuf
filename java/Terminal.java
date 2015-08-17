@@ -45,10 +45,13 @@ public final class Terminal extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Terminal> {
+    public static final class Builder extends Message.Builder<Terminal> {
         public Integer client;
         public Integer pc;
         public Integer wap;
+
+        public Builder() {
+        }
 
         public Builder(Terminal terminal) {
             super(terminal);

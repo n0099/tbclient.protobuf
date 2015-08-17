@@ -26,9 +26,12 @@ public final class FrsPageResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FrsPageResIdl> {
+    public static final class Builder extends Message.Builder<FrsPageResIdl> {
         public DataRes data;
         public Error error;
+
+        public Builder() {
+        }
 
         public Builder(FrsPageResIdl frsPageResIdl) {
             super(frsPageResIdl);

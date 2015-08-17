@@ -54,11 +54,14 @@ public final class TopNotice extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<TopNotice> {
+    public static final class Builder extends Message.Builder<TopNotice> {
         public String author;
         public Integer id;
         public String title;
         public String title_link;
+
+        public Builder() {
+        }
 
         public Builder(TopNotice topNotice) {
             super(topNotice);

@@ -21,8 +21,11 @@ public final class FinePbPageReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<FinePbPageReqIdl> {
+    public static final class Builder extends Message.Builder<FinePbPageReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(FinePbPageReqIdl finePbPageReqIdl) {
             super(finePbPageReqIdl);

@@ -21,8 +21,11 @@ public final class GetMyPostReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetMyPostReqIdl> {
+    public static final class Builder extends Message.Builder<GetMyPostReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(GetMyPostReqIdl getMyPostReqIdl) {
             super(getMyPostReqIdl);

@@ -41,11 +41,14 @@ public final class MparrProps extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<MparrProps> {
+    public static final class Builder extends Message.Builder<MparrProps> {
         public AvatarFrame avatarframe;
         public Level level;
         public Portrait portrait;
         public List<Props> props;
+
+        public Builder() {
+        }
 
         public Builder(MparrProps mparrProps) {
             super(mparrProps);

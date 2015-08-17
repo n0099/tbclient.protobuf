@@ -36,9 +36,12 @@ public final class Forum extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<Forum> {
+    public static final class Builder extends Message.Builder<Forum> {
         public Long forum_id;
         public String level1_dir_name;
+
+        public Builder() {
+        }
 
         public Builder(Forum forum) {
             super(forum);

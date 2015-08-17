@@ -36,9 +36,12 @@ public final class GiftInfo extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GiftInfo> {
+    public static final class Builder extends Message.Builder<GiftInfo> {
         public String icon;
         public Integer num;
+
+        public Builder() {
+        }
 
         public Builder(GiftInfo giftInfo) {
             super(giftInfo);

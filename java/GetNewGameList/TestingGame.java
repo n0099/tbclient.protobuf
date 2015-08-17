@@ -47,10 +47,13 @@ public final class TestingGame extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<TestingGame> {
+    public static final class Builder extends Message.Builder<TestingGame> {
         public List<NewGameInfo> future;
         public List<NewGameInfo> today;
         public List<NewGameInfo> tomorrow;
+
+        public Builder() {
+        }
 
         public Builder(TestingGame testingGame) {
             super(testingGame);

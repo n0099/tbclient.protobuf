@@ -21,8 +21,11 @@ public final class GetUserInfoReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public final class Builder extends Message.Builder<GetUserInfoReqIdl> {
+    public static final class Builder extends Message.Builder<GetUserInfoReqIdl> {
         public DataReq data;
+
+        public Builder() {
+        }
 
         public Builder(GetUserInfoReqIdl getUserInfoReqIdl) {
             super(getUserInfoReqIdl);
