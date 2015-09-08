@@ -92,7 +92,7 @@ public final class ForumInfo extends Message {
     public final Integer levelup_score;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Manager> managers;
-    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer meizhi_tag;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer member_num;

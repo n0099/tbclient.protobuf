@@ -1,13 +1,12 @@
-package tbclient.GetClientConfig;
+package tbclient.QueryCollectUpdateNum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
-    @ProtoField(tag = 2)
-    public final CLocalDialog local_dialog;
-    @ProtoField(tag = 1)
-    public final CPayType payType;
+    public static final Integer DEFAULT_COLLECT_UPDATE_NUM = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer collect_update_num;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -16,18 +15,20 @@ public final class DataRes extends Message {
     private DataRes(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.payType = builder.payType;
-            this.local_dialog = builder.local_dialog;
-            return;
+            if (builder.collect_update_num == null) {
+                this.collect_update_num = DEFAULT_COLLECT_UPDATE_NUM;
+                return;
+            } else {
+                this.collect_update_num = builder.collect_update_num;
+                return;
+            }
         }
-        this.payType = builder.payType;
-        this.local_dialog = builder.local_dialog;
+        this.collect_update_num = builder.collect_update_num;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public CLocalDialog local_dialog;
-        public CPayType payType;
+        public Integer collect_update_num;
 
         public Builder() {
         }
@@ -35,8 +36,7 @@ public final class DataRes extends Message {
         public Builder(DataRes dataRes) {
             super(dataRes);
             if (dataRes != null) {
-                this.payType = dataRes.payType;
-                this.local_dialog = dataRes.local_dialog;
+                this.collect_update_num = dataRes.collect_update_num;
             }
         }
 

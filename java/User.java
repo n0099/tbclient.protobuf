@@ -13,6 +13,7 @@ public final class User extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
     public static final String DEFAULT_BIMG_URL = "";
+    public static final String DEFAULT_FANS_NICKNAME = "";
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_IP = "";
@@ -37,8 +38,10 @@ public final class User extends Message {
     public final Integer bookmark_count;
     @ProtoField(tag = a0.A, type = Message.Datatype.INT32)
     public final Integer bookmark_new_count;
-    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer concern_num;
+    @ProtoField(tag = a0.m, type = Message.Datatype.STRING)
+    public final String fans_nickname;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
     @ProtoField(tag = a0.z, type = Message.Datatype.INT64)
@@ -443,9 +446,14 @@ public final class User extends Message {
             }
             if (builder.friend_num == null) {
                 this.friend_num = DEFAULT_FRIEND_NUM;
-                return;
             } else {
                 this.friend_num = builder.friend_num;
+            }
+            if (builder.fans_nickname == null) {
+                this.fans_nickname = "";
+                return;
+            } else {
+                this.fans_nickname = builder.fans_nickname;
                 return;
             }
         }
@@ -505,6 +513,7 @@ public final class User extends Message {
         this.bookmark_new_count = builder.bookmark_new_count;
         this.mute_user = immutableCopyOf(builder.mute_user);
         this.friend_num = builder.friend_num;
+        this.fans_nickname = builder.fans_nickname;
     }
 
     /* loaded from: classes.dex */
@@ -517,6 +526,7 @@ public final class User extends Message {
         public Integer bookmark_count;
         public Integer bookmark_new_count;
         public Integer concern_num;
+        public String fans_nickname;
         public Integer fans_num;
         public Long friend_num;
         public Integer gender;
@@ -628,6 +638,7 @@ public final class User extends Message {
                 this.bookmark_new_count = user.bookmark_new_count;
                 this.mute_user = User.copyOf(user.mute_user);
                 this.friend_num = user.friend_num;
+                this.fans_nickname = user.fans_nickname;
             }
         }
 

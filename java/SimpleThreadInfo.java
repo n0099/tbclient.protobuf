@@ -13,6 +13,8 @@ public final class SimpleThreadInfo extends Message {
     public final Integer last_time_int;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer reply_num;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT64)
+    public final Long thread_type;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long tid;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -23,6 +25,7 @@ public final class SimpleThreadInfo extends Message {
     public static final Integer DEFAULT_REPLY_NUM = 0;
     public static final Integer DEFAULT_LAST_TIME_INT = 0;
     public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
+    public static final Long DEFAULT_THREAD_TYPE = 0L;
 
     /* synthetic */ SimpleThreadInfo(Builder builder, boolean z, SimpleThreadInfo simpleThreadInfo) {
         this(builder, z);
@@ -57,7 +60,13 @@ public final class SimpleThreadInfo extends Message {
                 this._abstract = immutableCopyOf(builder._abstract);
             }
             this.zan = builder.zan;
-            return;
+            if (builder.thread_type == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+                return;
+            } else {
+                this.thread_type = builder.thread_type;
+                return;
+            }
         }
         this.tid = builder.tid;
         this.title = builder.title;
@@ -65,6 +74,7 @@ public final class SimpleThreadInfo extends Message {
         this.last_time_int = builder.last_time_int;
         this._abstract = immutableCopyOf(builder._abstract);
         this.zan = builder.zan;
+        this.thread_type = builder.thread_type;
     }
 
     /* loaded from: classes.dex */
@@ -72,6 +82,7 @@ public final class SimpleThreadInfo extends Message {
         public List<Abstract> _abstract;
         public Integer last_time_int;
         public Integer reply_num;
+        public Long thread_type;
         public Long tid;
         public String title;
         public Zan zan;
@@ -88,6 +99,7 @@ public final class SimpleThreadInfo extends Message {
                 this.last_time_int = simpleThreadInfo.last_time_int;
                 this._abstract = SimpleThreadInfo.copyOf(simpleThreadInfo._abstract);
                 this.zan = simpleThreadInfo.zan;
+                this.thread_type = simpleThreadInfo.thread_type;
             }
         }
 

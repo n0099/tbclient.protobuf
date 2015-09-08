@@ -33,6 +33,8 @@ public final class ReplyList extends Message {
     public final Integer server_time;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long thread_id;
+    @ProtoField(tag = 17, type = Message.Datatype.UINT32)
+    public final Integer thread_type;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer time;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -51,6 +53,7 @@ public final class ReplyList extends Message {
     public static final Integer DEFAULT_UNREAD = 0;
     public static final Long DEFAULT_QUOTE_PID = 0L;
     public static final Integer DEFAULT_SERVER_TIME = 0;
+    public static final Integer DEFAULT_THREAD_TYPE = 0;
 
     /* synthetic */ ReplyList(Builder builder, boolean z, ReplyList replyList) {
         this(builder, z);
@@ -124,9 +127,14 @@ public final class ReplyList extends Message {
             this.quote_user = builder.quote_user;
             if (builder.server_time == null) {
                 this.server_time = DEFAULT_SERVER_TIME;
-                return;
             } else {
                 this.server_time = builder.server_time;
+            }
+            if (builder.thread_type == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+                return;
+            } else {
+                this.thread_type = builder.thread_type;
                 return;
             }
         }
@@ -146,6 +154,7 @@ public final class ReplyList extends Message {
         this.quote_pid = builder.quote_pid;
         this.quote_user = builder.quote_user;
         this.server_time = builder.server_time;
+        this.thread_type = builder.thread_type;
     }
 
     /* loaded from: classes.dex */
@@ -161,6 +170,7 @@ public final class ReplyList extends Message {
         public User replyer;
         public Integer server_time;
         public Long thread_id;
+        public Integer thread_type;
         public Integer time;
         public String title;
         public Integer type;
@@ -189,6 +199,7 @@ public final class ReplyList extends Message {
                 this.quote_pid = replyList.quote_pid;
                 this.quote_user = replyList.quote_user;
                 this.server_time = replyList.server_time;
+                this.thread_type = replyList.thread_type;
             }
         }
 

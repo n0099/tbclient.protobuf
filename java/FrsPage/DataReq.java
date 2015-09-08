@@ -100,7 +100,7 @@ public final class DataReq extends Message {
     public final String st_type;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
-    @ProtoField(tag = a0.h, type = Message.Datatype.INT64)
+    @ProtoField(tag = 31, type = Message.Datatype.INT64)
     public final Long user_id;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String user_name;

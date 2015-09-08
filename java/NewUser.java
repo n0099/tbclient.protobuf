@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
@@ -76,7 +75,7 @@ public final class NewUser extends Message {
     public final List<Rpgoldicon> rpgoldicon;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer superboy;
-    @ProtoField(label = Message.Label.REPEATED, tag = a0.h)
+    @ProtoField(label = Message.Label.REPEATED, tag = 31)
     public final List<TbmallMonthIcon> tbmall_month_icon;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String tbscore_repeate_finish_time;

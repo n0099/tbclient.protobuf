@@ -39,6 +39,8 @@ public final class DataRes extends Message {
     public final GconAccount gcon_account;
     @ProtoField(tag = 6)
     public final Group group;
+    @ProtoField(tag = 26)
+    public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 15)
     public final Info info;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -61,6 +63,8 @@ public final class DataRes extends Message {
     public final Integer time;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
     public final List<ZhiBoInfoTW> twzhibo_info;
+    @ProtoField(tag = 27, type = Message.Datatype.INT32)
+    public final Integer twzhibo_pos;
     @ProtoField(tag = 1)
     public final User user;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
@@ -79,6 +83,7 @@ public final class DataRes extends Message {
     public static final List<ColorEgg> DEFAULT_COLOR_EGG = Collections.emptyList();
     public static final List<FrsTabInfo> DEFAULT_FRS_TAB_INFO = Collections.emptyList();
     public static final List<ZhiBoInfoTW> DEFAULT_TWZHIBO_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_TWZHIBO_POS = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -172,7 +177,14 @@ public final class DataRes extends Message {
                 this.twzhibo_info = immutableCopyOf(builder.twzhibo_info);
             }
             this.novel = builder.novel;
-            return;
+            this.hot_twzhibo_info = builder.hot_twzhibo_info;
+            if (builder.twzhibo_pos == null) {
+                this.twzhibo_pos = DEFAULT_TWZHIBO_POS;
+                return;
+            } else {
+                this.twzhibo_pos = builder.twzhibo_pos;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -199,6 +211,8 @@ public final class DataRes extends Message {
         this.activityhead = builder.activityhead;
         this.twzhibo_info = immutableCopyOf(builder.twzhibo_info);
         this.novel = builder.novel;
+        this.hot_twzhibo_info = builder.hot_twzhibo_info;
+        this.twzhibo_pos = builder.twzhibo_pos;
     }
 
     /* loaded from: classes.dex */
@@ -215,6 +229,7 @@ public final class DataRes extends Message {
         public List<FrsTabInfo> frs_tab_info;
         public GconAccount gcon_account;
         public Group group;
+        public ZhiBoInfoTW hot_twzhibo_info;
         public Info info;
         public Integer is_new_url;
         public Long logid;
@@ -226,6 +241,7 @@ public final class DataRes extends Message {
         public List<ThreadInfo> thread_list;
         public Integer time;
         public List<ZhiBoInfoTW> twzhibo_info;
+        public Integer twzhibo_pos;
         public User user;
         public List<User> user_list;
 
@@ -260,6 +276,8 @@ public final class DataRes extends Message {
                 this.activityhead = dataRes.activityhead;
                 this.twzhibo_info = DataRes.copyOf(dataRes.twzhibo_info);
                 this.novel = dataRes.novel;
+                this.hot_twzhibo_info = dataRes.hot_twzhibo_info;
+                this.twzhibo_pos = dataRes.twzhibo_pos;
             }
         }
 

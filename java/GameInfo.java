@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
@@ -76,7 +75,7 @@ public final class GameInfo extends Message {
     public final String icon_pic1;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic2;
-    @ProtoField(tag = a0.h, type = Message.Datatype.STRING)
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String icon_pic3;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String icon_url;

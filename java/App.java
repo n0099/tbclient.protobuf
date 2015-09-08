@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.location.a0;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -64,7 +63,7 @@ public final class App extends Message {
     public final String img_url;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String ios_url;
-    @ProtoField(tag = a0.h, type = Message.Datatype.STRING)
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String loc_code;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String name;

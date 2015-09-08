@@ -124,7 +124,7 @@ public final class NewGameInfo extends Message {
     public final String schema_url;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer score;
-    @ProtoField(tag = a0.h, type = Message.Datatype.STRING)
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String secret_key;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String server_id;

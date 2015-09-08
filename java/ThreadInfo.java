@@ -61,6 +61,8 @@ public final class ThreadInfo extends Message {
     public final Guess guess;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer has_commented;
+    @ProtoField(tag = a0.w)
+    public final HotTWThreadInfo hotTWInfo;
     @ProtoField(tag = BDLocation.TypeOffLineLocation, type = Message.Datatype.INT32)
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -129,7 +131,7 @@ public final class ThreadInfo extends Message {
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer repost_num;
-    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer show_commented;
     @ProtoField(tag = BDLocation.TypeOffLineLocationNetworkFail, type = Message.Datatype.INT32)
     public final Integer storecount;
@@ -147,6 +149,8 @@ public final class ThreadInfo extends Message {
     public final String title;
     @ProtoField(tag = 47)
     public final Topic topic;
+    @ProtoField(tag = 72)
+    public final ZhiBoInfoTW twzhibo_info;
     @ProtoField(tag = a0.m, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
     @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.STRING)
@@ -533,11 +537,12 @@ public final class ThreadInfo extends Message {
             }
             if (builder.post_num == null) {
                 this.post_num = DEFAULT_POST_NUM;
-                return;
             } else {
                 this.post_num = builder.post_num;
-                return;
             }
+            this.hotTWInfo = builder.hotTWInfo;
+            this.twzhibo_info = builder.twzhibo_info;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -608,6 +613,8 @@ public final class ThreadInfo extends Message {
         this.livecover_src = builder.livecover_src;
         this.storecount = builder.storecount;
         this.post_num = builder.post_num;
+        this.hotTWInfo = builder.hotTWInfo;
+        this.twzhibo_info = builder.twzhibo_info;
     }
 
     /* loaded from: classes.dex */
@@ -629,6 +636,7 @@ public final class ThreadInfo extends Message {
         public String from;
         public Guess guess;
         public Integer has_commented;
+        public HotTWThreadInfo hotTWInfo;
         public Integer hot_weight;
         public Long id;
         public Integer isLzDeleteAll;
@@ -672,6 +680,7 @@ public final class ThreadInfo extends Message {
         public Integer timeline;
         public String title;
         public Topic topic;
+        public ZhiBoInfoTW twzhibo_info;
         public Integer valid_post_num;
         public String video;
         public String video_cover;
@@ -757,6 +766,8 @@ public final class ThreadInfo extends Message {
                 this.livecover_src = threadInfo.livecover_src;
                 this.storecount = threadInfo.storecount;
                 this.post_num = threadInfo.post_num;
+                this.hotTWInfo = threadInfo.hotTWInfo;
+                this.twzhibo_info = threadInfo.twzhibo_info;
             }
         }
 

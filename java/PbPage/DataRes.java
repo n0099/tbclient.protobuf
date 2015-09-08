@@ -13,6 +13,7 @@ import tbclient.Post;
 import tbclient.RecommendThread;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
+import tbclient.TwZhiBoAnti;
 import tbclient.User;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
@@ -46,6 +47,8 @@ public final class DataRes extends Message {
     public final Integer server_time;
     @ProtoField(tag = 8)
     public final ThreadInfo thread;
+    @ProtoField(tag = 18)
+    public final TwZhiBoAnti twzhibo_anti;
     @ProtoField(tag = 1)
     public final User user;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
@@ -112,11 +115,11 @@ public final class DataRes extends Message {
             }
             if (builder.fine_banner == null) {
                 this.fine_banner = DEFAULT_FINE_BANNER;
-                return;
             } else {
                 this.fine_banner = immutableCopyOf(builder.fine_banner);
-                return;
             }
+            this.twzhibo_anti = builder.twzhibo_anti;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -135,6 +138,7 @@ public final class DataRes extends Message {
         this.news_info = builder.news_info;
         this.recommend_threads = immutableCopyOf(builder.recommend_threads);
         this.fine_banner = immutableCopyOf(builder.fine_banner);
+        this.twzhibo_anti = builder.twzhibo_anti;
     }
 
     /* loaded from: classes.dex */
@@ -154,6 +158,7 @@ public final class DataRes extends Message {
         public List<RecommendThread> recommend_threads;
         public Integer server_time;
         public ThreadInfo thread;
+        public TwZhiBoAnti twzhibo_anti;
         public User user;
         public List<User> user_list;
 
@@ -180,6 +185,7 @@ public final class DataRes extends Message {
                 this.news_info = dataRes.news_info;
                 this.recommend_threads = DataRes.copyOf(dataRes.recommend_threads);
                 this.fine_banner = DataRes.copyOf(dataRes.fine_banner);
+                this.twzhibo_anti = dataRes.twzhibo_anti;
             }
         }
 

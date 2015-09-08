@@ -1,6 +1,7 @@
 package tbclient.PbPage;
 
 import com.baidu.location.a0;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -30,8 +31,12 @@ public final class DataReq extends Message {
     public final Integer floor_rn;
     @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
-    @ProtoField(tag = a0.h, type = Message.Datatype.INT32)
+    @ProtoField(tag = 34, type = Message.Datatype.INT32)
+    public final Integer is_jumpfloor;
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer issdk;
+    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
+    public final Integer jumpfloor_num;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long kz;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
@@ -112,6 +117,8 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_ST_TASK = 0L;
     public static final Integer DEFAULT_ISSDK = 0;
     public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
+    public static final Integer DEFAULT_IS_JUMPFLOOR = 0;
+    public static final Integer DEFAULT_JUMPFLOOR_NUM = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -281,6 +288,16 @@ public final class DataReq extends Message {
             } else {
                 this.is_comm_reverse = builder.is_comm_reverse;
             }
+            if (builder.is_jumpfloor == null) {
+                this.is_jumpfloor = DEFAULT_IS_JUMPFLOOR;
+            } else {
+                this.is_jumpfloor = builder.is_jumpfloor;
+            }
+            if (builder.jumpfloor_num == null) {
+                this.jumpfloor_num = DEFAULT_JUMPFLOOR_NUM;
+            } else {
+                this.jumpfloor_num = builder.jumpfloor_num;
+            }
             if (builder.da_idfa == null) {
                 this.da_idfa = "";
             } else {
@@ -327,6 +344,8 @@ public final class DataReq extends Message {
         this.issdk = builder.issdk;
         this.query_word = builder.query_word;
         this.is_comm_reverse = builder.is_comm_reverse;
+        this.is_jumpfloor = builder.is_jumpfloor;
+        this.jumpfloor_num = builder.jumpfloor_num;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
     }
@@ -340,7 +359,9 @@ public final class DataReq extends Message {
         public String da_idfa;
         public Integer floor_rn;
         public Integer is_comm_reverse;
+        public Integer is_jumpfloor;
         public Integer issdk;
+        public Integer jumpfloor_num;
         public Long kz;
         public Integer last;
         public String lastids;
@@ -408,6 +429,8 @@ public final class DataReq extends Message {
                 this.issdk = dataReq.issdk;
                 this.query_word = dataReq.query_word;
                 this.is_comm_reverse = dataReq.is_comm_reverse;
+                this.is_jumpfloor = dataReq.is_jumpfloor;
+                this.jumpfloor_num = dataReq.jumpfloor_num;
                 this.da_idfa = dataReq.da_idfa;
                 this.platform = dataReq.platform;
             }

@@ -8,6 +8,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 9)
     public final CommonReq common;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer is_comm_reverse;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long kz;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -31,6 +33,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_W = 0;
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -80,7 +83,13 @@ public final class DataReq extends Message {
                 this.st_type = builder.st_type;
             }
             this.common = builder.common;
-            return;
+            if (builder.is_comm_reverse == null) {
+                this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
+                return;
+            } else {
+                this.is_comm_reverse = builder.is_comm_reverse;
+                return;
+            }
         }
         this.kz = builder.kz;
         this.pid = builder.pid;
@@ -91,11 +100,13 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
         this.st_type = builder.st_type;
         this.common = builder.common;
+        this.is_comm_reverse = builder.is_comm_reverse;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
+        public Integer is_comm_reverse;
         public Long kz;
         public Long pid;
         public Integer pn;
@@ -120,6 +131,7 @@ public final class DataReq extends Message {
                 this.scr_dip = dataReq.scr_dip;
                 this.st_type = dataReq.st_type;
                 this.common = dataReq.common;
+                this.is_comm_reverse = dataReq.is_comm_reverse;
             }
         }
 

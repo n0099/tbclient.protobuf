@@ -1,6 +1,5 @@
 package tbclient.UserPost;
 
-import com.baidu.location.a0;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -56,7 +55,7 @@ public final class DataReq extends Message {
     public final Integer q_type;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer rn;
-    @ProtoField(tag = a0.h, type = Message.Datatype.DOUBLE)
+    @ProtoField(tag = 31, type = Message.Datatype.DOUBLE)
     public final Double scr_dip;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer scr_h;
