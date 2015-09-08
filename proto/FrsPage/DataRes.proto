@@ -43,4 +43,6 @@ message DataRes {
     ActivityHead activityhead = 23;
     repeated ZhiBoInfoTW twzhibo_info = 24;
     Novel novel = 25;
+    ZhiBoInfoTW hot_twzhibo_info = 26;
+    int32 twzhibo_pos = 27;
 }

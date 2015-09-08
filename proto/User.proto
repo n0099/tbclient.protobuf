@@ -40,6 +40,7 @@ message User {
     string portraith = 27;
     string ip = 28;
     int32 fans_num = 30;
+    int32 concern_num = 31;
     int32 sex = 32;
     string intro = 34;
     string passwd = 36;

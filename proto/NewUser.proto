@@ -6,6 +6,7 @@ import "ParrProps.proto";
 import "ParrScores.proto";
 import "Props.proto";
 import "Rpgoldicon.proto";
+import "TbmallMonthIcon.proto";
 import "WapRn.proto";
 
 message NewUser {
@@ -38,6 +39,7 @@ message NewUser {
     repeated NoticeMask notice_mask = 27;
     repeated Rpgoldicon rpgoldicon = 28;
     string cdn_error = 30;
+    repeated TbmallMonthIcon tbmall_month_icon = 31;
     string is_coreuser = 32;
     string is_interestman = 34;
     string free_flag = 36;

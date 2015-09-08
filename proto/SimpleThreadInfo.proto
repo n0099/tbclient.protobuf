@@ -10,4 +10,5 @@ message SimpleThreadInfo {
     int32 last_time_int = 4;
     repeated Abstract _abstract = 5;
     Zan zan = 6;
+    uint64 thread_type = 7;
 }

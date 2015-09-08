@@ -10,6 +10,7 @@ import "PostList.proto";
 import "Topic.proto";
 import "User.proto";
 import "Voice.proto";
+import "ZhiBoInfoTW.proto";
 
 message ThreadInfo {
     int64 id = 1;
@@ -41,6 +42,7 @@ message ThreadInfo {
     int64 fid = 27;
     string fname = 28;
     int32 is_livepost = 30;
+    int32 show_commented = 31;
     string click_url = 32;
     string video_swf = 34;
     string video_id = 36;
@@ -64,4 +66,5 @@ message ThreadInfo {
     uint32 timeline = 64;
     repeated ActInfo act_info = 65;
     int32 post_num = 69;
+    ZhiBoInfoTW twzhibo_info = 72;
 }

@@ -12,6 +12,7 @@ import "Post.proto";
 import "RecommendThread.proto";
 import "SimpleForum.proto";
 import "ThreadInfo.proto";
+import "TwZhiBoAnti.proto";
 import "User.proto";
 
 message DataRes {
@@ -32,4 +33,5 @@ message DataRes {
     NewsInfo news_info = 15;
     repeated RecommendThread recommend_threads = 16;
     repeated FineBannerPb fine_banner = 17;
+    TwZhiBoAnti twzhibo_anti = 18;
 }

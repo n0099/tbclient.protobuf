@@ -1,5 +1,9 @@
 syntax = "proto3";
 
+import "HotTWThreadInfo.proto";
+import "LabelInfo.proto";
+import "LiveCoverStatus.proto";
+import "NoticeInfo.proto";
 import "User.proto";
 import "Zan.proto";
 
@@ -16,4 +20,10 @@ message ZhiBoInfoTW {
     string title = 10;
     string content = 11;
     User user = 12;
+    HotTWThreadInfo hot_tw_info = 13;
+    repeated LabelInfo labelInfo = 14;
+    string livecover_src_status = 15;
+    NoticeInfo notice_info = 16;
+    int32 is_headline = 17;
+    LiveCoverStatus livecover_status = 18;
 }

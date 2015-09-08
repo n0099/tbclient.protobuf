@@ -32,6 +32,7 @@ message DataReq {
     int32 st_param = 27;
     int32 smile_grade = 28;
     bool login = 30;
+    int64 user_id = 31;
     string user_name = 32;
     string portrait = 34;
     string email = 36;

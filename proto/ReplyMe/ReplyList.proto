@@ -20,4 +20,5 @@ message ReplyList {
     uint64 quote_pid = 14;
     User quote_user = 15;
     int32 server_time = 16;
+    uint32 thread_type = 17;
 }

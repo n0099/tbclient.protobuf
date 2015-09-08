@@ -32,5 +32,6 @@ message DataReq {
     CommonReq common = 27;
     uint32 is_twzhibo = 28;
     int32 scr_h = 30;
+    double scr_dip = 31;
     int32 q_type = 32;
 }

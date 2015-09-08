@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message CLocalDialog {
+    string picture = 1;
+    int32 show = 2;
+    string time = 3;
+    string title = 4;
+    string url = 5;
+    string name = 6;
+}

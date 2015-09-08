@@ -30,6 +30,7 @@ message NewGameInfo {
     string forum_name = 27;
     string icon_pic1 = 28;
     string icon_pic3 = 30;
+    string secret_key = 31;
     uint64 thread_theme_id = 32;
     uint64 forum_id = 34;
     uint64 deadline = 36;
