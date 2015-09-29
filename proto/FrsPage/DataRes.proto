@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "AnchorInfo.proto";
 import "Anti.proto";
+import "CategoryInfo.proto";
 import "FrsPage/ActivityHead.proto";
 import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumInfo.proto";
@@ -45,4 +46,5 @@ message DataRes {
     Novel novel = 25;
     ZhiBoInfoTW hot_twzhibo_info = 26;
     int32 twzhibo_pos = 27;
+    repeated CategoryInfo category_list = 28;
 }

@@ -5,6 +5,7 @@ import "GiftInfo.proto";
 import "Icon.proto";
 import "LikeForumInfo.proto";
 import "MyGroupInfo.proto";
+import "NewParrScores.proto";
 import "NewUser.proto";
 import "PrivSets.proto";
 import "TshowInfo.proto";
@@ -55,4 +56,6 @@ message User {
     repeated MyGroupInfo groupList = 48;
     int32 gift_num = 49;
     repeated GiftInfo gift_list = 50;
+    string bg_pic = 58;
+    NewParrScores parr_scores = 59;
 }

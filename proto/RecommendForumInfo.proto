@@ -13,4 +13,5 @@ message RecommendForumInfo {
     repeated PbContent content = 8;
     uint32 forum_type = 9;
     string authen = 10;
+    string recom_reason = 11;
 }

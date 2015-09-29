@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetSkinList/DataReq.proto";
+
+message GetSkinListReqIdl {
+    DataReq data = 1;
+}

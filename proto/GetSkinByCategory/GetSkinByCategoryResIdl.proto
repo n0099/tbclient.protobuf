@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetSkinByCategory/DataRes.proto";
+
+message GetSkinByCategoryResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

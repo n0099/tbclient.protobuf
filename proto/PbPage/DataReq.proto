@@ -35,4 +35,7 @@ message DataReq {
     int32 issdk = 31;
     string query_word = 32;
     int32 is_jumpfloor = 34;
+    uint64 jid = 44;
+    uint64 fid = 45;
+    string jfrom = 46;
 }

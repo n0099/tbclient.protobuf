@@ -7,4 +7,5 @@ message SimpleUser {
     string securemobil = 4;
     string user_name = 5;
     string user_nickname = 6;
+    uint32 incomplete_user = 7;
 }

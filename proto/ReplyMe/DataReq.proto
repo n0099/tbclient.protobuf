@@ -6,4 +6,8 @@ message DataReq {
     int32 pn = 1;
     string ids = 2;
     CommonReq common = 3;
+    int32 scr_w = 4;
+    int32 scr_h = 5;
+    double scr_dip = 6;
+    int32 q_type = 7;
 }

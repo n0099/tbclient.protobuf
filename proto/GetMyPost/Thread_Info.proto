@@ -6,7 +6,7 @@ import "Media.proto";
 import "Zan.proto";
 
 message Thread_Info {
-    int32 id = 1;
+    int64 id = 1;
     string title = 2;
     int32 reply_num = 3;
     int32 view_num = 4;

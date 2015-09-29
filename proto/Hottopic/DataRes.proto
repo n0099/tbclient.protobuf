@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "Hottopic/HotThread.proto";
+import "Hottopic/MagicPost.proto";
+import "Hottopic/RelateForum.proto";
+import "Hottopic/TopicInfo.proto";
+
+message DataRes {
+    repeated RelateForum relate_forum = 1;
+    MagicPost magic_post = 2;
+    HotThread hot_thread = 3;
+    TopicInfo topic_info = 4;
+}

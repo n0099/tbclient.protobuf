@@ -18,4 +18,8 @@ message GoodsInfo {
     string button_text = 13;
     string card_desc = 14;
     string card_tag = 15;
+    int32 width = 16;
+    int32 height = 17;
+    int32 label_measure = 18;
+    string thread_content = 19;
 }

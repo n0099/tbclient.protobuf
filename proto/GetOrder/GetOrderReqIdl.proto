@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetOrder/DataReq.proto";
-
-message GetOrderReqIdl {
-    DataReq data = 1;
-}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetTopicRelateThread/DataRes.proto";
+
+message GetTopicRelateThreadResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

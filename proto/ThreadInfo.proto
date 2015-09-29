@@ -3,9 +3,11 @@ syntax = "proto3";
 import "Abstract.proto";
 import "ActInfo.proto";
 import "Guess.proto";
+import "JNews.proto";
 import "Lbs.proto";
 import "Media.proto";
 import "MediaNum.proto";
+import "PollInfo.proto";
 import "PostList.proto";
 import "Topic.proto";
 import "User.proto";
@@ -67,4 +69,7 @@ message ThreadInfo {
     repeated ActInfo act_info = 65;
     int32 post_num = 69;
     ZhiBoInfoTW twzhibo_info = 72;
+    string category_name = 73;
+    PollInfo poll_info = 74;
+    JNews jid = 75;
 }

@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 import "Error.proto";
-import "GetOrder/DataRes.proto";
+import "GetThemeList/DataRes.proto";
 
-message GetOrderResIdl {
+message GetThemeListResIdl {
     DataRes data = 1;
     Error error = 2;
 }

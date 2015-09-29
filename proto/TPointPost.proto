@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message TPointPost {
+    uint32 is_tuiguang = 1;
+    string position = 2;
+    int64 template_id = 3;
+}

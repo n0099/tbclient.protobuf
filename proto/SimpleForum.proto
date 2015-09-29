@@ -5,4 +5,5 @@ message SimpleForum {
     string name = 2;
     int32 is_exists = 3;
     string avatar = 4;
+    uint32 is_liked = 5;
 }

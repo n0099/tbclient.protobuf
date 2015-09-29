@@ -1,10 +1,12 @@
 syntax = "proto3";
 
+import "ActPost.proto";
 import "AddPostList.proto";
 import "Lbs.proto";
 import "PbContent.proto";
 import "SignatureData.proto";
 import "SubPost.proto";
+import "TPointPost.proto";
 import "TailInfo.proto";
 import "User.proto";
 import "Zan.proto";
@@ -35,4 +37,6 @@ message Post {
     User author = 23;
     Zan zan = 24;
     int32 storecount = 25;
+    TPointPost tpoint_post = 26;
+    ActPost act_post = 27;
 }

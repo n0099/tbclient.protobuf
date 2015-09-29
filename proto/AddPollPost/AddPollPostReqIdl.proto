@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "AddPollPost/DataReq.proto";
+
+message AddPollPostReqIdl {
+    DataReq data = 1;
+}

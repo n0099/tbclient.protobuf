@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message SearchValue {
+    uint64 type = 1;
+    uint64 id = 2;
+    string name = 3;
+    string desc = 4;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message BetInfo {
+    string bet = 1;
+    int64 score = 2;
+}

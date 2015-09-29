@@ -7,4 +7,7 @@ message ActInfo {
     int32 end_time = 4;
     string url = 5;
     int32 total_num = 6;
+    int32 activity_id = 7;
+    int32 award_act_id = 8;
+    int32 component_id = 9;
 }

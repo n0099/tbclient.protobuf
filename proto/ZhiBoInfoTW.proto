@@ -26,4 +26,5 @@ message ZhiBoInfoTW {
     NoticeInfo notice_info = 16;
     int32 is_headline = 17;
     LiveCoverStatus livecover_status = 18;
+    uint32 freq_num = 19;
 }

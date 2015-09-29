@@ -27,4 +27,7 @@ message PbContent {
     uint32 is_native_app = 22;
     NativeApp native_app = 23;
     uint32 e_type = 24;
+    string origin_src = 25;
+    uint32 btn_type = 26;
+    uint32 origin_size = 27;
 }

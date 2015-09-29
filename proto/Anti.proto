@@ -18,4 +18,6 @@ message Anti {
     string vcode_md5 = 15;
     string vcode_pic_url = 16;
     string user_mute = 17;
+    string ifxiaoying = 18;
+    string poll_message = 19;
 }
