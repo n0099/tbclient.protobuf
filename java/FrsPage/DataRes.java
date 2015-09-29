@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.AnchorInfo;
 import tbclient.Anti;
+import tbclient.CategoryInfo;
 import tbclient.FrsTabInfo;
 import tbclient.Novel;
 import tbclient.Page;
@@ -19,6 +20,8 @@ public final class DataRes extends Message {
     public final ActivityHead activityhead;
     @ProtoField(tag = 5)
     public final Anti anti;
+    @ProtoField(label = Message.Label.REPEATED, tag = 28)
+    public final List<CategoryInfo> category_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<ColorEgg> color_egg;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
@@ -84,6 +87,7 @@ public final class DataRes extends Message {
     public static final List<FrsTabInfo> DEFAULT_FRS_TAB_INFO = Collections.emptyList();
     public static final List<ZhiBoInfoTW> DEFAULT_TWZHIBO_INFO = Collections.emptyList();
     public static final Integer DEFAULT_TWZHIBO_POS = 0;
+    public static final List<CategoryInfo> DEFAULT_CATEGORY_LIST = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -180,9 +184,14 @@ public final class DataRes extends Message {
             this.hot_twzhibo_info = builder.hot_twzhibo_info;
             if (builder.twzhibo_pos == null) {
                 this.twzhibo_pos = DEFAULT_TWZHIBO_POS;
-                return;
             } else {
                 this.twzhibo_pos = builder.twzhibo_pos;
+            }
+            if (builder.category_list == null) {
+                this.category_list = DEFAULT_CATEGORY_LIST;
+                return;
+            } else {
+                this.category_list = immutableCopyOf(builder.category_list);
                 return;
             }
         }
@@ -213,12 +222,14 @@ public final class DataRes extends Message {
         this.novel = builder.novel;
         this.hot_twzhibo_info = builder.hot_twzhibo_info;
         this.twzhibo_pos = builder.twzhibo_pos;
+        this.category_list = immutableCopyOf(builder.category_list);
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityHead activityhead;
         public Anti anti;
+        public List<CategoryInfo> category_list;
         public List<ColorEgg> color_egg;
         public Integer ctime;
         public Integer fortune_bag;
@@ -278,6 +289,7 @@ public final class DataRes extends Message {
                 this.novel = dataRes.novel;
                 this.hot_twzhibo_info = dataRes.hot_twzhibo_info;
                 this.twzhibo_pos = dataRes.twzhibo_pos;
+                this.category_list = DataRes.copyOf(dataRes.category_list);
             }
         }
 

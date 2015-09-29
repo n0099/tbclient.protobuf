@@ -1,20 +1,20 @@
-package tbclient.GetOrder;
+package tbclient.AddPollPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
 /* loaded from: classes.dex */
-public final class GetOrderResIdl extends Message {
+public final class AddPollPostResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* synthetic */ GetOrderResIdl(Builder builder, boolean z, GetOrderResIdl getOrderResIdl) {
+    /* synthetic */ AddPollPostResIdl(Builder builder, boolean z, AddPollPostResIdl addPollPostResIdl) {
         this(builder, z);
     }
 
-    private GetOrderResIdl(Builder builder, boolean z) {
+    private AddPollPostResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.data = builder.data;
@@ -26,25 +26,25 @@ public final class GetOrderResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public static final class Builder extends Message.Builder<GetOrderResIdl> {
+    public static final class Builder extends Message.Builder<AddPollPostResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(GetOrderResIdl getOrderResIdl) {
-            super(getOrderResIdl);
-            if (getOrderResIdl != null) {
-                this.data = getOrderResIdl.data;
-                this.error = getOrderResIdl.error;
+        public Builder(AddPollPostResIdl addPollPostResIdl) {
+            super(addPollPostResIdl);
+            if (addPollPostResIdl != null) {
+                this.data = addPollPostResIdl.data;
+                this.error = addPollPostResIdl.error;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetOrderResIdl build(boolean z) {
-            return new GetOrderResIdl(this, z, null);
+        public AddPollPostResIdl build(boolean z) {
+            return new AddPollPostResIdl(this, z, null);
         }
     }
 }

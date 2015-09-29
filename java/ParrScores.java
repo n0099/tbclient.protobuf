@@ -4,6 +4,12 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class ParrScores extends Message {
+    @ProtoField(tag = 9, type = Message.Datatype.UINT64)
+    public final Long i_money;
+    @ProtoField(tag = 10, type = Message.Datatype.UINT64)
+    public final Long i_other;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT64)
+    public final Long i_total;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer level;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -25,6 +31,9 @@ public final class ParrScores extends Message {
     public static final Integer DEFAULT_UPDATE_TIME = 0;
     public static final Integer DEFAULT_LEVEL = 0;
     public static final Integer DEFAULT_LIMIT = 0;
+    public static final Long DEFAULT_I_TOTAL = 0L;
+    public static final Long DEFAULT_I_MONEY = 0L;
+    public static final Long DEFAULT_I_OTHER = 0L;
 
     /* synthetic */ ParrScores(Builder builder, boolean z, ParrScores parrScores) {
         this(builder, z);
@@ -65,9 +74,24 @@ public final class ParrScores extends Message {
             }
             if (builder.limit == null) {
                 this.limit = DEFAULT_LIMIT;
-                return;
             } else {
                 this.limit = builder.limit;
+            }
+            if (builder.i_total == null) {
+                this.i_total = DEFAULT_I_TOTAL;
+            } else {
+                this.i_total = builder.i_total;
+            }
+            if (builder.i_money == null) {
+                this.i_money = DEFAULT_I_MONEY;
+            } else {
+                this.i_money = builder.i_money;
+            }
+            if (builder.i_other == null) {
+                this.i_other = DEFAULT_I_OTHER;
+                return;
+            } else {
+                this.i_other = builder.i_other;
                 return;
             }
         }
@@ -78,10 +102,16 @@ public final class ParrScores extends Message {
         this.update_time = builder.update_time;
         this.level = builder.level;
         this.limit = builder.limit;
+        this.i_total = builder.i_total;
+        this.i_money = builder.i_money;
+        this.i_other = builder.i_other;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ParrScores> {
+        public Long i_money;
+        public Long i_other;
+        public Long i_total;
         public Integer level;
         public Integer limit;
         public Integer scores_fetch;
@@ -103,6 +133,9 @@ public final class ParrScores extends Message {
                 this.update_time = parrScores.update_time;
                 this.level = parrScores.level;
                 this.limit = parrScores.limit;
+                this.i_total = parrScores.i_total;
+                this.i_money = parrScores.i_money;
+                this.i_other = parrScores.i_other;
             }
         }
 

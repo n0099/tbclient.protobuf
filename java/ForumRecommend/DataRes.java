@@ -10,6 +10,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Banner> banner;
+    @ProtoField(tag = 11)
+    public final HotSearch hot_search;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_login;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -92,11 +94,11 @@ public final class DataRes extends Message {
             }
             if (builder.recommend_forum_info == null) {
                 this.recommend_forum_info = DEFAULT_RECOMMEND_FORUM_INFO;
-                return;
             } else {
                 this.recommend_forum_info = immutableCopyOf(builder.recommend_forum_info);
-                return;
             }
+            this.hot_search = builder.hot_search;
+            return;
         }
         this.like_forum = immutableCopyOf(builder.like_forum);
         this.banner = immutableCopyOf(builder.banner);
@@ -108,11 +110,13 @@ public final class DataRes extends Message {
         this.time = builder.time;
         this.is_mem = builder.is_mem;
         this.recommend_forum_info = immutableCopyOf(builder.recommend_forum_info);
+        this.hot_search = builder.hot_search;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
+        public HotSearch hot_search;
         public Integer is_login;
         public Integer is_mem;
         public List<LikeForum> like_forum;
@@ -139,6 +143,7 @@ public final class DataRes extends Message {
                 this.time = dataRes.time;
                 this.is_mem = dataRes.is_mem;
                 this.recommend_forum_info = DataRes.copyOf(dataRes.recommend_forum_info);
+                this.hot_search = dataRes.hot_search;
             }
         }
 

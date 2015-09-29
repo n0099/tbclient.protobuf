@@ -11,6 +11,7 @@ public final class GoodsInfo extends Message {
     public static final String DEFAULT_CARD_TAG = "";
     public static final String DEFAULT_LABEL_TEXT = "";
     public static final String DEFAULT_POP_WINDOW_TEXT = "";
+    public static final String DEFAULT_THREAD_CONTENT = "";
     public static final String DEFAULT_THREAD_PIC = "";
     public static final String DEFAULT_THREAD_TITLE = "";
     public static final String DEFAULT_THREAD_TYPE = "";
@@ -24,8 +25,12 @@ public final class GoodsInfo extends Message {
     public final String card_tag;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer goods_style;
+    @ProtoField(tag = 17, type = Message.Datatype.INT32)
+    public final Integer height;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer id;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer label_measure;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String label_text;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -34,6 +39,8 @@ public final class GoodsInfo extends Message {
     public final String pop_window_text;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer rank_level;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String thread_content;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String thread_pic;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
@@ -46,11 +53,16 @@ public final class GoodsInfo extends Message {
     public final String user_name;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String user_portrait;
+    @ProtoField(tag = 16, type = Message.Datatype.INT32)
+    public final Integer width;
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_GOODS_STYLE = 0;
     public static final List<ThreadPicList> DEFAULT_THREAD_PIC_LIST = Collections.emptyList();
     public static final Integer DEFAULT_LABEL_VISIBLE = 0;
     public static final Integer DEFAULT_RANK_LEVEL = 0;
+    public static final Integer DEFAULT_WIDTH = 0;
+    public static final Integer DEFAULT_HEIGHT = 0;
+    public static final Integer DEFAULT_LABEL_MEASURE = 0;
 
     /* synthetic */ GoodsInfo(Builder builder, boolean z, GoodsInfo goodsInfo) {
         this(builder, z);
@@ -131,9 +143,29 @@ public final class GoodsInfo extends Message {
             }
             if (builder.card_tag == null) {
                 this.card_tag = "";
-                return;
             } else {
                 this.card_tag = builder.card_tag;
+            }
+            if (builder.width == null) {
+                this.width = DEFAULT_WIDTH;
+            } else {
+                this.width = builder.width;
+            }
+            if (builder.height == null) {
+                this.height = DEFAULT_HEIGHT;
+            } else {
+                this.height = builder.height;
+            }
+            if (builder.label_measure == null) {
+                this.label_measure = DEFAULT_LABEL_MEASURE;
+            } else {
+                this.label_measure = builder.label_measure;
+            }
+            if (builder.thread_content == null) {
+                this.thread_content = "";
+                return;
+            } else {
+                this.thread_content = builder.thread_content;
                 return;
             }
         }
@@ -152,6 +184,10 @@ public final class GoodsInfo extends Message {
         this.button_text = builder.button_text;
         this.card_desc = builder.card_desc;
         this.card_tag = builder.card_tag;
+        this.width = builder.width;
+        this.height = builder.height;
+        this.label_measure = builder.label_measure;
+        this.thread_content = builder.thread_content;
     }
 
     /* loaded from: classes.dex */
@@ -160,17 +196,21 @@ public final class GoodsInfo extends Message {
         public String card_desc;
         public String card_tag;
         public Integer goods_style;
+        public Integer height;
         public Integer id;
+        public Integer label_measure;
         public String label_text;
         public Integer label_visible;
         public String pop_window_text;
         public Integer rank_level;
+        public String thread_content;
         public String thread_pic;
         public List<ThreadPicList> thread_pic_list;
         public String thread_title;
         public String thread_type;
         public String user_name;
         public String user_portrait;
+        public Integer width;
 
         public Builder() {
         }
@@ -193,6 +233,10 @@ public final class GoodsInfo extends Message {
                 this.button_text = goodsInfo.button_text;
                 this.card_desc = goodsInfo.card_desc;
                 this.card_tag = goodsInfo.card_tag;
+                this.width = goodsInfo.width;
+                this.height = goodsInfo.height;
+                this.label_measure = goodsInfo.label_measure;
+                this.thread_content = goodsInfo.thread_content;
             }
         }
 

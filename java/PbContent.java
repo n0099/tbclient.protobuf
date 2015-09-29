@@ -13,6 +13,7 @@ public final class PbContent extends Message {
     public static final String DEFAULT_DYNAMIC = "";
     public static final String DEFAULT_IMGTYPE = "";
     public static final String DEFAULT_LINK = "";
+    public static final String DEFAULT_ORIGIN_SRC = "";
     public static final String DEFAULT_PACKET_NAME = "";
     public static final String DEFAULT_PHONETYPE = "";
     public static final String DEFAULT_SRC = "";
@@ -29,6 +30,8 @@ public final class PbContent extends Message {
     public final String big_src;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String bsize;
+    @ProtoField(tag = 26, type = Message.Datatype.UINT32)
+    public final Integer btn_type;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -51,6 +54,10 @@ public final class PbContent extends Message {
     public final String link;
     @ProtoField(tag = 23)
     public final NativeApp native_app;
+    @ProtoField(tag = 27, type = Message.Datatype.UINT32)
+    public final Integer origin_size;
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
+    public final String origin_src;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String packet_name;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -75,6 +82,8 @@ public final class PbContent extends Message {
     public static final Integer DEFAULT_HEIGHT = 0;
     public static final Integer DEFAULT_IS_NATIVE_APP = 0;
     public static final Integer DEFAULT_E_TYPE = 0;
+    public static final Integer DEFAULT_BTN_TYPE = 0;
+    public static final Integer DEFAULT_ORIGIN_SIZE = 0;
 
     /* synthetic */ PbContent(Builder builder, boolean z, PbContent pbContent) {
         this(builder, z);
@@ -196,9 +205,24 @@ public final class PbContent extends Message {
             this.native_app = builder.native_app;
             if (builder.e_type == null) {
                 this.e_type = DEFAULT_E_TYPE;
-                return;
             } else {
                 this.e_type = builder.e_type;
+            }
+            if (builder.origin_src == null) {
+                this.origin_src = "";
+            } else {
+                this.origin_src = builder.origin_src;
+            }
+            if (builder.btn_type == null) {
+                this.btn_type = DEFAULT_BTN_TYPE;
+            } else {
+                this.btn_type = builder.btn_type;
+            }
+            if (builder.origin_size == null) {
+                this.origin_size = DEFAULT_ORIGIN_SIZE;
+                return;
+            } else {
+                this.origin_size = builder.origin_size;
                 return;
             }
         }
@@ -226,6 +250,9 @@ public final class PbContent extends Message {
         this.is_native_app = builder.is_native_app;
         this.native_app = builder.native_app;
         this.e_type = builder.e_type;
+        this.origin_src = builder.origin_src;
+        this.btn_type = builder.btn_type;
+        this.origin_size = builder.origin_size;
     }
 
     /* loaded from: classes.dex */
@@ -235,6 +262,7 @@ public final class PbContent extends Message {
         public String big_size;
         public String big_src;
         public String bsize;
+        public Integer btn_type;
         public String c;
         public String cdn_src;
         public Integer during_time;
@@ -246,6 +274,8 @@ public final class PbContent extends Message {
         public Integer is_sub;
         public String link;
         public NativeApp native_app;
+        public Integer origin_size;
+        public String origin_src;
         public String packet_name;
         public String phonetype;
         public String src;
@@ -285,6 +315,9 @@ public final class PbContent extends Message {
                 this.is_native_app = pbContent.is_native_app;
                 this.native_app = pbContent.native_app;
                 this.e_type = pbContent.e_type;
+                this.origin_src = pbContent.origin_src;
+                this.btn_type = pbContent.btn_type;
+                this.origin_size = pbContent.origin_size;
             }
         }
 

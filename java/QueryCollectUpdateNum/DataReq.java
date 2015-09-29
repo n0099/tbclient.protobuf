@@ -2,11 +2,14 @@ package tbclient.QueryCollectUpdateNum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_COLLECT_MARK = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer collect_mark;
+    @ProtoField(tag = 2)
+    public final CommonReq common;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -17,18 +20,20 @@ public final class DataReq extends Message {
         if (z) {
             if (builder.collect_mark == null) {
                 this.collect_mark = DEFAULT_COLLECT_MARK;
-                return;
             } else {
                 this.collect_mark = builder.collect_mark;
-                return;
             }
+            this.common = builder.common;
+            return;
         }
         this.collect_mark = builder.collect_mark;
+        this.common = builder.common;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer collect_mark;
+        public CommonReq common;
 
         public Builder() {
         }
@@ -37,6 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.collect_mark = dataReq.collect_mark;
+                this.common = dataReq.common;
             }
         }
 

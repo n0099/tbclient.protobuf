@@ -6,6 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class Media extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_BSIZE = "";
+    public static final String DEFAULT_ORIGIN_PIC = "";
     public static final String DEFAULT_SMALL_PIC = "";
     public static final String DEFAULT_SRC_PIC = "";
     public static final String DEFAULT_TEXT = "";
@@ -23,6 +24,10 @@ public final class Media extends Message {
     public final Integer e_type;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer height;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String origin_pic;
+    @ProtoField(tag = 16, type = Message.Datatype.UINT32)
+    public final Integer origin_size;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String small_pic;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -46,6 +51,7 @@ public final class Media extends Message {
     public static final Integer DEFAULT_HEIGHT = 0;
     public static final Integer DEFAULT_DURING_TIME = 0;
     public static final Integer DEFAULT_E_TYPE = 0;
+    public static final Integer DEFAULT_ORIGIN_SIZE = 0;
 
     /* synthetic */ Media(Builder builder, boolean z, Media media) {
         this(builder, z);
@@ -121,9 +127,19 @@ public final class Media extends Message {
             }
             if (builder.e_type == null) {
                 this.e_type = DEFAULT_E_TYPE;
-                return;
             } else {
                 this.e_type = builder.e_type;
+            }
+            if (builder.origin_pic == null) {
+                this.origin_pic = "";
+            } else {
+                this.origin_pic = builder.origin_pic;
+            }
+            if (builder.origin_size == null) {
+                this.origin_size = DEFAULT_ORIGIN_SIZE;
+                return;
+            } else {
+                this.origin_size = builder.origin_size;
                 return;
             }
         }
@@ -141,6 +157,8 @@ public final class Media extends Message {
         this.bsize = builder.bsize;
         this.during_time = builder.during_time;
         this.e_type = builder.e_type;
+        this.origin_pic = builder.origin_pic;
+        this.origin_size = builder.origin_size;
     }
 
     /* loaded from: classes.dex */
@@ -150,6 +168,8 @@ public final class Media extends Message {
         public Integer during_time;
         public Integer e_type;
         public Integer height;
+        public String origin_pic;
+        public Integer origin_size;
         public String small_pic;
         public String src_pic;
         public String text;
@@ -180,6 +200,8 @@ public final class Media extends Message {
                 this.bsize = media.bsize;
                 this.during_time = media.during_time;
                 this.e_type = media.e_type;
+                this.origin_pic = media.origin_pic;
+                this.origin_size = media.origin_size;
             }
         }
 

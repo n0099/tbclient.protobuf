@@ -6,13 +6,25 @@ import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_IDS = "";
-    public static final Integer DEFAULT_PN = 0;
     @ProtoField(tag = 3)
     public final CommonReq common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String ids;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pn;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer q_type;
+    @ProtoField(tag = 6, type = Message.Datatype.DOUBLE)
+    public final Double scr_dip;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer scr_h;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer scr_w;
+    public static final Integer DEFAULT_PN = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_Q_TYPE = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -32,11 +44,36 @@ public final class DataReq extends Message {
                 this.ids = builder.ids;
             }
             this.common = builder.common;
-            return;
+            if (builder.scr_w == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = builder.scr_w;
+            }
+            if (builder.scr_h == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = builder.scr_h;
+            }
+            if (builder.scr_dip == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = builder.scr_dip;
+            }
+            if (builder.q_type == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+                return;
+            } else {
+                this.q_type = builder.q_type;
+                return;
+            }
         }
         this.pn = builder.pn;
         this.ids = builder.ids;
         this.common = builder.common;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
     }
 
     /* loaded from: classes.dex */
@@ -44,6 +81,10 @@ public final class DataReq extends Message {
         public CommonReq common;
         public String ids;
         public Integer pn;
+        public Integer q_type;
+        public Double scr_dip;
+        public Integer scr_h;
+        public Integer scr_w;
 
         public Builder() {
         }
@@ -54,6 +95,10 @@ public final class DataReq extends Message {
                 this.pn = dataReq.pn;
                 this.ids = dataReq.ids;
                 this.common = dataReq.common;
+                this.scr_w = dataReq.scr_w;
+                this.scr_h = dataReq.scr_h;
+                this.scr_dip = dataReq.scr_dip;
+                this.q_type = dataReq.q_type;
             }
         }
 

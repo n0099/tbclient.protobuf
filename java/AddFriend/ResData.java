@@ -6,7 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class ResData extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final String DEFAULT_MESSAGE = "";
-    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String message;

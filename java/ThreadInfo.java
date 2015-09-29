@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class ThreadInfo extends Message {
+    public static final String DEFAULT_CATEGORY_NAME = "";
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
     public static final String DEFAULT_ECOM = "";
@@ -37,6 +38,8 @@ public final class ThreadInfo extends Message {
     public final User author;
     @ProtoField(tag = a0.z, type = Message.Datatype.INT64)
     public final Long author_id;
+    @ProtoField(tag = 73, type = Message.Datatype.STRING)
+    public final String category_name;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
     @ProtoField(tag = a0.C, type = Message.Datatype.STRING)
@@ -101,6 +104,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_voice_thread;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_vote;
+    @ProtoField(tag = 75)
+    public final JNews jid;
     @ProtoField(tag = 19)
     public final User last_replyer;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -121,6 +126,8 @@ public final class ThreadInfo extends Message {
     public final String meizhi_pic;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String pids;
+    @ProtoField(tag = 74)
+    public final PollInfo poll_info;
     @ProtoField(tag = a0.f, type = Message.Datatype.INT64)
     public final Long post_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 44)
@@ -542,6 +549,13 @@ public final class ThreadInfo extends Message {
             }
             this.hotTWInfo = builder.hotTWInfo;
             this.twzhibo_info = builder.twzhibo_info;
+            if (builder.category_name == null) {
+                this.category_name = "";
+            } else {
+                this.category_name = builder.category_name;
+            }
+            this.poll_info = builder.poll_info;
+            this.jid = builder.jid;
             return;
         }
         this.id = builder.id;
@@ -615,6 +629,9 @@ public final class ThreadInfo extends Message {
         this.post_num = builder.post_num;
         this.hotTWInfo = builder.hotTWInfo;
         this.twzhibo_info = builder.twzhibo_info;
+        this.category_name = builder.category_name;
+        this.poll_info = builder.poll_info;
+        this.jid = builder.jid;
     }
 
     /* loaded from: classes.dex */
@@ -624,6 +641,7 @@ public final class ThreadInfo extends Message {
         public AnchorInfo anchor_info;
         public User author;
         public Long author_id;
+        public String category_name;
         public String click_url;
         public String collect_mark_pid;
         public Integer collect_status;
@@ -656,6 +674,7 @@ public final class ThreadInfo extends Message {
         public Integer is_top;
         public Integer is_voice_thread;
         public Integer is_vote;
+        public JNews jid;
         public User last_replyer;
         public String last_time;
         public Integer last_time_int;
@@ -666,6 +685,7 @@ public final class ThreadInfo extends Message {
         public List<MediaNum> media_num;
         public String meizhi_pic;
         public String pids;
+        public PollInfo poll_info;
         public Long post_id;
         public List<PostList> post_list;
         public Integer post_num;
@@ -768,6 +788,9 @@ public final class ThreadInfo extends Message {
                 this.post_num = threadInfo.post_num;
                 this.hotTWInfo = threadInfo.hotTWInfo;
                 this.twzhibo_info = threadInfo.twzhibo_info;
+                this.category_name = threadInfo.category_name;
+                this.poll_info = threadInfo.poll_info;
+                this.jid = threadInfo.jid;
             }
         }
 

@@ -9,6 +9,7 @@ public final class RecommendForumInfo extends Message {
     public static final String DEFAULT_AUTHEN = "";
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_SLOGAN = "";
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String authen;
@@ -26,6 +27,8 @@ public final class RecommendForumInfo extends Message {
     public final Integer is_like;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer member_count;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String recom_reason;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String slogan;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -91,9 +94,14 @@ public final class RecommendForumInfo extends Message {
             }
             if (builder.authen == null) {
                 this.authen = "";
-                return;
             } else {
                 this.authen = builder.authen;
+            }
+            if (builder.recom_reason == null) {
+                this.recom_reason = "";
+                return;
+            } else {
+                this.recom_reason = builder.recom_reason;
                 return;
             }
         }
@@ -107,6 +115,7 @@ public final class RecommendForumInfo extends Message {
         this.content = immutableCopyOf(builder.content);
         this.forum_type = builder.forum_type;
         this.authen = builder.authen;
+        this.recom_reason = builder.recom_reason;
     }
 
     /* loaded from: classes.dex */
@@ -119,6 +128,7 @@ public final class RecommendForumInfo extends Message {
         public Integer forum_type;
         public Integer is_like;
         public Integer member_count;
+        public String recom_reason;
         public String slogan;
         public Integer thread_count;
 
@@ -138,6 +148,7 @@ public final class RecommendForumInfo extends Message {
                 this.content = RecommendForumInfo.copyOf(recommendForumInfo.content);
                 this.forum_type = recommendForumInfo.forum_type;
                 this.authen = recommendForumInfo.authen;
+                this.recom_reason = recommendForumInfo.recom_reason;
             }
         }
 

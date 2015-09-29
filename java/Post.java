@@ -11,6 +11,8 @@ public final class Post extends Message {
     public static final String DEFAULT_TIME_EX = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VOTE_CRYPT = "";
+    @ProtoField(tag = 27)
+    public final ActPost act_post;
     @ProtoField(tag = 16)
     public final AddPostList add_post_list;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
@@ -57,6 +59,8 @@ public final class Post extends Message {
     public final String time_ex;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 26)
+    public final TPointPost tpoint_post;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String vote_crypt;
     @ProtoField(tag = 24)
@@ -176,11 +180,12 @@ public final class Post extends Message {
             this.zan = builder.zan;
             if (builder.storecount == null) {
                 this.storecount = DEFAULT_STORECOUNT;
-                return;
             } else {
                 this.storecount = builder.storecount;
-                return;
             }
+            this.tpoint_post = builder.tpoint_post;
+            this.act_post = builder.act_post;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -207,10 +212,13 @@ public final class Post extends Message {
         this.author = builder.author;
         this.zan = builder.zan;
         this.storecount = builder.storecount;
+        this.tpoint_post = builder.tpoint_post;
+        this.act_post = builder.act_post;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<Post> {
+        public ActPost act_post;
         public AddPostList add_post_list;
         public Integer add_post_number;
         public List<String> arr_video;
@@ -234,6 +242,7 @@ public final class Post extends Message {
         public Integer time;
         public String time_ex;
         public String title;
+        public TPointPost tpoint_post;
         public String vote_crypt;
         public Zan zan;
 
@@ -268,6 +277,8 @@ public final class Post extends Message {
                 this.author = post.author;
                 this.zan = post.zan;
                 this.storecount = post.storecount;
+                this.tpoint_post = post.tpoint_post;
+                this.act_post = post.act_post;
             }
         }
 

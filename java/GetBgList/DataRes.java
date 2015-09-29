@@ -1,0 +1,70 @@
+package tbclient.GetBgList;
+
+import com.squareup.wire.Message;
+import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
+import tbclient.ThemeBgProp;
+import tbclient.ThemeRecommand;
+/* loaded from: classes.dex */
+public final class DataRes extends Message {
+    public static final List<ThemeBgProp> DEFAULT_BGS = Collections.emptyList();
+    public static final Integer DEFAULT_HASMORE = 0;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<ThemeBgProp> bgs;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer hasmore;
+    @ProtoField(tag = 1)
+    public final ThemeRecommand recommend;
+
+    /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
+        this(builder, z);
+    }
+
+    private DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.recommend = builder.recommend;
+            if (builder.bgs == null) {
+                this.bgs = DEFAULT_BGS;
+            } else {
+                this.bgs = immutableCopyOf(builder.bgs);
+            }
+            if (builder.hasmore == null) {
+                this.hasmore = DEFAULT_HASMORE;
+                return;
+            } else {
+                this.hasmore = builder.hasmore;
+                return;
+            }
+        }
+        this.recommend = builder.recommend;
+        this.bgs = immutableCopyOf(builder.bgs);
+        this.hasmore = builder.hasmore;
+    }
+
+    /* loaded from: classes.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public List<ThemeBgProp> bgs;
+        public Integer hasmore;
+        public ThemeRecommand recommend;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes != null) {
+                this.recommend = dataRes.recommend;
+                this.bgs = DataRes.copyOf(dataRes.bgs);
+                this.hasmore = dataRes.hasmore;
+            }
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z, null);
+        }
+    }
+}

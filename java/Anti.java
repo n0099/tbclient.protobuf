@@ -5,6 +5,8 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class Anti extends Message {
     public static final String DEFAULT_FORBID_INFO = "";
+    public static final String DEFAULT_IFXIAOYING = "";
+    public static final String DEFAULT_POLL_MESSAGE = "";
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT_USER_MUTE = "";
     public static final String DEFAULT_VCODE_MD5 = "";
@@ -30,8 +32,12 @@ public final class Anti extends Message {
     public final Integer ifposta;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer ifvoice;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String ifxiaoying;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer need_vcode;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String poll_message;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tbs;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
@@ -145,9 +151,19 @@ public final class Anti extends Message {
             }
             if (builder.user_mute == null) {
                 this.user_mute = "";
-                return;
             } else {
                 this.user_mute = builder.user_mute;
+            }
+            if (builder.ifxiaoying == null) {
+                this.ifxiaoying = "";
+            } else {
+                this.ifxiaoying = builder.ifxiaoying;
+            }
+            if (builder.poll_message == null) {
+                this.poll_message = "";
+                return;
+            } else {
+                this.poll_message = builder.poll_message;
                 return;
             }
         }
@@ -168,6 +184,8 @@ public final class Anti extends Message {
         this.vcode_md5 = builder.vcode_md5;
         this.vcode_pic_url = builder.vcode_pic_url;
         this.user_mute = builder.user_mute;
+        this.ifxiaoying = builder.ifxiaoying;
+        this.poll_message = builder.poll_message;
     }
 
     /* loaded from: classes.dex */
@@ -182,7 +200,9 @@ public final class Anti extends Message {
         public Integer ifpost;
         public Integer ifposta;
         public Integer ifvoice;
+        public String ifxiaoying;
         public Integer need_vcode;
+        public String poll_message;
         public String tbs;
         public String user_mute;
         public String vcode_md5;
@@ -213,6 +233,8 @@ public final class Anti extends Message {
                 this.vcode_md5 = anti.vcode_md5;
                 this.vcode_pic_url = anti.vcode_pic_url;
                 this.user_mute = anti.user_mute;
+                this.ifxiaoying = anti.ifxiaoying;
+                this.poll_message = anti.poll_message;
             }
         }
 

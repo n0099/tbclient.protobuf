@@ -18,6 +18,8 @@ public final class ZhiBoInfoTW extends Message {
     public final Long forum_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 19, type = Message.Datatype.UINT32)
+    public final Integer freq_num;
     @ProtoField(tag = 13)
     public final HotTWThreadInfo hot_tw_info;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -55,6 +57,7 @@ public final class ZhiBoInfoTW extends Message {
     public static final Long DEFAULT_LAST_MODIFIED_TIME = 0L;
     public static final List<LabelInfo> DEFAULT_LABELINFO = Collections.emptyList();
     public static final Integer DEFAULT_IS_HEADLINE = 0;
+    public static final Integer DEFAULT_FREQ_NUM = 0;
 
     /* synthetic */ ZhiBoInfoTW(Builder builder, boolean z, ZhiBoInfoTW zhiBoInfoTW) {
         this(builder, z);
@@ -133,7 +136,13 @@ public final class ZhiBoInfoTW extends Message {
                 this.is_headline = builder.is_headline;
             }
             this.livecover_status = builder.livecover_status;
-            return;
+            if (builder.freq_num == null) {
+                this.freq_num = DEFAULT_FREQ_NUM;
+                return;
+            } else {
+                this.freq_num = builder.freq_num;
+                return;
+            }
         }
         this.thread_id = builder.thread_id;
         this.livecover_src = builder.livecover_src;
@@ -153,6 +162,7 @@ public final class ZhiBoInfoTW extends Message {
         this.notice_info = builder.notice_info;
         this.is_headline = builder.is_headline;
         this.livecover_status = builder.livecover_status;
+        this.freq_num = builder.freq_num;
     }
 
     /* loaded from: classes.dex */
@@ -160,6 +170,7 @@ public final class ZhiBoInfoTW extends Message {
         public String content;
         public Long forum_id;
         public String forum_name;
+        public Integer freq_num;
         public HotTWThreadInfo hot_tw_info;
         public Integer is_headline;
         public List<LabelInfo> labelInfo;
@@ -200,6 +211,7 @@ public final class ZhiBoInfoTW extends Message {
                 this.notice_info = zhiBoInfoTW.notice_info;
                 this.is_headline = zhiBoInfoTW.is_headline;
                 this.livecover_status = zhiBoInfoTW.livecover_status;
+                this.freq_num = zhiBoInfoTW.freq_num;
             }
         }
 

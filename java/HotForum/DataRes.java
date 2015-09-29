@@ -9,6 +9,10 @@ public final class DataRes extends Message {
     public static final List<ForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<ForumInfo> forum_info;
+    @ProtoField(tag = 2)
+    public final HotSearch hot_search;
+    @ProtoField(tag = 3)
+    public final HotTopic hot_topic;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -19,18 +23,23 @@ public final class DataRes extends Message {
         if (z) {
             if (builder.forum_info == null) {
                 this.forum_info = DEFAULT_FORUM_INFO;
-                return;
             } else {
                 this.forum_info = immutableCopyOf(builder.forum_info);
-                return;
             }
+            this.hot_search = builder.hot_search;
+            this.hot_topic = builder.hot_topic;
+            return;
         }
         this.forum_info = immutableCopyOf(builder.forum_info);
+        this.hot_search = builder.hot_search;
+        this.hot_topic = builder.hot_topic;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ForumInfo> forum_info;
+        public HotSearch hot_search;
+        public HotTopic hot_topic;
 
         public Builder() {
         }
@@ -39,6 +48,8 @@ public final class DataRes extends Message {
             super(dataRes);
             if (dataRes != null) {
                 this.forum_info = DataRes.copyOf(dataRes.forum_info);
+                this.hot_search = dataRes.hot_search;
+                this.hot_topic = dataRes.hot_topic;
             }
         }
 

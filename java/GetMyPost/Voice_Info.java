@@ -9,14 +9,14 @@ public final class Voice_Info extends Message {
     public final Integer durning_time;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String md5;
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer pid;
-    @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer tid;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long pid;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long tid;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer type;
-    public static final Integer DEFAULT_TID = 0;
-    public static final Integer DEFAULT_PID = 0;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Long DEFAULT_PID = 0L;
     public static final Integer DEFAULT_DURNING_TIME = 0;
     public static final Integer DEFAULT_TYPE = 0;
 
@@ -66,8 +66,8 @@ public final class Voice_Info extends Message {
     public static final class Builder extends Message.Builder<Voice_Info> {
         public Integer durning_time;
         public String md5;
-        public Integer pid;
-        public Integer tid;
+        public Long pid;
+        public Long tid;
         public Integer type;
 
         public Builder() {

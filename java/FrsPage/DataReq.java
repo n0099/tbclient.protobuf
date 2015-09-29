@@ -22,6 +22,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_USER_NAME = "";
+    @ProtoField(tag = 44, type = Message.Datatype.INT32)
+    public final Integer category_id;
     @ProtoField(tag = 20, type = Message.Datatype.BOOL)
     public final Boolean check_login;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -137,6 +139,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_NO_UN = 0;
     public static final Boolean DEFAULT_DEBUG = false;
     public static final Integer DEFAULT_ISSDK = 0;
+    public static final Integer DEFAULT_CATEGORY_ID = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -353,9 +356,14 @@ public final class DataReq extends Message {
             }
             if (builder.platform == null) {
                 this.platform = "";
-                return;
             } else {
                 this.platform = builder.platform;
+            }
+            if (builder.category_id == null) {
+                this.category_id = DEFAULT_CATEGORY_ID;
+                return;
+            } else {
+                this.category_id = builder.category_id;
                 return;
             }
         }
@@ -402,10 +410,12 @@ public final class DataReq extends Message {
         this.issdk = builder.issdk;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
+        this.category_id = builder.category_id;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public Integer category_id;
         public Boolean check_login;
         public Integer cid;
         public Integer class_id;
@@ -499,6 +509,7 @@ public final class DataReq extends Message {
                 this.issdk = dataReq.issdk;
                 this.da_idfa = dataReq.da_idfa;
                 this.platform = dataReq.platform;
+                this.category_id = dataReq.category_id;
             }
         }
 

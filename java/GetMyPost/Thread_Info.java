@@ -16,8 +16,8 @@ public final class Thread_Info extends Message {
     public final Integer comment_num;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer hotcount;
-    @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer id;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long id;
     @ProtoField(tag = 10, type = Message.Datatype.BOOL)
     public final Boolean is_bakan;
     @ProtoField(tag = 8, type = Message.Datatype.BOOL)
@@ -62,7 +62,7 @@ public final class Thread_Info extends Message {
     public final Voice_Info voice_info;
     @ProtoField(tag = 26)
     public final Zan zan;
-    public static final Integer DEFAULT_ID = 0;
+    public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_REPLY_NUM = 0;
     public static final Integer DEFAULT_VIEW_NUM = 0;
     public static final Integer DEFAULT_LAST_TIME_INT = 0;
@@ -247,7 +247,7 @@ public final class Thread_Info extends Message {
         public String _abstract;
         public Integer comment_num;
         public Integer hotcount;
-        public Integer id;
+        public Long id;
         public Boolean is_bakan;
         public Boolean is_good;
         public Boolean is_hastitle;

@@ -12,6 +12,7 @@ import java.util.List;
 public final class User extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
+    public static final String DEFAULT_BG_PIC = "";
     public static final String DEFAULT_BIMG_URL = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
     public static final String DEFAULT_INTRO = "";
@@ -30,6 +31,8 @@ public final class User extends Message {
     public final Balv balv;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String bawu_type;
+    @ProtoField(tag = 58, type = Message.Datatype.STRING)
+    public final String bg_pic;
     @ProtoField(tag = 40, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -110,6 +113,8 @@ public final class User extends Message {
     public final NewUser new_user_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer no_un;
+    @ProtoField(tag = 59)
+    public final NewParrScores parr_scores;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
     @ProtoField(tag = a0.x)
@@ -451,11 +456,16 @@ public final class User extends Message {
             }
             if (builder.fans_nickname == null) {
                 this.fans_nickname = "";
-                return;
             } else {
                 this.fans_nickname = builder.fans_nickname;
-                return;
             }
+            if (builder.bg_pic == null) {
+                this.bg_pic = "";
+            } else {
+                this.bg_pic = builder.bg_pic;
+            }
+            this.parr_scores = builder.parr_scores;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -514,6 +524,8 @@ public final class User extends Message {
         this.mute_user = immutableCopyOf(builder.mute_user);
         this.friend_num = builder.friend_num;
         this.fans_nickname = builder.fans_nickname;
+        this.bg_pic = builder.bg_pic;
+        this.parr_scores = builder.parr_scores;
     }
 
     /* loaded from: classes.dex */
@@ -521,6 +533,7 @@ public final class User extends Message {
         public String BDUSS;
         public Balv balv;
         public String bawu_type;
+        public String bg_pic;
         public Integer bimg_end_time;
         public String bimg_url;
         public Integer bookmark_count;
@@ -561,6 +574,7 @@ public final class User extends Message {
         public String name_show;
         public NewUser new_user_info;
         public Integer no_un;
+        public NewParrScores parr_scores;
         public String passwd;
         public PayMemberInfo pay_member_info;
         public String portrait;
@@ -639,6 +653,8 @@ public final class User extends Message {
                 this.mute_user = User.copyOf(user.mute_user);
                 this.friend_num = user.friend_num;
                 this.fans_nickname = user.fans_nickname;
+                this.bg_pic = user.bg_pic;
+                this.parr_scores = user.parr_scores;
             }
         }
 

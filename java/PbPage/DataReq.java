@@ -10,6 +10,7 @@ import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_DA_IDFA = "";
+    public static final String DEFAULT_JFROM = "";
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MSG_CLICK = "";
     public static final String DEFAULT_PLATFORM = "";
@@ -27,6 +28,8 @@ public final class DataReq extends Message {
     public final CommonReq common;
     @ProtoField(tag = a0.e, type = Message.Datatype.STRING)
     public final String da_idfa;
+    @ProtoField(tag = 45, type = Message.Datatype.UINT64)
+    public final Long fid;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
     @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.INT32)
@@ -35,6 +38,10 @@ public final class DataReq extends Message {
     public final Integer is_jumpfloor;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer issdk;
+    @ProtoField(tag = 46, type = Message.Datatype.STRING)
+    public final String jfrom;
+    @ProtoField(tag = 44, type = Message.Datatype.UINT64)
+    public final Long jid;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer jumpfloor_num;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -119,6 +126,8 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
     public static final Integer DEFAULT_IS_JUMPFLOOR = 0;
     public static final Integer DEFAULT_JUMPFLOOR_NUM = 0;
+    public static final Long DEFAULT_JID = 0L;
+    public static final Long DEFAULT_FID = 0L;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -305,9 +314,24 @@ public final class DataReq extends Message {
             }
             if (builder.platform == null) {
                 this.platform = "";
-                return;
             } else {
                 this.platform = builder.platform;
+            }
+            if (builder.jid == null) {
+                this.jid = DEFAULT_JID;
+            } else {
+                this.jid = builder.jid;
+            }
+            if (builder.fid == null) {
+                this.fid = DEFAULT_FID;
+            } else {
+                this.fid = builder.fid;
+            }
+            if (builder.jfrom == null) {
+                this.jfrom = "";
+                return;
+            } else {
+                this.jfrom = builder.jfrom;
                 return;
             }
         }
@@ -348,6 +372,9 @@ public final class DataReq extends Message {
         this.jumpfloor_num = builder.jumpfloor_num;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
+        this.jid = builder.jid;
+        this.fid = builder.fid;
+        this.jfrom = builder.jfrom;
     }
 
     /* loaded from: classes.dex */
@@ -357,10 +384,13 @@ public final class DataReq extends Message {
         public Integer banner;
         public CommonReq common;
         public String da_idfa;
+        public Long fid;
         public Integer floor_rn;
         public Integer is_comm_reverse;
         public Integer is_jumpfloor;
         public Integer issdk;
+        public String jfrom;
+        public Long jid;
         public Integer jumpfloor_num;
         public Long kz;
         public Integer last;
@@ -433,6 +463,9 @@ public final class DataReq extends Message {
                 this.jumpfloor_num = dataReq.jumpfloor_num;
                 this.da_idfa = dataReq.da_idfa;
                 this.platform = dataReq.platform;
+                this.jid = dataReq.jid;
+                this.fid = dataReq.fid;
+                this.jfrom = dataReq.jfrom;
             }
         }
 

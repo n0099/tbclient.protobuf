@@ -1,17 +1,17 @@
-package tbclient.GetOrder;
+package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
-public final class GetOrderReqIdl extends Message {
+public final class HottopicReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetOrderReqIdl(Builder builder, boolean z, GetOrderReqIdl getOrderReqIdl) {
+    /* synthetic */ HottopicReqIdl(Builder builder, boolean z, HottopicReqIdl hottopicReqIdl) {
         this(builder, z);
     }
 
-    private GetOrderReqIdl(Builder builder, boolean z) {
+    private HottopicReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.data = builder.data;
@@ -21,23 +21,23 @@ public final class GetOrderReqIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public static final class Builder extends Message.Builder<GetOrderReqIdl> {
+    public static final class Builder extends Message.Builder<HottopicReqIdl> {
         public DataReq data;
 
         public Builder() {
         }
 
-        public Builder(GetOrderReqIdl getOrderReqIdl) {
-            super(getOrderReqIdl);
-            if (getOrderReqIdl != null) {
-                this.data = getOrderReqIdl.data;
+        public Builder(HottopicReqIdl hottopicReqIdl) {
+            super(hottopicReqIdl);
+            if (hottopicReqIdl != null) {
+                this.data = hottopicReqIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetOrderReqIdl build(boolean z) {
-            return new GetOrderReqIdl(this, z, null);
+        public HottopicReqIdl build(boolean z) {
+            return new HottopicReqIdl(this, z, null);
         }
     }
 }
