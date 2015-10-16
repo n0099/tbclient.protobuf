@@ -58,7 +58,7 @@ public final class NewGameInfo extends Message {
     public final String bundle_id;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String canvas_name;
-    @ProtoField(tag = 47, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.BUILD_NUMBER, type = Message.Datatype.INT32)
     public final Integer category_id;
     @ProtoField(tag = a0.f, type = Message.Datatype.STRING)
     public final String category_name;

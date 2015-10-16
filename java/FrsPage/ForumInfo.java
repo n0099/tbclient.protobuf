@@ -54,7 +54,7 @@ public final class ForumInfo extends Message {
     public final List<GameInfo> game_card;
     @ProtoField(tag = a0.A, type = Message.Datatype.STRING)
     public final String game_name;
-    @ProtoField(tag = 47, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.BUILD_NUMBER, type = Message.Datatype.STRING)
     public final String game_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Classify> good_classify;

@@ -97,7 +97,7 @@ public final class User extends Message {
     public final Integer is_verify;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer level_id;
-    @ProtoField(label = Message.Label.REPEATED, tag = 47)
+    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.BUILD_NUMBER)
     public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer meizhi_level;

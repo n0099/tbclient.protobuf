@@ -33,6 +33,8 @@ public final class AdReq extends Message {
     public final String da_page;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String da_plan_id;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer da_pn;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_price;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
@@ -45,6 +47,8 @@ public final class AdReq extends Message {
     public final String da_type;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String da_user_id;
+    @ProtoField(tag = 17, type = Message.Datatype.INT64)
+    public final Long da_utime;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String da_verify;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -52,6 +56,8 @@ public final class AdReq extends Message {
     public static final Integer DEFAULT_DA_FID = 0;
     public static final Integer DEFAULT_DA_TID = 0;
     public static final Long DEFAULT_DA_THREADID = 0L;
+    public static final Long DEFAULT_DA_UTIME = 0L;
+    public static final Integer DEFAULT_DA_PN = 0;
 
     /* synthetic */ AdReq(Builder builder, boolean z, AdReq adReq) {
         this(builder, z);
@@ -137,9 +143,19 @@ public final class AdReq extends Message {
             }
             if (builder.da_threadid == null) {
                 this.da_threadid = DEFAULT_DA_THREADID;
-                return;
             } else {
                 this.da_threadid = builder.da_threadid;
+            }
+            if (builder.da_utime == null) {
+                this.da_utime = DEFAULT_DA_UTIME;
+            } else {
+                this.da_utime = builder.da_utime;
+            }
+            if (builder.da_pn == null) {
+                this.da_pn = DEFAULT_DA_PN;
+                return;
+            } else {
+                this.da_pn = builder.da_pn;
                 return;
             }
         }
@@ -159,6 +175,8 @@ public final class AdReq extends Message {
         this.da_task = builder.da_task;
         this.da_type = builder.da_type;
         this.da_threadid = builder.da_threadid;
+        this.da_utime = builder.da_utime;
+        this.da_pn = builder.da_pn;
     }
 
     /* loaded from: classes.dex */
@@ -171,12 +189,14 @@ public final class AdReq extends Message {
         public String da_obj_id;
         public String da_page;
         public String da_plan_id;
+        public Integer da_pn;
         public String da_price;
         public String da_task;
         public Long da_threadid;
         public Integer da_tid;
         public String da_type;
         public String da_user_id;
+        public Long da_utime;
         public String da_verify;
         public String ext;
 
@@ -202,6 +222,8 @@ public final class AdReq extends Message {
                 this.da_task = adReq.da_task;
                 this.da_type = adReq.da_type;
                 this.da_threadid = adReq.da_threadid;
+                this.da_utime = adReq.da_utime;
+                this.da_pn = adReq.da_pn;
             }
         }
 
