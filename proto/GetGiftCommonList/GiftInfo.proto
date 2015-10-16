@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "GetGiftCommonList/GiftList.proto";
+import "GetGiftCommonList/NumInfo.proto";
+
+message GiftInfo {
+    repeated GiftList list = 1;
+    repeated NumInfo num_info = 2;
+    uint32 version = 3;
+}

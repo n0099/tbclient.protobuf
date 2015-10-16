@@ -17,4 +17,6 @@ message AdReq {
     string da_task = 14;
     string da_type = 15;
     int64 da_threadid = 16;
+    int64 da_utime = 17;
+    int32 da_pn = 18;
 }

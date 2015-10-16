@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DataRes {
+    uint32 money = 1;
+    string public_key = 2;
+}

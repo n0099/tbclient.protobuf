@@ -58,7 +58,6 @@ message ForumInfo {
     AnchorPower anchor_power = 44;
     WorldCup worldcupinfo = 45;
     int32 has_game = 46;
-    string game_url = 47;
     RecomUserInfo recommend_user_info = 48;
     int32 can_use_accelerate = 49;
     string accelerate_cotent = 50;

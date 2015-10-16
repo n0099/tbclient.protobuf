@@ -9,7 +9,6 @@ import "Media.proto";
 import "MediaNum.proto";
 import "PollInfo.proto";
 import "PostList.proto";
-import "Topic.proto";
 import "User.proto";
 import "Voice.proto";
 import "ZhiBoInfoTW.proto";
@@ -55,7 +54,6 @@ message ThreadInfo {
     repeated PostList post_list = 44;
     int32 create_time = 45;
     int32 repost_num = 46;
-    Topic topic = 47;
     int32 has_commented = 48;
     string from = 49;
     int32 collect_status = 50;
