@@ -3,6 +3,7 @@ syntax = "proto3";
 import "Balv.proto";
 import "GiftInfo.proto";
 import "Icon.proto";
+import "LikeForumInfo.proto";
 import "MyGroupInfo.proto";
 import "NewParrScores.proto";
 import "NewUser.proto";
@@ -51,6 +52,7 @@ message User {
     repeated UserPics user_pics = 44;
     PrivSets priv_sets = 45;
     int32 is_friend = 46;
+    repeated LikeForumInfo likeForum = 47;
     repeated MyGroupInfo groupList = 48;
     int32 gift_num = 49;
     repeated GiftInfo gift_list = 50;
