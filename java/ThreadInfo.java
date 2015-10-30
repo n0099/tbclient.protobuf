@@ -154,7 +154,7 @@ public final class ThreadInfo extends Message {
     public final Integer timeline;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
-    @ProtoField(tag = TbConfig.BUILD_NUMBER)
+    @ProtoField(tag = 47)
     public final Topic topic;
     @ProtoField(tag = 72)
     public final ZhiBoInfoTW twzhibo_info;
