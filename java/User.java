@@ -113,6 +113,8 @@ public final class User extends Message {
     public final NewUser new_user_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer no_un;
+    @ProtoField(tag = 60)
+    public final NovelFansInfo novel_fans_info;
     @ProtoField(tag = 59)
     public final NewParrScores parr_scores;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -465,6 +467,7 @@ public final class User extends Message {
                 this.bg_pic = builder.bg_pic;
             }
             this.parr_scores = builder.parr_scores;
+            this.novel_fans_info = builder.novel_fans_info;
             return;
         }
         this.is_login = builder.is_login;
@@ -526,6 +529,7 @@ public final class User extends Message {
         this.fans_nickname = builder.fans_nickname;
         this.bg_pic = builder.bg_pic;
         this.parr_scores = builder.parr_scores;
+        this.novel_fans_info = builder.novel_fans_info;
     }
 
     /* loaded from: classes.dex */
@@ -574,6 +578,7 @@ public final class User extends Message {
         public String name_show;
         public NewUser new_user_info;
         public Integer no_un;
+        public NovelFansInfo novel_fans_info;
         public NewParrScores parr_scores;
         public String passwd;
         public PayMemberInfo pay_member_info;
@@ -655,6 +660,7 @@ public final class User extends Message {
                 this.fans_nickname = user.fans_nickname;
                 this.bg_pic = user.bg_pic;
                 this.parr_scores = user.parr_scores;
+                this.novel_fans_info = user.novel_fans_info;
             }
         }
 

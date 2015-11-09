@@ -13,12 +13,15 @@ public final class Banner extends Message {
     public final String banner_url;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String desc;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer template_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String value;
     public static final Integer DEFAULT_BANNER_TYPE = 0;
     public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_TEMPLATE_ID = 0;
 
     /* synthetic */ Banner(Builder builder, boolean z, Banner banner) {
         this(builder, z);
@@ -49,9 +52,14 @@ public final class Banner extends Message {
             }
             if (builder.desc == null) {
                 this.desc = "";
-                return;
             } else {
                 this.desc = builder.desc;
+            }
+            if (builder.template_id == null) {
+                this.template_id = DEFAULT_TEMPLATE_ID;
+                return;
+            } else {
+                this.template_id = builder.template_id;
                 return;
             }
         }
@@ -60,6 +68,7 @@ public final class Banner extends Message {
         this.value = builder.value;
         this.type = builder.type;
         this.desc = builder.desc;
+        this.template_id = builder.template_id;
     }
 
     /* loaded from: classes.dex */
@@ -67,6 +76,7 @@ public final class Banner extends Message {
         public Integer banner_type;
         public String banner_url;
         public String desc;
+        public Integer template_id;
         public Integer type;
         public String value;
 
@@ -81,6 +91,7 @@ public final class Banner extends Message {
                 this.value = banner.value;
                 this.type = banner.type;
                 this.desc = banner.desc;
+                this.template_id = banner.template_id;
             }
         }
 

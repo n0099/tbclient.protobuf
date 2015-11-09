@@ -43,6 +43,8 @@ public final class PostInfoList extends Message {
     public final LbsInfo lbs_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<Media> media;
+    @ProtoField(tag = 28)
+    public final PollInfo poll_info;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long post_id;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
@@ -210,6 +212,7 @@ public final class PostInfoList extends Message {
                 this.thread_type = builder.thread_type;
             }
             this.twzhibo_info = builder.twzhibo_info;
+            this.poll_info = builder.poll_info;
             return;
         }
         this.forum_id = builder.forum_id;
@@ -239,6 +242,7 @@ public final class PostInfoList extends Message {
         this.hide_post = builder.hide_post;
         this.thread_type = builder.thread_type;
         this.twzhibo_info = builder.twzhibo_info;
+        this.poll_info = builder.poll_info;
     }
 
     /* loaded from: classes.dex */
@@ -257,6 +261,7 @@ public final class PostInfoList extends Message {
         public Integer is_thread;
         public LbsInfo lbs_info;
         public List<Media> media;
+        public PollInfo poll_info;
         public Long post_id;
         public String post_type;
         public String ptype;
@@ -304,6 +309,7 @@ public final class PostInfoList extends Message {
                 this.hide_post = postInfoList.hide_post;
                 this.thread_type = postInfoList.thread_type;
                 this.twzhibo_info = postInfoList.twzhibo_info;
+                this.poll_info = postInfoList.poll_info;
             }
         }
 

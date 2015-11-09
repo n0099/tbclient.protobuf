@@ -10,6 +10,7 @@ public final class CLocalDialog extends Message {
     public static final String DEFAULT_TIME = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
+    public static final String DEFAULT_URL_IOS = "";
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -22,6 +23,8 @@ public final class CLocalDialog extends Message {
     public final String title;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String url;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String url_ios;
 
     /* synthetic */ CLocalDialog(Builder builder, boolean z, CLocalDialog cLocalDialog) {
         this(builder, z);
@@ -57,9 +60,14 @@ public final class CLocalDialog extends Message {
             }
             if (builder.name == null) {
                 this.name = "";
-                return;
             } else {
                 this.name = builder.name;
+            }
+            if (builder.url_ios == null) {
+                this.url_ios = "";
+                return;
+            } else {
+                this.url_ios = builder.url_ios;
                 return;
             }
         }
@@ -69,6 +77,7 @@ public final class CLocalDialog extends Message {
         this.title = builder.title;
         this.url = builder.url;
         this.name = builder.name;
+        this.url_ios = builder.url_ios;
     }
 
     /* loaded from: classes.dex */
@@ -79,6 +88,7 @@ public final class CLocalDialog extends Message {
         public String time;
         public String title;
         public String url;
+        public String url_ios;
 
         public Builder() {
         }
@@ -92,6 +102,7 @@ public final class CLocalDialog extends Message {
                 this.title = cLocalDialog.title;
                 this.url = cLocalDialog.url;
                 this.name = cLocalDialog.name;
+                this.url_ios = cLocalDialog.url_ios;
             }
         }
 

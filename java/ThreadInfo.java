@@ -92,6 +92,12 @@ public final class ThreadInfo extends Message {
     public final Integer is_membertop;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_notice;
+    @ProtoField(tag = 76, type = Message.Datatype.INT32)
+    public final Integer is_novel;
+    @ProtoField(tag = 78, type = Message.Datatype.INT32)
+    public final Integer is_novel_reward;
+    @ProtoField(tag = 77, type = Message.Datatype.INT32)
+    public final Integer is_novel_thank;
     @ProtoField(tag = 38, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
     @ProtoField(tag = a0.f29case, type = Message.Datatype.INT32)
@@ -222,6 +228,9 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_HOT_WEIGHT = 0;
     public static final Integer DEFAULT_STORECOUNT = 0;
     public static final Integer DEFAULT_POST_NUM = 0;
+    public static final Integer DEFAULT_IS_NOVEL = 0;
+    public static final Integer DEFAULT_IS_NOVEL_THANK = 0;
+    public static final Integer DEFAULT_IS_NOVEL_REWARD = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -556,7 +565,23 @@ public final class ThreadInfo extends Message {
             }
             this.poll_info = builder.poll_info;
             this.jid = builder.jid;
-            return;
+            if (builder.is_novel == null) {
+                this.is_novel = DEFAULT_IS_NOVEL;
+            } else {
+                this.is_novel = builder.is_novel;
+            }
+            if (builder.is_novel_thank == null) {
+                this.is_novel_thank = DEFAULT_IS_NOVEL_THANK;
+            } else {
+                this.is_novel_thank = builder.is_novel_thank;
+            }
+            if (builder.is_novel_reward == null) {
+                this.is_novel_reward = DEFAULT_IS_NOVEL_REWARD;
+                return;
+            } else {
+                this.is_novel_reward = builder.is_novel_reward;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -632,6 +657,9 @@ public final class ThreadInfo extends Message {
         this.category_name = builder.category_name;
         this.poll_info = builder.poll_info;
         this.jid = builder.jid;
+        this.is_novel = builder.is_novel;
+        this.is_novel_thank = builder.is_novel_thank;
+        this.is_novel_reward = builder.is_novel_reward;
     }
 
     /* loaded from: classes.dex */
@@ -668,6 +696,9 @@ public final class ThreadInfo extends Message {
         public Integer is_meizhi;
         public Integer is_membertop;
         public Integer is_notice;
+        public Integer is_novel;
+        public Integer is_novel_reward;
+        public Integer is_novel_thank;
         public Integer is_ntitle;
         public Integer is_pic;
         public Integer is_protal;
@@ -791,6 +822,9 @@ public final class ThreadInfo extends Message {
                 this.category_name = threadInfo.category_name;
                 this.poll_info = threadInfo.poll_info;
                 this.jid = threadInfo.jid;
+                this.is_novel = threadInfo.is_novel;
+                this.is_novel_thank = threadInfo.is_novel_thank;
+                this.is_novel_reward = threadInfo.is_novel_reward;
             }
         }
 

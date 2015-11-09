@@ -9,8 +9,10 @@ public final class TopCode extends Message {
     public static final Integer DEFAULT_GET_TYPE = 0;
     public static final Long DEFAULT_GIFTWORTH = 0L;
     public static final String DEFAULT_IMG_URL = "";
+    public static final String DEFAULT_SUBTITLE = "";
     public static final String DEFAULT_SUMMARY = "";
     public static final String DEFAULT_SURPLUSGIFT = "";
+    public static final String DEFAULT_TYPE_TEXT = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String code_link;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -21,10 +23,14 @@ public final class TopCode extends Message {
     public final Long giftworth;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String img_url;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String subtitle;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String summary;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String surplusgift;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String type_text;
 
     /* synthetic */ TopCode(Builder builder, boolean z, TopCode topCode) {
         this(builder, z);
@@ -65,9 +71,19 @@ public final class TopCode extends Message {
             }
             if (builder.giftworth == null) {
                 this.giftworth = DEFAULT_GIFTWORTH;
-                return;
             } else {
                 this.giftworth = builder.giftworth;
+            }
+            if (builder.type_text == null) {
+                this.type_text = "";
+            } else {
+                this.type_text = builder.type_text;
+            }
+            if (builder.subtitle == null) {
+                this.subtitle = "";
+                return;
+            } else {
+                this.subtitle = builder.subtitle;
                 return;
             }
         }
@@ -78,6 +94,8 @@ public final class TopCode extends Message {
         this.get_type = builder.get_type;
         this.surplusgift = builder.surplusgift;
         this.giftworth = builder.giftworth;
+        this.type_text = builder.type_text;
+        this.subtitle = builder.subtitle;
     }
 
     /* loaded from: classes.dex */
@@ -87,8 +105,10 @@ public final class TopCode extends Message {
         public Integer get_type;
         public Long giftworth;
         public String img_url;
+        public String subtitle;
         public String summary;
         public String surplusgift;
+        public String type_text;
 
         public Builder() {
         }
@@ -103,6 +123,8 @@ public final class TopCode extends Message {
                 this.get_type = topCode.get_type;
                 this.surplusgift = topCode.surplusgift;
                 this.giftworth = topCode.giftworth;
+                this.type_text = topCode.type_text;
+                this.subtitle = topCode.subtitle;
             }
         }
 
