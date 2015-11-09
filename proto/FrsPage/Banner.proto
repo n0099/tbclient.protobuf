@@ -6,4 +6,5 @@ message Banner {
     string value = 3;
     int32 type = 4;
     string desc = 5;
+    int32 template_id = 6;
 }

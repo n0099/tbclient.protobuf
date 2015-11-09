@@ -7,6 +7,7 @@ import "LikeForumInfo.proto";
 import "MyGroupInfo.proto";
 import "NewParrScores.proto";
 import "NewUser.proto";
+import "NovelFansInfo.proto";
 import "PrivSets.proto";
 import "TshowInfo.proto";
 import "UserPics.proto";
@@ -58,4 +59,5 @@ message User {
     repeated GiftInfo gift_list = 50;
     string bg_pic = 58;
     NewParrScores parr_scores = 59;
+    NovelFansInfo novel_fans_info = 60;
 }

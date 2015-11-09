@@ -7,4 +7,5 @@ message CLocalDialog {
     string title = 4;
     string url = 5;
     string name = 6;
+    string url_ios = 7;
 }

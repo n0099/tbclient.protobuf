@@ -8,4 +8,6 @@ message TopCode {
     int32 get_type = 5;
     string surplusgift = 6;
     int64 giftworth = 7;
+    string type_text = 8;
+    string subtitle = 9;
 }

@@ -72,4 +72,7 @@ message ThreadInfo {
     string category_name = 73;
     PollInfo poll_info = 74;
     JNews jid = 75;
+    int32 is_novel = 76;
+    int32 is_novel_thank = 77;
+    int32 is_novel_reward = 78;
 }

@@ -4,6 +4,7 @@ import "Abstract.proto";
 import "AnchorInfo.proto";
 import "LbsInfo.proto";
 import "Media.proto";
+import "PollInfo.proto";
 import "PostInfoContent.proto";
 import "Quote.proto";
 import "Voice.proto";
@@ -37,4 +38,5 @@ message PostInfoList {
     int32 hide_post = 25;
     uint64 thread_type = 26;
     ZhiBoInfoTW twzhibo_info = 27;
+    PollInfo poll_info = 28;
 }
