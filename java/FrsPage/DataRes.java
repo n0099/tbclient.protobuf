@@ -1,5 +1,6 @@
 package tbclient.FrsPage;
 
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -10,16 +11,20 @@ import tbclient.CategoryInfo;
 import tbclient.FrsTabInfo;
 import tbclient.Novel;
 import tbclient.Page;
+import tbclient.SdkTopicThread;
 import tbclient.ThreadInfo;
 import tbclient.User;
 import tbclient.ZhiBoInfoTW;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    public static final String DEFAULT_BAWU_ENTER_URL = "";
     public static final String DEFAULT_FORTUNE_DESC = "";
     @ProtoField(tag = 23)
     public final ActivityHead activityhead;
     @ProtoField(tag = 5)
     public final Anti anti;
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
+    public final String bawu_enter_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
@@ -54,10 +59,16 @@ public final class DataRes extends Message {
     public final Novel novel;
     @ProtoField(tag = 4)
     public final Page page;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB)
+    public final PushThreadInfo push_thread_info;
+    @ProtoField(tag = 31)
+    public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
+    @ProtoField(tag = 30)
+    public final ThreadInfo store_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 8, type = Message.Datatype.INT64)
     public final List<Long> thread_id_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
@@ -189,9 +200,17 @@ public final class DataRes extends Message {
             }
             if (builder.category_list == null) {
                 this.category_list = DEFAULT_CATEGORY_LIST;
-                return;
             } else {
                 this.category_list = immutableCopyOf(builder.category_list);
+            }
+            this.push_thread_info = builder.push_thread_info;
+            this.store_card = builder.store_card;
+            this.sdk_topic_thread = builder.sdk_topic_thread;
+            if (builder.bawu_enter_url == null) {
+                this.bawu_enter_url = "";
+                return;
+            } else {
+                this.bawu_enter_url = builder.bawu_enter_url;
                 return;
             }
         }
@@ -223,12 +242,17 @@ public final class DataRes extends Message {
         this.hot_twzhibo_info = builder.hot_twzhibo_info;
         this.twzhibo_pos = builder.twzhibo_pos;
         this.category_list = immutableCopyOf(builder.category_list);
+        this.push_thread_info = builder.push_thread_info;
+        this.store_card = builder.store_card;
+        this.sdk_topic_thread = builder.sdk_topic_thread;
+        this.bawu_enter_url = builder.bawu_enter_url;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityHead activityhead;
         public Anti anti;
+        public String bawu_enter_url;
         public List<CategoryInfo> category_list;
         public List<ColorEgg> color_egg;
         public Integer ctime;
@@ -246,8 +270,11 @@ public final class DataRes extends Message {
         public Long logid;
         public Novel novel;
         public Page page;
+        public PushThreadInfo push_thread_info;
+        public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
         public List<StarEnter> star_enter;
+        public ThreadInfo store_card;
         public List<Long> thread_id_list;
         public List<ThreadInfo> thread_list;
         public Integer time;
@@ -290,6 +317,10 @@ public final class DataRes extends Message {
                 this.hot_twzhibo_info = dataRes.hot_twzhibo_info;
                 this.twzhibo_pos = dataRes.twzhibo_pos;
                 this.category_list = DataRes.copyOf(dataRes.category_list);
+                this.push_thread_info = dataRes.push_thread_info;
+                this.store_card = dataRes.store_card;
+                this.sdk_topic_thread = dataRes.sdk_topic_thread;
+                this.bawu_enter_url = dataRes.bawu_enter_url;
             }
         }
 

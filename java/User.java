@@ -1,8 +1,8 @@
 package tbclient;
 
+import com.baidu.location.BDLocation;
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -55,10 +55,14 @@ public final class User extends Message {
     public final List<GiftInfo> gift_list;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer gift_num;
+    @ProtoField(tag = 62)
+    public final GodInfo god_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 48)
     public final List<MyGroupInfo> groupList;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer has_concerned;
+    @ProtoField(tag = 63, type = Message.Datatype.INT32)
+    public final Integer heavy_user;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Icon> iconinfo;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -103,12 +107,14 @@ public final class User extends Message {
     public final Integer meizhi_level;
     @ProtoField(label = Message.Label.REPEATED, tag = a0.B)
     public final List<SimpleUser> mute_user;
-    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer my_like_num;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String name_show;
+    @ProtoField(label = Message.Label.REPEATED, tag = 65)
+    public final List<TshowInfo> new_tshow_icon;
     @ProtoField(tag = 8)
     public final NewUser new_user_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -137,6 +143,8 @@ public final class User extends Message {
     public final String tb_age;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<TshowInfo> tshow_icon;
+    @ProtoField(tag = BDLocation.TypeOffLineLocation)
+    public final TwZhiBoUser tw_anchor_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer type;
     @ProtoField(label = Message.Label.REPEATED, tag = 44)
@@ -145,6 +153,10 @@ public final class User extends Message {
     public final Integer user_type;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer userhide;
+    @ProtoField(tag = 61)
+    public final UserVipInfo vipInfo;
+    @ProtoField(tag = 64)
+    public final VipShowInfo vip_show_info;
     public static final Integer DEFAULT_IS_LOGIN = 0;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_NO_UN = 0;
@@ -184,6 +196,8 @@ public final class User extends Message {
     public static final Integer DEFAULT_BOOKMARK_NEW_COUNT = 0;
     public static final List<SimpleUser> DEFAULT_MUTE_USER = Collections.emptyList();
     public static final Long DEFAULT_FRIEND_NUM = 0L;
+    public static final Integer DEFAULT_HEAVY_USER = 0;
+    public static final List<TshowInfo> DEFAULT_NEW_TSHOW_ICON = Collections.emptyList();
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -468,6 +482,20 @@ public final class User extends Message {
             }
             this.parr_scores = builder.parr_scores;
             this.novel_fans_info = builder.novel_fans_info;
+            this.vipInfo = builder.vipInfo;
+            this.god_data = builder.god_data;
+            if (builder.heavy_user == null) {
+                this.heavy_user = DEFAULT_HEAVY_USER;
+            } else {
+                this.heavy_user = builder.heavy_user;
+            }
+            this.vip_show_info = builder.vip_show_info;
+            if (builder.new_tshow_icon == null) {
+                this.new_tshow_icon = DEFAULT_NEW_TSHOW_ICON;
+            } else {
+                this.new_tshow_icon = immutableCopyOf(builder.new_tshow_icon);
+            }
+            this.tw_anchor_info = builder.tw_anchor_info;
             return;
         }
         this.is_login = builder.is_login;
@@ -530,6 +558,12 @@ public final class User extends Message {
         this.bg_pic = builder.bg_pic;
         this.parr_scores = builder.parr_scores;
         this.novel_fans_info = builder.novel_fans_info;
+        this.vipInfo = builder.vipInfo;
+        this.god_data = builder.god_data;
+        this.heavy_user = builder.heavy_user;
+        this.vip_show_info = builder.vip_show_info;
+        this.new_tshow_icon = immutableCopyOf(builder.new_tshow_icon);
+        this.tw_anchor_info = builder.tw_anchor_info;
     }
 
     /* loaded from: classes.dex */
@@ -549,8 +583,10 @@ public final class User extends Message {
         public Integer gender;
         public List<GiftInfo> gift_list;
         public Integer gift_num;
+        public GodInfo god_data;
         public List<MyGroupInfo> groupList;
         public Integer has_concerned;
+        public Integer heavy_user;
         public List<Icon> iconinfo;
         public Long id;
         public String intro;
@@ -576,6 +612,7 @@ public final class User extends Message {
         public Integer my_like_num;
         public String name;
         public String name_show;
+        public List<TshowInfo> new_tshow_icon;
         public NewUser new_user_info;
         public Integer no_un;
         public NovelFansInfo novel_fans_info;
@@ -590,10 +627,13 @@ public final class User extends Message {
         public Integer sex;
         public String tb_age;
         public List<TshowInfo> tshow_icon;
+        public TwZhiBoUser tw_anchor_info;
         public Integer type;
         public List<UserPics> user_pics;
         public Integer user_type;
         public Integer userhide;
+        public UserVipInfo vipInfo;
+        public VipShowInfo vip_show_info;
 
         public Builder() {
         }
@@ -661,6 +701,12 @@ public final class User extends Message {
                 this.bg_pic = user.bg_pic;
                 this.parr_scores = user.parr_scores;
                 this.novel_fans_info = user.novel_fans_info;
+                this.vipInfo = user.vipInfo;
+                this.god_data = user.god_data;
+                this.heavy_user = user.heavy_user;
+                this.vip_show_info = user.vip_show_info;
+                this.new_tshow_icon = User.copyOf(user.new_tshow_icon);
+                this.tw_anchor_info = user.tw_anchor_info;
             }
         }
 

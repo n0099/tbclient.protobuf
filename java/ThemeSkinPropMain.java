@@ -6,6 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class ThemeSkinPropMain extends Message {
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_EXAMPLE_URL = "";
+    public static final String DEFAULT_PACKAGE_KEY = "";
     public static final String DEFAULT_PACKAGE_SIZE = "";
     public static final String DEFAULT_PACKAGE_URL = "";
     public static final String DEFAULT_PERMISSION = "";
@@ -17,6 +18,10 @@ public final class ThemeSkinPropMain extends Message {
     public final String example_url;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer free_user_level;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer is_finished;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String package_key;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String package_size;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -34,6 +39,7 @@ public final class ThemeSkinPropMain extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     public static final Integer DEFAULT_PROPS_VERSION = 0;
     public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
+    public static final Integer DEFAULT_IS_FINISHED = 0;
 
     /* synthetic */ ThemeSkinPropMain(Builder builder, boolean z, ThemeSkinPropMain themeSkinPropMain) {
         this(builder, z);
@@ -89,9 +95,19 @@ public final class ThemeSkinPropMain extends Message {
             }
             if (builder.activity_url == null) {
                 this.activity_url = "";
-                return;
             } else {
                 this.activity_url = builder.activity_url;
+            }
+            if (builder.is_finished == null) {
+                this.is_finished = DEFAULT_IS_FINISHED;
+            } else {
+                this.is_finished = builder.is_finished;
+            }
+            if (builder.package_key == null) {
+                this.package_key = "";
+                return;
+            } else {
+                this.package_key = builder.package_key;
                 return;
             }
         }
@@ -105,6 +121,8 @@ public final class ThemeSkinPropMain extends Message {
         this.props_version = builder.props_version;
         this.free_user_level = builder.free_user_level;
         this.activity_url = builder.activity_url;
+        this.is_finished = builder.is_finished;
+        this.package_key = builder.package_key;
     }
 
     /* loaded from: classes.dex */
@@ -112,6 +130,8 @@ public final class ThemeSkinPropMain extends Message {
         public String activity_url;
         public String example_url;
         public Integer free_user_level;
+        public Integer is_finished;
+        public String package_key;
         public String package_size;
         public String package_url;
         public String permission;
@@ -136,6 +156,8 @@ public final class ThemeSkinPropMain extends Message {
                 this.props_version = themeSkinPropMain.props_version;
                 this.free_user_level = themeSkinPropMain.free_user_level;
                 this.activity_url = themeSkinPropMain.activity_url;
+                this.is_finished = themeSkinPropMain.is_finished;
+                this.package_key = themeSkinPropMain.package_key;
             }
         }
 

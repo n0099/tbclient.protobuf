@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -43,6 +44,8 @@ public final class Post extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
+    @ProtoField(tag = 28)
+    public final PbPresent present;
     @ProtoField(tag = 21)
     public final SignatureData signature;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
@@ -61,6 +64,8 @@ public final class Post extends Message {
     public final String title;
     @ProtoField(tag = 26)
     public final TPointPost tpoint_post;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB)
+    public final VideoInfo video_info;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String vote_crypt;
     @ProtoField(tag = 24)
@@ -185,6 +190,8 @@ public final class Post extends Message {
             }
             this.tpoint_post = builder.tpoint_post;
             this.act_post = builder.act_post;
+            this.present = builder.present;
+            this.video_info = builder.video_info;
             return;
         }
         this.id = builder.id;
@@ -214,6 +221,8 @@ public final class Post extends Message {
         this.storecount = builder.storecount;
         this.tpoint_post = builder.tpoint_post;
         this.act_post = builder.act_post;
+        this.present = builder.present;
+        this.video_info = builder.video_info;
     }
 
     /* loaded from: classes.dex */
@@ -234,6 +243,7 @@ public final class Post extends Message {
         public Integer is_voice;
         public Integer is_vote;
         public Lbs lbs_info;
+        public PbPresent present;
         public SignatureData signature;
         public Integer storecount;
         public SubPost sub_post_list;
@@ -243,6 +253,7 @@ public final class Post extends Message {
         public String time_ex;
         public String title;
         public TPointPost tpoint_post;
+        public VideoInfo video_info;
         public String vote_crypt;
         public Zan zan;
 
@@ -279,6 +290,8 @@ public final class Post extends Message {
                 this.storecount = post.storecount;
                 this.tpoint_post = post.tpoint_post;
                 this.act_post = post.act_post;
+                this.present = post.present;
+                this.video_info = post.video_info;
             }
         }
 

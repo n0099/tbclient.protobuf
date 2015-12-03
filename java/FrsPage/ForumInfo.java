@@ -2,7 +2,6 @@ package tbclient.FrsPage;
 
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -36,7 +35,7 @@ public final class ForumInfo extends Message {
     public final List<Badges> badges;
     @ProtoField(tag = 32)
     public final Banner banner;
-    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE)
+    @ProtoField(tag = 33)
     public final BannerList banner_list;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer can_use_accelerate;
@@ -50,6 +49,8 @@ public final class ForumInfo extends Message {
     public final ForumButton forum_button;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<Calendar> forum_sign_calendar;
+    @ProtoField(tag = a0.B)
+    public final MemberShowIcon forumvip_show_icon;
     @ProtoField(label = Message.Label.REPEATED, tag = a0.D)
     public final List<GameInfo> game_card;
     @ProtoField(tag = a0.A, type = Message.Datatype.STRING)
@@ -384,11 +385,11 @@ public final class ForumInfo extends Message {
             }
             if (builder.game_name == null) {
                 this.game_name = "";
-                return;
             } else {
                 this.game_name = builder.game_name;
-                return;
             }
+            this.forumvip_show_icon = builder.forumvip_show_icon;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -444,6 +445,7 @@ public final class ForumInfo extends Message {
         this.news_info = builder.news_info;
         this.game_card = immutableCopyOf(builder.game_card);
         this.game_name = builder.game_name;
+        this.forumvip_show_icon = builder.forumvip_show_icon;
     }
 
     /* loaded from: classes.dex */
@@ -461,6 +463,7 @@ public final class ForumInfo extends Message {
         public String first_class;
         public ForumButton forum_button;
         public List<Calendar> forum_sign_calendar;
+        public MemberShowIcon forumvip_show_icon;
         public List<GameInfo> game_card;
         public String game_name;
         public String game_url;
@@ -563,6 +566,7 @@ public final class ForumInfo extends Message {
                 this.news_info = forumInfo.news_info;
                 this.game_card = ForumInfo.copyOf(forumInfo.game_card);
                 this.game_name = forumInfo.game_name;
+                this.forumvip_show_icon = forumInfo.forumvip_show_icon;
             }
         }
 

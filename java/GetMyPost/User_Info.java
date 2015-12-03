@@ -2,6 +2,7 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.GodInfo;
 /* loaded from: classes.dex */
 public final class User_Info extends Message {
     public static final String DEFAULT_NAME = "";
@@ -11,6 +12,8 @@ public final class User_Info extends Message {
     public final Balv balv;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer gender;
+    @ProtoField(tag = 13)
+    public final GodInfo god_data;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -103,6 +106,7 @@ public final class User_Info extends Message {
                 this.userhide = builder.userhide;
             }
             this.balv = builder.balv;
+            this.god_data = builder.god_data;
             return;
         }
         this.is_login = builder.is_login;
@@ -117,12 +121,14 @@ public final class User_Info extends Message {
         this.is_select_tail = builder.is_select_tail;
         this.userhide = builder.userhide;
         this.balv = builder.balv;
+        this.god_data = builder.god_data;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<User_Info> {
         public Balv balv;
         public Integer gender;
+        public GodInfo god_data;
         public Long id;
         public Integer is_login;
         public Integer is_manager;
@@ -152,6 +158,7 @@ public final class User_Info extends Message {
                 this.is_select_tail = user_Info.is_select_tail;
                 this.userhide = user_Info.userhide;
                 this.balv = user_Info.balv;
+                this.god_data = user_Info.god_data;
             }
         }
 

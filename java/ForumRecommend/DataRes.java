@@ -28,6 +28,8 @@ public final class DataRes extends Message {
     public final List<NewRecommend> new_recommend;
     @ProtoField(label = Message.Label.REPEATED, tag = 10)
     public final List<RecommendForumInfo> recommend_forum_info;
+    @ProtoField(tag = 12, type = Message.Datatype.INT32)
+    public final Integer redirect;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer time;
     public static final List<LikeForum> DEFAULT_LIKE_FORUM = Collections.emptyList();
@@ -39,6 +41,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_TIME = 0;
     public static final Integer DEFAULT_IS_MEM = 0;
     public static final List<RecommendForumInfo> DEFAULT_RECOMMEND_FORUM_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_REDIRECT = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -98,7 +101,13 @@ public final class DataRes extends Message {
                 this.recommend_forum_info = immutableCopyOf(builder.recommend_forum_info);
             }
             this.hot_search = builder.hot_search;
-            return;
+            if (builder.redirect == null) {
+                this.redirect = DEFAULT_REDIRECT;
+                return;
+            } else {
+                this.redirect = builder.redirect;
+                return;
+            }
         }
         this.like_forum = immutableCopyOf(builder.like_forum);
         this.banner = immutableCopyOf(builder.banner);
@@ -111,6 +120,7 @@ public final class DataRes extends Message {
         this.is_mem = builder.is_mem;
         this.recommend_forum_info = immutableCopyOf(builder.recommend_forum_info);
         this.hot_search = builder.hot_search;
+        this.redirect = builder.redirect;
     }
 
     /* loaded from: classes.dex */
@@ -125,6 +135,7 @@ public final class DataRes extends Message {
         public Integer msign_valid;
         public List<NewRecommend> new_recommend;
         public List<RecommendForumInfo> recommend_forum_info;
+        public Integer redirect;
         public Integer time;
 
         public Builder() {
@@ -144,6 +155,7 @@ public final class DataRes extends Message {
                 this.is_mem = dataRes.is_mem;
                 this.recommend_forum_info = DataRes.copyOf(dataRes.recommend_forum_info);
                 this.hot_search = dataRes.hot_search;
+                this.redirect = dataRes.redirect;
             }
         }
 

@@ -10,10 +10,13 @@ import tbclient.ThemeRecommand;
 public final class DataRes extends Message {
     public static final List<ThemeBgProp> DEFAULT_BGS = Collections.emptyList();
     public static final Integer DEFAULT_HASMORE = 0;
+    public static final Integer DEFAULT_IS_DEFAULT = 0;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThemeBgProp> bgs;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer hasmore;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer is_default;
     @ProtoField(tag = 1)
     public final ThemeRecommand recommend;
 
@@ -32,21 +35,28 @@ public final class DataRes extends Message {
             }
             if (builder.hasmore == null) {
                 this.hasmore = DEFAULT_HASMORE;
-                return;
             } else {
                 this.hasmore = builder.hasmore;
+            }
+            if (builder.is_default == null) {
+                this.is_default = DEFAULT_IS_DEFAULT;
+                return;
+            } else {
+                this.is_default = builder.is_default;
                 return;
             }
         }
         this.recommend = builder.recommend;
         this.bgs = immutableCopyOf(builder.bgs);
         this.hasmore = builder.hasmore;
+        this.is_default = builder.is_default;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThemeBgProp> bgs;
         public Integer hasmore;
+        public Integer is_default;
         public ThemeRecommand recommend;
 
         public Builder() {
@@ -58,6 +68,7 @@ public final class DataRes extends Message {
                 this.recommend = dataRes.recommend;
                 this.bgs = DataRes.copyOf(dataRes.bgs);
                 this.hasmore = dataRes.hasmore;
+                this.is_default = dataRes.is_default;
             }
         }
 

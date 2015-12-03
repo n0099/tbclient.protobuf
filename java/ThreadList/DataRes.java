@@ -4,12 +4,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.BannerList;
 import tbclient.ThreadInfo;
 import tbclient.User;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    @ProtoField(tag = 3)
+    public final BannerList banner_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<ThreadInfo> thread_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -29,18 +32,20 @@ public final class DataRes extends Message {
             }
             if (builder.user_list == null) {
                 this.user_list = DEFAULT_USER_LIST;
-                return;
             } else {
                 this.user_list = immutableCopyOf(builder.user_list);
-                return;
             }
+            this.banner_list = builder.banner_list;
+            return;
         }
         this.thread_list = immutableCopyOf(builder.thread_list);
         this.user_list = immutableCopyOf(builder.user_list);
+        this.banner_list = builder.banner_list;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public BannerList banner_list;
         public List<ThreadInfo> thread_list;
         public List<User> user_list;
 
@@ -52,6 +57,7 @@ public final class DataRes extends Message {
             if (dataRes != null) {
                 this.thread_list = DataRes.copyOf(dataRes.thread_list);
                 this.user_list = DataRes.copyOf(dataRes.user_list);
+                this.banner_list = dataRes.banner_list;
             }
         }
 

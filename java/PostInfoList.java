@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -69,6 +70,8 @@ public final class PostInfoList extends Message {
     public final String user_name;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String user_portrait;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB)
+    public final VideoInfo video_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
     public static final Long DEFAULT_FORUM_ID = 0L;
@@ -213,6 +216,7 @@ public final class PostInfoList extends Message {
             }
             this.twzhibo_info = builder.twzhibo_info;
             this.poll_info = builder.poll_info;
+            this.video_info = builder.video_info;
             return;
         }
         this.forum_id = builder.forum_id;
@@ -243,6 +247,7 @@ public final class PostInfoList extends Message {
         this.thread_type = builder.thread_type;
         this.twzhibo_info = builder.twzhibo_info;
         this.poll_info = builder.poll_info;
+        this.video_info = builder.video_info;
     }
 
     /* loaded from: classes.dex */
@@ -274,6 +279,7 @@ public final class PostInfoList extends Message {
         public Long user_id;
         public String user_name;
         public String user_portrait;
+        public VideoInfo video_info;
         public List<Voice> voice_info;
 
         public Builder() {
@@ -310,6 +316,8 @@ public final class PostInfoList extends Message {
                 this.thread_type = postInfoList.thread_type;
                 this.twzhibo_info = postInfoList.twzhibo_info;
                 this.poll_info = postInfoList.poll_info;
+                this.poll_info = postInfoList.poll_info;
+                this.video_info = postInfoList.video_info;
             }
         }
 

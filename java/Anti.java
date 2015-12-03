@@ -11,6 +11,7 @@ public final class Anti extends Message {
     public static final String DEFAULT_USER_MUTE = "";
     public static final String DEFAULT_VCODE_MD5 = "";
     public static final String DEFAULT_VCODE_PIC_URL = "";
+    public static final String DEFAULT_VIDEO_MESSAGE = "";
     public static final String DEFAULT_VOICE_MESSAGE = "";
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer block_stat;
@@ -48,6 +49,8 @@ public final class Anti extends Message {
     public final String vcode_pic_url;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer vcode_stat;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String video_message;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String voice_message;
     public static final Integer DEFAULT_IFPOST = 0;
@@ -161,9 +164,14 @@ public final class Anti extends Message {
             }
             if (builder.poll_message == null) {
                 this.poll_message = "";
-                return;
             } else {
                 this.poll_message = builder.poll_message;
+            }
+            if (builder.video_message == null) {
+                this.video_message = "";
+                return;
+            } else {
+                this.video_message = builder.video_message;
                 return;
             }
         }
@@ -186,6 +194,7 @@ public final class Anti extends Message {
         this.user_mute = builder.user_mute;
         this.ifxiaoying = builder.ifxiaoying;
         this.poll_message = builder.poll_message;
+        this.video_message = builder.video_message;
     }
 
     /* loaded from: classes.dex */
@@ -208,6 +217,7 @@ public final class Anti extends Message {
         public String vcode_md5;
         public String vcode_pic_url;
         public Integer vcode_stat;
+        public String video_message;
         public String voice_message;
 
         public Builder() {
@@ -235,6 +245,7 @@ public final class Anti extends Message {
                 this.user_mute = anti.user_mute;
                 this.ifxiaoying = anti.ifxiaoying;
                 this.poll_message = anti.poll_message;
+                this.video_message = anti.video_message;
             }
         }
 

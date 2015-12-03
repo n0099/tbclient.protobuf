@@ -3,7 +3,6 @@ package tbclient;
 import com.baidu.location.BDLocation;
 import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -80,6 +79,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_bub;
+    @ProtoField(tag = a0.y, type = Message.Datatype.UINT32)
+    public final Integer is_copythread;
     @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -130,6 +131,8 @@ public final class ThreadInfo extends Message {
     public final List<MediaNum> media_num;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String meizhi_pic;
+    @ProtoField(tag = 82, type = Message.Datatype.UINT32)
+    public final Integer operator_flag;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String pids;
     @ProtoField(tag = 74)
@@ -140,6 +143,8 @@ public final class ThreadInfo extends Message {
     public final List<PostList> post_list;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
     public final Integer post_num;
+    @ProtoField(tag = 80, type = Message.Datatype.INT32)
+    public final Integer push_end_time;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
@@ -166,12 +171,14 @@ public final class ThreadInfo extends Message {
     public final ZhiBoInfoTW twzhibo_info;
     @ProtoField(tag = a0.m, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
-    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
     public final String video_cover;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String video_id;
+    @ProtoField(tag = 79)
+    public final VideoInfo video_info;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String video_mobile_url;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -231,6 +238,9 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_NOVEL = 0;
     public static final Integer DEFAULT_IS_NOVEL_THANK = 0;
     public static final Integer DEFAULT_IS_NOVEL_REWARD = 0;
+    public static final Integer DEFAULT_PUSH_END_TIME = 0;
+    public static final Integer DEFAULT_IS_COPYTHREAD = 0;
+    public static final Integer DEFAULT_OPERATOR_FLAG = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -577,9 +587,25 @@ public final class ThreadInfo extends Message {
             }
             if (builder.is_novel_reward == null) {
                 this.is_novel_reward = DEFAULT_IS_NOVEL_REWARD;
-                return;
             } else {
                 this.is_novel_reward = builder.is_novel_reward;
+            }
+            this.video_info = builder.video_info;
+            if (builder.push_end_time == null) {
+                this.push_end_time = DEFAULT_PUSH_END_TIME;
+            } else {
+                this.push_end_time = builder.push_end_time;
+            }
+            if (builder.is_copythread == null) {
+                this.is_copythread = DEFAULT_IS_COPYTHREAD;
+            } else {
+                this.is_copythread = builder.is_copythread;
+            }
+            if (builder.operator_flag == null) {
+                this.operator_flag = DEFAULT_OPERATOR_FLAG;
+                return;
+            } else {
+                this.operator_flag = builder.operator_flag;
                 return;
             }
         }
@@ -660,6 +686,10 @@ public final class ThreadInfo extends Message {
         this.is_novel = builder.is_novel;
         this.is_novel_thank = builder.is_novel_thank;
         this.is_novel_reward = builder.is_novel_reward;
+        this.video_info = builder.video_info;
+        this.push_end_time = builder.push_end_time;
+        this.is_copythread = builder.is_copythread;
+        this.operator_flag = builder.operator_flag;
     }
 
     /* loaded from: classes.dex */
@@ -690,6 +720,7 @@ public final class ThreadInfo extends Message {
         public Integer is_ad;
         public Integer is_bakan;
         public Integer is_bub;
+        public Integer is_copythread;
         public Integer is_global_top;
         public Integer is_good;
         public Integer is_livepost;
@@ -715,11 +746,13 @@ public final class ThreadInfo extends Message {
         public List<Media> media;
         public List<MediaNum> media_num;
         public String meizhi_pic;
+        public Integer operator_flag;
         public String pids;
         public PollInfo poll_info;
         public Long post_id;
         public List<PostList> post_list;
         public Integer post_num;
+        public Integer push_end_time;
         public Integer reply_num;
         public Integer repost_num;
         public Integer show_commented;
@@ -736,6 +769,7 @@ public final class ThreadInfo extends Message {
         public String video;
         public String video_cover;
         public String video_id;
+        public VideoInfo video_info;
         public String video_mobile_url;
         public String video_swf;
         public Integer view_num;
@@ -825,6 +859,10 @@ public final class ThreadInfo extends Message {
                 this.is_novel = threadInfo.is_novel;
                 this.is_novel_thank = threadInfo.is_novel_thank;
                 this.is_novel_reward = threadInfo.is_novel_reward;
+                this.video_info = threadInfo.video_info;
+                this.push_end_time = threadInfo.push_end_time;
+                this.is_copythread = threadInfo.is_copythread;
+                this.operator_flag = threadInfo.operator_flag;
             }
         }
 

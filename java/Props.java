@@ -15,6 +15,8 @@ public final class Props extends Message {
     public static final String DEFAULT_PROPS_TYPE = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_USED_STATUS = "";
+    @ProtoField(label = Message.Label.REPEATED, tag = 14, type = Message.Datatype.STRING)
+    public final List<String> _word;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String end_time;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -29,8 +31,6 @@ public final class Props extends Message {
     public final Integer num;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String open_status;
-    @ProtoField(label = Message.Label.REPEATED, tag = 14, type = Message.Datatype.STRING)
-    public final List<String> optional_word;
     @ProtoField(label = Message.Label.REPEATED, tag = 15, type = Message.Datatype.STRING)
     public final List<String> pattern;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -49,7 +49,7 @@ public final class Props extends Message {
     public static final Integer DEFAULT_LEFT_NUM = 0;
     public static final Integer DEFAULT_NUM = 0;
     public static final Integer DEFAULT_UPDATE_TIME = 0;
-    public static final List<String> DEFAULT_OPTIONAL_WORD = Collections.emptyList();
+    public static final List<String> DEFAULT__WORD = Collections.emptyList();
     public static final List<String> DEFAULT_PATTERN = Collections.emptyList();
 
     /* synthetic */ Props(Builder builder, boolean z, Props props) {
@@ -124,10 +124,10 @@ public final class Props extends Message {
             } else {
                 this.title = builder.title;
             }
-            if (builder.optional_word == null) {
-                this.optional_word = DEFAULT_OPTIONAL_WORD;
+            if (builder._word == null) {
+                this._word = DEFAULT__WORD;
             } else {
-                this.optional_word = immutableCopyOf(builder.optional_word);
+                this._word = immutableCopyOf(builder._word);
             }
             if (builder.pattern == null) {
                 this.pattern = DEFAULT_PATTERN;
@@ -150,12 +150,13 @@ public final class Props extends Message {
         this.expiring_notify = builder.expiring_notify;
         this.expired_notify = builder.expired_notify;
         this.title = builder.title;
-        this.optional_word = immutableCopyOf(builder.optional_word);
+        this._word = immutableCopyOf(builder._word);
         this.pattern = immutableCopyOf(builder.pattern);
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<Props> {
+        public List<String> _word;
         public String end_time;
         public String expired_notify;
         public String expiring_notify;
@@ -163,7 +164,6 @@ public final class Props extends Message {
         public String notice;
         public Integer num;
         public String open_status;
-        public List<String> optional_word;
         public List<String> pattern;
         public String props_category;
         public Integer props_id;
@@ -191,7 +191,7 @@ public final class Props extends Message {
                 this.expiring_notify = props.expiring_notify;
                 this.expired_notify = props.expired_notify;
                 this.title = props.title;
-                this.optional_word = Props.copyOf(props.optional_word);
+                this._word = Props.copyOf(props._word);
                 this.pattern = Props.copyOf(props.pattern);
             }
         }

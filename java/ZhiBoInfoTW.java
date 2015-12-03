@@ -14,6 +14,8 @@ public final class ZhiBoInfoTW extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String content;
+    @ProtoField(tag = 20, type = Message.Datatype.UINT32)
+    public final Integer copythread_remind;
     @ProtoField(tag = 8, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -22,6 +24,8 @@ public final class ZhiBoInfoTW extends Message {
     public final Integer freq_num;
     @ProtoField(tag = 13)
     public final HotTWThreadInfo hot_tw_info;
+    @ProtoField(tag = 21, type = Message.Datatype.UINT32)
+    public final Integer is_copytwzhibo;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_headline;
     @ProtoField(label = Message.Label.REPEATED, tag = 14)
@@ -58,6 +62,8 @@ public final class ZhiBoInfoTW extends Message {
     public static final List<LabelInfo> DEFAULT_LABELINFO = Collections.emptyList();
     public static final Integer DEFAULT_IS_HEADLINE = 0;
     public static final Integer DEFAULT_FREQ_NUM = 0;
+    public static final Integer DEFAULT_COPYTHREAD_REMIND = 0;
+    public static final Integer DEFAULT_IS_COPYTWZHIBO = 0;
 
     /* synthetic */ ZhiBoInfoTW(Builder builder, boolean z, ZhiBoInfoTW zhiBoInfoTW) {
         this(builder, z);
@@ -138,9 +144,19 @@ public final class ZhiBoInfoTW extends Message {
             this.livecover_status = builder.livecover_status;
             if (builder.freq_num == null) {
                 this.freq_num = DEFAULT_FREQ_NUM;
-                return;
             } else {
                 this.freq_num = builder.freq_num;
+            }
+            if (builder.copythread_remind == null) {
+                this.copythread_remind = DEFAULT_COPYTHREAD_REMIND;
+            } else {
+                this.copythread_remind = builder.copythread_remind;
+            }
+            if (builder.is_copytwzhibo == null) {
+                this.is_copytwzhibo = DEFAULT_IS_COPYTWZHIBO;
+                return;
+            } else {
+                this.is_copytwzhibo = builder.is_copytwzhibo;
                 return;
             }
         }
@@ -163,15 +179,19 @@ public final class ZhiBoInfoTW extends Message {
         this.is_headline = builder.is_headline;
         this.livecover_status = builder.livecover_status;
         this.freq_num = builder.freq_num;
+        this.copythread_remind = builder.copythread_remind;
+        this.is_copytwzhibo = builder.is_copytwzhibo;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ZhiBoInfoTW> {
         public String content;
+        public Integer copythread_remind;
         public Long forum_id;
         public String forum_name;
         public Integer freq_num;
         public HotTWThreadInfo hot_tw_info;
+        public Integer is_copytwzhibo;
         public Integer is_headline;
         public List<LabelInfo> labelInfo;
         public Long last_modified_time;
@@ -212,6 +232,8 @@ public final class ZhiBoInfoTW extends Message {
                 this.is_headline = zhiBoInfoTW.is_headline;
                 this.livecover_status = zhiBoInfoTW.livecover_status;
                 this.freq_num = zhiBoInfoTW.freq_num;
+                this.copythread_remind = zhiBoInfoTW.copythread_remind;
+                this.is_copytwzhibo = zhiBoInfoTW.is_copytwzhibo;
             }
         }
 

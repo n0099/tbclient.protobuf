@@ -20,6 +20,8 @@ public final class ThemeBgProp extends Message {
     public final Integer free_user_level;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer in_use;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer is_finished;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String permission;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -31,6 +33,7 @@ public final class ThemeBgProp extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     public static final Integer DEFAULT_IN_USE = 0;
     public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
+    public static final Integer DEFAULT_IS_FINISHED = 0;
 
     /* synthetic */ ThemeBgProp(Builder builder, boolean z, ThemeBgProp themeBgProp) {
         this(builder, z);
@@ -81,9 +84,14 @@ public final class ThemeBgProp extends Message {
             }
             if (builder.activity_url == null) {
                 this.activity_url = "";
-                return;
             } else {
                 this.activity_url = builder.activity_url;
+            }
+            if (builder.is_finished == null) {
+                this.is_finished = DEFAULT_IS_FINISHED;
+                return;
+            } else {
+                this.is_finished = builder.is_finished;
                 return;
             }
         }
@@ -96,6 +104,7 @@ public final class ThemeBgProp extends Message {
         this.in_use = builder.in_use;
         this.free_user_level = builder.free_user_level;
         this.activity_url = builder.activity_url;
+        this.is_finished = builder.is_finished;
     }
 
     /* loaded from: classes.dex */
@@ -105,6 +114,7 @@ public final class ThemeBgProp extends Message {
         public String example_url;
         public Integer free_user_level;
         public Integer in_use;
+        public Integer is_finished;
         public String permission;
         public Integer props_id;
         public String props_state_img;
@@ -125,6 +135,7 @@ public final class ThemeBgProp extends Message {
                 this.in_use = themeBgProp.in_use;
                 this.free_user_level = themeBgProp.free_user_level;
                 this.activity_url = themeBgProp.activity_url;
+                this.is_finished = themeBgProp.is_finished;
             }
         }
 

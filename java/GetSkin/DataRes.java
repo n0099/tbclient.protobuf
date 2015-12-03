@@ -8,6 +8,7 @@ import java.util.List;
 public final class DataRes extends Message {
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_DESCRIPTION = "";
+    public static final String DEFAULT_PACKAGE_KEY = "";
     public static final String DEFAULT_PACKAGE_SIZE = "";
     public static final String DEFAULT_PACKAGE_URL = "";
     public static final String DEFAULT_PERMISSION = "";
@@ -19,6 +20,10 @@ public final class DataRes extends Message {
     public final String description;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer free_user_level;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer is_finished;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String package_key;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String package_size;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -36,6 +41,7 @@ public final class DataRes extends Message {
     public static final List<String> DEFAULT_PIC_URL = Collections.emptyList();
     public static final Integer DEFAULT_PROPS_VERSION = 0;
     public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
+    public static final Integer DEFAULT_IS_FINISHED = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -91,9 +97,19 @@ public final class DataRes extends Message {
             }
             if (builder.activity_url == null) {
                 this.activity_url = "";
-                return;
             } else {
                 this.activity_url = builder.activity_url;
+            }
+            if (builder.is_finished == null) {
+                this.is_finished = DEFAULT_IS_FINISHED;
+            } else {
+                this.is_finished = builder.is_finished;
+            }
+            if (builder.package_key == null) {
+                this.package_key = "";
+                return;
+            } else {
+                this.package_key = builder.package_key;
                 return;
             }
         }
@@ -107,6 +123,8 @@ public final class DataRes extends Message {
         this.props_version = builder.props_version;
         this.free_user_level = builder.free_user_level;
         this.activity_url = builder.activity_url;
+        this.is_finished = builder.is_finished;
+        this.package_key = builder.package_key;
     }
 
     /* loaded from: classes.dex */
@@ -114,6 +132,8 @@ public final class DataRes extends Message {
         public String activity_url;
         public String description;
         public Integer free_user_level;
+        public Integer is_finished;
+        public String package_key;
         public String package_size;
         public String package_url;
         public String permission;
@@ -138,6 +158,8 @@ public final class DataRes extends Message {
                 this.props_version = dataRes.props_version;
                 this.free_user_level = dataRes.free_user_level;
                 this.activity_url = dataRes.activity_url;
+                this.is_finished = dataRes.is_finished;
+                this.package_key = dataRes.package_key;
             }
         }
 

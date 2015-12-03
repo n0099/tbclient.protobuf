@@ -18,6 +18,8 @@ public final class DataRes extends Message {
     public final TAInfo tainfo;
     @ProtoField(tag = 1)
     public final User user;
+    @ProtoField(tag = 5)
+    public final UserGodInfo user_god_info;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -31,16 +33,17 @@ public final class DataRes extends Message {
             this.tainfo = builder.tainfo;
             if (builder.post_list == null) {
                 this.post_list = DEFAULT_POST_LIST;
-                return;
             } else {
                 this.post_list = immutableCopyOf(builder.post_list);
-                return;
             }
+            this.user_god_info = builder.user_god_info;
+            return;
         }
         this.user = builder.user;
         this.anti_stat = builder.anti_stat;
         this.tainfo = builder.tainfo;
         this.post_list = immutableCopyOf(builder.post_list);
+        this.user_god_info = builder.user_god_info;
     }
 
     /* loaded from: classes.dex */
@@ -49,6 +52,7 @@ public final class DataRes extends Message {
         public List<PostInfoList> post_list;
         public TAInfo tainfo;
         public User user;
+        public UserGodInfo user_god_info;
 
         public Builder() {
         }
@@ -60,6 +64,7 @@ public final class DataRes extends Message {
                 this.anti_stat = dataRes.anti_stat;
                 this.tainfo = dataRes.tainfo;
                 this.post_list = DataRes.copyOf(dataRes.post_list);
+                this.user_god_info = dataRes.user_god_info;
             }
         }
 

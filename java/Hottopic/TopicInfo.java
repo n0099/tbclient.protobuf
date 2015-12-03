@@ -5,9 +5,15 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class TopicInfo extends Message {
     public static final String DEFAULT_DESC = "";
+    public static final String DEFAULT_HEAD_PHOTO_URL = "";
+    public static final String DEFAULT_SHARE_TITLE = "";
     public static final String DEFAULT_TOPIC_NAME = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String desc;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String head_photo_url;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String share_title;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long topic_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -41,9 +47,19 @@ public final class TopicInfo extends Message {
             }
             if (builder.total_post_num == null) {
                 this.total_post_num = DEFAULT_TOTAL_POST_NUM;
-                return;
             } else {
                 this.total_post_num = builder.total_post_num;
+            }
+            if (builder.head_photo_url == null) {
+                this.head_photo_url = "";
+            } else {
+                this.head_photo_url = builder.head_photo_url;
+            }
+            if (builder.share_title == null) {
+                this.share_title = "";
+                return;
+            } else {
+                this.share_title = builder.share_title;
                 return;
             }
         }
@@ -51,11 +67,15 @@ public final class TopicInfo extends Message {
         this.topic_name = builder.topic_name;
         this.desc = builder.desc;
         this.total_post_num = builder.total_post_num;
+        this.head_photo_url = builder.head_photo_url;
+        this.share_title = builder.share_title;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<TopicInfo> {
         public String desc;
+        public String head_photo_url;
+        public String share_title;
         public Long topic_id;
         public String topic_name;
         public Long total_post_num;
@@ -70,6 +90,8 @@ public final class TopicInfo extends Message {
                 this.topic_name = topicInfo.topic_name;
                 this.desc = topicInfo.desc;
                 this.total_post_num = topicInfo.total_post_num;
+                this.head_photo_url = topicInfo.head_photo_url;
+                this.share_title = topicInfo.share_title;
             }
         }
 

@@ -1,7 +1,6 @@
 package tbclient;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.core.data.LiveCardData;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -33,7 +32,7 @@ public final class NewUser extends Message {
     public final String cdn_error;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String free_flag;
-    @ProtoField(tag = LiveCardData.LIVETYPE_PHOTOLIVE)
+    @ProtoField(tag = 33)
     public final GameAttr game_attr;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
     public final Global global;
