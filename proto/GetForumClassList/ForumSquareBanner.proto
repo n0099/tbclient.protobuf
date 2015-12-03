@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetForumClassList/BannerBaseInfo.proto";
+
+message ForumSquareBanner {
+    repeated BannerBaseInfo infos = 1;
+    int64 forum_counts = 2;
+}

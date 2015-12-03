@@ -27,4 +27,6 @@ message ZhiBoInfoTW {
     int32 is_headline = 17;
     LiveCoverStatus livecover_status = 18;
     uint32 freq_num = 19;
+    uint32 copythread_remind = 20;
+    uint32 is_copytwzhibo = 21;
 }

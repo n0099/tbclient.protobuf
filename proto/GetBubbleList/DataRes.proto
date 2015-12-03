@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "ThemeBgProp.proto";
+import "ThemeRecommand.proto";
+
+message DataRes {
+    ThemeRecommand recommend = 1;
+    repeated ThemeBgProp bubbles = 2;
+    uint32 hasmore = 3;
+    uint32 is_default = 4;
+}

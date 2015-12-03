@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+import "User.proto";
+
+message PushThreadInfo {
+    repeated ThreadInfo thread_list = 1;
+    int32 has_pushcard = 2;
+    int32 has_pushplace = 3;
+    repeated User user_list = 4;
+}

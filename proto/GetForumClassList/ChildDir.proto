@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message ChildDir {
+    int64 forum_lid = 1;
+    string forum_name = 2;
+    int64 torder = 3;
+    string explain = 4;
+    string tag = 5;
+    string link = 6;
+    string avatar = 7;
+    string desc = 8;
+    int64 member_count = 9;
+    int64 thread_num = 10;
+}

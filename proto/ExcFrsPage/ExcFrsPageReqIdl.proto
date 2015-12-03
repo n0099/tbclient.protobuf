@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ExcFrsPage/DataReq.proto";
+
+message ExcFrsPageReqIdl {
+    DataReq data = 1;
+}

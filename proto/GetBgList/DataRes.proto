@@ -7,4 +7,5 @@ message DataRes {
     ThemeRecommand recommend = 1;
     repeated ThemeBgProp bgs = 2;
     uint32 hasmore = 3;
+    uint32 is_default = 4;
 }

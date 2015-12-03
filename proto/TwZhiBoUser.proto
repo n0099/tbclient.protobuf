@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message TwZhiBoUser {
+    uint32 anchor_level = 1;
+}

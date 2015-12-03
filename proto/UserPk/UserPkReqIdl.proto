@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "UserPk/DataReq.proto";
+
+message UserPkReqIdl {
+    DataReq data = 1;
+}

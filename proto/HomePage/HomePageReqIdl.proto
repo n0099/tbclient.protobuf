@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "HomePage/DataReq.proto";
+
+message HomePageReqIdl {
+    DataReq data = 1;
+}

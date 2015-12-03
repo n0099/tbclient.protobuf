@@ -20,4 +20,5 @@ message Anti {
     string user_mute = 17;
     string ifxiaoying = 18;
     string poll_message = 19;
+    string video_message = 20;
 }

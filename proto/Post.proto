@@ -4,6 +4,7 @@ import "ActPost.proto";
 import "AddPostList.proto";
 import "Lbs.proto";
 import "PbContent.proto";
+import "PbPresent.proto";
 import "SignatureData.proto";
 import "SubPost.proto";
 import "TPointPost.proto";
@@ -39,4 +40,5 @@ message Post {
     int32 storecount = 25;
     TPointPost tpoint_post = 26;
     ActPost act_post = 27;
+    PbPresent present = 28;
 }

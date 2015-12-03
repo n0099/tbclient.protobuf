@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "HomePage/GodInfoItem.proto";
+
+message HotGod {
+    int64 mid = 1;
+    string title = 2;
+    string more_text = 3;
+    string more_link = 4;
+    repeated GodInfoItem items = 5;
+}

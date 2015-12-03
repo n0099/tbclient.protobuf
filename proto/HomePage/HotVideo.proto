@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "HomePage/HotVideoItem.proto";
+
+message HotVideo {
+    int64 mid = 1;
+    string title = 2;
+    string more_text = 3;
+    string more_link = 4;
+    repeated HotVideoItem items = 5;
+}

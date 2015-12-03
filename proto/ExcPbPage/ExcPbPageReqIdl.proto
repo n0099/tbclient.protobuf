@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ExcPbPage/DataReq.proto";
+
+message ExcPbPageReqIdl {
+    DataReq data = 1;
+}

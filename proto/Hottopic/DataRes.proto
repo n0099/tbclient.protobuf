@@ -1,8 +1,11 @@
 syntax = "proto3";
 
+import "Hottopic/CommonInteraction.proto";
 import "Hottopic/HotThread.proto";
 import "Hottopic/MagicPost.proto";
+import "Hottopic/PkModule.proto";
 import "Hottopic/RelateForum.proto";
+import "Hottopic/ThreadModule.proto";
 import "Hottopic/TopicInfo.proto";
 
 message DataRes {
@@ -10,4 +13,8 @@ message DataRes {
     MagicPost magic_post = 2;
     HotThread hot_thread = 3;
     TopicInfo topic_info = 4;
+    ThreadModule thread_module = 5;
+    PkModule pk_module = 6;
+    CommonInteraction bless_module = 7;
+    CommonInteraction candle_module = 8;
 }

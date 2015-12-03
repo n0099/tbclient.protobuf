@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message GodInfo {
+    int64 id = 1;
+    string intro = 2;
+    int32 type = 3;
+    int64 fid = 4;
+}

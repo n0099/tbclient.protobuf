@@ -11,6 +11,7 @@ import "PollInfo.proto";
 import "PostList.proto";
 import "Topic.proto";
 import "User.proto";
+import "VideoInfo.proto";
 import "Voice.proto";
 import "ZhiBoInfoTW.proto";
 
@@ -46,6 +47,7 @@ message ThreadInfo {
     int32 is_livepost = 30;
     int32 show_commented = 31;
     string click_url = 32;
+    string video = 33;
     string video_swf = 34;
     string video_id = 36;
     string video_mobile_url = 37;
@@ -75,4 +77,7 @@ message ThreadInfo {
     int32 is_novel = 76;
     int32 is_novel_thank = 77;
     int32 is_novel_reward = 78;
+    VideoInfo video_info = 79;
+    int32 push_end_time = 80;
+    uint32 operator_flag = 82;
 }

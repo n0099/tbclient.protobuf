@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message ForumGodInfo {
+    int64 id = 1;
+    int64 fid = 2;
+    string intro = 3;
+}

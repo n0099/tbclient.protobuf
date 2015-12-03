@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message PkView {
+    string pk_desc = 1;
+    uint64 pk_num = 2;
+    int32 pk_index = 3;
+    int32 has_clicked = 4;
+}

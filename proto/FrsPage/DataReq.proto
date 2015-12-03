@@ -34,6 +34,7 @@ message DataReq {
     bool login = 30;
     int64 user_id = 31;
     string user_name = 32;
+    int32 no_un = 33;
     string portrait = 34;
     string email = 36;
     bool debug = 37;

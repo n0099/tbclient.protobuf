@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetMyGift/DataReq.proto";
+
+message GetMyGiftReqIdl {
+    DataReq data = 1;
+}

@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "Balv.proto";
+import "GodInfo.proto";
 
 message User_Info {
     int32 is_login = 1;
@@ -15,4 +16,5 @@ message User_Info {
     int32 is_select_tail = 10;
     int32 userhide = 11;
     Balv balv = 12;
+    GodInfo god_data = 13;
 }

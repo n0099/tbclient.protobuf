@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "HomePage/Banner.proto";
+import "HomePage/Discover.proto";
+import "HomePage/FunCenter.proto";
+import "HomePage/HotActivity.proto";
+import "HomePage/HotForum.proto";
+import "HomePage/HotGod.proto";
+import "HomePage/HotThread.proto";
+import "HomePage/HotTopic.proto";
+import "HomePage/HotTwzbThread.proto";
+import "HomePage/HotVideo.proto";
+import "HomePage/UserModule.proto";
+import "HomePage/VipCenter.proto";
+
+message DataRes {
+    Banner banner = 1;
+    HotGod hot_god = 2;
+    HotVideo hot_video = 3;
+    HotTwzbThread hot_twzb = 4;
+    HotTopic hot_topic = 5;
+    HotForum hot_forum = 6;
+    FunCenter fun_center = 7;
+    VipCenter vip_center = 8;
+    HotActivity hot_activity = 9;
+    Discover discover = 10;
+    UserModule user_module = 11;
+    HotThread hot_thread = 12;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetBubbleByCategory/ThemeBubbleInMain.proto";
+import "ThemeRecommand.proto";
+
+message DataRes {
+    ThemeRecommand recommend = 1;
+    repeated ThemeBubbleInMain bubbles = 2;
+}

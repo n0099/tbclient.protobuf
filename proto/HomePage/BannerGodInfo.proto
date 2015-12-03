@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message BannerGodInfo {
+    int64 uid = 1;
+    string avator = 2;
+    string god_intro = 3;
+    int64 thread_id = 4;
+    string thread_title = 5;
+    string thread_abstract = 6;
+    repeated string thread_pics = 7;
+    string user_name = 8;
+}

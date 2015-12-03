@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "ZhiBoInfoTW.proto";
+
+message ExcellentThreadInfo {
+    uint64 excid = 1;
+    uint64 thread_id = 2;
+    uint32 frs_type = 3;
+    uint32 pb_type = 4;
+    string title = 5;
+    string _abstract = 6;
+    repeated string thumbnail = 7;
+    uint64 tag_code = 8;
+    string tag_name = 9;
+    uint64 zansum = 10;
+    uint64 post_num = 11;
+    int32 thread_type = 12;
+    ZhiBoInfoTW twzhibo_info = 13;
+    uint64 forum_id = 14;
+    string forum_name = 15;
+    string abtest = 16;
+    uint32 source = 17;
+    uint64 rank = 18;
+    int32 publish_time = 19;
+}

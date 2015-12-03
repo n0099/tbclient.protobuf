@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message VideoInfo {
+    string video_md5 = 1;
+    string video_url = 2;
+    uint32 video_duration = 3;
+    uint32 video_width = 4;
+    uint32 video_height = 5;
+    string thumbnail_url = 6;
+    uint32 thumbnail_width = 7;
+    uint32 thumbnail_height = 8;
+}

@@ -14,6 +14,7 @@ import "FrsPage/StarInfo.proto";
 import "FrsTabInfo.proto";
 import "Novel.proto";
 import "Page.proto";
+import "SdkTopicThread.proto";
 import "ThreadInfo.proto";
 import "User.proto";
 import "ZhiBoInfoTW.proto";
@@ -47,4 +48,7 @@ message DataRes {
     ZhiBoInfoTW hot_twzhibo_info = 26;
     int32 twzhibo_pos = 27;
     repeated CategoryInfo category_list = 28;
+    ThreadInfo store_card = 30;
+    SdkTopicThread sdk_topic_thread = 31;
+    string bawu_enter_url = 32;
 }

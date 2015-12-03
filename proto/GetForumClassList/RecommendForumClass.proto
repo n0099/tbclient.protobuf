@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message RecommendForumClass {
+    string recommend_title = 1;
+    string recommend_image_url = 2;
+    string link_url = 3;
+    uint64 forum_class_id = 4;
+    string title = 5;
+    string _abstract = 6;
+    string image_url = 7;
+}

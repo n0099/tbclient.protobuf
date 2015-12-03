@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message TwzbThreadLabel {
+    string desc = 1;
+    int64 amount = 2;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "HomePage/BannerTwzbInfo.proto";
+import "HomePage/TwzbThreadItem.proto";
+
+message HotTwzbThread {
+    int64 mid = 1;
+    string title = 2;
+    string more_text = 3;
+    string more_link = 4;
+    BannerTwzbInfo banner_twzb = 5;
+    repeated TwzbThreadItem items = 6;
+}

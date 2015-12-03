@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message PresentCategoryList {
+    uint32 category_id = 1;
+    string category_name = 2;
+    repeated uint32 gift_ids = 3;
+}

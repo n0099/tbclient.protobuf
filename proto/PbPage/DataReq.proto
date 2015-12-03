@@ -34,6 +34,7 @@ message DataReq {
     int64 st_task = 30;
     int32 issdk = 31;
     string query_word = 32;
+    int32 is_comm_reverse = 33;
     int32 is_jumpfloor = 34;
     uint64 jid = 44;
     uint64 fid = 45;

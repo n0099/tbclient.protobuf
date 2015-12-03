@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message PresentMyList {
+    uint64 pay_userid = 1;
+    string pay_username = 2;
+    string portrait = 3;
+    uint32 gift_id = 4;
+    string gift_name = 5;
+    string play_url = 6;
+    string thumbnail_url = 7;
+    uint32 create_time = 8;
+    uint32 num = 9;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "HomePage/HotTopicItem.proto";
+
+message HotTopic {
+    int64 mid = 1;
+    string title = 2;
+    string more_text = 3;
+    string more_link = 4;
+    int64 banner_topic_id = 5;
+    string banner_topic_pic = 6;
+    string banner_topic_name = 7;
+    int64 banner_topic_discuss_num = 8;
+    repeated HotTopicItem items = 9;
+}
