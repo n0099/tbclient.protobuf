@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Personalized/TopicInfo.proto";
+
+message CardTopic {
+    string card_title = 1;
+    repeated TopicInfo topic_list = 2;
+    int32 position = 3;
+}

@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message NumInfo {
-    uint32 num = 1;
-    string name = 2;
-}

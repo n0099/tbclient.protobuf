@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "PicTextItem.proto";
-
-message Banner {
-    int64 mid = 1;
-    repeated PicTextItem items = 2;
-}

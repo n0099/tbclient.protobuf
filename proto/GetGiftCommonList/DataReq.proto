@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "CommonReq.proto";
-
-message DataReq {
-    uint32 timestamp = 1;
-    CommonReq common = 2;
-}

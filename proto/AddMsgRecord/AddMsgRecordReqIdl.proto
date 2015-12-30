@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "AddMsgRecord/DataReq.proto";
+
+message AddMsgRecordReqIdl {
+    DataReq data = 1;
+}

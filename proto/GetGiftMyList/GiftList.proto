@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "GetGiftMyList/Gift.proto";
-import "GetGiftMyList/Sender.proto";
-
-message GiftList {
-    Sender sender = 1;
-    Gift gift = 2;
-}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Realtime/DataReq.proto";
+
+message RealtimeReqIdl {
+    DataReq data = 1;
+}

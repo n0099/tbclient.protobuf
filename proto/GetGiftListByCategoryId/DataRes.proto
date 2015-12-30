@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetGiftListByCategoryId/PresentGiftListByCategoryId1.proto";
-
-message DataRes {
-    repeated PresentGiftListByCategoryId1 gift_list = 1;
-}

@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message HotForumItem {
-    int64 forum_id = 1;
-    string forum_name = 2;
-    string forum_avatar = 3;
-    int32 is_liked = 4;
-}

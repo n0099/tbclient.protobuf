@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    uint32 tag_code = 2;
+    uint32 need_tags = 3;
+    uint32 load_type = 4;
+    uint32 page_thread_count = 5;
+    uint32 pn = 6;
+    uint32 sug_count = 7;
+    int32 scr_w = 8;
+    int32 scr_h = 9;
+    double scr_dip = 10;
+    int32 q_type = 11;
+}

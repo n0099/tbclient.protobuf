@@ -17,4 +17,5 @@ message Media {
     uint32 e_type = 14;
     string origin_pic = 15;
     uint32 origin_size = 16;
+    int64 post_id = 17;
 }

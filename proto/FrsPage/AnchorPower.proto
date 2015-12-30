@@ -5,4 +5,5 @@ message AnchorPower {
     string anchor_message = 2;
     int32 can_add_live_post = 3;
     int32 can_del_live_post = 4;
+    string can_add_live_post_msg = 5;
 }

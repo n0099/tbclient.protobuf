@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "RecommendFriend/ReqData.proto";
-
-message RecommendFriendReqIdl {
-    ReqData data = 1;
-}

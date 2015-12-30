@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Personalized/PersonalForum.proto";
+
+message CardForum {
+    string card_title = 1;
+    repeated PersonalForum forum_list = 2;
+    uint64 position = 3;
+    uint32 card_type = 4;
+}

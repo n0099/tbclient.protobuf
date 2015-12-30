@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "HomePage/ModuleItem.proto";
-
-message UserModule {
-    repeated ModuleItem items = 1;
-}

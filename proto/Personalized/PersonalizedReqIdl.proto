@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Personalized/DataReq.proto";
+
+message PersonalizedReqIdl {
+    DataReq data = 1;
+}

@@ -1,7 +1,16 @@
 syntax = "proto3";
 
+import "ActBtn.proto";
+import "DetailInfo.proto";
+import "Timgs.proto";
+
 message TPointPost {
     uint32 is_tuiguang = 1;
     string position = 2;
     int64 template_id = 3;
+    int32 template_type = 4;
+    repeated ActBtn act_btn = 5;
+    repeated Timgs t_imgs = 6;
+    DetailInfo detail_info = 7;
+    string monitor_id = 8;
 }

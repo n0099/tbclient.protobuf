@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message presentMoneyTxt {
-    string txt = 1;
-    string url = 2;
-}

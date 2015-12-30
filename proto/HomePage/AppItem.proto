@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message AppItem {
-    string app_name = 1;
-    string app_icon = 2;
-    string app_link = 3;
-    int32 icon_type = 4;
-}

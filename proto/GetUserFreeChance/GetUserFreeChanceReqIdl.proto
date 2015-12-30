@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetUserFreeChance/DataReq.proto";
-
-message GetUserFreeChanceReqIdl {
-    DataReq data = 1;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message TwzbThreadItem {
-    int64 tid = 1;
-    string title = 2;
-    string _abstract = 3;
-    string pic_url = 4;
-    string link_url = 5;
-}

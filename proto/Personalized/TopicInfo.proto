@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message TopicInfo {
+    uint64 topic_id = 1;
+    string topic_name = 2;
+    string desc = 3;
+    uint32 is_hot = 4;
+}

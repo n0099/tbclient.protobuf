@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetGiftListByCategoryId/DataReq.proto";
-
-message GetGiftListByCategoryIdReqIdl {
-    DataReq data = 1;
-}

@@ -39,4 +39,6 @@ message DataReq {
     uint64 jid = 44;
     uint64 fid = 45;
     string jfrom = 46;
+    string yuelaou_locate = 47;
+    string yuelaou_params = 48;
 }

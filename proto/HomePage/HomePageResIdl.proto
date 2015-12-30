@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "HomePage/DataRes.proto";
-
-message HomePageResIdl {
-    DataRes data = 1;
-    Error error = 2;
-}
