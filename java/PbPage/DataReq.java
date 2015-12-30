@@ -17,6 +17,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ST_FROM = "";
     public static final String DEFAULT_ST_LINK = "";
     public static final String DEFAULT_ST_TYPE = "";
+    public static final String DEFAULT_YUELAOU_LOCATE = "";
+    public static final String DEFAULT_YUELAOU_PARAMS = "";
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer arround;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -97,6 +99,10 @@ public final class DataReq extends Message {
     public final Integer weipost;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer with_floor;
+    @ProtoField(tag = 47, type = Message.Datatype.STRING)
+    public final String yuelaou_locate;
+    @ProtoField(tag = 48, type = Message.Datatype.STRING)
+    public final String yuelaou_params;
     public static final Integer DEFAULT_PB_RN = 0;
     public static final Integer DEFAULT_MARK = 0;
     public static final Integer DEFAULT_BACK = 0;
@@ -328,9 +334,19 @@ public final class DataReq extends Message {
             }
             if (builder.jfrom == null) {
                 this.jfrom = "";
-                return;
             } else {
                 this.jfrom = builder.jfrom;
+            }
+            if (builder.yuelaou_locate == null) {
+                this.yuelaou_locate = "";
+            } else {
+                this.yuelaou_locate = builder.yuelaou_locate;
+            }
+            if (builder.yuelaou_params == null) {
+                this.yuelaou_params = "";
+                return;
+            } else {
+                this.yuelaou_params = builder.yuelaou_params;
                 return;
             }
         }
@@ -374,6 +390,8 @@ public final class DataReq extends Message {
         this.jid = builder.jid;
         this.fid = builder.fid;
         this.jfrom = builder.jfrom;
+        this.yuelaou_locate = builder.yuelaou_locate;
+        this.yuelaou_params = builder.yuelaou_params;
     }
 
     /* loaded from: classes.dex */
@@ -418,6 +436,8 @@ public final class DataReq extends Message {
         public Integer thread_type;
         public Integer weipost;
         public Integer with_floor;
+        public String yuelaou_locate;
+        public String yuelaou_params;
 
         public Builder() {
         }
@@ -465,6 +485,8 @@ public final class DataReq extends Message {
                 this.jid = dataReq.jid;
                 this.fid = dataReq.fid;
                 this.jfrom = dataReq.jfrom;
+                this.yuelaou_locate = dataReq.yuelaou_locate;
+                this.yuelaou_params = dataReq.yuelaou_params;
             }
         }
 

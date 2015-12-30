@@ -28,6 +28,8 @@ public final class Media extends Message {
     public final String origin_pic;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer origin_size;
+    @ProtoField(tag = 17, type = Message.Datatype.INT64)
+    public final Long post_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String small_pic;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -52,6 +54,7 @@ public final class Media extends Message {
     public static final Integer DEFAULT_DURING_TIME = 0;
     public static final Integer DEFAULT_E_TYPE = 0;
     public static final Integer DEFAULT_ORIGIN_SIZE = 0;
+    public static final Long DEFAULT_POST_ID = 0L;
 
     /* synthetic */ Media(Builder builder, boolean z, Media media) {
         this(builder, z);
@@ -137,9 +140,14 @@ public final class Media extends Message {
             }
             if (builder.origin_size == null) {
                 this.origin_size = DEFAULT_ORIGIN_SIZE;
-                return;
             } else {
                 this.origin_size = builder.origin_size;
+            }
+            if (builder.post_id == null) {
+                this.post_id = DEFAULT_POST_ID;
+                return;
+            } else {
+                this.post_id = builder.post_id;
                 return;
             }
         }
@@ -159,6 +167,7 @@ public final class Media extends Message {
         this.e_type = builder.e_type;
         this.origin_pic = builder.origin_pic;
         this.origin_size = builder.origin_size;
+        this.post_id = builder.post_id;
     }
 
     /* loaded from: classes.dex */
@@ -170,6 +179,7 @@ public final class Media extends Message {
         public Integer height;
         public String origin_pic;
         public Integer origin_size;
+        public Long post_id;
         public String small_pic;
         public String src_pic;
         public String text;
@@ -202,6 +212,7 @@ public final class Media extends Message {
                 this.e_type = media.e_type;
                 this.origin_pic = media.origin_pic;
                 this.origin_size = media.origin_size;
+                this.post_id = media.post_id;
             }
         }
 

@@ -21,6 +21,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_USER_NAME = "";
+    public static final String DEFAULT_YUELAOU_LOCATE = "";
+    public static final String DEFAULT_YUELAOU_PARAMS = "";
     @ProtoField(tag = 44, type = Message.Datatype.INT32)
     public final Integer category_id;
     @ProtoField(tag = 20, type = Message.Datatype.BOOL)
@@ -109,6 +111,10 @@ public final class DataReq extends Message {
     public final Integer with_group;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer withcal;
+    @ProtoField(tag = 45, type = Message.Datatype.STRING)
+    public final String yuelaou_locate;
+    @ProtoField(tag = 46, type = Message.Datatype.STRING)
+    public final String yuelaou_params;
     public static final Integer DEFAULT_RN = 0;
     public static final Integer DEFAULT_RN_NEED = 0;
     public static final Integer DEFAULT_IS_GOOD = 0;
@@ -360,9 +366,19 @@ public final class DataReq extends Message {
             }
             if (builder.category_id == null) {
                 this.category_id = DEFAULT_CATEGORY_ID;
-                return;
             } else {
                 this.category_id = builder.category_id;
+            }
+            if (builder.yuelaou_locate == null) {
+                this.yuelaou_locate = "";
+            } else {
+                this.yuelaou_locate = builder.yuelaou_locate;
+            }
+            if (builder.yuelaou_params == null) {
+                this.yuelaou_params = "";
+                return;
+            } else {
+                this.yuelaou_params = builder.yuelaou_params;
                 return;
             }
         }
@@ -410,6 +426,8 @@ public final class DataReq extends Message {
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
         this.category_id = builder.category_id;
+        this.yuelaou_locate = builder.yuelaou_locate;
+        this.yuelaou_params = builder.yuelaou_params;
     }
 
     /* loaded from: classes.dex */
@@ -458,6 +476,8 @@ public final class DataReq extends Message {
         public String user_name;
         public Integer with_group;
         public Integer withcal;
+        public String yuelaou_locate;
+        public String yuelaou_params;
 
         public Builder() {
         }
@@ -509,6 +529,8 @@ public final class DataReq extends Message {
                 this.da_idfa = dataReq.da_idfa;
                 this.platform = dataReq.platform;
                 this.category_id = dataReq.category_id;
+                this.yuelaou_locate = dataReq.yuelaou_locate;
+                this.yuelaou_params = dataReq.yuelaou_params;
             }
         }
 

@@ -5,10 +5,13 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class AnchorPower extends Message {
     public static final String DEFAULT_ANCHOR_MESSAGE = "";
+    public static final String DEFAULT_CAN_ADD_LIVE_POST_MSG = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String anchor_message;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer can_add_live_post;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String can_add_live_post_msg;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer can_del_live_post;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -41,9 +44,14 @@ public final class AnchorPower extends Message {
             }
             if (builder.can_del_live_post == null) {
                 this.can_del_live_post = DEFAULT_CAN_DEL_LIVE_POST;
-                return;
             } else {
                 this.can_del_live_post = builder.can_del_live_post;
+            }
+            if (builder.can_add_live_post_msg == null) {
+                this.can_add_live_post_msg = "";
+                return;
+            } else {
+                this.can_add_live_post_msg = builder.can_add_live_post_msg;
                 return;
             }
         }
@@ -51,12 +59,14 @@ public final class AnchorPower extends Message {
         this.anchor_message = builder.anchor_message;
         this.can_add_live_post = builder.can_add_live_post;
         this.can_del_live_post = builder.can_del_live_post;
+        this.can_add_live_post_msg = builder.can_add_live_post_msg;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<AnchorPower> {
         public String anchor_message;
         public Integer can_add_live_post;
+        public String can_add_live_post_msg;
         public Integer can_del_live_post;
         public Integer have_power;
 
@@ -70,6 +80,7 @@ public final class AnchorPower extends Message {
                 this.anchor_message = anchorPower.anchor_message;
                 this.can_add_live_post = anchorPower.can_add_live_post;
                 this.can_del_live_post = anchorPower.can_del_live_post;
+                this.can_add_live_post_msg = anchorPower.can_add_live_post_msg;
             }
         }
 
