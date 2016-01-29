@@ -143,7 +143,7 @@ public final class NewGameInfo extends Message {
     public final String test_userids;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String thread_forum_name;
-    @ProtoField(tag = 33, type = Message.Datatype.UINT64)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.UINT64)
     public final Long thread_id;
     @ProtoField(tag = 32, type = Message.Datatype.UINT64)
     public final Long thread_theme_id;

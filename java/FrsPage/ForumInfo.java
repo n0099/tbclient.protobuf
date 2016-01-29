@@ -25,6 +25,8 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_TIDS = "";
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
+    @ProtoField(tag = a0.z)
+    public final Adkiller adkiller_data;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer album_open_photo_frs;
     @ProtoField(tag = 44)
@@ -35,7 +37,7 @@ public final class ForumInfo extends Message {
     public final List<Badges> badges;
     @ProtoField(tag = 32)
     public final Banner banner;
-    @ProtoField(tag = 33)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
     public final BannerList banner_list;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer can_use_accelerate;
@@ -131,6 +133,8 @@ public final class ForumInfo extends Message {
     public final Integer user_level;
     @ProtoField(tag = 45)
     public final WorldCup worldcupinfo;
+    @ProtoField(tag = a0.m)
+    public final Yule yule;
     @ProtoField(tag = 16)
     public final Zhibo zhibo;
     public static final Long DEFAULT_ID = 0L;
@@ -389,6 +393,8 @@ public final class ForumInfo extends Message {
                 this.game_name = builder.game_name;
             }
             this.forumvip_show_icon = builder.forumvip_show_icon;
+            this.adkiller_data = builder.adkiller_data;
+            this.yule = builder.yule;
             return;
         }
         this.id = builder.id;
@@ -446,11 +452,14 @@ public final class ForumInfo extends Message {
         this.game_card = immutableCopyOf(builder.game_card);
         this.game_name = builder.game_name;
         this.forumvip_show_icon = builder.forumvip_show_icon;
+        this.adkiller_data = builder.adkiller_data;
+        this.yule = builder.yule;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
+        public Adkiller adkiller_data;
         public Integer album_open_photo_frs;
         public AnchorPower anchor_power;
         public String avatar;
@@ -504,6 +513,7 @@ public final class ForumInfo extends Message {
         public TopNotice top_notice;
         public Integer user_level;
         public WorldCup worldcupinfo;
+        public Yule yule;
         public Zhibo zhibo;
 
         public Builder() {
@@ -567,6 +577,8 @@ public final class ForumInfo extends Message {
                 this.game_card = ForumInfo.copyOf(forumInfo.game_card);
                 this.game_name = forumInfo.game_name;
                 this.forumvip_show_icon = forumInfo.forumvip_show_icon;
+                this.adkiller_data = forumInfo.adkiller_data;
+                this.yule = forumInfo.yule;
             }
         }
 

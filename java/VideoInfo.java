@@ -7,6 +7,8 @@ public final class VideoInfo extends Message {
     public static final String DEFAULT_THUMBNAIL_URL = "";
     public static final String DEFAULT_VIDEO_MD5 = "";
     public static final String DEFAULT_VIDEO_URL = "";
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer play_count;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer thumbnail_height;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -17,6 +19,8 @@ public final class VideoInfo extends Message {
     public final Integer video_duration;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer video_height;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer video_length;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String video_md5;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -28,6 +32,8 @@ public final class VideoInfo extends Message {
     public static final Integer DEFAULT_VIDEO_HEIGHT = 0;
     public static final Integer DEFAULT_THUMBNAIL_WIDTH = 0;
     public static final Integer DEFAULT_THUMBNAIL_HEIGHT = 0;
+    public static final Integer DEFAULT_VIDEO_LENGTH = 0;
+    public static final Integer DEFAULT_PLAY_COUNT = 0;
 
     /* synthetic */ VideoInfo(Builder builder, boolean z, VideoInfo videoInfo) {
         this(builder, z);
@@ -73,9 +79,19 @@ public final class VideoInfo extends Message {
             }
             if (builder.thumbnail_height == null) {
                 this.thumbnail_height = DEFAULT_THUMBNAIL_HEIGHT;
-                return;
             } else {
                 this.thumbnail_height = builder.thumbnail_height;
+            }
+            if (builder.video_length == null) {
+                this.video_length = DEFAULT_VIDEO_LENGTH;
+            } else {
+                this.video_length = builder.video_length;
+            }
+            if (builder.play_count == null) {
+                this.play_count = DEFAULT_PLAY_COUNT;
+                return;
+            } else {
+                this.play_count = builder.play_count;
                 return;
             }
         }
@@ -87,15 +103,19 @@ public final class VideoInfo extends Message {
         this.thumbnail_url = builder.thumbnail_url;
         this.thumbnail_width = builder.thumbnail_width;
         this.thumbnail_height = builder.thumbnail_height;
+        this.video_length = builder.video_length;
+        this.play_count = builder.play_count;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
+        public Integer play_count;
         public Integer thumbnail_height;
         public String thumbnail_url;
         public Integer thumbnail_width;
         public Integer video_duration;
         public Integer video_height;
+        public Integer video_length;
         public String video_md5;
         public String video_url;
         public Integer video_width;
@@ -114,6 +134,8 @@ public final class VideoInfo extends Message {
                 this.thumbnail_url = videoInfo.thumbnail_url;
                 this.thumbnail_width = videoInfo.thumbnail_width;
                 this.thumbnail_height = videoInfo.thumbnail_height;
+                this.video_length = videoInfo.video_length;
+                this.play_count = videoInfo.play_count;
             }
         }
 

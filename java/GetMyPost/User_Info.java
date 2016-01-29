@@ -10,6 +10,8 @@ public final class User_Info extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     @ProtoField(tag = 12)
     public final Balv balv;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer fans_num;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer gender;
     @ProtoField(tag = 13)
@@ -42,6 +44,7 @@ public final class User_Info extends Message {
     public static final Integer DEFAULT_IS_MEM = 0;
     public static final Integer DEFAULT_IS_SELECT_TAIL = 0;
     public static final Integer DEFAULT_USERHIDE = 0;
+    public static final Integer DEFAULT_FANS_NUM = 0;
 
     /* synthetic */ User_Info(Builder builder, boolean z, User_Info user_Info) {
         this(builder, z);
@@ -107,7 +110,13 @@ public final class User_Info extends Message {
             }
             this.balv = builder.balv;
             this.god_data = builder.god_data;
-            return;
+            if (builder.fans_num == null) {
+                this.fans_num = DEFAULT_FANS_NUM;
+                return;
+            } else {
+                this.fans_num = builder.fans_num;
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -122,11 +131,13 @@ public final class User_Info extends Message {
         this.userhide = builder.userhide;
         this.balv = builder.balv;
         this.god_data = builder.god_data;
+        this.fans_num = builder.fans_num;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<User_Info> {
         public Balv balv;
+        public Integer fans_num;
         public Integer gender;
         public GodInfo god_data;
         public Long id;
@@ -159,6 +170,7 @@ public final class User_Info extends Message {
                 this.userhide = user_Info.userhide;
                 this.balv = user_Info.balv;
                 this.god_data = user_Info.god_data;
+                this.fans_num = user_Info.fans_num;
             }
         }
 

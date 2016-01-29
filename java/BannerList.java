@@ -12,6 +12,8 @@ public final class BannerList extends Message {
     public final List<App> app;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<FeedForumInfo> feed_forum;
+    @ProtoField(tag = 3)
+    public final RecomTopicInfo hot_topic;
 
     /* synthetic */ BannerList(Builder builder, boolean z, BannerList bannerList) {
         this(builder, z);
@@ -27,20 +29,22 @@ public final class BannerList extends Message {
             }
             if (builder.feed_forum == null) {
                 this.feed_forum = DEFAULT_FEED_FORUM;
-                return;
             } else {
                 this.feed_forum = immutableCopyOf(builder.feed_forum);
-                return;
             }
+            this.hot_topic = builder.hot_topic;
+            return;
         }
         this.app = immutableCopyOf(builder.app);
         this.feed_forum = immutableCopyOf(builder.feed_forum);
+        this.hot_topic = builder.hot_topic;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<BannerList> {
         public List<App> app;
         public List<FeedForumInfo> feed_forum;
+        public RecomTopicInfo hot_topic;
 
         public Builder() {
         }
@@ -50,6 +54,7 @@ public final class BannerList extends Message {
             if (bannerList != null) {
                 this.app = BannerList.copyOf(bannerList.app);
                 this.feed_forum = BannerList.copyOf(bannerList.feed_forum);
+                this.hot_topic = bannerList.hot_topic;
             }
         }
 

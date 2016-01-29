@@ -7,6 +7,8 @@ public final class GodInfo extends Message {
     public static final String DEFAULT_INTRO = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long fid;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer followed;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -16,6 +18,7 @@ public final class GodInfo extends Message {
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_TYPE = 0;
     public static final Long DEFAULT_FID = 0L;
+    public static final Integer DEFAULT_FOLLOWED = 0;
 
     /* synthetic */ GodInfo(Builder builder, boolean z, GodInfo godInfo) {
         this(builder, z);
@@ -41,9 +44,14 @@ public final class GodInfo extends Message {
             }
             if (builder.fid == null) {
                 this.fid = DEFAULT_FID;
-                return;
             } else {
                 this.fid = builder.fid;
+            }
+            if (builder.followed == null) {
+                this.followed = DEFAULT_FOLLOWED;
+                return;
+            } else {
+                this.followed = builder.followed;
                 return;
             }
         }
@@ -51,11 +59,13 @@ public final class GodInfo extends Message {
         this.intro = builder.intro;
         this.type = builder.type;
         this.fid = builder.fid;
+        this.followed = builder.followed;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<GodInfo> {
         public Long fid;
+        public Integer followed;
         public Long id;
         public String intro;
         public Integer type;
@@ -70,6 +80,7 @@ public final class GodInfo extends Message {
                 this.intro = godInfo.intro;
                 this.type = godInfo.type;
                 this.fid = godInfo.fid;
+                this.followed = godInfo.followed;
             }
         }
 

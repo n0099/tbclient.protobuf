@@ -5,14 +5,25 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_DA_IDFA = "";
+    public static final String DEFAULT_LASTIDS = "";
+    public static final String DEFAULT_PLATFORM = "";
     @ProtoField(tag = 1)
     public final CommonReq common;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String da_idfa;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer issdk;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String lastids;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer need_tags;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer page_thread_count;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String platform;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
@@ -37,6 +48,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
     public static final Integer DEFAULT_Q_TYPE = 0;
+    public static final Integer DEFAULT_ISSDK = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -93,9 +105,29 @@ public final class DataReq extends Message {
             }
             if (builder.q_type == null) {
                 this.q_type = DEFAULT_Q_TYPE;
-                return;
             } else {
                 this.q_type = builder.q_type;
+            }
+            if (builder.lastids == null) {
+                this.lastids = "";
+            } else {
+                this.lastids = builder.lastids;
+            }
+            if (builder.issdk == null) {
+                this.issdk = DEFAULT_ISSDK;
+            } else {
+                this.issdk = builder.issdk;
+            }
+            if (builder.da_idfa == null) {
+                this.da_idfa = "";
+            } else {
+                this.da_idfa = builder.da_idfa;
+            }
+            if (builder.platform == null) {
+                this.platform = "";
+                return;
+            } else {
+                this.platform = builder.platform;
                 return;
             }
         }
@@ -110,14 +142,22 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
         this.q_type = builder.q_type;
+        this.lastids = builder.lastids;
+        this.issdk = builder.issdk;
+        this.da_idfa = builder.da_idfa;
+        this.platform = builder.platform;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
+        public String da_idfa;
+        public Integer issdk;
+        public String lastids;
         public Integer load_type;
         public Integer need_tags;
         public Integer page_thread_count;
+        public String platform;
         public Integer pn;
         public Integer q_type;
         public Double scr_dip;
@@ -143,6 +183,10 @@ public final class DataReq extends Message {
                 this.scr_h = dataReq.scr_h;
                 this.scr_dip = dataReq.scr_dip;
                 this.q_type = dataReq.q_type;
+                this.lastids = dataReq.lastids;
+                this.issdk = dataReq.issdk;
+                this.da_idfa = dataReq.da_idfa;
+                this.platform = dataReq.platform;
             }
         }
 

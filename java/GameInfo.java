@@ -100,7 +100,7 @@ public final class GameInfo extends Message {
     public final String secret_key;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer star;
-    @ProtoField(tag = 33, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.STRING)
     public final String subscript_color;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String superscript_color;

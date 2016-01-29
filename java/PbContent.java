@@ -36,6 +36,8 @@ public final class PbContent extends Message {
     public final String c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
+    @ProtoField(tag = 28, type = Message.Datatype.INT32)
+    public final Integer count;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer during_time;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -84,6 +86,7 @@ public final class PbContent extends Message {
     public static final Integer DEFAULT_E_TYPE = 0;
     public static final Integer DEFAULT_BTN_TYPE = 0;
     public static final Integer DEFAULT_ORIGIN_SIZE = 0;
+    public static final Integer DEFAULT_COUNT = 0;
 
     /* synthetic */ PbContent(Builder builder, boolean z, PbContent pbContent) {
         this(builder, z);
@@ -220,9 +223,14 @@ public final class PbContent extends Message {
             }
             if (builder.origin_size == null) {
                 this.origin_size = DEFAULT_ORIGIN_SIZE;
-                return;
             } else {
                 this.origin_size = builder.origin_size;
+            }
+            if (builder.count == null) {
+                this.count = DEFAULT_COUNT;
+                return;
+            } else {
+                this.count = builder.count;
                 return;
             }
         }
@@ -253,6 +261,7 @@ public final class PbContent extends Message {
         this.origin_src = builder.origin_src;
         this.btn_type = builder.btn_type;
         this.origin_size = builder.origin_size;
+        this.count = builder.count;
     }
 
     /* loaded from: classes.dex */
@@ -265,6 +274,7 @@ public final class PbContent extends Message {
         public Integer btn_type;
         public String c;
         public String cdn_src;
+        public Integer count;
         public Integer during_time;
         public String dynamic;
         public Integer e_type;
@@ -318,6 +328,7 @@ public final class PbContent extends Message {
                 this.origin_src = pbContent.origin_src;
                 this.btn_type = pbContent.btn_type;
                 this.origin_size = pbContent.origin_size;
+                this.count = pbContent.count;
             }
         }
 

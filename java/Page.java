@@ -12,6 +12,8 @@ public final class Page extends Message {
     public final Integer has_more;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer has_prev;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer lz_total_floor;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer offset;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -40,6 +42,7 @@ public final class Page extends Message {
     public static final Integer DEFAULT_PNUM = 0;
     public static final Integer DEFAULT_TNUM = 0;
     public static final Integer DEFAULT_TOTAL_NUM = 0;
+    public static final Integer DEFAULT_LZ_TOTAL_FLOOR = 0;
 
     /* synthetic */ Page(Builder builder, boolean z, Page page) {
         this(builder, z);
@@ -105,9 +108,14 @@ public final class Page extends Message {
             }
             if (builder.total_num == null) {
                 this.total_num = DEFAULT_TOTAL_NUM;
-                return;
             } else {
                 this.total_num = builder.total_num;
+            }
+            if (builder.lz_total_floor == null) {
+                this.lz_total_floor = DEFAULT_LZ_TOTAL_FLOOR;
+                return;
+            } else {
+                this.lz_total_floor = builder.lz_total_floor;
                 return;
             }
         }
@@ -123,6 +131,7 @@ public final class Page extends Message {
         this.pnum = builder.pnum;
         this.tnum = builder.tnum;
         this.total_num = builder.total_num;
+        this.lz_total_floor = builder.lz_total_floor;
     }
 
     /* loaded from: classes.dex */
@@ -131,6 +140,7 @@ public final class Page extends Message {
         public Integer current_page;
         public Integer has_more;
         public Integer has_prev;
+        public Integer lz_total_floor;
         public Integer offset;
         public Integer page_size;
         public Integer pnum;
@@ -158,6 +168,7 @@ public final class Page extends Message {
                 this.pnum = page.pnum;
                 this.tnum = page.tnum;
                 this.total_num = page.total_num;
+                this.lz_total_floor = page.lz_total_floor;
             }
         }
 

@@ -32,7 +32,7 @@ public final class NewUser extends Message {
     public final String cdn_error;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String free_flag;
-    @ProtoField(tag = 33)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
     public final GameAttr game_attr;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
     public final Global global;

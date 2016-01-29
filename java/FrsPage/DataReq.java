@@ -71,7 +71,7 @@ public final class DataReq extends Message {
     public final Integer need_badge;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer net_error;
-    @ProtoField(tag = 33, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.INT32)
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;

@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Anti;
 import tbclient.PostInfoList;
+import tbclient.UcCard;
 import tbclient.User;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
@@ -16,6 +17,8 @@ public final class DataRes extends Message {
     public final List<PostInfoList> post_list;
     @ProtoField(tag = 3)
     public final TAInfo tainfo;
+    @ProtoField(tag = 6)
+    public final UcCard uc_card;
     @ProtoField(tag = 1)
     public final User user;
     @ProtoField(tag = 5)
@@ -37,6 +40,7 @@ public final class DataRes extends Message {
                 this.post_list = immutableCopyOf(builder.post_list);
             }
             this.user_god_info = builder.user_god_info;
+            this.uc_card = builder.uc_card;
             return;
         }
         this.user = builder.user;
@@ -44,6 +48,7 @@ public final class DataRes extends Message {
         this.tainfo = builder.tainfo;
         this.post_list = immutableCopyOf(builder.post_list);
         this.user_god_info = builder.user_god_info;
+        this.uc_card = builder.uc_card;
     }
 
     /* loaded from: classes.dex */
@@ -51,6 +56,7 @@ public final class DataRes extends Message {
         public Anti anti_stat;
         public List<PostInfoList> post_list;
         public TAInfo tainfo;
+        public UcCard uc_card;
         public User user;
         public UserGodInfo user_god_info;
 
@@ -65,6 +71,7 @@ public final class DataRes extends Message {
                 this.tainfo = dataRes.tainfo;
                 this.post_list = DataRes.copyOf(dataRes.post_list);
                 this.user_god_info = dataRes.user_god_info;
+                this.uc_card = dataRes.uc_card;
             }
         }
 

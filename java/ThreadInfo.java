@@ -33,6 +33,8 @@ public final class ThreadInfo extends Message {
     public final List<ActInfo> act_info;
     @ProtoField(tag = a0.B)
     public final AnchorInfo anchor_info;
+    @ProtoField(tag = 89)
+    public final AppCode app_code;
     @ProtoField(tag = 18)
     public final User author;
     @ProtoField(tag = a0.z, type = Message.Datatype.INT64)
@@ -83,6 +85,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_copythread;
     @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
     public final Integer is_global_top;
+    @ProtoField(tag = 85, type = Message.Datatype.INT32)
+    public final Integer is_godthread_recommend;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
@@ -133,6 +137,8 @@ public final class ThreadInfo extends Message {
     public final String meizhi_pic;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
+    @ProtoField(tag = 84, type = Message.Datatype.UINT32)
+    public final Integer pic_num;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String pids;
     @ProtoField(tag = 74)
@@ -153,6 +159,8 @@ public final class ThreadInfo extends Message {
     public final Integer show_commented;
     @ProtoField(tag = BDLocation.TypeOffLineLocationNetworkFail, type = Message.Datatype.INT32)
     public final Integer storecount;
+    @ProtoField(tag = 83)
+    public final TaskInfo task_info;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -171,7 +179,7 @@ public final class ThreadInfo extends Message {
     public final ZhiBoInfoTW twzhibo_info;
     @ProtoField(tag = a0.m, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
-    @ProtoField(tag = 33, type = Message.Datatype.STRING)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.STRING)
     public final String video;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
     public final String video_cover;
@@ -187,6 +195,8 @@ public final class ThreadInfo extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
+    @ProtoField(tag = 88)
+    public final YulePostActivity yule_post_activity;
     @ProtoField(tag = a0.x)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
@@ -241,6 +251,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_PUSH_END_TIME = 0;
     public static final Integer DEFAULT_IS_COPYTHREAD = 0;
     public static final Integer DEFAULT_OPERATOR_FLAG = 0;
+    public static final Integer DEFAULT_PIC_NUM = 0;
+    public static final Integer DEFAULT_IS_GODTHREAD_RECOMMEND = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -603,11 +615,23 @@ public final class ThreadInfo extends Message {
             }
             if (builder.operator_flag == null) {
                 this.operator_flag = DEFAULT_OPERATOR_FLAG;
-                return;
             } else {
                 this.operator_flag = builder.operator_flag;
-                return;
             }
+            this.task_info = builder.task_info;
+            if (builder.pic_num == null) {
+                this.pic_num = DEFAULT_PIC_NUM;
+            } else {
+                this.pic_num = builder.pic_num;
+            }
+            if (builder.is_godthread_recommend == null) {
+                this.is_godthread_recommend = DEFAULT_IS_GODTHREAD_RECOMMEND;
+            } else {
+                this.is_godthread_recommend = builder.is_godthread_recommend;
+            }
+            this.yule_post_activity = builder.yule_post_activity;
+            this.app_code = builder.app_code;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -690,6 +714,11 @@ public final class ThreadInfo extends Message {
         this.push_end_time = builder.push_end_time;
         this.is_copythread = builder.is_copythread;
         this.operator_flag = builder.operator_flag;
+        this.task_info = builder.task_info;
+        this.pic_num = builder.pic_num;
+        this.is_godthread_recommend = builder.is_godthread_recommend;
+        this.yule_post_activity = builder.yule_post_activity;
+        this.app_code = builder.app_code;
     }
 
     /* loaded from: classes.dex */
@@ -697,6 +726,7 @@ public final class ThreadInfo extends Message {
         public List<Abstract> _abstract;
         public List<ActInfo> act_info;
         public AnchorInfo anchor_info;
+        public AppCode app_code;
         public User author;
         public Long author_id;
         public String category_name;
@@ -722,6 +752,7 @@ public final class ThreadInfo extends Message {
         public Integer is_bub;
         public Integer is_copythread;
         public Integer is_global_top;
+        public Integer is_godthread_recommend;
         public Integer is_good;
         public Integer is_livepost;
         public Integer is_meizhi;
@@ -747,6 +778,7 @@ public final class ThreadInfo extends Message {
         public List<MediaNum> media_num;
         public String meizhi_pic;
         public Integer operator_flag;
+        public Integer pic_num;
         public String pids;
         public PollInfo poll_info;
         public Long post_id;
@@ -757,6 +789,7 @@ public final class ThreadInfo extends Message {
         public Integer repost_num;
         public Integer show_commented;
         public Integer storecount;
+        public TaskInfo task_info;
         public Integer thread_type;
         public Integer thread_types;
         public Long tid;
@@ -774,6 +807,7 @@ public final class ThreadInfo extends Message {
         public String video_swf;
         public Integer view_num;
         public List<Voice> voice_info;
+        public YulePostActivity yule_post_activity;
         public Zan zan;
 
         public Builder() {
@@ -863,6 +897,11 @@ public final class ThreadInfo extends Message {
                 this.push_end_time = threadInfo.push_end_time;
                 this.is_copythread = threadInfo.is_copythread;
                 this.operator_flag = threadInfo.operator_flag;
+                this.task_info = threadInfo.task_info;
+                this.pic_num = threadInfo.pic_num;
+                this.is_godthread_recommend = threadInfo.is_godthread_recommend;
+                this.yule_post_activity = threadInfo.yule_post_activity;
+                this.app_code = threadInfo.app_code;
             }
         }
 

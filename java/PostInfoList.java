@@ -316,7 +316,6 @@ public final class PostInfoList extends Message {
                 this.thread_type = postInfoList.thread_type;
                 this.twzhibo_info = postInfoList.twzhibo_info;
                 this.poll_info = postInfoList.poll_info;
-                this.poll_info = postInfoList.poll_info;
                 this.video_info = postInfoList.video_info;
             }
         }

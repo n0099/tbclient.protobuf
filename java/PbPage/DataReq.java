@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     public final Long fid;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
-    @ProtoField(tag = 33, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
     @ProtoField(tag = 34, type = Message.Datatype.INT32)
     public final Integer is_jumpfloor;

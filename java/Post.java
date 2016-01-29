@@ -36,6 +36,8 @@ public final class Post extends Message {
     public final String ios_bimg_format;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer is_bub;
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    public final Integer is_hot_post;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer is_ntitle;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
@@ -44,6 +46,8 @@ public final class Post extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
+    @ProtoField(tag = 30)
+    public final PbPostZan post_zan;
     @ProtoField(tag = 28)
     public final PbPresent present;
     @ProtoField(tag = 21)
@@ -83,6 +87,7 @@ public final class Post extends Message {
     public static final Long DEFAULT_AUTHOR_ID = 0L;
     public static final Integer DEFAULT_ADD_POST_NUMBER = 0;
     public static final Integer DEFAULT_STORECOUNT = 0;
+    public static final Integer DEFAULT_IS_HOT_POST = 0;
 
     /* synthetic */ Post(Builder builder, boolean z, Post post) {
         this(builder, z);
@@ -192,7 +197,14 @@ public final class Post extends Message {
             this.act_post = builder.act_post;
             this.present = builder.present;
             this.video_info = builder.video_info;
-            return;
+            this.post_zan = builder.post_zan;
+            if (builder.is_hot_post == null) {
+                this.is_hot_post = DEFAULT_IS_HOT_POST;
+                return;
+            } else {
+                this.is_hot_post = builder.is_hot_post;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -223,6 +235,8 @@ public final class Post extends Message {
         this.act_post = builder.act_post;
         this.present = builder.present;
         this.video_info = builder.video_info;
+        this.post_zan = builder.post_zan;
+        this.is_hot_post = builder.is_hot_post;
     }
 
     /* loaded from: classes.dex */
@@ -239,10 +253,12 @@ public final class Post extends Message {
         public Long id;
         public String ios_bimg_format;
         public Integer is_bub;
+        public Integer is_hot_post;
         public Integer is_ntitle;
         public Integer is_voice;
         public Integer is_vote;
         public Lbs lbs_info;
+        public PbPostZan post_zan;
         public PbPresent present;
         public SignatureData signature;
         public Integer storecount;
@@ -292,6 +308,8 @@ public final class Post extends Message {
                 this.act_post = post.act_post;
                 this.present = post.present;
                 this.video_info = post.video_info;
+                this.post_zan = post.post_zan;
+                this.is_hot_post = post.is_hot_post;
             }
         }
 

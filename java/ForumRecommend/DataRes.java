@@ -24,6 +24,8 @@ public final class DataRes extends Message {
     public final String msign_text;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer msign_valid;
+    @ProtoField(label = Message.Label.REPEATED, tag = 13)
+    public final List<Banner> new_banner_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<NewRecommend> new_recommend;
     @ProtoField(label = Message.Label.REPEATED, tag = 10)
@@ -42,6 +44,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_MEM = 0;
     public static final List<RecommendForumInfo> DEFAULT_RECOMMEND_FORUM_INFO = Collections.emptyList();
     public static final Integer DEFAULT_REDIRECT = 0;
+    public static final List<Banner> DEFAULT_NEW_BANNER_INFO = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -103,9 +106,14 @@ public final class DataRes extends Message {
             this.hot_search = builder.hot_search;
             if (builder.redirect == null) {
                 this.redirect = DEFAULT_REDIRECT;
-                return;
             } else {
                 this.redirect = builder.redirect;
+            }
+            if (builder.new_banner_info == null) {
+                this.new_banner_info = DEFAULT_NEW_BANNER_INFO;
+                return;
+            } else {
+                this.new_banner_info = immutableCopyOf(builder.new_banner_info);
                 return;
             }
         }
@@ -121,6 +129,7 @@ public final class DataRes extends Message {
         this.recommend_forum_info = immutableCopyOf(builder.recommend_forum_info);
         this.hot_search = builder.hot_search;
         this.redirect = builder.redirect;
+        this.new_banner_info = immutableCopyOf(builder.new_banner_info);
     }
 
     /* loaded from: classes.dex */
@@ -133,6 +142,7 @@ public final class DataRes extends Message {
         public Integer msign_level;
         public String msign_text;
         public Integer msign_valid;
+        public List<Banner> new_banner_info;
         public List<NewRecommend> new_recommend;
         public List<RecommendForumInfo> recommend_forum_info;
         public Integer redirect;
@@ -156,6 +166,7 @@ public final class DataRes extends Message {
                 this.recommend_forum_info = DataRes.copyOf(dataRes.recommend_forum_info);
                 this.hot_search = dataRes.hot_search;
                 this.redirect = dataRes.redirect;
+                this.new_banner_info = DataRes.copyOf(dataRes.new_banner_info);
             }
         }
 

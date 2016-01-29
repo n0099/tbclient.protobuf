@@ -27,6 +27,8 @@ public final class DataRes extends Message {
     public final String bawu_enter_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
+    public final ClientPlatform client_platform;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<ColorEgg> color_egg;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
@@ -47,6 +49,8 @@ public final class DataRes extends Message {
     public final GconAccount gcon_account;
     @ProtoField(tag = 6)
     public final Group group;
+    @ProtoField(tag = 34)
+    public final HeadSdk head_sdk;
     @ProtoField(tag = 26)
     public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 15)
@@ -208,11 +212,12 @@ public final class DataRes extends Message {
             this.sdk_topic_thread = builder.sdk_topic_thread;
             if (builder.bawu_enter_url == null) {
                 this.bawu_enter_url = "";
-                return;
             } else {
                 this.bawu_enter_url = builder.bawu_enter_url;
-                return;
             }
+            this.client_platform = builder.client_platform;
+            this.head_sdk = builder.head_sdk;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -246,6 +251,8 @@ public final class DataRes extends Message {
         this.store_card = builder.store_card;
         this.sdk_topic_thread = builder.sdk_topic_thread;
         this.bawu_enter_url = builder.bawu_enter_url;
+        this.client_platform = builder.client_platform;
+        this.head_sdk = builder.head_sdk;
     }
 
     /* loaded from: classes.dex */
@@ -254,6 +261,7 @@ public final class DataRes extends Message {
         public Anti anti;
         public String bawu_enter_url;
         public List<CategoryInfo> category_list;
+        public ClientPlatform client_platform;
         public List<ColorEgg> color_egg;
         public Integer ctime;
         public Integer fortune_bag;
@@ -264,6 +272,7 @@ public final class DataRes extends Message {
         public List<FrsTabInfo> frs_tab_info;
         public GconAccount gcon_account;
         public Group group;
+        public HeadSdk head_sdk;
         public ZhiBoInfoTW hot_twzhibo_info;
         public Info info;
         public Integer is_new_url;
@@ -321,6 +330,8 @@ public final class DataRes extends Message {
                 this.store_card = dataRes.store_card;
                 this.sdk_topic_thread = dataRes.sdk_topic_thread;
                 this.bawu_enter_url = dataRes.bawu_enter_url;
+                this.client_platform = dataRes.client_platform;
+                this.head_sdk = dataRes.head_sdk;
             }
         }
 

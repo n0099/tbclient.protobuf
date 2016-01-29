@@ -43,6 +43,8 @@ public final class User extends Message {
     public final Integer bookmark_new_count;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer concern_num;
+    @ProtoField(tag = BDLocation.TypeOffLineLocationNetworkFail)
+    public final ConsumeInfo consume_info;
     @ProtoField(tag = a0.m, type = Message.Datatype.STRING)
     public final String fans_nickname;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
@@ -107,7 +109,7 @@ public final class User extends Message {
     public final Integer meizhi_level;
     @ProtoField(label = Message.Label.REPEATED, tag = a0.B)
     public final List<SimpleUser> mute_user;
-    @ProtoField(tag = 33, type = Message.Datatype.INT32)
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.INT32)
     public final Integer my_like_num;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String name;
@@ -135,6 +137,8 @@ public final class User extends Message {
     public final Integer post_num;
     @ProtoField(tag = 45)
     public final PrivSets priv_sets;
+    @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeOffLineLocationFail)
+    public final List<TwAnchorProfitItem> profit_list;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String rank;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
@@ -198,6 +202,7 @@ public final class User extends Message {
     public static final Long DEFAULT_FRIEND_NUM = 0L;
     public static final Integer DEFAULT_HEAVY_USER = 0;
     public static final List<TshowInfo> DEFAULT_NEW_TSHOW_ICON = Collections.emptyList();
+    public static final List<TwAnchorProfitItem> DEFAULT_PROFIT_LIST = Collections.emptyList();
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -496,6 +501,12 @@ public final class User extends Message {
                 this.new_tshow_icon = immutableCopyOf(builder.new_tshow_icon);
             }
             this.tw_anchor_info = builder.tw_anchor_info;
+            if (builder.profit_list == null) {
+                this.profit_list = DEFAULT_PROFIT_LIST;
+            } else {
+                this.profit_list = immutableCopyOf(builder.profit_list);
+            }
+            this.consume_info = builder.consume_info;
             return;
         }
         this.is_login = builder.is_login;
@@ -564,6 +575,8 @@ public final class User extends Message {
         this.vip_show_info = builder.vip_show_info;
         this.new_tshow_icon = immutableCopyOf(builder.new_tshow_icon);
         this.tw_anchor_info = builder.tw_anchor_info;
+        this.profit_list = immutableCopyOf(builder.profit_list);
+        this.consume_info = builder.consume_info;
     }
 
     /* loaded from: classes.dex */
@@ -577,6 +590,7 @@ public final class User extends Message {
         public Integer bookmark_count;
         public Integer bookmark_new_count;
         public Integer concern_num;
+        public ConsumeInfo consume_info;
         public String fans_nickname;
         public Integer fans_num;
         public Long friend_num;
@@ -623,6 +637,7 @@ public final class User extends Message {
         public String portraith;
         public Integer post_num;
         public PrivSets priv_sets;
+        public List<TwAnchorProfitItem> profit_list;
         public String rank;
         public Integer sex;
         public String tb_age;
@@ -707,6 +722,8 @@ public final class User extends Message {
                 this.vip_show_info = user.vip_show_info;
                 this.new_tshow_icon = User.copyOf(user.new_tshow_icon);
                 this.tw_anchor_info = user.tw_anchor_info;
+                this.profit_list = User.copyOf(user.profit_list);
+                this.consume_info = user.consume_info;
             }
         }
 

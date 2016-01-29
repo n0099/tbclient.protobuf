@@ -4,9 +4,12 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.BannerList;
 import tbclient.ThreadInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    @ProtoField(tag = 9)
+    public final BannerList banner_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<CardForum> card_forum;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
@@ -76,11 +79,11 @@ public final class DataRes extends Message {
             }
             if (builder.is_new_url == null) {
                 this.is_new_url = DEFAULT_IS_NEW_URL;
-                return;
             } else {
                 this.is_new_url = builder.is_new_url;
-                return;
             }
+            this.banner_list = builder.banner_list;
+            return;
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
         this.thread_list = immutableCopyOf(builder.thread_list);
@@ -90,10 +93,12 @@ public final class DataRes extends Message {
         this.sug_seconds = builder.sug_seconds;
         this.thread_personalized = immutableCopyOf(builder.thread_personalized);
         this.is_new_url = builder.is_new_url;
+        this.banner_list = builder.banner_list;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public BannerList banner_list;
         public List<CardForum> card_forum;
         public List<CardTopic> card_topic;
         public Integer is_new_url;
@@ -117,6 +122,7 @@ public final class DataRes extends Message {
                 this.sug_seconds = dataRes.sug_seconds;
                 this.thread_personalized = DataRes.copyOf(dataRes.thread_personalized);
                 this.is_new_url = dataRes.is_new_url;
+                this.banner_list = dataRes.banner_list;
             }
         }
 

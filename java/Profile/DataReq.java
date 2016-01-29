@@ -18,8 +18,16 @@ public final class DataReq extends Message {
     public final Integer need_post_count;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer pn;
+    @ProtoField(tag = 12, type = Message.Datatype.UINT32)
+    public final Integer q_type;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer rn;
+    @ProtoField(tag = 13, type = Message.Datatype.DOUBLE)
+    public final Double scr_dip;
+    @ProtoField(tag = 11, type = Message.Datatype.UINT32)
+    public final Integer scr_h;
+    @ProtoField(tag = 10, type = Message.Datatype.UINT32)
+    public final Integer scr_w;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String st_type;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -31,6 +39,10 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
     public static final Integer DEFAULT_HAS_PLIST = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Integer DEFAULT_Q_TYPE = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -80,7 +92,28 @@ public final class DataReq extends Message {
                 this.has_plist = builder.has_plist;
             }
             this.common = builder.common;
-            return;
+            if (builder.scr_w == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = builder.scr_w;
+            }
+            if (builder.scr_h == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = builder.scr_h;
+            }
+            if (builder.q_type == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = builder.q_type;
+            }
+            if (builder.scr_dip == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+                return;
+            } else {
+                this.scr_dip = builder.scr_dip;
+                return;
+            }
         }
         this.uid = builder.uid;
         this.need_post_count = builder.need_post_count;
@@ -91,6 +124,10 @@ public final class DataReq extends Message {
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
         this.common = builder.common;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.q_type = builder.q_type;
+        this.scr_dip = builder.scr_dip;
     }
 
     /* loaded from: classes.dex */
@@ -101,7 +138,11 @@ public final class DataReq extends Message {
         public Integer is_guest;
         public Integer need_post_count;
         public Integer pn;
+        public Integer q_type;
         public Integer rn;
+        public Double scr_dip;
+        public Integer scr_h;
+        public Integer scr_w;
         public String st_type;
         public Long uid;
 
@@ -120,6 +161,10 @@ public final class DataReq extends Message {
                 this.rn = dataReq.rn;
                 this.has_plist = dataReq.has_plist;
                 this.common = dataReq.common;
+                this.scr_w = dataReq.scr_w;
+                this.scr_h = dataReq.scr_h;
+                this.q_type = dataReq.q_type;
+                this.scr_dip = dataReq.scr_dip;
             }
         }
 

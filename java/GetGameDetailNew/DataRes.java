@@ -15,6 +15,8 @@ public final class DataRes extends Message {
     public final RecommendForumInfo forum_info;
     @ProtoField(tag = 1)
     public final GameInfo game_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 8)
+    public final List<GiftPkgInfo> giftpkg_info;
     @ProtoField(tag = 2)
     public final RankInfo rank_info;
     @ProtoField(tag = 3)
@@ -25,6 +27,7 @@ public final class DataRes extends Message {
     public final List<GameInfo> user_recommend;
     public static final List<GameInfo> DEFAULT_USER_RECOMMEND = Collections.emptyList();
     public static final List<SimpleThreadInfo> DEFAULT_RELATE_THREAD = Collections.emptyList();
+    public static final List<GiftPkgInfo> DEFAULT_GIFTPKG_INFO = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -48,7 +51,13 @@ public final class DataRes extends Message {
             }
             this.forum_info = builder.forum_info;
             this.code_info = builder.code_info;
-            return;
+            if (builder.giftpkg_info == null) {
+                this.giftpkg_info = DEFAULT_GIFTPKG_INFO;
+                return;
+            } else {
+                this.giftpkg_info = immutableCopyOf(builder.giftpkg_info);
+                return;
+            }
         }
         this.game_info = builder.game_info;
         this.rank_info = builder.rank_info;
@@ -57,6 +66,7 @@ public final class DataRes extends Message {
         this.relate_thread = immutableCopyOf(builder.relate_thread);
         this.forum_info = builder.forum_info;
         this.code_info = builder.code_info;
+        this.giftpkg_info = immutableCopyOf(builder.giftpkg_info);
     }
 
     /* loaded from: classes.dex */
@@ -64,6 +74,7 @@ public final class DataRes extends Message {
         public CodeInfo code_info;
         public RecommendForumInfo forum_info;
         public GameInfo game_info;
+        public List<GiftPkgInfo> giftpkg_info;
         public RankInfo rank_info;
         public RelateGame relate_game;
         public List<SimpleThreadInfo> relate_thread;
@@ -82,6 +93,7 @@ public final class DataRes extends Message {
                 this.relate_thread = DataRes.copyOf(dataRes.relate_thread);
                 this.forum_info = dataRes.forum_info;
                 this.code_info = dataRes.code_info;
+                this.giftpkg_info = DataRes.copyOf(dataRes.giftpkg_info);
             }
         }
 
