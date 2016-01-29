@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "SetBackground/DataReq.proto";
-
-message SetBackgroundReqIdl {
-    DataReq data = 1;
-}

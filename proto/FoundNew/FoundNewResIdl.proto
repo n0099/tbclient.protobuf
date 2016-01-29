@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "FoundNew/DataRes.proto";
-
-message FoundNewResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

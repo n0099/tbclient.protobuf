@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message Banner {
-    string link = 1;
-    string pic_url = 2;
-    string title = 3;
-}

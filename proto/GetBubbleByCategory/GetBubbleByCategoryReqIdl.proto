@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetBubbleByCategory/DataReq.proto";
-
-message GetBubbleByCategoryReqIdl {
-    DataReq data = 1;
-}

@@ -30,4 +30,5 @@ message PbContent {
     string origin_src = 25;
     uint32 btn_type = 26;
     uint32 origin_size = 27;
+    int32 count = 28;
 }

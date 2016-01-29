@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "FoundNew/Menu.proto";
-
-message Module {
-    int32 type = 1;
-    repeated Menu menu_list = 2;
-}

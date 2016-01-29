@@ -17,4 +17,5 @@ message User_Info {
     int32 userhide = 11;
     Balv balv = 12;
     GodInfo god_data = 13;
+    int32 fans_num = 14;
 }

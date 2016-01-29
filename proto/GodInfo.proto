@@ -5,4 +5,5 @@ message GodInfo {
     string intro = 2;
     int32 type = 3;
     int64 fid = 4;
+    int32 followed = 5;
 }

@@ -17,4 +17,6 @@ message DataRes {
     PkModule pk_module = 6;
     CommonInteraction bless_module = 7;
     CommonInteraction candle_module = 8;
+    HotThread good_threads = 9;
+    int32 is_new_url = 10;
 }

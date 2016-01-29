@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GetSkin/DataRes.proto";
-
-message GetSkinResIdl {
-    DataRes data = 1;
-    Error error = 2;
-}

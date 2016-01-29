@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FrsPage/StarSchedule.proto";
+
+message ClientPlatform {
+    string schedule_cal = 1;
+    StarSchedule star_schedule = 2;
+}

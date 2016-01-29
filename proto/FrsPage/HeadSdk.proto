@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message HeadSdk {
+    string head_pic = 1;
+    string head_text = 2;
+    string sdk_name = 3;
+    string sdk_params = 4;
+}

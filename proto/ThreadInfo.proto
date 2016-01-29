@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "Abstract.proto";
 import "ActInfo.proto";
+import "AppCode.proto";
 import "Guess.proto";
 import "JNews.proto";
 import "Lbs.proto";
@@ -9,10 +10,12 @@ import "Media.proto";
 import "MediaNum.proto";
 import "PollInfo.proto";
 import "PostList.proto";
+import "TaskInfo.proto";
 import "Topic.proto";
 import "User.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
+import "YulePostActivity.proto";
 import "ZhiBoInfoTW.proto";
 
 message ThreadInfo {
@@ -47,7 +50,6 @@ message ThreadInfo {
     int32 is_livepost = 30;
     int32 show_commented = 31;
     string click_url = 32;
-    string video = 33;
     string video_swf = 34;
     string video_id = 36;
     string video_mobile_url = 37;
@@ -80,4 +82,9 @@ message ThreadInfo {
     VideoInfo video_info = 79;
     int32 push_end_time = 80;
     uint32 operator_flag = 82;
+    TaskInfo task_info = 83;
+    uint32 pic_num = 84;
+    int32 is_godthread_recommend = 85;
+    YulePostActivity yule_post_activity = 88;
+    AppCode app_code = 89;
 }

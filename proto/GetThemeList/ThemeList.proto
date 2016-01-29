@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message ThemeList {
-    string name = 1;
-    string icon = 2;
-    int64 last_update_time = 3;
-    string type = 4;
-}

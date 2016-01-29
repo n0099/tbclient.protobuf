@@ -7,4 +7,5 @@ message HotThread {
     string hot_title = 1;
     repeated ThreadInfo thread_list = 2;
     Page page = 3;
+    int32 is_new_url = 4;
 }

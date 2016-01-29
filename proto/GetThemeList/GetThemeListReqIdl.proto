@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetThemeList/DataReq.proto";
-
-message GetThemeListReqIdl {
-    DataReq data = 1;
-}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated ThreadInfo thread_list = 1;
+    int32 cur_page = 2;
+    int32 has_more = 3;
+    int32 thread_num = 4;
+}

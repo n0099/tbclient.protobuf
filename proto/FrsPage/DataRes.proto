@@ -8,6 +8,7 @@ import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
+import "FrsPage/HeadSdk.proto";
 import "FrsPage/Info.proto";
 import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
@@ -51,4 +52,5 @@ message DataRes {
     ThreadInfo store_card = 30;
     SdkTopicThread sdk_topic_thread = 31;
     string bawu_enter_url = 32;
+    HeadSdk head_sdk = 34;
 }

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "FoundNew/DataReq.proto";
-
-message FoundNewReqIdl {
-    DataReq data = 1;
-}

@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ShowData {
+    int32 show = 1;
+}

@@ -4,6 +4,7 @@ import "Anti.proto";
 import "PostInfoList.proto";
 import "Profile/TAInfo.proto";
 import "Profile/UserGodInfo.proto";
+import "UcCard.proto";
 import "User.proto";
 
 message DataRes {
@@ -12,4 +13,5 @@ message DataRes {
     TAInfo tainfo = 3;
     repeated PostInfoList post_list = 4;
     UserGodInfo user_god_info = 5;
+    UcCard uc_card = 6;
 }

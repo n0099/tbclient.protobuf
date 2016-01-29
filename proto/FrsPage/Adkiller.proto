@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FrsPage/AdkillerAd.proto";
+
+message Adkiller {
+    uint32 show_hint = 1;
+    uint32 show_ad = 2;
+    string hint_url = 3;
+    uint32 ad_left_num = 4;
+    repeated AdkillerAd ad_list = 5;
+}

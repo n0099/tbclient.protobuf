@@ -6,4 +6,5 @@ message SdkTopicThread {
     uint64 post_num = 3;
     uint64 zan_num = 4;
     uint64 tid = 5;
+    int32 need_topic = 6;
 }

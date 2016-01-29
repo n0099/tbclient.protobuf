@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "DefaultInfo.proto";
+import "OrderList.proto";
+
+message OrderData {
+    repeated OrderList order_list = 1;
+    int32 hasmore = 2;
+    DefaultInfo default_info = 3;
+}

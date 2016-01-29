@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    int64 task_id = 2;
+    int64 thread_id = 3;
+    int32 need_danmu = 4;
+    int32 back = 5;
+    int32 rn = 6;
+    int32 scr_w = 7;
+    int32 scr_h = 8;
+    double scr_dip = 9;
+    int32 q_type = 10;
+    int64 order_id = 11;
+    int32 need_taskinfo = 12;
+    int32 need_anti = 13;
+}

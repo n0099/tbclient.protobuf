@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message ThemeCarousel {
-    string pic_url = 1;
-    string active_url = 2;
-}

@@ -9,4 +9,6 @@ message VideoInfo {
     string thumbnail_url = 6;
     uint32 thumbnail_width = 7;
     uint32 thumbnail_height = 8;
+    int32 video_length = 9;
+    int32 play_count = 10;
 }

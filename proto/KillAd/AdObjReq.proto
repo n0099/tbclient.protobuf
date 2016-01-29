@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message AdObjReq {
+    uint64 forum_id = 1;
+    string page_name = 2;
+    uint32 page_num = 3;
+    string pos_name = 4;
+}

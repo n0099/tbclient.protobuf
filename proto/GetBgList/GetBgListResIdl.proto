@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GetBgList/DataRes.proto";
-
-message GetBgListResIdl {
-    DataRes data = 1;
-    Error error = 2;
-}

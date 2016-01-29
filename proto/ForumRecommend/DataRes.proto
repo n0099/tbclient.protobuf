@@ -19,4 +19,5 @@ message DataRes {
     repeated RecommendForumInfo recommend_forum_info = 10;
     HotSearch hot_search = 11;
     int32 redirect = 12;
+    repeated Banner new_banner_info = 13;
 }

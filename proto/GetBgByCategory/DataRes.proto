@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "GetBgByCategory/ThemeBgInMain.proto";
-import "ThemeRecommand.proto";
-
-message DataRes {
-    ThemeRecommand recommend = 1;
-    repeated ThemeBgInMain bgs = 2;
-}

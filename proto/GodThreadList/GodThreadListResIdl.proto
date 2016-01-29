@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GodThreadList/DataRes.proto";
+
+message GodThreadListResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

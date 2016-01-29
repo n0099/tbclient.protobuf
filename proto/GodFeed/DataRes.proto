@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message DataRes {
+    uint64 timeline = 2;
+    uint32 has_more = 3;
+    repeated ThreadInfo thread_list = 4;
+    uint32 pn = 5;
+    uint32 has_attention_god = 6;
+}

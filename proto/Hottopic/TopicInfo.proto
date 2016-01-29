@@ -7,4 +7,7 @@ message TopicInfo {
     uint64 total_post_num = 4;
     string head_photo_url = 5;
     string share_title = 6;
+    string share_pic = 7;
+    uint64 idx_num = 8;
+    string discuss_forum = 9;
 }

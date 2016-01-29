@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetBgList/DataReq.proto";
-
-message GetBgListReqIdl {
-    DataReq data = 1;
-}

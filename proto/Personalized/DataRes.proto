@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "BannerList.proto";
 import "Personalized/CardForum.proto";
 import "Personalized/CardTopic.proto";
 import "Personalized/Resource.proto";
@@ -16,4 +17,5 @@ message DataRes {
     uint32 sug_seconds = 6;
     repeated ThreadPersonalized thread_personalized = 7;
     int32 is_new_url = 8;
+    BannerList banner_list = 9;
 }

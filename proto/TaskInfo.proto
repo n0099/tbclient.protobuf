@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message TaskInfo {
+    int64 task_id = 1;
+    int64 thread_id = 2;
+    string bgimg = 3;
+    string thread_img = 4;
+    int64 start_time = 5;
+    int64 end_time = 6;
+    string thread_img_size = 7;
+    int64 forum_id = 8;
+    string forum_name = 9;
+}

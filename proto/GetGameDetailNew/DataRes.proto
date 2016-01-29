@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "GameInfo.proto";
 import "GetGameDetailNew/CodeInfo.proto";
+import "GetGameDetailNew/GiftPkgInfo.proto";
 import "GetGameDetailNew/RankInfo.proto";
 import "GetGameDetailNew/RelateGame.proto";
 import "RecommendForumInfo.proto";
@@ -15,4 +16,5 @@ message DataRes {
     repeated SimpleThreadInfo relate_thread = 5;
     RecommendForumInfo forum_info = 6;
     CodeInfo code_info = 7;
+    repeated GiftPkgInfo giftpkg_info = 8;
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "TwAnchorPKItem.proto";
+
+message T {
+    string describe = 1;
+    repeated TwAnchorPKItem pk_list = 2;
+}

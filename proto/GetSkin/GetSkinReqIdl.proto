@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetSkin/DataReq.proto";
-
-message GetSkinReqIdl {
-    DataReq data = 1;
-}

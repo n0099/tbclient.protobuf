@@ -14,4 +14,8 @@ message DataReq {
     int32 scr_h = 9;
     double scr_dip = 10;
     int32 q_type = 11;
+    string lastids = 12;
+    int32 issdk = 13;
+    string da_idfa = 14;
+    string platform = 15;
 }
