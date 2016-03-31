@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "VipCloseAd.proto";
+
+message DataRes {
+    VipCloseAd vip_close_ad = 1;
+}

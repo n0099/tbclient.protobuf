@@ -29,4 +29,5 @@ message ZhiBoInfoTW {
     uint32 freq_num = 19;
     uint32 copythread_remind = 20;
     uint32 is_copytwzhibo = 21;
+    string field_ex = 22;
 }

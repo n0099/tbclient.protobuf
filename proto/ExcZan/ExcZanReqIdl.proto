@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "ExcZan/DataReq.proto";
-
-message ExcZanReqIdl {
-    DataReq data = 1;
-}

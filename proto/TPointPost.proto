@@ -13,4 +13,5 @@ message TPointPost {
     repeated Timgs t_imgs = 6;
     DetailInfo detail_info = 7;
     string monitor_id = 8;
+    int32 hidden_day = 9;
 }

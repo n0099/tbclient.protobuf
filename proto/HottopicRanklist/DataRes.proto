@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "HottopicRanklist/TopicListModule.proto";
-
-message DataRes {
-    TopicListModule topic_bang = 1;
-    TopicListModule topic_manual = 2;
-}

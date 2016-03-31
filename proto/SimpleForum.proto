@@ -6,4 +6,5 @@ message SimpleForum {
     int32 is_exists = 3;
     string avatar = 4;
     uint32 is_liked = 5;
+    uint32 is_signed = 6;
 }

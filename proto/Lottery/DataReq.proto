@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    int64 user_id = 2;
+    string user_name = 3;
+    int64 forum_id = 4;
+    int64 thread_id = 5;
+    int32 from_type = 6;
+    int64 activity_id = 7;
+    int64 award_act_id = 8;
+    int64 component_id = 9;
+}

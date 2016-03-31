@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "Hottopic/GoodThread.proto";
-
-message CommonThread {
-    string module_name = 1;
-    repeated GoodThread thread_list = 2;
-}

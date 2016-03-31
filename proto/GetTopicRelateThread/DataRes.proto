@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Page.proto";
-import "ThreadInfo.proto";
-
-message DataRes {
-    repeated ThreadInfo thread_list = 1;
-    Page page = 2;
-}

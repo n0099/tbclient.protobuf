@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message DataRes {
-    repeated string remind_time = 1;
-}

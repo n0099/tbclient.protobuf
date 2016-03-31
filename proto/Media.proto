@@ -18,4 +18,5 @@ message Media {
     string origin_pic = 15;
     uint32 origin_size = 16;
     int64 post_id = 17;
+    string dynamic_pic = 18;
 }

@@ -9,10 +9,11 @@ import "MyGroupInfo.proto";
 import "NewParrScores.proto";
 import "NewUser.proto";
 import "NovelFansInfo.proto";
-import "PrivSets.proto";
+import "ThemeCardInUser.proto";
 import "TshowInfo.proto";
 import "UserPics.proto";
 import "UserVipInfo.proto";
+import "VipCloseAd.proto";
 import "VipShowInfo.proto";
 
 message User {
@@ -54,7 +55,6 @@ message User {
     int32 is_mem = 39;
     int32 bimg_end_time = 40;
     repeated UserPics user_pics = 44;
-    PrivSets priv_sets = 45;
     int32 is_friend = 46;
     repeated LikeForumInfo likeForum = 47;
     repeated MyGroupInfo groupList = 48;
@@ -68,4 +68,6 @@ message User {
     int32 heavy_user = 63;
     VipShowInfo vip_show_info = 64;
     repeated TshowInfo new_tshow_icon = 65;
+    ThemeCardInUser theme_card = 69;
+    VipCloseAd vip_close_ad = 70;
 }

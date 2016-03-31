@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetCartoonCategoryList/DataReq.proto";
+
+message GetCartoonCategoryListReqIdl {
+    DataReq data = 1;
+}

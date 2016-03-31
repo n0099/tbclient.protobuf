@@ -8,4 +8,5 @@ message Zan {
     int32 is_liked = 3;
     int32 last_time = 4;
     repeated int64 liker_id = 5;
+    int32 consent_type = 6;
 }

@@ -18,4 +18,9 @@ message DataReq {
     int32 issdk = 13;
     string da_idfa = 14;
     string platform = 15;
+    string sex_tag = 17;
+    string age_tag = 18;
+    uint32 need_age_module = 19;
+    repeated string interest_tag = 20;
+    uint32 tag_changed = 21;
 }

@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message Discount {
-    int32 recharge = 1;
-    int32 rebate = 2;
-}

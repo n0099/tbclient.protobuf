@@ -10,4 +10,5 @@ message TaskInfo {
     string thread_img_size = 7;
     int64 forum_id = 8;
     string forum_name = 9;
+    string obj_id = 10;
 }

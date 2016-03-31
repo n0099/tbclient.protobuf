@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CloseAd/DataRes.proto";
+import "Error.proto";
+
+message CloseAdResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

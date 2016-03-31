@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetTopicRelateThread/DataReq.proto";
-
-message GetTopicRelateThreadReqIdl {
-    DataReq data = 1;
-}

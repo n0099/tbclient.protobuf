@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "GraffitiRankItem.proto";
+
+message GraffitiRankListInfo {
+    int32 has_more = 1;
+    int32 total = 2;
+    repeated GraffitiRankItem list = 3;
+    int32 show_list_count = 4;
+    int32 quick_list_count = 5;
+    int32 has_state = 6;
+}

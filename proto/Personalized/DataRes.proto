@@ -1,10 +1,13 @@
 syntax = "proto3";
 
 import "BannerList.proto";
+import "Personalized/AgeSexModule.proto";
 import "Personalized/CardForum.proto";
+import "Personalized/CardGod.proto";
 import "Personalized/CardTopic.proto";
 import "Personalized/Resource.proto";
 import "Personalized/TagInfo.proto";
+import "Personalized/TagStruct.proto";
 import "Personalized/ThreadPersonalized.proto";
 import "ThreadInfo.proto";
 
@@ -18,4 +21,7 @@ message DataRes {
     repeated ThreadPersonalized thread_personalized = 7;
     int32 is_new_url = 8;
     BannerList banner_list = 9;
+    AgeSexModule age_sex = 10;
+    repeated TagStruct interestion = 11;
+    repeated CardGod card_god = 12;
 }

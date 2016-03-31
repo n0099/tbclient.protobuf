@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message ZanInfo {
-    uint64 zansum = 1;
-    bool is_zan = 2;
-}

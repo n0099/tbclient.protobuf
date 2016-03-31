@@ -44,4 +44,5 @@ message Post {
     PbPresent present = 28;
     PbPostZan post_zan = 30;
     int32 is_hot_post = 31;
+    repeated TailInfo ext_tails = 32;
 }

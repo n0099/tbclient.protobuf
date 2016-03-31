@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetMyShelf/BookInfo.proto";
+
+message DataRes {
+    repeated BookInfo followed_cartoon = 1;
+    int32 has_more = 2;
+}

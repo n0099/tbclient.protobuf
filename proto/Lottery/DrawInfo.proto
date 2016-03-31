@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message DrawInfo {
+    int32 draw_res_type = 1;
+    string link = 2;
+    string award_imgsrc = 3;
+    string bsize = 4;
+    string award_des = 5;
+    int64 award_id = 6;
+}

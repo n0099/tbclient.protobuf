@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Lottery/DataReq.proto";
+
+message LotteryReqIdl {
+    DataReq data = 1;
+}

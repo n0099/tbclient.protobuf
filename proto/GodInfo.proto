@@ -6,4 +6,6 @@ message GodInfo {
     int32 type = 3;
     int64 fid = 4;
     int32 followed = 5;
+    string recommend_reason = 6;
+    string forum_name = 7;
 }

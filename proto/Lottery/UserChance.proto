@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Lottery/ActRegular.proto";
+
+message UserChance {
+    int64 chance_count = 1;
+    int64 enable_get_chance = 2;
+    repeated ActRegular regular = 3;
+}

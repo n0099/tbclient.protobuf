@@ -36,8 +36,8 @@ message DataReq {
     string query_word = 32;
     int32 is_jumpfloor = 34;
     uint64 jid = 44;
-    uint64 fid = 45;
     string jfrom = 46;
     string yuelaou_locate = 47;
     string yuelaou_params = 48;
+    string obj_source = 50;
 }

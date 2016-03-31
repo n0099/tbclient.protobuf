@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message DataRes {
-    uint64 pk_id = 1;
-}

@@ -39,7 +39,6 @@ message NewGameInfo {
     int32 game_platform = 39;
     uint32 channel = 40;
     string version_ios = 44;
-    string inter_version_ios = 45;
     string subscript_color = 46;
     int32 category_id = 47;
     int32 status = 48;

@@ -5,4 +5,5 @@ message HeadSdk {
     string head_text = 2;
     string sdk_name = 3;
     string sdk_params = 4;
+    int32 head_type = 5;
 }

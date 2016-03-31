@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message CartoonBookInfo {
+    int64 cartoon_id = 1;
+    string cartoon_name = 2;
+    string cover_img = 3;
+}

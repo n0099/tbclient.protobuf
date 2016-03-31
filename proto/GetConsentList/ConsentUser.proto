@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message ConsentUser {
+    int64 user_id = 1;
+    string user_name = 2;
+    int64 author_id = 3;
+    string author_name = 4;
+    string portrait = 5;
+    int64 thread_id = 6;
+    uint64 post_id = 7;
+    int32 create_time = 8;
+    int64 gid = 9;
+    string author_name_show = 10;
+    string user_name_show = 11;
+}

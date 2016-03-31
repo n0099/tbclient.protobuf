@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetMyShelf/DataReq.proto";
+
+message GetMyShelfReqIdl {
+    DataReq data = 1;
+}

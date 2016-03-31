@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GetUserForumStore/DataRes.proto";
-
-message GetUserForumStoreResIdl {
-    DataRes data = 1;
-    Error error = 2;
-}

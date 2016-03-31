@@ -3,13 +3,17 @@ syntax = "proto3";
 import "Anti.proto";
 import "BannerList.proto";
 import "FineBannerPb.proto";
+import "GraffitiRankListInfo.proto";
 import "Lbs.proto";
 import "Page.proto";
+import "PbHotPost.proto";
 import "PbPage/AddPost.proto";
+import "PbPage/AppealInfo.proto";
 import "PbPage/NewsInfo.proto";
 import "PbPage/PostBanner.proto";
 import "Post.proto";
 import "RecommendThread.proto";
+import "SdkTopicThread.proto";
 import "SimpleForum.proto";
 import "ThreadInfo.proto";
 import "TwZhiBoAnti.proto";
@@ -34,4 +38,8 @@ message DataRes {
     repeated RecommendThread recommend_threads = 16;
     repeated FineBannerPb fine_banner = 17;
     TwZhiBoAnti twzhibo_anti = 18;
+    SdkTopicThread sdk_topic_thread = 19;
+    PbHotPost hot_post_list = 20;
+    GraffitiRankListInfo graffiti_rank_list_info = 21;
+    AppealInfo appeal_info = 22;
 }

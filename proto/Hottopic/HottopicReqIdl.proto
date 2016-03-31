@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Hottopic/DataReq.proto";
-
-message HottopicReqIdl {
-    DataReq data = 1;
-}

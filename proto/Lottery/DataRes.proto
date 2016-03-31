@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "Lottery/DrawInfo.proto";
+import "Lottery/UserChance.proto";
+
+message DataRes {
+    DrawInfo award_info = 1;
+    UserChance chance = 2;
+    int32 status = 3;
+    string status_msg = 4;
+}

@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message DataRes {
+    int32 enable_get_chance = 3;
+}

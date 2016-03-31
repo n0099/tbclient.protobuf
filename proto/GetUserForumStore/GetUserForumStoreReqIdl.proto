@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetUserForumStore/DataReq.proto";
-
-message GetUserForumStoreReqIdl {
-    DataReq data = 1;
-}

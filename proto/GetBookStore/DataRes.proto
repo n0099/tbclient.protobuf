@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetBookStore/Category.proto";
+import "GetBookStore/Shelf.proto";
+
+message DataRes {
+    repeated Shelf my_shelf = 1;
+    repeated Category cartoon_category = 2;
+}

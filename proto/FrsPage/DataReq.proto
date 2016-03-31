@@ -41,6 +41,5 @@ message DataReq {
     CommonReq common = 39;
     string lastids = 40;
     int32 category_id = 44;
-    string yuelaou_locate = 45;
     string yuelaou_params = 46;
 }

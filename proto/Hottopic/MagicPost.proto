@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "Hottopic/MagicPostList.proto";
-
-message MagicPost {
-    string magic_title = 1;
-    repeated MagicPostList mc_post_list = 2;
-}

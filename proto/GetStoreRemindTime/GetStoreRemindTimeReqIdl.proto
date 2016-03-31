@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetStoreRemindTime/DataReq.proto";
-
-message GetStoreRemindTimeReqIdl {
-    DataReq data = 1;
-}

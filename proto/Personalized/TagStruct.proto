@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message TagStruct {
+    string tag_name = 1;
+    uint32 selected = 3;
+}

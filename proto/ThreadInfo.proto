@@ -10,6 +10,7 @@ import "Media.proto";
 import "MediaNum.proto";
 import "PollInfo.proto";
 import "PostList.proto";
+import "TailInfo.proto";
 import "TaskInfo.proto";
 import "Topic.proto";
 import "User.proto";
@@ -57,7 +58,6 @@ message ThreadInfo {
     int32 is_bub = 39;
     int64 first_post_id = 40;
     repeated PostList post_list = 44;
-    int32 create_time = 45;
     int32 repost_num = 46;
     Topic topic = 47;
     int32 has_commented = 48;
@@ -87,4 +87,5 @@ message ThreadInfo {
     int32 is_godthread_recommend = 85;
     YulePostActivity yule_post_activity = 88;
     AppCode app_code = 89;
+    repeated TailInfo ext_tails = 90;
 }

@@ -5,4 +5,5 @@ message TopicInfo {
     string topic_name = 2;
     string desc = 3;
     uint32 is_hot = 4;
+    uint32 tag = 5;
 }
