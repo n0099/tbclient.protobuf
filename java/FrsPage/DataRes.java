@@ -1,5 +1,6 @@
 package tbclient.FrsPage;
 
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -25,6 +26,8 @@ public final class DataRes extends Message {
     public final Anti anti;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String bawu_enter_url;
+    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
+    public final List<ThreadInfo> card_shipin_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
@@ -43,6 +46,8 @@ public final class DataRes extends Message {
     public final List<AnchorInfo> forum_livegroup_list;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
+    @ProtoField(tag = 38, type = Message.Datatype.INT32)
+    public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
     @ProtoField(tag = 18)
@@ -59,6 +64,8 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
     public final Long logid;
+    @ProtoField(tag = 37)
+    public final NavTabInfo nav_tab_info;
     @ProtoField(tag = 25)
     public final Novel novel;
     @ProtoField(tag = 4)
@@ -103,6 +110,8 @@ public final class DataRes extends Message {
     public static final List<ZhiBoInfoTW> DEFAULT_TWZHIBO_INFO = Collections.emptyList();
     public static final Integer DEFAULT_TWZHIBO_POS = 0;
     public static final List<CategoryInfo> DEFAULT_CATEGORY_LIST = Collections.emptyList();
+    public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_FRS_TAB_DEFAULT = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -217,7 +226,19 @@ public final class DataRes extends Message {
             }
             this.client_platform = builder.client_platform;
             this.head_sdk = builder.head_sdk;
-            return;
+            if (builder.card_shipin_info == null) {
+                this.card_shipin_info = DEFAULT_CARD_SHIPIN_INFO;
+            } else {
+                this.card_shipin_info = immutableCopyOf(builder.card_shipin_info);
+            }
+            this.nav_tab_info = builder.nav_tab_info;
+            if (builder.frs_tab_default == null) {
+                this.frs_tab_default = DEFAULT_FRS_TAB_DEFAULT;
+                return;
+            } else {
+                this.frs_tab_default = builder.frs_tab_default;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -253,6 +274,9 @@ public final class DataRes extends Message {
         this.bawu_enter_url = builder.bawu_enter_url;
         this.client_platform = builder.client_platform;
         this.head_sdk = builder.head_sdk;
+        this.card_shipin_info = immutableCopyOf(builder.card_shipin_info);
+        this.nav_tab_info = builder.nav_tab_info;
+        this.frs_tab_default = builder.frs_tab_default;
     }
 
     /* loaded from: classes.dex */
@@ -260,6 +284,7 @@ public final class DataRes extends Message {
         public ActivityHead activityhead;
         public Anti anti;
         public String bawu_enter_url;
+        public List<ThreadInfo> card_shipin_info;
         public List<CategoryInfo> category_list;
         public ClientPlatform client_platform;
         public List<ColorEgg> color_egg;
@@ -269,6 +294,7 @@ public final class DataRes extends Message {
         public ForumInfo forum;
         public List<AnchorInfo> forum_livegroup_list;
         public StarInfo frs_star;
+        public Integer frs_tab_default;
         public List<FrsTabInfo> frs_tab_info;
         public GconAccount gcon_account;
         public Group group;
@@ -277,6 +303,7 @@ public final class DataRes extends Message {
         public Info info;
         public Integer is_new_url;
         public Long logid;
+        public NavTabInfo nav_tab_info;
         public Novel novel;
         public Page page;
         public PushThreadInfo push_thread_info;
@@ -332,6 +359,9 @@ public final class DataRes extends Message {
                 this.bawu_enter_url = dataRes.bawu_enter_url;
                 this.client_platform = dataRes.client_platform;
                 this.head_sdk = dataRes.head_sdk;
+                this.card_shipin_info = DataRes.copyOf(dataRes.card_shipin_info);
+                this.nav_tab_info = dataRes.nav_tab_info;
+                this.frs_tab_default = dataRes.frs_tab_default;
             }
         }
 

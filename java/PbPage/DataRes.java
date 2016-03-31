@@ -7,10 +7,13 @@ import java.util.List;
 import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.FineBannerPb;
+import tbclient.GraffitiRankListInfo;
 import tbclient.Lbs;
 import tbclient.Page;
+import tbclient.PbHotPost;
 import tbclient.Post;
 import tbclient.RecommendThread;
+import tbclient.SdkTopicThread;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
@@ -21,14 +24,20 @@ public final class DataRes extends Message {
     public final AddPost add_post;
     @ProtoField(tag = 4)
     public final Anti anti;
+    @ProtoField(tag = 22)
+    public final AppealInfo appeal_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<FineBannerPb> fine_banner;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
+    @ProtoField(tag = 21)
+    public final GraffitiRankListInfo graffiti_rank_list_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer has_floor;
+    @ProtoField(tag = 20)
+    public final PbHotPost hot_post_list;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(tag = 9)
@@ -43,6 +52,8 @@ public final class DataRes extends Message {
     public final List<Post> post_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<RecommendThread> recommend_threads;
+    @ProtoField(tag = 19)
+    public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
     @ProtoField(tag = 8)
@@ -119,6 +130,10 @@ public final class DataRes extends Message {
                 this.fine_banner = immutableCopyOf(builder.fine_banner);
             }
             this.twzhibo_anti = builder.twzhibo_anti;
+            this.sdk_topic_thread = builder.sdk_topic_thread;
+            this.hot_post_list = builder.hot_post_list;
+            this.graffiti_rank_list_info = builder.graffiti_rank_list_info;
+            this.appeal_info = builder.appeal_info;
             return;
         }
         this.user = builder.user;
@@ -139,16 +154,23 @@ public final class DataRes extends Message {
         this.recommend_threads = immutableCopyOf(builder.recommend_threads);
         this.fine_banner = immutableCopyOf(builder.fine_banner);
         this.twzhibo_anti = builder.twzhibo_anti;
+        this.sdk_topic_thread = builder.sdk_topic_thread;
+        this.hot_post_list = builder.hot_post_list;
+        this.graffiti_rank_list_info = builder.graffiti_rank_list_info;
+        this.appeal_info = builder.appeal_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
         public Anti anti;
+        public AppealInfo appeal_info;
         public BannerList banner_list;
         public List<FineBannerPb> fine_banner;
         public SimpleForum forum;
+        public GraffitiRankListInfo graffiti_rank_list_info;
         public Integer has_floor;
+        public PbHotPost hot_post_list;
         public Integer is_new_url;
         public Lbs location;
         public NewsInfo news_info;
@@ -156,6 +178,7 @@ public final class DataRes extends Message {
         public List<PostBanner> post_banner;
         public List<Post> post_list;
         public List<RecommendThread> recommend_threads;
+        public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
         public ThreadInfo thread;
         public TwZhiBoAnti twzhibo_anti;
@@ -186,6 +209,10 @@ public final class DataRes extends Message {
                 this.recommend_threads = DataRes.copyOf(dataRes.recommend_threads);
                 this.fine_banner = DataRes.copyOf(dataRes.fine_banner);
                 this.twzhibo_anti = dataRes.twzhibo_anti;
+                this.sdk_topic_thread = dataRes.sdk_topic_thread;
+                this.hot_post_list = dataRes.hot_post_list;
+                this.graffiti_rank_list_info = dataRes.graffiti_rank_list_info;
+                this.appeal_info = dataRes.appeal_info;
             }
         }
 

@@ -4,15 +4,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class TwZhiBoUser extends Message {
-    public static final String DEFAULT_ANCHOR_ICON = "";
-    public static final Integer DEFAULT_ANCHOR_LEVEL = 0;
-    public static final Integer DEFAULT_IN_BLACK_LIST = 0;
-    @ProtoField(tag = 3, type = Message.Datatype.STRING)
-    public final String anchor_icon;
+    public static final String DEFAULT_FIELD_EX = "";
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer anchor_level;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String field_ex;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer in_black_list;
+    public static final Integer DEFAULT_ANCHOR_LEVEL = 0;
+    public static final Integer DEFAULT_IN_BLACK_LIST = 0;
 
     /* synthetic */ TwZhiBoUser(Builder builder, boolean z, TwZhiBoUser twZhiBoUser) {
         this(builder, z);
@@ -31,23 +31,23 @@ public final class TwZhiBoUser extends Message {
             } else {
                 this.in_black_list = builder.in_black_list;
             }
-            if (builder.anchor_icon == null) {
-                this.anchor_icon = "";
+            if (builder.field_ex == null) {
+                this.field_ex = "";
                 return;
             } else {
-                this.anchor_icon = builder.anchor_icon;
+                this.field_ex = builder.field_ex;
                 return;
             }
         }
         this.anchor_level = builder.anchor_level;
         this.in_black_list = builder.in_black_list;
-        this.anchor_icon = builder.anchor_icon;
+        this.field_ex = builder.field_ex;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<TwZhiBoUser> {
-        public String anchor_icon;
         public Integer anchor_level;
+        public String field_ex;
         public Integer in_black_list;
 
         public Builder() {
@@ -58,7 +58,7 @@ public final class TwZhiBoUser extends Message {
             if (twZhiBoUser != null) {
                 this.anchor_level = twZhiBoUser.anchor_level;
                 this.in_black_list = twZhiBoUser.in_black_list;
-                this.anchor_icon = twZhiBoUser.anchor_icon;
+                this.field_ex = twZhiBoUser.field_ex;
             }
         }
 

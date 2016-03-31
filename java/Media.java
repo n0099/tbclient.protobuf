@@ -6,6 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class Media extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_BSIZE = "";
+    public static final String DEFAULT_DYNAMIC_PIC = "";
     public static final String DEFAULT_ORIGIN_PIC = "";
     public static final String DEFAULT_SMALL_PIC = "";
     public static final String DEFAULT_SRC_PIC = "";
@@ -20,6 +21,8 @@ public final class Media extends Message {
     public final String bsize;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer during_time;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String dynamic_pic;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer e_type;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
@@ -145,9 +148,14 @@ public final class Media extends Message {
             }
             if (builder.post_id == null) {
                 this.post_id = DEFAULT_POST_ID;
-                return;
             } else {
                 this.post_id = builder.post_id;
+            }
+            if (builder.dynamic_pic == null) {
+                this.dynamic_pic = "";
+                return;
+            } else {
+                this.dynamic_pic = builder.dynamic_pic;
                 return;
             }
         }
@@ -168,6 +176,7 @@ public final class Media extends Message {
         this.origin_pic = builder.origin_pic;
         this.origin_size = builder.origin_size;
         this.post_id = builder.post_id;
+        this.dynamic_pic = builder.dynamic_pic;
     }
 
     /* loaded from: classes.dex */
@@ -175,6 +184,7 @@ public final class Media extends Message {
         public String big_pic;
         public String bsize;
         public Integer during_time;
+        public String dynamic_pic;
         public Integer e_type;
         public Integer height;
         public String origin_pic;
@@ -213,6 +223,7 @@ public final class Media extends Message {
                 this.origin_pic = media.origin_pic;
                 this.origin_size = media.origin_size;
                 this.post_id = media.post_id;
+                this.dynamic_pic = media.dynamic_pic;
             }
         }
 

@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class Zan extends Message {
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer consent_type;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer is_liked;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -21,6 +23,7 @@ public final class Zan extends Message {
     public static final Integer DEFAULT_IS_LIKED = 0;
     public static final Integer DEFAULT_LAST_TIME = 0;
     public static final List<Long> DEFAULT_LIKER_ID = Collections.emptyList();
+    public static final Integer DEFAULT_CONSENT_TYPE = 0;
 
     /* synthetic */ Zan(Builder builder, boolean z, Zan zan) {
         this(builder, z);
@@ -51,9 +54,14 @@ public final class Zan extends Message {
             }
             if (builder.liker_id == null) {
                 this.liker_id = DEFAULT_LIKER_ID;
-                return;
             } else {
                 this.liker_id = immutableCopyOf(builder.liker_id);
+            }
+            if (builder.consent_type == null) {
+                this.consent_type = DEFAULT_CONSENT_TYPE;
+                return;
+            } else {
+                this.consent_type = builder.consent_type;
                 return;
             }
         }
@@ -62,10 +70,12 @@ public final class Zan extends Message {
         this.is_liked = builder.is_liked;
         this.last_time = builder.last_time;
         this.liker_id = immutableCopyOf(builder.liker_id);
+        this.consent_type = builder.consent_type;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<Zan> {
+        public Integer consent_type;
         public Integer is_liked;
         public Integer last_time;
         public List<Long> liker_id;
@@ -83,6 +93,7 @@ public final class Zan extends Message {
                 this.is_liked = zan.is_liked;
                 this.last_time = zan.last_time;
                 this.liker_id = Zan.copyOf(zan.liker_id);
+                this.consent_type = zan.consent_type;
             }
         }
 

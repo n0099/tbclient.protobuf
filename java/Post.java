@@ -28,6 +28,8 @@ public final class Post extends Message {
     public final String bimg_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<PbContent> content;
+    @ProtoField(label = Message.Label.REPEATED, tag = 32)
+    public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -88,6 +90,7 @@ public final class Post extends Message {
     public static final Integer DEFAULT_ADD_POST_NUMBER = 0;
     public static final Integer DEFAULT_STORECOUNT = 0;
     public static final Integer DEFAULT_IS_HOT_POST = 0;
+    public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
 
     /* synthetic */ Post(Builder builder, boolean z, Post post) {
         this(builder, z);
@@ -200,9 +203,14 @@ public final class Post extends Message {
             this.post_zan = builder.post_zan;
             if (builder.is_hot_post == null) {
                 this.is_hot_post = DEFAULT_IS_HOT_POST;
-                return;
             } else {
                 this.is_hot_post = builder.is_hot_post;
+            }
+            if (builder.ext_tails == null) {
+                this.ext_tails = DEFAULT_EXT_TAILS;
+                return;
+            } else {
+                this.ext_tails = immutableCopyOf(builder.ext_tails);
                 return;
             }
         }
@@ -237,6 +245,7 @@ public final class Post extends Message {
         this.video_info = builder.video_info;
         this.post_zan = builder.post_zan;
         this.is_hot_post = builder.is_hot_post;
+        this.ext_tails = immutableCopyOf(builder.ext_tails);
     }
 
     /* loaded from: classes.dex */
@@ -249,6 +258,7 @@ public final class Post extends Message {
         public Long author_id;
         public String bimg_url;
         public List<PbContent> content;
+        public List<TailInfo> ext_tails;
         public Integer floor;
         public Long id;
         public String ios_bimg_format;
@@ -310,6 +320,7 @@ public final class Post extends Message {
                 this.video_info = post.video_info;
                 this.post_zan = post.post_zan;
                 this.is_hot_post = post.is_hot_post;
+                this.ext_tails = Post.copyOf(post.ext_tails);
             }
         }
 

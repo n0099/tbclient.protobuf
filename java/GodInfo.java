@@ -4,15 +4,21 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class GodInfo extends Message {
+    public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_INTRO = "";
+    public static final String DEFAULT_RECOMMEND_REASON = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer followed;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String forum_name;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String intro;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String recommend_reason;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer type;
     public static final Long DEFAULT_ID = 0L;
@@ -49,9 +55,19 @@ public final class GodInfo extends Message {
             }
             if (builder.followed == null) {
                 this.followed = DEFAULT_FOLLOWED;
-                return;
             } else {
                 this.followed = builder.followed;
+            }
+            if (builder.recommend_reason == null) {
+                this.recommend_reason = "";
+            } else {
+                this.recommend_reason = builder.recommend_reason;
+            }
+            if (builder.forum_name == null) {
+                this.forum_name = "";
+                return;
+            } else {
+                this.forum_name = builder.forum_name;
                 return;
             }
         }
@@ -60,14 +76,18 @@ public final class GodInfo extends Message {
         this.type = builder.type;
         this.fid = builder.fid;
         this.followed = builder.followed;
+        this.recommend_reason = builder.recommend_reason;
+        this.forum_name = builder.forum_name;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<GodInfo> {
         public Long fid;
         public Integer followed;
+        public String forum_name;
         public Long id;
         public String intro;
+        public String recommend_reason;
         public Integer type;
 
         public Builder() {
@@ -81,6 +101,8 @@ public final class GodInfo extends Message {
                 this.type = godInfo.type;
                 this.fid = godInfo.fid;
                 this.followed = godInfo.followed;
+                this.recommend_reason = godInfo.recommend_reason;
+                this.forum_name = godInfo.forum_name;
             }
         }
 

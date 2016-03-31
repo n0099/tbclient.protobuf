@@ -12,6 +12,8 @@ public final class TPointPost extends Message {
     public final List<ActBtn> act_btn;
     @ProtoField(tag = 7)
     public final DetailInfo detail_info;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer hidden_day;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer is_tuiguang;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -29,6 +31,7 @@ public final class TPointPost extends Message {
     public static final Integer DEFAULT_TEMPLATE_TYPE = 0;
     public static final List<ActBtn> DEFAULT_ACT_BTN = Collections.emptyList();
     public static final List<Timgs> DEFAULT_T_IMGS = Collections.emptyList();
+    public static final Integer DEFAULT_HIDDEN_DAY = 0;
 
     /* synthetic */ TPointPost(Builder builder, boolean z, TPointPost tPointPost) {
         this(builder, z);
@@ -70,9 +73,14 @@ public final class TPointPost extends Message {
             this.detail_info = builder.detail_info;
             if (builder.monitor_id == null) {
                 this.monitor_id = "";
-                return;
             } else {
                 this.monitor_id = builder.monitor_id;
+            }
+            if (builder.hidden_day == null) {
+                this.hidden_day = DEFAULT_HIDDEN_DAY;
+                return;
+            } else {
+                this.hidden_day = builder.hidden_day;
                 return;
             }
         }
@@ -84,12 +92,14 @@ public final class TPointPost extends Message {
         this.t_imgs = immutableCopyOf(builder.t_imgs);
         this.detail_info = builder.detail_info;
         this.monitor_id = builder.monitor_id;
+        this.hidden_day = builder.hidden_day;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<TPointPost> {
         public List<ActBtn> act_btn;
         public DetailInfo detail_info;
+        public Integer hidden_day;
         public Integer is_tuiguang;
         public String monitor_id;
         public String position;
@@ -111,6 +121,7 @@ public final class TPointPost extends Message {
                 this.t_imgs = TPointPost.copyOf(tPointPost.t_imgs);
                 this.detail_info = tPointPost.detail_info;
                 this.monitor_id = tPointPost.monitor_id;
+                this.hidden_day = tPointPost.hidden_day;
             }
         }
 

@@ -6,12 +6,15 @@ import com.squareup.wire.ProtoField;
 public final class HeadSdk extends Message {
     public static final String DEFAULT_HEAD_PIC = "";
     public static final String DEFAULT_HEAD_TEXT = "";
+    public static final Integer DEFAULT_HEAD_TYPE = 0;
     public static final String DEFAULT_SDK_NAME = "";
     public static final String DEFAULT_SDK_PARAMS = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String head_pic;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String head_text;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer head_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String sdk_name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -41,9 +44,14 @@ public final class HeadSdk extends Message {
             }
             if (builder.sdk_params == null) {
                 this.sdk_params = "";
-                return;
             } else {
                 this.sdk_params = builder.sdk_params;
+            }
+            if (builder.head_type == null) {
+                this.head_type = DEFAULT_HEAD_TYPE;
+                return;
+            } else {
+                this.head_type = builder.head_type;
                 return;
             }
         }
@@ -51,12 +59,14 @@ public final class HeadSdk extends Message {
         this.head_text = builder.head_text;
         this.sdk_name = builder.sdk_name;
         this.sdk_params = builder.sdk_params;
+        this.head_type = builder.head_type;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<HeadSdk> {
         public String head_pic;
         public String head_text;
+        public Integer head_type;
         public String sdk_name;
         public String sdk_params;
 
@@ -70,6 +80,7 @@ public final class HeadSdk extends Message {
                 this.head_text = headSdk.head_text;
                 this.sdk_name = headSdk.sdk_name;
                 this.sdk_params = headSdk.sdk_params;
+                this.head_type = headSdk.head_type;
             }
         }
 

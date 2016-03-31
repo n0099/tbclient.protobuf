@@ -8,12 +8,18 @@ import tbclient.BannerList;
 import tbclient.ThreadInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    @ProtoField(tag = 10)
+    public final AgeSexModule age_sex;
     @ProtoField(tag = 9)
     public final BannerList banner_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<CardForum> card_forum;
+    @ProtoField(label = Message.Label.REPEATED, tag = 12)
+    public final List<CardGod> card_god;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<CardTopic> card_topic;
+    @ProtoField(label = Message.Label.REPEATED, tag = 11)
+    public final List<TagStruct> interestion;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
@@ -34,6 +40,8 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SUG_SECONDS = 0;
     public static final List<ThreadPersonalized> DEFAULT_THREAD_PERSONALIZED = Collections.emptyList();
     public static final Integer DEFAULT_IS_NEW_URL = 0;
+    public static final List<TagStruct> DEFAULT_INTERESTION = Collections.emptyList();
+    public static final List<CardGod> DEFAULT_CARD_GOD = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -83,7 +91,19 @@ public final class DataRes extends Message {
                 this.is_new_url = builder.is_new_url;
             }
             this.banner_list = builder.banner_list;
-            return;
+            this.age_sex = builder.age_sex;
+            if (builder.interestion == null) {
+                this.interestion = DEFAULT_INTERESTION;
+            } else {
+                this.interestion = immutableCopyOf(builder.interestion);
+            }
+            if (builder.card_god == null) {
+                this.card_god = DEFAULT_CARD_GOD;
+                return;
+            } else {
+                this.card_god = immutableCopyOf(builder.card_god);
+                return;
+            }
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
         this.thread_list = immutableCopyOf(builder.thread_list);
@@ -94,13 +114,19 @@ public final class DataRes extends Message {
         this.thread_personalized = immutableCopyOf(builder.thread_personalized);
         this.is_new_url = builder.is_new_url;
         this.banner_list = builder.banner_list;
+        this.age_sex = builder.age_sex;
+        this.interestion = immutableCopyOf(builder.interestion);
+        this.card_god = immutableCopyOf(builder.card_god);
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public AgeSexModule age_sex;
         public BannerList banner_list;
         public List<CardForum> card_forum;
+        public List<CardGod> card_god;
         public List<CardTopic> card_topic;
+        public List<TagStruct> interestion;
         public Integer is_new_url;
         public List<Resource> resource_list;
         public Integer sug_seconds;
@@ -123,6 +149,9 @@ public final class DataRes extends Message {
                 this.thread_personalized = DataRes.copyOf(dataRes.thread_personalized);
                 this.is_new_url = dataRes.is_new_url;
                 this.banner_list = dataRes.banner_list;
+                this.age_sex = dataRes.age_sex;
+                this.interestion = DataRes.copyOf(dataRes.interestion);
+                this.card_god = DataRes.copyOf(dataRes.card_god);
             }
         }
 

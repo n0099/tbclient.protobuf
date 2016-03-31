@@ -135,7 +135,7 @@ public final class User extends Message {
     public final String portraith;
     @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = 45)
+    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
     public final PrivSets priv_sets;
     @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeOffLineLocationFail)
     public final List<TwAnchorProfitItem> profit_list;
@@ -145,6 +145,8 @@ public final class User extends Message {
     public final Integer sex;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String tb_age;
+    @ProtoField(tag = 69)
+    public final ThemeCardInUser theme_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<TshowInfo> tshow_icon;
     @ProtoField(tag = BDLocation.TypeOffLineLocation)
@@ -159,6 +161,8 @@ public final class User extends Message {
     public final Integer userhide;
     @ProtoField(tag = 61)
     public final UserVipInfo vipInfo;
+    @ProtoField(tag = 70)
+    public final VipCloseAd vip_close_ad;
     @ProtoField(tag = 64)
     public final VipShowInfo vip_show_info;
     public static final Integer DEFAULT_IS_LOGIN = 0;
@@ -507,6 +511,8 @@ public final class User extends Message {
                 this.profit_list = immutableCopyOf(builder.profit_list);
             }
             this.consume_info = builder.consume_info;
+            this.theme_card = builder.theme_card;
+            this.vip_close_ad = builder.vip_close_ad;
             return;
         }
         this.is_login = builder.is_login;
@@ -577,6 +583,8 @@ public final class User extends Message {
         this.tw_anchor_info = builder.tw_anchor_info;
         this.profit_list = immutableCopyOf(builder.profit_list);
         this.consume_info = builder.consume_info;
+        this.theme_card = builder.theme_card;
+        this.vip_close_ad = builder.vip_close_ad;
     }
 
     /* loaded from: classes.dex */
@@ -641,6 +649,7 @@ public final class User extends Message {
         public String rank;
         public Integer sex;
         public String tb_age;
+        public ThemeCardInUser theme_card;
         public List<TshowInfo> tshow_icon;
         public TwZhiBoUser tw_anchor_info;
         public Integer type;
@@ -648,6 +657,7 @@ public final class User extends Message {
         public Integer user_type;
         public Integer userhide;
         public UserVipInfo vipInfo;
+        public VipCloseAd vip_close_ad;
         public VipShowInfo vip_show_info;
 
         public Builder() {
@@ -724,6 +734,8 @@ public final class User extends Message {
                 this.tw_anchor_info = user.tw_anchor_info;
                 this.profit_list = User.copyOf(user.profit_list);
                 this.consume_info = user.consume_info;
+                this.theme_card = user.theme_card;
+                this.vip_close_ad = user.vip_close_ad;
             }
         }
 

@@ -39,6 +39,8 @@ public final class ThreadInfo extends Message {
     public final User author;
     @ProtoField(tag = a0.z, type = Message.Datatype.INT64)
     public final Long author_id;
+    @ProtoField(tag = a0.f39try)
+    public final CartoonThread cartoon_info;
     @ProtoField(tag = 73, type = Message.Datatype.STRING)
     public final String category_name;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
@@ -49,10 +51,12 @@ public final class ThreadInfo extends Message {
     public final Integer collect_status;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer comment_num;
-    @ProtoField(tag = 45, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.INT32)
     public final Integer create_time;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
+    @ProtoField(label = Message.Label.REPEATED, tag = 90)
+    public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 40, type = Message.Datatype.INT64)
@@ -151,6 +155,8 @@ public final class ThreadInfo extends Message {
     public final Integer post_num;
     @ProtoField(tag = 80, type = Message.Datatype.INT32)
     public final Integer push_end_time;
+    @ProtoField(tag = a0.v)
+    public final PushStatus push_status;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
@@ -253,6 +259,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_OPERATOR_FLAG = 0;
     public static final Integer DEFAULT_PIC_NUM = 0;
     public static final Integer DEFAULT_IS_GODTHREAD_RECOMMEND = 0;
+    public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -631,6 +638,13 @@ public final class ThreadInfo extends Message {
             }
             this.yule_post_activity = builder.yule_post_activity;
             this.app_code = builder.app_code;
+            if (builder.ext_tails == null) {
+                this.ext_tails = DEFAULT_EXT_TAILS;
+            } else {
+                this.ext_tails = immutableCopyOf(builder.ext_tails);
+            }
+            this.push_status = builder.push_status;
+            this.cartoon_info = builder.cartoon_info;
             return;
         }
         this.id = builder.id;
@@ -719,6 +733,9 @@ public final class ThreadInfo extends Message {
         this.is_godthread_recommend = builder.is_godthread_recommend;
         this.yule_post_activity = builder.yule_post_activity;
         this.app_code = builder.app_code;
+        this.ext_tails = immutableCopyOf(builder.ext_tails);
+        this.push_status = builder.push_status;
+        this.cartoon_info = builder.cartoon_info;
     }
 
     /* loaded from: classes.dex */
@@ -729,6 +746,7 @@ public final class ThreadInfo extends Message {
         public AppCode app_code;
         public User author;
         public Long author_id;
+        public CartoonThread cartoon_info;
         public String category_name;
         public String click_url;
         public String collect_mark_pid;
@@ -736,6 +754,7 @@ public final class ThreadInfo extends Message {
         public Integer comment_num;
         public Integer create_time;
         public String ecom;
+        public List<TailInfo> ext_tails;
         public Long fid;
         public Long first_post_id;
         public String fname;
@@ -785,6 +804,7 @@ public final class ThreadInfo extends Message {
         public List<PostList> post_list;
         public Integer post_num;
         public Integer push_end_time;
+        public PushStatus push_status;
         public Integer reply_num;
         public Integer repost_num;
         public Integer show_commented;
@@ -902,6 +922,9 @@ public final class ThreadInfo extends Message {
                 this.is_godthread_recommend = threadInfo.is_godthread_recommend;
                 this.yule_post_activity = threadInfo.yule_post_activity;
                 this.app_code = threadInfo.app_code;
+                this.ext_tails = ThreadInfo.copyOf(threadInfo.ext_tails);
+                this.push_status = threadInfo.push_status;
+                this.cartoon_info = threadInfo.cartoon_info;
             }
         }
 

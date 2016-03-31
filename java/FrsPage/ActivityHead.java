@@ -9,12 +9,15 @@ public final class ActivityHead extends Message {
     public static final String DEFAULT_ACTIVITY_TITLE = "";
     public static final Integer DEFAULT_ACTIVITY_TYPE = 0;
     public static final List<HeadImgs> DEFAULT_HEAD_IMGS = Collections.emptyList();
+    public static final String DEFAULT_OBJ_ID = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String activity_title;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer activity_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<HeadImgs> head_imgs;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String obj_id;
     @ProtoField(tag = 4)
     public final Size top_size;
 
@@ -41,12 +44,19 @@ public final class ActivityHead extends Message {
                 this.head_imgs = immutableCopyOf(builder.head_imgs);
             }
             this.top_size = builder.top_size;
-            return;
+            if (builder.obj_id == null) {
+                this.obj_id = "";
+                return;
+            } else {
+                this.obj_id = builder.obj_id;
+                return;
+            }
         }
         this.activity_type = builder.activity_type;
         this.activity_title = builder.activity_title;
         this.head_imgs = immutableCopyOf(builder.head_imgs);
         this.top_size = builder.top_size;
+        this.obj_id = builder.obj_id;
     }
 
     /* loaded from: classes.dex */
@@ -54,6 +64,7 @@ public final class ActivityHead extends Message {
         public String activity_title;
         public Integer activity_type;
         public List<HeadImgs> head_imgs;
+        public String obj_id;
         public Size top_size;
 
         public Builder() {
@@ -66,6 +77,7 @@ public final class ActivityHead extends Message {
                 this.activity_title = activityHead.activity_title;
                 this.head_imgs = ActivityHead.copyOf(activityHead.head_imgs);
                 this.top_size = activityHead.top_size;
+                this.obj_id = activityHead.obj_id;
             }
         }
 

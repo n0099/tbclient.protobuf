@@ -111,7 +111,7 @@ public final class DataReq extends Message {
     public final Integer with_group;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer withcal;
-    @ProtoField(tag = 45, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.STRING)
     public final String yuelaou_locate;
     @ProtoField(tag = 46, type = Message.Datatype.STRING)
     public final String yuelaou_params;

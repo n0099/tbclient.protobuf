@@ -131,7 +131,7 @@ public final class ForumInfo extends Message {
     public final TopNotice top_notice;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer user_level;
-    @ProtoField(tag = 45)
+    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
     public final WorldCup worldcupinfo;
     @ProtoField(tag = a0.m)
     public final Yule yule;

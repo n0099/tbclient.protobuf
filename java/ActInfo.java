@@ -4,6 +4,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class ActInfo extends Message {
+    public static final String DEFAULT_BANNER_IMG = "";
+    public static final String DEFAULT_BANNER_IMG_SIZE = "";
     public static final String DEFAULT_URL = "";
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer activity_id;
@@ -11,12 +13,22 @@ public final class ActInfo extends Message {
     public final Integer activity_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer award_act_id;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String banner_img;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String banner_img_size;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer begin_time;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer component_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer end_time;
+    @ProtoField(tag = 10, type = Message.Datatype.BOOL)
+    public final Boolean is_senior;
+    @ProtoField(tag = 13)
+    public final SeniorLottery lottery_senior;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer show_total_num;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer status;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -31,6 +43,8 @@ public final class ActInfo extends Message {
     public static final Integer DEFAULT_ACTIVITY_ID = 0;
     public static final Integer DEFAULT_AWARD_ACT_ID = 0;
     public static final Integer DEFAULT_COMPONENT_ID = 0;
+    public static final Boolean DEFAULT_IS_SENIOR = false;
+    public static final Integer DEFAULT_SHOW_TOTAL_NUM = 0;
 
     /* synthetic */ ActInfo(Builder builder, boolean z, ActInfo actInfo) {
         this(builder, z);
@@ -81,9 +95,30 @@ public final class ActInfo extends Message {
             }
             if (builder.component_id == null) {
                 this.component_id = DEFAULT_COMPONENT_ID;
-                return;
             } else {
                 this.component_id = builder.component_id;
+            }
+            if (builder.is_senior == null) {
+                this.is_senior = DEFAULT_IS_SENIOR;
+            } else {
+                this.is_senior = builder.is_senior;
+            }
+            if (builder.banner_img == null) {
+                this.banner_img = "";
+            } else {
+                this.banner_img = builder.banner_img;
+            }
+            if (builder.banner_img_size == null) {
+                this.banner_img_size = "";
+            } else {
+                this.banner_img_size = builder.banner_img_size;
+            }
+            this.lottery_senior = builder.lottery_senior;
+            if (builder.show_total_num == null) {
+                this.show_total_num = DEFAULT_SHOW_TOTAL_NUM;
+                return;
+            } else {
+                this.show_total_num = builder.show_total_num;
                 return;
             }
         }
@@ -96,6 +131,11 @@ public final class ActInfo extends Message {
         this.activity_id = builder.activity_id;
         this.award_act_id = builder.award_act_id;
         this.component_id = builder.component_id;
+        this.is_senior = builder.is_senior;
+        this.banner_img = builder.banner_img;
+        this.banner_img_size = builder.banner_img_size;
+        this.lottery_senior = builder.lottery_senior;
+        this.show_total_num = builder.show_total_num;
     }
 
     /* loaded from: classes.dex */
@@ -103,9 +143,14 @@ public final class ActInfo extends Message {
         public Integer activity_id;
         public Integer activity_type;
         public Integer award_act_id;
+        public String banner_img;
+        public String banner_img_size;
         public Integer begin_time;
         public Integer component_id;
         public Integer end_time;
+        public Boolean is_senior;
+        public SeniorLottery lottery_senior;
+        public Integer show_total_num;
         public Integer status;
         public Integer total_num;
         public String url;
@@ -125,6 +170,11 @@ public final class ActInfo extends Message {
                 this.activity_id = actInfo.activity_id;
                 this.award_act_id = actInfo.award_act_id;
                 this.component_id = actInfo.component_id;
+                this.is_senior = actInfo.is_senior;
+                this.banner_img = actInfo.banner_img;
+                this.banner_img_size = actInfo.banner_img_size;
+                this.lottery_senior = actInfo.lottery_senior;
+                this.show_total_num = actInfo.show_total_num;
             }
         }
 

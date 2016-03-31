@@ -5,8 +5,11 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_IS_MUTE = "";
+    public static final String DEFAULT_MUTE_CONFIRM = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String is_mute;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String mute_confirm;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -17,18 +20,25 @@ public final class DataRes extends Message {
         if (z) {
             if (builder.is_mute == null) {
                 this.is_mute = "";
-                return;
             } else {
                 this.is_mute = builder.is_mute;
+            }
+            if (builder.mute_confirm == null) {
+                this.mute_confirm = "";
+                return;
+            } else {
+                this.mute_confirm = builder.mute_confirm;
                 return;
             }
         }
         this.is_mute = builder.is_mute;
+        this.mute_confirm = builder.mute_confirm;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String is_mute;
+        public String mute_confirm;
 
         public Builder() {
         }
@@ -37,6 +47,7 @@ public final class DataRes extends Message {
             super(dataRes);
             if (dataRes != null) {
                 this.is_mute = dataRes.is_mute;
+                this.mute_confirm = dataRes.mute_confirm;
             }
         }
 

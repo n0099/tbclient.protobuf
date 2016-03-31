@@ -7,6 +7,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class ZhiBoInfoTW extends Message {
     public static final String DEFAULT_CONTENT = "";
+    public static final String DEFAULT_FIELD_EX = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_LIVECOVER_SRC = "";
     public static final String DEFAULT_LIVECOVER_SRC_BSIZE = "";
@@ -16,6 +17,8 @@ public final class ZhiBoInfoTW extends Message {
     public final String content;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer copythread_remind;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String field_ex;
     @ProtoField(tag = 8, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -154,9 +157,14 @@ public final class ZhiBoInfoTW extends Message {
             }
             if (builder.is_copytwzhibo == null) {
                 this.is_copytwzhibo = DEFAULT_IS_COPYTWZHIBO;
-                return;
             } else {
                 this.is_copytwzhibo = builder.is_copytwzhibo;
+            }
+            if (builder.field_ex == null) {
+                this.field_ex = "";
+                return;
+            } else {
+                this.field_ex = builder.field_ex;
                 return;
             }
         }
@@ -181,12 +189,14 @@ public final class ZhiBoInfoTW extends Message {
         this.freq_num = builder.freq_num;
         this.copythread_remind = builder.copythread_remind;
         this.is_copytwzhibo = builder.is_copytwzhibo;
+        this.field_ex = builder.field_ex;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ZhiBoInfoTW> {
         public String content;
         public Integer copythread_remind;
+        public String field_ex;
         public Long forum_id;
         public String forum_name;
         public Integer freq_num;
@@ -234,6 +244,7 @@ public final class ZhiBoInfoTW extends Message {
                 this.freq_num = zhiBoInfoTW.freq_num;
                 this.copythread_remind = zhiBoInfoTW.copythread_remind;
                 this.is_copytwzhibo = zhiBoInfoTW.is_copytwzhibo;
+                this.field_ex = zhiBoInfoTW.field_ex;
             }
         }
 

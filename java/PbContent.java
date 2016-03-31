@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -44,6 +45,8 @@ public final class PbContent extends Message {
     public final String dynamic;
     @ProtoField(tag = 24, type = Message.Datatype.UINT32)
     public final Integer e_type;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB)
+    public final GraffitiInfo graffiti_info;
     @ProtoField(tag = 19, type = Message.Datatype.UINT32)
     public final Integer height;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -228,11 +231,11 @@ public final class PbContent extends Message {
             }
             if (builder.count == null) {
                 this.count = DEFAULT_COUNT;
-                return;
             } else {
                 this.count = builder.count;
-                return;
             }
+            this.graffiti_info = builder.graffiti_info;
+            return;
         }
         this.type = builder.type;
         this.text = builder.text;
@@ -262,6 +265,7 @@ public final class PbContent extends Message {
         this.btn_type = builder.btn_type;
         this.origin_size = builder.origin_size;
         this.count = builder.count;
+        this.graffiti_info = builder.graffiti_info;
     }
 
     /* loaded from: classes.dex */
@@ -278,6 +282,7 @@ public final class PbContent extends Message {
         public Integer during_time;
         public String dynamic;
         public Integer e_type;
+        public GraffitiInfo graffiti_info;
         public Integer height;
         public String imgtype;
         public Integer is_native_app;
@@ -329,6 +334,7 @@ public final class PbContent extends Message {
                 this.btn_type = pbContent.btn_type;
                 this.origin_size = pbContent.origin_size;
                 this.count = pbContent.count;
+                this.graffiti_info = pbContent.graffiti_info;
             }
         }
 

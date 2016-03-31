@@ -101,7 +101,7 @@ public final class NewGameInfo extends Message {
     public final Long id;
     @ProtoField(tag = a0.f29case, type = Message.Datatype.STRING)
     public final String inter_version;
-    @ProtoField(tag = 45, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.STRING)
     public final String inter_version_ios;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String launchComponent;

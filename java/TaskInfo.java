@@ -6,6 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class TaskInfo extends Message {
     public static final String DEFAULT_BGIMG = "";
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_OBJ_ID = "";
     public static final String DEFAULT_THREAD_IMG = "";
     public static final String DEFAULT_THREAD_IMG_SIZE = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -16,6 +17,8 @@ public final class TaskInfo extends Message {
     public final Long forum_id;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String obj_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long start_time;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -81,9 +84,14 @@ public final class TaskInfo extends Message {
             }
             if (builder.forum_name == null) {
                 this.forum_name = "";
-                return;
             } else {
                 this.forum_name = builder.forum_name;
+            }
+            if (builder.obj_id == null) {
+                this.obj_id = "";
+                return;
+            } else {
+                this.obj_id = builder.obj_id;
                 return;
             }
         }
@@ -96,6 +104,7 @@ public final class TaskInfo extends Message {
         this.thread_img_size = builder.thread_img_size;
         this.forum_id = builder.forum_id;
         this.forum_name = builder.forum_name;
+        this.obj_id = builder.obj_id;
     }
 
     /* loaded from: classes.dex */
@@ -104,6 +113,7 @@ public final class TaskInfo extends Message {
         public Long end_time;
         public Long forum_id;
         public String forum_name;
+        public String obj_id;
         public Long start_time;
         public Long task_id;
         public Long thread_id;
@@ -125,6 +135,7 @@ public final class TaskInfo extends Message {
                 this.thread_img_size = taskInfo.thread_img_size;
                 this.forum_id = taskInfo.forum_id;
                 this.forum_name = taskInfo.forum_name;
+                this.obj_id = taskInfo.obj_id;
             }
         }
 

@@ -10,12 +10,15 @@ public final class TopicInfo extends Message {
     public final String desc;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer is_hot;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer tag;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long topic_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String topic_name;
     public static final Long DEFAULT_TOPIC_ID = 0L;
     public static final Integer DEFAULT_IS_HOT = 0;
+    public static final Integer DEFAULT_TAG = 0;
 
     /* synthetic */ TopicInfo(Builder builder, boolean z, TopicInfo topicInfo) {
         this(builder, z);
@@ -41,9 +44,14 @@ public final class TopicInfo extends Message {
             }
             if (builder.is_hot == null) {
                 this.is_hot = DEFAULT_IS_HOT;
-                return;
             } else {
                 this.is_hot = builder.is_hot;
+            }
+            if (builder.tag == null) {
+                this.tag = DEFAULT_TAG;
+                return;
+            } else {
+                this.tag = builder.tag;
                 return;
             }
         }
@@ -51,12 +59,14 @@ public final class TopicInfo extends Message {
         this.topic_name = builder.topic_name;
         this.desc = builder.desc;
         this.is_hot = builder.is_hot;
+        this.tag = builder.tag;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<TopicInfo> {
         public String desc;
         public Integer is_hot;
+        public Integer tag;
         public Long topic_id;
         public String topic_name;
 
@@ -70,6 +80,7 @@ public final class TopicInfo extends Message {
                 this.topic_name = topicInfo.topic_name;
                 this.desc = topicInfo.desc;
                 this.is_hot = topicInfo.is_hot;
+                this.tag = topicInfo.tag;
             }
         }
 

@@ -8,6 +8,7 @@ public final class SimpleForum extends Message {
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_IS_EXISTS = 0;
     public static final Integer DEFAULT_IS_LIKED = 0;
+    public static final Integer DEFAULT_IS_SIGNED = 0;
     public static final String DEFAULT_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String avatar;
@@ -17,6 +18,8 @@ public final class SimpleForum extends Message {
     public final Integer is_exists;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer is_liked;
+    @ProtoField(tag = 6, type = Message.Datatype.UINT32)
+    public final Integer is_signed;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
 
@@ -49,9 +52,14 @@ public final class SimpleForum extends Message {
             }
             if (builder.is_liked == null) {
                 this.is_liked = DEFAULT_IS_LIKED;
-                return;
             } else {
                 this.is_liked = builder.is_liked;
+            }
+            if (builder.is_signed == null) {
+                this.is_signed = DEFAULT_IS_SIGNED;
+                return;
+            } else {
+                this.is_signed = builder.is_signed;
                 return;
             }
         }
@@ -60,6 +68,7 @@ public final class SimpleForum extends Message {
         this.is_exists = builder.is_exists;
         this.avatar = builder.avatar;
         this.is_liked = builder.is_liked;
+        this.is_signed = builder.is_signed;
     }
 
     /* loaded from: classes.dex */
@@ -68,6 +77,7 @@ public final class SimpleForum extends Message {
         public Long id;
         public Integer is_exists;
         public Integer is_liked;
+        public Integer is_signed;
         public String name;
 
         public Builder() {
@@ -81,6 +91,7 @@ public final class SimpleForum extends Message {
                 this.is_exists = simpleForum.is_exists;
                 this.avatar = simpleForum.avatar;
                 this.is_liked = simpleForum.is_liked;
+                this.is_signed = simpleForum.is_signed;
             }
         }
 
