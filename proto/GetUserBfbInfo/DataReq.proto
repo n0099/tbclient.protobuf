@@ -4,8 +4,4 @@ import "CommonReq.proto";
 
 message DataReq {
     CommonReq common = 1;
-    int32 scr_w = 2;
-    int32 scr_h = 3;
-    double scr_dip = 4;
-    uint64 q_type = 5;
 }

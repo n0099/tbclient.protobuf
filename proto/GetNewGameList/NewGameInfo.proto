@@ -26,9 +26,9 @@ message NewGameInfo {
     string schema_url = 23;
     string app_id = 24;
     string canvas_name = 25;
-    string thread_forum_name = 26;
     string forum_name = 27;
     string icon_pic1 = 28;
+    string icon_pic2 = 29;
     string icon_pic3 = 30;
     string secret_key = 31;
     uint64 thread_theme_id = 32;
@@ -38,10 +38,17 @@ message NewGameInfo {
     int32 game_type = 38;
     int32 game_platform = 39;
     uint32 channel = 40;
+    string version = 41;
+    string api_key = 42;
+    string inter_version = 43;
     string version_ios = 44;
     string subscript_color = 46;
     int32 category_id = 47;
     int32 status = 48;
     int32 mark = 49;
     string package_link = 50;
+    string andr_pk_name = 51;
+    string category_name = 52;
+    string icon_url = 53;
+    string category_name_sim = 54;
 }

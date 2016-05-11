@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "BannerList.proto";
+import "Page.proto";
+import "ThreadInfo.proto";
+import "User.proto";
+
+message DataRes {
+    repeated ThreadInfo thread_list = 1;
+    repeated User user_list = 2;
+    BannerList banner_list = 3;
+    Page page = 4;
+}

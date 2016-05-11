@@ -8,9 +8,9 @@ import "PbPostZan.proto";
 import "PbPresent.proto";
 import "SignatureData.proto";
 import "SubPost.proto";
-import "TPointPost.proto";
 import "TailInfo.proto";
 import "User.proto";
+import "VideoInfo.proto";
 import "Zan.proto";
 
 message Post {
@@ -39,9 +39,9 @@ message Post {
     User author = 23;
     Zan zan = 24;
     int32 storecount = 25;
-    TPointPost tpoint_post = 26;
     ActPost act_post = 27;
     PbPresent present = 28;
+    VideoInfo video_info = 29;
     PbPostZan post_zan = 30;
     int32 is_hot_post = 31;
     repeated TailInfo ext_tails = 32;

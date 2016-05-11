@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetUserBfbInfo/DataRes.proto";
+
+message GetUserBfbInfoResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

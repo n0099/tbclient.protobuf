@@ -35,9 +35,9 @@ message NewUser {
     string tbscore_repeate_finish_time = 23;
     int32 is_member = 24;
     int32 is_passer = 25;
-    int32 is_qun_spring = 26;
     repeated NoticeMask notice_mask = 27;
     repeated Rpgoldicon rpgoldicon = 28;
+    string is_doudizhu = 29;
     string cdn_error = 30;
     repeated TbmallMonthIcon tbmall_month_icon = 31;
     string is_coreuser = 32;

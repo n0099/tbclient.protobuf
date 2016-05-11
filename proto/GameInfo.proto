@@ -26,9 +26,9 @@ message GameInfo {
     string version = 23;
     uint64 deadline = 24;
     string editor_rec = 25;
-    string _abstract = 26;
     string game_details_url = 27;
     uint32 app_id = 28;
+    string icon_pic1 = 29;
     string icon_pic2 = 30;
     string icon_pic3 = 31;
     string game_desc = 32;

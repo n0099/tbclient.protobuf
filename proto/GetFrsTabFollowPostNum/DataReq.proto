@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "CommonReq.proto";
 
-message ReqData {
-    int64 user_id = 1;
+message DataReq {
+    uint64 forum_id = 1;
     CommonReq common = 2;
 }

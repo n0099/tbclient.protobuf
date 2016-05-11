@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message RealTime {
+    int64 task_id = 1;
+    string icon = 2;
+    string url = 3;
+}

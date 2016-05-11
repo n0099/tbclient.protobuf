@@ -3,7 +3,6 @@ syntax = "proto3";
 import "GetMyPost/Media_Num.proto";
 import "GetMyPost/Voice_Info.proto";
 import "Media.proto";
-import "Zan.proto";
 
 message Thread_Info {
     int64 id = 1;
@@ -31,5 +30,4 @@ message Thread_Info {
     repeated Media_Num media_num = 23;
     int32 thread_type = 24;
     Voice_Info voice_info = 25;
-    Zan zan = 26;
 }

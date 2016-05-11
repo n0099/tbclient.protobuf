@@ -1,6 +1,8 @@
 syntax = "proto3";
 
+import "GraffitiInfo.proto";
 import "NativeApp.proto";
+import "TogetherHi.proto";
 
 message PbContent {
     uint32 type = 1;
@@ -28,7 +30,8 @@ message PbContent {
     NativeApp native_app = 23;
     uint32 e_type = 24;
     string origin_src = 25;
-    uint32 btn_type = 26;
     uint32 origin_size = 27;
     int32 count = 28;
+    GraffitiInfo graffiti_info = 29;
+    TogetherHi high_together = 30;
 }

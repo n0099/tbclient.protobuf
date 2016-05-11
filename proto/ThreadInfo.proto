@@ -1,22 +1,25 @@
 syntax = "proto3";
 
 import "Abstract.proto";
-import "ActInfo.proto";
+import "AnchorInfo.proto";
 import "AppCode.proto";
-import "Guess.proto";
+import "CartoonThread.proto";
+import "HotTWThreadInfo.proto";
 import "JNews.proto";
-import "Lbs.proto";
 import "Media.proto";
 import "MediaNum.proto";
 import "PollInfo.proto";
 import "PostList.proto";
+import "PushStatus.proto";
 import "TailInfo.proto";
 import "TaskInfo.proto";
+import "TogetherHi.proto";
 import "Topic.proto";
 import "User.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
 import "YulePostActivity.proto";
+import "Zan.proto";
 import "ZhiBoInfoTW.proto";
 
 message ThreadInfo {
@@ -45,9 +48,9 @@ message ThreadInfo {
     repeated Voice voice_info = 23;
     string meizhi_pic = 24;
     repeated MediaNum media_num = 25;
-    int32 thread_type = 26;
     int64 fid = 27;
     string fname = 28;
+    string live_post_type = 29;
     int32 is_livepost = 30;
     int32 show_commented = 31;
     string click_url = 32;
@@ -57,21 +60,28 @@ message ThreadInfo {
     int32 is_ntitle = 38;
     int32 is_bub = 39;
     int64 first_post_id = 40;
+    Zan zan = 41;
+    int32 is_global_top = 42;
+    int32 is_pic = 43;
     repeated PostList post_list = 44;
     int32 repost_num = 46;
     Topic topic = 47;
     int32 has_commented = 48;
     string from = 49;
     int32 collect_status = 50;
+    string collect_mark_pid = 51;
+    int64 post_id = 52;
+    int32 time = 53;
+    int32 is_membertop = 54;
+    AnchorInfo anchor_info = 55;
+    int64 author_id = 56;
+    uint32 valid_post_num = 57;
     uint32 isLzDeleteAll = 58;
     uint32 is_ad = 59;
     string ecom = 60;
-    string pids = 61;
-    Lbs location = 62;
-    Guess guess = 63;
     uint32 timeline = 64;
-    repeated ActInfo act_info = 65;
     int32 post_num = 69;
+    HotTWThreadInfo hotTWInfo = 71;
     ZhiBoInfoTW twzhibo_info = 72;
     string category_name = 73;
     PollInfo poll_info = 74;
@@ -81,6 +91,7 @@ message ThreadInfo {
     int32 is_novel_reward = 78;
     VideoInfo video_info = 79;
     int32 push_end_time = 80;
+    uint32 is_copythread = 81;
     uint32 operator_flag = 82;
     TaskInfo task_info = 83;
     uint32 pic_num = 84;
@@ -88,4 +99,8 @@ message ThreadInfo {
     YulePostActivity yule_post_activity = 88;
     AppCode app_code = 89;
     repeated TailInfo ext_tails = 90;
+    PushStatus push_status = 91;
+    CartoonThread cartoon_info = 92;
+    string lego_card = 94;
+    TogetherHi high_together = 95;
 }

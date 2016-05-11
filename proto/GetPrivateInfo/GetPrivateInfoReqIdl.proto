@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetPrivateInfo/ReqData.proto";
-
-message GetPrivateInfoReqIdl {
-    ReqData data = 1;
-}
