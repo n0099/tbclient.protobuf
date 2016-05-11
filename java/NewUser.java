@@ -38,7 +38,7 @@ public final class NewUser extends Message {
     public final Global global;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String is_coreuser;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String is_doudizhu;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_group_owner;
@@ -50,7 +50,7 @@ public final class NewUser extends Message {
     public final Integer is_member;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer is_passer;
-    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.INT32)
     public final Integer is_qun_spring;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer is_shengyou;

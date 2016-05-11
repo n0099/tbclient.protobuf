@@ -1,6 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -25,7 +24,7 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_TIDS = "";
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
-    @ProtoField(tag = a0.z)
+    @ProtoField(tag = 56)
     public final Adkiller adkiller_data;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer album_open_photo_frs;
@@ -51,11 +50,11 @@ public final class ForumInfo extends Message {
     public final ForumButton forum_button;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<Calendar> forum_sign_calendar;
-    @ProtoField(tag = a0.B)
+    @ProtoField(tag = 55)
     public final MemberShowIcon forumvip_show_icon;
-    @ProtoField(label = Message.Label.REPEATED, tag = a0.D)
+    @ProtoField(label = Message.Label.REPEATED, tag = 53)
     public final List<GameInfo> game_card;
-    @ProtoField(tag = a0.A, type = Message.Datatype.STRING)
+    @ProtoField(tag = 54, type = Message.Datatype.STRING)
     public final String game_name;
     @ProtoField(tag = 47, type = Message.Datatype.STRING)
     public final String game_url;
@@ -65,9 +64,9 @@ public final class ForumInfo extends Message {
     public final Integer has_frs_star;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer has_game;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.INT32)
+    @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer has_paper;
-    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.INT32)
     public final Integer has_postpre;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
@@ -77,7 +76,7 @@ public final class ForumInfo extends Message {
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
-    @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
+    @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_local_effect;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String is_readonly;
@@ -85,7 +84,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = a0.x, type = Message.Datatype.INT32)
+    @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -101,13 +100,15 @@ public final class ForumInfo extends Message {
     public final Integer member_num;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
-    @ProtoField(tag = a0.f)
+    @ProtoField(tag = 52)
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
     @ProtoField(tag = 39)
     public final PostPrefix post_prefix;
-    @ProtoField(label = Message.Label.REPEATED, tag = a0.f29case)
+    @ProtoField(tag = 58)
+    public final RealTime realtime_data;
+    @ProtoField(label = Message.Label.REPEATED, tag = 43)
     public final List<RecommendForum> recommend_forum;
     @ProtoField(tag = 48)
     public final RecomUserInfo recommend_user_info;
@@ -125,7 +126,7 @@ public final class ForumInfo extends Message {
     public final Integer thread_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String tids;
-    @ProtoField(tag = a0.C)
+    @ProtoField(tag = 51)
     public final TopCode top_code;
     @ProtoField(tag = 28)
     public final TopNotice top_notice;
@@ -133,7 +134,7 @@ public final class ForumInfo extends Message {
     public final Integer user_level;
     @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
     public final WorldCup worldcupinfo;
-    @ProtoField(tag = a0.m)
+    @ProtoField(tag = 57)
     public final Yule yule;
     @ProtoField(tag = 16)
     public final Zhibo zhibo;
@@ -395,6 +396,7 @@ public final class ForumInfo extends Message {
             this.forumvip_show_icon = builder.forumvip_show_icon;
             this.adkiller_data = builder.adkiller_data;
             this.yule = builder.yule;
+            this.realtime_data = builder.realtime_data;
             return;
         }
         this.id = builder.id;
@@ -454,6 +456,7 @@ public final class ForumInfo extends Message {
         this.forumvip_show_icon = builder.forumvip_show_icon;
         this.adkiller_data = builder.adkiller_data;
         this.yule = builder.yule;
+        this.realtime_data = builder.realtime_data;
     }
 
     /* loaded from: classes.dex */
@@ -500,6 +503,7 @@ public final class ForumInfo extends Message {
         public TopNews news_info;
         public Integer post_num;
         public PostPrefix post_prefix;
+        public RealTime realtime_data;
         public List<RecommendForum> recommend_forum;
         public RecomUserInfo recommend_user_info;
         public String second_class;
@@ -579,6 +583,7 @@ public final class ForumInfo extends Message {
                 this.forumvip_show_icon = forumInfo.forumvip_show_icon;
                 this.adkiller_data = forumInfo.adkiller_data;
                 this.yule = forumInfo.yule;
+                this.realtime_data = forumInfo.realtime_data;
             }
         }
 

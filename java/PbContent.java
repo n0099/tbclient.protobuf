@@ -1,6 +1,6 @@
 package tbclient;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -31,7 +31,7 @@ public final class PbContent extends Message {
     public final String big_src;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String bsize;
-    @ProtoField(tag = 26, type = Message.Datatype.UINT32)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.UINT32)
     public final Integer btn_type;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String c;
@@ -45,10 +45,12 @@ public final class PbContent extends Message {
     public final String dynamic;
     @ProtoField(tag = 24, type = Message.Datatype.UINT32)
     public final Integer e_type;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB)
+    @ProtoField(tag = 29)
     public final GraffitiInfo graffiti_info;
     @ProtoField(tag = 19, type = Message.Datatype.UINT32)
     public final Integer height;
+    @ProtoField(tag = 30)
+    public final TogetherHi high_together;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String imgtype;
     @ProtoField(tag = 22, type = Message.Datatype.UINT32)
@@ -235,6 +237,7 @@ public final class PbContent extends Message {
                 this.count = builder.count;
             }
             this.graffiti_info = builder.graffiti_info;
+            this.high_together = builder.high_together;
             return;
         }
         this.type = builder.type;
@@ -266,6 +269,7 @@ public final class PbContent extends Message {
         this.origin_size = builder.origin_size;
         this.count = builder.count;
         this.graffiti_info = builder.graffiti_info;
+        this.high_together = builder.high_together;
     }
 
     /* loaded from: classes.dex */
@@ -284,6 +288,7 @@ public final class PbContent extends Message {
         public Integer e_type;
         public GraffitiInfo graffiti_info;
         public Integer height;
+        public TogetherHi high_together;
         public String imgtype;
         public Integer is_native_app;
         public Integer is_sub;
@@ -335,6 +340,7 @@ public final class PbContent extends Message {
                 this.origin_size = pbContent.origin_size;
                 this.count = pbContent.count;
                 this.graffiti_info = pbContent.graffiti_info;
+                this.high_together = pbContent.high_together;
             }
         }
 

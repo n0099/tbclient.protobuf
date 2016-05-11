@@ -1,7 +1,6 @@
 package tbclient;
 
 import com.baidu.location.BDLocation;
-import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -17,6 +16,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_LAST_TIME = "";
+    public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_LIVECOVER_SRC = "";
     public static final String DEFAULT_LIVE_POST_TYPE = "";
     public static final String DEFAULT_MEIZHI_PIC = "";
@@ -29,23 +29,23 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_VIDEO_SWF = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
-    @ProtoField(label = Message.Label.REPEATED, tag = 65)
+    @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
     public final List<ActInfo> act_info;
-    @ProtoField(tag = a0.B)
+    @ProtoField(tag = 55)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 89)
     public final AppCode app_code;
     @ProtoField(tag = 18)
     public final User author;
-    @ProtoField(tag = a0.z, type = Message.Datatype.INT64)
+    @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long author_id;
-    @ProtoField(tag = a0.f39try)
+    @ProtoField(tag = 92)
     public final CartoonThread cartoon_info;
     @ProtoField(tag = 73, type = Message.Datatype.STRING)
     public final String category_name;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
-    @ProtoField(tag = a0.C, type = Message.Datatype.STRING)
+    @ProtoField(tag = 51, type = Message.Datatype.STRING)
     public final String collect_mark_pid;
     @ProtoField(tag = 50, type = Message.Datatype.INT32)
     public final Integer collect_status;
@@ -65,11 +65,13 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = 49, type = Message.Datatype.STRING)
     public final String from;
-    @ProtoField(tag = 63)
+    @ProtoField(tag = BDLocation.TypeNetWorkException)
     public final Guess guess;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer has_commented;
-    @ProtoField(tag = a0.w)
+    @ProtoField(tag = 95)
+    public final TogetherHi high_together;
+    @ProtoField(tag = 71)
     public final HotTWThreadInfo hotTWInfo;
     @ProtoField(tag = BDLocation.TypeOffLineLocation, type = Message.Datatype.INT32)
     public final Integer hot_weight;
@@ -85,9 +87,9 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_bub;
-    @ProtoField(tag = a0.y, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
-    @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
+    @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = 85, type = Message.Datatype.INT32)
     public final Integer is_godthread_recommend;
@@ -97,7 +99,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_livepost;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
-    @ProtoField(tag = a0.A, type = Message.Datatype.INT32)
+    @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer is_membertop;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_notice;
@@ -109,7 +111,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_thank;
     @ProtoField(tag = 38, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
-    @ProtoField(tag = a0.f29case, type = Message.Datatype.INT32)
+    @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
@@ -127,11 +129,13 @@ public final class ThreadInfo extends Message {
     public final String last_time;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer last_time_int;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
+    @ProtoField(tag = 94, type = Message.Datatype.STRING)
+    public final String lego_card;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String live_post_type;
     @ProtoField(tag = BDLocation.TypeOffLineLocationFail, type = Message.Datatype.STRING)
     public final String livecover_src;
-    @ProtoField(tag = 62)
+    @ProtoField(tag = BDLocation.TypeCriteriaException)
     public final Lbs location;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Media> media;
@@ -143,11 +147,11 @@ public final class ThreadInfo extends Message {
     public final Integer operator_flag;
     @ProtoField(tag = 84, type = Message.Datatype.UINT32)
     public final Integer pic_num;
-    @ProtoField(tag = 61, type = Message.Datatype.STRING)
+    @ProtoField(tag = BDLocation.TypeGpsLocation, type = Message.Datatype.STRING)
     public final String pids;
     @ProtoField(tag = 74)
     public final PollInfo poll_info;
-    @ProtoField(tag = a0.f, type = Message.Datatype.INT64)
+    @ProtoField(tag = 52, type = Message.Datatype.INT64)
     public final Long post_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 44)
     public final List<PostList> post_list;
@@ -155,7 +159,7 @@ public final class ThreadInfo extends Message {
     public final Integer post_num;
     @ProtoField(tag = 80, type = Message.Datatype.INT32)
     public final Integer push_end_time;
-    @ProtoField(tag = a0.v)
+    @ProtoField(tag = 91)
     public final PushStatus push_status;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer reply_num;
@@ -167,13 +171,13 @@ public final class ThreadInfo extends Message {
     public final Integer storecount;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
-    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer thread_types;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
-    @ProtoField(tag = a0.D, type = Message.Datatype.INT32)
+    @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer time;
     @ProtoField(tag = 64, type = Message.Datatype.UINT32)
     public final Integer timeline;
@@ -183,7 +187,7 @@ public final class ThreadInfo extends Message {
     public final Topic topic;
     @ProtoField(tag = 72)
     public final ZhiBoInfoTW twzhibo_info;
-    @ProtoField(tag = a0.m, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 57, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.STRING)
     public final String video;
@@ -203,7 +207,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = a0.x)
+    @ProtoField(tag = 41)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -645,6 +649,12 @@ public final class ThreadInfo extends Message {
             }
             this.push_status = builder.push_status;
             this.cartoon_info = builder.cartoon_info;
+            if (builder.lego_card == null) {
+                this.lego_card = "";
+            } else {
+                this.lego_card = builder.lego_card;
+            }
+            this.high_together = builder.high_together;
             return;
         }
         this.id = builder.id;
@@ -736,6 +746,8 @@ public final class ThreadInfo extends Message {
         this.ext_tails = immutableCopyOf(builder.ext_tails);
         this.push_status = builder.push_status;
         this.cartoon_info = builder.cartoon_info;
+        this.lego_card = builder.lego_card;
+        this.high_together = builder.high_together;
     }
 
     /* loaded from: classes.dex */
@@ -761,6 +773,7 @@ public final class ThreadInfo extends Message {
         public String from;
         public Guess guess;
         public Integer has_commented;
+        public TogetherHi high_together;
         public HotTWThreadInfo hotTWInfo;
         public Integer hot_weight;
         public Long id;
@@ -790,6 +803,7 @@ public final class ThreadInfo extends Message {
         public User last_replyer;
         public String last_time;
         public Integer last_time_int;
+        public String lego_card;
         public String live_post_type;
         public String livecover_src;
         public Lbs location;
@@ -925,6 +939,8 @@ public final class ThreadInfo extends Message {
                 this.ext_tails = ThreadInfo.copyOf(threadInfo.ext_tails);
                 this.push_status = threadInfo.push_status;
                 this.cartoon_info = threadInfo.cartoon_info;
+                this.lego_card = threadInfo.lego_card;
+                this.high_together = threadInfo.high_together;
             }
         }
 

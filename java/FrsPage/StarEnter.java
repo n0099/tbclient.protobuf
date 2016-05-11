@@ -5,10 +5,16 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class StarEnter extends Message {
     public static final String DEFAULT_ICON = "";
+    public static final String DEFAULT_OBJ_ID = "";
+    public static final String DEFAULT_TEXT = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String icon;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String obj_id;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String text;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer time;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -57,9 +63,19 @@ public final class StarEnter extends Message {
             }
             if (builder.time == null) {
                 this.time = DEFAULT_TIME;
-                return;
             } else {
                 this.time = builder.time;
+            }
+            if (builder.obj_id == null) {
+                this.obj_id = "";
+            } else {
+                this.obj_id = builder.obj_id;
+            }
+            if (builder.text == null) {
+                this.text = "";
+                return;
+            } else {
+                this.text = builder.text;
                 return;
             }
         }
@@ -69,11 +85,15 @@ public final class StarEnter extends Message {
         this.type = builder.type;
         this.url = builder.url;
         this.time = builder.time;
+        this.obj_id = builder.obj_id;
+        this.text = builder.text;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<StarEnter> {
         public String icon;
+        public String obj_id;
+        public String text;
         public Integer time;
         public String title;
         public Integer type;
@@ -92,6 +112,8 @@ public final class StarEnter extends Message {
                 this.type = starEnter.type;
                 this.url = starEnter.url;
                 this.time = starEnter.time;
+                this.obj_id = starEnter.obj_id;
+                this.text = starEnter.text;
             }
         }
 

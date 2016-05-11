@@ -1,6 +1,5 @@
 package tbclient.GetNewGameList;
 
-import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -45,9 +44,9 @@ public final class NewGameInfo extends Message {
     public static final String DEFAULT_THREAD_FORUM_NAME = "";
     public static final String DEFAULT_VERSION = "";
     public static final String DEFAULT_VERSION_IOS = "";
-    @ProtoField(tag = a0.C, type = Message.Datatype.STRING)
+    @ProtoField(tag = 51, type = Message.Datatype.STRING)
     public final String andr_pk_name;
-    @ProtoField(tag = a0.e, type = Message.Datatype.STRING)
+    @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String api_key;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String app_id;
@@ -59,9 +58,9 @@ public final class NewGameInfo extends Message {
     public final String canvas_name;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer category_id;
-    @ProtoField(tag = a0.f, type = Message.Datatype.STRING)
+    @ProtoField(tag = 52, type = Message.Datatype.STRING)
     public final String category_name;
-    @ProtoField(tag = a0.A, type = Message.Datatype.STRING)
+    @ProtoField(tag = 54, type = Message.Datatype.STRING)
     public final String category_name_sim;
     @ProtoField(tag = 40, type = Message.Datatype.UINT32)
     public final Integer channel;
@@ -91,15 +90,15 @@ public final class NewGameInfo extends Message {
     public final String gift_code;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String icon_pic1;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String icon_pic2;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic3;
-    @ProtoField(tag = a0.D, type = Message.Datatype.STRING)
+    @ProtoField(tag = 53, type = Message.Datatype.STRING)
     public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
-    @ProtoField(tag = a0.f29case, type = Message.Datatype.STRING)
+    @ProtoField(tag = 43, type = Message.Datatype.STRING)
     public final String inter_version;
     @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.STRING)
     public final String inter_version_ios;
@@ -141,7 +140,7 @@ public final class NewGameInfo extends Message {
     public final String subscript_color;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String test_userids;
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
     public final String thread_forum_name;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.UINT64)
     public final Long thread_id;
@@ -149,7 +148,7 @@ public final class NewGameInfo extends Message {
     public final Long thread_theme_id;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer time;
-    @ProtoField(tag = a0.x, type = Message.Datatype.STRING)
+    @ProtoField(tag = 41, type = Message.Datatype.STRING)
     public final String version;
     @ProtoField(tag = 44, type = Message.Datatype.STRING)
     public final String version_ios;

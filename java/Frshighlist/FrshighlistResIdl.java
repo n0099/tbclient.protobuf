@@ -1,20 +1,20 @@
-package tbclient.GetConsentList;
+package tbclient.Frshighlist;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
 /* loaded from: classes.dex */
-public final class GetConsentListResIdl extends Message {
+public final class FrshighlistResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetConsentListResIdl(Builder builder, boolean z, GetConsentListResIdl getConsentListResIdl) {
+    /* synthetic */ FrshighlistResIdl(Builder builder, boolean z, FrshighlistResIdl frshighlistResIdl) {
         this(builder, z);
     }
 
-    private GetConsentListResIdl(Builder builder, boolean z) {
+    private FrshighlistResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -26,25 +26,25 @@ public final class GetConsentListResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public static final class Builder extends Message.Builder<GetConsentListResIdl> {
+    public static final class Builder extends Message.Builder<FrshighlistResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(GetConsentListResIdl getConsentListResIdl) {
-            super(getConsentListResIdl);
-            if (getConsentListResIdl != null) {
-                this.error = getConsentListResIdl.error;
-                this.data = getConsentListResIdl.data;
+        public Builder(FrshighlistResIdl frshighlistResIdl) {
+            super(frshighlistResIdl);
+            if (frshighlistResIdl != null) {
+                this.error = frshighlistResIdl.error;
+                this.data = frshighlistResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetConsentListResIdl build(boolean z) {
-            return new GetConsentListResIdl(this, z, null);
+        public FrshighlistResIdl build(boolean z) {
+            return new FrshighlistResIdl(this, z, null);
         }
     }
 }

@@ -1,6 +1,6 @@
 package tbclient.UserPost;
 
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer offset;
-    @ProtoField(tag = 26, type = Message.Datatype.UINT32)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String portrait;
@@ -59,7 +59,7 @@ public final class DataReq extends Message {
     public final Double scr_dip;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer scr_h;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.INT32)
+    @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer scr_w;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer smile_grade;

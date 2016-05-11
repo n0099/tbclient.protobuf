@@ -1,6 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -37,7 +36,7 @@ public final class DataReq extends Message {
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
-    @ProtoField(tag = a0.e, type = Message.Datatype.STRING)
+    @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer data_size;
@@ -55,7 +54,7 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = a0.x, type = Message.Datatype.INT32)
+    @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
@@ -65,7 +64,7 @@ public final class DataReq extends Message {
     public final Boolean login;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
     public final String mobile;
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
     public final String module_name;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer need_badge;
@@ -75,7 +74,7 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;
-    @ProtoField(tag = a0.f29case, type = Message.Datatype.STRING)
+    @ProtoField(tag = 43, type = Message.Datatype.STRING)
     public final String platform;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer pn;
@@ -97,11 +96,13 @@ public final class DataReq extends Message {
     public final Integer scr_w;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer smile_grade;
+    @ProtoField(tag = 47, type = Message.Datatype.INT32)
+    public final Integer sort_type;
     @ProtoField(tag = 27, type = Message.Datatype.INT32)
     public final Integer st_param;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String st_type;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.BOOL)
+    @ProtoField(tag = 29, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
     @ProtoField(tag = 31, type = Message.Datatype.INT64)
     public final Long user_id;
@@ -145,6 +146,7 @@ public final class DataReq extends Message {
     public static final Boolean DEFAULT_DEBUG = false;
     public static final Integer DEFAULT_ISSDK = 0;
     public static final Integer DEFAULT_CATEGORY_ID = 0;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -376,9 +378,14 @@ public final class DataReq extends Message {
             }
             if (builder.yuelaou_params == null) {
                 this.yuelaou_params = "";
-                return;
             } else {
                 this.yuelaou_params = builder.yuelaou_params;
+            }
+            if (builder.sort_type == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.sort_type = builder.sort_type;
                 return;
             }
         }
@@ -428,6 +435,7 @@ public final class DataReq extends Message {
         this.category_id = builder.category_id;
         this.yuelaou_locate = builder.yuelaou_locate;
         this.yuelaou_params = builder.yuelaou_params;
+        this.sort_type = builder.sort_type;
     }
 
     /* loaded from: classes.dex */
@@ -469,6 +477,7 @@ public final class DataReq extends Message {
         public Integer scr_h;
         public Integer scr_w;
         public Integer smile_grade;
+        public Integer sort_type;
         public Integer st_param;
         public String st_type;
         public Boolean support_noun;
@@ -531,6 +540,7 @@ public final class DataReq extends Message {
                 this.category_id = dataReq.category_id;
                 this.yuelaou_locate = dataReq.yuelaou_locate;
                 this.yuelaou_params = dataReq.yuelaou_params;
+                this.sort_type = dataReq.sort_type;
             }
         }
 

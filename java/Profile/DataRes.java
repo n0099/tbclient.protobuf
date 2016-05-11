@@ -5,6 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Anti;
+import tbclient.Highlist;
 import tbclient.PostInfoList;
 import tbclient.UcCard;
 import tbclient.User;
@@ -13,6 +14,8 @@ public final class DataRes extends Message {
     public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
     @ProtoField(tag = 2)
     public final Anti anti_stat;
+    @ProtoField(tag = 7)
+    public final Highlist highs;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<PostInfoList> post_list;
     @ProtoField(tag = 3)
@@ -41,6 +44,7 @@ public final class DataRes extends Message {
             }
             this.user_god_info = builder.user_god_info;
             this.uc_card = builder.uc_card;
+            this.highs = builder.highs;
             return;
         }
         this.user = builder.user;
@@ -49,11 +53,13 @@ public final class DataRes extends Message {
         this.post_list = immutableCopyOf(builder.post_list);
         this.user_god_info = builder.user_god_info;
         this.uc_card = builder.uc_card;
+        this.highs = builder.highs;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Anti anti_stat;
+        public Highlist highs;
         public List<PostInfoList> post_list;
         public TAInfo tainfo;
         public UcCard uc_card;
@@ -72,6 +78,7 @@ public final class DataRes extends Message {
                 this.post_list = DataRes.copyOf(dataRes.post_list);
                 this.user_god_info = dataRes.user_god_info;
                 this.uc_card = dataRes.uc_card;
+                this.highs = dataRes.highs;
             }
         }
 

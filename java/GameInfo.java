@@ -34,7 +34,7 @@ public final class GameInfo extends Message {
     public static final String DEFAULT_SUBSCRIPT_COLOR = "";
     public static final String DEFAULT_SUPERSCRIPT_COLOR = "";
     public static final String DEFAULT_VERSION = "";
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String andr_pk_name;
@@ -70,7 +70,7 @@ public final class GameInfo extends Message {
     public final List<String> game_pic;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer game_type;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String icon_pic1;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic2;

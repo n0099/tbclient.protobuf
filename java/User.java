@@ -1,7 +1,6 @@
 package tbclient;
 
 import com.baidu.location.BDLocation;
-import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -25,11 +24,13 @@ public final class User extends Message {
     public static final String DEFAULT_PORTRAITH = "";
     public static final String DEFAULT_RANK = "";
     public static final String DEFAULT_TB_AGE = "";
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String BDUSS;
+    @ProtoField(tag = 71)
+    public final ActivitySponsor activity_sponsor;
     @ProtoField(tag = 10)
     public final Balv balv;
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
     public final String bawu_type;
     @ProtoField(tag = 58, type = Message.Datatype.STRING)
     public final String bg_pic;
@@ -37,33 +38,33 @@ public final class User extends Message {
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
-    @ProtoField(tag = a0.D, type = Message.Datatype.INT32)
+    @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer bookmark_count;
-    @ProtoField(tag = a0.A, type = Message.Datatype.INT32)
+    @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer bookmark_new_count;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer concern_num;
     @ProtoField(tag = BDLocation.TypeOffLineLocationNetworkFail)
     public final ConsumeInfo consume_info;
-    @ProtoField(tag = a0.m, type = Message.Datatype.STRING)
+    @ProtoField(tag = 57, type = Message.Datatype.STRING)
     public final String fans_nickname;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
-    @ProtoField(tag = a0.z, type = Message.Datatype.INT64)
+    @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long friend_num;
-    @ProtoField(tag = a0.e, type = Message.Datatype.INT32)
+    @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer gender;
     @ProtoField(label = Message.Label.REPEATED, tag = 50)
     public final List<GiftInfo> gift_list;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer gift_num;
-    @ProtoField(tag = 62)
+    @ProtoField(tag = BDLocation.TypeCriteriaException)
     public final GodInfo god_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 48)
     public final List<MyGroupInfo> groupList;
     @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
     public final Integer has_concerned;
-    @ProtoField(tag = 63, type = Message.Datatype.INT32)
+    @ProtoField(tag = BDLocation.TypeNetWorkException, type = Message.Datatype.INT32)
     public final Integer heavy_user;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Icon> iconinfo;
@@ -81,7 +82,7 @@ public final class User extends Message {
     public final Integer is_coreuser;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer is_friend;
-    @ProtoField(tag = a0.f, type = Message.Datatype.INT32)
+    @ProtoField(tag = 52, type = Message.Datatype.INT32)
     public final Integer is_guanfang;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer is_huinibuke;
@@ -93,11 +94,11 @@ public final class User extends Message {
     public final Integer is_login;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_manager;
-    @ProtoField(tag = a0.f29case, type = Message.Datatype.INT32)
+    @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_mask;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_mem;
-    @ProtoField(tag = a0.C, type = Message.Datatype.INT32)
+    @ProtoField(tag = 51, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
@@ -107,7 +108,7 @@ public final class User extends Message {
     public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
-    @ProtoField(label = Message.Label.REPEATED, tag = a0.B)
+    @ProtoField(label = Message.Label.REPEATED, tag = 55)
     public final List<SimpleUser> mute_user;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.INT32)
     public final Integer my_like_num;
@@ -115,10 +116,12 @@ public final class User extends Message {
     public final String name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String name_show;
-    @ProtoField(label = Message.Label.REPEATED, tag = 65)
+    @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
     public final List<TshowInfo> new_tshow_icon;
     @ProtoField(tag = 8)
     public final NewUser new_user_info;
+    @ProtoField(tag = 73, type = Message.Datatype.UINT32)
+    public final Integer no_post_high;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer no_un;
     @ProtoField(tag = 60)
@@ -127,7 +130,7 @@ public final class User extends Message {
     public final NewParrScores parr_scores;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = a0.x)
+    @ProtoField(tag = 41)
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
@@ -145,6 +148,8 @@ public final class User extends Message {
     public final Integer sex;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String tb_age;
+    @ProtoField(tag = 72)
+    public final TbVipInfo tb_vip;
     @ProtoField(tag = 69)
     public final ThemeCardInUser theme_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
@@ -159,7 +164,7 @@ public final class User extends Message {
     public final Integer user_type;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer userhide;
-    @ProtoField(tag = 61)
+    @ProtoField(tag = BDLocation.TypeGpsLocation)
     public final UserVipInfo vipInfo;
     @ProtoField(tag = 70)
     public final VipCloseAd vip_close_ad;
@@ -207,6 +212,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_HEAVY_USER = 0;
     public static final List<TshowInfo> DEFAULT_NEW_TSHOW_ICON = Collections.emptyList();
     public static final List<TwAnchorProfitItem> DEFAULT_PROFIT_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_NO_POST_HIGH = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -513,7 +519,15 @@ public final class User extends Message {
             this.consume_info = builder.consume_info;
             this.theme_card = builder.theme_card;
             this.vip_close_ad = builder.vip_close_ad;
-            return;
+            this.activity_sponsor = builder.activity_sponsor;
+            this.tb_vip = builder.tb_vip;
+            if (builder.no_post_high == null) {
+                this.no_post_high = DEFAULT_NO_POST_HIGH;
+                return;
+            } else {
+                this.no_post_high = builder.no_post_high;
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -585,11 +599,15 @@ public final class User extends Message {
         this.consume_info = builder.consume_info;
         this.theme_card = builder.theme_card;
         this.vip_close_ad = builder.vip_close_ad;
+        this.activity_sponsor = builder.activity_sponsor;
+        this.tb_vip = builder.tb_vip;
+        this.no_post_high = builder.no_post_high;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
+        public ActivitySponsor activity_sponsor;
         public Balv balv;
         public String bawu_type;
         public String bg_pic;
@@ -636,6 +654,7 @@ public final class User extends Message {
         public String name_show;
         public List<TshowInfo> new_tshow_icon;
         public NewUser new_user_info;
+        public Integer no_post_high;
         public Integer no_un;
         public NovelFansInfo novel_fans_info;
         public NewParrScores parr_scores;
@@ -649,6 +668,7 @@ public final class User extends Message {
         public String rank;
         public Integer sex;
         public String tb_age;
+        public TbVipInfo tb_vip;
         public ThemeCardInUser theme_card;
         public List<TshowInfo> tshow_icon;
         public TwZhiBoUser tw_anchor_info;
@@ -736,6 +756,9 @@ public final class User extends Message {
                 this.consume_info = user.consume_info;
                 this.theme_card = user.theme_card;
                 this.vip_close_ad = user.vip_close_ad;
+                this.activity_sponsor = user.activity_sponsor;
+                this.tb_vip = user.tb_vip;
+                this.no_post_high = user.no_post_high;
             }
         }
 

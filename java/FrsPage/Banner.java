@@ -6,6 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class Banner extends Message {
     public static final String DEFAULT_BANNER_URL = "";
     public static final String DEFAULT_DESC = "";
+    public static final String DEFAULT_OBJ_ID = "";
     public static final String DEFAULT_VALUE = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer banner_type;
@@ -13,6 +14,8 @@ public final class Banner extends Message {
     public final String banner_url;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String desc;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String obj_id;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer template_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -57,9 +60,14 @@ public final class Banner extends Message {
             }
             if (builder.template_id == null) {
                 this.template_id = DEFAULT_TEMPLATE_ID;
-                return;
             } else {
                 this.template_id = builder.template_id;
+            }
+            if (builder.obj_id == null) {
+                this.obj_id = "";
+                return;
+            } else {
+                this.obj_id = builder.obj_id;
                 return;
             }
         }
@@ -69,6 +77,7 @@ public final class Banner extends Message {
         this.type = builder.type;
         this.desc = builder.desc;
         this.template_id = builder.template_id;
+        this.obj_id = builder.obj_id;
     }
 
     /* loaded from: classes.dex */
@@ -76,6 +85,7 @@ public final class Banner extends Message {
         public Integer banner_type;
         public String banner_url;
         public String desc;
+        public String obj_id;
         public Integer template_id;
         public Integer type;
         public String value;
@@ -92,6 +102,7 @@ public final class Banner extends Message {
                 this.type = banner.type;
                 this.desc = banner.desc;
                 this.template_id = banner.template_id;
+                this.obj_id = banner.obj_id;
             }
         }
 

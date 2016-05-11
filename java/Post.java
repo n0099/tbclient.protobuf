@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -32,6 +33,8 @@ public final class Post extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
+    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
+    public final TogetherHi high_together;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
@@ -68,9 +71,9 @@ public final class Post extends Message {
     public final String time_ex;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
-    @ProtoField(tag = 26)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID)
     public final TPointPost tpoint_post;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB)
+    @ProtoField(tag = 29)
     public final VideoInfo video_info;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String vote_crypt;
@@ -208,11 +211,11 @@ public final class Post extends Message {
             }
             if (builder.ext_tails == null) {
                 this.ext_tails = DEFAULT_EXT_TAILS;
-                return;
             } else {
                 this.ext_tails = immutableCopyOf(builder.ext_tails);
-                return;
             }
+            this.high_together = builder.high_together;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -246,6 +249,7 @@ public final class Post extends Message {
         this.post_zan = builder.post_zan;
         this.is_hot_post = builder.is_hot_post;
         this.ext_tails = immutableCopyOf(builder.ext_tails);
+        this.high_together = builder.high_together;
     }
 
     /* loaded from: classes.dex */
@@ -260,6 +264,7 @@ public final class Post extends Message {
         public List<PbContent> content;
         public List<TailInfo> ext_tails;
         public Integer floor;
+        public TogetherHi high_together;
         public Long id;
         public String ios_bimg_format;
         public Integer is_bub;
@@ -321,6 +326,7 @@ public final class Post extends Message {
                 this.post_zan = post.post_zan;
                 this.is_hot_post = post.is_hot_post;
                 this.ext_tails = Post.copyOf(post.ext_tails);
+                this.high_together = post.high_together;
             }
         }
 

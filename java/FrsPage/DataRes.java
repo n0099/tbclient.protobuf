@@ -12,6 +12,7 @@ import tbclient.CategoryInfo;
 import tbclient.FrsTabInfo;
 import tbclient.Novel;
 import tbclient.Page;
+import tbclient.RecommendInfo;
 import tbclient.SdkTopicThread;
 import tbclient.ThreadInfo;
 import tbclient.User;
@@ -56,7 +57,7 @@ public final class DataRes extends Message {
     public final Group group;
     @ProtoField(tag = 34)
     public final HeadSdk head_sdk;
-    @ProtoField(tag = 26)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID)
     public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 15)
     public final Info info;
@@ -70,12 +71,18 @@ public final class DataRes extends Message {
     public final Novel novel;
     @ProtoField(tag = 4)
     public final Page page;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB)
+    @ProtoField(tag = 29)
     public final PushThreadInfo push_thread_info;
+    @ProtoField(tag = 40)
+    public final RecommendInfo school_recom_info;
+    @ProtoField(tag = 41, type = Message.Datatype.UINT32)
+    public final Integer school_recom_pos;
     @ProtoField(tag = 31)
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
     @ProtoField(tag = 30)
@@ -112,6 +119,8 @@ public final class DataRes extends Message {
     public static final List<CategoryInfo> DEFAULT_CATEGORY_LIST = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_INFO = Collections.emptyList();
     public static final Integer DEFAULT_FRS_TAB_DEFAULT = 0;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final Integer DEFAULT_SCHOOL_RECOM_POS = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -234,9 +243,20 @@ public final class DataRes extends Message {
             this.nav_tab_info = builder.nav_tab_info;
             if (builder.frs_tab_default == null) {
                 this.frs_tab_default = DEFAULT_FRS_TAB_DEFAULT;
-                return;
             } else {
                 this.frs_tab_default = builder.frs_tab_default;
+            }
+            if (builder.sort_type == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+            } else {
+                this.sort_type = builder.sort_type;
+            }
+            this.school_recom_info = builder.school_recom_info;
+            if (builder.school_recom_pos == null) {
+                this.school_recom_pos = DEFAULT_SCHOOL_RECOM_POS;
+                return;
+            } else {
+                this.school_recom_pos = builder.school_recom_pos;
                 return;
             }
         }
@@ -277,6 +297,9 @@ public final class DataRes extends Message {
         this.card_shipin_info = immutableCopyOf(builder.card_shipin_info);
         this.nav_tab_info = builder.nav_tab_info;
         this.frs_tab_default = builder.frs_tab_default;
+        this.sort_type = builder.sort_type;
+        this.school_recom_info = builder.school_recom_info;
+        this.school_recom_pos = builder.school_recom_pos;
     }
 
     /* loaded from: classes.dex */
@@ -307,8 +330,11 @@ public final class DataRes extends Message {
         public Novel novel;
         public Page page;
         public PushThreadInfo push_thread_info;
+        public RecommendInfo school_recom_info;
+        public Integer school_recom_pos;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
+        public Integer sort_type;
         public List<StarEnter> star_enter;
         public ThreadInfo store_card;
         public List<Long> thread_id_list;
@@ -362,6 +388,9 @@ public final class DataRes extends Message {
                 this.card_shipin_info = DataRes.copyOf(dataRes.card_shipin_info);
                 this.nav_tab_info = dataRes.nav_tab_info;
                 this.frs_tab_default = dataRes.frs_tab_default;
+                this.sort_type = dataRes.sort_type;
+                this.school_recom_info = dataRes.school_recom_info;
+                this.school_recom_pos = dataRes.school_recom_pos;
             }
         }
 

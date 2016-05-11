@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -46,7 +47,7 @@ public final class CommonReq extends Message {
     public final Long _timestamp;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String apid;
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
     public final String brand;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String brand_type;

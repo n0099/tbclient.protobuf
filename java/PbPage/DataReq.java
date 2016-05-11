@@ -1,6 +1,5 @@
 package tbclient.PbPage;
 
-import com.baidu.location.a0;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
 import com.squareup.wire.Message;
@@ -28,7 +27,7 @@ public final class DataReq extends Message {
     public final Integer banner;
     @ProtoField(tag = 25)
     public final CommonReq common;
-    @ProtoField(tag = a0.e, type = Message.Datatype.STRING)
+    @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.UINT64)
     public final Long fid;
@@ -50,7 +49,7 @@ public final class DataReq extends Message {
     public final Long kz;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer last;
-    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer lz;
@@ -66,7 +65,7 @@ public final class DataReq extends Message {
     public final Integer pb_rn;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long pid;
-    @ProtoField(tag = a0.f29case, type = Message.Datatype.STRING)
+    @ProtoField(tag = 43, type = Message.Datatype.STRING)
     public final String platform;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer pn;
@@ -90,7 +89,7 @@ public final class DataReq extends Message {
     public final String st_from;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String st_link;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_PUSH_RECOMMEND_PB, type = Message.Datatype.INT32)
+    @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer st_stat;
     @ProtoField(tag = 30, type = Message.Datatype.INT64)
     public final Long st_task;
