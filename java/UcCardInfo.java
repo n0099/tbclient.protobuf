@@ -6,12 +6,15 @@ import com.squareup.wire.ProtoField;
 public final class UcCardInfo extends Message {
     public static final String DEFAULT_JMP = "";
     public static final String DEFAULT_PIC = "";
+    public static final Integer DEFAULT_ST = 0;
     public static final String DEFAULT_TIP = "";
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String jmp;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String pic;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer st;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String tip;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -41,9 +44,14 @@ public final class UcCardInfo extends Message {
             }
             if (builder.tip == null) {
                 this.tip = "";
-                return;
             } else {
                 this.tip = builder.tip;
+            }
+            if (builder.st == null) {
+                this.st = DEFAULT_ST;
+                return;
+            } else {
+                this.st = builder.st;
                 return;
             }
         }
@@ -51,12 +59,14 @@ public final class UcCardInfo extends Message {
         this.pic = builder.pic;
         this.jmp = builder.jmp;
         this.tip = builder.tip;
+        this.st = builder.st;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<UcCardInfo> {
         public String jmp;
         public String pic;
+        public Integer st;
         public String tip;
         public String title;
 
@@ -70,6 +80,7 @@ public final class UcCardInfo extends Message {
                 this.pic = ucCardInfo.pic;
                 this.jmp = ucCardInfo.jmp;
                 this.tip = ucCardInfo.tip;
+                this.st = ucCardInfo.st;
             }
         }
 

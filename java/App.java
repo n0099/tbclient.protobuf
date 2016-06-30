@@ -13,6 +13,7 @@ public final class App extends Message {
     public static final String DEFAULT_APK_URL = "";
     public static final String DEFAULT_APP_DESC = "";
     public static final String DEFAULT_APP_NAME = "";
+    public static final String DEFAULT_DEEP_URL = "";
     public static final String DEFAULT_EXT_INFO = "";
     public static final String DEFAULT_FIRST_NAME = "";
     public static final String DEFAULT_ICON_LINK = "";
@@ -47,6 +48,8 @@ public final class App extends Message {
     public final Integer app_time;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer cpid;
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
+    public final String deep_url;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String ext_info;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -260,9 +263,14 @@ public final class App extends Message {
             }
             if (builder.loc_code == null) {
                 this.loc_code = "";
-                return;
             } else {
                 this.loc_code = builder.loc_code;
+            }
+            if (builder.deep_url == null) {
+                this.deep_url = "";
+                return;
+            } else {
+                this.deep_url = builder.deep_url;
                 return;
             }
         }
@@ -297,6 +305,7 @@ public final class App extends Message {
         this.ext_info = builder.ext_info;
         this.goods_info = immutableCopyOf(builder.goods_info);
         this.loc_code = builder.loc_code;
+        this.deep_url = builder.deep_url;
     }
 
     /* loaded from: classes.dex */
@@ -309,6 +318,7 @@ public final class App extends Message {
         public String app_name;
         public Integer app_time;
         public Integer cpid;
+        public String deep_url;
         public String ext_info;
         public String first_name;
         public List<GoodsInfo> goods_info;
@@ -370,6 +380,7 @@ public final class App extends Message {
                 this.ext_info = app.ext_info;
                 this.goods_info = App.copyOf(app.goods_info);
                 this.loc_code = app.loc_code;
+                this.deep_url = app.deep_url;
             }
         }
 

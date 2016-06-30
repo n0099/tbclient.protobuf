@@ -6,11 +6,14 @@ import com.squareup.wire.ProtoField;
 public final class VipShowInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_LINK = "";
+    public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VIP_ICON = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String title;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String vip_icon;
 
@@ -33,21 +36,28 @@ public final class VipShowInfo extends Message {
             }
             if (builder.link == null) {
                 this.link = "";
-                return;
             } else {
                 this.link = builder.link;
+            }
+            if (builder.title == null) {
+                this.title = "";
+                return;
+            } else {
+                this.title = builder.title;
                 return;
             }
         }
         this.vip_icon = builder.vip_icon;
         this.content = builder.content;
         this.link = builder.link;
+        this.title = builder.title;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<VipShowInfo> {
         public String content;
         public String link;
+        public String title;
         public String vip_icon;
 
         public Builder() {
@@ -59,6 +69,7 @@ public final class VipShowInfo extends Message {
                 this.vip_icon = vipShowInfo.vip_icon;
                 this.content = vipShowInfo.content;
                 this.link = vipShowInfo.link;
+                this.title = vipShowInfo.title;
             }
         }
 

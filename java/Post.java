@@ -51,12 +51,16 @@ public final class Post extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
+    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
+    public final DealInfo pb_deal_info;
     @ProtoField(tag = 30)
     public final PbPostZan post_zan;
     @ProtoField(tag = 28)
     public final PbPresent present;
     @ProtoField(tag = 21)
     public final SignatureData signature;
+    @ProtoField(tag = 34)
+    public final SkinInfo skin_info;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer storecount;
     @ProtoField(tag = 15)
@@ -215,6 +219,8 @@ public final class Post extends Message {
                 this.ext_tails = immutableCopyOf(builder.ext_tails);
             }
             this.high_together = builder.high_together;
+            this.skin_info = builder.skin_info;
+            this.pb_deal_info = builder.pb_deal_info;
             return;
         }
         this.id = builder.id;
@@ -250,6 +256,8 @@ public final class Post extends Message {
         this.is_hot_post = builder.is_hot_post;
         this.ext_tails = immutableCopyOf(builder.ext_tails);
         this.high_together = builder.high_together;
+        this.skin_info = builder.skin_info;
+        this.pb_deal_info = builder.pb_deal_info;
     }
 
     /* loaded from: classes.dex */
@@ -273,9 +281,11 @@ public final class Post extends Message {
         public Integer is_voice;
         public Integer is_vote;
         public Lbs lbs_info;
+        public DealInfo pb_deal_info;
         public PbPostZan post_zan;
         public PbPresent present;
         public SignatureData signature;
+        public SkinInfo skin_info;
         public Integer storecount;
         public SubPost sub_post_list;
         public Integer sub_post_number;
@@ -327,6 +337,8 @@ public final class Post extends Message {
                 this.is_hot_post = post.is_hot_post;
                 this.ext_tails = Post.copyOf(post.ext_tails);
                 this.high_together = post.high_together;
+                this.skin_info = post.skin_info;
+                this.pb_deal_info = post.pb_deal_info;
             }
         }
 

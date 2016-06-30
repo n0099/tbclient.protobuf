@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.cloudsdk.social.core.util.SocialAPIErrorCodes;
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tbadk.coreExtra.service.DealIntentService;
@@ -33,12 +34,16 @@ public final class ThreadInfo extends Message {
     public final List<ActInfo> act_info;
     @ProtoField(tag = 55)
     public final AnchorInfo anchor_info;
+    @ProtoField(tag = 99)
+    public final AnimationThread animation_info;
     @ProtoField(tag = 89)
     public final AppCode app_code;
     @ProtoField(tag = 18)
     public final User author;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long author_id;
+    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_SESSION_KEY)
+    public final BookThread book_chapter;
     @ProtoField(tag = 92)
     public final CartoonThread cartoon_info;
     @ProtoField(tag = 73, type = Message.Datatype.STRING)
@@ -53,6 +58,8 @@ public final class ThreadInfo extends Message {
     public final Integer comment_num;
     @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.INT32)
     public final Integer create_time;
+    @ProtoField(tag = 98)
+    public final DealInfo deal_info;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
     @ProtoField(label = Message.Label.REPEATED, tag = 90)
@@ -85,10 +92,14 @@ public final class ThreadInfo extends Message {
     public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
+    @ProtoField(tag = 103, type = Message.Datatype.UINT32)
+    public final Integer is_book_chapter;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_bub;
     @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
+    @ProtoField(tag = 97, type = Message.Datatype.INT32)
+    public final Integer is_deal;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = 85, type = Message.Datatype.INT32)
@@ -157,6 +168,8 @@ public final class ThreadInfo extends Message {
     public final List<PostList> post_list;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
     public final Integer post_num;
+    @ProtoField(tag = 101)
+    public final PsInfo ps_info;
     @ProtoField(tag = 80, type = Message.Datatype.INT32)
     public final Integer push_end_time;
     @ProtoField(tag = 91)
@@ -167,6 +180,8 @@ public final class ThreadInfo extends Message {
     public final Integer repost_num;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer show_commented;
+    @ProtoField(tag = 100)
+    public final SkinInfo skin_info;
     @ProtoField(tag = BDLocation.TypeOffLineLocationNetworkFail, type = Message.Datatype.INT32)
     public final Integer storecount;
     @ProtoField(tag = 83)
@@ -201,6 +216,8 @@ public final class ThreadInfo extends Message {
     public final String video_mobile_url;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String video_swf;
+    @ProtoField(tag = 96)
+    public final VideoActive videoactive_info;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
@@ -264,6 +281,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_PIC_NUM = 0;
     public static final Integer DEFAULT_IS_GODTHREAD_RECOMMEND = 0;
     public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
+    public static final Integer DEFAULT_IS_DEAL = 0;
+    public static final Integer DEFAULT_IS_BOOK_CHAPTER = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -655,7 +674,24 @@ public final class ThreadInfo extends Message {
                 this.lego_card = builder.lego_card;
             }
             this.high_together = builder.high_together;
-            return;
+            this.videoactive_info = builder.videoactive_info;
+            if (builder.is_deal == null) {
+                this.is_deal = DEFAULT_IS_DEAL;
+            } else {
+                this.is_deal = builder.is_deal;
+            }
+            this.deal_info = builder.deal_info;
+            this.animation_info = builder.animation_info;
+            this.skin_info = builder.skin_info;
+            this.ps_info = builder.ps_info;
+            this.book_chapter = builder.book_chapter;
+            if (builder.is_book_chapter == null) {
+                this.is_book_chapter = DEFAULT_IS_BOOK_CHAPTER;
+                return;
+            } else {
+                this.is_book_chapter = builder.is_book_chapter;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -748,6 +784,14 @@ public final class ThreadInfo extends Message {
         this.cartoon_info = builder.cartoon_info;
         this.lego_card = builder.lego_card;
         this.high_together = builder.high_together;
+        this.videoactive_info = builder.videoactive_info;
+        this.is_deal = builder.is_deal;
+        this.deal_info = builder.deal_info;
+        this.animation_info = builder.animation_info;
+        this.skin_info = builder.skin_info;
+        this.ps_info = builder.ps_info;
+        this.book_chapter = builder.book_chapter;
+        this.is_book_chapter = builder.is_book_chapter;
     }
 
     /* loaded from: classes.dex */
@@ -755,9 +799,11 @@ public final class ThreadInfo extends Message {
         public List<Abstract> _abstract;
         public List<ActInfo> act_info;
         public AnchorInfo anchor_info;
+        public AnimationThread animation_info;
         public AppCode app_code;
         public User author;
         public Long author_id;
+        public BookThread book_chapter;
         public CartoonThread cartoon_info;
         public String category_name;
         public String click_url;
@@ -765,6 +811,7 @@ public final class ThreadInfo extends Message {
         public Integer collect_status;
         public Integer comment_num;
         public Integer create_time;
+        public DealInfo deal_info;
         public String ecom;
         public List<TailInfo> ext_tails;
         public Long fid;
@@ -781,8 +828,10 @@ public final class ThreadInfo extends Message {
         public Integer is_activity;
         public Integer is_ad;
         public Integer is_bakan;
+        public Integer is_book_chapter;
         public Integer is_bub;
         public Integer is_copythread;
+        public Integer is_deal;
         public Integer is_global_top;
         public Integer is_godthread_recommend;
         public Integer is_good;
@@ -817,11 +866,13 @@ public final class ThreadInfo extends Message {
         public Long post_id;
         public List<PostList> post_list;
         public Integer post_num;
+        public PsInfo ps_info;
         public Integer push_end_time;
         public PushStatus push_status;
         public Integer reply_num;
         public Integer repost_num;
         public Integer show_commented;
+        public SkinInfo skin_info;
         public Integer storecount;
         public TaskInfo task_info;
         public Integer thread_type;
@@ -839,6 +890,7 @@ public final class ThreadInfo extends Message {
         public VideoInfo video_info;
         public String video_mobile_url;
         public String video_swf;
+        public VideoActive videoactive_info;
         public Integer view_num;
         public List<Voice> voice_info;
         public YulePostActivity yule_post_activity;
@@ -941,6 +993,14 @@ public final class ThreadInfo extends Message {
                 this.cartoon_info = threadInfo.cartoon_info;
                 this.lego_card = threadInfo.lego_card;
                 this.high_together = threadInfo.high_together;
+                this.videoactive_info = threadInfo.videoactive_info;
+                this.is_deal = threadInfo.is_deal;
+                this.deal_info = threadInfo.deal_info;
+                this.animation_info = threadInfo.animation_info;
+                this.skin_info = threadInfo.skin_info;
+                this.ps_info = threadInfo.ps_info;
+                this.book_chapter = threadInfo.book_chapter;
+                this.is_book_chapter = threadInfo.is_book_chapter;
             }
         }
 

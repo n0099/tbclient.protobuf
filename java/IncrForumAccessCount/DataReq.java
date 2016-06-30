@@ -1,18 +1,15 @@
-package tbclient.GetHotGod;
+package tbclient.IncrForumAccessCount;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
-    public static final Integer DEFAULT_PN = 0;
-    public static final Integer DEFAULT_RN = 0;
+    public static final Long DEFAULT_FORUM_ID = 0L;
     @ProtoField(tag = 1)
     public final CommonReq common;
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer pn;
-    @ProtoField(tag = 3, type = Message.Datatype.INT32)
-    public final Integer rn;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long forum_id;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -22,29 +19,22 @@ public final class DataReq extends Message {
         super(builder);
         if (z) {
             this.common = builder.common;
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
+            if (builder.forum_id == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
                 return;
             } else {
-                this.rn = builder.rn;
+                this.forum_id = builder.forum_id;
                 return;
             }
         }
         this.common = builder.common;
-        this.pn = builder.pn;
-        this.rn = builder.rn;
+        this.forum_id = builder.forum_id;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
-        public Integer pn;
-        public Integer rn;
+        public Long forum_id;
 
         public Builder() {
         }
@@ -53,8 +43,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.common = dataReq.common;
-                this.pn = dataReq.pn;
-                this.rn = dataReq.rn;
+                this.forum_id = dataReq.forum_id;
             }
         }
 

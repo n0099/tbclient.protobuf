@@ -16,6 +16,7 @@ import tbclient.RecommendInfo;
 import tbclient.SdkTopicThread;
 import tbclient.ThreadInfo;
 import tbclient.User;
+import tbclient.VitalityInfo;
 import tbclient.ZhiBoInfoTW;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
@@ -25,10 +26,14 @@ public final class DataRes extends Message {
     public final ActivityHead activityhead;
     @ProtoField(tag = 5)
     public final Anti anti;
+    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
+    public final List<BannerThreadInfo> banner_thread_list;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String bawu_enter_url;
     @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
     public final List<ThreadInfo> card_shipin_info;
+    @ProtoField(tag = 43)
+    public final CarrierEnter carrier_enter;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
     @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
@@ -73,6 +78,8 @@ public final class DataRes extends Message {
     public final Page page;
     @ProtoField(tag = 29)
     public final PushThreadInfo push_thread_info;
+    @ProtoField(tag = 46)
+    public final RecommendBook recommend_book;
     @ProtoField(tag = 40)
     public final RecommendInfo school_recom_info;
     @ProtoField(tag = 41, type = Message.Datatype.UINT32)
@@ -101,6 +108,8 @@ public final class DataRes extends Message {
     public final User user;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<User> user_list;
+    @ProtoField(tag = 42)
+    public final VitalityInfo vitality_info;
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<Long> DEFAULT_THREAD_ID_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_NEW_URL = 0;
@@ -121,6 +130,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_FRS_TAB_DEFAULT = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final Integer DEFAULT_SCHOOL_RECOM_POS = 0;
+    public static final List<BannerThreadInfo> DEFAULT_BANNER_THREAD_LIST = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -254,11 +264,18 @@ public final class DataRes extends Message {
             this.school_recom_info = builder.school_recom_info;
             if (builder.school_recom_pos == null) {
                 this.school_recom_pos = DEFAULT_SCHOOL_RECOM_POS;
-                return;
             } else {
                 this.school_recom_pos = builder.school_recom_pos;
-                return;
             }
+            this.vitality_info = builder.vitality_info;
+            this.carrier_enter = builder.carrier_enter;
+            if (builder.banner_thread_list == null) {
+                this.banner_thread_list = DEFAULT_BANNER_THREAD_LIST;
+            } else {
+                this.banner_thread_list = immutableCopyOf(builder.banner_thread_list);
+            }
+            this.recommend_book = builder.recommend_book;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -300,14 +317,20 @@ public final class DataRes extends Message {
         this.sort_type = builder.sort_type;
         this.school_recom_info = builder.school_recom_info;
         this.school_recom_pos = builder.school_recom_pos;
+        this.vitality_info = builder.vitality_info;
+        this.carrier_enter = builder.carrier_enter;
+        this.banner_thread_list = immutableCopyOf(builder.banner_thread_list);
+        this.recommend_book = builder.recommend_book;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityHead activityhead;
         public Anti anti;
+        public List<BannerThreadInfo> banner_thread_list;
         public String bawu_enter_url;
         public List<ThreadInfo> card_shipin_info;
+        public CarrierEnter carrier_enter;
         public List<CategoryInfo> category_list;
         public ClientPlatform client_platform;
         public List<ColorEgg> color_egg;
@@ -330,6 +353,7 @@ public final class DataRes extends Message {
         public Novel novel;
         public Page page;
         public PushThreadInfo push_thread_info;
+        public RecommendBook recommend_book;
         public RecommendInfo school_recom_info;
         public Integer school_recom_pos;
         public SdkTopicThread sdk_topic_thread;
@@ -344,6 +368,7 @@ public final class DataRes extends Message {
         public Integer twzhibo_pos;
         public User user;
         public List<User> user_list;
+        public VitalityInfo vitality_info;
 
         public Builder() {
         }
@@ -391,6 +416,10 @@ public final class DataRes extends Message {
                 this.sort_type = dataRes.sort_type;
                 this.school_recom_info = dataRes.school_recom_info;
                 this.school_recom_pos = dataRes.school_recom_pos;
+                this.vitality_info = dataRes.vitality_info;
+                this.carrier_enter = dataRes.carrier_enter;
+                this.banner_thread_list = DataRes.copyOf(dataRes.banner_thread_list);
+                this.recommend_book = dataRes.recommend_book;
             }
         }
 

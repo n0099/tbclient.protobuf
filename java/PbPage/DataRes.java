@@ -32,6 +32,8 @@ public final class DataRes extends Message {
     public final List<FineBannerPb> fine_banner;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
+    @ProtoField(tag = 23)
+    public final GodCard god_card;
     @ProtoField(tag = 21)
     public final GraffitiRankListInfo graffiti_rank_list_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -134,6 +136,7 @@ public final class DataRes extends Message {
             this.hot_post_list = builder.hot_post_list;
             this.graffiti_rank_list_info = builder.graffiti_rank_list_info;
             this.appeal_info = builder.appeal_info;
+            this.god_card = builder.god_card;
             return;
         }
         this.user = builder.user;
@@ -158,6 +161,7 @@ public final class DataRes extends Message {
         this.hot_post_list = builder.hot_post_list;
         this.graffiti_rank_list_info = builder.graffiti_rank_list_info;
         this.appeal_info = builder.appeal_info;
+        this.god_card = builder.god_card;
     }
 
     /* loaded from: classes.dex */
@@ -168,6 +172,7 @@ public final class DataRes extends Message {
         public BannerList banner_list;
         public List<FineBannerPb> fine_banner;
         public SimpleForum forum;
+        public GodCard god_card;
         public GraffitiRankListInfo graffiti_rank_list_info;
         public Integer has_floor;
         public PbHotPost hot_post_list;
@@ -213,6 +218,7 @@ public final class DataRes extends Message {
                 this.hot_post_list = dataRes.hot_post_list;
                 this.graffiti_rank_list_info = dataRes.graffiti_rank_list_info;
                 this.appeal_info = dataRes.appeal_info;
+                this.god_card = dataRes.god_card;
             }
         }
 

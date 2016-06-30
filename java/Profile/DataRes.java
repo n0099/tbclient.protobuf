@@ -5,8 +5,10 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Anti;
+import tbclient.DealWindow;
 import tbclient.Highlist;
 import tbclient.PostInfoList;
+import tbclient.TbBookrack;
 import tbclient.UcCard;
 import tbclient.User;
 /* loaded from: classes.dex */
@@ -20,12 +22,16 @@ public final class DataRes extends Message {
     public final List<PostInfoList> post_list;
     @ProtoField(tag = 3)
     public final TAInfo tainfo;
+    @ProtoField(tag = 9)
+    public final TbBookrack tbbookrack;
     @ProtoField(tag = 6)
     public final UcCard uc_card;
     @ProtoField(tag = 1)
     public final User user;
     @ProtoField(tag = 5)
     public final UserGodInfo user_god_info;
+    @ProtoField(tag = 8)
+    public final DealWindow window;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -45,6 +51,8 @@ public final class DataRes extends Message {
             this.user_god_info = builder.user_god_info;
             this.uc_card = builder.uc_card;
             this.highs = builder.highs;
+            this.window = builder.window;
+            this.tbbookrack = builder.tbbookrack;
             return;
         }
         this.user = builder.user;
@@ -54,6 +62,8 @@ public final class DataRes extends Message {
         this.user_god_info = builder.user_god_info;
         this.uc_card = builder.uc_card;
         this.highs = builder.highs;
+        this.window = builder.window;
+        this.tbbookrack = builder.tbbookrack;
     }
 
     /* loaded from: classes.dex */
@@ -62,9 +72,11 @@ public final class DataRes extends Message {
         public Highlist highs;
         public List<PostInfoList> post_list;
         public TAInfo tainfo;
+        public TbBookrack tbbookrack;
         public UcCard uc_card;
         public User user;
         public UserGodInfo user_god_info;
+        public DealWindow window;
 
         public Builder() {
         }
@@ -79,6 +91,8 @@ public final class DataRes extends Message {
                 this.user_god_info = dataRes.user_god_info;
                 this.uc_card = dataRes.uc_card;
                 this.highs = dataRes.highs;
+                this.window = dataRes.window;
+                this.tbbookrack = dataRes.tbbookrack;
             }
         }
 

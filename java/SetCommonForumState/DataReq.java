@@ -1,15 +1,18 @@
-package tbclient.HotForum;
+package tbclient.SetCommonForumState;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
-    public static final Integer DEFAULT_LYO = 0;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_OPERATION = 0;
     @ProtoField(tag = 1)
     public final CommonReq common;
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer lyo;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long forum_id;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer operation;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -19,22 +22,29 @@ public final class DataReq extends Message {
         super(builder);
         if (z) {
             this.common = builder.common;
-            if (builder.lyo == null) {
-                this.lyo = DEFAULT_LYO;
+            if (builder.forum_id == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = builder.forum_id;
+            }
+            if (builder.operation == null) {
+                this.operation = DEFAULT_OPERATION;
                 return;
             } else {
-                this.lyo = builder.lyo;
+                this.operation = builder.operation;
                 return;
             }
         }
         this.common = builder.common;
-        this.lyo = builder.lyo;
+        this.forum_id = builder.forum_id;
+        this.operation = builder.operation;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
-        public Integer lyo;
+        public Long forum_id;
+        public Integer operation;
 
         public Builder() {
         }
@@ -43,7 +53,8 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.common = dataReq.common;
-                this.lyo = dataReq.lyo;
+                this.forum_id = dataReq.forum_id;
+                this.operation = dataReq.operation;
             }
         }
 

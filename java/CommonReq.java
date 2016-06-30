@@ -12,6 +12,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_KA = "";
+    public static final String DEFAULT_LEGO_LIB_VERSION = "";
     public static final String DEFAULT_MODEL = "";
     public static final String DEFAULT_M_API = "";
     public static final String DEFAULT_M_COST = "";
@@ -57,6 +58,8 @@ public final class CommonReq extends Message {
     public final String from;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String ka;
+    @ProtoField(tag = 28, type = Message.Datatype.STRING)
+    public final String lego_lib_version;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String m_api;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
@@ -226,9 +229,14 @@ public final class CommonReq extends Message {
             }
             if (builder.brand_type == null) {
                 this.brand_type = "";
-                return;
             } else {
                 this.brand_type = builder.brand_type;
+            }
+            if (builder.lego_lib_version == null) {
+                this.lego_lib_version = "";
+                return;
+            } else {
+                this.lego_lib_version = builder.lego_lib_version;
                 return;
             }
         }
@@ -259,6 +267,7 @@ public final class CommonReq extends Message {
         this._os_version = builder._os_version;
         this.brand = builder.brand;
         this.brand_type = builder.brand_type;
+        this.lego_lib_version = builder.lego_lib_version;
     }
 
     /* loaded from: classes.dex */
@@ -277,6 +286,7 @@ public final class CommonReq extends Message {
         public String cuid;
         public String from;
         public String ka;
+        public String lego_lib_version;
         public String m_api;
         public String m_cost;
         public String m_logid;
@@ -324,6 +334,7 @@ public final class CommonReq extends Message {
                 this._os_version = commonReq._os_version;
                 this.brand = commonReq.brand;
                 this.brand_type = commonReq.brand_type;
+                this.lego_lib_version = commonReq.lego_lib_version;
             }
         }
 

@@ -22,6 +22,8 @@ public final class TPointPost extends Message {
     public final String position;
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
     public final List<Timgs> t_imgs;
+    @ProtoField(tag = 10)
+    public final VideoInfo t_video;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long template_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -78,11 +80,11 @@ public final class TPointPost extends Message {
             }
             if (builder.hidden_day == null) {
                 this.hidden_day = DEFAULT_HIDDEN_DAY;
-                return;
             } else {
                 this.hidden_day = builder.hidden_day;
-                return;
             }
+            this.t_video = builder.t_video;
+            return;
         }
         this.is_tuiguang = builder.is_tuiguang;
         this.position = builder.position;
@@ -93,6 +95,7 @@ public final class TPointPost extends Message {
         this.detail_info = builder.detail_info;
         this.monitor_id = builder.monitor_id;
         this.hidden_day = builder.hidden_day;
+        this.t_video = builder.t_video;
     }
 
     /* loaded from: classes.dex */
@@ -104,6 +107,7 @@ public final class TPointPost extends Message {
         public String monitor_id;
         public String position;
         public List<Timgs> t_imgs;
+        public VideoInfo t_video;
         public Long template_id;
         public Integer template_type;
 
@@ -122,6 +126,7 @@ public final class TPointPost extends Message {
                 this.detail_info = tPointPost.detail_info;
                 this.monitor_id = tPointPost.monitor_id;
                 this.hidden_day = tPointPost.hidden_day;
+                this.t_video = tPointPost.t_video;
             }
         }
 

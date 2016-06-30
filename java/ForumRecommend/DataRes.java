@@ -4,12 +4,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.FrequentlyForumInfo;
 import tbclient.RecommendForumInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Banner> banner;
+    @ProtoField(label = Message.Label.REPEATED, tag = 14)
+    public final List<FrequentlyForumInfo> frequently_forum_info;
     @ProtoField(tag = 11)
     public final HotSearch hot_search;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -45,6 +48,7 @@ public final class DataRes extends Message {
     public static final List<RecommendForumInfo> DEFAULT_RECOMMEND_FORUM_INFO = Collections.emptyList();
     public static final Integer DEFAULT_REDIRECT = 0;
     public static final List<Banner> DEFAULT_NEW_BANNER_INFO = Collections.emptyList();
+    public static final List<FrequentlyForumInfo> DEFAULT_FREQUENTLY_FORUM_INFO = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -111,9 +115,14 @@ public final class DataRes extends Message {
             }
             if (builder.new_banner_info == null) {
                 this.new_banner_info = DEFAULT_NEW_BANNER_INFO;
-                return;
             } else {
                 this.new_banner_info = immutableCopyOf(builder.new_banner_info);
+            }
+            if (builder.frequently_forum_info == null) {
+                this.frequently_forum_info = DEFAULT_FREQUENTLY_FORUM_INFO;
+                return;
+            } else {
+                this.frequently_forum_info = immutableCopyOf(builder.frequently_forum_info);
                 return;
             }
         }
@@ -130,11 +139,13 @@ public final class DataRes extends Message {
         this.hot_search = builder.hot_search;
         this.redirect = builder.redirect;
         this.new_banner_info = immutableCopyOf(builder.new_banner_info);
+        this.frequently_forum_info = immutableCopyOf(builder.frequently_forum_info);
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
+        public List<FrequentlyForumInfo> frequently_forum_info;
         public HotSearch hot_search;
         public Integer is_login;
         public Integer is_mem;
@@ -167,6 +178,7 @@ public final class DataRes extends Message {
                 this.hot_search = dataRes.hot_search;
                 this.redirect = dataRes.redirect;
                 this.new_banner_info = DataRes.copyOf(dataRes.new_banner_info);
+                this.frequently_forum_info = DataRes.copyOf(dataRes.frequently_forum_info);
             }
         }
 

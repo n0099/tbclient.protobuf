@@ -11,6 +11,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_JFROM = "";
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MSG_CLICK = "";
+    public static final String DEFAULT_OBJ_LOCATE = "";
+    public static final String DEFAULT_OBJ_PARAM1 = "";
     public static final String DEFAULT_OBJ_SOURCE = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_QUERY_WORD = "";
@@ -59,6 +61,10 @@ public final class DataReq extends Message {
     public final Integer message_id;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String msg_click;
+    @ProtoField(tag = 51, type = Message.Datatype.STRING)
+    public final String obj_locate;
+    @ProtoField(tag = 52, type = Message.Datatype.STRING)
+    public final String obj_param1;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String obj_source;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -351,9 +357,19 @@ public final class DataReq extends Message {
             }
             if (builder.obj_source == null) {
                 this.obj_source = "";
-                return;
             } else {
                 this.obj_source = builder.obj_source;
+            }
+            if (builder.obj_locate == null) {
+                this.obj_locate = "";
+            } else {
+                this.obj_locate = builder.obj_locate;
+            }
+            if (builder.obj_param1 == null) {
+                this.obj_param1 = "";
+                return;
+            } else {
+                this.obj_param1 = builder.obj_param1;
                 return;
             }
         }
@@ -400,6 +416,8 @@ public final class DataReq extends Message {
         this.yuelaou_locate = builder.yuelaou_locate;
         this.yuelaou_params = builder.yuelaou_params;
         this.obj_source = builder.obj_source;
+        this.obj_locate = builder.obj_locate;
+        this.obj_param1 = builder.obj_param1;
     }
 
     /* loaded from: classes.dex */
@@ -424,6 +442,8 @@ public final class DataReq extends Message {
         public Integer mark;
         public Integer message_id;
         public String msg_click;
+        public String obj_locate;
+        public String obj_param1;
         public String obj_source;
         public Integer pb_rn;
         public Long pid;
@@ -497,6 +517,8 @@ public final class DataReq extends Message {
                 this.yuelaou_locate = dataReq.yuelaou_locate;
                 this.yuelaou_params = dataReq.yuelaou_params;
                 this.obj_source = dataReq.obj_source;
+                this.obj_locate = dataReq.obj_locate;
+                this.obj_param1 = dataReq.obj_param1;
             }
         }
 

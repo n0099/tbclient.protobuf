@@ -10,6 +10,7 @@ public final class GoodsInfo extends Message {
     public static final String DEFAULT_CARD_DESC = "";
     public static final String DEFAULT_CARD_TAG = "";
     public static final String DEFAULT_LABEL_TEXT = "";
+    public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_POP_WINDOW_TEXT = "";
     public static final String DEFAULT_THREAD_CONTENT = "";
     public static final String DEFAULT_THREAD_PIC = "";
@@ -35,6 +36,8 @@ public final class GoodsInfo extends Message {
     public final String label_text;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer label_visible;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String lego_card;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String pop_window_text;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
@@ -163,9 +166,14 @@ public final class GoodsInfo extends Message {
             }
             if (builder.thread_content == null) {
                 this.thread_content = "";
-                return;
             } else {
                 this.thread_content = builder.thread_content;
+            }
+            if (builder.lego_card == null) {
+                this.lego_card = "";
+                return;
+            } else {
+                this.lego_card = builder.lego_card;
                 return;
             }
         }
@@ -188,6 +196,7 @@ public final class GoodsInfo extends Message {
         this.height = builder.height;
         this.label_measure = builder.label_measure;
         this.thread_content = builder.thread_content;
+        this.lego_card = builder.lego_card;
     }
 
     /* loaded from: classes.dex */
@@ -201,6 +210,7 @@ public final class GoodsInfo extends Message {
         public Integer label_measure;
         public String label_text;
         public Integer label_visible;
+        public String lego_card;
         public String pop_window_text;
         public Integer rank_level;
         public String thread_content;
@@ -237,6 +247,7 @@ public final class GoodsInfo extends Message {
                 this.height = goodsInfo.height;
                 this.label_measure = goodsInfo.label_measure;
                 this.thread_content = goodsInfo.thread_content;
+                this.lego_card = goodsInfo.lego_card;
             }
         }
 

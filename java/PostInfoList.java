@@ -28,6 +28,8 @@ public final class PostInfoList extends Message {
     public final String content_thread;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer create_time;
+    @ProtoField(tag = 31)
+    public final DealInfo deal_info;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -36,6 +38,8 @@ public final class PostInfoList extends Message {
     public final Integer hide_post;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String ip;
+    @ProtoField(tag = 30, type = Message.Datatype.BOOL)
+    public final Boolean is_deal;
     @ProtoField(tag = 12, type = Message.Datatype.UINT32)
     public final Integer is_post_deleted;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -88,6 +92,7 @@ public final class PostInfoList extends Message {
     public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
     public static final Integer DEFAULT_HIDE_POST = 0;
     public static final Long DEFAULT_THREAD_TYPE = 0L;
+    public static final Boolean DEFAULT_IS_DEAL = false;
 
     /* synthetic */ PostInfoList(Builder builder, boolean z, PostInfoList postInfoList) {
         this(builder, z);
@@ -217,6 +222,12 @@ public final class PostInfoList extends Message {
             this.twzhibo_info = builder.twzhibo_info;
             this.poll_info = builder.poll_info;
             this.video_info = builder.video_info;
+            if (builder.is_deal == null) {
+                this.is_deal = DEFAULT_IS_DEAL;
+            } else {
+                this.is_deal = builder.is_deal;
+            }
+            this.deal_info = builder.deal_info;
             return;
         }
         this.forum_id = builder.forum_id;
@@ -248,6 +259,8 @@ public final class PostInfoList extends Message {
         this.twzhibo_info = builder.twzhibo_info;
         this.poll_info = builder.poll_info;
         this.video_info = builder.video_info;
+        this.is_deal = builder.is_deal;
+        this.deal_info = builder.deal_info;
     }
 
     /* loaded from: classes.dex */
@@ -258,10 +271,12 @@ public final class PostInfoList extends Message {
         public List<PostInfoContent> content;
         public String content_thread;
         public Integer create_time;
+        public DealInfo deal_info;
         public Long forum_id;
         public String forum_name;
         public Integer hide_post;
         public String ip;
+        public Boolean is_deal;
         public Integer is_post_deleted;
         public Integer is_thread;
         public LbsInfo lbs_info;
@@ -317,6 +332,8 @@ public final class PostInfoList extends Message {
                 this.twzhibo_info = postInfoList.twzhibo_info;
                 this.poll_info = postInfoList.poll_info;
                 this.video_info = postInfoList.video_info;
+                this.is_deal = postInfoList.is_deal;
+                this.deal_info = postInfoList.deal_info;
             }
         }
 

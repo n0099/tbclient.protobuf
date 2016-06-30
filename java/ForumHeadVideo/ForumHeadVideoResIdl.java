@@ -1,20 +1,20 @@
-package tbclient.GetInterview;
+package tbclient.ForumHeadVideo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
 /* loaded from: classes.dex */
-public final class GetInterviewResIdl extends Message {
+public final class ForumHeadVideoResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetInterviewResIdl(Builder builder, boolean z, GetInterviewResIdl getInterviewResIdl) {
+    /* synthetic */ ForumHeadVideoResIdl(Builder builder, boolean z, ForumHeadVideoResIdl forumHeadVideoResIdl) {
         this(builder, z);
     }
 
-    private GetInterviewResIdl(Builder builder, boolean z) {
+    private ForumHeadVideoResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -26,25 +26,25 @@ public final class GetInterviewResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public static final class Builder extends Message.Builder<GetInterviewResIdl> {
+    public static final class Builder extends Message.Builder<ForumHeadVideoResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(GetInterviewResIdl getInterviewResIdl) {
-            super(getInterviewResIdl);
-            if (getInterviewResIdl != null) {
-                this.error = getInterviewResIdl.error;
-                this.data = getInterviewResIdl.data;
+        public Builder(ForumHeadVideoResIdl forumHeadVideoResIdl) {
+            super(forumHeadVideoResIdl);
+            if (forumHeadVideoResIdl != null) {
+                this.error = forumHeadVideoResIdl.error;
+                this.data = forumHeadVideoResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetInterviewResIdl build(boolean z) {
-            return new GetInterviewResIdl(this, z, null);
+        public ForumHeadVideoResIdl build(boolean z) {
+            return new ForumHeadVideoResIdl(this, z, null);
         }
     }
 }
