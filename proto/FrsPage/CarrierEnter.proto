@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message CarrierEnter {
+    string title = 1;
+    string text = 2;
+    string headline_cover = 3;
+    string url = 4;
+    string obj_id = 5;
+}

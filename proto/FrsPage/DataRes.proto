@@ -4,6 +4,7 @@ import "AnchorInfo.proto";
 import "Anti.proto";
 import "CategoryInfo.proto";
 import "FrsPage/ActivityHead.proto";
+import "FrsPage/CarrierEnter.proto";
 import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
@@ -12,6 +13,7 @@ import "FrsPage/HeadSdk.proto";
 import "FrsPage/Info.proto";
 import "FrsPage/NavTabInfo.proto";
 import "FrsPage/PushThreadInfo.proto";
+import "FrsPage/RecommendBook.proto";
 import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
 import "FrsTabInfo.proto";
@@ -21,6 +23,7 @@ import "RecommendInfo.proto";
 import "SdkTopicThread.proto";
 import "ThreadInfo.proto";
 import "User.proto";
+import "VitalityInfo.proto";
 import "ZhiBoInfoTW.proto";
 
 message DataRes {
@@ -61,4 +64,7 @@ message DataRes {
     int32 sort_type = 39;
     RecommendInfo school_recom_info = 40;
     uint32 school_recom_pos = 41;
+    VitalityInfo vitality_info = 42;
+    CarrierEnter carrier_enter = 43;
+    RecommendBook recommend_book = 46;
 }

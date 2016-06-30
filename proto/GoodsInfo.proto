@@ -22,4 +22,5 @@ message GoodsInfo {
     int32 height = 17;
     int32 label_measure = 18;
     string thread_content = 19;
+    string lego_card = 20;
 }

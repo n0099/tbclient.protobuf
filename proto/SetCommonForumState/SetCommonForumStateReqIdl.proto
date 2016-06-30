@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "SetCommonForumState/DataReq.proto";
+
+message SetCommonForumStateReqIdl {
+    DataReq data = 1;
+}

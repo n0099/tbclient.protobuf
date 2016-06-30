@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message RecommendBook {
+    uint32 type = 1;
+    string book_id = 2;
+    string title = 3;
+    string image = 4;
+    repeated string desc = 5;
+    string link_url = 6;
+}

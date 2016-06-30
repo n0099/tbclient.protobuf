@@ -2,20 +2,25 @@ syntax = "proto3";
 
 import "Abstract.proto";
 import "AnchorInfo.proto";
+import "AnimationThread.proto";
 import "AppCode.proto";
 import "CartoonThread.proto";
+import "DealInfo.proto";
 import "HotTWThreadInfo.proto";
 import "JNews.proto";
 import "Media.proto";
 import "MediaNum.proto";
 import "PollInfo.proto";
 import "PostList.proto";
+import "PsInfo.proto";
 import "PushStatus.proto";
+import "SkinInfo.proto";
 import "TailInfo.proto";
 import "TaskInfo.proto";
 import "TogetherHi.proto";
 import "Topic.proto";
 import "User.proto";
+import "VideoActive.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
 import "YulePostActivity.proto";
@@ -103,4 +108,11 @@ message ThreadInfo {
     CartoonThread cartoon_info = 92;
     string lego_card = 94;
     TogetherHi high_together = 95;
+    VideoActive videoactive_info = 96;
+    int32 is_deal = 97;
+    DealInfo deal_info = 98;
+    AnimationThread animation_info = 99;
+    SkinInfo skin_info = 100;
+    PsInfo ps_info = 101;
+    uint32 is_book_chapter = 103;
 }

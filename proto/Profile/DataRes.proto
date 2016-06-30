@@ -1,10 +1,12 @@
 syntax = "proto3";
 
 import "Anti.proto";
+import "DealWindow.proto";
 import "Highlist.proto";
 import "PostInfoList.proto";
 import "Profile/TAInfo.proto";
 import "Profile/UserGodInfo.proto";
+import "TbBookrack.proto";
 import "UcCard.proto";
 import "User.proto";
 
@@ -16,4 +18,6 @@ message DataRes {
     UserGodInfo user_god_info = 5;
     UcCard uc_card = 6;
     Highlist highs = 7;
+    DealWindow window = 8;
+    TbBookrack tbbookrack = 9;
 }

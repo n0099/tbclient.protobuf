@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message HighCover {
+    string pic_url = 1;
+}

@@ -7,6 +7,7 @@ import "PbContent.proto";
 import "PbPostZan.proto";
 import "PbPresent.proto";
 import "SignatureData.proto";
+import "SkinInfo.proto";
 import "SubPost.proto";
 import "TailInfo.proto";
 import "User.proto";
@@ -45,4 +46,5 @@ message Post {
     PbPostZan post_zan = 30;
     int32 is_hot_post = 31;
     repeated TailInfo ext_tails = 32;
+    SkinInfo skin_info = 34;
 }

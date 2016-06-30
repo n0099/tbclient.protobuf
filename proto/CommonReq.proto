@@ -27,4 +27,5 @@ message CommonReq {
     string pversion = 24;
     string _os_version = 25;
     string brand_type = 27;
+    string lego_lib_version = 28;
 }

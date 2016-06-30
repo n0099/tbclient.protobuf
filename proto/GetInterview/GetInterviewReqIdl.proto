@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetInterview/DataReq.proto";
-
-message GetInterviewReqIdl {
-    DataReq data = 1;
-}

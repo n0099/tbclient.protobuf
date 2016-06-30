@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    int32 pn = 2;
+    int32 rn = 3;
+    int64 fid = 4;
+    uint32 scr_w = 6;
+    uint32 scr_h = 7;
+    uint32 q_type = 8;
+    double scr_dip = 9;
+    int64 active_tid = 10;
+}

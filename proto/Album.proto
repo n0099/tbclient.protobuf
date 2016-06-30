@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "ConcernUser.proto";
+import "High.proto";
+
+message Album {
+    uint64 album_id = 1;
+    uint64 uid = 2;
+    uint32 create_time = 3;
+    uint32 start_time = 4;
+    uint32 end_time = 5;
+    uint32 num_join = 6;
+    uint32 weight = 7;
+    string album_name = 8;
+    string location = 9;
+    uint32 distance = 10;
+    repeated High high = 11;
+    repeated ConcernUser concern_user = 12;
+    uint32 num_user = 13;
+    string user_name = 14;
+    string portrait = 15;
+}

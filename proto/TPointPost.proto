@@ -3,6 +3,7 @@ syntax = "proto3";
 import "ActBtn.proto";
 import "DetailInfo.proto";
 import "Timgs.proto";
+import "VideoInfo.proto";
 
 message TPointPost {
     uint32 is_tuiguang = 1;
@@ -14,4 +15,5 @@ message TPointPost {
     DetailInfo detail_info = 7;
     string monitor_id = 8;
     int32 hidden_day = 9;
+    VideoInfo t_video = 10;
 }

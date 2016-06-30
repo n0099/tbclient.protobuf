@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "Abstract.proto";
 import "AnchorInfo.proto";
+import "DealInfo.proto";
 import "LbsInfo.proto";
 import "Media.proto";
 import "PollInfo.proto";
@@ -40,4 +41,6 @@ message PostInfoList {
     ZhiBoInfoTW twzhibo_info = 27;
     PollInfo poll_info = 28;
     VideoInfo video_info = 29;
+    bool is_deal = 30;
+    DealInfo deal_info = 31;
 }

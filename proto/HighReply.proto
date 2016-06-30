@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message HighReply {
+    uint64 uid = 1;
+    string uname = 2;
+    uint64 hid = 3;
+    string content = 4;
+    uint32 create_time = 5;
+    string portrait = 6;
+    uint64 id = 7;
+}

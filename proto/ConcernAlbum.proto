@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Album.proto";
+import "ConcernUser.proto";
+
+message ConcernAlbum {
+    repeated ConcernUser concern_user = 1;
+    uint32 num_user = 2;
+    Album album = 3;
+}

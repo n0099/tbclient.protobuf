@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message BfbSdkParam {
+    repeated int32 activity_no = 1;
+}

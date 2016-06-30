@@ -9,6 +9,7 @@ import "Page.proto";
 import "PbHotPost.proto";
 import "PbPage/AddPost.proto";
 import "PbPage/AppealInfo.proto";
+import "PbPage/GodCard.proto";
 import "PbPage/NewsInfo.proto";
 import "PbPage/PostBanner.proto";
 import "Post.proto";
@@ -42,4 +43,5 @@ message DataRes {
     PbHotPost hot_post_list = 20;
     GraffitiRankListInfo graffiti_rank_list_info = 21;
     AppealInfo appeal_info = 22;
+    GodCard god_card = 23;
 }
