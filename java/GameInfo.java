@@ -1,7 +1,6 @@
 package tbclient;
 
-import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -34,7 +33,7 @@ public final class GameInfo extends Message {
     public static final String DEFAULT_SUBSCRIPT_COLOR = "";
     public static final String DEFAULT_SUPERSCRIPT_COLOR = "";
     public static final String DEFAULT_VERSION = "";
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String andr_pk_name;
@@ -48,7 +47,7 @@ public final class GameInfo extends Message {
     public final Integer category_id;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String category_name;
-    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
+    @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String category_name_sim;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer day_downloads;
@@ -80,7 +79,7 @@ public final class GameInfo extends Message {
     public final String icon_url;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String introduce;
-    @ProtoField(tag = 34, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
     public final String launchComponent;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String launch_component;
@@ -94,13 +93,13 @@ public final class GameInfo extends Message {
     public final Integer player_num;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String schema_url;
-    @ProtoField(tag = 36, type = Message.Datatype.UINT32)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.UINT32)
     public final Integer score;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String secret_key;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer star;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String subscript_color;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String superscript_color;

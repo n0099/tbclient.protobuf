@@ -1,6 +1,5 @@
 package tbclient.GetMyPost;
 
-import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -61,7 +60,7 @@ public final class Thread_Info extends Message {
     public final Integer view_num;
     @ProtoField(tag = 25)
     public final Voice_Info voice_info;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID)
+    @ProtoField(tag = 26)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_REPLY_NUM = 0;

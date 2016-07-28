@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -31,7 +30,7 @@ public final class PbContent extends Message {
     public final String big_src;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String bsize;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 26, type = Message.Datatype.UINT32)
     public final Integer btn_type;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String c;

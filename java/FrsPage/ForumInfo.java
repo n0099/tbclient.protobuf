@@ -1,7 +1,7 @@
 package tbclient.FrsPage;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -32,17 +32,17 @@ public final class ForumInfo extends Message {
     public final AnchorPower anchor_power;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String avatar;
-    @ProtoField(label = Message.Label.REPEATED, tag = 34)
+    @ProtoField(label = Message.Label.REPEATED, tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling)
     public final List<Badges> badges;
     @ProtoField(tag = 32)
     public final Banner banner;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
+    @ProtoField(tag = 33)
     public final BannerList banner_list;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
-    @ProtoField(tag = 37, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.INT32)
     public final Integer favo_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String first_class;
@@ -66,13 +66,13 @@ public final class ForumInfo extends Message {
     public final Integer has_game;
     @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer has_paper;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.INT32)
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer has_postpre;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer is_exists;
-    @ProtoField(tag = 36, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.INT32)
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
@@ -84,9 +84,9 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = 41, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_mode, type = Message.Datatype.INT32)
     public final Integer is_support_local;
-    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
+    @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer level_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String level_name;
@@ -104,7 +104,7 @@ public final class ForumInfo extends Message {
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = 39)
+    @ProtoField(tag = u.l.PullToRefresh_headerBackground)
     public final PostPrefix post_prefix;
     @ProtoField(tag = 58)
     public final RealTime realtime_data;
@@ -118,9 +118,9 @@ public final class ForumInfo extends Message {
     public final SignInfo sign_in_info;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String superboy;
-    @ProtoField(tag = 38)
+    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground)
     public final TagInfo tag_info;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_num;

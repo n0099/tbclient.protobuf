@@ -1,7 +1,7 @@
 package tbclient.PbPage;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -35,9 +35,9 @@ public final class DataReq extends Message {
     public final Long fid;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
-    @ProtoField(tag = 34, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.INT32)
     public final Integer is_jumpfloor;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer issdk;
@@ -45,13 +45,13 @@ public final class DataReq extends Message {
     public final String jfrom;
     @ProtoField(tag = 44, type = Message.Datatype.UINT64)
     public final Long jid;
-    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
+    @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer jumpfloor_num;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long kz;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer last;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer lz;

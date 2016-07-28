@@ -12,6 +12,7 @@ import tbclient.Lbs;
 import tbclient.Page;
 import tbclient.PbHotPost;
 import tbclient.Post;
+import tbclient.PsRankListItem;
 import tbclient.RecommendThread;
 import tbclient.SdkTopicThread;
 import tbclient.SimpleForum;
@@ -48,10 +49,14 @@ public final class DataRes extends Message {
     public final NewsInfo news_info;
     @ProtoField(tag = 3)
     public final Page page;
+    @ProtoField(label = Message.Label.REPEATED, tag = 24)
+    public final List<PsRankListItem> play_rank_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
     public final List<PostBanner> post_banner;
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
     public final List<Post> post_list;
+    @ProtoField(tag = 25)
+    public final RecommendBook recommend_book;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<RecommendThread> recommend_threads;
     @ProtoField(tag = 19)
@@ -74,6 +79,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SERVER_TIME = 0;
     public static final List<RecommendThread> DEFAULT_RECOMMEND_THREADS = Collections.emptyList();
     public static final List<FineBannerPb> DEFAULT_FINE_BANNER = Collections.emptyList();
+    public static final List<PsRankListItem> DEFAULT_PLAY_RANK_LIST = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -137,6 +143,12 @@ public final class DataRes extends Message {
             this.graffiti_rank_list_info = builder.graffiti_rank_list_info;
             this.appeal_info = builder.appeal_info;
             this.god_card = builder.god_card;
+            if (builder.play_rank_list == null) {
+                this.play_rank_list = DEFAULT_PLAY_RANK_LIST;
+            } else {
+                this.play_rank_list = immutableCopyOf(builder.play_rank_list);
+            }
+            this.recommend_book = builder.recommend_book;
             return;
         }
         this.user = builder.user;
@@ -162,6 +174,8 @@ public final class DataRes extends Message {
         this.graffiti_rank_list_info = builder.graffiti_rank_list_info;
         this.appeal_info = builder.appeal_info;
         this.god_card = builder.god_card;
+        this.play_rank_list = immutableCopyOf(builder.play_rank_list);
+        this.recommend_book = builder.recommend_book;
     }
 
     /* loaded from: classes.dex */
@@ -180,8 +194,10 @@ public final class DataRes extends Message {
         public Lbs location;
         public NewsInfo news_info;
         public Page page;
+        public List<PsRankListItem> play_rank_list;
         public List<PostBanner> post_banner;
         public List<Post> post_list;
+        public RecommendBook recommend_book;
         public List<RecommendThread> recommend_threads;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
@@ -219,6 +235,8 @@ public final class DataRes extends Message {
                 this.graffiti_rank_list_info = dataRes.graffiti_rank_list_info;
                 this.appeal_info = dataRes.appeal_info;
                 this.god_card = dataRes.god_card;
+                this.play_rank_list = DataRes.copyOf(dataRes.play_rank_list);
+                this.recommend_book = dataRes.recommend_book;
             }
         }
 

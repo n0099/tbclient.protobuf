@@ -17,6 +17,8 @@ public final class DataReq extends Message {
     public final Long forum_id;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 15, type = Message.Datatype.UINT64)
+    public final Long last_click_tid;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer need_abstract;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -31,6 +33,8 @@ public final class DataReq extends Message {
     public final Integer scr_h;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer scr_w;
+    @ProtoField(tag = 16, type = Message.Datatype.INT32)
+    public final Integer sort_type;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer st_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -46,6 +50,8 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
     public static final Integer DEFAULT_PN = 0;
+    public static final Long DEFAULT_LAST_CLICK_TID = 0L;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -117,9 +123,19 @@ public final class DataReq extends Message {
             }
             if (builder.forum_name == null) {
                 this.forum_name = "";
-                return;
             } else {
                 this.forum_name = builder.forum_name;
+            }
+            if (builder.last_click_tid == null) {
+                this.last_click_tid = DEFAULT_LAST_CLICK_TID;
+            } else {
+                this.last_click_tid = builder.last_click_tid;
+            }
+            if (builder.sort_type == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.sort_type = builder.sort_type;
                 return;
             }
         }
@@ -137,6 +153,8 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
         this.pn = builder.pn;
         this.forum_name = builder.forum_name;
+        this.last_click_tid = builder.last_click_tid;
+        this.sort_type = builder.sort_type;
     }
 
     /* loaded from: classes.dex */
@@ -145,6 +163,7 @@ public final class DataReq extends Message {
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
+        public Long last_click_tid;
         public Integer need_abstract;
         public String platform;
         public Integer pn;
@@ -152,6 +171,7 @@ public final class DataReq extends Message {
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
+        public Integer sort_type;
         public Integer st_type;
         public String thread_ids;
         public Long user_id;
@@ -176,6 +196,8 @@ public final class DataReq extends Message {
                 this.scr_dip = dataReq.scr_dip;
                 this.pn = dataReq.pn;
                 this.forum_name = dataReq.forum_name;
+                this.last_click_tid = dataReq.last_click_tid;
+                this.sort_type = dataReq.sort_type;
             }
         }
 

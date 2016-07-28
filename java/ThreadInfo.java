@@ -3,13 +3,14 @@ package tbclient;
 import com.baidu.cloudsdk.social.core.util.SocialAPIErrorCodes;
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class ThreadInfo extends Message {
+    public static final String DEFAULT_AB_TAG = "";
     public static final String DEFAULT_CATEGORY_NAME = "";
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
@@ -22,6 +23,9 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_LIVE_POST_TYPE = "";
     public static final String DEFAULT_MEIZHI_PIC = "";
     public static final String DEFAULT_PIDS = "";
+    public static final String DEFAULT_RECOM_REASON = "";
+    public static final String DEFAULT_RECOM_SOURCE = "";
+    public static final String DEFAULT_RECOM_WEIGHT = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VIDEO = "";
     public static final String DEFAULT_VIDEO_COVER = "";
@@ -30,6 +34,8 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_VIDEO_SWF = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
+    @ProtoField(tag = 108, type = Message.Datatype.STRING)
+    public final String ab_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
     public final List<ActInfo> act_info;
     @ProtoField(tag = 55)
@@ -48,6 +54,8 @@ public final class ThreadInfo extends Message {
     public final CartoonThread cartoon_info;
     @ProtoField(tag = 73, type = Message.Datatype.STRING)
     public final String category_name;
+    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_TIMESTAMP, type = Message.Datatype.UINT32)
+    public final Integer cheak_repeat;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
     @ProtoField(tag = 51, type = Message.Datatype.STRING)
@@ -66,7 +74,7 @@ public final class ThreadInfo extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = 40, type = Message.Datatype.INT64)
+    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
@@ -94,7 +102,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = 103, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
-    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_bub;
     @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
@@ -120,7 +128,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_reward;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_novel_thank;
-    @ProtoField(tag = 38, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
@@ -134,6 +142,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 75)
     public final JNews jid;
+    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_SIGNATURE_ALGORITHM, type = Message.Datatype.UINT64)
+    public final Long last_read_pid;
     @ProtoField(tag = 19)
     public final User last_replyer;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -174,6 +184,12 @@ public final class ThreadInfo extends Message {
     public final Integer push_end_time;
     @ProtoField(tag = 91)
     public final PushStatus push_status;
+    @ProtoField(tag = 109, type = Message.Datatype.STRING)
+    public final String recom_reason;
+    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_SIGNATURE, type = Message.Datatype.STRING)
+    public final String recom_source;
+    @ProtoField(tag = 105, type = Message.Datatype.STRING)
+    public final String recom_weight;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
@@ -186,7 +202,7 @@ public final class ThreadInfo extends Message {
     public final Integer storecount;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.INT32)
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer thread_types;
@@ -204,17 +220,19 @@ public final class ThreadInfo extends Message {
     public final ZhiBoInfoTW twzhibo_info;
     @ProtoField(tag = 57, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
-    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
+    @ProtoField(tag = 110)
+    public final AdInfo video_ad_info;
+    @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String video_cover;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
     public final String video_id;
     @ProtoField(tag = 79)
     public final VideoInfo video_info;
-    @ProtoField(tag = 37, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.STRING)
     public final String video_mobile_url;
-    @ProtoField(tag = 34, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
     public final String video_swf;
     @ProtoField(tag = 96)
     public final VideoActive videoactive_info;
@@ -224,7 +242,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = 41)
+    @ProtoField(tag = u.l.PullToRefresh_mode)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -283,6 +301,8 @@ public final class ThreadInfo extends Message {
     public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
     public static final Integer DEFAULT_IS_DEAL = 0;
     public static final Integer DEFAULT_IS_BOOK_CHAPTER = 0;
+    public static final Long DEFAULT_LAST_READ_PID = 0L;
+    public static final Integer DEFAULT_CHEAK_REPEAT = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -687,11 +707,41 @@ public final class ThreadInfo extends Message {
             this.book_chapter = builder.book_chapter;
             if (builder.is_book_chapter == null) {
                 this.is_book_chapter = DEFAULT_IS_BOOK_CHAPTER;
-                return;
             } else {
                 this.is_book_chapter = builder.is_book_chapter;
-                return;
             }
+            if (builder.recom_source == null) {
+                this.recom_source = "";
+            } else {
+                this.recom_source = builder.recom_source;
+            }
+            if (builder.recom_weight == null) {
+                this.recom_weight = "";
+            } else {
+                this.recom_weight = builder.recom_weight;
+            }
+            if (builder.last_read_pid == null) {
+                this.last_read_pid = DEFAULT_LAST_READ_PID;
+            } else {
+                this.last_read_pid = builder.last_read_pid;
+            }
+            if (builder.cheak_repeat == null) {
+                this.cheak_repeat = DEFAULT_CHEAK_REPEAT;
+            } else {
+                this.cheak_repeat = builder.cheak_repeat;
+            }
+            if (builder.ab_tag == null) {
+                this.ab_tag = "";
+            } else {
+                this.ab_tag = builder.ab_tag;
+            }
+            if (builder.recom_reason == null) {
+                this.recom_reason = "";
+            } else {
+                this.recom_reason = builder.recom_reason;
+            }
+            this.video_ad_info = builder.video_ad_info;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -792,11 +842,19 @@ public final class ThreadInfo extends Message {
         this.ps_info = builder.ps_info;
         this.book_chapter = builder.book_chapter;
         this.is_book_chapter = builder.is_book_chapter;
+        this.recom_source = builder.recom_source;
+        this.recom_weight = builder.recom_weight;
+        this.last_read_pid = builder.last_read_pid;
+        this.cheak_repeat = builder.cheak_repeat;
+        this.ab_tag = builder.ab_tag;
+        this.recom_reason = builder.recom_reason;
+        this.video_ad_info = builder.video_ad_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
+        public String ab_tag;
         public List<ActInfo> act_info;
         public AnchorInfo anchor_info;
         public AnimationThread animation_info;
@@ -806,6 +864,7 @@ public final class ThreadInfo extends Message {
         public BookThread book_chapter;
         public CartoonThread cartoon_info;
         public String category_name;
+        public Integer cheak_repeat;
         public String click_url;
         public String collect_mark_pid;
         public Integer collect_status;
@@ -849,6 +908,7 @@ public final class ThreadInfo extends Message {
         public Integer is_voice_thread;
         public Integer is_vote;
         public JNews jid;
+        public Long last_read_pid;
         public User last_replyer;
         public String last_time;
         public Integer last_time_int;
@@ -869,6 +929,9 @@ public final class ThreadInfo extends Message {
         public PsInfo ps_info;
         public Integer push_end_time;
         public PushStatus push_status;
+        public String recom_reason;
+        public String recom_source;
+        public String recom_weight;
         public Integer reply_num;
         public Integer repost_num;
         public Integer show_commented;
@@ -885,6 +948,7 @@ public final class ThreadInfo extends Message {
         public ZhiBoInfoTW twzhibo_info;
         public Integer valid_post_num;
         public String video;
+        public AdInfo video_ad_info;
         public String video_cover;
         public String video_id;
         public VideoInfo video_info;
@@ -1001,6 +1065,13 @@ public final class ThreadInfo extends Message {
                 this.ps_info = threadInfo.ps_info;
                 this.book_chapter = threadInfo.book_chapter;
                 this.is_book_chapter = threadInfo.is_book_chapter;
+                this.recom_source = threadInfo.recom_source;
+                this.recom_weight = threadInfo.recom_weight;
+                this.last_read_pid = threadInfo.last_read_pid;
+                this.cheak_repeat = threadInfo.cheak_repeat;
+                this.ab_tag = threadInfo.ab_tag;
+                this.recom_reason = threadInfo.recom_reason;
+                this.video_ad_info = threadInfo.video_ad_info;
             }
         }
 

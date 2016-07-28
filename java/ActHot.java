@@ -8,6 +8,7 @@ public final class ActHot extends Message {
     public static final String DEFAULT_BSIZE = "";
     public static final String DEFAULT_IMG_DES = "";
     public static final String DEFAULT_IMG_SRC = "";
+    public static final Integer DEFAULT_IMG_TYPE = 0;
     public static final String DEFAULT_LINK = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String author_name;
@@ -17,6 +18,8 @@ public final class ActHot extends Message {
     public final String img_des;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String img_src;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer img_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
 
@@ -49,9 +52,14 @@ public final class ActHot extends Message {
             }
             if (builder.img_des == null) {
                 this.img_des = "";
-                return;
             } else {
                 this.img_des = builder.img_des;
+            }
+            if (builder.img_type == null) {
+                this.img_type = DEFAULT_IMG_TYPE;
+                return;
+            } else {
+                this.img_type = builder.img_type;
                 return;
             }
         }
@@ -60,6 +68,7 @@ public final class ActHot extends Message {
         this.link = builder.link;
         this.author_name = builder.author_name;
         this.img_des = builder.img_des;
+        this.img_type = builder.img_type;
     }
 
     /* loaded from: classes.dex */
@@ -68,6 +77,7 @@ public final class ActHot extends Message {
         public String bsize;
         public String img_des;
         public String img_src;
+        public Integer img_type;
         public String link;
 
         public Builder() {
@@ -81,6 +91,7 @@ public final class ActHot extends Message {
                 this.link = actHot.link;
                 this.author_name = actHot.author_name;
                 this.img_des = actHot.img_des;
+                this.img_type = actHot.img_type;
             }
         }
 

@@ -1,7 +1,6 @@
 package tbclient;
 
-import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -10,6 +9,7 @@ import java.util.List;
 public final class Post extends Message {
     public static final String DEFAULT_BIMG_URL = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
+    public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_TIME_EX = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VOTE_CRYPT = "";
@@ -33,7 +33,7 @@ public final class Post extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
+    @ProtoField(tag = 33)
     public final TogetherHi high_together;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
@@ -51,7 +51,9 @@ public final class Post extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
-    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
+    public final String lego_card;
+    @ProtoField(tag = 35)
     public final DealInfo pb_deal_info;
     @ProtoField(tag = 30)
     public final PbPostZan post_zan;
@@ -59,7 +61,7 @@ public final class Post extends Message {
     public final PbPresent present;
     @ProtoField(tag = 21)
     public final SignatureData signature;
-    @ProtoField(tag = 34)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling)
     public final SkinInfo skin_info;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer storecount;
@@ -75,7 +77,7 @@ public final class Post extends Message {
     public final String time_ex;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID)
+    @ProtoField(tag = 26)
     public final TPointPost tpoint_post;
     @ProtoField(tag = 29)
     public final VideoInfo video_info;
@@ -221,7 +223,13 @@ public final class Post extends Message {
             this.high_together = builder.high_together;
             this.skin_info = builder.skin_info;
             this.pb_deal_info = builder.pb_deal_info;
-            return;
+            if (builder.lego_card == null) {
+                this.lego_card = "";
+                return;
+            } else {
+                this.lego_card = builder.lego_card;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -258,6 +266,7 @@ public final class Post extends Message {
         this.high_together = builder.high_together;
         this.skin_info = builder.skin_info;
         this.pb_deal_info = builder.pb_deal_info;
+        this.lego_card = builder.lego_card;
     }
 
     /* loaded from: classes.dex */
@@ -281,6 +290,7 @@ public final class Post extends Message {
         public Integer is_voice;
         public Integer is_vote;
         public Lbs lbs_info;
+        public String lego_card;
         public DealInfo pb_deal_info;
         public PbPostZan post_zan;
         public PbPresent present;
@@ -339,6 +349,7 @@ public final class Post extends Message {
                 this.high_together = post.high_together;
                 this.skin_info = post.skin_info;
                 this.pb_deal_info = post.pb_deal_info;
+                this.lego_card = post.lego_card;
             }
         }
 

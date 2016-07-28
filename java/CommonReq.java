@@ -1,11 +1,11 @@
 package tbclient;
 
-import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class CommonReq extends Message {
     public static final String DEFAULT_APID = "";
+    public static final String DEFAULT_APPLIST = "";
     public static final String DEFAULT_BDUSS = "";
     public static final String DEFAULT_BRAND = "";
     public static final String DEFAULT_BRAND_TYPE = "";
@@ -48,7 +48,9 @@ public final class CommonReq extends Message {
     public final Long _timestamp;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String apid;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String applist;
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String brand;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String brand_type;
@@ -234,9 +236,14 @@ public final class CommonReq extends Message {
             }
             if (builder.lego_lib_version == null) {
                 this.lego_lib_version = "";
-                return;
             } else {
                 this.lego_lib_version = builder.lego_lib_version;
+            }
+            if (builder.applist == null) {
+                this.applist = "";
+                return;
+            } else {
+                this.applist = builder.applist;
                 return;
             }
         }
@@ -268,6 +275,7 @@ public final class CommonReq extends Message {
         this.brand = builder.brand;
         this.brand_type = builder.brand_type;
         this.lego_lib_version = builder.lego_lib_version;
+        this.applist = builder.applist;
     }
 
     /* loaded from: classes.dex */
@@ -281,6 +289,7 @@ public final class CommonReq extends Message {
         public String _phone_newimei;
         public Long _timestamp;
         public String apid;
+        public String applist;
         public String brand;
         public String brand_type;
         public String cuid;
@@ -335,6 +344,7 @@ public final class CommonReq extends Message {
                 this.brand = commonReq.brand;
                 this.brand_type = commonReq.brand_type;
                 this.lego_lib_version = commonReq.lego_lib_version;
+                this.applist = commonReq.applist;
             }
         }
 

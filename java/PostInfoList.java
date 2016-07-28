@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -62,7 +61,7 @@ public final class PostInfoList extends Message {
     public final Integer reply_num;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 26, type = Message.Datatype.UINT64)
     public final Long thread_type;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String title;

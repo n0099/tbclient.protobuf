@@ -1,7 +1,7 @@
 package tbclient.FrsPage;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -30,9 +30,9 @@ public final class DataReq extends Message {
     public final Integer cid;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer class_id;
-    @ProtoField(tag = 39)
+    @ProtoField(tag = u.l.PullToRefresh_headerBackground)
     public final CommonReq common;
-    @ProtoField(tag = 38, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
@@ -40,9 +40,9 @@ public final class DataReq extends Message {
     public final String da_idfa;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer data_size;
-    @ProtoField(tag = 37, type = Message.Datatype.BOOL)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.BOOL)
     public final Boolean debug;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
     public final String email;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String forum_name;
@@ -54,23 +54,25 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = 41, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_mode, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
-    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    @ProtoField(tag = 48, type = Message.Datatype.UINT64)
+    public final Long last_click_tid;
+    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean login;
-    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.STRING)
+    @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String mobile;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String module_name;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer need_badge;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer net_error;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;
@@ -78,7 +80,7 @@ public final class DataReq extends Message {
     public final String platform;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer pn;
-    @ProtoField(tag = 34, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer q_type;
@@ -147,6 +149,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_ISSDK = 0;
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final Long DEFAULT_LAST_CLICK_TID = 0L;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -383,9 +386,14 @@ public final class DataReq extends Message {
             }
             if (builder.sort_type == null) {
                 this.sort_type = DEFAULT_SORT_TYPE;
-                return;
             } else {
                 this.sort_type = builder.sort_type;
+            }
+            if (builder.last_click_tid == null) {
+                this.last_click_tid = DEFAULT_LAST_CLICK_TID;
+                return;
+            } else {
+                this.last_click_tid = builder.last_click_tid;
                 return;
             }
         }
@@ -436,6 +444,7 @@ public final class DataReq extends Message {
         this.yuelaou_locate = builder.yuelaou_locate;
         this.yuelaou_params = builder.yuelaou_params;
         this.sort_type = builder.sort_type;
+        this.last_click_tid = builder.last_click_tid;
     }
 
     /* loaded from: classes.dex */
@@ -458,6 +467,7 @@ public final class DataReq extends Message {
         public Integer is_good;
         public Integer issdk;
         public String kw;
+        public Long last_click_tid;
         public String lastids;
         public Boolean login;
         public String mobile;
@@ -541,6 +551,7 @@ public final class DataReq extends Message {
                 this.yuelaou_locate = dataReq.yuelaou_locate;
                 this.yuelaou_params = dataReq.yuelaou_params;
                 this.sort_type = dataReq.sort_type;
+                this.last_click_tid = dataReq.last_click_tid;
             }
         }
 

@@ -7,6 +7,8 @@ public final class GodInfo extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_RECOMMEND_REASON = "";
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer can_send_msg;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -25,6 +27,7 @@ public final class GodInfo extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Long DEFAULT_FID = 0L;
     public static final Integer DEFAULT_FOLLOWED = 0;
+    public static final Integer DEFAULT_CAN_SEND_MSG = 0;
 
     /* synthetic */ GodInfo(Builder builder, boolean z, GodInfo godInfo) {
         this(builder, z);
@@ -65,9 +68,14 @@ public final class GodInfo extends Message {
             }
             if (builder.forum_name == null) {
                 this.forum_name = "";
-                return;
             } else {
                 this.forum_name = builder.forum_name;
+            }
+            if (builder.can_send_msg == null) {
+                this.can_send_msg = DEFAULT_CAN_SEND_MSG;
+                return;
+            } else {
+                this.can_send_msg = builder.can_send_msg;
                 return;
             }
         }
@@ -78,10 +86,12 @@ public final class GodInfo extends Message {
         this.followed = builder.followed;
         this.recommend_reason = builder.recommend_reason;
         this.forum_name = builder.forum_name;
+        this.can_send_msg = builder.can_send_msg;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<GodInfo> {
+        public Integer can_send_msg;
         public Long fid;
         public Integer followed;
         public String forum_name;
@@ -103,6 +113,7 @@ public final class GodInfo extends Message {
                 this.followed = godInfo.followed;
                 this.recommend_reason = godInfo.recommend_reason;
                 this.forum_name = godInfo.forum_name;
+                this.can_send_msg = godInfo.can_send_msg;
             }
         }
 

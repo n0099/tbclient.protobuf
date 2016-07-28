@@ -2,7 +2,7 @@ package tbclient;
 
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -30,11 +30,11 @@ public final class User extends Message {
     public final ActivitySponsor activity_sponsor;
     @ProtoField(tag = 10)
     public final Balv balv;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String bawu_type;
     @ProtoField(tag = 58, type = Message.Datatype.STRING)
     public final String bg_pic;
-    @ProtoField(tag = 40, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
@@ -46,6 +46,8 @@ public final class User extends Message {
     public final Integer concern_num;
     @ProtoField(tag = BDLocation.TypeOffLineLocationNetworkFail)
     public final ConsumeInfo consume_info;
+    @ProtoField(tag = 74)
+    public final Ecom ecom;
     @ProtoField(tag = 57, type = Message.Datatype.STRING)
     public final String fans_nickname;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
@@ -62,7 +64,7 @@ public final class User extends Message {
     public final GodInfo god_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 48)
     public final List<MyGroupInfo> groupList;
-    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER, type = Message.Datatype.INT32)
+    @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer has_concerned;
     @ProtoField(tag = BDLocation.TypeNetWorkException, type = Message.Datatype.INT32)
     public final Integer heavy_user;
@@ -70,7 +72,7 @@ public final class User extends Message {
     public final List<Icon> iconinfo;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = 34, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
     public final String intro;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String ios_bimg_format;
@@ -96,7 +98,7 @@ public final class User extends Message {
     public final Integer is_manager;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_mask;
-    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_mem;
     @ProtoField(tag = 51, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
@@ -110,7 +112,7 @@ public final class User extends Message {
     public final Integer meizhi_level;
     @ProtoField(label = Message.Label.REPEATED, tag = 55)
     public final List<SimpleUser> mute_user;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer my_like_num;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String name;
@@ -128,15 +130,15 @@ public final class User extends Message {
     public final NovelFansInfo novel_fans_info;
     @ProtoField(tag = 59)
     public final NewParrScores parr_scores;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = 41)
+    @ProtoField(tag = u.l.PullToRefresh_mode)
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String portraith;
-    @ProtoField(tag = 37, type = Message.Datatype.INT32)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.INT32)
     public final Integer post_num;
     @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
     public final PrivSets priv_sets;
@@ -146,7 +148,7 @@ public final class User extends Message {
     public final String rank;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer sex;
-    @ProtoField(tag = 38, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
     public final String tb_age;
     @ProtoField(tag = 72)
     public final TbVipInfo tb_vip;
@@ -523,11 +525,11 @@ public final class User extends Message {
             this.tb_vip = builder.tb_vip;
             if (builder.no_post_high == null) {
                 this.no_post_high = DEFAULT_NO_POST_HIGH;
-                return;
             } else {
                 this.no_post_high = builder.no_post_high;
-                return;
             }
+            this.ecom = builder.ecom;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -602,6 +604,7 @@ public final class User extends Message {
         this.activity_sponsor = builder.activity_sponsor;
         this.tb_vip = builder.tb_vip;
         this.no_post_high = builder.no_post_high;
+        this.ecom = builder.ecom;
     }
 
     /* loaded from: classes.dex */
@@ -617,6 +620,7 @@ public final class User extends Message {
         public Integer bookmark_new_count;
         public Integer concern_num;
         public ConsumeInfo consume_info;
+        public Ecom ecom;
         public String fans_nickname;
         public Integer fans_num;
         public Long friend_num;
@@ -759,6 +763,7 @@ public final class User extends Message {
                 this.activity_sponsor = user.activity_sponsor;
                 this.tb_vip = user.tb_vip;
                 this.no_post_high = user.no_post_high;
+                this.ecom = user.ecom;
             }
         }
 

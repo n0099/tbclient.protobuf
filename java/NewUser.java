@@ -1,7 +1,6 @@
 package tbclient;
 
-import com.baidu.tbadk.TbConfig;
-import com.baidu.tbadk.coreExtra.service.DealIntentService;
+import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -30,11 +29,11 @@ public final class NewUser extends Message {
     public final String card;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String cdn_error;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
     public final String free_flag;
-    @ProtoField(tag = DealIntentService.CLASS_TYPE_MY_COLLECT_UPDATE)
+    @ProtoField(tag = 33)
     public final GameAttr game_attr;
-    @ProtoField(tag = TbConfig.FRS_NOABSTRACT_ITEM_NUMBER)
+    @ProtoField(tag = 35)
     public final Global global;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String is_coreuser;
@@ -44,13 +43,13 @@ public final class NewUser extends Message {
     public final Integer is_group_owner;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer is_hardworking;
-    @ProtoField(tag = 34, type = Message.Datatype.STRING)
+    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
     public final String is_interestman;
     @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_member;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer is_passer;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.INT32)
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer is_qun_spring;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer is_shengyou;

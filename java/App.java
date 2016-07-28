@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -90,7 +89,7 @@ public final class App extends Message {
     public final String url;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer url_type;
-    @ProtoField(tag = TbConfig.NOTIFY_FANS_NEW_ID, type = Message.Datatype.STRING)
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String user_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String verify;

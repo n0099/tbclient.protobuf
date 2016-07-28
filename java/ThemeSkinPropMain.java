@@ -14,6 +14,10 @@ public final class ThemeSkinPropMain extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String activity_url;
+    @ProtoField(tag = 13, type = Message.Datatype.UINT32)
+    public final Integer daily_privilege_status;
+    @ProtoField(tag = 14, type = Message.Datatype.INT64)
+    public final Long end_time;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String example_url;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
@@ -40,6 +44,8 @@ public final class ThemeSkinPropMain extends Message {
     public static final Integer DEFAULT_PROPS_VERSION = 0;
     public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
     public static final Integer DEFAULT_IS_FINISHED = 0;
+    public static final Integer DEFAULT_DAILY_PRIVILEGE_STATUS = 0;
+    public static final Long DEFAULT_END_TIME = 0L;
 
     /* synthetic */ ThemeSkinPropMain(Builder builder, boolean z, ThemeSkinPropMain themeSkinPropMain) {
         this(builder, z);
@@ -105,9 +111,19 @@ public final class ThemeSkinPropMain extends Message {
             }
             if (builder.package_key == null) {
                 this.package_key = "";
-                return;
             } else {
                 this.package_key = builder.package_key;
+            }
+            if (builder.daily_privilege_status == null) {
+                this.daily_privilege_status = DEFAULT_DAILY_PRIVILEGE_STATUS;
+            } else {
+                this.daily_privilege_status = builder.daily_privilege_status;
+            }
+            if (builder.end_time == null) {
+                this.end_time = DEFAULT_END_TIME;
+                return;
+            } else {
+                this.end_time = builder.end_time;
                 return;
             }
         }
@@ -123,11 +139,15 @@ public final class ThemeSkinPropMain extends Message {
         this.activity_url = builder.activity_url;
         this.is_finished = builder.is_finished;
         this.package_key = builder.package_key;
+        this.daily_privilege_status = builder.daily_privilege_status;
+        this.end_time = builder.end_time;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ThemeSkinPropMain> {
         public String activity_url;
+        public Integer daily_privilege_status;
+        public Long end_time;
         public String example_url;
         public Integer free_user_level;
         public Integer is_finished;
@@ -158,6 +178,8 @@ public final class ThemeSkinPropMain extends Message {
                 this.activity_url = themeSkinPropMain.activity_url;
                 this.is_finished = themeSkinPropMain.is_finished;
                 this.package_key = themeSkinPropMain.package_key;
+                this.daily_privilege_status = themeSkinPropMain.daily_privilege_status;
+                this.end_time = themeSkinPropMain.end_time;
             }
         }
 
