@@ -28,19 +28,15 @@ message BookInfo {
     string publisher = 23;
     string isbn = 24;
     string copyright = 25;
+    string publish_text = 26;
     string copyright_text = 27;
     string publish_time = 28;
     string publish_type = 29;
     uint32 update_time = 30;
     string big_cover = 31;
     uint32 discount_type = 32;
-    uint32 read_count = 34;
-    string book_ver = 36;
-    string chapter_ver = 37;
-    uint64 forum_id = 38;
-    string forum_name = 39;
-    string discuss = 40;
-    string cp_id = 41;
+    string discount_icon = 33;
+    uint32 total_page = 35;
     string paper_price = 42;
     uint32 first_chapter = 43;
 }

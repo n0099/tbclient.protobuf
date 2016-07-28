@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "ActivitySponsor.proto";
 import "Balv.proto";
+import "Ecom.proto";
 import "GiftInfo.proto";
 import "Icon.proto";
 import "LikeForumInfo.proto";
@@ -9,7 +10,6 @@ import "MyGroupInfo.proto";
 import "NewParrScores.proto";
 import "NewUser.proto";
 import "NovelFansInfo.proto";
-import "PayMemberInfo.proto";
 import "SimpleUser.proto";
 import "TbVipInfo.proto";
 import "ThemeCardInUser.proto";
@@ -44,19 +44,15 @@ message User {
     int32 level_id = 23;
     int32 is_like = 24;
     int32 is_bawu = 25;
+    string bawu_type = 26;
     string portraith = 27;
     string ip = 28;
     string BDUSS = 29;
     int32 fans_num = 30;
     int32 concern_num = 31;
     int32 sex = 32;
-    string intro = 34;
-    string passwd = 36;
-    int32 post_num = 37;
-    string tb_age = 38;
-    int32 is_mem = 39;
-    int32 bimg_end_time = 40;
-    PayMemberInfo pay_member_info = 41;
+    int32 my_like_num = 33;
+    int32 has_concerned = 35;
     int32 gender = 42;
     int32 is_mask = 43;
     repeated UserPics user_pics = 44;
@@ -81,4 +77,5 @@ message User {
     ActivitySponsor activity_sponsor = 71;
     TbVipInfo tb_vip = 72;
     uint32 no_post_high = 73;
+    Ecom ecom = 74;
 }

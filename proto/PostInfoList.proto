@@ -38,6 +38,7 @@ message PostInfoList {
     repeated Voice voice_info = 23;
     AnchorInfo anchor_info = 24;
     int32 hide_post = 25;
+    uint64 thread_type = 26;
     ZhiBoInfoTW twzhibo_info = 27;
     PollInfo poll_info = 28;
     VideoInfo video_info = 29;

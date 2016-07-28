@@ -8,4 +8,5 @@ message GodInfo {
     int32 followed = 5;
     string recommend_reason = 6;
     string forum_name = 7;
+    int32 can_send_msg = 8;
 }

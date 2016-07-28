@@ -28,13 +28,15 @@ message DataReq {
     int32 last = 23;
     string msg_click = 24;
     CommonReq common = 25;
+    string lastids = 26;
     string st_from = 27;
     string st_link = 28;
     int32 st_stat = 29;
     int64 st_task = 30;
     int32 issdk = 31;
     string query_word = 32;
-    int32 is_jumpfloor = 34;
+    int32 is_comm_reverse = 33;
+    int32 jumpfloor_num = 35;
     string da_idfa = 42;
     string platform = 43;
     uint64 jid = 44;

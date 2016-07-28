@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetFrsTabFollowPostNum/DataReq.proto";
-
-message GetFrsTabFollowPostNumReqIdl {
-    DataReq data = 1;
-}

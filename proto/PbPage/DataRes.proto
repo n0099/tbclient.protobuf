@@ -12,7 +12,9 @@ import "PbPage/AppealInfo.proto";
 import "PbPage/GodCard.proto";
 import "PbPage/NewsInfo.proto";
 import "PbPage/PostBanner.proto";
+import "PbPage/RecommendBook.proto";
 import "Post.proto";
+import "PsRankListItem.proto";
 import "RecommendThread.proto";
 import "SdkTopicThread.proto";
 import "SimpleForum.proto";
@@ -44,4 +46,6 @@ message DataRes {
     GraffitiRankListInfo graffiti_rank_list_info = 21;
     AppealInfo appeal_info = 22;
     GodCard god_card = 23;
+    repeated PsRankListItem play_rank_list = 24;
+    RecommendBook recommend_book = 25;
 }

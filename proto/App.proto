@@ -28,6 +28,7 @@ message App {
     int32 cpid = 23;
     string abtest = 24;
     int32 plan_id = 25;
+    string user_id = 26;
     string price = 27;
     string verify = 28;
     string ext_info = 29;
