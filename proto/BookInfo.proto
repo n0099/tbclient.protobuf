@@ -36,7 +36,10 @@ message BookInfo {
     string big_cover = 31;
     uint32 discount_type = 32;
     string discount_icon = 33;
+    uint32 read_count = 34;
     uint32 total_page = 35;
+    string book_ver = 36;
+    string chapter_ver = 37;
     string paper_price = 42;
     uint32 first_chapter = 43;
 }

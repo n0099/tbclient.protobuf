@@ -36,7 +36,10 @@ message DataReq {
     int64 user_id = 31;
     string user_name = 32;
     int32 no_un = 33;
+    string portrait = 34;
     string mobile = 35;
+    string email = 36;
+    bool debug = 37;
     string da_idfa = 42;
     string platform = 43;
     int32 category_id = 44;

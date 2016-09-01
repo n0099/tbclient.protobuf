@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "ThreadPicList.proto";
+import "VideoInfo.proto";
 
 message GoodsInfo {
     int32 id = 1;
@@ -23,4 +24,10 @@ message GoodsInfo {
     int32 label_measure = 18;
     string thread_content = 19;
     string lego_card = 20;
+    VideoInfo video_info = 21;
+    string tag_name = 22;
+    string button_url = 23;
+    string ad_source = 24;
+    string tag_name_url = 25;
+    string tag_name_wh = 26;
 }

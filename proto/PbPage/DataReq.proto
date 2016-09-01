@@ -36,6 +36,7 @@ message DataReq {
     int32 issdk = 31;
     string query_word = 32;
     int32 is_comm_reverse = 33;
+    int32 is_jumpfloor = 34;
     int32 jumpfloor_num = 35;
     string da_idfa = 42;
     string platform = 43;

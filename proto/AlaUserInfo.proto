@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message AlaUserInfo {
+    uint64 ala_id = 1;
+    string user_name = 2;
+    string portrait = 3;
+    string description = 4;
+    string sex = 5;
+}

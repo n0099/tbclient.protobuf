@@ -10,6 +10,7 @@ import "MyGroupInfo.proto";
 import "NewParrScores.proto";
 import "NewUser.proto";
 import "NovelFansInfo.proto";
+import "Pendant.proto";
 import "SimpleUser.proto";
 import "TbVipInfo.proto";
 import "ThemeCardInUser.proto";
@@ -52,7 +53,10 @@ message User {
     int32 concern_num = 31;
     int32 sex = 32;
     int32 my_like_num = 33;
+    string intro = 34;
     int32 has_concerned = 35;
+    string passwd = 36;
+    int32 post_num = 37;
     int32 gender = 42;
     int32 is_mask = 43;
     repeated UserPics user_pics = 44;
@@ -78,4 +82,7 @@ message User {
     TbVipInfo tb_vip = 72;
     uint32 no_post_high = 73;
     Ecom ecom = 74;
+    int32 visitor_num = 75;
+    int32 total_visitor_num = 76;
+    Pendant pendant = 77;
 }

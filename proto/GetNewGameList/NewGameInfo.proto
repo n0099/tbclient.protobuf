@@ -34,7 +34,10 @@ message NewGameInfo {
     string secret_key = 31;
     uint64 thread_theme_id = 32;
     uint64 thread_id = 33;
+    uint64 forum_id = 34;
     int32 score = 35;
+    uint64 deadline = 36;
+    int32 play_count = 37;
     string api_key = 42;
     string inter_version = 43;
     string version_ios = 44;

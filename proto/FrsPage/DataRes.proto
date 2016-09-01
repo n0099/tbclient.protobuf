@@ -7,10 +7,13 @@ import "FrsPage/ActivityHead.proto";
 import "FrsPage/CarrierEnter.proto";
 import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
+import "FrsPage/ForumBookInfo.proto";
 import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
+import "FrsPage/HeadSdk.proto";
 import "FrsPage/Info.proto";
+import "FrsPage/NavTabInfo.proto";
 import "FrsPage/PushThreadInfo.proto";
 import "FrsPage/RecommendBook.proto";
 import "FrsPage/StarEnter.proto";
@@ -59,11 +62,14 @@ message DataRes {
     SdkTopicThread sdk_topic_thread = 31;
     string bawu_enter_url = 32;
     ClientPlatform client_platform = 33;
+    HeadSdk head_sdk = 34;
     repeated ThreadInfo card_shipin_info = 35;
+    NavTabInfo nav_tab_info = 37;
     VitalityInfo vitality_info = 42;
     CarrierEnter carrier_enter = 43;
     RecommendBook recommend_book = 46;
     int32 smart_frs_type = 47;
     int32 need_log = 48;
     int32 is_auto_play_forumheadvideo = 49;
+    ForumBookInfo book_info = 50;
 }

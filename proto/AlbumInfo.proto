@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message AlbumInfo {
+    uint64 album_id = 1;
+    string album_name = 2;
+    uint64 uid = 3;
+    uint32 create_time = 4;
+    uint32 start_time = 5;
+    uint32 end_time = 6;
+    uint32 update_time = 7;
+    uint32 num_join = 8;
+    uint32 num_high = 9;
+    string location = 10;
+    double longtd = 11;
+    double latd = 12;
+    string user_name = 13;
+    string portrait = 14;
+    bool has_collect = 15;
+}

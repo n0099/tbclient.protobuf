@@ -8,6 +8,7 @@ import "PbContent.proto";
 import "PbPostZan.proto";
 import "PbPresent.proto";
 import "SignatureData.proto";
+import "SkinInfo.proto";
 import "SubPost.proto";
 import "TPointPost.proto";
 import "TailInfo.proto";
@@ -50,5 +51,7 @@ message Post {
     int32 is_hot_post = 31;
     repeated TailInfo ext_tails = 32;
     TogetherHi high_together = 33;
+    SkinInfo skin_info = 34;
     DealInfo pb_deal_info = 35;
+    string lego_card = 36;
 }

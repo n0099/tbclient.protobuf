@@ -16,4 +16,5 @@ message TPointPost {
     string monitor_id = 8;
     int32 hidden_day = 9;
     VideoInfo t_video = 10;
+    string tag_name = 11;
 }

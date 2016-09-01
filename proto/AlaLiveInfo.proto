@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "AlaUserInfo.proto";
+
+message AlaLiveInfo {
+    uint64 live_id = 1;
+    string cover = 2;
+    string session_id = 3;
+    string rtmp_url = 4;
+    string hls_url = 5;
+    uint64 group_id = 6;
+    string media_url = 7;
+    string media_pic = 8;
+    string media_id = 9;
+    string media_subtitle = 10;
+    string description = 11;
+    AlaUserInfo user_info = 12;
+    uint32 duration = 13;
+}

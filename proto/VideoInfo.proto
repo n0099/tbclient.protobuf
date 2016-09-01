@@ -11,4 +11,5 @@ message VideoInfo {
     uint32 thumbnail_height = 8;
     int32 video_length = 9;
     int32 play_count = 10;
+    string media_subtitle = 11;
 }

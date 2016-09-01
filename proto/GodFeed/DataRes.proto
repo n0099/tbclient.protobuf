@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "BannerInfo.proto";
 import "ThreadInfo.proto";
 
 message DataRes {
@@ -8,4 +9,5 @@ message DataRes {
     repeated ThreadInfo thread_list = 4;
     uint32 pn = 5;
     uint32 has_attention_god = 6;
+    BannerInfo banner_info = 10;
 }

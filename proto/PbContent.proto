@@ -35,4 +35,5 @@ message PbContent {
     int32 count = 28;
     GraffitiInfo graffiti_info = 29;
     TogetherHi high_together = 30;
+    string media_subtitle = 31;
 }

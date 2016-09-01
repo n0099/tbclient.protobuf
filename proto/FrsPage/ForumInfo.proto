@@ -3,6 +3,7 @@ syntax = "proto3";
 import "BannerList.proto";
 import "FrsPage/Adkiller.proto";
 import "FrsPage/AnchorPower.proto";
+import "FrsPage/Badges.proto";
 import "FrsPage/Banner.proto";
 import "FrsPage/Calendar.proto";
 import "FrsPage/Classify.proto";
@@ -54,7 +55,10 @@ message ForumInfo {
     int32 meizhi_tag = 31;
     Banner banner = 32;
     BannerList banner_list = 33;
+    repeated Badges badges = 34;
     int32 level_id = 35;
+    int32 is_forbidden = 36;
+    int32 favo_type = 37;
     int32 is_local_effect = 42;
     repeated RecommendForum recommend_forum = 43;
     AnchorPower anchor_power = 44;
@@ -71,4 +75,6 @@ message ForumInfo {
     Adkiller adkiller_data = 56;
     Yule yule = 57;
     RealTime realtime_data = 58;
+    string add_thread_title = 59;
+    string add_thread_content = 60;
 }

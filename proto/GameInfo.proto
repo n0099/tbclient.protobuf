@@ -34,5 +34,7 @@ message GameInfo {
     string icon_pic3 = 31;
     string game_desc = 32;
     string subscript_color = 33;
+    string launchComponent = 34;
     string category_name_sim = 35;
+    uint32 score = 36;
 }
