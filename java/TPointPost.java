@@ -8,6 +8,7 @@ import java.util.List;
 public final class TPointPost extends Message {
     public static final String DEFAULT_MONITOR_ID = "";
     public static final String DEFAULT_POSITION = "";
+    public static final String DEFAULT_TAG_NAME = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<ActBtn> act_btn;
     @ProtoField(tag = 7)
@@ -24,6 +25,8 @@ public final class TPointPost extends Message {
     public final List<Timgs> t_imgs;
     @ProtoField(tag = 10)
     public final VideoInfo t_video;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String tag_name;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long template_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -84,7 +87,13 @@ public final class TPointPost extends Message {
                 this.hidden_day = builder.hidden_day;
             }
             this.t_video = builder.t_video;
-            return;
+            if (builder.tag_name == null) {
+                this.tag_name = "";
+                return;
+            } else {
+                this.tag_name = builder.tag_name;
+                return;
+            }
         }
         this.is_tuiguang = builder.is_tuiguang;
         this.position = builder.position;
@@ -96,6 +105,7 @@ public final class TPointPost extends Message {
         this.monitor_id = builder.monitor_id;
         this.hidden_day = builder.hidden_day;
         this.t_video = builder.t_video;
+        this.tag_name = builder.tag_name;
     }
 
     /* loaded from: classes.dex */
@@ -108,6 +118,7 @@ public final class TPointPost extends Message {
         public String position;
         public List<Timgs> t_imgs;
         public VideoInfo t_video;
+        public String tag_name;
         public Long template_id;
         public Integer template_type;
 
@@ -127,6 +138,7 @@ public final class TPointPost extends Message {
                 this.monitor_id = tPointPost.monitor_id;
                 this.hidden_day = tPointPost.hidden_day;
                 this.t_video = tPointPost.t_video;
+                this.tag_name = tPointPost.tag_name;
             }
         }
 

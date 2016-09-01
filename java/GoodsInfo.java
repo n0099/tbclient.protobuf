@@ -6,20 +6,29 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes.dex */
 public final class GoodsInfo extends Message {
+    public static final String DEFAULT_AD_SOURCE = "";
     public static final String DEFAULT_BUTTON_TEXT = "";
+    public static final String DEFAULT_BUTTON_URL = "";
     public static final String DEFAULT_CARD_DESC = "";
     public static final String DEFAULT_CARD_TAG = "";
     public static final String DEFAULT_LABEL_TEXT = "";
     public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_POP_WINDOW_TEXT = "";
+    public static final String DEFAULT_TAG_NAME = "";
+    public static final String DEFAULT_TAG_NAME_URL = "";
+    public static final String DEFAULT_TAG_NAME_WH = "";
     public static final String DEFAULT_THREAD_CONTENT = "";
     public static final String DEFAULT_THREAD_PIC = "";
     public static final String DEFAULT_THREAD_TITLE = "";
     public static final String DEFAULT_THREAD_TYPE = "";
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_USER_PORTRAIT = "";
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String ad_source;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String button_text;
+    @ProtoField(tag = 23, type = Message.Datatype.STRING)
+    public final String button_url;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String card_desc;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -42,6 +51,12 @@ public final class GoodsInfo extends Message {
     public final String pop_window_text;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer rank_level;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String tag_name;
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
+    public final String tag_name_url;
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    public final String tag_name_wh;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String thread_content;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -56,6 +71,8 @@ public final class GoodsInfo extends Message {
     public final String user_name;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String user_portrait;
+    @ProtoField(tag = 21)
+    public final VideoInfo video_info;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer width;
     public static final Integer DEFAULT_ID = 0;
@@ -171,9 +188,35 @@ public final class GoodsInfo extends Message {
             }
             if (builder.lego_card == null) {
                 this.lego_card = "";
-                return;
             } else {
                 this.lego_card = builder.lego_card;
+            }
+            this.video_info = builder.video_info;
+            if (builder.tag_name == null) {
+                this.tag_name = "";
+            } else {
+                this.tag_name = builder.tag_name;
+            }
+            if (builder.button_url == null) {
+                this.button_url = "";
+            } else {
+                this.button_url = builder.button_url;
+            }
+            if (builder.ad_source == null) {
+                this.ad_source = "";
+            } else {
+                this.ad_source = builder.ad_source;
+            }
+            if (builder.tag_name_url == null) {
+                this.tag_name_url = "";
+            } else {
+                this.tag_name_url = builder.tag_name_url;
+            }
+            if (builder.tag_name_wh == null) {
+                this.tag_name_wh = "";
+                return;
+            } else {
+                this.tag_name_wh = builder.tag_name_wh;
                 return;
             }
         }
@@ -197,11 +240,19 @@ public final class GoodsInfo extends Message {
         this.label_measure = builder.label_measure;
         this.thread_content = builder.thread_content;
         this.lego_card = builder.lego_card;
+        this.video_info = builder.video_info;
+        this.tag_name = builder.tag_name;
+        this.button_url = builder.button_url;
+        this.ad_source = builder.ad_source;
+        this.tag_name_url = builder.tag_name_url;
+        this.tag_name_wh = builder.tag_name_wh;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<GoodsInfo> {
+        public String ad_source;
         public String button_text;
+        public String button_url;
         public String card_desc;
         public String card_tag;
         public Integer goods_style;
@@ -213,6 +264,9 @@ public final class GoodsInfo extends Message {
         public String lego_card;
         public String pop_window_text;
         public Integer rank_level;
+        public String tag_name;
+        public String tag_name_url;
+        public String tag_name_wh;
         public String thread_content;
         public String thread_pic;
         public List<ThreadPicList> thread_pic_list;
@@ -220,6 +274,7 @@ public final class GoodsInfo extends Message {
         public String thread_type;
         public String user_name;
         public String user_portrait;
+        public VideoInfo video_info;
         public Integer width;
 
         public Builder() {
@@ -248,6 +303,12 @@ public final class GoodsInfo extends Message {
                 this.label_measure = goodsInfo.label_measure;
                 this.thread_content = goodsInfo.thread_content;
                 this.lego_card = goodsInfo.lego_card;
+                this.video_info = goodsInfo.video_info;
+                this.tag_name = goodsInfo.tag_name;
+                this.button_url = goodsInfo.button_url;
+                this.ad_source = goodsInfo.ad_source;
+                this.tag_name_url = goodsInfo.tag_name_url;
+                this.tag_name_wh = goodsInfo.tag_name_wh;
             }
         }
 

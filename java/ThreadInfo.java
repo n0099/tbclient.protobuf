@@ -3,7 +3,7 @@ package tbclient;
 import com.baidu.cloudsdk.social.core.util.SocialAPIErrorCodes;
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.u;
+import com.baidu.tieba.t;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -38,6 +38,8 @@ public final class ThreadInfo extends Message {
     public final String ab_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
     public final List<ActInfo> act_info;
+    @ProtoField(tag = 113)
+    public final AlaLiveInfo ala_info;
     @ProtoField(tag = 55)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 99)
@@ -74,7 +76,7 @@ public final class ThreadInfo extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
+    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
@@ -102,7 +104,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = 103, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
-    @ProtoField(tag = u.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_bub;
     @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
@@ -128,7 +130,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_reward;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_novel_thank;
-    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
@@ -194,6 +196,10 @@ public final class ThreadInfo extends Message {
     public final Integer reply_num;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer repost_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_EXPIRED_SESSION_KEY)
+    public final List<PbContent> rich_abstract;
+    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_EXPIRED_ACCESS_TOKEN)
+    public final List<PbContent> rich_title;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer show_commented;
     @ProtoField(tag = 100)
@@ -226,13 +232,13 @@ public final class ThreadInfo extends Message {
     public final AdInfo video_ad_info;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String video_cover;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String video_id;
     @ProtoField(tag = 79)
     public final VideoInfo video_info;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.STRING)
+    @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String video_mobile_url;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
+    @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String video_swf;
     @ProtoField(tag = 96)
     public final VideoActive videoactive_info;
@@ -242,7 +248,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = u.l.PullToRefresh_mode)
+    @ProtoField(tag = t.l.PullToRefresh_mode)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -303,6 +309,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_BOOK_CHAPTER = 0;
     public static final Long DEFAULT_LAST_READ_PID = 0L;
     public static final Integer DEFAULT_CHEAK_REPEAT = 0;
+    public static final List<PbContent> DEFAULT_RICH_TITLE = Collections.emptyList();
+    public static final List<PbContent> DEFAULT_RICH_ABSTRACT = Collections.emptyList();
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -741,6 +749,17 @@ public final class ThreadInfo extends Message {
                 this.recom_reason = builder.recom_reason;
             }
             this.video_ad_info = builder.video_ad_info;
+            if (builder.rich_title == null) {
+                this.rich_title = DEFAULT_RICH_TITLE;
+            } else {
+                this.rich_title = immutableCopyOf(builder.rich_title);
+            }
+            if (builder.rich_abstract == null) {
+                this.rich_abstract = DEFAULT_RICH_ABSTRACT;
+            } else {
+                this.rich_abstract = immutableCopyOf(builder.rich_abstract);
+            }
+            this.ala_info = builder.ala_info;
             return;
         }
         this.id = builder.id;
@@ -849,6 +868,9 @@ public final class ThreadInfo extends Message {
         this.ab_tag = builder.ab_tag;
         this.recom_reason = builder.recom_reason;
         this.video_ad_info = builder.video_ad_info;
+        this.rich_title = immutableCopyOf(builder.rich_title);
+        this.rich_abstract = immutableCopyOf(builder.rich_abstract);
+        this.ala_info = builder.ala_info;
     }
 
     /* loaded from: classes.dex */
@@ -856,6 +878,7 @@ public final class ThreadInfo extends Message {
         public List<Abstract> _abstract;
         public String ab_tag;
         public List<ActInfo> act_info;
+        public AlaLiveInfo ala_info;
         public AnchorInfo anchor_info;
         public AnimationThread animation_info;
         public AppCode app_code;
@@ -934,6 +957,8 @@ public final class ThreadInfo extends Message {
         public String recom_weight;
         public Integer reply_num;
         public Integer repost_num;
+        public List<PbContent> rich_abstract;
+        public List<PbContent> rich_title;
         public Integer show_commented;
         public SkinInfo skin_info;
         public Integer storecount;
@@ -1072,6 +1097,9 @@ public final class ThreadInfo extends Message {
                 this.ab_tag = threadInfo.ab_tag;
                 this.recom_reason = threadInfo.recom_reason;
                 this.video_ad_info = threadInfo.video_ad_info;
+                this.rich_title = ThreadInfo.copyOf(threadInfo.rich_title);
+                this.rich_abstract = ThreadInfo.copyOf(threadInfo.rich_abstract);
+                this.ala_info = threadInfo.ala_info;
             }
         }
 

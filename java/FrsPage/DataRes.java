@@ -1,7 +1,7 @@
 package tbclient.FrsPage;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.u;
+import com.baidu.tieba.t;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -30,6 +30,8 @@ public final class DataRes extends Message {
     public final List<BannerThreadInfo> banner_thread_list;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String bawu_enter_url;
+    @ProtoField(tag = 50)
+    public final ForumBookInfo book_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<ThreadInfo> card_shipin_info;
     @ProtoField(tag = 43)
@@ -52,7 +54,7 @@ public final class DataRes extends Message {
     public final List<AnchorInfo> forum_livegroup_list;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
-    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
@@ -60,7 +62,7 @@ public final class DataRes extends Message {
     public final GconAccount gcon_account;
     @ProtoField(tag = 6)
     public final Group group;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling)
+    @ProtoField(tag = 34)
     public final HeadSdk head_sdk;
     @ProtoField(tag = 26)
     public final ZhiBoInfoTW hot_twzhibo_info;
@@ -72,7 +74,7 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
     public final Long logid;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom)
+    @ProtoField(tag = 37)
     public final NavTabInfo nav_tab_info;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer need_log;
@@ -84,9 +86,9 @@ public final class DataRes extends Message {
     public final PushThreadInfo push_thread_info;
     @ProtoField(tag = 46)
     public final RecommendBook recommend_book;
-    @ProtoField(tag = u.l.PullToRefresh_headerTextColor)
+    @ProtoField(tag = t.l.PullToRefresh_headerTextColor)
     public final RecommendInfo school_recom_info;
-    @ProtoField(tag = u.l.PullToRefresh_mode, type = Message.Datatype.UINT32)
+    @ProtoField(tag = t.l.PullToRefresh_mode, type = Message.Datatype.UINT32)
     public final Integer school_recom_pos;
     @ProtoField(tag = 31)
     public final SdkTopicThread sdk_topic_thread;
@@ -94,7 +96,7 @@ public final class DataRes extends Message {
     public final Integer server_time;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer smart_frs_type;
-    @ProtoField(tag = u.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
@@ -296,11 +298,11 @@ public final class DataRes extends Message {
             }
             if (builder.is_auto_play_forumheadvideo == null) {
                 this.is_auto_play_forumheadvideo = DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
-                return;
             } else {
                 this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
-                return;
             }
+            this.book_info = builder.book_info;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -349,6 +351,7 @@ public final class DataRes extends Message {
         this.smart_frs_type = builder.smart_frs_type;
         this.need_log = builder.need_log;
         this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
+        this.book_info = builder.book_info;
     }
 
     /* loaded from: classes.dex */
@@ -357,6 +360,7 @@ public final class DataRes extends Message {
         public Anti anti;
         public List<BannerThreadInfo> banner_thread_list;
         public String bawu_enter_url;
+        public ForumBookInfo book_info;
         public List<ThreadInfo> card_shipin_info;
         public CarrierEnter carrier_enter;
         public List<CategoryInfo> category_list;
@@ -454,6 +458,7 @@ public final class DataRes extends Message {
                 this.smart_frs_type = dataRes.smart_frs_type;
                 this.need_log = dataRes.need_log;
                 this.is_auto_play_forumheadvideo = dataRes.is_auto_play_forumheadvideo;
+                this.book_info = dataRes.book_info;
             }
         }
 

@@ -1,7 +1,7 @@
 package tbclient.GetNewGameList;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.u;
+import com.baidu.tieba.t;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -62,13 +62,13 @@ public final class NewGameInfo extends Message {
     public final String category_name;
     @ProtoField(tag = 54, type = Message.Datatype.STRING)
     public final String category_name_sim;
-    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.UINT32)
+    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.UINT32)
     public final Integer channel;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 36, type = Message.Datatype.UINT64)
     public final Long deadline;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String developer;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 34, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String forum_name;
@@ -82,9 +82,9 @@ public final class NewGameInfo extends Message {
     public final String game_name;
     @ProtoField(label = Message.Label.REPEATED, tag = 13, type = Message.Datatype.STRING)
     public final List<String> game_pic;
-    @ProtoField(tag = u.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer game_platform;
-    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer game_type;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String gift_code;
@@ -112,7 +112,7 @@ public final class NewGameInfo extends Message {
     public final String package_name;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String package_size;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.INT32)
+    @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer play_count;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String praise;
@@ -148,7 +148,7 @@ public final class NewGameInfo extends Message {
     public final Long thread_theme_id;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer time;
-    @ProtoField(tag = u.l.PullToRefresh_mode, type = Message.Datatype.STRING)
+    @ProtoField(tag = t.l.PullToRefresh_mode, type = Message.Datatype.STRING)
     public final String version;
     @ProtoField(tag = 44, type = Message.Datatype.STRING)
     public final String version_ios;

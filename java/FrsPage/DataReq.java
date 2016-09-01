@@ -1,7 +1,7 @@
 package tbclient.FrsPage;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.u;
+import com.baidu.tieba.t;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -30,9 +30,9 @@ public final class DataReq extends Message {
     public final Integer cid;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer class_id;
-    @ProtoField(tag = u.l.PullToRefresh_headerBackground)
+    @ProtoField(tag = t.l.PullToRefresh_headerBackground)
     public final CommonReq common;
-    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
@@ -40,9 +40,9 @@ public final class DataReq extends Message {
     public final String da_idfa;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer data_size;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.BOOL)
+    @ProtoField(tag = 37, type = Message.Datatype.BOOL)
     public final Boolean debug;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String email;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String forum_name;
@@ -54,13 +54,13 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = u.l.PullToRefresh_mode, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_mode, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
     @ProtoField(tag = 48, type = Message.Datatype.UINT64)
     public final Long last_click_tid;
-    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean login;
@@ -80,7 +80,7 @@ public final class DataReq extends Message {
     public final String platform;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer pn;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
+    @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer q_type;

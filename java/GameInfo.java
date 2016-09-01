@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -79,7 +78,7 @@ public final class GameInfo extends Message {
     public final String icon_url;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String introduce;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
+    @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String launchComponent;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String launch_component;
@@ -93,7 +92,7 @@ public final class GameInfo extends Message {
     public final Integer player_num;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String schema_url;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 36, type = Message.Datatype.UINT32)
     public final Integer score;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String secret_key;

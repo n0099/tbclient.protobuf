@@ -13,6 +13,7 @@ public final class PbContent extends Message {
     public static final String DEFAULT_DYNAMIC = "";
     public static final String DEFAULT_IMGTYPE = "";
     public static final String DEFAULT_LINK = "";
+    public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_ORIGIN_SRC = "";
     public static final String DEFAULT_PACKET_NAME = "";
     public static final String DEFAULT_PHONETYPE = "";
@@ -58,6 +59,8 @@ public final class PbContent extends Message {
     public final Integer is_sub;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
+    public final String media_subtitle;
     @ProtoField(tag = 23)
     public final NativeApp native_app;
     @ProtoField(tag = 27, type = Message.Datatype.UINT32)
@@ -237,7 +240,13 @@ public final class PbContent extends Message {
             }
             this.graffiti_info = builder.graffiti_info;
             this.high_together = builder.high_together;
-            return;
+            if (builder.media_subtitle == null) {
+                this.media_subtitle = "";
+                return;
+            } else {
+                this.media_subtitle = builder.media_subtitle;
+                return;
+            }
         }
         this.type = builder.type;
         this.text = builder.text;
@@ -269,6 +278,7 @@ public final class PbContent extends Message {
         this.count = builder.count;
         this.graffiti_info = builder.graffiti_info;
         this.high_together = builder.high_together;
+        this.media_subtitle = builder.media_subtitle;
     }
 
     /* loaded from: classes.dex */
@@ -292,6 +302,7 @@ public final class PbContent extends Message {
         public Integer is_native_app;
         public Integer is_sub;
         public String link;
+        public String media_subtitle;
         public NativeApp native_app;
         public Integer origin_size;
         public String origin_src;
@@ -340,6 +351,7 @@ public final class PbContent extends Message {
                 this.count = pbContent.count;
                 this.graffiti_info = pbContent.graffiti_info;
                 this.high_together = pbContent.high_together;
+                this.media_subtitle = pbContent.media_subtitle;
             }
         }
 

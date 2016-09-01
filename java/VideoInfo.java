@@ -4,9 +4,12 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class VideoInfo extends Message {
+    public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_THUMBNAIL_URL = "";
     public static final String DEFAULT_VIDEO_MD5 = "";
     public static final String DEFAULT_VIDEO_URL = "";
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String media_subtitle;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer play_count;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
@@ -89,9 +92,14 @@ public final class VideoInfo extends Message {
             }
             if (builder.play_count == null) {
                 this.play_count = DEFAULT_PLAY_COUNT;
-                return;
             } else {
                 this.play_count = builder.play_count;
+            }
+            if (builder.media_subtitle == null) {
+                this.media_subtitle = "";
+                return;
+            } else {
+                this.media_subtitle = builder.media_subtitle;
                 return;
             }
         }
@@ -105,10 +113,12 @@ public final class VideoInfo extends Message {
         this.thumbnail_height = builder.thumbnail_height;
         this.video_length = builder.video_length;
         this.play_count = builder.play_count;
+        this.media_subtitle = builder.media_subtitle;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
+        public String media_subtitle;
         public Integer play_count;
         public Integer thumbnail_height;
         public String thumbnail_url;
@@ -136,6 +146,7 @@ public final class VideoInfo extends Message {
                 this.thumbnail_height = videoInfo.thumbnail_height;
                 this.video_length = videoInfo.video_length;
                 this.play_count = videoInfo.play_count;
+                this.media_subtitle = videoInfo.media_subtitle;
             }
         }
 

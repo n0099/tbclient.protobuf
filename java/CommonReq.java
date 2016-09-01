@@ -23,6 +23,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_PVERSION = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
+    public static final String DEFAULT_STOKEN = "";
     public static final String DEFAULT_SUBAPP_TYPE = "";
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT__CLIENT_ID = "";
@@ -84,6 +85,8 @@ public final class CommonReq extends Message {
     public final String sign;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String smallflow;
+    @ProtoField(tag = 30, type = Message.Datatype.STRING)
+    public final String stoken;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String subapp_type;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -241,9 +244,14 @@ public final class CommonReq extends Message {
             }
             if (builder.applist == null) {
                 this.applist = "";
-                return;
             } else {
                 this.applist = builder.applist;
+            }
+            if (builder.stoken == null) {
+                this.stoken = "";
+                return;
+            } else {
+                this.stoken = builder.stoken;
                 return;
             }
         }
@@ -276,6 +284,7 @@ public final class CommonReq extends Message {
         this.brand_type = builder.brand_type;
         this.lego_lib_version = builder.lego_lib_version;
         this.applist = builder.applist;
+        this.stoken = builder.stoken;
     }
 
     /* loaded from: classes.dex */
@@ -307,6 +316,7 @@ public final class CommonReq extends Message {
         public String pversion;
         public String sign;
         public String smallflow;
+        public String stoken;
         public String subapp_type;
         public String tbs;
 
@@ -345,6 +355,7 @@ public final class CommonReq extends Message {
                 this.brand_type = commonReq.brand_type;
                 this.lego_lib_version = commonReq.lego_lib_version;
                 this.applist = commonReq.applist;
+                this.stoken = commonReq.stoken;
             }
         }
 

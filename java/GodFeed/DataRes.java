@@ -4,9 +4,12 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.BannerInfo;
 import tbclient.ThreadInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    @ProtoField(tag = 10)
+    public final BannerInfo banner_info;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer has_attention_god;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -52,21 +55,23 @@ public final class DataRes extends Message {
             }
             if (builder.has_attention_god == null) {
                 this.has_attention_god = DEFAULT_HAS_ATTENTION_GOD;
-                return;
             } else {
                 this.has_attention_god = builder.has_attention_god;
-                return;
             }
+            this.banner_info = builder.banner_info;
+            return;
         }
         this.timeline = builder.timeline;
         this.has_more = builder.has_more;
         this.thread_list = immutableCopyOf(builder.thread_list);
         this.pn = builder.pn;
         this.has_attention_god = builder.has_attention_god;
+        this.banner_info = builder.banner_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public BannerInfo banner_info;
         public Integer has_attention_god;
         public Integer has_more;
         public Integer pn;
@@ -84,6 +89,7 @@ public final class DataRes extends Message {
                 this.thread_list = DataRes.copyOf(dataRes.thread_list);
                 this.pn = dataRes.pn;
                 this.has_attention_god = dataRes.has_attention_god;
+                this.banner_info = dataRes.banner_info;
             }
         }
 

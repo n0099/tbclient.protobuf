@@ -1,7 +1,6 @@
 package tbclient.PbPage;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
@@ -37,7 +36,7 @@ public final class DataReq extends Message {
     public final Integer floor_rn;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.INT32)
+    @ProtoField(tag = 34, type = Message.Datatype.INT32)
     public final Integer is_jumpfloor;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer issdk;

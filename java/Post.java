@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -51,7 +50,7 @@ public final class Post extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String lego_card;
     @ProtoField(tag = 35)
     public final DealInfo pb_deal_info;
@@ -61,7 +60,7 @@ public final class Post extends Message {
     public final PbPresent present;
     @ProtoField(tag = 21)
     public final SignatureData signature;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling)
+    @ProtoField(tag = 34)
     public final SkinInfo skin_info;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer storecount;

@@ -7,6 +7,9 @@ public final class Banner extends Message {
     public static final String DEFAULT_BANNER_URL = "";
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_OBJ_ID = "";
+    public static final String DEFAULT_TAG_NAME = "";
+    public static final String DEFAULT_TAG_NAME_URL = "";
+    public static final String DEFAULT_TAG_NAME_WH = "";
     public static final String DEFAULT_VALUE = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer banner_type;
@@ -16,6 +19,12 @@ public final class Banner extends Message {
     public final String desc;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String obj_id;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String tag_name;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String tag_name_url;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String tag_name_wh;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer template_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -65,9 +74,24 @@ public final class Banner extends Message {
             }
             if (builder.obj_id == null) {
                 this.obj_id = "";
-                return;
             } else {
                 this.obj_id = builder.obj_id;
+            }
+            if (builder.tag_name == null) {
+                this.tag_name = "";
+            } else {
+                this.tag_name = builder.tag_name;
+            }
+            if (builder.tag_name_url == null) {
+                this.tag_name_url = "";
+            } else {
+                this.tag_name_url = builder.tag_name_url;
+            }
+            if (builder.tag_name_wh == null) {
+                this.tag_name_wh = "";
+                return;
+            } else {
+                this.tag_name_wh = builder.tag_name_wh;
                 return;
             }
         }
@@ -78,6 +102,9 @@ public final class Banner extends Message {
         this.desc = builder.desc;
         this.template_id = builder.template_id;
         this.obj_id = builder.obj_id;
+        this.tag_name = builder.tag_name;
+        this.tag_name_url = builder.tag_name_url;
+        this.tag_name_wh = builder.tag_name_wh;
     }
 
     /* loaded from: classes.dex */
@@ -86,6 +113,9 @@ public final class Banner extends Message {
         public String banner_url;
         public String desc;
         public String obj_id;
+        public String tag_name;
+        public String tag_name_url;
+        public String tag_name_wh;
         public Integer template_id;
         public Integer type;
         public String value;
@@ -103,6 +133,9 @@ public final class Banner extends Message {
                 this.desc = banner.desc;
                 this.template_id = banner.template_id;
                 this.obj_id = banner.obj_id;
+                this.tag_name = banner.tag_name;
+                this.tag_name_url = banner.tag_name_url;
+                this.tag_name_wh = banner.tag_name_wh;
             }
         }
 

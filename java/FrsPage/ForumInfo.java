@@ -1,7 +1,7 @@
 package tbclient.FrsPage;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.u;
+import com.baidu.tieba.t;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -11,6 +11,8 @@ import tbclient.GameInfo;
 /* loaded from: classes.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
+    public static final String DEFAULT_ADD_THREAD_CONTENT = "";
+    public static final String DEFAULT_ADD_THREAD_TITLE = "";
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FIRST_CLASS = "";
     public static final String DEFAULT_GAME_NAME = "";
@@ -24,6 +26,10 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_TIDS = "";
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
+    @ProtoField(tag = 60, type = Message.Datatype.STRING)
+    public final String add_thread_content;
+    @ProtoField(tag = 59, type = Message.Datatype.STRING)
+    public final String add_thread_title;
     @ProtoField(tag = 56)
     public final Adkiller adkiller_data;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
@@ -32,7 +38,7 @@ public final class ForumInfo extends Message {
     public final AnchorPower anchor_power;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String avatar;
-    @ProtoField(label = Message.Label.REPEATED, tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling)
+    @ProtoField(label = Message.Label.REPEATED, tag = 34)
     public final List<Badges> badges;
     @ProtoField(tag = 32)
     public final Banner banner;
@@ -42,7 +48,7 @@ public final class ForumInfo extends Message {
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.INT32)
+    @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer favo_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String first_class;
@@ -72,7 +78,7 @@ public final class ForumInfo extends Message {
     public final Long id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer is_exists;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.INT32)
+    @ProtoField(tag = 36, type = Message.Datatype.INT32)
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
@@ -84,7 +90,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = u.l.PullToRefresh_mode, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_mode, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -104,7 +110,7 @@ public final class ForumInfo extends Message {
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = u.l.PullToRefresh_headerBackground)
+    @ProtoField(tag = t.l.PullToRefresh_headerBackground)
     public final PostPrefix post_prefix;
     @ProtoField(tag = 58)
     public final RealTime realtime_data;
@@ -118,9 +124,9 @@ public final class ForumInfo extends Message {
     public final SignInfo sign_in_info;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String superboy;
-    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground)
+    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground)
     public final TagInfo tag_info;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_num;
@@ -397,7 +403,18 @@ public final class ForumInfo extends Message {
             this.adkiller_data = builder.adkiller_data;
             this.yule = builder.yule;
             this.realtime_data = builder.realtime_data;
-            return;
+            if (builder.add_thread_title == null) {
+                this.add_thread_title = "";
+            } else {
+                this.add_thread_title = builder.add_thread_title;
+            }
+            if (builder.add_thread_content == null) {
+                this.add_thread_content = "";
+                return;
+            } else {
+                this.add_thread_content = builder.add_thread_content;
+                return;
+            }
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -457,11 +474,15 @@ public final class ForumInfo extends Message {
         this.adkiller_data = builder.adkiller_data;
         this.yule = builder.yule;
         this.realtime_data = builder.realtime_data;
+        this.add_thread_title = builder.add_thread_title;
+        this.add_thread_content = builder.add_thread_content;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
+        public String add_thread_content;
+        public String add_thread_title;
         public Adkiller adkiller_data;
         public Integer album_open_photo_frs;
         public AnchorPower anchor_power;
@@ -584,6 +605,8 @@ public final class ForumInfo extends Message {
                 this.adkiller_data = forumInfo.adkiller_data;
                 this.yule = forumInfo.yule;
                 this.realtime_data = forumInfo.realtime_data;
+                this.add_thread_title = forumInfo.add_thread_title;
+                this.add_thread_content = forumInfo.add_thread_content;
             }
         }
 

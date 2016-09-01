@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.u;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -29,7 +28,7 @@ public final class NewUser extends Message {
     public final String card;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String cdn_error;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String free_flag;
     @ProtoField(tag = 33)
     public final GameAttr game_attr;
@@ -43,7 +42,7 @@ public final class NewUser extends Message {
     public final Integer is_group_owner;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer is_hardworking;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
+    @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String is_interestman;
     @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_member;

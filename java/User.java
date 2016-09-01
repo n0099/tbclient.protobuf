@@ -2,7 +2,7 @@ package tbclient;
 
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.u;
+import com.baidu.tieba.t;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -34,7 +34,7 @@ public final class User extends Message {
     public final String bawu_type;
     @ProtoField(tag = 58, type = Message.Datatype.STRING)
     public final String bg_pic;
-    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
@@ -72,7 +72,7 @@ public final class User extends Message {
     public final List<Icon> iconinfo;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.STRING)
+    @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String intro;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String ios_bimg_format;
@@ -98,7 +98,7 @@ public final class User extends Message {
     public final Integer is_manager;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_mask;
-    @ProtoField(tag = u.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = t.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_mem;
     @ProtoField(tag = 51, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
@@ -130,15 +130,17 @@ public final class User extends Message {
     public final NovelFansInfo novel_fans_info;
     @ProtoField(tag = 59)
     public final NewParrScores parr_scores;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = u.l.PullToRefresh_mode)
+    @ProtoField(tag = t.l.PullToRefresh_mode)
     public final PayMemberInfo pay_member_info;
+    @ProtoField(tag = 77)
+    public final Pendant pendant;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String portraith;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.INT32)
+    @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer post_num;
     @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
     public final PrivSets priv_sets;
@@ -148,12 +150,14 @@ public final class User extends Message {
     public final String rank;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer sex;
-    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
     public final String tb_age;
     @ProtoField(tag = 72)
     public final TbVipInfo tb_vip;
     @ProtoField(tag = 69)
     public final ThemeCardInUser theme_card;
+    @ProtoField(tag = 76, type = Message.Datatype.INT32)
+    public final Integer total_visitor_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<TshowInfo> tshow_icon;
     @ProtoField(tag = BDLocation.TypeOffLineLocation)
@@ -172,6 +176,8 @@ public final class User extends Message {
     public final VipCloseAd vip_close_ad;
     @ProtoField(tag = 64)
     public final VipShowInfo vip_show_info;
+    @ProtoField(tag = 75, type = Message.Datatype.INT32)
+    public final Integer visitor_num;
     public static final Integer DEFAULT_IS_LOGIN = 0;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_NO_UN = 0;
@@ -189,12 +195,12 @@ public final class User extends Message {
     public static final Integer DEFAULT_LEVEL_ID = 0;
     public static final Integer DEFAULT_IS_LIKE = 0;
     public static final Integer DEFAULT_IS_BAWU = 0;
-    public static final Integer DEFAULT_FANS_NUM = 0;
-    public static final Integer DEFAULT_CONCERN_NUM = 0;
+    public static final Integer DEFAULT_FANS_NUM = -1;
+    public static final Integer DEFAULT_CONCERN_NUM = -1;
     public static final Integer DEFAULT_SEX = 0;
-    public static final Integer DEFAULT_MY_LIKE_NUM = 0;
+    public static final Integer DEFAULT_MY_LIKE_NUM = -1;
     public static final Integer DEFAULT_HAS_CONCERNED = 0;
-    public static final Integer DEFAULT_POST_NUM = 0;
+    public static final Integer DEFAULT_POST_NUM = -1;
     public static final Integer DEFAULT_IS_MEM = 0;
     public static final Integer DEFAULT_BIMG_END_TIME = 0;
     public static final Integer DEFAULT_GENDER = 0;
@@ -215,6 +221,8 @@ public final class User extends Message {
     public static final List<TshowInfo> DEFAULT_NEW_TSHOW_ICON = Collections.emptyList();
     public static final List<TwAnchorProfitItem> DEFAULT_PROFIT_LIST = Collections.emptyList();
     public static final Integer DEFAULT_NO_POST_HIGH = 0;
+    public static final Integer DEFAULT_VISITOR_NUM = 0;
+    public static final Integer DEFAULT_TOTAL_VISITOR_NUM = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -529,6 +537,17 @@ public final class User extends Message {
                 this.no_post_high = builder.no_post_high;
             }
             this.ecom = builder.ecom;
+            if (builder.visitor_num == null) {
+                this.visitor_num = DEFAULT_VISITOR_NUM;
+            } else {
+                this.visitor_num = builder.visitor_num;
+            }
+            if (builder.total_visitor_num == null) {
+                this.total_visitor_num = DEFAULT_TOTAL_VISITOR_NUM;
+            } else {
+                this.total_visitor_num = builder.total_visitor_num;
+            }
+            this.pendant = builder.pendant;
             return;
         }
         this.is_login = builder.is_login;
@@ -605,6 +624,9 @@ public final class User extends Message {
         this.tb_vip = builder.tb_vip;
         this.no_post_high = builder.no_post_high;
         this.ecom = builder.ecom;
+        this.visitor_num = builder.visitor_num;
+        this.total_visitor_num = builder.total_visitor_num;
+        this.pendant = builder.pendant;
     }
 
     /* loaded from: classes.dex */
@@ -664,6 +686,7 @@ public final class User extends Message {
         public NewParrScores parr_scores;
         public String passwd;
         public PayMemberInfo pay_member_info;
+        public Pendant pendant;
         public String portrait;
         public String portraith;
         public Integer post_num;
@@ -674,6 +697,7 @@ public final class User extends Message {
         public String tb_age;
         public TbVipInfo tb_vip;
         public ThemeCardInUser theme_card;
+        public Integer total_visitor_num;
         public List<TshowInfo> tshow_icon;
         public TwZhiBoUser tw_anchor_info;
         public Integer type;
@@ -683,6 +707,7 @@ public final class User extends Message {
         public UserVipInfo vipInfo;
         public VipCloseAd vip_close_ad;
         public VipShowInfo vip_show_info;
+        public Integer visitor_num;
 
         public Builder() {
         }
@@ -764,6 +789,9 @@ public final class User extends Message {
                 this.tb_vip = user.tb_vip;
                 this.no_post_high = user.no_post_high;
                 this.ecom = user.ecom;
+                this.visitor_num = user.visitor_num;
+                this.total_visitor_num = user.total_visitor_num;
+                this.pendant = user.pendant;
             }
         }
 

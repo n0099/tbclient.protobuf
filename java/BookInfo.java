@@ -1,6 +1,6 @@
 package tbclient;
 
-import com.baidu.tieba.u;
+import com.baidu.tieba.t;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -47,9 +47,9 @@ public final class BookInfo extends Message {
     public final Integer book_size;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer book_type;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableTop, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String book_ver;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrDrawableBottom, type = Message.Datatype.STRING)
+    @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String chapter_ver;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer class_id;
@@ -61,7 +61,7 @@ public final class BookInfo extends Message {
     public final String copyright_text;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String cover;
-    @ProtoField(tag = u.l.PullToRefresh_mode, type = Message.Datatype.STRING)
+    @ProtoField(tag = t.l.PullToRefresh_mode, type = Message.Datatype.STRING)
     public final String cp_id;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String discount_icon;
@@ -69,13 +69,13 @@ public final class BookInfo extends Message {
     public final String discount_ratio;
     @ProtoField(tag = 32, type = Message.Datatype.UINT32)
     public final Integer discount_type;
-    @ProtoField(tag = u.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String discuss;
     @ProtoField(tag = 43, type = Message.Datatype.UINT32)
     public final Integer first_chapter;
-    @ProtoField(tag = u.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.UINT64)
+    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.UINT64)
     public final Long forum_id;
-    @ProtoField(tag = u.l.PullToRefresh_headerBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = t.l.PullToRefresh_headerBackground, type = Message.Datatype.STRING)
     public final String forum_name;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String free_info;
@@ -101,7 +101,7 @@ public final class BookInfo extends Message {
     public final String publish_type;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String publisher;
-    @ProtoField(tag = u.l.PullToRefresh_tb_ptrRotateDrawableWhilePulling, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 34, type = Message.Datatype.UINT32)
     public final Integer read_count;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer sub_class_id;
