@@ -25,7 +25,7 @@ public final class ForumBookInfo extends Message {
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String forum_pic;
     @ProtoField(tag = 10, type = Message.Datatype.INT64)
-    public final Long history_page_idhistory_page_id;
+    public final Long history_page_id;
     @ProtoField(tag = 11, type = Message.Datatype.INT64)
     public final Long history_paragraph_id;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
@@ -43,7 +43,7 @@ public final class ForumBookInfo extends Message {
     @ProtoField(tag = 15, type = Message.Datatype.INT64)
     public final Long show_paragraph_id;
     public static final Integer DEFAULT_BOOK_TYPE = 0;
-    public static final Long DEFAULT_HISTORY_PAGE_IDHISTORY_PAGE_ID = 0L;
+    public static final Long DEFAULT_HISTORY_PAGE_ID = 0L;
     public static final Long DEFAULT_HISTORY_PARAGRAPH_ID = 0L;
     public static final Long DEFAULT_HISTORY_WORD_ID = 0L;
     public static final Long DEFAULT_HISTORY_PERCENT = 0L;
@@ -102,10 +102,10 @@ public final class ForumBookInfo extends Message {
             } else {
                 this.show_chapter_title = builder.show_chapter_title;
             }
-            if (builder.history_page_idhistory_page_id == null) {
-                this.history_page_idhistory_page_id = DEFAULT_HISTORY_PAGE_IDHISTORY_PAGE_ID;
+            if (builder.history_page_id == null) {
+                this.history_page_id = DEFAULT_HISTORY_PAGE_ID;
             } else {
-                this.history_page_idhistory_page_id = builder.history_page_idhistory_page_id;
+                this.history_page_id = builder.history_page_id;
             }
             if (builder.history_paragraph_id == null) {
                 this.history_paragraph_id = DEFAULT_HISTORY_PARAGRAPH_ID;
@@ -144,7 +144,7 @@ public final class ForumBookInfo extends Message {
         this.show_chapter_id = builder.show_chapter_id;
         this.show_chapter_no = builder.show_chapter_no;
         this.show_chapter_title = builder.show_chapter_title;
-        this.history_page_idhistory_page_id = builder.history_page_idhistory_page_id;
+        this.history_page_id = builder.history_page_id;
         this.history_paragraph_id = builder.history_paragraph_id;
         this.history_word_id = builder.history_word_id;
         this.history_percent = builder.history_percent;
@@ -160,7 +160,7 @@ public final class ForumBookInfo extends Message {
         public String book_title;
         public Integer book_type;
         public String forum_pic;
-        public Long history_page_idhistory_page_id;
+        public Long history_page_id;
         public Long history_paragraph_id;
         public Long history_percent;
         public Long history_word_id;
@@ -185,7 +185,7 @@ public final class ForumBookInfo extends Message {
                 this.show_chapter_id = forumBookInfo.show_chapter_id;
                 this.show_chapter_no = forumBookInfo.show_chapter_no;
                 this.show_chapter_title = forumBookInfo.show_chapter_title;
-                this.history_page_idhistory_page_id = forumBookInfo.history_page_idhistory_page_id;
+                this.history_page_id = forumBookInfo.history_page_id;
                 this.history_paragraph_id = forumBookInfo.history_paragraph_id;
                 this.history_word_id = forumBookInfo.history_word_id;
                 this.history_percent = forumBookInfo.history_percent;

@@ -8,6 +8,8 @@ public final class HeadImgs extends Message {
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_PC_URL = "";
     public static final String DEFAULT_SUBTITLE = "";
+    public static final String DEFAULT_TAG_NAME_URL = "";
+    public static final String DEFAULT_TAG_NAME_WH = "";
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String btn_text;
@@ -17,6 +19,10 @@ public final class HeadImgs extends Message {
     public final String pc_url;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String subtitle;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String tag_name_url;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String tag_name_wh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
 
@@ -49,9 +55,19 @@ public final class HeadImgs extends Message {
             }
             if (builder.btn_text == null) {
                 this.btn_text = "";
-                return;
             } else {
                 this.btn_text = builder.btn_text;
+            }
+            if (builder.tag_name_url == null) {
+                this.tag_name_url = "";
+            } else {
+                this.tag_name_url = builder.tag_name_url;
+            }
+            if (builder.tag_name_wh == null) {
+                this.tag_name_wh = "";
+                return;
+            } else {
+                this.tag_name_wh = builder.tag_name_wh;
                 return;
             }
         }
@@ -60,6 +76,8 @@ public final class HeadImgs extends Message {
         this.title = builder.title;
         this.subtitle = builder.subtitle;
         this.btn_text = builder.btn_text;
+        this.tag_name_url = builder.tag_name_url;
+        this.tag_name_wh = builder.tag_name_wh;
     }
 
     /* loaded from: classes.dex */
@@ -68,6 +86,8 @@ public final class HeadImgs extends Message {
         public String img_url;
         public String pc_url;
         public String subtitle;
+        public String tag_name_url;
+        public String tag_name_wh;
         public String title;
 
         public Builder() {
@@ -81,6 +101,8 @@ public final class HeadImgs extends Message {
                 this.title = headImgs.title;
                 this.subtitle = headImgs.subtitle;
                 this.btn_text = headImgs.btn_text;
+                this.tag_name_url = headImgs.tag_name_url;
+                this.tag_name_wh = headImgs.tag_name_wh;
             }
         }
 

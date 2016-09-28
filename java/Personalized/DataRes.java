@@ -8,6 +8,7 @@ import tbclient.BannerList;
 import tbclient.ThreadInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    public static final String DEFAULT_STAT_KEY = "";
     @ProtoField(tag = 10)
     public final AgeSexModule age_sex;
     @ProtoField(tag = 9)
@@ -24,6 +25,8 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Resource> resource_list;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String stat_key;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer sug_seconds;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -99,9 +102,14 @@ public final class DataRes extends Message {
             }
             if (builder.card_god == null) {
                 this.card_god = DEFAULT_CARD_GOD;
-                return;
             } else {
                 this.card_god = immutableCopyOf(builder.card_god);
+            }
+            if (builder.stat_key == null) {
+                this.stat_key = "";
+                return;
+            } else {
+                this.stat_key = builder.stat_key;
                 return;
             }
         }
@@ -117,6 +125,7 @@ public final class DataRes extends Message {
         this.age_sex = builder.age_sex;
         this.interestion = immutableCopyOf(builder.interestion);
         this.card_god = immutableCopyOf(builder.card_god);
+        this.stat_key = builder.stat_key;
     }
 
     /* loaded from: classes.dex */
@@ -129,6 +138,7 @@ public final class DataRes extends Message {
         public List<TagStruct> interestion;
         public Integer is_new_url;
         public List<Resource> resource_list;
+        public String stat_key;
         public Integer sug_seconds;
         public List<TagInfo> tag_list;
         public List<ThreadInfo> thread_list;
@@ -152,6 +162,7 @@ public final class DataRes extends Message {
                 this.age_sex = dataRes.age_sex;
                 this.interestion = DataRes.copyOf(dataRes.interestion);
                 this.card_god = DataRes.copyOf(dataRes.card_god);
+                this.stat_key = dataRes.stat_key;
             }
         }
 

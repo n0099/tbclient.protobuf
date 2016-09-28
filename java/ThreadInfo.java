@@ -3,7 +3,7 @@ package tbclient;
 import com.baidu.cloudsdk.social.core.util.SocialAPIErrorCodes;
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.t;
+import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -46,6 +46,8 @@ public final class ThreadInfo extends Message {
     public final AnimationThread animation_info;
     @ProtoField(tag = 89)
     public final AppCode app_code;
+    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_MEDIA_TYPE)
+    public final AppInfo app_info;
     @ProtoField(tag = 18)
     public final User author;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
@@ -76,7 +78,7 @@ public final class ThreadInfo extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
+    @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
@@ -104,7 +106,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = 103, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
-    @ProtoField(tag = t.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_bub;
     @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
@@ -130,12 +132,16 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_reward;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_novel_thank;
-    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
+    @ProtoField(tag = 114, type = Message.Datatype.UINT32)
+    public final Integer is_operate_thread;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
+    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_RESPONSE_TYPE, type = Message.Datatype.INT32)
+    public final Integer is_tbread_dispatch;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_top;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
@@ -208,6 +214,8 @@ public final class ThreadInfo extends Message {
     public final Integer storecount;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
+    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_GRANT_TYPE)
+    public final TbreadDispatch tbread_dispatch_info;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -248,7 +256,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = t.l.PullToRefresh_mode)
+    @ProtoField(tag = r.l.PullToRefresh_mode)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -311,6 +319,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_CHEAK_REPEAT = 0;
     public static final List<PbContent> DEFAULT_RICH_TITLE = Collections.emptyList();
     public static final List<PbContent> DEFAULT_RICH_ABSTRACT = Collections.emptyList();
+    public static final Integer DEFAULT_IS_OPERATE_THREAD = 0;
+    public static final Integer DEFAULT_IS_TBREAD_DISPATCH = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -760,6 +770,18 @@ public final class ThreadInfo extends Message {
                 this.rich_abstract = immutableCopyOf(builder.rich_abstract);
             }
             this.ala_info = builder.ala_info;
+            if (builder.is_operate_thread == null) {
+                this.is_operate_thread = DEFAULT_IS_OPERATE_THREAD;
+            } else {
+                this.is_operate_thread = builder.is_operate_thread;
+            }
+            if (builder.is_tbread_dispatch == null) {
+                this.is_tbread_dispatch = DEFAULT_IS_TBREAD_DISPATCH;
+            } else {
+                this.is_tbread_dispatch = builder.is_tbread_dispatch;
+            }
+            this.tbread_dispatch_info = builder.tbread_dispatch_info;
+            this.app_info = builder.app_info;
             return;
         }
         this.id = builder.id;
@@ -871,6 +893,10 @@ public final class ThreadInfo extends Message {
         this.rich_title = immutableCopyOf(builder.rich_title);
         this.rich_abstract = immutableCopyOf(builder.rich_abstract);
         this.ala_info = builder.ala_info;
+        this.is_operate_thread = builder.is_operate_thread;
+        this.is_tbread_dispatch = builder.is_tbread_dispatch;
+        this.tbread_dispatch_info = builder.tbread_dispatch_info;
+        this.app_info = builder.app_info;
     }
 
     /* loaded from: classes.dex */
@@ -882,6 +908,7 @@ public final class ThreadInfo extends Message {
         public AnchorInfo anchor_info;
         public AnimationThread animation_info;
         public AppCode app_code;
+        public AppInfo app_info;
         public User author;
         public Long author_id;
         public BookThread book_chapter;
@@ -925,8 +952,10 @@ public final class ThreadInfo extends Message {
         public Integer is_novel_reward;
         public Integer is_novel_thank;
         public Integer is_ntitle;
+        public Integer is_operate_thread;
         public Integer is_pic;
         public Integer is_protal;
+        public Integer is_tbread_dispatch;
         public Integer is_top;
         public Integer is_voice_thread;
         public Integer is_vote;
@@ -963,6 +992,7 @@ public final class ThreadInfo extends Message {
         public SkinInfo skin_info;
         public Integer storecount;
         public TaskInfo task_info;
+        public TbreadDispatch tbread_dispatch_info;
         public Integer thread_type;
         public Integer thread_types;
         public Long tid;
@@ -1100,6 +1130,10 @@ public final class ThreadInfo extends Message {
                 this.rich_title = ThreadInfo.copyOf(threadInfo.rich_title);
                 this.rich_abstract = ThreadInfo.copyOf(threadInfo.rich_abstract);
                 this.ala_info = threadInfo.ala_info;
+                this.is_operate_thread = threadInfo.is_operate_thread;
+                this.is_tbread_dispatch = threadInfo.is_tbread_dispatch;
+                this.tbread_dispatch_info = threadInfo.tbread_dispatch_info;
+                this.app_info = threadInfo.app_info;
             }
         }
 

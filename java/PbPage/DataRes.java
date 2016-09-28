@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.FineBannerPb;
@@ -23,6 +24,8 @@ import tbclient.User;
 public final class DataRes extends Message {
     @ProtoField(tag = 5)
     public final AddPost add_post;
+    @ProtoField(tag = 26)
+    public final AlaLiveInfo ala_info;
     @ProtoField(tag = 4)
     public final Anti anti;
     @ProtoField(tag = 22)
@@ -33,6 +36,8 @@ public final class DataRes extends Message {
     public final List<FineBannerPb> fine_banner;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
+    @ProtoField(tag = 27)
+    public final ForumHeadlineImgInfo forum_headline_img_info;
     @ProtoField(tag = 23)
     public final GodCard god_card;
     @ProtoField(tag = 21)
@@ -149,6 +154,8 @@ public final class DataRes extends Message {
                 this.play_rank_list = immutableCopyOf(builder.play_rank_list);
             }
             this.recommend_book = builder.recommend_book;
+            this.ala_info = builder.ala_info;
+            this.forum_headline_img_info = builder.forum_headline_img_info;
             return;
         }
         this.user = builder.user;
@@ -176,16 +183,20 @@ public final class DataRes extends Message {
         this.god_card = builder.god_card;
         this.play_rank_list = immutableCopyOf(builder.play_rank_list);
         this.recommend_book = builder.recommend_book;
+        this.ala_info = builder.ala_info;
+        this.forum_headline_img_info = builder.forum_headline_img_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
+        public AlaLiveInfo ala_info;
         public Anti anti;
         public AppealInfo appeal_info;
         public BannerList banner_list;
         public List<FineBannerPb> fine_banner;
         public SimpleForum forum;
+        public ForumHeadlineImgInfo forum_headline_img_info;
         public GodCard god_card;
         public GraffitiRankListInfo graffiti_rank_list_info;
         public Integer has_floor;
@@ -237,6 +248,8 @@ public final class DataRes extends Message {
                 this.god_card = dataRes.god_card;
                 this.play_rank_list = DataRes.copyOf(dataRes.play_rank_list);
                 this.recommend_book = dataRes.recommend_book;
+                this.ala_info = dataRes.ala_info;
+                this.forum_headline_img_info = dataRes.forum_headline_img_info;
             }
         }
 

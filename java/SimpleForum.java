@@ -5,13 +5,17 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class SimpleForum extends Message {
     public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_FIRST_CLASS = "";
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_IS_EXISTS = 0;
     public static final Integer DEFAULT_IS_LIKED = 0;
     public static final Integer DEFAULT_IS_SIGNED = 0;
     public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_SECOND_CLASS = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String avatar;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String first_class;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -22,6 +26,8 @@ public final class SimpleForum extends Message {
     public final Integer is_signed;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String second_class;
 
     /* synthetic */ SimpleForum(Builder builder, boolean z, SimpleForum simpleForum) {
         this(builder, z);
@@ -57,9 +63,19 @@ public final class SimpleForum extends Message {
             }
             if (builder.is_signed == null) {
                 this.is_signed = DEFAULT_IS_SIGNED;
-                return;
             } else {
                 this.is_signed = builder.is_signed;
+            }
+            if (builder.first_class == null) {
+                this.first_class = "";
+            } else {
+                this.first_class = builder.first_class;
+            }
+            if (builder.second_class == null) {
+                this.second_class = "";
+                return;
+            } else {
+                this.second_class = builder.second_class;
                 return;
             }
         }
@@ -69,16 +85,20 @@ public final class SimpleForum extends Message {
         this.avatar = builder.avatar;
         this.is_liked = builder.is_liked;
         this.is_signed = builder.is_signed;
+        this.first_class = builder.first_class;
+        this.second_class = builder.second_class;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<SimpleForum> {
         public String avatar;
+        public String first_class;
         public Long id;
         public Integer is_exists;
         public Integer is_liked;
         public Integer is_signed;
         public String name;
+        public String second_class;
 
         public Builder() {
         }
@@ -92,6 +112,8 @@ public final class SimpleForum extends Message {
                 this.avatar = simpleForum.avatar;
                 this.is_liked = simpleForum.is_liked;
                 this.is_signed = simpleForum.is_signed;
+                this.first_class = simpleForum.first_class;
+                this.second_class = simpleForum.second_class;
             }
         }
 

@@ -1,7 +1,7 @@
 package tbclient.FrsPage;
 
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.t;
+import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -9,6 +9,7 @@ import java.util.List;
 import tbclient.AnchorInfo;
 import tbclient.Anti;
 import tbclient.CategoryInfo;
+import tbclient.ForumPresentInfo;
 import tbclient.FrsTabInfo;
 import tbclient.Novel;
 import tbclient.Page;
@@ -50,11 +51,15 @@ public final class DataRes extends Message {
     public final String fortune_desc;
     @ProtoField(tag = 2)
     public final ForumInfo forum;
+    @ProtoField(tag = 52)
+    public final ForumHeadlineImgInfo forum_headline_img_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<AnchorInfo> forum_livegroup_list;
+    @ProtoField(tag = 51)
+    public final ForumPresentInfo forum_present_info;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
-    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
@@ -80,15 +85,17 @@ public final class DataRes extends Message {
     public final Integer need_log;
     @ProtoField(tag = 25)
     public final Novel novel;
+    @ProtoField(tag = 53)
+    public final NtSpreadInfo ntspread;
     @ProtoField(tag = 4)
     public final Page page;
     @ProtoField(tag = 29)
     public final PushThreadInfo push_thread_info;
     @ProtoField(tag = 46)
     public final RecommendBook recommend_book;
-    @ProtoField(tag = t.l.PullToRefresh_headerTextColor)
+    @ProtoField(tag = r.l.PullToRefresh_headerTextColor)
     public final RecommendInfo school_recom_info;
-    @ProtoField(tag = t.l.PullToRefresh_mode, type = Message.Datatype.UINT32)
+    @ProtoField(tag = r.l.PullToRefresh_mode, type = Message.Datatype.UINT32)
     public final Integer school_recom_pos;
     @ProtoField(tag = 31)
     public final SdkTopicThread sdk_topic_thread;
@@ -96,7 +103,7 @@ public final class DataRes extends Message {
     public final Integer server_time;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer smart_frs_type;
-    @ProtoField(tag = t.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
@@ -302,6 +309,9 @@ public final class DataRes extends Message {
                 this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
             }
             this.book_info = builder.book_info;
+            this.forum_present_info = builder.forum_present_info;
+            this.forum_headline_img_info = builder.forum_headline_img_info;
+            this.ntspread = builder.ntspread;
             return;
         }
         this.user = builder.user;
@@ -352,6 +362,9 @@ public final class DataRes extends Message {
         this.need_log = builder.need_log;
         this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
         this.book_info = builder.book_info;
+        this.forum_present_info = builder.forum_present_info;
+        this.forum_headline_img_info = builder.forum_headline_img_info;
+        this.ntspread = builder.ntspread;
     }
 
     /* loaded from: classes.dex */
@@ -370,7 +383,9 @@ public final class DataRes extends Message {
         public Integer fortune_bag;
         public String fortune_desc;
         public ForumInfo forum;
+        public ForumHeadlineImgInfo forum_headline_img_info;
         public List<AnchorInfo> forum_livegroup_list;
+        public ForumPresentInfo forum_present_info;
         public StarInfo frs_star;
         public Integer frs_tab_default;
         public List<FrsTabInfo> frs_tab_info;
@@ -385,6 +400,7 @@ public final class DataRes extends Message {
         public NavTabInfo nav_tab_info;
         public Integer need_log;
         public Novel novel;
+        public NtSpreadInfo ntspread;
         public Page page;
         public PushThreadInfo push_thread_info;
         public RecommendBook recommend_book;
@@ -459,6 +475,9 @@ public final class DataRes extends Message {
                 this.need_log = dataRes.need_log;
                 this.is_auto_play_forumheadvideo = dataRes.is_auto_play_forumheadvideo;
                 this.book_info = dataRes.book_info;
+                this.forum_present_info = dataRes.forum_present_info;
+                this.forum_headline_img_info = dataRes.forum_headline_img_info;
+                this.ntspread = dataRes.ntspread;
             }
         }
 

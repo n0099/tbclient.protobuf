@@ -1,7 +1,8 @@
 package tbclient.FrsPage;
 
+import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.t;
+import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -90,7 +91,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = t.l.PullToRefresh_mode, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.l.PullToRefresh_mode, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -110,8 +111,10 @@ public final class ForumInfo extends Message {
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = t.l.PullToRefresh_headerBackground)
+    @ProtoField(tag = r.l.PullToRefresh_headerBackground)
     public final PostPrefix post_prefix;
+    @ProtoField(tag = BDLocation.TypeGpsLocation)
+    public final PostTopic post_topic;
     @ProtoField(tag = 58)
     public final RealTime realtime_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 43)
@@ -124,9 +127,9 @@ public final class ForumInfo extends Message {
     public final SignInfo sign_in_info;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String superboy;
-    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground)
+    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground)
     public final TagInfo tag_info;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_num;
@@ -410,11 +413,11 @@ public final class ForumInfo extends Message {
             }
             if (builder.add_thread_content == null) {
                 this.add_thread_content = "";
-                return;
             } else {
                 this.add_thread_content = builder.add_thread_content;
-                return;
             }
+            this.post_topic = builder.post_topic;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -476,6 +479,7 @@ public final class ForumInfo extends Message {
         this.realtime_data = builder.realtime_data;
         this.add_thread_title = builder.add_thread_title;
         this.add_thread_content = builder.add_thread_content;
+        this.post_topic = builder.post_topic;
     }
 
     /* loaded from: classes.dex */
@@ -524,6 +528,7 @@ public final class ForumInfo extends Message {
         public TopNews news_info;
         public Integer post_num;
         public PostPrefix post_prefix;
+        public PostTopic post_topic;
         public RealTime realtime_data;
         public List<RecommendForum> recommend_forum;
         public RecomUserInfo recommend_user_info;
@@ -607,6 +612,7 @@ public final class ForumInfo extends Message {
                 this.realtime_data = forumInfo.realtime_data;
                 this.add_thread_title = forumInfo.add_thread_title;
                 this.add_thread_content = forumInfo.add_thread_content;
+                this.post_topic = forumInfo.post_topic;
             }
         }
 

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.t;
+import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -34,7 +34,7 @@ public final class User extends Message {
     public final String bawu_type;
     @ProtoField(tag = 58, type = Message.Datatype.STRING)
     public final String bg_pic;
-    @ProtoField(tag = t.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
@@ -98,7 +98,7 @@ public final class User extends Message {
     public final Integer is_manager;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_mask;
-    @ProtoField(tag = t.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_mem;
     @ProtoField(tag = 51, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
@@ -132,7 +132,7 @@ public final class User extends Message {
     public final NewParrScores parr_scores;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = t.l.PullToRefresh_mode)
+    @ProtoField(tag = r.l.PullToRefresh_mode)
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 77)
     public final Pendant pendant;
@@ -150,7 +150,7 @@ public final class User extends Message {
     public final String rank;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer sex;
-    @ProtoField(tag = t.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
     public final String tb_age;
     @ProtoField(tag = 72)
     public final TbVipInfo tb_vip;
