@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message NtSpreadInfo {
+    string user_name = 1;
+    string user_avatar = 2;
+    string tips = 3;
+    string type = 4;
+    string title = 5;
+    repeated string pics = 6;
+    string link_url = 7;
+    int32 position = 8;
+    string publish_date = 9;
+}

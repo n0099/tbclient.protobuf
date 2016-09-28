@@ -10,7 +10,7 @@ message ForumBookInfo {
     string show_chapter_id = 7;
     string show_chapter_no = 8;
     string show_chapter_title = 9;
-    int64 history_page_idhistory_page_id = 10;
+    int64 history_page_id = 10;
     int64 history_paragraph_id = 11;
     int64 history_word_id = 12;
     int64 history_percent = 13;

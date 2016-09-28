@@ -6,4 +6,6 @@ message HeadImgs {
     string title = 3;
     string subtitle = 4;
     string btn_text = 5;
+    string tag_name_url = 6;
+    string tag_name_wh = 7;
 }

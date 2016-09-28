@@ -3,17 +3,20 @@ syntax = "proto3";
 import "AnchorInfo.proto";
 import "Anti.proto";
 import "CategoryInfo.proto";
+import "ForumPresentInfo.proto";
 import "FrsPage/ActivityHead.proto";
 import "FrsPage/CarrierEnter.proto";
 import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumBookInfo.proto";
+import "FrsPage/ForumHeadlineImgInfo.proto";
 import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
 import "FrsPage/HeadSdk.proto";
 import "FrsPage/Info.proto";
 import "FrsPage/NavTabInfo.proto";
+import "FrsPage/NtSpreadInfo.proto";
 import "FrsPage/PushThreadInfo.proto";
 import "FrsPage/RecommendBook.proto";
 import "FrsPage/StarEnter.proto";
@@ -72,4 +75,7 @@ message DataRes {
     int32 need_log = 48;
     int32 is_auto_play_forumheadvideo = 49;
     ForumBookInfo book_info = 50;
+    ForumPresentInfo forum_present_info = 51;
+    ForumHeadlineImgInfo forum_headline_img_info = 52;
+    NtSpreadInfo ntspread = 53;
 }

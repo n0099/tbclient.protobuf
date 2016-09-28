@@ -7,4 +7,6 @@ message SimpleForum {
     string avatar = 4;
     uint32 is_liked = 5;
     uint32 is_signed = 6;
+    string first_class = 7;
+    string second_class = 8;
 }

@@ -1,8 +1,11 @@
 syntax = "proto3";
 
+import "Personalized/DislikeReason.proto";
+
 message ThreadPersonalized {
     uint64 tid = 1;
     string weight = 2;
     string source = 3;
     string abtest_tag = 4;
+    repeated DislikeReason dislike_resource = 5;
 }

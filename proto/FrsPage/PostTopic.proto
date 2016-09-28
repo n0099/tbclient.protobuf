@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message PostTopic {
+    string title_topic = 1;
+    string content_topic = 2;
+}

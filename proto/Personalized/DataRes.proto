@@ -24,4 +24,5 @@ message DataRes {
     AgeSexModule age_sex = 10;
     repeated TagStruct interestion = 11;
     repeated CardGod card_god = 12;
+    string stat_key = 13;
 }

@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AlaLiveInfo.proto";
 import "Anti.proto";
 import "BannerList.proto";
 import "FineBannerPb.proto";
@@ -9,6 +10,7 @@ import "Page.proto";
 import "PbHotPost.proto";
 import "PbPage/AddPost.proto";
 import "PbPage/AppealInfo.proto";
+import "PbPage/ForumHeadlineImgInfo.proto";
 import "PbPage/GodCard.proto";
 import "PbPage/NewsInfo.proto";
 import "PbPage/PostBanner.proto";
@@ -48,4 +50,6 @@ message DataRes {
     GodCard god_card = 23;
     repeated PsRankListItem play_rank_list = 24;
     RecommendBook recommend_book = 25;
+    AlaLiveInfo ala_info = 26;
+    ForumHeadlineImgInfo forum_headline_img_info = 27;
 }

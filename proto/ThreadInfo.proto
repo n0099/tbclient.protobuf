@@ -120,4 +120,5 @@ message ThreadInfo {
     string recom_reason = 109;
     AdInfo video_ad_info = 110;
     AlaLiveInfo ala_info = 113;
+    uint32 is_operate_thread = 114;
 }

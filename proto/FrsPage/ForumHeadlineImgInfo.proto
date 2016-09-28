@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message ForumHeadlineImgInfo {
+    int64 thread_id = 1;
+    string thread_user_name = 2;
+    string img_user_name = 3;
+    string img_url = 4;
+    int64 thread_user_id = 5;
+    int64 img_user_id = 6;
+    string headline_url = 7;
+}
