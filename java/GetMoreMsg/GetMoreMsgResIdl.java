@@ -1,20 +1,20 @@
-package tbclient.GetGameDetailNew;
+package tbclient.GetMoreMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
 /* loaded from: classes.dex */
-public final class GetGameDetailNewResIdl extends Message {
+public final class GetMoreMsgResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetGameDetailNewResIdl(Builder builder, boolean z, GetGameDetailNewResIdl getGameDetailNewResIdl) {
+    /* synthetic */ GetMoreMsgResIdl(Builder builder, boolean z, GetMoreMsgResIdl getMoreMsgResIdl) {
         this(builder, z);
     }
 
-    private GetGameDetailNewResIdl(Builder builder, boolean z) {
+    private GetMoreMsgResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -26,25 +26,25 @@ public final class GetGameDetailNewResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public static final class Builder extends Message.Builder<GetGameDetailNewResIdl> {
+    public static final class Builder extends Message.Builder<GetMoreMsgResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(GetGameDetailNewResIdl getGameDetailNewResIdl) {
-            super(getGameDetailNewResIdl);
-            if (getGameDetailNewResIdl != null) {
-                this.error = getGameDetailNewResIdl.error;
-                this.data = getGameDetailNewResIdl.data;
+        public Builder(GetMoreMsgResIdl getMoreMsgResIdl) {
+            super(getMoreMsgResIdl);
+            if (getMoreMsgResIdl != null) {
+                this.error = getMoreMsgResIdl.error;
+                this.data = getMoreMsgResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetGameDetailNewResIdl build(boolean z) {
-            return new GetGameDetailNewResIdl(this, z, null);
+        public GetMoreMsgResIdl build(boolean z) {
+            return new GetMoreMsgResIdl(this, z, null);
         }
     }
 }

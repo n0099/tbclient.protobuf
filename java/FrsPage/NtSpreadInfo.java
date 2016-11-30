@@ -19,7 +19,7 @@ public final class NtSpreadInfo extends Message {
     public final String link_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
     public final List<String> pics;
-    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer position;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String publish_date;

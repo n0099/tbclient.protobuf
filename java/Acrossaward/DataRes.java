@@ -1,13 +1,12 @@
-package tbclient.GetNewGameList;
+package tbclient.Acrossaward;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
-    @ProtoField(tag = 1)
-    public final RunningGame running;
-    @ProtoField(tag = 2)
-    public final TestingGame testing;
+    public static final String DEFAULT_TIPS = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String tips;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -16,18 +15,20 @@ public final class DataRes extends Message {
     private DataRes(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.running = builder.running;
-            this.testing = builder.testing;
-            return;
+            if (builder.tips == null) {
+                this.tips = "";
+                return;
+            } else {
+                this.tips = builder.tips;
+                return;
+            }
         }
-        this.running = builder.running;
-        this.testing = builder.testing;
+        this.tips = builder.tips;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public RunningGame running;
-        public TestingGame testing;
+        public String tips;
 
         public Builder() {
         }
@@ -35,8 +36,7 @@ public final class DataRes extends Message {
         public Builder(DataRes dataRes) {
             super(dataRes);
             if (dataRes != null) {
-                this.running = dataRes.running;
-                this.testing = dataRes.testing;
+                this.tips = dataRes.tips;
             }
         }
 

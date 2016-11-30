@@ -3,6 +3,7 @@ package tbclient.PbPage;
 import com.baidu.tbadk.TbConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.AppPosInfo;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
@@ -20,6 +21,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
+    @ProtoField(tag = 53)
+    public final AppPosInfo app_pos;
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer arround;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -366,11 +369,11 @@ public final class DataReq extends Message {
             }
             if (builder.obj_param1 == null) {
                 this.obj_param1 = "";
-                return;
             } else {
                 this.obj_param1 = builder.obj_param1;
-                return;
             }
+            this.app_pos = builder.app_pos;
+            return;
         }
         this.pb_rn = builder.pb_rn;
         this.mark = builder.mark;
@@ -417,10 +420,12 @@ public final class DataReq extends Message {
         this.obj_source = builder.obj_source;
         this.obj_locate = builder.obj_locate;
         this.obj_param1 = builder.obj_param1;
+        this.app_pos = builder.app_pos;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public AppPosInfo app_pos;
         public Integer arround;
         public Integer back;
         public Integer banner;
@@ -518,6 +523,7 @@ public final class DataReq extends Message {
                 this.obj_source = dataReq.obj_source;
                 this.obj_locate = dataReq.obj_locate;
                 this.obj_param1 = dataReq.obj_param1;
+                this.app_pos = dataReq.app_pos;
             }
         }
 

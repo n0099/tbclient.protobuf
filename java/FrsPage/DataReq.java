@@ -4,6 +4,7 @@ import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.AppPosInfo;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
@@ -22,6 +23,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
+    @ProtoField(tag = 50)
+    public final AppPosInfo app_pos;
     @ProtoField(tag = 44, type = Message.Datatype.INT32)
     public final Integer category_id;
     @ProtoField(tag = 20, type = Message.Datatype.BOOL)
@@ -62,6 +65,8 @@ public final class DataReq extends Message {
     public final Long last_click_tid;
     @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String lastids;
+    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    public final Integer load_type;
     @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean login;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
@@ -150,6 +155,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final Long DEFAULT_LAST_CLICK_TID = 0L;
+    public static final Integer DEFAULT_LOAD_TYPE = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -391,11 +397,16 @@ public final class DataReq extends Message {
             }
             if (builder.last_click_tid == null) {
                 this.last_click_tid = DEFAULT_LAST_CLICK_TID;
-                return;
             } else {
                 this.last_click_tid = builder.last_click_tid;
-                return;
             }
+            if (builder.load_type == null) {
+                this.load_type = DEFAULT_LOAD_TYPE;
+            } else {
+                this.load_type = builder.load_type;
+            }
+            this.app_pos = builder.app_pos;
+            return;
         }
         this.kw = builder.kw;
         this.rn = builder.rn;
@@ -445,10 +456,13 @@ public final class DataReq extends Message {
         this.yuelaou_params = builder.yuelaou_params;
         this.sort_type = builder.sort_type;
         this.last_click_tid = builder.last_click_tid;
+        this.load_type = builder.load_type;
+        this.app_pos = builder.app_pos;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public AppPosInfo app_pos;
         public Integer category_id;
         public Boolean check_login;
         public Integer cid;
@@ -469,6 +483,7 @@ public final class DataReq extends Message {
         public String kw;
         public Long last_click_tid;
         public String lastids;
+        public Integer load_type;
         public Boolean login;
         public String mobile;
         public String module_name;
@@ -552,6 +567,8 @@ public final class DataReq extends Message {
                 this.yuelaou_params = dataReq.yuelaou_params;
                 this.sort_type = dataReq.sort_type;
                 this.last_click_tid = dataReq.last_click_tid;
+                this.load_type = dataReq.load_type;
+                this.app_pos = dataReq.app_pos;
             }
         }
 

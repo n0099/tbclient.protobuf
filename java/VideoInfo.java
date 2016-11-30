@@ -2,6 +2,8 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes.dex */
 public final class VideoInfo extends Message {
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
@@ -18,6 +20,8 @@ public final class VideoInfo extends Message {
     public final String thumbnail_url;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer thumbnail_width;
+    @ProtoField(label = Message.Label.REPEATED, tag = 12)
+    public final List<VideoDesc> video_desc;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer video_duration;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -26,6 +30,8 @@ public final class VideoInfo extends Message {
     public final Integer video_length;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String video_md5;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer video_select_flag;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String video_url;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -37,6 +43,8 @@ public final class VideoInfo extends Message {
     public static final Integer DEFAULT_THUMBNAIL_HEIGHT = 0;
     public static final Integer DEFAULT_VIDEO_LENGTH = 0;
     public static final Integer DEFAULT_PLAY_COUNT = 0;
+    public static final List<VideoDesc> DEFAULT_VIDEO_DESC = Collections.emptyList();
+    public static final Integer DEFAULT_VIDEO_SELECT_FLAG = 0;
 
     /* synthetic */ VideoInfo(Builder builder, boolean z, VideoInfo videoInfo) {
         this(builder, z);
@@ -97,9 +105,19 @@ public final class VideoInfo extends Message {
             }
             if (builder.media_subtitle == null) {
                 this.media_subtitle = "";
-                return;
             } else {
                 this.media_subtitle = builder.media_subtitle;
+            }
+            if (builder.video_desc == null) {
+                this.video_desc = DEFAULT_VIDEO_DESC;
+            } else {
+                this.video_desc = immutableCopyOf(builder.video_desc);
+            }
+            if (builder.video_select_flag == null) {
+                this.video_select_flag = DEFAULT_VIDEO_SELECT_FLAG;
+                return;
+            } else {
+                this.video_select_flag = builder.video_select_flag;
                 return;
             }
         }
@@ -114,6 +132,8 @@ public final class VideoInfo extends Message {
         this.video_length = builder.video_length;
         this.play_count = builder.play_count;
         this.media_subtitle = builder.media_subtitle;
+        this.video_desc = immutableCopyOf(builder.video_desc);
+        this.video_select_flag = builder.video_select_flag;
     }
 
     /* loaded from: classes.dex */
@@ -123,10 +143,12 @@ public final class VideoInfo extends Message {
         public Integer thumbnail_height;
         public String thumbnail_url;
         public Integer thumbnail_width;
+        public List<VideoDesc> video_desc;
         public Integer video_duration;
         public Integer video_height;
         public Integer video_length;
         public String video_md5;
+        public Integer video_select_flag;
         public String video_url;
         public Integer video_width;
 
@@ -147,6 +169,8 @@ public final class VideoInfo extends Message {
                 this.video_length = videoInfo.video_length;
                 this.play_count = videoInfo.play_count;
                 this.media_subtitle = videoInfo.media_subtitle;
+                this.video_desc = VideoInfo.copyOf(videoInfo.video_desc);
+                this.video_select_flag = videoInfo.video_select_flag;
             }
         }
 

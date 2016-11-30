@@ -21,12 +21,15 @@ import tbclient.VitalityInfo;
 import tbclient.ZhiBoInfoTW;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
     public static final String DEFAULT_FORTUNE_DESC = "";
     @ProtoField(tag = 23)
     public final ActivityHead activityhead;
     @ProtoField(tag = 5)
     public final Anti anti;
+    @ProtoField(tag = 56, type = Message.Datatype.STRING)
+    public final String asp_shown_info;
     @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
     public final List<BannerThreadInfo> banner_thread_list;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
@@ -35,6 +38,10 @@ public final class DataRes extends Message {
     public final ForumBookInfo book_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<ThreadInfo> card_shipin_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 55)
+    public final List<ThreadInfo> card_shipin_new;
+    @ProtoField(label = Message.Label.REPEATED, tag = 54, type = Message.Datatype.INT32)
+    public final List<Integer> card_shipin_pos;
     @ProtoField(tag = 43)
     public final CarrierEnter carrier_enter;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
@@ -149,6 +156,8 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SMART_FRS_TYPE = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
     public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO = 0;
+    public static final List<Integer> DEFAULT_CARD_SHIPIN_POS = Collections.emptyList();
+    public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -312,7 +321,23 @@ public final class DataRes extends Message {
             this.forum_present_info = builder.forum_present_info;
             this.forum_headline_img_info = builder.forum_headline_img_info;
             this.ntspread = builder.ntspread;
-            return;
+            if (builder.card_shipin_pos == null) {
+                this.card_shipin_pos = DEFAULT_CARD_SHIPIN_POS;
+            } else {
+                this.card_shipin_pos = immutableCopyOf(builder.card_shipin_pos);
+            }
+            if (builder.card_shipin_new == null) {
+                this.card_shipin_new = DEFAULT_CARD_SHIPIN_NEW;
+            } else {
+                this.card_shipin_new = immutableCopyOf(builder.card_shipin_new);
+            }
+            if (builder.asp_shown_info == null) {
+                this.asp_shown_info = "";
+                return;
+            } else {
+                this.asp_shown_info = builder.asp_shown_info;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -365,16 +390,22 @@ public final class DataRes extends Message {
         this.forum_present_info = builder.forum_present_info;
         this.forum_headline_img_info = builder.forum_headline_img_info;
         this.ntspread = builder.ntspread;
+        this.card_shipin_pos = immutableCopyOf(builder.card_shipin_pos);
+        this.card_shipin_new = immutableCopyOf(builder.card_shipin_new);
+        this.asp_shown_info = builder.asp_shown_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityHead activityhead;
         public Anti anti;
+        public String asp_shown_info;
         public List<BannerThreadInfo> banner_thread_list;
         public String bawu_enter_url;
         public ForumBookInfo book_info;
         public List<ThreadInfo> card_shipin_info;
+        public List<ThreadInfo> card_shipin_new;
+        public List<Integer> card_shipin_pos;
         public CarrierEnter carrier_enter;
         public List<CategoryInfo> category_list;
         public ClientPlatform client_platform;
@@ -478,6 +509,9 @@ public final class DataRes extends Message {
                 this.forum_present_info = dataRes.forum_present_info;
                 this.forum_headline_img_info = dataRes.forum_headline_img_info;
                 this.ntspread = dataRes.ntspread;
+                this.card_shipin_pos = DataRes.copyOf(dataRes.card_shipin_pos);
+                this.card_shipin_new = DataRes.copyOf(dataRes.card_shipin_new);
+                this.asp_shown_info = dataRes.asp_shown_info;
             }
         }
 

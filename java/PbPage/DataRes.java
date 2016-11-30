@@ -22,6 +22,7 @@ import tbclient.TwZhiBoAnti;
 import tbclient.User;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    public static final String DEFAULT_ASP_SHOWN_INFO = "";
     @ProtoField(tag = 5)
     public final AddPost add_post;
     @ProtoField(tag = 26)
@@ -30,6 +31,8 @@ public final class DataRes extends Message {
     public final Anti anti;
     @ProtoField(tag = 22)
     public final AppealInfo appeal_info;
+    @ProtoField(tag = 28, type = Message.Datatype.STRING)
+    public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
@@ -156,7 +159,13 @@ public final class DataRes extends Message {
             this.recommend_book = builder.recommend_book;
             this.ala_info = builder.ala_info;
             this.forum_headline_img_info = builder.forum_headline_img_info;
-            return;
+            if (builder.asp_shown_info == null) {
+                this.asp_shown_info = "";
+                return;
+            } else {
+                this.asp_shown_info = builder.asp_shown_info;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -185,6 +194,7 @@ public final class DataRes extends Message {
         this.recommend_book = builder.recommend_book;
         this.ala_info = builder.ala_info;
         this.forum_headline_img_info = builder.forum_headline_img_info;
+        this.asp_shown_info = builder.asp_shown_info;
     }
 
     /* loaded from: classes.dex */
@@ -193,6 +203,7 @@ public final class DataRes extends Message {
         public AlaLiveInfo ala_info;
         public Anti anti;
         public AppealInfo appeal_info;
+        public String asp_shown_info;
         public BannerList banner_list;
         public List<FineBannerPb> fine_banner;
         public SimpleForum forum;
@@ -250,6 +261,7 @@ public final class DataRes extends Message {
                 this.recommend_book = dataRes.recommend_book;
                 this.ala_info = dataRes.ala_info;
                 this.forum_headline_img_info = dataRes.forum_headline_img_info;
+                this.asp_shown_info = dataRes.asp_shown_info;
             }
         }
 

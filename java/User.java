@@ -23,11 +23,14 @@ public final class User extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_PORTRAITH = "";
     public static final String DEFAULT_RANK = "";
+    public static final String DEFAULT_SEAL_PREFIX = "";
     public static final String DEFAULT_TB_AGE = "";
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String BDUSS;
     @ProtoField(tag = 71)
     public final ActivitySponsor activity_sponsor;
+    @ProtoField(tag = 78)
+    public final AlaUserInfo ala_info;
     @ProtoField(tag = 10)
     public final Balv balv;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
@@ -148,6 +151,8 @@ public final class User extends Message {
     public final List<TwAnchorProfitItem> profit_list;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String rank;
+    @ProtoField(tag = 79, type = Message.Datatype.STRING)
+    public final String seal_prefix;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer sex;
     @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
@@ -195,12 +200,12 @@ public final class User extends Message {
     public static final Integer DEFAULT_LEVEL_ID = 0;
     public static final Integer DEFAULT_IS_LIKE = 0;
     public static final Integer DEFAULT_IS_BAWU = 0;
-    public static final Integer DEFAULT_FANS_NUM = -1;
-    public static final Integer DEFAULT_CONCERN_NUM = -1;
+    public static final Integer DEFAULT_FANS_NUM = 0;
+    public static final Integer DEFAULT_CONCERN_NUM = 0;
     public static final Integer DEFAULT_SEX = 0;
-    public static final Integer DEFAULT_MY_LIKE_NUM = -1;
+    public static final Integer DEFAULT_MY_LIKE_NUM = 0;
     public static final Integer DEFAULT_HAS_CONCERNED = 0;
-    public static final Integer DEFAULT_POST_NUM = -1;
+    public static final Integer DEFAULT_POST_NUM = 0;
     public static final Integer DEFAULT_IS_MEM = 0;
     public static final Integer DEFAULT_BIMG_END_TIME = 0;
     public static final Integer DEFAULT_GENDER = 0;
@@ -548,7 +553,14 @@ public final class User extends Message {
                 this.total_visitor_num = builder.total_visitor_num;
             }
             this.pendant = builder.pendant;
-            return;
+            this.ala_info = builder.ala_info;
+            if (builder.seal_prefix == null) {
+                this.seal_prefix = "";
+                return;
+            } else {
+                this.seal_prefix = builder.seal_prefix;
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -627,12 +639,15 @@ public final class User extends Message {
         this.visitor_num = builder.visitor_num;
         this.total_visitor_num = builder.total_visitor_num;
         this.pendant = builder.pendant;
+        this.ala_info = builder.ala_info;
+        this.seal_prefix = builder.seal_prefix;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;
+        public AlaUserInfo ala_info;
         public Balv balv;
         public String bawu_type;
         public String bg_pic;
@@ -693,6 +708,7 @@ public final class User extends Message {
         public PrivSets priv_sets;
         public List<TwAnchorProfitItem> profit_list;
         public String rank;
+        public String seal_prefix;
         public Integer sex;
         public String tb_age;
         public TbVipInfo tb_vip;
@@ -792,6 +808,8 @@ public final class User extends Message {
                 this.visitor_num = user.visitor_num;
                 this.total_visitor_num = user.total_visitor_num;
                 this.pendant = user.pendant;
+                this.ala_info = user.ala_info;
+                this.seal_prefix = user.seal_prefix;
             }
         }
 

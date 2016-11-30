@@ -12,8 +12,6 @@ import tbclient.GameInfo;
 /* loaded from: classes.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
-    public static final String DEFAULT_ADD_THREAD_CONTENT = "";
-    public static final String DEFAULT_ADD_THREAD_TITLE = "";
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FIRST_CLASS = "";
     public static final String DEFAULT_GAME_NAME = "";
@@ -27,10 +25,10 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_TIDS = "";
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
-    @ProtoField(tag = 60, type = Message.Datatype.STRING)
-    public final String add_thread_content;
-    @ProtoField(tag = 59, type = Message.Datatype.STRING)
-    public final String add_thread_title;
+    @ProtoField(tag = BDLocation.TypeCriteriaException)
+    public final AcrossForumIcon across_forum_hide;
+    @ProtoField(tag = 60)
+    public final AcrossForumIcon across_forum_show;
     @ProtoField(tag = 56)
     public final Adkiller adkiller_data;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
@@ -406,17 +404,9 @@ public final class ForumInfo extends Message {
             this.adkiller_data = builder.adkiller_data;
             this.yule = builder.yule;
             this.realtime_data = builder.realtime_data;
-            if (builder.add_thread_title == null) {
-                this.add_thread_title = "";
-            } else {
-                this.add_thread_title = builder.add_thread_title;
-            }
-            if (builder.add_thread_content == null) {
-                this.add_thread_content = "";
-            } else {
-                this.add_thread_content = builder.add_thread_content;
-            }
+            this.across_forum_show = builder.across_forum_show;
             this.post_topic = builder.post_topic;
+            this.across_forum_hide = builder.across_forum_hide;
             return;
         }
         this.id = builder.id;
@@ -477,16 +467,16 @@ public final class ForumInfo extends Message {
         this.adkiller_data = builder.adkiller_data;
         this.yule = builder.yule;
         this.realtime_data = builder.realtime_data;
-        this.add_thread_title = builder.add_thread_title;
-        this.add_thread_content = builder.add_thread_content;
+        this.across_forum_show = builder.across_forum_show;
         this.post_topic = builder.post_topic;
+        this.across_forum_hide = builder.across_forum_hide;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
-        public String add_thread_content;
-        public String add_thread_title;
+        public AcrossForumIcon across_forum_hide;
+        public AcrossForumIcon across_forum_show;
         public Adkiller adkiller_data;
         public Integer album_open_photo_frs;
         public AnchorPower anchor_power;
@@ -610,9 +600,9 @@ public final class ForumInfo extends Message {
                 this.adkiller_data = forumInfo.adkiller_data;
                 this.yule = forumInfo.yule;
                 this.realtime_data = forumInfo.realtime_data;
-                this.add_thread_title = forumInfo.add_thread_title;
-                this.add_thread_content = forumInfo.add_thread_content;
+                this.across_forum_show = forumInfo.across_forum_show;
                 this.post_topic = forumInfo.post_topic;
+                this.across_forum_hide = forumInfo.across_forum_hide;
             }
         }
 

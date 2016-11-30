@@ -2,6 +2,7 @@ package tbclient.ThreadList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.AppPosInfo;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
@@ -9,6 +10,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_THREAD_IDS = "";
+    @ProtoField(tag = 17)
+    public final AppPosInfo app_pos;
     @ProtoField(tag = 8)
     public final CommonReq common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -133,11 +136,11 @@ public final class DataReq extends Message {
             }
             if (builder.sort_type == null) {
                 this.sort_type = DEFAULT_SORT_TYPE;
-                return;
             } else {
                 this.sort_type = builder.sort_type;
-                return;
             }
+            this.app_pos = builder.app_pos;
+            return;
         }
         this.thread_ids = builder.thread_ids;
         this.forum_id = builder.forum_id;
@@ -155,10 +158,12 @@ public final class DataReq extends Message {
         this.forum_name = builder.forum_name;
         this.last_click_tid = builder.last_click_tid;
         this.sort_type = builder.sort_type;
+        this.app_pos = builder.app_pos;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public AppPosInfo app_pos;
         public CommonReq common;
         public String da_idfa;
         public Long forum_id;
@@ -198,6 +203,7 @@ public final class DataReq extends Message {
                 this.forum_name = dataReq.forum_name;
                 this.last_click_tid = dataReq.last_click_tid;
                 this.sort_type = dataReq.sort_type;
+                this.app_pos = dataReq.app_pos;
             }
         }
 

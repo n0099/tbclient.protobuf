@@ -9,8 +9,11 @@ import tbclient.ThreadInfo;
 import tbclient.User;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String asp_shown_info;
     @ProtoField(tag = 3)
     public final BannerList banner_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -36,15 +39,23 @@ public final class DataRes extends Message {
                 this.user_list = immutableCopyOf(builder.user_list);
             }
             this.banner_list = builder.banner_list;
-            return;
+            if (builder.asp_shown_info == null) {
+                this.asp_shown_info = "";
+                return;
+            } else {
+                this.asp_shown_info = builder.asp_shown_info;
+                return;
+            }
         }
         this.thread_list = immutableCopyOf(builder.thread_list);
         this.user_list = immutableCopyOf(builder.user_list);
         this.banner_list = builder.banner_list;
+        this.asp_shown_info = builder.asp_shown_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public String asp_shown_info;
         public BannerList banner_list;
         public List<ThreadInfo> thread_list;
         public List<User> user_list;
@@ -58,6 +69,7 @@ public final class DataRes extends Message {
                 this.thread_list = DataRes.copyOf(dataRes.thread_list);
                 this.user_list = DataRes.copyOf(dataRes.user_list);
                 this.banner_list = dataRes.banner_list;
+                this.asp_shown_info = dataRes.asp_shown_info;
             }
         }
 
