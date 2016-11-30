@@ -1,9 +1,9 @@
 syntax = "proto3";
 
+import "Acrossaward/DataRes.proto";
 import "Error.proto";
-import "GetGameCenter/DataRes.proto";
 
-message GetGameCenterResIdl {
+message AcrossawardResIdl {
     Error error = 1;
     DataRes data = 2;
 }

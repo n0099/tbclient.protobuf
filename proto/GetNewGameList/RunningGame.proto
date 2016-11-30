@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "GetNewGameList/NewGameInfo.proto";
-
-message RunningGame {
-    repeated NewGameInfo today = 1;
-    repeated NewGameInfo tomorrow = 2;
-    repeated NewGameInfo future = 3;
-}

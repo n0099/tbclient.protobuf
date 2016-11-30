@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message AcrossForumIcon {
+    string icon_url = 1;
+    uint32 pic_type = 2;
+}

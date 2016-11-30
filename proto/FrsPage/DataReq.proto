@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AppPosInfo.proto";
 import "CommonReq.proto";
 
 message DataReq {
@@ -46,4 +47,6 @@ message DataReq {
     string yuelaou_params = 46;
     int32 sort_type = 47;
     uint64 last_click_tid = 48;
+    int32 load_type = 49;
+    AppPosInfo app_pos = 50;
 }

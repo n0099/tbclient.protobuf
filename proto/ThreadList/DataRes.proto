@@ -8,4 +8,5 @@ message DataRes {
     repeated ThreadInfo thread_list = 1;
     repeated User user_list = 2;
     BannerList banner_list = 3;
+    string asp_shown_info = 4;
 }

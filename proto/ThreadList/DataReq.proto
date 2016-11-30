@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AppPosInfo.proto";
 import "CommonReq.proto";
 
 message DataReq {
@@ -19,4 +20,5 @@ message DataReq {
     string forum_name = 14;
     uint64 last_click_tid = 15;
     int32 sort_type = 16;
+    AppPosInfo app_pos = 17;
 }

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "GetNewGameList/RunningGame.proto";
-import "GetNewGameList/TestingGame.proto";
-
-message DataRes {
-    RunningGame running = 1;
-    TestingGame testing = 2;
-}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetGameDetailNew/RankItem.proto";
-
-message RankInfo {
-    repeated RankItem rank_list = 1;
-}

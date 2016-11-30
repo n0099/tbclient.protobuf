@@ -78,4 +78,7 @@ message DataRes {
     ForumPresentInfo forum_present_info = 51;
     ForumHeadlineImgInfo forum_headline_img_info = 52;
     NtSpreadInfo ntspread = 53;
+    repeated int32 card_shipin_pos = 54;
+    repeated ThreadInfo card_shipin_new = 55;
+    string asp_shown_info = 56;
 }

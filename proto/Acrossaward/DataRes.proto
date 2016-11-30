@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message DataRes {
+    string tips = 1;
+}

@@ -52,4 +52,5 @@ message DataRes {
     RecommendBook recommend_book = 25;
     AlaLiveInfo ala_info = 26;
     ForumHeadlineImgInfo forum_headline_img_info = 27;
+    string asp_shown_info = 28;
 }

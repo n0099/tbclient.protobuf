@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AppPosInfo.proto";
 import "CommonReq.proto";
 
 message DataReq {
@@ -47,4 +48,5 @@ message DataReq {
     string obj_source = 50;
     string obj_locate = 51;
     string obj_param1 = 52;
+    AppPosInfo app_pos = 53;
 }

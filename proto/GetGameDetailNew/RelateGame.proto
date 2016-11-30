@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "GameInfo.proto";
-
-message RelateGame {
-    uint32 relate_type = 1;
-    repeated GameInfo game_list = 2;
-}

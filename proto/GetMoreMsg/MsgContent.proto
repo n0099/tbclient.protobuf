@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message MsgContent {
+    string id = 1;
+    string title = 2;
+    string url = 3;
+    string text = 4;
+    string src = 5;
+}

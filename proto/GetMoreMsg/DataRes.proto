@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetMoreMsg/MsgContent.proto";
+
+message DataRes {
+    repeated MsgContent msg_content = 1;
+    int32 has_more = 2;
+}

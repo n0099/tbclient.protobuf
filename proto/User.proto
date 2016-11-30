@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "ActivitySponsor.proto";
+import "AlaUserInfo.proto";
 import "Balv.proto";
 import "Ecom.proto";
 import "GiftInfo.proto";
@@ -85,4 +86,6 @@ message User {
     int32 visitor_num = 75;
     int32 total_visitor_num = 76;
     Pendant pendant = 77;
+    AlaUserInfo ala_info = 78;
+    string seal_prefix = 79;
 }

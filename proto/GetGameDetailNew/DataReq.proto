@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "CommonReq.proto";
-
-message DataReq {
-    string game_id = 1;
-    uint32 recommend_platform = 2;
-    CommonReq common = 3;
-}

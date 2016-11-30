@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "VideoDesc.proto";
+
 message VideoInfo {
     string video_md5 = 1;
     string video_url = 2;
@@ -12,4 +14,6 @@ message VideoInfo {
     int32 video_length = 9;
     int32 play_count = 10;
     string media_subtitle = 11;
+    repeated VideoDesc video_desc = 12;
+    int32 video_select_flag = 13;
 }

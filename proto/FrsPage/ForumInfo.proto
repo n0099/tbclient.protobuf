@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "BannerList.proto";
+import "FrsPage/AcrossForumIcon.proto";
 import "FrsPage/Adkiller.proto";
 import "FrsPage/AnchorPower.proto";
 import "FrsPage/Badges.proto";
@@ -75,6 +76,5 @@ message ForumInfo {
     Adkiller adkiller_data = 56;
     Yule yule = 57;
     RealTime realtime_data = 58;
-    string add_thread_title = 59;
-    string add_thread_content = 60;
+    AcrossForumIcon across_forum_show = 60;
 }

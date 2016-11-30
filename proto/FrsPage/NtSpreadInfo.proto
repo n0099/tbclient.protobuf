@@ -8,6 +8,6 @@ message NtSpreadInfo {
     string title = 5;
     repeated string pics = 6;
     string link_url = 7;
-    int32 position = 8;
+    uint32 position = 8;
     string publish_date = 9;
 }
