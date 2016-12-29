@@ -12,6 +12,7 @@ import "PbPage/AddPost.proto";
 import "PbPage/AppealInfo.proto";
 import "PbPage/ForumHeadlineImgInfo.proto";
 import "PbPage/GodCard.proto";
+import "PbPage/GuessLikeStruct.proto";
 import "PbPage/NewsInfo.proto";
 import "PbPage/PostBanner.proto";
 import "PbPage/RecommendBook.proto";
@@ -53,4 +54,5 @@ message DataRes {
     AlaLiveInfo ala_info = 26;
     ForumHeadlineImgInfo forum_headline_img_info = 27;
     string asp_shown_info = 28;
+    GuessLikeStruct guess_like = 29;
 }

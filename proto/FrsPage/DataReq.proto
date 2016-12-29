@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "AppPosInfo.proto";
 import "CommonReq.proto";
+import "FrsPage/AdParam.proto";
 
 message DataReq {
     string kw = 1;
@@ -49,4 +50,5 @@ message DataReq {
     uint64 last_click_tid = 48;
     int32 load_type = 49;
     AppPosInfo app_pos = 50;
+    AdParam ad_param = 51;
 }

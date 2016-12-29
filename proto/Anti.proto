@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "BlockPopInfo.proto";
+
 message Anti {
     string tbs = 1;
     int32 ifpost = 2;
@@ -22,4 +24,5 @@ message Anti {
     string poll_message = 19;
     string video_message = 20;
     string video_local_message = 21;
+    BlockPopInfo block_pop_info = 22;
 }

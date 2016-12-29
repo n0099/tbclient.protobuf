@@ -88,4 +88,5 @@ message User {
     Pendant pendant = 77;
     AlaUserInfo ala_info = 78;
     string seal_prefix = 79;
+    int32 has_bottle_enter = 80;
 }

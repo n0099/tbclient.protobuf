@@ -30,4 +30,6 @@ message GoodsInfo {
     string ad_source = 24;
     string tag_name_url = 25;
     string tag_name_wh = 26;
+    string brand_icon = 27;
+    string brand_icon_wh = 28;
 }

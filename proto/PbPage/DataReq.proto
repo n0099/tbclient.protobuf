@@ -49,4 +49,5 @@ message DataReq {
     string obj_locate = 51;
     string obj_param1 = 52;
     AppPosInfo app_pos = 53;
+    uint32 from_smart_frs = 54;
 }

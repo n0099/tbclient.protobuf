@@ -5,6 +5,7 @@ import "Anti.proto";
 import "CategoryInfo.proto";
 import "ForumPresentInfo.proto";
 import "FrsPage/ActivityHead.proto";
+import "FrsPage/Bottle.proto";
 import "FrsPage/CarrierEnter.proto";
 import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
@@ -24,6 +25,7 @@ import "FrsPage/StarInfo.proto";
 import "FrsTabInfo.proto";
 import "Novel.proto";
 import "Page.proto";
+import "PopInfo.proto";
 import "RecommendInfo.proto";
 import "SdkTopicThread.proto";
 import "ThreadInfo.proto";
@@ -81,4 +83,6 @@ message DataRes {
     repeated int32 card_shipin_pos = 54;
     repeated ThreadInfo card_shipin_new = 55;
     string asp_shown_info = 56;
+    uint32 ala_live_count = 57;
+    Bottle bottle = 58;
 }
