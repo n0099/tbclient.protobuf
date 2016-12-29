@@ -7,6 +7,8 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class GoodsInfo extends Message {
     public static final String DEFAULT_AD_SOURCE = "";
+    public static final String DEFAULT_BRAND_ICON = "";
+    public static final String DEFAULT_BRAND_ICON_WH = "";
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_BUTTON_URL = "";
     public static final String DEFAULT_CARD_DESC = "";
@@ -25,6 +27,10 @@ public final class GoodsInfo extends Message {
     public static final String DEFAULT_USER_PORTRAIT = "";
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String ad_source;
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
+    public final String brand_icon;
+    @ProtoField(tag = 28, type = Message.Datatype.STRING)
+    public final String brand_icon_wh;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String button_text;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
@@ -214,9 +220,19 @@ public final class GoodsInfo extends Message {
             }
             if (builder.tag_name_wh == null) {
                 this.tag_name_wh = "";
-                return;
             } else {
                 this.tag_name_wh = builder.tag_name_wh;
+            }
+            if (builder.brand_icon == null) {
+                this.brand_icon = "";
+            } else {
+                this.brand_icon = builder.brand_icon;
+            }
+            if (builder.brand_icon_wh == null) {
+                this.brand_icon_wh = "";
+                return;
+            } else {
+                this.brand_icon_wh = builder.brand_icon_wh;
                 return;
             }
         }
@@ -246,11 +262,15 @@ public final class GoodsInfo extends Message {
         this.ad_source = builder.ad_source;
         this.tag_name_url = builder.tag_name_url;
         this.tag_name_wh = builder.tag_name_wh;
+        this.brand_icon = builder.brand_icon;
+        this.brand_icon_wh = builder.brand_icon_wh;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<GoodsInfo> {
         public String ad_source;
+        public String brand_icon;
+        public String brand_icon_wh;
         public String button_text;
         public String button_url;
         public String card_desc;
@@ -309,6 +329,8 @@ public final class GoodsInfo extends Message {
                 this.ad_source = goodsInfo.ad_source;
                 this.tag_name_url = goodsInfo.tag_name_url;
                 this.tag_name_wh = goodsInfo.tag_name_wh;
+                this.brand_icon = goodsInfo.brand_icon;
+                this.brand_icon_wh = goodsInfo.brand_icon_wh;
             }
         }
 

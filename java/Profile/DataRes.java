@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Anti;
 import tbclient.DealWindow;
+import tbclient.Feedback;
 import tbclient.Highlist;
 import tbclient.PostInfoList;
 import tbclient.TbBookrack;
@@ -16,6 +17,8 @@ public final class DataRes extends Message {
     public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
     @ProtoField(tag = 2)
     public final Anti anti_stat;
+    @ProtoField(tag = 10)
+    public final Feedback feedback;
     @ProtoField(tag = 7)
     public final Highlist highs;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
@@ -53,6 +56,7 @@ public final class DataRes extends Message {
             this.highs = builder.highs;
             this.window = builder.window;
             this.tbbookrack = builder.tbbookrack;
+            this.feedback = builder.feedback;
             return;
         }
         this.user = builder.user;
@@ -64,11 +68,13 @@ public final class DataRes extends Message {
         this.highs = builder.highs;
         this.window = builder.window;
         this.tbbookrack = builder.tbbookrack;
+        this.feedback = builder.feedback;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Anti anti_stat;
+        public Feedback feedback;
         public Highlist highs;
         public List<PostInfoList> post_list;
         public TAInfo tainfo;
@@ -93,6 +99,7 @@ public final class DataRes extends Message {
                 this.highs = dataRes.highs;
                 this.window = dataRes.window;
                 this.tbbookrack = dataRes.tbbookrack;
+                this.feedback = dataRes.feedback;
             }
         }
 

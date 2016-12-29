@@ -1,5 +1,6 @@
 package tbclient.FrsPage;
 
+import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.r;
 import com.squareup.wire.Message;
@@ -13,6 +14,7 @@ import tbclient.ForumPresentInfo;
 import tbclient.FrsTabInfo;
 import tbclient.Novel;
 import tbclient.Page;
+import tbclient.PopInfo;
 import tbclient.RecommendInfo;
 import tbclient.SdkTopicThread;
 import tbclient.ThreadInfo;
@@ -26,6 +28,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_FORTUNE_DESC = "";
     @ProtoField(tag = 23)
     public final ActivityHead activityhead;
+    @ProtoField(tag = 57, type = Message.Datatype.UINT32)
+    public final Integer ala_live_count;
     @ProtoField(tag = 5)
     public final Anti anti;
     @ProtoField(tag = 56, type = Message.Datatype.STRING)
@@ -36,6 +40,8 @@ public final class DataRes extends Message {
     public final String bawu_enter_url;
     @ProtoField(tag = 50)
     public final ForumBookInfo book_info;
+    @ProtoField(tag = 58)
+    public final Bottle bottle;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<ThreadInfo> card_shipin_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 55)
@@ -52,6 +58,8 @@ public final class DataRes extends Message {
     public final List<ColorEgg> color_egg;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer ctime;
+    @ProtoField(tag = BDLocation.TypeGpsLocation)
+    public final PopInfo enter_pop_info;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer fortune_bag;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
@@ -158,6 +166,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO = 0;
     public static final List<Integer> DEFAULT_CARD_SHIPIN_POS = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW = Collections.emptyList();
+    public static final Integer DEFAULT_ALA_LIVE_COUNT = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -333,11 +342,17 @@ public final class DataRes extends Message {
             }
             if (builder.asp_shown_info == null) {
                 this.asp_shown_info = "";
-                return;
             } else {
                 this.asp_shown_info = builder.asp_shown_info;
-                return;
             }
+            if (builder.ala_live_count == null) {
+                this.ala_live_count = DEFAULT_ALA_LIVE_COUNT;
+            } else {
+                this.ala_live_count = builder.ala_live_count;
+            }
+            this.bottle = builder.bottle;
+            this.enter_pop_info = builder.enter_pop_info;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -393,16 +408,21 @@ public final class DataRes extends Message {
         this.card_shipin_pos = immutableCopyOf(builder.card_shipin_pos);
         this.card_shipin_new = immutableCopyOf(builder.card_shipin_new);
         this.asp_shown_info = builder.asp_shown_info;
+        this.ala_live_count = builder.ala_live_count;
+        this.bottle = builder.bottle;
+        this.enter_pop_info = builder.enter_pop_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityHead activityhead;
+        public Integer ala_live_count;
         public Anti anti;
         public String asp_shown_info;
         public List<BannerThreadInfo> banner_thread_list;
         public String bawu_enter_url;
         public ForumBookInfo book_info;
+        public Bottle bottle;
         public List<ThreadInfo> card_shipin_info;
         public List<ThreadInfo> card_shipin_new;
         public List<Integer> card_shipin_pos;
@@ -411,6 +431,7 @@ public final class DataRes extends Message {
         public ClientPlatform client_platform;
         public List<ColorEgg> color_egg;
         public Integer ctime;
+        public PopInfo enter_pop_info;
         public Integer fortune_bag;
         public String fortune_desc;
         public ForumInfo forum;
@@ -512,6 +533,9 @@ public final class DataRes extends Message {
                 this.card_shipin_pos = DataRes.copyOf(dataRes.card_shipin_pos);
                 this.card_shipin_new = DataRes.copyOf(dataRes.card_shipin_new);
                 this.asp_shown_info = dataRes.asp_shown_info;
+                this.ala_live_count = dataRes.ala_live_count;
+                this.bottle = dataRes.bottle;
+                this.enter_pop_info = dataRes.enter_pop_info;
             }
         }
 

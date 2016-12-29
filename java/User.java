@@ -67,6 +67,8 @@ public final class User extends Message {
     public final GodInfo god_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 48)
     public final List<MyGroupInfo> groupList;
+    @ProtoField(tag = 80, type = Message.Datatype.INT32)
+    public final Integer has_bottle_enter;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer has_concerned;
     @ProtoField(tag = BDLocation.TypeNetWorkException, type = Message.Datatype.INT32)
@@ -228,6 +230,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_NO_POST_HIGH = 0;
     public static final Integer DEFAULT_VISITOR_NUM = 0;
     public static final Integer DEFAULT_TOTAL_VISITOR_NUM = 0;
+    public static final Integer DEFAULT_HAS_BOTTLE_ENTER = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -556,9 +559,14 @@ public final class User extends Message {
             this.ala_info = builder.ala_info;
             if (builder.seal_prefix == null) {
                 this.seal_prefix = "";
-                return;
             } else {
                 this.seal_prefix = builder.seal_prefix;
+            }
+            if (builder.has_bottle_enter == null) {
+                this.has_bottle_enter = DEFAULT_HAS_BOTTLE_ENTER;
+                return;
+            } else {
+                this.has_bottle_enter = builder.has_bottle_enter;
                 return;
             }
         }
@@ -641,6 +649,7 @@ public final class User extends Message {
         this.pendant = builder.pendant;
         this.ala_info = builder.ala_info;
         this.seal_prefix = builder.seal_prefix;
+        this.has_bottle_enter = builder.has_bottle_enter;
     }
 
     /* loaded from: classes.dex */
@@ -666,6 +675,7 @@ public final class User extends Message {
         public Integer gift_num;
         public GodInfo god_data;
         public List<MyGroupInfo> groupList;
+        public Integer has_bottle_enter;
         public Integer has_concerned;
         public Integer heavy_user;
         public List<Icon> iconinfo;
@@ -810,6 +820,7 @@ public final class User extends Message {
                 this.pendant = user.pendant;
                 this.ala_info = user.ala_info;
                 this.seal_prefix = user.seal_prefix;
+                this.has_bottle_enter = user.has_bottle_enter;
             }
         }
 

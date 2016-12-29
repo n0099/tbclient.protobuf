@@ -37,6 +37,8 @@ public final class DataReq extends Message {
     public final Long fid;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
+    @ProtoField(tag = 54, type = Message.Datatype.UINT32)
+    public final Integer from_smart_frs;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
     @ProtoField(tag = 34, type = Message.Datatype.INT32)
@@ -143,6 +145,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_JUMPFLOOR_NUM = 0;
     public static final Long DEFAULT_JID = 0L;
     public static final Long DEFAULT_FID = 0L;
+    public static final Integer DEFAULT_FROM_SMART_FRS = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -373,7 +376,13 @@ public final class DataReq extends Message {
                 this.obj_param1 = builder.obj_param1;
             }
             this.app_pos = builder.app_pos;
-            return;
+            if (builder.from_smart_frs == null) {
+                this.from_smart_frs = DEFAULT_FROM_SMART_FRS;
+                return;
+            } else {
+                this.from_smart_frs = builder.from_smart_frs;
+                return;
+            }
         }
         this.pb_rn = builder.pb_rn;
         this.mark = builder.mark;
@@ -421,6 +430,7 @@ public final class DataReq extends Message {
         this.obj_locate = builder.obj_locate;
         this.obj_param1 = builder.obj_param1;
         this.app_pos = builder.app_pos;
+        this.from_smart_frs = builder.from_smart_frs;
     }
 
     /* loaded from: classes.dex */
@@ -433,6 +443,7 @@ public final class DataReq extends Message {
         public String da_idfa;
         public Long fid;
         public Integer floor_rn;
+        public Integer from_smart_frs;
         public Integer is_comm_reverse;
         public Integer is_jumpfloor;
         public Integer issdk;
@@ -524,6 +535,7 @@ public final class DataReq extends Message {
                 this.obj_locate = dataReq.obj_locate;
                 this.obj_param1 = dataReq.obj_param1;
                 this.app_pos = dataReq.app_pos;
+                this.from_smart_frs = dataReq.from_smart_frs;
             }
         }
 

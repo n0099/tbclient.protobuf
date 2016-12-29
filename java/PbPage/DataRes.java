@@ -45,6 +45,8 @@ public final class DataRes extends Message {
     public final GodCard god_card;
     @ProtoField(tag = 21)
     public final GraffitiRankListInfo graffiti_rank_list_info;
+    @ProtoField(tag = 29)
+    public final GuessLikeStruct guess_like;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer has_floor;
     @ProtoField(tag = 20)
@@ -161,11 +163,11 @@ public final class DataRes extends Message {
             this.forum_headline_img_info = builder.forum_headline_img_info;
             if (builder.asp_shown_info == null) {
                 this.asp_shown_info = "";
-                return;
             } else {
                 this.asp_shown_info = builder.asp_shown_info;
-                return;
             }
+            this.guess_like = builder.guess_like;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -195,6 +197,7 @@ public final class DataRes extends Message {
         this.ala_info = builder.ala_info;
         this.forum_headline_img_info = builder.forum_headline_img_info;
         this.asp_shown_info = builder.asp_shown_info;
+        this.guess_like = builder.guess_like;
     }
 
     /* loaded from: classes.dex */
@@ -210,6 +213,7 @@ public final class DataRes extends Message {
         public ForumHeadlineImgInfo forum_headline_img_info;
         public GodCard god_card;
         public GraffitiRankListInfo graffiti_rank_list_info;
+        public GuessLikeStruct guess_like;
         public Integer has_floor;
         public PbHotPost hot_post_list;
         public Integer is_new_url;
@@ -262,6 +266,7 @@ public final class DataRes extends Message {
                 this.ala_info = dataRes.ala_info;
                 this.forum_headline_img_info = dataRes.forum_headline_img_info;
                 this.asp_shown_info = dataRes.asp_shown_info;
+                this.guess_like = dataRes.guess_like;
             }
         }
 

@@ -23,6 +23,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
+    @ProtoField(tag = 51)
+    public final AdParam ad_param;
     @ProtoField(tag = 50)
     public final AppPosInfo app_pos;
     @ProtoField(tag = 44, type = Message.Datatype.INT32)
@@ -406,6 +408,7 @@ public final class DataReq extends Message {
                 this.load_type = builder.load_type;
             }
             this.app_pos = builder.app_pos;
+            this.ad_param = builder.ad_param;
             return;
         }
         this.kw = builder.kw;
@@ -458,10 +461,12 @@ public final class DataReq extends Message {
         this.last_click_tid = builder.last_click_tid;
         this.load_type = builder.load_type;
         this.app_pos = builder.app_pos;
+        this.ad_param = builder.ad_param;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public AdParam ad_param;
         public AppPosInfo app_pos;
         public Integer category_id;
         public Boolean check_login;
@@ -569,6 +574,7 @@ public final class DataReq extends Message {
                 this.last_click_tid = dataReq.last_click_tid;
                 this.load_type = dataReq.load_type;
                 this.app_pos = dataReq.app_pos;
+                this.ad_param = dataReq.ad_param;
             }
         }
 

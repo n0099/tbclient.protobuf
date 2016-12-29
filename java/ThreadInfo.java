@@ -200,6 +200,8 @@ public final class ThreadInfo extends Message {
     public final String recom_weight;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer reply_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_INVALID_REDIRECT_URI)
+    public final List<ReportInfo> report_info;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer repost_num;
     @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_EXPIRED_SESSION_KEY)
@@ -321,6 +323,7 @@ public final class ThreadInfo extends Message {
     public static final List<PbContent> DEFAULT_RICH_ABSTRACT = Collections.emptyList();
     public static final Integer DEFAULT_IS_OPERATE_THREAD = 0;
     public static final Integer DEFAULT_IS_TBREAD_DISPATCH = 0;
+    public static final List<ReportInfo> DEFAULT_REPORT_INFO = Collections.emptyList();
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -782,7 +785,13 @@ public final class ThreadInfo extends Message {
             }
             this.tbread_dispatch_info = builder.tbread_dispatch_info;
             this.app_info = builder.app_info;
-            return;
+            if (builder.report_info == null) {
+                this.report_info = DEFAULT_REPORT_INFO;
+                return;
+            } else {
+                this.report_info = immutableCopyOf(builder.report_info);
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -897,6 +906,7 @@ public final class ThreadInfo extends Message {
         this.is_tbread_dispatch = builder.is_tbread_dispatch;
         this.tbread_dispatch_info = builder.tbread_dispatch_info;
         this.app_info = builder.app_info;
+        this.report_info = immutableCopyOf(builder.report_info);
     }
 
     /* loaded from: classes.dex */
@@ -985,6 +995,7 @@ public final class ThreadInfo extends Message {
         public String recom_source;
         public String recom_weight;
         public Integer reply_num;
+        public List<ReportInfo> report_info;
         public Integer repost_num;
         public List<PbContent> rich_abstract;
         public List<PbContent> rich_title;
@@ -1134,6 +1145,7 @@ public final class ThreadInfo extends Message {
                 this.is_tbread_dispatch = threadInfo.is_tbread_dispatch;
                 this.tbread_dispatch_info = threadInfo.tbread_dispatch_info;
                 this.app_info = threadInfo.app_info;
+                this.report_info = ThreadInfo.copyOf(threadInfo.report_info);
             }
         }
 

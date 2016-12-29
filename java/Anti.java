@@ -14,6 +14,8 @@ public final class Anti extends Message {
     public static final String DEFAULT_VIDEO_LOCAL_MESSAGE = "";
     public static final String DEFAULT_VIDEO_MESSAGE = "";
     public static final String DEFAULT_VOICE_MESSAGE = "";
+    @ProtoField(tag = 22)
+    public final BlockPopInfo block_pop_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer block_stat;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -177,11 +179,11 @@ public final class Anti extends Message {
             }
             if (builder.video_local_message == null) {
                 this.video_local_message = "";
-                return;
             } else {
                 this.video_local_message = builder.video_local_message;
-                return;
             }
+            this.block_pop_info = builder.block_pop_info;
+            return;
         }
         this.tbs = builder.tbs;
         this.ifpost = builder.ifpost;
@@ -204,10 +206,12 @@ public final class Anti extends Message {
         this.poll_message = builder.poll_message;
         this.video_message = builder.video_message;
         this.video_local_message = builder.video_local_message;
+        this.block_pop_info = builder.block_pop_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<Anti> {
+        public BlockPopInfo block_pop_info;
         public Integer block_stat;
         public Integer days_tofree;
         public Integer forbid_flag;
@@ -257,6 +261,7 @@ public final class Anti extends Message {
                 this.poll_message = anti.poll_message;
                 this.video_message = anti.video_message;
                 this.video_local_message = anti.video_local_message;
+                this.block_pop_info = anti.block_pop_info;
             }
         }
 
