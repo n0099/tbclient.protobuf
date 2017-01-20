@@ -2,6 +2,7 @@ package tbclient.FrsPage;
 
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -43,7 +44,7 @@ public final class ForumInfo extends Message {
     public final Banner banner;
     @ProtoField(tag = 33)
     public final BannerList banner_list;
-    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.INT32)
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
@@ -89,7 +90,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = r.l.PullToRefresh_mode, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_mode, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -109,7 +110,7 @@ public final class ForumInfo extends Message {
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = r.l.PullToRefresh_headerBackground)
+    @ProtoField(tag = r.n.PullToRefresh_headerBackground)
     public final PostPrefix post_prefix;
     @ProtoField(tag = BDLocation.TypeGpsLocation)
     public final PostTopic post_topic;
@@ -125,9 +126,9 @@ public final class ForumInfo extends Message {
     public final SignInfo sign_in_info;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String superboy;
-    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground)
+    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground)
     public final TagInfo tag_info;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_num;

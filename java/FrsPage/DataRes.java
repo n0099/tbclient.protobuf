@@ -2,6 +2,7 @@ package tbclient.FrsPage;
 
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -74,7 +75,7 @@ public final class DataRes extends Message {
     public final ForumPresentInfo forum_present_info;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
-    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
@@ -88,7 +89,7 @@ public final class DataRes extends Message {
     public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 15)
     public final Info info;
-    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.INT32)
     public final Integer is_auto_play_forumheadvideo;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
@@ -108,9 +109,9 @@ public final class DataRes extends Message {
     public final PushThreadInfo push_thread_info;
     @ProtoField(tag = 46)
     public final RecommendBook recommend_book;
-    @ProtoField(tag = r.l.PullToRefresh_headerTextColor)
+    @ProtoField(tag = r.n.PullToRefresh_headerTextColor)
     public final RecommendInfo school_recom_info;
-    @ProtoField(tag = r.l.PullToRefresh_mode, type = Message.Datatype.UINT32)
+    @ProtoField(tag = r.n.PullToRefresh_mode, type = Message.Datatype.UINT32)
     public final Integer school_recom_pos;
     @ProtoField(tag = 31)
     public final SdkTopicThread sdk_topic_thread;
@@ -118,7 +119,7 @@ public final class DataRes extends Message {
     public final Integer server_time;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer smart_frs_type;
-    @ProtoField(tag = r.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;

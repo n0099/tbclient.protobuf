@@ -10,6 +10,8 @@ public final class PrivSets extends Message {
     public final Integer group;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer like;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer live;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer location;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -19,6 +21,7 @@ public final class PrivSets extends Message {
     public static final Integer DEFAULT_GROUP = 0;
     public static final Integer DEFAULT_POST = 0;
     public static final Integer DEFAULT_FRIEND = 0;
+    public static final Integer DEFAULT_LIVE = 0;
 
     /* synthetic */ PrivSets(Builder builder, boolean z, PrivSets privSets) {
         this(builder, z);
@@ -49,9 +52,14 @@ public final class PrivSets extends Message {
             }
             if (builder.friend == null) {
                 this.friend = DEFAULT_FRIEND;
-                return;
             } else {
                 this.friend = builder.friend;
+            }
+            if (builder.live == null) {
+                this.live = DEFAULT_LIVE;
+                return;
+            } else {
+                this.live = builder.live;
                 return;
             }
         }
@@ -60,6 +68,7 @@ public final class PrivSets extends Message {
         this.group = builder.group;
         this.post = builder.post;
         this.friend = builder.friend;
+        this.live = builder.live;
     }
 
     /* loaded from: classes.dex */
@@ -67,6 +76,7 @@ public final class PrivSets extends Message {
         public Integer friend;
         public Integer group;
         public Integer like;
+        public Integer live;
         public Integer location;
         public Integer post;
 
@@ -81,6 +91,7 @@ public final class PrivSets extends Message {
                 this.group = privSets.group;
                 this.post = privSets.post;
                 this.friend = privSets.friend;
+                this.live = privSets.live;
             }
         }
 

@@ -1,21 +1,18 @@
-package tbclient.Acrossforum;
+package tbclient.AlaTab;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
-    public static final String DEFAULT_CALL_FROM = "";
-    public static final String DEFAULT_FORUM_NAME = "";
-    public static final Integer DEFAULT_NEED_NUM = 0;
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String call_from;
+    public static final String DEFAULT_LAST_VIEWED_FEEDS = "";
+    public static final Integer DEFAULT_PN = 0;
     @ProtoField(tag = 1)
     public final CommonReq common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
-    public final String forum_name;
-    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-    public final Integer need_num;
+    public final String last_viewed_feeds;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer pn;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -25,36 +22,29 @@ public final class DataReq extends Message {
         super(builder);
         if (z) {
             this.common = builder.common;
-            if (builder.call_from == null) {
-                this.call_from = "";
+            if (builder.pn == null) {
+                this.pn = DEFAULT_PN;
             } else {
-                this.call_from = builder.call_from;
+                this.pn = builder.pn;
             }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.need_num == null) {
-                this.need_num = DEFAULT_NEED_NUM;
+            if (builder.last_viewed_feeds == null) {
+                this.last_viewed_feeds = "";
                 return;
             } else {
-                this.need_num = builder.need_num;
+                this.last_viewed_feeds = builder.last_viewed_feeds;
                 return;
             }
         }
         this.common = builder.common;
-        this.call_from = builder.call_from;
-        this.forum_name = builder.forum_name;
-        this.need_num = builder.need_num;
+        this.pn = builder.pn;
+        this.last_viewed_feeds = builder.last_viewed_feeds;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public String call_from;
         public CommonReq common;
-        public String forum_name;
-        public Integer need_num;
+        public String last_viewed_feeds;
+        public Integer pn;
 
         public Builder() {
         }
@@ -63,9 +53,8 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.common = dataReq.common;
-                this.call_from = dataReq.call_from;
-                this.forum_name = dataReq.forum_name;
-                this.need_num = dataReq.need_num;
+                this.pn = dataReq.pn;
+                this.last_viewed_feeds = dataReq.last_viewed_feeds;
             }
         }
 

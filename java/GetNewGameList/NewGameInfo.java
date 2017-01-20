@@ -1,6 +1,7 @@
 package tbclient.GetNewGameList;
 
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -62,7 +63,7 @@ public final class NewGameInfo extends Message {
     public final String category_name;
     @ProtoField(tag = 54, type = Message.Datatype.STRING)
     public final String category_name_sim;
-    @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.UINT32)
+    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.UINT32)
     public final Integer channel;
     @ProtoField(tag = 36, type = Message.Datatype.UINT64)
     public final Long deadline;
@@ -82,9 +83,9 @@ public final class NewGameInfo extends Message {
     public final String game_name;
     @ProtoField(label = Message.Label.REPEATED, tag = 13, type = Message.Datatype.STRING)
     public final List<String> game_pic;
-    @ProtoField(tag = r.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer game_platform;
-    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer game_type;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String gift_code;
@@ -104,7 +105,7 @@ public final class NewGameInfo extends Message {
     public final String inter_version_ios;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String launchComponent;
-    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.INT32)
     public final Integer mark;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String package_link;
@@ -148,7 +149,7 @@ public final class NewGameInfo extends Message {
     public final Long thread_theme_id;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer time;
-    @ProtoField(tag = r.l.PullToRefresh_mode, type = Message.Datatype.STRING)
+    @ProtoField(tag = r.n.PullToRefresh_mode, type = Message.Datatype.STRING)
     public final String version;
     @ProtoField(tag = 44, type = Message.Datatype.STRING)
     public final String version_ios;

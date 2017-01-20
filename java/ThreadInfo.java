@@ -3,6 +3,7 @@ package tbclient;
 import com.baidu.cloudsdk.social.core.util.SocialAPIErrorCodes;
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -78,11 +79,11 @@ public final class ThreadInfo extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
+    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
-    @ProtoField(tag = 49, type = Message.Datatype.STRING)
+    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.STRING)
     public final String from;
     @ProtoField(tag = BDLocation.TypeNetWorkException)
     public final Guess guess;
@@ -106,7 +107,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = 103, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
-    @ProtoField(tag = r.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_bub;
     @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
@@ -132,7 +133,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_reward;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_novel_thank;
-    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
@@ -240,6 +241,8 @@ public final class ThreadInfo extends Message {
     public final String video;
     @ProtoField(tag = 110)
     public final AdInfo video_ad_info;
+    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_SECRET_KEY)
+    public final VideoChannelInfo video_channel_info;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String video_cover;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -258,7 +261,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = r.l.PullToRefresh_mode)
+    @ProtoField(tag = r.n.PullToRefresh_mode)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -787,11 +790,11 @@ public final class ThreadInfo extends Message {
             this.app_info = builder.app_info;
             if (builder.report_info == null) {
                 this.report_info = DEFAULT_REPORT_INFO;
-                return;
             } else {
                 this.report_info = immutableCopyOf(builder.report_info);
-                return;
             }
+            this.video_channel_info = builder.video_channel_info;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -907,6 +910,7 @@ public final class ThreadInfo extends Message {
         this.tbread_dispatch_info = builder.tbread_dispatch_info;
         this.app_info = builder.app_info;
         this.report_info = immutableCopyOf(builder.report_info);
+        this.video_channel_info = builder.video_channel_info;
     }
 
     /* loaded from: classes.dex */
@@ -1015,6 +1019,7 @@ public final class ThreadInfo extends Message {
         public Integer valid_post_num;
         public String video;
         public AdInfo video_ad_info;
+        public VideoChannelInfo video_channel_info;
         public String video_cover;
         public String video_id;
         public VideoInfo video_info;
@@ -1146,6 +1151,7 @@ public final class ThreadInfo extends Message {
                 this.tbread_dispatch_info = threadInfo.tbread_dispatch_info;
                 this.app_info = threadInfo.app_info;
                 this.report_info = ThreadInfo.copyOf(threadInfo.report_info);
+                this.video_channel_info = threadInfo.video_channel_info;
             }
         }
 

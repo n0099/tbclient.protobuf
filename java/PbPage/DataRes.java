@@ -35,6 +35,8 @@ public final class DataRes extends Message {
     public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 30)
+    public final List<ThreadInfo> feed_thread_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<FineBannerPb> fine_banner;
     @ProtoField(tag = 2)
@@ -51,6 +53,8 @@ public final class DataRes extends Message {
     public final Integer has_floor;
     @ProtoField(tag = 20)
     public final PbHotPost hot_post_list;
+    @ProtoField(tag = 31, type = Message.Datatype.UINT32)
+    public final Integer is_follow_current_channel;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(tag = 9)
@@ -90,6 +94,8 @@ public final class DataRes extends Message {
     public static final List<RecommendThread> DEFAULT_RECOMMEND_THREADS = Collections.emptyList();
     public static final List<FineBannerPb> DEFAULT_FINE_BANNER = Collections.emptyList();
     public static final List<PsRankListItem> DEFAULT_PLAY_RANK_LIST = Collections.emptyList();
+    public static final List<ThreadInfo> DEFAULT_FEED_THREAD_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_FOLLOW_CURRENT_CHANNEL = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -167,7 +173,18 @@ public final class DataRes extends Message {
                 this.asp_shown_info = builder.asp_shown_info;
             }
             this.guess_like = builder.guess_like;
-            return;
+            if (builder.feed_thread_list == null) {
+                this.feed_thread_list = DEFAULT_FEED_THREAD_LIST;
+            } else {
+                this.feed_thread_list = immutableCopyOf(builder.feed_thread_list);
+            }
+            if (builder.is_follow_current_channel == null) {
+                this.is_follow_current_channel = DEFAULT_IS_FOLLOW_CURRENT_CHANNEL;
+                return;
+            } else {
+                this.is_follow_current_channel = builder.is_follow_current_channel;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -198,6 +215,8 @@ public final class DataRes extends Message {
         this.forum_headline_img_info = builder.forum_headline_img_info;
         this.asp_shown_info = builder.asp_shown_info;
         this.guess_like = builder.guess_like;
+        this.feed_thread_list = immutableCopyOf(builder.feed_thread_list);
+        this.is_follow_current_channel = builder.is_follow_current_channel;
     }
 
     /* loaded from: classes.dex */
@@ -208,6 +227,7 @@ public final class DataRes extends Message {
         public AppealInfo appeal_info;
         public String asp_shown_info;
         public BannerList banner_list;
+        public List<ThreadInfo> feed_thread_list;
         public List<FineBannerPb> fine_banner;
         public SimpleForum forum;
         public ForumHeadlineImgInfo forum_headline_img_info;
@@ -216,6 +236,7 @@ public final class DataRes extends Message {
         public GuessLikeStruct guess_like;
         public Integer has_floor;
         public PbHotPost hot_post_list;
+        public Integer is_follow_current_channel;
         public Integer is_new_url;
         public Lbs location;
         public NewsInfo news_info;
@@ -267,6 +288,8 @@ public final class DataRes extends Message {
                 this.forum_headline_img_info = dataRes.forum_headline_img_info;
                 this.asp_shown_info = dataRes.asp_shown_info;
                 this.guess_like = dataRes.guess_like;
+                this.feed_thread_list = DataRes.copyOf(dataRes.feed_thread_list);
+                this.is_follow_current_channel = dataRes.is_follow_current_channel;
             }
         }
 

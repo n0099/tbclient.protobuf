@@ -13,6 +13,8 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_MEDIA_URL = "";
     public static final String DEFAULT_RTMP_URL = "";
     public static final String DEFAULT_SESSION_ID = "";
+    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
+    public final Integer audience_count;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String cover;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -42,6 +44,7 @@ public final class AlaLiveInfo extends Message {
     public static final Long DEFAULT_LIVE_ID = 0L;
     public static final Long DEFAULT_GROUP_ID = 0L;
     public static final Integer DEFAULT_DURATION = 0;
+    public static final Integer DEFAULT_AUDIENCE_COUNT = 0;
 
     /* synthetic */ AlaLiveInfo(Builder builder, boolean z, AlaLiveInfo alaLiveInfo) {
         this(builder, z);
@@ -108,9 +111,14 @@ public final class AlaLiveInfo extends Message {
             this.user_info = builder.user_info;
             if (builder.duration == null) {
                 this.duration = DEFAULT_DURATION;
-                return;
             } else {
                 this.duration = builder.duration;
+            }
+            if (builder.audience_count == null) {
+                this.audience_count = DEFAULT_AUDIENCE_COUNT;
+                return;
+            } else {
+                this.audience_count = builder.audience_count;
                 return;
             }
         }
@@ -127,10 +135,12 @@ public final class AlaLiveInfo extends Message {
         this.description = builder.description;
         this.user_info = builder.user_info;
         this.duration = builder.duration;
+        this.audience_count = builder.audience_count;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
+        public Integer audience_count;
         public String cover;
         public String description;
         public Integer duration;
@@ -164,6 +174,7 @@ public final class AlaLiveInfo extends Message {
                 this.description = alaLiveInfo.description;
                 this.user_info = alaLiveInfo.user_info;
                 this.duration = alaLiveInfo.duration;
+                this.audience_count = alaLiveInfo.audience_count;
             }
         }
 

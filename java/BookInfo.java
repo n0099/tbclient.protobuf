@@ -61,7 +61,7 @@ public final class BookInfo extends Message {
     public final String copyright_text;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String cover;
-    @ProtoField(tag = r.l.PullToRefresh_mode, type = Message.Datatype.STRING)
+    @ProtoField(tag = r.n.PullToRefresh_mode, type = Message.Datatype.STRING)
     public final String cp_id;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String discount_icon;
@@ -69,13 +69,13 @@ public final class BookInfo extends Message {
     public final String discount_ratio;
     @ProtoField(tag = 32, type = Message.Datatype.UINT32)
     public final Integer discount_type;
-    @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String discuss;
     @ProtoField(tag = 43, type = Message.Datatype.UINT32)
     public final Integer first_chapter;
-    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.UINT64)
+    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.UINT64)
     public final Long forum_id;
-    @ProtoField(tag = r.l.PullToRefresh_headerBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = r.n.PullToRefresh_headerBackground, type = Message.Datatype.STRING)
     public final String forum_name;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String free_info;

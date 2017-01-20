@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
+import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.r;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -37,7 +38,7 @@ public final class User extends Message {
     public final String bawu_type;
     @ProtoField(tag = 58, type = Message.Datatype.STRING)
     public final String bg_pic;
-    @ProtoField(tag = r.l.PullToRefresh_headerTextColor, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
@@ -61,7 +62,7 @@ public final class User extends Message {
     public final Integer gender;
     @ProtoField(label = Message.Label.REPEATED, tag = 50)
     public final List<GiftInfo> gift_list;
-    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.INT32)
     public final Integer gift_num;
     @ProtoField(tag = BDLocation.TypeCriteriaException)
     public final GodInfo god_data;
@@ -103,7 +104,7 @@ public final class User extends Message {
     public final Integer is_manager;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_mask;
-    @ProtoField(tag = r.l.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = r.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_mem;
     @ProtoField(tag = 51, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
@@ -137,7 +138,7 @@ public final class User extends Message {
     public final NewParrScores parr_scores;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = r.l.PullToRefresh_mode)
+    @ProtoField(tag = r.n.PullToRefresh_mode)
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 77)
     public final Pendant pendant;
@@ -157,7 +158,9 @@ public final class User extends Message {
     public final String seal_prefix;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer sex;
-    @ProtoField(tag = r.l.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = 82)
+    public final SpringVirtualUser spring_virtual_user;
+    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
     public final String tb_age;
     @ProtoField(tag = 72)
     public final TbVipInfo tb_vip;
@@ -177,6 +180,8 @@ public final class User extends Message {
     public final Integer user_type;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer userhide;
+    @ProtoField(tag = 81)
+    public final UserVideoChannelInfo video_channel_info;
     @ProtoField(tag = BDLocation.TypeGpsLocation)
     public final UserVipInfo vipInfo;
     @ProtoField(tag = 70)
@@ -564,11 +569,12 @@ public final class User extends Message {
             }
             if (builder.has_bottle_enter == null) {
                 this.has_bottle_enter = DEFAULT_HAS_BOTTLE_ENTER;
-                return;
             } else {
                 this.has_bottle_enter = builder.has_bottle_enter;
-                return;
             }
+            this.video_channel_info = builder.video_channel_info;
+            this.spring_virtual_user = builder.spring_virtual_user;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -650,6 +656,8 @@ public final class User extends Message {
         this.ala_info = builder.ala_info;
         this.seal_prefix = builder.seal_prefix;
         this.has_bottle_enter = builder.has_bottle_enter;
+        this.video_channel_info = builder.video_channel_info;
+        this.spring_virtual_user = builder.spring_virtual_user;
     }
 
     /* loaded from: classes.dex */
@@ -720,6 +728,7 @@ public final class User extends Message {
         public String rank;
         public String seal_prefix;
         public Integer sex;
+        public SpringVirtualUser spring_virtual_user;
         public String tb_age;
         public TbVipInfo tb_vip;
         public ThemeCardInUser theme_card;
@@ -730,6 +739,7 @@ public final class User extends Message {
         public List<UserPics> user_pics;
         public Integer user_type;
         public Integer userhide;
+        public UserVideoChannelInfo video_channel_info;
         public UserVipInfo vipInfo;
         public VipCloseAd vip_close_ad;
         public VipShowInfo vip_show_info;
@@ -821,6 +831,8 @@ public final class User extends Message {
                 this.ala_info = user.ala_info;
                 this.seal_prefix = user.seal_prefix;
                 this.has_bottle_enter = user.has_bottle_enter;
+                this.video_channel_info = user.video_channel_info;
+                this.spring_virtual_user = user.spring_virtual_user;
             }
         }
 

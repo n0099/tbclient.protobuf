@@ -12,6 +12,7 @@ import tbclient.PostInfoList;
 import tbclient.TbBookrack;
 import tbclient.UcCard;
 import tbclient.User;
+import tbclient.UserManChannelInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
@@ -33,6 +34,8 @@ public final class DataRes extends Message {
     public final User user;
     @ProtoField(tag = 5)
     public final UserGodInfo user_god_info;
+    @ProtoField(tag = 11)
+    public final UserManChannelInfo video_channel_info;
     @ProtoField(tag = 8)
     public final DealWindow window;
 
@@ -57,6 +60,7 @@ public final class DataRes extends Message {
             this.window = builder.window;
             this.tbbookrack = builder.tbbookrack;
             this.feedback = builder.feedback;
+            this.video_channel_info = builder.video_channel_info;
             return;
         }
         this.user = builder.user;
@@ -69,6 +73,7 @@ public final class DataRes extends Message {
         this.window = builder.window;
         this.tbbookrack = builder.tbbookrack;
         this.feedback = builder.feedback;
+        this.video_channel_info = builder.video_channel_info;
     }
 
     /* loaded from: classes.dex */
@@ -82,6 +87,7 @@ public final class DataRes extends Message {
         public UcCard uc_card;
         public User user;
         public UserGodInfo user_god_info;
+        public UserManChannelInfo video_channel_info;
         public DealWindow window;
 
         public Builder() {
@@ -100,6 +106,7 @@ public final class DataRes extends Message {
                 this.window = dataRes.window;
                 this.tbbookrack = dataRes.tbbookrack;
                 this.feedback = dataRes.feedback;
+                this.video_channel_info = dataRes.video_channel_info;
             }
         }
 
