@@ -13,10 +13,12 @@ import "NewUser.proto";
 import "NovelFansInfo.proto";
 import "Pendant.proto";
 import "SimpleUser.proto";
+import "SpringVirtualUser.proto";
 import "TbVipInfo.proto";
 import "ThemeCardInUser.proto";
 import "TshowInfo.proto";
 import "UserPics.proto";
+import "UserVideoChannelInfo.proto";
 import "VipCloseAd.proto";
 import "VipShowInfo.proto";
 
@@ -64,7 +66,6 @@ message User {
     int32 is_friend = 46;
     repeated LikeForumInfo likeForum = 47;
     repeated MyGroupInfo groupList = 48;
-    int32 gift_num = 49;
     repeated GiftInfo gift_list = 50;
     int32 is_select_tail = 51;
     int32 is_guanfang = 52;
@@ -89,4 +90,6 @@ message User {
     AlaUserInfo ala_info = 78;
     string seal_prefix = 79;
     int32 has_bottle_enter = 80;
+    UserVideoChannelInfo video_channel_info = 81;
+    SpringVirtualUser spring_virtual_user = 82;
 }

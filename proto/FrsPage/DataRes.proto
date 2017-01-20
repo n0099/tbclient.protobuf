@@ -75,7 +75,6 @@ message DataRes {
     RecommendBook recommend_book = 46;
     int32 smart_frs_type = 47;
     int32 need_log = 48;
-    int32 is_auto_play_forumheadvideo = 49;
     ForumBookInfo book_info = 50;
     ForumPresentInfo forum_present_info = 51;
     ForumHeadlineImgInfo forum_headline_img_info = 52;

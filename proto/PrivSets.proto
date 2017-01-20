@@ -6,4 +6,5 @@ message PrivSets {
     int32 group = 3;
     int32 post = 4;
     int32 friend = 5;
+    int32 live = 6;
 }

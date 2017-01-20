@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-import "Acrossforum/DataRes.proto";
+import "AlaTab/DataRes.proto";
 import "Error.proto";
 
-message AcrossforumResIdl {
+message AlaTabResIdl {
     Error error = 1;
     DataRes data = 2;
 }

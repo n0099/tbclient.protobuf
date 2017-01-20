@@ -4,7 +4,6 @@ import "CommonReq.proto";
 
 message DataReq {
     CommonReq common = 1;
-    string call_from = 2;
-    string forum_name = 3;
-    uint32 need_num = 4;
+    uint32 pn = 2;
+    string last_viewed_feeds = 3;
 }

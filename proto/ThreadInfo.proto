@@ -72,7 +72,6 @@ message ThreadInfo {
     int32 repost_num = 46;
     Topic topic = 47;
     int32 has_commented = 48;
-    string from = 49;
     int32 collect_status = 50;
     string collect_mark_pid = 51;
     int64 post_id = 52;

@@ -55,4 +55,6 @@ message DataRes {
     ForumHeadlineImgInfo forum_headline_img_info = 27;
     string asp_shown_info = 28;
     GuessLikeStruct guess_like = 29;
+    repeated ThreadInfo feed_thread_list = 30;
+    uint32 is_follow_current_channel = 31;
 }

@@ -66,7 +66,6 @@ message ForumInfo {
     int32 has_game = 46;
     string game_url = 47;
     RecomUserInfo recommend_user_info = 48;
-    int32 can_use_accelerate = 49;
     string accelerate_cotent = 50;
     TopCode top_code = 51;
     TopNews news_info = 52;

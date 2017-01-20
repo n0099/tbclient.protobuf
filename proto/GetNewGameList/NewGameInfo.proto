@@ -44,7 +44,6 @@ message NewGameInfo {
     string subscript_color = 46;
     int32 category_id = 47;
     int32 status = 48;
-    int32 mark = 49;
     string package_link = 50;
     string andr_pk_name = 51;
     string category_name = 52;

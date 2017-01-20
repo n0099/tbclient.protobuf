@@ -16,4 +16,5 @@ message AlaLiveInfo {
     string description = 11;
     AlaUserInfo user_info = 12;
     uint32 duration = 13;
+    uint32 audience_count = 14;
 }

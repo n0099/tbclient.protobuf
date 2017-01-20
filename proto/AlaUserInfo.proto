@@ -6,4 +6,17 @@ message AlaUserInfo {
     string portrait = 3;
     string description = 4;
     string sex = 5;
+    uint64 enter_live = 6;
+    uint64 anchor_live = 7;
+    uint32 live_status = 8;
+    uint64 live_id = 9;
+    string location = 10;
+    double lng = 11;
+    double lat = 12;
+    uint32 update_time = 13;
+    uint64 charm_count = 14;
+    uint64 level_exp = 15;
+    uint32 is_official = 16;
+    string verify_status = 17;
+    uint32 level_id = 18;
 }

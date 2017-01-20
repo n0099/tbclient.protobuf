@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Acrossforum/DataReq.proto";
-
-message AcrossforumReqIdl {
-    DataReq data = 1;
-}
