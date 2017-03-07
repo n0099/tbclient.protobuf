@@ -57,4 +57,5 @@ message DataRes {
     GuessLikeStruct guess_like = 29;
     repeated ThreadInfo feed_thread_list = 30;
     uint32 is_follow_current_channel = 31;
+    int32 switch_read_open = 32;
 }

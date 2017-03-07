@@ -36,4 +36,5 @@ message PbContent {
     GraffitiInfo graffiti_info = 29;
     TogetherHi high_together = 30;
     string media_subtitle = 31;
+    int32 url_type = 32;
 }
