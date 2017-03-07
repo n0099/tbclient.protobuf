@@ -4,7 +4,7 @@ import com.baidu.cloudsdk.social.core.util.SocialAPIErrorCodes;
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.frs.tab.TabData;
-import com.baidu.tieba.r;
+import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -73,13 +73,17 @@ public final class ThreadInfo extends Message {
     public final Integer create_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_INVALID_STATE)
+    public final List<DeclareInfo> declare_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_INVALID_AUTHORIZED_CODE)
+    public final List<DislikeInfo> dislike_info;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
     @ProtoField(label = Message.Label.REPEATED, tag = 90)
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
+    @ProtoField(tag = w.n.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
@@ -107,7 +111,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = 103, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
-    @ProtoField(tag = r.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_bub;
     @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
@@ -133,7 +137,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_reward;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_novel_thank;
-    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
@@ -261,7 +265,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = r.n.PullToRefresh_mode)
+    @ProtoField(tag = w.n.PullToRefresh_mode)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -327,6 +331,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_OPERATE_THREAD = 0;
     public static final Integer DEFAULT_IS_TBREAD_DISPATCH = 0;
     public static final List<ReportInfo> DEFAULT_REPORT_INFO = Collections.emptyList();
+    public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO = Collections.emptyList();
+    public static final List<DeclareInfo> DEFAULT_DECLARE_LIST = Collections.emptyList();
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -794,7 +800,18 @@ public final class ThreadInfo extends Message {
                 this.report_info = immutableCopyOf(builder.report_info);
             }
             this.video_channel_info = builder.video_channel_info;
-            return;
+            if (builder.dislike_info == null) {
+                this.dislike_info = DEFAULT_DISLIKE_INFO;
+            } else {
+                this.dislike_info = immutableCopyOf(builder.dislike_info);
+            }
+            if (builder.declare_list == null) {
+                this.declare_list = DEFAULT_DECLARE_LIST;
+                return;
+            } else {
+                this.declare_list = immutableCopyOf(builder.declare_list);
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -911,6 +928,8 @@ public final class ThreadInfo extends Message {
         this.app_info = builder.app_info;
         this.report_info = immutableCopyOf(builder.report_info);
         this.video_channel_info = builder.video_channel_info;
+        this.dislike_info = immutableCopyOf(builder.dislike_info);
+        this.declare_list = immutableCopyOf(builder.declare_list);
     }
 
     /* loaded from: classes.dex */
@@ -935,6 +954,8 @@ public final class ThreadInfo extends Message {
         public Integer comment_num;
         public Integer create_time;
         public DealInfo deal_info;
+        public List<DeclareInfo> declare_list;
+        public List<DislikeInfo> dislike_info;
         public String ecom;
         public List<TailInfo> ext_tails;
         public Long fid;
@@ -1152,6 +1173,8 @@ public final class ThreadInfo extends Message {
                 this.app_info = threadInfo.app_info;
                 this.report_info = ThreadInfo.copyOf(threadInfo.report_info);
                 this.video_channel_info = threadInfo.video_channel_info;
+                this.dislike_info = ThreadInfo.copyOf(threadInfo.dislike_info);
+                this.declare_list = ThreadInfo.copyOf(threadInfo.declare_list);
             }
         }
 

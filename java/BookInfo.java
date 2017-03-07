@@ -1,6 +1,6 @@
 package tbclient;
 
-import com.baidu.tieba.r;
+import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -61,7 +61,7 @@ public final class BookInfo extends Message {
     public final String copyright_text;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String cover;
-    @ProtoField(tag = r.n.PullToRefresh_mode, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.PullToRefresh_mode, type = Message.Datatype.STRING)
     public final String cp_id;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String discount_icon;
@@ -69,13 +69,13 @@ public final class BookInfo extends Message {
     public final String discount_ratio;
     @ProtoField(tag = 32, type = Message.Datatype.UINT32)
     public final Integer discount_type;
-    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String discuss;
     @ProtoField(tag = 43, type = Message.Datatype.UINT32)
     public final Integer first_chapter;
-    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.UINT64)
+    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.UINT64)
     public final Long forum_id;
-    @ProtoField(tag = r.n.PullToRefresh_headerBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.PullToRefresh_headerBackground, type = Message.Datatype.STRING)
     public final String forum_name;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String free_info;

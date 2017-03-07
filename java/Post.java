@@ -18,6 +18,8 @@ public final class Post extends Message {
     public final AddPostList add_post_list;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer add_post_number;
+    @ProtoField(tag = 37)
+    public final Agree agree;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
     public final List<String> arr_video;
     @ProtoField(tag = 23)
@@ -224,11 +226,11 @@ public final class Post extends Message {
             this.pb_deal_info = builder.pb_deal_info;
             if (builder.lego_card == null) {
                 this.lego_card = "";
-                return;
             } else {
                 this.lego_card = builder.lego_card;
-                return;
             }
+            this.agree = builder.agree;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -266,6 +268,7 @@ public final class Post extends Message {
         this.skin_info = builder.skin_info;
         this.pb_deal_info = builder.pb_deal_info;
         this.lego_card = builder.lego_card;
+        this.agree = builder.agree;
     }
 
     /* loaded from: classes.dex */
@@ -273,6 +276,7 @@ public final class Post extends Message {
         public ActPost act_post;
         public AddPostList add_post_list;
         public Integer add_post_number;
+        public Agree agree;
         public List<String> arr_video;
         public User author;
         public Long author_id;
@@ -349,6 +353,7 @@ public final class Post extends Message {
                 this.skin_info = post.skin_info;
                 this.pb_deal_info = post.pb_deal_info;
                 this.lego_card = post.lego_card;
+                this.agree = post.agree;
             }
         }
 

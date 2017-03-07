@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.frs.tab.TabData;
-import com.baidu.tieba.r;
+import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
@@ -36,9 +36,9 @@ public final class DataReq extends Message {
     public final Integer cid;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer class_id;
-    @ProtoField(tag = r.n.PullToRefresh_headerBackground)
+    @ProtoField(tag = w.n.PullToRefresh_headerBackground)
     public final CommonReq common;
-    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
@@ -60,13 +60,13 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = r.n.PullToRefresh_mode, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.PullToRefresh_mode, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
     @ProtoField(tag = 48, type = Message.Datatype.UINT64)
     public final Long last_click_tid;
-    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.INT32)
     public final Integer load_type;

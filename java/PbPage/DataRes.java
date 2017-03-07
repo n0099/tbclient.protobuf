@@ -77,6 +77,8 @@ public final class DataRes extends Message {
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
+    @ProtoField(tag = 32, type = Message.Datatype.INT32)
+    public final Integer switch_read_open;
     @ProtoField(tag = 8)
     public final ThreadInfo thread;
     @ProtoField(tag = 18)
@@ -96,6 +98,7 @@ public final class DataRes extends Message {
     public static final List<PsRankListItem> DEFAULT_PLAY_RANK_LIST = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_FEED_THREAD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_FOLLOW_CURRENT_CHANNEL = 0;
+    public static final Integer DEFAULT_SWITCH_READ_OPEN = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -180,9 +183,14 @@ public final class DataRes extends Message {
             }
             if (builder.is_follow_current_channel == null) {
                 this.is_follow_current_channel = DEFAULT_IS_FOLLOW_CURRENT_CHANNEL;
-                return;
             } else {
                 this.is_follow_current_channel = builder.is_follow_current_channel;
+            }
+            if (builder.switch_read_open == null) {
+                this.switch_read_open = DEFAULT_SWITCH_READ_OPEN;
+                return;
+            } else {
+                this.switch_read_open = builder.switch_read_open;
                 return;
             }
         }
@@ -217,6 +225,7 @@ public final class DataRes extends Message {
         this.guess_like = builder.guess_like;
         this.feed_thread_list = immutableCopyOf(builder.feed_thread_list);
         this.is_follow_current_channel = builder.is_follow_current_channel;
+        this.switch_read_open = builder.switch_read_open;
     }
 
     /* loaded from: classes.dex */
@@ -248,6 +257,7 @@ public final class DataRes extends Message {
         public List<RecommendThread> recommend_threads;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
+        public Integer switch_read_open;
         public ThreadInfo thread;
         public TwZhiBoAnti twzhibo_anti;
         public User user;
@@ -290,6 +300,7 @@ public final class DataRes extends Message {
                 this.guess_like = dataRes.guess_like;
                 this.feed_thread_list = DataRes.copyOf(dataRes.feed_thread_list);
                 this.is_follow_current_channel = dataRes.is_follow_current_channel;
+                this.switch_read_open = dataRes.switch_read_open;
             }
         }
 

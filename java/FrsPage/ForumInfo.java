@@ -3,7 +3,7 @@ package tbclient.FrsPage;
 import com.baidu.location.BDLocation;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.frs.tab.TabData;
-import com.baidu.tieba.r;
+import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -90,7 +90,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = r.n.PullToRefresh_mode, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.PullToRefresh_mode, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -110,7 +110,7 @@ public final class ForumInfo extends Message {
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = r.n.PullToRefresh_headerBackground)
+    @ProtoField(tag = w.n.PullToRefresh_headerBackground)
     public final PostPrefix post_prefix;
     @ProtoField(tag = BDLocation.TypeGpsLocation)
     public final PostTopic post_topic;
@@ -126,9 +126,9 @@ public final class ForumInfo extends Message {
     public final SignInfo sign_in_info;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = r.n.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.PullToRefresh_headerTextColor, type = Message.Datatype.STRING)
     public final String superboy;
-    @ProtoField(tag = r.n.PullToRefresh_adapterViewBackground)
+    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground)
     public final TagInfo tag_info;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_num;

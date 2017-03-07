@@ -79,6 +79,8 @@ public final class PbContent extends Message {
     public final Integer type;
     @ProtoField(tag = 15, type = Message.Datatype.INT64)
     public final Long uid;
+    @ProtoField(tag = 32, type = Message.Datatype.INT32)
+    public final Integer url_type;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String voice_md5;
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
@@ -94,6 +96,7 @@ public final class PbContent extends Message {
     public static final Integer DEFAULT_BTN_TYPE = 0;
     public static final Integer DEFAULT_ORIGIN_SIZE = 0;
     public static final Integer DEFAULT_COUNT = 0;
+    public static final Integer DEFAULT_URL_TYPE = 0;
 
     /* synthetic */ PbContent(Builder builder, boolean z, PbContent pbContent) {
         this(builder, z);
@@ -242,9 +245,14 @@ public final class PbContent extends Message {
             this.high_together = builder.high_together;
             if (builder.media_subtitle == null) {
                 this.media_subtitle = "";
-                return;
             } else {
                 this.media_subtitle = builder.media_subtitle;
+            }
+            if (builder.url_type == null) {
+                this.url_type = DEFAULT_URL_TYPE;
+                return;
+            } else {
+                this.url_type = builder.url_type;
                 return;
             }
         }
@@ -279,6 +287,7 @@ public final class PbContent extends Message {
         this.graffiti_info = builder.graffiti_info;
         this.high_together = builder.high_together;
         this.media_subtitle = builder.media_subtitle;
+        this.url_type = builder.url_type;
     }
 
     /* loaded from: classes.dex */
@@ -312,6 +321,7 @@ public final class PbContent extends Message {
         public String text;
         public Integer type;
         public Long uid;
+        public Integer url_type;
         public String voice_md5;
         public Integer width;
 
@@ -352,6 +362,7 @@ public final class PbContent extends Message {
                 this.graffiti_info = pbContent.graffiti_info;
                 this.high_together = pbContent.high_together;
                 this.media_subtitle = pbContent.media_subtitle;
+                this.url_type = pbContent.url_type;
             }
         }
 
