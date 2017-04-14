@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AdCloseInfo.proto";
 import "ThreadPicList.proto";
 import "VideoInfo.proto";
 
@@ -32,4 +33,5 @@ message GoodsInfo {
     string tag_name_wh = 26;
     string brand_icon = 27;
     string brand_icon_wh = 28;
+    AdCloseInfo close_info = 29;
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message AdCloseInfo {
+    int32 support_close = 1;
+    string title = 2;
+    repeated string reasons = 3;
+    string confirm_title = 4;
+}

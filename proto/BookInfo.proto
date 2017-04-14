@@ -42,4 +42,5 @@ message BookInfo {
     string chapter_ver = 37;
     string paper_price = 42;
     uint32 first_chapter = 43;
+    uint32 charge_type = 44;
 }
