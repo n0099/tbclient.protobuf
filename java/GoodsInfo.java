@@ -39,6 +39,8 @@ public final class GoodsInfo extends Message {
     public final String card_desc;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String card_tag;
+    @ProtoField(tag = 29)
+    public final AdCloseInfo close_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer goods_style;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -230,11 +232,11 @@ public final class GoodsInfo extends Message {
             }
             if (builder.brand_icon_wh == null) {
                 this.brand_icon_wh = "";
-                return;
             } else {
                 this.brand_icon_wh = builder.brand_icon_wh;
-                return;
             }
+            this.close_info = builder.close_info;
+            return;
         }
         this.id = builder.id;
         this.user_name = builder.user_name;
@@ -264,6 +266,7 @@ public final class GoodsInfo extends Message {
         this.tag_name_wh = builder.tag_name_wh;
         this.brand_icon = builder.brand_icon;
         this.brand_icon_wh = builder.brand_icon_wh;
+        this.close_info = builder.close_info;
     }
 
     /* loaded from: classes.dex */
@@ -275,6 +278,7 @@ public final class GoodsInfo extends Message {
         public String button_url;
         public String card_desc;
         public String card_tag;
+        public AdCloseInfo close_info;
         public Integer goods_style;
         public Integer height;
         public Integer id;
@@ -331,6 +335,7 @@ public final class GoodsInfo extends Message {
                 this.tag_name_wh = goodsInfo.tag_name_wh;
                 this.brand_icon = goodsInfo.brand_icon;
                 this.brand_icon_wh = goodsInfo.brand_icon_wh;
+                this.close_info = goodsInfo.close_info;
             }
         }
 

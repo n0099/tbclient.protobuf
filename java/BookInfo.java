@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -51,6 +52,8 @@ public final class BookInfo extends Message {
     public final String book_ver;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String chapter_ver;
+    @ProtoField(tag = 44, type = Message.Datatype.UINT32)
+    public final Integer charge_type;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer class_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -87,6 +90,8 @@ public final class BookInfo extends Message {
     public final Integer is_finish;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String isbn;
+    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.UINT32)
+    public final Integer member_show_type;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer orignal_price;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
@@ -136,6 +141,8 @@ public final class BookInfo extends Message {
     public static final Integer DEFAULT_TOTAL_PAGE = 0;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_FIRST_CHAPTER = 0;
+    public static final Integer DEFAULT_CHARGE_TYPE = 0;
+    public static final Integer DEFAULT_MEMBER_SHOW_TYPE = 0;
 
     /* synthetic */ BookInfo(Builder builder, boolean z, BookInfo bookInfo) {
         this(builder, z);
@@ -356,9 +363,19 @@ public final class BookInfo extends Message {
             }
             if (builder.first_chapter == null) {
                 this.first_chapter = DEFAULT_FIRST_CHAPTER;
-                return;
             } else {
                 this.first_chapter = builder.first_chapter;
+            }
+            if (builder.charge_type == null) {
+                this.charge_type = DEFAULT_CHARGE_TYPE;
+            } else {
+                this.charge_type = builder.charge_type;
+            }
+            if (builder.member_show_type == null) {
+                this.member_show_type = DEFAULT_MEMBER_SHOW_TYPE;
+                return;
+            } else {
+                this.member_show_type = builder.member_show_type;
                 return;
             }
         }
@@ -405,6 +422,8 @@ public final class BookInfo extends Message {
         this.cp_id = builder.cp_id;
         this.paper_price = builder.paper_price;
         this.first_chapter = builder.first_chapter;
+        this.charge_type = builder.charge_type;
+        this.member_show_type = builder.member_show_type;
     }
 
     /* loaded from: classes.dex */
@@ -418,6 +437,7 @@ public final class BookInfo extends Message {
         public Integer book_type;
         public String book_ver;
         public String chapter_ver;
+        public Integer charge_type;
         public Integer class_id;
         public String class_name;
         public String copyright;
@@ -436,6 +456,7 @@ public final class BookInfo extends Message {
         public Integer is_buy;
         public Integer is_finish;
         public String isbn;
+        public Integer member_show_type;
         public Integer orignal_price;
         public String paper_price;
         public Integer price;
@@ -502,6 +523,8 @@ public final class BookInfo extends Message {
                 this.cp_id = bookInfo.cp_id;
                 this.paper_price = bookInfo.paper_price;
                 this.first_chapter = bookInfo.first_chapter;
+                this.charge_type = bookInfo.charge_type;
+                this.member_show_type = bookInfo.member_show_type;
             }
         }
 

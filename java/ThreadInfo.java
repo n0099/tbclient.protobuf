@@ -1,7 +1,7 @@
 package tbclient;
 
-import com.baidu.cloudsdk.social.core.util.SocialAPIErrorCodes;
 import com.baidu.location.BDLocation;
+import com.baidu.sapi2.SapiSafeFacade;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.w;
@@ -35,7 +35,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_VIDEO_SWF = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
-    @ProtoField(tag = 108, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_SMS_LOGIN, type = Message.Datatype.STRING)
     public final String ab_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
     public final List<ActInfo> act_info;
@@ -47,19 +47,19 @@ public final class ThreadInfo extends Message {
     public final AnimationThread animation_info;
     @ProtoField(tag = 89)
     public final AppCode app_code;
-    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_MEDIA_TYPE)
+    @ProtoField(tag = 117)
     public final AppInfo app_info;
     @ProtoField(tag = 18)
     public final User author;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long author_id;
-    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_SESSION_KEY)
+    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_BACK)
     public final BookThread book_chapter;
     @ProtoField(tag = 92)
     public final CartoonThread cartoon_info;
     @ProtoField(tag = 73, type = Message.Datatype.STRING)
     public final String category_name;
-    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_TIMESTAMP, type = Message.Datatype.UINT32)
+    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_LOGIN, type = Message.Datatype.UINT32)
     public final Integer cheak_repeat;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
@@ -73,9 +73,9 @@ public final class ThreadInfo extends Message {
     public final Integer create_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_INVALID_STATE)
+    @ProtoField(label = Message.Label.REPEATED, tag = 121)
     public final List<DeclareInfo> declare_list;
-    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_INVALID_AUTHORIZED_CODE)
+    @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
@@ -109,7 +109,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
-    @ProtoField(tag = 103, type = Message.Datatype.UINT32)
+    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_FINISH, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
     @ProtoField(tag = w.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
     public final Integer is_bub;
@@ -145,7 +145,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
-    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_RESPONSE_TYPE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 115, type = Message.Datatype.INT32)
     public final Integer is_tbread_dispatch;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_top;
@@ -155,7 +155,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 75)
     public final JNews jid;
-    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_SIGNATURE_ALGORITHM, type = Message.Datatype.UINT64)
+    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_MODIFY_PWD, type = Message.Datatype.UINT64)
     public final Long last_read_pid;
     @ProtoField(tag = 19)
     public final User last_replyer;
@@ -197,21 +197,21 @@ public final class ThreadInfo extends Message {
     public final Integer push_end_time;
     @ProtoField(tag = 91)
     public final PushStatus push_status;
-    @ProtoField(tag = 109, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_REG, type = Message.Datatype.STRING)
     public final String recom_reason;
-    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_SIGNATURE, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_AUTHORIZATION, type = Message.Datatype.STRING)
     public final String recom_source;
     @ProtoField(tag = 105, type = Message.Datatype.STRING)
     public final String recom_weight;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer reply_num;
-    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_INVALID_REDIRECT_URI)
+    @ProtoField(label = Message.Label.REPEATED, tag = 118)
     public final List<ReportInfo> report_info;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer repost_num;
-    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_EXPIRED_SESSION_KEY)
+    @ProtoField(label = Message.Label.REPEATED, tag = 112)
     public final List<PbContent> rich_abstract;
-    @ProtoField(label = Message.Label.REPEATED, tag = SocialAPIErrorCodes.ERROR_EXPIRED_ACCESS_TOKEN)
+    @ProtoField(label = Message.Label.REPEATED, tag = SapiSafeFacade.SAPIWEBVIEW_BIND_WIDGET)
     public final List<PbContent> rich_title;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer show_commented;
@@ -221,7 +221,7 @@ public final class ThreadInfo extends Message {
     public final Integer storecount;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
-    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_GRANT_TYPE)
+    @ProtoField(tag = 116)
     public final TbreadDispatch tbread_dispatch_info;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer thread_type;
@@ -245,7 +245,7 @@ public final class ThreadInfo extends Message {
     public final String video;
     @ProtoField(tag = 110)
     public final AdInfo video_ad_info;
-    @ProtoField(tag = SocialAPIErrorCodes.ERROR_INVALID_SECRET_KEY)
+    @ProtoField(tag = 119)
     public final VideoChannelInfo video_channel_info;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String video_cover;
