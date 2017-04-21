@@ -27,6 +27,8 @@ public final class AlaLiveInfo extends Message {
     public final String hls_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long live_id;
+    @ProtoField(tag = 15, type = Message.Datatype.UINT32)
+    public final Integer live_type;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String media_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -37,6 +39,8 @@ public final class AlaLiveInfo extends Message {
     public final String media_url;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String rtmp_url;
+    @ProtoField(tag = 16, type = Message.Datatype.UINT32)
+    public final Integer screen_direction;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String session_id;
     @ProtoField(tag = 12)
@@ -45,6 +49,8 @@ public final class AlaLiveInfo extends Message {
     public static final Long DEFAULT_GROUP_ID = 0L;
     public static final Integer DEFAULT_DURATION = 0;
     public static final Integer DEFAULT_AUDIENCE_COUNT = 0;
+    public static final Integer DEFAULT_LIVE_TYPE = 0;
+    public static final Integer DEFAULT_SCREEN_DIRECTION = 0;
 
     /* synthetic */ AlaLiveInfo(Builder builder, boolean z, AlaLiveInfo alaLiveInfo) {
         this(builder, z);
@@ -116,9 +122,19 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.audience_count == null) {
                 this.audience_count = DEFAULT_AUDIENCE_COUNT;
-                return;
             } else {
                 this.audience_count = builder.audience_count;
+            }
+            if (builder.live_type == null) {
+                this.live_type = DEFAULT_LIVE_TYPE;
+            } else {
+                this.live_type = builder.live_type;
+            }
+            if (builder.screen_direction == null) {
+                this.screen_direction = DEFAULT_SCREEN_DIRECTION;
+                return;
+            } else {
+                this.screen_direction = builder.screen_direction;
                 return;
             }
         }
@@ -136,6 +152,8 @@ public final class AlaLiveInfo extends Message {
         this.user_info = builder.user_info;
         this.duration = builder.duration;
         this.audience_count = builder.audience_count;
+        this.live_type = builder.live_type;
+        this.screen_direction = builder.screen_direction;
     }
 
     /* loaded from: classes.dex */
@@ -147,11 +165,13 @@ public final class AlaLiveInfo extends Message {
         public Long group_id;
         public String hls_url;
         public Long live_id;
+        public Integer live_type;
         public String media_id;
         public String media_pic;
         public String media_subtitle;
         public String media_url;
         public String rtmp_url;
+        public Integer screen_direction;
         public String session_id;
         public AlaUserInfo user_info;
 
@@ -175,6 +195,8 @@ public final class AlaLiveInfo extends Message {
                 this.user_info = alaLiveInfo.user_info;
                 this.duration = alaLiveInfo.duration;
                 this.audience_count = alaLiveInfo.audience_count;
+                this.live_type = alaLiveInfo.live_type;
+                this.screen_direction = alaLiveInfo.screen_direction;
             }
         }
 

@@ -82,6 +82,8 @@ public final class ForumInfo extends Message {
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
+    @ProtoField(tag = BDLocation.TypeNetWorkException, type = Message.Datatype.INT32)
+    public final Integer is_live_game_forum;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_local_effect;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
@@ -175,6 +177,7 @@ public final class ForumInfo extends Message {
     public static final Integer DEFAULT_HAS_GAME = 0;
     public static final Integer DEFAULT_CAN_USE_ACCELERATE = 0;
     public static final List<GameInfo> DEFAULT_GAME_CARD = Collections.emptyList();
+    public static final Integer DEFAULT_IS_LIVE_GAME_FORUM = 0;
 
     /* synthetic */ ForumInfo(Builder builder, boolean z, ForumInfo forumInfo) {
         this(builder, z);
@@ -408,7 +411,13 @@ public final class ForumInfo extends Message {
             this.across_forum_show = builder.across_forum_show;
             this.post_topic = builder.post_topic;
             this.across_forum_hide = builder.across_forum_hide;
-            return;
+            if (builder.is_live_game_forum == null) {
+                this.is_live_game_forum = DEFAULT_IS_LIVE_GAME_FORUM;
+                return;
+            } else {
+                this.is_live_game_forum = builder.is_live_game_forum;
+                return;
+            }
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -471,6 +480,7 @@ public final class ForumInfo extends Message {
         this.across_forum_show = builder.across_forum_show;
         this.post_topic = builder.post_topic;
         this.across_forum_hide = builder.across_forum_hide;
+        this.is_live_game_forum = builder.is_live_game_forum;
     }
 
     /* loaded from: classes.dex */
@@ -504,6 +514,7 @@ public final class ForumInfo extends Message {
         public Integer is_exists;
         public Integer is_forbidden;
         public Integer is_like;
+        public Integer is_live_game_forum;
         public Integer is_local_effect;
         public String is_readonly;
         public Integer is_search_people;
@@ -604,6 +615,7 @@ public final class ForumInfo extends Message {
                 this.across_forum_show = forumInfo.across_forum_show;
                 this.post_topic = forumInfo.post_topic;
                 this.across_forum_hide = forumInfo.across_forum_hide;
+                this.is_live_game_forum = forumInfo.is_live_game_forum;
             }
         }
 
