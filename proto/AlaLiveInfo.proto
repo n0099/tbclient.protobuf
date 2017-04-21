@@ -17,4 +17,6 @@ message AlaLiveInfo {
     AlaUserInfo user_info = 12;
     uint32 duration = 13;
     uint32 audience_count = 14;
+    uint32 live_type = 15;
+    uint32 screen_direction = 16;
 }
