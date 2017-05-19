@@ -21,4 +21,6 @@ message ReplyList {
     User quote_user = 15;
     int32 server_time = 16;
     uint32 thread_type = 17;
+    uint64 v_forum_id = 18;
+    uint32 hide_fname = 19;
 }

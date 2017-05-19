@@ -2,7 +2,9 @@ syntax = "proto3";
 
 import "Anti.proto";
 import "DealWindow.proto";
+import "DynamicInfo.proto";
 import "Feedback.proto";
+import "ForumDynamic.proto";
 import "Highlist.proto";
 import "PostInfoList.proto";
 import "Profile/TAInfo.proto";
@@ -24,4 +26,6 @@ message DataRes {
     TbBookrack tbbookrack = 9;
     Feedback feedback = 10;
     UserManChannelInfo video_channel_info = 11;
+    repeated DynamicInfo dynamic_list = 12;
+    repeated ForumDynamic concerned_forum_list = 13;
 }

@@ -3,7 +3,7 @@ syntax = "proto3";
 import "DealWindow.proto";
 import "DynamicInfo.proto";
 import "ForumDynamic.proto";
-import "Personal/UserGodInfo.proto";
+import "Profile/UserGodInfo.proto";
 import "ThreadInfo.proto";
 import "User.proto";
 

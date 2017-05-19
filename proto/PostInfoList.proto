@@ -5,6 +5,7 @@ import "AnchorInfo.proto";
 import "DealInfo.proto";
 import "LbsInfo.proto";
 import "Media.proto";
+import "MultipleForum.proto";
 import "PollInfo.proto";
 import "PostInfoContent.proto";
 import "Quote.proto";
@@ -44,4 +45,7 @@ message PostInfoList {
     VideoInfo video_info = 29;
     bool is_deal = 30;
     DealInfo deal_info = 31;
+    repeated MultipleForum multiple_forum_list = 32;
+    int32 freq_num = 33;
+    uint64 v_forum_id = 34;
 }

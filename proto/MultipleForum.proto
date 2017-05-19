@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message MultipleForum {
+    int64 forum_id = 1;
+    string forum_name = 2;
+}

@@ -50,4 +50,6 @@ message DataReq {
     uint64 last_click_tid = 48;
     AppPosInfo app_pos = 50;
     AdParam ad_param = 51;
+    string obj_locate = 52;
+    string obj_source = 53;
 }

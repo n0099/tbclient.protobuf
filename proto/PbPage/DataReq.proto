@@ -50,4 +50,7 @@ message DataReq {
     string obj_param1 = 52;
     AppPosInfo app_pos = 53;
     uint32 from_smart_frs = 54;
+    string feed_nid = 55;
+    int64 forum_id = 56;
+    int32 need_repost_recommend_forum = 57;
 }

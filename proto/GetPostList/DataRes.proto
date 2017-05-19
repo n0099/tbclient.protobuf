@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Post.proto";
+
+message DataRes {
+    repeated Post post_list = 1;
+}
