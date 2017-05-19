@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -34,6 +35,8 @@ public final class Post extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
+    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground)
+    public final SimpleForum from_forum;
     @ProtoField(tag = 33)
     public final TogetherHi high_together;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -230,6 +233,7 @@ public final class Post extends Message {
                 this.lego_card = builder.lego_card;
             }
             this.agree = builder.agree;
+            this.from_forum = builder.from_forum;
             return;
         }
         this.id = builder.id;
@@ -269,6 +273,7 @@ public final class Post extends Message {
         this.pb_deal_info = builder.pb_deal_info;
         this.lego_card = builder.lego_card;
         this.agree = builder.agree;
+        this.from_forum = builder.from_forum;
     }
 
     /* loaded from: classes.dex */
@@ -284,6 +289,7 @@ public final class Post extends Message {
         public List<PbContent> content;
         public List<TailInfo> ext_tails;
         public Integer floor;
+        public SimpleForum from_forum;
         public TogetherHi high_together;
         public Long id;
         public String ios_bimg_format;
@@ -354,6 +360,7 @@ public final class Post extends Message {
                 this.pb_deal_info = post.pb_deal_info;
                 this.lego_card = post.lego_card;
                 this.agree = post.agree;
+                this.from_forum = post.from_forum;
             }
         }
 

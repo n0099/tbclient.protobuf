@@ -1,5 +1,6 @@
 package tbclient.PbPage;
 
+import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,17 +13,20 @@ import tbclient.GraffitiRankListInfo;
 import tbclient.Lbs;
 import tbclient.Page;
 import tbclient.PbHotPost;
+import tbclient.PbTopAgreePost;
 import tbclient.Post;
 import tbclient.PsRankListItem;
 import tbclient.RecommendThread;
 import tbclient.SdkTopicThread;
 import tbclient.SimpleForum;
+import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
+    public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
     @ProtoField(tag = 5)
     public final AddPost add_post;
     @ProtoField(tag = 26)
@@ -35,14 +39,22 @@ public final class DataRes extends Message {
     public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
+    @ProtoField(tag = w.n.PullToRefresh_headerBackground)
+    public final SimpleForum display_forum;
+    @ProtoField(tag = 33)
+    public final FeedExtInfo feed_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 30)
     public final List<ThreadInfo> feed_thread_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<FineBannerPb> fine_banner;
+    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground)
+    public final Post first_floor_post;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
     @ProtoField(tag = 27)
     public final ForumHeadlineImgInfo forum_headline_img_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 36)
+    public final List<SimpleForum> from_forum_list;
     @ProtoField(tag = 23)
     public final GodCard god_card;
     @ProtoField(tag = 21)
@@ -59,10 +71,14 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 9)
     public final Lbs location;
+    @ProtoField(label = Message.Label.REPEATED, tag = w.n.PullToRefresh_headerTextColor)
+    public final List<SimpleUser> new_agree_user;
     @ProtoField(tag = 15)
     public final NewsInfo news_info;
     @ProtoField(tag = 3)
     public final Page page;
+    @ProtoField(tag = w.n.PullToRefresh_mode, type = Message.Datatype.STRING)
+    public final String partial_visible_toast;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
     public final List<PsRankListItem> play_rank_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
@@ -73,6 +89,8 @@ public final class DataRes extends Message {
     public final RecommendBook recommend_book;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<RecommendThread> recommend_threads;
+    @ProtoField(label = Message.Label.REPEATED, tag = 35)
+    public final List<SimpleForum> repost_recommend_forum_list;
     @ProtoField(tag = 19)
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -81,6 +99,10 @@ public final class DataRes extends Message {
     public final Integer switch_read_open;
     @ProtoField(tag = 8)
     public final ThreadInfo thread;
+    @ProtoField(tag = 37, type = Message.Datatype.INT64)
+    public final Long thread_freq_num;
+    @ProtoField(tag = 34)
+    public final PbTopAgreePost top_agree_post_list;
     @ProtoField(tag = 18)
     public final TwZhiBoAnti twzhibo_anti;
     @ProtoField(tag = 1)
@@ -99,6 +121,10 @@ public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_FEED_THREAD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_FOLLOW_CURRENT_CHANNEL = 0;
     public static final Integer DEFAULT_SWITCH_READ_OPEN = 0;
+    public static final List<SimpleForum> DEFAULT_REPOST_RECOMMEND_FORUM_LIST = Collections.emptyList();
+    public static final List<SimpleForum> DEFAULT_FROM_FORUM_LIST = Collections.emptyList();
+    public static final Long DEFAULT_THREAD_FREQ_NUM = 0L;
+    public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -188,9 +214,38 @@ public final class DataRes extends Message {
             }
             if (builder.switch_read_open == null) {
                 this.switch_read_open = DEFAULT_SWITCH_READ_OPEN;
-                return;
             } else {
                 this.switch_read_open = builder.switch_read_open;
+            }
+            this.feed_info = builder.feed_info;
+            this.top_agree_post_list = builder.top_agree_post_list;
+            if (builder.repost_recommend_forum_list == null) {
+                this.repost_recommend_forum_list = DEFAULT_REPOST_RECOMMEND_FORUM_LIST;
+            } else {
+                this.repost_recommend_forum_list = immutableCopyOf(builder.repost_recommend_forum_list);
+            }
+            if (builder.from_forum_list == null) {
+                this.from_forum_list = DEFAULT_FROM_FORUM_LIST;
+            } else {
+                this.from_forum_list = immutableCopyOf(builder.from_forum_list);
+            }
+            if (builder.thread_freq_num == null) {
+                this.thread_freq_num = DEFAULT_THREAD_FREQ_NUM;
+            } else {
+                this.thread_freq_num = builder.thread_freq_num;
+            }
+            this.first_floor_post = builder.first_floor_post;
+            this.display_forum = builder.display_forum;
+            if (builder.new_agree_user == null) {
+                this.new_agree_user = DEFAULT_NEW_AGREE_USER;
+            } else {
+                this.new_agree_user = immutableCopyOf(builder.new_agree_user);
+            }
+            if (builder.partial_visible_toast == null) {
+                this.partial_visible_toast = "";
+                return;
+            } else {
+                this.partial_visible_toast = builder.partial_visible_toast;
                 return;
             }
         }
@@ -226,6 +281,15 @@ public final class DataRes extends Message {
         this.feed_thread_list = immutableCopyOf(builder.feed_thread_list);
         this.is_follow_current_channel = builder.is_follow_current_channel;
         this.switch_read_open = builder.switch_read_open;
+        this.feed_info = builder.feed_info;
+        this.top_agree_post_list = builder.top_agree_post_list;
+        this.repost_recommend_forum_list = immutableCopyOf(builder.repost_recommend_forum_list);
+        this.from_forum_list = immutableCopyOf(builder.from_forum_list);
+        this.thread_freq_num = builder.thread_freq_num;
+        this.first_floor_post = builder.first_floor_post;
+        this.display_forum = builder.display_forum;
+        this.new_agree_user = immutableCopyOf(builder.new_agree_user);
+        this.partial_visible_toast = builder.partial_visible_toast;
     }
 
     /* loaded from: classes.dex */
@@ -236,10 +300,14 @@ public final class DataRes extends Message {
         public AppealInfo appeal_info;
         public String asp_shown_info;
         public BannerList banner_list;
+        public SimpleForum display_forum;
+        public FeedExtInfo feed_info;
         public List<ThreadInfo> feed_thread_list;
         public List<FineBannerPb> fine_banner;
+        public Post first_floor_post;
         public SimpleForum forum;
         public ForumHeadlineImgInfo forum_headline_img_info;
+        public List<SimpleForum> from_forum_list;
         public GodCard god_card;
         public GraffitiRankListInfo graffiti_rank_list_info;
         public GuessLikeStruct guess_like;
@@ -248,17 +316,22 @@ public final class DataRes extends Message {
         public Integer is_follow_current_channel;
         public Integer is_new_url;
         public Lbs location;
+        public List<SimpleUser> new_agree_user;
         public NewsInfo news_info;
         public Page page;
+        public String partial_visible_toast;
         public List<PsRankListItem> play_rank_list;
         public List<PostBanner> post_banner;
         public List<Post> post_list;
         public RecommendBook recommend_book;
         public List<RecommendThread> recommend_threads;
+        public List<SimpleForum> repost_recommend_forum_list;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
         public Integer switch_read_open;
         public ThreadInfo thread;
+        public Long thread_freq_num;
+        public PbTopAgreePost top_agree_post_list;
         public TwZhiBoAnti twzhibo_anti;
         public User user;
         public List<User> user_list;
@@ -301,6 +374,15 @@ public final class DataRes extends Message {
                 this.feed_thread_list = DataRes.copyOf(dataRes.feed_thread_list);
                 this.is_follow_current_channel = dataRes.is_follow_current_channel;
                 this.switch_read_open = dataRes.switch_read_open;
+                this.feed_info = dataRes.feed_info;
+                this.top_agree_post_list = dataRes.top_agree_post_list;
+                this.repost_recommend_forum_list = DataRes.copyOf(dataRes.repost_recommend_forum_list);
+                this.from_forum_list = DataRes.copyOf(dataRes.from_forum_list);
+                this.thread_freq_num = dataRes.thread_freq_num;
+                this.first_floor_post = dataRes.first_floor_post;
+                this.display_forum = dataRes.display_forum;
+                this.new_agree_user = DataRes.copyOf(dataRes.new_agree_user);
+                this.partial_visible_toast = dataRes.partial_visible_toast;
             }
         }
 

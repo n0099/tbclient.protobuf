@@ -5,6 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.BannerList;
+import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
@@ -23,6 +24,8 @@ public final class DataRes extends Message {
     public final List<TagStruct> interestion;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_new_url;
+    @ProtoField(label = Message.Label.REPEATED, tag = 14)
+    public final List<SimpleForum> like_forums;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Resource> resource_list;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -45,6 +48,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_NEW_URL = 0;
     public static final List<TagStruct> DEFAULT_INTERESTION = Collections.emptyList();
     public static final List<CardGod> DEFAULT_CARD_GOD = Collections.emptyList();
+    public static final List<SimpleForum> DEFAULT_LIKE_FORUMS = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -107,9 +111,14 @@ public final class DataRes extends Message {
             }
             if (builder.stat_key == null) {
                 this.stat_key = "";
-                return;
             } else {
                 this.stat_key = builder.stat_key;
+            }
+            if (builder.like_forums == null) {
+                this.like_forums = DEFAULT_LIKE_FORUMS;
+                return;
+            } else {
+                this.like_forums = immutableCopyOf(builder.like_forums);
                 return;
             }
         }
@@ -126,6 +135,7 @@ public final class DataRes extends Message {
         this.interestion = immutableCopyOf(builder.interestion);
         this.card_god = immutableCopyOf(builder.card_god);
         this.stat_key = builder.stat_key;
+        this.like_forums = immutableCopyOf(builder.like_forums);
     }
 
     /* loaded from: classes.dex */
@@ -137,6 +147,7 @@ public final class DataRes extends Message {
         public List<CardTopic> card_topic;
         public List<TagStruct> interestion;
         public Integer is_new_url;
+        public List<SimpleForum> like_forums;
         public List<Resource> resource_list;
         public String stat_key;
         public Integer sug_seconds;
@@ -163,6 +174,7 @@ public final class DataRes extends Message {
                 this.interestion = DataRes.copyOf(dataRes.interestion);
                 this.card_god = DataRes.copyOf(dataRes.card_god);
                 this.stat_key = dataRes.stat_key;
+                this.like_forums = DataRes.copyOf(dataRes.like_forums);
             }
         }
 

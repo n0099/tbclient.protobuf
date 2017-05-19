@@ -1,5 +1,6 @@
 package tbclient;
 
+import android.support.v4.media.TransportMediator;
 import com.baidu.location.BDLocation;
 import com.baidu.sapi2.SapiSafeFacade;
 import com.baidu.tbadk.TbConfig;
@@ -39,6 +40,10 @@ public final class ThreadInfo extends Message {
     public final String ab_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
     public final List<ActInfo> act_info;
+    @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PLAY)
+    public final Agree agree;
+    @ProtoField(tag = 124, type = Message.Datatype.INT32)
+    public final Integer agree_num;
     @ProtoField(tag = 113)
     public final AlaLiveInfo ala_info;
     @ProtoField(tag = 55)
@@ -129,6 +134,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_meizhi;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer is_membertop;
+    @ProtoField(tag = 123, type = Message.Datatype.INT32)
+    public final Integer is_multiforum_thread;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_notice;
     @ProtoField(tag = 76, type = Message.Datatype.INT32)
@@ -141,6 +148,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
+    @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PAUSE, type = Message.Datatype.INT32)
+    public final Integer is_partial_visible;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
@@ -177,6 +186,8 @@ public final class ThreadInfo extends Message {
     public final List<MediaNum> media_num;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String meizhi_pic;
+    @ProtoField(label = Message.Label.REPEATED, tag = 122)
+    public final List<MultipleForum> multiple_forum_list;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
     @ProtoField(tag = 84, type = Message.Datatype.UINT32)
@@ -235,6 +246,8 @@ public final class ThreadInfo extends Message {
     public final Integer timeline;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 125)
+    public final Post top_agree_post;
     @ProtoField(tag = 47)
     public final Topic topic;
     @ProtoField(tag = 72)
@@ -333,6 +346,10 @@ public final class ThreadInfo extends Message {
     public static final List<ReportInfo> DEFAULT_REPORT_INFO = Collections.emptyList();
     public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO = Collections.emptyList();
     public static final List<DeclareInfo> DEFAULT_DECLARE_LIST = Collections.emptyList();
+    public static final List<MultipleForum> DEFAULT_MULTIPLE_FORUM_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_MULTIFORUM_THREAD = 0;
+    public static final Integer DEFAULT_AGREE_NUM = 0;
+    public static final Integer DEFAULT_IS_PARTIAL_VISIBLE = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -807,9 +824,31 @@ public final class ThreadInfo extends Message {
             }
             if (builder.declare_list == null) {
                 this.declare_list = DEFAULT_DECLARE_LIST;
-                return;
             } else {
                 this.declare_list = immutableCopyOf(builder.declare_list);
+            }
+            if (builder.multiple_forum_list == null) {
+                this.multiple_forum_list = DEFAULT_MULTIPLE_FORUM_LIST;
+            } else {
+                this.multiple_forum_list = immutableCopyOf(builder.multiple_forum_list);
+            }
+            if (builder.is_multiforum_thread == null) {
+                this.is_multiforum_thread = DEFAULT_IS_MULTIFORUM_THREAD;
+            } else {
+                this.is_multiforum_thread = builder.is_multiforum_thread;
+            }
+            if (builder.agree_num == null) {
+                this.agree_num = DEFAULT_AGREE_NUM;
+            } else {
+                this.agree_num = builder.agree_num;
+            }
+            this.top_agree_post = builder.top_agree_post;
+            this.agree = builder.agree;
+            if (builder.is_partial_visible == null) {
+                this.is_partial_visible = DEFAULT_IS_PARTIAL_VISIBLE;
+                return;
+            } else {
+                this.is_partial_visible = builder.is_partial_visible;
                 return;
             }
         }
@@ -930,6 +969,12 @@ public final class ThreadInfo extends Message {
         this.video_channel_info = builder.video_channel_info;
         this.dislike_info = immutableCopyOf(builder.dislike_info);
         this.declare_list = immutableCopyOf(builder.declare_list);
+        this.multiple_forum_list = immutableCopyOf(builder.multiple_forum_list);
+        this.is_multiforum_thread = builder.is_multiforum_thread;
+        this.agree_num = builder.agree_num;
+        this.top_agree_post = builder.top_agree_post;
+        this.agree = builder.agree;
+        this.is_partial_visible = builder.is_partial_visible;
     }
 
     /* loaded from: classes.dex */
@@ -937,6 +982,8 @@ public final class ThreadInfo extends Message {
         public List<Abstract> _abstract;
         public String ab_tag;
         public List<ActInfo> act_info;
+        public Agree agree;
+        public Integer agree_num;
         public AlaLiveInfo ala_info;
         public AnchorInfo anchor_info;
         public AnimationThread animation_info;
@@ -982,12 +1029,14 @@ public final class ThreadInfo extends Message {
         public Integer is_livepost;
         public Integer is_meizhi;
         public Integer is_membertop;
+        public Integer is_multiforum_thread;
         public Integer is_notice;
         public Integer is_novel;
         public Integer is_novel_reward;
         public Integer is_novel_thank;
         public Integer is_ntitle;
         public Integer is_operate_thread;
+        public Integer is_partial_visible;
         public Integer is_pic;
         public Integer is_protal;
         public Integer is_tbread_dispatch;
@@ -1006,6 +1055,7 @@ public final class ThreadInfo extends Message {
         public List<Media> media;
         public List<MediaNum> media_num;
         public String meizhi_pic;
+        public List<MultipleForum> multiple_forum_list;
         public Integer operator_flag;
         public Integer pic_num;
         public String pids;
@@ -1035,6 +1085,7 @@ public final class ThreadInfo extends Message {
         public Integer time;
         public Integer timeline;
         public String title;
+        public Post top_agree_post;
         public Topic topic;
         public ZhiBoInfoTW twzhibo_info;
         public Integer valid_post_num;
@@ -1175,6 +1226,12 @@ public final class ThreadInfo extends Message {
                 this.video_channel_info = threadInfo.video_channel_info;
                 this.dislike_info = ThreadInfo.copyOf(threadInfo.dislike_info);
                 this.declare_list = ThreadInfo.copyOf(threadInfo.declare_list);
+                this.multiple_forum_list = ThreadInfo.copyOf(threadInfo.multiple_forum_list);
+                this.is_multiforum_thread = threadInfo.is_multiforum_thread;
+                this.agree_num = threadInfo.agree_num;
+                this.top_agree_post = threadInfo.top_agree_post;
+                this.agree = threadInfo.agree;
+                this.is_partial_visible = threadInfo.is_partial_visible;
             }
         }
 

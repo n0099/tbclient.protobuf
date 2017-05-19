@@ -15,6 +15,8 @@ public final class ReplyList extends Message {
     public final String content;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String fname;
+    @ProtoField(tag = 19, type = Message.Datatype.UINT32)
+    public final Integer hide_fname;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer is_floor;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -43,6 +45,8 @@ public final class ReplyList extends Message {
     public final Integer type;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer unread;
+    @ProtoField(tag = 18, type = Message.Datatype.UINT64)
+    public final Long v_forum_id;
     @ProtoField(tag = 13)
     public final Zan zan;
     public static final Long DEFAULT_THREAD_ID = 0L;
@@ -54,6 +58,8 @@ public final class ReplyList extends Message {
     public static final Long DEFAULT_QUOTE_PID = 0L;
     public static final Integer DEFAULT_SERVER_TIME = 0;
     public static final Integer DEFAULT_THREAD_TYPE = 0;
+    public static final Long DEFAULT_V_FORUM_ID = 0L;
+    public static final Integer DEFAULT_HIDE_FNAME = 0;
 
     /* synthetic */ ReplyList(Builder builder, boolean z, ReplyList replyList) {
         this(builder, z);
@@ -132,9 +138,19 @@ public final class ReplyList extends Message {
             }
             if (builder.thread_type == null) {
                 this.thread_type = DEFAULT_THREAD_TYPE;
-                return;
             } else {
                 this.thread_type = builder.thread_type;
+            }
+            if (builder.v_forum_id == null) {
+                this.v_forum_id = DEFAULT_V_FORUM_ID;
+            } else {
+                this.v_forum_id = builder.v_forum_id;
+            }
+            if (builder.hide_fname == null) {
+                this.hide_fname = DEFAULT_HIDE_FNAME;
+                return;
+            } else {
+                this.hide_fname = builder.hide_fname;
                 return;
             }
         }
@@ -155,12 +171,15 @@ public final class ReplyList extends Message {
         this.quote_user = builder.quote_user;
         this.server_time = builder.server_time;
         this.thread_type = builder.thread_type;
+        this.v_forum_id = builder.v_forum_id;
+        this.hide_fname = builder.hide_fname;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ReplyList> {
         public String content;
         public String fname;
+        public Integer hide_fname;
         public Integer is_floor;
         public String item_type;
         public Long post_id;
@@ -175,6 +194,7 @@ public final class ReplyList extends Message {
         public String title;
         public Integer type;
         public Integer unread;
+        public Long v_forum_id;
         public Zan zan;
 
         public Builder() {
@@ -200,6 +220,8 @@ public final class ReplyList extends Message {
                 this.quote_user = replyList.quote_user;
                 this.server_time = replyList.server_time;
                 this.thread_type = replyList.thread_type;
+                this.v_forum_id = replyList.v_forum_id;
+                this.hide_fname = replyList.hide_fname;
             }
         }
 

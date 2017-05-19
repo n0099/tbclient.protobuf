@@ -18,6 +18,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MOBILE = "";
     public static final String DEFAULT_MODULE_NAME = "";
+    public static final String DEFAULT_OBJ_LOCATE = "";
+    public static final String DEFAULT_OBJ_SOURCE = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_ST_TYPE = "";
@@ -84,6 +86,10 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;
+    @ProtoField(tag = 52, type = Message.Datatype.STRING)
+    public final String obj_locate;
+    @ProtoField(tag = 53, type = Message.Datatype.STRING)
+    public final String obj_source;
     @ProtoField(tag = 43, type = Message.Datatype.STRING)
     public final String platform;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
@@ -410,7 +416,18 @@ public final class DataReq extends Message {
             }
             this.app_pos = builder.app_pos;
             this.ad_param = builder.ad_param;
-            return;
+            if (builder.obj_locate == null) {
+                this.obj_locate = "";
+            } else {
+                this.obj_locate = builder.obj_locate;
+            }
+            if (builder.obj_source == null) {
+                this.obj_source = "";
+                return;
+            } else {
+                this.obj_source = builder.obj_source;
+                return;
+            }
         }
         this.kw = builder.kw;
         this.rn = builder.rn;
@@ -463,6 +480,8 @@ public final class DataReq extends Message {
         this.load_type = builder.load_type;
         this.app_pos = builder.app_pos;
         this.ad_param = builder.ad_param;
+        this.obj_locate = builder.obj_locate;
+        this.obj_source = builder.obj_source;
     }
 
     /* loaded from: classes.dex */
@@ -497,6 +516,8 @@ public final class DataReq extends Message {
         public Integer net_error;
         public Integer no_un;
         public Integer noval;
+        public String obj_locate;
+        public String obj_source;
         public String platform;
         public Integer pn;
         public String portrait;
@@ -576,6 +597,8 @@ public final class DataReq extends Message {
                 this.load_type = dataReq.load_type;
                 this.app_pos = dataReq.app_pos;
                 this.ad_param = dataReq.ad_param;
+                this.obj_locate = dataReq.obj_locate;
+                this.obj_source = dataReq.obj_source;
             }
         }
 

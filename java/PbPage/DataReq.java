@@ -8,6 +8,7 @@ import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_DA_IDFA = "";
+    public static final String DEFAULT_FEED_NID = "";
     public static final String DEFAULT_JFROM = "";
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_MSG_CLICK = "";
@@ -33,10 +34,14 @@ public final class DataReq extends Message {
     public final CommonReq common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
+    @ProtoField(tag = 55, type = Message.Datatype.STRING)
+    public final String feed_nid;
     @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.UINT64)
     public final Long fid;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
+    @ProtoField(tag = 56, type = Message.Datatype.INT64)
+    public final Long forum_id;
     @ProtoField(tag = 54, type = Message.Datatype.UINT32)
     public final Integer from_smart_frs;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
@@ -65,6 +70,8 @@ public final class DataReq extends Message {
     public final Integer message_id;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String msg_click;
+    @ProtoField(tag = 57, type = Message.Datatype.INT32)
+    public final Integer need_repost_recommend_forum;
     @ProtoField(tag = 51, type = Message.Datatype.STRING)
     public final String obj_locate;
     @ProtoField(tag = 52, type = Message.Datatype.STRING)
@@ -146,6 +153,8 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_JID = 0L;
     public static final Long DEFAULT_FID = 0L;
     public static final Integer DEFAULT_FROM_SMART_FRS = 0;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
 
     /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
         this(builder, z);
@@ -378,9 +387,24 @@ public final class DataReq extends Message {
             this.app_pos = builder.app_pos;
             if (builder.from_smart_frs == null) {
                 this.from_smart_frs = DEFAULT_FROM_SMART_FRS;
-                return;
             } else {
                 this.from_smart_frs = builder.from_smart_frs;
+            }
+            if (builder.feed_nid == null) {
+                this.feed_nid = "";
+            } else {
+                this.feed_nid = builder.feed_nid;
+            }
+            if (builder.forum_id == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = builder.forum_id;
+            }
+            if (builder.need_repost_recommend_forum == null) {
+                this.need_repost_recommend_forum = DEFAULT_NEED_REPOST_RECOMMEND_FORUM;
+                return;
+            } else {
+                this.need_repost_recommend_forum = builder.need_repost_recommend_forum;
                 return;
             }
         }
@@ -431,6 +455,9 @@ public final class DataReq extends Message {
         this.obj_param1 = builder.obj_param1;
         this.app_pos = builder.app_pos;
         this.from_smart_frs = builder.from_smart_frs;
+        this.feed_nid = builder.feed_nid;
+        this.forum_id = builder.forum_id;
+        this.need_repost_recommend_forum = builder.need_repost_recommend_forum;
     }
 
     /* loaded from: classes.dex */
@@ -441,8 +468,10 @@ public final class DataReq extends Message {
         public Integer banner;
         public CommonReq common;
         public String da_idfa;
+        public String feed_nid;
         public Long fid;
         public Integer floor_rn;
+        public Long forum_id;
         public Integer from_smart_frs;
         public Integer is_comm_reverse;
         public Integer is_jumpfloor;
@@ -457,6 +486,7 @@ public final class DataReq extends Message {
         public Integer mark;
         public Integer message_id;
         public String msg_click;
+        public Integer need_repost_recommend_forum;
         public String obj_locate;
         public String obj_param1;
         public String obj_source;
@@ -536,6 +566,9 @@ public final class DataReq extends Message {
                 this.obj_param1 = dataReq.obj_param1;
                 this.app_pos = dataReq.app_pos;
                 this.from_smart_frs = dataReq.from_smart_frs;
+                this.feed_nid = dataReq.feed_nid;
+                this.forum_id = dataReq.forum_id;
+                this.need_repost_recommend_forum = dataReq.need_repost_recommend_forum;
             }
         }
 

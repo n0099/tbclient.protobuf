@@ -7,6 +7,7 @@ import java.util.List;
 import tbclient.DealWindow;
 import tbclient.DynamicInfo;
 import tbclient.ForumDynamic;
+import tbclient.Profile.UserGodInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
 /* loaded from: classes.dex */

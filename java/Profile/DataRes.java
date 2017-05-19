@@ -6,7 +6,9 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Anti;
 import tbclient.DealWindow;
+import tbclient.DynamicInfo;
 import tbclient.Feedback;
+import tbclient.ForumDynamic;
 import tbclient.Highlist;
 import tbclient.PostInfoList;
 import tbclient.TbBookrack;
@@ -15,9 +17,12 @@ import tbclient.User;
 import tbclient.UserManChannelInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
-    public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
     @ProtoField(tag = 2)
     public final Anti anti_stat;
+    @ProtoField(label = Message.Label.REPEATED, tag = 13)
+    public final List<ForumDynamic> concerned_forum_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 12)
+    public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 10)
     public final Feedback feedback;
     @ProtoField(tag = 7)
@@ -38,6 +43,9 @@ public final class DataRes extends Message {
     public final UserManChannelInfo video_channel_info;
     @ProtoField(tag = 8)
     public final DealWindow window;
+    public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
+    public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST = Collections.emptyList();
+    public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -61,7 +69,18 @@ public final class DataRes extends Message {
             this.tbbookrack = builder.tbbookrack;
             this.feedback = builder.feedback;
             this.video_channel_info = builder.video_channel_info;
-            return;
+            if (builder.dynamic_list == null) {
+                this.dynamic_list = DEFAULT_DYNAMIC_LIST;
+            } else {
+                this.dynamic_list = immutableCopyOf(builder.dynamic_list);
+            }
+            if (builder.concerned_forum_list == null) {
+                this.concerned_forum_list = DEFAULT_CONCERNED_FORUM_LIST;
+                return;
+            } else {
+                this.concerned_forum_list = immutableCopyOf(builder.concerned_forum_list);
+                return;
+            }
         }
         this.user = builder.user;
         this.anti_stat = builder.anti_stat;
@@ -74,11 +93,15 @@ public final class DataRes extends Message {
         this.tbbookrack = builder.tbbookrack;
         this.feedback = builder.feedback;
         this.video_channel_info = builder.video_channel_info;
+        this.dynamic_list = immutableCopyOf(builder.dynamic_list);
+        this.concerned_forum_list = immutableCopyOf(builder.concerned_forum_list);
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Anti anti_stat;
+        public List<ForumDynamic> concerned_forum_list;
+        public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
         public Highlist highs;
         public List<PostInfoList> post_list;
@@ -107,6 +130,8 @@ public final class DataRes extends Message {
                 this.tbbookrack = dataRes.tbbookrack;
                 this.feedback = dataRes.feedback;
                 this.video_channel_info = dataRes.video_channel_info;
+                this.dynamic_list = DataRes.copyOf(dataRes.dynamic_list);
+                this.concerned_forum_list = DataRes.copyOf(dataRes.concerned_forum_list);
             }
         }
 

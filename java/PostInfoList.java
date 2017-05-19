@@ -33,6 +33,8 @@ public final class PostInfoList extends Message {
     public final Long forum_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 33, type = Message.Datatype.INT32)
+    public final Integer freq_num;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer hide_post;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -47,6 +49,8 @@ public final class PostInfoList extends Message {
     public final LbsInfo lbs_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<Media> media;
+    @ProtoField(label = Message.Label.REPEATED, tag = 32)
+    public final List<MultipleForum> multiple_forum_list;
     @ProtoField(tag = 28)
     public final PollInfo poll_info;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -73,6 +77,8 @@ public final class PostInfoList extends Message {
     public final String user_name;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String user_portrait;
+    @ProtoField(tag = 34, type = Message.Datatype.UINT64)
+    public final Long v_forum_id;
     @ProtoField(tag = 29)
     public final VideoInfo video_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
@@ -92,6 +98,9 @@ public final class PostInfoList extends Message {
     public static final Integer DEFAULT_HIDE_POST = 0;
     public static final Long DEFAULT_THREAD_TYPE = 0L;
     public static final Boolean DEFAULT_IS_DEAL = false;
+    public static final List<MultipleForum> DEFAULT_MULTIPLE_FORUM_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_FREQ_NUM = 0;
+    public static final Long DEFAULT_V_FORUM_ID = 0L;
 
     /* synthetic */ PostInfoList(Builder builder, boolean z, PostInfoList postInfoList) {
         this(builder, z);
@@ -227,7 +236,23 @@ public final class PostInfoList extends Message {
                 this.is_deal = builder.is_deal;
             }
             this.deal_info = builder.deal_info;
-            return;
+            if (builder.multiple_forum_list == null) {
+                this.multiple_forum_list = DEFAULT_MULTIPLE_FORUM_LIST;
+            } else {
+                this.multiple_forum_list = immutableCopyOf(builder.multiple_forum_list);
+            }
+            if (builder.freq_num == null) {
+                this.freq_num = DEFAULT_FREQ_NUM;
+            } else {
+                this.freq_num = builder.freq_num;
+            }
+            if (builder.v_forum_id == null) {
+                this.v_forum_id = DEFAULT_V_FORUM_ID;
+                return;
+            } else {
+                this.v_forum_id = builder.v_forum_id;
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
@@ -260,6 +285,9 @@ public final class PostInfoList extends Message {
         this.video_info = builder.video_info;
         this.is_deal = builder.is_deal;
         this.deal_info = builder.deal_info;
+        this.multiple_forum_list = immutableCopyOf(builder.multiple_forum_list);
+        this.freq_num = builder.freq_num;
+        this.v_forum_id = builder.v_forum_id;
     }
 
     /* loaded from: classes.dex */
@@ -273,6 +301,7 @@ public final class PostInfoList extends Message {
         public DealInfo deal_info;
         public Long forum_id;
         public String forum_name;
+        public Integer freq_num;
         public Integer hide_post;
         public String ip;
         public Boolean is_deal;
@@ -280,6 +309,7 @@ public final class PostInfoList extends Message {
         public Integer is_thread;
         public LbsInfo lbs_info;
         public List<Media> media;
+        public List<MultipleForum> multiple_forum_list;
         public PollInfo poll_info;
         public Long post_id;
         public String post_type;
@@ -293,6 +323,7 @@ public final class PostInfoList extends Message {
         public Long user_id;
         public String user_name;
         public String user_portrait;
+        public Long v_forum_id;
         public VideoInfo video_info;
         public List<Voice> voice_info;
 
@@ -333,6 +364,9 @@ public final class PostInfoList extends Message {
                 this.video_info = postInfoList.video_info;
                 this.is_deal = postInfoList.is_deal;
                 this.deal_info = postInfoList.deal_info;
+                this.multiple_forum_list = PostInfoList.copyOf(postInfoList.multiple_forum_list);
+                this.freq_num = postInfoList.freq_num;
+                this.v_forum_id = postInfoList.v_forum_id;
             }
         }
 
