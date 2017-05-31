@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -35,7 +34,7 @@ public final class Post extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
-    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground)
+    @ProtoField(tag = 38)
     public final SimpleForum from_forum;
     @ProtoField(tag = 33)
     public final TogetherHi high_together;
@@ -49,6 +48,8 @@ public final class Post extends Message {
     public final Integer is_hot_post;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer is_ntitle;
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    public final Integer is_post_visible;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer is_voice;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
@@ -104,6 +105,7 @@ public final class Post extends Message {
     public static final Integer DEFAULT_STORECOUNT = 0;
     public static final Integer DEFAULT_IS_HOT_POST = 0;
     public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
+    public static final Integer DEFAULT_IS_POST_VISIBLE = 0;
 
     /* synthetic */ Post(Builder builder, boolean z, Post post) {
         this(builder, z);
@@ -234,7 +236,13 @@ public final class Post extends Message {
             }
             this.agree = builder.agree;
             this.from_forum = builder.from_forum;
-            return;
+            if (builder.is_post_visible == null) {
+                this.is_post_visible = DEFAULT_IS_POST_VISIBLE;
+                return;
+            } else {
+                this.is_post_visible = builder.is_post_visible;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -274,6 +282,7 @@ public final class Post extends Message {
         this.lego_card = builder.lego_card;
         this.agree = builder.agree;
         this.from_forum = builder.from_forum;
+        this.is_post_visible = builder.is_post_visible;
     }
 
     /* loaded from: classes.dex */
@@ -296,6 +305,7 @@ public final class Post extends Message {
         public Integer is_bub;
         public Integer is_hot_post;
         public Integer is_ntitle;
+        public Integer is_post_visible;
         public Integer is_voice;
         public Integer is_vote;
         public Lbs lbs_info;
@@ -361,6 +371,7 @@ public final class Post extends Message {
                 this.lego_card = post.lego_card;
                 this.agree = post.agree;
                 this.from_forum = post.from_forum;
+                this.is_post_visible = post.is_post_visible;
             }
         }
 

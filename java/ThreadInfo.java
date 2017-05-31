@@ -3,8 +3,6 @@ package tbclient;
 import android.support.v4.media.TransportMediator;
 import com.baidu.location.BDLocation;
 import com.baidu.sapi2.SapiSafeFacade;
-import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -38,7 +36,7 @@ public final class ThreadInfo extends Message {
     public final List<Abstract> _abstract;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_SMS_LOGIN, type = Message.Datatype.STRING)
     public final String ab_tag;
-    @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
+    @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<ActInfo> act_info;
     @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PLAY)
     public final Agree agree;
@@ -46,7 +44,7 @@ public final class ThreadInfo extends Message {
     public final Integer agree_num;
     @ProtoField(tag = 113)
     public final AlaLiveInfo ala_info;
-    @ProtoField(tag = 55)
+    @ProtoField(tag = w.n.View_rotation)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 99)
     public final AnimationThread animation_info;
@@ -56,7 +54,7 @@ public final class ThreadInfo extends Message {
     public final AppInfo app_info;
     @ProtoField(tag = 18)
     public final User author;
-    @ProtoField(tag = 56, type = Message.Datatype.INT64)
+    @ProtoField(tag = w.n.View_rotationX, type = Message.Datatype.INT64)
     public final Long author_id;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_BACK)
     public final BookThread book_chapter;
@@ -68,13 +66,13 @@ public final class ThreadInfo extends Message {
     public final Integer cheak_repeat;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
-    @ProtoField(tag = 51, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_translationX, type = Message.Datatype.STRING)
     public final String collect_mark_pid;
     @ProtoField(tag = 50, type = Message.Datatype.INT32)
     public final Integer collect_status;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer comment_num;
-    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
@@ -82,57 +80,61 @@ public final class ThreadInfo extends Message {
     public final List<DeclareInfo> declare_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
-    @ProtoField(tag = 60, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_verticalScrollbarPosition, type = Message.Datatype.STRING)
     public final String ecom;
     @ProtoField(label = Message.Label.REPEATED, tag = 90)
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = w.n.PullToRefresh_headerTextColor, type = Message.Datatype.INT64)
+    @ProtoField(tag = 40, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
-    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.STRING)
+    @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_RECORD, type = Message.Datatype.INT64)
+    public final Long freq_num;
+    @ProtoField(tag = 49, type = Message.Datatype.STRING)
     public final String from;
-    @ProtoField(tag = BDLocation.TypeNetWorkException)
+    @ProtoField(tag = 63)
     public final Guess guess;
-    @ProtoField(tag = 48, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_onClick, type = Message.Datatype.INT32)
     public final Integer has_commented;
     @ProtoField(tag = 95)
     public final TogetherHi high_together;
     @ProtoField(tag = 71)
     public final HotTWThreadInfo hotTWInfo;
-    @ProtoField(tag = BDLocation.TypeOffLineLocation, type = Message.Datatype.INT32)
+    @ProtoField(tag = 66, type = Message.Datatype.INT32)
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = 58, type = Message.Datatype.UINT32)
+    @ProtoField(tag = w.n.View_scaleX, type = Message.Datatype.UINT32)
     public final Integer isLzDeleteAll;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_activity;
-    @ProtoField(tag = 59, type = Message.Datatype.UINT32)
+    @ProtoField(tag = w.n.View_scaleY, type = Message.Datatype.UINT32)
     public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_FINISH, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
-    @ProtoField(tag = w.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_bub;
     @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
     @ProtoField(tag = 97, type = Message.Datatype.INT32)
     public final Integer is_deal;
-    @ProtoField(tag = 42, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = 85, type = Message.Datatype.INT32)
     public final Integer is_godthread_recommend;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
+    @ProtoField(tag = 128, type = Message.Datatype.INT32)
+    public final Integer is_link_thread;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_livepost;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
-    @ProtoField(tag = 54, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_transformPivotY, type = Message.Datatype.INT32)
     public final Integer is_membertop;
     @ProtoField(tag = 123, type = Message.Datatype.INT32)
     public final Integer is_multiforum_thread;
@@ -144,13 +146,13 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_reward;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_novel_thank;
-    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = 38, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
     @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PAUSE, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
-    @ProtoField(tag = 43, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_minHeight, type = Message.Datatype.INT32)
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
@@ -174,11 +176,13 @@ public final class ThreadInfo extends Message {
     public final Integer last_time_int;
     @ProtoField(tag = 94, type = Message.Datatype.STRING)
     public final String lego_card;
+    @ProtoField(tag = 129)
+    public final LinkThreadInfo link_info;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String live_post_type;
     @ProtoField(tag = BDLocation.TypeOffLineLocationFail, type = Message.Datatype.STRING)
     public final String livecover_src;
-    @ProtoField(tag = BDLocation.TypeCriteriaException)
+    @ProtoField(tag = 62)
     public final Lbs location;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Media> media;
@@ -192,13 +196,13 @@ public final class ThreadInfo extends Message {
     public final Integer operator_flag;
     @ProtoField(tag = 84, type = Message.Datatype.UINT32)
     public final Integer pic_num;
-    @ProtoField(tag = BDLocation.TypeGpsLocation, type = Message.Datatype.STRING)
+    @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String pids;
     @ProtoField(tag = 74)
     public final PollInfo poll_info;
-    @ProtoField(tag = 52, type = Message.Datatype.INT64)
+    @ProtoField(tag = w.n.View_translationY, type = Message.Datatype.INT64)
     public final Long post_id;
-    @ProtoField(label = Message.Label.REPEATED, tag = 44)
+    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_minWidth)
     public final List<PostList> post_list;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
     public final Integer post_num;
@@ -218,7 +222,7 @@ public final class ThreadInfo extends Message {
     public final Integer reply_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 118)
     public final List<ReportInfo> report_info;
-    @ProtoField(tag = 46, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
     public final Integer repost_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 112)
     public final List<PbContent> rich_abstract;
@@ -240,7 +244,7 @@ public final class ThreadInfo extends Message {
     public final Integer thread_types;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
-    @ProtoField(tag = 53, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_transformPivotX, type = Message.Datatype.INT32)
     public final Integer time;
     @ProtoField(tag = 64, type = Message.Datatype.UINT32)
     public final Integer timeline;
@@ -248,11 +252,11 @@ public final class ThreadInfo extends Message {
     public final String title;
     @ProtoField(tag = 125)
     public final Post top_agree_post;
-    @ProtoField(tag = 47)
+    @ProtoField(tag = w.n.View_contentDescription)
     public final Topic topic;
     @ProtoField(tag = 72)
     public final ZhiBoInfoTW twzhibo_info;
-    @ProtoField(tag = 57, type = Message.Datatype.UINT32)
+    @ProtoField(tag = w.n.View_rotationY, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
@@ -278,7 +282,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = w.n.PullToRefresh_mode)
+    @ProtoField(tag = 41)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -350,6 +354,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_MULTIFORUM_THREAD = 0;
     public static final Integer DEFAULT_AGREE_NUM = 0;
     public static final Integer DEFAULT_IS_PARTIAL_VISIBLE = 0;
+    public static final Integer DEFAULT_IS_LINK_THREAD = 0;
+    public static final Long DEFAULT_FREQ_NUM = 0L;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -846,9 +852,20 @@ public final class ThreadInfo extends Message {
             this.agree = builder.agree;
             if (builder.is_partial_visible == null) {
                 this.is_partial_visible = DEFAULT_IS_PARTIAL_VISIBLE;
-                return;
             } else {
                 this.is_partial_visible = builder.is_partial_visible;
+            }
+            if (builder.is_link_thread == null) {
+                this.is_link_thread = DEFAULT_IS_LINK_THREAD;
+            } else {
+                this.is_link_thread = builder.is_link_thread;
+            }
+            this.link_info = builder.link_info;
+            if (builder.freq_num == null) {
+                this.freq_num = DEFAULT_FREQ_NUM;
+                return;
+            } else {
+                this.freq_num = builder.freq_num;
                 return;
             }
         }
@@ -975,6 +992,9 @@ public final class ThreadInfo extends Message {
         this.top_agree_post = builder.top_agree_post;
         this.agree = builder.agree;
         this.is_partial_visible = builder.is_partial_visible;
+        this.is_link_thread = builder.is_link_thread;
+        this.link_info = builder.link_info;
+        this.freq_num = builder.freq_num;
     }
 
     /* loaded from: classes.dex */
@@ -1008,6 +1028,7 @@ public final class ThreadInfo extends Message {
         public Long fid;
         public Long first_post_id;
         public String fname;
+        public Long freq_num;
         public String from;
         public Guess guess;
         public Integer has_commented;
@@ -1026,6 +1047,7 @@ public final class ThreadInfo extends Message {
         public Integer is_global_top;
         public Integer is_godthread_recommend;
         public Integer is_good;
+        public Integer is_link_thread;
         public Integer is_livepost;
         public Integer is_meizhi;
         public Integer is_membertop;
@@ -1049,6 +1071,7 @@ public final class ThreadInfo extends Message {
         public String last_time;
         public Integer last_time_int;
         public String lego_card;
+        public LinkThreadInfo link_info;
         public String live_post_type;
         public String livecover_src;
         public Lbs location;
@@ -1232,6 +1255,9 @@ public final class ThreadInfo extends Message {
                 this.top_agree_post = threadInfo.top_agree_post;
                 this.agree = threadInfo.agree;
                 this.is_partial_visible = threadInfo.is_partial_visible;
+                this.is_link_thread = threadInfo.is_link_thread;
+                this.link_info = threadInfo.link_info;
+                this.freq_num = threadInfo.freq_num;
             }
         }
 

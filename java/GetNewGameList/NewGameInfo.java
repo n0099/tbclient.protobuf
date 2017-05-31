@@ -1,7 +1,5 @@
 package tbclient.GetNewGameList;
 
-import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -45,9 +43,9 @@ public final class NewGameInfo extends Message {
     public static final String DEFAULT_THREAD_FORUM_NAME = "";
     public static final String DEFAULT_VERSION = "";
     public static final String DEFAULT_VERSION_IOS = "";
-    @ProtoField(tag = 51, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_translationX, type = Message.Datatype.STRING)
     public final String andr_pk_name;
-    @ProtoField(tag = 42, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.STRING)
     public final String api_key;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String app_id;
@@ -57,13 +55,13 @@ public final class NewGameInfo extends Message {
     public final String bundle_id;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String canvas_name;
-    @ProtoField(tag = 47, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_contentDescription, type = Message.Datatype.INT32)
     public final Integer category_id;
-    @ProtoField(tag = 52, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_translationY, type = Message.Datatype.STRING)
     public final String category_name;
-    @ProtoField(tag = 54, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_transformPivotY, type = Message.Datatype.STRING)
     public final String category_name_sim;
-    @ProtoField(tag = w.n.PullToRefresh_headerTextColor, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 40, type = Message.Datatype.UINT32)
     public final Integer channel;
     @ProtoField(tag = 36, type = Message.Datatype.UINT64)
     public final Long deadline;
@@ -83,9 +81,9 @@ public final class NewGameInfo extends Message {
     public final String game_name;
     @ProtoField(label = Message.Label.REPEATED, tag = 13, type = Message.Datatype.STRING)
     public final List<String> game_pic;
-    @ProtoField(tag = w.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer game_platform;
-    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = 38, type = Message.Datatype.INT32)
     public final Integer game_type;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String gift_code;
@@ -95,17 +93,17 @@ public final class NewGameInfo extends Message {
     public final String icon_pic2;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic3;
-    @ProtoField(tag = 53, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_transformPivotX, type = Message.Datatype.STRING)
     public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
-    @ProtoField(tag = 43, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_minHeight, type = Message.Datatype.STRING)
     public final String inter_version;
-    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 45, type = Message.Datatype.STRING)
     public final String inter_version_ios;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String launchComponent;
-    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer mark;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String package_link;
@@ -135,9 +133,9 @@ public final class NewGameInfo extends Message {
     public final Integer server_type;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String sign;
-    @ProtoField(tag = 48, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_onClick, type = Message.Datatype.INT32)
     public final Integer status;
-    @ProtoField(tag = 46, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
     public final String subscript_color;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String test_userids;
@@ -149,9 +147,9 @@ public final class NewGameInfo extends Message {
     public final Long thread_theme_id;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer time;
-    @ProtoField(tag = w.n.PullToRefresh_mode, type = Message.Datatype.STRING)
+    @ProtoField(tag = 41, type = Message.Datatype.STRING)
     public final String version;
-    @ProtoField(tag = 44, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_minWidth, type = Message.Datatype.STRING)
     public final String version_ios;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_SERVER_OPEN_TIME = 0;

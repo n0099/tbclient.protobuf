@@ -1,8 +1,6 @@
 package tbclient;
 
 import com.baidu.location.BDLocation;
-import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -36,15 +34,15 @@ public final class User extends Message {
     public final Balv balv;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String bawu_type;
-    @ProtoField(tag = 58, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_scaleX, type = Message.Datatype.STRING)
     public final String bg_pic;
-    @ProtoField(tag = w.n.PullToRefresh_headerTextColor, type = Message.Datatype.INT32)
+    @ProtoField(tag = 40, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
-    @ProtoField(tag = 53, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_transformPivotX, type = Message.Datatype.INT32)
     public final Integer bookmark_count;
-    @ProtoField(tag = 54, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_transformPivotY, type = Message.Datatype.INT32)
     public final Integer bookmark_new_count;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer concern_num;
@@ -52,27 +50,27 @@ public final class User extends Message {
     public final ConsumeInfo consume_info;
     @ProtoField(tag = 74)
     public final Ecom ecom;
-    @ProtoField(tag = 57, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_rotationY, type = Message.Datatype.STRING)
     public final String fans_nickname;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
-    @ProtoField(tag = 56, type = Message.Datatype.INT64)
+    @ProtoField(tag = w.n.View_rotationX, type = Message.Datatype.INT64)
     public final Long friend_num;
-    @ProtoField(tag = 42, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.INT32)
     public final Integer gender;
     @ProtoField(label = Message.Label.REPEATED, tag = 50)
     public final List<GiftInfo> gift_list;
-    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer gift_num;
-    @ProtoField(tag = BDLocation.TypeCriteriaException)
+    @ProtoField(tag = 62)
     public final GodInfo god_data;
-    @ProtoField(label = Message.Label.REPEATED, tag = 48)
+    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_onClick)
     public final List<MyGroupInfo> groupList;
     @ProtoField(tag = 80, type = Message.Datatype.INT32)
     public final Integer has_bottle_enter;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer has_concerned;
-    @ProtoField(tag = BDLocation.TypeNetWorkException, type = Message.Datatype.INT32)
+    @ProtoField(tag = 63, type = Message.Datatype.INT32)
     public final Integer heavy_user;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Icon> iconinfo;
@@ -88,9 +86,9 @@ public final class User extends Message {
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_coreuser;
-    @ProtoField(tag = 46, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
     public final Integer is_friend;
-    @ProtoField(tag = 52, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_translationY, type = Message.Datatype.INT32)
     public final Integer is_guanfang;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer is_huinibuke;
@@ -102,21 +100,21 @@ public final class User extends Message {
     public final Integer is_login;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_manager;
-    @ProtoField(tag = 43, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_minHeight, type = Message.Datatype.INT32)
     public final Integer is_mask;
-    @ProtoField(tag = w.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_mem;
-    @ProtoField(tag = 51, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_translationX, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer level_id;
-    @ProtoField(label = Message.Label.REPEATED, tag = 47)
+    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_contentDescription)
     public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
-    @ProtoField(label = Message.Label.REPEATED, tag = 55)
+    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_rotation)
     public final List<SimpleUser> mute_user;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer my_like_num;
@@ -124,7 +122,7 @@ public final class User extends Message {
     public final String name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String name_show;
-    @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeCacheLocation)
+    @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<TshowInfo> new_tshow_icon;
     @ProtoField(tag = 8)
     public final NewUser new_user_info;
@@ -132,13 +130,13 @@ public final class User extends Message {
     public final Integer no_post_high;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer no_un;
-    @ProtoField(tag = 60)
+    @ProtoField(tag = w.n.View_verticalScrollbarPosition)
     public final NovelFansInfo novel_fans_info;
-    @ProtoField(tag = 59)
+    @ProtoField(tag = w.n.View_scaleY)
     public final NewParrScores parr_scores;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = w.n.PullToRefresh_mode)
+    @ProtoField(tag = 41)
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 77)
     public final Pendant pendant;
@@ -148,7 +146,7 @@ public final class User extends Message {
     public final String portraith;
     @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
+    @ProtoField(tag = 45)
     public final PrivSets priv_sets;
     @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeOffLineLocationFail)
     public final List<TwAnchorProfitItem> profit_list;
@@ -160,7 +158,7 @@ public final class User extends Message {
     public final Integer sex;
     @ProtoField(tag = 82)
     public final SpringVirtualUser spring_virtual_user;
-    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.STRING)
+    @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String tb_age;
     @ProtoField(tag = 72)
     public final TbVipInfo tb_vip;
@@ -170,11 +168,11 @@ public final class User extends Message {
     public final Integer total_visitor_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<TshowInfo> tshow_icon;
-    @ProtoField(tag = BDLocation.TypeOffLineLocation)
+    @ProtoField(tag = 66)
     public final TwZhiBoUser tw_anchor_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer type;
-    @ProtoField(label = Message.Label.REPEATED, tag = 44)
+    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_minWidth)
     public final List<UserPics> user_pics;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer user_type;
@@ -182,7 +180,7 @@ public final class User extends Message {
     public final Integer userhide;
     @ProtoField(tag = 81)
     public final UserVideoChannelInfo video_channel_info;
-    @ProtoField(tag = BDLocation.TypeGpsLocation)
+    @ProtoField(tag = 61)
     public final UserVipInfo vipInfo;
     @ProtoField(tag = 70)
     public final VipCloseAd vip_close_ad;

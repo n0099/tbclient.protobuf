@@ -1,6 +1,5 @@
 package tbclient.PbPage;
 
-import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -39,7 +38,7 @@ public final class DataRes extends Message {
     public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
-    @ProtoField(tag = w.n.PullToRefresh_headerBackground)
+    @ProtoField(tag = 39)
     public final SimpleForum display_forum;
     @ProtoField(tag = 33)
     public final FeedExtInfo feed_info;
@@ -47,7 +46,7 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> feed_thread_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<FineBannerPb> fine_banner;
-    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground)
+    @ProtoField(tag = 38)
     public final Post first_floor_post;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
@@ -71,13 +70,13 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 9)
     public final Lbs location;
-    @ProtoField(label = Message.Label.REPEATED, tag = w.n.PullToRefresh_headerTextColor)
+    @ProtoField(label = Message.Label.REPEATED, tag = 40)
     public final List<SimpleUser> new_agree_user;
     @ProtoField(tag = 15)
     public final NewsInfo news_info;
     @ProtoField(tag = 3)
     public final Page page;
-    @ProtoField(tag = w.n.PullToRefresh_mode, type = Message.Datatype.STRING)
+    @ProtoField(tag = 41, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
     public final List<PsRankListItem> play_rank_list;

@@ -4,12 +4,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class SimpleUser extends Message {
+    public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_SECUREEMAIL = "";
     public static final String DEFAULT_SECUREMOBIL = "";
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_USER_NICKNAME = "";
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer agree_type;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer incomplete_user;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String portrait;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String secureemail;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -25,6 +30,7 @@ public final class SimpleUser extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_USER_STATUS = 0;
     public static final Integer DEFAULT_INCOMPLETE_USER = 0;
+    public static final Integer DEFAULT_AGREE_TYPE = 0;
 
     /* synthetic */ SimpleUser(Builder builder, boolean z, SimpleUser simpleUser) {
         this(builder, z);
@@ -65,9 +71,19 @@ public final class SimpleUser extends Message {
             }
             if (builder.incomplete_user == null) {
                 this.incomplete_user = DEFAULT_INCOMPLETE_USER;
-                return;
             } else {
                 this.incomplete_user = builder.incomplete_user;
+            }
+            if (builder.portrait == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = builder.portrait;
+            }
+            if (builder.agree_type == null) {
+                this.agree_type = DEFAULT_AGREE_TYPE;
+                return;
+            } else {
+                this.agree_type = builder.agree_type;
                 return;
             }
         }
@@ -78,11 +94,15 @@ public final class SimpleUser extends Message {
         this.user_name = builder.user_name;
         this.user_nickname = builder.user_nickname;
         this.incomplete_user = builder.incomplete_user;
+        this.portrait = builder.portrait;
+        this.agree_type = builder.agree_type;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<SimpleUser> {
+        public Integer agree_type;
         public Integer incomplete_user;
+        public String portrait;
         public String secureemail;
         public String securemobil;
         public Long user_id;
@@ -103,6 +123,8 @@ public final class SimpleUser extends Message {
                 this.user_name = simpleUser.user_name;
                 this.user_nickname = simpleUser.user_nickname;
                 this.incomplete_user = simpleUser.incomplete_user;
+                this.portrait = simpleUser.portrait;
+                this.agree_type = simpleUser.agree_type;
             }
         }
 

@@ -4,12 +4,14 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.DealWindow;
 import tbclient.DynamicInfo;
 import tbclient.Feedback;
 import tbclient.ForumDynamic;
 import tbclient.Highlist;
+import tbclient.ModuleInfo;
 import tbclient.PostInfoList;
 import tbclient.TbBookrack;
 import tbclient.UcCard;
@@ -17,6 +19,8 @@ import tbclient.User;
 import tbclient.UserManChannelInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
+    @ProtoField(tag = 16)
+    public final AlaLiveInfo ala_live_info;
     @ProtoField(tag = 2)
     public final Anti anti_stat;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
@@ -27,6 +31,8 @@ public final class DataRes extends Message {
     public final Feedback feedback;
     @ProtoField(tag = 7)
     public final Highlist highs;
+    @ProtoField(tag = 15)
+    public final ModuleInfo module_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<PostInfoList> post_list;
     @ProtoField(tag = 3)
@@ -37,6 +43,8 @@ public final class DataRes extends Message {
     public final UcCard uc_card;
     @ProtoField(tag = 1)
     public final User user;
+    @ProtoField(tag = 14)
+    public final UserAgreeInfo user_agree_info;
     @ProtoField(tag = 5)
     public final UserGodInfo user_god_info;
     @ProtoField(tag = 11)
@@ -76,11 +84,13 @@ public final class DataRes extends Message {
             }
             if (builder.concerned_forum_list == null) {
                 this.concerned_forum_list = DEFAULT_CONCERNED_FORUM_LIST;
-                return;
             } else {
                 this.concerned_forum_list = immutableCopyOf(builder.concerned_forum_list);
-                return;
             }
+            this.user_agree_info = builder.user_agree_info;
+            this.module_info = builder.module_info;
+            this.ala_live_info = builder.ala_live_info;
+            return;
         }
         this.user = builder.user;
         this.anti_stat = builder.anti_stat;
@@ -95,20 +105,26 @@ public final class DataRes extends Message {
         this.video_channel_info = builder.video_channel_info;
         this.dynamic_list = immutableCopyOf(builder.dynamic_list);
         this.concerned_forum_list = immutableCopyOf(builder.concerned_forum_list);
+        this.user_agree_info = builder.user_agree_info;
+        this.module_info = builder.module_info;
+        this.ala_live_info = builder.ala_live_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public AlaLiveInfo ala_live_info;
         public Anti anti_stat;
         public List<ForumDynamic> concerned_forum_list;
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
         public Highlist highs;
+        public ModuleInfo module_info;
         public List<PostInfoList> post_list;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
         public User user;
+        public UserAgreeInfo user_agree_info;
         public UserGodInfo user_god_info;
         public UserManChannelInfo video_channel_info;
         public DealWindow window;
@@ -132,6 +148,9 @@ public final class DataRes extends Message {
                 this.video_channel_info = dataRes.video_channel_info;
                 this.dynamic_list = DataRes.copyOf(dataRes.dynamic_list);
                 this.concerned_forum_list = DataRes.copyOf(dataRes.concerned_forum_list);
+                this.user_agree_info = dataRes.user_agree_info;
+                this.module_info = dataRes.module_info;
+                this.ala_live_info = dataRes.ala_live_info;
             }
         }
 

@@ -1,8 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.location.BDLocation;
-import com.baidu.tbadk.TbConfig;
-import com.baidu.tieba.frs.tab.TabData;
 import com.baidu.tieba.w;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -11,6 +8,7 @@ import java.util.List;
 import tbclient.AnchorInfo;
 import tbclient.Anti;
 import tbclient.CategoryInfo;
+import tbclient.Esport;
 import tbclient.ForumPresentInfo;
 import tbclient.FrsTabInfo;
 import tbclient.Novel;
@@ -27,29 +25,32 @@ public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
     public static final String DEFAULT_FORTUNE_DESC = "";
+    public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
     @ProtoField(tag = 23)
     public final ActivityHead activityhead;
-    @ProtoField(tag = 57, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 65)
+    public final AgreeBanner agree_banner;
+    @ProtoField(tag = w.n.View_rotationY, type = Message.Datatype.UINT32)
     public final Integer ala_live_count;
     @ProtoField(tag = 5)
     public final Anti anti;
-    @ProtoField(tag = 56, type = Message.Datatype.STRING)
+    @ProtoField(tag = w.n.View_rotationX, type = Message.Datatype.STRING)
     public final String asp_shown_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = TbConfig.VIEW_IMAGE_QUALITY_LOW_VALUE)
+    @ProtoField(label = Message.Label.REPEATED, tag = 45)
     public final List<BannerThreadInfo> banner_thread_list;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String bawu_enter_url;
     @ProtoField(tag = 50)
     public final ForumBookInfo book_info;
-    @ProtoField(tag = 58)
+    @ProtoField(tag = w.n.View_scaleX)
     public final Bottle bottle;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<ThreadInfo> card_shipin_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = 55)
+    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_rotation)
     public final List<ThreadInfo> card_shipin_new;
-    @ProtoField(label = Message.Label.REPEATED, tag = 54, type = Message.Datatype.INT32)
+    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_transformPivotY, type = Message.Datatype.INT32)
     public final List<Integer> card_shipin_pos;
-    @ProtoField(tag = 43)
+    @ProtoField(tag = w.n.View_minHeight)
     public final CarrierEnter carrier_enter;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
@@ -59,23 +60,25 @@ public final class DataRes extends Message {
     public final List<ColorEgg> color_egg;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer ctime;
-    @ProtoField(tag = BDLocation.TypeGpsLocation)
+    @ProtoField(tag = 61)
     public final PopInfo enter_pop_info;
+    @ProtoField(tag = 63)
+    public final Esport esport;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer fortune_bag;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String fortune_desc;
     @ProtoField(tag = 2)
     public final ForumInfo forum;
-    @ProtoField(tag = 52)
+    @ProtoField(tag = w.n.View_translationY)
     public final ForumHeadlineImgInfo forum_headline_img_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<AnchorInfo> forum_livegroup_list;
-    @ProtoField(tag = 51)
+    @ProtoField(tag = w.n.View_translationX)
     public final ForumPresentInfo forum_present_info;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
-    @ProtoField(tag = w.n.PullToRefresh_adapterViewBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = 38, type = Message.Datatype.INT32)
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
@@ -89,7 +92,7 @@ public final class DataRes extends Message {
     public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 15)
     public final Info info;
-    @ProtoField(tag = TabData.TYPE_TAB_ALA_LIVE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer is_auto_play_forumheadvideo;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
@@ -97,29 +100,31 @@ public final class DataRes extends Message {
     public final Long logid;
     @ProtoField(tag = 37)
     public final NavTabInfo nav_tab_info;
-    @ProtoField(tag = 48, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_onClick, type = Message.Datatype.INT32)
     public final Integer need_log;
     @ProtoField(tag = 25)
     public final Novel novel;
-    @ProtoField(tag = 53)
+    @ProtoField(tag = w.n.View_transformPivotX)
     public final NtSpreadInfo ntspread;
     @ProtoField(tag = 4)
     public final Page page;
+    @ProtoField(tag = 62, type = Message.Datatype.STRING)
+    public final String partial_visible_toast;
     @ProtoField(tag = 29)
     public final PushThreadInfo push_thread_info;
-    @ProtoField(tag = 46)
+    @ProtoField(tag = w.n.View_hapticFeedbackEnabled)
     public final RecommendBook recommend_book;
-    @ProtoField(tag = w.n.PullToRefresh_headerTextColor)
+    @ProtoField(tag = 40)
     public final RecommendInfo school_recom_info;
-    @ProtoField(tag = w.n.PullToRefresh_mode, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 41, type = Message.Datatype.UINT32)
     public final Integer school_recom_pos;
     @ProtoField(tag = 31)
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
-    @ProtoField(tag = 47, type = Message.Datatype.INT32)
+    @ProtoField(tag = w.n.View_contentDescription, type = Message.Datatype.INT32)
     public final Integer smart_frs_type;
-    @ProtoField(tag = w.n.PullToRefresh_headerBackground, type = Message.Datatype.INT32)
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
@@ -127,6 +132,8 @@ public final class DataRes extends Message {
     public final ThreadInfo store_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 8, type = Message.Datatype.INT64)
     public final List<Long> thread_id_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 64)
+    public final List<ThreadIdListInfo> thread_id_list_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
     public final List<ThreadInfo> thread_list;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
@@ -139,7 +146,7 @@ public final class DataRes extends Message {
     public final User user;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<User> user_list;
-    @ProtoField(tag = 42)
+    @ProtoField(tag = w.n.View_duplicateParentState)
     public final VitalityInfo vitality_info;
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<Long> DEFAULT_THREAD_ID_LIST = Collections.emptyList();
@@ -168,6 +175,7 @@ public final class DataRes extends Message {
     public static final List<Integer> DEFAULT_CARD_SHIPIN_POS = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW = Collections.emptyList();
     public static final Integer DEFAULT_ALA_LIVE_COUNT = 0;
+    public static final List<ThreadIdListInfo> DEFAULT_THREAD_ID_LIST_INFO = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -353,6 +361,18 @@ public final class DataRes extends Message {
             }
             this.bottle = builder.bottle;
             this.enter_pop_info = builder.enter_pop_info;
+            if (builder.partial_visible_toast == null) {
+                this.partial_visible_toast = "";
+            } else {
+                this.partial_visible_toast = builder.partial_visible_toast;
+            }
+            this.esport = builder.esport;
+            if (builder.thread_id_list_info == null) {
+                this.thread_id_list_info = DEFAULT_THREAD_ID_LIST_INFO;
+            } else {
+                this.thread_id_list_info = immutableCopyOf(builder.thread_id_list_info);
+            }
+            this.agree_banner = builder.agree_banner;
             return;
         }
         this.user = builder.user;
@@ -412,11 +432,16 @@ public final class DataRes extends Message {
         this.ala_live_count = builder.ala_live_count;
         this.bottle = builder.bottle;
         this.enter_pop_info = builder.enter_pop_info;
+        this.partial_visible_toast = builder.partial_visible_toast;
+        this.esport = builder.esport;
+        this.thread_id_list_info = immutableCopyOf(builder.thread_id_list_info);
+        this.agree_banner = builder.agree_banner;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityHead activityhead;
+        public AgreeBanner agree_banner;
         public Integer ala_live_count;
         public Anti anti;
         public String asp_shown_info;
@@ -433,6 +458,7 @@ public final class DataRes extends Message {
         public List<ColorEgg> color_egg;
         public Integer ctime;
         public PopInfo enter_pop_info;
+        public Esport esport;
         public Integer fortune_bag;
         public String fortune_desc;
         public ForumInfo forum;
@@ -455,6 +481,7 @@ public final class DataRes extends Message {
         public Novel novel;
         public NtSpreadInfo ntspread;
         public Page page;
+        public String partial_visible_toast;
         public PushThreadInfo push_thread_info;
         public RecommendBook recommend_book;
         public RecommendInfo school_recom_info;
@@ -466,6 +493,7 @@ public final class DataRes extends Message {
         public List<StarEnter> star_enter;
         public ThreadInfo store_card;
         public List<Long> thread_id_list;
+        public List<ThreadIdListInfo> thread_id_list_info;
         public List<ThreadInfo> thread_list;
         public Integer time;
         public List<ZhiBoInfoTW> twzhibo_info;
@@ -537,6 +565,10 @@ public final class DataRes extends Message {
                 this.ala_live_count = dataRes.ala_live_count;
                 this.bottle = dataRes.bottle;
                 this.enter_pop_info = dataRes.enter_pop_info;
+                this.partial_visible_toast = dataRes.partial_visible_toast;
+                this.esport = dataRes.esport;
+                this.thread_id_list_info = DataRes.copyOf(dataRes.thread_id_list_info);
+                this.agree_banner = dataRes.agree_banner;
             }
         }
 

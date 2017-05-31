@@ -13,6 +13,8 @@ public final class StarEnter extends Message {
     public final String icon;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String obj_id;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer rank_num;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String text;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -28,6 +30,7 @@ public final class StarEnter extends Message {
     public static final Integer DEFAULT_WEIGHT = 0;
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_TIME = 0;
+    public static final Integer DEFAULT_RANK_NUM = 0;
 
     /* synthetic */ StarEnter(Builder builder, boolean z, StarEnter starEnter) {
         this(builder, z);
@@ -73,9 +76,14 @@ public final class StarEnter extends Message {
             }
             if (builder.text == null) {
                 this.text = "";
-                return;
             } else {
                 this.text = builder.text;
+            }
+            if (builder.rank_num == null) {
+                this.rank_num = DEFAULT_RANK_NUM;
+                return;
+            } else {
+                this.rank_num = builder.rank_num;
                 return;
             }
         }
@@ -87,12 +95,14 @@ public final class StarEnter extends Message {
         this.time = builder.time;
         this.obj_id = builder.obj_id;
         this.text = builder.text;
+        this.rank_num = builder.rank_num;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<StarEnter> {
         public String icon;
         public String obj_id;
+        public Integer rank_num;
         public String text;
         public Integer time;
         public String title;
@@ -114,6 +124,7 @@ public final class StarEnter extends Message {
                 this.time = starEnter.time;
                 this.obj_id = starEnter.obj_id;
                 this.text = starEnter.text;
+                this.rank_num = starEnter.rank_num;
             }
         }
 

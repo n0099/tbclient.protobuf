@@ -10,6 +10,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_THREAD_IDS = "";
+    @ProtoField(tag = 18)
+    public final AdParam ad_param;
     @ProtoField(tag = 17)
     public final AppPosInfo app_pos;
     @ProtoField(tag = 8)
@@ -140,6 +142,7 @@ public final class DataReq extends Message {
                 this.sort_type = builder.sort_type;
             }
             this.app_pos = builder.app_pos;
+            this.ad_param = builder.ad_param;
             return;
         }
         this.thread_ids = builder.thread_ids;
@@ -159,10 +162,12 @@ public final class DataReq extends Message {
         this.last_click_tid = builder.last_click_tid;
         this.sort_type = builder.sort_type;
         this.app_pos = builder.app_pos;
+        this.ad_param = builder.ad_param;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public AdParam ad_param;
         public AppPosInfo app_pos;
         public CommonReq common;
         public String da_idfa;
@@ -204,6 +209,7 @@ public final class DataReq extends Message {
                 this.last_click_tid = dataReq.last_click_tid;
                 this.sort_type = dataReq.sort_type;
                 this.app_pos = dataReq.app_pos;
+                this.ad_param = dataReq.ad_param;
             }
         }
 
