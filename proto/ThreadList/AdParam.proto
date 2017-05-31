@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message AdParam {
+    int32 load_count = 1;
+    int32 refresh_count = 2;
+}

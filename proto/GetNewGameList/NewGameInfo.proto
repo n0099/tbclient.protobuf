@@ -38,15 +38,11 @@ message NewGameInfo {
     int32 score = 35;
     uint64 deadline = 36;
     int32 play_count = 37;
-    string api_key = 42;
-    string inter_version = 43;
-    string version_ios = 44;
-    string subscript_color = 46;
-    int32 category_id = 47;
-    int32 status = 48;
+    int32 game_type = 38;
+    int32 game_platform = 39;
+    uint32 channel = 40;
+    string version = 41;
+    string inter_version_ios = 45;
+    int32 mark = 49;
     string package_link = 50;
-    string andr_pk_name = 51;
-    string category_name = 52;
-    string icon_url = 53;
-    string category_name_sim = 54;
 }

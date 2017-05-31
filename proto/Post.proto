@@ -9,6 +9,7 @@ import "PbContent.proto";
 import "PbPostZan.proto";
 import "PbPresent.proto";
 import "SignatureData.proto";
+import "SimpleForum.proto";
 import "SkinInfo.proto";
 import "SubPost.proto";
 import "TPointPost.proto";
@@ -56,4 +57,6 @@ message Post {
     DealInfo pb_deal_info = 35;
     string lego_card = 36;
     Agree agree = 37;
+    SimpleForum from_forum = 38;
+    int32 is_post_visible = 39;
 }

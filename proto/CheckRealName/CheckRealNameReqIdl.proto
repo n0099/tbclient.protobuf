@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "CheckRealName/DataReq.proto";
+
+message CheckRealNameReqIdl {
+    DataReq data = 1;
+}

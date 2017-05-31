@@ -3,4 +3,5 @@ syntax = "proto3";
 message Agree {
     int64 agree_num = 1;
     int32 has_agree = 2;
+    int32 agree_type = 3;
 }

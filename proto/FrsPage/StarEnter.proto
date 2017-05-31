@@ -9,4 +9,5 @@ message StarEnter {
     int32 time = 6;
     string obj_id = 7;
     string text = 8;
+    int32 rank_num = 9;
 }

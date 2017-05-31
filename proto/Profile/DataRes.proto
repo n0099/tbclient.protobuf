@@ -1,13 +1,16 @@
 syntax = "proto3";
 
+import "AlaLiveInfo.proto";
 import "Anti.proto";
 import "DealWindow.proto";
 import "DynamicInfo.proto";
 import "Feedback.proto";
 import "ForumDynamic.proto";
 import "Highlist.proto";
+import "ModuleInfo.proto";
 import "PostInfoList.proto";
 import "Profile/TAInfo.proto";
+import "Profile/UserAgreeInfo.proto";
 import "Profile/UserGodInfo.proto";
 import "TbBookrack.proto";
 import "UcCard.proto";
@@ -28,4 +31,7 @@ message DataRes {
     UserManChannelInfo video_channel_info = 11;
     repeated DynamicInfo dynamic_list = 12;
     repeated ForumDynamic concerned_forum_list = 13;
+    UserAgreeInfo user_agree_info = 14;
+    ModuleInfo module_info = 15;
+    AlaLiveInfo ala_live_info = 16;
 }
