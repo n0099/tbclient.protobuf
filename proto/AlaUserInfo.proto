@@ -19,4 +19,7 @@ message AlaUserInfo {
     uint32 is_official = 16;
     string verify_status = 17;
     uint32 level_id = 18;
+    string great_anchor_icon = 19;
+    string great_anchor_desc_grade = 20;
+    string great_anchor_desc_role = 21;
 }

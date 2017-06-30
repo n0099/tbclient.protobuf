@@ -1,9 +1,11 @@
 syntax = "proto3";
 
 import "ActivitySponsor.proto";
+import "AlaLiveInfo.proto";
 import "AlaUserInfo.proto";
 import "Balv.proto";
 import "Ecom.proto";
+import "EsportInfo.proto";
 import "GiftInfo.proto";
 import "GodInfo.proto";
 import "Icon.proto";
@@ -86,4 +88,10 @@ message User {
     int32 has_bottle_enter = 80;
     UserVideoChannelInfo video_channel_info = 81;
     SpringVirtualUser spring_virtual_user = 82;
+    int32 each_other_friend = 83;
+    EsportInfo esport_data = 84;
+    AlaLiveInfo ala_live_info = 85;
+    int32 nickname_update_time = 86;
+    int32 thread_num = 87;
+    int32 agree_num = 88;
 }

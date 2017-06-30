@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+import "CartoonChapterInfo.proto";
+import "CartoonUserInfo.proto";
+
 message DataRes {
     int64 cartoon_id = 1;
     string cartoon_name = 2;
@@ -14,4 +17,7 @@ message DataRes {
     int64 forum_id = 11;
     repeated int32 chapters = 12;
     string forum_name = 13;
+    repeated CartoonChapterInfo chapter_list = 14;
+    uint32 cartoon_vip = 15;
+    CartoonUserInfo user_info = 16;
 }

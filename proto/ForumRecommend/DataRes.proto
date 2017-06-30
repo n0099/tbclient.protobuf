@@ -22,4 +22,5 @@ message DataRes {
     int32 redirect = 12;
     repeated Banner new_banner_info = 13;
     repeated FrequentlyForumInfo frequently_forum_info = 14;
+    repeated RecommendForumInfo tag_recommend_forum = 15;
 }

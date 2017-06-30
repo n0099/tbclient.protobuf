@@ -9,6 +9,7 @@ import "ForumDynamic.proto";
 import "Highlist.proto";
 import "ModuleInfo.proto";
 import "PostInfoList.proto";
+import "Profile/NicknameInfo.proto";
 import "Profile/TAInfo.proto";
 import "Profile/UserAgreeInfo.proto";
 import "Profile/UserGodInfo.proto";
@@ -34,4 +35,5 @@ message DataRes {
     UserAgreeInfo user_agree_info = 14;
     ModuleInfo module_info = 15;
     AlaLiveInfo ala_live_info = 16;
+    NicknameInfo nickname_info = 17;
 }

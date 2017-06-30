@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "MultiConcern/DataReq.proto";
+
+message MultiConcernReqIdl {
+    DataReq data = 1;
+}

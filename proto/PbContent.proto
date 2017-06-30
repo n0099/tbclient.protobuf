@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "GraffitiInfo.proto";
+import "MemeInfo.proto";
 import "NativeApp.proto";
 import "TogetherHi.proto";
 
@@ -37,4 +38,5 @@ message PbContent {
     TogetherHi high_together = 30;
     string media_subtitle = 31;
     int32 url_type = 32;
+    MemeInfo meme_info = 33;
 }

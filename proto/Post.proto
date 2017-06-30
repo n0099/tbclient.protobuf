@@ -59,4 +59,5 @@ message Post {
     Agree agree = 37;
     SimpleForum from_forum = 38;
     int32 is_post_visible = 39;
+    int32 need_log = 40;
 }

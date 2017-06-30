@@ -48,4 +48,5 @@ message PostInfoList {
     repeated MultipleForum multiple_forum_list = 32;
     int32 freq_num = 33;
     uint64 v_forum_id = 34;
+    string name_show = 35;
 }

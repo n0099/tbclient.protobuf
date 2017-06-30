@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "Abstract.proto";
 import "ActInfo.proto";
+import "ActivityInfo.proto";
 import "AdInfo.proto";
 import "AlaLiveInfo.proto";
 import "AnimationThread.proto";
@@ -137,4 +138,6 @@ message ThreadInfo {
     Post top_agree_post = 125;
     int32 is_link_thread = 128;
     LinkThreadInfo link_info = 129;
+    int32 is_god = 131;
+    ActivityInfo activity_info = 132;
 }
