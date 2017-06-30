@@ -28,8 +28,12 @@ public final class User extends Message {
     public final String BDUSS;
     @ProtoField(tag = 71)
     public final ActivitySponsor activity_sponsor;
+    @ProtoField(tag = 88, type = Message.Datatype.INT32)
+    public final Integer agree_num;
     @ProtoField(tag = 78)
     public final AlaUserInfo ala_info;
+    @ProtoField(tag = 85)
+    public final AlaLiveInfo ala_live_info;
     @ProtoField(tag = 10)
     public final Balv balv;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
@@ -48,8 +52,12 @@ public final class User extends Message {
     public final Integer concern_num;
     @ProtoField(tag = BDLocation.TypeOffLineLocationNetworkFail)
     public final ConsumeInfo consume_info;
+    @ProtoField(tag = 83, type = Message.Datatype.INT32)
+    public final Integer each_other_friend;
     @ProtoField(tag = 74)
     public final Ecom ecom;
+    @ProtoField(tag = 84)
+    public final EsportInfo esport_data;
     @ProtoField(tag = w.n.View_rotationY, type = Message.Datatype.STRING)
     public final String fans_nickname;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
@@ -126,6 +134,8 @@ public final class User extends Message {
     public final List<TshowInfo> new_tshow_icon;
     @ProtoField(tag = 8)
     public final NewUser new_user_info;
+    @ProtoField(tag = 86, type = Message.Datatype.INT32)
+    public final Integer nickname_update_time;
     @ProtoField(tag = 73, type = Message.Datatype.UINT32)
     public final Integer no_post_high;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -164,6 +174,8 @@ public final class User extends Message {
     public final TbVipInfo tb_vip;
     @ProtoField(tag = 69)
     public final ThemeCardInUser theme_card;
+    @ProtoField(tag = 87, type = Message.Datatype.INT32)
+    public final Integer thread_num;
     @ProtoField(tag = 76, type = Message.Datatype.INT32)
     public final Integer total_visitor_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
@@ -234,6 +246,10 @@ public final class User extends Message {
     public static final Integer DEFAULT_VISITOR_NUM = 0;
     public static final Integer DEFAULT_TOTAL_VISITOR_NUM = 0;
     public static final Integer DEFAULT_HAS_BOTTLE_ENTER = 0;
+    public static final Integer DEFAULT_EACH_OTHER_FRIEND = 0;
+    public static final Integer DEFAULT_NICKNAME_UPDATE_TIME = 0;
+    public static final Integer DEFAULT_THREAD_NUM = 0;
+    public static final Integer DEFAULT_AGREE_NUM = 0;
 
     /* synthetic */ User(Builder builder, boolean z, User user) {
         this(builder, z);
@@ -572,7 +588,30 @@ public final class User extends Message {
             }
             this.video_channel_info = builder.video_channel_info;
             this.spring_virtual_user = builder.spring_virtual_user;
-            return;
+            if (builder.each_other_friend == null) {
+                this.each_other_friend = DEFAULT_EACH_OTHER_FRIEND;
+            } else {
+                this.each_other_friend = builder.each_other_friend;
+            }
+            this.esport_data = builder.esport_data;
+            this.ala_live_info = builder.ala_live_info;
+            if (builder.nickname_update_time == null) {
+                this.nickname_update_time = DEFAULT_NICKNAME_UPDATE_TIME;
+            } else {
+                this.nickname_update_time = builder.nickname_update_time;
+            }
+            if (builder.thread_num == null) {
+                this.thread_num = DEFAULT_THREAD_NUM;
+            } else {
+                this.thread_num = builder.thread_num;
+            }
+            if (builder.agree_num == null) {
+                this.agree_num = DEFAULT_AGREE_NUM;
+                return;
+            } else {
+                this.agree_num = builder.agree_num;
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -656,13 +695,21 @@ public final class User extends Message {
         this.has_bottle_enter = builder.has_bottle_enter;
         this.video_channel_info = builder.video_channel_info;
         this.spring_virtual_user = builder.spring_virtual_user;
+        this.each_other_friend = builder.each_other_friend;
+        this.esport_data = builder.esport_data;
+        this.ala_live_info = builder.ala_live_info;
+        this.nickname_update_time = builder.nickname_update_time;
+        this.thread_num = builder.thread_num;
+        this.agree_num = builder.agree_num;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;
+        public Integer agree_num;
         public AlaUserInfo ala_info;
+        public AlaLiveInfo ala_live_info;
         public Balv balv;
         public String bawu_type;
         public String bg_pic;
@@ -672,7 +719,9 @@ public final class User extends Message {
         public Integer bookmark_new_count;
         public Integer concern_num;
         public ConsumeInfo consume_info;
+        public Integer each_other_friend;
         public Ecom ecom;
+        public EsportInfo esport_data;
         public String fans_nickname;
         public Integer fans_num;
         public Long friend_num;
@@ -711,6 +760,7 @@ public final class User extends Message {
         public String name_show;
         public List<TshowInfo> new_tshow_icon;
         public NewUser new_user_info;
+        public Integer nickname_update_time;
         public Integer no_post_high;
         public Integer no_un;
         public NovelFansInfo novel_fans_info;
@@ -730,6 +780,7 @@ public final class User extends Message {
         public String tb_age;
         public TbVipInfo tb_vip;
         public ThemeCardInUser theme_card;
+        public Integer thread_num;
         public Integer total_visitor_num;
         public List<TshowInfo> tshow_icon;
         public TwZhiBoUser tw_anchor_info;
@@ -831,6 +882,12 @@ public final class User extends Message {
                 this.has_bottle_enter = user.has_bottle_enter;
                 this.video_channel_info = user.video_channel_info;
                 this.spring_virtual_user = user.spring_virtual_user;
+                this.each_other_friend = user.each_other_friend;
+                this.esport_data = user.esport_data;
+                this.ala_live_info = user.ala_live_info;
+                this.nickname_update_time = user.nickname_update_time;
+                this.thread_num = user.thread_num;
+                this.agree_num = user.agree_num;
             }
         }
 

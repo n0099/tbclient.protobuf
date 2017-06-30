@@ -7,6 +7,7 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_HLS_URL = "";
+    public static final String DEFAULT_LABEL_NAME = "";
     public static final String DEFAULT_MEDIA_ID = "";
     public static final String DEFAULT_MEDIA_PIC = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
@@ -25,6 +26,8 @@ public final class AlaLiveInfo extends Message {
     public final Long group_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String hls_url;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String label_name;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long live_id;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
@@ -132,9 +135,14 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.screen_direction == null) {
                 this.screen_direction = DEFAULT_SCREEN_DIRECTION;
-                return;
             } else {
                 this.screen_direction = builder.screen_direction;
+            }
+            if (builder.label_name == null) {
+                this.label_name = "";
+                return;
+            } else {
+                this.label_name = builder.label_name;
                 return;
             }
         }
@@ -154,6 +162,7 @@ public final class AlaLiveInfo extends Message {
         this.audience_count = builder.audience_count;
         this.live_type = builder.live_type;
         this.screen_direction = builder.screen_direction;
+        this.label_name = builder.label_name;
     }
 
     /* loaded from: classes.dex */
@@ -164,6 +173,7 @@ public final class AlaLiveInfo extends Message {
         public Integer duration;
         public Long group_id;
         public String hls_url;
+        public String label_name;
         public Long live_id;
         public Integer live_type;
         public String media_id;
@@ -197,6 +207,7 @@ public final class AlaLiveInfo extends Message {
                 this.audience_count = alaLiveInfo.audience_count;
                 this.live_type = alaLiveInfo.live_type;
                 this.screen_direction = alaLiveInfo.screen_direction;
+                this.label_name = alaLiveInfo.label_name;
             }
         }
 

@@ -33,6 +33,8 @@ public final class DataRes extends Message {
     public final Highlist highs;
     @ProtoField(tag = 15)
     public final ModuleInfo module_info;
+    @ProtoField(tag = 17)
+    public final NicknameInfo nickname_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<PostInfoList> post_list;
     @ProtoField(tag = 3)
@@ -90,6 +92,7 @@ public final class DataRes extends Message {
             this.user_agree_info = builder.user_agree_info;
             this.module_info = builder.module_info;
             this.ala_live_info = builder.ala_live_info;
+            this.nickname_info = builder.nickname_info;
             return;
         }
         this.user = builder.user;
@@ -108,6 +111,7 @@ public final class DataRes extends Message {
         this.user_agree_info = builder.user_agree_info;
         this.module_info = builder.module_info;
         this.ala_live_info = builder.ala_live_info;
+        this.nickname_info = builder.nickname_info;
     }
 
     /* loaded from: classes.dex */
@@ -119,6 +123,7 @@ public final class DataRes extends Message {
         public Feedback feedback;
         public Highlist highs;
         public ModuleInfo module_info;
+        public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
@@ -151,6 +156,7 @@ public final class DataRes extends Message {
                 this.user_agree_info = dataRes.user_agree_info;
                 this.module_info = dataRes.module_info;
                 this.ala_live_info = dataRes.ala_live_info;
+                this.nickname_info = dataRes.nickname_info;
             }
         }
 

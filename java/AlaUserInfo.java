@@ -5,6 +5,9 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class AlaUserInfo extends Message {
     public static final String DEFAULT_DESCRIPTION = "";
+    public static final String DEFAULT_GREAT_ANCHOR_DESC_GRADE = "";
+    public static final String DEFAULT_GREAT_ANCHOR_DESC_ROLE = "";
+    public static final String DEFAULT_GREAT_ANCHOR_ICON = "";
     public static final String DEFAULT_LOCATION = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_SEX = "";
@@ -20,6 +23,12 @@ public final class AlaUserInfo extends Message {
     public final String description;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long enter_live;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String great_anchor_desc_grade;
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
+    public final String great_anchor_desc_role;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String great_anchor_icon;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer is_official;
     @ProtoField(tag = 12, type = Message.Datatype.DOUBLE)
@@ -153,9 +162,24 @@ public final class AlaUserInfo extends Message {
             }
             if (builder.level_id == null) {
                 this.level_id = DEFAULT_LEVEL_ID;
-                return;
             } else {
                 this.level_id = builder.level_id;
+            }
+            if (builder.great_anchor_icon == null) {
+                this.great_anchor_icon = "";
+            } else {
+                this.great_anchor_icon = builder.great_anchor_icon;
+            }
+            if (builder.great_anchor_desc_grade == null) {
+                this.great_anchor_desc_grade = "";
+            } else {
+                this.great_anchor_desc_grade = builder.great_anchor_desc_grade;
+            }
+            if (builder.great_anchor_desc_role == null) {
+                this.great_anchor_desc_role = "";
+                return;
+            } else {
+                this.great_anchor_desc_role = builder.great_anchor_desc_role;
                 return;
             }
         }
@@ -177,6 +201,9 @@ public final class AlaUserInfo extends Message {
         this.is_official = builder.is_official;
         this.verify_status = builder.verify_status;
         this.level_id = builder.level_id;
+        this.great_anchor_icon = builder.great_anchor_icon;
+        this.great_anchor_desc_grade = builder.great_anchor_desc_grade;
+        this.great_anchor_desc_role = builder.great_anchor_desc_role;
     }
 
     /* loaded from: classes.dex */
@@ -186,6 +213,9 @@ public final class AlaUserInfo extends Message {
         public Long charm_count;
         public String description;
         public Long enter_live;
+        public String great_anchor_desc_grade;
+        public String great_anchor_desc_role;
+        public String great_anchor_icon;
         public Integer is_official;
         public Double lat;
         public Long level_exp;
@@ -224,6 +254,9 @@ public final class AlaUserInfo extends Message {
                 this.is_official = alaUserInfo.is_official;
                 this.verify_status = alaUserInfo.verify_status;
                 this.level_id = alaUserInfo.level_id;
+                this.great_anchor_icon = alaUserInfo.great_anchor_icon;
+                this.great_anchor_desc_grade = alaUserInfo.great_anchor_desc_grade;
+                this.great_anchor_desc_role = alaUserInfo.great_anchor_desc_role;
             }
         }
 

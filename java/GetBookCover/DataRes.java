@@ -4,6 +4,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.CartoonChapterInfo;
+import tbclient.CartoonUserInfo;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_AUTHOR = "";
@@ -21,6 +23,10 @@ public final class DataRes extends Message {
     public final Long cartoon_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String cartoon_name;
+    @ProtoField(tag = 15, type = Message.Datatype.UINT32)
+    public final Integer cartoon_vip;
+    @ProtoField(label = Message.Label.REPEATED, tag = 14)
+    public final List<CartoonChapterInfo> chapter_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 12, type = Message.Datatype.INT32)
     public final List<Integer> chapters;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -39,12 +45,16 @@ public final class DataRes extends Message {
     public final String label_text;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String update_info;
+    @ProtoField(tag = 16)
+    public final CartoonUserInfo user_info;
     public static final Long DEFAULT_CARTOON_ID = 0L;
     public static final Integer DEFAULT_IS_FOLLOW = 0;
     public static final Integer DEFAULT_IS_FINISH = 0;
     public static final Integer DEFAULT_CAN_DOWNLOAD = 0;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final List<Integer> DEFAULT_CHAPTERS = Collections.emptyList();
+    public static final List<CartoonChapterInfo> DEFAULT_CHAPTER_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_CARTOON_VIP = 0;
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -115,11 +125,21 @@ public final class DataRes extends Message {
             }
             if (builder.forum_name == null) {
                 this.forum_name = "";
-                return;
             } else {
                 this.forum_name = builder.forum_name;
-                return;
             }
+            if (builder.chapter_list == null) {
+                this.chapter_list = DEFAULT_CHAPTER_LIST;
+            } else {
+                this.chapter_list = immutableCopyOf(builder.chapter_list);
+            }
+            if (builder.cartoon_vip == null) {
+                this.cartoon_vip = DEFAULT_CARTOON_VIP;
+            } else {
+                this.cartoon_vip = builder.cartoon_vip;
+            }
+            this.user_info = builder.user_info;
+            return;
         }
         this.cartoon_id = builder.cartoon_id;
         this.cartoon_name = builder.cartoon_name;
@@ -134,6 +154,9 @@ public final class DataRes extends Message {
         this.forum_id = builder.forum_id;
         this.chapters = immutableCopyOf(builder.chapters);
         this.forum_name = builder.forum_name;
+        this.chapter_list = immutableCopyOf(builder.chapter_list);
+        this.cartoon_vip = builder.cartoon_vip;
+        this.user_info = builder.user_info;
     }
 
     /* loaded from: classes.dex */
@@ -142,6 +165,8 @@ public final class DataRes extends Message {
         public Integer can_download;
         public Long cartoon_id;
         public String cartoon_name;
+        public Integer cartoon_vip;
+        public List<CartoonChapterInfo> chapter_list;
         public List<Integer> chapters;
         public String cover_img;
         public Long forum_id;
@@ -151,6 +176,7 @@ public final class DataRes extends Message {
         public Integer is_follow;
         public String label_text;
         public String update_info;
+        public CartoonUserInfo user_info;
 
         public Builder() {
         }
@@ -171,6 +197,9 @@ public final class DataRes extends Message {
                 this.forum_id = dataRes.forum_id;
                 this.chapters = DataRes.copyOf(dataRes.chapters);
                 this.forum_name = dataRes.forum_name;
+                this.chapter_list = DataRes.copyOf(dataRes.chapter_list);
+                this.cartoon_vip = dataRes.cartoon_vip;
+                this.user_info = dataRes.user_info;
             }
         }
 

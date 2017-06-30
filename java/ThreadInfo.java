@@ -38,6 +38,8 @@ public final class ThreadInfo extends Message {
     public final String ab_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<ActInfo> act_info;
+    @ProtoField(tag = 132)
+    public final ActivityInfo activity_info;
     @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PLAY)
     public final Agree agree;
     @ProtoField(tag = 124, type = Message.Datatype.INT32)
@@ -124,6 +126,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_deal;
     @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.INT32)
     public final Integer is_global_top;
+    @ProtoField(tag = 131, type = Message.Datatype.INT32)
+    public final Integer is_god;
     @ProtoField(tag = 85, type = Message.Datatype.INT32)
     public final Integer is_godthread_recommend;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -356,6 +360,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_PARTIAL_VISIBLE = 0;
     public static final Integer DEFAULT_IS_LINK_THREAD = 0;
     public static final Long DEFAULT_FREQ_NUM = 0L;
+    public static final Integer DEFAULT_IS_GOD = 0;
 
     /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
         this(builder, z);
@@ -863,11 +868,16 @@ public final class ThreadInfo extends Message {
             this.link_info = builder.link_info;
             if (builder.freq_num == null) {
                 this.freq_num = DEFAULT_FREQ_NUM;
-                return;
             } else {
                 this.freq_num = builder.freq_num;
-                return;
             }
+            if (builder.is_god == null) {
+                this.is_god = DEFAULT_IS_GOD;
+            } else {
+                this.is_god = builder.is_god;
+            }
+            this.activity_info = builder.activity_info;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -995,6 +1005,8 @@ public final class ThreadInfo extends Message {
         this.is_link_thread = builder.is_link_thread;
         this.link_info = builder.link_info;
         this.freq_num = builder.freq_num;
+        this.is_god = builder.is_god;
+        this.activity_info = builder.activity_info;
     }
 
     /* loaded from: classes.dex */
@@ -1002,6 +1014,7 @@ public final class ThreadInfo extends Message {
         public List<Abstract> _abstract;
         public String ab_tag;
         public List<ActInfo> act_info;
+        public ActivityInfo activity_info;
         public Agree agree;
         public Integer agree_num;
         public AlaLiveInfo ala_info;
@@ -1045,6 +1058,7 @@ public final class ThreadInfo extends Message {
         public Integer is_copythread;
         public Integer is_deal;
         public Integer is_global_top;
+        public Integer is_god;
         public Integer is_godthread_recommend;
         public Integer is_good;
         public Integer is_link_thread;
@@ -1258,6 +1272,8 @@ public final class ThreadInfo extends Message {
                 this.is_link_thread = threadInfo.is_link_thread;
                 this.link_info = threadInfo.link_info;
                 this.freq_num = threadInfo.freq_num;
+                this.is_god = threadInfo.is_god;
+                this.activity_info = threadInfo.activity_info;
             }
         }
 

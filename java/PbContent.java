@@ -61,6 +61,8 @@ public final class PbContent extends Message {
     public final String link;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String media_subtitle;
+    @ProtoField(tag = 33)
+    public final MemeInfo meme_info;
     @ProtoField(tag = 23)
     public final NativeApp native_app;
     @ProtoField(tag = 27, type = Message.Datatype.UINT32)
@@ -250,11 +252,11 @@ public final class PbContent extends Message {
             }
             if (builder.url_type == null) {
                 this.url_type = DEFAULT_URL_TYPE;
-                return;
             } else {
                 this.url_type = builder.url_type;
-                return;
             }
+            this.meme_info = builder.meme_info;
+            return;
         }
         this.type = builder.type;
         this.text = builder.text;
@@ -288,6 +290,7 @@ public final class PbContent extends Message {
         this.high_together = builder.high_together;
         this.media_subtitle = builder.media_subtitle;
         this.url_type = builder.url_type;
+        this.meme_info = builder.meme_info;
     }
 
     /* loaded from: classes.dex */
@@ -312,6 +315,7 @@ public final class PbContent extends Message {
         public Integer is_sub;
         public String link;
         public String media_subtitle;
+        public MemeInfo meme_info;
         public NativeApp native_app;
         public Integer origin_size;
         public String origin_src;
@@ -363,6 +367,7 @@ public final class PbContent extends Message {
                 this.high_together = pbContent.high_together;
                 this.media_subtitle = pbContent.media_subtitle;
                 this.url_type = pbContent.url_type;
+                this.meme_info = pbContent.meme_info;
             }
         }
 

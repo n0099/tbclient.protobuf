@@ -58,6 +58,8 @@ public final class Post extends Message {
     public final Lbs lbs_info;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String lego_card;
+    @ProtoField(tag = 40, type = Message.Datatype.INT32)
+    public final Integer need_log;
     @ProtoField(tag = 35)
     public final DealInfo pb_deal_info;
     @ProtoField(tag = 30)
@@ -106,6 +108,7 @@ public final class Post extends Message {
     public static final Integer DEFAULT_IS_HOT_POST = 0;
     public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
     public static final Integer DEFAULT_IS_POST_VISIBLE = 0;
+    public static final Integer DEFAULT_NEED_LOG = 0;
 
     /* synthetic */ Post(Builder builder, boolean z, Post post) {
         this(builder, z);
@@ -238,9 +241,14 @@ public final class Post extends Message {
             this.from_forum = builder.from_forum;
             if (builder.is_post_visible == null) {
                 this.is_post_visible = DEFAULT_IS_POST_VISIBLE;
-                return;
             } else {
                 this.is_post_visible = builder.is_post_visible;
+            }
+            if (builder.need_log == null) {
+                this.need_log = DEFAULT_NEED_LOG;
+                return;
+            } else {
+                this.need_log = builder.need_log;
                 return;
             }
         }
@@ -283,6 +291,7 @@ public final class Post extends Message {
         this.agree = builder.agree;
         this.from_forum = builder.from_forum;
         this.is_post_visible = builder.is_post_visible;
+        this.need_log = builder.need_log;
     }
 
     /* loaded from: classes.dex */
@@ -310,6 +319,7 @@ public final class Post extends Message {
         public Integer is_vote;
         public Lbs lbs_info;
         public String lego_card;
+        public Integer need_log;
         public DealInfo pb_deal_info;
         public PbPostZan post_zan;
         public PbPresent present;
@@ -372,6 +382,7 @@ public final class Post extends Message {
                 this.agree = post.agree;
                 this.from_forum = post.from_forum;
                 this.is_post_visible = post.is_post_visible;
+                this.need_log = post.need_log;
             }
         }
 

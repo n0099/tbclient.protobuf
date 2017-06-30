@@ -35,6 +35,8 @@ public final class DataRes extends Message {
     public final List<RecommendForumInfo> recommend_forum_info;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer redirect;
+    @ProtoField(label = Message.Label.REPEATED, tag = 15)
+    public final List<RecommendForumInfo> tag_recommend_forum;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer time;
     public static final List<LikeForum> DEFAULT_LIKE_FORUM = Collections.emptyList();
@@ -49,6 +51,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_REDIRECT = 0;
     public static final List<Banner> DEFAULT_NEW_BANNER_INFO = Collections.emptyList();
     public static final List<FrequentlyForumInfo> DEFAULT_FREQUENTLY_FORUM_INFO = Collections.emptyList();
+    public static final List<RecommendForumInfo> DEFAULT_TAG_RECOMMEND_FORUM = Collections.emptyList();
 
     /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
         this(builder, z);
@@ -120,9 +123,14 @@ public final class DataRes extends Message {
             }
             if (builder.frequently_forum_info == null) {
                 this.frequently_forum_info = DEFAULT_FREQUENTLY_FORUM_INFO;
-                return;
             } else {
                 this.frequently_forum_info = immutableCopyOf(builder.frequently_forum_info);
+            }
+            if (builder.tag_recommend_forum == null) {
+                this.tag_recommend_forum = DEFAULT_TAG_RECOMMEND_FORUM;
+                return;
+            } else {
+                this.tag_recommend_forum = immutableCopyOf(builder.tag_recommend_forum);
                 return;
             }
         }
@@ -140,6 +148,7 @@ public final class DataRes extends Message {
         this.redirect = builder.redirect;
         this.new_banner_info = immutableCopyOf(builder.new_banner_info);
         this.frequently_forum_info = immutableCopyOf(builder.frequently_forum_info);
+        this.tag_recommend_forum = immutableCopyOf(builder.tag_recommend_forum);
     }
 
     /* loaded from: classes.dex */
@@ -157,6 +166,7 @@ public final class DataRes extends Message {
         public List<NewRecommend> new_recommend;
         public List<RecommendForumInfo> recommend_forum_info;
         public Integer redirect;
+        public List<RecommendForumInfo> tag_recommend_forum;
         public Integer time;
 
         public Builder() {
@@ -179,6 +189,7 @@ public final class DataRes extends Message {
                 this.redirect = dataRes.redirect;
                 this.new_banner_info = DataRes.copyOf(dataRes.new_banner_info);
                 this.frequently_forum_info = DataRes.copyOf(dataRes.frequently_forum_info);
+                this.tag_recommend_forum = DataRes.copyOf(dataRes.tag_recommend_forum);
             }
         }
 

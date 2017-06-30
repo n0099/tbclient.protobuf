@@ -10,6 +10,7 @@ public final class PostInfoList extends Message {
     public static final String DEFAULT_CONTENT_THREAD = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_IP = "";
+    public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_POST_TYPE = "";
     public static final String DEFAULT_PTYPE = "";
     public static final String DEFAULT_TITLE = "";
@@ -51,6 +52,8 @@ public final class PostInfoList extends Message {
     public final List<Media> media;
     @ProtoField(label = Message.Label.REPEATED, tag = 32)
     public final List<MultipleForum> multiple_forum_list;
+    @ProtoField(tag = 35, type = Message.Datatype.STRING)
+    public final String name_show;
     @ProtoField(tag = 28)
     public final PollInfo poll_info;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -248,9 +251,14 @@ public final class PostInfoList extends Message {
             }
             if (builder.v_forum_id == null) {
                 this.v_forum_id = DEFAULT_V_FORUM_ID;
-                return;
             } else {
                 this.v_forum_id = builder.v_forum_id;
+            }
+            if (builder.name_show == null) {
+                this.name_show = "";
+                return;
+            } else {
+                this.name_show = builder.name_show;
                 return;
             }
         }
@@ -288,6 +296,7 @@ public final class PostInfoList extends Message {
         this.multiple_forum_list = immutableCopyOf(builder.multiple_forum_list);
         this.freq_num = builder.freq_num;
         this.v_forum_id = builder.v_forum_id;
+        this.name_show = builder.name_show;
     }
 
     /* loaded from: classes.dex */
@@ -310,6 +319,7 @@ public final class PostInfoList extends Message {
         public LbsInfo lbs_info;
         public List<Media> media;
         public List<MultipleForum> multiple_forum_list;
+        public String name_show;
         public PollInfo poll_info;
         public Long post_id;
         public String post_type;
@@ -367,6 +377,7 @@ public final class PostInfoList extends Message {
                 this.multiple_forum_list = PostInfoList.copyOf(postInfoList.multiple_forum_list);
                 this.freq_num = postInfoList.freq_num;
                 this.v_forum_id = postInfoList.v_forum_id;
+                this.name_show = postInfoList.name_show;
             }
         }
 
