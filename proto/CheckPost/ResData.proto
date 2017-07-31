@@ -5,4 +5,5 @@ message ResData {
     uint64 forumId = 2;
     uint64 quoteId = 3;
     uint64 repostId = 4;
+    string fname = 5;
 }

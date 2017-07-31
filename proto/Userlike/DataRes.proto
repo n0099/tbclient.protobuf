@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "BannerUserStory.proto";
+import "Userlike/ConcernData.proto";
+import "Userlike/UserList.proto";
+
+message DataRes {
+    repeated ConcernData thread_info = 1;
+    string page_tag = 2;
+    repeated UserList user_list = 3;
+    int32 has_more = 4;
+    string user_tips = 5;
+    BannerUserStory banner_user_story = 6;
+    string last_tips = 7;
+}

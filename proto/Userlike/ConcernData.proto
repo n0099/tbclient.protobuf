@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+import "Userlike/PostData.proto";
+
+message ConcernData {
+    ThreadInfo thread_list = 1;
+    PostData post_data = 2;
+    int32 recom_type = 3;
+}

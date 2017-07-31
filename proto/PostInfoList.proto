@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "Abstract.proto";
+import "AlaLiveInfo.proto";
 import "AnchorInfo.proto";
 import "DealInfo.proto";
 import "LbsInfo.proto";
@@ -49,4 +50,7 @@ message PostInfoList {
     int32 freq_num = 33;
     uint64 v_forum_id = 34;
     string name_show = 35;
+    AlaLiveInfo ala_info = 36;
+    int32 agree_num = 37;
+    int32 view_num = 38;
 }

@@ -23,4 +23,5 @@ message ReplyList {
     uint32 thread_type = 17;
     uint64 v_forum_id = 18;
     uint32 hide_fname = 19;
+    int32 is_story = 20;
 }

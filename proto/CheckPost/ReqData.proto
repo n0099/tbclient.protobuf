@@ -7,4 +7,5 @@ message ReqData {
     uint32 postType = 2;
     string forumName = 3;
     CommonReq common = 4;
+    uint64 tid = 5;
 }

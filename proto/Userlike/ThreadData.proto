@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message ThreadData {
+    repeated ThreadInfo thread_list = 1;
+    string post_data = 2;
+    int32 post_type = 3;
+}

@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AlaShareInfo.proto";
 import "AlaUserInfo.proto";
 
 message AlaLiveInfo {
@@ -20,4 +21,6 @@ message AlaLiveInfo {
     uint32 live_type = 15;
     uint32 screen_direction = 16;
     string label_name = 17;
+    int32 live_status = 18;
+    AlaShareInfo share_info = 19;
 }

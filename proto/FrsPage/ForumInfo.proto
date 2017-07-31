@@ -65,4 +65,7 @@ message ForumInfo {
     PostTopic post_topic = 61;
     AcrossForumIcon across_forum_hide = 62;
     int32 is_live_game_forum = 63;
+    int32 is_live_game = 64;
+    int32 is_new_game_forum = 65;
+    string forum_game_label = 66;
 }

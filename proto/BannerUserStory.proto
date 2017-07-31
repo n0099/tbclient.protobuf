@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "UserStory.proto";
+
+message BannerUserStory {
+    repeated UserStory user_story = 1;
+    uint32 _switch = 2;
+}

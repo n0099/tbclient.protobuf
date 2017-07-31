@@ -1,7 +1,9 @@
 syntax = "proto3";
 
+import "AlaLiveNotify.proto";
 import "AnchorInfo.proto";
 import "Anti.proto";
+import "BannerUserStory.proto";
 import "CategoryInfo.proto";
 import "Esport.proto";
 import "ForumPresentInfo.proto";
@@ -22,6 +24,7 @@ import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
 import "FrsPage/ThreadIdListInfo.proto";
 import "FrsTabInfo.proto";
+import "NaGuide.proto";
 import "Novel.proto";
 import "Page.proto";
 import "PopInfo.proto";
@@ -74,11 +77,12 @@ message DataRes {
     RecommendInfo school_recom_info = 40;
     uint32 school_recom_pos = 41;
     repeated BannerThreadInfo banner_thread_list = 45;
-    int32 is_auto_play_forumheadvideo = 49;
     ForumBookInfo book_info = 50;
     PopInfo enter_pop_info = 61;
     string partial_visible_toast = 62;
     Esport esport = 63;
     repeated ThreadIdListInfo thread_id_list_info = 64;
     AgreeBanner agree_banner = 65;
+    AlaLiveNotify live_frs_notify = 69;
+    BannerUserStory banner_user_story = 70;
 }
