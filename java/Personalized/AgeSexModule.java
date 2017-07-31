@@ -13,10 +13,6 @@ public final class AgeSexModule extends Message {
     public static final List<TagStruct> DEFAULT_SEX_TAG = Collections.emptyList();
     public static final List<TagStruct> DEFAULT_AGE_TAG = Collections.emptyList();
 
-    /* synthetic */ AgeSexModule(Builder builder, boolean z, AgeSexModule ageSexModule) {
-        this(builder, z);
-    }
-
     private AgeSexModule(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class AgeSexModule extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AgeSexModule build(boolean z) {
-            return new AgeSexModule(this, z, null);
+            return new AgeSexModule(this, z);
         }
     }
 }

@@ -8,10 +8,6 @@ public final class CPayType extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pay_type;
 
-    /* synthetic */ CPayType(Builder builder, boolean z, CPayType cPayType) {
-        this(builder, z);
-    }
-
     private CPayType(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class CPayType extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CPayType build(boolean z) {
-            return new CPayType(this, z, null);
+            return new CPayType(this, z);
         }
     }
 }

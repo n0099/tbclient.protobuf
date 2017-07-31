@@ -13,10 +13,6 @@ public final class ForcusRecommand extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ForcusUsers> users;
 
-    /* synthetic */ ForcusRecommand(Builder builder, boolean z, ForcusRecommand forcusRecommand) {
-        this(builder, z);
-    }
-
     private ForcusRecommand(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class ForcusRecommand extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForcusRecommand build(boolean z) {
-            return new ForcusRecommand(this, z, null);
+            return new ForcusRecommand(this, z);
         }
     }
 }

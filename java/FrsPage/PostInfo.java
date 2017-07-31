@@ -11,10 +11,6 @@ public final class PostInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String large_post_pic;
 
-    /* synthetic */ PostInfo(Builder builder, boolean z, PostInfo postInfo) {
-        this(builder, z);
-    }
-
     private PostInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class PostInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostInfo build(boolean z) {
-            return new PostInfo(this, z, null);
+            return new PostInfo(this, z);
         }
     }
 }

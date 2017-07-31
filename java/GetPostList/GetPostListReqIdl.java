@@ -7,10 +7,6 @@ public final class GetPostListReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetPostListReqIdl(Builder builder, boolean z, GetPostListReqIdl getPostListReqIdl) {
-        this(builder, z);
-    }
-
     private GetPostListReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetPostListReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetPostListReqIdl build(boolean z) {
-            return new GetPostListReqIdl(this, z, null);
+            return new GetPostListReqIdl(this, z);
         }
     }
 }

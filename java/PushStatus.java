@@ -13,10 +13,6 @@ public final class PushStatus extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<PushType> types;
 
-    /* synthetic */ PushStatus(Builder builder, boolean z, PushStatus pushStatus) {
-        this(builder, z);
-    }
-
     private PushStatus(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class PushStatus extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PushStatus build(boolean z) {
-            return new PushStatus(this, z, null);
+            return new PushStatus(this, z);
         }
     }
 }

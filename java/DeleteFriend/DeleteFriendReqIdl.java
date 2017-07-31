@@ -7,10 +7,6 @@ public final class DeleteFriendReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;
 
-    /* synthetic */ DeleteFriendReqIdl(Builder builder, boolean z, DeleteFriendReqIdl deleteFriendReqIdl) {
-        this(builder, z);
-    }
-
     private DeleteFriendReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class DeleteFriendReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DeleteFriendReqIdl build(boolean z) {
-            return new DeleteFriendReqIdl(this, z, null);
+            return new DeleteFriendReqIdl(this, z);
         }
     }
 }

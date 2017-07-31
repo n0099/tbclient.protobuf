@@ -7,10 +7,6 @@ public final class AcrossawardReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ AcrossawardReqIdl(Builder builder, boolean z, AcrossawardReqIdl acrossawardReqIdl) {
-        this(builder, z);
-    }
-
     private AcrossawardReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class AcrossawardReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AcrossawardReqIdl build(boolean z) {
-            return new AcrossawardReqIdl(this, z, null);
+            return new AcrossawardReqIdl(this, z);
         }
     }
 }

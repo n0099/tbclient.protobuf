@@ -14,10 +14,6 @@ public final class ConsumeInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* synthetic */ ConsumeInfo(Builder builder, boolean z, ConsumeInfo consumeInfo) {
-        this(builder, z);
-    }
-
     private ConsumeInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class ConsumeInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ConsumeInfo build(boolean z) {
-            return new ConsumeInfo(this, z, null);
+            return new ConsumeInfo(this, z);
         }
     }
 }

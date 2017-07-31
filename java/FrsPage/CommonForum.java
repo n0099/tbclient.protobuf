@@ -8,10 +8,6 @@ public final class CommonForum extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String common_forum;
 
-    /* synthetic */ CommonForum(Builder builder, boolean z, CommonForum commonForum) {
-        this(builder, z);
-    }
-
     private CommonForum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class CommonForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CommonForum build(boolean z) {
-            return new CommonForum(this, z, null);
+            return new CommonForum(this, z);
         }
     }
 }

@@ -19,10 +19,6 @@ public final class EsportRank extends Message {
     @ProtoField(tag = 3)
     public final EsportUser user;
 
-    /* synthetic */ EsportRank(Builder builder, boolean z, EsportRank esportRank) {
-        this(builder, z);
-    }
-
     private EsportRank(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -82,7 +78,7 @@ public final class EsportRank extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public EsportRank build(boolean z) {
-            return new EsportRank(this, z, null);
+            return new EsportRank(this, z);
         }
     }
 }

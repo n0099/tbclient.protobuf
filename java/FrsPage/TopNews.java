@@ -11,10 +11,6 @@ public final class TopNews extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String summary;
 
-    /* synthetic */ TopNews(Builder builder, boolean z, TopNews topNews) {
-        this(builder, z);
-    }
-
     private TopNews(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class TopNews extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TopNews build(boolean z) {
-            return new TopNews(this, z, null);
+            return new TopNews(this, z);
         }
     }
 }

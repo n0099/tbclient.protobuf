@@ -13,10 +13,6 @@ public final class deleteList extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String key;
 
-    /* synthetic */ deleteList(Builder builder, boolean z, deleteList deletelist) {
-        this(builder, z);
-    }
-
     private deleteList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class deleteList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public deleteList build(boolean z) {
-            return new deleteList(this, z, null);
+            return new deleteList(this, z);
         }
     }
 }

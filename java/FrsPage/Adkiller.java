@@ -22,10 +22,6 @@ public final class Adkiller extends Message {
     public static final Integer DEFAULT_AD_LEFT_NUM = 0;
     public static final List<AdkillerAd> DEFAULT_AD_LIST = Collections.emptyList();
 
-    /* synthetic */ Adkiller(Builder builder, boolean z, Adkiller adkiller) {
-        this(builder, z);
-    }
-
     private Adkiller(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -89,7 +85,7 @@ public final class Adkiller extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Adkiller build(boolean z) {
-            return new Adkiller(this, z, null);
+            return new Adkiller(this, z);
         }
     }
 }

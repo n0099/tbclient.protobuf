@@ -44,10 +44,6 @@ public final class StarInfo extends Message {
     public static final Integer DEFAULT_GENDER = 0;
     public static final List<Focus> DEFAULT_FOCUS = Collections.emptyList();
 
-    /* synthetic */ StarInfo(Builder builder, boolean z, StarInfo starInfo) {
-        this(builder, z);
-    }
-
     private StarInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -154,7 +150,7 @@ public final class StarInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public StarInfo build(boolean z) {
-            return new StarInfo(this, z, null);
+            return new StarInfo(this, z);
         }
     }
 }

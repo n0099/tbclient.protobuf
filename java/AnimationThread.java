@@ -11,10 +11,6 @@ public final class AnimationThread extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String video_pic;
 
-    /* synthetic */ AnimationThread(Builder builder, boolean z, AnimationThread animationThread) {
-        this(builder, z);
-    }
-
     private AnimationThread(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class AnimationThread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AnimationThread build(boolean z) {
-            return new AnimationThread(this, z, null);
+            return new AnimationThread(this, z);
         }
     }
 }

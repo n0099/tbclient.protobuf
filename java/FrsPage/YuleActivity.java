@@ -20,10 +20,6 @@ public final class YuleActivity extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String activity_url;
 
-    /* synthetic */ YuleActivity(Builder builder, boolean z, YuleActivity yuleActivity) {
-        this(builder, z);
-    }
-
     private YuleActivity(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class YuleActivity extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public YuleActivity build(boolean z) {
-            return new YuleActivity(this, z, null);
+            return new YuleActivity(this, z);
         }
     }
 }

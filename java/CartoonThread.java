@@ -11,10 +11,6 @@ public final class CartoonThread extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer chapter_id;
 
-    /* synthetic */ CartoonThread(Builder builder, boolean z, CartoonThread cartoonThread) {
-        this(builder, z);
-    }
-
     private CartoonThread(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class CartoonThread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CartoonThread build(boolean z) {
-            return new CartoonThread(this, z, null);
+            return new CartoonThread(this, z);
         }
     }
 }

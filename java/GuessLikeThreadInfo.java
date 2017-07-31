@@ -26,10 +26,6 @@ public final class GuessLikeThreadInfo extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Long DEFAULT_REPLY_NUM = 0L;
 
-    /* synthetic */ GuessLikeThreadInfo(Builder builder, boolean z, GuessLikeThreadInfo guessLikeThreadInfo) {
-        this(builder, z);
-    }
-
     private GuessLikeThreadInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class GuessLikeThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GuessLikeThreadInfo build(boolean z) {
-            return new GuessLikeThreadInfo(this, z, null);
+            return new GuessLikeThreadInfo(this, z);
         }
     }
 }

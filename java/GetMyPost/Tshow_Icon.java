@@ -14,10 +14,6 @@ public final class Tshow_Icon extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ Tshow_Icon(Builder builder, boolean z, Tshow_Icon tshow_Icon) {
-        this(builder, z);
-    }
-
     private Tshow_Icon(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Tshow_Icon extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Tshow_Icon build(boolean z) {
-            return new Tshow_Icon(this, z, null);
+            return new Tshow_Icon(this, z);
         }
     }
 }

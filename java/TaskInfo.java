@@ -35,10 +35,6 @@ public final class TaskInfo extends Message {
     public static final Long DEFAULT_END_TIME = 0L;
     public static final Long DEFAULT_FORUM_ID = 0L;
 
-    /* synthetic */ TaskInfo(Builder builder, boolean z, TaskInfo taskInfo) {
-        this(builder, z);
-    }
-
     private TaskInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -142,7 +138,7 @@ public final class TaskInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TaskInfo build(boolean z) {
-            return new TaskInfo(this, z, null);
+            return new TaskInfo(this, z);
         }
     }
 }

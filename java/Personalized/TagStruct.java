@@ -11,10 +11,6 @@ public final class TagStruct extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tag_name;
 
-    /* synthetic */ TagStruct(Builder builder, boolean z, TagStruct tagStruct) {
-        this(builder, z);
-    }
-
     private TagStruct(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class TagStruct extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TagStruct build(boolean z) {
-            return new TagStruct(this, z, null);
+            return new TagStruct(this, z);
         }
     }
 }

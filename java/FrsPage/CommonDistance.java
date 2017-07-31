@@ -14,10 +14,6 @@ public final class CommonDistance extends Message {
     public static final Integer DEFAULT_TIME = 0;
     public static final Integer DEFAULT_IS_HIDE = 0;
 
-    /* synthetic */ CommonDistance(Builder builder, boolean z, CommonDistance commonDistance) {
-        this(builder, z);
-    }
-
     private CommonDistance(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class CommonDistance extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CommonDistance build(boolean z) {
-            return new CommonDistance(this, z, null);
+            return new CommonDistance(this, z);
         }
     }
 }

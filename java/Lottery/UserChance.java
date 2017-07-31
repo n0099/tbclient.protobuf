@@ -16,10 +16,6 @@ public final class UserChance extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ActRegular> regular;
 
-    /* synthetic */ UserChance(Builder builder, boolean z, UserChance userChance) {
-        this(builder, z);
-    }
-
     private UserChance(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class UserChance extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserChance build(boolean z) {
-            return new UserChance(this, z, null);
+            return new UserChance(this, z);
         }
     }
 }

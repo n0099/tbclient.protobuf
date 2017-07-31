@@ -17,10 +17,6 @@ public final class CartoonBookInfo extends Message {
     public static final Long DEFAULT_CARTOON_ID = 0L;
     public static final Integer DEFAULT_CARTOON_VIP = 0;
 
-    /* synthetic */ CartoonBookInfo(Builder builder, boolean z, CartoonBookInfo cartoonBookInfo) {
-        this(builder, z);
-    }
-
     private CartoonBookInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class CartoonBookInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CartoonBookInfo build(boolean z) {
-            return new CartoonBookInfo(this, z, null);
+            return new CartoonBookInfo(this, z);
         }
     }
 }

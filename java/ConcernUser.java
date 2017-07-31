@@ -14,10 +14,6 @@ public final class ConcernUser extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* synthetic */ ConcernUser(Builder builder, boolean z, ConcernUser concernUser) {
-        this(builder, z);
-    }
-
     private ConcernUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class ConcernUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ConcernUser build(boolean z) {
-            return new ConcernUser(this, z, null);
+            return new ConcernUser(this, z);
         }
     }
 }

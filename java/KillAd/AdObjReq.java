@@ -17,10 +17,6 @@ public final class AdObjReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_PAGE_NUM = 0;
 
-    /* synthetic */ AdObjReq(Builder builder, boolean z, AdObjReq adObjReq) {
-        this(builder, z);
-    }
-
     private AdObjReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class AdObjReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AdObjReq build(boolean z) {
-            return new AdObjReq(this, z, null);
+            return new AdObjReq(this, z);
         }
     }
 }

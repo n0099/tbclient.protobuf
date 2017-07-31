@@ -82,10 +82,6 @@ public final class RecommendGame extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final Long DEFAULT_DEADLINE = 0L;
 
-    /* synthetic */ RecommendGame(Builder builder, boolean z, RecommendGame recommendGame) {
-        this(builder, z);
-    }
-
     private RecommendGame(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -309,7 +305,7 @@ public final class RecommendGame extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecommendGame build(boolean z) {
-            return new RecommendGame(this, z, null);
+            return new RecommendGame(this, z);
         }
     }
 }

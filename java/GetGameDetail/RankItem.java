@@ -17,10 +17,6 @@ public final class RankItem extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_GRADE = 0L;
 
-    /* synthetic */ RankItem(Builder builder, boolean z, RankItem rankItem) {
-        this(builder, z);
-    }
-
     private RankItem(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class RankItem extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RankItem build(boolean z) {
-            return new RankItem(this, z, null);
+            return new RankItem(this, z);
         }
     }
 }

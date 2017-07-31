@@ -10,10 +10,6 @@ public final class AcrossawardResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ AcrossawardResIdl(Builder builder, boolean z, AcrossawardResIdl acrossawardResIdl) {
-        this(builder, z);
-    }
-
     private AcrossawardResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class AcrossawardResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AcrossawardResIdl build(boolean z) {
-            return new AcrossawardResIdl(this, z, null);
+            return new AcrossawardResIdl(this, z);
         }
     }
 }

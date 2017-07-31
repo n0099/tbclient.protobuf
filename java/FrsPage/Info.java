@@ -11,10 +11,6 @@ public final class Info extends Message {
     public static final Integer DEFAULT_USER_NUM = 0;
     public static final Integer DEFAULT_POST_NUM = 0;
 
-    /* synthetic */ Info(Builder builder, boolean z, Info info) {
-        this(builder, z);
-    }
-
     private Info(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Info extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Info build(boolean z) {
-            return new Info(this, z, null);
+            return new Info(this, z);
         }
     }
 }

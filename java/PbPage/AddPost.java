@@ -26,10 +26,6 @@ public final class AddPost extends Message {
     public static final Integer DEFAULT_TOTAL_COUNT = 0;
     public static final Integer DEFAULT_LAST_ADDITION_TIME = 0;
 
-    /* synthetic */ AddPost(Builder builder, boolean z, AddPost addPost) {
-        this(builder, z);
-    }
-
     private AddPost(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class AddPost extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AddPost build(boolean z) {
-            return new AddPost(this, z, null);
+            return new AddPost(this, z);
         }
     }
 }

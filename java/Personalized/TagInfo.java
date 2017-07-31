@@ -23,10 +23,6 @@ public final class TagInfo extends Message {
     public static final Integer DEFAULT_TAG_TYPE = 0;
     public static final Long DEFAULT_LEGO_PAGE_ID = 0L;
 
-    /* synthetic */ TagInfo(Builder builder, boolean z, TagInfo tagInfo) {
-        this(builder, z);
-    }
-
     private TagInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class TagInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TagInfo build(boolean z) {
-            return new TagInfo(this, z, null);
+            return new TagInfo(this, z);
         }
     }
 }

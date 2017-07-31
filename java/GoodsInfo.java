@@ -92,10 +92,6 @@ public final class GoodsInfo extends Message {
     public static final Integer DEFAULT_HEIGHT = 0;
     public static final Integer DEFAULT_LABEL_MEASURE = 0;
 
-    /* synthetic */ GoodsInfo(Builder builder, boolean z, GoodsInfo goodsInfo) {
-        this(builder, z);
-    }
-
     private GoodsInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -342,7 +338,7 @@ public final class GoodsInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GoodsInfo build(boolean z) {
-            return new GoodsInfo(this, z, null);
+            return new GoodsInfo(this, z);
         }
     }
 }

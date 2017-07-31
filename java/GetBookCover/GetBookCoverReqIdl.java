@@ -7,10 +7,6 @@ public final class GetBookCoverReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetBookCoverReqIdl(Builder builder, boolean z, GetBookCoverReqIdl getBookCoverReqIdl) {
-        this(builder, z);
-    }
-
     private GetBookCoverReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetBookCoverReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetBookCoverReqIdl build(boolean z) {
-            return new GetBookCoverReqIdl(this, z, null);
+            return new GetBookCoverReqIdl(this, z);
         }
     }
 }

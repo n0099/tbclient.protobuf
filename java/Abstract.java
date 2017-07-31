@@ -26,10 +26,6 @@ public final class Abstract extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String voice_md5;
 
-    /* synthetic */ Abstract(Builder builder, boolean z, Abstract r3) {
-        this(builder, z);
-    }
-
     private Abstract(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class Abstract extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Abstract build(boolean z) {
-            return new Abstract(this, z, null);
+            return new Abstract(this, z);
         }
     }
 }

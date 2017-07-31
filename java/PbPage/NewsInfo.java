@@ -26,10 +26,6 @@ public final class NewsInfo extends Message {
     public static final Integer DEFAULT_POSITION = 0;
     public static final Integer DEFAULT_NEWS_TYPE = 0;
 
-    /* synthetic */ NewsInfo(Builder builder, boolean z, NewsInfo newsInfo) {
-        this(builder, z);
-    }
-
     private NewsInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class NewsInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NewsInfo build(boolean z) {
-            return new NewsInfo(this, z, null);
+            return new NewsInfo(this, z);
         }
     }
 }

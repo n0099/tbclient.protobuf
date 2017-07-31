@@ -7,10 +7,6 @@ public final class GetUserInfoReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetUserInfoReqIdl(Builder builder, boolean z, GetUserInfoReqIdl getUserInfoReqIdl) {
-        this(builder, z);
-    }
-
     private GetUserInfoReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetUserInfoReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetUserInfoReqIdl build(boolean z) {
-            return new GetUserInfoReqIdl(this, z, null);
+            return new GetUserInfoReqIdl(this, z);
         }
     }
 }

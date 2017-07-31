@@ -14,10 +14,6 @@ public final class DealAuthInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String item_url;
 
-    /* synthetic */ DealAuthInfo(Builder builder, boolean z, DealAuthInfo dealAuthInfo) {
-        this(builder, z);
-    }
-
     private DealAuthInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class DealAuthInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DealAuthInfo build(boolean z) {
-            return new DealAuthInfo(this, z, null);
+            return new DealAuthInfo(this, z);
         }
     }
 }

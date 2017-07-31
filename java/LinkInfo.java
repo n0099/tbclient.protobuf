@@ -14,10 +14,6 @@ public final class LinkInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String type;
 
-    /* synthetic */ LinkInfo(Builder builder, boolean z, LinkInfo linkInfo) {
-        this(builder, z);
-    }
-
     private LinkInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class LinkInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LinkInfo build(boolean z) {
-            return new LinkInfo(this, z, null);
+            return new LinkInfo(this, z);
         }
     }
 }

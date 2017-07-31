@@ -11,10 +11,6 @@ public final class ScoreInfo extends Message {
     public static final Integer DEFAULT_SCORE = 0;
     public static final Integer DEFAULT_ENDTIME = 0;
 
-    /* synthetic */ ScoreInfo(Builder builder, boolean z, ScoreInfo scoreInfo) {
-        this(builder, z);
-    }
-
     private ScoreInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class ScoreInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ScoreInfo build(boolean z) {
-            return new ScoreInfo(this, z, null);
+            return new ScoreInfo(this, z);
         }
     }
 }

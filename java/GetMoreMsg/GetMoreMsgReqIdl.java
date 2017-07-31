@@ -7,10 +7,6 @@ public final class GetMoreMsgReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetMoreMsgReqIdl(Builder builder, boolean z, GetMoreMsgReqIdl getMoreMsgReqIdl) {
-        this(builder, z);
-    }
-
     private GetMoreMsgReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetMoreMsgReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetMoreMsgReqIdl build(boolean z) {
-            return new GetMoreMsgReqIdl(this, z, null);
+            return new GetMoreMsgReqIdl(this, z);
         }
     }
 }

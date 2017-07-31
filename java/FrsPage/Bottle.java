@@ -11,10 +11,6 @@ public final class Bottle extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
 
-    /* synthetic */ Bottle(Builder builder, boolean z, Bottle bottle) {
-        this(builder, z);
-    }
-
     private Bottle(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Bottle extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Bottle build(boolean z) {
-            return new Bottle(this, z, null);
+            return new Bottle(this, z);
         }
     }
 }

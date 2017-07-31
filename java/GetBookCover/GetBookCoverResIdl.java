@@ -10,10 +10,6 @@ public final class GetBookCoverResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetBookCoverResIdl(Builder builder, boolean z, GetBookCoverResIdl getBookCoverResIdl) {
-        this(builder, z);
-    }
-
     private GetBookCoverResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetBookCoverResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetBookCoverResIdl build(boolean z) {
-            return new GetBookCoverResIdl(this, z, null);
+            return new GetBookCoverResIdl(this, z);
         }
     }
 }

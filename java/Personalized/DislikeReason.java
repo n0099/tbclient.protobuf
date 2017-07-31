@@ -11,10 +11,6 @@ public final class DislikeReason extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String dislike_reason;
 
-    /* synthetic */ DislikeReason(Builder builder, boolean z, DislikeReason dislikeReason) {
-        this(builder, z);
-    }
-
     private DislikeReason(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class DislikeReason extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DislikeReason build(boolean z) {
-            return new DislikeReason(this, z, null);
+            return new DislikeReason(this, z);
         }
     }
 }

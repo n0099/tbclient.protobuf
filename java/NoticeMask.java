@@ -11,10 +11,6 @@ public final class NoticeMask extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String attr_value;
 
-    /* synthetic */ NoticeMask(Builder builder, boolean z, NoticeMask noticeMask) {
-        this(builder, z);
-    }
-
     private NoticeMask(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class NoticeMask extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NoticeMask build(boolean z) {
-            return new NoticeMask(this, z, null);
+            return new NoticeMask(this, z);
         }
     }
 }

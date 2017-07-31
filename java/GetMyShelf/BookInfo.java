@@ -29,10 +29,6 @@ public final class BookInfo extends Message {
     public static final Integer DEFAULT_TOTAL_CHAPTER = 0;
     public static final Integer DEFAULT_IS_FINISH = 0;
 
-    /* synthetic */ BookInfo(Builder builder, boolean z, BookInfo bookInfo) {
-        this(builder, z);
-    }
-
     private BookInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -120,7 +116,7 @@ public final class BookInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BookInfo build(boolean z) {
-            return new BookInfo(this, z, null);
+            return new BookInfo(this, z);
         }
     }
 }

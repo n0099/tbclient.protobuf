@@ -11,10 +11,6 @@ public final class Superscript extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String desc;
 
-    /* synthetic */ Superscript(Builder builder, boolean z, Superscript superscript) {
-        this(builder, z);
-    }
-
     private Superscript(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Superscript extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Superscript build(boolean z) {
-            return new Superscript(this, z, null);
+            return new Superscript(this, z);
         }
     }
 }

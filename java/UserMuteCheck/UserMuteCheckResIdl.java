@@ -10,10 +10,6 @@ public final class UserMuteCheckResIdl extends Message {
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* synthetic */ UserMuteCheckResIdl(Builder builder, boolean z, UserMuteCheckResIdl userMuteCheckResIdl) {
-        this(builder, z);
-    }
-
     private UserMuteCheckResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class UserMuteCheckResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserMuteCheckResIdl build(boolean z) {
-            return new UserMuteCheckResIdl(this, z, null);
+            return new UserMuteCheckResIdl(this, z);
         }
     }
 }

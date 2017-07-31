@@ -20,10 +20,6 @@ public final class AnchorPower extends Message {
     public static final Integer DEFAULT_CAN_ADD_LIVE_POST = 0;
     public static final Integer DEFAULT_CAN_DEL_LIVE_POST = 0;
 
-    /* synthetic */ AnchorPower(Builder builder, boolean z, AnchorPower anchorPower) {
-        this(builder, z);
-    }
-
     private AnchorPower(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class AnchorPower extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AnchorPower build(boolean z) {
-            return new AnchorPower(this, z, null);
+            return new AnchorPower(this, z);
         }
     }
 }

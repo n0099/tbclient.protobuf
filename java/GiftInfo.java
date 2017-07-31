@@ -26,10 +26,6 @@ public final class GiftInfo extends Message {
     public static final Integer DEFAULT_GIFT_ID = 0;
     public static final Long DEFAULT_SENDER_ID = 0L;
 
-    /* synthetic */ GiftInfo(Builder builder, boolean z, GiftInfo giftInfo) {
-        this(builder, z);
-    }
-
     private GiftInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class GiftInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GiftInfo build(boolean z) {
-            return new GiftInfo(this, z, null);
+            return new GiftInfo(this, z);
         }
     }
 }

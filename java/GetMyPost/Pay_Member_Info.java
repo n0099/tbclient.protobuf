@@ -17,10 +17,6 @@ public final class Pay_Member_Info extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     public static final Integer DEFAULT_END_TIME = 0;
 
-    /* synthetic */ Pay_Member_Info(Builder builder, boolean z, Pay_Member_Info pay_Member_Info) {
-        this(builder, z);
-    }
-
     private Pay_Member_Info(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class Pay_Member_Info extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Pay_Member_Info build(boolean z) {
-            return new Pay_Member_Info(this, z, null);
+            return new Pay_Member_Info(this, z);
         }
     }
 }

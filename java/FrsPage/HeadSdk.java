@@ -20,10 +20,6 @@ public final class HeadSdk extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String sdk_params;
 
-    /* synthetic */ HeadSdk(Builder builder, boolean z, HeadSdk headSdk) {
-        this(builder, z);
-    }
-
     private HeadSdk(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class HeadSdk extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HeadSdk build(boolean z) {
-            return new HeadSdk(this, z, null);
+            return new HeadSdk(this, z);
         }
     }
 }

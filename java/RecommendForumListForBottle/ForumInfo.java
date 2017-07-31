@@ -20,10 +20,6 @@ public final class ForumInfo extends Message {
     public static final Long DEFAULT_MEMBER_COUNT = 0L;
     public static final Long DEFAULT_THREAD_COUNT = 0L;
 
-    /* synthetic */ ForumInfo(Builder builder, boolean z, ForumInfo forumInfo) {
-        this(builder, z);
-    }
-
     private ForumInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class ForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumInfo build(boolean z) {
-            return new ForumInfo(this, z, null);
+            return new ForumInfo(this, z);
         }
     }
 }

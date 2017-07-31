@@ -49,10 +49,6 @@ public final class DealInfo extends Message {
     public static final List<DealAuthInfo> DEFAULT_AUTH_INFO = Collections.emptyList();
     public static final Long DEFAULT_SHIP_FEE = 0L;
 
-    /* synthetic */ DealInfo(Builder builder, boolean z, DealInfo dealInfo) {
-        this(builder, z);
-    }
-
     private DealInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -188,7 +184,7 @@ public final class DealInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DealInfo build(boolean z) {
-            return new DealInfo(this, z, null);
+            return new DealInfo(this, z);
         }
     }
 }

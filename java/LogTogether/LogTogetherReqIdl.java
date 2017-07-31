@@ -7,10 +7,6 @@ public final class LogTogetherReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ LogTogetherReqIdl(Builder builder, boolean z, LogTogetherReqIdl logTogetherReqIdl) {
-        this(builder, z);
-    }
-
     private LogTogetherReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class LogTogetherReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LogTogetherReqIdl build(boolean z) {
-            return new LogTogetherReqIdl(this, z, null);
+            return new LogTogetherReqIdl(this, z);
         }
     }
 }

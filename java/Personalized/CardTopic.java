@@ -16,10 +16,6 @@ public final class CardTopic extends Message {
     public static final List<TopicInfo> DEFAULT_TOPIC_LIST = Collections.emptyList();
     public static final Integer DEFAULT_POSITION = 0;
 
-    /* synthetic */ CardTopic(Builder builder, boolean z, CardTopic cardTopic) {
-        this(builder, z);
-    }
-
     private CardTopic(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class CardTopic extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CardTopic build(boolean z) {
-            return new CardTopic(this, z, null);
+            return new CardTopic(this, z);
         }
     }
 }

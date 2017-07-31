@@ -10,10 +10,6 @@ public final class ProfileResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ ProfileResIdl(Builder builder, boolean z, ProfileResIdl profileResIdl) {
-        this(builder, z);
-    }
-
     private ProfileResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class ProfileResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ProfileResIdl build(boolean z) {
-            return new ProfileResIdl(this, z, null);
+            return new ProfileResIdl(this, z);
         }
     }
 }

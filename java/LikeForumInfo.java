@@ -11,10 +11,6 @@ public final class LikeForumInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String forum_name;
 
-    /* synthetic */ LikeForumInfo(Builder builder, boolean z, LikeForumInfo likeForumInfo) {
-        this(builder, z);
-    }
-
     private LikeForumInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class LikeForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LikeForumInfo build(boolean z) {
-            return new LikeForumInfo(this, z, null);
+            return new LikeForumInfo(this, z);
         }
     }
 }

@@ -26,10 +26,6 @@ public final class MemeInfo extends Message {
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
 
-    /* synthetic */ MemeInfo(Builder builder, boolean z, MemeInfo memeInfo) {
-        this(builder, z);
-    }
-
     private MemeInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class MemeInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MemeInfo build(boolean z) {
-            return new MemeInfo(this, z, null);
+            return new MemeInfo(this, z);
         }
     }
 }

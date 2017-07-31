@@ -10,10 +10,6 @@ public final class Yule extends Message {
     @ProtoField(tag = 1)
     public final YuleActivity yule_activity;
 
-    /* synthetic */ Yule(Builder builder, boolean z, Yule yule) {
-        this(builder, z);
-    }
-
     private Yule(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -49,7 +45,7 @@ public final class Yule extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Yule build(boolean z) {
-            return new Yule(this, z, null);
+            return new Yule(this, z);
         }
     }
 }

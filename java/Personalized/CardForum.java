@@ -19,10 +19,6 @@ public final class CardForum extends Message {
     public static final Long DEFAULT_POSITION = 0L;
     public static final Integer DEFAULT_CARD_TYPE = 0;
 
-    /* synthetic */ CardForum(Builder builder, boolean z, CardForum cardForum) {
-        this(builder, z);
-    }
-
     private CardForum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class CardForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CardForum build(boolean z) {
-            return new CardForum(this, z, null);
+            return new CardForum(this, z);
         }
     }
 }

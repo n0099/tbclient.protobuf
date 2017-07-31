@@ -23,10 +23,6 @@ public final class PopInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String v_title;
 
-    /* synthetic */ PopInfo(Builder builder, boolean z, PopInfo popInfo) {
-        this(builder, z);
-    }
-
     private PopInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class PopInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PopInfo build(boolean z) {
-            return new PopInfo(this, z, null);
+            return new PopInfo(this, z);
         }
     }
 }

@@ -14,10 +14,6 @@ public final class Feedback extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ Feedback(Builder builder, boolean z, Feedback feedback) {
-        this(builder, z);
-    }
-
     private Feedback(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Feedback extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Feedback build(boolean z) {
-            return new Feedback(this, z, null);
+            return new Feedback(this, z);
         }
     }
 }

@@ -30,6 +30,8 @@ public final class AlaLiveInfo extends Message {
     public final String label_name;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long live_id;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer live_status;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer live_type;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -46,6 +48,8 @@ public final class AlaLiveInfo extends Message {
     public final Integer screen_direction;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String session_id;
+    @ProtoField(tag = 19)
+    public final AlaShareInfo share_info;
     @ProtoField(tag = 12)
     public final AlaUserInfo user_info;
     public static final Long DEFAULT_LIVE_ID = 0L;
@@ -54,10 +58,7 @@ public final class AlaLiveInfo extends Message {
     public static final Integer DEFAULT_AUDIENCE_COUNT = 0;
     public static final Integer DEFAULT_LIVE_TYPE = 0;
     public static final Integer DEFAULT_SCREEN_DIRECTION = 0;
-
-    /* synthetic */ AlaLiveInfo(Builder builder, boolean z, AlaLiveInfo alaLiveInfo) {
-        this(builder, z);
-    }
+    public static final Integer DEFAULT_LIVE_STATUS = 0;
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -140,11 +141,16 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.label_name == null) {
                 this.label_name = "";
-                return;
             } else {
                 this.label_name = builder.label_name;
-                return;
             }
+            if (builder.live_status == null) {
+                this.live_status = DEFAULT_LIVE_STATUS;
+            } else {
+                this.live_status = builder.live_status;
+            }
+            this.share_info = builder.share_info;
+            return;
         }
         this.live_id = builder.live_id;
         this.cover = builder.cover;
@@ -163,6 +169,8 @@ public final class AlaLiveInfo extends Message {
         this.live_type = builder.live_type;
         this.screen_direction = builder.screen_direction;
         this.label_name = builder.label_name;
+        this.live_status = builder.live_status;
+        this.share_info = builder.share_info;
     }
 
     /* loaded from: classes.dex */
@@ -175,6 +183,7 @@ public final class AlaLiveInfo extends Message {
         public String hls_url;
         public String label_name;
         public Long live_id;
+        public Integer live_status;
         public Integer live_type;
         public String media_id;
         public String media_pic;
@@ -183,6 +192,7 @@ public final class AlaLiveInfo extends Message {
         public String rtmp_url;
         public Integer screen_direction;
         public String session_id;
+        public AlaShareInfo share_info;
         public AlaUserInfo user_info;
 
         public Builder() {
@@ -208,13 +218,15 @@ public final class AlaLiveInfo extends Message {
                 this.live_type = alaLiveInfo.live_type;
                 this.screen_direction = alaLiveInfo.screen_direction;
                 this.label_name = alaLiveInfo.label_name;
+                this.live_status = alaLiveInfo.live_status;
+                this.share_info = alaLiveInfo.share_info;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AlaLiveInfo build(boolean z) {
-            return new AlaLiveInfo(this, z, null);
+            return new AlaLiveInfo(this, z);
         }
     }
 }

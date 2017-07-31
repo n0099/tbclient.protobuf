@@ -10,10 +10,6 @@ public final class GetCartoonCategoryListResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetCartoonCategoryListResIdl(Builder builder, boolean z, GetCartoonCategoryListResIdl getCartoonCategoryListResIdl) {
-        this(builder, z);
-    }
-
     private GetCartoonCategoryListResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetCartoonCategoryListResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetCartoonCategoryListResIdl build(boolean z) {
-            return new GetCartoonCategoryListResIdl(this, z, null);
+            return new GetCartoonCategoryListResIdl(this, z);
         }
     }
 }

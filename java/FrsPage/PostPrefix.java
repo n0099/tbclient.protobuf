@@ -17,10 +17,6 @@ public final class PostPrefix extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String type;
 
-    /* synthetic */ PostPrefix(Builder builder, boolean z, PostPrefix postPrefix) {
-        this(builder, z);
-    }
-
     private PostPrefix(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class PostPrefix extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostPrefix build(boolean z) {
-            return new PostPrefix(this, z, null);
+            return new PostPrefix(this, z);
         }
     }
 }

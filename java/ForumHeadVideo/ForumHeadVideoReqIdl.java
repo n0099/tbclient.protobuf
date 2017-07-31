@@ -7,10 +7,6 @@ public final class ForumHeadVideoReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ ForumHeadVideoReqIdl(Builder builder, boolean z, ForumHeadVideoReqIdl forumHeadVideoReqIdl) {
-        this(builder, z);
-    }
-
     private ForumHeadVideoReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class ForumHeadVideoReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumHeadVideoReqIdl build(boolean z) {
-            return new ForumHeadVideoReqIdl(this, z, null);
+            return new ForumHeadVideoReqIdl(this, z);
         }
     }
 }

@@ -11,10 +11,6 @@ public final class EsportStatic extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ EsportStatic(Builder builder, boolean z, EsportStatic esportStatic) {
-        this(builder, z);
-    }
-
     private EsportStatic(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class EsportStatic extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public EsportStatic build(boolean z) {
-            return new EsportStatic(this, z, null);
+            return new EsportStatic(this, z);
         }
     }
 }

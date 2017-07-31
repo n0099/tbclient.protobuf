@@ -32,10 +32,6 @@ public final class Resource extends Message {
     public static final Long DEFAULT_RES_ID = 0L;
     public static final Long DEFAULT_POSITION = 0L;
 
-    /* synthetic */ Resource(Builder builder, boolean z, Resource resource) {
-        this(builder, z);
-    }
-
     private Resource(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -131,7 +127,7 @@ public final class Resource extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Resource build(boolean z) {
-            return new Resource(this, z, null);
+            return new Resource(this, z);
         }
     }
 }

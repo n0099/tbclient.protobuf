@@ -32,10 +32,6 @@ public final class SimpleUser extends Message {
     public static final Integer DEFAULT_INCOMPLETE_USER = 0;
     public static final Integer DEFAULT_AGREE_TYPE = 0;
 
-    /* synthetic */ SimpleUser(Builder builder, boolean z, SimpleUser simpleUser) {
-        this(builder, z);
-    }
-
     private SimpleUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -131,7 +127,7 @@ public final class SimpleUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SimpleUser build(boolean z) {
-            return new SimpleUser(this, z, null);
+            return new SimpleUser(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class TwAnchorProfit extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<TwAnchorProfitItem> profit_list;
 
-    /* synthetic */ TwAnchorProfit(Builder builder, boolean z, TwAnchorProfit twAnchorProfit) {
-        this(builder, z);
-    }
-
     private TwAnchorProfit(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -45,7 +41,7 @@ public final class TwAnchorProfit extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwAnchorProfit build(boolean z) {
-            return new TwAnchorProfit(this, z, null);
+            return new TwAnchorProfit(this, z);
         }
     }
 }

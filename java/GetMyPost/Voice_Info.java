@@ -20,10 +20,6 @@ public final class Voice_Info extends Message {
     public static final Integer DEFAULT_DURNING_TIME = 0;
     public static final Integer DEFAULT_TYPE = 0;
 
-    /* synthetic */ Voice_Info(Builder builder, boolean z, Voice_Info voice_Info) {
-        this(builder, z);
-    }
-
     private Voice_Info(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class Voice_Info extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Voice_Info build(boolean z) {
-            return new Voice_Info(this, z, null);
+            return new Voice_Info(this, z);
         }
     }
 }

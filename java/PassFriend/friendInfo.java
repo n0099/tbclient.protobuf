@@ -20,10 +20,6 @@ public final class friendInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* synthetic */ friendInfo(Builder builder, boolean z, friendInfo friendinfo) {
-        this(builder, z);
-    }
-
     private friendInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class friendInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public friendInfo build(boolean z) {
-            return new friendInfo(this, z, null);
+            return new friendInfo(this, z);
         }
     }
 }

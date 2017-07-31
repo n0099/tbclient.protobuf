@@ -13,10 +13,6 @@ public final class BawuRoleDes extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String role_name;
 
-    /* synthetic */ BawuRoleDes(Builder builder, boolean z, BawuRoleDes bawuRoleDes) {
-        this(builder, z);
-    }
-
     private BawuRoleDes(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class BawuRoleDes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BawuRoleDes build(boolean z) {
-            return new BawuRoleDes(this, z, null);
+            return new BawuRoleDes(this, z);
         }
     }
 }

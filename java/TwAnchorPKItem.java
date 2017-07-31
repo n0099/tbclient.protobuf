@@ -23,10 +23,6 @@ public final class TwAnchorPKItem extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_USER_SEX = 0;
 
-    /* synthetic */ TwAnchorPKItem(Builder builder, boolean z, TwAnchorPKItem twAnchorPKItem) {
-        this(builder, z);
-    }
-
     private TwAnchorPKItem(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class TwAnchorPKItem extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwAnchorPKItem build(boolean z) {
-            return new TwAnchorPKItem(this, z, null);
+            return new TwAnchorPKItem(this, z);
         }
     }
 }

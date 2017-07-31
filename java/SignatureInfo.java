@@ -24,10 +24,6 @@ public final class SignatureInfo extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String server;
 
-    /* synthetic */ SignatureInfo(Builder builder, boolean z, SignatureInfo signatureInfo) {
-        this(builder, z);
-    }
-
     private SignatureInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -99,7 +95,7 @@ public final class SignatureInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SignatureInfo build(boolean z) {
-            return new SignatureInfo(this, z, null);
+            return new SignatureInfo(this, z);
         }
     }
 }

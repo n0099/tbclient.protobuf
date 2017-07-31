@@ -7,10 +7,6 @@ public final class ExcFrsPageReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ ExcFrsPageReqIdl(Builder builder, boolean z, ExcFrsPageReqIdl excFrsPageReqIdl) {
-        this(builder, z);
-    }
-
     private ExcFrsPageReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class ExcFrsPageReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ExcFrsPageReqIdl build(boolean z) {
-            return new ExcFrsPageReqIdl(this, z, null);
+            return new ExcFrsPageReqIdl(this, z);
         }
     }
 }

@@ -14,10 +14,6 @@ public final class forumVipShowIcon extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ forumVipShowIcon(Builder builder, boolean z, forumVipShowIcon forumvipshowicon) {
-        this(builder, z);
-    }
-
     private forumVipShowIcon(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class forumVipShowIcon extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public forumVipShowIcon build(boolean z) {
-            return new forumVipShowIcon(this, z, null);
+            return new forumVipShowIcon(this, z);
         }
     }
 }

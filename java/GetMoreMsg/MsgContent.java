@@ -20,10 +20,6 @@ public final class MsgContent extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ MsgContent(Builder builder, boolean z, MsgContent msgContent) {
-        this(builder, z);
-    }
-
     private MsgContent(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class MsgContent extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MsgContent build(boolean z) {
-            return new MsgContent(this, z, null);
+            return new MsgContent(this, z);
         }
     }
 }

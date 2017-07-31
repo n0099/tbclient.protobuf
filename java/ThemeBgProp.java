@@ -35,10 +35,6 @@ public final class ThemeBgProp extends Message {
     public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
     public static final Integer DEFAULT_IS_FINISHED = 0;
 
-    /* synthetic */ ThemeBgProp(Builder builder, boolean z, ThemeBgProp themeBgProp) {
-        this(builder, z);
-    }
-
     private ThemeBgProp(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -142,7 +138,7 @@ public final class ThemeBgProp extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThemeBgProp build(boolean z) {
-            return new ThemeBgProp(this, z, null);
+            return new ThemeBgProp(this, z);
         }
     }
 }

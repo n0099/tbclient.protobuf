@@ -10,10 +10,6 @@ public final class ThreadListResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ ThreadListResIdl(Builder builder, boolean z, ThreadListResIdl threadListResIdl) {
-        this(builder, z);
-    }
-
     private ThreadListResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class ThreadListResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThreadListResIdl build(boolean z) {
-            return new ThreadListResIdl(this, z, null);
+            return new ThreadListResIdl(this, z);
         }
     }
 }

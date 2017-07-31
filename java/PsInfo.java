@@ -20,10 +20,6 @@ public final class PsInfo extends Message {
     public static final Long DEFAULT_SCORE = 0L;
     public static final Long DEFAULT_GAME_TYPE = 0L;
 
-    /* synthetic */ PsInfo(Builder builder, boolean z, PsInfo psInfo) {
-        this(builder, z);
-    }
-
     private PsInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class PsInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PsInfo build(boolean z) {
-            return new PsInfo(this, z, null);
+            return new PsInfo(this, z);
         }
     }
 }

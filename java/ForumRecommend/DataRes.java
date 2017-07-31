@@ -53,10 +53,6 @@ public final class DataRes extends Message {
     public static final List<FrequentlyForumInfo> DEFAULT_FREQUENTLY_FORUM_INFO = Collections.emptyList();
     public static final List<RecommendForumInfo> DEFAULT_TAG_RECOMMEND_FORUM = Collections.emptyList();
 
-    /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
-        this(builder, z);
-    }
-
     private DataRes(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -196,7 +192,7 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            return new DataRes(this, z, null);
+            return new DataRes(this, z);
         }
     }
 }

@@ -8,10 +8,6 @@ public final class ForumButton extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_blueV;
 
-    /* synthetic */ ForumButton(Builder builder, boolean z, ForumButton forumButton) {
-        this(builder, z);
-    }
-
     private ForumButton(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class ForumButton extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumButton build(boolean z) {
-            return new ForumButton(this, z, null);
+            return new ForumButton(this, z);
         }
     }
 }

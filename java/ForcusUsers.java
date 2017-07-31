@@ -17,10 +17,6 @@ public final class ForcusUsers extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* synthetic */ ForcusUsers(Builder builder, boolean z, ForcusUsers forcusUsers) {
-        this(builder, z);
-    }
-
     private ForcusUsers(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class ForcusUsers extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForcusUsers build(boolean z) {
-            return new ForcusUsers(this, z, null);
+            return new ForcusUsers(this, z);
         }
     }
 }

@@ -40,10 +40,6 @@ public final class RecommendForumInfo extends Message {
     public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
     public static final Integer DEFAULT_FORUM_TYPE = 0;
 
-    /* synthetic */ RecommendForumInfo(Builder builder, boolean z, RecommendForumInfo recommendForumInfo) {
-        this(builder, z);
-    }
-
     private RecommendForumInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -155,7 +151,7 @@ public final class RecommendForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecommendForumInfo build(boolean z) {
-            return new RecommendForumInfo(this, z, null);
+            return new RecommendForumInfo(this, z);
         }
     }
 }

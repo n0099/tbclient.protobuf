@@ -17,10 +17,6 @@ public final class NativeApp extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String jump_ios;
 
-    /* synthetic */ NativeApp(Builder builder, boolean z, NativeApp nativeApp) {
-        this(builder, z);
-    }
-
     private NativeApp(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class NativeApp extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NativeApp build(boolean z) {
-            return new NativeApp(this, z, null);
+            return new NativeApp(this, z);
         }
     }
 }

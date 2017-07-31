@@ -13,10 +13,6 @@ public final class SubPost extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<SubPostList> sub_post_list;
 
-    /* synthetic */ SubPost(Builder builder, boolean z, SubPost subPost) {
-        this(builder, z);
-    }
-
     private SubPost(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class SubPost extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SubPost build(boolean z) {
-            return new SubPost(this, z, null);
+            return new SubPost(this, z);
         }
     }
 }

@@ -20,10 +20,6 @@ public final class CarrierEnter extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ CarrierEnter(Builder builder, boolean z, CarrierEnter carrierEnter) {
-        this(builder, z);
-    }
-
     private CarrierEnter(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class CarrierEnter extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CarrierEnter build(boolean z) {
-            return new CarrierEnter(this, z, null);
+            return new CarrierEnter(this, z);
         }
     }
 }

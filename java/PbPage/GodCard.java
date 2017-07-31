@@ -29,10 +29,6 @@ public final class GodCard extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* synthetic */ GodCard(Builder builder, boolean z, GodCard godCard) {
-        this(builder, z);
-    }
-
     private GodCard(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -120,7 +116,7 @@ public final class GodCard extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GodCard build(boolean z) {
-            return new GodCard(this, z, null);
+            return new GodCard(this, z);
         }
     }
 }

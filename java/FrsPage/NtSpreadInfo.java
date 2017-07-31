@@ -34,10 +34,6 @@ public final class NtSpreadInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* synthetic */ NtSpreadInfo(Builder builder, boolean z, NtSpreadInfo ntSpreadInfo) {
-        this(builder, z);
-    }
-
     private NtSpreadInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -133,7 +129,7 @@ public final class NtSpreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NtSpreadInfo build(boolean z) {
-            return new NtSpreadInfo(this, z, null);
+            return new NtSpreadInfo(this, z);
         }
     }
 }

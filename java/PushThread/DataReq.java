@@ -20,10 +20,6 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PUSH_TYPE = 0;
     public static final Long DEFAULT_USER_ID = 0L;
 
-    /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
-        this(builder, z);
-    }
-
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -83,7 +79,7 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            return new DataReq(this, z, null);
+            return new DataReq(this, z);
         }
     }
 }

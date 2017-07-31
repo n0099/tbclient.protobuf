@@ -47,10 +47,6 @@ public final class ThemeSkinPropMain extends Message {
     public static final Integer DEFAULT_DAILY_PRIVILEGE_STATUS = 0;
     public static final Long DEFAULT_END_TIME = 0L;
 
-    /* synthetic */ ThemeSkinPropMain(Builder builder, boolean z, ThemeSkinPropMain themeSkinPropMain) {
-        this(builder, z);
-    }
-
     private ThemeSkinPropMain(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -186,7 +182,7 @@ public final class ThemeSkinPropMain extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThemeSkinPropMain build(boolean z) {
-            return new ThemeSkinPropMain(this, z, null);
+            return new ThemeSkinPropMain(this, z);
         }
     }
 }

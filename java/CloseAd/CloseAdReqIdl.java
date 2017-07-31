@@ -7,10 +7,6 @@ public final class CloseAdReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ CloseAdReqIdl(Builder builder, boolean z, CloseAdReqIdl closeAdReqIdl) {
-        this(builder, z);
-    }
-
     private CloseAdReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class CloseAdReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CloseAdReqIdl build(boolean z) {
-            return new CloseAdReqIdl(this, z, null);
+            return new CloseAdReqIdl(this, z);
         }
     }
 }

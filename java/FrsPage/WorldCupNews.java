@@ -11,10 +11,6 @@ public final class WorldCupNews extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ WorldCupNews(Builder builder, boolean z, WorldCupNews worldCupNews) {
-        this(builder, z);
-    }
-
     private WorldCupNews(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class WorldCupNews extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public WorldCupNews build(boolean z) {
-            return new WorldCupNews(this, z, null);
+            return new WorldCupNews(this, z);
         }
     }
 }

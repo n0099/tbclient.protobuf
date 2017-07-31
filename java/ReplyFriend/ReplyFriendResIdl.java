@@ -10,10 +10,6 @@ public final class ReplyFriendResIdl extends Message {
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* synthetic */ ReplyFriendResIdl(Builder builder, boolean z, ReplyFriendResIdl replyFriendResIdl) {
-        this(builder, z);
-    }
-
     private ReplyFriendResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class ReplyFriendResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ReplyFriendResIdl build(boolean z) {
-            return new ReplyFriendResIdl(this, z, null);
+            return new ReplyFriendResIdl(this, z);
         }
     }
 }

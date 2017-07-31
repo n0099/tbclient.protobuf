@@ -14,10 +14,6 @@ public final class Pic extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String water_pic;
 
-    /* synthetic */ Pic(Builder builder, boolean z, Pic pic) {
-        this(builder, z);
-    }
-
     private Pic(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Pic extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Pic build(boolean z) {
-            return new Pic(this, z, null);
+            return new Pic(this, z);
         }
     }
 }

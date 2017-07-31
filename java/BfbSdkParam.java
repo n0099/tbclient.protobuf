@@ -10,10 +10,6 @@ public final class BfbSdkParam extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.INT32)
     public final List<Integer> activity_no;
 
-    /* synthetic */ BfbSdkParam(Builder builder, boolean z, BfbSdkParam bfbSdkParam) {
-        this(builder, z);
-    }
-
     private BfbSdkParam(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -45,7 +41,7 @@ public final class BfbSdkParam extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BfbSdkParam build(boolean z) {
-            return new BfbSdkParam(this, z, null);
+            return new BfbSdkParam(this, z);
         }
     }
 }

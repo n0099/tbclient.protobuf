@@ -26,10 +26,6 @@ public final class HighReply extends Message {
     public static final Integer DEFAULT_CREATE_TIME = 0;
     public static final Long DEFAULT_ID = 0L;
 
-    /* synthetic */ HighReply(Builder builder, boolean z, HighReply highReply) {
-        this(builder, z);
-    }
-
     private HighReply(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class HighReply extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HighReply build(boolean z) {
-            return new HighReply(this, z, null);
+            return new HighReply(this, z);
         }
     }
 }

@@ -13,10 +13,6 @@ public final class WorldCup extends Message {
     @ProtoField(tag = 2)
     public final WorldCupPk pk;
 
-    /* synthetic */ WorldCup(Builder builder, boolean z, WorldCup worldCup) {
-        this(builder, z);
-    }
-
     private WorldCup(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -55,7 +51,7 @@ public final class WorldCup extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public WorldCup build(boolean z) {
-            return new WorldCup(this, z, null);
+            return new WorldCup(this, z);
         }
     }
 }

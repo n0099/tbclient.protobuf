@@ -16,10 +16,6 @@ public final class MemberGroupInfo extends Message {
     public static final Integer DEFAULT_MEMBER_GROUP_NUM = 0;
     public static final List<BawuRoleInfoPub> DEFAULT_MEMBER_GROUP_LIST = Collections.emptyList();
 
-    /* synthetic */ MemberGroupInfo(Builder builder, boolean z, MemberGroupInfo memberGroupInfo) {
-        this(builder, z);
-    }
-
     private MemberGroupInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class MemberGroupInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MemberGroupInfo build(boolean z) {
-            return new MemberGroupInfo(this, z, null);
+            return new MemberGroupInfo(this, z);
         }
     }
 }

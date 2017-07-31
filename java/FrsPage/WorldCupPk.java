@@ -17,10 +17,6 @@ public final class WorldCupPk extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ WorldCupPk(Builder builder, boolean z, WorldCupPk worldCupPk) {
-        this(builder, z);
-    }
-
     private WorldCupPk(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class WorldCupPk extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public WorldCupPk build(boolean z) {
-            return new WorldCupPk(this, z, null);
+            return new WorldCupPk(this, z);
         }
     }
 }

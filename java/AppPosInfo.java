@@ -26,10 +26,6 @@ public final class AppPosInfo extends Message {
     public static final Boolean DEFAULT_AP_CONNECTED = false;
     public static final Long DEFAULT_ADDR_TIMESTAMP = 0L;
 
-    /* synthetic */ AppPosInfo(Builder builder, boolean z, AppPosInfo appPosInfo) {
-        this(builder, z);
-    }
-
     private AppPosInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class AppPosInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AppPosInfo build(boolean z) {
-            return new AppPosInfo(this, z, null);
+            return new AppPosInfo(this, z);
         }
     }
 }

@@ -29,10 +29,6 @@ public final class FeedForumInfo extends Message {
     public static final Integer DEFAULT_POS = 0;
     public static final Integer DEFAULT_IS_LIKE = 0;
 
-    /* synthetic */ FeedForumInfo(Builder builder, boolean z, FeedForumInfo feedForumInfo) {
-        this(builder, z);
-    }
-
     private FeedForumInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -120,7 +116,7 @@ public final class FeedForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FeedForumInfo build(boolean z) {
-            return new FeedForumInfo(this, z, null);
+            return new FeedForumInfo(this, z);
         }
     }
 }

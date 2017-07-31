@@ -16,10 +16,6 @@ public final class ModuleInfo extends Message {
     public static final Integer DEFAULT_MAX_MODULE_NUM = 0;
     public static final Integer DEFAULT_MAX_MODULE_THREAD_NUM = 0;
 
-    /* synthetic */ ModuleInfo(Builder builder, boolean z, ModuleInfo moduleInfo) {
-        this(builder, z);
-    }
-
     private ModuleInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class ModuleInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ModuleInfo build(boolean z) {
-            return new ModuleInfo(this, z, null);
+            return new ModuleInfo(this, z);
         }
     }
 }

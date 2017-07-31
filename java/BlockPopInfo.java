@@ -20,10 +20,6 @@ public final class BlockPopInfo extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String ok_info;
 
-    /* synthetic */ BlockPopInfo(Builder builder, boolean z, BlockPopInfo blockPopInfo) {
-        this(builder, z);
-    }
-
     private BlockPopInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class BlockPopInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BlockPopInfo build(boolean z) {
-            return new BlockPopInfo(this, z, null);
+            return new BlockPopInfo(this, z);
         }
     }
 }

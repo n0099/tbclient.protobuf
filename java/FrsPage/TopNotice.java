@@ -17,10 +17,6 @@ public final class TopNotice extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title_link;
 
-    /* synthetic */ TopNotice(Builder builder, boolean z, TopNotice topNotice) {
-        this(builder, z);
-    }
-
     private TopNotice(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class TopNotice extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TopNotice build(boolean z) {
-            return new TopNotice(this, z, null);
+            return new TopNotice(this, z);
         }
     }
 }

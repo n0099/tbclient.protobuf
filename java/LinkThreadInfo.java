@@ -16,10 +16,6 @@ public final class LinkThreadInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String link_url_code;
 
-    /* synthetic */ LinkThreadInfo(Builder builder, boolean z, LinkThreadInfo linkThreadInfo) {
-        this(builder, z);
-    }
-
     private LinkThreadInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class LinkThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LinkThreadInfo build(boolean z) {
-            return new LinkThreadInfo(this, z, null);
+            return new LinkThreadInfo(this, z);
         }
     }
 }

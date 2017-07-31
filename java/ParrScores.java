@@ -35,10 +35,6 @@ public final class ParrScores extends Message {
     public static final Long DEFAULT_I_MONEY = 0L;
     public static final Long DEFAULT_I_OTHER = 0L;
 
-    /* synthetic */ ParrScores(Builder builder, boolean z, ParrScores parrScores) {
-        this(builder, z);
-    }
-
     private ParrScores(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -142,7 +138,7 @@ public final class ParrScores extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ParrScores build(boolean z) {
-            return new ParrScores(this, z, null);
+            return new ParrScores(this, z);
         }
     }
 }

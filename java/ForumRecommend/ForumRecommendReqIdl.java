@@ -7,10 +7,6 @@ public final class ForumRecommendReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ ForumRecommendReqIdl(Builder builder, boolean z, ForumRecommendReqIdl forumRecommendReqIdl) {
-        this(builder, z);
-    }
-
     private ForumRecommendReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class ForumRecommendReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumRecommendReqIdl build(boolean z) {
-            return new ForumRecommendReqIdl(this, z, null);
+            return new ForumRecommendReqIdl(this, z);
         }
     }
 }

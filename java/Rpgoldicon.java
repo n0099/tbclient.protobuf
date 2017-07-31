@@ -11,10 +11,6 @@ public final class Rpgoldicon extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String value;
 
-    /* synthetic */ Rpgoldicon(Builder builder, boolean z, Rpgoldicon rpgoldicon) {
-        this(builder, z);
-    }
-
     private Rpgoldicon(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Rpgoldicon extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Rpgoldicon build(boolean z) {
-            return new Rpgoldicon(this, z, null);
+            return new Rpgoldicon(this, z);
         }
     }
 }

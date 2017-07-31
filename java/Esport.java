@@ -15,10 +15,6 @@ public final class Esport extends Message {
     public static final Integer DEFAULT_FLOOR_NO = 0;
     public static final List<EsportRank> DEFAULT_BILLBOARD = Collections.emptyList();
 
-    /* synthetic */ Esport(Builder builder, boolean z, Esport esport) {
-        this(builder, z);
-    }
-
     private Esport(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -62,7 +58,7 @@ public final class Esport extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Esport build(boolean z) {
-            return new Esport(this, z, null);
+            return new Esport(this, z);
         }
     }
 }

@@ -11,10 +11,6 @@ public final class Size extends Message {
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
 
-    /* synthetic */ Size(Builder builder, boolean z, Size size) {
-        this(builder, z);
-    }
-
     private Size(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Size extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Size build(boolean z) {
-            return new Size(this, z, null);
+            return new Size(this, z);
         }
     }
 }

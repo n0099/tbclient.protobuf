@@ -20,6 +20,10 @@ public final class PostInfoList extends Message {
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
+    @ProtoField(tag = 37, type = Message.Datatype.INT32)
+    public final Integer agree_num;
+    @ProtoField(tag = 36)
+    public final AlaLiveInfo ala_info;
     @ProtoField(tag = 24)
     public final AnchorInfo anchor_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
@@ -84,6 +88,8 @@ public final class PostInfoList extends Message {
     public final Long v_forum_id;
     @ProtoField(tag = 29)
     public final VideoInfo video_info;
+    @ProtoField(tag = 38, type = Message.Datatype.INT32)
+    public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
     public static final Long DEFAULT_FORUM_ID = 0L;
@@ -104,10 +110,8 @@ public final class PostInfoList extends Message {
     public static final List<MultipleForum> DEFAULT_MULTIPLE_FORUM_LIST = Collections.emptyList();
     public static final Integer DEFAULT_FREQ_NUM = 0;
     public static final Long DEFAULT_V_FORUM_ID = 0L;
-
-    /* synthetic */ PostInfoList(Builder builder, boolean z, PostInfoList postInfoList) {
-        this(builder, z);
-    }
+    public static final Integer DEFAULT_AGREE_NUM = 0;
+    public static final Integer DEFAULT_VIEW_NUM = 0;
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -256,9 +260,20 @@ public final class PostInfoList extends Message {
             }
             if (builder.name_show == null) {
                 this.name_show = "";
-                return;
             } else {
                 this.name_show = builder.name_show;
+            }
+            this.ala_info = builder.ala_info;
+            if (builder.agree_num == null) {
+                this.agree_num = DEFAULT_AGREE_NUM;
+            } else {
+                this.agree_num = builder.agree_num;
+            }
+            if (builder.view_num == null) {
+                this.view_num = DEFAULT_VIEW_NUM;
+                return;
+            } else {
+                this.view_num = builder.view_num;
                 return;
             }
         }
@@ -297,12 +312,17 @@ public final class PostInfoList extends Message {
         this.freq_num = builder.freq_num;
         this.v_forum_id = builder.v_forum_id;
         this.name_show = builder.name_show;
+        this.ala_info = builder.ala_info;
+        this.agree_num = builder.agree_num;
+        this.view_num = builder.view_num;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;
+        public Integer agree_num;
+        public AlaLiveInfo ala_info;
         public AnchorInfo anchor_info;
         public List<PostInfoContent> content;
         public String content_thread;
@@ -335,6 +355,7 @@ public final class PostInfoList extends Message {
         public String user_portrait;
         public Long v_forum_id;
         public VideoInfo video_info;
+        public Integer view_num;
         public List<Voice> voice_info;
 
         public Builder() {
@@ -378,13 +399,16 @@ public final class PostInfoList extends Message {
                 this.freq_num = postInfoList.freq_num;
                 this.v_forum_id = postInfoList.v_forum_id;
                 this.name_show = postInfoList.name_show;
+                this.ala_info = postInfoList.ala_info;
+                this.agree_num = postInfoList.agree_num;
+                this.view_num = postInfoList.view_num;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostInfoList build(boolean z) {
-            return new PostInfoList(this, z, null);
+            return new PostInfoList(this, z);
         }
     }
 }

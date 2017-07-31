@@ -19,10 +19,6 @@ public final class UserBfbInfo extends Message {
     public static final Integer DEFAULT_ACTIVITY_STATUS = 0;
     public static final Integer DEFAULT_RES_NO = 0;
 
-    /* synthetic */ UserBfbInfo(Builder builder, boolean z, UserBfbInfo userBfbInfo) {
-        this(builder, z);
-    }
-
     private UserBfbInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -81,7 +77,7 @@ public final class UserBfbInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserBfbInfo build(boolean z) {
-            return new UserBfbInfo(this, z, null);
+            return new UserBfbInfo(this, z);
         }
     }
 }

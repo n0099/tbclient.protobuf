@@ -52,10 +52,6 @@ public final class Props extends Message {
     public static final List<String> DEFAULT__WORD = Collections.emptyList();
     public static final List<String> DEFAULT_PATTERN = Collections.emptyList();
 
-    /* synthetic */ Props(Builder builder, boolean z, Props props) {
-        this(builder, z);
-    }
-
     private Props(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -199,7 +195,7 @@ public final class Props extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Props build(boolean z) {
-            return new Props(this, z, null);
+            return new Props(this, z);
         }
     }
 }

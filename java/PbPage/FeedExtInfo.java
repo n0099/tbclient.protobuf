@@ -13,10 +13,6 @@ public final class FeedExtInfo extends Message {
     public static final List<String> DEFAULT_FEED_TAB = Collections.emptyList();
     public static final List<String> DEFAULT_FEED_BAR = Collections.emptyList();
 
-    /* synthetic */ FeedExtInfo(Builder builder, boolean z, FeedExtInfo feedExtInfo) {
-        this(builder, z);
-    }
-
     private FeedExtInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class FeedExtInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FeedExtInfo build(boolean z) {
-            return new FeedExtInfo(this, z, null);
+            return new FeedExtInfo(this, z);
         }
     }
 }

@@ -17,10 +17,6 @@ public final class VipShowInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String vip_icon;
 
-    /* synthetic */ VipShowInfo(Builder builder, boolean z, VipShowInfo vipShowInfo) {
-        this(builder, z);
-    }
-
     private VipShowInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class VipShowInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VipShowInfo build(boolean z) {
-            return new VipShowInfo(this, z, null);
+            return new VipShowInfo(this, z);
         }
     }
 }

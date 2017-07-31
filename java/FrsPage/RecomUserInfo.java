@@ -23,10 +23,6 @@ public final class RecomUserInfo extends Message {
     public static final List<CommonForum> DEFAULT_COMMON_FORUM = Collections.emptyList();
     public static final List<PostInfo> DEFAULT_POST_INFO = Collections.emptyList();
 
-    /* synthetic */ RecomUserInfo(Builder builder, boolean z, RecomUserInfo recomUserInfo) {
-        this(builder, z);
-    }
-
     private RecomUserInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -89,7 +85,7 @@ public final class RecomUserInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecomUserInfo build(boolean z) {
-            return new RecomUserInfo(this, z, null);
+            return new RecomUserInfo(this, z);
         }
     }
 }

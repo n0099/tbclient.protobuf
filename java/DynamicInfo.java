@@ -17,10 +17,6 @@ public final class DynamicInfo extends Message {
     @ProtoField(tag = 4)
     public final UserDynamic user_dynamic;
 
-    /* synthetic */ DynamicInfo(Builder builder, boolean z, DynamicInfo dynamicInfo) {
-        this(builder, z);
-    }
-
     private DynamicInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -72,7 +68,7 @@ public final class DynamicInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DynamicInfo build(boolean z) {
-            return new DynamicInfo(this, z, null);
+            return new DynamicInfo(this, z);
         }
     }
 }

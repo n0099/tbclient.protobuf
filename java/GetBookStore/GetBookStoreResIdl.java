@@ -10,10 +10,6 @@ public final class GetBookStoreResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetBookStoreResIdl(Builder builder, boolean z, GetBookStoreResIdl getBookStoreResIdl) {
-        this(builder, z);
-    }
-
     private GetBookStoreResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetBookStoreResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetBookStoreResIdl build(boolean z) {
-            return new GetBookStoreResIdl(this, z, null);
+            return new GetBookStoreResIdl(this, z);
         }
     }
 }

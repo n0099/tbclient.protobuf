@@ -103,10 +103,6 @@ public final class App extends Message {
     public static final Integer DEFAULT_PLAN_ID = 0;
     public static final List<GoodsInfo> DEFAULT_GOODS_INFO = Collections.emptyList();
 
-    /* synthetic */ App(Builder builder, boolean z, App app) {
-        this(builder, z);
-    }
-
     private App(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -386,7 +382,7 @@ public final class App extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public App build(boolean z) {
-            return new App(this, z, null);
+            return new App(this, z);
         }
     }
 }

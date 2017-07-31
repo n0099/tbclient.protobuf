@@ -52,10 +52,6 @@ public final class Hot_Thread extends Message {
     public static final Integer DEFAULT_IS_ACTIVITY = 0;
     public static final Integer DEFAULT_IS_LIVEPOST = 0;
 
-    /* synthetic */ Hot_Thread(Builder builder, boolean z, Hot_Thread hot_Thread) {
-        this(builder, z);
-    }
-
     private Hot_Thread(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -199,7 +195,7 @@ public final class Hot_Thread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Hot_Thread build(boolean z) {
-            return new Hot_Thread(this, z, null);
+            return new Hot_Thread(this, z);
         }
     }
 }

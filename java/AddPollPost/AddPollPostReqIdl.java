@@ -7,10 +7,6 @@ public final class AddPollPostReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ AddPollPostReqIdl(Builder builder, boolean z, AddPollPostReqIdl addPollPostReqIdl) {
-        this(builder, z);
-    }
-
     private AddPollPostReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class AddPollPostReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AddPollPostReqIdl build(boolean z) {
-            return new AddPollPostReqIdl(this, z, null);
+            return new AddPollPostReqIdl(this, z);
         }
     }
 }

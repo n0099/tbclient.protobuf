@@ -11,10 +11,6 @@ public final class ThreadIdListInfo extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final Integer DEFAULT_IS_PARTIAL_VISIBLE = 0;
 
-    /* synthetic */ ThreadIdListInfo(Builder builder, boolean z, ThreadIdListInfo threadIdListInfo) {
-        this(builder, z);
-    }
-
     private ThreadIdListInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class ThreadIdListInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThreadIdListInfo build(boolean z) {
-            return new ThreadIdListInfo(this, z, null);
+            return new ThreadIdListInfo(this, z);
         }
     }
 }

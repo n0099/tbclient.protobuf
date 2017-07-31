@@ -23,10 +23,6 @@ public final class PostBanner extends Message {
     public static final Integer DEFAULT_LINK_TYPE = 0;
     public static final Integer DEFAULT_CLIENT_TYPE = 0;
 
-    /* synthetic */ PostBanner(Builder builder, boolean z, PostBanner postBanner) {
-        this(builder, z);
-    }
-
     private PostBanner(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class PostBanner extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostBanner build(boolean z) {
-            return new PostBanner(this, z, null);
+            return new PostBanner(this, z);
         }
     }
 }

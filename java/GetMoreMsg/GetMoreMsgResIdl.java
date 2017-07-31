@@ -10,10 +10,6 @@ public final class GetMoreMsgResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetMoreMsgResIdl(Builder builder, boolean z, GetMoreMsgResIdl getMoreMsgResIdl) {
-        this(builder, z);
-    }
-
     private GetMoreMsgResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetMoreMsgResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetMoreMsgResIdl build(boolean z) {
-            return new GetMoreMsgResIdl(this, z, null);
+            return new GetMoreMsgResIdl(this, z);
         }
     }
 }

@@ -17,10 +17,6 @@ public final class VipSpreadList extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String item;
 
-    /* synthetic */ VipSpreadList(Builder builder, boolean z, VipSpreadList vipSpreadList) {
-        this(builder, z);
-    }
-
     private VipSpreadList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class VipSpreadList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VipSpreadList build(boolean z) {
-            return new VipSpreadList(this, z, null);
+            return new VipSpreadList(this, z);
         }
     }
 }

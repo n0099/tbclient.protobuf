@@ -23,10 +23,6 @@ public final class LinkThreadContent extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer link_type;
 
-    /* synthetic */ LinkThreadContent(Builder builder, boolean z, LinkThreadContent linkThreadContent) {
-        this(builder, z);
-    }
-
     private LinkThreadContent(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class LinkThreadContent extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LinkThreadContent build(boolean z) {
-            return new LinkThreadContent(this, z, null);
+            return new LinkThreadContent(this, z);
         }
     }
 }

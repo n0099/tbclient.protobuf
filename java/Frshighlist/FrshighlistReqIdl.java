@@ -7,10 +7,6 @@ public final class FrshighlistReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ FrshighlistReqIdl(Builder builder, boolean z, FrshighlistReqIdl frshighlistReqIdl) {
-        this(builder, z);
-    }
-
     private FrshighlistReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class FrshighlistReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FrshighlistReqIdl build(boolean z) {
-            return new FrshighlistReqIdl(this, z, null);
+            return new FrshighlistReqIdl(this, z);
         }
     }
 }

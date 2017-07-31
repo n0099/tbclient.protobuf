@@ -17,10 +17,6 @@ public final class Music extends Message {
     public static final Integer DEFAULT_SID = 0;
     public static final Integer DEFAULT_ISOPEN = 0;
 
-    /* synthetic */ Music(Builder builder, boolean z, Music music) {
-        this(builder, z);
-    }
-
     private Music(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class Music extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Music build(boolean z) {
-            return new Music(this, z, null);
+            return new Music(this, z);
         }
     }
 }

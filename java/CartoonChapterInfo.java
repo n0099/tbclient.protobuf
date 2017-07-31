@@ -11,10 +11,6 @@ public final class CartoonChapterInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer chapter_vip;
 
-    /* synthetic */ CartoonChapterInfo(Builder builder, boolean z, CartoonChapterInfo cartoonChapterInfo) {
-        this(builder, z);
-    }
-
     private CartoonChapterInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class CartoonChapterInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CartoonChapterInfo build(boolean z) {
-            return new CartoonChapterInfo(this, z, null);
+            return new CartoonChapterInfo(this, z);
         }
     }
 }

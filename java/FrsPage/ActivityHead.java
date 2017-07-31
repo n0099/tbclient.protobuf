@@ -21,10 +21,6 @@ public final class ActivityHead extends Message {
     @ProtoField(tag = 4)
     public final Size top_size;
 
-    /* synthetic */ ActivityHead(Builder builder, boolean z, ActivityHead activityHead) {
-        this(builder, z);
-    }
-
     private ActivityHead(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -84,7 +80,7 @@ public final class ActivityHead extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActivityHead build(boolean z) {
-            return new ActivityHead(this, z, null);
+            return new ActivityHead(this, z);
         }
     }
 }

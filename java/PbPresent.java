@@ -13,10 +13,6 @@ public final class PbPresent extends Message {
     public static final Integer DEFAULT_TOTAL = 0;
     public static final List<PbPresentList> DEFAULT_LIST = Collections.emptyList();
 
-    /* synthetic */ PbPresent(Builder builder, boolean z, PbPresent pbPresent) {
-        this(builder, z);
-    }
-
     private PbPresent(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class PbPresent extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbPresent build(boolean z) {
-            return new PbPresent(this, z, null);
+            return new PbPresent(this, z);
         }
     }
 }

@@ -35,10 +35,6 @@ public final class SimpleForum extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String second_class;
 
-    /* synthetic */ SimpleForum(Builder builder, boolean z, SimpleForum simpleForum) {
-        this(builder, z);
-    }
-
     private SimpleForum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -142,7 +138,7 @@ public final class SimpleForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SimpleForum build(boolean z) {
-            return new SimpleForum(this, z, null);
+            return new SimpleForum(this, z);
         }
     }
 }

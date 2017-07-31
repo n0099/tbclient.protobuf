@@ -23,10 +23,6 @@ public final class CodeInfo extends Message {
     public static final Integer DEFAULT_KAIFU_ID = 0;
     public static final Integer DEFAULT_CODE_TYPE = 0;
 
-    /* synthetic */ CodeInfo(Builder builder, boolean z, CodeInfo codeInfo) {
-        this(builder, z);
-    }
-
     private CodeInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class CodeInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CodeInfo build(boolean z) {
-            return new CodeInfo(this, z, null);
+            return new CodeInfo(this, z);
         }
     }
 }

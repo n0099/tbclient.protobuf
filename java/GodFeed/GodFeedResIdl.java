@@ -10,10 +10,6 @@ public final class GodFeedResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GodFeedResIdl(Builder builder, boolean z, GodFeedResIdl godFeedResIdl) {
-        this(builder, z);
-    }
-
     private GodFeedResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GodFeedResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GodFeedResIdl build(boolean z) {
-            return new GodFeedResIdl(this, z, null);
+            return new GodFeedResIdl(this, z);
         }
     }
 }

@@ -7,10 +7,6 @@ public final class GetGameDetailReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetGameDetailReqIdl(Builder builder, boolean z, GetGameDetailReqIdl getGameDetailReqIdl) {
-        this(builder, z);
-    }
-
     private GetGameDetailReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetGameDetailReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetGameDetailReqIdl build(boolean z) {
-            return new GetGameDetailReqIdl(this, z, null);
+            return new GetGameDetailReqIdl(this, z);
         }
     }
 }

@@ -70,10 +70,6 @@ public final class Anti extends Message {
     public static final Integer DEFAULT_IFADDITION = 0;
     public static final Integer DEFAULT_NEED_VCODE = 0;
 
-    /* synthetic */ Anti(Builder builder, boolean z, Anti anti) {
-        this(builder, z);
-    }
-
     private Anti(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -268,7 +264,7 @@ public final class Anti extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Anti build(boolean z) {
-            return new Anti(this, z, null);
+            return new Anti(this, z);
         }
     }
 }

@@ -20,10 +20,6 @@ public final class UcCardInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* synthetic */ UcCardInfo(Builder builder, boolean z, UcCardInfo ucCardInfo) {
-        this(builder, z);
-    }
-
     private UcCardInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class UcCardInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UcCardInfo build(boolean z) {
-            return new UcCardInfo(this, z, null);
+            return new UcCardInfo(this, z);
         }
     }
 }

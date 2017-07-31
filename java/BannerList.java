@@ -18,10 +18,6 @@ public final class BannerList extends Message {
     public static final List<App> DEFAULT_APP = Collections.emptyList();
     public static final List<FeedForumInfo> DEFAULT_FEED_FORUM = Collections.emptyList();
 
-    /* synthetic */ BannerList(Builder builder, boolean z, BannerList bannerList) {
-        this(builder, z);
-    }
-
     private BannerList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -73,7 +69,7 @@ public final class BannerList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BannerList build(boolean z) {
-            return new BannerList(this, z, null);
+            return new BannerList(this, z);
         }
     }
 }

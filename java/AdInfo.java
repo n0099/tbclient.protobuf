@@ -20,10 +20,6 @@ public final class AdInfo extends Message {
     public static final Integer DEFAULT_SHOW_RULE = 0;
     public static final Integer DEFAULT_AD_TYPE = 0;
 
-    /* synthetic */ AdInfo(Builder builder, boolean z, AdInfo adInfo) {
-        this(builder, z);
-    }
-
     private AdInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class AdInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AdInfo build(boolean z) {
-            return new AdInfo(this, z, null);
+            return new AdInfo(this, z);
         }
     }
 }

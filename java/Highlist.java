@@ -13,10 +13,6 @@ public final class Highlist extends Message {
     public static final List<High> DEFAULT_LIST = Collections.emptyList();
     public static final Boolean DEFAULT_HAS_MORE = false;
 
-    /* synthetic */ Highlist(Builder builder, boolean z, Highlist highlist) {
-        this(builder, z);
-    }
-
     private Highlist(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class Highlist extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Highlist build(boolean z) {
-            return new Highlist(this, z, null);
+            return new Highlist(this, z);
         }
     }
 }

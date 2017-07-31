@@ -20,10 +20,6 @@ public final class HotTopicList extends Message {
     public static final Long DEFAULT_DISCUSS_NUM = 0L;
     public static final Integer DEFAULT_TAG = 0;
 
-    /* synthetic */ HotTopicList(Builder builder, boolean z, HotTopicList hotTopicList) {
-        this(builder, z);
-    }
-
     private HotTopicList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class HotTopicList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HotTopicList build(boolean z) {
-            return new HotTopicList(this, z, null);
+            return new HotTopicList(this, z);
         }
     }
 }

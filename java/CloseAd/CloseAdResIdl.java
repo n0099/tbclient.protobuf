@@ -10,10 +10,6 @@ public final class CloseAdResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ CloseAdResIdl(Builder builder, boolean z, CloseAdResIdl closeAdResIdl) {
-        this(builder, z);
-    }
-
     private CloseAdResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class CloseAdResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CloseAdResIdl build(boolean z) {
-            return new CloseAdResIdl(this, z, null);
+            return new CloseAdResIdl(this, z);
         }
     }
 }

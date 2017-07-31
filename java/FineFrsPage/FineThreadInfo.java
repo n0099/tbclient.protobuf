@@ -49,10 +49,6 @@ public final class FineThreadInfo extends Message {
     public static final Integer DEFAULT_THREAD_TYPE = 0;
     public static final Integer DEFAULT_FORDER = 0;
 
-    /* synthetic */ FineThreadInfo(Builder builder, boolean z, FineThreadInfo fineThreadInfo) {
-        this(builder, z);
-    }
-
     private FineThreadInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -184,7 +180,7 @@ public final class FineThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FineThreadInfo build(boolean z) {
-            return new FineThreadInfo(this, z, null);
+            return new FineThreadInfo(this, z);
         }
     }
 }

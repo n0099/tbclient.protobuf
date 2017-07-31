@@ -11,10 +11,6 @@ public final class GconAccount extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String menu_name;
 
-    /* synthetic */ GconAccount(Builder builder, boolean z, GconAccount gconAccount) {
-        this(builder, z);
-    }
-
     private GconAccount(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class GconAccount extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GconAccount build(boolean z) {
-            return new GconAccount(this, z, null);
+            return new GconAccount(this, z);
         }
     }
 }

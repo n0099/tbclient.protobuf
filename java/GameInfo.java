@@ -115,10 +115,6 @@ public final class GameInfo extends Message {
     public static final Integer DEFAULT_APP_ID = 0;
     public static final Integer DEFAULT_SCORE = 0;
 
-    /* synthetic */ GameInfo(Builder builder, boolean z, GameInfo gameInfo) {
-        this(builder, z);
-    }
-
     private GameInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -430,7 +426,7 @@ public final class GameInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GameInfo build(boolean z) {
-            return new GameInfo(this, z, null);
+            return new GameInfo(this, z);
         }
     }
 }

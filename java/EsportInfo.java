@@ -8,10 +8,6 @@ public final class EsportInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String intro;
 
-    /* synthetic */ EsportInfo(Builder builder, boolean z, EsportInfo esportInfo) {
-        this(builder, z);
-    }
-
     private EsportInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class EsportInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public EsportInfo build(boolean z) {
-            return new EsportInfo(this, z, null);
+            return new EsportInfo(this, z);
         }
     }
 }

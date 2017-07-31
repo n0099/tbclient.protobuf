@@ -23,10 +23,6 @@ public final class HotThreadInfo extends Message {
     public static final Integer DEFAULT_TIME_TYPE = 0;
     public static final Integer DEFAULT_HOT_WEIGHT = 0;
 
-    /* synthetic */ HotThreadInfo(Builder builder, boolean z, HotThreadInfo hotThreadInfo) {
-        this(builder, z);
-    }
-
     private HotThreadInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class HotThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HotThreadInfo build(boolean z) {
-            return new HotThreadInfo(this, z, null);
+            return new HotThreadInfo(this, z);
         }
     }
 }

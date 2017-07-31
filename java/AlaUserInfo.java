@@ -68,10 +68,6 @@ public final class AlaUserInfo extends Message {
     public static final Integer DEFAULT_IS_OFFICIAL = 0;
     public static final Integer DEFAULT_LEVEL_ID = 0;
 
-    /* synthetic */ AlaUserInfo(Builder builder, boolean z, AlaUserInfo alaUserInfo) {
-        this(builder, z);
-    }
-
     private AlaUserInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -263,7 +259,7 @@ public final class AlaUserInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AlaUserInfo build(boolean z) {
-            return new AlaUserInfo(this, z, null);
+            return new AlaUserInfo(this, z);
         }
     }
 }

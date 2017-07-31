@@ -26,10 +26,6 @@ public final class BazhuForum extends Message {
     public static final Integer DEFAULT_ROLE_ID = 0;
     public static final Integer DEFAULT_IS_SIGN = 0;
 
-    /* synthetic */ BazhuForum(Builder builder, boolean z, BazhuForum bazhuForum) {
-        this(builder, z);
-    }
-
     private BazhuForum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class BazhuForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BazhuForum build(boolean z) {
-            return new BazhuForum(this, z, null);
+            return new BazhuForum(this, z);
         }
     }
 }

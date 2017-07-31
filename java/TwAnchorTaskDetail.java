@@ -8,10 +8,6 @@ public final class TwAnchorTaskDetail extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String describe;
 
-    /* synthetic */ TwAnchorTaskDetail(Builder builder, boolean z, TwAnchorTaskDetail twAnchorTaskDetail) {
-        this(builder, z);
-    }
-
     private TwAnchorTaskDetail(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class TwAnchorTaskDetail extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwAnchorTaskDetail build(boolean z) {
-            return new TwAnchorTaskDetail(this, z, null);
+            return new TwAnchorTaskDetail(this, z);
         }
     }
 }

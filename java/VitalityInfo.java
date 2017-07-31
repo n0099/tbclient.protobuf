@@ -7,10 +7,6 @@ public final class VitalityInfo extends Message {
     @ProtoField(tag = 1)
     public final FrequentlyForumInfo frequently_forum_info;
 
-    /* synthetic */ VitalityInfo(Builder builder, boolean z, VitalityInfo vitalityInfo) {
-        this(builder, z);
-    }
-
     private VitalityInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class VitalityInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VitalityInfo build(boolean z) {
-            return new VitalityInfo(this, z, null);
+            return new VitalityInfo(this, z);
         }
     }
 }

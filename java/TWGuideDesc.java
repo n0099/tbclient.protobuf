@@ -14,10 +14,6 @@ public final class TWGuideDesc extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* synthetic */ TWGuideDesc(Builder builder, boolean z, TWGuideDesc tWGuideDesc) {
-        this(builder, z);
-    }
-
     private TWGuideDesc(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class TWGuideDesc extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TWGuideDesc build(boolean z) {
-            return new TWGuideDesc(this, z, null);
+            return new TWGuideDesc(this, z);
         }
     }
 }

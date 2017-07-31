@@ -11,10 +11,6 @@ public final class ReportInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ ReportInfo(Builder builder, boolean z, ReportInfo reportInfo) {
-        this(builder, z);
-    }
-
     private ReportInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class ReportInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ReportInfo build(boolean z) {
-            return new ReportInfo(this, z, null);
+            return new ReportInfo(this, z);
         }
     }
 }

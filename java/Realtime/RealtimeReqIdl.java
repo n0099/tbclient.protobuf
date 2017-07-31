@@ -7,10 +7,6 @@ public final class RealtimeReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ RealtimeReqIdl(Builder builder, boolean z, RealtimeReqIdl realtimeReqIdl) {
-        this(builder, z);
-    }
-
     private RealtimeReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class RealtimeReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RealtimeReqIdl build(boolean z) {
-            return new RealtimeReqIdl(this, z, null);
+            return new RealtimeReqIdl(this, z);
         }
     }
 }

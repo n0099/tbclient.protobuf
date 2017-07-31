@@ -8,10 +8,6 @@ public final class NicknameInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer left_days;
 
-    /* synthetic */ NicknameInfo(Builder builder, boolean z, NicknameInfo nicknameInfo) {
-        this(builder, z);
-    }
-
     private NicknameInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class NicknameInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NicknameInfo build(boolean z) {
-            return new NicknameInfo(this, z, null);
+            return new NicknameInfo(this, z);
         }
     }
 }

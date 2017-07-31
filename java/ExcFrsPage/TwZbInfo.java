@@ -17,10 +17,6 @@ public final class TwZbInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* synthetic */ TwZbInfo(Builder builder, boolean z, TwZbInfo twZbInfo) {
-        this(builder, z);
-    }
-
     private TwZbInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class TwZbInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwZbInfo build(boolean z) {
-            return new TwZbInfo(this, z, null);
+            return new TwZbInfo(this, z);
         }
     }
 }

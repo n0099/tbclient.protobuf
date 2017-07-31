@@ -7,10 +7,6 @@ public final class PushThreadReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ PushThreadReqIdl(Builder builder, boolean z, PushThreadReqIdl pushThreadReqIdl) {
-        this(builder, z);
-    }
-
     private PushThreadReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class PushThreadReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PushThreadReqIdl build(boolean z) {
-            return new PushThreadReqIdl(this, z, null);
+            return new PushThreadReqIdl(this, z);
         }
     }
 }

@@ -8,10 +8,6 @@ public final class SelectInterest extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String select_interest_name;
 
-    /* synthetic */ SelectInterest(Builder builder, boolean z, SelectInterest selectInterest) {
-        this(builder, z);
-    }
-
     private SelectInterest(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class SelectInterest extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SelectInterest build(boolean z) {
-            return new SelectInterest(this, z, null);
+            return new SelectInterest(this, z);
         }
     }
 }

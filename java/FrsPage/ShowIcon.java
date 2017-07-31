@@ -14,10 +14,6 @@ public final class ShowIcon extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ ShowIcon(Builder builder, boolean z, ShowIcon showIcon) {
-        this(builder, z);
-    }
-
     private ShowIcon(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class ShowIcon extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ShowIcon build(boolean z) {
-            return new ShowIcon(this, z, null);
+            return new ShowIcon(this, z);
         }
     }
 }

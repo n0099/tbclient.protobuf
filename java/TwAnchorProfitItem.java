@@ -20,10 +20,6 @@ public final class TwAnchorProfitItem extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_AVAILABLE_ANCHOR_LEVEL = 0;
 
-    /* synthetic */ TwAnchorProfitItem(Builder builder, boolean z, TwAnchorProfitItem twAnchorProfitItem) {
-        this(builder, z);
-    }
-
     private TwAnchorProfitItem(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class TwAnchorProfitItem extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwAnchorProfitItem build(boolean z) {
-            return new TwAnchorProfitItem(this, z, null);
+            return new TwAnchorProfitItem(this, z);
         }
     }
 }

@@ -14,10 +14,6 @@ public final class NavTabInfo extends Message {
     public static final List<FrsTabInfo> DEFAULT_TAB = Collections.emptyList();
     public static final List<FrsTabInfo> DEFAULT_MENU = Collections.emptyList();
 
-    /* synthetic */ NavTabInfo(Builder builder, boolean z, NavTabInfo navTabInfo) {
-        this(builder, z);
-    }
-
     private NavTabInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -57,7 +53,7 @@ public final class NavTabInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NavTabInfo build(boolean z) {
-            return new NavTabInfo(this, z, null);
+            return new NavTabInfo(this, z);
         }
     }
 }

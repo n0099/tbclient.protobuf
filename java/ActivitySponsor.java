@@ -11,10 +11,6 @@ public final class ActivitySponsor extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String sponsor_url;
 
-    /* synthetic */ ActivitySponsor(Builder builder, boolean z, ActivitySponsor activitySponsor) {
-        this(builder, z);
-    }
-
     private ActivitySponsor(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class ActivitySponsor extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActivitySponsor build(boolean z) {
-            return new ActivitySponsor(this, z, null);
+            return new ActivitySponsor(this, z);
         }
     }
 }

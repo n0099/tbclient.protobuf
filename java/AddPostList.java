@@ -19,10 +19,6 @@ public final class AddPostList extends Message {
     public static final Integer DEFAULT_TOTAL_COUNT = 0;
     public static final List<SubPostList> DEFAULT_ADD_POST_LIST = Collections.emptyList();
 
-    /* synthetic */ AddPostList(Builder builder, boolean z, AddPostList addPostList) {
-        this(builder, z);
-    }
-
     private AddPostList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class AddPostList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AddPostList build(boolean z) {
-            return new AddPostList(this, z, null);
+            return new AddPostList(this, z);
         }
     }
 }

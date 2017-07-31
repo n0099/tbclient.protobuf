@@ -13,10 +13,6 @@ public final class T extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<TwAnchorPKItem> pk_list;
 
-    /* synthetic */ T(Builder builder, boolean z, T t) {
-        this(builder, z);
-    }
-
     private T(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class T extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public T build(boolean z) {
-            return new T(this, z, null);
+            return new T(this, z);
         }
     }
 }

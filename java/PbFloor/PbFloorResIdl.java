@@ -10,10 +10,6 @@ public final class PbFloorResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ PbFloorResIdl(Builder builder, boolean z, PbFloorResIdl pbFloorResIdl) {
-        this(builder, z);
-    }
-
     private PbFloorResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class PbFloorResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbFloorResIdl build(boolean z) {
-            return new PbFloorResIdl(this, z, null);
+            return new PbFloorResIdl(this, z);
         }
     }
 }

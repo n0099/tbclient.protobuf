@@ -17,10 +17,6 @@ public final class StarSchedule extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ StarSchedule(Builder builder, boolean z, StarSchedule starSchedule) {
-        this(builder, z);
-    }
-
     private StarSchedule(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class StarSchedule extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public StarSchedule build(boolean z) {
-            return new StarSchedule(this, z, null);
+            return new StarSchedule(this, z);
         }
     }
 }

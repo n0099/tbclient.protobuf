@@ -11,10 +11,6 @@ public final class SpringVirtualUser extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ SpringVirtualUser(Builder builder, boolean z, SpringVirtualUser springVirtualUser) {
-        this(builder, z);
-    }
-
     private SpringVirtualUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class SpringVirtualUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SpringVirtualUser build(boolean z) {
-            return new SpringVirtualUser(this, z, null);
+            return new SpringVirtualUser(this, z);
         }
     }
 }

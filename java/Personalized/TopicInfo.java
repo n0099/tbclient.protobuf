@@ -20,10 +20,6 @@ public final class TopicInfo extends Message {
     public static final Integer DEFAULT_IS_HOT = 0;
     public static final Integer DEFAULT_TAG = 0;
 
-    /* synthetic */ TopicInfo(Builder builder, boolean z, TopicInfo topicInfo) {
-        this(builder, z);
-    }
-
     private TopicInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class TopicInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TopicInfo build(boolean z) {
-            return new TopicInfo(this, z, null);
+            return new TopicInfo(this, z);
         }
     }
 }

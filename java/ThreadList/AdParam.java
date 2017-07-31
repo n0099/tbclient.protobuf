@@ -11,10 +11,6 @@ public final class AdParam extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer refresh_count;
 
-    /* synthetic */ AdParam(Builder builder, boolean z, AdParam adParam) {
-        this(builder, z);
-    }
-
     private AdParam(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class AdParam extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AdParam build(boolean z) {
-            return new AdParam(this, z, null);
+            return new AdParam(this, z);
         }
     }
 }

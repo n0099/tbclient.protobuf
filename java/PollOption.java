@@ -17,10 +17,6 @@ public final class PollOption extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Long DEFAULT_NUM = 0L;
 
-    /* synthetic */ PollOption(Builder builder, boolean z, PollOption pollOption) {
-        this(builder, z);
-    }
-
     private PollOption(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class PollOption extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PollOption build(boolean z) {
-            return new PollOption(this, z, null);
+            return new PollOption(this, z);
         }
     }
 }

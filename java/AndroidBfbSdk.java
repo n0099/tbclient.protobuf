@@ -26,10 +26,6 @@ public final class AndroidBfbSdk extends Message {
     public static final Integer DEFAULT_SP_NO = 0;
     public static final Integer DEFAULT_SIGN_METHOD = 0;
 
-    /* synthetic */ AndroidBfbSdk(Builder builder, boolean z, AndroidBfbSdk androidBfbSdk) {
-        this(builder, z);
-    }
-
     private AndroidBfbSdk(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class AndroidBfbSdk extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AndroidBfbSdk build(boolean z) {
-            return new AndroidBfbSdk(this, z, null);
+            return new AndroidBfbSdk(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class GetGameDetailResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetGameDetailResIdl(Builder builder, boolean z, GetGameDetailResIdl getGameDetailResIdl) {
-        this(builder, z);
-    }
-
     private GetGameDetailResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetGameDetailResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetGameDetailResIdl build(boolean z) {
-            return new GetGameDetailResIdl(this, z, null);
+            return new GetGameDetailResIdl(this, z);
         }
     }
 }

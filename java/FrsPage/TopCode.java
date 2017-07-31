@@ -32,10 +32,6 @@ public final class TopCode extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String type_text;
 
-    /* synthetic */ TopCode(Builder builder, boolean z, TopCode topCode) {
-        this(builder, z);
-    }
-
     private TopCode(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -131,7 +127,7 @@ public final class TopCode extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TopCode build(boolean z) {
-            return new TopCode(this, z, null);
+            return new TopCode(this, z);
         }
     }
 }

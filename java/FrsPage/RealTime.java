@@ -14,10 +14,6 @@ public final class RealTime extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ RealTime(Builder builder, boolean z, RealTime realTime) {
-        this(builder, z);
-    }
-
     private RealTime(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class RealTime extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RealTime build(boolean z) {
-            return new RealTime(this, z, null);
+            return new RealTime(this, z);
         }
     }
 }

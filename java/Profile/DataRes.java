@@ -57,10 +57,6 @@ public final class DataRes extends Message {
     public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST = Collections.emptyList();
     public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
 
-    /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
-        this(builder, z);
-    }
-
     private DataRes(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -163,7 +159,7 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            return new DataRes(this, z, null);
+            return new DataRes(this, z);
         }
     }
 }

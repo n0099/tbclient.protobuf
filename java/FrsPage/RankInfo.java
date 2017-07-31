@@ -17,10 +17,6 @@ public final class RankInfo extends Message {
     public static final Integer DEFAULT_MEMBER_COUNT = 0;
     public static final Double DEFAULT_DIR_RATE = Double.valueOf(0.0d);
 
-    /* synthetic */ RankInfo(Builder builder, boolean z, RankInfo rankInfo) {
-        this(builder, z);
-    }
-
     private RankInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class RankInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RankInfo build(boolean z) {
-            return new RankInfo(this, z, null);
+            return new RankInfo(this, z);
         }
     }
 }

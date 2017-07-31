@@ -17,10 +17,6 @@ public final class AwardInfo extends Message {
     public static final Long DEFAULT_AWARD_ID = 0L;
     public static final Long DEFAULT_AWARD_ACT_ID = 0L;
 
-    /* synthetic */ AwardInfo(Builder builder, boolean z, AwardInfo awardInfo) {
-        this(builder, z);
-    }
-
     private AwardInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class AwardInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AwardInfo build(boolean z) {
-            return new AwardInfo(this, z, null);
+            return new AwardInfo(this, z);
         }
     }
 }

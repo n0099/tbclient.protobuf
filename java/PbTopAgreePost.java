@@ -16,10 +16,6 @@ public final class PbTopAgreePost extends Message {
     public static final Integer DEFAULT_TOTAL_NUM = 0;
     public static final List<Long> DEFAULT_POST_ID_LIST = Collections.emptyList();
 
-    /* synthetic */ PbTopAgreePost(Builder builder, boolean z, PbTopAgreePost pbTopAgreePost) {
-        this(builder, z);
-    }
-
     private PbTopAgreePost(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class PbTopAgreePost extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbTopAgreePost build(boolean z) {
-            return new PbTopAgreePost(this, z, null);
+            return new PbTopAgreePost(this, z);
         }
     }
 }

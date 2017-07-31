@@ -20,10 +20,6 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_HAS_MORE = 0;
     public static final Integer DEFAULT_THREAD_NUM = 0;
 
-    /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
-        this(builder, z);
-    }
-
     private DataRes(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -79,7 +75,7 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            return new DataRes(this, z, null);
+            return new DataRes(this, z);
         }
     }
 }

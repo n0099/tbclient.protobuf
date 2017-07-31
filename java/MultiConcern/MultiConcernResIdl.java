@@ -10,10 +10,6 @@ public final class MultiConcernResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ MultiConcernResIdl(Builder builder, boolean z, MultiConcernResIdl multiConcernResIdl) {
-        this(builder, z);
-    }
-
     private MultiConcernResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class MultiConcernResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MultiConcernResIdl build(boolean z) {
-            return new MultiConcernResIdl(this, z, null);
+            return new MultiConcernResIdl(this, z);
         }
     }
 }

@@ -30,10 +30,6 @@ public final class SignForum extends Message {
     public static final Integer DEFAULT_IS_FILTER = 0;
     public static final Long DEFAULT_FORUM_ID = 0L;
 
-    /* synthetic */ SignForum(Builder builder, boolean z, SignForum signForum) {
-        this(builder, z);
-    }
-
     private SignForum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -117,7 +113,7 @@ public final class SignForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SignForum build(boolean z) {
-            return new SignForum(this, z, null);
+            return new SignForum(this, z);
         }
     }
 }

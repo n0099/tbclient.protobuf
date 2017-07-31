@@ -11,10 +11,6 @@ public final class BookTag extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ BookTag(Builder builder, boolean z, BookTag bookTag) {
-        this(builder, z);
-    }
-
     private BookTag(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class BookTag extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BookTag build(boolean z) {
-            return new BookTag(this, z, null);
+            return new BookTag(this, z);
         }
     }
 }

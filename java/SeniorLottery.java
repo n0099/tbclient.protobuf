@@ -24,10 +24,6 @@ public final class SeniorLottery extends Message {
     public static final List<AwardUser> DEFAULT_LUCK_USERS = Collections.emptyList();
     public static final List<LotteryRegular> DEFAULT_ACT_REGULAR = Collections.emptyList();
 
-    /* synthetic */ SeniorLottery(Builder builder, boolean z, SeniorLottery seniorLottery) {
-        this(builder, z);
-    }
-
     private SeniorLottery(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -95,7 +91,7 @@ public final class SeniorLottery extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SeniorLottery build(boolean z) {
-            return new SeniorLottery(this, z, null);
+            return new SeniorLottery(this, z);
         }
     }
 }

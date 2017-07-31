@@ -20,10 +20,6 @@ public final class VideoDesc extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String video_width;
 
-    /* synthetic */ VideoDesc(Builder builder, boolean z, VideoDesc videoDesc) {
-        this(builder, z);
-    }
-
     private VideoDesc(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class VideoDesc extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VideoDesc build(boolean z) {
-            return new VideoDesc(this, z, null);
+            return new VideoDesc(this, z);
         }
     }
 }

@@ -16,10 +16,6 @@ public final class PsRankListItem extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_SCORE = 0L;
 
-    /* synthetic */ PsRankListItem(Builder builder, boolean z, PsRankListItem psRankListItem) {
-        this(builder, z);
-    }
-
     private PsRankListItem(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -70,7 +66,7 @@ public final class PsRankListItem extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PsRankListItem build(boolean z) {
-            return new PsRankListItem(this, z, null);
+            return new PsRankListItem(this, z);
         }
     }
 }

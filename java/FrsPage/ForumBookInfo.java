@@ -50,10 +50,6 @@ public final class ForumBookInfo extends Message {
     public static final Long DEFAULT_SHOW_PAGE_ID = 0L;
     public static final Long DEFAULT_SHOW_PARAGRAPH_ID = 0L;
 
-    /* synthetic */ ForumBookInfo(Builder builder, boolean z, ForumBookInfo forumBookInfo) {
-        this(builder, z);
-    }
-
     private ForumBookInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -197,7 +193,7 @@ public final class ForumBookInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumBookInfo build(boolean z) {
-            return new ForumBookInfo(this, z, null);
+            return new ForumBookInfo(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class SetCommonForumStateResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ SetCommonForumStateResIdl(Builder builder, boolean z, SetCommonForumStateResIdl setCommonForumStateResIdl) {
-        this(builder, z);
-    }
-
     private SetCommonForumStateResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class SetCommonForumStateResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SetCommonForumStateResIdl build(boolean z) {
-            return new SetCommonForumStateResIdl(this, z, null);
+            return new SetCommonForumStateResIdl(this, z);
         }
     }
 }

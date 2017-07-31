@@ -14,10 +14,6 @@ public final class Agree extends Message {
     public static final Integer DEFAULT_HAS_AGREE = 0;
     public static final Integer DEFAULT_AGREE_TYPE = 0;
 
-    /* synthetic */ Agree(Builder builder, boolean z, Agree agree) {
-        this(builder, z);
-    }
-
     private Agree(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Agree extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Agree build(boolean z) {
-            return new Agree(this, z, null);
+            return new Agree(this, z);
         }
     }
 }

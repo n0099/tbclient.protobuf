@@ -11,10 +11,6 @@ public final class GraffitiInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ GraffitiInfo(Builder builder, boolean z, GraffitiInfo graffitiInfo) {
-        this(builder, z);
-    }
-
     private GraffitiInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class GraffitiInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GraffitiInfo build(boolean z) {
-            return new GraffitiInfo(this, z, null);
+            return new GraffitiInfo(this, z);
         }
     }
 }

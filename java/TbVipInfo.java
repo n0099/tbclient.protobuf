@@ -14,10 +14,6 @@ public final class TbVipInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String v_url;
 
-    /* synthetic */ TbVipInfo(Builder builder, boolean z, TbVipInfo tbVipInfo) {
-        this(builder, z);
-    }
-
     private TbVipInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class TbVipInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TbVipInfo build(boolean z) {
-            return new TbVipInfo(this, z, null);
+            return new TbVipInfo(this, z);
         }
     }
 }

@@ -23,10 +23,6 @@ public final class UserAgreeInfo extends Message {
     public static final Long DEFAULT_ALA_AGREE_NUM = 0L;
     public static final Integer DEFAULT_HAS_USER_AGREE = 0;
 
-    /* synthetic */ UserAgreeInfo(Builder builder, boolean z, UserAgreeInfo userAgreeInfo) {
-        this(builder, z);
-    }
-
     private UserAgreeInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class UserAgreeInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserAgreeInfo build(boolean z) {
-            return new UserAgreeInfo(this, z, null);
+            return new UserAgreeInfo(this, z);
         }
     }
 }

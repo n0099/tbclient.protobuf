@@ -7,10 +7,6 @@ public final class FinefrspageReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ FinefrspageReqIdl(Builder builder, boolean z, FinefrspageReqIdl finefrspageReqIdl) {
-        this(builder, z);
-    }
-
     private FinefrspageReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class FinefrspageReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FinefrspageReqIdl build(boolean z) {
-            return new FinefrspageReqIdl(this, z, null);
+            return new FinefrspageReqIdl(this, z);
         }
     }
 }

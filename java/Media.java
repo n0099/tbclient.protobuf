@@ -59,10 +59,6 @@ public final class Media extends Message {
     public static final Integer DEFAULT_ORIGIN_SIZE = 0;
     public static final Long DEFAULT_POST_ID = 0L;
 
-    /* synthetic */ Media(Builder builder, boolean z, Media media) {
-        this(builder, z);
-    }
-
     private Media(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -230,7 +226,7 @@ public final class Media extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Media build(boolean z) {
-            return new Media(this, z, null);
+            return new Media(this, z);
         }
     }
 }

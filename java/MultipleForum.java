@@ -11,10 +11,6 @@ public final class MultipleForum extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String forum_name;
 
-    /* synthetic */ MultipleForum(Builder builder, boolean z, MultipleForum multipleForum) {
-        this(builder, z);
-    }
-
     private MultipleForum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class MultipleForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MultipleForum build(boolean z) {
-            return new MultipleForum(this, z, null);
+            return new MultipleForum(this, z);
         }
     }
 }

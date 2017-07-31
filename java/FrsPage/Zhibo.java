@@ -26,10 +26,6 @@ public final class Zhibo extends Message {
     public static final Integer DEFAULT_HAS_LPOST = 0;
     public static final Integer DEFAULT_LPOST_TYPE = 0;
 
-    /* synthetic */ Zhibo(Builder builder, boolean z, Zhibo zhibo) {
-        this(builder, z);
-    }
-
     private Zhibo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class Zhibo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Zhibo build(boolean z) {
-            return new Zhibo(this, z, null);
+            return new Zhibo(this, z);
         }
     }
 }

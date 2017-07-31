@@ -19,10 +19,6 @@ public final class PbHotPost extends Message {
     public static final Integer DEFAULT_NEED_POST_ZAN = 0;
     public static final List<HotPost> DEFAULT_HOT_POST_LIST = Collections.emptyList();
 
-    /* synthetic */ PbHotPost(Builder builder, boolean z, PbHotPost pbHotPost) {
-        this(builder, z);
-    }
-
     private PbHotPost(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class PbHotPost extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbHotPost build(boolean z) {
-            return new PbHotPost(this, z, null);
+            return new PbHotPost(this, z);
         }
     }
 }

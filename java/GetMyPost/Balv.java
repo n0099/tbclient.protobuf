@@ -14,10 +14,6 @@ public final class Balv extends Message {
     public static final Integer DEFAULT_IS_BLOCK = 0;
     public static final Integer DEFAULT_DAYS_TOFREE = 0;
 
-    /* synthetic */ Balv(Builder builder, boolean z, Balv balv) {
-        this(builder, z);
-    }
-
     private Balv(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Balv extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Balv build(boolean z) {
-            return new Balv(this, z, null);
+            return new Balv(this, z);
         }
     }
 }

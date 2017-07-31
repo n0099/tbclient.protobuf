@@ -17,10 +17,6 @@ public final class Calendar extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String t;
 
-    /* synthetic */ Calendar(Builder builder, boolean z, Calendar calendar) {
-        this(builder, z);
-    }
-
     private Calendar(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class Calendar extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Calendar build(boolean z) {
-            return new Calendar(this, z, null);
+            return new Calendar(this, z);
         }
     }
 }

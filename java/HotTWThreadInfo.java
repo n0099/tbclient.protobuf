@@ -13,10 +13,6 @@ public final class HotTWThreadInfo extends Message {
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
     public static final Integer DEFAULT_FANS_COUNT = 0;
 
-    /* synthetic */ HotTWThreadInfo(Builder builder, boolean z, HotTWThreadInfo hotTWThreadInfo) {
-        this(builder, z);
-    }
-
     private HotTWThreadInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class HotTWThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HotTWThreadInfo build(boolean z) {
-            return new HotTWThreadInfo(this, z, null);
+            return new HotTWThreadInfo(this, z);
         }
     }
 }

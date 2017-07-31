@@ -7,10 +7,6 @@ public final class PersonalReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ PersonalReqIdl(Builder builder, boolean z, PersonalReqIdl personalReqIdl) {
-        this(builder, z);
-    }
-
     private PersonalReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class PersonalReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PersonalReqIdl build(boolean z) {
-            return new PersonalReqIdl(this, z, null);
+            return new PersonalReqIdl(this, z);
         }
     }
 }

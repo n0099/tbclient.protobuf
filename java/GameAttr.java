@@ -13,10 +13,6 @@ public final class GameAttr extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String user_id;
 
-    /* synthetic */ GameAttr(Builder builder, boolean z, GameAttr gameAttr) {
-        this(builder, z);
-    }
-
     private GameAttr(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -60,7 +56,7 @@ public final class GameAttr extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GameAttr build(boolean z) {
-            return new GameAttr(this, z, null);
+            return new GameAttr(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class LastViewFeeds extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.UINT32)
     public final List<Integer> live;
 
-    /* synthetic */ LastViewFeeds(Builder builder, boolean z, LastViewFeeds lastViewFeeds) {
-        this(builder, z);
-    }
-
     private LastViewFeeds(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -45,7 +41,7 @@ public final class LastViewFeeds extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LastViewFeeds build(boolean z) {
-            return new LastViewFeeds(this, z, null);
+            return new LastViewFeeds(this, z);
         }
     }
 }

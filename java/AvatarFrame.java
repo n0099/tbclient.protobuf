@@ -11,10 +11,6 @@ public final class AvatarFrame extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     public static final Integer DEFAULT_END_TIME = 0;
 
-    /* synthetic */ AvatarFrame(Builder builder, boolean z, AvatarFrame avatarFrame) {
-        this(builder, z);
-    }
-
     private AvatarFrame(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class AvatarFrame extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AvatarFrame build(boolean z) {
-            return new AvatarFrame(this, z, null);
+            return new AvatarFrame(this, z);
         }
     }
 }

@@ -14,10 +14,6 @@ public final class TwZhiBoAnti extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer can_show_pb_headline;
 
-    /* synthetic */ TwZhiBoAnti(Builder builder, boolean z, TwZhiBoAnti twZhiBoAnti) {
-        this(builder, z);
-    }
-
     private TwZhiBoAnti(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class TwZhiBoAnti extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwZhiBoAnti build(boolean z) {
-            return new TwZhiBoAnti(this, z, null);
+            return new TwZhiBoAnti(this, z);
         }
     }
 }

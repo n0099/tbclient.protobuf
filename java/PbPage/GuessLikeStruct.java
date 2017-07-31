@@ -14,10 +14,6 @@ public final class GuessLikeStruct extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* synthetic */ GuessLikeStruct(Builder builder, boolean z, GuessLikeStruct guessLikeStruct) {
-        this(builder, z);
-    }
-
     private GuessLikeStruct(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -57,7 +53,7 @@ public final class GuessLikeStruct extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GuessLikeStruct build(boolean z) {
-            return new GuessLikeStruct(this, z, null);
+            return new GuessLikeStruct(this, z);
         }
     }
 }

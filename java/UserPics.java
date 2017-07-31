@@ -11,10 +11,6 @@ public final class UserPics extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String small;
 
-    /* synthetic */ UserPics(Builder builder, boolean z, UserPics userPics) {
-        this(builder, z);
-    }
-
     private UserPics(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class UserPics extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserPics build(boolean z) {
-            return new UserPics(this, z, null);
+            return new UserPics(this, z);
         }
     }
 }

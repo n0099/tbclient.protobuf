@@ -19,10 +19,6 @@ public final class PostInfoContent extends Message {
     public static final Long DEFAULT_POST_TYPE = 0L;
     public static final Long DEFAULT_POST_ID = 0L;
 
-    /* synthetic */ PostInfoContent(Builder builder, boolean z, PostInfoContent postInfoContent) {
-        this(builder, z);
-    }
-
     private PostInfoContent(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class PostInfoContent extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostInfoContent build(boolean z) {
-            return new PostInfoContent(this, z, null);
+            return new PostInfoContent(this, z);
         }
     }
 }

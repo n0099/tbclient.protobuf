@@ -17,10 +17,6 @@ public final class Position extends Message {
     public static final Integer DEFAULT_HOME = 0;
     public static final Integer DEFAULT_CARD = 0;
 
-    /* synthetic */ Position(Builder builder, boolean z, Position position) {
-        this(builder, z);
-    }
-
     private Position(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class Position extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Position build(boolean z) {
-            return new Position(this, z, null);
+            return new Position(this, z);
         }
     }
 }

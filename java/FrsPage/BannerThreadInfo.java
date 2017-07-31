@@ -11,10 +11,6 @@ public final class BannerThreadInfo extends Message {
     @ProtoField(tag = 1)
     public final ThreadInfo thread_info;
 
-    /* synthetic */ BannerThreadInfo(Builder builder, boolean z, BannerThreadInfo bannerThreadInfo) {
-        this(builder, z);
-    }
-
     private BannerThreadInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -50,7 +46,7 @@ public final class BannerThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BannerThreadInfo build(boolean z) {
-            return new BannerThreadInfo(this, z, null);
+            return new BannerThreadInfo(this, z);
         }
     }
 }

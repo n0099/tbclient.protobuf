@@ -23,10 +23,6 @@ public final class DrawInfo extends Message {
     public static final Integer DEFAULT_DRAW_RES_TYPE = 0;
     public static final Long DEFAULT_AWARD_ID = 0L;
 
-    /* synthetic */ DrawInfo(Builder builder, boolean z, DrawInfo drawInfo) {
-        this(builder, z);
-    }
-
     private DrawInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class DrawInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DrawInfo build(boolean z) {
-            return new DrawInfo(this, z, null);
+            return new DrawInfo(this, z);
         }
     }
 }

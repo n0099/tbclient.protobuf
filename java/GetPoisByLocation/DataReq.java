@@ -14,10 +14,6 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String lng;
 
-    /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
-        this(builder, z);
-    }
-
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -60,7 +56,7 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            return new DataReq(this, z, null);
+            return new DataReq(this, z);
         }
     }
 }

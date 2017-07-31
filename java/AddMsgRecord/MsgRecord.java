@@ -11,10 +11,6 @@ public final class MsgRecord extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* synthetic */ MsgRecord(Builder builder, boolean z, MsgRecord msgRecord) {
-        this(builder, z);
-    }
-
     private MsgRecord(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class MsgRecord extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MsgRecord build(boolean z) {
-            return new MsgRecord(this, z, null);
+            return new MsgRecord(this, z);
         }
     }
 }

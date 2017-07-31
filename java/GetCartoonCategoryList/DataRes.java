@@ -13,10 +13,6 @@ public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer has_more;
 
-    /* synthetic */ DataRes(Builder builder, boolean z, DataRes dataRes) {
-        this(builder, z);
-    }
-
     private DataRes(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            return new DataRes(this, z, null);
+            return new DataRes(this, z);
         }
     }
 }

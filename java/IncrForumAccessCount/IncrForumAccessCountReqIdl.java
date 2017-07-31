@@ -7,10 +7,6 @@ public final class IncrForumAccessCountReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ IncrForumAccessCountReqIdl(Builder builder, boolean z, IncrForumAccessCountReqIdl incrForumAccessCountReqIdl) {
-        this(builder, z);
-    }
-
     private IncrForumAccessCountReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class IncrForumAccessCountReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public IncrForumAccessCountReqIdl build(boolean z) {
-            return new IncrForumAccessCountReqIdl(this, z, null);
+            return new IncrForumAccessCountReqIdl(this, z);
         }
     }
 }

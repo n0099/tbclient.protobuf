@@ -23,10 +23,6 @@ public final class RecommendForum extends Message {
     public static final Integer DEFAULT_MEMBER_NUM = 0;
     public static final Integer DEFAULT_THREAD_NUM = 0;
 
-    /* synthetic */ RecommendForum(Builder builder, boolean z, RecommendForum recommendForum) {
-        this(builder, z);
-    }
-
     private RecommendForum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class RecommendForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecommendForum build(boolean z) {
-            return new RecommendForum(this, z, null);
+            return new RecommendForum(this, z);
         }
     }
 }

@@ -11,10 +11,6 @@ public final class ExcellentTagInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tag_name;
 
-    /* synthetic */ ExcellentTagInfo(Builder builder, boolean z, ExcellentTagInfo excellentTagInfo) {
-        this(builder, z);
-    }
-
     private ExcellentTagInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class ExcellentTagInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ExcellentTagInfo build(boolean z) {
-            return new ExcellentTagInfo(this, z, null);
+            return new ExcellentTagInfo(this, z);
         }
     }
 }

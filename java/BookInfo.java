@@ -1,6 +1,6 @@
 package tbclient;
 
-import com.baidu.tieba.w;
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -51,7 +51,7 @@ public final class BookInfo extends Message {
     public final String book_ver;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String chapter_ver;
-    @ProtoField(tag = w.n.View_minWidth, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.n.View_minWidth, type = Message.Datatype.UINT32)
     public final Integer charge_type;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer class_id;
@@ -73,7 +73,7 @@ public final class BookInfo extends Message {
     public final Integer discount_type;
     @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String discuss;
-    @ProtoField(tag = w.n.View_minHeight, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.UINT32)
     public final Integer first_chapter;
     @ProtoField(tag = 38, type = Message.Datatype.UINT64)
     public final Long forum_id;
@@ -93,7 +93,7 @@ public final class BookInfo extends Message {
     public final Integer member_show_type;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer orignal_price;
-    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.STRING)
     public final String paper_price;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer price;
@@ -142,10 +142,6 @@ public final class BookInfo extends Message {
     public static final Integer DEFAULT_FIRST_CHAPTER = 0;
     public static final Integer DEFAULT_CHARGE_TYPE = 0;
     public static final Integer DEFAULT_MEMBER_SHOW_TYPE = 0;
-
-    /* synthetic */ BookInfo(Builder builder, boolean z, BookInfo bookInfo) {
-        this(builder, z);
-    }
 
     private BookInfo(Builder builder, boolean z) {
         super(builder);
@@ -530,7 +526,7 @@ public final class BookInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BookInfo build(boolean z) {
-            return new BookInfo(this, z, null);
+            return new BookInfo(this, z);
         }
     }
 }

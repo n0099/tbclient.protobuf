@@ -10,10 +10,6 @@ public final class PushThreadResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ PushThreadResIdl(Builder builder, boolean z, PushThreadResIdl pushThreadResIdl) {
-        this(builder, z);
-    }
-
     private PushThreadResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class PushThreadResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PushThreadResIdl build(boolean z) {
-            return new PushThreadResIdl(this, z, null);
+            return new PushThreadResIdl(this, z);
         }
     }
 }

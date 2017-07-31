@@ -20,10 +20,6 @@ public final class DeclareInfo extends Message {
     public static final Long DEFAULT_DECLARE_NUM = 0L;
     public static final Integer DEFAULT_IS_DECLARE = 0;
 
-    /* synthetic */ DeclareInfo(Builder builder, boolean z, DeclareInfo declareInfo) {
-        this(builder, z);
-    }
-
     private DeclareInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class DeclareInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DeclareInfo build(boolean z) {
-            return new DeclareInfo(this, z, null);
+            return new DeclareInfo(this, z);
         }
     }
 }

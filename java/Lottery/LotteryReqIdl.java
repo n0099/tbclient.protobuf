@@ -7,10 +7,6 @@ public final class LotteryReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ LotteryReqIdl(Builder builder, boolean z, LotteryReqIdl lotteryReqIdl) {
-        this(builder, z);
-    }
-
     private LotteryReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class LotteryReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LotteryReqIdl build(boolean z) {
-            return new LotteryReqIdl(this, z, null);
+            return new LotteryReqIdl(this, z);
         }
     }
 }

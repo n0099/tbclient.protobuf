@@ -37,10 +37,6 @@ public final class FrequentlyForumInfo extends Message {
     public static final Integer DEFAULT_ACCESS_FLAG = 0;
     public static final Integer DEFAULT_IS_SIGN = 0;
 
-    /* synthetic */ FrequentlyForumInfo(Builder builder, boolean z, FrequentlyForumInfo frequentlyForumInfo) {
-        this(builder, z);
-    }
-
     private FrequentlyForumInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -144,7 +140,7 @@ public final class FrequentlyForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FrequentlyForumInfo build(boolean z) {
-            return new FrequentlyForumInfo(this, z, null);
+            return new FrequentlyForumInfo(this, z);
         }
     }
 }

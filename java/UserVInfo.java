@@ -8,10 +8,6 @@ public final class UserVInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer v_type;
 
-    /* synthetic */ UserVInfo(Builder builder, boolean z, UserVInfo userVInfo) {
-        this(builder, z);
-    }
-
     private UserVInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class UserVInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserVInfo build(boolean z) {
-            return new UserVInfo(this, z, null);
+            return new UserVInfo(this, z);
         }
     }
 }

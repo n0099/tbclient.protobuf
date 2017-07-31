@@ -14,10 +14,6 @@ public final class BetInfo extends Message {
     public static final Long DEFAULT_SCORE = 0L;
     public static final Integer DEFAULT_NO = 0;
 
-    /* synthetic */ BetInfo(Builder builder, boolean z, BetInfo betInfo) {
-        this(builder, z);
-    }
-
     private BetInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class BetInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BetInfo build(boolean z) {
-            return new BetInfo(this, z, null);
+            return new BetInfo(this, z);
         }
     }
 }

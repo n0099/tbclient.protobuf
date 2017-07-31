@@ -20,10 +20,6 @@ public final class SchoolRecomUserInfo extends Message {
     public static final Long DEFAULT_UID = 0L;
     public static final Integer DEFAULT_IS_LIKED = 0;
 
-    /* synthetic */ SchoolRecomUserInfo(Builder builder, boolean z, SchoolRecomUserInfo schoolRecomUserInfo) {
-        this(builder, z);
-    }
-
     private SchoolRecomUserInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class SchoolRecomUserInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SchoolRecomUserInfo build(boolean z) {
-            return new SchoolRecomUserInfo(this, z, null);
+            return new SchoolRecomUserInfo(this, z);
         }
     }
 }

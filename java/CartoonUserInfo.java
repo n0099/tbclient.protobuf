@@ -8,10 +8,6 @@ public final class CartoonUserInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer is_vip;
 
-    /* synthetic */ CartoonUserInfo(Builder builder, boolean z, CartoonUserInfo cartoonUserInfo) {
-        this(builder, z);
-    }
-
     private CartoonUserInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class CartoonUserInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CartoonUserInfo build(boolean z) {
-            return new CartoonUserInfo(this, z, null);
+            return new CartoonUserInfo(this, z);
         }
     }
 }

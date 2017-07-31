@@ -10,10 +10,6 @@ public final class HotSearch extends Message {
     @ProtoField(tag = 2)
     public final SearchValue search_value;
 
-    /* synthetic */ HotSearch(Builder builder, boolean z, HotSearch hotSearch) {
-        this(builder, z);
-    }
-
     private HotSearch(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -48,7 +44,7 @@ public final class HotSearch extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HotSearch build(boolean z) {
-            return new HotSearch(this, z, null);
+            return new HotSearch(this, z);
         }
     }
 }

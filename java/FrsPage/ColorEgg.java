@@ -13,10 +13,6 @@ public final class ColorEgg extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer style_flag;
 
-    /* synthetic */ ColorEgg(Builder builder, boolean z, ColorEgg colorEgg) {
-        this(builder, z);
-    }
-
     private ColorEgg(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class ColorEgg extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ColorEgg build(boolean z) {
-            return new ColorEgg(this, z, null);
+            return new ColorEgg(this, z);
         }
     }
 }

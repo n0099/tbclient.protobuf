@@ -4,6 +4,9 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class ResData extends Message {
+    public static final String DEFAULT_FNAME = "";
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String fname;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long forumId;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -16,10 +19,6 @@ public final class ResData extends Message {
     public static final Long DEFAULT_FORUMID = 0L;
     public static final Long DEFAULT_QUOTEID = 0L;
     public static final Long DEFAULT_REPOSTID = 0L;
-
-    /* synthetic */ ResData(Builder builder, boolean z, ResData resData) {
-        this(builder, z);
-    }
 
     private ResData(Builder builder, boolean z) {
         super(builder);
@@ -41,9 +40,14 @@ public final class ResData extends Message {
             }
             if (builder.repostId == null) {
                 this.repostId = DEFAULT_REPOSTID;
-                return;
             } else {
                 this.repostId = builder.repostId;
+            }
+            if (builder.fname == null) {
+                this.fname = "";
+                return;
+            } else {
+                this.fname = builder.fname;
                 return;
             }
         }
@@ -51,10 +55,12 @@ public final class ResData extends Message {
         this.forumId = builder.forumId;
         this.quoteId = builder.quoteId;
         this.repostId = builder.repostId;
+        this.fname = builder.fname;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ResData> {
+        public String fname;
         public Long forumId;
         public Long postState;
         public Long quoteId;
@@ -70,13 +76,14 @@ public final class ResData extends Message {
                 this.forumId = resData.forumId;
                 this.quoteId = resData.quoteId;
                 this.repostId = resData.repostId;
+                this.fname = resData.fname;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ResData build(boolean z) {
-            return new ResData(this, z, null);
+            return new ResData(this, z);
         }
     }
 }

@@ -26,10 +26,6 @@ public final class RecomTopicList extends Message {
     public static final Long DEFAULT_DISCUSS_NUM = 0L;
     public static final Integer DEFAULT_TAG = 0;
 
-    /* synthetic */ RecomTopicList(Builder builder, boolean z, RecomTopicList recomTopicList) {
-        this(builder, z);
-    }
-
     private RecomTopicList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class RecomTopicList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecomTopicList build(boolean z) {
-            return new RecomTopicList(this, z, null);
+            return new RecomTopicList(this, z);
         }
     }
 }

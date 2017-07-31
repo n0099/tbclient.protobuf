@@ -11,10 +11,6 @@ public final class Guess extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ Guess(Builder builder, boolean z, Guess guess) {
-        this(builder, z);
-    }
-
     private Guess(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Guess extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Guess build(boolean z) {
-            return new Guess(this, z, null);
+            return new Guess(this, z);
         }
     }
 }

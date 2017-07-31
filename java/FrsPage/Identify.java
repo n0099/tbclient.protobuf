@@ -11,10 +11,6 @@ public final class Identify extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_identify;
 
-    /* synthetic */ Identify(Builder builder, boolean z, Identify identify) {
-        this(builder, z);
-    }
-
     private Identify(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Identify extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Identify build(boolean z) {
-            return new Identify(this, z, null);
+            return new Identify(this, z);
         }
     }
 }

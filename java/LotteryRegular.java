@@ -13,10 +13,6 @@ public final class LotteryRegular extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String regular;
 
-    /* synthetic */ LotteryRegular(Builder builder, boolean z, LotteryRegular lotteryRegular) {
-        this(builder, z);
-    }
-
     private LotteryRegular(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class LotteryRegular extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LotteryRegular build(boolean z) {
-            return new LotteryRegular(this, z, null);
+            return new LotteryRegular(this, z);
         }
     }
 }

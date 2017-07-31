@@ -7,10 +7,6 @@ public final class AddFriendReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;
 
-    /* synthetic */ AddFriendReqIdl(Builder builder, boolean z, AddFriendReqIdl addFriendReqIdl) {
-        this(builder, z);
-    }
-
     private AddFriendReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class AddFriendReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AddFriendReqIdl build(boolean z) {
-            return new AddFriendReqIdl(this, z, null);
+            return new AddFriendReqIdl(this, z);
         }
     }
 }

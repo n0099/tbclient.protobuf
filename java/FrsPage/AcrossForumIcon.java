@@ -11,10 +11,6 @@ public final class AcrossForumIcon extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer pic_type;
 
-    /* synthetic */ AcrossForumIcon(Builder builder, boolean z, AcrossForumIcon acrossForumIcon) {
-        this(builder, z);
-    }
-
     private AcrossForumIcon(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class AcrossForumIcon extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AcrossForumIcon build(boolean z) {
-            return new AcrossForumIcon(this, z, null);
+            return new AcrossForumIcon(this, z);
         }
     }
 }

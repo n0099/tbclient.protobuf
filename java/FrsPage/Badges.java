@@ -14,10 +14,6 @@ public final class Badges extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String webview;
 
-    /* synthetic */ Badges(Builder builder, boolean z, Badges badges) {
-        this(builder, z);
-    }
-
     private Badges(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Badges extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Badges build(boolean z) {
-            return new Badges(this, z, null);
+            return new Badges(this, z);
         }
     }
 }

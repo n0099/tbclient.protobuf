@@ -29,10 +29,6 @@ public final class GraffitiRankItem extends Message {
     public static final Long DEFAULT_UID = 0L;
     public static final Integer DEFAULT_G_TYPE = 0;
 
-    /* synthetic */ GraffitiRankItem(Builder builder, boolean z, GraffitiRankItem graffitiRankItem) {
-        this(builder, z);
-    }
-
     private GraffitiRankItem(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -120,7 +116,7 @@ public final class GraffitiRankItem extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GraffitiRankItem build(boolean z) {
-            return new GraffitiRankItem(this, z, null);
+            return new GraffitiRankItem(this, z);
         }
     }
 }

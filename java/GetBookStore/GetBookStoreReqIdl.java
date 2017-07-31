@@ -7,10 +7,6 @@ public final class GetBookStoreReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetBookStoreReqIdl(Builder builder, boolean z, GetBookStoreReqIdl getBookStoreReqIdl) {
-        this(builder, z);
-    }
-
     private GetBookStoreReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetBookStoreReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetBookStoreReqIdl build(boolean z) {
-            return new GetBookStoreReqIdl(this, z, null);
+            return new GetBookStoreReqIdl(this, z);
         }
     }
 }

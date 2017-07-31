@@ -23,10 +23,6 @@ public final class PrivSets extends Message {
     public static final Integer DEFAULT_FRIEND = 0;
     public static final Integer DEFAULT_LIVE = 0;
 
-    /* synthetic */ PrivSets(Builder builder, boolean z, PrivSets privSets) {
-        this(builder, z);
-    }
-
     private PrivSets(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class PrivSets extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PrivSets build(boolean z) {
-            return new PrivSets(this, z, null);
+            return new PrivSets(this, z);
         }
     }
 }

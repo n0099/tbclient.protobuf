@@ -29,10 +29,6 @@ public final class BawuRoleInfoPub extends Message {
     public static final Integer DEFAULT_ROLE_ID = 0;
     public static final Integer DEFAULT_USER_LEVEL = 0;
 
-    /* synthetic */ BawuRoleInfoPub(Builder builder, boolean z, BawuRoleInfoPub bawuRoleInfoPub) {
-        this(builder, z);
-    }
-
     private BawuRoleInfoPub(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -120,7 +116,7 @@ public final class BawuRoleInfoPub extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BawuRoleInfoPub build(boolean z) {
-            return new BawuRoleInfoPub(this, z, null);
+            return new BawuRoleInfoPub(this, z);
         }
     }
 }

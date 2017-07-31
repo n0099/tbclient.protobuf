@@ -15,10 +15,6 @@ public final class OrderData extends Message {
     public static final List<OrderList> DEFAULT_ORDER_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HASMORE = 0;
 
-    /* synthetic */ OrderData(Builder builder, boolean z, OrderData orderData) {
-        this(builder, z);
-    }
-
     private OrderData(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -61,7 +57,7 @@ public final class OrderData extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public OrderData build(boolean z) {
-            return new OrderData(this, z, null);
+            return new OrderData(this, z);
         }
     }
 }

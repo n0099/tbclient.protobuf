@@ -46,10 +46,6 @@ public final class VideoInfo extends Message {
     public static final List<VideoDesc> DEFAULT_VIDEO_DESC = Collections.emptyList();
     public static final Integer DEFAULT_VIDEO_SELECT_FLAG = 0;
 
-    /* synthetic */ VideoInfo(Builder builder, boolean z, VideoInfo videoInfo) {
-        this(builder, z);
-    }
-
     private VideoInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -177,7 +173,7 @@ public final class VideoInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VideoInfo build(boolean z) {
-            return new VideoInfo(this, z, null);
+            return new VideoInfo(this, z);
         }
     }
 }

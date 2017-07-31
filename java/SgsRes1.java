@@ -8,10 +8,6 @@ public final class SgsRes1 extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer aa;
 
-    /* synthetic */ SgsRes1(Builder builder, boolean z, SgsRes1 sgsRes1) {
-        this(builder, z);
-    }
-
     private SgsRes1(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class SgsRes1 extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SgsRes1 build(boolean z) {
-            return new SgsRes1(this, z, null);
+            return new SgsRes1(this, z);
         }
     }
 }

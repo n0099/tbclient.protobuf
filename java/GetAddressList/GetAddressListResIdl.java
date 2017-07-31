@@ -10,10 +10,6 @@ public final class GetAddressListResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetAddressListResIdl(Builder builder, boolean z, GetAddressListResIdl getAddressListResIdl) {
-        this(builder, z);
-    }
-
     private GetAddressListResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetAddressListResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetAddressListResIdl build(boolean z) {
-            return new GetAddressListResIdl(this, z, null);
+            return new GetAddressListResIdl(this, z);
         }
     }
 }

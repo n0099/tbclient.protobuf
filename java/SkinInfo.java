@@ -20,10 +20,6 @@ public final class SkinInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ SkinInfo(Builder builder, boolean z, SkinInfo skinInfo) {
-        this(builder, z);
-    }
-
     private SkinInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class SkinInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SkinInfo build(boolean z) {
-            return new SkinInfo(this, z, null);
+            return new SkinInfo(this, z);
         }
     }
 }

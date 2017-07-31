@@ -52,10 +52,6 @@ public final class Album extends Message {
     public static final List<ConcernUser> DEFAULT_CONCERN_USER = Collections.emptyList();
     public static final Integer DEFAULT_NUM_USER = 0;
 
-    /* synthetic */ Album(Builder builder, boolean z, Album album) {
-        this(builder, z);
-    }
-
     private Album(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -199,7 +195,7 @@ public final class Album extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Album build(boolean z) {
-            return new Album(this, z, null);
+            return new Album(this, z);
         }
     }
 }

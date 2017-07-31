@@ -11,10 +11,6 @@ public final class SignatureContent extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* synthetic */ SignatureContent(Builder builder, boolean z, SignatureContent signatureContent) {
-        this(builder, z);
-    }
-
     private SignatureContent(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class SignatureContent extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SignatureContent build(boolean z) {
-            return new SignatureContent(this, z, null);
+            return new SignatureContent(this, z);
         }
     }
 }

@@ -14,10 +14,6 @@ public final class PicTextItem extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String item_url;
 
-    /* synthetic */ PicTextItem(Builder builder, boolean z, PicTextItem picTextItem) {
-        this(builder, z);
-    }
-
     private PicTextItem(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class PicTextItem extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PicTextItem build(boolean z) {
-            return new PicTextItem(this, z, null);
+            return new PicTextItem(this, z);
         }
     }
 }

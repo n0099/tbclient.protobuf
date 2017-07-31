@@ -7,10 +7,6 @@ public final class UserMuteQueryReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ UserMuteQueryReqIdl(Builder builder, boolean z, UserMuteQueryReqIdl userMuteQueryReqIdl) {
-        this(builder, z);
-    }
-
     private UserMuteQueryReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class UserMuteQueryReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserMuteQueryReqIdl build(boolean z) {
-            return new UserMuteQueryReqIdl(this, z, null);
+            return new UserMuteQueryReqIdl(this, z);
         }
     }
 }

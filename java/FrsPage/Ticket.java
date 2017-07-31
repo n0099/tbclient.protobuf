@@ -11,10 +11,6 @@ public final class Ticket extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ Ticket(Builder builder, boolean z, Ticket ticket) {
-        this(builder, z);
-    }
-
     private Ticket(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Ticket extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Ticket build(boolean z) {
-            return new Ticket(this, z, null);
+            return new Ticket(this, z);
         }
     }
 }

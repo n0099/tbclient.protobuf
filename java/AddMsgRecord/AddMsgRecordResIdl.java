@@ -10,10 +10,6 @@ public final class AddMsgRecordResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ AddMsgRecordResIdl(Builder builder, boolean z, AddMsgRecordResIdl addMsgRecordResIdl) {
-        this(builder, z);
-    }
-
     private AddMsgRecordResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class AddMsgRecordResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AddMsgRecordResIdl build(boolean z) {
-            return new AddMsgRecordResIdl(this, z, null);
+            return new AddMsgRecordResIdl(this, z);
         }
     }
 }

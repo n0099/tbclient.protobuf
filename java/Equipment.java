@@ -11,10 +11,6 @@ public final class Equipment extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String portrait;
 
-    /* synthetic */ Equipment(Builder builder, boolean z, Equipment equipment) {
-        this(builder, z);
-    }
-
     private Equipment(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Equipment extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Equipment build(boolean z) {
-            return new Equipment(this, z, null);
+            return new Equipment(this, z);
         }
     }
 }

@@ -14,10 +14,6 @@ public final class TbreadDispatch extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String product_type;
 
-    /* synthetic */ TbreadDispatch(Builder builder, boolean z, TbreadDispatch tbreadDispatch) {
-        this(builder, z);
-    }
-
     private TbreadDispatch(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class TbreadDispatch extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TbreadDispatch build(boolean z) {
-            return new TbreadDispatch(this, z, null);
+            return new TbreadDispatch(this, z);
         }
     }
 }

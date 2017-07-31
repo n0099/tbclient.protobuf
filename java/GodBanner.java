@@ -14,10 +14,6 @@ public final class GodBanner extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic_url;
 
-    /* synthetic */ GodBanner(Builder builder, boolean z, GodBanner godBanner) {
-        this(builder, z);
-    }
-
     private GodBanner(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class GodBanner extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GodBanner build(boolean z) {
-            return new GodBanner(this, z, null);
+            return new GodBanner(this, z);
         }
     }
 }

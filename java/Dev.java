@@ -14,10 +14,6 @@ public final class Dev extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String version;
 
-    /* synthetic */ Dev(Builder builder, boolean z, Dev dev) {
-        this(builder, z);
-    }
-
     private Dev(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Dev extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Dev build(boolean z) {
-            return new Dev(this, z, null);
+            return new Dev(this, z);
         }
     }
 }

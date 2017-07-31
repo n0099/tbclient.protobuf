@@ -13,10 +13,6 @@ public final class EverydayThread extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer show_time;
 
-    /* synthetic */ EverydayThread(Builder builder, boolean z, EverydayThread everydayThread) {
-        this(builder, z);
-    }
-
     private EverydayThread(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class EverydayThread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public EverydayThread build(boolean z) {
-            return new EverydayThread(this, z, null);
+            return new EverydayThread(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class UserDynamic extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<User> concerned_user_list;
 
-    /* synthetic */ UserDynamic(Builder builder, boolean z, UserDynamic userDynamic) {
-        this(builder, z);
-    }
-
     private UserDynamic(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -45,7 +41,7 @@ public final class UserDynamic extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserDynamic build(boolean z) {
-            return new UserDynamic(this, z, null);
+            return new UserDynamic(this, z);
         }
     }
 }

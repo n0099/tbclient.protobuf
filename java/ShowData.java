@@ -8,10 +8,6 @@ public final class ShowData extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer show;
 
-    /* synthetic */ ShowData(Builder builder, boolean z, ShowData showData) {
-        this(builder, z);
-    }
-
     private ShowData(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class ShowData extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ShowData build(boolean z) {
-            return new ShowData(this, z, null);
+            return new ShowData(this, z);
         }
     }
 }

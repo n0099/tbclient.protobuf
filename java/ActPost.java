@@ -16,10 +16,6 @@ public final class ActPost extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String list_head;
 
-    /* synthetic */ ActPost(Builder builder, boolean z, ActPost actPost) {
-        this(builder, z);
-    }
-
     private ActPost(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class ActPost extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActPost build(boolean z) {
-            return new ActPost(this, z, null);
+            return new ActPost(this, z);
         }
     }
 }

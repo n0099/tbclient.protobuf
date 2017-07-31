@@ -23,10 +23,6 @@ public final class SdkTopicThread extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final Integer DEFAULT_NEED_TOPIC = 0;
 
-    /* synthetic */ SdkTopicThread(Builder builder, boolean z, SdkTopicThread sdkTopicThread) {
-        this(builder, z);
-    }
-
     private SdkTopicThread(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class SdkTopicThread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SdkTopicThread build(boolean z) {
-            return new SdkTopicThread(this, z, null);
+            return new SdkTopicThread(this, z);
         }
     }
 }

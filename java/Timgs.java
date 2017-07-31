@@ -26,10 +26,6 @@ public final class Timgs extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ Timgs(Builder builder, boolean z, Timgs timgs) {
-        this(builder, z);
-    }
-
     private Timgs(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class Timgs extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Timgs build(boolean z) {
-            return new Timgs(this, z, null);
+            return new Timgs(this, z);
         }
     }
 }

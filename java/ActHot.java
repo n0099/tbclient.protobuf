@@ -23,10 +23,6 @@ public final class ActHot extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
 
-    /* synthetic */ ActHot(Builder builder, boolean z, ActHot actHot) {
-        this(builder, z);
-    }
-
     private ActHot(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class ActHot extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActHot build(boolean z) {
-            return new ActHot(this, z, null);
+            return new ActHot(this, z);
         }
     }
 }

@@ -17,10 +17,6 @@ public final class FrsTabInfo extends Message {
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final Integer DEFAULT_TAB_TYPE = 0;
 
-    /* synthetic */ FrsTabInfo(Builder builder, boolean z, FrsTabInfo frsTabInfo) {
-        this(builder, z);
-    }
-
     private FrsTabInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class FrsTabInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FrsTabInfo build(boolean z) {
-            return new FrsTabInfo(this, z, null);
+            return new FrsTabInfo(this, z);
         }
     }
 }

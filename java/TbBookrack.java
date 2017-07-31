@@ -25,10 +25,6 @@ public final class TbBookrack extends Message {
     public static final Integer DEFAULT_NUM = 0;
     public static final List<BookInfo> DEFAULT_BOOK_LIST = Collections.emptyList();
 
-    /* synthetic */ TbBookrack(Builder builder, boolean z, TbBookrack tbBookrack) {
-        this(builder, z);
-    }
-
     private TbBookrack(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -100,7 +96,7 @@ public final class TbBookrack extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TbBookrack build(boolean z) {
-            return new TbBookrack(this, z, null);
+            return new TbBookrack(this, z);
         }
     }
 }

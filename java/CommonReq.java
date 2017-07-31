@@ -95,10 +95,6 @@ public final class CommonReq extends Message {
     public static final Long DEFAULT__TIMESTAMP = 0L;
     public static final Integer DEFAULT_NET_TYPE = 0;
 
-    /* synthetic */ CommonReq(Builder builder, boolean z, CommonReq commonReq) {
-        this(builder, z);
-    }
-
     private CommonReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -362,7 +358,7 @@ public final class CommonReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CommonReq build(boolean z) {
-            return new CommonReq(this, z, null);
+            return new CommonReq(this, z);
         }
     }
 }

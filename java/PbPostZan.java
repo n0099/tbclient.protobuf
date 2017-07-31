@@ -11,10 +11,6 @@ public final class PbPostZan extends Message {
     public static final Long DEFAULT_ZAN_NUM = 0L;
     public static final Integer DEFAULT_HAS_ZAN = 0;
 
-    /* synthetic */ PbPostZan(Builder builder, boolean z, PbPostZan pbPostZan) {
-        this(builder, z);
-    }
-
     private PbPostZan(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class PbPostZan extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbPostZan build(boolean z) {
-            return new PbPostZan(this, z, null);
+            return new PbPostZan(this, z);
         }
     }
 }

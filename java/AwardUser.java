@@ -17,10 +17,6 @@ public final class AwardUser extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_AWARD_TIME = 0;
 
-    /* synthetic */ AwardUser(Builder builder, boolean z, AwardUser awardUser) {
-        this(builder, z);
-    }
-
     private AwardUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class AwardUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AwardUser build(boolean z) {
-            return new AwardUser(this, z, null);
+            return new AwardUser(this, z);
         }
     }
 }

@@ -19,6 +19,8 @@ public final class ReplyList extends Message {
     public final Integer hide_fname;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer is_floor;
+    @ProtoField(tag = 20, type = Message.Datatype.INT32)
+    public final Integer is_story;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String item_type;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -60,10 +62,7 @@ public final class ReplyList extends Message {
     public static final Integer DEFAULT_THREAD_TYPE = 0;
     public static final Long DEFAULT_V_FORUM_ID = 0L;
     public static final Integer DEFAULT_HIDE_FNAME = 0;
-
-    /* synthetic */ ReplyList(Builder builder, boolean z, ReplyList replyList) {
-        this(builder, z);
-    }
+    public static final Integer DEFAULT_IS_STORY = 0;
 
     private ReplyList(Builder builder, boolean z) {
         super(builder);
@@ -148,9 +147,14 @@ public final class ReplyList extends Message {
             }
             if (builder.hide_fname == null) {
                 this.hide_fname = DEFAULT_HIDE_FNAME;
-                return;
             } else {
                 this.hide_fname = builder.hide_fname;
+            }
+            if (builder.is_story == null) {
+                this.is_story = DEFAULT_IS_STORY;
+                return;
+            } else {
+                this.is_story = builder.is_story;
                 return;
             }
         }
@@ -173,6 +177,7 @@ public final class ReplyList extends Message {
         this.thread_type = builder.thread_type;
         this.v_forum_id = builder.v_forum_id;
         this.hide_fname = builder.hide_fname;
+        this.is_story = builder.is_story;
     }
 
     /* loaded from: classes.dex */
@@ -181,6 +186,7 @@ public final class ReplyList extends Message {
         public String fname;
         public Integer hide_fname;
         public Integer is_floor;
+        public Integer is_story;
         public String item_type;
         public Long post_id;
         public String quote_content;
@@ -222,13 +228,14 @@ public final class ReplyList extends Message {
                 this.thread_type = replyList.thread_type;
                 this.v_forum_id = replyList.v_forum_id;
                 this.hide_fname = replyList.hide_fname;
+                this.is_story = replyList.is_story;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ReplyList build(boolean z) {
-            return new ReplyList(this, z, null);
+            return new ReplyList(this, z);
         }
     }
 }

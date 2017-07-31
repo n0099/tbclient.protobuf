@@ -17,10 +17,6 @@ public final class ForumHeadlineImg extends Message {
     public static final Long DEFAULT_THREAD_USER_ID = 0L;
     public static final Long DEFAULT_IMG_USER_ID = 0L;
 
-    /* synthetic */ ForumHeadlineImg(Builder builder, boolean z, ForumHeadlineImg forumHeadlineImg) {
-        this(builder, z);
-    }
-
     private ForumHeadlineImg(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class ForumHeadlineImg extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumHeadlineImg build(boolean z) {
-            return new ForumHeadlineImg(this, z, null);
+            return new ForumHeadlineImg(this, z);
         }
     }
 }

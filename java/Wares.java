@@ -23,10 +23,6 @@ public final class Wares extends Message {
     public static final Integer DEFAULT_MONEY = 0;
     public static final Integer DEFAULT_PROPS_MON = 0;
 
-    /* synthetic */ Wares(Builder builder, boolean z, Wares wares) {
-        this(builder, z);
-    }
-
     private Wares(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class Wares extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Wares build(boolean z) {
-            return new Wares(this, z, null);
+            return new Wares(this, z);
         }
     }
 }

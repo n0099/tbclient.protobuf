@@ -35,10 +35,6 @@ public final class ThemeCardPropMain extends Message {
     public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
     public static final Integer DEFAULT_IS_FINISHED = 0;
 
-    /* synthetic */ ThemeCardPropMain(Builder builder, boolean z, ThemeCardPropMain themeCardPropMain) {
-        this(builder, z);
-    }
-
     private ThemeCardPropMain(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -142,7 +138,7 @@ public final class ThemeCardPropMain extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThemeCardPropMain build(boolean z) {
-            return new ThemeCardPropMain(this, z, null);
+            return new ThemeCardPropMain(this, z);
         }
     }
 }

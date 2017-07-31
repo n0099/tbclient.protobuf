@@ -38,10 +38,6 @@ public final class High extends Message {
     public static final Integer DEFAULT_WEIGHT = 0;
     public static final Integer DEFAULT_TYPE = 0;
 
-    /* synthetic */ High(Builder builder, boolean z, High high) {
-        this(builder, z);
-    }
-
     private High(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -153,7 +149,7 @@ public final class High extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public High build(boolean z) {
-            return new High(this, z, null);
+            return new High(this, z);
         }
     }
 }

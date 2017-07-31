@@ -11,10 +11,6 @@ public final class NoticeInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer pullCommentFrequence;
 
-    /* synthetic */ NoticeInfo(Builder builder, boolean z, NoticeInfo noticeInfo) {
-        this(builder, z);
-    }
-
     private NoticeInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class NoticeInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NoticeInfo build(boolean z) {
-            return new NoticeInfo(this, z, null);
+            return new NoticeInfo(this, z);
         }
     }
 }

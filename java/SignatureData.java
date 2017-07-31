@@ -19,10 +19,6 @@ public final class SignatureData extends Message {
     public static final Integer DEFAULT_SIGNATURE_ID = 0;
     public static final List<SignatureContent> DEFAULT_CONTENT = Collections.emptyList();
 
-    /* synthetic */ SignatureData(Builder builder, boolean z, SignatureData signatureData) {
-        this(builder, z);
-    }
-
     private SignatureData(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class SignatureData extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SignatureData build(boolean z) {
-            return new SignatureData(this, z, null);
+            return new SignatureData(this, z);
         }
     }
 }

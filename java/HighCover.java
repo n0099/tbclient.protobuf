@@ -8,10 +8,6 @@ public final class HighCover extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic_url;
 
-    /* synthetic */ HighCover(Builder builder, boolean z, HighCover highCover) {
-        this(builder, z);
-    }
-
     private HighCover(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class HighCover extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HighCover build(boolean z) {
-            return new HighCover(this, z, null);
+            return new HighCover(this, z);
         }
     }
 }

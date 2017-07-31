@@ -23,10 +23,6 @@ public final class ActiveBannerList extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_ACTIVE_TYPE = 0;
 
-    /* synthetic */ ActiveBannerList(Builder builder, boolean z, ActiveBannerList activeBannerList) {
-        this(builder, z);
-    }
-
     private ActiveBannerList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class ActiveBannerList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActiveBannerList build(boolean z) {
-            return new ActiveBannerList(this, z, null);
+            return new ActiveBannerList(this, z);
         }
     }
 }

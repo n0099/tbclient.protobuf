@@ -7,10 +7,6 @@ public final class GodThreadListReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GodThreadListReqIdl(Builder builder, boolean z, GodThreadListReqIdl godThreadListReqIdl) {
-        this(builder, z);
-    }
-
     private GodThreadListReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GodThreadListReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GodThreadListReqIdl build(boolean z) {
-            return new GodThreadListReqIdl(this, z, null);
+            return new GodThreadListReqIdl(this, z);
         }
     }
 }

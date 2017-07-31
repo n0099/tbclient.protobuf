@@ -11,10 +11,6 @@ public final class ThemePendantProp extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* synthetic */ ThemePendantProp(Builder builder, boolean z, ThemePendantProp themePendantProp) {
-        this(builder, z);
-    }
-
     private ThemePendantProp(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class ThemePendantProp extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThemePendantProp build(boolean z) {
-            return new ThemePendantProp(this, z, null);
+            return new ThemePendantProp(this, z);
         }
     }
 }

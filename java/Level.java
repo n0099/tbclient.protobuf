@@ -41,10 +41,6 @@ public final class Level extends Message {
     public static final Integer DEFAULT_LEFT_NUM = 0;
     public static final Integer DEFAULT_UPDATE_TIME = 0;
 
-    /* synthetic */ Level(Builder builder, boolean z, Level level) {
-        this(builder, z);
-    }
-
     private Level(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -164,7 +160,7 @@ public final class Level extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Level build(boolean z) {
-            return new Level(this, z, null);
+            return new Level(this, z);
         }
     }
 }

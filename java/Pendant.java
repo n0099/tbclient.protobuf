@@ -11,10 +11,6 @@ public final class Pendant extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long props_id;
 
-    /* synthetic */ Pendant(Builder builder, boolean z, Pendant pendant) {
-        this(builder, z);
-    }
-
     private Pendant(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Pendant extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Pendant build(boolean z) {
-            return new Pendant(this, z, null);
+            return new Pendant(this, z);
         }
     }
 }

@@ -13,10 +13,6 @@ public final class RecomTopicInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<RecomTopicList> topic_list;
 
-    /* synthetic */ RecomTopicInfo(Builder builder, boolean z, RecomTopicInfo recomTopicInfo) {
-        this(builder, z);
-    }
-
     private RecomTopicInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class RecomTopicInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecomTopicInfo build(boolean z) {
-            return new RecomTopicInfo(this, z, null);
+            return new RecomTopicInfo(this, z);
         }
     }
 }

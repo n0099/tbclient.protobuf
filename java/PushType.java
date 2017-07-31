@@ -14,10 +14,6 @@ public final class PushType extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* synthetic */ PushType(Builder builder, boolean z, PushType pushType) {
-        this(builder, z);
-    }
-
     private PushType(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class PushType extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PushType build(boolean z) {
-            return new PushType(this, z, null);
+            return new PushType(this, z);
         }
     }
 }

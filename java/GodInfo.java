@@ -29,10 +29,6 @@ public final class GodInfo extends Message {
     public static final Integer DEFAULT_FOLLOWED = 0;
     public static final Integer DEFAULT_CAN_SEND_MSG = 0;
 
-    /* synthetic */ GodInfo(Builder builder, boolean z, GodInfo godInfo) {
-        this(builder, z);
-    }
-
     private GodInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -120,7 +116,7 @@ public final class GodInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GodInfo build(boolean z) {
-            return new GodInfo(this, z, null);
+            return new GodInfo(this, z);
         }
     }
 }

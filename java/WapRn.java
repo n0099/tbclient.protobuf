@@ -11,10 +11,6 @@ public final class WapRn extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer pbrn;
 
-    /* synthetic */ WapRn(Builder builder, boolean z, WapRn wapRn) {
-        this(builder, z);
-    }
-
     private WapRn(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class WapRn extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public WapRn build(boolean z) {
-            return new WapRn(this, z, null);
+            return new WapRn(this, z);
         }
     }
 }

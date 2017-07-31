@@ -16,10 +16,6 @@ public final class MparrProps extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<Props> props;
 
-    /* synthetic */ MparrProps(Builder builder, boolean z, MparrProps mparrProps) {
-        this(builder, z);
-    }
-
     private MparrProps(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -63,7 +59,7 @@ public final class MparrProps extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MparrProps build(boolean z) {
-            return new MparrProps(this, z, null);
+            return new MparrProps(this, z);
         }
     }
 }

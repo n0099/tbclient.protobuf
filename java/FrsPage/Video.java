@@ -11,10 +11,6 @@ public final class Video extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic;
 
-    /* synthetic */ Video(Builder builder, boolean z, Video video) {
-        this(builder, z);
-    }
-
     private Video(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Video extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Video build(boolean z) {
-            return new Video(this, z, null);
+            return new Video(this, z);
         }
     }
 }

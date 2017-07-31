@@ -19,10 +19,6 @@ public final class RecommendThread extends Message {
     public static final Long DEFAULT_POST_NUM = 0L;
     public static final List<String> DEFAULT_TERM_LIST = Collections.emptyList();
 
-    /* synthetic */ RecommendThread(Builder builder, boolean z, RecommendThread recommendThread) {
-        this(builder, z);
-    }
-
     private RecommendThread(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class RecommendThread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecommendThread build(boolean z) {
-            return new RecommendThread(this, z, null);
+            return new RecommendThread(this, z);
         }
     }
 }

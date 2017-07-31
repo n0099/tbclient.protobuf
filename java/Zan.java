@@ -25,10 +25,6 @@ public final class Zan extends Message {
     public static final List<Long> DEFAULT_LIKER_ID = Collections.emptyList();
     public static final Integer DEFAULT_CONSENT_TYPE = 0;
 
-    /* synthetic */ Zan(Builder builder, boolean z, Zan zan) {
-        this(builder, z);
-    }
-
     private Zan(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -100,7 +96,7 @@ public final class Zan extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Zan build(boolean z) {
-            return new Zan(this, z, null);
+            return new Zan(this, z);
         }
     }
 }

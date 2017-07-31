@@ -20,10 +20,6 @@ public final class ThemeCardInUser extends Message {
     public static final Long DEFAULT_PROPS_ID = 0L;
     public static final Integer DEFAULT_LEVEL = 0;
 
-    /* synthetic */ ThemeCardInUser(Builder builder, boolean z, ThemeCardInUser themeCardInUser) {
-        this(builder, z);
-    }
-
     private ThemeCardInUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class ThemeCardInUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThemeCardInUser build(boolean z) {
-            return new ThemeCardInUser(this, z, null);
+            return new ThemeCardInUser(this, z);
         }
     }
 }

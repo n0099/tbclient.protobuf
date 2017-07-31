@@ -31,10 +31,6 @@ public final class DisplayWindowInfo extends Message {
     public static final Integer DEFAULT_IS_DISPLAY = 0;
     public static final Long DEFAULT_SALES = 0L;
 
-    /* synthetic */ DisplayWindowInfo(Builder builder, boolean z, DisplayWindowInfo displayWindowInfo) {
-        this(builder, z);
-    }
-
     private DisplayWindowInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -126,7 +122,7 @@ public final class DisplayWindowInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DisplayWindowInfo build(boolean z) {
-            return new DisplayWindowInfo(this, z, null);
+            return new DisplayWindowInfo(this, z);
         }
     }
 }

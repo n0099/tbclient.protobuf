@@ -8,10 +8,6 @@ public final class Ecom extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer is_seller;
 
-    /* synthetic */ Ecom(Builder builder, boolean z, Ecom ecom) {
-        this(builder, z);
-    }
-
     private Ecom(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class Ecom extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Ecom build(boolean z) {
-            return new Ecom(this, z, null);
+            return new Ecom(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class RecommendForumListForBottleResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ RecommendForumListForBottleResIdl(Builder builder, boolean z, RecommendForumListForBottleResIdl recommendForumListForBottleResIdl) {
-        this(builder, z);
-    }
-
     private RecommendForumListForBottleResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class RecommendForumListForBottleResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecommendForumListForBottleResIdl build(boolean z) {
-            return new RecommendForumListForBottleResIdl(this, z, null);
+            return new RecommendForumListForBottleResIdl(this, z);
         }
     }
 }

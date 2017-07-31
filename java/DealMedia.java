@@ -17,10 +17,6 @@ public final class DealMedia extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String water_pic;
 
-    /* synthetic */ DealMedia(Builder builder, boolean z, DealMedia dealMedia) {
-        this(builder, z);
-    }
-
     private DealMedia(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class DealMedia extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DealMedia build(boolean z) {
-            return new DealMedia(this, z, null);
+            return new DealMedia(this, z);
         }
     }
 }

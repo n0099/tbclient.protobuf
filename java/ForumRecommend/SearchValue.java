@@ -17,10 +17,6 @@ public final class SearchValue extends Message {
     public static final Long DEFAULT_TYPE = 0L;
     public static final Long DEFAULT_ID = 0L;
 
-    /* synthetic */ SearchValue(Builder builder, boolean z, SearchValue searchValue) {
-        this(builder, z);
-    }
-
     private SearchValue(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class SearchValue extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SearchValue build(boolean z) {
-            return new SearchValue(this, z, null);
+            return new SearchValue(this, z);
         }
     }
 }

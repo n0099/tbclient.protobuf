@@ -14,10 +14,6 @@ public final class Focus extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* synthetic */ Focus(Builder builder, boolean z, Focus focus) {
-        this(builder, z);
-    }
-
     private Focus(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Focus extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Focus build(boolean z) {
-            return new Focus(this, z, null);
+            return new Focus(this, z);
         }
     }
 }

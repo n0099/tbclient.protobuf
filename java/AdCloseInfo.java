@@ -19,10 +19,6 @@ public final class AdCloseInfo extends Message {
     public static final Integer DEFAULT_SUPPORT_CLOSE = 0;
     public static final List<String> DEFAULT_REASONS = Collections.emptyList();
 
-    /* synthetic */ AdCloseInfo(Builder builder, boolean z, AdCloseInfo adCloseInfo) {
-        this(builder, z);
-    }
-
     private AdCloseInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class AdCloseInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AdCloseInfo build(boolean z) {
-            return new AdCloseInfo(this, z, null);
+            return new AdCloseInfo(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class KillAdResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ KillAdResIdl(Builder builder, boolean z, KillAdResIdl killAdResIdl) {
-        this(builder, z);
-    }
-
     private KillAdResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class KillAdResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public KillAdResIdl build(boolean z) {
-            return new KillAdResIdl(this, z, null);
+            return new KillAdResIdl(this, z);
         }
     }
 }

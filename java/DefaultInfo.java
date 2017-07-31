@@ -11,10 +11,6 @@ public final class DefaultInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ DefaultInfo(Builder builder, boolean z, DefaultInfo defaultInfo) {
-        this(builder, z);
-    }
-
     private DefaultInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class DefaultInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DefaultInfo build(boolean z) {
-            return new DefaultInfo(this, z, null);
+            return new DefaultInfo(this, z);
         }
     }
 }

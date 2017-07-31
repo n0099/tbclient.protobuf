@@ -14,10 +14,6 @@ public final class LbsInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String town;
 
-    /* synthetic */ LbsInfo(Builder builder, boolean z, LbsInfo lbsInfo) {
-        this(builder, z);
-    }
-
     private LbsInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class LbsInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LbsInfo build(boolean z) {
-            return new LbsInfo(this, z, null);
+            return new LbsInfo(this, z);
         }
     }
 }

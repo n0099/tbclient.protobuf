@@ -13,10 +13,6 @@ public final class ForumPresentInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<UserRankPresentInfo> user_list;
 
-    /* synthetic */ ForumPresentInfo(Builder builder, boolean z, ForumPresentInfo forumPresentInfo) {
-        this(builder, z);
-    }
-
     private ForumPresentInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class ForumPresentInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumPresentInfo build(boolean z) {
-            return new ForumPresentInfo(this, z, null);
+            return new ForumPresentInfo(this, z);
         }
     }
 }

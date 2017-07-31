@@ -16,10 +16,6 @@ public final class VipCloseAd extends Message {
     public static final Integer DEFAULT_VIP_CLOSE = 0;
     public static final List<Integer> DEFAULT_FORUM_CLOSE = Collections.emptyList();
 
-    /* synthetic */ VipCloseAd(Builder builder, boolean z, VipCloseAd vipCloseAd) {
-        this(builder, z);
-    }
-
     private VipCloseAd(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class VipCloseAd extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VipCloseAd build(boolean z) {
-            return new VipCloseAd(this, z, null);
+            return new VipCloseAd(this, z);
         }
     }
 }

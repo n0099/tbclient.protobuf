@@ -17,10 +17,6 @@ public final class GodDetailInfo extends Message {
     public static final Long DEFAULT_GOD_ID = 0L;
     public static final Long DEFAULT_USER_ID = 0L;
 
-    /* synthetic */ GodDetailInfo(Builder builder, boolean z, GodDetailInfo godDetailInfo) {
-        this(builder, z);
-    }
-
     private GodDetailInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class GodDetailInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GodDetailInfo build(boolean z) {
-            return new GodDetailInfo(this, z, null);
+            return new GodDetailInfo(this, z);
         }
     }
 }

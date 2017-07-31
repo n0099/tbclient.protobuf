@@ -1,6 +1,6 @@
 package tbclient.FrsPage;
 
-import com.baidu.tieba.w;
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
@@ -24,11 +24,11 @@ public final class DataReq extends Message {
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
-    @ProtoField(tag = w.n.View_translationX)
+    @ProtoField(tag = d.n.View_translationX)
     public final AdParam ad_param;
     @ProtoField(tag = 50)
     public final AppPosInfo app_pos;
-    @ProtoField(tag = w.n.View_minWidth, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_minWidth, type = Message.Datatype.INT32)
     public final Integer category_id;
     @ProtoField(tag = 20, type = Message.Datatype.BOOL)
     public final Boolean check_login;
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
-    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer data_size;
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
-    @ProtoField(tag = w.n.View_onClick, type = Message.Datatype.UINT64)
+    @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.UINT64)
     public final Long last_click_tid;
     @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String lastids;
@@ -84,11 +84,11 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;
-    @ProtoField(tag = w.n.View_translationY, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_translationY, type = Message.Datatype.STRING)
     public final String obj_locate;
-    @ProtoField(tag = w.n.View_transformPivotX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_transformPivotX, type = Message.Datatype.STRING)
     public final String obj_source;
-    @ProtoField(tag = w.n.View_minHeight, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.STRING)
     public final String platform;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer pn;
@@ -110,7 +110,7 @@ public final class DataReq extends Message {
     public final Integer scr_w;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer smile_grade;
-    @ProtoField(tag = w.n.View_contentDescription, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_contentDescription, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(tag = 27, type = Message.Datatype.INT32)
     public final Integer st_param;
@@ -128,7 +128,7 @@ public final class DataReq extends Message {
     public final Integer withcal;
     @ProtoField(tag = 45, type = Message.Datatype.STRING)
     public final String yuelaou_locate;
-    @ProtoField(tag = w.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
     public final String yuelaou_params;
     public static final Integer DEFAULT_RN = 0;
     public static final Integer DEFAULT_RN_NEED = 0;
@@ -163,10 +163,6 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final Long DEFAULT_LAST_CLICK_TID = 0L;
     public static final Integer DEFAULT_LOAD_TYPE = 0;
-
-    /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
-        this(builder, z);
-    }
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -603,7 +599,7 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            return new DataReq(this, z, null);
+            return new DataReq(this, z);
         }
     }
 }

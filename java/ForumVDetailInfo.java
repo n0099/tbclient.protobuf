@@ -26,10 +26,6 @@ public final class ForumVDetailInfo extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_FORUM_ID = 0L;
 
-    /* synthetic */ ForumVDetailInfo(Builder builder, boolean z, ForumVDetailInfo forumVDetailInfo) {
-        this(builder, z);
-    }
-
     private ForumVDetailInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class ForumVDetailInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumVDetailInfo build(boolean z) {
-            return new ForumVDetailInfo(this, z, null);
+            return new ForumVDetailInfo(this, z);
         }
     }
 }

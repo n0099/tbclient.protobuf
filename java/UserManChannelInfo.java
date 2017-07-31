@@ -11,10 +11,6 @@ public final class UserManChannelInfo extends Message {
     public static final Integer DEFAULT_MAN_CHANNEL = 0;
     public static final Integer DEFAULT_FOLLOW_CHANNEL = 0;
 
-    /* synthetic */ UserManChannelInfo(Builder builder, boolean z, UserManChannelInfo userManChannelInfo) {
-        this(builder, z);
-    }
-
     private UserManChannelInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class UserManChannelInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserManChannelInfo build(boolean z) {
-            return new UserManChannelInfo(this, z, null);
+            return new UserManChannelInfo(this, z);
         }
     }
 }

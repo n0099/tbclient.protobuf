@@ -10,10 +10,6 @@ public final class GetPostListResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetPostListResIdl(Builder builder, boolean z, GetPostListResIdl getPostListResIdl) {
-        this(builder, z);
-    }
-
     private GetPostListResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetPostListResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetPostListResIdl build(boolean z) {
-            return new GetPostListResIdl(this, z, null);
+            return new GetPostListResIdl(this, z);
         }
     }
 }

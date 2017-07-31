@@ -29,10 +29,6 @@ public final class UserVipInfo extends Message {
     public static final Integer DEFAULT_A_SCORE = 0;
     public static final Integer DEFAULT_N_SCORE = 0;
 
-    /* synthetic */ UserVipInfo(Builder builder, boolean z, UserVipInfo userVipInfo) {
-        this(builder, z);
-    }
-
     private UserVipInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -120,7 +116,7 @@ public final class UserVipInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserVipInfo build(boolean z) {
-            return new UserVipInfo(this, z, null);
+            return new UserVipInfo(this, z);
         }
     }
 }

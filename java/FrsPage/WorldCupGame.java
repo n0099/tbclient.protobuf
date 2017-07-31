@@ -19,10 +19,6 @@ public final class WorldCupGame extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ WorldCupGame(Builder builder, boolean z, WorldCupGame worldCupGame) {
-        this(builder, z);
-    }
-
     private WorldCupGame(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class WorldCupGame extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public WorldCupGame build(boolean z) {
-            return new WorldCupGame(this, z, null);
+            return new WorldCupGame(this, z);
         }
     }
 }

@@ -14,10 +14,6 @@ public final class Topic extends Message {
     public static final Integer DEFAULT_IS_LPOST = 0;
     public static final Integer DEFAULT_TOPIC_TYPE = 0;
 
-    /* synthetic */ Topic(Builder builder, boolean z, Topic topic) {
-        this(builder, z);
-    }
-
     private Topic(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Topic extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Topic build(boolean z) {
-            return new Topic(this, z, null);
+            return new Topic(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class FrsPageResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ FrsPageResIdl(Builder builder, boolean z, FrsPageResIdl frsPageResIdl) {
-        this(builder, z);
-    }
-
     private FrsPageResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class FrsPageResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FrsPageResIdl build(boolean z) {
-            return new FrsPageResIdl(this, z, null);
+            return new FrsPageResIdl(this, z);
         }
     }
 }

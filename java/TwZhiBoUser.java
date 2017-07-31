@@ -14,10 +14,6 @@ public final class TwZhiBoUser extends Message {
     public static final Integer DEFAULT_ANCHOR_LEVEL = 0;
     public static final Integer DEFAULT_IN_BLACK_LIST = 0;
 
-    /* synthetic */ TwZhiBoUser(Builder builder, boolean z, TwZhiBoUser twZhiBoUser) {
-        this(builder, z);
-    }
-
     private TwZhiBoUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class TwZhiBoUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwZhiBoUser build(boolean z) {
-            return new TwZhiBoUser(this, z, null);
+            return new TwZhiBoUser(this, z);
         }
     }
 }

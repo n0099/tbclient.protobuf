@@ -1,6 +1,6 @@
 package tbclient.GetNewGameList;
 
-import com.baidu.tieba.w;
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -43,9 +43,9 @@ public final class NewGameInfo extends Message {
     public static final String DEFAULT_THREAD_FORUM_NAME = "";
     public static final String DEFAULT_VERSION = "";
     public static final String DEFAULT_VERSION_IOS = "";
-    @ProtoField(tag = w.n.View_translationX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_translationX, type = Message.Datatype.STRING)
     public final String andr_pk_name;
-    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.STRING)
     public final String api_key;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String app_id;
@@ -55,11 +55,11 @@ public final class NewGameInfo extends Message {
     public final String bundle_id;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String canvas_name;
-    @ProtoField(tag = w.n.View_contentDescription, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_contentDescription, type = Message.Datatype.INT32)
     public final Integer category_id;
-    @ProtoField(tag = w.n.View_translationY, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_translationY, type = Message.Datatype.STRING)
     public final String category_name;
-    @ProtoField(tag = w.n.View_transformPivotY, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_transformPivotY, type = Message.Datatype.STRING)
     public final String category_name_sim;
     @ProtoField(tag = 40, type = Message.Datatype.UINT32)
     public final Integer channel;
@@ -93,11 +93,11 @@ public final class NewGameInfo extends Message {
     public final String icon_pic2;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic3;
-    @ProtoField(tag = w.n.View_transformPivotX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_transformPivotX, type = Message.Datatype.STRING)
     public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
-    @ProtoField(tag = w.n.View_minHeight, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.STRING)
     public final String inter_version;
     @ProtoField(tag = 45, type = Message.Datatype.STRING)
     public final String inter_version_ios;
@@ -133,9 +133,9 @@ public final class NewGameInfo extends Message {
     public final Integer server_type;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String sign;
-    @ProtoField(tag = w.n.View_onClick, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.INT32)
     public final Integer status;
-    @ProtoField(tag = w.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
     public final String subscript_color;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String test_userids;
@@ -149,7 +149,7 @@ public final class NewGameInfo extends Message {
     public final Integer time;
     @ProtoField(tag = 41, type = Message.Datatype.STRING)
     public final String version;
-    @ProtoField(tag = w.n.View_minWidth, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_minWidth, type = Message.Datatype.STRING)
     public final String version_ios;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_SERVER_OPEN_TIME = 0;
@@ -169,10 +169,6 @@ public final class NewGameInfo extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final Integer DEFAULT_STATUS = 0;
     public static final Integer DEFAULT_MARK = 0;
-
-    /* synthetic */ NewGameInfo(Builder builder, boolean z, NewGameInfo newGameInfo) {
-        this(builder, z);
-    }
 
     private NewGameInfo(Builder builder, boolean z) {
         super(builder);
@@ -629,7 +625,7 @@ public final class NewGameInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NewGameInfo build(boolean z) {
-            return new NewGameInfo(this, z, null);
+            return new NewGameInfo(this, z);
         }
     }
 }

@@ -7,10 +7,6 @@ public final class PbPageReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ PbPageReqIdl(Builder builder, boolean z, PbPageReqIdl pbPageReqIdl) {
-        this(builder, z);
-    }
-
     private PbPageReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class PbPageReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbPageReqIdl build(boolean z) {
-            return new PbPageReqIdl(this, z, null);
+            return new PbPageReqIdl(this, z);
         }
     }
 }

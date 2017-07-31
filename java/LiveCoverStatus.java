@@ -11,10 +11,6 @@ public final class LiveCoverStatus extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer status_num;
 
-    /* synthetic */ LiveCoverStatus(Builder builder, boolean z, LiveCoverStatus liveCoverStatus) {
-        this(builder, z);
-    }
-
     private LiveCoverStatus(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class LiveCoverStatus extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LiveCoverStatus build(boolean z) {
-            return new LiveCoverStatus(this, z, null);
+            return new LiveCoverStatus(this, z);
         }
     }
 }

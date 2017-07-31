@@ -7,10 +7,6 @@ public final class GetRepostRecommendForumReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetRepostRecommendForumReqIdl(Builder builder, boolean z, GetRepostRecommendForumReqIdl getRepostRecommendForumReqIdl) {
-        this(builder, z);
-    }
-
     private GetRepostRecommendForumReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetRepostRecommendForumReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetRepostRecommendForumReqIdl build(boolean z) {
-            return new GetRepostRecommendForumReqIdl(this, z, null);
+            return new GetRepostRecommendForumReqIdl(this, z);
         }
     }
 }

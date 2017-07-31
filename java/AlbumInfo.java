@@ -50,10 +50,6 @@ public final class AlbumInfo extends Message {
     public static final Double DEFAULT_LATD = Double.valueOf(0.0d);
     public static final Boolean DEFAULT_HAS_COLLECT = false;
 
-    /* synthetic */ AlbumInfo(Builder builder, boolean z, AlbumInfo albumInfo) {
-        this(builder, z);
-    }
-
     private AlbumInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -197,7 +193,7 @@ public final class AlbumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AlbumInfo build(boolean z) {
-            return new AlbumInfo(this, z, null);
+            return new AlbumInfo(this, z);
         }
     }
 }

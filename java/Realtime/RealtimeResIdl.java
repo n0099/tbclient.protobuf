@@ -10,10 +10,6 @@ public final class RealtimeResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ RealtimeResIdl(Builder builder, boolean z, RealtimeResIdl realtimeResIdl) {
-        this(builder, z);
-    }
-
     private RealtimeResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class RealtimeResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RealtimeResIdl build(boolean z) {
-            return new RealtimeResIdl(this, z, null);
+            return new RealtimeResIdl(this, z);
         }
     }
 }

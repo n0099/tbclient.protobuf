@@ -8,10 +8,6 @@ public final class Good extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer num;
 
-    /* synthetic */ Good(Builder builder, boolean z, Good good) {
-        this(builder, z);
-    }
-
     private Good(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class Good extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Good build(boolean z) {
-            return new Good(this, z, null);
+            return new Good(this, z);
         }
     }
 }

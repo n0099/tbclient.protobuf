@@ -14,10 +14,6 @@ public final class JNews extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ JNews(Builder builder, boolean z, JNews jNews) {
-        this(builder, z);
-    }
-
     private JNews(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class JNews extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public JNews build(boolean z) {
-            return new JNews(this, z, null);
+            return new JNews(this, z);
         }
     }
 }

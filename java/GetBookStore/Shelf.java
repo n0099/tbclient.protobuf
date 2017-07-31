@@ -26,10 +26,6 @@ public final class Shelf extends Message {
     public static final Integer DEFAULT_FIRST_CHAPTER_ID = 0;
     public static final Long DEFAULT_UPDATE_TIME = 0L;
 
-    /* synthetic */ Shelf(Builder builder, boolean z, Shelf shelf) {
-        this(builder, z);
-    }
-
     private Shelf(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class Shelf extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Shelf build(boolean z) {
-            return new Shelf(this, z, null);
+            return new Shelf(this, z);
         }
     }
 }

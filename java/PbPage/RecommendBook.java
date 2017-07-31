@@ -37,10 +37,6 @@ public final class RecommendBook extends Message {
     public static final Integer DEFAULT_BOOK_TYPE = 0;
     public static final List<String> DEFAULT_BOOK_TIPS = Collections.emptyList();
 
-    /* synthetic */ RecommendBook(Builder builder, boolean z, RecommendBook recommendBook) {
-        this(builder, z);
-    }
-
     private RecommendBook(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -144,7 +140,7 @@ public final class RecommendBook extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecommendBook build(boolean z) {
-            return new RecommendBook(this, z, null);
+            return new RecommendBook(this, z);
         }
     }
 }

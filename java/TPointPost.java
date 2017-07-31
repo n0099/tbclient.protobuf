@@ -38,10 +38,6 @@ public final class TPointPost extends Message {
     public static final List<Timgs> DEFAULT_T_IMGS = Collections.emptyList();
     public static final Integer DEFAULT_HIDDEN_DAY = 0;
 
-    /* synthetic */ TPointPost(Builder builder, boolean z, TPointPost tPointPost) {
-        this(builder, z);
-    }
-
     private TPointPost(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -145,7 +141,7 @@ public final class TPointPost extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TPointPost build(boolean z) {
-            return new TPointPost(this, z, null);
+            return new TPointPost(this, z);
         }
     }
 }

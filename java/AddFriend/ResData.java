@@ -11,10 +11,6 @@ public final class ResData extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String message;
 
-    /* synthetic */ ResData(Builder builder, boolean z, ResData resData) {
-        this(builder, z);
-    }
-
     private ResData(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class ResData extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ResData build(boolean z) {
-            return new ResData(this, z, null);
+            return new ResData(this, z);
         }
     }
 }

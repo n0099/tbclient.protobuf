@@ -11,10 +11,6 @@ public final class Category extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String category_text;
 
-    /* synthetic */ Category(Builder builder, boolean z, Category category) {
-        this(builder, z);
-    }
-
     private Category(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Category extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Category build(boolean z) {
-            return new Category(this, z, null);
+            return new Category(this, z);
         }
     }
 }

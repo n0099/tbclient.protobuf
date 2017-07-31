@@ -26,10 +26,6 @@ public final class CartoonInfo extends Message {
     public static final Integer DEFAULT_IS_FINISH = 0;
     public static final Integer DEFAULT_TOTAL_CHAPTER = 0;
 
-    /* synthetic */ CartoonInfo(Builder builder, boolean z, CartoonInfo cartoonInfo) {
-        this(builder, z);
-    }
-
     private CartoonInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class CartoonInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CartoonInfo build(boolean z) {
-            return new CartoonInfo(this, z, null);
+            return new CartoonInfo(this, z);
         }
     }
 }

@@ -27,10 +27,6 @@ public final class PostList extends Message {
     public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
     public static final Long DEFAULT_AUTHOR_ID = 0L;
 
-    /* synthetic */ PostList(Builder builder, boolean z, PostList postList) {
-        this(builder, z);
-    }
-
     private PostList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -106,7 +102,7 @@ public final class PostList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostList build(boolean z) {
-            return new PostList(this, z, null);
+            return new PostList(this, z);
         }
     }
 }

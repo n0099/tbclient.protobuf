@@ -8,10 +8,6 @@ public final class WorldCupLottery extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ WorldCupLottery(Builder builder, boolean z, WorldCupLottery worldCupLottery) {
-        this(builder, z);
-    }
-
     private WorldCupLottery(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class WorldCupLottery extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public WorldCupLottery build(boolean z) {
-            return new WorldCupLottery(this, z, null);
+            return new WorldCupLottery(this, z);
         }
     }
 }

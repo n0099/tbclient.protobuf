@@ -11,10 +11,6 @@ public final class EsportUser extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String steam_portrait;
 
-    /* synthetic */ EsportUser(Builder builder, boolean z, EsportUser esportUser) {
-        this(builder, z);
-    }
-
     private EsportUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class EsportUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public EsportUser build(boolean z) {
-            return new EsportUser(this, z, null);
+            return new EsportUser(this, z);
         }
     }
 }

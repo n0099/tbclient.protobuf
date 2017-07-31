@@ -10,10 +10,6 @@ public final class GetSuggestionByAddrNameResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetSuggestionByAddrNameResIdl(Builder builder, boolean z, GetSuggestionByAddrNameResIdl getSuggestionByAddrNameResIdl) {
-        this(builder, z);
-    }
-
     private GetSuggestionByAddrNameResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetSuggestionByAddrNameResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetSuggestionByAddrNameResIdl build(boolean z) {
-            return new GetSuggestionByAddrNameResIdl(this, z, null);
+            return new GetSuggestionByAddrNameResIdl(this, z);
         }
     }
 }

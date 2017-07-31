@@ -19,10 +19,6 @@ public final class GameCategory extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final List<String> DEFAULT_GAME_LIST = Collections.emptyList();
 
-    /* synthetic */ GameCategory(Builder builder, boolean z, GameCategory gameCategory) {
-        this(builder, z);
-    }
-
     private GameCategory(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class GameCategory extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GameCategory build(boolean z) {
-            return new GameCategory(this, z, null);
+            return new GameCategory(this, z);
         }
     }
 }

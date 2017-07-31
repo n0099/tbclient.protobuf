@@ -7,10 +7,6 @@ public final class MultiConcernReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ MultiConcernReqIdl(Builder builder, boolean z, MultiConcernReqIdl multiConcernReqIdl) {
-        this(builder, z);
-    }
-
     private MultiConcernReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class MultiConcernReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MultiConcernReqIdl build(boolean z) {
-            return new MultiConcernReqIdl(this, z, null);
+            return new MultiConcernReqIdl(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class PersonalizedResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ PersonalizedResIdl(Builder builder, boolean z, PersonalizedResIdl personalizedResIdl) {
-        this(builder, z);
-    }
-
     private PersonalizedResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class PersonalizedResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PersonalizedResIdl build(boolean z) {
-            return new PersonalizedResIdl(this, z, null);
+            return new PersonalizedResIdl(this, z);
         }
     }
 }

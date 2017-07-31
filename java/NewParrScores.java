@@ -14,10 +14,6 @@ public final class NewParrScores extends Message {
     public static final Integer DEFAULT_UPDATE_TIME = 0;
     public static final Long DEFAULT_I_TOTAL = 0L;
 
-    /* synthetic */ NewParrScores(Builder builder, boolean z, NewParrScores newParrScores) {
-        this(builder, z);
-    }
-
     private NewParrScores(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class NewParrScores extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NewParrScores build(boolean z) {
-            return new NewParrScores(this, z, null);
+            return new NewParrScores(this, z);
         }
     }
 }

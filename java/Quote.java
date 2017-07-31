@@ -20,10 +20,6 @@ public final class Quote extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* synthetic */ Quote(Builder builder, boolean z, Quote quote) {
-        this(builder, z);
-    }
-
     private Quote(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class Quote extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Quote build(boolean z) {
-            return new Quote(this, z, null);
+            return new Quote(this, z);
         }
     }
 }

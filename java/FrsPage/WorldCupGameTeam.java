@@ -11,10 +11,6 @@ public final class WorldCupGameTeam extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
 
-    /* synthetic */ WorldCupGameTeam(Builder builder, boolean z, WorldCupGameTeam worldCupGameTeam) {
-        this(builder, z);
-    }
-
     private WorldCupGameTeam(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class WorldCupGameTeam extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public WorldCupGameTeam build(boolean z) {
-            return new WorldCupGameTeam(this, z, null);
+            return new WorldCupGameTeam(this, z);
         }
     }
 }

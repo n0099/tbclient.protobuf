@@ -20,10 +20,6 @@ public final class ForumMember extends Message {
     public static final Integer DEFAULT_CUR_SCORE = 0;
     public static final Integer DEFAULT_LEVELUP_SCORE = 0;
 
-    /* synthetic */ ForumMember(Builder builder, boolean z, ForumMember forumMember) {
-        this(builder, z);
-    }
-
     private ForumMember(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class ForumMember extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumMember build(boolean z) {
-            return new ForumMember(this, z, null);
+            return new ForumMember(this, z);
         }
     }
 }

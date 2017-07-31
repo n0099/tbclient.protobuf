@@ -17,10 +17,6 @@ public final class FollowRelation extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Boolean DEFAULT_HAS_FOLLOW = false;
 
-    /* synthetic */ FollowRelation(Builder builder, boolean z, FollowRelation followRelation) {
-        this(builder, z);
-    }
-
     private FollowRelation(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class FollowRelation extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FollowRelation build(boolean z) {
-            return new FollowRelation(this, z, null);
+            return new FollowRelation(this, z);
         }
     }
 }

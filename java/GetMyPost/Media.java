@@ -11,10 +11,6 @@ public final class Media extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* synthetic */ Media(Builder builder, boolean z, Media media) {
-        this(builder, z);
-    }
-
     private Media(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Media extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Media build(boolean z) {
-            return new Media(this, z, null);
+            return new Media(this, z);
         }
     }
 }

@@ -20,10 +20,6 @@ public final class Fans extends Message {
     public static final Integer DEFAULT_IS_GET = 0;
     public static final Integer DEFAULT_NUM = 0;
 
-    /* synthetic */ Fans(Builder builder, boolean z, Fans fans) {
-        this(builder, z);
-    }
-
     private Fans(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class Fans extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Fans build(boolean z) {
-            return new Fans(this, z, null);
+            return new Fans(this, z);
         }
     }
 }

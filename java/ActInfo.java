@@ -46,10 +46,6 @@ public final class ActInfo extends Message {
     public static final Boolean DEFAULT_IS_SENIOR = false;
     public static final Integer DEFAULT_SHOW_TOTAL_NUM = 0;
 
-    /* synthetic */ ActInfo(Builder builder, boolean z, ActInfo actInfo) {
-        this(builder, z);
-    }
-
     private ActInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -181,7 +177,7 @@ public final class ActInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActInfo build(boolean z) {
-            return new ActInfo(this, z, null);
+            return new ActInfo(this, z);
         }
     }
 }

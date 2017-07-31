@@ -10,10 +10,6 @@ public final class AddPollPostResIdl extends Message {
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* synthetic */ AddPollPostResIdl(Builder builder, boolean z, AddPollPostResIdl addPollPostResIdl) {
-        this(builder, z);
-    }
-
     private AddPollPostResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class AddPollPostResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AddPollPostResIdl build(boolean z) {
-            return new AddPollPostResIdl(this, z, null);
+            return new AddPollPostResIdl(this, z);
         }
     }
 }

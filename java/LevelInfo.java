@@ -14,10 +14,6 @@ public final class LevelInfo extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_SCORE = 0;
 
-    /* synthetic */ LevelInfo(Builder builder, boolean z, LevelInfo levelInfo) {
-        this(builder, z);
-    }
-
     private LevelInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class LevelInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LevelInfo build(boolean z) {
-            return new LevelInfo(this, z, null);
+            return new LevelInfo(this, z);
         }
     }
 }

@@ -7,10 +7,6 @@ public final class GetAddressListReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;
 
-    /* synthetic */ GetAddressListReqIdl(Builder builder, boolean z, GetAddressListReqIdl getAddressListReqIdl) {
-        this(builder, z);
-    }
-
     private GetAddressListReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetAddressListReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetAddressListReqIdl build(boolean z) {
-            return new GetAddressListReqIdl(this, z, null);
+            return new GetAddressListReqIdl(this, z);
         }
     }
 }

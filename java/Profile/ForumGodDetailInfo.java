@@ -26,10 +26,6 @@ public final class ForumGodDetailInfo extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_FORUM_ID = 0L;
 
-    /* synthetic */ ForumGodDetailInfo(Builder builder, boolean z, ForumGodDetailInfo forumGodDetailInfo) {
-        this(builder, z);
-    }
-
     private ForumGodDetailInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class ForumGodDetailInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumGodDetailInfo build(boolean z) {
-            return new ForumGodDetailInfo(this, z, null);
+            return new ForumGodDetailInfo(this, z);
         }
     }
 }

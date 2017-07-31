@@ -15,10 +15,6 @@ public final class ConcernAlbum extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer num_user;
 
-    /* synthetic */ ConcernAlbum(Builder builder, boolean z, ConcernAlbum concernAlbum) {
-        this(builder, z);
-    }
-
     private ConcernAlbum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -61,7 +57,7 @@ public final class ConcernAlbum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ConcernAlbum build(boolean z) {
-            return new ConcernAlbum(this, z, null);
+            return new ConcernAlbum(this, z);
         }
     }
 }

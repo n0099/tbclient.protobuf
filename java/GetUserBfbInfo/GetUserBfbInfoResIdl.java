@@ -10,10 +10,6 @@ public final class GetUserBfbInfoResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetUserBfbInfoResIdl(Builder builder, boolean z, GetUserBfbInfoResIdl getUserBfbInfoResIdl) {
-        this(builder, z);
-    }
-
     private GetUserBfbInfoResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetUserBfbInfoResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetUserBfbInfoResIdl build(boolean z) {
-            return new GetUserBfbInfoResIdl(this, z, null);
+            return new GetUserBfbInfoResIdl(this, z);
         }
     }
 }

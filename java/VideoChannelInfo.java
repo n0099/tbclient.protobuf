@@ -14,10 +14,6 @@ public final class VideoChannelInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String channel_name;
 
-    /* synthetic */ VideoChannelInfo(Builder builder, boolean z, VideoChannelInfo videoChannelInfo) {
-        this(builder, z);
-    }
-
     private VideoChannelInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class VideoChannelInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VideoChannelInfo build(boolean z) {
-            return new VideoChannelInfo(this, z, null);
+            return new VideoChannelInfo(this, z);
         }
     }
 }

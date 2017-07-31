@@ -11,10 +11,6 @@ public final class Forum extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String level1_dir_name;
 
-    /* synthetic */ Forum(Builder builder, boolean z, Forum forum) {
-        this(builder, z);
-    }
-
     private Forum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Forum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Forum build(boolean z) {
-            return new Forum(this, z, null);
+            return new Forum(this, z);
         }
     }
 }

@@ -8,6 +8,7 @@ public final class ReqData extends Message {
     public static final String DEFAULT_FORUMNAME = "";
     public static final Long DEFAULT_PID = 0L;
     public static final Integer DEFAULT_POSTTYPE = 0;
+    public static final Long DEFAULT_TID = 0L;
     @ProtoField(tag = 4)
     public final CommonReq common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -16,10 +17,8 @@ public final class ReqData extends Message {
     public final Long pid;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer postType;
-
-    /* synthetic */ ReqData(Builder builder, boolean z, ReqData reqData) {
-        this(builder, z);
-    }
+    @ProtoField(tag = 5, type = Message.Datatype.UINT64)
+    public final Long tid;
 
     private ReqData(Builder builder, boolean z) {
         super(builder);
@@ -40,12 +39,19 @@ public final class ReqData extends Message {
                 this.forumName = builder.forumName;
             }
             this.common = builder.common;
-            return;
+            if (builder.tid == null) {
+                this.tid = DEFAULT_TID;
+                return;
+            } else {
+                this.tid = builder.tid;
+                return;
+            }
         }
         this.pid = builder.pid;
         this.postType = builder.postType;
         this.forumName = builder.forumName;
         this.common = builder.common;
+        this.tid = builder.tid;
     }
 
     /* loaded from: classes.dex */
@@ -54,6 +60,7 @@ public final class ReqData extends Message {
         public String forumName;
         public Long pid;
         public Integer postType;
+        public Long tid;
 
         public Builder() {
         }
@@ -65,13 +72,14 @@ public final class ReqData extends Message {
                 this.postType = reqData.postType;
                 this.forumName = reqData.forumName;
                 this.common = reqData.common;
+                this.tid = reqData.tid;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ReqData build(boolean z) {
-            return new ReqData(this, z, null);
+            return new ReqData(this, z);
         }
     }
 }

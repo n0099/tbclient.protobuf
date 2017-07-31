@@ -19,10 +19,6 @@ public final class ThreadModule extends Message {
     public static final List<ThreadInfo> DEFAULT_THREAD_INFO = Collections.emptyList();
     public static final Long DEFAULT_SHOW_NUM = 0L;
 
-    /* synthetic */ ThreadModule(Builder builder, boolean z, ThreadModule threadModule) {
-        this(builder, z);
-    }
-
     private ThreadModule(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -78,7 +74,7 @@ public final class ThreadModule extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThreadModule build(boolean z) {
-            return new ThreadModule(this, z, null);
+            return new ThreadModule(this, z);
         }
     }
 }

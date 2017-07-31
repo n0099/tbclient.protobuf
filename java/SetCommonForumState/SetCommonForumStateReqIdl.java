@@ -7,10 +7,6 @@ public final class SetCommonForumStateReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ SetCommonForumStateReqIdl(Builder builder, boolean z, SetCommonForumStateReqIdl setCommonForumStateReqIdl) {
-        this(builder, z);
-    }
-
     private SetCommonForumStateReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class SetCommonForumStateReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SetCommonForumStateReqIdl build(boolean z) {
-            return new SetCommonForumStateReqIdl(this, z, null);
+            return new SetCommonForumStateReqIdl(this, z);
         }
     }
 }

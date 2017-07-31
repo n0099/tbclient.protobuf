@@ -8,10 +8,6 @@ public final class MediaNum extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pic;
 
-    /* synthetic */ MediaNum(Builder builder, boolean z, MediaNum mediaNum) {
-        this(builder, z);
-    }
-
     private MediaNum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class MediaNum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MediaNum build(boolean z) {
-            return new MediaNum(this, z, null);
+            return new MediaNum(this, z);
         }
     }
 }

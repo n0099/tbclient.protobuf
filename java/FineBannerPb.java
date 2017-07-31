@@ -17,10 +17,6 @@ public final class FineBannerPb extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* synthetic */ FineBannerPb(Builder builder, boolean z, FineBannerPb fineBannerPb) {
-        this(builder, z);
-    }
-
     private FineBannerPb(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class FineBannerPb extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FineBannerPb build(boolean z) {
-            return new FineBannerPb(this, z, null);
+            return new FineBannerPb(this, z);
         }
     }
 }

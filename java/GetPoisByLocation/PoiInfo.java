@@ -14,10 +14,6 @@ public final class PoiInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String sn;
 
-    /* synthetic */ PoiInfo(Builder builder, boolean z, PoiInfo poiInfo) {
-        this(builder, z);
-    }
-
     private PoiInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class PoiInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PoiInfo build(boolean z) {
-            return new PoiInfo(this, z, null);
+            return new PoiInfo(this, z);
         }
     }
 }

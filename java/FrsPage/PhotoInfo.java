@@ -11,10 +11,6 @@ public final class PhotoInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic;
 
-    /* synthetic */ PhotoInfo(Builder builder, boolean z, PhotoInfo photoInfo) {
-        this(builder, z);
-    }
-
     private PhotoInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class PhotoInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PhotoInfo build(boolean z) {
-            return new PhotoInfo(this, z, null);
+            return new PhotoInfo(this, z);
         }
     }
 }

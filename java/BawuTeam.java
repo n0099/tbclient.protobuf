@@ -13,10 +13,6 @@ public final class BawuTeam extends Message {
     public static final Integer DEFAULT_TOTAL_NUM = 0;
     public static final List<BawuRoleDes> DEFAULT_BAWU_TEAM_LIST = Collections.emptyList();
 
-    /* synthetic */ BawuTeam(Builder builder, boolean z, BawuTeam bawuTeam) {
-        this(builder, z);
-    }
-
     private BawuTeam(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -56,7 +52,7 @@ public final class BawuTeam extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BawuTeam build(boolean z) {
-            return new BawuTeam(this, z, null);
+            return new BawuTeam(this, z);
         }
     }
 }

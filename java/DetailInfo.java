@@ -11,10 +11,6 @@ public final class DetailInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ DetailInfo(Builder builder, boolean z, DetailInfo detailInfo) {
-        this(builder, z);
-    }
-
     private DetailInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class DetailInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DetailInfo build(boolean z) {
-            return new DetailInfo(this, z, null);
+            return new DetailInfo(this, z);
         }
     }
 }

@@ -16,10 +16,6 @@ public final class BannerInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String god_rank_url;
 
-    /* synthetic */ BannerInfo(Builder builder, boolean z, BannerInfo bannerInfo) {
-        this(builder, z);
-    }
-
     private BannerInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class BannerInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BannerInfo build(boolean z) {
-            return new BannerInfo(this, z, null);
+            return new BannerInfo(this, z);
         }
     }
 }

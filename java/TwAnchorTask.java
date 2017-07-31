@@ -16,10 +16,6 @@ public final class TwAnchorTask extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String task_name;
 
-    /* synthetic */ TwAnchorTask(Builder builder, boolean z, TwAnchorTask twAnchorTask) {
-        this(builder, z);
-    }
-
     private TwAnchorTask(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -67,7 +63,7 @@ public final class TwAnchorTask extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwAnchorTask build(boolean z) {
-            return new TwAnchorTask(this, z, null);
+            return new TwAnchorTask(this, z);
         }
     }
 }

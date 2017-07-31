@@ -7,10 +7,6 @@ public final class GetHotThreadReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetHotThreadReqIdl(Builder builder, boolean z, GetHotThreadReqIdl getHotThreadReqIdl) {
-        this(builder, z);
-    }
-
     private GetHotThreadReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetHotThreadReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetHotThreadReqIdl build(boolean z) {
-            return new GetHotThreadReqIdl(this, z, null);
+            return new GetHotThreadReqIdl(this, z);
         }
     }
 }

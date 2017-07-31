@@ -11,10 +11,6 @@ public final class PostTopic extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title_topic;
 
-    /* synthetic */ PostTopic(Builder builder, boolean z, PostTopic postTopic) {
-        this(builder, z);
-    }
-
     private PostTopic(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class PostTopic extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostTopic build(boolean z) {
-            return new PostTopic(this, z, null);
+            return new PostTopic(this, z);
         }
     }
 }

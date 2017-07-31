@@ -10,10 +10,6 @@ public final class GetVUserInfoResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ GetVUserInfoResIdl(Builder builder, boolean z, GetVUserInfoResIdl getVUserInfoResIdl) {
-        this(builder, z);
-    }
-
     private GetVUserInfoResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetVUserInfoResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetVUserInfoResIdl build(boolean z) {
-            return new GetVUserInfoResIdl(this, z, null);
+            return new GetVUserInfoResIdl(this, z);
         }
     }
 }

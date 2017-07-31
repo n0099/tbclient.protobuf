@@ -20,10 +20,6 @@ public final class MyGroupInfo extends Message {
     public static final Integer DEFAULT_MEMBER_NUM = 0;
     public static final Integer DEFAULT_MAX_MEMBER_NUM = 0;
 
-    /* synthetic */ MyGroupInfo(Builder builder, boolean z, MyGroupInfo myGroupInfo) {
-        this(builder, z);
-    }
-
     private MyGroupInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class MyGroupInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MyGroupInfo build(boolean z) {
-            return new MyGroupInfo(this, z, null);
+            return new MyGroupInfo(this, z);
         }
     }
 }

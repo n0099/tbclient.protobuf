@@ -83,10 +83,6 @@ public final class Thread_Info extends Message {
     public static final List<Media_Num> DEFAULT_MEDIA_NUM = Collections.emptyList();
     public static final Integer DEFAULT_THREAD_TYPE = 0;
 
-    /* synthetic */ Thread_Info(Builder builder, boolean z, Thread_Info thread_Info) {
-        this(builder, z);
-    }
-
     private Thread_Info(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -309,7 +305,7 @@ public final class Thread_Info extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Thread_Info build(boolean z) {
-            return new Thread_Info(this, z, null);
+            return new Thread_Info(this, z);
         }
     }
 }

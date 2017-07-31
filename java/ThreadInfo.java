@@ -3,7 +3,7 @@ package tbclient;
 import android.support.v4.media.TransportMediator;
 import com.baidu.location.BDLocation;
 import com.baidu.sapi2.SapiSafeFacade;
-import com.baidu.tieba.w;
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -46,7 +46,7 @@ public final class ThreadInfo extends Message {
     public final Integer agree_num;
     @ProtoField(tag = 113)
     public final AlaLiveInfo ala_info;
-    @ProtoField(tag = w.n.View_rotation)
+    @ProtoField(tag = d.n.View_rotation)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 99)
     public final AnimationThread animation_info;
@@ -56,7 +56,7 @@ public final class ThreadInfo extends Message {
     public final AppInfo app_info;
     @ProtoField(tag = 18)
     public final User author;
-    @ProtoField(tag = w.n.View_rotationX, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.n.View_rotationX, type = Message.Datatype.INT64)
     public final Long author_id;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_BACK)
     public final BookThread book_chapter;
@@ -68,7 +68,7 @@ public final class ThreadInfo extends Message {
     public final Integer cheak_repeat;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
-    @ProtoField(tag = w.n.View_translationX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_translationX, type = Message.Datatype.STRING)
     public final String collect_mark_pid;
     @ProtoField(tag = 50, type = Message.Datatype.INT32)
     public final Integer collect_status;
@@ -82,7 +82,7 @@ public final class ThreadInfo extends Message {
     public final List<DeclareInfo> declare_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
-    @ProtoField(tag = w.n.View_verticalScrollbarPosition, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_verticalScrollbarPosition, type = Message.Datatype.STRING)
     public final String ecom;
     @ProtoField(label = Message.Label.REPEATED, tag = 90)
     public final List<TailInfo> ext_tails;
@@ -98,7 +98,7 @@ public final class ThreadInfo extends Message {
     public final String from;
     @ProtoField(tag = 63)
     public final Guess guess;
-    @ProtoField(tag = w.n.View_onClick, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.INT32)
     public final Integer has_commented;
     @ProtoField(tag = 95)
     public final TogetherHi high_together;
@@ -108,11 +108,11 @@ public final class ThreadInfo extends Message {
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = w.n.View_scaleX, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.n.View_scaleX, type = Message.Datatype.UINT32)
     public final Integer isLzDeleteAll;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_activity;
-    @ProtoField(tag = w.n.View_scaleY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.n.View_scaleY, type = Message.Datatype.UINT32)
     public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
@@ -124,7 +124,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_copythread;
     @ProtoField(tag = 97, type = Message.Datatype.INT32)
     public final Integer is_deal;
-    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = 131, type = Message.Datatype.INT32)
     public final Integer is_god;
@@ -138,7 +138,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_livepost;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
-    @ProtoField(tag = w.n.View_transformPivotY, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_transformPivotY, type = Message.Datatype.INT32)
     public final Integer is_membertop;
     @ProtoField(tag = 123, type = Message.Datatype.INT32)
     public final Integer is_multiforum_thread;
@@ -156,10 +156,12 @@ public final class ThreadInfo extends Message {
     public final Integer is_operate_thread;
     @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PAUSE, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
-    @ProtoField(tag = w.n.View_minHeight, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.INT32)
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
+    @ProtoField(tag = 134, type = Message.Datatype.INT32)
+    public final Integer is_story_audit;
     @ProtoField(tag = 115, type = Message.Datatype.INT32)
     public final Integer is_tbread_dispatch;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -198,15 +200,17 @@ public final class ThreadInfo extends Message {
     public final List<MultipleForum> multiple_forum_list;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
+    @ProtoField(tag = 133)
+    public final Media pic_info;
     @ProtoField(tag = 84, type = Message.Datatype.UINT32)
     public final Integer pic_num;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String pids;
     @ProtoField(tag = 74)
     public final PollInfo poll_info;
-    @ProtoField(tag = w.n.View_translationY, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.n.View_translationY, type = Message.Datatype.INT64)
     public final Long post_id;
-    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_minWidth)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_minWidth)
     public final List<PostList> post_list;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
     public final Integer post_num;
@@ -226,7 +230,7 @@ public final class ThreadInfo extends Message {
     public final Integer reply_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 118)
     public final List<ReportInfo> report_info;
-    @ProtoField(tag = w.n.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
     public final Integer repost_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 112)
     public final List<PbContent> rich_abstract;
@@ -248,7 +252,7 @@ public final class ThreadInfo extends Message {
     public final Integer thread_types;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
-    @ProtoField(tag = w.n.View_transformPivotX, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_transformPivotX, type = Message.Datatype.INT32)
     public final Integer time;
     @ProtoField(tag = 64, type = Message.Datatype.UINT32)
     public final Integer timeline;
@@ -256,11 +260,11 @@ public final class ThreadInfo extends Message {
     public final String title;
     @ProtoField(tag = 125)
     public final Post top_agree_post;
-    @ProtoField(tag = w.n.View_contentDescription)
+    @ProtoField(tag = d.n.View_contentDescription)
     public final Topic topic;
     @ProtoField(tag = 72)
     public final ZhiBoInfoTW twzhibo_info;
-    @ProtoField(tag = w.n.View_rotationY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.n.View_rotationY, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
@@ -361,10 +365,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_LINK_THREAD = 0;
     public static final Long DEFAULT_FREQ_NUM = 0L;
     public static final Integer DEFAULT_IS_GOD = 0;
-
-    /* synthetic */ ThreadInfo(Builder builder, boolean z, ThreadInfo threadInfo) {
-        this(builder, z);
-    }
+    public static final Integer DEFAULT_IS_STORY_AUDIT = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -877,7 +878,14 @@ public final class ThreadInfo extends Message {
                 this.is_god = builder.is_god;
             }
             this.activity_info = builder.activity_info;
-            return;
+            this.pic_info = builder.pic_info;
+            if (builder.is_story_audit == null) {
+                this.is_story_audit = DEFAULT_IS_STORY_AUDIT;
+                return;
+            } else {
+                this.is_story_audit = builder.is_story_audit;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1007,6 +1015,8 @@ public final class ThreadInfo extends Message {
         this.freq_num = builder.freq_num;
         this.is_god = builder.is_god;
         this.activity_info = builder.activity_info;
+        this.pic_info = builder.pic_info;
+        this.is_story_audit = builder.is_story_audit;
     }
 
     /* loaded from: classes.dex */
@@ -1075,6 +1085,7 @@ public final class ThreadInfo extends Message {
         public Integer is_partial_visible;
         public Integer is_pic;
         public Integer is_protal;
+        public Integer is_story_audit;
         public Integer is_tbread_dispatch;
         public Integer is_top;
         public Integer is_voice_thread;
@@ -1094,6 +1105,7 @@ public final class ThreadInfo extends Message {
         public String meizhi_pic;
         public List<MultipleForum> multiple_forum_list;
         public Integer operator_flag;
+        public Media pic_info;
         public Integer pic_num;
         public String pids;
         public PollInfo poll_info;
@@ -1274,13 +1286,15 @@ public final class ThreadInfo extends Message {
                 this.freq_num = threadInfo.freq_num;
                 this.is_god = threadInfo.is_god;
                 this.activity_info = threadInfo.activity_info;
+                this.pic_info = threadInfo.pic_info;
+                this.is_story_audit = threadInfo.is_story_audit;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThreadInfo build(boolean z) {
-            return new ThreadInfo(this, z, null);
+            return new ThreadInfo(this, z);
         }
     }
 }

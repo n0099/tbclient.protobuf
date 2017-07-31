@@ -14,10 +14,6 @@ public final class Terminal extends Message {
     public static final Integer DEFAULT_WAP = 0;
     public static final Integer DEFAULT_CLIENT = 0;
 
-    /* synthetic */ Terminal(Builder builder, boolean z, Terminal terminal) {
-        this(builder, z);
-    }
-
     private Terminal(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class Terminal extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Terminal build(boolean z) {
-            return new Terminal(this, z, null);
+            return new Terminal(this, z);
         }
     }
 }

@@ -17,10 +17,6 @@ public final class VDetailInfo extends Message {
     public static final Long DEFAULT_V_ID = 0L;
     public static final Long DEFAULT_USER_ID = 0L;
 
-    /* synthetic */ VDetailInfo(Builder builder, boolean z, VDetailInfo vDetailInfo) {
-        this(builder, z);
-    }
-
     private VDetailInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class VDetailInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VDetailInfo build(boolean z) {
-            return new VDetailInfo(this, z, null);
+            return new VDetailInfo(this, z);
         }
     }
 }

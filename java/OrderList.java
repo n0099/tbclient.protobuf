@@ -41,10 +41,6 @@ public final class OrderList extends Message {
     public static final Long DEFAULT_MONEY = 0L;
     public static final Long DEFAULT_SCORES = 0L;
 
-    /* synthetic */ OrderList(Builder builder, boolean z, OrderList orderList) {
-        this(builder, z);
-    }
-
     private OrderList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -164,7 +160,7 @@ public final class OrderList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public OrderList build(boolean z) {
-            return new OrderList(this, z, null);
+            return new OrderList(this, z);
         }
     }
 }

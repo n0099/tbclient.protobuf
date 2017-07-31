@@ -8,10 +8,6 @@ public final class Global extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tbmall_newprops;
 
-    /* synthetic */ Global(Builder builder, boolean z, Global global) {
-        this(builder, z);
-    }
-
     private Global(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class Global extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Global build(boolean z) {
-            return new Global(this, z, null);
+            return new Global(this, z);
         }
     }
 }

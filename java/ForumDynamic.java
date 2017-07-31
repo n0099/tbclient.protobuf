@@ -32,10 +32,6 @@ public final class ForumDynamic extends Message {
     public static final Integer DEFAULT_THREAD_COUNT = 0;
     public static final Integer DEFAULT_USER_THREAD_COUNT = 0;
 
-    /* synthetic */ ForumDynamic(Builder builder, boolean z, ForumDynamic forumDynamic) {
-        this(builder, z);
-    }
-
     private ForumDynamic(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -131,7 +127,7 @@ public final class ForumDynamic extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumDynamic build(boolean z) {
-            return new ForumDynamic(this, z, null);
+            return new ForumDynamic(this, z);
         }
     }
 }

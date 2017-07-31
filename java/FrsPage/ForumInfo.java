@@ -1,6 +1,6 @@
 package tbclient.FrsPage;
 
-import com.baidu.tieba.w;
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,6 +12,7 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FIRST_CLASS = "";
+    public static final String DEFAULT_FORUM_GAME_LABEL = "";
     public static final String DEFAULT_GAME_NAME = "";
     public static final String DEFAULT_GAME_URL = "";
     public static final String DEFAULT_IS_READONLY = "";
@@ -25,13 +26,13 @@ public final class ForumInfo extends Message {
     public final String accelerate_cotent;
     @ProtoField(tag = 62)
     public final AcrossForumIcon across_forum_hide;
-    @ProtoField(tag = w.n.View_verticalScrollbarPosition)
+    @ProtoField(tag = d.n.View_verticalScrollbarPosition)
     public final AcrossForumIcon across_forum_show;
-    @ProtoField(tag = w.n.View_rotationX)
+    @ProtoField(tag = d.n.View_rotationX)
     public final Adkiller adkiller_data;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer album_open_photo_frs;
-    @ProtoField(tag = w.n.View_minWidth)
+    @ProtoField(tag = d.n.View_minWidth)
     public final AnchorPower anchor_power;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String avatar;
@@ -51,21 +52,23 @@ public final class ForumInfo extends Message {
     public final String first_class;
     @ProtoField(tag = 27)
     public final ForumButton forum_button;
+    @ProtoField(tag = 66, type = Message.Datatype.STRING)
+    public final String forum_game_label;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<Calendar> forum_sign_calendar;
-    @ProtoField(tag = w.n.View_rotation)
+    @ProtoField(tag = d.n.View_rotation)
     public final MemberShowIcon forumvip_show_icon;
-    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_transformPivotX)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_transformPivotX)
     public final List<GameInfo> game_card;
-    @ProtoField(tag = w.n.View_transformPivotY, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_transformPivotY, type = Message.Datatype.STRING)
     public final String game_name;
-    @ProtoField(tag = w.n.View_contentDescription, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_contentDescription, type = Message.Datatype.STRING)
     public final String game_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Classify> good_classify;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer has_frs_star;
-    @ProtoField(tag = w.n.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
     public final Integer has_game;
     @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer has_paper;
@@ -79,10 +82,14 @@ public final class ForumInfo extends Message {
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
+    @ProtoField(tag = 64, type = Message.Datatype.INT32)
+    public final Integer is_live_game;
     @ProtoField(tag = 63, type = Message.Datatype.INT32)
     public final Integer is_live_game_forum;
-    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.INT32)
     public final Integer is_local_effect;
+    @ProtoField(tag = 65, type = Message.Datatype.INT32)
+    public final Integer is_new_game_forum;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String is_readonly;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
@@ -105,7 +112,7 @@ public final class ForumInfo extends Message {
     public final Integer member_num;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
-    @ProtoField(tag = w.n.View_translationY)
+    @ProtoField(tag = d.n.View_translationY)
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
@@ -113,11 +120,11 @@ public final class ForumInfo extends Message {
     public final PostPrefix post_prefix;
     @ProtoField(tag = 61)
     public final PostTopic post_topic;
-    @ProtoField(tag = w.n.View_scaleX)
+    @ProtoField(tag = d.n.View_scaleX)
     public final RealTime realtime_data;
-    @ProtoField(label = Message.Label.REPEATED, tag = w.n.View_minHeight)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_minHeight)
     public final List<RecommendForum> recommend_forum;
-    @ProtoField(tag = w.n.View_onClick)
+    @ProtoField(tag = d.n.View_onClick)
     public final RecomUserInfo recommend_user_info;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String second_class;
@@ -133,7 +140,7 @@ public final class ForumInfo extends Message {
     public final Integer thread_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String tids;
-    @ProtoField(tag = w.n.View_translationX)
+    @ProtoField(tag = d.n.View_translationX)
     public final TopCode top_code;
     @ProtoField(tag = 28)
     public final TopNotice top_notice;
@@ -141,7 +148,7 @@ public final class ForumInfo extends Message {
     public final Integer user_level;
     @ProtoField(tag = 45)
     public final WorldCup worldcupinfo;
-    @ProtoField(tag = w.n.View_rotationY)
+    @ProtoField(tag = d.n.View_rotationY)
     public final Yule yule;
     @ProtoField(tag = 16)
     public final Zhibo zhibo;
@@ -175,10 +182,8 @@ public final class ForumInfo extends Message {
     public static final Integer DEFAULT_CAN_USE_ACCELERATE = 0;
     public static final List<GameInfo> DEFAULT_GAME_CARD = Collections.emptyList();
     public static final Integer DEFAULT_IS_LIVE_GAME_FORUM = 0;
-
-    /* synthetic */ ForumInfo(Builder builder, boolean z, ForumInfo forumInfo) {
-        this(builder, z);
-    }
+    public static final Integer DEFAULT_IS_LIVE_GAME = 0;
+    public static final Integer DEFAULT_IS_NEW_GAME_FORUM = 0;
 
     private ForumInfo(Builder builder, boolean z) {
         super(builder);
@@ -410,9 +415,24 @@ public final class ForumInfo extends Message {
             this.across_forum_hide = builder.across_forum_hide;
             if (builder.is_live_game_forum == null) {
                 this.is_live_game_forum = DEFAULT_IS_LIVE_GAME_FORUM;
-                return;
             } else {
                 this.is_live_game_forum = builder.is_live_game_forum;
+            }
+            if (builder.is_live_game == null) {
+                this.is_live_game = DEFAULT_IS_LIVE_GAME;
+            } else {
+                this.is_live_game = builder.is_live_game;
+            }
+            if (builder.is_new_game_forum == null) {
+                this.is_new_game_forum = DEFAULT_IS_NEW_GAME_FORUM;
+            } else {
+                this.is_new_game_forum = builder.is_new_game_forum;
+            }
+            if (builder.forum_game_label == null) {
+                this.forum_game_label = "";
+                return;
+            } else {
+                this.forum_game_label = builder.forum_game_label;
                 return;
             }
         }
@@ -478,6 +498,9 @@ public final class ForumInfo extends Message {
         this.post_topic = builder.post_topic;
         this.across_forum_hide = builder.across_forum_hide;
         this.is_live_game_forum = builder.is_live_game_forum;
+        this.is_live_game = builder.is_live_game;
+        this.is_new_game_forum = builder.is_new_game_forum;
+        this.forum_game_label = builder.forum_game_label;
     }
 
     /* loaded from: classes.dex */
@@ -497,6 +520,7 @@ public final class ForumInfo extends Message {
         public Integer favo_type;
         public String first_class;
         public ForumButton forum_button;
+        public String forum_game_label;
         public List<Calendar> forum_sign_calendar;
         public MemberShowIcon forumvip_show_icon;
         public List<GameInfo> game_card;
@@ -511,8 +535,10 @@ public final class ForumInfo extends Message {
         public Integer is_exists;
         public Integer is_forbidden;
         public Integer is_like;
+        public Integer is_live_game;
         public Integer is_live_game_forum;
         public Integer is_local_effect;
+        public Integer is_new_game_forum;
         public String is_readonly;
         public Integer is_search_people;
         public Integer is_stage_forum;
@@ -613,13 +639,16 @@ public final class ForumInfo extends Message {
                 this.post_topic = forumInfo.post_topic;
                 this.across_forum_hide = forumInfo.across_forum_hide;
                 this.is_live_game_forum = forumInfo.is_live_game_forum;
+                this.is_live_game = forumInfo.is_live_game;
+                this.is_new_game_forum = forumInfo.is_new_game_forum;
+                this.forum_game_label = forumInfo.forum_game_label;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumInfo build(boolean z) {
-            return new ForumInfo(this, z, null);
+            return new ForumInfo(this, z);
         }
     }
 }

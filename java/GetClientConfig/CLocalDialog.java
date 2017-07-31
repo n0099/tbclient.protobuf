@@ -26,10 +26,6 @@ public final class CLocalDialog extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String url_ios;
 
-    /* synthetic */ CLocalDialog(Builder builder, boolean z, CLocalDialog cLocalDialog) {
-        this(builder, z);
-    }
-
     private CLocalDialog(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -109,7 +105,7 @@ public final class CLocalDialog extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CLocalDialog build(boolean z) {
-            return new CLocalDialog(this, z, null);
+            return new CLocalDialog(this, z);
         }
     }
 }

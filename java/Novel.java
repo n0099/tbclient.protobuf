@@ -56,10 +56,6 @@ public final class Novel extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String last_chapter_update_time;
 
-    /* synthetic */ Novel(Builder builder, boolean z, Novel novel) {
-        this(builder, z);
-    }
-
     private Novel(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -219,7 +215,7 @@ public final class Novel extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Novel build(boolean z) {
-            return new Novel(this, z, null);
+            return new Novel(this, z);
         }
     }
 }

@@ -23,10 +23,6 @@ public final class TwAnchorTaskItem extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_COMPLETE = 0;
 
-    /* synthetic */ TwAnchorTaskItem(Builder builder, boolean z, TwAnchorTaskItem twAnchorTaskItem) {
-        this(builder, z);
-    }
-
     private TwAnchorTaskItem(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class TwAnchorTaskItem extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TwAnchorTaskItem build(boolean z) {
-            return new TwAnchorTaskItem(this, z, null);
+            return new TwAnchorTaskItem(this, z);
         }
     }
 }

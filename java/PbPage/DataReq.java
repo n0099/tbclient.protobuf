@@ -1,6 +1,6 @@
 package tbclient.PbPage;
 
-import com.baidu.tieba.w;
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
@@ -22,9 +22,9 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
-    @ProtoField(tag = w.n.View_scaleX)
+    @ProtoField(tag = d.n.View_scaleX)
     public final AdParam ad_param;
-    @ProtoField(tag = w.n.View_transformPivotX)
+    @ProtoField(tag = d.n.View_transformPivotX)
     public final AppPosInfo app_pos;
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer arround;
@@ -34,17 +34,17 @@ public final class DataReq extends Message {
     public final Integer banner;
     @ProtoField(tag = 25)
     public final CommonReq common;
-    @ProtoField(tag = w.n.View_duplicateParentState, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.STRING)
     public final String da_idfa;
-    @ProtoField(tag = w.n.View_rotation, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_rotation, type = Message.Datatype.STRING)
     public final String feed_nid;
     @ProtoField(tag = 45, type = Message.Datatype.UINT64)
     public final Long fid;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
-    @ProtoField(tag = w.n.View_rotationX, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.n.View_rotationX, type = Message.Datatype.INT64)
     public final Long forum_id;
-    @ProtoField(tag = w.n.View_transformPivotY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.n.View_transformPivotY, type = Message.Datatype.UINT32)
     public final Integer from_smart_frs;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
@@ -52,9 +52,9 @@ public final class DataReq extends Message {
     public final Integer is_jumpfloor;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer issdk;
-    @ProtoField(tag = w.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
     public final String jfrom;
-    @ProtoField(tag = w.n.View_minWidth, type = Message.Datatype.UINT64)
+    @ProtoField(tag = d.n.View_minWidth, type = Message.Datatype.UINT64)
     public final Long jid;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer jumpfloor_num;
@@ -72,11 +72,11 @@ public final class DataReq extends Message {
     public final Integer message_id;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String msg_click;
-    @ProtoField(tag = w.n.View_rotationY, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_rotationY, type = Message.Datatype.INT32)
     public final Integer need_repost_recommend_forum;
-    @ProtoField(tag = w.n.View_translationX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_translationX, type = Message.Datatype.STRING)
     public final String obj_locate;
-    @ProtoField(tag = w.n.View_translationY, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_translationY, type = Message.Datatype.STRING)
     public final String obj_param1;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String obj_source;
@@ -84,7 +84,7 @@ public final class DataReq extends Message {
     public final Integer pb_rn;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long pid;
-    @ProtoField(tag = w.n.View_minHeight, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.STRING)
     public final String platform;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer pn;
@@ -120,9 +120,9 @@ public final class DataReq extends Message {
     public final Integer weipost;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer with_floor;
-    @ProtoField(tag = w.n.View_contentDescription, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_contentDescription, type = Message.Datatype.STRING)
     public final String yuelaou_locate;
-    @ProtoField(tag = w.n.View_onClick, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.STRING)
     public final String yuelaou_params;
     public static final Integer DEFAULT_PB_RN = 0;
     public static final Integer DEFAULT_MARK = 0;
@@ -157,10 +157,6 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FROM_SMART_FRS = 0;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
-
-    /* synthetic */ DataReq(Builder builder, boolean z, DataReq dataReq) {
-        this(builder, z);
-    }
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -580,7 +576,7 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            return new DataReq(this, z, null);
+            return new DataReq(this, z);
         }
     }
 }

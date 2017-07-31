@@ -10,10 +10,6 @@ public final class LotteryResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ LotteryResIdl(Builder builder, boolean z, LotteryResIdl lotteryResIdl) {
-        this(builder, z);
-    }
-
     private LotteryResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class LotteryResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LotteryResIdl build(boolean z) {
-            return new LotteryResIdl(this, z, null);
+            return new LotteryResIdl(this, z);
         }
     }
 }

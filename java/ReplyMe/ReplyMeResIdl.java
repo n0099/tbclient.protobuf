@@ -10,10 +10,6 @@ public final class ReplyMeResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ ReplyMeResIdl(Builder builder, boolean z, ReplyMeResIdl replyMeResIdl) {
-        this(builder, z);
-    }
-
     private ReplyMeResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class ReplyMeResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ReplyMeResIdl build(boolean z) {
-            return new ReplyMeResIdl(this, z, null);
+            return new ReplyMeResIdl(this, z);
         }
     }
 }

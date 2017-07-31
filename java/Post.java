@@ -110,10 +110,6 @@ public final class Post extends Message {
     public static final Integer DEFAULT_IS_POST_VISIBLE = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
 
-    /* synthetic */ Post(Builder builder, boolean z, Post post) {
-        this(builder, z);
-    }
-
     private Post(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -389,7 +385,7 @@ public final class Post extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Post build(boolean z) {
-            return new Post(this, z, null);
+            return new Post(this, z);
         }
     }
 }

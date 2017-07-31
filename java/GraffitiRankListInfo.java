@@ -31,10 +31,6 @@ public final class GraffitiRankListInfo extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final List<User> DEFAULT_CONSENT_LIST = Collections.emptyList();
 
-    /* synthetic */ GraffitiRankListInfo(Builder builder, boolean z, GraffitiRankListInfo graffitiRankListInfo) {
-        this(builder, z);
-    }
-
     private GraffitiRankListInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -122,7 +118,7 @@ public final class GraffitiRankListInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GraffitiRankListInfo build(boolean z) {
-            return new GraffitiRankListInfo(this, z, null);
+            return new GraffitiRankListInfo(this, z);
         }
     }
 }

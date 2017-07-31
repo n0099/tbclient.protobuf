@@ -38,10 +38,6 @@ public final class SignUser extends Message {
     public static final Integer DEFAULT_TOTAL_RESIGN_NUM = 0;
     public static final Integer DEFAULT_MISS_SIGN_NUM = 0;
 
-    /* synthetic */ SignUser(Builder builder, boolean z, SignUser signUser) {
-        this(builder, z);
-    }
-
     private SignUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -153,7 +149,7 @@ public final class SignUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SignUser build(boolean z) {
-            return new SignUser(this, z, null);
+            return new SignUser(this, z);
         }
     }
 }

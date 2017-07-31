@@ -14,10 +14,6 @@ public final class BookThread extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long chapter_id;
 
-    /* synthetic */ BookThread(Builder builder, boolean z, BookThread bookThread) {
-        this(builder, z);
-    }
-
     private BookThread(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class BookThread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BookThread build(boolean z) {
-            return new BookThread(this, z, null);
+            return new BookThread(this, z);
         }
     }
 }

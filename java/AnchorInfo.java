@@ -64,10 +64,6 @@ public final class AnchorInfo extends Message {
     public static final Integer DEFAULT_LABEL_ID = 0;
     public static final Integer DEFAULT_TYPE = 0;
 
-    /* synthetic */ AnchorInfo(Builder builder, boolean z, AnchorInfo anchorInfo) {
-        this(builder, z);
-    }
-
     private AnchorInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -246,7 +242,7 @@ public final class AnchorInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AnchorInfo build(boolean z) {
-            return new AnchorInfo(this, z, null);
+            return new AnchorInfo(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class GetForumsFromForumClassResIdl extends Message {
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* synthetic */ GetForumsFromForumClassResIdl(Builder builder, boolean z, GetForumsFromForumClassResIdl getForumsFromForumClassResIdl) {
-        this(builder, z);
-    }
-
     private GetForumsFromForumClassResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class GetForumsFromForumClassResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetForumsFromForumClassResIdl build(boolean z) {
-            return new GetForumsFromForumClassResIdl(this, z, null);
+            return new GetForumsFromForumClassResIdl(this, z);
         }
     }
 }

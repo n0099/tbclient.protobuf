@@ -44,10 +44,6 @@ public final class Page extends Message {
     public static final Integer DEFAULT_TOTAL_NUM = 0;
     public static final Integer DEFAULT_LZ_TOTAL_FLOOR = 0;
 
-    /* synthetic */ Page(Builder builder, boolean z, Page page) {
-        this(builder, z);
-    }
-
     private Page(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -175,7 +171,7 @@ public final class Page extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Page build(boolean z) {
-            return new Page(this, z, null);
+            return new Page(this, z);
         }
     }
 }

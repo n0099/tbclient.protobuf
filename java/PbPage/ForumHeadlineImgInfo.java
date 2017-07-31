@@ -23,10 +23,6 @@ public final class ForumHeadlineImgInfo extends Message {
     public static final Integer DEFAULT_RANK_NUM = 0;
     public static final Long DEFAULT_IMG_USER_ID = 0L;
 
-    /* synthetic */ ForumHeadlineImgInfo(Builder builder, boolean z, ForumHeadlineImgInfo forumHeadlineImgInfo) {
-        this(builder, z);
-    }
-
     private ForumHeadlineImgInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class ForumHeadlineImgInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumHeadlineImgInfo build(boolean z) {
-            return new ForumHeadlineImgInfo(this, z, null);
+            return new ForumHeadlineImgInfo(this, z);
         }
     }
 }

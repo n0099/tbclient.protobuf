@@ -10,10 +10,6 @@ public final class CheckPostResIdl extends Message {
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* synthetic */ CheckPostResIdl(Builder builder, boolean z, CheckPostResIdl checkPostResIdl) {
-        this(builder, z);
-    }
-
     private CheckPostResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class CheckPostResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CheckPostResIdl build(boolean z) {
-            return new CheckPostResIdl(this, z, null);
+            return new CheckPostResIdl(this, z);
         }
     }
 }

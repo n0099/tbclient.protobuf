@@ -20,10 +20,6 @@ public final class UserRankPresentInfo extends Message {
     public static final Integer DEFAULT_PRESENT_NUM = 0;
     public static final Long DEFAULT_PRESENT_SCORES = 0L;
 
-    /* synthetic */ UserRankPresentInfo(Builder builder, boolean z, UserRankPresentInfo userRankPresentInfo) {
-        this(builder, z);
-    }
-
     private UserRankPresentInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -87,7 +83,7 @@ public final class UserRankPresentInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserRankPresentInfo build(boolean z) {
-            return new UserRankPresentInfo(this, z, null);
+            return new UserRankPresentInfo(this, z);
         }
     }
 }

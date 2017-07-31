@@ -17,10 +17,6 @@ public final class ThemeRecommand extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tip_text;
 
-    /* synthetic */ ThemeRecommand(Builder builder, boolean z, ThemeRecommand themeRecommand) {
-        this(builder, z);
-    }
-
     private ThemeRecommand(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class ThemeRecommand extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThemeRecommand build(boolean z) {
-            return new ThemeRecommand(this, z, null);
+            return new ThemeRecommand(this, z);
         }
     }
 }

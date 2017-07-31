@@ -11,10 +11,6 @@ public final class UserVideoChannelInfo extends Message {
     public static final Integer DEFAULT_MAN_CHANNEL = 0;
     public static final Integer DEFAULT_FOLLOW_CHANNEL = 0;
 
-    /* synthetic */ UserVideoChannelInfo(Builder builder, boolean z, UserVideoChannelInfo userVideoChannelInfo) {
-        this(builder, z);
-    }
-
     private UserVideoChannelInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class UserVideoChannelInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserVideoChannelInfo build(boolean z) {
-            return new UserVideoChannelInfo(this, z, null);
+            return new UserVideoChannelInfo(this, z);
         }
     }
 }

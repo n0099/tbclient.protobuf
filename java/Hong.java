@@ -8,10 +8,6 @@ public final class Hong extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String test;
 
-    /* synthetic */ Hong(Builder builder, boolean z, Hong hong) {
-        this(builder, z);
-    }
-
     private Hong(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -43,7 +39,7 @@ public final class Hong extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Hong build(boolean z) {
-            return new Hong(this, z, null);
+            return new Hong(this, z);
         }
     }
 }

@@ -14,10 +14,6 @@ public final class TshowInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* synthetic */ TshowInfo(Builder builder, boolean z, TshowInfo tshowInfo) {
-        this(builder, z);
-    }
-
     private TshowInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class TshowInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TshowInfo build(boolean z) {
-            return new TshowInfo(this, z, null);
+            return new TshowInfo(this, z);
         }
     }
 }

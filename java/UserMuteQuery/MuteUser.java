@@ -17,10 +17,6 @@ public final class MuteUser extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_MUTE_TIME = 0;
 
-    /* synthetic */ MuteUser(Builder builder, boolean z, MuteUser muteUser) {
-        this(builder, z);
-    }
-
     private MuteUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class MuteUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MuteUser build(boolean z) {
-            return new MuteUser(this, z, null);
+            return new MuteUser(this, z);
         }
     }
 }

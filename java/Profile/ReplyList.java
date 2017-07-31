@@ -17,10 +17,6 @@ public final class ReplyList extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final Integer DEFAULT_TIME = 0;
 
-    /* synthetic */ ReplyList(Builder builder, boolean z, ReplyList replyList) {
-        this(builder, z);
-    }
-
     private ReplyList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class ReplyList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ReplyList build(boolean z) {
-            return new ReplyList(this, z, null);
+            return new ReplyList(this, z);
         }
     }
 }

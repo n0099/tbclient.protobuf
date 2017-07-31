@@ -17,10 +17,6 @@ public final class Lbs extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String sn;
 
-    /* synthetic */ Lbs(Builder builder, boolean z, Lbs lbs) {
-        this(builder, z);
-    }
-
     private Lbs(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class Lbs extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Lbs build(boolean z) {
-            return new Lbs(this, z, null);
+            return new Lbs(this, z);
         }
     }
 }

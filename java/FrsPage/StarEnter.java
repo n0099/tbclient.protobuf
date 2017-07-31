@@ -32,10 +32,6 @@ public final class StarEnter extends Message {
     public static final Integer DEFAULT_TIME = 0;
     public static final Integer DEFAULT_RANK_NUM = 0;
 
-    /* synthetic */ StarEnter(Builder builder, boolean z, StarEnter starEnter) {
-        this(builder, z);
-    }
-
     private StarEnter(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -131,7 +127,7 @@ public final class StarEnter extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public StarEnter build(boolean z) {
-            return new StarEnter(this, z, null);
+            return new StarEnter(this, z);
         }
     }
 }

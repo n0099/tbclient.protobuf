@@ -14,10 +14,6 @@ public final class AppCode extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String post_url;
 
-    /* synthetic */ AppCode(Builder builder, boolean z, AppCode appCode) {
-        this(builder, z);
-    }
-
     private AppCode(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -65,7 +61,7 @@ public final class AppCode extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AppCode build(boolean z) {
-            return new AppCode(this, z, null);
+            return new AppCode(this, z);
         }
     }
 }

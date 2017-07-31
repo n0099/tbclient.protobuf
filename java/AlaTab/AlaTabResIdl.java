@@ -10,10 +10,6 @@ public final class AlaTabResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* synthetic */ AlaTabResIdl(Builder builder, boolean z, AlaTabResIdl alaTabResIdl) {
-        this(builder, z);
-    }
-
     private AlaTabResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -44,7 +40,7 @@ public final class AlaTabResIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AlaTabResIdl build(boolean z) {
-            return new AlaTabResIdl(this, z, null);
+            return new AlaTabResIdl(this, z);
         }
     }
 }

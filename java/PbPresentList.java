@@ -17,10 +17,6 @@ public final class PbPresentList extends Message {
     public static final Integer DEFAULT_GIFT_ID = 0;
     public static final Integer DEFAULT_NUM = 0;
 
-    /* synthetic */ PbPresentList(Builder builder, boolean z, PbPresentList pbPresentList) {
-        this(builder, z);
-    }
-
     private PbPresentList(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class PbPresentList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbPresentList build(boolean z) {
-            return new PbPresentList(this, z, null);
+            return new PbPresentList(this, z);
         }
     }
 }

@@ -36,10 +36,6 @@ public final class HotPost extends Message {
     public static final Integer DEFAULT_CREATE_TIME = 0;
     public static final Integer DEFAULT_FLOOR = 0;
 
-    /* synthetic */ HotPost(Builder builder, boolean z, HotPost hotPost) {
-        this(builder, z);
-    }
-
     private HotPost(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -139,7 +135,7 @@ public final class HotPost extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HotPost build(boolean z) {
-            return new HotPost(this, z, null);
+            return new HotPost(this, z);
         }
     }
 }

@@ -10,10 +10,6 @@ public final class WeeklyForum extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer hot_rank;
 
-    /* synthetic */ WeeklyForum(Builder builder, boolean z, WeeklyForum weeklyForum) {
-        this(builder, z);
-    }
-
     private WeeklyForum(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -49,7 +45,7 @@ public final class WeeklyForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public WeeklyForum build(boolean z) {
-            return new WeeklyForum(this, z, null);
+            return new WeeklyForum(this, z);
         }
     }
 }

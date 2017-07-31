@@ -11,10 +11,6 @@ public final class Group extends Message {
     public static final Integer DEFAULT_HIDE_RECOMMEND_GROUP = 0;
     public static final Integer DEFAULT_GROUP_COUNT = 0;
 
-    /* synthetic */ Group(Builder builder, boolean z, Group group) {
-        this(builder, z);
-    }
-
     private Group(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Group extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Group build(boolean z) {
-            return new Group(this, z, null);
+            return new Group(this, z);
         }
     }
 }

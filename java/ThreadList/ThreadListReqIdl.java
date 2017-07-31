@@ -7,10 +7,6 @@ public final class ThreadListReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ ThreadListReqIdl(Builder builder, boolean z, ThreadListReqIdl threadListReqIdl) {
-        this(builder, z);
-    }
-
     private ThreadListReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class ThreadListReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThreadListReqIdl build(boolean z) {
-            return new ThreadListReqIdl(this, z, null);
+            return new ThreadListReqIdl(this, z);
         }
     }
 }

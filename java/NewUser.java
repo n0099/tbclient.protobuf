@@ -109,10 +109,6 @@ public final class NewUser extends Message {
     public static final List<Rpgoldicon> DEFAULT_RPGOLDICON = Collections.emptyList();
     public static final List<TbmallMonthIcon> DEFAULT_TBMALL_MONTH_ICON = Collections.emptyList();
 
-    /* synthetic */ NewUser(Builder builder, boolean z, NewUser newUser) {
-        this(builder, z);
-    }
-
     private NewUser(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -400,7 +396,7 @@ public final class NewUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NewUser build(boolean z) {
-            return new NewUser(this, z, null);
+            return new NewUser(this, z);
         }
     }
 }

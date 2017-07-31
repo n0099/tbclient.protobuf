@@ -34,10 +34,6 @@ public final class TogetherHi extends Message {
     public static final Integer DEFAULT_NUM_JOIN = 0;
     public static final List<String> DEFAULT_PIC_URLS = Collections.emptyList();
 
-    /* synthetic */ TogetherHi(Builder builder, boolean z, TogetherHi togetherHi) {
-        this(builder, z);
-    }
-
     private TogetherHi(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -133,7 +129,7 @@ public final class TogetherHi extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TogetherHi build(boolean z) {
-            return new TogetherHi(this, z, null);
+            return new TogetherHi(this, z);
         }
     }
 }

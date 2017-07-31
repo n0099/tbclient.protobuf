@@ -27,10 +27,6 @@ public final class SimpleThreadInfo extends Message {
     public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
     public static final Long DEFAULT_THREAD_TYPE = 0L;
 
-    /* synthetic */ SimpleThreadInfo(Builder builder, boolean z, SimpleThreadInfo simpleThreadInfo) {
-        this(builder, z);
-    }
-
     private SimpleThreadInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -106,7 +102,7 @@ public final class SimpleThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SimpleThreadInfo build(boolean z) {
-            return new SimpleThreadInfo(this, z, null);
+            return new SimpleThreadInfo(this, z);
         }
     }
 }

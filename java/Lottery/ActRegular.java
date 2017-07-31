@@ -17,10 +17,6 @@ public final class ActRegular extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_CHANCE = 0;
 
-    /* synthetic */ ActRegular(Builder builder, boolean z, ActRegular actRegular) {
-        this(builder, z);
-    }
-
     private ActRegular(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class ActRegular extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActRegular build(boolean z) {
-            return new ActRegular(this, z, null);
+            return new ActRegular(this, z);
         }
     }
 }

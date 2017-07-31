@@ -22,10 +22,6 @@ public final class ThreadPersonalized extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final List<DislikeReason> DEFAULT_DISLIKE_RESOURCE = Collections.emptyList();
 
-    /* synthetic */ ThreadPersonalized(Builder builder, boolean z, ThreadPersonalized threadPersonalized) {
-        this(builder, z);
-    }
-
     private ThreadPersonalized(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -89,7 +85,7 @@ public final class ThreadPersonalized extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThreadPersonalized build(boolean z) {
-            return new ThreadPersonalized(this, z, null);
+            return new ThreadPersonalized(this, z);
         }
     }
 }

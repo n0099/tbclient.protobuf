@@ -100,10 +100,6 @@ public final class PbContent extends Message {
     public static final Integer DEFAULT_COUNT = 0;
     public static final Integer DEFAULT_URL_TYPE = 0;
 
-    /* synthetic */ PbContent(Builder builder, boolean z, PbContent pbContent) {
-        this(builder, z);
-    }
-
     private PbContent(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -374,7 +370,7 @@ public final class PbContent extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbContent build(boolean z) {
-            return new PbContent(this, z, null);
+            return new PbContent(this, z);
         }
     }
 }

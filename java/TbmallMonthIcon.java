@@ -11,10 +11,6 @@ public final class TbmallMonthIcon extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String mon;
 
-    /* synthetic */ TbmallMonthIcon(Builder builder, boolean z, TbmallMonthIcon tbmallMonthIcon) {
-        this(builder, z);
-    }
-
     private TbmallMonthIcon(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class TbmallMonthIcon extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TbmallMonthIcon build(boolean z) {
-            return new TbmallMonthIcon(this, z, null);
+            return new TbmallMonthIcon(this, z);
         }
     }
 }

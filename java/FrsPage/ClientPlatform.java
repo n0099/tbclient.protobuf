@@ -10,10 +10,6 @@ public final class ClientPlatform extends Message {
     @ProtoField(tag = 2)
     public final StarSchedule star_schedule;
 
-    /* synthetic */ ClientPlatform(Builder builder, boolean z, ClientPlatform clientPlatform) {
-        this(builder, z);
-    }
-
     private ClientPlatform(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -48,7 +44,7 @@ public final class ClientPlatform extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ClientPlatform build(boolean z) {
-            return new ClientPlatform(this, z, null);
+            return new ClientPlatform(this, z);
         }
     }
 }

@@ -17,10 +17,6 @@ public final class Classify extends Message {
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_CLASS_ID = 0;
 
-    /* synthetic */ Classify(Builder builder, boolean z, Classify classify) {
-        this(builder, z);
-    }
-
     private Classify(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -76,7 +72,7 @@ public final class Classify extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Classify build(boolean z) {
-            return new Classify(this, z, null);
+            return new Classify(this, z);
         }
     }
 }

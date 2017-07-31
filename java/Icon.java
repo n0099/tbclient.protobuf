@@ -29,10 +29,6 @@ public final class Icon extends Message {
     public static final Integer DEFAULT_VALUE = 0;
     public static final List<String> DEFAULT_SPRITE_INFO = Collections.emptyList();
 
-    /* synthetic */ Icon(Builder builder, boolean z, Icon icon) {
-        this(builder, z);
-    }
-
     private Icon(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -112,7 +108,7 @@ public final class Icon extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Icon build(boolean z) {
-            return new Icon(this, z, null);
+            return new Icon(this, z);
         }
     }
 }

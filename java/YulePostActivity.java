@@ -23,10 +23,6 @@ public final class YulePostActivity extends Message {
     public static final Long DEFAULT_START_TIME = 0L;
     public static final Long DEFAULT_END_TIME = 0L;
 
-    /* synthetic */ YulePostActivity(Builder builder, boolean z, YulePostActivity yulePostActivity) {
-        this(builder, z);
-    }
-
     private YulePostActivity(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -98,7 +94,7 @@ public final class YulePostActivity extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public YulePostActivity build(boolean z) {
-            return new YulePostActivity(this, z, null);
+            return new YulePostActivity(this, z);
         }
     }
 }

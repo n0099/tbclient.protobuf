@@ -31,10 +31,6 @@ public final class VideoActive extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
 
-    /* synthetic */ VideoActive(Builder builder, boolean z, VideoActive videoActive) {
-        this(builder, z);
-    }
-
     private VideoActive(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -122,7 +118,7 @@ public final class VideoActive extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VideoActive build(boolean z) {
-            return new VideoActive(this, z, null);
+            return new VideoActive(this, z);
         }
     }
 }

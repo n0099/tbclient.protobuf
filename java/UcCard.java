@@ -22,10 +22,6 @@ public final class UcCard extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<UcCardInfo> uc_cards;
 
-    /* synthetic */ UcCard(Builder builder, boolean z, UcCard ucCard) {
-        this(builder, z);
-    }
-
     private UcCard(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -89,7 +85,7 @@ public final class UcCard extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UcCard build(boolean z) {
-            return new UcCard(this, z, null);
+            return new UcCard(this, z);
         }
     }
 }

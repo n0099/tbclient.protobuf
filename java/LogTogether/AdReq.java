@@ -59,10 +59,6 @@ public final class AdReq extends Message {
     public static final Long DEFAULT_DA_UTIME = 0L;
     public static final Integer DEFAULT_DA_PN = 0;
 
-    /* synthetic */ AdReq(Builder builder, boolean z, AdReq adReq) {
-        this(builder, z);
-    }
-
     private AdReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -230,7 +226,7 @@ public final class AdReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AdReq build(boolean z) {
-            return new AdReq(this, z, null);
+            return new AdReq(this, z);
         }
     }
 }

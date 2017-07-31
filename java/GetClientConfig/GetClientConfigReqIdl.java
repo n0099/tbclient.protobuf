@@ -7,10 +7,6 @@ public final class GetClientConfigReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* synthetic */ GetClientConfigReqIdl(Builder builder, boolean z, GetClientConfigReqIdl getClientConfigReqIdl) {
-        this(builder, z);
-    }
-
     private GetClientConfigReqIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -37,7 +33,7 @@ public final class GetClientConfigReqIdl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GetClientConfigReqIdl build(boolean z) {
-            return new GetClientConfigReqIdl(this, z, null);
+            return new GetClientConfigReqIdl(this, z);
         }
     }
 }

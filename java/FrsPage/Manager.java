@@ -11,10 +11,6 @@ public final class Manager extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
 
-    /* synthetic */ Manager(Builder builder, boolean z, Manager manager) {
-        this(builder, z);
-    }
-
     private Manager(Builder builder, boolean z) {
         super(builder);
         if (z) {
@@ -54,7 +50,7 @@ public final class Manager extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Manager build(boolean z) {
-            return new Manager(this, z, null);
+            return new Manager(this, z);
         }
     }
 }
