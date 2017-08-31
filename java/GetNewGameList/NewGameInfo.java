@@ -61,9 +61,9 @@ public final class NewGameInfo extends Message {
     public final String category_name;
     @ProtoField(tag = d.n.View_transformPivotY, type = Message.Datatype.STRING)
     public final String category_name_sim;
-    @ProtoField(tag = 40, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.UINT32)
     public final Integer channel;
-    @ProtoField(tag = 36, type = Message.Datatype.UINT64)
+    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.UINT64)
     public final Long deadline;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String developer;
@@ -81,9 +81,9 @@ public final class NewGameInfo extends Message {
     public final String game_name;
     @ProtoField(label = Message.Label.REPEATED, tag = 13, type = Message.Datatype.STRING)
     public final List<String> game_pic;
-    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer game_platform;
-    @ProtoField(tag = 38, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.INT32)
     public final Integer game_type;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String gift_code;
@@ -111,7 +111,7 @@ public final class NewGameInfo extends Message {
     public final String package_name;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String package_size;
-    @ProtoField(tag = 37, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT32)
     public final Integer play_count;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String praise;
@@ -147,7 +147,7 @@ public final class NewGameInfo extends Message {
     public final Long thread_theme_id;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer time;
-    @ProtoField(tag = 41, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.STRING)
     public final String version;
     @ProtoField(tag = d.n.View_minWidth, type = Message.Datatype.STRING)
     public final String version_ios;

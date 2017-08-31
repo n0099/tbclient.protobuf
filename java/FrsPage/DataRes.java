@@ -86,7 +86,7 @@ public final class DataRes extends Message {
     public final List<FrsTabInfo> frs_game_tab_info;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
-    @ProtoField(tag = 38, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.INT32)
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
@@ -108,7 +108,7 @@ public final class DataRes extends Message {
     public final Long logid;
     @ProtoField(tag = BDLocation.TypeOffLineLocationFail)
     public final NaGuide na_guide;
-    @ProtoField(tag = 37)
+    @ProtoField(tag = d.n.View_longClickable)
     public final NavTabInfo nav_tab_info;
     @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.INT32)
     public final Integer need_log;
@@ -124,9 +124,9 @@ public final class DataRes extends Message {
     public final PushThreadInfo push_thread_info;
     @ProtoField(tag = d.n.View_hapticFeedbackEnabled)
     public final RecommendBook recommend_book;
-    @ProtoField(tag = 40)
+    @ProtoField(tag = d.n.View_drawingCacheQuality)
     public final RecommendInfo school_recom_info;
-    @ProtoField(tag = 41, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.UINT32)
     public final Integer school_recom_pos;
     @ProtoField(tag = 31)
     public final SdkTopicThread sdk_topic_thread;
@@ -134,7 +134,7 @@ public final class DataRes extends Message {
     public final Integer server_time;
     @ProtoField(tag = d.n.View_contentDescription, type = Message.Datatype.INT32)
     public final Integer smart_frs_type;
-    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;

@@ -1,6 +1,7 @@
 package tbclient;
 
 import com.baidu.location.BDLocation;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -32,7 +33,7 @@ public final class User extends Message {
     public final Integer agree_num;
     @ProtoField(tag = 78)
     public final AlaUserInfo ala_info;
-    @ProtoField(tag = 85)
+    @ProtoField(tag = TbConfig.POST_IMAGE_QUALITY)
     public final AlaLiveInfo ala_live_info;
     @ProtoField(tag = 10)
     public final Balv balv;
@@ -40,7 +41,7 @@ public final class User extends Message {
     public final String bawu_type;
     @ProtoField(tag = d.n.View_scaleX, type = Message.Datatype.STRING)
     public final String bg_pic;
-    @ProtoField(tag = 40, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.INT32)
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
@@ -102,6 +103,8 @@ public final class User extends Message {
     public final Integer is_huinibuke;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_interestman;
+    @ProtoField(tag = 90, type = Message.Datatype.INT32)
+    public final Integer is_invited;
     @ProtoField(tag = 24, type = Message.Datatype.INT32)
     public final Integer is_like;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -110,12 +113,14 @@ public final class User extends Message {
     public final Integer is_manager;
     @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.INT32)
     public final Integer is_mask;
-    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer is_mem;
     @ProtoField(tag = d.n.View_translationX, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
+    @ProtoField(tag = 89, type = Message.Datatype.INT32)
+    public final Integer left_call_num;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer level_id;
     @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_contentDescription)
@@ -144,9 +149,9 @@ public final class User extends Message {
     public final NovelFansInfo novel_fans_info;
     @ProtoField(tag = d.n.View_scaleY)
     public final NewParrScores parr_scores;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.STRING)
     public final String passwd;
-    @ProtoField(tag = 41)
+    @ProtoField(tag = d.n.View_keepScreenOn)
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 77)
     public final Pendant pendant;
@@ -154,7 +159,7 @@ public final class User extends Message {
     public final String portrait;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String portraith;
-    @ProtoField(tag = 37, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT32)
     public final Integer post_num;
     @ProtoField(tag = 45)
     public final PrivSets priv_sets;
@@ -168,7 +173,7 @@ public final class User extends Message {
     public final Integer sex;
     @ProtoField(tag = 82)
     public final SpringVirtualUser spring_virtual_user;
-    @ProtoField(tag = 38, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.STRING)
     public final String tb_age;
     @ProtoField(tag = 72)
     public final TbVipInfo tb_vip;
@@ -250,6 +255,8 @@ public final class User extends Message {
     public static final Integer DEFAULT_NICKNAME_UPDATE_TIME = 0;
     public static final Integer DEFAULT_THREAD_NUM = 0;
     public static final Integer DEFAULT_AGREE_NUM = 0;
+    public static final Integer DEFAULT_LEFT_CALL_NUM = 0;
+    public static final Integer DEFAULT_IS_INVITED = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -603,9 +610,19 @@ public final class User extends Message {
             }
             if (builder.agree_num == null) {
                 this.agree_num = DEFAULT_AGREE_NUM;
-                return;
             } else {
                 this.agree_num = builder.agree_num;
+            }
+            if (builder.left_call_num == null) {
+                this.left_call_num = DEFAULT_LEFT_CALL_NUM;
+            } else {
+                this.left_call_num = builder.left_call_num;
+            }
+            if (builder.is_invited == null) {
+                this.is_invited = DEFAULT_IS_INVITED;
+                return;
+            } else {
+                this.is_invited = builder.is_invited;
                 return;
             }
         }
@@ -697,6 +714,8 @@ public final class User extends Message {
         this.nickname_update_time = builder.nickname_update_time;
         this.thread_num = builder.thread_num;
         this.agree_num = builder.agree_num;
+        this.left_call_num = builder.left_call_num;
+        this.is_invited = builder.is_invited;
     }
 
     /* loaded from: classes.dex */
@@ -740,6 +759,7 @@ public final class User extends Message {
         public Integer is_guanfang;
         public Integer is_huinibuke;
         public Integer is_interestman;
+        public Integer is_invited;
         public Integer is_like;
         public Integer is_login;
         public Integer is_manager;
@@ -747,6 +767,7 @@ public final class User extends Message {
         public Integer is_mem;
         public Integer is_select_tail;
         public Integer is_verify;
+        public Integer left_call_num;
         public Integer level_id;
         public List<LikeForumInfo> likeForum;
         public Integer meizhi_level;
@@ -884,6 +905,8 @@ public final class User extends Message {
                 this.nickname_update_time = user.nickname_update_time;
                 this.thread_num = user.thread_num;
                 this.agree_num = user.agree_num;
+                this.left_call_num = user.left_call_num;
+                this.is_invited = user.is_invited;
             }
         }
 

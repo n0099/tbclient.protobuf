@@ -2,6 +2,7 @@ package tbclient.Userlike;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.ThreadInfo;
 /* loaded from: classes.dex */
 public final class UserList extends Message {
     public static final String DEFAULT_INTRO = "";
@@ -17,6 +18,8 @@ public final class UserList extends Message {
     public final String intro;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer is_god;
+    @ProtoField(tag = 10, type = Message.Datatype.UINT32)
+    public final Integer level;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -27,10 +30,13 @@ public final class UserList extends Message {
     public final String prefix;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String recom_reason;
+    @ProtoField(tag = 11)
+    public final ThreadInfo thread_info;
     public static final Integer DEFAULT_FANS_NUM = 0;
     public static final Integer DEFAULT_POST_NUM = 0;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_IS_GOD = 0;
+    public static final Integer DEFAULT_LEVEL = 0;
 
     private UserList(Builder builder, boolean z) {
         super(builder);
@@ -77,11 +83,16 @@ public final class UserList extends Message {
             }
             if (builder.is_god == null) {
                 this.is_god = DEFAULT_IS_GOD;
-                return;
             } else {
                 this.is_god = builder.is_god;
-                return;
             }
+            if (builder.level == null) {
+                this.level = DEFAULT_LEVEL;
+            } else {
+                this.level = builder.level;
+            }
+            this.thread_info = builder.thread_info;
+            return;
         }
         this.name = builder.name;
         this.prefix = builder.prefix;
@@ -92,6 +103,8 @@ public final class UserList extends Message {
         this.portrait = builder.portrait;
         this.id = builder.id;
         this.is_god = builder.is_god;
+        this.level = builder.level;
+        this.thread_info = builder.thread_info;
     }
 
     /* loaded from: classes.dex */
@@ -100,11 +113,13 @@ public final class UserList extends Message {
         public Long id;
         public String intro;
         public Integer is_god;
+        public Integer level;
         public String name;
         public String portrait;
         public Integer post_num;
         public String prefix;
         public String recom_reason;
+        public ThreadInfo thread_info;
 
         public Builder() {
         }
@@ -121,6 +136,8 @@ public final class UserList extends Message {
                 this.portrait = userList.portrait;
                 this.id = userList.id;
                 this.is_god = userList.is_god;
+                this.level = userList.level;
+                this.thread_info = userList.thread_info;
             }
         }
 

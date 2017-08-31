@@ -1,5 +1,6 @@
 package tbclient.PbPage;
 
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -10,6 +11,7 @@ import tbclient.BannerList;
 import tbclient.FineBannerPb;
 import tbclient.GraffitiRankListInfo;
 import tbclient.Lbs;
+import tbclient.NaGuide;
 import tbclient.Page;
 import tbclient.PbHotPost;
 import tbclient.PbTopAgreePost;
@@ -38,7 +40,7 @@ public final class DataRes extends Message {
     public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
-    @ProtoField(tag = 39)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured)
     public final SimpleForum display_forum;
     @ProtoField(tag = 33)
     public final FeedExtInfo feed_info;
@@ -46,13 +48,13 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> feed_thread_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<FineBannerPb> fine_banner;
-    @ProtoField(tag = 38)
+    @ProtoField(tag = d.n.View_saveEnabled)
     public final Post first_floor_post;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
     @ProtoField(tag = 27)
     public final ForumHeadlineImgInfo forum_headline_img_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = 36)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_clickable)
     public final List<SimpleForum> from_forum_list;
     @ProtoField(tag = 23)
     public final GodCard god_card;
@@ -70,13 +72,15 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 9)
     public final Lbs location;
-    @ProtoField(label = Message.Label.REPEATED, tag = 40)
+    @ProtoField(tag = d.n.View_duplicateParentState)
+    public final NaGuide na_guide;
+    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_drawingCacheQuality)
     public final List<SimpleUser> new_agree_user;
     @ProtoField(tag = 15)
     public final NewsInfo news_info;
     @ProtoField(tag = 3)
     public final Page page;
-    @ProtoField(tag = 41, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
     public final List<PsRankListItem> play_rank_list;
@@ -98,7 +102,7 @@ public final class DataRes extends Message {
     public final Integer switch_read_open;
     @ProtoField(tag = 8)
     public final ThreadInfo thread;
-    @ProtoField(tag = 37, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT64)
     public final Long thread_freq_num;
     @ProtoField(tag = 34)
     public final PbTopAgreePost top_agree_post_list;
@@ -238,11 +242,11 @@ public final class DataRes extends Message {
             }
             if (builder.partial_visible_toast == null) {
                 this.partial_visible_toast = "";
-                return;
             } else {
                 this.partial_visible_toast = builder.partial_visible_toast;
-                return;
             }
+            this.na_guide = builder.na_guide;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -285,6 +289,7 @@ public final class DataRes extends Message {
         this.display_forum = builder.display_forum;
         this.new_agree_user = immutableCopyOf(builder.new_agree_user);
         this.partial_visible_toast = builder.partial_visible_toast;
+        this.na_guide = builder.na_guide;
     }
 
     /* loaded from: classes.dex */
@@ -311,6 +316,7 @@ public final class DataRes extends Message {
         public Integer is_follow_current_channel;
         public Integer is_new_url;
         public Lbs location;
+        public NaGuide na_guide;
         public List<SimpleUser> new_agree_user;
         public NewsInfo news_info;
         public Page page;
@@ -378,6 +384,7 @@ public final class DataRes extends Message {
                 this.display_forum = dataRes.display_forum;
                 this.new_agree_user = DataRes.copyOf(dataRes.new_agree_user);
                 this.partial_visible_toast = dataRes.partial_visible_toast;
+                this.na_guide = dataRes.na_guide;
             }
         }
 

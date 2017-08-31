@@ -3,6 +3,7 @@ package tbclient;
 import android.support.v4.media.TransportMediator;
 import com.baidu.location.BDLocation;
 import com.baidu.sapi2.SapiSafeFacade;
+import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -88,7 +89,7 @@ public final class ThreadInfo extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = 40, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
@@ -118,8 +119,10 @@ public final class ThreadInfo extends Message {
     public final Integer is_bakan;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_FINISH, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
-    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer is_bub;
+    @ProtoField(tag = 136, type = Message.Datatype.INT32)
+    public final Integer is_called;
     @ProtoField(tag = 81, type = Message.Datatype.UINT32)
     public final Integer is_copythread;
     @ProtoField(tag = 97, type = Message.Datatype.INT32)
@@ -128,7 +131,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_global_top;
     @ProtoField(tag = 131, type = Message.Datatype.INT32)
     public final Integer is_god;
-    @ProtoField(tag = 85, type = Message.Datatype.INT32)
+    @ProtoField(tag = TbConfig.POST_IMAGE_QUALITY, type = Message.Datatype.INT32)
     public final Integer is_godthread_recommend;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
@@ -150,7 +153,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_reward;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_novel_thank;
-    @ProtoField(tag = 38, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
@@ -236,6 +239,8 @@ public final class ThreadInfo extends Message {
     public final List<PbContent> rich_abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = SapiSafeFacade.SAPIWEBVIEW_BIND_WIDGET)
     public final List<PbContent> rich_title;
+    @ProtoField(tag = 135, type = Message.Datatype.INT64)
+    public final Long share_num;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer show_commented;
     @ProtoField(tag = 100)
@@ -274,11 +279,11 @@ public final class ThreadInfo extends Message {
     public final VideoChannelInfo video_channel_info;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String video_cover;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.STRING)
     public final String video_id;
     @ProtoField(tag = 79)
     public final VideoInfo video_info;
-    @ProtoField(tag = 37, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.STRING)
     public final String video_mobile_url;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String video_swf;
@@ -290,7 +295,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = 41)
+    @ProtoField(tag = d.n.View_keepScreenOn)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -366,6 +371,8 @@ public final class ThreadInfo extends Message {
     public static final Long DEFAULT_FREQ_NUM = 0L;
     public static final Integer DEFAULT_IS_GOD = 0;
     public static final Integer DEFAULT_IS_STORY_AUDIT = 0;
+    public static final Long DEFAULT_SHARE_NUM = 0L;
+    public static final Integer DEFAULT_IS_CALLED = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -881,9 +888,19 @@ public final class ThreadInfo extends Message {
             this.pic_info = builder.pic_info;
             if (builder.is_story_audit == null) {
                 this.is_story_audit = DEFAULT_IS_STORY_AUDIT;
-                return;
             } else {
                 this.is_story_audit = builder.is_story_audit;
+            }
+            if (builder.share_num == null) {
+                this.share_num = DEFAULT_SHARE_NUM;
+            } else {
+                this.share_num = builder.share_num;
+            }
+            if (builder.is_called == null) {
+                this.is_called = DEFAULT_IS_CALLED;
+                return;
+            } else {
+                this.is_called = builder.is_called;
                 return;
             }
         }
@@ -1017,6 +1034,8 @@ public final class ThreadInfo extends Message {
         this.activity_info = builder.activity_info;
         this.pic_info = builder.pic_info;
         this.is_story_audit = builder.is_story_audit;
+        this.share_num = builder.share_num;
+        this.is_called = builder.is_called;
     }
 
     /* loaded from: classes.dex */
@@ -1065,6 +1084,7 @@ public final class ThreadInfo extends Message {
         public Integer is_bakan;
         public Integer is_book_chapter;
         public Integer is_bub;
+        public Integer is_called;
         public Integer is_copythread;
         public Integer is_deal;
         public Integer is_global_top;
@@ -1123,6 +1143,7 @@ public final class ThreadInfo extends Message {
         public Integer repost_num;
         public List<PbContent> rich_abstract;
         public List<PbContent> rich_title;
+        public Long share_num;
         public Integer show_commented;
         public SkinInfo skin_info;
         public Integer storecount;
@@ -1288,6 +1309,8 @@ public final class ThreadInfo extends Message {
                 this.activity_info = threadInfo.activity_info;
                 this.pic_info = threadInfo.pic_info;
                 this.is_story_audit = threadInfo.is_story_audit;
+                this.share_num = threadInfo.share_num;
+                this.is_called = threadInfo.is_called;
             }
         }
 

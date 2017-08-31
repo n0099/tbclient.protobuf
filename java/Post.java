@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -18,7 +19,7 @@ public final class Post extends Message {
     public final AddPostList add_post_list;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer add_post_number;
-    @ProtoField(tag = 37)
+    @ProtoField(tag = d.n.View_longClickable)
     public final Agree agree;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
     public final List<String> arr_video;
@@ -34,12 +35,14 @@ public final class Post extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
-    @ProtoField(tag = 38)
+    @ProtoField(tag = d.n.View_saveEnabled)
     public final SimpleForum from_forum;
     @ProtoField(tag = 33)
     public final TogetherHi high_together;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
+    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.INT32)
+    public final Integer img_num_abtest;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String ios_bimg_format;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
@@ -48,7 +51,7 @@ public final class Post extends Message {
     public final Integer is_hot_post;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer is_ntitle;
-    @ProtoField(tag = 39, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer is_post_visible;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer is_voice;
@@ -56,9 +59,9 @@ public final class Post extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.STRING)
     public final String lego_card;
-    @ProtoField(tag = 40, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.INT32)
     public final Integer need_log;
     @ProtoField(tag = 35)
     public final DealInfo pb_deal_info;
@@ -109,6 +112,7 @@ public final class Post extends Message {
     public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
     public static final Integer DEFAULT_IS_POST_VISIBLE = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
+    public static final Integer DEFAULT_IMG_NUM_ABTEST = 0;
 
     private Post(Builder builder, boolean z) {
         super(builder);
@@ -242,9 +246,14 @@ public final class Post extends Message {
             }
             if (builder.need_log == null) {
                 this.need_log = DEFAULT_NEED_LOG;
-                return;
             } else {
                 this.need_log = builder.need_log;
+            }
+            if (builder.img_num_abtest == null) {
+                this.img_num_abtest = DEFAULT_IMG_NUM_ABTEST;
+                return;
+            } else {
+                this.img_num_abtest = builder.img_num_abtest;
                 return;
             }
         }
@@ -288,6 +297,7 @@ public final class Post extends Message {
         this.from_forum = builder.from_forum;
         this.is_post_visible = builder.is_post_visible;
         this.need_log = builder.need_log;
+        this.img_num_abtest = builder.img_num_abtest;
     }
 
     /* loaded from: classes.dex */
@@ -306,6 +316,7 @@ public final class Post extends Message {
         public SimpleForum from_forum;
         public TogetherHi high_together;
         public Long id;
+        public Integer img_num_abtest;
         public String ios_bimg_format;
         public Integer is_bub;
         public Integer is_hot_post;
@@ -379,6 +390,7 @@ public final class Post extends Message {
                 this.from_forum = post.from_forum;
                 this.is_post_visible = post.is_post_visible;
                 this.need_log = post.need_log;
+                this.img_num_abtest = post.img_num_abtest;
             }
         }
 

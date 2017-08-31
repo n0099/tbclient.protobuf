@@ -46,7 +46,7 @@ public final class ForumInfo extends Message {
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
-    @ProtoField(tag = 37, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT32)
     public final Integer favo_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String first_class;
@@ -78,7 +78,7 @@ public final class ForumInfo extends Message {
     public final Long id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer is_exists;
-    @ProtoField(tag = 36, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.INT32)
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
@@ -96,7 +96,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = 41, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -116,7 +116,7 @@ public final class ForumInfo extends Message {
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = 39)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured)
     public final PostPrefix post_prefix;
     @ProtoField(tag = 61)
     public final PostTopic post_topic;
@@ -132,9 +132,9 @@ public final class ForumInfo extends Message {
     public final SignInfo sign_in_info;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.STRING)
     public final String superboy;
-    @ProtoField(tag = 38)
+    @ProtoField(tag = d.n.View_saveEnabled)
     public final TagInfo tag_info;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_num;

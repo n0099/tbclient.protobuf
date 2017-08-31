@@ -26,6 +26,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_STOKEN = "";
     public static final String DEFAULT_SUBAPP_TYPE = "";
     public static final String DEFAULT_TBS = "";
+    public static final String DEFAULT_Z_ID = "";
     public static final String DEFAULT__CLIENT_ID = "";
     public static final String DEFAULT__CLIENT_VERSION = "";
     public static final String DEFAULT__OS_VERSION = "";
@@ -91,6 +92,8 @@ public final class CommonReq extends Message {
     public final String subapp_type;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String tbs;
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
+    public final String z_id;
     public static final Integer DEFAULT__CLIENT_TYPE = 0;
     public static final Long DEFAULT__TIMESTAMP = 0L;
     public static final Integer DEFAULT_NET_TYPE = 0;
@@ -245,9 +248,14 @@ public final class CommonReq extends Message {
             }
             if (builder.stoken == null) {
                 this.stoken = "";
-                return;
             } else {
                 this.stoken = builder.stoken;
+            }
+            if (builder.z_id == null) {
+                this.z_id = "";
+                return;
+            } else {
+                this.z_id = builder.z_id;
                 return;
             }
         }
@@ -281,6 +289,7 @@ public final class CommonReq extends Message {
         this.lego_lib_version = builder.lego_lib_version;
         this.applist = builder.applist;
         this.stoken = builder.stoken;
+        this.z_id = builder.z_id;
     }
 
     /* loaded from: classes.dex */
@@ -315,6 +324,7 @@ public final class CommonReq extends Message {
         public String stoken;
         public String subapp_type;
         public String tbs;
+        public String z_id;
 
         public Builder() {
         }
@@ -352,6 +362,7 @@ public final class CommonReq extends Message {
                 this.lego_lib_version = commonReq.lego_lib_version;
                 this.applist = commonReq.applist;
                 this.stoken = commonReq.stoken;
+                this.z_id = commonReq.z_id;
             }
         }
 

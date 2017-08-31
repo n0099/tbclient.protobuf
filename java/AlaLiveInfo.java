@@ -20,6 +20,8 @@ public final class AlaLiveInfo extends Message {
     public final String cover;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String description;
+    @ProtoField(tag = 20, type = Message.Datatype.UINT64)
+    public final Long distance;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer duration;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
@@ -59,6 +61,7 @@ public final class AlaLiveInfo extends Message {
     public static final Integer DEFAULT_LIVE_TYPE = 0;
     public static final Integer DEFAULT_SCREEN_DIRECTION = 0;
     public static final Integer DEFAULT_LIVE_STATUS = 0;
+    public static final Long DEFAULT_DISTANCE = 0L;
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -150,7 +153,13 @@ public final class AlaLiveInfo extends Message {
                 this.live_status = builder.live_status;
             }
             this.share_info = builder.share_info;
-            return;
+            if (builder.distance == null) {
+                this.distance = DEFAULT_DISTANCE;
+                return;
+            } else {
+                this.distance = builder.distance;
+                return;
+            }
         }
         this.live_id = builder.live_id;
         this.cover = builder.cover;
@@ -171,6 +180,7 @@ public final class AlaLiveInfo extends Message {
         this.label_name = builder.label_name;
         this.live_status = builder.live_status;
         this.share_info = builder.share_info;
+        this.distance = builder.distance;
     }
 
     /* loaded from: classes.dex */
@@ -178,6 +188,7 @@ public final class AlaLiveInfo extends Message {
         public Integer audience_count;
         public String cover;
         public String description;
+        public Long distance;
         public Integer duration;
         public Long group_id;
         public String hls_url;
@@ -220,6 +231,7 @@ public final class AlaLiveInfo extends Message {
                 this.label_name = alaLiveInfo.label_name;
                 this.live_status = alaLiveInfo.live_status;
                 this.share_info = alaLiveInfo.share_info;
+                this.distance = alaLiveInfo.distance;
             }
         }
 

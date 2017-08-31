@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -20,9 +21,9 @@ public final class PostInfoList extends Message {
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
-    @ProtoField(tag = 37, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT32)
     public final Integer agree_num;
-    @ProtoField(tag = 36)
+    @ProtoField(tag = d.n.View_clickable)
     public final AlaLiveInfo ala_info;
     @ProtoField(tag = 24)
     public final AnchorInfo anchor_info;
@@ -88,7 +89,7 @@ public final class PostInfoList extends Message {
     public final Long v_forum_id;
     @ProtoField(tag = 29)
     public final VideoInfo video_info;
-    @ProtoField(tag = 38, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.INT32)
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;

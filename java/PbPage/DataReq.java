@@ -72,6 +72,8 @@ public final class DataReq extends Message {
     public final Integer message_id;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String msg_click;
+    @ProtoField(tag = d.n.View_scaleY, type = Message.Datatype.INT32)
+    public final Integer need_log;
     @ProtoField(tag = d.n.View_rotationY, type = Message.Datatype.INT32)
     public final Integer need_repost_recommend_forum;
     @ProtoField(tag = d.n.View_translationX, type = Message.Datatype.STRING)
@@ -157,6 +159,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FROM_SMART_FRS = 0;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
+    public static final Integer DEFAULT_NEED_LOG = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -404,7 +407,13 @@ public final class DataReq extends Message {
                 this.need_repost_recommend_forum = builder.need_repost_recommend_forum;
             }
             this.ad_param = builder.ad_param;
-            return;
+            if (builder.need_log == null) {
+                this.need_log = DEFAULT_NEED_LOG;
+                return;
+            } else {
+                this.need_log = builder.need_log;
+                return;
+            }
         }
         this.pb_rn = builder.pb_rn;
         this.mark = builder.mark;
@@ -457,6 +466,7 @@ public final class DataReq extends Message {
         this.forum_id = builder.forum_id;
         this.need_repost_recommend_forum = builder.need_repost_recommend_forum;
         this.ad_param = builder.ad_param;
+        this.need_log = builder.need_log;
     }
 
     /* loaded from: classes.dex */
@@ -486,6 +496,7 @@ public final class DataReq extends Message {
         public Integer mark;
         public Integer message_id;
         public String msg_click;
+        public Integer need_log;
         public Integer need_repost_recommend_forum;
         public String obj_locate;
         public String obj_param1;
@@ -570,6 +581,7 @@ public final class DataReq extends Message {
                 this.forum_id = dataReq.forum_id;
                 this.need_repost_recommend_forum = dataReq.need_repost_recommend_forum;
                 this.ad_param = dataReq.ad_param;
+                this.need_log = dataReq.need_log;
             }
         }
 

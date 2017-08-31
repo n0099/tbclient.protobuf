@@ -47,9 +47,9 @@ public final class BookInfo extends Message {
     public final Integer book_size;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer book_type;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.STRING)
     public final String book_ver;
-    @ProtoField(tag = 37, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.STRING)
     public final String chapter_ver;
     @ProtoField(tag = d.n.View_minWidth, type = Message.Datatype.UINT32)
     public final Integer charge_type;
@@ -63,7 +63,7 @@ public final class BookInfo extends Message {
     public final String copyright_text;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String cover;
-    @ProtoField(tag = 41, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.STRING)
     public final String cp_id;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String discount_icon;
@@ -71,13 +71,13 @@ public final class BookInfo extends Message {
     public final String discount_ratio;
     @ProtoField(tag = 32, type = Message.Datatype.UINT32)
     public final Integer discount_type;
-    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.STRING)
     public final String discuss;
     @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.UINT32)
     public final Integer first_chapter;
-    @ProtoField(tag = 38, type = Message.Datatype.UINT64)
+    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.UINT64)
     public final Long forum_id;
-    @ProtoField(tag = 39, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.STRING)
     public final String forum_name;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String free_info;

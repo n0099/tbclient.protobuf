@@ -36,9 +36,9 @@ public final class DataReq extends Message {
     public final Integer cid;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer class_id;
-    @ProtoField(tag = 39)
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured)
     public final CommonReq common;
-    @ProtoField(tag = 38, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
@@ -46,9 +46,9 @@ public final class DataReq extends Message {
     public final String da_idfa;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer data_size;
-    @ProtoField(tag = 37, type = Message.Datatype.BOOL)
+    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.BOOL)
     public final Boolean debug;
-    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.STRING)
     public final String email;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String forum_name;
@@ -60,13 +60,13 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = 41, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
     @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.UINT64)
     public final Long last_click_tid;
-    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer load_type;
