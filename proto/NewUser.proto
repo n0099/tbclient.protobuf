@@ -47,5 +47,4 @@ message NewUser {
     GameAttr game_attr = 33;
     string is_interestman = 34;
     Global global = 35;
-    string free_flag = 36;
 }

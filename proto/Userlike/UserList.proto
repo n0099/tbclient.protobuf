@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "ThreadInfo.proto";
+
 message UserList {
     string name = 1;
     string prefix = 2;
@@ -10,4 +12,6 @@ message UserList {
     string portrait = 7;
     uint64 id = 8;
     uint32 is_god = 9;
+    uint32 level = 10;
+    ThreadInfo thread_info = 11;
 }

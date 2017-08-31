@@ -39,12 +39,6 @@ message DataReq {
     int32 no_un = 33;
     string portrait = 34;
     string mobile = 35;
-    string email = 36;
-    bool debug = 37;
-    string cookie = 38;
-    CommonReq common = 39;
-    string lastids = 40;
-    int32 issdk = 41;
     string yuelaou_locate = 45;
     int32 load_type = 49;
     AppPosInfo app_pos = 50;

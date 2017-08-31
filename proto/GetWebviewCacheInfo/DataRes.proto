@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message DataRes {
+    string src = 1;
+    string webview_version = 2;
+    string md5 = 3;
+}

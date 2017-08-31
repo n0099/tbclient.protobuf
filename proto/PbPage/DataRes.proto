@@ -6,6 +6,7 @@ import "BannerList.proto";
 import "FineBannerPb.proto";
 import "GraffitiRankListInfo.proto";
 import "Lbs.proto";
+import "NaGuide.proto";
 import "Page.proto";
 import "PbHotPost.proto";
 import "PbPage/AddPost.proto";
@@ -64,10 +65,4 @@ message DataRes {
     FeedExtInfo feed_info = 33;
     PbTopAgreePost top_agree_post_list = 34;
     repeated SimpleForum repost_recommend_forum_list = 35;
-    repeated SimpleForum from_forum_list = 36;
-    int64 thread_freq_num = 37;
-    Post first_floor_post = 38;
-    SimpleForum display_forum = 39;
-    repeated SimpleUser new_agree_user = 40;
-    string partial_visible_toast = 41;
 }

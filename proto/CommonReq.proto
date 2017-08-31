@@ -31,4 +31,5 @@ message CommonReq {
     string lego_lib_version = 28;
     string applist = 29;
     string stoken = 30;
+    string z_id = 31;
 }

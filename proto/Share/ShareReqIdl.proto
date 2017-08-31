@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Share/DataReq.proto";
+
+message ShareReqIdl {
+    DataReq data = 1;
+}

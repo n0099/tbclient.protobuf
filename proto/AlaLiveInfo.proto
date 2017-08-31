@@ -23,4 +23,5 @@ message AlaLiveInfo {
     string label_name = 17;
     int32 live_status = 18;
     AlaShareInfo share_info = 19;
+    uint64 distance = 20;
 }

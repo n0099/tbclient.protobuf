@@ -36,12 +36,6 @@ message NewGameInfo {
     uint64 thread_id = 33;
     uint64 forum_id = 34;
     int32 score = 35;
-    uint64 deadline = 36;
-    int32 play_count = 37;
-    int32 game_type = 38;
-    int32 game_platform = 39;
-    uint32 channel = 40;
-    string version = 41;
     string inter_version_ios = 45;
     int32 mark = 49;
     string package_link = 50;

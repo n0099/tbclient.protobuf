@@ -2,14 +2,12 @@ syntax = "proto3";
 
 import "ActPost.proto";
 import "AddPostList.proto";
-import "Agree.proto";
 import "DealInfo.proto";
 import "Lbs.proto";
 import "PbContent.proto";
 import "PbPostZan.proto";
 import "PbPresent.proto";
 import "SignatureData.proto";
-import "SimpleForum.proto";
 import "SkinInfo.proto";
 import "SubPost.proto";
 import "TPointPost.proto";
@@ -55,9 +53,4 @@ message Post {
     TogetherHi high_together = 33;
     SkinInfo skin_info = 34;
     DealInfo pb_deal_info = 35;
-    string lego_card = 36;
-    Agree agree = 37;
-    SimpleForum from_forum = 38;
-    int32 is_post_visible = 39;
-    int32 need_log = 40;
 }
