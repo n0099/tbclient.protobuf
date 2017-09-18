@@ -14,6 +14,7 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_MEDIA_URL = "";
     public static final String DEFAULT_RTMP_URL = "";
     public static final String DEFAULT_SESSION_ID = "";
+    public static final String DEFAULT_THIRD_APP_ID = "";
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer audience_count;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -52,6 +53,8 @@ public final class AlaLiveInfo extends Message {
     public final String session_id;
     @ProtoField(tag = 19)
     public final AlaShareInfo share_info;
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
+    public final String third_app_id;
     @ProtoField(tag = 12)
     public final AlaUserInfo user_info;
     public static final Long DEFAULT_LIVE_ID = 0L;
@@ -155,9 +158,14 @@ public final class AlaLiveInfo extends Message {
             this.share_info = builder.share_info;
             if (builder.distance == null) {
                 this.distance = DEFAULT_DISTANCE;
-                return;
             } else {
                 this.distance = builder.distance;
+            }
+            if (builder.third_app_id == null) {
+                this.third_app_id = "";
+                return;
+            } else {
+                this.third_app_id = builder.third_app_id;
                 return;
             }
         }
@@ -181,6 +189,7 @@ public final class AlaLiveInfo extends Message {
         this.live_status = builder.live_status;
         this.share_info = builder.share_info;
         this.distance = builder.distance;
+        this.third_app_id = builder.third_app_id;
     }
 
     /* loaded from: classes.dex */
@@ -204,6 +213,7 @@ public final class AlaLiveInfo extends Message {
         public Integer screen_direction;
         public String session_id;
         public AlaShareInfo share_info;
+        public String third_app_id;
         public AlaUserInfo user_info;
 
         public Builder() {
@@ -232,6 +242,7 @@ public final class AlaLiveInfo extends Message {
                 this.live_status = alaLiveInfo.live_status;
                 this.share_info = alaLiveInfo.share_info;
                 this.distance = alaLiveInfo.distance;
+                this.third_app_id = alaLiveInfo.third_app_id;
             }
         }
 
