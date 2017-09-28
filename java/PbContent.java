@@ -1,5 +1,6 @@
 package tbclient;
 
+import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -11,6 +12,7 @@ public final class PbContent extends Message {
     public static final String DEFAULT_C = "";
     public static final String DEFAULT_CDN_SRC = "";
     public static final String DEFAULT_DYNAMIC = "";
+    public static final String DEFAULT_ID = "";
     public static final String DEFAULT_IMGTYPE = "";
     public static final String DEFAULT_LINK = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
@@ -51,8 +53,12 @@ public final class PbContent extends Message {
     public final Integer height;
     @ProtoField(tag = 30)
     public final TogetherHi high_together;
+    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.STRING)
+    public final String id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String imgtype;
+    @ProtoField(tag = 34, type = Message.Datatype.UINT32)
+    public final Integer is_long_pic;
     @ProtoField(tag = 22, type = Message.Datatype.UINT32)
     public final Integer is_native_app;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
@@ -73,6 +79,8 @@ public final class PbContent extends Message {
     public final String packet_name;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String phonetype;
+    @ProtoField(tag = 35, type = Message.Datatype.UINT32)
+    public final Integer show_original_btn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String src;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -99,6 +107,8 @@ public final class PbContent extends Message {
     public static final Integer DEFAULT_ORIGIN_SIZE = 0;
     public static final Integer DEFAULT_COUNT = 0;
     public static final Integer DEFAULT_URL_TYPE = 0;
+    public static final Integer DEFAULT_IS_LONG_PIC = 0;
+    public static final Integer DEFAULT_SHOW_ORIGINAL_BTN = 0;
 
     private PbContent(Builder builder, boolean z) {
         super(builder);
@@ -252,7 +262,23 @@ public final class PbContent extends Message {
                 this.url_type = builder.url_type;
             }
             this.meme_info = builder.meme_info;
-            return;
+            if (builder.is_long_pic == null) {
+                this.is_long_pic = DEFAULT_IS_LONG_PIC;
+            } else {
+                this.is_long_pic = builder.is_long_pic;
+            }
+            if (builder.show_original_btn == null) {
+                this.show_original_btn = DEFAULT_SHOW_ORIGINAL_BTN;
+            } else {
+                this.show_original_btn = builder.show_original_btn;
+            }
+            if (builder.id == null) {
+                this.id = "";
+                return;
+            } else {
+                this.id = builder.id;
+                return;
+            }
         }
         this.type = builder.type;
         this.text = builder.text;
@@ -287,6 +313,9 @@ public final class PbContent extends Message {
         this.media_subtitle = builder.media_subtitle;
         this.url_type = builder.url_type;
         this.meme_info = builder.meme_info;
+        this.is_long_pic = builder.is_long_pic;
+        this.show_original_btn = builder.show_original_btn;
+        this.id = builder.id;
     }
 
     /* loaded from: classes.dex */
@@ -306,7 +335,9 @@ public final class PbContent extends Message {
         public GraffitiInfo graffiti_info;
         public Integer height;
         public TogetherHi high_together;
+        public String id;
         public String imgtype;
+        public Integer is_long_pic;
         public Integer is_native_app;
         public Integer is_sub;
         public String link;
@@ -317,6 +348,7 @@ public final class PbContent extends Message {
         public String origin_src;
         public String packet_name;
         public String phonetype;
+        public Integer show_original_btn;
         public String src;
         public String text;
         public Integer type;
@@ -364,6 +396,9 @@ public final class PbContent extends Message {
                 this.media_subtitle = pbContent.media_subtitle;
                 this.url_type = pbContent.url_type;
                 this.meme_info = pbContent.meme_info;
+                this.is_long_pic = pbContent.is_long_pic;
+                this.show_original_btn = pbContent.show_original_btn;
+                this.id = pbContent.id;
             }
         }
 

@@ -18,6 +18,8 @@ public final class DataRes extends Message {
     public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer has_more;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer mask_type;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 1)
@@ -33,6 +35,7 @@ public final class DataRes extends Message {
     public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_HAS_MORE = 0;
+    public static final Integer DEFAULT_MASK_TYPE = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -65,7 +68,13 @@ public final class DataRes extends Message {
             }
             this.user_god_info = builder.user_god_info;
             this.window = builder.window;
-            return;
+            if (builder.mask_type == null) {
+                this.mask_type = DEFAULT_MASK_TYPE;
+                return;
+            } else {
+                this.mask_type = builder.mask_type;
+                return;
+            }
         }
         this.user = builder.user;
         this.video_page = immutableCopyOf(builder.video_page);
@@ -75,6 +84,7 @@ public final class DataRes extends Message {
         this.has_more = builder.has_more;
         this.user_god_info = builder.user_god_info;
         this.window = builder.window;
+        this.mask_type = builder.mask_type;
     }
 
     /* loaded from: classes.dex */
@@ -82,6 +92,7 @@ public final class DataRes extends Message {
         public List<ForumDynamic> concerned_forum_list;
         public List<DynamicInfo> dynamic_list;
         public Integer has_more;
+        public Integer mask_type;
         public Integer pn;
         public User user;
         public UserGodInfo user_god_info;
@@ -102,6 +113,7 @@ public final class DataRes extends Message {
                 this.has_more = dataRes.has_more;
                 this.user_god_info = dataRes.user_god_info;
                 this.window = dataRes.window;
+                this.mask_type = dataRes.mask_type;
             }
         }
 

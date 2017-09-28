@@ -76,6 +76,8 @@ public final class DataRes extends Message {
     public final String fortune_desc;
     @ProtoField(tag = 2)
     public final ForumInfo forum;
+    @ProtoField(tag = 72)
+    public final ForumHeadIcon forum_head_icon;
     @ProtoField(tag = d.n.View_translationY)
     public final ForumHeadlineImgInfo forum_headline_img_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
@@ -100,6 +102,8 @@ public final class DataRes extends Message {
     public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 15)
     public final Info info;
+    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    public final Integer is_auto_play_forumheadvideo;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(tag = 69)
@@ -154,6 +158,8 @@ public final class DataRes extends Message {
     public final Integer twzhibo_pos;
     @ProtoField(tag = 1)
     public final User user;
+    @ProtoField(tag = 71)
+    public final tbclient.FrsPageUserExtend user_extend;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<User> user_list;
     @ProtoField(tag = d.n.View_duplicateParentState)
@@ -181,6 +187,7 @@ public final class DataRes extends Message {
     public static final List<BannerThreadInfo> DEFAULT_BANNER_THREAD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_SMART_FRS_TYPE = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
+    public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO = 0;
     public static final List<Integer> DEFAULT_CARD_SHIPIN_POS = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW = Collections.emptyList();
     public static final Integer DEFAULT_ALA_LIVE_COUNT = 0;
@@ -336,6 +343,11 @@ public final class DataRes extends Message {
             } else {
                 this.need_log = builder.need_log;
             }
+            if (builder.is_auto_play_forumheadvideo == null) {
+                this.is_auto_play_forumheadvideo = DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
+            } else {
+                this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
+            }
             this.book_info = builder.book_info;
             this.forum_present_info = builder.forum_present_info;
             this.forum_headline_img_info = builder.forum_headline_img_info;
@@ -382,6 +394,8 @@ public final class DataRes extends Message {
             }
             this.live_frs_notify = builder.live_frs_notify;
             this.banner_user_story = builder.banner_user_story;
+            this.user_extend = builder.user_extend;
+            this.forum_head_icon = builder.forum_head_icon;
             return;
         }
         this.user = builder.user;
@@ -430,6 +444,7 @@ public final class DataRes extends Message {
         this.recommend_book = builder.recommend_book;
         this.smart_frs_type = builder.smart_frs_type;
         this.need_log = builder.need_log;
+        this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
         this.book_info = builder.book_info;
         this.forum_present_info = builder.forum_present_info;
         this.forum_headline_img_info = builder.forum_headline_img_info;
@@ -448,6 +463,8 @@ public final class DataRes extends Message {
         this.frs_game_tab_info = immutableCopyOf(builder.frs_game_tab_info);
         this.live_frs_notify = builder.live_frs_notify;
         this.banner_user_story = builder.banner_user_story;
+        this.user_extend = builder.user_extend;
+        this.forum_head_icon = builder.forum_head_icon;
     }
 
     /* loaded from: classes.dex */
@@ -475,6 +492,7 @@ public final class DataRes extends Message {
         public Integer fortune_bag;
         public String fortune_desc;
         public ForumInfo forum;
+        public ForumHeadIcon forum_head_icon;
         public ForumHeadlineImgInfo forum_headline_img_info;
         public List<AnchorInfo> forum_livegroup_list;
         public ForumPresentInfo forum_present_info;
@@ -487,6 +505,7 @@ public final class DataRes extends Message {
         public HeadSdk head_sdk;
         public ZhiBoInfoTW hot_twzhibo_info;
         public Info info;
+        public Integer is_auto_play_forumheadvideo;
         public Integer is_new_url;
         public AlaLiveNotify live_frs_notify;
         public Long logid;
@@ -514,6 +533,7 @@ public final class DataRes extends Message {
         public List<ZhiBoInfoTW> twzhibo_info;
         public Integer twzhibo_pos;
         public User user;
+        public tbclient.FrsPageUserExtend user_extend;
         public List<User> user_list;
         public VitalityInfo vitality_info;
 
@@ -569,6 +589,7 @@ public final class DataRes extends Message {
                 this.recommend_book = dataRes.recommend_book;
                 this.smart_frs_type = dataRes.smart_frs_type;
                 this.need_log = dataRes.need_log;
+                this.is_auto_play_forumheadvideo = dataRes.is_auto_play_forumheadvideo;
                 this.book_info = dataRes.book_info;
                 this.forum_present_info = dataRes.forum_present_info;
                 this.forum_headline_img_info = dataRes.forum_headline_img_info;
@@ -587,6 +608,8 @@ public final class DataRes extends Message {
                 this.frs_game_tab_info = DataRes.copyOf(dataRes.frs_game_tab_info);
                 this.live_frs_notify = dataRes.live_frs_notify;
                 this.banner_user_story = dataRes.banner_user_story;
+                this.user_extend = dataRes.user_extend;
+                this.forum_head_icon = dataRes.forum_head_icon;
             }
         }
 

@@ -95,6 +95,8 @@ public final class User extends Message {
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_coreuser;
+    @ProtoField(tag = 91, type = Message.Datatype.INT32)
+    public final Integer is_fans;
     @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
     public final Integer is_friend;
     @ProtoField(tag = d.n.View_translationY, type = Message.Datatype.INT32)
@@ -257,6 +259,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_AGREE_NUM = 0;
     public static final Integer DEFAULT_LEFT_CALL_NUM = 0;
     public static final Integer DEFAULT_IS_INVITED = 0;
+    public static final Integer DEFAULT_IS_FANS = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -620,9 +623,14 @@ public final class User extends Message {
             }
             if (builder.is_invited == null) {
                 this.is_invited = DEFAULT_IS_INVITED;
-                return;
             } else {
                 this.is_invited = builder.is_invited;
+            }
+            if (builder.is_fans == null) {
+                this.is_fans = DEFAULT_IS_FANS;
+                return;
+            } else {
+                this.is_fans = builder.is_fans;
                 return;
             }
         }
@@ -716,6 +724,7 @@ public final class User extends Message {
         this.agree_num = builder.agree_num;
         this.left_call_num = builder.left_call_num;
         this.is_invited = builder.is_invited;
+        this.is_fans = builder.is_fans;
     }
 
     /* loaded from: classes.dex */
@@ -755,6 +764,7 @@ public final class User extends Message {
         public String ip;
         public Integer is_bawu;
         public Integer is_coreuser;
+        public Integer is_fans;
         public Integer is_friend;
         public Integer is_guanfang;
         public Integer is_huinibuke;
@@ -907,6 +917,7 @@ public final class User extends Message {
                 this.agree_num = user.agree_num;
                 this.left_call_num = user.left_call_num;
                 this.is_invited = user.is_invited;
+                this.is_fans = user.is_fans;
             }
         }
 

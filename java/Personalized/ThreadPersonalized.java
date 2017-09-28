@@ -7,12 +7,15 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class ThreadPersonalized extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
+    public static final String DEFAULT_EXTRA = "";
     public static final String DEFAULT_SOURCE = "";
     public static final String DEFAULT_WEIGHT = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String abtest_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<DislikeReason> dislike_resource;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String extra;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String source;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -47,9 +50,14 @@ public final class ThreadPersonalized extends Message {
             }
             if (builder.dislike_resource == null) {
                 this.dislike_resource = DEFAULT_DISLIKE_RESOURCE;
-                return;
             } else {
                 this.dislike_resource = immutableCopyOf(builder.dislike_resource);
+            }
+            if (builder.extra == null) {
+                this.extra = "";
+                return;
+            } else {
+                this.extra = builder.extra;
                 return;
             }
         }
@@ -58,12 +66,14 @@ public final class ThreadPersonalized extends Message {
         this.source = builder.source;
         this.abtest_tag = builder.abtest_tag;
         this.dislike_resource = immutableCopyOf(builder.dislike_resource);
+        this.extra = builder.extra;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ThreadPersonalized> {
         public String abtest_tag;
         public List<DislikeReason> dislike_resource;
+        public String extra;
         public String source;
         public Long tid;
         public String weight;
@@ -79,6 +89,7 @@ public final class ThreadPersonalized extends Message {
                 this.source = threadPersonalized.source;
                 this.abtest_tag = threadPersonalized.abtest_tag;
                 this.dislike_resource = ThreadPersonalized.copyOf(threadPersonalized.dislike_resource);
+                this.extra = threadPersonalized.extra;
             }
         }
 

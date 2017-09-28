@@ -17,10 +17,13 @@ import tbclient.TbBookrack;
 import tbclient.UcCard;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
+import tbclient.UserMap;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 16)
     public final AlaLiveInfo ala_live_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 19)
+    public final List<AlaLiveInfo> ala_live_record;
     @ProtoField(tag = 2)
     public final Anti anti_stat;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
@@ -31,6 +34,8 @@ public final class DataRes extends Message {
     public final Feedback feedback;
     @ProtoField(tag = 7)
     public final Highlist highs;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer mask_type;
     @ProtoField(tag = 15)
     public final ModuleInfo module_info;
     @ProtoField(tag = 17)
@@ -43,6 +48,8 @@ public final class DataRes extends Message {
     public final TbBookrack tbbookrack;
     @ProtoField(tag = 6)
     public final UcCard uc_card;
+    @ProtoField(label = Message.Label.REPEATED, tag = 20)
+    public final List<UserMap> url_map;
     @ProtoField(tag = 1)
     public final User user;
     @ProtoField(tag = 14)
@@ -56,6 +63,9 @@ public final class DataRes extends Message {
     public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
     public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST = Collections.emptyList();
     public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_MASK_TYPE = 0;
+    public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
+    public static final List<UserMap> DEFAULT_URL_MAP = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -89,7 +99,23 @@ public final class DataRes extends Message {
             this.module_info = builder.module_info;
             this.ala_live_info = builder.ala_live_info;
             this.nickname_info = builder.nickname_info;
-            return;
+            if (builder.mask_type == null) {
+                this.mask_type = DEFAULT_MASK_TYPE;
+            } else {
+                this.mask_type = builder.mask_type;
+            }
+            if (builder.ala_live_record == null) {
+                this.ala_live_record = DEFAULT_ALA_LIVE_RECORD;
+            } else {
+                this.ala_live_record = immutableCopyOf(builder.ala_live_record);
+            }
+            if (builder.url_map == null) {
+                this.url_map = DEFAULT_URL_MAP;
+                return;
+            } else {
+                this.url_map = immutableCopyOf(builder.url_map);
+                return;
+            }
         }
         this.user = builder.user;
         this.anti_stat = builder.anti_stat;
@@ -108,22 +134,28 @@ public final class DataRes extends Message {
         this.module_info = builder.module_info;
         this.ala_live_info = builder.ala_live_info;
         this.nickname_info = builder.nickname_info;
+        this.mask_type = builder.mask_type;
+        this.ala_live_record = immutableCopyOf(builder.ala_live_record);
+        this.url_map = immutableCopyOf(builder.url_map);
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AlaLiveInfo ala_live_info;
+        public List<AlaLiveInfo> ala_live_record;
         public Anti anti_stat;
         public List<ForumDynamic> concerned_forum_list;
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
         public Highlist highs;
+        public Integer mask_type;
         public ModuleInfo module_info;
         public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
+        public List<UserMap> url_map;
         public User user;
         public UserAgreeInfo user_agree_info;
         public UserGodInfo user_god_info;
@@ -153,6 +185,9 @@ public final class DataRes extends Message {
                 this.module_info = dataRes.module_info;
                 this.ala_live_info = dataRes.ala_live_info;
                 this.nickname_info = dataRes.nickname_info;
+                this.mask_type = dataRes.mask_type;
+                this.ala_live_record = DataRes.copyOf(dataRes.ala_live_record);
+                this.url_map = DataRes.copyOf(dataRes.url_map);
             }
         }
 

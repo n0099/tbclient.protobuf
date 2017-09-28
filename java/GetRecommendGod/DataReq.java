@@ -1,46 +1,36 @@
-package tbclient.Userlike;
+package tbclient.GetRecommendGod;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
-    public static final Long DEFAULT_LAST_REQ_UNIX = 0L;
-    public static final String DEFAULT_PAGE_TAG = "";
+    public static final Long DEFAULT_USER_ID = 0L;
     @ProtoField(tag = 1)
     public final CommonReq common;
-    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
-    public final Long last_req_unix;
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String page_tag;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long user_id;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.common = builder.common;
-            if (builder.page_tag == null) {
-                this.page_tag = "";
-            } else {
-                this.page_tag = builder.page_tag;
-            }
-            if (builder.last_req_unix == null) {
-                this.last_req_unix = DEFAULT_LAST_REQ_UNIX;
+            if (builder.user_id == null) {
+                this.user_id = DEFAULT_USER_ID;
                 return;
             } else {
-                this.last_req_unix = builder.last_req_unix;
+                this.user_id = builder.user_id;
                 return;
             }
         }
         this.common = builder.common;
-        this.page_tag = builder.page_tag;
-        this.last_req_unix = builder.last_req_unix;
+        this.user_id = builder.user_id;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
-        public Long last_req_unix;
-        public String page_tag;
+        public Long user_id;
 
         public Builder() {
         }
@@ -49,8 +39,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.common = dataReq.common;
-                this.page_tag = dataReq.page_tag;
-                this.last_req_unix = dataReq.last_req_unix;
+                this.user_id = dataReq.user_id;
             }
         }
 

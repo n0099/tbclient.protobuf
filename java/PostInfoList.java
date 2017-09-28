@@ -21,6 +21,8 @@ public final class PostInfoList extends Message {
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
+    @ProtoField(tag = d.n.View_drawingCacheQuality)
+    public final Agree agree;
     @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT32)
     public final Integer agree_num;
     @ProtoField(tag = d.n.View_clickable)
@@ -71,6 +73,8 @@ public final class PostInfoList extends Message {
     public final Quote quote;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer reply_num;
+    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
+    public final Integer share_num;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
     @ProtoField(tag = 26, type = Message.Datatype.UINT64)
@@ -113,6 +117,7 @@ public final class PostInfoList extends Message {
     public static final Long DEFAULT_V_FORUM_ID = 0L;
     public static final Integer DEFAULT_AGREE_NUM = 0;
     public static final Integer DEFAULT_VIEW_NUM = 0;
+    public static final Integer DEFAULT_SHARE_NUM = 0;
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -272,11 +277,16 @@ public final class PostInfoList extends Message {
             }
             if (builder.view_num == null) {
                 this.view_num = DEFAULT_VIEW_NUM;
-                return;
             } else {
                 this.view_num = builder.view_num;
-                return;
             }
+            if (builder.share_num == null) {
+                this.share_num = DEFAULT_SHARE_NUM;
+            } else {
+                this.share_num = builder.share_num;
+            }
+            this.agree = builder.agree;
+            return;
         }
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
@@ -316,12 +326,15 @@ public final class PostInfoList extends Message {
         this.ala_info = builder.ala_info;
         this.agree_num = builder.agree_num;
         this.view_num = builder.view_num;
+        this.share_num = builder.share_num;
+        this.agree = builder.agree;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;
+        public Agree agree;
         public Integer agree_num;
         public AlaLiveInfo ala_info;
         public AnchorInfo anchor_info;
@@ -347,6 +360,7 @@ public final class PostInfoList extends Message {
         public String ptype;
         public Quote quote;
         public Integer reply_num;
+        public Integer share_num;
         public Long thread_id;
         public Long thread_type;
         public String title;
@@ -403,6 +417,8 @@ public final class PostInfoList extends Message {
                 this.ala_info = postInfoList.ala_info;
                 this.agree_num = postInfoList.agree_num;
                 this.view_num = postInfoList.view_num;
+                this.share_num = postInfoList.share_num;
+                this.agree = postInfoList.agree;
             }
         }
 

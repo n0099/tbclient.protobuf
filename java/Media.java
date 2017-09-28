@@ -7,6 +7,7 @@ public final class Media extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_BSIZE = "";
     public static final String DEFAULT_DYNAMIC_PIC = "";
+    public static final String DEFAULT_ID = "";
     public static final String DEFAULT_ORIGIN_PIC = "";
     public static final String DEFAULT_SMALL_PIC = "";
     public static final String DEFAULT_SRC_PIC = "";
@@ -27,12 +28,20 @@ public final class Media extends Message {
     public final Integer e_type;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer height;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String id;
+    @ProtoField(tag = 21, type = Message.Datatype.UINT32)
+    public final Integer is_blocked_pic;
+    @ProtoField(tag = 19, type = Message.Datatype.UINT32)
+    public final Integer is_long_pic;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String origin_pic;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer origin_size;
     @ProtoField(tag = 17, type = Message.Datatype.INT64)
     public final Long post_id;
+    @ProtoField(tag = 20, type = Message.Datatype.UINT32)
+    public final Integer show_original_btn;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String small_pic;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -58,6 +67,9 @@ public final class Media extends Message {
     public static final Integer DEFAULT_E_TYPE = 0;
     public static final Integer DEFAULT_ORIGIN_SIZE = 0;
     public static final Long DEFAULT_POST_ID = 0L;
+    public static final Integer DEFAULT_IS_LONG_PIC = 0;
+    public static final Integer DEFAULT_SHOW_ORIGINAL_BTN = 0;
+    public static final Integer DEFAULT_IS_BLOCKED_PIC = 0;
 
     private Media(Builder builder, boolean z) {
         super(builder);
@@ -149,9 +161,29 @@ public final class Media extends Message {
             }
             if (builder.dynamic_pic == null) {
                 this.dynamic_pic = "";
-                return;
             } else {
                 this.dynamic_pic = builder.dynamic_pic;
+            }
+            if (builder.is_long_pic == null) {
+                this.is_long_pic = DEFAULT_IS_LONG_PIC;
+            } else {
+                this.is_long_pic = builder.is_long_pic;
+            }
+            if (builder.show_original_btn == null) {
+                this.show_original_btn = DEFAULT_SHOW_ORIGINAL_BTN;
+            } else {
+                this.show_original_btn = builder.show_original_btn;
+            }
+            if (builder.is_blocked_pic == null) {
+                this.is_blocked_pic = DEFAULT_IS_BLOCKED_PIC;
+            } else {
+                this.is_blocked_pic = builder.is_blocked_pic;
+            }
+            if (builder.id == null) {
+                this.id = "";
+                return;
+            } else {
+                this.id = builder.id;
                 return;
             }
         }
@@ -173,6 +205,10 @@ public final class Media extends Message {
         this.origin_size = builder.origin_size;
         this.post_id = builder.post_id;
         this.dynamic_pic = builder.dynamic_pic;
+        this.is_long_pic = builder.is_long_pic;
+        this.show_original_btn = builder.show_original_btn;
+        this.is_blocked_pic = builder.is_blocked_pic;
+        this.id = builder.id;
     }
 
     /* loaded from: classes.dex */
@@ -183,9 +219,13 @@ public final class Media extends Message {
         public String dynamic_pic;
         public Integer e_type;
         public Integer height;
+        public String id;
+        public Integer is_blocked_pic;
+        public Integer is_long_pic;
         public String origin_pic;
         public Integer origin_size;
         public Long post_id;
+        public Integer show_original_btn;
         public String small_pic;
         public String src_pic;
         public String text;
@@ -220,6 +260,10 @@ public final class Media extends Message {
                 this.origin_size = media.origin_size;
                 this.post_id = media.post_id;
                 this.dynamic_pic = media.dynamic_pic;
+                this.is_long_pic = media.is_long_pic;
+                this.show_original_btn = media.show_original_btn;
+                this.is_blocked_pic = media.is_blocked_pic;
+                this.id = media.id;
             }
         }
 

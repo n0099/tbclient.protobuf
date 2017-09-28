@@ -50,6 +50,8 @@ public final class DataRes extends Message {
     public final List<FineBannerPb> fine_banner;
     @ProtoField(tag = d.n.View_saveEnabled)
     public final Post first_floor_post;
+    @ProtoField(tag = d.n.View_minHeight)
+    public final PbFollowTip follow_tip;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
     @ProtoField(tag = 27)
@@ -246,6 +248,7 @@ public final class DataRes extends Message {
                 this.partial_visible_toast = builder.partial_visible_toast;
             }
             this.na_guide = builder.na_guide;
+            this.follow_tip = builder.follow_tip;
             return;
         }
         this.user = builder.user;
@@ -290,6 +293,7 @@ public final class DataRes extends Message {
         this.new_agree_user = immutableCopyOf(builder.new_agree_user);
         this.partial_visible_toast = builder.partial_visible_toast;
         this.na_guide = builder.na_guide;
+        this.follow_tip = builder.follow_tip;
     }
 
     /* loaded from: classes.dex */
@@ -305,6 +309,7 @@ public final class DataRes extends Message {
         public List<ThreadInfo> feed_thread_list;
         public List<FineBannerPb> fine_banner;
         public Post first_floor_post;
+        public PbFollowTip follow_tip;
         public SimpleForum forum;
         public ForumHeadlineImgInfo forum_headline_img_info;
         public List<SimpleForum> from_forum_list;
@@ -385,6 +390,7 @@ public final class DataRes extends Message {
                 this.new_agree_user = DataRes.copyOf(dataRes.new_agree_user);
                 this.partial_visible_toast = dataRes.partial_visible_toast;
                 this.na_guide = dataRes.na_guide;
+                this.follow_tip = dataRes.follow_tip;
             }
         }
 
