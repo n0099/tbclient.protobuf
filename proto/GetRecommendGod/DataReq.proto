@@ -4,6 +4,5 @@ import "CommonReq.proto";
 
 message DataReq {
     CommonReq common = 1;
-    string page_tag = 2;
-    uint64 last_req_unix = 3;
+    int64 user_id = 2;
 }

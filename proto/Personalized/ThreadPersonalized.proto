@@ -8,4 +8,5 @@ message ThreadPersonalized {
     string source = 3;
     string abtest_tag = 4;
     repeated DislikeReason dislike_resource = 5;
+    string extra = 6;
 }

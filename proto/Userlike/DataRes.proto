@@ -12,4 +12,8 @@ message DataRes {
     string user_tips = 5;
     BannerUserStory banner_user_story = 6;
     string last_tips = 7;
+    UserList top_user_info = 9;
+    uint64 req_unix = 10;
+    int32 user_tips_type = 11;
+    string top_tips = 12;
 }

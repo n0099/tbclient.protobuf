@@ -39,4 +39,6 @@ message PbContent {
     string media_subtitle = 31;
     int32 url_type = 32;
     MemeInfo meme_info = 33;
+    uint32 is_long_pic = 34;
+    uint32 show_original_btn = 35;
 }

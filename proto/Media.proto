@@ -19,4 +19,8 @@ message Media {
     uint32 origin_size = 16;
     int64 post_id = 17;
     string dynamic_pic = 18;
+    uint32 is_long_pic = 19;
+    uint32 show_original_btn = 20;
+    uint32 is_blocked_pic = 21;
+    string id = 22;
 }

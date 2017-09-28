@@ -13,6 +13,7 @@ import "FrsPage/BannerThreadInfo.proto";
 import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumBookInfo.proto";
+import "FrsPage/ForumHeadIcon.proto";
 import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
@@ -22,6 +23,7 @@ import "FrsPage/PushThreadInfo.proto";
 import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
 import "FrsPage/ThreadIdListInfo.proto";
+import "FrsPageUserExtend.proto";
 import "FrsTabInfo.proto";
 import "NaGuide.proto";
 import "Novel.proto";
@@ -71,6 +73,7 @@ message DataRes {
     HeadSdk head_sdk = 34;
     repeated ThreadInfo card_shipin_info = 35;
     repeated BannerThreadInfo banner_thread_list = 45;
+    int32 is_auto_play_forumheadvideo = 49;
     ForumBookInfo book_info = 50;
     PopInfo enter_pop_info = 61;
     string partial_visible_toast = 62;
@@ -79,4 +82,6 @@ message DataRes {
     AgreeBanner agree_banner = 65;
     AlaLiveNotify live_frs_notify = 69;
     BannerUserStory banner_user_story = 70;
+    FrsPageUserExtend user_extend = 71;
+    ForumHeadIcon forum_head_icon = 72;
 }

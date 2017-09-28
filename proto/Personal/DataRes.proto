@@ -16,4 +16,5 @@ message DataRes {
     int32 has_more = 6;
     UserGodInfo user_god_info = 7;
     DealWindow window = 8;
+    int32 mask_type = 9;
 }

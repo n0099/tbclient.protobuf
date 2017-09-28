@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "User.proto";
+
+message DataRes {
+    repeated User user_list = 1;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ForumHeadIcon {
+    int32 grade = 1;
+    string url = 2;
+}
