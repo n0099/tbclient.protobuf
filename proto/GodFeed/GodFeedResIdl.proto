@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GodFeed/DataRes.proto";
-
-message GodFeedResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

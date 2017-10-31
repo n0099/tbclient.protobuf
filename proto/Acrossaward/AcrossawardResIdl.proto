@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Acrossaward/DataRes.proto";
-import "Error.proto";
-
-message AcrossawardResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

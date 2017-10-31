@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Acrossaward/DataReq.proto";
-
-message AcrossawardReqIdl {
-    DataReq data = 1;
-}

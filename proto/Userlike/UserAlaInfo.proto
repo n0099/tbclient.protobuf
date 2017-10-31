@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message UserAlaInfo {
+    uint64 user_id = 1;
+    string user_name = 2;
+    string user_nickname = 3;
+    string portrait = 4;
+    uint32 live_id = 5;
+    uint32 live_status = 6;
+}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GetHotThread/DataRes.proto";
-
-message GetHotThreadResIdl {
-    DataRes data = 1;
-    Error error = 2;
-}

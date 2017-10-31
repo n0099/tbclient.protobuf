@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetHotThread/DataReq.proto";
-
-message GetHotThreadReqIdl {
-    DataReq data = 1;
-}

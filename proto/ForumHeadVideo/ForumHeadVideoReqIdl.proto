@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "ForumHeadVideo/DataReq.proto";
-
-message ForumHeadVideoReqIdl {
-    DataReq data = 1;
-}

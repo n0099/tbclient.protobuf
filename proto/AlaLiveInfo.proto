@@ -25,4 +25,5 @@ message AlaLiveInfo {
     AlaShareInfo share_info = 19;
     uint64 distance = 20;
     string third_app_id = 21;
+    uint64 thread_id = 22;
 }

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "AlaLiveInfo.proto";
+
+message UserStoryAlaLiveInfo {
+    int64 forum_id = 1;
+    int64 thread_id = 2;
+    string title = 3;
+    int64 user_id = 4;
+    int32 user_ip = 5;
+    int64 vote_id = 6;
+    int64 from_thread_id = 7;
+    int64 post_num = 8;
+    int32 last_modified_time = 9;
+    int64 last_user_id = 10;
+    int32 last_user_ip = 11;
+    int32 good_types = 12;
+    int32 top_types = 13;
+    int32 thread_types = 14;
+    int32 thread_classes = 15;
+    int64 last_post_id = 16;
+    int32 phone_type = 17;
+    int32 is_deleted = 18;
+    int64 first_post_id = 19;
+    string forum_name = 20;
+    string title_prefix = 21;
+    int32 last_post_deleted = 22;
+    int32 freq_num = 23;
+    int64 live_id = 24;
+    int32 tstore_type = 25;
+    int64 agree_num = 26;
+    AlaLiveInfo ala_info = 27;
+}

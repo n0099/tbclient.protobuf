@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GodFeed/DataReq.proto";
-
-message GodFeedReqIdl {
-    DataReq data = 1;
-}

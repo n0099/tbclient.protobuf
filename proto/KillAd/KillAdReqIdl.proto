@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "KillAd/DataReq.proto";
-
-message KillAdReqIdl {
-    DataReq data = 1;
-}
