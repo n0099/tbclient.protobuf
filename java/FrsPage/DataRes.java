@@ -14,6 +14,7 @@ import tbclient.CategoryInfo;
 import tbclient.Esport;
 import tbclient.ForumPresentInfo;
 import tbclient.FrsTabInfo;
+import tbclient.FrsVideo;
 import tbclient.NaGuide;
 import tbclient.Novel;
 import tbclient.Page;
@@ -34,11 +35,11 @@ public final class DataRes extends Message {
     public final ActivityHead activityhead;
     @ProtoField(tag = 65)
     public final AgreeBanner agree_banner;
-    @ProtoField(tag = d.n.View_rotationY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.l.View_rotationY, type = Message.Datatype.UINT32)
     public final Integer ala_live_count;
     @ProtoField(tag = 5)
     public final Anti anti;
-    @ProtoField(tag = d.n.View_rotationX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_rotationX, type = Message.Datatype.STRING)
     public final String asp_shown_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 45)
     public final List<BannerThreadInfo> banner_thread_list;
@@ -48,15 +49,15 @@ public final class DataRes extends Message {
     public final String bawu_enter_url;
     @ProtoField(tag = 50)
     public final ForumBookInfo book_info;
-    @ProtoField(tag = d.n.View_scaleX)
+    @ProtoField(tag = d.l.View_scaleX)
     public final Bottle bottle;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<ThreadInfo> card_shipin_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_rotation)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_rotation)
     public final List<ThreadInfo> card_shipin_new;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_transformPivotY, type = Message.Datatype.INT32)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_transformPivotY, type = Message.Datatype.INT32)
     public final List<Integer> card_shipin_pos;
-    @ProtoField(tag = d.n.View_minHeight)
+    @ProtoField(tag = d.l.View_minHeight)
     public final CarrierEnter carrier_enter;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
@@ -78,17 +79,17 @@ public final class DataRes extends Message {
     public final ForumInfo forum;
     @ProtoField(tag = 72)
     public final ForumHeadIcon forum_head_icon;
-    @ProtoField(tag = d.n.View_translationY)
+    @ProtoField(tag = d.l.View_translationY)
     public final ForumHeadlineImgInfo forum_headline_img_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<AnchorInfo> forum_livegroup_list;
-    @ProtoField(tag = d.n.View_translationX)
+    @ProtoField(tag = d.l.View_translationX)
     public final ForumPresentInfo forum_present_info;
     @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeOffLineLocationNetworkFail)
     public final List<FrsTabInfo> frs_game_tab_info;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
-    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_saveEnabled, type = Message.Datatype.INT32)
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
@@ -102,8 +103,6 @@ public final class DataRes extends Message {
     public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 15)
     public final Info info;
-    @ProtoField(tag = 49, type = Message.Datatype.INT32)
-    public final Integer is_auto_play_forumheadvideo;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(tag = 69)
@@ -112,13 +111,13 @@ public final class DataRes extends Message {
     public final Long logid;
     @ProtoField(tag = BDLocation.TypeOffLineLocationFail)
     public final NaGuide na_guide;
-    @ProtoField(tag = d.n.View_longClickable)
+    @ProtoField(tag = d.l.View_longClickable)
     public final NavTabInfo nav_tab_info;
-    @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_onClick, type = Message.Datatype.INT32)
     public final Integer need_log;
     @ProtoField(tag = 25)
     public final Novel novel;
-    @ProtoField(tag = d.n.View_transformPivotX)
+    @ProtoField(tag = d.l.View_transformPivotX)
     public final NtSpreadInfo ntspread;
     @ProtoField(tag = 4)
     public final Page page;
@@ -126,19 +125,19 @@ public final class DataRes extends Message {
     public final String partial_visible_toast;
     @ProtoField(tag = 29)
     public final PushThreadInfo push_thread_info;
-    @ProtoField(tag = d.n.View_hapticFeedbackEnabled)
+    @ProtoField(tag = d.l.View_hapticFeedbackEnabled)
     public final RecommendBook recommend_book;
-    @ProtoField(tag = d.n.View_drawingCacheQuality)
+    @ProtoField(tag = d.l.View_drawingCacheQuality)
     public final RecommendInfo school_recom_info;
-    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.UINT32)
     public final Integer school_recom_pos;
     @ProtoField(tag = 31)
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
-    @ProtoField(tag = d.n.View_contentDescription, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_contentDescription, type = Message.Datatype.INT32)
     public final Integer smart_frs_type;
-    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
@@ -162,7 +161,9 @@ public final class DataRes extends Message {
     public final tbclient.FrsPageUserExtend user_extend;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<User> user_list;
-    @ProtoField(tag = d.n.View_duplicateParentState)
+    @ProtoField(tag = 73)
+    public final FrsVideo video;
+    @ProtoField(tag = d.l.View_duplicateParentState)
     public final VitalityInfo vitality_info;
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<Long> DEFAULT_THREAD_ID_LIST = Collections.emptyList();
@@ -187,7 +188,6 @@ public final class DataRes extends Message {
     public static final List<BannerThreadInfo> DEFAULT_BANNER_THREAD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_SMART_FRS_TYPE = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
-    public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO = 0;
     public static final List<Integer> DEFAULT_CARD_SHIPIN_POS = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW = Collections.emptyList();
     public static final Integer DEFAULT_ALA_LIVE_COUNT = 0;
@@ -343,11 +343,6 @@ public final class DataRes extends Message {
             } else {
                 this.need_log = builder.need_log;
             }
-            if (builder.is_auto_play_forumheadvideo == null) {
-                this.is_auto_play_forumheadvideo = DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
-            } else {
-                this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
-            }
             this.book_info = builder.book_info;
             this.forum_present_info = builder.forum_present_info;
             this.forum_headline_img_info = builder.forum_headline_img_info;
@@ -396,6 +391,7 @@ public final class DataRes extends Message {
             this.banner_user_story = builder.banner_user_story;
             this.user_extend = builder.user_extend;
             this.forum_head_icon = builder.forum_head_icon;
+            this.video = builder.video;
             return;
         }
         this.user = builder.user;
@@ -444,7 +440,6 @@ public final class DataRes extends Message {
         this.recommend_book = builder.recommend_book;
         this.smart_frs_type = builder.smart_frs_type;
         this.need_log = builder.need_log;
-        this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
         this.book_info = builder.book_info;
         this.forum_present_info = builder.forum_present_info;
         this.forum_headline_img_info = builder.forum_headline_img_info;
@@ -465,6 +460,7 @@ public final class DataRes extends Message {
         this.banner_user_story = builder.banner_user_story;
         this.user_extend = builder.user_extend;
         this.forum_head_icon = builder.forum_head_icon;
+        this.video = builder.video;
     }
 
     /* loaded from: classes.dex */
@@ -505,7 +501,6 @@ public final class DataRes extends Message {
         public HeadSdk head_sdk;
         public ZhiBoInfoTW hot_twzhibo_info;
         public Info info;
-        public Integer is_auto_play_forumheadvideo;
         public Integer is_new_url;
         public AlaLiveNotify live_frs_notify;
         public Long logid;
@@ -535,6 +530,7 @@ public final class DataRes extends Message {
         public User user;
         public tbclient.FrsPageUserExtend user_extend;
         public List<User> user_list;
+        public FrsVideo video;
         public VitalityInfo vitality_info;
 
         public Builder() {
@@ -589,7 +585,6 @@ public final class DataRes extends Message {
                 this.recommend_book = dataRes.recommend_book;
                 this.smart_frs_type = dataRes.smart_frs_type;
                 this.need_log = dataRes.need_log;
-                this.is_auto_play_forumheadvideo = dataRes.is_auto_play_forumheadvideo;
                 this.book_info = dataRes.book_info;
                 this.forum_present_info = dataRes.forum_present_info;
                 this.forum_headline_img_info = dataRes.forum_headline_img_info;
@@ -610,6 +605,7 @@ public final class DataRes extends Message {
                 this.banner_user_story = dataRes.banner_user_story;
                 this.user_extend = dataRes.user_extend;
                 this.forum_head_icon = dataRes.forum_head_icon;
+                this.video = dataRes.video;
             }
         }
 

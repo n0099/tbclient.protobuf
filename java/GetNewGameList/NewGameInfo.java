@@ -43,9 +43,9 @@ public final class NewGameInfo extends Message {
     public static final String DEFAULT_THREAD_FORUM_NAME = "";
     public static final String DEFAULT_VERSION = "";
     public static final String DEFAULT_VERSION_IOS = "";
-    @ProtoField(tag = d.n.View_translationX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_translationX, type = Message.Datatype.STRING)
     public final String andr_pk_name;
-    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_duplicateParentState, type = Message.Datatype.STRING)
     public final String api_key;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String app_id;
@@ -55,15 +55,15 @@ public final class NewGameInfo extends Message {
     public final String bundle_id;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String canvas_name;
-    @ProtoField(tag = d.n.View_contentDescription, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_contentDescription, type = Message.Datatype.INT32)
     public final Integer category_id;
-    @ProtoField(tag = d.n.View_translationY, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_translationY, type = Message.Datatype.STRING)
     public final String category_name;
-    @ProtoField(tag = d.n.View_transformPivotY, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_transformPivotY, type = Message.Datatype.STRING)
     public final String category_name_sim;
-    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.l.View_drawingCacheQuality, type = Message.Datatype.UINT32)
     public final Integer channel;
-    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.UINT64)
+    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.UINT64)
     public final Long deadline;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String developer;
@@ -81,9 +81,9 @@ public final class NewGameInfo extends Message {
     public final String game_name;
     @ProtoField(label = Message.Label.REPEATED, tag = 13, type = Message.Datatype.STRING)
     public final List<String> game_pic;
-    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer game_platform;
-    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_saveEnabled, type = Message.Datatype.INT32)
     public final Integer game_type;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String gift_code;
@@ -93,11 +93,11 @@ public final class NewGameInfo extends Message {
     public final String icon_pic2;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String icon_pic3;
-    @ProtoField(tag = d.n.View_transformPivotX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_transformPivotX, type = Message.Datatype.STRING)
     public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
-    @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.STRING)
     public final String inter_version;
     @ProtoField(tag = 45, type = Message.Datatype.STRING)
     public final String inter_version_ios;
@@ -111,7 +111,7 @@ public final class NewGameInfo extends Message {
     public final String package_name;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String package_size;
-    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.INT32)
     public final Integer play_count;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String praise;
@@ -133,9 +133,9 @@ public final class NewGameInfo extends Message {
     public final Integer server_type;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String sign;
-    @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_onClick, type = Message.Datatype.INT32)
     public final Integer status;
-    @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
     public final String subscript_color;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String test_userids;
@@ -147,9 +147,9 @@ public final class NewGameInfo extends Message {
     public final Long thread_theme_id;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer time;
-    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.STRING)
     public final String version;
-    @ProtoField(tag = d.n.View_minWidth, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_minWidth, type = Message.Datatype.STRING)
     public final String version_ios;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_SERVER_OPEN_TIME = 0;

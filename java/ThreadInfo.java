@@ -2,6 +2,7 @@ package tbclient;
 
 import android.support.v4.media.TransportMediator;
 import com.baidu.location.BDLocation;
+import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.sapi2.SapiSafeFacade;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.d;
@@ -27,6 +28,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_RECOM_SOURCE = "";
     public static final String DEFAULT_RECOM_WEIGHT = "";
+    public static final String DEFAULT_TIEBA_GAME_INFORMATION_SOURCE = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VIDEO = "";
     public static final String DEFAULT_VIDEO_COVER = "";
@@ -47,7 +49,7 @@ public final class ThreadInfo extends Message {
     public final Integer agree_num;
     @ProtoField(tag = 113)
     public final AlaLiveInfo ala_info;
-    @ProtoField(tag = d.n.View_rotation)
+    @ProtoField(tag = d.l.View_rotation)
     public final AnchorInfo anchor_info;
     @ProtoField(tag = 99)
     public final AnimationThread animation_info;
@@ -55,9 +57,11 @@ public final class ThreadInfo extends Message {
     public final AppCode app_code;
     @ProtoField(tag = 117)
     public final AppInfo app_info;
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT64)
+    public final Long audit_time;
     @ProtoField(tag = 18)
     public final User author;
-    @ProtoField(tag = d.n.View_rotationX, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.l.View_rotationX, type = Message.Datatype.INT64)
     public final Long author_id;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_BACK)
     public final BookThread book_chapter;
@@ -69,7 +73,7 @@ public final class ThreadInfo extends Message {
     public final Integer cheak_repeat;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
-    @ProtoField(tag = d.n.View_translationX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_translationX, type = Message.Datatype.STRING)
     public final String collect_mark_pid;
     @ProtoField(tag = 50, type = Message.Datatype.INT32)
     public final Integer collect_status;
@@ -83,13 +87,13 @@ public final class ThreadInfo extends Message {
     public final List<DeclareInfo> declare_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
-    @ProtoField(tag = d.n.View_verticalScrollbarPosition, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_verticalScrollbarPosition, type = Message.Datatype.STRING)
     public final String ecom;
     @ProtoField(label = Message.Label.REPEATED, tag = 90)
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
-    @ProtoField(tag = d.n.View_drawingCacheQuality, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.l.View_drawingCacheQuality, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
@@ -99,7 +103,7 @@ public final class ThreadInfo extends Message {
     public final String from;
     @ProtoField(tag = 63)
     public final Guess guess;
-    @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_onClick, type = Message.Datatype.INT32)
     public final Integer has_commented;
     @ProtoField(tag = 95)
     public final TogetherHi high_together;
@@ -109,17 +113,17 @@ public final class ThreadInfo extends Message {
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = d.n.View_scaleX, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.l.View_scaleX, type = Message.Datatype.UINT32)
     public final Integer isLzDeleteAll;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_activity;
-    @ProtoField(tag = d.n.View_scaleY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.l.View_scaleY, type = Message.Datatype.UINT32)
     public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_FINISH, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
-    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer is_bub;
     @ProtoField(tag = 136, type = Message.Datatype.INT32)
     public final Integer is_called;
@@ -127,7 +131,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_copythread;
     @ProtoField(tag = 97, type = Message.Datatype.INT32)
     public final Integer is_deal;
-    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_duplicateParentState, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = 131, type = Message.Datatype.INT32)
     public final Integer is_god;
@@ -141,7 +145,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_livepost;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
-    @ProtoField(tag = d.n.View_transformPivotY, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_transformPivotY, type = Message.Datatype.INT32)
     public final Integer is_membertop;
     @ProtoField(tag = 123, type = Message.Datatype.INT32)
     public final Integer is_multiforum_thread;
@@ -153,13 +157,13 @@ public final class ThreadInfo extends Message {
     public final Integer is_novel_reward;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_novel_thank;
-    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_saveEnabled, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
     @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PAUSE, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
-    @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.INT32)
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
@@ -199,6 +203,10 @@ public final class ThreadInfo extends Message {
     public final List<MediaNum> media_num;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String meizhi_pic;
+    @ProtoField(tag = 139, type = Message.Datatype.INT32)
+    public final Integer middle_page_num;
+    @ProtoField(tag = 140, type = Message.Datatype.INT32)
+    public final Integer middle_page_pass_flag;
     @ProtoField(label = Message.Label.REPEATED, tag = 122)
     public final List<MultipleForum> multiple_forum_list;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
@@ -211,9 +219,9 @@ public final class ThreadInfo extends Message {
     public final String pids;
     @ProtoField(tag = 74)
     public final PollInfo poll_info;
-    @ProtoField(tag = d.n.View_translationY, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.l.View_translationY, type = Message.Datatype.INT64)
     public final Long post_id;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_minWidth)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_minWidth)
     public final List<PostList> post_list;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
     public final Integer post_num;
@@ -233,7 +241,7 @@ public final class ThreadInfo extends Message {
     public final Integer reply_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 118)
     public final List<ReportInfo> report_info;
-    @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
     public final Integer repost_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 112)
     public final List<PbContent> rich_abstract;
@@ -257,7 +265,9 @@ public final class ThreadInfo extends Message {
     public final Integer thread_types;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
-    @ProtoField(tag = d.n.View_transformPivotX, type = Message.Datatype.INT32)
+    @ProtoField(tag = 137, type = Message.Datatype.STRING)
+    public final String tieba_game_information_source;
+    @ProtoField(tag = d.l.View_transformPivotX, type = Message.Datatype.INT32)
     public final Integer time;
     @ProtoField(tag = 64, type = Message.Datatype.UINT32)
     public final Integer timeline;
@@ -265,11 +275,11 @@ public final class ThreadInfo extends Message {
     public final String title;
     @ProtoField(tag = 125)
     public final Post top_agree_post;
-    @ProtoField(tag = d.n.View_contentDescription)
+    @ProtoField(tag = d.l.View_contentDescription)
     public final Topic topic;
     @ProtoField(tag = 72)
     public final ZhiBoInfoTW twzhibo_info;
-    @ProtoField(tag = d.n.View_rotationY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.l.View_rotationY, type = Message.Datatype.UINT32)
     public final Integer valid_post_num;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
@@ -279,11 +289,11 @@ public final class ThreadInfo extends Message {
     public final VideoChannelInfo video_channel_info;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String video_cover;
-    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.STRING)
     public final String video_id;
     @ProtoField(tag = 79)
     public final VideoInfo video_info;
-    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.STRING)
     public final String video_mobile_url;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String video_swf;
@@ -295,7 +305,7 @@ public final class ThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
-    @ProtoField(tag = d.n.View_keepScreenOn)
+    @ProtoField(tag = d.l.View_keepScreenOn)
     public final Zan zan;
     public static final Long DEFAULT_ID = 0L;
     public static final Long DEFAULT_TID = 0L;
@@ -373,6 +383,9 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_STORY_AUDIT = 0;
     public static final Long DEFAULT_SHARE_NUM = 0L;
     public static final Integer DEFAULT_IS_CALLED = 0;
+    public static final Long DEFAULT_AUDIT_TIME = 0L;
+    public static final Integer DEFAULT_MIDDLE_PAGE_NUM = 0;
+    public static final Integer DEFAULT_MIDDLE_PAGE_PASS_FLAG = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -898,9 +911,29 @@ public final class ThreadInfo extends Message {
             }
             if (builder.is_called == null) {
                 this.is_called = DEFAULT_IS_CALLED;
-                return;
             } else {
                 this.is_called = builder.is_called;
+            }
+            if (builder.tieba_game_information_source == null) {
+                this.tieba_game_information_source = "";
+            } else {
+                this.tieba_game_information_source = builder.tieba_game_information_source;
+            }
+            if (builder.audit_time == null) {
+                this.audit_time = DEFAULT_AUDIT_TIME;
+            } else {
+                this.audit_time = builder.audit_time;
+            }
+            if (builder.middle_page_num == null) {
+                this.middle_page_num = DEFAULT_MIDDLE_PAGE_NUM;
+            } else {
+                this.middle_page_num = builder.middle_page_num;
+            }
+            if (builder.middle_page_pass_flag == null) {
+                this.middle_page_pass_flag = DEFAULT_MIDDLE_PAGE_PASS_FLAG;
+                return;
+            } else {
+                this.middle_page_pass_flag = builder.middle_page_pass_flag;
                 return;
             }
         }
@@ -1036,6 +1069,10 @@ public final class ThreadInfo extends Message {
         this.is_story_audit = builder.is_story_audit;
         this.share_num = builder.share_num;
         this.is_called = builder.is_called;
+        this.tieba_game_information_source = builder.tieba_game_information_source;
+        this.audit_time = builder.audit_time;
+        this.middle_page_num = builder.middle_page_num;
+        this.middle_page_pass_flag = builder.middle_page_pass_flag;
     }
 
     /* loaded from: classes.dex */
@@ -1051,6 +1088,7 @@ public final class ThreadInfo extends Message {
         public AnimationThread animation_info;
         public AppCode app_code;
         public AppInfo app_info;
+        public Long audit_time;
         public User author;
         public Long author_id;
         public BookThread book_chapter;
@@ -1123,6 +1161,8 @@ public final class ThreadInfo extends Message {
         public List<Media> media;
         public List<MediaNum> media_num;
         public String meizhi_pic;
+        public Integer middle_page_num;
+        public Integer middle_page_pass_flag;
         public List<MultipleForum> multiple_forum_list;
         public Integer operator_flag;
         public Media pic_info;
@@ -1152,6 +1192,7 @@ public final class ThreadInfo extends Message {
         public Integer thread_type;
         public Integer thread_types;
         public Long tid;
+        public String tieba_game_information_source;
         public Integer time;
         public Integer timeline;
         public String title;
@@ -1311,6 +1352,10 @@ public final class ThreadInfo extends Message {
                 this.is_story_audit = threadInfo.is_story_audit;
                 this.share_num = threadInfo.share_num;
                 this.is_called = threadInfo.is_called;
+                this.tieba_game_information_source = threadInfo.tieba_game_information_source;
+                this.audit_time = threadInfo.audit_time;
+                this.middle_page_num = threadInfo.middle_page_num;
+                this.middle_page_pass_flag = threadInfo.middle_page_pass_flag;
             }
         }
 

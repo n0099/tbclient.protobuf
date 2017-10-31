@@ -93,7 +93,7 @@ public final class GameInfo extends Message {
     public final Integer player_num;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String schema_url;
-    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.UINT32)
     public final Integer score;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String secret_key;

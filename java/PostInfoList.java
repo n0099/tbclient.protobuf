@@ -21,11 +21,11 @@ public final class PostInfoList extends Message {
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
-    @ProtoField(tag = d.n.View_drawingCacheQuality)
+    @ProtoField(tag = d.l.View_drawingCacheQuality)
     public final Agree agree;
-    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.INT32)
     public final Integer agree_num;
-    @ProtoField(tag = d.n.View_clickable)
+    @ProtoField(tag = d.l.View_clickable)
     public final AlaLiveInfo ala_info;
     @ProtoField(tag = 24)
     public final AnchorInfo anchor_info;
@@ -73,7 +73,7 @@ public final class PostInfoList extends Message {
     public final Quote quote;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer reply_num;
-    @ProtoField(tag = d.n.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer share_num;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
@@ -93,7 +93,7 @@ public final class PostInfoList extends Message {
     public final Long v_forum_id;
     @ProtoField(tag = 29)
     public final VideoInfo video_info;
-    @ProtoField(tag = d.n.View_saveEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_saveEnabled, type = Message.Datatype.INT32)
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;

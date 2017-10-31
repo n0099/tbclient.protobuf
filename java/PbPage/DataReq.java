@@ -22,9 +22,9 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
-    @ProtoField(tag = d.n.View_scaleX)
+    @ProtoField(tag = d.l.View_scaleX)
     public final AdParam ad_param;
-    @ProtoField(tag = d.n.View_transformPivotX)
+    @ProtoField(tag = d.l.View_transformPivotX)
     public final AppPosInfo app_pos;
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer arround;
@@ -34,17 +34,17 @@ public final class DataReq extends Message {
     public final Integer banner;
     @ProtoField(tag = 25)
     public final CommonReq common;
-    @ProtoField(tag = d.n.View_duplicateParentState, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_duplicateParentState, type = Message.Datatype.STRING)
     public final String da_idfa;
-    @ProtoField(tag = d.n.View_rotation, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_rotation, type = Message.Datatype.STRING)
     public final String feed_nid;
     @ProtoField(tag = 45, type = Message.Datatype.UINT64)
     public final Long fid;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
-    @ProtoField(tag = d.n.View_rotationX, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.l.View_rotationX, type = Message.Datatype.INT64)
     public final Long forum_id;
-    @ProtoField(tag = d.n.View_transformPivotY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = d.l.View_transformPivotY, type = Message.Datatype.UINT32)
     public final Integer from_smart_frs;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
@@ -52,9 +52,9 @@ public final class DataReq extends Message {
     public final Integer is_jumpfloor;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer issdk;
-    @ProtoField(tag = d.n.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
     public final String jfrom;
-    @ProtoField(tag = d.n.View_minWidth, type = Message.Datatype.UINT64)
+    @ProtoField(tag = d.l.View_minWidth, type = Message.Datatype.UINT64)
     public final Long jid;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer jumpfloor_num;
@@ -72,13 +72,13 @@ public final class DataReq extends Message {
     public final Integer message_id;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String msg_click;
-    @ProtoField(tag = d.n.View_scaleY, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_scaleY, type = Message.Datatype.INT32)
     public final Integer need_log;
-    @ProtoField(tag = d.n.View_rotationY, type = Message.Datatype.INT32)
+    @ProtoField(tag = d.l.View_rotationY, type = Message.Datatype.INT32)
     public final Integer need_repost_recommend_forum;
-    @ProtoField(tag = d.n.View_translationX, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_translationX, type = Message.Datatype.STRING)
     public final String obj_locate;
-    @ProtoField(tag = d.n.View_translationY, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_translationY, type = Message.Datatype.STRING)
     public final String obj_param1;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String obj_source;
@@ -86,7 +86,7 @@ public final class DataReq extends Message {
     public final Integer pb_rn;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long pid;
-    @ProtoField(tag = d.n.View_minHeight, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.STRING)
     public final String platform;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer pn;
@@ -122,9 +122,9 @@ public final class DataReq extends Message {
     public final Integer weipost;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer with_floor;
-    @ProtoField(tag = d.n.View_contentDescription, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_contentDescription, type = Message.Datatype.STRING)
     public final String yuelaou_locate;
-    @ProtoField(tag = d.n.View_onClick, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_onClick, type = Message.Datatype.STRING)
     public final String yuelaou_params;
     public static final Integer DEFAULT_PB_RN = 0;
     public static final Integer DEFAULT_MARK = 0;

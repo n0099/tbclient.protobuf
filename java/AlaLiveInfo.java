@@ -55,6 +55,8 @@ public final class AlaLiveInfo extends Message {
     public final AlaShareInfo share_info;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String third_app_id;
+    @ProtoField(tag = 22, type = Message.Datatype.UINT64)
+    public final Long thread_id;
     @ProtoField(tag = 12)
     public final AlaUserInfo user_info;
     public static final Long DEFAULT_LIVE_ID = 0L;
@@ -65,6 +67,7 @@ public final class AlaLiveInfo extends Message {
     public static final Integer DEFAULT_SCREEN_DIRECTION = 0;
     public static final Integer DEFAULT_LIVE_STATUS = 0;
     public static final Long DEFAULT_DISTANCE = 0L;
+    public static final Long DEFAULT_THREAD_ID = 0L;
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -163,9 +166,14 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.third_app_id == null) {
                 this.third_app_id = "";
-                return;
             } else {
                 this.third_app_id = builder.third_app_id;
+            }
+            if (builder.thread_id == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+                return;
+            } else {
+                this.thread_id = builder.thread_id;
                 return;
             }
         }
@@ -190,6 +198,7 @@ public final class AlaLiveInfo extends Message {
         this.share_info = builder.share_info;
         this.distance = builder.distance;
         this.third_app_id = builder.third_app_id;
+        this.thread_id = builder.thread_id;
     }
 
     /* loaded from: classes.dex */
@@ -214,6 +223,7 @@ public final class AlaLiveInfo extends Message {
         public String session_id;
         public AlaShareInfo share_info;
         public String third_app_id;
+        public Long thread_id;
         public AlaUserInfo user_info;
 
         public Builder() {
@@ -243,6 +253,7 @@ public final class AlaLiveInfo extends Message {
                 this.share_info = alaLiveInfo.share_info;
                 this.distance = alaLiveInfo.distance;
                 this.third_app_id = alaLiveInfo.third_app_id;
+                this.thread_id = alaLiveInfo.thread_id;
             }
         }
 

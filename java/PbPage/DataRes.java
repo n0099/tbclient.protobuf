@@ -40,7 +40,7 @@ public final class DataRes extends Message {
     public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
-    @ProtoField(tag = d.n.View_filterTouchesWhenObscured)
+    @ProtoField(tag = d.l.View_filterTouchesWhenObscured)
     public final SimpleForum display_forum;
     @ProtoField(tag = 33)
     public final FeedExtInfo feed_info;
@@ -48,15 +48,15 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> feed_thread_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<FineBannerPb> fine_banner;
-    @ProtoField(tag = d.n.View_saveEnabled)
+    @ProtoField(tag = d.l.View_saveEnabled)
     public final Post first_floor_post;
-    @ProtoField(tag = d.n.View_minHeight)
+    @ProtoField(tag = d.l.View_minHeight)
     public final PbFollowTip follow_tip;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
     @ProtoField(tag = 27)
     public final ForumHeadlineImgInfo forum_headline_img_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_clickable)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_clickable)
     public final List<SimpleForum> from_forum_list;
     @ProtoField(tag = 23)
     public final GodCard god_card;
@@ -74,15 +74,15 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 9)
     public final Lbs location;
-    @ProtoField(tag = d.n.View_duplicateParentState)
+    @ProtoField(tag = d.l.View_duplicateParentState)
     public final NaGuide na_guide;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.n.View_drawingCacheQuality)
+    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_drawingCacheQuality)
     public final List<SimpleUser> new_agree_user;
     @ProtoField(tag = 15)
     public final NewsInfo news_info;
     @ProtoField(tag = 3)
     public final Page page;
-    @ProtoField(tag = d.n.View_keepScreenOn, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
     public final List<PsRankListItem> play_rank_list;
@@ -104,7 +104,7 @@ public final class DataRes extends Message {
     public final Integer switch_read_open;
     @ProtoField(tag = 8)
     public final ThreadInfo thread;
-    @ProtoField(tag = d.n.View_longClickable, type = Message.Datatype.INT64)
+    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.INT64)
     public final Long thread_freq_num;
     @ProtoField(tag = 34)
     public final PbTopAgreePost top_agree_post_list;

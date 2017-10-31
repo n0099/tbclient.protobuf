@@ -53,7 +53,7 @@ public final class PbContent extends Message {
     public final Integer height;
     @ProtoField(tag = 30)
     public final TogetherHi high_together;
-    @ProtoField(tag = d.n.View_clickable, type = Message.Datatype.STRING)
+    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.STRING)
     public final String id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String imgtype;
