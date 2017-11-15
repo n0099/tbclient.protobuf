@@ -35,6 +35,8 @@ public final class DataRes extends Message {
     public final ActivityHead activityhead;
     @ProtoField(tag = 65)
     public final AgreeBanner agree_banner;
+    @ProtoField(label = Message.Label.REPEATED, tag = 75)
+    public final List<ThreadInfo> ala_insert_thread;
     @ProtoField(tag = d.l.View_rotationY, type = Message.Datatype.UINT32)
     public final Integer ala_live_count;
     @ProtoField(tag = 5)
@@ -93,6 +95,8 @@ public final class DataRes extends Message {
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
+    @ProtoField(tag = 74, type = Message.Datatype.INT32)
+    public final Integer game_default_tab_id;
     @ProtoField(tag = 18)
     public final GconAccount gcon_account;
     @ProtoField(tag = 6)
@@ -103,6 +107,8 @@ public final class DataRes extends Message {
     public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 15)
     public final Info info;
+    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    public final Integer is_auto_play_forumheadvideo;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(tag = 69)
@@ -188,11 +194,14 @@ public final class DataRes extends Message {
     public static final List<BannerThreadInfo> DEFAULT_BANNER_THREAD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_SMART_FRS_TYPE = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
+    public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO = 0;
     public static final List<Integer> DEFAULT_CARD_SHIPIN_POS = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW = Collections.emptyList();
     public static final Integer DEFAULT_ALA_LIVE_COUNT = 0;
     public static final List<ThreadIdListInfo> DEFAULT_THREAD_ID_LIST_INFO = Collections.emptyList();
     public static final List<FrsTabInfo> DEFAULT_FRS_GAME_TAB_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_GAME_DEFAULT_TAB_ID = 0;
+    public static final List<ThreadInfo> DEFAULT_ALA_INSERT_THREAD = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -343,6 +352,11 @@ public final class DataRes extends Message {
             } else {
                 this.need_log = builder.need_log;
             }
+            if (builder.is_auto_play_forumheadvideo == null) {
+                this.is_auto_play_forumheadvideo = DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
+            } else {
+                this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
+            }
             this.book_info = builder.book_info;
             this.forum_present_info = builder.forum_present_info;
             this.forum_headline_img_info = builder.forum_headline_img_info;
@@ -392,7 +406,18 @@ public final class DataRes extends Message {
             this.user_extend = builder.user_extend;
             this.forum_head_icon = builder.forum_head_icon;
             this.video = builder.video;
-            return;
+            if (builder.game_default_tab_id == null) {
+                this.game_default_tab_id = DEFAULT_GAME_DEFAULT_TAB_ID;
+            } else {
+                this.game_default_tab_id = builder.game_default_tab_id;
+            }
+            if (builder.ala_insert_thread == null) {
+                this.ala_insert_thread = DEFAULT_ALA_INSERT_THREAD;
+                return;
+            } else {
+                this.ala_insert_thread = immutableCopyOf(builder.ala_insert_thread);
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -440,6 +465,7 @@ public final class DataRes extends Message {
         this.recommend_book = builder.recommend_book;
         this.smart_frs_type = builder.smart_frs_type;
         this.need_log = builder.need_log;
+        this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
         this.book_info = builder.book_info;
         this.forum_present_info = builder.forum_present_info;
         this.forum_headline_img_info = builder.forum_headline_img_info;
@@ -461,12 +487,15 @@ public final class DataRes extends Message {
         this.user_extend = builder.user_extend;
         this.forum_head_icon = builder.forum_head_icon;
         this.video = builder.video;
+        this.game_default_tab_id = builder.game_default_tab_id;
+        this.ala_insert_thread = immutableCopyOf(builder.ala_insert_thread);
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityHead activityhead;
         public AgreeBanner agree_banner;
+        public List<ThreadInfo> ala_insert_thread;
         public Integer ala_live_count;
         public Anti anti;
         public String asp_shown_info;
@@ -496,11 +525,13 @@ public final class DataRes extends Message {
         public StarInfo frs_star;
         public Integer frs_tab_default;
         public List<FrsTabInfo> frs_tab_info;
+        public Integer game_default_tab_id;
         public GconAccount gcon_account;
         public Group group;
         public HeadSdk head_sdk;
         public ZhiBoInfoTW hot_twzhibo_info;
         public Info info;
+        public Integer is_auto_play_forumheadvideo;
         public Integer is_new_url;
         public AlaLiveNotify live_frs_notify;
         public Long logid;
@@ -585,6 +616,7 @@ public final class DataRes extends Message {
                 this.recommend_book = dataRes.recommend_book;
                 this.smart_frs_type = dataRes.smart_frs_type;
                 this.need_log = dataRes.need_log;
+                this.is_auto_play_forumheadvideo = dataRes.is_auto_play_forumheadvideo;
                 this.book_info = dataRes.book_info;
                 this.forum_present_info = dataRes.forum_present_info;
                 this.forum_headline_img_info = dataRes.forum_headline_img_info;
@@ -606,6 +638,8 @@ public final class DataRes extends Message {
                 this.user_extend = dataRes.user_extend;
                 this.forum_head_icon = dataRes.forum_head_icon;
                 this.video = dataRes.video;
+                this.game_default_tab_id = dataRes.game_default_tab_id;
+                this.ala_insert_thread = DataRes.copyOf(dataRes.ala_insert_thread);
             }
         }
 
