@@ -74,6 +74,7 @@ message DataRes {
     HeadSdk head_sdk = 34;
     repeated ThreadInfo card_shipin_info = 35;
     repeated BannerThreadInfo banner_thread_list = 45;
+    int32 is_auto_play_forumheadvideo = 49;
     ForumBookInfo book_info = 50;
     PopInfo enter_pop_info = 61;
     string partial_visible_toast = 62;
@@ -85,4 +86,6 @@ message DataRes {
     FrsPageUserExtend user_extend = 71;
     ForumHeadIcon forum_head_icon = 72;
     FrsVideo video = 73;
+    int32 game_default_tab_id = 74;
+    repeated ThreadInfo ala_insert_thread = 75;
 }
