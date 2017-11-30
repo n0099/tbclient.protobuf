@@ -2,6 +2,7 @@ package tbclient.ReplyMe;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
 /* loaded from: classes.dex */
@@ -9,6 +10,7 @@ public final class ReplyList extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_ITEM_TYPE = "";
+    public static final String DEFAULT_POST_FROM = "";
     public static final String DEFAULT_QUOTE_CONTENT = "";
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -19,10 +21,16 @@ public final class ReplyList extends Message {
     public final Integer hide_fname;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer is_floor;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer is_share_thread;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_story;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String item_type;
+    @ProtoField(tag = 21)
+    public final OriginThreadInfo origin_thread_info;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String post_from;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long post_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -63,6 +71,7 @@ public final class ReplyList extends Message {
     public static final Long DEFAULT_V_FORUM_ID = 0L;
     public static final Integer DEFAULT_HIDE_FNAME = 0;
     public static final Integer DEFAULT_IS_STORY = 0;
+    public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
 
     private ReplyList(Builder builder, boolean z) {
         super(builder);
@@ -152,9 +161,20 @@ public final class ReplyList extends Message {
             }
             if (builder.is_story == null) {
                 this.is_story = DEFAULT_IS_STORY;
-                return;
             } else {
                 this.is_story = builder.is_story;
+            }
+            this.origin_thread_info = builder.origin_thread_info;
+            if (builder.post_from == null) {
+                this.post_from = "";
+            } else {
+                this.post_from = builder.post_from;
+            }
+            if (builder.is_share_thread == null) {
+                this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
+                return;
+            } else {
+                this.is_share_thread = builder.is_share_thread;
                 return;
             }
         }
@@ -178,6 +198,9 @@ public final class ReplyList extends Message {
         this.v_forum_id = builder.v_forum_id;
         this.hide_fname = builder.hide_fname;
         this.is_story = builder.is_story;
+        this.origin_thread_info = builder.origin_thread_info;
+        this.post_from = builder.post_from;
+        this.is_share_thread = builder.is_share_thread;
     }
 
     /* loaded from: classes.dex */
@@ -186,8 +209,11 @@ public final class ReplyList extends Message {
         public String fname;
         public Integer hide_fname;
         public Integer is_floor;
+        public Integer is_share_thread;
         public Integer is_story;
         public String item_type;
+        public OriginThreadInfo origin_thread_info;
+        public String post_from;
         public Long post_id;
         public String quote_content;
         public Long quote_pid;
@@ -229,6 +255,9 @@ public final class ReplyList extends Message {
                 this.v_forum_id = replyList.v_forum_id;
                 this.hide_fname = replyList.hide_fname;
                 this.is_story = replyList.is_story;
+                this.origin_thread_info = replyList.origin_thread_info;
+                this.post_from = replyList.post_from;
+                this.is_share_thread = replyList.is_share_thread;
             }
         }
 

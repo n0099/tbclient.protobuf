@@ -51,8 +51,14 @@ public final class PostInfoList extends Message {
     public final Boolean is_deal;
     @ProtoField(tag = 12, type = Message.Datatype.UINT32)
     public final Integer is_post_deleted;
+    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.INT32)
+    public final Integer is_remain;
+    @ProtoField(tag = d.l.View_minWidth, type = Message.Datatype.INT32)
+    public final Integer is_share_thread;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer is_thread;
+    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.INT32)
+    public final Integer is_view_year;
     @ProtoField(tag = 21)
     public final LbsInfo lbs_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
@@ -61,6 +67,8 @@ public final class PostInfoList extends Message {
     public final List<MultipleForum> multiple_forum_list;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String name_show;
+    @ProtoField(tag = d.l.View_duplicateParentState)
+    public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 28)
     public final PollInfo poll_info;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -118,6 +126,9 @@ public final class PostInfoList extends Message {
     public static final Integer DEFAULT_AGREE_NUM = 0;
     public static final Integer DEFAULT_VIEW_NUM = 0;
     public static final Integer DEFAULT_SHARE_NUM = 0;
+    public static final Integer DEFAULT_IS_REMAIN = 0;
+    public static final Integer DEFAULT_IS_VIEW_YEAR = 0;
+    public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -286,7 +297,24 @@ public final class PostInfoList extends Message {
                 this.share_num = builder.share_num;
             }
             this.agree = builder.agree;
-            return;
+            if (builder.is_remain == null) {
+                this.is_remain = DEFAULT_IS_REMAIN;
+            } else {
+                this.is_remain = builder.is_remain;
+            }
+            this.origin_thread_info = builder.origin_thread_info;
+            if (builder.is_view_year == null) {
+                this.is_view_year = DEFAULT_IS_VIEW_YEAR;
+            } else {
+                this.is_view_year = builder.is_view_year;
+            }
+            if (builder.is_share_thread == null) {
+                this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
+                return;
+            } else {
+                this.is_share_thread = builder.is_share_thread;
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
@@ -328,6 +356,10 @@ public final class PostInfoList extends Message {
         this.view_num = builder.view_num;
         this.share_num = builder.share_num;
         this.agree = builder.agree;
+        this.is_remain = builder.is_remain;
+        this.origin_thread_info = builder.origin_thread_info;
+        this.is_view_year = builder.is_view_year;
+        this.is_share_thread = builder.is_share_thread;
     }
 
     /* loaded from: classes.dex */
@@ -349,11 +381,15 @@ public final class PostInfoList extends Message {
         public String ip;
         public Boolean is_deal;
         public Integer is_post_deleted;
+        public Integer is_remain;
+        public Integer is_share_thread;
         public Integer is_thread;
+        public Integer is_view_year;
         public LbsInfo lbs_info;
         public List<Media> media;
         public List<MultipleForum> multiple_forum_list;
         public String name_show;
+        public OriginThreadInfo origin_thread_info;
         public PollInfo poll_info;
         public Long post_id;
         public String post_type;
@@ -419,6 +455,10 @@ public final class PostInfoList extends Message {
                 this.view_num = postInfoList.view_num;
                 this.share_num = postInfoList.share_num;
                 this.agree = postInfoList.agree;
+                this.is_remain = postInfoList.is_remain;
+                this.origin_thread_info = postInfoList.origin_thread_info;
+                this.is_view_year = postInfoList.is_view_year;
+                this.is_share_thread = postInfoList.is_share_thread;
             }
         }
 

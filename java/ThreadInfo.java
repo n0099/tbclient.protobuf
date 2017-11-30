@@ -25,6 +25,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_LIVE_POST_TYPE = "";
     public static final String DEFAULT_MEIZHI_PIC = "";
     public static final String DEFAULT_PIDS = "";
+    public static final String DEFAULT_RECOM_EXTRA = "";
     public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_RECOM_SOURCE = "";
     public static final String DEFAULT_RECOM_WEIGHT = "";
@@ -93,6 +94,8 @@ public final class ThreadInfo extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
     public final Long fid;
+    @ProtoField(label = Message.Label.REPEATED, tag = 142)
+    public final List<PbContent> first_post_content;
     @ProtoField(tag = d.l.View_drawingCacheQuality, type = Message.Datatype.INT64)
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
@@ -167,6 +170,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
+    @ProtoField(tag = 143, type = Message.Datatype.INT32)
+    public final Integer is_share_thread;
     @ProtoField(tag = 134, type = Message.Datatype.INT32)
     public final Integer is_story_audit;
     @ProtoField(tag = 115, type = Message.Datatype.INT32)
@@ -211,6 +216,8 @@ public final class ThreadInfo extends Message {
     public final List<MultipleForum> multiple_forum_list;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
+    @ProtoField(tag = 141)
+    public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 133)
     public final Media pic_info;
     @ProtoField(tag = 84, type = Message.Datatype.UINT32)
@@ -231,6 +238,8 @@ public final class ThreadInfo extends Message {
     public final Integer push_end_time;
     @ProtoField(tag = 91)
     public final PushStatus push_status;
+    @ProtoField(tag = 144, type = Message.Datatype.STRING)
+    public final String recom_extra;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_REG, type = Message.Datatype.STRING)
     public final String recom_reason;
     @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_AUTHORIZATION, type = Message.Datatype.STRING)
@@ -277,6 +286,8 @@ public final class ThreadInfo extends Message {
     public final Post top_agree_post;
     @ProtoField(tag = d.l.View_contentDescription)
     public final Topic topic;
+    @ProtoField(tag = 145, type = Message.Datatype.UINT64)
+    public final Long trans_num;
     @ProtoField(tag = 72)
     public final ZhiBoInfoTW twzhibo_info;
     @ProtoField(tag = d.l.View_rotationY, type = Message.Datatype.UINT32)
@@ -386,6 +397,9 @@ public final class ThreadInfo extends Message {
     public static final Long DEFAULT_AUDIT_TIME = 0L;
     public static final Integer DEFAULT_MIDDLE_PAGE_NUM = 0;
     public static final Integer DEFAULT_MIDDLE_PAGE_PASS_FLAG = 0;
+    public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
+    public static final Long DEFAULT_TRANS_NUM = 0L;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -931,9 +945,30 @@ public final class ThreadInfo extends Message {
             }
             if (builder.middle_page_pass_flag == null) {
                 this.middle_page_pass_flag = DEFAULT_MIDDLE_PAGE_PASS_FLAG;
-                return;
             } else {
                 this.middle_page_pass_flag = builder.middle_page_pass_flag;
+            }
+            this.origin_thread_info = builder.origin_thread_info;
+            if (builder.first_post_content == null) {
+                this.first_post_content = DEFAULT_FIRST_POST_CONTENT;
+            } else {
+                this.first_post_content = immutableCopyOf(builder.first_post_content);
+            }
+            if (builder.is_share_thread == null) {
+                this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
+            } else {
+                this.is_share_thread = builder.is_share_thread;
+            }
+            if (builder.recom_extra == null) {
+                this.recom_extra = "";
+            } else {
+                this.recom_extra = builder.recom_extra;
+            }
+            if (builder.trans_num == null) {
+                this.trans_num = DEFAULT_TRANS_NUM;
+                return;
+            } else {
+                this.trans_num = builder.trans_num;
                 return;
             }
         }
@@ -1073,6 +1108,11 @@ public final class ThreadInfo extends Message {
         this.audit_time = builder.audit_time;
         this.middle_page_num = builder.middle_page_num;
         this.middle_page_pass_flag = builder.middle_page_pass_flag;
+        this.origin_thread_info = builder.origin_thread_info;
+        this.first_post_content = immutableCopyOf(builder.first_post_content);
+        this.is_share_thread = builder.is_share_thread;
+        this.recom_extra = builder.recom_extra;
+        this.trans_num = builder.trans_num;
     }
 
     /* loaded from: classes.dex */
@@ -1106,6 +1146,7 @@ public final class ThreadInfo extends Message {
         public String ecom;
         public List<TailInfo> ext_tails;
         public Long fid;
+        public List<PbContent> first_post_content;
         public Long first_post_id;
         public String fname;
         public Long freq_num;
@@ -1143,6 +1184,7 @@ public final class ThreadInfo extends Message {
         public Integer is_partial_visible;
         public Integer is_pic;
         public Integer is_protal;
+        public Integer is_share_thread;
         public Integer is_story_audit;
         public Integer is_tbread_dispatch;
         public Integer is_top;
@@ -1165,6 +1207,7 @@ public final class ThreadInfo extends Message {
         public Integer middle_page_pass_flag;
         public List<MultipleForum> multiple_forum_list;
         public Integer operator_flag;
+        public OriginThreadInfo origin_thread_info;
         public Media pic_info;
         public Integer pic_num;
         public String pids;
@@ -1175,6 +1218,7 @@ public final class ThreadInfo extends Message {
         public PsInfo ps_info;
         public Integer push_end_time;
         public PushStatus push_status;
+        public String recom_extra;
         public String recom_reason;
         public String recom_source;
         public String recom_weight;
@@ -1198,6 +1242,7 @@ public final class ThreadInfo extends Message {
         public String title;
         public Post top_agree_post;
         public Topic topic;
+        public Long trans_num;
         public ZhiBoInfoTW twzhibo_info;
         public Integer valid_post_num;
         public String video;
@@ -1356,6 +1401,11 @@ public final class ThreadInfo extends Message {
                 this.audit_time = threadInfo.audit_time;
                 this.middle_page_num = threadInfo.middle_page_num;
                 this.middle_page_pass_flag = threadInfo.middle_page_pass_flag;
+                this.origin_thread_info = threadInfo.origin_thread_info;
+                this.first_post_content = ThreadInfo.copyOf(threadInfo.first_post_content);
+                this.is_share_thread = threadInfo.is_share_thread;
+                this.recom_extra = threadInfo.recom_extra;
+                this.trans_num = threadInfo.trans_num;
             }
         }
 

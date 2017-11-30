@@ -1,16 +1,16 @@
-package tbclient.GetGameDetail;
+package tbclient.UnreadTip;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
 /* loaded from: classes.dex */
-public final class GetGameDetailResIdl extends Message {
+public final class UnreadTipResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    private GetGameDetailResIdl(Builder builder, boolean z) {
+    private UnreadTipResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -22,25 +22,25 @@ public final class GetGameDetailResIdl extends Message {
     }
 
     /* loaded from: classes.dex */
-    public static final class Builder extends Message.Builder<GetGameDetailResIdl> {
+    public static final class Builder extends Message.Builder<UnreadTipResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(GetGameDetailResIdl getGameDetailResIdl) {
-            super(getGameDetailResIdl);
-            if (getGameDetailResIdl != null) {
-                this.error = getGameDetailResIdl.error;
-                this.data = getGameDetailResIdl.data;
+        public Builder(UnreadTipResIdl unreadTipResIdl) {
+            super(unreadTipResIdl);
+            if (unreadTipResIdl != null) {
+                this.error = unreadTipResIdl.error;
+                this.data = unreadTipResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetGameDetailResIdl build(boolean z) {
-            return new GetGameDetailResIdl(this, z);
+        public UnreadTipResIdl build(boolean z) {
+            return new UnreadTipResIdl(this, z);
         }
     }
 }

@@ -47,6 +47,8 @@ public final class Post extends Message {
     public final String ios_bimg_format;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer is_bub;
+    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.INT32)
+    public final Integer is_fold;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer is_hot_post;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
@@ -63,6 +65,8 @@ public final class Post extends Message {
     public final String lego_card;
     @ProtoField(tag = d.l.View_drawingCacheQuality, type = Message.Datatype.INT32)
     public final Integer need_log;
+    @ProtoField(tag = d.l.View_duplicateParentState)
+    public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 35)
     public final DealInfo pb_deal_info;
     @ProtoField(tag = 30)
@@ -113,6 +117,7 @@ public final class Post extends Message {
     public static final Integer DEFAULT_IS_POST_VISIBLE = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
     public static final Integer DEFAULT_IMG_NUM_ABTEST = 0;
+    public static final Integer DEFAULT_IS_FOLD = 0;
 
     private Post(Builder builder, boolean z) {
         super(builder);
@@ -251,9 +256,15 @@ public final class Post extends Message {
             }
             if (builder.img_num_abtest == null) {
                 this.img_num_abtest = DEFAULT_IMG_NUM_ABTEST;
-                return;
             } else {
                 this.img_num_abtest = builder.img_num_abtest;
+            }
+            this.origin_thread_info = builder.origin_thread_info;
+            if (builder.is_fold == null) {
+                this.is_fold = DEFAULT_IS_FOLD;
+                return;
+            } else {
+                this.is_fold = builder.is_fold;
                 return;
             }
         }
@@ -298,6 +309,8 @@ public final class Post extends Message {
         this.is_post_visible = builder.is_post_visible;
         this.need_log = builder.need_log;
         this.img_num_abtest = builder.img_num_abtest;
+        this.origin_thread_info = builder.origin_thread_info;
+        this.is_fold = builder.is_fold;
     }
 
     /* loaded from: classes.dex */
@@ -319,6 +332,7 @@ public final class Post extends Message {
         public Integer img_num_abtest;
         public String ios_bimg_format;
         public Integer is_bub;
+        public Integer is_fold;
         public Integer is_hot_post;
         public Integer is_ntitle;
         public Integer is_post_visible;
@@ -327,6 +341,7 @@ public final class Post extends Message {
         public Lbs lbs_info;
         public String lego_card;
         public Integer need_log;
+        public OriginThreadInfo origin_thread_info;
         public DealInfo pb_deal_info;
         public PbPostZan post_zan;
         public PbPresent present;
@@ -391,6 +406,8 @@ public final class Post extends Message {
                 this.is_post_visible = post.is_post_visible;
                 this.need_log = post.need_log;
                 this.img_num_abtest = post.img_num_abtest;
+                this.origin_thread_info = post.origin_thread_info;
+                this.is_fold = post.is_fold;
             }
         }
 
