@@ -5,4 +5,5 @@ import "FrsTabInfo.proto";
 message NavTabInfo {
     repeated FrsTabInfo tab = 1;
     repeated FrsTabInfo menu = 2;
+    repeated FrsTabInfo head = 3;
 }

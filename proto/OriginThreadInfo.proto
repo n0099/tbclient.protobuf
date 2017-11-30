@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "Abstract.proto";
+import "AlaLiveInfo.proto";
+import "Media.proto";
+
+message OriginThreadInfo {
+    string title = 1;
+    repeated Media media = 2;
+    repeated Abstract _abstract = 3;
+    string fname = 4;
+    string tid = 5;
+    AlaLiveInfo ala_info = 6;
+    int64 fid = 7;
+    int32 thread_type = 8;
+}

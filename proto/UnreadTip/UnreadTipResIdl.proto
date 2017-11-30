@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 import "Error.proto";
-import "GetGameDetail/DataRes.proto";
+import "UnreadTip/DataRes.proto";
 
-message GetGameDetailResIdl {
+message UnreadTipResIdl {
     Error error = 1;
     DataRes data = 2;
 }
