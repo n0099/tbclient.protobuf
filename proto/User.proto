@@ -88,4 +88,5 @@ message User {
     int32 left_call_num = 89;
     int32 is_invited = 90;
     int32 is_fans = 91;
+    int32 priv_thread = 92;
 }

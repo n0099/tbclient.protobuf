@@ -18,4 +18,7 @@ message User_Info {
     Balv balv = 12;
     GodInfo god_data = 13;
     int32 fans_num = 14;
+    string fans_nickname = 15;
+    int32 is_bawu = 16;
+    string bawu_type = 17;
 }
