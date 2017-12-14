@@ -8,11 +8,14 @@ import tbclient.SimpleForum;
 /* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_RECOMMEND_EXT = "";
-    public static final List<SimpleForum> DEFAULT_RECOMMEND_FORUM_LIST = Collections.emptyList();
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer priv_thread;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String recommend_ext;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<SimpleForum> recommend_forum_list;
+    public static final List<SimpleForum> DEFAULT_RECOMMEND_FORUM_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_PRIV_THREAD = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -24,18 +27,25 @@ public final class DataRes extends Message {
             }
             if (builder.recommend_ext == null) {
                 this.recommend_ext = "";
-                return;
             } else {
                 this.recommend_ext = builder.recommend_ext;
+            }
+            if (builder.priv_thread == null) {
+                this.priv_thread = DEFAULT_PRIV_THREAD;
+                return;
+            } else {
+                this.priv_thread = builder.priv_thread;
                 return;
             }
         }
         this.recommend_forum_list = immutableCopyOf(builder.recommend_forum_list);
         this.recommend_ext = builder.recommend_ext;
+        this.priv_thread = builder.priv_thread;
     }
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public Integer priv_thread;
         public String recommend_ext;
         public List<SimpleForum> recommend_forum_list;
 
@@ -47,6 +57,7 @@ public final class DataRes extends Message {
             if (dataRes != null) {
                 this.recommend_forum_list = DataRes.copyOf(dataRes.recommend_forum_list);
                 this.recommend_ext = dataRes.recommend_ext;
+                this.priv_thread = dataRes.priv_thread;
             }
         }
 

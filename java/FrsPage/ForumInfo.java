@@ -1,5 +1,6 @@
 package tbclient.FrsPage;
 
+import com.baidu.location.BDLocation;
 import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -22,6 +23,7 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_SLOGAN = "";
     public static final String DEFAULT_SUPERBOY = "";
     public static final String DEFAULT_TIDS = "";
+    public static final String DEFAULT_WARNING_MSG = "";
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
     @ProtoField(tag = 62)
@@ -146,6 +148,8 @@ public final class ForumInfo extends Message {
     public final TopNotice top_notice;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer user_level;
+    @ProtoField(tag = BDLocation.TypeOffLineLocationFail, type = Message.Datatype.STRING)
+    public final String warning_msg;
     @ProtoField(tag = 45)
     public final WorldCup worldcupinfo;
     @ProtoField(tag = d.l.View_rotationY)
@@ -430,9 +434,14 @@ public final class ForumInfo extends Message {
             }
             if (builder.forum_game_label == null) {
                 this.forum_game_label = "";
-                return;
             } else {
                 this.forum_game_label = builder.forum_game_label;
+            }
+            if (builder.warning_msg == null) {
+                this.warning_msg = "";
+                return;
+            } else {
+                this.warning_msg = builder.warning_msg;
                 return;
             }
         }
@@ -501,6 +510,7 @@ public final class ForumInfo extends Message {
         this.is_live_game = builder.is_live_game;
         this.is_new_game_forum = builder.is_new_game_forum;
         this.forum_game_label = builder.forum_game_label;
+        this.warning_msg = builder.warning_msg;
     }
 
     /* loaded from: classes.dex */
@@ -567,6 +577,7 @@ public final class ForumInfo extends Message {
         public TopCode top_code;
         public TopNotice top_notice;
         public Integer user_level;
+        public String warning_msg;
         public WorldCup worldcupinfo;
         public Yule yule;
         public Zhibo zhibo;
@@ -642,6 +653,7 @@ public final class ForumInfo extends Message {
                 this.is_live_game = forumInfo.is_live_game;
                 this.is_new_game_forum = forumInfo.is_new_game_forum;
                 this.forum_game_label = forumInfo.forum_game_label;
+                this.warning_msg = forumInfo.warning_msg;
             }
         }
 

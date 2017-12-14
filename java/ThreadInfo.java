@@ -2,8 +2,6 @@ package tbclient;
 
 import android.support.v4.media.TransportMediator;
 import com.baidu.location.BDLocation;
-import com.baidu.sapi2.SapiAccountManager;
-import com.baidu.sapi2.SapiSafeFacade;
 import com.baidu.tbadk.TbConfig;
 import com.baidu.tieba.d;
 import com.squareup.wire.Message;
@@ -38,7 +36,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_VIDEO_SWF = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
-    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_SMS_LOGIN, type = Message.Datatype.STRING)
+    @ProtoField(tag = 108, type = Message.Datatype.STRING)
     public final String ab_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<ActInfo> act_info;
@@ -58,19 +56,19 @@ public final class ThreadInfo extends Message {
     public final AppCode app_code;
     @ProtoField(tag = 117)
     public final AppInfo app_info;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT64)
+    @ProtoField(tag = 138, type = Message.Datatype.INT64)
     public final Long audit_time;
     @ProtoField(tag = 18)
     public final User author;
     @ProtoField(tag = d.l.View_rotationX, type = Message.Datatype.INT64)
     public final Long author_id;
-    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_BACK)
+    @ProtoField(tag = 102)
     public final BookThread book_chapter;
     @ProtoField(tag = 92)
     public final CartoonThread cartoon_info;
     @ProtoField(tag = 73, type = Message.Datatype.STRING)
     public final String category_name;
-    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_LOGIN, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 107, type = Message.Datatype.UINT32)
     public final Integer cheak_repeat;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
@@ -124,7 +122,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
-    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_FINISH, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 103, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
     @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
     public final Integer is_bub;
@@ -164,7 +162,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
-    @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PAUSE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 127, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
     @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.INT32)
     public final Integer is_pic;
@@ -184,7 +182,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 75)
     public final JNews jid;
-    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_MODIFY_PWD, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 106, type = Message.Datatype.UINT64)
     public final Long last_read_pid;
     @ProtoField(tag = 19)
     public final User last_replyer;
@@ -240,9 +238,9 @@ public final class ThreadInfo extends Message {
     public final PushStatus push_status;
     @ProtoField(tag = 144, type = Message.Datatype.STRING)
     public final String recom_extra;
-    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_REG, type = Message.Datatype.STRING)
+    @ProtoField(tag = 109, type = Message.Datatype.STRING)
     public final String recom_reason;
-    @ProtoField(tag = SapiSafeFacade.SAPIWEBVIEW_AUTHORIZATION, type = Message.Datatype.STRING)
+    @ProtoField(tag = 104, type = Message.Datatype.STRING)
     public final String recom_source;
     @ProtoField(tag = 105, type = Message.Datatype.STRING)
     public final String recom_weight;
@@ -254,7 +252,7 @@ public final class ThreadInfo extends Message {
     public final Integer repost_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 112)
     public final List<PbContent> rich_abstract;
-    @ProtoField(label = Message.Label.REPEATED, tag = SapiSafeFacade.SAPIWEBVIEW_BIND_WIDGET)
+    @ProtoField(label = Message.Label.REPEATED, tag = 111)
     public final List<PbContent> rich_title;
     @ProtoField(tag = 135, type = Message.Datatype.INT64)
     public final Long share_num;
@@ -294,7 +292,7 @@ public final class ThreadInfo extends Message {
     public final Integer valid_post_num;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String video;
-    @ProtoField(tag = 110)
+    @ProtoField(tag = TbConfig.BIG_PHOTO_MAX_SIZE)
     public final AdInfo video_ad_info;
     @ProtoField(tag = 119)
     public final VideoChannelInfo video_channel_info;

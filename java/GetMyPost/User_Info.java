@@ -5,11 +5,17 @@ import com.squareup.wire.ProtoField;
 import tbclient.GodInfo;
 /* loaded from: classes.dex */
 public final class User_Info extends Message {
+    public static final String DEFAULT_BAWU_TYPE = "";
+    public static final String DEFAULT_FANS_NICKNAME = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
     @ProtoField(tag = 12)
     public final Balv balv;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String bawu_type;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String fans_nickname;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer fans_num;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -18,6 +24,8 @@ public final class User_Info extends Message {
     public final GodInfo god_data;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long id;
+    @ProtoField(tag = 16, type = Message.Datatype.INT32)
+    public final Integer is_bawu;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_login;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -45,6 +53,7 @@ public final class User_Info extends Message {
     public static final Integer DEFAULT_IS_SELECT_TAIL = 0;
     public static final Integer DEFAULT_USERHIDE = 0;
     public static final Integer DEFAULT_FANS_NUM = 0;
+    public static final Integer DEFAULT_IS_BAWU = 0;
 
     private User_Info(Builder builder, boolean z) {
         super(builder);
@@ -108,9 +117,24 @@ public final class User_Info extends Message {
             this.god_data = builder.god_data;
             if (builder.fans_num == null) {
                 this.fans_num = DEFAULT_FANS_NUM;
-                return;
             } else {
                 this.fans_num = builder.fans_num;
+            }
+            if (builder.fans_nickname == null) {
+                this.fans_nickname = "";
+            } else {
+                this.fans_nickname = builder.fans_nickname;
+            }
+            if (builder.is_bawu == null) {
+                this.is_bawu = DEFAULT_IS_BAWU;
+            } else {
+                this.is_bawu = builder.is_bawu;
+            }
+            if (builder.bawu_type == null) {
+                this.bawu_type = "";
+                return;
+            } else {
+                this.bawu_type = builder.bawu_type;
                 return;
             }
         }
@@ -128,15 +152,21 @@ public final class User_Info extends Message {
         this.balv = builder.balv;
         this.god_data = builder.god_data;
         this.fans_num = builder.fans_num;
+        this.fans_nickname = builder.fans_nickname;
+        this.is_bawu = builder.is_bawu;
+        this.bawu_type = builder.bawu_type;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<User_Info> {
         public Balv balv;
+        public String bawu_type;
+        public String fans_nickname;
         public Integer fans_num;
         public Integer gender;
         public GodInfo god_data;
         public Long id;
+        public Integer is_bawu;
         public Integer is_login;
         public Integer is_manager;
         public Integer is_mem;
@@ -167,6 +197,9 @@ public final class User_Info extends Message {
                 this.balv = user_Info.balv;
                 this.god_data = user_Info.god_data;
                 this.fans_num = user_Info.fans_num;
+                this.fans_nickname = user_Info.fans_nickname;
+                this.is_bawu = user_Info.is_bawu;
+                this.bawu_type = user_Info.bawu_type;
             }
         }
 

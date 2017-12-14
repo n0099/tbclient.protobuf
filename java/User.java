@@ -165,6 +165,8 @@ public final class User extends Message {
     public final Integer post_num;
     @ProtoField(tag = 45)
     public final PrivSets priv_sets;
+    @ProtoField(tag = 92, type = Message.Datatype.INT32)
+    public final Integer priv_thread;
     @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeOffLineLocationFail)
     public final List<TwAnchorProfitItem> profit_list;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -260,6 +262,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_LEFT_CALL_NUM = 0;
     public static final Integer DEFAULT_IS_INVITED = 0;
     public static final Integer DEFAULT_IS_FANS = 0;
+    public static final Integer DEFAULT_PRIV_THREAD = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -628,9 +631,14 @@ public final class User extends Message {
             }
             if (builder.is_fans == null) {
                 this.is_fans = DEFAULT_IS_FANS;
-                return;
             } else {
                 this.is_fans = builder.is_fans;
+            }
+            if (builder.priv_thread == null) {
+                this.priv_thread = DEFAULT_PRIV_THREAD;
+                return;
+            } else {
+                this.priv_thread = builder.priv_thread;
                 return;
             }
         }
@@ -725,6 +733,7 @@ public final class User extends Message {
         this.left_call_num = builder.left_call_num;
         this.is_invited = builder.is_invited;
         this.is_fans = builder.is_fans;
+        this.priv_thread = builder.priv_thread;
     }
 
     /* loaded from: classes.dex */
@@ -799,6 +808,7 @@ public final class User extends Message {
         public String portraith;
         public Integer post_num;
         public PrivSets priv_sets;
+        public Integer priv_thread;
         public List<TwAnchorProfitItem> profit_list;
         public String rank;
         public String seal_prefix;
@@ -918,6 +928,7 @@ public final class User extends Message {
                 this.left_call_num = user.left_call_num;
                 this.is_invited = user.is_invited;
                 this.is_fans = user.is_fans;
+                this.priv_thread = user.priv_thread;
             }
         }
 
