@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class ForcusRecommand extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final List<ForcusUsers> DEFAULT_USERS = Collections.emptyList();
@@ -33,7 +33,7 @@ public final class ForcusRecommand extends Message {
         this.users = immutableCopyOf(builder.users);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForcusRecommand> {
         public Integer type;
         public List<ForcusUsers> users;

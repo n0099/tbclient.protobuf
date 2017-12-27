@@ -1,6 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
@@ -24,11 +23,11 @@ public final class DataReq extends Message {
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
-    @ProtoField(tag = d.l.View_translationX)
+    @ProtoField(tag = 51)
     public final AdParam ad_param;
     @ProtoField(tag = 50)
     public final AppPosInfo app_pos;
-    @ProtoField(tag = d.l.View_minWidth, type = Message.Datatype.INT32)
+    @ProtoField(tag = 44, type = Message.Datatype.INT32)
     public final Integer category_id;
     @ProtoField(tag = 20, type = Message.Datatype.BOOL)
     public final Boolean check_login;
@@ -36,19 +35,19 @@ public final class DataReq extends Message {
     public final Integer cid;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer class_id;
-    @ProtoField(tag = d.l.View_filterTouchesWhenObscured)
+    @ProtoField(tag = 39)
     public final CommonReq common;
-    @ProtoField(tag = d.l.View_saveEnabled, type = Message.Datatype.STRING)
+    @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer ctime;
-    @ProtoField(tag = d.l.View_duplicateParentState, type = Message.Datatype.STRING)
+    @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer data_size;
-    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.BOOL)
+    @ProtoField(tag = 37, type = Message.Datatype.BOOL)
     public final Boolean debug;
-    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String email;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String forum_name;
@@ -60,13 +59,13 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.INT32)
+    @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String kw;
-    @ProtoField(tag = d.l.View_onClick, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 48, type = Message.Datatype.UINT64)
     public final Long last_click_tid;
-    @ProtoField(tag = d.l.View_drawingCacheQuality, type = Message.Datatype.STRING)
+    @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String lastids;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer load_type;
@@ -84,11 +83,11 @@ public final class DataReq extends Message {
     public final Integer no_un;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer noval;
-    @ProtoField(tag = d.l.View_translationY, type = Message.Datatype.STRING)
+    @ProtoField(tag = 52, type = Message.Datatype.STRING)
     public final String obj_locate;
-    @ProtoField(tag = d.l.View_transformPivotX, type = Message.Datatype.STRING)
+    @ProtoField(tag = 53, type = Message.Datatype.STRING)
     public final String obj_source;
-    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.STRING)
+    @ProtoField(tag = 43, type = Message.Datatype.STRING)
     public final String platform;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer pn;
@@ -110,7 +109,7 @@ public final class DataReq extends Message {
     public final Integer scr_w;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer smile_grade;
-    @ProtoField(tag = d.l.View_contentDescription, type = Message.Datatype.INT32)
+    @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(tag = 27, type = Message.Datatype.INT32)
     public final Integer st_param;
@@ -128,7 +127,7 @@ public final class DataReq extends Message {
     public final Integer withcal;
     @ProtoField(tag = 45, type = Message.Datatype.STRING)
     public final String yuelaou_locate;
-    @ProtoField(tag = d.l.View_hapticFeedbackEnabled, type = Message.Datatype.STRING)
+    @ProtoField(tag = 46, type = Message.Datatype.STRING)
     public final String yuelaou_params;
     public static final Integer DEFAULT_RN = 0;
     public static final Integer DEFAULT_RN_NEED = 0;

@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -93,7 +92,7 @@ public final class GameInfo extends Message {
     public final Integer player_num;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String schema_url;
-    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 36, type = Message.Datatype.UINT32)
     public final Integer score;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String secret_key;

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
     public final CommonReq common;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
         this.is_comm_reverse = builder.is_comm_reverse;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Integer is_comm_reverse;

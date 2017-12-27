@@ -30,6 +30,8 @@ public final class SimpleForum extends Message {
     public final Integer is_signed;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer level_id;
+    @ProtoField(tag = 11)
+    public final MultiForumPerm multi_forum_perm;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -85,11 +87,11 @@ public final class SimpleForum extends Message {
             }
             if (builder.level_id == null) {
                 this.level_id = DEFAULT_LEVEL_ID;
-                return;
             } else {
                 this.level_id = builder.level_id;
-                return;
             }
+            this.multi_forum_perm = builder.multi_forum_perm;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -101,6 +103,7 @@ public final class SimpleForum extends Message {
         this.second_class = builder.second_class;
         this.ext = builder.ext;
         this.level_id = builder.level_id;
+        this.multi_forum_perm = builder.multi_forum_perm;
     }
 
     /* loaded from: classes.dex */
@@ -113,6 +116,7 @@ public final class SimpleForum extends Message {
         public Integer is_liked;
         public Integer is_signed;
         public Integer level_id;
+        public MultiForumPerm multi_forum_perm;
         public String name;
         public String second_class;
 
@@ -132,6 +136,7 @@ public final class SimpleForum extends Message {
                 this.second_class = simpleForum.second_class;
                 this.ext = simpleForum.ext;
                 this.level_id = simpleForum.level_id;
+                this.multi_forum_perm = simpleForum.multi_forum_perm;
             }
         }
 

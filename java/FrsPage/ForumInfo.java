@@ -1,7 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.location.BDLocation;
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -28,13 +26,13 @@ public final class ForumInfo extends Message {
     public final String accelerate_cotent;
     @ProtoField(tag = 62)
     public final AcrossForumIcon across_forum_hide;
-    @ProtoField(tag = d.l.View_verticalScrollbarPosition)
+    @ProtoField(tag = 60)
     public final AcrossForumIcon across_forum_show;
-    @ProtoField(tag = d.l.View_rotationX)
+    @ProtoField(tag = 56)
     public final Adkiller adkiller_data;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer album_open_photo_frs;
-    @ProtoField(tag = d.l.View_minWidth)
+    @ProtoField(tag = 44)
     public final AnchorPower anchor_power;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String avatar;
@@ -48,7 +46,7 @@ public final class ForumInfo extends Message {
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
-    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.INT32)
+    @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer favo_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String first_class;
@@ -58,19 +56,19 @@ public final class ForumInfo extends Message {
     public final String forum_game_label;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<Calendar> forum_sign_calendar;
-    @ProtoField(tag = d.l.View_rotation)
+    @ProtoField(tag = 55)
     public final MemberShowIcon forumvip_show_icon;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_transformPivotX)
+    @ProtoField(label = Message.Label.REPEATED, tag = 53)
     public final List<GameInfo> game_card;
-    @ProtoField(tag = d.l.View_transformPivotY, type = Message.Datatype.STRING)
+    @ProtoField(tag = 54, type = Message.Datatype.STRING)
     public final String game_name;
-    @ProtoField(tag = d.l.View_contentDescription, type = Message.Datatype.STRING)
+    @ProtoField(tag = 47, type = Message.Datatype.STRING)
     public final String game_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Classify> good_classify;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer has_frs_star;
-    @ProtoField(tag = d.l.View_hapticFeedbackEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer has_game;
     @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer has_paper;
@@ -80,7 +78,7 @@ public final class ForumInfo extends Message {
     public final Long id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer is_exists;
-    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.INT32)
+    @ProtoField(tag = 36, type = Message.Datatype.INT32)
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
@@ -88,7 +86,7 @@ public final class ForumInfo extends Message {
     public final Integer is_live_game;
     @ProtoField(tag = 63, type = Message.Datatype.INT32)
     public final Integer is_live_game_forum;
-    @ProtoField(tag = d.l.View_duplicateParentState, type = Message.Datatype.INT32)
+    @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_local_effect;
     @ProtoField(tag = 65, type = Message.Datatype.INT32)
     public final Integer is_new_game_forum;
@@ -98,7 +96,7 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
-    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.INT32)
+    @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_support_local;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer level_id;
@@ -114,19 +112,19 @@ public final class ForumInfo extends Message {
     public final Integer member_num;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
-    @ProtoField(tag = d.l.View_translationY)
+    @ProtoField(tag = 52)
     public final TopNews news_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = d.l.View_filterTouchesWhenObscured)
+    @ProtoField(tag = 39)
     public final PostPrefix post_prefix;
     @ProtoField(tag = 61)
     public final PostTopic post_topic;
-    @ProtoField(tag = d.l.View_scaleX)
+    @ProtoField(tag = 58)
     public final RealTime realtime_data;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_minHeight)
+    @ProtoField(label = Message.Label.REPEATED, tag = 43)
     public final List<RecommendForum> recommend_forum;
-    @ProtoField(tag = d.l.View_onClick)
+    @ProtoField(tag = 48)
     public final RecomUserInfo recommend_user_info;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String second_class;
@@ -134,25 +132,25 @@ public final class ForumInfo extends Message {
     public final SignInfo sign_in_info;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
-    @ProtoField(tag = d.l.View_drawingCacheQuality, type = Message.Datatype.STRING)
+    @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String superboy;
-    @ProtoField(tag = d.l.View_saveEnabled)
+    @ProtoField(tag = 38)
     public final TagInfo tag_info;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String tids;
-    @ProtoField(tag = d.l.View_translationX)
+    @ProtoField(tag = 51)
     public final TopCode top_code;
     @ProtoField(tag = 28)
     public final TopNotice top_notice;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer user_level;
-    @ProtoField(tag = BDLocation.TypeOffLineLocationFail, type = Message.Datatype.STRING)
+    @ProtoField(tag = 67, type = Message.Datatype.STRING)
     public final String warning_msg;
     @ProtoField(tag = 45)
     public final WorldCup worldcupinfo;
-    @ProtoField(tag = d.l.View_rotationY)
+    @ProtoField(tag = 57)
     public final Yule yule;
     @ProtoField(tag = 16)
     public final Zhibo zhibo;

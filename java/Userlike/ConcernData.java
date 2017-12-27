@@ -3,7 +3,7 @@ package tbclient.Userlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class ConcernData extends Message {
     public static final Integer DEFAULT_RECOM_TYPE = 0;
     @ProtoField(tag = 2)
@@ -31,7 +31,7 @@ public final class ConcernData extends Message {
         this.recom_type = builder.recom_type;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ConcernData> {
         public PostData post_data;
         public Integer recom_type;

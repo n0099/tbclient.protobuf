@@ -1,7 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.location.BDLocation;
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -40,13 +38,15 @@ public final class DataRes extends Message {
     public final Integer ala_insert_floor;
     @ProtoField(label = Message.Label.REPEATED, tag = 75)
     public final List<ThreadInfo> ala_insert_thread;
-    @ProtoField(tag = d.l.View_rotationY, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 57, type = Message.Datatype.UINT32)
     public final Integer ala_live_count;
     @ProtoField(tag = 76)
     public final AlaLiveInsert ala_live_insert;
+    @ProtoField(label = Message.Label.REPEATED, tag = 80)
+    public final List<ThreadInfo> ala_stage_list;
     @ProtoField(tag = 5)
     public final Anti anti;
-    @ProtoField(tag = d.l.View_rotationX, type = Message.Datatype.STRING)
+    @ProtoField(tag = 56, type = Message.Datatype.STRING)
     public final String asp_shown_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 45)
     public final List<BannerThreadInfo> banner_thread_list;
@@ -56,15 +56,15 @@ public final class DataRes extends Message {
     public final String bawu_enter_url;
     @ProtoField(tag = 50)
     public final ForumBookInfo book_info;
-    @ProtoField(tag = d.l.View_scaleX)
+    @ProtoField(tag = 58)
     public final Bottle bottle;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<ThreadInfo> card_shipin_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_rotation)
+    @ProtoField(label = Message.Label.REPEATED, tag = 55)
     public final List<ThreadInfo> card_shipin_new;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_transformPivotY, type = Message.Datatype.INT32)
+    @ProtoField(label = Message.Label.REPEATED, tag = 54, type = Message.Datatype.INT32)
     public final List<Integer> card_shipin_pos;
-    @ProtoField(tag = d.l.View_minHeight)
+    @ProtoField(tag = 43)
     public final CarrierEnter carrier_enter;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
@@ -88,17 +88,17 @@ public final class DataRes extends Message {
     public final ForumArIno forum_ar_info;
     @ProtoField(tag = 72)
     public final ForumHeadIcon forum_head_icon;
-    @ProtoField(tag = d.l.View_translationY)
+    @ProtoField(tag = 52)
     public final ForumHeadlineImgInfo forum_headline_img_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<AnchorInfo> forum_livegroup_list;
-    @ProtoField(tag = d.l.View_translationX)
+    @ProtoField(tag = 51)
     public final ForumPresentInfo forum_present_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = BDLocation.TypeOffLineLocationNetworkFail)
+    @ProtoField(label = Message.Label.REPEATED, tag = 68)
     public final List<FrsTabInfo> frs_game_tab_info;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
-    @ProtoField(tag = d.l.View_saveEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = 38, type = Message.Datatype.INT32)
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
@@ -122,37 +122,35 @@ public final class DataRes extends Message {
     public final AlaLiveNotify live_frs_notify;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
     public final Long logid;
-    @ProtoField(tag = BDLocation.TypeOffLineLocationFail)
+    @ProtoField(tag = 67)
     public final NaGuide na_guide;
-    @ProtoField(tag = d.l.View_longClickable)
+    @ProtoField(tag = 37)
     public final NavTabInfo nav_tab_info;
-    @ProtoField(tag = d.l.View_onClick, type = Message.Datatype.INT32)
+    @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer need_log;
     @ProtoField(tag = 25)
     public final Novel novel;
-    @ProtoField(tag = d.l.View_transformPivotX)
+    @ProtoField(tag = 53)
     public final NtSpreadInfo ntspread;
     @ProtoField(tag = 4)
     public final Page page;
     @ProtoField(tag = 62, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
-    @ProtoField(tag = 79, type = Message.Datatype.UINT32)
-    public final Integer priv_thread;
     @ProtoField(tag = 29)
     public final PushThreadInfo push_thread_info;
-    @ProtoField(tag = d.l.View_hapticFeedbackEnabled)
+    @ProtoField(tag = 46)
     public final RecommendBook recommend_book;
-    @ProtoField(tag = d.l.View_drawingCacheQuality)
+    @ProtoField(tag = 40)
     public final RecommendInfo school_recom_info;
-    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 41, type = Message.Datatype.UINT32)
     public final Integer school_recom_pos;
     @ProtoField(tag = 31)
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
-    @ProtoField(tag = d.l.View_contentDescription, type = Message.Datatype.INT32)
+    @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer smart_frs_type;
-    @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
@@ -178,7 +176,7 @@ public final class DataRes extends Message {
     public final List<User> user_list;
     @ProtoField(tag = 73)
     public final FrsVideo video;
-    @ProtoField(tag = d.l.View_duplicateParentState)
+    @ProtoField(tag = 42)
     public final VitalityInfo vitality_info;
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<Long> DEFAULT_THREAD_ID_LIST = Collections.emptyList();
@@ -212,7 +210,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_GAME_DEFAULT_TAB_ID = 0;
     public static final List<ThreadInfo> DEFAULT_ALA_INSERT_THREAD = Collections.emptyList();
     public static final Integer DEFAULT_ALA_INSERT_FLOOR = 0;
-    public static final Integer DEFAULT_PRIV_THREAD = 0;
+    public static final List<ThreadInfo> DEFAULT_ALA_STAGE_LIST = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -434,11 +432,11 @@ public final class DataRes extends Message {
                 this.ala_insert_floor = builder.ala_insert_floor;
             }
             this.forum_ar_info = builder.forum_ar_info;
-            if (builder.priv_thread == null) {
-                this.priv_thread = DEFAULT_PRIV_THREAD;
+            if (builder.ala_stage_list == null) {
+                this.ala_stage_list = DEFAULT_ALA_STAGE_LIST;
                 return;
             } else {
-                this.priv_thread = builder.priv_thread;
+                this.ala_stage_list = immutableCopyOf(builder.ala_stage_list);
                 return;
             }
         }
@@ -515,7 +513,7 @@ public final class DataRes extends Message {
         this.ala_live_insert = builder.ala_live_insert;
         this.ala_insert_floor = builder.ala_insert_floor;
         this.forum_ar_info = builder.forum_ar_info;
-        this.priv_thread = builder.priv_thread;
+        this.ala_stage_list = immutableCopyOf(builder.ala_stage_list);
     }
 
     /* loaded from: classes.dex */
@@ -526,6 +524,7 @@ public final class DataRes extends Message {
         public List<ThreadInfo> ala_insert_thread;
         public Integer ala_live_count;
         public AlaLiveInsert ala_live_insert;
+        public List<ThreadInfo> ala_stage_list;
         public Anti anti;
         public String asp_shown_info;
         public List<BannerThreadInfo> banner_thread_list;
@@ -572,7 +571,6 @@ public final class DataRes extends Message {
         public NtSpreadInfo ntspread;
         public Page page;
         public String partial_visible_toast;
-        public Integer priv_thread;
         public PushThreadInfo push_thread_info;
         public RecommendBook recommend_book;
         public RecommendInfo school_recom_info;
@@ -674,7 +672,7 @@ public final class DataRes extends Message {
                 this.ala_live_insert = dataRes.ala_live_insert;
                 this.ala_insert_floor = dataRes.ala_insert_floor;
                 this.forum_ar_info = dataRes.forum_ar_info;
-                this.priv_thread = dataRes.priv_thread;
+                this.ala_stage_list = DataRes.copyOf(dataRes.ala_stage_list);
             }
         }
 

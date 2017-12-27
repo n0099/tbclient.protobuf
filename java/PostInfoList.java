@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -21,11 +20,11 @@ public final class PostInfoList extends Message {
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<Abstract> abstract_thread;
-    @ProtoField(tag = d.l.View_drawingCacheQuality)
+    @ProtoField(tag = 40)
     public final Agree agree;
-    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.INT32)
+    @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer agree_num;
-    @ProtoField(tag = d.l.View_clickable)
+    @ProtoField(tag = 36)
     public final AlaLiveInfo ala_info;
     @ProtoField(tag = 24)
     public final AnchorInfo anchor_info;
@@ -51,13 +50,13 @@ public final class PostInfoList extends Message {
     public final Boolean is_deal;
     @ProtoField(tag = 12, type = Message.Datatype.UINT32)
     public final Integer is_post_deleted;
-    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.INT32)
+    @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_remain;
-    @ProtoField(tag = d.l.View_minWidth, type = Message.Datatype.INT32)
+    @ProtoField(tag = 44, type = Message.Datatype.INT32)
     public final Integer is_share_thread;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer is_thread;
-    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.INT32)
+    @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_view_year;
     @ProtoField(tag = 21)
     public final LbsInfo lbs_info;
@@ -67,7 +66,7 @@ public final class PostInfoList extends Message {
     public final List<MultipleForum> multiple_forum_list;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String name_show;
-    @ProtoField(tag = d.l.View_duplicateParentState)
+    @ProtoField(tag = 42)
     public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 28)
     public final PollInfo poll_info;
@@ -81,7 +80,7 @@ public final class PostInfoList extends Message {
     public final Quote quote;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer reply_num;
-    @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer share_num;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
@@ -101,7 +100,7 @@ public final class PostInfoList extends Message {
     public final Long v_forum_id;
     @ProtoField(tag = 29)
     public final VideoInfo video_info;
-    @ProtoField(tag = d.l.View_saveEnabled, type = Message.Datatype.INT32)
+    @ProtoField(tag = 38, type = Message.Datatype.INT32)
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;

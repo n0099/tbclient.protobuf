@@ -7,10 +7,11 @@ public final class BlockPopInfo extends Message {
     public static final String DEFAULT_AHEAD_INFO = "";
     public static final String DEFAULT_AHEAD_URL = "";
     public static final String DEFAULT_BLOCK_INFO = "";
-    public static final Integer DEFAULT_CAN_POST = 0;
     public static final String DEFAULT_OK_INFO = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String ahead_info;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer ahead_type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String ahead_url;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,6 +20,8 @@ public final class BlockPopInfo extends Message {
     public final Integer can_post;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String ok_info;
+    public static final Integer DEFAULT_CAN_POST = 0;
+    public static final Integer DEFAULT_AHEAD_TYPE = 0;
 
     private BlockPopInfo(Builder builder, boolean z) {
         super(builder);
@@ -45,9 +48,14 @@ public final class BlockPopInfo extends Message {
             }
             if (builder.ok_info == null) {
                 this.ok_info = "";
-                return;
             } else {
                 this.ok_info = builder.ok_info;
+            }
+            if (builder.ahead_type == null) {
+                this.ahead_type = DEFAULT_AHEAD_TYPE;
+                return;
+            } else {
+                this.ahead_type = builder.ahead_type;
                 return;
             }
         }
@@ -56,11 +64,13 @@ public final class BlockPopInfo extends Message {
         this.ahead_info = builder.ahead_info;
         this.ahead_url = builder.ahead_url;
         this.ok_info = builder.ok_info;
+        this.ahead_type = builder.ahead_type;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<BlockPopInfo> {
         public String ahead_info;
+        public Integer ahead_type;
         public String ahead_url;
         public String block_info;
         public Integer can_post;
@@ -77,6 +87,7 @@ public final class BlockPopInfo extends Message {
                 this.ahead_info = blockPopInfo.ahead_info;
                 this.ahead_url = blockPopInfo.ahead_url;
                 this.ok_info = blockPopInfo.ok_info;
+                this.ahead_type = blockPopInfo.ahead_type;
             }
         }
 

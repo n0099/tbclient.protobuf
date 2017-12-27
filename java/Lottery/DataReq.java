@@ -3,7 +3,7 @@ package tbclient.Lottery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_USER_NAME = "";
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -90,7 +90,7 @@ public final class DataReq extends Message {
         this.component_id = builder.component_id;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long activity_id;
         public Long award_act_id;

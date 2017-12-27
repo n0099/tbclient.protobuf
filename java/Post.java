@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -19,7 +18,7 @@ public final class Post extends Message {
     public final AddPostList add_post_list;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer add_post_number;
-    @ProtoField(tag = d.l.View_longClickable)
+    @ProtoField(tag = 37)
     public final Agree agree;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
     public final List<String> arr_video;
@@ -35,25 +34,25 @@ public final class Post extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
-    @ProtoField(tag = d.l.View_saveEnabled)
+    @ProtoField(tag = 38)
     public final SimpleForum from_forum;
     @ProtoField(tag = 33)
     public final TogetherHi high_together;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
-    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.INT32)
+    @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer img_num_abtest;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String ios_bimg_format;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer is_bub;
-    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.INT32)
+    @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_fold;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer is_hot_post;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer is_ntitle;
-    @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.INT32)
+    @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_post_visible;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer is_voice;
@@ -61,11 +60,11 @@ public final class Post extends Message {
     public final Integer is_vote;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
-    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String lego_card;
-    @ProtoField(tag = d.l.View_drawingCacheQuality, type = Message.Datatype.INT32)
+    @ProtoField(tag = 40, type = Message.Datatype.INT32)
     public final Integer need_log;
-    @ProtoField(tag = d.l.View_duplicateParentState)
+    @ProtoField(tag = 42)
     public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 35)
     public final DealInfo pb_deal_info;

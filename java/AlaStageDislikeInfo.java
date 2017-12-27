@@ -1,9 +1,9 @@
-package tbclient.Personalized;
+package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
-public final class DislikeReason extends Message {
+/* loaded from: classes.dex */
+public final class AlaStageDislikeInfo extends Message {
     public static final Integer DEFAULT_DISLIKE_ID = 0;
     public static final String DEFAULT_DISLIKE_REASON = "";
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -11,7 +11,7 @@ public final class DislikeReason extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String dislike_reason;
 
-    private DislikeReason(Builder builder, boolean z) {
+    private AlaStageDislikeInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
             if (builder.dislike_reason == null) {
@@ -31,26 +31,26 @@ public final class DislikeReason extends Message {
         this.dislike_id = builder.dislike_id;
     }
 
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<DislikeReason> {
+    /* loaded from: classes.dex */
+    public static final class Builder extends Message.Builder<AlaStageDislikeInfo> {
         public Integer dislike_id;
         public String dislike_reason;
 
         public Builder() {
         }
 
-        public Builder(DislikeReason dislikeReason) {
-            super(dislikeReason);
-            if (dislikeReason != null) {
-                this.dislike_reason = dislikeReason.dislike_reason;
-                this.dislike_id = dislikeReason.dislike_id;
+        public Builder(AlaStageDislikeInfo alaStageDislikeInfo) {
+            super(alaStageDislikeInfo);
+            if (alaStageDislikeInfo != null) {
+                this.dislike_reason = alaStageDislikeInfo.dislike_reason;
+                this.dislike_id = alaStageDislikeInfo.dislike_id;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DislikeReason build(boolean z) {
-            return new DislikeReason(this, z);
+        public AlaStageDislikeInfo build(boolean z) {
+            return new AlaStageDislikeInfo(this, z);
         }
     }
 }

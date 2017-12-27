@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
@@ -11,8 +10,8 @@ public final class PbContent extends Message {
     public static final String DEFAULT_BSIZE = "";
     public static final String DEFAULT_C = "";
     public static final String DEFAULT_CDN_SRC = "";
+    public static final String DEFAULT_CDN_SRC_ACTIVE = "";
     public static final String DEFAULT_DYNAMIC = "";
-    public static final String DEFAULT_ID = "";
     public static final String DEFAULT_IMGTYPE = "";
     public static final String DEFAULT_LINK = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
@@ -39,6 +38,8 @@ public final class PbContent extends Message {
     public final String c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    public final String cdn_src_active;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer count;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
@@ -53,8 +54,6 @@ public final class PbContent extends Message {
     public final Integer height;
     @ProtoField(tag = 30)
     public final TogetherHi high_together;
-    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.STRING)
-    public final String id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String imgtype;
     @ProtoField(tag = 34, type = Message.Datatype.UINT32)
@@ -272,11 +271,11 @@ public final class PbContent extends Message {
             } else {
                 this.show_original_btn = builder.show_original_btn;
             }
-            if (builder.id == null) {
-                this.id = "";
+            if (builder.cdn_src_active == null) {
+                this.cdn_src_active = "";
                 return;
             } else {
-                this.id = builder.id;
+                this.cdn_src_active = builder.cdn_src_active;
                 return;
             }
         }
@@ -315,7 +314,7 @@ public final class PbContent extends Message {
         this.meme_info = builder.meme_info;
         this.is_long_pic = builder.is_long_pic;
         this.show_original_btn = builder.show_original_btn;
-        this.id = builder.id;
+        this.cdn_src_active = builder.cdn_src_active;
     }
 
     /* loaded from: classes.dex */
@@ -328,6 +327,7 @@ public final class PbContent extends Message {
         public Integer btn_type;
         public String c;
         public String cdn_src;
+        public String cdn_src_active;
         public Integer count;
         public Integer during_time;
         public String dynamic;
@@ -335,7 +335,6 @@ public final class PbContent extends Message {
         public GraffitiInfo graffiti_info;
         public Integer height;
         public TogetherHi high_together;
-        public String id;
         public String imgtype;
         public Integer is_long_pic;
         public Integer is_native_app;
@@ -398,7 +397,7 @@ public final class PbContent extends Message {
                 this.meme_info = pbContent.meme_info;
                 this.is_long_pic = pbContent.is_long_pic;
                 this.show_original_btn = pbContent.show_original_btn;
-                this.id = pbContent.id;
+                this.cdn_src_active = pbContent.cdn_src_active;
             }
         }
 

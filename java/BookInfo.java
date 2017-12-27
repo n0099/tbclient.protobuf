@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -47,11 +46,11 @@ public final class BookInfo extends Message {
     public final Integer book_size;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer book_type;
-    @ProtoField(tag = d.l.View_clickable, type = Message.Datatype.STRING)
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String book_ver;
-    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.STRING)
+    @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String chapter_ver;
-    @ProtoField(tag = d.l.View_minWidth, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 44, type = Message.Datatype.UINT32)
     public final Integer charge_type;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer class_id;
@@ -63,7 +62,7 @@ public final class BookInfo extends Message {
     public final String copyright_text;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String cover;
-    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.STRING)
+    @ProtoField(tag = 41, type = Message.Datatype.STRING)
     public final String cp_id;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String discount_icon;
@@ -71,13 +70,13 @@ public final class BookInfo extends Message {
     public final String discount_ratio;
     @ProtoField(tag = 32, type = Message.Datatype.UINT32)
     public final Integer discount_type;
-    @ProtoField(tag = d.l.View_drawingCacheQuality, type = Message.Datatype.STRING)
+    @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String discuss;
-    @ProtoField(tag = d.l.View_minHeight, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 43, type = Message.Datatype.UINT32)
     public final Integer first_chapter;
-    @ProtoField(tag = d.l.View_saveEnabled, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 38, type = Message.Datatype.UINT64)
     public final Long forum_id;
-    @ProtoField(tag = d.l.View_filterTouchesWhenObscured, type = Message.Datatype.STRING)
+    @ProtoField(tag = 39, type = Message.Datatype.STRING)
     public final String forum_name;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String free_info;
@@ -93,7 +92,7 @@ public final class BookInfo extends Message {
     public final Integer member_show_type;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer orignal_price;
-    @ProtoField(tag = d.l.View_duplicateParentState, type = Message.Datatype.STRING)
+    @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String paper_price;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer price;

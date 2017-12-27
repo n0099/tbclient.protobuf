@@ -1,6 +1,5 @@
 package tbclient.PbPage;
 
-import com.baidu.tieba.d;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -27,6 +26,8 @@ import tbclient.User;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
+    public static final String DEFAULT_FOLD_TIP = "";
+    public static final String DEFAULT_MULTI_FORUM_TEXT = "";
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
     @ProtoField(tag = 5)
     public final AddPost add_post;
@@ -40,23 +41,29 @@ public final class DataRes extends Message {
     public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
-    @ProtoField(tag = d.l.View_filterTouchesWhenObscured)
+    @ProtoField(tag = 39)
     public final SimpleForum display_forum;
+    @ProtoField(tag = 46, type = Message.Datatype.INT32)
+    public final Integer exp_guide_today;
+    @ProtoField(tag = 45, type = Message.Datatype.INT32)
+    public final Integer exp_news_today;
     @ProtoField(tag = 33)
     public final FeedExtInfo feed_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 30)
     public final List<ThreadInfo> feed_thread_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<FineBannerPb> fine_banner;
-    @ProtoField(tag = d.l.View_saveEnabled)
+    @ProtoField(tag = 38)
     public final Post first_floor_post;
-    @ProtoField(tag = d.l.View_minHeight)
+    @ProtoField(tag = 44, type = Message.Datatype.STRING)
+    public final String fold_tip;
+    @ProtoField(tag = 43)
     public final PbFollowTip follow_tip;
     @ProtoField(tag = 2)
     public final SimpleForum forum;
     @ProtoField(tag = 27)
     public final ForumHeadlineImgInfo forum_headline_img_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_clickable)
+    @ProtoField(label = Message.Label.REPEATED, tag = 36)
     public final List<SimpleForum> from_forum_list;
     @ProtoField(tag = 23)
     public final GodCard god_card;
@@ -74,15 +81,17 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 9)
     public final Lbs location;
-    @ProtoField(tag = d.l.View_duplicateParentState)
+    @ProtoField(tag = 47, type = Message.Datatype.STRING)
+    public final String multi_forum_text;
+    @ProtoField(tag = 42)
     public final NaGuide na_guide;
-    @ProtoField(label = Message.Label.REPEATED, tag = d.l.View_drawingCacheQuality)
+    @ProtoField(label = Message.Label.REPEATED, tag = 40)
     public final List<SimpleUser> new_agree_user;
     @ProtoField(tag = 15)
     public final NewsInfo news_info;
     @ProtoField(tag = 3)
     public final Page page;
-    @ProtoField(tag = d.l.View_keepScreenOn, type = Message.Datatype.STRING)
+    @ProtoField(tag = 41, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
     public final List<PsRankListItem> play_rank_list;
@@ -104,7 +113,7 @@ public final class DataRes extends Message {
     public final Integer switch_read_open;
     @ProtoField(tag = 8)
     public final ThreadInfo thread;
-    @ProtoField(tag = d.l.View_longClickable, type = Message.Datatype.INT64)
+    @ProtoField(tag = 37, type = Message.Datatype.INT64)
     public final Long thread_freq_num;
     @ProtoField(tag = 34)
     public final PbTopAgreePost top_agree_post_list;
@@ -130,6 +139,8 @@ public final class DataRes extends Message {
     public static final List<SimpleForum> DEFAULT_FROM_FORUM_LIST = Collections.emptyList();
     public static final Long DEFAULT_THREAD_FREQ_NUM = 0L;
     public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER = Collections.emptyList();
+    public static final Integer DEFAULT_EXP_NEWS_TODAY = 0;
+    public static final Integer DEFAULT_EXP_GUIDE_TODAY = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -249,7 +260,28 @@ public final class DataRes extends Message {
             }
             this.na_guide = builder.na_guide;
             this.follow_tip = builder.follow_tip;
-            return;
+            if (builder.fold_tip == null) {
+                this.fold_tip = "";
+            } else {
+                this.fold_tip = builder.fold_tip;
+            }
+            if (builder.exp_news_today == null) {
+                this.exp_news_today = DEFAULT_EXP_NEWS_TODAY;
+            } else {
+                this.exp_news_today = builder.exp_news_today;
+            }
+            if (builder.exp_guide_today == null) {
+                this.exp_guide_today = DEFAULT_EXP_GUIDE_TODAY;
+            } else {
+                this.exp_guide_today = builder.exp_guide_today;
+            }
+            if (builder.multi_forum_text == null) {
+                this.multi_forum_text = "";
+                return;
+            } else {
+                this.multi_forum_text = builder.multi_forum_text;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -294,6 +326,10 @@ public final class DataRes extends Message {
         this.partial_visible_toast = builder.partial_visible_toast;
         this.na_guide = builder.na_guide;
         this.follow_tip = builder.follow_tip;
+        this.fold_tip = builder.fold_tip;
+        this.exp_news_today = builder.exp_news_today;
+        this.exp_guide_today = builder.exp_guide_today;
+        this.multi_forum_text = builder.multi_forum_text;
     }
 
     /* loaded from: classes.dex */
@@ -305,10 +341,13 @@ public final class DataRes extends Message {
         public String asp_shown_info;
         public BannerList banner_list;
         public SimpleForum display_forum;
+        public Integer exp_guide_today;
+        public Integer exp_news_today;
         public FeedExtInfo feed_info;
         public List<ThreadInfo> feed_thread_list;
         public List<FineBannerPb> fine_banner;
         public Post first_floor_post;
+        public String fold_tip;
         public PbFollowTip follow_tip;
         public SimpleForum forum;
         public ForumHeadlineImgInfo forum_headline_img_info;
@@ -321,6 +360,7 @@ public final class DataRes extends Message {
         public Integer is_follow_current_channel;
         public Integer is_new_url;
         public Lbs location;
+        public String multi_forum_text;
         public NaGuide na_guide;
         public List<SimpleUser> new_agree_user;
         public NewsInfo news_info;
@@ -391,6 +431,10 @@ public final class DataRes extends Message {
                 this.partial_visible_toast = dataRes.partial_visible_toast;
                 this.na_guide = dataRes.na_guide;
                 this.follow_tip = dataRes.follow_tip;
+                this.fold_tip = dataRes.fold_tip;
+                this.exp_news_today = dataRes.exp_news_today;
+                this.exp_guide_today = dataRes.exp_guide_today;
+                this.multi_forum_text = dataRes.multi_forum_text;
             }
         }
 

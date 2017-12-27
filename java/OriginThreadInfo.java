@@ -17,6 +17,8 @@ public final class OriginThreadInfo extends Message {
     public final Long fid;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String fname;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer is_deleted;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Media> media;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -29,6 +31,7 @@ public final class OriginThreadInfo extends Message {
     public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
     public static final Long DEFAULT_FID = 0L;
     public static final Integer DEFAULT_THREAD_TYPE = 0;
+    public static final Integer DEFAULT_IS_DELETED = 0;
 
     private OriginThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -66,9 +69,14 @@ public final class OriginThreadInfo extends Message {
             }
             if (builder.thread_type == null) {
                 this.thread_type = DEFAULT_THREAD_TYPE;
-                return;
             } else {
                 this.thread_type = builder.thread_type;
+            }
+            if (builder.is_deleted == null) {
+                this.is_deleted = DEFAULT_IS_DELETED;
+                return;
+            } else {
+                this.is_deleted = builder.is_deleted;
                 return;
             }
         }
@@ -80,6 +88,7 @@ public final class OriginThreadInfo extends Message {
         this.ala_info = builder.ala_info;
         this.fid = builder.fid;
         this.thread_type = builder.thread_type;
+        this.is_deleted = builder.is_deleted;
     }
 
     /* loaded from: classes.dex */
@@ -88,6 +97,7 @@ public final class OriginThreadInfo extends Message {
         public AlaLiveInfo ala_info;
         public Long fid;
         public String fname;
+        public Integer is_deleted;
         public List<Media> media;
         public Integer thread_type;
         public String tid;
@@ -107,6 +117,7 @@ public final class OriginThreadInfo extends Message {
                 this.ala_info = originThreadInfo.ala_info;
                 this.fid = originThreadInfo.fid;
                 this.thread_type = originThreadInfo.thread_type;
+                this.is_deleted = originThreadInfo.is_deleted;
             }
         }
 

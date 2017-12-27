@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AGE_TAG = "";
     public static final String DEFAULT_DA_IDFA = "";
@@ -32,6 +32,8 @@ public final class DataReq extends Message {
     public final Integer need_forumlist;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer need_tags;
+    @ProtoField(tag = 23, type = Message.Datatype.UINT32)
+    public final Integer new_net_type;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer page_thread_count;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -69,6 +71,7 @@ public final class DataReq extends Message {
     public static final List<String> DEFAULT_INTEREST_TAG = Collections.emptyList();
     public static final Integer DEFAULT_TAG_CHANGED = 0;
     public static final Integer DEFAULT_NEED_FORUMLIST = 0;
+    public static final Integer DEFAULT_NEW_NET_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -171,9 +174,14 @@ public final class DataReq extends Message {
             }
             if (builder.need_forumlist == null) {
                 this.need_forumlist = DEFAULT_NEED_FORUMLIST;
-                return;
             } else {
                 this.need_forumlist = builder.need_forumlist;
+            }
+            if (builder.new_net_type == null) {
+                this.new_net_type = DEFAULT_NEW_NET_TYPE;
+                return;
+            } else {
+                this.new_net_type = builder.new_net_type;
                 return;
             }
         }
@@ -198,9 +206,10 @@ public final class DataReq extends Message {
         this.interest_tag = immutableCopyOf(builder.interest_tag);
         this.tag_changed = builder.tag_changed;
         this.need_forumlist = builder.need_forumlist;
+        this.new_net_type = builder.new_net_type;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String age_tag;
         public CommonReq common;
@@ -212,6 +221,7 @@ public final class DataReq extends Message {
         public Integer need_age_module;
         public Integer need_forumlist;
         public Integer need_tags;
+        public Integer new_net_type;
         public Integer page_thread_count;
         public String platform;
         public Integer pn;
@@ -251,6 +261,7 @@ public final class DataReq extends Message {
                 this.interest_tag = DataReq.copyOf(dataReq.interest_tag);
                 this.tag_changed = dataReq.tag_changed;
                 this.need_forumlist = dataReq.need_forumlist;
+                this.new_net_type = dataReq.new_net_type;
             }
         }
 

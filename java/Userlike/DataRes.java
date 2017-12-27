@@ -4,13 +4,16 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.BannerFollowLive;
 import tbclient.BannerUserStory;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_LAST_TIPS = "";
     public static final String DEFAULT_PAGE_TAG = "";
     public static final String DEFAULT_TOP_TIPS = "";
     public static final String DEFAULT_USER_TIPS = "";
+    @ProtoField(tag = 13)
+    public final BannerFollowLive banner_follow_live;
     @ProtoField(tag = 6)
     public final BannerUserStory banner_user_story;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -86,11 +89,11 @@ public final class DataRes extends Message {
             }
             if (builder.top_tips == null) {
                 this.top_tips = "";
-                return;
             } else {
                 this.top_tips = builder.top_tips;
-                return;
             }
+            this.banner_follow_live = builder.banner_follow_live;
+            return;
         }
         this.thread_info = immutableCopyOf(builder.thread_info);
         this.page_tag = builder.page_tag;
@@ -103,10 +106,12 @@ public final class DataRes extends Message {
         this.req_unix = builder.req_unix;
         this.user_tips_type = builder.user_tips_type;
         this.top_tips = builder.top_tips;
+        this.banner_follow_live = builder.banner_follow_live;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public BannerFollowLive banner_follow_live;
         public BannerUserStory banner_user_story;
         public Integer has_more;
         public String last_tips;
@@ -136,6 +141,7 @@ public final class DataRes extends Message {
                 this.req_unix = dataRes.req_unix;
                 this.user_tips_type = dataRes.user_tips_type;
                 this.top_tips = dataRes.top_tips;
+                this.banner_follow_live = dataRes.banner_follow_live;
             }
         }
 

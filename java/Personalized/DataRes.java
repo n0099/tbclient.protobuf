@@ -4,14 +4,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_STAT_KEY = "";
     @ProtoField(tag = 10)
     public final AgeSexModule age_sex;
+    @ProtoField(tag = 16)
+    public final Anti anti;
     @ProtoField(tag = 9)
     public final BannerList banner_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
@@ -30,6 +33,8 @@ public final class DataRes extends Message {
     public final List<Resource> resource_list;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String stat_key;
+    @ProtoField(tag = 15, type = Message.Datatype.INT32)
+    public final Integer style_ab_tag;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer sug_seconds;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -49,6 +54,7 @@ public final class DataRes extends Message {
     public static final List<TagStruct> DEFAULT_INTERESTION = Collections.emptyList();
     public static final List<CardGod> DEFAULT_CARD_GOD = Collections.emptyList();
     public static final List<SimpleForum> DEFAULT_LIKE_FORUMS = Collections.emptyList();
+    public static final Integer DEFAULT_STYLE_AB_TAG = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -112,11 +118,16 @@ public final class DataRes extends Message {
             }
             if (builder.like_forums == null) {
                 this.like_forums = DEFAULT_LIKE_FORUMS;
-                return;
             } else {
                 this.like_forums = immutableCopyOf(builder.like_forums);
-                return;
             }
+            if (builder.style_ab_tag == null) {
+                this.style_ab_tag = DEFAULT_STYLE_AB_TAG;
+            } else {
+                this.style_ab_tag = builder.style_ab_tag;
+            }
+            this.anti = builder.anti;
+            return;
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
         this.thread_list = immutableCopyOf(builder.thread_list);
@@ -132,11 +143,14 @@ public final class DataRes extends Message {
         this.card_god = immutableCopyOf(builder.card_god);
         this.stat_key = builder.stat_key;
         this.like_forums = immutableCopyOf(builder.like_forums);
+        this.style_ab_tag = builder.style_ab_tag;
+        this.anti = builder.anti;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AgeSexModule age_sex;
+        public Anti anti;
         public BannerList banner_list;
         public List<CardForum> card_forum;
         public List<CardGod> card_god;
@@ -146,6 +160,7 @@ public final class DataRes extends Message {
         public List<SimpleForum> like_forums;
         public List<Resource> resource_list;
         public String stat_key;
+        public Integer style_ab_tag;
         public Integer sug_seconds;
         public List<TagInfo> tag_list;
         public List<ThreadInfo> thread_list;
@@ -171,6 +186,8 @@ public final class DataRes extends Message {
                 this.card_god = DataRes.copyOf(dataRes.card_god);
                 this.stat_key = dataRes.stat_key;
                 this.like_forums = DataRes.copyOf(dataRes.like_forums);
+                this.style_ab_tag = dataRes.style_ab_tag;
+                this.anti = dataRes.anti;
             }
         }
 

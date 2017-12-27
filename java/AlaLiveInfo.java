@@ -2,6 +2,8 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes.dex */
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
@@ -53,6 +55,8 @@ public final class AlaLiveInfo extends Message {
     public final String session_id;
     @ProtoField(tag = 19)
     public final AlaShareInfo share_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 23)
+    public final List<AlaStageDislikeInfo> stage_dislike_info;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String third_app_id;
     @ProtoField(tag = 22, type = Message.Datatype.UINT64)
@@ -68,6 +72,7 @@ public final class AlaLiveInfo extends Message {
     public static final Integer DEFAULT_LIVE_STATUS = 0;
     public static final Long DEFAULT_DISTANCE = 0L;
     public static final Long DEFAULT_THREAD_ID = 0L;
+    public static final List<AlaStageDislikeInfo> DEFAULT_STAGE_DISLIKE_INFO = Collections.emptyList();
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -171,9 +176,14 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.thread_id == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
-                return;
             } else {
                 this.thread_id = builder.thread_id;
+            }
+            if (builder.stage_dislike_info == null) {
+                this.stage_dislike_info = DEFAULT_STAGE_DISLIKE_INFO;
+                return;
+            } else {
+                this.stage_dislike_info = immutableCopyOf(builder.stage_dislike_info);
                 return;
             }
         }
@@ -199,6 +209,7 @@ public final class AlaLiveInfo extends Message {
         this.distance = builder.distance;
         this.third_app_id = builder.third_app_id;
         this.thread_id = builder.thread_id;
+        this.stage_dislike_info = immutableCopyOf(builder.stage_dislike_info);
     }
 
     /* loaded from: classes.dex */
@@ -222,6 +233,7 @@ public final class AlaLiveInfo extends Message {
         public Integer screen_direction;
         public String session_id;
         public AlaShareInfo share_info;
+        public List<AlaStageDislikeInfo> stage_dislike_info;
         public String third_app_id;
         public Long thread_id;
         public AlaUserInfo user_info;
@@ -254,6 +266,7 @@ public final class AlaLiveInfo extends Message {
                 this.distance = alaLiveInfo.distance;
                 this.third_app_id = alaLiveInfo.third_app_id;
                 this.thread_id = alaLiveInfo.thread_id;
+                this.stage_dislike_info = AlaLiveInfo.copyOf(alaLiveInfo.stage_dislike_info);
             }
         }
 
