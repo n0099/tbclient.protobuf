@@ -41,4 +41,5 @@ message PbContent {
     MemeInfo meme_info = 33;
     uint32 is_long_pic = 34;
     uint32 show_original_btn = 35;
+    string cdn_src_active = 36;
 }

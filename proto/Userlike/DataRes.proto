@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "BannerFollowLive.proto";
 import "BannerUserStory.proto";
 import "Userlike/ConcernData.proto";
 import "Userlike/UserList.proto";
@@ -16,4 +17,5 @@ message DataRes {
     uint64 req_unix = 10;
     int32 user_tips_type = 11;
     string top_tips = 12;
+    BannerFollowLive banner_follow_live = 13;
 }

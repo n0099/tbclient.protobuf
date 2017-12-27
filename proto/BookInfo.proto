@@ -38,5 +38,14 @@ message BookInfo {
     string discount_icon = 33;
     uint32 read_count = 34;
     uint32 total_page = 35;
+    string book_ver = 36;
+    string chapter_ver = 37;
+    uint64 forum_id = 38;
+    string forum_name = 39;
+    string discuss = 40;
+    string cp_id = 41;
+    string paper_price = 42;
+    uint32 first_chapter = 43;
+    uint32 charge_type = 44;
     uint32 member_show_type = 45;
 }

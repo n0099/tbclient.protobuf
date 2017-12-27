@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "MultiForumPerm.proto";
+
 message SimpleForum {
     int64 id = 1;
     string name = 2;
@@ -11,4 +13,5 @@ message SimpleForum {
     string second_class = 8;
     string ext = 9;
     uint32 level_id = 10;
+    MultiForumPerm multi_forum_perm = 11;
 }

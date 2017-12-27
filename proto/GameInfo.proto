@@ -36,4 +36,5 @@ message GameInfo {
     string subscript_color = 33;
     string launchComponent = 34;
     string category_name_sim = 35;
+    uint32 score = 36;
 }

@@ -24,4 +24,5 @@ message DataReq {
     repeated string interest_tag = 20;
     uint32 tag_changed = 21;
     uint32 need_forumlist = 22;
+    uint32 new_net_type = 23;
 }

@@ -6,4 +6,5 @@ message BlockPopInfo {
     string ahead_info = 3;
     string ahead_url = 4;
     string ok_info = 5;
+    int32 ahead_type = 6;
 }

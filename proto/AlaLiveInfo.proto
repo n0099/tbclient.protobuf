@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "AlaShareInfo.proto";
+import "AlaStageDislikeInfo.proto";
 import "AlaUserInfo.proto";
 
 message AlaLiveInfo {
@@ -26,4 +27,5 @@ message AlaLiveInfo {
     uint64 distance = 20;
     string third_app_id = 21;
     uint64 thread_id = 22;
+    repeated AlaStageDislikeInfo stage_dislike_info = 23;
 }

@@ -16,6 +16,7 @@ import "PbPage/ForumHeadlineImgInfo.proto";
 import "PbPage/GodCard.proto";
 import "PbPage/GuessLikeStruct.proto";
 import "PbPage/NewsInfo.proto";
+import "PbPage/PbFollowTip.proto";
 import "PbPage/PostBanner.proto";
 import "PbPage/RecommendBook.proto";
 import "PbTopAgreePost.proto";
@@ -65,4 +66,16 @@ message DataRes {
     FeedExtInfo feed_info = 33;
     PbTopAgreePost top_agree_post_list = 34;
     repeated SimpleForum repost_recommend_forum_list = 35;
+    repeated SimpleForum from_forum_list = 36;
+    int64 thread_freq_num = 37;
+    Post first_floor_post = 38;
+    SimpleForum display_forum = 39;
+    repeated SimpleUser new_agree_user = 40;
+    string partial_visible_toast = 41;
+    NaGuide na_guide = 42;
+    PbFollowTip follow_tip = 43;
+    string fold_tip = 44;
+    int32 exp_news_today = 45;
+    int32 exp_guide_today = 46;
+    string multi_forum_text = 47;
 }
