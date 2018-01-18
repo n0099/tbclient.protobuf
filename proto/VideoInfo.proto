@@ -16,4 +16,5 @@ message VideoInfo {
     string media_subtitle = 11;
     repeated VideoDesc video_desc = 12;
     int32 video_select_flag = 13;
+    uint32 video_type = 14;
 }

@@ -6,6 +6,8 @@ import "Personalized/AgeSexModule.proto";
 import "Personalized/CardForum.proto";
 import "Personalized/CardGod.proto";
 import "Personalized/CardTopic.proto";
+import "Personalized/FloatInfo.proto";
+import "Personalized/LiveAnswer.proto";
 import "Personalized/Resource.proto";
 import "Personalized/TagInfo.proto";
 import "Personalized/TagStruct.proto";
@@ -30,4 +32,6 @@ message DataRes {
     repeated SimpleForum like_forums = 14;
     int32 style_ab_tag = 15;
     Anti anti = 16;
+    LiveAnswer live_answer = 17;
+    FloatInfo float_info = 18;
 }

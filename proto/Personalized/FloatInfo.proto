@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message FloatInfo {
+    string float_url = 1;
+    uint64 start_time = 2;
+    uint64 end_time = 3;
+}
