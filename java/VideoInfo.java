@@ -32,6 +32,8 @@ public final class VideoInfo extends Message {
     public final String video_md5;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer video_select_flag;
+    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
+    public final Integer video_type;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String video_url;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -45,6 +47,7 @@ public final class VideoInfo extends Message {
     public static final Integer DEFAULT_PLAY_COUNT = 0;
     public static final List<VideoDesc> DEFAULT_VIDEO_DESC = Collections.emptyList();
     public static final Integer DEFAULT_VIDEO_SELECT_FLAG = 0;
+    public static final Integer DEFAULT_VIDEO_TYPE = 0;
 
     private VideoInfo(Builder builder, boolean z) {
         super(builder);
@@ -111,9 +114,14 @@ public final class VideoInfo extends Message {
             }
             if (builder.video_select_flag == null) {
                 this.video_select_flag = DEFAULT_VIDEO_SELECT_FLAG;
-                return;
             } else {
                 this.video_select_flag = builder.video_select_flag;
+            }
+            if (builder.video_type == null) {
+                this.video_type = DEFAULT_VIDEO_TYPE;
+                return;
+            } else {
+                this.video_type = builder.video_type;
                 return;
             }
         }
@@ -130,6 +138,7 @@ public final class VideoInfo extends Message {
         this.media_subtitle = builder.media_subtitle;
         this.video_desc = immutableCopyOf(builder.video_desc);
         this.video_select_flag = builder.video_select_flag;
+        this.video_type = builder.video_type;
     }
 
     /* loaded from: classes.dex */
@@ -145,6 +154,7 @@ public final class VideoInfo extends Message {
         public Integer video_length;
         public String video_md5;
         public Integer video_select_flag;
+        public Integer video_type;
         public String video_url;
         public Integer video_width;
 
@@ -167,6 +177,7 @@ public final class VideoInfo extends Message {
                 this.media_subtitle = videoInfo.media_subtitle;
                 this.video_desc = VideoInfo.copyOf(videoInfo.video_desc);
                 this.video_select_flag = videoInfo.video_select_flag;
+                this.video_type = videoInfo.video_type;
             }
         }
 

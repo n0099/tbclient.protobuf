@@ -23,12 +23,16 @@ public final class DataRes extends Message {
     public final List<CardGod> card_god;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<CardTopic> card_topic;
+    @ProtoField(tag = 18)
+    public final FloatInfo float_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
     public final List<TagStruct> interestion;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 14)
     public final List<SimpleForum> like_forums;
+    @ProtoField(tag = 17)
+    public final LiveAnswer live_answer;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Resource> resource_list;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -127,6 +131,8 @@ public final class DataRes extends Message {
                 this.style_ab_tag = builder.style_ab_tag;
             }
             this.anti = builder.anti;
+            this.live_answer = builder.live_answer;
+            this.float_info = builder.float_info;
             return;
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
@@ -145,6 +151,8 @@ public final class DataRes extends Message {
         this.like_forums = immutableCopyOf(builder.like_forums);
         this.style_ab_tag = builder.style_ab_tag;
         this.anti = builder.anti;
+        this.live_answer = builder.live_answer;
+        this.float_info = builder.float_info;
     }
 
     /* loaded from: classes2.dex */
@@ -155,9 +163,11 @@ public final class DataRes extends Message {
         public List<CardForum> card_forum;
         public List<CardGod> card_god;
         public List<CardTopic> card_topic;
+        public FloatInfo float_info;
         public List<TagStruct> interestion;
         public Integer is_new_url;
         public List<SimpleForum> like_forums;
+        public LiveAnswer live_answer;
         public List<Resource> resource_list;
         public String stat_key;
         public Integer style_ab_tag;
@@ -188,6 +198,8 @@ public final class DataRes extends Message {
                 this.like_forums = DataRes.copyOf(dataRes.like_forums);
                 this.style_ab_tag = dataRes.style_ab_tag;
                 this.anti = dataRes.anti;
+                this.live_answer = dataRes.live_answer;
+                this.float_info = dataRes.float_info;
             }
         }
 
