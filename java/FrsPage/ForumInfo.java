@@ -19,6 +19,7 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_SECOND_CLASS = "";
     public static final String DEFAULT_SLOGAN = "";
+    public static final String DEFAULT_SPECIAL_FORUM_TYPE = "";
     public static final String DEFAULT_SUPERBOY = "";
     public static final String DEFAULT_TIDS = "";
     public static final String DEFAULT_WARNING_MSG = "";
@@ -132,6 +133,8 @@ public final class ForumInfo extends Message {
     public final SignInfo sign_in_info;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String slogan;
+    @ProtoField(tag = 68, type = Message.Datatype.STRING)
+    public final String special_forum_type;
     @ProtoField(tag = 40, type = Message.Datatype.STRING)
     public final String superboy;
     @ProtoField(tag = 38)
@@ -437,9 +440,14 @@ public final class ForumInfo extends Message {
             }
             if (builder.warning_msg == null) {
                 this.warning_msg = "";
-                return;
             } else {
                 this.warning_msg = builder.warning_msg;
+            }
+            if (builder.special_forum_type == null) {
+                this.special_forum_type = "";
+                return;
+            } else {
+                this.special_forum_type = builder.special_forum_type;
                 return;
             }
         }
@@ -509,6 +517,7 @@ public final class ForumInfo extends Message {
         this.is_new_game_forum = builder.is_new_game_forum;
         this.forum_game_label = builder.forum_game_label;
         this.warning_msg = builder.warning_msg;
+        this.special_forum_type = builder.special_forum_type;
     }
 
     /* loaded from: classes.dex */
@@ -568,6 +577,7 @@ public final class ForumInfo extends Message {
         public String second_class;
         public SignInfo sign_in_info;
         public String slogan;
+        public String special_forum_type;
         public String superboy;
         public TagInfo tag_info;
         public Integer thread_num;
@@ -652,6 +662,7 @@ public final class ForumInfo extends Message {
                 this.is_new_game_forum = forumInfo.is_new_game_forum;
                 this.forum_game_label = forumInfo.forum_game_label;
                 this.warning_msg = forumInfo.warning_msg;
+                this.special_forum_type = forumInfo.special_forum_type;
             }
         }
 

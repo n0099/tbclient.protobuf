@@ -1,6 +1,7 @@
 package tbclient;
 
 import android.support.v4.media.TransportMediator;
+import com.baidu.sapi2.SapiAccountManager;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -132,7 +133,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_deal;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
-    @ProtoField(tag = 131, type = Message.Datatype.INT32)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
     public final Integer is_god;
     @ProtoField(tag = 85, type = Message.Datatype.INT32)
     public final Integer is_godthread_recommend;
@@ -160,7 +161,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
-    @ProtoField(tag = 127, type = Message.Datatype.INT32)
+    @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PAUSE, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
@@ -260,6 +261,8 @@ public final class ThreadInfo extends Message {
     public final Integer show_commented;
     @ProtoField(tag = 100)
     public final SkinInfo skin_info;
+    @ProtoField(tag = 147)
+    public final StarRankIcon star_rank_icon;
     @ProtoField(tag = 68, type = Message.Datatype.INT32)
     public final Integer storecount;
     @ProtoField(tag = 83)
@@ -969,11 +972,11 @@ public final class ThreadInfo extends Message {
             }
             if (builder.multi_forum_text == null) {
                 this.multi_forum_text = "";
-                return;
             } else {
                 this.multi_forum_text = builder.multi_forum_text;
-                return;
             }
+            this.star_rank_icon = builder.star_rank_icon;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1117,6 +1120,7 @@ public final class ThreadInfo extends Message {
         this.recom_extra = builder.recom_extra;
         this.trans_num = builder.trans_num;
         this.multi_forum_text = builder.multi_forum_text;
+        this.star_rank_icon = builder.star_rank_icon;
     }
 
     /* loaded from: classes.dex */
@@ -1235,6 +1239,7 @@ public final class ThreadInfo extends Message {
         public Long share_num;
         public Integer show_commented;
         public SkinInfo skin_info;
+        public StarRankIcon star_rank_icon;
         public Integer storecount;
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
@@ -1412,6 +1417,7 @@ public final class ThreadInfo extends Message {
                 this.recom_extra = threadInfo.recom_extra;
                 this.trans_num = threadInfo.trans_num;
                 this.multi_forum_text = threadInfo.multi_forum_text;
+                this.star_rank_icon = threadInfo.star_rank_icon;
             }
         }
 

@@ -9,6 +9,8 @@ public final class StarEnter extends Message {
     public static final String DEFAULT_TEXT = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer bazhu_mark;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String icon;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -31,6 +33,7 @@ public final class StarEnter extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_TIME = 0;
     public static final Integer DEFAULT_RANK_NUM = 0;
+    public static final Integer DEFAULT_BAZHU_MARK = 0;
 
     private StarEnter(Builder builder, boolean z) {
         super(builder);
@@ -77,9 +80,14 @@ public final class StarEnter extends Message {
             }
             if (builder.rank_num == null) {
                 this.rank_num = DEFAULT_RANK_NUM;
-                return;
             } else {
                 this.rank_num = builder.rank_num;
+            }
+            if (builder.bazhu_mark == null) {
+                this.bazhu_mark = DEFAULT_BAZHU_MARK;
+                return;
+            } else {
+                this.bazhu_mark = builder.bazhu_mark;
                 return;
             }
         }
@@ -92,10 +100,12 @@ public final class StarEnter extends Message {
         this.obj_id = builder.obj_id;
         this.text = builder.text;
         this.rank_num = builder.rank_num;
+        this.bazhu_mark = builder.bazhu_mark;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<StarEnter> {
+        public Integer bazhu_mark;
         public String icon;
         public String obj_id;
         public Integer rank_num;
@@ -121,6 +131,7 @@ public final class StarEnter extends Message {
                 this.obj_id = starEnter.obj_id;
                 this.text = starEnter.text;
                 this.rank_num = starEnter.rank_num;
+                this.bazhu_mark = starEnter.bazhu_mark;
             }
         }
 

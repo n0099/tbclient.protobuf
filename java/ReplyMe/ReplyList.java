@@ -12,6 +12,7 @@ public final class ReplyList extends Message {
     public static final String DEFAULT_ITEM_TYPE = "";
     public static final String DEFAULT_POST_FROM = "";
     public static final String DEFAULT_QUOTE_CONTENT = "";
+    public static final String DEFAULT_THREAD_IMG_URL = "";
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String content;
@@ -45,6 +46,8 @@ public final class ReplyList extends Message {
     public final Integer server_time;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long thread_id;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String thread_img_url;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer thread_type;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -172,9 +175,14 @@ public final class ReplyList extends Message {
             }
             if (builder.is_share_thread == null) {
                 this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
-                return;
             } else {
                 this.is_share_thread = builder.is_share_thread;
+            }
+            if (builder.thread_img_url == null) {
+                this.thread_img_url = "";
+                return;
+            } else {
+                this.thread_img_url = builder.thread_img_url;
                 return;
             }
         }
@@ -201,6 +209,7 @@ public final class ReplyList extends Message {
         this.origin_thread_info = builder.origin_thread_info;
         this.post_from = builder.post_from;
         this.is_share_thread = builder.is_share_thread;
+        this.thread_img_url = builder.thread_img_url;
     }
 
     /* loaded from: classes.dex */
@@ -221,6 +230,7 @@ public final class ReplyList extends Message {
         public User replyer;
         public Integer server_time;
         public Long thread_id;
+        public String thread_img_url;
         public Integer thread_type;
         public Integer time;
         public String title;
@@ -258,6 +268,7 @@ public final class ReplyList extends Message {
                 this.origin_thread_info = replyList.origin_thread_info;
                 this.post_from = replyList.post_from;
                 this.is_share_thread = replyList.is_share_thread;
+                this.thread_img_url = replyList.thread_img_url;
             }
         }
 

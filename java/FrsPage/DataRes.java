@@ -154,6 +154,8 @@ public final class DataRes extends Message {
     public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
+    @ProtoField(tag = 81)
+    public final StarRank star_rank_info;
     @ProtoField(tag = 30)
     public final ThreadInfo store_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 8, type = Message.Datatype.INT64)
@@ -434,11 +436,11 @@ public final class DataRes extends Message {
             this.forum_ar_info = builder.forum_ar_info;
             if (builder.ala_stage_list == null) {
                 this.ala_stage_list = DEFAULT_ALA_STAGE_LIST;
-                return;
             } else {
                 this.ala_stage_list = immutableCopyOf(builder.ala_stage_list);
-                return;
             }
+            this.star_rank_info = builder.star_rank_info;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -514,6 +516,7 @@ public final class DataRes extends Message {
         this.ala_insert_floor = builder.ala_insert_floor;
         this.forum_ar_info = builder.forum_ar_info;
         this.ala_stage_list = immutableCopyOf(builder.ala_stage_list);
+        this.star_rank_info = builder.star_rank_info;
     }
 
     /* loaded from: classes.dex */
@@ -580,6 +583,7 @@ public final class DataRes extends Message {
         public Integer smart_frs_type;
         public Integer sort_type;
         public List<StarEnter> star_enter;
+        public StarRank star_rank_info;
         public ThreadInfo store_card;
         public List<Long> thread_id_list;
         public List<ThreadIdListInfo> thread_id_list_info;
@@ -673,6 +677,7 @@ public final class DataRes extends Message {
                 this.ala_insert_floor = dataRes.ala_insert_floor;
                 this.forum_ar_info = dataRes.forum_ar_info;
                 this.ala_stage_list = DataRes.copyOf(dataRes.ala_stage_list);
+                this.star_rank_info = dataRes.star_rank_info;
             }
         }
 

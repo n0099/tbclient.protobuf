@@ -4,6 +4,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class SimpleUser extends Message {
+    public static final String DEFAULT_AHEAD_URL = "";
+    public static final String DEFAULT_BLOCK_MSG = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_SECUREEMAIL = "";
     public static final String DEFAULT_SECUREMOBIL = "";
@@ -11,6 +13,10 @@ public final class SimpleUser extends Message {
     public static final String DEFAULT_USER_NICKNAME = "";
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer agree_type;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String ahead_url;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String block_msg;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer incomplete_user;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -77,9 +83,19 @@ public final class SimpleUser extends Message {
             }
             if (builder.agree_type == null) {
                 this.agree_type = DEFAULT_AGREE_TYPE;
-                return;
             } else {
                 this.agree_type = builder.agree_type;
+            }
+            if (builder.ahead_url == null) {
+                this.ahead_url = "";
+            } else {
+                this.ahead_url = builder.ahead_url;
+            }
+            if (builder.block_msg == null) {
+                this.block_msg = "";
+                return;
+            } else {
+                this.block_msg = builder.block_msg;
                 return;
             }
         }
@@ -92,11 +108,15 @@ public final class SimpleUser extends Message {
         this.incomplete_user = builder.incomplete_user;
         this.portrait = builder.portrait;
         this.agree_type = builder.agree_type;
+        this.ahead_url = builder.ahead_url;
+        this.block_msg = builder.block_msg;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<SimpleUser> {
         public Integer agree_type;
+        public String ahead_url;
+        public String block_msg;
         public Integer incomplete_user;
         public String portrait;
         public String secureemail;
@@ -121,6 +141,8 @@ public final class SimpleUser extends Message {
                 this.incomplete_user = simpleUser.incomplete_user;
                 this.portrait = simpleUser.portrait;
                 this.agree_type = simpleUser.agree_type;
+                this.ahead_url = simpleUser.ahead_url;
+                this.block_msg = simpleUser.block_msg;
             }
         }
 
