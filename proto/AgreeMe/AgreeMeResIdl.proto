@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "AgreeMe/DataRes.proto";
+import "Error.proto";
+
+message AgreeMeResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

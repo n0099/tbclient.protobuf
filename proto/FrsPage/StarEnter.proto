@@ -10,4 +10,5 @@ message StarEnter {
     string obj_id = 7;
     string text = 8;
     int32 rank_num = 9;
+    int32 bazhu_mark = 10;
 }

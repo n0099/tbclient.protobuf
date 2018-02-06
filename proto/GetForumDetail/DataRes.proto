@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "GetForumDetail/BzApplySwitch.proto";
+import "ManagerApplyInfo.proto";
+import "RecommendForumInfo.proto";
+import "SimpleThreadInfo.proto";
+
+message DataRes {
+    RecommendForumInfo forum_info = 1;
+    repeated SimpleThreadInfo thread_list = 2;
+    BzApplySwitch bz_apply_switch = 3;
+    int32 is_bawu_show = 4;
+    ManagerApplyInfo bz_apply_info = 5;
+}

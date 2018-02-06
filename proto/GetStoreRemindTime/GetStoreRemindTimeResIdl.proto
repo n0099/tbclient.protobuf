@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetStoreRemindTime/DataRes.proto";
+
+message GetStoreRemindTimeResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

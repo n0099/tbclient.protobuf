@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    int32 pn = 2;
+    int32 ps = 3;
+    int64 forum_id = 4;
+    int32 sub_tab_id = 6;
+    int32 sub_label_id = 7;
+    int32 need_tab_stuct = 8;
+}

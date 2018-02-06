@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "FrsPage/StarContriRecord.proto";
+import "FrsPage/StarTaskInfo.proto";
+
+message StarRank {
+    string rank_name = 1;
+    int32 rank_ranking = 2;
+    repeated StarContriRecord contri_record_list = 3;
+    int32 user_contri_score = 4;
+    string user_task_notice = 5;
+    repeated StarTaskInfo user_task_info = 6;
+    string user_current_score_notice = 7;
+    string url = 8;
+}

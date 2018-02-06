@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message TagInfo {
+    string tag_name = 1;
+    uint32 tag_id = 2;
+    uint32 is_followed = 3;
+}

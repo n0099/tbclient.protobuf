@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message StarContriRecord {
+    int64 user_id = 1;
+    string user_name = 2;
+    string record_notice = 3;
+}

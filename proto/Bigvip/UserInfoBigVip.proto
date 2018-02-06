@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message UserInfoBigVip {
+    int64 user_id = 1;
+    string user_name = 2;
+    string user_type = 3;
+    string user_detail = 4;
+    uint32 message_accept = 5;
+    string portrait = 6;
+    string portraith = 7;
+}

@@ -93,4 +93,5 @@ message ForumInfo {
     int32 is_new_game_forum = 65;
     string forum_game_label = 66;
     string warning_msg = 67;
+    string special_forum_type = 68;
 }

@@ -10,4 +10,6 @@ message SimpleUser {
     uint32 incomplete_user = 7;
     string portrait = 8;
     int32 agree_type = 9;
+    string ahead_url = 10;
+    string block_msg = 11;
 }

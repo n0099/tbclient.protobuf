@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "RecommendFriend/ForumInfo.proto";
+import "RecommendFriend/PostInfo.proto";
+import "RecommendFriend/UserInfo.proto";
+
+message LikeUserInfo {
+    UserInfo user_info = 1;
+    repeated ForumInfo forum_info = 2;
+    repeated PostInfo post_info = 3;
+    string message = 4;
+}

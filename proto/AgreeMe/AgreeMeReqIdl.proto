@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "AgreeMe/DataReq.proto";
+
+message AgreeMeReqIdl {
+    DataReq data = 1;
+}

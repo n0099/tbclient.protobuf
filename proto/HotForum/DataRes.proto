@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "HotForum/ForumInfo.proto";
+import "HotForum/HotSearch.proto";
+import "HotForum/HotTopic.proto";
+
+message DataRes {
+    repeated ForumInfo forum_info = 1;
+    HotSearch hot_search = 2;
+    HotTopic hot_topic = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "SearchPostForum/DataRes.proto";
+
+message SearchPostForumResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

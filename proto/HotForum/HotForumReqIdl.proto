@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "HotForum/DataReq.proto";
+
+message HotForumReqIdl {
+    DataReq data = 1;
+}

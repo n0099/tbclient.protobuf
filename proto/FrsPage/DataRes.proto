@@ -30,6 +30,7 @@ import "FrsPage/PushThreadInfo.proto";
 import "FrsPage/RecommendBook.proto";
 import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
+import "FrsPage/StarRank.proto";
 import "FrsPage/ThreadIdListInfo.proto";
 import "FrsPageUserExtend.proto";
 import "FrsTabInfo.proto";
@@ -120,4 +121,5 @@ message DataRes {
     int32 ala_insert_floor = 77;
     ForumArIno forum_ar_info = 78;
     repeated ThreadInfo ala_stage_list = 80;
+    StarRank star_rank_info = 81;
 }

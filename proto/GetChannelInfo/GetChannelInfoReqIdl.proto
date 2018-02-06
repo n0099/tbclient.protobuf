@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetChannelInfo/DataReq.proto";
+
+message GetChannelInfoReqIdl {
+    DataReq data = 1;
+}

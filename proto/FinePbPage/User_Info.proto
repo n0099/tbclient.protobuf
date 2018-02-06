@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message User_Info {
+    int64 id = 1;
+    string name = 2;
+    string portrait = 3;
+    uint64 gender = 4;
+}

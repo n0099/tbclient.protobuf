@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DataRes {
+    int32 forum_loc = 1;
+    repeated string list = 2;
+}

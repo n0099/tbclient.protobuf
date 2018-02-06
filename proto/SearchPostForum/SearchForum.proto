@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message SearchForum {
+    int64 forum_id = 1;
+    string forum_name = 2;
+    string avatar = 3;
+    string post_num = 4;
+    string concern_num = 5;
+    string slogan = 6;
+    string intro = 7;
+    int32 has_concerned = 8;
+}

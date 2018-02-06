@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GodFollowRecommend/DataReq.proto";
+
+message GodFollowRecommendReqIdl {
+    DataReq data = 1;
+}

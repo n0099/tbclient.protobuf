@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "SimpleUser.proto";
+
+message ResData {
+    int32 location = 1;
+    int32 post = 2;
+    int32 like = 3;
+    int32 group = 4;
+    SimpleUser user = 5;
+    int32 live = 6;
+    int32 forum_num = 7;
+}

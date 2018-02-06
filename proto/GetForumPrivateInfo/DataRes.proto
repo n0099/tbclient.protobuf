@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetForumPrivateInfo/ForumInfo.proto";
+
+message DataRes {
+    repeated ForumInfo forum_list = 1;
+    int32 has_more = 2;
+    int32 mask_type = 3;
+}

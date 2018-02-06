@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message DataReq {
+    int64 user_id = 1;
+}
