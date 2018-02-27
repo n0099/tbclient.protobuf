@@ -133,7 +133,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_deal;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 131, type = Message.Datatype.INT32)
     public final Integer is_god;
     @ProtoField(tag = 85, type = Message.Datatype.INT32)
     public final Integer is_godthread_recommend;
@@ -275,7 +275,7 @@ public final class ThreadInfo extends Message {
     public final Integer thread_types;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
-    @ProtoField(tag = 137, type = Message.Datatype.STRING)
+    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
     public final String tieba_game_information_source;
     @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer time;
