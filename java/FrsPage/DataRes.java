@@ -20,9 +20,11 @@ import tbclient.Page;
 import tbclient.PopInfo;
 import tbclient.RecommendInfo;
 import tbclient.SdkTopicThread;
+import tbclient.StarVoice;
 import tbclient.ThreadInfo;
 import tbclient.User;
 import tbclient.VitalityInfo;
+import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
 /* loaded from: classes.dex */
 public final class DataRes extends Message {
@@ -30,6 +32,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_BAWU_ENTER_URL = "";
     public static final String DEFAULT_FORTUNE_DESC = "";
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
+    @ProtoField(tag = 87)
+    public final ActivityConfig activity_config;
     @ProtoField(tag = 23)
     public final ActivityHead activityhead;
     @ProtoField(tag = 65)
@@ -138,6 +142,8 @@ public final class DataRes extends Message {
     public final String partial_visible_toast;
     @ProtoField(tag = 29)
     public final PushThreadInfo push_thread_info;
+    @ProtoField(tag = 86)
+    public final RecomPostTopic recom_post_topic;
     @ProtoField(tag = 46)
     public final RecommendBook recommend_book;
     @ProtoField(tag = 40)
@@ -156,6 +162,8 @@ public final class DataRes extends Message {
     public final List<StarEnter> star_enter;
     @ProtoField(tag = 81)
     public final StarRank star_rank_info;
+    @ProtoField(tag = 88)
+    public final StarVoice star_voice;
     @ProtoField(tag = 30)
     public final ThreadInfo store_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 8, type = Message.Datatype.INT64)
@@ -166,6 +174,8 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> thread_list;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer time;
+    @ProtoField(tag = 82, type = Message.Datatype.INT32)
+    public final Integer trends_redpoint;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
     public final List<ZhiBoInfoTW> twzhibo_info;
     @ProtoField(tag = 27, type = Message.Datatype.INT32)
@@ -180,6 +190,8 @@ public final class DataRes extends Message {
     public final FrsVideo video;
     @ProtoField(tag = 42)
     public final VitalityInfo vitality_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 85)
+    public final List<WindowToast> window_toast;
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<Long> DEFAULT_THREAD_ID_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_NEW_URL = 0;
@@ -213,6 +225,8 @@ public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_ALA_INSERT_THREAD = Collections.emptyList();
     public static final Integer DEFAULT_ALA_INSERT_FLOOR = 0;
     public static final List<ThreadInfo> DEFAULT_ALA_STAGE_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_TRENDS_REDPOINT = 0;
+    public static final List<WindowToast> DEFAULT_WINDOW_TOAST = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -440,6 +454,19 @@ public final class DataRes extends Message {
                 this.ala_stage_list = immutableCopyOf(builder.ala_stage_list);
             }
             this.star_rank_info = builder.star_rank_info;
+            if (builder.trends_redpoint == null) {
+                this.trends_redpoint = DEFAULT_TRENDS_REDPOINT;
+            } else {
+                this.trends_redpoint = builder.trends_redpoint;
+            }
+            if (builder.window_toast == null) {
+                this.window_toast = DEFAULT_WINDOW_TOAST;
+            } else {
+                this.window_toast = immutableCopyOf(builder.window_toast);
+            }
+            this.recom_post_topic = builder.recom_post_topic;
+            this.activity_config = builder.activity_config;
+            this.star_voice = builder.star_voice;
             return;
         }
         this.user = builder.user;
@@ -517,10 +544,16 @@ public final class DataRes extends Message {
         this.forum_ar_info = builder.forum_ar_info;
         this.ala_stage_list = immutableCopyOf(builder.ala_stage_list);
         this.star_rank_info = builder.star_rank_info;
+        this.trends_redpoint = builder.trends_redpoint;
+        this.window_toast = immutableCopyOf(builder.window_toast);
+        this.recom_post_topic = builder.recom_post_topic;
+        this.activity_config = builder.activity_config;
+        this.star_voice = builder.star_voice;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public ActivityConfig activity_config;
         public ActivityHead activityhead;
         public AgreeBanner agree_banner;
         public Integer ala_insert_floor;
@@ -575,6 +608,7 @@ public final class DataRes extends Message {
         public Page page;
         public String partial_visible_toast;
         public PushThreadInfo push_thread_info;
+        public RecomPostTopic recom_post_topic;
         public RecommendBook recommend_book;
         public RecommendInfo school_recom_info;
         public Integer school_recom_pos;
@@ -584,11 +618,13 @@ public final class DataRes extends Message {
         public Integer sort_type;
         public List<StarEnter> star_enter;
         public StarRank star_rank_info;
+        public StarVoice star_voice;
         public ThreadInfo store_card;
         public List<Long> thread_id_list;
         public List<ThreadIdListInfo> thread_id_list_info;
         public List<ThreadInfo> thread_list;
         public Integer time;
+        public Integer trends_redpoint;
         public List<ZhiBoInfoTW> twzhibo_info;
         public Integer twzhibo_pos;
         public User user;
@@ -596,6 +632,7 @@ public final class DataRes extends Message {
         public List<User> user_list;
         public FrsVideo video;
         public VitalityInfo vitality_info;
+        public List<WindowToast> window_toast;
 
         public Builder() {
         }
@@ -678,6 +715,11 @@ public final class DataRes extends Message {
                 this.forum_ar_info = dataRes.forum_ar_info;
                 this.ala_stage_list = DataRes.copyOf(dataRes.ala_stage_list);
                 this.star_rank_info = dataRes.star_rank_info;
+                this.trends_redpoint = dataRes.trends_redpoint;
+                this.window_toast = DataRes.copyOf(dataRes.window_toast);
+                this.recom_post_topic = dataRes.recom_post_topic;
+                this.activity_config = dataRes.activity_config;
+                this.star_voice = dataRes.star_voice;
             }
         }
 

@@ -7,6 +7,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class StarInfo extends Message {
     public static final String DEFAULT_HEAD = "";
+    public static final String DEFAULT_STAR_FORUM_HEADIMG = "";
     public static final String DEFAULT_TOP = "";
     @ProtoField(tag = 6)
     public final Fans fans;
@@ -32,6 +33,8 @@ public final class StarInfo extends Message {
     public final Music mv;
     @ProtoField(tag = 8)
     public final PhotoInfo photo;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String star_forum_headimg;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String top;
     @ProtoField(tag = 14)
@@ -83,7 +86,13 @@ public final class StarInfo extends Message {
             this.top_size = builder.top_size;
             this.head_size = builder.head_size;
             this.trade = builder.trade;
-            return;
+            if (builder.star_forum_headimg == null) {
+                this.star_forum_headimg = "";
+                return;
+            } else {
+                this.star_forum_headimg = builder.star_forum_headimg;
+                return;
+            }
         }
         this.has_frs_star = builder.has_frs_star;
         this.top = builder.top;
@@ -101,6 +110,7 @@ public final class StarInfo extends Message {
         this.top_size = builder.top_size;
         this.head_size = builder.head_size;
         this.trade = builder.trade;
+        this.star_forum_headimg = builder.star_forum_headimg;
     }
 
     /* loaded from: classes.dex */
@@ -117,6 +127,7 @@ public final class StarInfo extends Message {
         public Music music;
         public Music mv;
         public PhotoInfo photo;
+        public String star_forum_headimg;
         public String top;
         public Size top_size;
         public Ticket trade;
@@ -144,6 +155,7 @@ public final class StarInfo extends Message {
                 this.top_size = starInfo.top_size;
                 this.head_size = starInfo.head_size;
                 this.trade = starInfo.trade;
+                this.star_forum_headimg = starInfo.star_forum_headimg;
             }
         }
 

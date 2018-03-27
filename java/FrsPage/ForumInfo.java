@@ -22,6 +22,7 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_SPECIAL_FORUM_TYPE = "";
     public static final String DEFAULT_SUPERBOY = "";
     public static final String DEFAULT_TIDS = "";
+    public static final String DEFAULT_TOPIC_SPECIAL_ICON = "";
     public static final String DEFAULT_WARNING_MSG = "";
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
@@ -147,6 +148,8 @@ public final class ForumInfo extends Message {
     public final TopCode top_code;
     @ProtoField(tag = 28)
     public final TopNotice top_notice;
+    @ProtoField(tag = 69, type = Message.Datatype.STRING)
+    public final String topic_special_icon;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer user_level;
     @ProtoField(tag = 67, type = Message.Datatype.STRING)
@@ -445,9 +448,14 @@ public final class ForumInfo extends Message {
             }
             if (builder.special_forum_type == null) {
                 this.special_forum_type = "";
-                return;
             } else {
                 this.special_forum_type = builder.special_forum_type;
+            }
+            if (builder.topic_special_icon == null) {
+                this.topic_special_icon = "";
+                return;
+            } else {
+                this.topic_special_icon = builder.topic_special_icon;
                 return;
             }
         }
@@ -518,6 +526,7 @@ public final class ForumInfo extends Message {
         this.forum_game_label = builder.forum_game_label;
         this.warning_msg = builder.warning_msg;
         this.special_forum_type = builder.special_forum_type;
+        this.topic_special_icon = builder.topic_special_icon;
     }
 
     /* loaded from: classes.dex */
@@ -584,6 +593,7 @@ public final class ForumInfo extends Message {
         public String tids;
         public TopCode top_code;
         public TopNotice top_notice;
+        public String topic_special_icon;
         public Integer user_level;
         public String warning_msg;
         public WorldCup worldcupinfo;
@@ -663,6 +673,7 @@ public final class ForumInfo extends Message {
                 this.forum_game_label = forumInfo.forum_game_label;
                 this.warning_msg = forumInfo.warning_msg;
                 this.special_forum_type = forumInfo.special_forum_type;
+                this.topic_special_icon = forumInfo.topic_special_icon;
             }
         }
 

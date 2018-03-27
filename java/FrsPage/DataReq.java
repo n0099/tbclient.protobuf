@@ -6,6 +6,7 @@ import tbclient.AppPosInfo;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_COOKIE = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_EMAIL = "";
@@ -27,6 +28,8 @@ public final class DataReq extends Message {
     public final AdParam ad_param;
     @ProtoField(tag = 50)
     public final AppPosInfo app_pos;
+    @ProtoField(tag = 54, type = Message.Datatype.STRING)
+    public final String call_url;
     @ProtoField(tag = 44, type = Message.Datatype.INT32)
     public final Integer category_id;
     @ProtoField(tag = 20, type = Message.Datatype.BOOL)
@@ -416,9 +419,14 @@ public final class DataReq extends Message {
             }
             if (builder.obj_source == null) {
                 this.obj_source = "";
-                return;
             } else {
                 this.obj_source = builder.obj_source;
+            }
+            if (builder.call_url == null) {
+                this.call_url = "";
+                return;
+            } else {
+                this.call_url = builder.call_url;
                 return;
             }
         }
@@ -475,12 +483,14 @@ public final class DataReq extends Message {
         this.ad_param = builder.ad_param;
         this.obj_locate = builder.obj_locate;
         this.obj_source = builder.obj_source;
+        this.call_url = builder.call_url;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public AdParam ad_param;
         public AppPosInfo app_pos;
+        public String call_url;
         public Integer category_id;
         public Boolean check_login;
         public Integer cid;
@@ -592,6 +602,7 @@ public final class DataReq extends Message {
                 this.ad_param = dataReq.ad_param;
                 this.obj_locate = dataReq.obj_locate;
                 this.obj_source = dataReq.obj_source;
+                this.call_url = dataReq.call_url;
             }
         }
 
