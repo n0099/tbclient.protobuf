@@ -58,4 +58,5 @@ message DataReq {
     AdParam ad_param = 51;
     string obj_locate = 52;
     string obj_source = 53;
+    string call_url = 54;
 }

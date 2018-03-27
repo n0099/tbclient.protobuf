@@ -28,4 +28,5 @@ message StarInfo {
     Size top_size = 14;
     Size head_size = 15;
     Ticket trade = 16;
+    string star_forum_headimg = 17;
 }
