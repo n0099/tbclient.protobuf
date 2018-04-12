@@ -1,16 +1,16 @@
-package tbclient.GetMoreMsg;
+package tbclient.StarTrends;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes3.dex */
-public final class GetMoreMsgResIdl extends Message {
+/* loaded from: classes2.dex */
+public final class StarTrendsResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    private GetMoreMsgResIdl(Builder builder, boolean z) {
+    private StarTrendsResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -21,26 +21,26 @@ public final class GetMoreMsgResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes3.dex */
-    public static final class Builder extends Message.Builder<GetMoreMsgResIdl> {
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<StarTrendsResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(GetMoreMsgResIdl getMoreMsgResIdl) {
-            super(getMoreMsgResIdl);
-            if (getMoreMsgResIdl != null) {
-                this.error = getMoreMsgResIdl.error;
-                this.data = getMoreMsgResIdl.data;
+        public Builder(StarTrendsResIdl starTrendsResIdl) {
+            super(starTrendsResIdl);
+            if (starTrendsResIdl != null) {
+                this.error = starTrendsResIdl.error;
+                this.data = starTrendsResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetMoreMsgResIdl build(boolean z) {
-            return new GetMoreMsgResIdl(this, z);
+        public StarTrendsResIdl build(boolean z) {
+            return new StarTrendsResIdl(this, z);
         }
     }
 }

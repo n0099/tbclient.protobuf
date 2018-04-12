@@ -10,6 +10,8 @@ public final class VideoInfo extends Message {
     public static final String DEFAULT_THUMBNAIL_URL = "";
     public static final String DEFAULT_VIDEO_MD5 = "";
     public static final String DEFAULT_VIDEO_URL = "";
+    @ProtoField(tag = 15, type = Message.Datatype.UINT32)
+    public final Integer is_vertical;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String media_subtitle;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -48,6 +50,7 @@ public final class VideoInfo extends Message {
     public static final List<VideoDesc> DEFAULT_VIDEO_DESC = Collections.emptyList();
     public static final Integer DEFAULT_VIDEO_SELECT_FLAG = 0;
     public static final Integer DEFAULT_VIDEO_TYPE = 0;
+    public static final Integer DEFAULT_IS_VERTICAL = 0;
 
     private VideoInfo(Builder builder, boolean z) {
         super(builder);
@@ -119,9 +122,14 @@ public final class VideoInfo extends Message {
             }
             if (builder.video_type == null) {
                 this.video_type = DEFAULT_VIDEO_TYPE;
-                return;
             } else {
                 this.video_type = builder.video_type;
+            }
+            if (builder.is_vertical == null) {
+                this.is_vertical = DEFAULT_IS_VERTICAL;
+                return;
+            } else {
+                this.is_vertical = builder.is_vertical;
                 return;
             }
         }
@@ -139,10 +147,12 @@ public final class VideoInfo extends Message {
         this.video_desc = immutableCopyOf(builder.video_desc);
         this.video_select_flag = builder.video_select_flag;
         this.video_type = builder.video_type;
+        this.is_vertical = builder.is_vertical;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
+        public Integer is_vertical;
         public String media_subtitle;
         public Integer play_count;
         public Integer thumbnail_height;
@@ -178,6 +188,7 @@ public final class VideoInfo extends Message {
                 this.video_desc = VideoInfo.copyOf(videoInfo.video_desc);
                 this.video_select_flag = videoInfo.video_select_flag;
                 this.video_type = videoInfo.video_type;
+                this.is_vertical = videoInfo.is_vertical;
             }
         }
 

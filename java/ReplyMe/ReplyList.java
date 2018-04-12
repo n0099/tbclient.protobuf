@@ -44,6 +44,8 @@ public final class ReplyList extends Message {
     public final User replyer;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer server_time;
+    @ProtoField(tag = 25)
+    public final User thread_author_user;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long thread_id;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
@@ -180,11 +182,11 @@ public final class ReplyList extends Message {
             }
             if (builder.thread_img_url == null) {
                 this.thread_img_url = "";
-                return;
             } else {
                 this.thread_img_url = builder.thread_img_url;
-                return;
             }
+            this.thread_author_user = builder.thread_author_user;
+            return;
         }
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;
@@ -210,6 +212,7 @@ public final class ReplyList extends Message {
         this.post_from = builder.post_from;
         this.is_share_thread = builder.is_share_thread;
         this.thread_img_url = builder.thread_img_url;
+        this.thread_author_user = builder.thread_author_user;
     }
 
     /* loaded from: classes.dex */
@@ -229,6 +232,7 @@ public final class ReplyList extends Message {
         public User quote_user;
         public User replyer;
         public Integer server_time;
+        public User thread_author_user;
         public Long thread_id;
         public String thread_img_url;
         public Integer thread_type;
@@ -269,6 +273,7 @@ public final class ReplyList extends Message {
                 this.post_from = replyList.post_from;
                 this.is_share_thread = replyList.is_share_thread;
                 this.thread_img_url = replyList.thread_img_url;
+                this.thread_author_user = replyList.thread_author_user;
             }
         }
 

@@ -4,12 +4,18 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class FrsTabInfo extends Message {
+    public static final String DEFAULT_TAB_GID = "";
     public static final String DEFAULT_TAB_NAME = "";
+    public static final String DEFAULT_TAB_TITLE = "";
     public static final String DEFAULT_TAB_URL = "";
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String tab_gid;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer tab_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String tab_name;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String tab_title;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer tab_type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -37,9 +43,19 @@ public final class FrsTabInfo extends Message {
             }
             if (builder.tab_url == null) {
                 this.tab_url = "";
-                return;
             } else {
                 this.tab_url = builder.tab_url;
+            }
+            if (builder.tab_gid == null) {
+                this.tab_gid = "";
+            } else {
+                this.tab_gid = builder.tab_gid;
+            }
+            if (builder.tab_title == null) {
+                this.tab_title = "";
+                return;
+            } else {
+                this.tab_title = builder.tab_title;
                 return;
             }
         }
@@ -47,12 +63,16 @@ public final class FrsTabInfo extends Message {
         this.tab_type = builder.tab_type;
         this.tab_name = builder.tab_name;
         this.tab_url = builder.tab_url;
+        this.tab_gid = builder.tab_gid;
+        this.tab_title = builder.tab_title;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<FrsTabInfo> {
+        public String tab_gid;
         public Integer tab_id;
         public String tab_name;
+        public String tab_title;
         public Integer tab_type;
         public String tab_url;
 
@@ -66,6 +86,8 @@ public final class FrsTabInfo extends Message {
                 this.tab_type = frsTabInfo.tab_type;
                 this.tab_name = frsTabInfo.tab_name;
                 this.tab_url = frsTabInfo.tab_url;
+                this.tab_gid = frsTabInfo.tab_gid;
+                this.tab_title = frsTabInfo.tab_title;
             }
         }
 

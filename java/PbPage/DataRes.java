@@ -16,6 +16,7 @@ import tbclient.PbHotPost;
 import tbclient.PbTopAgreePost;
 import tbclient.Post;
 import tbclient.PsRankListItem;
+import tbclient.RecomTopicList;
 import tbclient.RecommendThread;
 import tbclient.SdkTopicThread;
 import tbclient.SimpleForum;
@@ -23,7 +24,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_FOLD_TIP = "";
@@ -115,6 +116,8 @@ public final class DataRes extends Message {
     public final ThreadInfo thread;
     @ProtoField(tag = 37, type = Message.Datatype.INT64)
     public final Long thread_freq_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 48)
+    public final List<RecomTopicList> thread_topic;
     @ProtoField(tag = 34)
     public final PbTopAgreePost top_agree_post_list;
     @ProtoField(tag = 18)
@@ -141,6 +144,7 @@ public final class DataRes extends Message {
     public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER = Collections.emptyList();
     public static final Integer DEFAULT_EXP_NEWS_TODAY = 0;
     public static final Integer DEFAULT_EXP_GUIDE_TODAY = 0;
+    public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -277,9 +281,14 @@ public final class DataRes extends Message {
             }
             if (builder.multi_forum_text == null) {
                 this.multi_forum_text = "";
-                return;
             } else {
                 this.multi_forum_text = builder.multi_forum_text;
+            }
+            if (builder.thread_topic == null) {
+                this.thread_topic = DEFAULT_THREAD_TOPIC;
+                return;
+            } else {
+                this.thread_topic = immutableCopyOf(builder.thread_topic);
                 return;
             }
         }
@@ -330,9 +339,10 @@ public final class DataRes extends Message {
         this.exp_news_today = builder.exp_news_today;
         this.exp_guide_today = builder.exp_guide_today;
         this.multi_forum_text = builder.multi_forum_text;
+        this.thread_topic = immutableCopyOf(builder.thread_topic);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
         public AlaLiveInfo ala_info;
@@ -377,6 +387,7 @@ public final class DataRes extends Message {
         public Integer switch_read_open;
         public ThreadInfo thread;
         public Long thread_freq_num;
+        public List<RecomTopicList> thread_topic;
         public PbTopAgreePost top_agree_post_list;
         public TwZhiBoAnti twzhibo_anti;
         public User user;
@@ -435,6 +446,7 @@ public final class DataRes extends Message {
                 this.exp_news_today = dataRes.exp_news_today;
                 this.exp_guide_today = dataRes.exp_guide_today;
                 this.multi_forum_text = dataRes.multi_forum_text;
+                this.thread_topic = DataRes.copyOf(dataRes.thread_topic);
             }
         }
 

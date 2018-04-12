@@ -2,6 +2,7 @@ package tbclient;
 
 import android.support.v4.media.TransportMediator;
 import com.baidu.sapi2.SapiAccountManager;
+import com.baidu.tbadk.BaseActivity;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -28,6 +29,8 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_RECOM_WEIGHT = "";
     public static final String DEFAULT_TIEBA_GAME_INFORMATION_SOURCE = "";
     public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_TOPIC_H5_URL = "";
+    public static final String DEFAULT_TOPIC_USER_NAME = "";
     public static final String DEFAULT_VIDEO = "";
     public static final String DEFAULT_VIDEO_COVER = "";
     public static final String DEFAULT_VIDEO_ID = "";
@@ -175,6 +178,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_tbread_dispatch;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_top;
+    @ProtoField(tag = 148, type = Message.Datatype.INT32)
+    public final Integer is_topic;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_voice_thread;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
@@ -287,6 +292,10 @@ public final class ThreadInfo extends Message {
     public final Post top_agree_post;
     @ProtoField(tag = 47)
     public final Topic topic;
+    @ProtoField(tag = BaseActivity.SHOW_SOFT_KEYBOARD_DELAY, type = Message.Datatype.STRING)
+    public final String topic_h5_url;
+    @ProtoField(tag = 149, type = Message.Datatype.STRING)
+    public final String topic_user_name;
     @ProtoField(tag = 145, type = Message.Datatype.UINT64)
     public final Long trans_num;
     @ProtoField(tag = 72)
@@ -401,6 +410,7 @@ public final class ThreadInfo extends Message {
     public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
     public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
     public static final Long DEFAULT_TRANS_NUM = 0L;
+    public static final Integer DEFAULT_IS_TOPIC = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -976,7 +986,23 @@ public final class ThreadInfo extends Message {
                 this.multi_forum_text = builder.multi_forum_text;
             }
             this.star_rank_icon = builder.star_rank_icon;
-            return;
+            if (builder.is_topic == null) {
+                this.is_topic = DEFAULT_IS_TOPIC;
+            } else {
+                this.is_topic = builder.is_topic;
+            }
+            if (builder.topic_user_name == null) {
+                this.topic_user_name = "";
+            } else {
+                this.topic_user_name = builder.topic_user_name;
+            }
+            if (builder.topic_h5_url == null) {
+                this.topic_h5_url = "";
+                return;
+            } else {
+                this.topic_h5_url = builder.topic_h5_url;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1121,6 +1147,9 @@ public final class ThreadInfo extends Message {
         this.trans_num = builder.trans_num;
         this.multi_forum_text = builder.multi_forum_text;
         this.star_rank_icon = builder.star_rank_icon;
+        this.is_topic = builder.is_topic;
+        this.topic_user_name = builder.topic_user_name;
+        this.topic_h5_url = builder.topic_h5_url;
     }
 
     /* loaded from: classes.dex */
@@ -1196,6 +1225,7 @@ public final class ThreadInfo extends Message {
         public Integer is_story_audit;
         public Integer is_tbread_dispatch;
         public Integer is_top;
+        public Integer is_topic;
         public Integer is_voice_thread;
         public Integer is_vote;
         public JNews jid;
@@ -1252,6 +1282,8 @@ public final class ThreadInfo extends Message {
         public String title;
         public Post top_agree_post;
         public Topic topic;
+        public String topic_h5_url;
+        public String topic_user_name;
         public Long trans_num;
         public ZhiBoInfoTW twzhibo_info;
         public Integer valid_post_num;
@@ -1418,6 +1450,9 @@ public final class ThreadInfo extends Message {
                 this.trans_num = threadInfo.trans_num;
                 this.multi_forum_text = threadInfo.multi_forum_text;
                 this.star_rank_icon = threadInfo.star_rank_icon;
+                this.is_topic = threadInfo.is_topic;
+                this.topic_user_name = threadInfo.topic_user_name;
+                this.topic_h5_url = threadInfo.topic_h5_url;
             }
         }
 

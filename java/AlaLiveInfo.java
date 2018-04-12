@@ -19,6 +19,8 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_THIRD_APP_ID = "";
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer audience_count;
+    @ProtoField(tag = 25)
+    public final AlaChallengeInfo challenge_info;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String cover;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -31,6 +33,8 @@ public final class AlaLiveInfo extends Message {
     public final Long group_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String hls_url;
+    @ProtoField(tag = 24)
+    public final AlaCoverLabel label;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String label_name;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -181,11 +185,12 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.stage_dislike_info == null) {
                 this.stage_dislike_info = DEFAULT_STAGE_DISLIKE_INFO;
-                return;
             } else {
                 this.stage_dislike_info = immutableCopyOf(builder.stage_dislike_info);
-                return;
             }
+            this.label = builder.label;
+            this.challenge_info = builder.challenge_info;
+            return;
         }
         this.live_id = builder.live_id;
         this.cover = builder.cover;
@@ -210,17 +215,21 @@ public final class AlaLiveInfo extends Message {
         this.third_app_id = builder.third_app_id;
         this.thread_id = builder.thread_id;
         this.stage_dislike_info = immutableCopyOf(builder.stage_dislike_info);
+        this.label = builder.label;
+        this.challenge_info = builder.challenge_info;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
         public Integer audience_count;
+        public AlaChallengeInfo challenge_info;
         public String cover;
         public String description;
         public Long distance;
         public Integer duration;
         public Long group_id;
         public String hls_url;
+        public AlaCoverLabel label;
         public String label_name;
         public Long live_id;
         public Integer live_status;
@@ -267,6 +276,8 @@ public final class AlaLiveInfo extends Message {
                 this.third_app_id = alaLiveInfo.third_app_id;
                 this.thread_id = alaLiveInfo.thread_id;
                 this.stage_dislike_info = AlaLiveInfo.copyOf(alaLiveInfo.stage_dislike_info);
+                this.label = alaLiveInfo.label;
+                this.challenge_info = alaLiveInfo.challenge_info;
             }
         }
 

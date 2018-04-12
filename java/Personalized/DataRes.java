@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Anti;
 import tbclient.BannerList;
+import tbclient.RecomPostTopic;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
 /* loaded from: classes2.dex */
@@ -33,6 +34,8 @@ public final class DataRes extends Message {
     public final List<SimpleForum> like_forums;
     @ProtoField(tag = 17)
     public final LiveAnswer live_answer;
+    @ProtoField(tag = 19)
+    public final RecomPostTopic recom_post_topic;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Resource> resource_list;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -133,6 +136,7 @@ public final class DataRes extends Message {
             this.anti = builder.anti;
             this.live_answer = builder.live_answer;
             this.float_info = builder.float_info;
+            this.recom_post_topic = builder.recom_post_topic;
             return;
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
@@ -153,6 +157,7 @@ public final class DataRes extends Message {
         this.anti = builder.anti;
         this.live_answer = builder.live_answer;
         this.float_info = builder.float_info;
+        this.recom_post_topic = builder.recom_post_topic;
     }
 
     /* loaded from: classes2.dex */
@@ -168,6 +173,7 @@ public final class DataRes extends Message {
         public Integer is_new_url;
         public List<SimpleForum> like_forums;
         public LiveAnswer live_answer;
+        public RecomPostTopic recom_post_topic;
         public List<Resource> resource_list;
         public String stat_key;
         public Integer style_ab_tag;
@@ -200,6 +206,7 @@ public final class DataRes extends Message {
                 this.anti = dataRes.anti;
                 this.live_answer = dataRes.live_answer;
                 this.float_info = dataRes.float_info;
+                this.recom_post_topic = dataRes.recom_post_topic;
             }
         }
 

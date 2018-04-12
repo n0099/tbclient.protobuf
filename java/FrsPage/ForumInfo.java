@@ -23,6 +23,7 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_SUPERBOY = "";
     public static final String DEFAULT_TIDS = "";
     public static final String DEFAULT_TOPIC_SPECIAL_ICON = "";
+    public static final String DEFAULT_TOPIC_SPECIAL_ICON_RIGHT = "";
     public static final String DEFAULT_WARNING_MSG = "";
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
@@ -150,6 +151,8 @@ public final class ForumInfo extends Message {
     public final TopNotice top_notice;
     @ProtoField(tag = 69, type = Message.Datatype.STRING)
     public final String topic_special_icon;
+    @ProtoField(tag = 70, type = Message.Datatype.STRING)
+    public final String topic_special_icon_right;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer user_level;
     @ProtoField(tag = 67, type = Message.Datatype.STRING)
@@ -453,9 +456,14 @@ public final class ForumInfo extends Message {
             }
             if (builder.topic_special_icon == null) {
                 this.topic_special_icon = "";
-                return;
             } else {
                 this.topic_special_icon = builder.topic_special_icon;
+            }
+            if (builder.topic_special_icon_right == null) {
+                this.topic_special_icon_right = "";
+                return;
+            } else {
+                this.topic_special_icon_right = builder.topic_special_icon_right;
                 return;
             }
         }
@@ -527,6 +535,7 @@ public final class ForumInfo extends Message {
         this.warning_msg = builder.warning_msg;
         this.special_forum_type = builder.special_forum_type;
         this.topic_special_icon = builder.topic_special_icon;
+        this.topic_special_icon_right = builder.topic_special_icon_right;
     }
 
     /* loaded from: classes.dex */
@@ -594,6 +603,7 @@ public final class ForumInfo extends Message {
         public TopCode top_code;
         public TopNotice top_notice;
         public String topic_special_icon;
+        public String topic_special_icon_right;
         public Integer user_level;
         public String warning_msg;
         public WorldCup worldcupinfo;
@@ -674,6 +684,7 @@ public final class ForumInfo extends Message {
                 this.warning_msg = forumInfo.warning_msg;
                 this.special_forum_type = forumInfo.special_forum_type;
                 this.topic_special_icon = forumInfo.topic_special_icon;
+                this.topic_special_icon_right = forumInfo.topic_special_icon_right;
             }
         }
 

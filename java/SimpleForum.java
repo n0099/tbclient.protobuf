@@ -7,11 +7,6 @@ public final class SimpleForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_EXT = "";
     public static final String DEFAULT_FIRST_CLASS = "";
-    public static final Long DEFAULT_ID = 0L;
-    public static final Integer DEFAULT_IS_EXISTS = 0;
-    public static final Integer DEFAULT_IS_LIKED = 0;
-    public static final Integer DEFAULT_IS_SIGNED = 0;
-    public static final Integer DEFAULT_LEVEL_ID = 0;
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_SECOND_CLASS = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -30,12 +25,23 @@ public final class SimpleForum extends Message {
     public final Integer is_signed;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer level_id;
+    @ProtoField(tag = 12, type = Message.Datatype.INT32)
+    public final Integer member_num;
     @ProtoField(tag = 11)
     public final MultiForumPerm multi_forum_perm;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer post_num;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String second_class;
+    public static final Long DEFAULT_ID = 0L;
+    public static final Integer DEFAULT_IS_EXISTS = 0;
+    public static final Integer DEFAULT_IS_LIKED = 0;
+    public static final Integer DEFAULT_IS_SIGNED = 0;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_MEMBER_NUM = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
 
     private SimpleForum(Builder builder, boolean z) {
         super(builder);
@@ -91,7 +97,18 @@ public final class SimpleForum extends Message {
                 this.level_id = builder.level_id;
             }
             this.multi_forum_perm = builder.multi_forum_perm;
-            return;
+            if (builder.member_num == null) {
+                this.member_num = DEFAULT_MEMBER_NUM;
+            } else {
+                this.member_num = builder.member_num;
+            }
+            if (builder.post_num == null) {
+                this.post_num = DEFAULT_POST_NUM;
+                return;
+            } else {
+                this.post_num = builder.post_num;
+                return;
+            }
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -104,6 +121,8 @@ public final class SimpleForum extends Message {
         this.ext = builder.ext;
         this.level_id = builder.level_id;
         this.multi_forum_perm = builder.multi_forum_perm;
+        this.member_num = builder.member_num;
+        this.post_num = builder.post_num;
     }
 
     /* loaded from: classes.dex */
@@ -116,8 +135,10 @@ public final class SimpleForum extends Message {
         public Integer is_liked;
         public Integer is_signed;
         public Integer level_id;
+        public Integer member_num;
         public MultiForumPerm multi_forum_perm;
         public String name;
+        public Integer post_num;
         public String second_class;
 
         public Builder() {
@@ -137,6 +158,8 @@ public final class SimpleForum extends Message {
                 this.ext = simpleForum.ext;
                 this.level_id = simpleForum.level_id;
                 this.multi_forum_perm = simpleForum.multi_forum_perm;
+                this.member_num = simpleForum.member_num;
+                this.post_num = simpleForum.post_num;
             }
         }
 

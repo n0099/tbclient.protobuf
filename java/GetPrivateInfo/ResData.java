@@ -17,6 +17,8 @@ public final class ResData extends Message {
     public final Integer location;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer post;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer reply;
     @ProtoField(tag = 5)
     public final SimpleUser user;
     public static final Integer DEFAULT_LOCATION = 0;
@@ -25,6 +27,7 @@ public final class ResData extends Message {
     public static final Integer DEFAULT_GROUP = 0;
     public static final Integer DEFAULT_LIVE = 0;
     public static final Integer DEFAULT_FORUM_NUM = 0;
+    public static final Integer DEFAULT_REPLY = 0;
 
     private ResData(Builder builder, boolean z) {
         super(builder);
@@ -57,9 +60,14 @@ public final class ResData extends Message {
             }
             if (builder.forum_num == null) {
                 this.forum_num = DEFAULT_FORUM_NUM;
-                return;
             } else {
                 this.forum_num = builder.forum_num;
+            }
+            if (builder.reply == null) {
+                this.reply = DEFAULT_REPLY;
+                return;
+            } else {
+                this.reply = builder.reply;
                 return;
             }
         }
@@ -70,6 +78,7 @@ public final class ResData extends Message {
         this.user = builder.user;
         this.live = builder.live;
         this.forum_num = builder.forum_num;
+        this.reply = builder.reply;
     }
 
     /* loaded from: classes.dex */
@@ -80,6 +89,7 @@ public final class ResData extends Message {
         public Integer live;
         public Integer location;
         public Integer post;
+        public Integer reply;
         public SimpleUser user;
 
         public Builder() {
@@ -95,6 +105,7 @@ public final class ResData extends Message {
                 this.user = resData.user;
                 this.live = resData.live;
                 this.forum_num = resData.forum_num;
+                this.reply = resData.reply;
             }
         }
 

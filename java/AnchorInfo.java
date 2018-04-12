@@ -20,8 +20,8 @@ public final class AnchorInfo extends Message {
     public final String forumName;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer from_type;
-    @ProtoField(tag = 9, type = Message.Datatype.INT32)
-    public final Integer group_id;
+    @ProtoField(tag = 9, type = Message.Datatype.INT64)
+    public final Long group_id;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String intro;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
@@ -57,7 +57,7 @@ public final class AnchorInfo extends Message {
     public static final Long DEFAULT_AUTHOR_ID = 0L;
     public static final Integer DEFAULT_LISTENERS = 0;
     public static final Integer DEFAULT_LIKERS = 0;
-    public static final Integer DEFAULT_GROUP_ID = 0;
+    public static final Long DEFAULT_GROUP_ID = 0L;
     public static final Long DEFAULT_PUBLISHERID = 0L;
     public static final Integer DEFAULT_FROM_TYPE = 0;
     public static final Integer DEFAULT_IS_VIP = 0;
@@ -193,7 +193,7 @@ public final class AnchorInfo extends Message {
         public String author_name;
         public String forumName;
         public Integer from_type;
-        public Integer group_id;
+        public Long group_id;
         public String intro;
         public Integer is_vip;
         public Integer label_id;

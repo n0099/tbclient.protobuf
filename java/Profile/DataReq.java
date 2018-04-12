@@ -12,10 +12,14 @@ public final class DataReq extends Message {
     public final Long friend_uid;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer has_plist;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer is_from_usercenter;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer is_guest;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer need_post_count;
+    @ProtoField(tag = 15, type = Message.Datatype.INT32)
+    public final Integer page;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 12, type = Message.Datatype.UINT32)
@@ -43,6 +47,8 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Integer DEFAULT_Q_TYPE = 0;
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_IS_FROM_USERCENTER = 0;
+    public static final Integer DEFAULT_PAGE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -105,9 +111,19 @@ public final class DataReq extends Message {
             }
             if (builder.scr_dip == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
-                return;
             } else {
                 this.scr_dip = builder.scr_dip;
+            }
+            if (builder.is_from_usercenter == null) {
+                this.is_from_usercenter = DEFAULT_IS_FROM_USERCENTER;
+            } else {
+                this.is_from_usercenter = builder.is_from_usercenter;
+            }
+            if (builder.page == null) {
+                this.page = DEFAULT_PAGE;
+                return;
+            } else {
+                this.page = builder.page;
                 return;
             }
         }
@@ -124,6 +140,8 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
         this.scr_dip = builder.scr_dip;
+        this.is_from_usercenter = builder.is_from_usercenter;
+        this.page = builder.page;
     }
 
     /* loaded from: classes.dex */
@@ -131,8 +149,10 @@ public final class DataReq extends Message {
         public CommonReq common;
         public Long friend_uid;
         public Integer has_plist;
+        public Integer is_from_usercenter;
         public Integer is_guest;
         public Integer need_post_count;
+        public Integer page;
         public Integer pn;
         public Integer q_type;
         public Integer rn;
@@ -161,6 +181,8 @@ public final class DataReq extends Message {
                 this.scr_h = dataReq.scr_h;
                 this.q_type = dataReq.q_type;
                 this.scr_dip = dataReq.scr_dip;
+                this.is_from_usercenter = dataReq.is_from_usercenter;
+                this.page = dataReq.page;
             }
         }
 

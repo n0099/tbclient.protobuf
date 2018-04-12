@@ -48,6 +48,8 @@ public final class PostInfoList extends Message {
     public final String ip;
     @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean is_deal;
+    @ProtoField(tag = 47, type = Message.Datatype.INT32)
+    public final Integer is_ntitle;
     @ProtoField(tag = 12, type = Message.Datatype.UINT32)
     public final Integer is_post_deleted;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
@@ -80,6 +82,10 @@ public final class PostInfoList extends Message {
     public final Quote quote;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer reply_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 46)
+    public final List<PbContent> rich_abstract;
+    @ProtoField(label = Message.Label.REPEATED, tag = 45)
+    public final List<PbContent> rich_title;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer share_num;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -128,6 +134,9 @@ public final class PostInfoList extends Message {
     public static final Integer DEFAULT_IS_REMAIN = 0;
     public static final Integer DEFAULT_IS_VIEW_YEAR = 0;
     public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
+    public static final List<PbContent> DEFAULT_RICH_TITLE = Collections.emptyList();
+    public static final List<PbContent> DEFAULT_RICH_ABSTRACT = Collections.emptyList();
+    public static final Integer DEFAULT_IS_NTITLE = 0;
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -309,9 +318,24 @@ public final class PostInfoList extends Message {
             }
             if (builder.is_share_thread == null) {
                 this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
-                return;
             } else {
                 this.is_share_thread = builder.is_share_thread;
+            }
+            if (builder.rich_title == null) {
+                this.rich_title = DEFAULT_RICH_TITLE;
+            } else {
+                this.rich_title = immutableCopyOf(builder.rich_title);
+            }
+            if (builder.rich_abstract == null) {
+                this.rich_abstract = DEFAULT_RICH_ABSTRACT;
+            } else {
+                this.rich_abstract = immutableCopyOf(builder.rich_abstract);
+            }
+            if (builder.is_ntitle == null) {
+                this.is_ntitle = DEFAULT_IS_NTITLE;
+                return;
+            } else {
+                this.is_ntitle = builder.is_ntitle;
                 return;
             }
         }
@@ -359,6 +383,9 @@ public final class PostInfoList extends Message {
         this.origin_thread_info = builder.origin_thread_info;
         this.is_view_year = builder.is_view_year;
         this.is_share_thread = builder.is_share_thread;
+        this.rich_title = immutableCopyOf(builder.rich_title);
+        this.rich_abstract = immutableCopyOf(builder.rich_abstract);
+        this.is_ntitle = builder.is_ntitle;
     }
 
     /* loaded from: classes.dex */
@@ -379,6 +406,7 @@ public final class PostInfoList extends Message {
         public Integer hide_post;
         public String ip;
         public Boolean is_deal;
+        public Integer is_ntitle;
         public Integer is_post_deleted;
         public Integer is_remain;
         public Integer is_share_thread;
@@ -395,6 +423,8 @@ public final class PostInfoList extends Message {
         public String ptype;
         public Quote quote;
         public Integer reply_num;
+        public List<PbContent> rich_abstract;
+        public List<PbContent> rich_title;
         public Integer share_num;
         public Long thread_id;
         public Long thread_type;
@@ -458,6 +488,9 @@ public final class PostInfoList extends Message {
                 this.origin_thread_info = postInfoList.origin_thread_info;
                 this.is_view_year = postInfoList.is_view_year;
                 this.is_share_thread = postInfoList.is_share_thread;
+                this.rich_title = PostInfoList.copyOf(postInfoList.rich_title);
+                this.rich_abstract = PostInfoList.copyOf(postInfoList.rich_abstract);
+                this.is_ntitle = postInfoList.is_ntitle;
             }
         }
 

@@ -34,14 +34,14 @@ public final class DataRes extends Message {
     public final Feedback feedback;
     @ProtoField(tag = 7)
     public final Highlist highs;
-    @ProtoField(tag = 18, type = Message.Datatype.INT32)
-    public final Integer mask_type;
     @ProtoField(tag = 15)
     public final ModuleInfo module_info;
     @ProtoField(tag = 17)
     public final NicknameInfo nickname_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<PostInfoList> post_list;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer show_answer;
     @ProtoField(tag = 3)
     public final TAInfo tainfo;
     @ProtoField(tag = 9)
@@ -63,9 +63,9 @@ public final class DataRes extends Message {
     public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
     public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST = Collections.emptyList();
     public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
-    public static final Integer DEFAULT_MASK_TYPE = 0;
     public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
     public static final List<UserMap> DEFAULT_URL_MAP = Collections.emptyList();
+    public static final Integer DEFAULT_SHOW_ANSWER = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -99,11 +99,6 @@ public final class DataRes extends Message {
             this.module_info = builder.module_info;
             this.ala_live_info = builder.ala_live_info;
             this.nickname_info = builder.nickname_info;
-            if (builder.mask_type == null) {
-                this.mask_type = DEFAULT_MASK_TYPE;
-            } else {
-                this.mask_type = builder.mask_type;
-            }
             if (builder.ala_live_record == null) {
                 this.ala_live_record = DEFAULT_ALA_LIVE_RECORD;
             } else {
@@ -111,9 +106,14 @@ public final class DataRes extends Message {
             }
             if (builder.url_map == null) {
                 this.url_map = DEFAULT_URL_MAP;
-                return;
             } else {
                 this.url_map = immutableCopyOf(builder.url_map);
+            }
+            if (builder.show_answer == null) {
+                this.show_answer = DEFAULT_SHOW_ANSWER;
+                return;
+            } else {
+                this.show_answer = builder.show_answer;
                 return;
             }
         }
@@ -134,9 +134,9 @@ public final class DataRes extends Message {
         this.module_info = builder.module_info;
         this.ala_live_info = builder.ala_live_info;
         this.nickname_info = builder.nickname_info;
-        this.mask_type = builder.mask_type;
         this.ala_live_record = immutableCopyOf(builder.ala_live_record);
         this.url_map = immutableCopyOf(builder.url_map);
+        this.show_answer = builder.show_answer;
     }
 
     /* loaded from: classes.dex */
@@ -148,10 +148,10 @@ public final class DataRes extends Message {
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
         public Highlist highs;
-        public Integer mask_type;
         public ModuleInfo module_info;
         public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
+        public Integer show_answer;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
@@ -185,9 +185,9 @@ public final class DataRes extends Message {
                 this.module_info = dataRes.module_info;
                 this.ala_live_info = dataRes.ala_live_info;
                 this.nickname_info = dataRes.nickname_info;
-                this.mask_type = dataRes.mask_type;
                 this.ala_live_record = DataRes.copyOf(dataRes.ala_live_record);
                 this.url_map = DataRes.copyOf(dataRes.url_map);
+                this.show_answer = dataRes.show_answer;
             }
         }
 

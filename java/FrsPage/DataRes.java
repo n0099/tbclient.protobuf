@@ -20,7 +20,6 @@ import tbclient.Page;
 import tbclient.PopInfo;
 import tbclient.RecommendInfo;
 import tbclient.SdkTopicThread;
-import tbclient.StarVoice;
 import tbclient.ThreadInfo;
 import tbclient.User;
 import tbclient.VitalityInfo;

@@ -4,16 +4,25 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class ActivityConfig extends Message {
+    public static final String DEFAULT_ADDTHREAD_ICON = "";
+    public static final String DEFAULT_ADDTHREAD_TEXT = "";
     public static final String DEFAULT_AGREED_ICON = "";
     public static final String DEFAULT_AGREE_ICON = "";
+    public static final String DEFAULT_NIGHT_ADDTHREAD_ICON = "";
     public static final String DEFAULT_NIGHT_AGREED_ICON = "";
     public static final String DEFAULT_NIGHT_AGREE_ICON = "";
     @ProtoField(tag = 9, type = Message.Datatype.UINT64)
     public final Long activity_id;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String addthread_icon;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String addthread_text;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String agree_icon;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String agreed_icon;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String night_addthread_icon;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String night_agree_icon;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -53,9 +62,24 @@ public final class ActivityConfig extends Message {
             }
             if (builder.activity_id == null) {
                 this.activity_id = DEFAULT_ACTIVITY_ID;
-                return;
             } else {
                 this.activity_id = builder.activity_id;
+            }
+            if (builder.addthread_icon == null) {
+                this.addthread_icon = "";
+            } else {
+                this.addthread_icon = builder.addthread_icon;
+            }
+            if (builder.night_addthread_icon == null) {
+                this.night_addthread_icon = "";
+            } else {
+                this.night_addthread_icon = builder.night_addthread_icon;
+            }
+            if (builder.addthread_text == null) {
+                this.addthread_text = "";
+                return;
+            } else {
+                this.addthread_text = builder.addthread_text;
                 return;
             }
         }
@@ -65,13 +89,19 @@ public final class ActivityConfig extends Message {
         this.agreed_icon = builder.agreed_icon;
         this.night_agreed_icon = builder.night_agreed_icon;
         this.activity_id = builder.activity_id;
+        this.addthread_icon = builder.addthread_icon;
+        this.night_addthread_icon = builder.night_addthread_icon;
+        this.addthread_text = builder.addthread_text;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<ActivityConfig> {
         public Long activity_id;
+        public String addthread_icon;
+        public String addthread_text;
         public String agree_icon;
         public String agreed_icon;
+        public String night_addthread_icon;
         public String night_agree_icon;
         public String night_agreed_icon;
         public Integer type;
@@ -88,6 +118,9 @@ public final class ActivityConfig extends Message {
                 this.agreed_icon = activityConfig.agreed_icon;
                 this.night_agreed_icon = activityConfig.night_agreed_icon;
                 this.activity_id = activityConfig.activity_id;
+                this.addthread_icon = activityConfig.addthread_icon;
+                this.night_addthread_icon = activityConfig.night_addthread_icon;
+                this.addthread_text = activityConfig.addthread_text;
             }
         }
 

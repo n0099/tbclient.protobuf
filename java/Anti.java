@@ -42,6 +42,8 @@ public final class Anti extends Message {
     public final Integer need_vcode;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String poll_message;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer reply_private_flag;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tbs;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
@@ -69,6 +71,7 @@ public final class Anti extends Message {
     public static final Integer DEFAULT_IFVOICE = 0;
     public static final Integer DEFAULT_IFADDITION = 0;
     public static final Integer DEFAULT_NEED_VCODE = 0;
+    public static final Integer DEFAULT_REPLY_PRIVATE_FLAG = 0;
 
     private Anti(Builder builder, boolean z) {
         super(builder);
@@ -179,7 +182,13 @@ public final class Anti extends Message {
                 this.video_local_message = builder.video_local_message;
             }
             this.block_pop_info = builder.block_pop_info;
-            return;
+            if (builder.reply_private_flag == null) {
+                this.reply_private_flag = DEFAULT_REPLY_PRIVATE_FLAG;
+                return;
+            } else {
+                this.reply_private_flag = builder.reply_private_flag;
+                return;
+            }
         }
         this.tbs = builder.tbs;
         this.ifpost = builder.ifpost;
@@ -203,6 +212,7 @@ public final class Anti extends Message {
         this.video_message = builder.video_message;
         this.video_local_message = builder.video_local_message;
         this.block_pop_info = builder.block_pop_info;
+        this.reply_private_flag = builder.reply_private_flag;
     }
 
     /* loaded from: classes.dex */
@@ -221,6 +231,7 @@ public final class Anti extends Message {
         public String ifxiaoying;
         public Integer need_vcode;
         public String poll_message;
+        public Integer reply_private_flag;
         public String tbs;
         public String user_mute;
         public String vcode_md5;
@@ -258,6 +269,7 @@ public final class Anti extends Message {
                 this.video_message = anti.video_message;
                 this.video_local_message = anti.video_local_message;
                 this.block_pop_info = anti.block_pop_info;
+                this.reply_private_flag = anti.reply_private_flag;
             }
         }
 
