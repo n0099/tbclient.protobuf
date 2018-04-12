@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "HistoryForumInfo.proto";
+
+message DataRes {
+    repeated HistoryForumInfo history_forum = 1;
+}

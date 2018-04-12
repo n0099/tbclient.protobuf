@@ -11,7 +11,7 @@ message AnchorInfo {
     string author_name = 6;
     int32 listeners = 7;
     int32 likers = 8;
-    int32 group_id = 9;
+    int64 group_id = 9;
     string intro = 10;
     string publisherPortrait = 11;
     string publisherName = 12;

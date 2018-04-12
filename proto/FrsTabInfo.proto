@@ -5,4 +5,6 @@ message FrsTabInfo {
     int32 tab_type = 2;
     string tab_name = 3;
     string tab_url = 4;
+    string tab_gid = 5;
+    string tab_title = 6;
 }

@@ -95,4 +95,5 @@ message ForumInfo {
     string warning_msg = 67;
     string special_forum_type = 68;
     string topic_special_icon = 69;
+    string topic_special_icon_right = 70;
 }

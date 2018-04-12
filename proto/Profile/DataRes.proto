@@ -37,7 +37,7 @@ message DataRes {
     ModuleInfo module_info = 15;
     AlaLiveInfo ala_live_info = 16;
     NicknameInfo nickname_info = 17;
-    int32 mask_type = 18;
     repeated AlaLiveInfo ala_live_record = 19;
     repeated UserMap url_map = 20;
+    int32 show_answer = 21;
 }

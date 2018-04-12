@@ -17,4 +17,5 @@ message VideoInfo {
     repeated VideoDesc video_desc = 12;
     int32 video_select_flag = 13;
     uint32 video_type = 14;
+    uint32 is_vertical = 15;
 }

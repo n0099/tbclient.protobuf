@@ -22,6 +22,7 @@ import "PbPage/RecommendBook.proto";
 import "PbTopAgreePost.proto";
 import "Post.proto";
 import "PsRankListItem.proto";
+import "RecomTopicList.proto";
 import "RecommendThread.proto";
 import "SdkTopicThread.proto";
 import "SimpleForum.proto";
@@ -78,4 +79,5 @@ message DataRes {
     int32 exp_news_today = 45;
     int32 exp_guide_today = 46;
     string multi_forum_text = 47;
+    repeated RecomTopicList thread_topic = 48;
 }

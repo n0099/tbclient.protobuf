@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "AlaChallengeInfo.proto";
+import "AlaCoverLabel.proto";
 import "AlaShareInfo.proto";
 import "AlaStageDislikeInfo.proto";
 import "AlaUserInfo.proto";
@@ -28,4 +30,6 @@ message AlaLiveInfo {
     string third_app_id = 21;
     uint64 thread_id = 22;
     repeated AlaStageDislikeInfo stage_dislike_info = 23;
+    AlaCoverLabel label = 24;
+    AlaChallengeInfo challenge_info = 25;
 }

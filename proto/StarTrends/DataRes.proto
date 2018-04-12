@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+import "User.proto";
+
+message DataRes {
+    repeated User user_list = 1;
+    repeated ThreadInfo thread_list = 2;
+    uint32 has_more = 3;
+}

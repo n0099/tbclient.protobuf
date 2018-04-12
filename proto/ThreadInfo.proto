@@ -186,4 +186,6 @@ message ThreadInfo {
     uint64 trans_num = 145;
     string multi_forum_text = 146;
     StarRankIcon star_rank_icon = 147;
+    int32 is_topic = 148;
+    string topic_user_name = 149;
 }

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message HistoryInfo {
+    int64 forum_id = 1;
+    string visit_time = 2;
+}

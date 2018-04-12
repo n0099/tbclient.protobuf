@@ -6,4 +6,5 @@ import "ThreadInfo.proto";
 message DataRes {
     User_Info user_info = 1;
     ThreadInfo thread_info = 2;
+    string partial_visible_toast = 3;
 }

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message HistoryForumInfo {
+    int64 forum_id = 1;
+    string forum_name = 2;
+    string avatar = 3;
+    int32 is_liveforum = 4;
+    int32 unread_num = 5;
+    string visit_time = 6;
+}
