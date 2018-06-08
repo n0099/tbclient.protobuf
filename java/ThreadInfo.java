@@ -1,6 +1,5 @@
 package tbclient;
 
-import android.support.v4.media.TransportMediator;
 import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.BaseActivity;
 import com.squareup.wire.Message;
@@ -23,6 +22,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_MEIZHI_PIC = "";
     public static final String DEFAULT_MULTI_FORUM_TEXT = "";
     public static final String DEFAULT_PIDS = "";
+    public static final String DEFAULT_PRESENTATION_STYLE = "";
     public static final String DEFAULT_RECOM_EXTRA = "";
     public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_RECOM_SOURCE = "";
@@ -44,7 +44,7 @@ public final class ThreadInfo extends Message {
     public final List<ActInfo> act_info;
     @ProtoField(tag = 132)
     public final ActivityInfo activity_info;
-    @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PLAY)
+    @ProtoField(tag = 126)
     public final Agree agree;
     @ProtoField(tag = 124, type = Message.Datatype.INT32)
     public final Integer agree_num;
@@ -100,7 +100,7 @@ public final class ThreadInfo extends Message {
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
-    @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_RECORD, type = Message.Datatype.INT64)
+    @ProtoField(tag = 130, type = Message.Datatype.INT64)
     public final Long freq_num;
     @ProtoField(tag = 49, type = Message.Datatype.STRING)
     public final String from;
@@ -164,7 +164,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
-    @ProtoField(tag = TransportMediator.KEYCODE_MEDIA_PAUSE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 127, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
@@ -236,6 +236,8 @@ public final class ThreadInfo extends Message {
     public final List<PostList> post_list;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
     public final Integer post_num;
+    @ProtoField(tag = 151, type = Message.Datatype.STRING)
+    public final String presentation_style;
     @ProtoField(tag = 101)
     public final PsInfo ps_info;
     @ProtoField(tag = 80, type = Message.Datatype.INT32)
@@ -998,9 +1000,14 @@ public final class ThreadInfo extends Message {
             }
             if (builder.topic_h5_url == null) {
                 this.topic_h5_url = "";
-                return;
             } else {
                 this.topic_h5_url = builder.topic_h5_url;
+            }
+            if (builder.presentation_style == null) {
+                this.presentation_style = "";
+                return;
+            } else {
+                this.presentation_style = builder.presentation_style;
                 return;
             }
         }
@@ -1150,6 +1157,7 @@ public final class ThreadInfo extends Message {
         this.is_topic = builder.is_topic;
         this.topic_user_name = builder.topic_user_name;
         this.topic_h5_url = builder.topic_h5_url;
+        this.presentation_style = builder.presentation_style;
     }
 
     /* loaded from: classes.dex */
@@ -1254,6 +1262,7 @@ public final class ThreadInfo extends Message {
         public Long post_id;
         public List<PostList> post_list;
         public Integer post_num;
+        public String presentation_style;
         public PsInfo ps_info;
         public Integer push_end_time;
         public PushStatus push_status;
@@ -1453,6 +1462,7 @@ public final class ThreadInfo extends Message {
                 this.is_topic = threadInfo.is_topic;
                 this.topic_user_name = threadInfo.topic_user_name;
                 this.topic_h5_url = threadInfo.topic_h5_url;
+                this.presentation_style = threadInfo.presentation_style;
             }
         }
 

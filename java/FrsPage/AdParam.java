@@ -6,7 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class AdParam extends Message {
     public static final Integer DEFAULT_LOAD_COUNT = 0;
     public static final Integer DEFAULT_REFRESH_COUNT = 0;
-    public static final String DEFAULT_YOGA_LIB_VERSION = "1.0";
+    public static final String DEFAULT_YOGA_LIB_VERSION = "";
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer load_count;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -28,7 +28,7 @@ public final class AdParam extends Message {
                 this.refresh_count = builder.refresh_count;
             }
             if (builder.yoga_lib_version == null) {
-                this.yoga_lib_version = "1.0";
+                this.yoga_lib_version = "";
                 return;
             } else {
                 this.yoga_lib_version = builder.yoga_lib_version;

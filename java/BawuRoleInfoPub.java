@@ -5,6 +5,7 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class BawuRoleInfoPub extends Message {
     public static final String DEFAULT_LEVEL_NAME = "";
+    public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_ROLE_NAME = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -12,6 +13,8 @@ public final class BawuRoleInfoPub extends Message {
     public final Long forum_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String level_name;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String name_show;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -69,9 +72,14 @@ public final class BawuRoleInfoPub extends Message {
             }
             if (builder.user_name == null) {
                 this.user_name = "";
-                return;
             } else {
                 this.user_name = builder.user_name;
+            }
+            if (builder.name_show == null) {
+                this.name_show = "";
+                return;
+            } else {
+                this.name_show = builder.name_show;
                 return;
             }
         }
@@ -83,12 +91,14 @@ public final class BawuRoleInfoPub extends Message {
         this.user_level = builder.user_level;
         this.level_name = builder.level_name;
         this.user_name = builder.user_name;
+        this.name_show = builder.name_show;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<BawuRoleInfoPub> {
         public Long forum_id;
         public String level_name;
+        public String name_show;
         public String portrait;
         public Integer role_id;
         public String role_name;
@@ -110,6 +120,7 @@ public final class BawuRoleInfoPub extends Message {
                 this.user_level = bawuRoleInfoPub.user_level;
                 this.level_name = bawuRoleInfoPub.level_name;
                 this.user_name = bawuRoleInfoPub.user_name;
+                this.name_show = bawuRoleInfoPub.name_show;
             }
         }
 

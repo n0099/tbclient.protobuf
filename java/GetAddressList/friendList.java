@@ -4,12 +4,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class friendList extends Message {
+    public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_QUANPIN = "";
     public static final Long DEFAULT_USER_ID = 0L;
     public static final String DEFAULT_USER_NAME = "";
     @ProtoField(tag = 5)
     public final LbsInfo location;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String name_show;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -43,18 +46,26 @@ public final class friendList extends Message {
                 this.quanpin = builder.quanpin;
             }
             this.location = builder.location;
-            return;
+            if (builder.name_show == null) {
+                this.name_show = "";
+                return;
+            } else {
+                this.name_show = builder.name_show;
+                return;
+            }
         }
         this.portrait = builder.portrait;
         this.user_name = builder.user_name;
         this.user_id = builder.user_id;
         this.quanpin = builder.quanpin;
         this.location = builder.location;
+        this.name_show = builder.name_show;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<friendList> {
         public LbsInfo location;
+        public String name_show;
         public String portrait;
         public String quanpin;
         public Long user_id;
@@ -71,6 +82,7 @@ public final class friendList extends Message {
                 this.user_id = friendlist.user_id;
                 this.quanpin = friendlist.quanpin;
                 this.location = friendlist.location;
+                this.name_show = friendlist.name_show;
             }
         }
 

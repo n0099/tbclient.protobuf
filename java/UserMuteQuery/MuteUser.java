@@ -4,10 +4,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes.dex */
 public final class MuteUser extends Message {
+    public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer mute_time;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String name_show;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -37,9 +40,14 @@ public final class MuteUser extends Message {
             }
             if (builder.portrait == null) {
                 this.portrait = "";
-                return;
             } else {
                 this.portrait = builder.portrait;
+            }
+            if (builder.name_show == null) {
+                this.name_show = "";
+                return;
+            } else {
+                this.name_show = builder.name_show;
                 return;
             }
         }
@@ -47,11 +55,13 @@ public final class MuteUser extends Message {
         this.user_name = builder.user_name;
         this.mute_time = builder.mute_time;
         this.portrait = builder.portrait;
+        this.name_show = builder.name_show;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<MuteUser> {
         public Integer mute_time;
+        public String name_show;
         public String portrait;
         public Long user_id;
         public String user_name;
@@ -66,6 +76,7 @@ public final class MuteUser extends Message {
                 this.user_name = muteUser.user_name;
                 this.mute_time = muteUser.mute_time;
                 this.portrait = muteUser.portrait;
+                this.name_show = muteUser.name_show;
             }
         }
 

@@ -19,6 +19,7 @@ import tbclient.Novel;
 import tbclient.Page;
 import tbclient.PopInfo;
 import tbclient.RecommendInfo;
+import tbclient.RedpacketRain;
 import tbclient.SdkTopicThread;
 import tbclient.ThreadInfo;
 import tbclient.User;
@@ -145,6 +146,8 @@ public final class DataRes extends Message {
     public final RecomPostTopic recom_post_topic;
     @ProtoField(tag = 46)
     public final RecommendBook recommend_book;
+    @ProtoField(tag = 90)
+    public final RedpacketRain redpacketrain;
     @ProtoField(tag = 40)
     public final RecommendInfo school_recom_info;
     @ProtoField(tag = 41, type = Message.Datatype.UINT32)
@@ -162,7 +165,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 81)
     public final StarRank star_rank_info;
     @ProtoField(tag = 88)
-    public final StarVoice star_voice;
+    public final tbclient.StarVoice star_voice;
     @ProtoField(tag = 30)
     public final ThreadInfo store_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 8, type = Message.Datatype.INT64)
@@ -191,6 +194,8 @@ public final class DataRes extends Message {
     public final VitalityInfo vitality_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 85)
     public final List<WindowToast> window_toast;
+    @ProtoField(tag = 89)
+    public final WorldcupSkin worldcup_skin;
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<Long> DEFAULT_THREAD_ID_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_NEW_URL = 0;
@@ -466,6 +471,8 @@ public final class DataRes extends Message {
             this.recom_post_topic = builder.recom_post_topic;
             this.activity_config = builder.activity_config;
             this.star_voice = builder.star_voice;
+            this.worldcup_skin = builder.worldcup_skin;
+            this.redpacketrain = builder.redpacketrain;
             return;
         }
         this.user = builder.user;
@@ -548,6 +555,8 @@ public final class DataRes extends Message {
         this.recom_post_topic = builder.recom_post_topic;
         this.activity_config = builder.activity_config;
         this.star_voice = builder.star_voice;
+        this.worldcup_skin = builder.worldcup_skin;
+        this.redpacketrain = builder.redpacketrain;
     }
 
     /* loaded from: classes.dex */
@@ -609,6 +618,7 @@ public final class DataRes extends Message {
         public PushThreadInfo push_thread_info;
         public RecomPostTopic recom_post_topic;
         public RecommendBook recommend_book;
+        public RedpacketRain redpacketrain;
         public RecommendInfo school_recom_info;
         public Integer school_recom_pos;
         public SdkTopicThread sdk_topic_thread;
@@ -617,7 +627,7 @@ public final class DataRes extends Message {
         public Integer sort_type;
         public List<StarEnter> star_enter;
         public StarRank star_rank_info;
-        public StarVoice star_voice;
+        public tbclient.StarVoice star_voice;
         public ThreadInfo store_card;
         public List<Long> thread_id_list;
         public List<ThreadIdListInfo> thread_id_list_info;
@@ -632,6 +642,7 @@ public final class DataRes extends Message {
         public FrsVideo video;
         public VitalityInfo vitality_info;
         public List<WindowToast> window_toast;
+        public WorldcupSkin worldcup_skin;
 
         public Builder() {
         }
@@ -719,6 +730,8 @@ public final class DataRes extends Message {
                 this.recom_post_topic = dataRes.recom_post_topic;
                 this.activity_config = dataRes.activity_config;
                 this.star_voice = dataRes.star_voice;
+                this.worldcup_skin = dataRes.worldcup_skin;
+                this.redpacketrain = dataRes.redpacketrain;
             }
         }
 
