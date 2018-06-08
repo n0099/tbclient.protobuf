@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "BannerImage.proto";
+import "RedpacketRain.proto";
+import "TalkBall/AdidasAdvert.proto";
+import "TalkBall/CardInfo.proto";
+import "TalkBall/GuessingCompetition.proto";
+
+message DataRes {
+    repeated CardInfo thread_list = 1;
+    repeated BannerImage banner_images = 2;
+    int32 has_more = 3;
+    int64 last_thread_id = 4;
+    AdidasAdvert adidas_advert = 5;
+    GuessingCompetition guessing_competition = 6;
+    RedpacketRain redpacketrain = 7;
+}

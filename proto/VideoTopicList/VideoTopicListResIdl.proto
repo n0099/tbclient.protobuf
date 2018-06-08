@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "VideoTopicList/DataRes.proto";
+
+message VideoTopicListResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

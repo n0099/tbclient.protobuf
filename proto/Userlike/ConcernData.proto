@@ -7,4 +7,5 @@ message ConcernData {
     ThreadInfo thread_list = 1;
     PostData post_data = 2;
     int32 recom_type = 3;
+    int32 source = 4;
 }

@@ -8,4 +8,5 @@ message friendList {
     int64 user_id = 3;
     string quanpin = 4;
     LbsInfo location = 5;
+    string name_show = 6;
 }

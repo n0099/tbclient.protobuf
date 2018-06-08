@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "VideoTopicList/DataReq.proto";
+
+message VideoTopicListReqIdl {
+    DataReq data = 1;
+}

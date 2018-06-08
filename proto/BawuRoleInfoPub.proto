@@ -9,4 +9,5 @@ message BawuRoleInfoPub {
     int32 user_level = 6;
     string level_name = 7;
     string user_name = 8;
+    string name_show = 9;
 }

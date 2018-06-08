@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "TalkBall/Country.proto";
+
+message Competition {
+    repeated Country country = 1;
+    uint64 time = 2;
+    string type = 3;
+    string btn_title = 4;
+}

@@ -4,4 +4,8 @@ message FloatInfo {
     string float_url = 1;
     uint64 start_time = 2;
     uint64 end_time = 3;
+    repeated string dynamic_url = 4;
+    uint64 activity_id = 5;
+    string jump_url = 6;
+    uint32 show_type = 7;
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetToken/DataRes.proto";
+
+message GetTokenResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

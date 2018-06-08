@@ -4,4 +4,5 @@ message LiveAnswer {
     string banner_url = 1;
     int32 banner_width = 2;
     int32 banner_high = 3;
+    string jump_url = 4;
 }

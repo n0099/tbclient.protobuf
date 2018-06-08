@@ -32,8 +32,8 @@ import "FrsPage/RecommendBook.proto";
 import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
 import "FrsPage/StarRank.proto";
-import "FrsPage/StarVoice.proto";
 import "FrsPage/ThreadIdListInfo.proto";
+import "FrsPage/WorldcupSkin.proto";
 import "FrsPageUserExtend.proto";
 import "FrsTabInfo.proto";
 import "FrsVideo.proto";
@@ -43,7 +43,9 @@ import "Page.proto";
 import "PopInfo.proto";
 import "RecomPostTopic.proto";
 import "RecommendInfo.proto";
+import "RedpacketRain.proto";
 import "SdkTopicThread.proto";
+import "StarVoice.proto";
 import "ThreadInfo.proto";
 import "User.proto";
 import "VitalityInfo.proto";
@@ -131,4 +133,6 @@ message DataRes {
     RecomPostTopic recom_post_topic = 86;
     ActivityConfig activity_config = 87;
     StarVoice star_voice = 88;
+    WorldcupSkin worldcup_skin = 89;
+    RedpacketRain redpacketrain = 90;
 }

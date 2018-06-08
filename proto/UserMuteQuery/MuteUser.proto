@@ -5,4 +5,5 @@ message MuteUser {
     string user_name = 2;
     int32 mute_time = 3;
     string portrait = 4;
+    string name_show = 5;
 }

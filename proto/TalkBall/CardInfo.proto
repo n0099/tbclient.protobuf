@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "TalkBall/InsertFloor.proto";
+import "ThreadInfo.proto";
+
+message CardInfo {
+    ThreadInfo thread_info = 1;
+    InsertFloor insert_floor = 2;
+}

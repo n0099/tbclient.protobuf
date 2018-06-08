@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FrsPage/TabSkin.proto";
+
+message WorldcupSkin {
+    int32 worldcup_icon_height = 1;
+    string worldcup_bottom = 2;
+    string worldcup_bottom_night = 3;
+    string worldcup_top = 4;
+    string worldcup_top_night = 5;
+    repeated TabSkin tab_skin = 6;
+}
