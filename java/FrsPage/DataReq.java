@@ -28,6 +28,8 @@ public final class DataReq extends Message {
     public final AdParam ad_param;
     @ProtoField(tag = 50)
     public final AppPosInfo app_pos;
+    @ProtoField(tag = 56, type = Message.Datatype.INT32)
+    public final Integer call_from;
     @ProtoField(tag = 54, type = Message.Datatype.STRING)
     public final String call_url;
     @ProtoField(tag = 44, type = Message.Datatype.INT32)
@@ -62,6 +64,8 @@ public final class DataReq extends Message {
     public final String ip_str;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
+    @ProtoField(tag = 55, type = Message.Datatype.INT32)
+    public final Integer is_selection;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -165,6 +169,8 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final Long DEFAULT_LAST_CLICK_TID = 0L;
     public static final Integer DEFAULT_LOAD_TYPE = 0;
+    public static final Integer DEFAULT_IS_SELECTION = 0;
+    public static final Integer DEFAULT_CALL_FROM = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -424,9 +430,19 @@ public final class DataReq extends Message {
             }
             if (builder.call_url == null) {
                 this.call_url = "";
-                return;
             } else {
                 this.call_url = builder.call_url;
+            }
+            if (builder.is_selection == null) {
+                this.is_selection = DEFAULT_IS_SELECTION;
+            } else {
+                this.is_selection = builder.is_selection;
+            }
+            if (builder.call_from == null) {
+                this.call_from = DEFAULT_CALL_FROM;
+                return;
+            } else {
+                this.call_from = builder.call_from;
                 return;
             }
         }
@@ -484,12 +500,15 @@ public final class DataReq extends Message {
         this.obj_locate = builder.obj_locate;
         this.obj_source = builder.obj_source;
         this.call_url = builder.call_url;
+        this.is_selection = builder.is_selection;
+        this.call_from = builder.call_from;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public AdParam ad_param;
         public AppPosInfo app_pos;
+        public Integer call_from;
         public String call_url;
         public Integer category_id;
         public Boolean check_login;
@@ -507,6 +526,7 @@ public final class DataReq extends Message {
         public Integer ip_int;
         public String ip_str;
         public Integer is_good;
+        public Integer is_selection;
         public Integer issdk;
         public String kw;
         public Long last_click_tid;
@@ -603,6 +623,8 @@ public final class DataReq extends Message {
                 this.obj_locate = dataReq.obj_locate;
                 this.obj_source = dataReq.obj_source;
                 this.call_url = dataReq.call_url;
+                this.is_selection = dataReq.is_selection;
+                this.call_from = dataReq.call_from;
             }
         }
 

@@ -10,6 +10,8 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_BRAND = "";
     public static final String DEFAULT_BRAND_TYPE = "";
     public static final String DEFAULT_CUID = "";
+    public static final String DEFAULT_CUID_GALAXY2 = "";
+    public static final String DEFAULT_CUID_GID = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_KA = "";
     public static final String DEFAULT_LEGO_LIB_VERSION = "";
@@ -58,6 +60,10 @@ public final class CommonReq extends Message {
     public final String brand_type;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String cuid;
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
+    public final String cuid_galaxy2;
+    @ProtoField(tag = 33, type = Message.Datatype.STRING)
+    public final String cuid_gid;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String from;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -253,9 +259,19 @@ public final class CommonReq extends Message {
             }
             if (builder.z_id == null) {
                 this.z_id = "";
-                return;
             } else {
                 this.z_id = builder.z_id;
+            }
+            if (builder.cuid_galaxy2 == null) {
+                this.cuid_galaxy2 = "";
+            } else {
+                this.cuid_galaxy2 = builder.cuid_galaxy2;
+            }
+            if (builder.cuid_gid == null) {
+                this.cuid_gid = "";
+                return;
+            } else {
+                this.cuid_gid = builder.cuid_gid;
                 return;
             }
         }
@@ -290,6 +306,8 @@ public final class CommonReq extends Message {
         this.applist = builder.applist;
         this.stoken = builder.stoken;
         this.z_id = builder.z_id;
+        this.cuid_galaxy2 = builder.cuid_galaxy2;
+        this.cuid_gid = builder.cuid_gid;
     }
 
     /* loaded from: classes.dex */
@@ -307,6 +325,8 @@ public final class CommonReq extends Message {
         public String brand;
         public String brand_type;
         public String cuid;
+        public String cuid_galaxy2;
+        public String cuid_gid;
         public String from;
         public String ka;
         public String lego_lib_version;
@@ -363,6 +383,8 @@ public final class CommonReq extends Message {
                 this.applist = commonReq.applist;
                 this.stoken = commonReq.stoken;
                 this.z_id = commonReq.z_id;
+                this.cuid_galaxy2 = commonReq.cuid_galaxy2;
+                this.cuid_gid = commonReq.cuid_gid;
             }
         }
 

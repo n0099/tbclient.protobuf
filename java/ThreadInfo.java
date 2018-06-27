@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.sapi2.SapiAccountManager;
 import com.baidu.tbadk.BaseActivity;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -220,6 +219,8 @@ public final class ThreadInfo extends Message {
     public final List<MultipleForum> multiple_forum_list;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
+    @ProtoField(tag = 152)
+    public final OriForumInfo ori_forum_info;
     @ProtoField(tag = 141)
     public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 133)
@@ -282,7 +283,7 @@ public final class ThreadInfo extends Message {
     public final Integer thread_types;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
-    @ProtoField(tag = SapiAccountManager.VERSION_CODE, type = Message.Datatype.STRING)
+    @ProtoField(tag = 137, type = Message.Datatype.STRING)
     public final String tieba_game_information_source;
     @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer time;
@@ -1005,11 +1006,11 @@ public final class ThreadInfo extends Message {
             }
             if (builder.presentation_style == null) {
                 this.presentation_style = "";
-                return;
             } else {
                 this.presentation_style = builder.presentation_style;
-                return;
             }
+            this.ori_forum_info = builder.ori_forum_info;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1158,6 +1159,7 @@ public final class ThreadInfo extends Message {
         this.topic_user_name = builder.topic_user_name;
         this.topic_h5_url = builder.topic_h5_url;
         this.presentation_style = builder.presentation_style;
+        this.ori_forum_info = builder.ori_forum_info;
     }
 
     /* loaded from: classes.dex */
@@ -1254,6 +1256,7 @@ public final class ThreadInfo extends Message {
         public String multi_forum_text;
         public List<MultipleForum> multiple_forum_list;
         public Integer operator_flag;
+        public OriForumInfo ori_forum_info;
         public OriginThreadInfo origin_thread_info;
         public Media pic_info;
         public Integer pic_num;
@@ -1463,6 +1466,7 @@ public final class ThreadInfo extends Message {
                 this.topic_user_name = threadInfo.topic_user_name;
                 this.topic_h5_url = threadInfo.topic_h5_url;
                 this.presentation_style = threadInfo.presentation_style;
+                this.ori_forum_info = threadInfo.ori_forum_info;
             }
         }
 

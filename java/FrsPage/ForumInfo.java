@@ -79,6 +79,8 @@ public final class ForumInfo extends Message {
     public final Integer has_postpre;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
+    @ProtoField(tag = 71, type = Message.Datatype.INT32)
+    public final Integer is_brand_forum;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer is_exists;
     @ProtoField(tag = 36, type = Message.Datatype.INT32)
@@ -97,6 +99,8 @@ public final class ForumInfo extends Message {
     public final String is_readonly;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer is_search_people;
+    @ProtoField(tag = 72, type = Message.Datatype.INT32)
+    public final Integer is_show_all_top_thread;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
@@ -195,6 +199,8 @@ public final class ForumInfo extends Message {
     public static final Integer DEFAULT_IS_LIVE_GAME_FORUM = 0;
     public static final Integer DEFAULT_IS_LIVE_GAME = 0;
     public static final Integer DEFAULT_IS_NEW_GAME_FORUM = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
+    public static final Integer DEFAULT_IS_SHOW_ALL_TOP_THREAD = 0;
 
     private ForumInfo(Builder builder, boolean z) {
         super(builder);
@@ -461,9 +467,19 @@ public final class ForumInfo extends Message {
             }
             if (builder.topic_special_icon_right == null) {
                 this.topic_special_icon_right = "";
-                return;
             } else {
                 this.topic_special_icon_right = builder.topic_special_icon_right;
+            }
+            if (builder.is_brand_forum == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+            } else {
+                this.is_brand_forum = builder.is_brand_forum;
+            }
+            if (builder.is_show_all_top_thread == null) {
+                this.is_show_all_top_thread = DEFAULT_IS_SHOW_ALL_TOP_THREAD;
+                return;
+            } else {
+                this.is_show_all_top_thread = builder.is_show_all_top_thread;
                 return;
             }
         }
@@ -536,6 +552,8 @@ public final class ForumInfo extends Message {
         this.special_forum_type = builder.special_forum_type;
         this.topic_special_icon = builder.topic_special_icon;
         this.topic_special_icon_right = builder.topic_special_icon_right;
+        this.is_brand_forum = builder.is_brand_forum;
+        this.is_show_all_top_thread = builder.is_show_all_top_thread;
     }
 
     /* loaded from: classes.dex */
@@ -567,6 +585,7 @@ public final class ForumInfo extends Message {
         public Integer has_paper;
         public Integer has_postpre;
         public Long id;
+        public Integer is_brand_forum;
         public Integer is_exists;
         public Integer is_forbidden;
         public Integer is_like;
@@ -576,6 +595,7 @@ public final class ForumInfo extends Message {
         public Integer is_new_game_forum;
         public String is_readonly;
         public Integer is_search_people;
+        public Integer is_show_all_top_thread;
         public Integer is_stage_forum;
         public Integer is_support_local;
         public Integer level_id;
@@ -685,6 +705,8 @@ public final class ForumInfo extends Message {
                 this.special_forum_type = forumInfo.special_forum_type;
                 this.topic_special_icon = forumInfo.topic_special_icon;
                 this.topic_special_icon_right = forumInfo.topic_special_icon_right;
+                this.is_brand_forum = forumInfo.is_brand_forum;
+                this.is_show_all_top_thread = forumInfo.is_show_all_top_thread;
             }
         }
 

@@ -17,6 +17,8 @@ public final class SimpleForum extends Message {
     public final String first_class;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer is_brand_forum;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer is_exists;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -42,6 +44,7 @@ public final class SimpleForum extends Message {
     public static final Integer DEFAULT_LEVEL_ID = 0;
     public static final Integer DEFAULT_MEMBER_NUM = 0;
     public static final Integer DEFAULT_POST_NUM = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
 
     private SimpleForum(Builder builder, boolean z) {
         super(builder);
@@ -104,9 +107,14 @@ public final class SimpleForum extends Message {
             }
             if (builder.post_num == null) {
                 this.post_num = DEFAULT_POST_NUM;
-                return;
             } else {
                 this.post_num = builder.post_num;
+            }
+            if (builder.is_brand_forum == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+                return;
+            } else {
+                this.is_brand_forum = builder.is_brand_forum;
                 return;
             }
         }
@@ -123,6 +131,7 @@ public final class SimpleForum extends Message {
         this.multi_forum_perm = builder.multi_forum_perm;
         this.member_num = builder.member_num;
         this.post_num = builder.post_num;
+        this.is_brand_forum = builder.is_brand_forum;
     }
 
     /* loaded from: classes.dex */
@@ -131,6 +140,7 @@ public final class SimpleForum extends Message {
         public String ext;
         public String first_class;
         public Long id;
+        public Integer is_brand_forum;
         public Integer is_exists;
         public Integer is_liked;
         public Integer is_signed;
@@ -160,6 +170,7 @@ public final class SimpleForum extends Message {
                 this.multi_forum_perm = simpleForum.multi_forum_perm;
                 this.member_num = simpleForum.member_num;
                 this.post_num = simpleForum.post_num;
+                this.is_brand_forum = simpleForum.is_brand_forum;
             }
         }
 

@@ -12,6 +12,10 @@ public final class LikeForum extends Message {
     public final Long forum_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer is_brand_forum;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer is_liveforum;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_sign;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -19,6 +23,8 @@ public final class LikeForum extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_IS_SIGN = 0;
     public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_IS_LIVEFORUM = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
 
     private LikeForum(Builder builder, boolean z) {
         super(builder);
@@ -45,9 +51,19 @@ public final class LikeForum extends Message {
             }
             if (builder.level_id == null) {
                 this.level_id = DEFAULT_LEVEL_ID;
-                return;
             } else {
                 this.level_id = builder.level_id;
+            }
+            if (builder.is_liveforum == null) {
+                this.is_liveforum = DEFAULT_IS_LIVEFORUM;
+            } else {
+                this.is_liveforum = builder.is_liveforum;
+            }
+            if (builder.is_brand_forum == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+                return;
+            } else {
+                this.is_brand_forum = builder.is_brand_forum;
                 return;
             }
         }
@@ -56,6 +72,8 @@ public final class LikeForum extends Message {
         this.avatar = builder.avatar;
         this.is_sign = builder.is_sign;
         this.level_id = builder.level_id;
+        this.is_liveforum = builder.is_liveforum;
+        this.is_brand_forum = builder.is_brand_forum;
     }
 
     /* loaded from: classes.dex */
@@ -63,6 +81,8 @@ public final class LikeForum extends Message {
         public String avatar;
         public Long forum_id;
         public String forum_name;
+        public Integer is_brand_forum;
+        public Integer is_liveforum;
         public Integer is_sign;
         public Integer level_id;
 
@@ -77,6 +97,8 @@ public final class LikeForum extends Message {
                 this.avatar = likeForum.avatar;
                 this.is_sign = likeForum.is_sign;
                 this.level_id = likeForum.level_id;
+                this.is_liveforum = likeForum.is_liveforum;
+                this.is_brand_forum = likeForum.is_brand_forum;
             }
         }
 

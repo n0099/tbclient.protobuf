@@ -2,6 +2,8 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes.dex */
 public final class Anti extends Message {
     public static final String DEFAULT_FORBID_INFO = "";
@@ -20,6 +22,8 @@ public final class Anti extends Message {
     public final Integer block_stat;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer days_tofree;
+    @ProtoField(label = Message.Label.REPEATED, tag = 24)
+    public final List<DelThreadText> del_thread_text;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer forbid_flag;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -38,6 +42,8 @@ public final class Anti extends Message {
     public final Integer ifvoice;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String ifxiaoying;
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    public final Integer multi_delthread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer need_vcode;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
@@ -72,6 +78,8 @@ public final class Anti extends Message {
     public static final Integer DEFAULT_IFADDITION = 0;
     public static final Integer DEFAULT_NEED_VCODE = 0;
     public static final Integer DEFAULT_REPLY_PRIVATE_FLAG = 0;
+    public static final List<DelThreadText> DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
+    public static final Integer DEFAULT_MULTI_DELTHREAD = 0;
 
     private Anti(Builder builder, boolean z) {
         super(builder);
@@ -184,9 +192,19 @@ public final class Anti extends Message {
             this.block_pop_info = builder.block_pop_info;
             if (builder.reply_private_flag == null) {
                 this.reply_private_flag = DEFAULT_REPLY_PRIVATE_FLAG;
-                return;
             } else {
                 this.reply_private_flag = builder.reply_private_flag;
+            }
+            if (builder.del_thread_text == null) {
+                this.del_thread_text = DEFAULT_DEL_THREAD_TEXT;
+            } else {
+                this.del_thread_text = immutableCopyOf(builder.del_thread_text);
+            }
+            if (builder.multi_delthread == null) {
+                this.multi_delthread = DEFAULT_MULTI_DELTHREAD;
+                return;
+            } else {
+                this.multi_delthread = builder.multi_delthread;
                 return;
             }
         }
@@ -213,6 +231,8 @@ public final class Anti extends Message {
         this.video_local_message = builder.video_local_message;
         this.block_pop_info = builder.block_pop_info;
         this.reply_private_flag = builder.reply_private_flag;
+        this.del_thread_text = immutableCopyOf(builder.del_thread_text);
+        this.multi_delthread = builder.multi_delthread;
     }
 
     /* loaded from: classes.dex */
@@ -220,6 +240,7 @@ public final class Anti extends Message {
         public BlockPopInfo block_pop_info;
         public Integer block_stat;
         public Integer days_tofree;
+        public List<DelThreadText> del_thread_text;
         public Integer forbid_flag;
         public String forbid_info;
         public Integer has_chance;
@@ -229,6 +250,7 @@ public final class Anti extends Message {
         public Integer ifposta;
         public Integer ifvoice;
         public String ifxiaoying;
+        public Integer multi_delthread;
         public Integer need_vcode;
         public String poll_message;
         public Integer reply_private_flag;
@@ -270,6 +292,8 @@ public final class Anti extends Message {
                 this.video_local_message = anti.video_local_message;
                 this.block_pop_info = anti.block_pop_info;
                 this.reply_private_flag = anti.reply_private_flag;
+                this.del_thread_text = Anti.copyOf(anti.del_thread_text);
+                this.multi_delthread = anti.multi_delthread;
             }
         }
 

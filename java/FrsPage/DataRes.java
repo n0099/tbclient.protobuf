@@ -8,6 +8,7 @@ import tbclient.AlaLiveNotify;
 import tbclient.AnchorInfo;
 import tbclient.Anti;
 import tbclient.BannerUserStory;
+import tbclient.BottomMenu;
 import tbclient.CategoryInfo;
 import tbclient.Esport;
 import tbclient.ForumArIno;
@@ -62,6 +63,10 @@ public final class DataRes extends Message {
     public final ForumBookInfo book_info;
     @ProtoField(tag = 58)
     public final Bottle bottle;
+    @ProtoField(label = Message.Label.REPEATED, tag = 92)
+    public final List<BottomMenu> bottom_menu;
+    @ProtoField(tag = 91)
+    public final BrandForumInfo brand_forum_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<ThreadInfo> card_shipin_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 55)
@@ -231,6 +236,7 @@ public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_ALA_STAGE_LIST = Collections.emptyList();
     public static final Integer DEFAULT_TRENDS_REDPOINT = 0;
     public static final List<WindowToast> DEFAULT_WINDOW_TOAST = Collections.emptyList();
+    public static final List<BottomMenu> DEFAULT_BOTTOM_MENU = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -473,7 +479,14 @@ public final class DataRes extends Message {
             this.star_voice = builder.star_voice;
             this.worldcup_skin = builder.worldcup_skin;
             this.redpacketrain = builder.redpacketrain;
-            return;
+            this.brand_forum_info = builder.brand_forum_info;
+            if (builder.bottom_menu == null) {
+                this.bottom_menu = DEFAULT_BOTTOM_MENU;
+                return;
+            } else {
+                this.bottom_menu = immutableCopyOf(builder.bottom_menu);
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -557,6 +570,8 @@ public final class DataRes extends Message {
         this.star_voice = builder.star_voice;
         this.worldcup_skin = builder.worldcup_skin;
         this.redpacketrain = builder.redpacketrain;
+        this.brand_forum_info = builder.brand_forum_info;
+        this.bottom_menu = immutableCopyOf(builder.bottom_menu);
     }
 
     /* loaded from: classes.dex */
@@ -576,6 +591,8 @@ public final class DataRes extends Message {
         public String bawu_enter_url;
         public ForumBookInfo book_info;
         public Bottle bottle;
+        public List<BottomMenu> bottom_menu;
+        public BrandForumInfo brand_forum_info;
         public List<ThreadInfo> card_shipin_info;
         public List<ThreadInfo> card_shipin_new;
         public List<Integer> card_shipin_pos;
@@ -732,6 +749,8 @@ public final class DataRes extends Message {
                 this.star_voice = dataRes.star_voice;
                 this.worldcup_skin = dataRes.worldcup_skin;
                 this.redpacketrain = dataRes.redpacketrain;
+                this.brand_forum_info = dataRes.brand_forum_info;
+                this.bottom_menu = DataRes.copyOf(dataRes.bottom_menu);
             }
         }
 
