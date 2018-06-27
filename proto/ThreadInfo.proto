@@ -23,6 +23,7 @@ import "LinkThreadInfo.proto";
 import "Media.proto";
 import "MediaNum.proto";
 import "MultipleForum.proto";
+import "OriForumInfo.proto";
 import "OriginThreadInfo.proto";
 import "PbContent.proto";
 import "PollInfo.proto";
@@ -180,6 +181,7 @@ message ThreadInfo {
     int32 is_story_audit = 134;
     int64 share_num = 135;
     int32 is_called = 136;
+    string tieba_game_information_source = 137;
     int64 audit_time = 138;
     int32 middle_page_num = 139;
     int32 middle_page_pass_flag = 140;
@@ -193,4 +195,5 @@ message ThreadInfo {
     int32 is_topic = 148;
     string topic_user_name = 149;
     string presentation_style = 151;
+    OriForumInfo ori_forum_info = 152;
 }

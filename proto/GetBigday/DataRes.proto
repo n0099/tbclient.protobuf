@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetBigday/BigdayInfo.proto";
+
+message DataRes {
+    repeated BigdayInfo bigday_list = 1;
+}

@@ -4,6 +4,7 @@ import "AlaLiveNotify.proto";
 import "AnchorInfo.proto";
 import "Anti.proto";
 import "BannerUserStory.proto";
+import "BottomMenu.proto";
 import "CategoryInfo.proto";
 import "Esport.proto";
 import "ForumArIno.proto";
@@ -14,6 +15,7 @@ import "FrsPage/AgreeBanner.proto";
 import "FrsPage/AlaLiveInsert.proto";
 import "FrsPage/BannerThreadInfo.proto";
 import "FrsPage/Bottle.proto";
+import "FrsPage/BrandForumInfo.proto";
 import "FrsPage/CarrierEnter.proto";
 import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
@@ -135,4 +137,6 @@ message DataRes {
     StarVoice star_voice = 88;
     WorldcupSkin worldcup_skin = 89;
     RedpacketRain redpacketrain = 90;
+    BrandForumInfo brand_forum_info = 91;
+    repeated BottomMenu bottom_menu = 92;
 }

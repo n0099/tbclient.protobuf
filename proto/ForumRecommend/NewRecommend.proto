@@ -5,4 +5,5 @@ message NewRecommend {
     string forum_name = 2;
     int32 member_count = 3;
     string avatar = 4;
+    uint32 is_brand_forum = 5;
 }

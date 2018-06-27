@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message SubBottomMenu {
+    string name = 1;
+    string url = 2;
+}

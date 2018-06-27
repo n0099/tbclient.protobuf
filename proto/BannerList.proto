@@ -9,4 +9,5 @@ message BannerList {
     repeated FeedForumInfo feed_forum = 2;
     RecomTopicInfo hot_topic = 3;
     string applist = 4;
+    App pb_banner_ad = 5;
 }

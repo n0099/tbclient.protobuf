@@ -96,4 +96,6 @@ message ForumInfo {
     string special_forum_type = 68;
     string topic_special_icon = 69;
     string topic_special_icon_right = 70;
+    int32 is_brand_forum = 71;
+    int32 is_show_all_top_thread = 72;
 }

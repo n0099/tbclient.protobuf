@@ -32,4 +32,6 @@ message CommonReq {
     string applist = 29;
     string stoken = 30;
     string z_id = 31;
+    string cuid_galaxy2 = 32;
+    string cuid_gid = 33;
 }

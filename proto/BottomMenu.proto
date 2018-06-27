@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "SubBottomMenu.proto";
+
+message BottomMenu {
+    string name = 1;
+    string url = 2;
+    repeated SubBottomMenu submenu = 3;
+}

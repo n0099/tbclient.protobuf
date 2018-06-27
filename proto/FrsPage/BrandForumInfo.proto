@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FrsPage/HeadImgs.proto";
+import "OriForumInfo.proto";
+
+message BrandForumInfo {
+    repeated OriForumInfo relation_forum = 1;
+    HeadImgs head_imgs = 2;
+    string brand_desc = 3;
+    string jump_url = 4;
+    string jump_desc = 5;
+}

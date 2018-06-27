@@ -59,4 +59,6 @@ message DataReq {
     string obj_locate = 52;
     string obj_source = 53;
     string call_url = 54;
+    int32 is_selection = 55;
+    int32 call_from = 56;
 }

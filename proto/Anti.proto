@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "BlockPopInfo.proto";
+import "DelThreadText.proto";
 
 message Anti {
     string tbs = 1;
@@ -26,4 +27,6 @@ message Anti {
     string video_local_message = 21;
     BlockPopInfo block_pop_info = 22;
     int32 reply_private_flag = 23;
+    repeated DelThreadText del_thread_text = 24;
+    int32 multi_delthread = 25;
 }
