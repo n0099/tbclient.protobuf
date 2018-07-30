@@ -3,7 +3,7 @@ package tbclient.TalkBall;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     @ProtoField(tag = 1)
@@ -90,7 +90,7 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public String forum_name;

@@ -1,16 +1,16 @@
-package tbclient.TalkBall;
+package tbclient.GetLockWindowMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
 /* loaded from: classes3.dex */
-public final class TalkBallResIdl extends Message {
+public final class GetLockWindowMsgResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    private TalkBallResIdl(Builder builder, boolean z) {
+    private GetLockWindowMsgResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -22,25 +22,25 @@ public final class TalkBallResIdl extends Message {
     }
 
     /* loaded from: classes3.dex */
-    public static final class Builder extends Message.Builder<TalkBallResIdl> {
+    public static final class Builder extends Message.Builder<GetLockWindowMsgResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(TalkBallResIdl talkBallResIdl) {
-            super(talkBallResIdl);
-            if (talkBallResIdl != null) {
-                this.error = talkBallResIdl.error;
-                this.data = talkBallResIdl.data;
+        public Builder(GetLockWindowMsgResIdl getLockWindowMsgResIdl) {
+            super(getLockWindowMsgResIdl);
+            if (getLockWindowMsgResIdl != null) {
+                this.error = getLockWindowMsgResIdl.error;
+                this.data = getLockWindowMsgResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public TalkBallResIdl build(boolean z) {
-            return new TalkBallResIdl(this, z);
+        public GetLockWindowMsgResIdl build(boolean z) {
+            return new GetLockWindowMsgResIdl(this, z);
         }
     }
 }

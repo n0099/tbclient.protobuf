@@ -2,7 +2,7 @@ package tbclient.TalkBall;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Country extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -31,7 +31,7 @@ public final class Country extends Message {
         this.name = builder.name;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<Country> {
         public String icon;
         public String name;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class InsertFloor extends Message {
     public static final String DEFAULT_TOPIC_NAME = "";
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -42,7 +42,7 @@ public final class InsertFloor extends Message {
         this.wander_list = immutableCopyOf(builder.wander_list);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<InsertFloor> {
         public Integer topic_id;
         public String topic_name;

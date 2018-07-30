@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.BannerImage;
 import tbclient.RedpacketRain;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 5)
     public final AdidasAdvert adidas_advert;
@@ -64,7 +64,7 @@ public final class DataRes extends Message {
         this.redpacketrain = builder.redpacketrain;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AdidasAdvert adidas_advert;
         public List<BannerImage> banner_images;

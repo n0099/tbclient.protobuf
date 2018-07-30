@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class GuessingCompetition extends Message {
     public static final String DEFAULT_AHEAD_URL = "";
     public static final List<Competition> DEFAULT_COMPETITION = Collections.emptyList();
@@ -42,7 +42,7 @@ public final class GuessingCompetition extends Message {
         this.winning_message = immutableCopyOf(builder.winning_message);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<GuessingCompetition> {
         public String ahead_url;
         public List<Competition> competition;

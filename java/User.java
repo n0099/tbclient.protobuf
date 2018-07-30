@@ -118,6 +118,8 @@ public final class User extends Message {
     public final Integer is_select_tail;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
+    @ProtoField(tag = 93, type = Message.Datatype.INT32)
+    public final Integer is_videobiggie;
     @ProtoField(tag = 89, type = Message.Datatype.INT32)
     public final Integer left_call_num;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
@@ -260,6 +262,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_IS_INVITED = 0;
     public static final Integer DEFAULT_IS_FANS = 0;
     public static final Integer DEFAULT_PRIV_THREAD = 0;
+    public static final Integer DEFAULT_IS_VIDEOBIGGIE = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -633,9 +636,14 @@ public final class User extends Message {
             }
             if (builder.priv_thread == null) {
                 this.priv_thread = DEFAULT_PRIV_THREAD;
-                return;
             } else {
                 this.priv_thread = builder.priv_thread;
+            }
+            if (builder.is_videobiggie == null) {
+                this.is_videobiggie = DEFAULT_IS_VIDEOBIGGIE;
+                return;
+            } else {
+                this.is_videobiggie = builder.is_videobiggie;
                 return;
             }
         }
@@ -731,6 +739,7 @@ public final class User extends Message {
         this.is_invited = builder.is_invited;
         this.is_fans = builder.is_fans;
         this.priv_thread = builder.priv_thread;
+        this.is_videobiggie = builder.is_videobiggie;
     }
 
     /* loaded from: classes.dex */
@@ -783,6 +792,7 @@ public final class User extends Message {
         public Integer is_mem;
         public Integer is_select_tail;
         public Integer is_verify;
+        public Integer is_videobiggie;
         public Integer left_call_num;
         public Integer level_id;
         public List<LikeForumInfo> likeForum;
@@ -926,6 +936,7 @@ public final class User extends Message {
                 this.is_invited = user.is_invited;
                 this.is_fans = user.is_fans;
                 this.priv_thread = user.priv_thread;
+                this.is_videobiggie = user.is_videobiggie;
             }
         }
 

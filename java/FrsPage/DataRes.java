@@ -195,6 +195,8 @@ public final class DataRes extends Message {
     public final List<User> user_list;
     @ProtoField(tag = 73)
     public final FrsVideo video;
+    @ProtoField(tag = 93, type = Message.Datatype.INT32)
+    public final Integer video_auto_play;
     @ProtoField(tag = 42)
     public final VitalityInfo vitality_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 85)
@@ -237,6 +239,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_TRENDS_REDPOINT = 0;
     public static final List<WindowToast> DEFAULT_WINDOW_TOAST = Collections.emptyList();
     public static final List<BottomMenu> DEFAULT_BOTTOM_MENU = Collections.emptyList();
+    public static final Integer DEFAULT_VIDEO_AUTO_PLAY = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -482,9 +485,14 @@ public final class DataRes extends Message {
             this.brand_forum_info = builder.brand_forum_info;
             if (builder.bottom_menu == null) {
                 this.bottom_menu = DEFAULT_BOTTOM_MENU;
-                return;
             } else {
                 this.bottom_menu = immutableCopyOf(builder.bottom_menu);
+            }
+            if (builder.video_auto_play == null) {
+                this.video_auto_play = DEFAULT_VIDEO_AUTO_PLAY;
+                return;
+            } else {
+                this.video_auto_play = builder.video_auto_play;
                 return;
             }
         }
@@ -572,6 +580,7 @@ public final class DataRes extends Message {
         this.redpacketrain = builder.redpacketrain;
         this.brand_forum_info = builder.brand_forum_info;
         this.bottom_menu = immutableCopyOf(builder.bottom_menu);
+        this.video_auto_play = builder.video_auto_play;
     }
 
     /* loaded from: classes.dex */
@@ -657,6 +666,7 @@ public final class DataRes extends Message {
         public tbclient.FrsPageUserExtend user_extend;
         public List<User> user_list;
         public FrsVideo video;
+        public Integer video_auto_play;
         public VitalityInfo vitality_info;
         public List<WindowToast> window_toast;
         public WorldcupSkin worldcup_skin;
@@ -751,6 +761,7 @@ public final class DataRes extends Message {
                 this.redpacketrain = dataRes.redpacketrain;
                 this.brand_forum_info = dataRes.brand_forum_info;
                 this.bottom_menu = DataRes.copyOf(dataRes.bottom_menu);
+                this.video_auto_play = dataRes.video_auto_play;
             }
         }
 

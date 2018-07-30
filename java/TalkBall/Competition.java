@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Competition extends Message {
     public static final String DEFAULT_BTN_TITLE = "";
     public static final List<Country> DEFAULT_COUNTRY = Collections.emptyList();
@@ -51,7 +51,7 @@ public final class Competition extends Message {
         this.btn_title = builder.btn_title;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<Competition> {
         public String btn_title;
         public List<Country> country;

@@ -7,7 +7,6 @@ public final class Media extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_BSIZE = "";
     public static final String DEFAULT_DYNAMIC_PIC = "";
-    public static final String DEFAULT_ID = "";
     public static final String DEFAULT_ORIGIN_PIC = "";
     public static final String DEFAULT_SMALL_PIC = "";
     public static final String DEFAULT_SRC_PIC = "";
@@ -28,8 +27,8 @@ public final class Media extends Message {
     public final Integer e_type;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer height;
-    @ProtoField(tag = 22, type = Message.Datatype.STRING)
-    public final String id;
+    @ProtoField(tag = 23, type = Message.Datatype.DOUBLE)
+    public final Double hth_mid_loc;
     @ProtoField(tag = 21, type = Message.Datatype.UINT32)
     public final Integer is_blocked_pic;
     @ProtoField(tag = 19, type = Message.Datatype.UINT32)
@@ -60,6 +59,8 @@ public final class Media extends Message {
     public final String water_pic;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
     public final Integer width;
+    @ProtoField(tag = 22, type = Message.Datatype.DOUBLE)
+    public final Double wth_mid_loc;
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
@@ -70,6 +71,8 @@ public final class Media extends Message {
     public static final Integer DEFAULT_IS_LONG_PIC = 0;
     public static final Integer DEFAULT_SHOW_ORIGINAL_BTN = 0;
     public static final Integer DEFAULT_IS_BLOCKED_PIC = 0;
+    public static final Double DEFAULT_WTH_MID_LOC = Double.valueOf(0.0d);
+    public static final Double DEFAULT_HTH_MID_LOC = Double.valueOf(0.0d);
 
     private Media(Builder builder, boolean z) {
         super(builder);
@@ -179,11 +182,16 @@ public final class Media extends Message {
             } else {
                 this.is_blocked_pic = builder.is_blocked_pic;
             }
-            if (builder.id == null) {
-                this.id = "";
+            if (builder.wth_mid_loc == null) {
+                this.wth_mid_loc = DEFAULT_WTH_MID_LOC;
+            } else {
+                this.wth_mid_loc = builder.wth_mid_loc;
+            }
+            if (builder.hth_mid_loc == null) {
+                this.hth_mid_loc = DEFAULT_HTH_MID_LOC;
                 return;
             } else {
-                this.id = builder.id;
+                this.hth_mid_loc = builder.hth_mid_loc;
                 return;
             }
         }
@@ -208,7 +216,8 @@ public final class Media extends Message {
         this.is_long_pic = builder.is_long_pic;
         this.show_original_btn = builder.show_original_btn;
         this.is_blocked_pic = builder.is_blocked_pic;
-        this.id = builder.id;
+        this.wth_mid_loc = builder.wth_mid_loc;
+        this.hth_mid_loc = builder.hth_mid_loc;
     }
 
     /* loaded from: classes.dex */
@@ -219,7 +228,7 @@ public final class Media extends Message {
         public String dynamic_pic;
         public Integer e_type;
         public Integer height;
-        public String id;
+        public Double hth_mid_loc;
         public Integer is_blocked_pic;
         public Integer is_long_pic;
         public String origin_pic;
@@ -235,6 +244,7 @@ public final class Media extends Message {
         public String vsrc;
         public String water_pic;
         public Integer width;
+        public Double wth_mid_loc;
 
         public Builder() {
         }
@@ -263,7 +273,8 @@ public final class Media extends Message {
                 this.is_long_pic = media.is_long_pic;
                 this.show_original_btn = media.show_original_btn;
                 this.is_blocked_pic = media.is_blocked_pic;
-                this.id = media.id;
+                this.wth_mid_loc = media.wth_mid_loc;
+                this.hth_mid_loc = media.hth_mid_loc;
             }
         }
 

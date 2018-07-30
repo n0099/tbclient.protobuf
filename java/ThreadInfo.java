@@ -11,6 +11,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_CATEGORY_NAME = "";
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
+    public static final String DEFAULT_DAILY_PAPER_TIME = "";
     public static final String DEFAULT_ECOM = "";
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FROM = "";
@@ -81,6 +82,8 @@ public final class ThreadInfo extends Message {
     public final Integer comment_num;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
+    @ProtoField(tag = 154, type = Message.Datatype.STRING)
+    public final String daily_paper_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 121)
@@ -99,6 +102,8 @@ public final class ThreadInfo extends Message {
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
+    @ProtoField(tag = 155)
+    public final SimpleForum forum_info;
     @ProtoField(tag = 130, type = Message.Datatype.INT64)
     public final Long freq_num;
     @ProtoField(tag = 49, type = Message.Datatype.STRING)
@@ -179,6 +184,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_top;
     @ProtoField(tag = 148, type = Message.Datatype.INT32)
     public final Integer is_topic;
+    @ProtoField(tag = 153, type = Message.Datatype.INT32)
+    public final Integer is_videobiggie_recomthread;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_voice_thread;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
@@ -414,6 +421,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
     public static final Long DEFAULT_TRANS_NUM = 0L;
     public static final Integer DEFAULT_IS_TOPIC = 0;
+    public static final Integer DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1010,6 +1018,17 @@ public final class ThreadInfo extends Message {
                 this.presentation_style = builder.presentation_style;
             }
             this.ori_forum_info = builder.ori_forum_info;
+            if (builder.is_videobiggie_recomthread == null) {
+                this.is_videobiggie_recomthread = DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD;
+            } else {
+                this.is_videobiggie_recomthread = builder.is_videobiggie_recomthread;
+            }
+            if (builder.daily_paper_time == null) {
+                this.daily_paper_time = "";
+            } else {
+                this.daily_paper_time = builder.daily_paper_time;
+            }
+            this.forum_info = builder.forum_info;
             return;
         }
         this.id = builder.id;
@@ -1160,6 +1179,9 @@ public final class ThreadInfo extends Message {
         this.topic_h5_url = builder.topic_h5_url;
         this.presentation_style = builder.presentation_style;
         this.ori_forum_info = builder.ori_forum_info;
+        this.is_videobiggie_recomthread = builder.is_videobiggie_recomthread;
+        this.daily_paper_time = builder.daily_paper_time;
+        this.forum_info = builder.forum_info;
     }
 
     /* loaded from: classes.dex */
@@ -1187,6 +1209,7 @@ public final class ThreadInfo extends Message {
         public Integer collect_status;
         public Integer comment_num;
         public Integer create_time;
+        public String daily_paper_time;
         public DealInfo deal_info;
         public List<DeclareInfo> declare_list;
         public List<DislikeInfo> dislike_info;
@@ -1196,6 +1219,7 @@ public final class ThreadInfo extends Message {
         public List<PbContent> first_post_content;
         public Long first_post_id;
         public String fname;
+        public SimpleForum forum_info;
         public Long freq_num;
         public String from;
         public Guess guess;
@@ -1236,6 +1260,7 @@ public final class ThreadInfo extends Message {
         public Integer is_tbread_dispatch;
         public Integer is_top;
         public Integer is_topic;
+        public Integer is_videobiggie_recomthread;
         public Integer is_voice_thread;
         public Integer is_vote;
         public JNews jid;
@@ -1467,6 +1492,9 @@ public final class ThreadInfo extends Message {
                 this.topic_h5_url = threadInfo.topic_h5_url;
                 this.presentation_style = threadInfo.presentation_style;
                 this.ori_forum_info = threadInfo.ori_forum_info;
+                this.is_videobiggie_recomthread = threadInfo.is_videobiggie_recomthread;
+                this.daily_paper_time = threadInfo.daily_paper_time;
+                this.forum_info = threadInfo.forum_info;
             }
         }
 

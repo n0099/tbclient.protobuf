@@ -6,6 +6,7 @@ import com.squareup.wire.ProtoField;
 public final class BlockPopInfo extends Message {
     public static final String DEFAULT_AHEAD_INFO = "";
     public static final String DEFAULT_AHEAD_URL = "";
+    public static final String DEFAULT_APPEAL_MSG = "";
     public static final String DEFAULT_BLOCK_INFO = "";
     public static final String DEFAULT_OK_INFO = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -14,6 +15,10 @@ public final class BlockPopInfo extends Message {
     public final Integer ahead_type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String ahead_url;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String appeal_msg;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer appeal_status;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String block_info;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -22,6 +27,7 @@ public final class BlockPopInfo extends Message {
     public final String ok_info;
     public static final Integer DEFAULT_CAN_POST = 0;
     public static final Integer DEFAULT_AHEAD_TYPE = 0;
+    public static final Integer DEFAULT_APPEAL_STATUS = 0;
 
     private BlockPopInfo(Builder builder, boolean z) {
         super(builder);
@@ -53,9 +59,19 @@ public final class BlockPopInfo extends Message {
             }
             if (builder.ahead_type == null) {
                 this.ahead_type = DEFAULT_AHEAD_TYPE;
-                return;
             } else {
                 this.ahead_type = builder.ahead_type;
+            }
+            if (builder.appeal_status == null) {
+                this.appeal_status = DEFAULT_APPEAL_STATUS;
+            } else {
+                this.appeal_status = builder.appeal_status;
+            }
+            if (builder.appeal_msg == null) {
+                this.appeal_msg = "";
+                return;
+            } else {
+                this.appeal_msg = builder.appeal_msg;
                 return;
             }
         }
@@ -65,6 +81,8 @@ public final class BlockPopInfo extends Message {
         this.ahead_url = builder.ahead_url;
         this.ok_info = builder.ok_info;
         this.ahead_type = builder.ahead_type;
+        this.appeal_status = builder.appeal_status;
+        this.appeal_msg = builder.appeal_msg;
     }
 
     /* loaded from: classes.dex */
@@ -72,6 +90,8 @@ public final class BlockPopInfo extends Message {
         public String ahead_info;
         public Integer ahead_type;
         public String ahead_url;
+        public String appeal_msg;
+        public Integer appeal_status;
         public String block_info;
         public Integer can_post;
         public String ok_info;
@@ -88,6 +108,8 @@ public final class BlockPopInfo extends Message {
                 this.ahead_url = blockPopInfo.ahead_url;
                 this.ok_info = blockPopInfo.ok_info;
                 this.ahead_type = blockPopInfo.ahead_type;
+                this.appeal_status = blockPopInfo.appeal_status;
+                this.appeal_msg = blockPopInfo.appeal_msg;
             }
         }
 

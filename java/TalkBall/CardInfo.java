@@ -3,7 +3,7 @@ package tbclient.TalkBall;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CardInfo extends Message {
     @ProtoField(tag = 2)
     public final InsertFloor insert_floor;
@@ -21,7 +21,7 @@ public final class CardInfo extends Message {
         this.insert_floor = builder.insert_floor;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<CardInfo> {
         public InsertFloor insert_floor;
         public ThreadInfo thread_info;

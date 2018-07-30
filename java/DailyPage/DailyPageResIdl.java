@@ -1,16 +1,16 @@
-package tbclient.TalkBall;
+package tbclient.DailyPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes3.dex */
-public final class TalkBallResIdl extends Message {
+/* loaded from: classes2.dex */
+public final class DailyPageResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    private TalkBallResIdl(Builder builder, boolean z) {
+    private DailyPageResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -21,26 +21,26 @@ public final class TalkBallResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes3.dex */
-    public static final class Builder extends Message.Builder<TalkBallResIdl> {
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DailyPageResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(TalkBallResIdl talkBallResIdl) {
-            super(talkBallResIdl);
-            if (talkBallResIdl != null) {
-                this.error = talkBallResIdl.error;
-                this.data = talkBallResIdl.data;
+        public Builder(DailyPageResIdl dailyPageResIdl) {
+            super(dailyPageResIdl);
+            if (dailyPageResIdl != null) {
+                this.error = dailyPageResIdl.error;
+                this.data = dailyPageResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public TalkBallResIdl build(boolean z) {
-            return new TalkBallResIdl(this, z);
+        public DailyPageResIdl build(boolean z) {
+            return new DailyPageResIdl(this, z);
         }
     }
 }

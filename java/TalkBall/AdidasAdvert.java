@@ -2,7 +2,7 @@ package tbclient.TalkBall;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AdidasAdvert extends Message {
     public static final String DEFAULT_AHEAD_URL = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -31,7 +31,7 @@ public final class AdidasAdvert extends Message {
         this.ahead_url = builder.ahead_url;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<AdidasAdvert> {
         public String ahead_url;
         public String img_url;
