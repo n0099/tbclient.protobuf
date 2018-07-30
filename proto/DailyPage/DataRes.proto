@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "DailyInfo.proto";
+import "DailyTopic.proto";
+import "GodBanner.proto";
+
+message DataRes {
+    repeated GodBanner banner = 1;
+    repeated DailyTopic topic = 2;
+    DailyInfo daily_info = 3;
+}

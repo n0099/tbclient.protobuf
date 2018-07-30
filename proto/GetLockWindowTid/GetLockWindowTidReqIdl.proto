@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetLockWindowTid/DataReq.proto";
+
+message GetLockWindowTidReqIdl {
+    DataReq data = 1;
+}

@@ -32,6 +32,7 @@ import "PostList.proto";
 import "PsInfo.proto";
 import "PushStatus.proto";
 import "ReportInfo.proto";
+import "SimpleForum.proto";
 import "SkinInfo.proto";
 import "StarRankIcon.proto";
 import "TailInfo.proto";
@@ -196,4 +197,7 @@ message ThreadInfo {
     string topic_user_name = 149;
     string presentation_style = 151;
     OriForumInfo ori_forum_info = 152;
+    int32 is_videobiggie_recomthread = 153;
+    string daily_paper_time = 154;
+    SimpleForum forum_info = 155;
 }

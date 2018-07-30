@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "QueryBlockAndAppealInfo/DataRes.proto";
+
+message QueryBlockAndAppealInfoResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

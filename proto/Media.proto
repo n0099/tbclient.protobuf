@@ -22,5 +22,6 @@ message Media {
     uint32 is_long_pic = 19;
     uint32 show_original_btn = 20;
     uint32 is_blocked_pic = 21;
-    string id = 22;
+    double wth_mid_loc = 22;
+    double hth_mid_loc = 23;
 }

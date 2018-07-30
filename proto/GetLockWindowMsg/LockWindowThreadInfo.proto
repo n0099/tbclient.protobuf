@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "PbContent.proto";
+
+message LockWindowThreadInfo {
+    uint64 tid = 1;
+    string title = 2;
+    repeated PbContent content = 3;
+    uint32 post_num = 4;
+}

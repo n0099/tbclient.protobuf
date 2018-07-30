@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message DataRes {
+    uint64 tid = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message LockWindowContent {
+    uint32 type = 1;
+    string text = 2;
+    string small_pic = 3;
+    string big_pic = 4;
+    uint32 width = 5;
+    uint32 height = 6;
+    uint32 during_time = 7;
+    uint32 origin_size = 8;
+    string link = 9;
+    string src = 10;
+}

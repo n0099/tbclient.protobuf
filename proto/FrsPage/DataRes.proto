@@ -139,4 +139,5 @@ message DataRes {
     RedpacketRain redpacketrain = 90;
     BrandForumInfo brand_forum_info = 91;
     repeated BottomMenu bottom_menu = 92;
+    int32 video_auto_play = 93;
 }
