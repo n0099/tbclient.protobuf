@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.AlaLiveInfo;
 import tbclient.Anti;
+import tbclient.BannerImage;
 import tbclient.DealWindow;
 import tbclient.DynamicInfo;
 import tbclient.Feedback;
@@ -26,6 +27,8 @@ public final class DataRes extends Message {
     public final List<AlaLiveInfo> ala_live_record;
     @ProtoField(tag = 2)
     public final Anti anti_stat;
+    @ProtoField(label = Message.Label.REPEATED, tag = 22)
+    public final List<BannerImage> banner;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<ForumDynamic> concerned_forum_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
@@ -66,6 +69,7 @@ public final class DataRes extends Message {
     public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
     public static final List<UserMap> DEFAULT_URL_MAP = Collections.emptyList();
     public static final Integer DEFAULT_SHOW_ANSWER = 0;
+    public static final List<BannerImage> DEFAULT_BANNER = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -111,9 +115,14 @@ public final class DataRes extends Message {
             }
             if (builder.show_answer == null) {
                 this.show_answer = DEFAULT_SHOW_ANSWER;
-                return;
             } else {
                 this.show_answer = builder.show_answer;
+            }
+            if (builder.banner == null) {
+                this.banner = DEFAULT_BANNER;
+                return;
+            } else {
+                this.banner = immutableCopyOf(builder.banner);
                 return;
             }
         }
@@ -137,6 +146,7 @@ public final class DataRes extends Message {
         this.ala_live_record = immutableCopyOf(builder.ala_live_record);
         this.url_map = immutableCopyOf(builder.url_map);
         this.show_answer = builder.show_answer;
+        this.banner = immutableCopyOf(builder.banner);
     }
 
     /* loaded from: classes.dex */
@@ -144,6 +154,7 @@ public final class DataRes extends Message {
         public AlaLiveInfo ala_live_info;
         public List<AlaLiveInfo> ala_live_record;
         public Anti anti_stat;
+        public List<BannerImage> banner;
         public List<ForumDynamic> concerned_forum_list;
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
@@ -188,6 +199,7 @@ public final class DataRes extends Message {
                 this.ala_live_record = DataRes.copyOf(dataRes.ala_live_record);
                 this.url_map = DataRes.copyOf(dataRes.url_map);
                 this.show_answer = dataRes.show_answer;
+                this.banner = DataRes.copyOf(dataRes.banner);
             }
         }
 

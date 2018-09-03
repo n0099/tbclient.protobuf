@@ -5,9 +5,12 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_SHOUBAICUID = "";
     public static final String DEFAULT_TOKEN = "";
     @ProtoField(tag = 1)
     public final CommonReq common;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String shoubaicuid;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String token;
 
@@ -17,19 +20,26 @@ public final class DataReq extends Message {
             this.common = builder.common;
             if (builder.token == null) {
                 this.token = "";
-                return;
             } else {
                 this.token = builder.token;
+            }
+            if (builder.shoubaicuid == null) {
+                this.shoubaicuid = "";
+                return;
+            } else {
+                this.shoubaicuid = builder.shoubaicuid;
                 return;
             }
         }
         this.common = builder.common;
         this.token = builder.token;
+        this.shoubaicuid = builder.shoubaicuid;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
+        public String shoubaicuid;
         public String token;
 
         public Builder() {
@@ -40,6 +50,7 @@ public final class DataReq extends Message {
             if (dataReq != null) {
                 this.common = dataReq.common;
                 this.token = dataReq.token;
+                this.shoubaicuid = dataReq.shoubaicuid;
             }
         }
 
