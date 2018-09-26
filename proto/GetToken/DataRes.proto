@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "GetToken/ToastInfo.proto";
+
 message DataRes {
     string title = 1;
     string img = 2;
@@ -7,4 +9,5 @@ message DataRes {
     string url = 4;
     string btn_sure = 5;
     string btn_cancel = 6;
+    ToastInfo activity_done = 7;
 }

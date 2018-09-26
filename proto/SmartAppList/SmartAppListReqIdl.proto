@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "SmartAppList/DataReq.proto";
+
+message SmartAppListReqIdl {
+    DataReq data = 1;
+}

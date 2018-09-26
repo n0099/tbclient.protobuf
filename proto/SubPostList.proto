@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "Agree.proto";
 import "PbContent.proto";
 import "User.proto";
 
@@ -12,4 +13,5 @@ message SubPostList {
     uint32 floor = 6;
     User author = 7;
     int32 is_giftpost = 8;
+    Agree agree = 9;
 }

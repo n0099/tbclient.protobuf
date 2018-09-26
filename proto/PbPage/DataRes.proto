@@ -17,6 +17,7 @@ import "PbPage/GodCard.proto";
 import "PbPage/GuessLikeStruct.proto";
 import "PbPage/NewsInfo.proto";
 import "PbPage/PbFollowTip.proto";
+import "PbPage/PbSortType.proto";
 import "PbPage/PostBanner.proto";
 import "PbPage/RecommendBook.proto";
 import "PbTopAgreePost.proto";
@@ -80,4 +81,6 @@ message DataRes {
     int32 exp_guide_today = 46;
     string multi_forum_text = 47;
     repeated RecomTopicList thread_topic = 48;
+    repeated PbSortType pb_sort_info = 49;
+    int32 sort_type = 50;
 }

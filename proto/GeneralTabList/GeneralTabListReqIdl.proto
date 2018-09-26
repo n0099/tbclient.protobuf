@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GeneralTabList/DataReq.proto";
+
+message GeneralTabListReqIdl {
+    DataReq data = 1;
+}

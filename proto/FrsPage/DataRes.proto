@@ -47,6 +47,7 @@ import "RecomPostTopic.proto";
 import "RecommendInfo.proto";
 import "RedpacketRain.proto";
 import "SdkTopicThread.proto";
+import "SmartApp.proto";
 import "StarVoice.proto";
 import "ThreadInfo.proto";
 import "User.proto";
@@ -140,4 +141,6 @@ message DataRes {
     BrandForumInfo brand_forum_info = 91;
     repeated BottomMenu bottom_menu = 92;
     int32 video_auto_play = 93;
+    repeated string smart_app_avatar = 94;
+    SmartApp smart_app = 95;
 }

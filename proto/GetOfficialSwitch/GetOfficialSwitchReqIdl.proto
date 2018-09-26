@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetOfficialSwitch/DataReq.proto";
+
+message GetOfficialSwitchReqIdl {
+    DataReq data = 1;
+}

@@ -57,4 +57,5 @@ message DataReq {
     int32 need_repost_recommend_forum = 57;
     AdParam ad_param = 58;
     int32 need_log = 59;
+    string call_url = 60;
 }

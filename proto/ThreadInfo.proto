@@ -34,6 +34,7 @@ import "PushStatus.proto";
 import "ReportInfo.proto";
 import "SimpleForum.proto";
 import "SkinInfo.proto";
+import "SmartApp.proto";
 import "StarRankIcon.proto";
 import "TailInfo.proto";
 import "TaskInfo.proto";
@@ -43,6 +44,7 @@ import "Topic.proto";
 import "User.proto";
 import "VideoActive.proto";
 import "VideoChannelInfo.proto";
+import "VideoDesc.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
 import "YulePostActivity.proto";
@@ -200,4 +202,6 @@ message ThreadInfo {
     int32 is_videobiggie_recomthread = 153;
     string daily_paper_time = 154;
     SimpleForum forum_info = 155;
+    SmartApp swan_info = 156;
+    VideoDesc video_segment = 157;
 }

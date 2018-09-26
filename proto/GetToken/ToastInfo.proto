@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message ToastInfo {
+    string url = 1;
+    string message = 2;
+    string btntext = 3;
+    string sharetoken = 4;
+}
