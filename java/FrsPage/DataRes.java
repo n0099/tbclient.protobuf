@@ -22,6 +22,7 @@ import tbclient.PopInfo;
 import tbclient.RecommendInfo;
 import tbclient.RedpacketRain;
 import tbclient.SdkTopicThread;
+import tbclient.SmartApp;
 import tbclient.ThreadInfo;
 import tbclient.User;
 import tbclient.VitalityInfo;
@@ -161,6 +162,10 @@ public final class DataRes extends Message {
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
+    @ProtoField(tag = 95)
+    public final SmartApp smart_app;
+    @ProtoField(label = Message.Label.REPEATED, tag = 94, type = Message.Datatype.STRING)
+    public final List<String> smart_app_avatar;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer smart_frs_type;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
@@ -240,6 +245,7 @@ public final class DataRes extends Message {
     public static final List<WindowToast> DEFAULT_WINDOW_TOAST = Collections.emptyList();
     public static final List<BottomMenu> DEFAULT_BOTTOM_MENU = Collections.emptyList();
     public static final Integer DEFAULT_VIDEO_AUTO_PLAY = 0;
+    public static final List<String> DEFAULT_SMART_APP_AVATAR = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -490,11 +496,16 @@ public final class DataRes extends Message {
             }
             if (builder.video_auto_play == null) {
                 this.video_auto_play = DEFAULT_VIDEO_AUTO_PLAY;
-                return;
             } else {
                 this.video_auto_play = builder.video_auto_play;
-                return;
             }
+            if (builder.smart_app_avatar == null) {
+                this.smart_app_avatar = DEFAULT_SMART_APP_AVATAR;
+            } else {
+                this.smart_app_avatar = immutableCopyOf(builder.smart_app_avatar);
+            }
+            this.smart_app = builder.smart_app;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -581,6 +592,8 @@ public final class DataRes extends Message {
         this.brand_forum_info = builder.brand_forum_info;
         this.bottom_menu = immutableCopyOf(builder.bottom_menu);
         this.video_auto_play = builder.video_auto_play;
+        this.smart_app_avatar = immutableCopyOf(builder.smart_app_avatar);
+        this.smart_app = builder.smart_app;
     }
 
     /* loaded from: classes.dex */
@@ -649,6 +662,8 @@ public final class DataRes extends Message {
         public Integer school_recom_pos;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
+        public SmartApp smart_app;
+        public List<String> smart_app_avatar;
         public Integer smart_frs_type;
         public Integer sort_type;
         public List<StarEnter> star_enter;
@@ -762,6 +777,8 @@ public final class DataRes extends Message {
                 this.brand_forum_info = dataRes.brand_forum_info;
                 this.bottom_menu = DataRes.copyOf(dataRes.bottom_menu);
                 this.video_auto_play = dataRes.video_auto_play;
+                this.smart_app_avatar = DataRes.copyOf(dataRes.smart_app_avatar);
+                this.smart_app = dataRes.smart_app;
             }
         }
 

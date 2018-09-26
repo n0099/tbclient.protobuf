@@ -7,6 +7,8 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class SubPostList extends Message {
     public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 9)
+    public final Agree agree;
     @ProtoField(tag = 7)
     public final User author;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -66,11 +68,11 @@ public final class SubPostList extends Message {
             this.author = builder.author;
             if (builder.is_giftpost == null) {
                 this.is_giftpost = DEFAULT_IS_GIFTPOST;
-                return;
             } else {
                 this.is_giftpost = builder.is_giftpost;
-                return;
             }
+            this.agree = builder.agree;
+            return;
         }
         this.id = builder.id;
         this.content = immutableCopyOf(builder.content);
@@ -80,10 +82,12 @@ public final class SubPostList extends Message {
         this.floor = builder.floor;
         this.author = builder.author;
         this.is_giftpost = builder.is_giftpost;
+        this.agree = builder.agree;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<SubPostList> {
+        public Agree agree;
         public User author;
         public Long author_id;
         public List<PbContent> content;
@@ -107,6 +111,7 @@ public final class SubPostList extends Message {
                 this.floor = subPostList.floor;
                 this.author = subPostList.author;
                 this.is_giftpost = subPostList.is_giftpost;
+                this.agree = subPostList.agree;
             }
         }
 

@@ -6,6 +6,7 @@ import tbclient.AppPosInfo;
 import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FEED_NID = "";
     public static final String DEFAULT_JFROM = "";
@@ -31,6 +32,8 @@ public final class DataReq extends Message {
     public final Integer back;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer banner;
+    @ProtoField(tag = 60, type = Message.Datatype.STRING)
+    public final String call_url;
     @ProtoField(tag = 25)
     public final CommonReq common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
@@ -408,9 +411,14 @@ public final class DataReq extends Message {
             this.ad_param = builder.ad_param;
             if (builder.need_log == null) {
                 this.need_log = DEFAULT_NEED_LOG;
-                return;
             } else {
                 this.need_log = builder.need_log;
+            }
+            if (builder.call_url == null) {
+                this.call_url = "";
+                return;
+            } else {
+                this.call_url = builder.call_url;
                 return;
             }
         }
@@ -466,6 +474,7 @@ public final class DataReq extends Message {
         this.need_repost_recommend_forum = builder.need_repost_recommend_forum;
         this.ad_param = builder.ad_param;
         this.need_log = builder.need_log;
+        this.call_url = builder.call_url;
     }
 
     /* loaded from: classes2.dex */
@@ -475,6 +484,7 @@ public final class DataReq extends Message {
         public Integer arround;
         public Integer back;
         public Integer banner;
+        public String call_url;
         public CommonReq common;
         public String da_idfa;
         public String feed_nid;
@@ -581,6 +591,7 @@ public final class DataReq extends Message {
                 this.need_repost_recommend_forum = dataReq.need_repost_recommend_forum;
                 this.ad_param = dataReq.ad_param;
                 this.need_log = dataReq.need_log;
+                this.call_url = dataReq.call_url;
             }
         }
 

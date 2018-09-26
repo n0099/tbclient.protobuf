@@ -94,6 +94,8 @@ public final class DataRes extends Message {
     public final Page page;
     @ProtoField(tag = 41, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
+    @ProtoField(label = Message.Label.REPEATED, tag = 49)
+    public final List<PbSortType> pb_sort_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
     public final List<PsRankListItem> play_rank_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
@@ -110,6 +112,8 @@ public final class DataRes extends Message {
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
+    @ProtoField(tag = 50, type = Message.Datatype.INT32)
+    public final Integer sort_type;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer switch_read_open;
     @ProtoField(tag = 8)
@@ -145,6 +149,8 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_EXP_NEWS_TODAY = 0;
     public static final Integer DEFAULT_EXP_GUIDE_TODAY = 0;
     public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC = Collections.emptyList();
+    public static final List<PbSortType> DEFAULT_PB_SORT_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_SORT_TYPE = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -286,9 +292,19 @@ public final class DataRes extends Message {
             }
             if (builder.thread_topic == null) {
                 this.thread_topic = DEFAULT_THREAD_TOPIC;
-                return;
             } else {
                 this.thread_topic = immutableCopyOf(builder.thread_topic);
+            }
+            if (builder.pb_sort_info == null) {
+                this.pb_sort_info = DEFAULT_PB_SORT_INFO;
+            } else {
+                this.pb_sort_info = immutableCopyOf(builder.pb_sort_info);
+            }
+            if (builder.sort_type == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.sort_type = builder.sort_type;
                 return;
             }
         }
@@ -340,6 +356,8 @@ public final class DataRes extends Message {
         this.exp_guide_today = builder.exp_guide_today;
         this.multi_forum_text = builder.multi_forum_text;
         this.thread_topic = immutableCopyOf(builder.thread_topic);
+        this.pb_sort_info = immutableCopyOf(builder.pb_sort_info);
+        this.sort_type = builder.sort_type;
     }
 
     /* loaded from: classes2.dex */
@@ -376,6 +394,7 @@ public final class DataRes extends Message {
         public NewsInfo news_info;
         public Page page;
         public String partial_visible_toast;
+        public List<PbSortType> pb_sort_info;
         public List<PsRankListItem> play_rank_list;
         public List<PostBanner> post_banner;
         public List<Post> post_list;
@@ -384,6 +403,7 @@ public final class DataRes extends Message {
         public List<SimpleForum> repost_recommend_forum_list;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
+        public Integer sort_type;
         public Integer switch_read_open;
         public ThreadInfo thread;
         public Long thread_freq_num;
@@ -447,6 +467,8 @@ public final class DataRes extends Message {
                 this.exp_guide_today = dataRes.exp_guide_today;
                 this.multi_forum_text = dataRes.multi_forum_text;
                 this.thread_topic = DataRes.copyOf(dataRes.thread_topic);
+                this.pb_sort_info = DataRes.copyOf(dataRes.pb_sort_info);
+                this.sort_type = dataRes.sort_type;
             }
         }
 

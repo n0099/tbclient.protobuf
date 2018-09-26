@@ -280,6 +280,8 @@ public final class ThreadInfo extends Message {
     public final StarRankIcon star_rank_icon;
     @ProtoField(tag = 68, type = Message.Datatype.INT32)
     public final Integer storecount;
+    @ProtoField(tag = 156)
+    public final SmartApp swan_info;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
     @ProtoField(tag = 116)
@@ -326,6 +328,8 @@ public final class ThreadInfo extends Message {
     public final VideoInfo video_info;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String video_mobile_url;
+    @ProtoField(tag = 157)
+    public final VideoDesc video_segment;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String video_swf;
     @ProtoField(tag = 96)
@@ -1029,6 +1033,8 @@ public final class ThreadInfo extends Message {
                 this.daily_paper_time = builder.daily_paper_time;
             }
             this.forum_info = builder.forum_info;
+            this.swan_info = builder.swan_info;
+            this.video_segment = builder.video_segment;
             return;
         }
         this.id = builder.id;
@@ -1182,6 +1188,8 @@ public final class ThreadInfo extends Message {
         this.is_videobiggie_recomthread = builder.is_videobiggie_recomthread;
         this.daily_paper_time = builder.daily_paper_time;
         this.forum_info = builder.forum_info;
+        this.swan_info = builder.swan_info;
+        this.video_segment = builder.video_segment;
     }
 
     /* loaded from: classes.dex */
@@ -1308,6 +1316,7 @@ public final class ThreadInfo extends Message {
         public SkinInfo skin_info;
         public StarRankIcon star_rank_icon;
         public Integer storecount;
+        public SmartApp swan_info;
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
         public Integer thread_type;
@@ -1331,6 +1340,7 @@ public final class ThreadInfo extends Message {
         public String video_id;
         public VideoInfo video_info;
         public String video_mobile_url;
+        public VideoDesc video_segment;
         public String video_swf;
         public VideoActive videoactive_info;
         public Integer view_num;
@@ -1495,6 +1505,8 @@ public final class ThreadInfo extends Message {
                 this.is_videobiggie_recomthread = threadInfo.is_videobiggie_recomthread;
                 this.daily_paper_time = threadInfo.daily_paper_time;
                 this.forum_info = threadInfo.forum_info;
+                this.swan_info = threadInfo.swan_info;
+                this.video_segment = threadInfo.video_segment;
             }
         }
 

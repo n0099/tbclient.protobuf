@@ -10,6 +10,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_TIPS = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 7)
+    public final ToastInfo activity_done;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String btn_cancel;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -53,11 +55,11 @@ public final class DataRes extends Message {
             }
             if (builder.btn_cancel == null) {
                 this.btn_cancel = "";
-                return;
             } else {
                 this.btn_cancel = builder.btn_cancel;
-                return;
             }
+            this.activity_done = builder.activity_done;
+            return;
         }
         this.title = builder.title;
         this.img = builder.img;
@@ -65,10 +67,12 @@ public final class DataRes extends Message {
         this.url = builder.url;
         this.btn_sure = builder.btn_sure;
         this.btn_cancel = builder.btn_cancel;
+        this.activity_done = builder.activity_done;
     }
 
     /* loaded from: classes.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public ToastInfo activity_done;
         public String btn_cancel;
         public String btn_sure;
         public String img;
@@ -88,6 +92,7 @@ public final class DataRes extends Message {
                 this.url = dataRes.url;
                 this.btn_sure = dataRes.btn_sure;
                 this.btn_cancel = dataRes.btn_cancel;
+                this.activity_done = dataRes.activity_done;
             }
         }
 
