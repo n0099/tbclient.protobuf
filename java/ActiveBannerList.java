@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class ActiveBannerList extends Message {
     public static final String DEFAULT_ACTIVE_DESC = "";
     public static final String DEFAULT_ACTIVE_NAME = "";
@@ -67,7 +67,7 @@ public final class ActiveBannerList extends Message {
         this.active_type = builder.active_type;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ActiveBannerList> {
         public String active_desc;
         public String active_name;

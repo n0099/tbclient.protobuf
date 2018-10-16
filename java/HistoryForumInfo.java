@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class HistoryForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -67,7 +67,7 @@ public final class HistoryForumInfo extends Message {
         this.visit_time = builder.visit_time;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<HistoryForumInfo> {
         public String avatar;
         public Long forum_id;

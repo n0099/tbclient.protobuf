@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class PsRankListItem extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long game_id;
@@ -43,7 +43,7 @@ public final class PsRankListItem extends Message {
         this.user = builder.user;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PsRankListItem> {
         public Long game_id;
         public Long score;

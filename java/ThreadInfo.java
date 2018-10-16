@@ -5,7 +5,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class ThreadInfo extends Message {
     public static final String DEFAULT_AB_TAG = "";
     public static final String DEFAULT_CATEGORY_NAME = "";
@@ -1192,7 +1192,7 @@ public final class ThreadInfo extends Message {
         this.video_segment = builder.video_segment;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
         public String ab_tag;

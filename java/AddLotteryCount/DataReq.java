@@ -3,7 +3,7 @@ package tbclient.AddLotteryCount;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long award_act_id;
@@ -54,7 +54,7 @@ public final class DataReq extends Message {
         this.thread_id = builder.thread_id;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long award_act_id;
         public CommonReq common;

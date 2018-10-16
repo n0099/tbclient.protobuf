@@ -3,7 +3,7 @@ package tbclient.GetCartoonCategoryList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class GetCartoonCategoryListResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetCartoonCategoryListResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<GetCartoonCategoryListResIdl> {
         public DataRes data;
         public Error error;

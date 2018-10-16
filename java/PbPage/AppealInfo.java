@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class AppealInfo extends Message {
     public static final String DEFAULT_APPEAL_URL = "";
     public static final String DEFAULT_SOURCE = "";
@@ -31,7 +31,7 @@ public final class AppealInfo extends Message {
         this.appeal_url = builder.appeal_url;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<AppealInfo> {
         public String appeal_url;
         public String source;

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.FrequentlyForumInfo;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -147,7 +147,7 @@ public final class DataRes extends Message {
         this.tag_recommend_forum = immutableCopyOf(builder.tag_recommend_forum);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public List<FrequentlyForumInfo> frequently_forum_info;

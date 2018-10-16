@@ -3,7 +3,7 @@ package tbclient.UserMuteQuery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2)
     public final CommonReq common;
@@ -54,7 +54,7 @@ public final class DataReq extends Message {
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Integer mute_type;

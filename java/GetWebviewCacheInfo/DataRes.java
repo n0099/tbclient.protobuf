@@ -2,7 +2,7 @@ package tbclient.GetWebviewCacheInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MD5 = "";
     public static final String DEFAULT_SRC = "";
@@ -40,7 +40,7 @@ public final class DataRes extends Message {
         this.md5 = builder.md5;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String md5;
         public String src;

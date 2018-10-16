@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class RecommendForumInfo extends Message {
     public static final String DEFAULT_AUTHEN = "";
     public static final String DEFAULT_AVATAR = "";
@@ -114,7 +114,7 @@ public final class RecommendForumInfo extends Message {
         this.recom_reason = builder.recom_reason;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<RecommendForumInfo> {
         public String authen;
         public String avatar;

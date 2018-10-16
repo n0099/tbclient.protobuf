@@ -3,7 +3,7 @@ package tbclient.PassFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class ReqData extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final String DEFAULT_ST_TYPE = "";
@@ -35,7 +35,7 @@ public final class ReqData extends Message {
         this.common = builder.common;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public CommonReq common;
         public Long friend_id;

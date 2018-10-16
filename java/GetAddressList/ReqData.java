@@ -3,7 +3,7 @@ package tbclient.GetAddressList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class ReqData extends Message {
     public static final Integer DEFAULT_TIMESTAMP = 0;
     @ProtoField(tag = 2)
@@ -26,7 +26,7 @@ public final class ReqData extends Message {
         this.common = builder.common;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public CommonReq common;
         public Integer timestamp;

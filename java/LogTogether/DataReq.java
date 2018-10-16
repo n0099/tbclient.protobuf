@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final List<AdReq> DEFAULT_AD = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
         this.common = builder.common;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<AdReq> Ad;
         public CommonReq common;

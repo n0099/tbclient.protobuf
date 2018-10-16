@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -25,7 +25,7 @@ public final class DataRes extends Message {
         this.user_list = immutableCopyOf(builder.user_list);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<User> user_list;
 

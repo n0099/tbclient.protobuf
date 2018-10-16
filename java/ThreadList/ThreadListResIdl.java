@@ -3,7 +3,7 @@ package tbclient.ThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class ThreadListResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class ThreadListResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ThreadListResIdl> {
         public DataRes data;
         public Error error;

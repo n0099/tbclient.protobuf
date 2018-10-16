@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_GENERAL_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;
@@ -44,7 +44,7 @@ public final class DataRes extends Message {
         this.user_list = immutableCopyOf(builder.user_list);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThreadInfo> general_list;
         public Integer has_more;

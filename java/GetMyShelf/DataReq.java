@@ -3,7 +3,7 @@ package tbclient.GetMyShelf;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Integer pn;

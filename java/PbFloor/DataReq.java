@@ -3,7 +3,7 @@ package tbclient.PbFloor;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 9)
@@ -99,7 +99,7 @@ public final class DataReq extends Message {
         this.is_comm_reverse = builder.is_comm_reverse;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Integer is_comm_reverse;

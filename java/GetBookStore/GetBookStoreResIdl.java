@@ -3,7 +3,7 @@ package tbclient.GetBookStore;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class GetBookStoreResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetBookStoreResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<GetBookStoreResIdl> {
         public DataRes data;
         public Error error;

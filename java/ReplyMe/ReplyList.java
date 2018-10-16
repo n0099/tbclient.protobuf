@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class ReplyList extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FNAME = "";
@@ -215,7 +215,7 @@ public final class ReplyList extends Message {
         this.thread_author_user = builder.thread_author_user;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ReplyList> {
         public String content;
         public String fname;

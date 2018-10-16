@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class Position extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer card;
@@ -49,7 +49,7 @@ public final class Position extends Message {
         this.card = builder.card;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<Position> {
         public Integer card;
         public Integer frs;

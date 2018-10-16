@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class PrivSets extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer friend;
@@ -67,7 +67,7 @@ public final class PrivSets extends Message {
         this.live = builder.live;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PrivSets> {
         public Integer friend;
         public Integer group;

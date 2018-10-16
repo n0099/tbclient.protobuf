@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.DailyInfo;
 import tbclient.DailyTopic;
 import tbclient.GodBanner;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final List<GodBanner> DEFAULT_BANNER = Collections.emptyList();
     public static final List<DailyTopic> DEFAULT_TOPIC = Collections.emptyList();
@@ -39,7 +39,7 @@ public final class DataRes extends Message {
         this.daily_info = builder.daily_info;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<GodBanner> banner;
         public DailyInfo daily_info;

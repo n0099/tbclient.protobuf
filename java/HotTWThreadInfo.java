@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class HotTWThreadInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer fans_count;
@@ -33,7 +33,7 @@ public final class HotTWThreadInfo extends Message {
         this.fans_count = builder.fans_count;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<HotTWThreadInfo> {
         public Integer fans_count;
         public List<User> user_list;

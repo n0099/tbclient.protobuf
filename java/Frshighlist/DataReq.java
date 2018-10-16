@@ -3,7 +3,7 @@ package tbclient.Frshighlist;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -126,7 +126,7 @@ public final class DataReq extends Message {
         this.forum_name = builder.forum_name;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public String da_idfa;

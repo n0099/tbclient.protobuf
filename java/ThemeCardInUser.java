@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class ThemeCardInUser extends Message {
     public static final String DEFAULT_COORDINATE = "";
     public static final String DEFAULT_IMG_ANDROID = "";
@@ -58,7 +58,7 @@ public final class ThemeCardInUser extends Message {
         this.level = builder.level;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ThemeCardInUser> {
         public String coordinate;
         public String img_android;

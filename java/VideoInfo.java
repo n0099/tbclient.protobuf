@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class VideoInfo extends Message {
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_THUMBNAIL_URL = "";
@@ -150,7 +150,7 @@ public final class VideoInfo extends Message {
         this.is_vertical = builder.is_vertical;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public Integer is_vertical;
         public String media_subtitle;

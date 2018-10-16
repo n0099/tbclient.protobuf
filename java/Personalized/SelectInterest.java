@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class SelectInterest extends Message {
     public static final String DEFAULT_SELECT_INTEREST_NAME = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -22,7 +22,7 @@ public final class SelectInterest extends Message {
         this.select_interest_name = builder.select_interest_name;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<SelectInterest> {
         public String select_interest_name;
 

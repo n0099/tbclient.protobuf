@@ -3,7 +3,7 @@ package tbclient.VideoTopicList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_Q_TYPE = "";
     public static final String DEFAULT_SCR_DIP = "";
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long pn;

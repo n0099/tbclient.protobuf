@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class LotteryRegular extends Message {
     public static final List<Integer> DEFAULT_CHANCE = Collections.emptyList();
     public static final String DEFAULT_REGULAR = "";
@@ -33,7 +33,7 @@ public final class LotteryRegular extends Message {
         this.chance = immutableCopyOf(builder.chance);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<LotteryRegular> {
         public List<Integer> chance;
         public String regular;

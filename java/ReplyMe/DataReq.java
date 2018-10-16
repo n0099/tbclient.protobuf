@@ -3,7 +3,7 @@ package tbclient.ReplyMe;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_IDS = "";
     @ProtoField(tag = 3)
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
         this.q_type = builder.q_type;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public String ids;

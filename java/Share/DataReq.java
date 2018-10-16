@@ -3,7 +3,7 @@ package tbclient.Share;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
     public final CommonReq common;
@@ -45,7 +45,7 @@ public final class DataReq extends Message {
         this.fid = builder.fid;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long fid;

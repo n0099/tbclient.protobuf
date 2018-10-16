@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class AdParam extends Message {
     public static final Integer DEFAULT_LOAD_COUNT = 0;
     public static final Integer DEFAULT_REFRESH_COUNT = 0;
@@ -31,7 +31,7 @@ public final class AdParam extends Message {
         this.refresh_count = builder.refresh_count;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<AdParam> {
         public Integer load_count;
         public Integer refresh_count;

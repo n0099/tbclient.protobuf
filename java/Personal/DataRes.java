@@ -10,7 +10,7 @@ import tbclient.ForumDynamic;
 import tbclient.Profile.UserGodInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<ForumDynamic> concerned_forum_list;
@@ -87,7 +87,7 @@ public final class DataRes extends Message {
         this.mask_type = builder.mask_type;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ForumDynamic> concerned_forum_list;
         public List<DynamicInfo> dynamic_list;

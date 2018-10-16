@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class ThreadPersonalized extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_EXTRA = "";
@@ -69,7 +69,7 @@ public final class ThreadPersonalized extends Message {
         this.extra = builder.extra;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ThreadPersonalized> {
         public String abtest_tag;
         public List<DislikeReason> dislike_resource;

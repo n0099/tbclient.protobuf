@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class CartoonThread extends Message {
     public static final Long DEFAULT_CARTOON_ID = 0L;
     public static final Integer DEFAULT_CHAPTER_ID = 0;
@@ -31,7 +31,7 @@ public final class CartoonThread extends Message {
         this.chapter_id = builder.chapter_id;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<CartoonThread> {
         public Long cartoon_id;
         public Integer chapter_id;

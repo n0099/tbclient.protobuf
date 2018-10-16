@@ -2,7 +2,7 @@ package tbclient.RedNotify;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final RedNotify notify_data;
@@ -16,7 +16,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public RedNotify notify_data;
 

@@ -2,7 +2,7 @@ package tbclient.GetMyShelf;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class BookInfo extends Message {
     public static final String DEFAULT_AUTHOR_NAME = "";
     public static final String DEFAULT_CARTOON_NAME = "";
@@ -85,7 +85,7 @@ public final class BookInfo extends Message {
         this.author_name = builder.author_name;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<BookInfo> {
         public String author_name;
         public Long cartoon_id;

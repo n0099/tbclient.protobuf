@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class GodInfo extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_INTRO = "";
@@ -85,7 +85,7 @@ public final class GodInfo extends Message {
         this.can_send_msg = builder.can_send_msg;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<GodInfo> {
         public Integer can_send_msg;
         public Long fid;

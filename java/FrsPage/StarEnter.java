@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class StarEnter extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_OBJ_ID = "";
@@ -103,7 +103,7 @@ public final class StarEnter extends Message {
         this.bazhu_mark = builder.bazhu_mark;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<StarEnter> {
         public Integer bazhu_mark;
         public String icon;

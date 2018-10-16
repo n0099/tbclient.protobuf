@@ -3,7 +3,7 @@ package tbclient.GetCartoonCategoryList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_CARTOON_CATEGORY_ID = 0;
     public static final Integer DEFAULT_PN = 0;
@@ -45,7 +45,7 @@ public final class DataReq extends Message {
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer cartoon_category_id;
         public CommonReq common;

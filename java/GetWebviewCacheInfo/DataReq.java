@@ -3,7 +3,7 @@ package tbclient.GetWebviewCacheInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_WEBVIEW_VERSION = "";
     @ProtoField(tag = 1)
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
         this.webview_version = builder.webview_version;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public String webview_version;

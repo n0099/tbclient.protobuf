@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.BannerList;
 import tbclient.GameInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -556,7 +556,7 @@ public final class ForumInfo extends Message {
         this.is_show_all_top_thread = builder.is_show_all_top_thread;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
         public AcrossForumIcon across_forum_hide;

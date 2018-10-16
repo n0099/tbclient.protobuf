@@ -24,7 +24,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_FOLD_TIP = "";
@@ -360,7 +360,7 @@ public final class DataRes extends Message {
         this.sort_type = builder.sort_type;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
         public AlaLiveInfo ala_info;

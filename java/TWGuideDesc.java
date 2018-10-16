@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class TWGuideDesc extends Message {
     public static final String DEFAULT_LINK = "";
     public static final Integer DEFAULT_ORDER = 0;
@@ -40,7 +40,7 @@ public final class TWGuideDesc extends Message {
         this.link = builder.link;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<TWGuideDesc> {
         public String link;
         public Integer order;

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class Video extends Message {
     public static final Integer DEFAULT_NUM = 0;
     public static final String DEFAULT_PIC = "";
@@ -31,7 +31,7 @@ public final class Video extends Message {
         this.num = builder.num;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<Video> {
         public Integer num;
         public String pic;

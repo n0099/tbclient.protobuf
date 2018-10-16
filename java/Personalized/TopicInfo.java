@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class TopicInfo extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_TOPIC_NAME = "";
@@ -58,7 +58,7 @@ public final class TopicInfo extends Message {
         this.tag = builder.tag;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<TopicInfo> {
         public String desc;
         public Integer is_hot;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_COOKIE = "";
@@ -504,7 +504,7 @@ public final class DataReq extends Message {
         this.call_from = builder.call_from;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public AdParam ad_param;
         public AppPosInfo app_pos;

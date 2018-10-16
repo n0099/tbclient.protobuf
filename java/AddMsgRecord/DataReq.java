@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final List<MsgRecord> DEFAULT_RECORDS = Collections.emptyList();
     @ProtoField(tag = 1)
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
         this.records = immutableCopyOf(builder.records);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public List<MsgRecord> records;

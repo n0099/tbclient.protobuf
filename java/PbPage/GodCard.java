@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class GodCard extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_BUTTON_URL = "";
@@ -85,7 +85,7 @@ public final class GodCard extends Message {
         this.show_floor = builder.show_floor;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<GodCard> {
         public String button_text;
         public String button_url;

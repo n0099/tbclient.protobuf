@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class HeadSdk extends Message {
     public static final String DEFAULT_HEAD_PIC = "";
     public static final String DEFAULT_HEAD_TEXT = "";
@@ -58,7 +58,7 @@ public final class HeadSdk extends Message {
         this.head_type = builder.head_type;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<HeadSdk> {
         public String head_pic;
         public String head_text;

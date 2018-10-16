@@ -2,7 +2,7 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class User_Pic extends Message {
     public static final String DEFAULT_BIG = "";
     public static final String DEFAULT_SMALL = "";
@@ -31,7 +31,7 @@ public final class User_Pic extends Message {
         this.small = builder.small;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<User_Pic> {
         public String big;
         public String small;

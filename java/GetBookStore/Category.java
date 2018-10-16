@@ -2,7 +2,7 @@ package tbclient.GetBookStore;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class Category extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final String DEFAULT_CATEGORY_TEXT = "";
@@ -31,7 +31,7 @@ public final class Category extends Message {
         this.category_text = builder.category_text;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<Category> {
         public Integer category_id;
         public String category_text;

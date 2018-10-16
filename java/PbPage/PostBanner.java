@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class PostBanner extends Message {
     public static final String DEFAULT_BANNER_NAME = "";
     public static final String DEFAULT_BANNER_PIC = "";
@@ -67,7 +67,7 @@ public final class PostBanner extends Message {
         this.client_type = builder.client_type;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<PostBanner> {
         public String banner_name;
         public String banner_pic;

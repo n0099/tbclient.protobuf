@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Category> cartoon_category;
@@ -33,7 +33,7 @@ public final class DataRes extends Message {
         this.cartoon_category = immutableCopyOf(builder.cartoon_category);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Category> cartoon_category;
         public List<Shelf> my_shelf;

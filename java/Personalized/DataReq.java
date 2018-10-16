@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AGE_TAG = "";
     public static final String DEFAULT_DA_IDFA = "";
@@ -209,7 +209,7 @@ public final class DataReq extends Message {
         this.new_net_type = builder.new_net_type;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String age_tag;
         public CommonReq common;

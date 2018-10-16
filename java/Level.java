@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class Level extends Message {
     public static final String DEFAULT_EXPIRED_NOTIFY = "";
     public static final String DEFAULT_EXPIRING_NOTIFY = "";
@@ -121,7 +121,7 @@ public final class Level extends Message {
         this.pic_url = builder.pic_url;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<Level> {
         public Integer end_time;
         public String expired_notify;

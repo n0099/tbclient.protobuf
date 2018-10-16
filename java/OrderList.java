@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class OrderList extends Message {
     public static final String DEFAULT_ACTIVITY_DESC = "";
     public static final String DEFAULT_ACTIVITY_URL = "";
@@ -121,7 +121,7 @@ public final class OrderList extends Message {
         this.preg_field = builder.preg_field;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<OrderList> {
         public String activity_desc;
         public String activity_url;

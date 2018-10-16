@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class AnchorInfo extends Message {
     public static final String DEFAULT_AUTHOR_NAME = "";
     public static final String DEFAULT_FORUMNAME = "";
@@ -187,7 +187,7 @@ public final class AnchorInfo extends Message {
         this.twzhibo_info = builder.twzhibo_info;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<AnchorInfo> {
         public Long author_id;
         public String author_name;
