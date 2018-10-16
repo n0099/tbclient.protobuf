@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "decrypt/DataRes.proto";
+
+message DecryptCodeResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

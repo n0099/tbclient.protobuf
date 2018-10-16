@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "decrypt/DataReq.proto";
+
+message DecryptCodeReqIdl {
+    DataReq data = 1;
+}
