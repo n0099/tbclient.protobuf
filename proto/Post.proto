@@ -64,4 +64,5 @@ message Post {
     int32 img_num_abtest = 41;
     OriginThreadInfo origin_thread_info = 42;
     int32 is_fold = 43;
+    string fold_tip = 44;
 }

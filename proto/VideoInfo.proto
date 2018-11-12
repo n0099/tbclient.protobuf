@@ -18,4 +18,6 @@ message VideoInfo {
     int32 video_select_flag = 13;
     uint32 video_type = 14;
     uint32 is_vertical = 15;
+    VideoDesc video_h265 = 16;
+    string mcn_lead_page = 17;
 }
