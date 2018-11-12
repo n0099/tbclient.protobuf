@@ -6,12 +6,15 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes4.dex */
 public final class VideoInfo extends Message {
+    public static final String DEFAULT_MCN_LEAD_PAGE = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_THUMBNAIL_URL = "";
     public static final String DEFAULT_VIDEO_MD5 = "";
     public static final String DEFAULT_VIDEO_URL = "";
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer is_vertical;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String mcn_lead_page;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String media_subtitle;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -26,6 +29,8 @@ public final class VideoInfo extends Message {
     public final List<VideoDesc> video_desc;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer video_duration;
+    @ProtoField(tag = 16)
+    public final VideoDesc video_h265;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer video_height;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -127,9 +132,15 @@ public final class VideoInfo extends Message {
             }
             if (builder.is_vertical == null) {
                 this.is_vertical = DEFAULT_IS_VERTICAL;
-                return;
             } else {
                 this.is_vertical = builder.is_vertical;
+            }
+            this.video_h265 = builder.video_h265;
+            if (builder.mcn_lead_page == null) {
+                this.mcn_lead_page = "";
+                return;
+            } else {
+                this.mcn_lead_page = builder.mcn_lead_page;
                 return;
             }
         }
@@ -148,11 +159,14 @@ public final class VideoInfo extends Message {
         this.video_select_flag = builder.video_select_flag;
         this.video_type = builder.video_type;
         this.is_vertical = builder.is_vertical;
+        this.video_h265 = builder.video_h265;
+        this.mcn_lead_page = builder.mcn_lead_page;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public Integer is_vertical;
+        public String mcn_lead_page;
         public String media_subtitle;
         public Integer play_count;
         public Integer thumbnail_height;
@@ -160,6 +174,7 @@ public final class VideoInfo extends Message {
         public Integer thumbnail_width;
         public List<VideoDesc> video_desc;
         public Integer video_duration;
+        public VideoDesc video_h265;
         public Integer video_height;
         public Integer video_length;
         public String video_md5;
@@ -189,6 +204,8 @@ public final class VideoInfo extends Message {
                 this.video_select_flag = videoInfo.video_select_flag;
                 this.video_type = videoInfo.video_type;
                 this.is_vertical = videoInfo.is_vertical;
+                this.video_h265 = videoInfo.video_h265;
+                this.mcn_lead_page = videoInfo.mcn_lead_page;
             }
         }
 

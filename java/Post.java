@@ -7,6 +7,7 @@ import java.util.List;
 /* loaded from: classes4.dex */
 public final class Post extends Message {
     public static final String DEFAULT_BIMG_URL = "";
+    public static final String DEFAULT_FOLD_TIP = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_TIME_EX = "";
@@ -34,6 +35,8 @@ public final class Post extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
+    @ProtoField(tag = 44, type = Message.Datatype.STRING)
+    public final String fold_tip;
     @ProtoField(tag = 38)
     public final SimpleForum from_forum;
     @ProtoField(tag = 33)
@@ -261,9 +264,14 @@ public final class Post extends Message {
             this.origin_thread_info = builder.origin_thread_info;
             if (builder.is_fold == null) {
                 this.is_fold = DEFAULT_IS_FOLD;
-                return;
             } else {
                 this.is_fold = builder.is_fold;
+            }
+            if (builder.fold_tip == null) {
+                this.fold_tip = "";
+                return;
+            } else {
+                this.fold_tip = builder.fold_tip;
                 return;
             }
         }
@@ -310,6 +318,7 @@ public final class Post extends Message {
         this.img_num_abtest = builder.img_num_abtest;
         this.origin_thread_info = builder.origin_thread_info;
         this.is_fold = builder.is_fold;
+        this.fold_tip = builder.fold_tip;
     }
 
     /* loaded from: classes4.dex */
@@ -325,6 +334,7 @@ public final class Post extends Message {
         public List<PbContent> content;
         public List<TailInfo> ext_tails;
         public Integer floor;
+        public String fold_tip;
         public SimpleForum from_forum;
         public TogetherHi high_together;
         public Long id;
@@ -407,6 +417,7 @@ public final class Post extends Message {
                 this.img_num_abtest = post.img_num_abtest;
                 this.origin_thread_info = post.origin_thread_info;
                 this.is_fold = post.is_fold;
+                this.fold_tip = post.fold_tip;
             }
         }
 
