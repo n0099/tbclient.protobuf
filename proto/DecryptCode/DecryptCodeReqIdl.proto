@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "decrypt/DataReq.proto";
+import "DecryptCode/DataReq.proto";
 
 message DecryptCodeReqIdl {
     DataReq data = 1;

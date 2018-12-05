@@ -25,4 +25,7 @@ message DataReq {
     uint32 tag_changed = 21;
     uint32 need_forumlist = 22;
     uint32 new_net_type = 23;
+    string shoubai_cuid = 24;
+    int64 from_tid = 25;
+    int32 pre_ad_thread_count = 26;
 }

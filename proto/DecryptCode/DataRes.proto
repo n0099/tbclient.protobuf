@@ -7,4 +7,6 @@ message DataRes {
     string url = 4;
     string btn_sure = 5;
     string btn_cancel = 6;
+    int32 acitivity_id = 7;
+    int32 type = 8;
 }
