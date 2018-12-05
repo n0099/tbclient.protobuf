@@ -136,6 +136,8 @@ public final class DataRes extends Message {
     public final NaGuide na_guide;
     @ProtoField(tag = 37)
     public final NavTabInfo nav_tab_info;
+    @ProtoField(tag = 96)
+    public final NebulaHotThreads nebula_hot_threads;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer need_log;
     @ProtoField(tag = 25)
@@ -505,6 +507,7 @@ public final class DataRes extends Message {
                 this.smart_app_avatar = immutableCopyOf(builder.smart_app_avatar);
             }
             this.smart_app = builder.smart_app;
+            this.nebula_hot_threads = builder.nebula_hot_threads;
             return;
         }
         this.user = builder.user;
@@ -594,6 +597,7 @@ public final class DataRes extends Message {
         this.video_auto_play = builder.video_auto_play;
         this.smart_app_avatar = immutableCopyOf(builder.smart_app_avatar);
         this.smart_app = builder.smart_app;
+        this.nebula_hot_threads = builder.nebula_hot_threads;
     }
 
     /* loaded from: classes4.dex */
@@ -649,6 +653,7 @@ public final class DataRes extends Message {
         public Long logid;
         public NaGuide na_guide;
         public NavTabInfo nav_tab_info;
+        public NebulaHotThreads nebula_hot_threads;
         public Integer need_log;
         public Novel novel;
         public NtSpreadInfo ntspread;
@@ -779,6 +784,7 @@ public final class DataRes extends Message {
                 this.video_auto_play = dataRes.video_auto_play;
                 this.smart_app_avatar = DataRes.copyOf(dataRes.smart_app_avatar);
                 this.smart_app = dataRes.smart_app;
+                this.nebula_hot_threads = dataRes.nebula_hot_threads;
             }
         }
 

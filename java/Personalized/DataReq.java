@@ -12,12 +12,15 @@ public final class DataReq extends Message {
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_SEX_TAG = "";
+    public static final String DEFAULT_SHOUBAI_CUID = "";
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String age_tag;
     @ProtoField(tag = 1)
     public final CommonReq common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
+    @ProtoField(tag = 25, type = Message.Datatype.INT64)
+    public final Long from_tid;
     @ProtoField(label = Message.Label.REPEATED, tag = 20, type = Message.Datatype.STRING)
     public final List<String> interest_tag;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
@@ -40,6 +43,8 @@ public final class DataReq extends Message {
     public final String platform;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer pn;
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    public final Integer pre_ad_thread_count;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer q_type;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
@@ -50,6 +55,8 @@ public final class DataReq extends Message {
     public final Integer scr_w;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String sex_tag;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String shoubai_cuid;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer sug_count;
     @ProtoField(tag = 21, type = Message.Datatype.UINT32)
@@ -72,6 +79,8 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_TAG_CHANGED = 0;
     public static final Integer DEFAULT_NEED_FORUMLIST = 0;
     public static final Integer DEFAULT_NEW_NET_TYPE = 0;
+    public static final Long DEFAULT_FROM_TID = 0L;
+    public static final Integer DEFAULT_PRE_AD_THREAD_COUNT = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -179,9 +188,24 @@ public final class DataReq extends Message {
             }
             if (builder.new_net_type == null) {
                 this.new_net_type = DEFAULT_NEW_NET_TYPE;
-                return;
             } else {
                 this.new_net_type = builder.new_net_type;
+            }
+            if (builder.shoubai_cuid == null) {
+                this.shoubai_cuid = "";
+            } else {
+                this.shoubai_cuid = builder.shoubai_cuid;
+            }
+            if (builder.from_tid == null) {
+                this.from_tid = DEFAULT_FROM_TID;
+            } else {
+                this.from_tid = builder.from_tid;
+            }
+            if (builder.pre_ad_thread_count == null) {
+                this.pre_ad_thread_count = DEFAULT_PRE_AD_THREAD_COUNT;
+                return;
+            } else {
+                this.pre_ad_thread_count = builder.pre_ad_thread_count;
                 return;
             }
         }
@@ -207,6 +231,9 @@ public final class DataReq extends Message {
         this.tag_changed = builder.tag_changed;
         this.need_forumlist = builder.need_forumlist;
         this.new_net_type = builder.new_net_type;
+        this.shoubai_cuid = builder.shoubai_cuid;
+        this.from_tid = builder.from_tid;
+        this.pre_ad_thread_count = builder.pre_ad_thread_count;
     }
 
     /* loaded from: classes6.dex */
@@ -214,6 +241,7 @@ public final class DataReq extends Message {
         public String age_tag;
         public CommonReq common;
         public String da_idfa;
+        public Long from_tid;
         public List<String> interest_tag;
         public Integer issdk;
         public String lastids;
@@ -225,11 +253,13 @@ public final class DataReq extends Message {
         public Integer page_thread_count;
         public String platform;
         public Integer pn;
+        public Integer pre_ad_thread_count;
         public Integer q_type;
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
         public String sex_tag;
+        public String shoubai_cuid;
         public Integer sug_count;
         public Integer tag_changed;
         public Integer tag_code;
@@ -262,6 +292,9 @@ public final class DataReq extends Message {
                 this.tag_changed = dataReq.tag_changed;
                 this.need_forumlist = dataReq.need_forumlist;
                 this.new_net_type = dataReq.new_net_type;
+                this.shoubai_cuid = dataReq.shoubai_cuid;
+                this.from_tid = dataReq.from_tid;
+                this.pre_ad_thread_count = dataReq.pre_ad_thread_count;
             }
         }
 

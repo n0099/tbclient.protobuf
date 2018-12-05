@@ -1,4 +1,4 @@
-package tbclient.decrypt;
+package tbclient.DecryptCode;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -10,6 +10,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_TIPS = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer acitivity_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String btn_cancel;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -20,8 +22,12 @@ public final class DataRes extends Message {
     public final String tips;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String url;
+    public static final Integer DEFAULT_ACITIVITY_ID = 0;
+    public static final Integer DEFAULT_TYPE = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -53,9 +59,19 @@ public final class DataRes extends Message {
             }
             if (builder.btn_cancel == null) {
                 this.btn_cancel = "";
-                return;
             } else {
                 this.btn_cancel = builder.btn_cancel;
+            }
+            if (builder.acitivity_id == null) {
+                this.acitivity_id = DEFAULT_ACITIVITY_ID;
+            } else {
+                this.acitivity_id = builder.acitivity_id;
+            }
+            if (builder.type == null) {
+                this.type = DEFAULT_TYPE;
+                return;
+            } else {
+                this.type = builder.type;
                 return;
             }
         }
@@ -65,15 +81,19 @@ public final class DataRes extends Message {
         this.url = builder.url;
         this.btn_sure = builder.btn_sure;
         this.btn_cancel = builder.btn_cancel;
+        this.acitivity_id = builder.acitivity_id;
+        this.type = builder.type;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public Integer acitivity_id;
         public String btn_cancel;
         public String btn_sure;
         public String img;
         public String tips;
         public String title;
+        public Integer type;
         public String url;
 
         public Builder() {
@@ -88,6 +108,8 @@ public final class DataRes extends Message {
                 this.url = dataRes.url;
                 this.btn_sure = dataRes.btn_sure;
                 this.btn_cancel = dataRes.btn_cancel;
+                this.acitivity_id = dataRes.acitivity_id;
+                this.type = dataRes.type;
             }
         }
 

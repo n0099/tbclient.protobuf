@@ -1,4 +1,4 @@
-package tbclient.decrypt;
+package tbclient.DecryptCode;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
