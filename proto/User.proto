@@ -125,4 +125,5 @@ message User {
     int32 is_fans = 91;
     int32 priv_thread = 92;
     int32 is_videobiggie = 93;
+    int32 is_show_redpacket = 94;
 }
