@@ -8,6 +8,8 @@ import java.util.List;
 public final class AdCloseInfo extends Message {
     public static final String DEFAULT_CONFIRM_TITLE = "";
     public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 5)
+    public final ActionControl action_control;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String confirm_title;
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.STRING)
@@ -39,20 +41,22 @@ public final class AdCloseInfo extends Message {
             }
             if (builder.confirm_title == null) {
                 this.confirm_title = "";
-                return;
             } else {
                 this.confirm_title = builder.confirm_title;
-                return;
             }
+            this.action_control = builder.action_control;
+            return;
         }
         this.support_close = builder.support_close;
         this.title = builder.title;
         this.reasons = immutableCopyOf(builder.reasons);
         this.confirm_title = builder.confirm_title;
+        this.action_control = builder.action_control;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<AdCloseInfo> {
+        public ActionControl action_control;
         public String confirm_title;
         public List<String> reasons;
         public Integer support_close;
@@ -68,6 +72,7 @@ public final class AdCloseInfo extends Message {
                 this.title = adCloseInfo.title;
                 this.reasons = AdCloseInfo.copyOf(adCloseInfo.reasons);
                 this.confirm_title = adCloseInfo.confirm_title;
+                this.action_control = adCloseInfo.action_control;
             }
         }
 

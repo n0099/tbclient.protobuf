@@ -116,6 +116,8 @@ public final class User extends Message {
     public final Integer is_mem;
     @ProtoField(tag = 51, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
+    @ProtoField(tag = 94, type = Message.Datatype.INT32)
+    public final Integer is_show_redpacket;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_verify;
     @ProtoField(tag = 93, type = Message.Datatype.INT32)
@@ -263,6 +265,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_IS_FANS = 0;
     public static final Integer DEFAULT_PRIV_THREAD = 0;
     public static final Integer DEFAULT_IS_VIDEOBIGGIE = 0;
+    public static final Integer DEFAULT_IS_SHOW_REDPACKET = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -641,9 +644,14 @@ public final class User extends Message {
             }
             if (builder.is_videobiggie == null) {
                 this.is_videobiggie = DEFAULT_IS_VIDEOBIGGIE;
-                return;
             } else {
                 this.is_videobiggie = builder.is_videobiggie;
+            }
+            if (builder.is_show_redpacket == null) {
+                this.is_show_redpacket = DEFAULT_IS_SHOW_REDPACKET;
+                return;
+            } else {
+                this.is_show_redpacket = builder.is_show_redpacket;
                 return;
             }
         }
@@ -740,6 +748,7 @@ public final class User extends Message {
         this.is_fans = builder.is_fans;
         this.priv_thread = builder.priv_thread;
         this.is_videobiggie = builder.is_videobiggie;
+        this.is_show_redpacket = builder.is_show_redpacket;
     }
 
     /* loaded from: classes4.dex */
@@ -791,6 +800,7 @@ public final class User extends Message {
         public Integer is_mask;
         public Integer is_mem;
         public Integer is_select_tail;
+        public Integer is_show_redpacket;
         public Integer is_verify;
         public Integer is_videobiggie;
         public Integer left_call_num;
@@ -937,6 +947,7 @@ public final class User extends Message {
                 this.is_fans = user.is_fans;
                 this.priv_thread = user.priv_thread;
                 this.is_videobiggie = user.is_videobiggie;
+                this.is_show_redpacket = user.is_show_redpacket;
             }
         }
 
