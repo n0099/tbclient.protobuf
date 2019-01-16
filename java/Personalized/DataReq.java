@@ -9,6 +9,7 @@ import tbclient.CommonReq;
 public final class DataReq extends Message {
     public static final String DEFAULT_AGE_TAG = "";
     public static final String DEFAULT_DA_IDFA = "";
+    public static final String DEFAULT_INVOKE_SOURCE = "";
     public static final String DEFAULT_LASTIDS = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_SEX_TAG = "";
@@ -23,6 +24,8 @@ public final class DataReq extends Message {
     public final Long from_tid;
     @ProtoField(label = Message.Label.REPEATED, tag = 20, type = Message.Datatype.STRING)
     public final List<String> interest_tag;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String invoke_source;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -35,6 +38,8 @@ public final class DataReq extends Message {
     public final Integer need_forumlist;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer need_tags;
+    @ProtoField(tag = 27, type = Message.Datatype.INT32)
+    public final Integer new_install;
     @ProtoField(tag = 23, type = Message.Datatype.UINT32)
     public final Integer new_net_type;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -47,6 +52,8 @@ public final class DataReq extends Message {
     public final Integer pre_ad_thread_count;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer q_type;
+    @ProtoField(tag = 28, type = Message.Datatype.INT32)
+    public final Integer request_times;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
     public final Double scr_dip;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -81,6 +88,8 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_NEW_NET_TYPE = 0;
     public static final Long DEFAULT_FROM_TID = 0L;
     public static final Integer DEFAULT_PRE_AD_THREAD_COUNT = 0;
+    public static final Integer DEFAULT_NEW_INSTALL = 0;
+    public static final Integer DEFAULT_REQUEST_TIMES = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -203,9 +212,24 @@ public final class DataReq extends Message {
             }
             if (builder.pre_ad_thread_count == null) {
                 this.pre_ad_thread_count = DEFAULT_PRE_AD_THREAD_COUNT;
-                return;
             } else {
                 this.pre_ad_thread_count = builder.pre_ad_thread_count;
+            }
+            if (builder.new_install == null) {
+                this.new_install = DEFAULT_NEW_INSTALL;
+            } else {
+                this.new_install = builder.new_install;
+            }
+            if (builder.request_times == null) {
+                this.request_times = DEFAULT_REQUEST_TIMES;
+            } else {
+                this.request_times = builder.request_times;
+            }
+            if (builder.invoke_source == null) {
+                this.invoke_source = "";
+                return;
+            } else {
+                this.invoke_source = builder.invoke_source;
                 return;
             }
         }
@@ -234,6 +258,9 @@ public final class DataReq extends Message {
         this.shoubai_cuid = builder.shoubai_cuid;
         this.from_tid = builder.from_tid;
         this.pre_ad_thread_count = builder.pre_ad_thread_count;
+        this.new_install = builder.new_install;
+        this.request_times = builder.request_times;
+        this.invoke_source = builder.invoke_source;
     }
 
     /* loaded from: classes6.dex */
@@ -243,18 +270,21 @@ public final class DataReq extends Message {
         public String da_idfa;
         public Long from_tid;
         public List<String> interest_tag;
+        public String invoke_source;
         public Integer issdk;
         public String lastids;
         public Integer load_type;
         public Integer need_age_module;
         public Integer need_forumlist;
         public Integer need_tags;
+        public Integer new_install;
         public Integer new_net_type;
         public Integer page_thread_count;
         public String platform;
         public Integer pn;
         public Integer pre_ad_thread_count;
         public Integer q_type;
+        public Integer request_times;
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
@@ -295,6 +325,9 @@ public final class DataReq extends Message {
                 this.shoubai_cuid = dataReq.shoubai_cuid;
                 this.from_tid = dataReq.from_tid;
                 this.pre_ad_thread_count = dataReq.pre_ad_thread_count;
+                this.new_install = dataReq.new_install;
+                this.request_times = dataReq.request_times;
+                this.invoke_source = dataReq.invoke_source;
             }
         }
 
