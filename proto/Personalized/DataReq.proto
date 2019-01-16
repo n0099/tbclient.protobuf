@@ -28,4 +28,7 @@ message DataReq {
     string shoubai_cuid = 24;
     int64 from_tid = 25;
     int32 pre_ad_thread_count = 26;
+    int32 new_install = 27;
+    int32 request_times = 28;
+    string invoke_source = 29;
 }
