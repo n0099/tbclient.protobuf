@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Frshighlist/DataReq.proto";
-
-message FrshighlistReqIdl {
-    DataReq data = 1;
-}

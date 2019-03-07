@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message ForumInfo {
-    uint64 forum_id = 1;
-}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message PrivateForumTask {
+    int32 audit_status = 1;
+    int32 like_status = 2;
+    int32 active_status = 3;
+    int32 main_post_status = 4;
+    int32 task_left_time = 5;
+}

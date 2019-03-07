@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message GodUserInfo {
-    int64 user_id = 1;
-    string user_name = 2;
-    string portrait = 3;
-    string forum_name = 4;
-    string intro = 5;
-}

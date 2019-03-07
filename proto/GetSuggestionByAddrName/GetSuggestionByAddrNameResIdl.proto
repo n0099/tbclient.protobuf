@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GetSuggestionByAddrName/DataRes.proto";
-
-message GetSuggestionByAddrNameResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

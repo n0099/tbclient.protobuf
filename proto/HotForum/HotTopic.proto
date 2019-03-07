@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "HotForum/HotTopicList.proto";
-
-message HotTopic {
-    string title = 1;
-    repeated HotTopicList topic_list = 2;
-}

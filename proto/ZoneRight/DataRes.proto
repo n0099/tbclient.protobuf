@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ZoneRight/Toast.proto";
+
+message DataRes {
+    uint32 has_right = 1;
+    Toast toast = 2;
+}

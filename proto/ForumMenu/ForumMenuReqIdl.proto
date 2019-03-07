@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "ForumMenu/DataReq.proto";
-
-message ForumMenuReqIdl {
-    DataReq data = 1;
-}

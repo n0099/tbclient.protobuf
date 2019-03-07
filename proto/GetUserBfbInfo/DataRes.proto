@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "UserBfbInfo.proto";
-
-message DataRes {
-    UserBfbInfo bfb = 1;
-}

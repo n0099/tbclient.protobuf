@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "BawuTeam.proto";
-import "ManagerApplyInfo.proto";
-
-message DataRes {
-    BawuTeam bawu_team_info = 1;
-    ManagerApplyInfo manager_apply_info = 2;
-}

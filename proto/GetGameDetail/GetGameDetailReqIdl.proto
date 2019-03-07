@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetGameDetail/DataReq.proto";
-
-message GetGameDetailReqIdl {
-    DataReq data = 1;
-}

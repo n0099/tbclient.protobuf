@@ -14,4 +14,10 @@ message RecommendForumInfo {
     uint32 forum_type = 9;
     string authen = 10;
     string recom_reason = 11;
+    uint32 is_brand_forum = 12;
+    string hot_text = 13;
+    string abtest_tag = 14;
+    string source = 15;
+    string extra = 16;
+    uint32 is_private_forum = 17;
 }

@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message AdidasAdvert {
-    string img_url = 1;
-    string ahead_url = 2;
-}

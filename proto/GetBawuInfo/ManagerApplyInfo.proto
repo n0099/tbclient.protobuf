@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message ManagerApplyInfo {
-    int32 manager_left_num = 1;
-    string manager_apply_url = 2;
-    int32 assist_left_num = 3;
-    string assist_apply_url = 4;
-}

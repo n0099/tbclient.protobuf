@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "TalkBall/Competition.proto";
-
-message GuessingCompetition {
-    repeated Competition competition = 1;
-    string ahead_url = 2;
-    repeated string winning_message = 3;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GetBookStore/DataRes.proto";
-
-message GetBookStoreResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

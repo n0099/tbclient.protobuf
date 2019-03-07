@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GameForumGuideTab/DataRes.proto";
-
-message GameForumGuideTabResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

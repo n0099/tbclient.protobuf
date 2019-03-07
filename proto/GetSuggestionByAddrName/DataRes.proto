@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Lbs.proto";
-
-message DataRes {
-    repeated Lbs poi_info = 1;
-}

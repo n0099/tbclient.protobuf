@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetRecommendGod/DataReq.proto";
-
-message GetRecommendGodReqIdl {
-    DataReq data = 1;
-}

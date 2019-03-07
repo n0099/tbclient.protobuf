@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetConsentList/DataReq.proto";
-
-message GetConsentListReqIdl {
-    DataReq data = 1;
-}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetUserBfbInfo/DataReq.proto";
-
-message GetUserBfbInfoReqIdl {
-    DataReq data = 1;
-}

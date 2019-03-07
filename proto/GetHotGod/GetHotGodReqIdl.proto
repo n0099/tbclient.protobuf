@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetHotGod/DataReq.proto";
-
-message GetHotGodReqIdl {
-    DataReq data = 1;
-}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetBookStore/DataReq.proto";
-
-message GetBookStoreReqIdl {
-    DataReq data = 1;
-}

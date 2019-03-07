@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "TestClose/DataRes.proto";
+
+message TestCloseResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

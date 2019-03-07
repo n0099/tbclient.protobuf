@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetSuggestionByAddrName/DataReq.proto";
-
-message GetSuggestionByAddrNameReqIdl {
-    DataReq data = 1;
-}

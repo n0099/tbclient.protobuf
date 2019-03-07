@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetBawuInfo/DataReq.proto";
-
-message GetBawuInfoReqIdl {
-    DataReq data = 1;
-}

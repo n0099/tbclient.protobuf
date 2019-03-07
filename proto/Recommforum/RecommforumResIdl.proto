@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "Recommforum/DataRes.proto";
+
+message RecommforumResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

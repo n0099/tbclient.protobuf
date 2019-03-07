@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "NewHottopic/TimeLineInfo.proto";
+
+message TimeLine {
+    string title = 2;
+    repeated TimeLineInfo timeline_info = 3;
+}

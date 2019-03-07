@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "ExcZan/DataRes.proto";
-
-message ExcZanResIdl {
-    DataRes data = 1;
-    Error error = 2;
-}

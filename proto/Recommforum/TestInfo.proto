@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "Recommforum/RecommForum.proto";
+
+message TestInfo {
+    int64 test_id = 1;
+    string title = 2;
+    string image_url = 3;
+    int32 create_time = 4;
+    int32 answered = 6;
+    string result_img = 7;
+    RecommForum recomm_forum = 9;
+}

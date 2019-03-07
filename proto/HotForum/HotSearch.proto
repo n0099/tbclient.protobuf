@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "HotForum/SearchValue.proto";
-
-message HotSearch {
-    string search_title = 1;
-    SearchValue search_value = 2;
-}

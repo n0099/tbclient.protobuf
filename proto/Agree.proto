@@ -5,4 +5,5 @@ message Agree {
     int32 has_agree = 2;
     int32 agree_type = 3;
     int64 disagree_num = 4;
+    int64 diff_agree_num = 5;
 }

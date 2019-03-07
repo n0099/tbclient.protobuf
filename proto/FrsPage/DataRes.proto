@@ -30,6 +30,7 @@ import "FrsPage/Info.proto";
 import "FrsPage/NavTabInfo.proto";
 import "FrsPage/NebulaHotThreads.proto";
 import "FrsPage/NtSpreadInfo.proto";
+import "FrsPage/PrivateForumTotalInfo.proto";
 import "FrsPage/PushThreadInfo.proto";
 import "FrsPage/RecommendBook.proto";
 import "FrsPage/StarEnter.proto";
@@ -145,4 +146,5 @@ message DataRes {
     repeated string smart_app_avatar = 94;
     SmartApp smart_app = 95;
     NebulaHotThreads nebula_hot_threads = 96;
+    PrivateForumTotalInfo private_forum_info = 97;
 }

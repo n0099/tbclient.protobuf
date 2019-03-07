@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "GetCartoonCategoryList/CartoonInfo.proto";
-
-message DataRes {
-    repeated CartoonInfo cartoon_list = 1;
-    int32 has_more = 2;
-}

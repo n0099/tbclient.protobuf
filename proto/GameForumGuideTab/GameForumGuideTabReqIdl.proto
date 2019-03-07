@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GameForumGuideTab/DataReq.proto";
-
-message GameForumGuideTabReqIdl {
-    DataReq data = 1;
-}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetLevelInfo/DataReq.proto";
-
-message GetLevelInfoReqIdl {
-    DataReq data = 1;
-}

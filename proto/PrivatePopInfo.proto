@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message PrivatePopInfo {
+    string pop_type = 1;
+    string pop_content = 2;
+    string pop_url = 3;
+    int32 pop_forum_id = 4;
+}

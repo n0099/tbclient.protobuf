@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message MFollowResult {
-    string portrait = 1;
-    bool is_success = 2;
-    string msg = 3;
-}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "SubTagList/DataReq.proto";
-
-message SubTagListReqIdl {
-    DataReq data = 1;
-}

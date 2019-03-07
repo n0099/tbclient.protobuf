@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message BzApplySwitch {
-    int32 apply_switch = 1;
-    string manager_link = 2;
-    string assist_link = 3;
-}

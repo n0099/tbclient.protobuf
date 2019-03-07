@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "SearchSug/DataReq.proto";
-
-message SearchSugReqIdl {
-    DataReq data = 1;
-}

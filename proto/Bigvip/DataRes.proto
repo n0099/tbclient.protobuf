@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Bigvip/UserInfoBigVip.proto";
-
-message DataRes {
-    UserInfoBigVip user_info = 1;
-}

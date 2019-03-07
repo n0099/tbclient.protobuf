@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "TalkBall/VideoCard.proto";
-
-message InsertFloor {
-    int32 topic_id = 1;
-    string topic_name = 2;
-    repeated VideoCard wander_list = 3;
-}

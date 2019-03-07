@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "ForumSubLabel.proto";
-
-message GameForumSubTab {
-    int32 id = 1;
-    string sub_tab_name = 2;
-    repeated ForumSubLabel sub_label_list = 3;
-}

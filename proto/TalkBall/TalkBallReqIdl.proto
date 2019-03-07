@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "TalkBall/DataReq.proto";
-
-message TalkBallReqIdl {
-    DataReq data = 1;
-}

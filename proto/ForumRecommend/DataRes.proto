@@ -1,10 +1,12 @@
 syntax = "proto3";
 
+import "ForumCreateInfo.proto";
 import "ForumRecommend/Banner.proto";
 import "ForumRecommend/HotSearch.proto";
 import "ForumRecommend/LikeForum.proto";
 import "ForumRecommend/NewRecommend.proto";
 import "FrequentlyForumInfo.proto";
+import "PrivatePopInfo.proto";
 import "RecommendForumInfo.proto";
 
 message DataRes {
@@ -23,4 +25,7 @@ message DataRes {
     repeated Banner new_banner_info = 13;
     repeated FrequentlyForumInfo frequently_forum_info = 14;
     repeated RecommendForumInfo tag_recommend_forum = 15;
+    int32 sort_type = 18;
+    ForumCreateInfo forum_create_info = 19;
+    PrivatePopInfo private_forum_popinfo = 20;
 }
