@@ -57,6 +57,8 @@ public final class Post extends Message {
     public final Integer is_ntitle;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_post_visible;
+    @ProtoField(tag = 45, type = Message.Datatype.INT32)
+    public final Integer is_top_agree_post;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer is_voice;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
@@ -75,6 +77,8 @@ public final class Post extends Message {
     public final PbPostZan post_zan;
     @ProtoField(tag = 28)
     public final PbPresent present;
+    @ProtoField(tag = 47, type = Message.Datatype.INT32)
+    public final Integer show_squared;
     @ProtoField(tag = 21)
     public final SignatureData signature;
     @ProtoField(tag = 34)
@@ -87,6 +91,8 @@ public final class Post extends Message {
     public final Integer sub_post_number;
     @ProtoField(tag = 22)
     public final TailInfo tail_info;
+    @ProtoField(tag = 46, type = Message.Datatype.INT64)
+    public final Long tid;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer time;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
@@ -120,6 +126,9 @@ public final class Post extends Message {
     public static final Integer DEFAULT_NEED_LOG = 0;
     public static final Integer DEFAULT_IMG_NUM_ABTEST = 0;
     public static final Integer DEFAULT_IS_FOLD = 0;
+    public static final Integer DEFAULT_IS_TOP_AGREE_POST = 0;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Integer DEFAULT_SHOW_SQUARED = 0;
 
     private Post(Builder builder, boolean z) {
         super(builder);
@@ -269,9 +278,24 @@ public final class Post extends Message {
             }
             if (builder.fold_tip == null) {
                 this.fold_tip = "";
-                return;
             } else {
                 this.fold_tip = builder.fold_tip;
+            }
+            if (builder.is_top_agree_post == null) {
+                this.is_top_agree_post = DEFAULT_IS_TOP_AGREE_POST;
+            } else {
+                this.is_top_agree_post = builder.is_top_agree_post;
+            }
+            if (builder.tid == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = builder.tid;
+            }
+            if (builder.show_squared == null) {
+                this.show_squared = DEFAULT_SHOW_SQUARED;
+                return;
+            } else {
+                this.show_squared = builder.show_squared;
                 return;
             }
         }
@@ -319,6 +343,9 @@ public final class Post extends Message {
         this.origin_thread_info = builder.origin_thread_info;
         this.is_fold = builder.is_fold;
         this.fold_tip = builder.fold_tip;
+        this.is_top_agree_post = builder.is_top_agree_post;
+        this.tid = builder.tid;
+        this.show_squared = builder.show_squared;
     }
 
     /* loaded from: classes4.dex */
@@ -345,6 +372,7 @@ public final class Post extends Message {
         public Integer is_hot_post;
         public Integer is_ntitle;
         public Integer is_post_visible;
+        public Integer is_top_agree_post;
         public Integer is_voice;
         public Integer is_vote;
         public Lbs lbs_info;
@@ -354,12 +382,14 @@ public final class Post extends Message {
         public DealInfo pb_deal_info;
         public PbPostZan post_zan;
         public PbPresent present;
+        public Integer show_squared;
         public SignatureData signature;
         public SkinInfo skin_info;
         public Integer storecount;
         public SubPost sub_post_list;
         public Integer sub_post_number;
         public TailInfo tail_info;
+        public Long tid;
         public Integer time;
         public String time_ex;
         public String title;
@@ -418,6 +448,9 @@ public final class Post extends Message {
                 this.origin_thread_info = post.origin_thread_info;
                 this.is_fold = post.is_fold;
                 this.fold_tip = post.fold_tip;
+                this.is_top_agree_post = post.is_top_agree_post;
+                this.tid = post.tid;
+                this.show_squared = post.show_squared;
             }
         }
 

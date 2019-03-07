@@ -3,7 +3,7 @@ package tbclient.SmartAppList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class SmartAppListResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class SmartAppListResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<SmartAppListResIdl> {
         public DataRes data;
         public Error error;

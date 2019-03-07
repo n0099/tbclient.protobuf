@@ -4,13 +4,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.ForumCreateInfo;
 import tbclient.FrequentlyForumInfo;
+import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
 /* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Banner> banner;
+    @ProtoField(tag = 19)
+    public final ForumCreateInfo forum_create_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 14)
     public final List<FrequentlyForumInfo> frequently_forum_info;
     @ProtoField(tag = 11)
@@ -31,10 +35,14 @@ public final class DataRes extends Message {
     public final List<Banner> new_banner_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<NewRecommend> new_recommend;
+    @ProtoField(tag = 20)
+    public final PrivatePopInfo private_forum_popinfo;
     @ProtoField(label = Message.Label.REPEATED, tag = 10)
     public final List<RecommendForumInfo> recommend_forum_info;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer redirect;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer sort_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<RecommendForumInfo> tag_recommend_forum;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -52,6 +60,7 @@ public final class DataRes extends Message {
     public static final List<Banner> DEFAULT_NEW_BANNER_INFO = Collections.emptyList();
     public static final List<FrequentlyForumInfo> DEFAULT_FREQUENTLY_FORUM_INFO = Collections.emptyList();
     public static final List<RecommendForumInfo> DEFAULT_TAG_RECOMMEND_FORUM = Collections.emptyList();
+    public static final Integer DEFAULT_SORT_TYPE = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -124,11 +133,17 @@ public final class DataRes extends Message {
             }
             if (builder.tag_recommend_forum == null) {
                 this.tag_recommend_forum = DEFAULT_TAG_RECOMMEND_FORUM;
-                return;
             } else {
                 this.tag_recommend_forum = immutableCopyOf(builder.tag_recommend_forum);
-                return;
             }
+            if (builder.sort_type == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+            } else {
+                this.sort_type = builder.sort_type;
+            }
+            this.forum_create_info = builder.forum_create_info;
+            this.private_forum_popinfo = builder.private_forum_popinfo;
+            return;
         }
         this.like_forum = immutableCopyOf(builder.like_forum);
         this.banner = immutableCopyOf(builder.banner);
@@ -145,11 +160,15 @@ public final class DataRes extends Message {
         this.new_banner_info = immutableCopyOf(builder.new_banner_info);
         this.frequently_forum_info = immutableCopyOf(builder.frequently_forum_info);
         this.tag_recommend_forum = immutableCopyOf(builder.tag_recommend_forum);
+        this.sort_type = builder.sort_type;
+        this.forum_create_info = builder.forum_create_info;
+        this.private_forum_popinfo = builder.private_forum_popinfo;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
+        public ForumCreateInfo forum_create_info;
         public List<FrequentlyForumInfo> frequently_forum_info;
         public HotSearch hot_search;
         public Integer is_login;
@@ -160,8 +179,10 @@ public final class DataRes extends Message {
         public Integer msign_valid;
         public List<Banner> new_banner_info;
         public List<NewRecommend> new_recommend;
+        public PrivatePopInfo private_forum_popinfo;
         public List<RecommendForumInfo> recommend_forum_info;
         public Integer redirect;
+        public Integer sort_type;
         public List<RecommendForumInfo> tag_recommend_forum;
         public Integer time;
 
@@ -186,6 +207,9 @@ public final class DataRes extends Message {
                 this.new_banner_info = DataRes.copyOf(dataRes.new_banner_info);
                 this.frequently_forum_info = DataRes.copyOf(dataRes.frequently_forum_info);
                 this.tag_recommend_forum = DataRes.copyOf(dataRes.tag_recommend_forum);
+                this.sort_type = dataRes.sort_type;
+                this.forum_create_info = dataRes.forum_create_info;
+                this.private_forum_popinfo = dataRes.private_forum_popinfo;
             }
         }
 

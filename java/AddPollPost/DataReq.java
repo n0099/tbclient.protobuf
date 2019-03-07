@@ -3,7 +3,7 @@ package tbclient.AddPollPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_OPTIONS = "";
     @ProtoField(tag = 3)
@@ -45,7 +45,7 @@ public final class DataReq extends Message {
         this.forum_id = builder.forum_id;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long forum_id;

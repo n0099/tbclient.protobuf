@@ -9,7 +9,7 @@ import tbclient.BannerList;
 import tbclient.RecomPostTopic;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_STAT_KEY = "";
     @ProtoField(tag = 10)
@@ -160,7 +160,7 @@ public final class DataRes extends Message {
         this.recom_post_topic = builder.recom_post_topic;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AgeSexModule age_sex;
         public Anti anti;

@@ -8,6 +8,8 @@ public final class Agree extends Message {
     public final Long agree_num;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer agree_type;
+    @ProtoField(tag = 5, type = Message.Datatype.INT64)
+    public final Long diff_agree_num;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long disagree_num;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -16,6 +18,7 @@ public final class Agree extends Message {
     public static final Integer DEFAULT_HAS_AGREE = 0;
     public static final Integer DEFAULT_AGREE_TYPE = 0;
     public static final Long DEFAULT_DISAGREE_NUM = 0L;
+    public static final Long DEFAULT_DIFF_AGREE_NUM = 0L;
 
     private Agree(Builder builder, boolean z) {
         super(builder);
@@ -37,9 +40,14 @@ public final class Agree extends Message {
             }
             if (builder.disagree_num == null) {
                 this.disagree_num = DEFAULT_DISAGREE_NUM;
-                return;
             } else {
                 this.disagree_num = builder.disagree_num;
+            }
+            if (builder.diff_agree_num == null) {
+                this.diff_agree_num = DEFAULT_DIFF_AGREE_NUM;
+                return;
+            } else {
+                this.diff_agree_num = builder.diff_agree_num;
                 return;
             }
         }
@@ -47,12 +55,14 @@ public final class Agree extends Message {
         this.has_agree = builder.has_agree;
         this.agree_type = builder.agree_type;
         this.disagree_num = builder.disagree_num;
+        this.diff_agree_num = builder.diff_agree_num;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<Agree> {
         public Long agree_num;
         public Integer agree_type;
+        public Long diff_agree_num;
         public Long disagree_num;
         public Integer has_agree;
 
@@ -66,6 +76,7 @@ public final class Agree extends Message {
                 this.has_agree = agree.has_agree;
                 this.agree_type = agree.agree_type;
                 this.disagree_num = agree.disagree_num;
+                this.diff_agree_num = agree.diff_agree_num;
             }
         }
 

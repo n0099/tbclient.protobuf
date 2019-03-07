@@ -5,17 +5,23 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes4.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_VISIT_HISTORY = "";
     @ProtoField(tag = 4)
     public final CommonReq common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer like_forum;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer recommend;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer sort_type;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer topic;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String visit_history;
     public static final Integer DEFAULT_LIKE_FORUM = 0;
     public static final Integer DEFAULT_TOPIC = 0;
     public static final Integer DEFAULT_RECOMMEND = 0;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -36,12 +42,25 @@ public final class DataReq extends Message {
                 this.recommend = builder.recommend;
             }
             this.common = builder.common;
-            return;
+            if (builder.visit_history == null) {
+                this.visit_history = "";
+            } else {
+                this.visit_history = builder.visit_history;
+            }
+            if (builder.sort_type == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.sort_type = builder.sort_type;
+                return;
+            }
         }
         this.like_forum = builder.like_forum;
         this.topic = builder.topic;
         this.recommend = builder.recommend;
         this.common = builder.common;
+        this.visit_history = builder.visit_history;
+        this.sort_type = builder.sort_type;
     }
 
     /* loaded from: classes4.dex */
@@ -49,7 +68,9 @@ public final class DataReq extends Message {
         public CommonReq common;
         public Integer like_forum;
         public Integer recommend;
+        public Integer sort_type;
         public Integer topic;
+        public String visit_history;
 
         public Builder() {
         }
@@ -61,6 +82,8 @@ public final class DataReq extends Message {
                 this.topic = dataReq.topic;
                 this.recommend = dataReq.recommend;
                 this.common = dataReq.common;
+                this.visit_history = dataReq.visit_history;
+                this.sort_type = dataReq.sort_type;
             }
         }
 

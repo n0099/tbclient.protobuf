@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class DataRes extends Message {
     public static final List<OfficialList> DEFAULT_OFFICIAL_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -24,7 +24,7 @@ public final class DataRes extends Message {
         this.official_list = immutableCopyOf(builder.official_list);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<OfficialList> official_list;
 

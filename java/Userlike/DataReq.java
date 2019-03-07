@@ -3,7 +3,7 @@ package tbclient.Userlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_LAST_REQ_UNIX = 0L;
     public static final String DEFAULT_PAGE_TAG = "";
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
         this.last_req_unix = builder.last_req_unix;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long last_req_unix;

@@ -2,7 +2,7 @@ package tbclient.CloseAd;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CloseAdReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class CloseAdReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<CloseAdReqIdl> {
         public DataReq data;
 

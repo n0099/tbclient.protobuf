@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.BannerList;
 import tbclient.GameInfo;
+import tbclient.ThemeColorInfo;
 /* loaded from: classes4.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
@@ -15,6 +16,7 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_GAME_NAME = "";
     public static final String DEFAULT_GAME_URL = "";
     public static final String DEFAULT_IS_READONLY = "";
+    public static final String DEFAULT_IS_TOP_IMG = "";
     public static final String DEFAULT_LEVEL_NAME = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_SECOND_CLASS = "";
@@ -95,6 +97,8 @@ public final class ForumInfo extends Message {
     public final Integer is_local_effect;
     @ProtoField(tag = 65, type = Message.Datatype.INT32)
     public final Integer is_new_game_forum;
+    @ProtoField(tag = 75, type = Message.Datatype.INT32)
+    public final Integer is_private_forum;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String is_readonly;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
@@ -105,6 +109,8 @@ public final class ForumInfo extends Message {
     public final Integer is_stage_forum;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_support_local;
+    @ProtoField(tag = 74, type = Message.Datatype.STRING)
+    public final String is_top_img;
     @ProtoField(tag = 35, type = Message.Datatype.INT32)
     public final Integer level_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -145,6 +151,8 @@ public final class ForumInfo extends Message {
     public final String superboy;
     @ProtoField(tag = 38)
     public final TagInfo tag_info;
+    @ProtoField(tag = 73)
+    public final ThemeColorInfo theme_color;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
@@ -201,6 +209,7 @@ public final class ForumInfo extends Message {
     public static final Integer DEFAULT_IS_NEW_GAME_FORUM = 0;
     public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
     public static final Integer DEFAULT_IS_SHOW_ALL_TOP_THREAD = 0;
+    public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
 
     private ForumInfo(Builder builder, boolean z) {
         super(builder);
@@ -477,9 +486,20 @@ public final class ForumInfo extends Message {
             }
             if (builder.is_show_all_top_thread == null) {
                 this.is_show_all_top_thread = DEFAULT_IS_SHOW_ALL_TOP_THREAD;
-                return;
             } else {
                 this.is_show_all_top_thread = builder.is_show_all_top_thread;
+            }
+            this.theme_color = builder.theme_color;
+            if (builder.is_top_img == null) {
+                this.is_top_img = "";
+            } else {
+                this.is_top_img = builder.is_top_img;
+            }
+            if (builder.is_private_forum == null) {
+                this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
+                return;
+            } else {
+                this.is_private_forum = builder.is_private_forum;
                 return;
             }
         }
@@ -554,6 +574,9 @@ public final class ForumInfo extends Message {
         this.topic_special_icon_right = builder.topic_special_icon_right;
         this.is_brand_forum = builder.is_brand_forum;
         this.is_show_all_top_thread = builder.is_show_all_top_thread;
+        this.theme_color = builder.theme_color;
+        this.is_top_img = builder.is_top_img;
+        this.is_private_forum = builder.is_private_forum;
     }
 
     /* loaded from: classes4.dex */
@@ -593,11 +616,13 @@ public final class ForumInfo extends Message {
         public Integer is_live_game_forum;
         public Integer is_local_effect;
         public Integer is_new_game_forum;
+        public Integer is_private_forum;
         public String is_readonly;
         public Integer is_search_people;
         public Integer is_show_all_top_thread;
         public Integer is_stage_forum;
         public Integer is_support_local;
+        public String is_top_img;
         public Integer level_id;
         public String level_name;
         public Integer levelup_score;
@@ -618,6 +643,7 @@ public final class ForumInfo extends Message {
         public String special_forum_type;
         public String superboy;
         public TagInfo tag_info;
+        public ThemeColorInfo theme_color;
         public Integer thread_num;
         public String tids;
         public TopCode top_code;
@@ -707,6 +733,9 @@ public final class ForumInfo extends Message {
                 this.topic_special_icon_right = forumInfo.topic_special_icon_right;
                 this.is_brand_forum = forumInfo.is_brand_forum;
                 this.is_show_all_top_thread = forumInfo.is_show_all_top_thread;
+                this.theme_color = forumInfo.theme_color;
+                this.is_top_img = forumInfo.is_top_img;
+                this.is_private_forum = forumInfo.is_private_forum;
             }
         }
 

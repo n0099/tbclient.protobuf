@@ -10,7 +10,7 @@ import tbclient.Post;
 import tbclient.SimpleForum;
 import tbclient.SubPostList;
 import tbclient.ThreadInfo;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final Anti anti;
@@ -59,7 +59,7 @@ public final class DataRes extends Message {
         this.server_time = builder.server_time;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Anti anti;
         public SimpleForum forum;

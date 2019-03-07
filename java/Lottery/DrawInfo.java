@@ -2,7 +2,7 @@ package tbclient.Lottery;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class DrawInfo extends Message {
     public static final String DEFAULT_AWARD_DES = "";
     public static final String DEFAULT_AWARD_IMGSRC = "";
@@ -67,7 +67,7 @@ public final class DrawInfo extends Message {
         this.award_id = builder.award_id;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DrawInfo> {
         public String award_des;
         public Long award_id;

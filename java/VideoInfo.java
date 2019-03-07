@@ -13,6 +13,8 @@ public final class VideoInfo extends Message {
     public static final String DEFAULT_VIDEO_URL = "";
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer is_vertical;
+    @ProtoField(tag = 18)
+    public final McnAdInfo mcn_ad_card;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String mcn_lead_page;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -138,11 +140,11 @@ public final class VideoInfo extends Message {
             this.video_h265 = builder.video_h265;
             if (builder.mcn_lead_page == null) {
                 this.mcn_lead_page = "";
-                return;
             } else {
                 this.mcn_lead_page = builder.mcn_lead_page;
-                return;
             }
+            this.mcn_ad_card = builder.mcn_ad_card;
+            return;
         }
         this.video_md5 = builder.video_md5;
         this.video_url = builder.video_url;
@@ -161,11 +163,13 @@ public final class VideoInfo extends Message {
         this.is_vertical = builder.is_vertical;
         this.video_h265 = builder.video_h265;
         this.mcn_lead_page = builder.mcn_lead_page;
+        this.mcn_ad_card = builder.mcn_ad_card;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public Integer is_vertical;
+        public McnAdInfo mcn_ad_card;
         public String mcn_lead_page;
         public String media_subtitle;
         public Integer play_count;
@@ -206,6 +210,7 @@ public final class VideoInfo extends Message {
                 this.is_vertical = videoInfo.is_vertical;
                 this.video_h265 = videoInfo.video_h265;
                 this.mcn_lead_page = videoInfo.mcn_lead_page;
+                this.mcn_ad_card = videoInfo.mcn_ad_card;
             }
         }
 

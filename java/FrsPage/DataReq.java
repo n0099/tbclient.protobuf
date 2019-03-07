@@ -20,6 +20,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_OBJ_SOURCE = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_PORTRAIT = "";
+    public static final String DEFAULT_SHOUBAI_CUID = "";
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
@@ -58,6 +59,8 @@ public final class DataReq extends Message {
     public final String forum_name;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer frs_rn;
+    @ProtoField(tag = 58, type = Message.Datatype.INT64)
+    public final Long hot_thread_id;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer ip_int;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
@@ -114,6 +117,8 @@ public final class DataReq extends Message {
     public final Integer scr_h;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer scr_w;
+    @ProtoField(tag = 57, type = Message.Datatype.STRING)
+    public final String shoubai_cuid;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer smile_grade;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
@@ -171,6 +176,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_LOAD_TYPE = 0;
     public static final Integer DEFAULT_IS_SELECTION = 0;
     public static final Integer DEFAULT_CALL_FROM = 0;
+    public static final Long DEFAULT_HOT_THREAD_ID = 0L;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -440,9 +446,19 @@ public final class DataReq extends Message {
             }
             if (builder.call_from == null) {
                 this.call_from = DEFAULT_CALL_FROM;
-                return;
             } else {
                 this.call_from = builder.call_from;
+            }
+            if (builder.shoubai_cuid == null) {
+                this.shoubai_cuid = "";
+            } else {
+                this.shoubai_cuid = builder.shoubai_cuid;
+            }
+            if (builder.hot_thread_id == null) {
+                this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
+                return;
+            } else {
+                this.hot_thread_id = builder.hot_thread_id;
                 return;
             }
         }
@@ -502,6 +518,8 @@ public final class DataReq extends Message {
         this.call_url = builder.call_url;
         this.is_selection = builder.is_selection;
         this.call_from = builder.call_from;
+        this.shoubai_cuid = builder.shoubai_cuid;
+        this.hot_thread_id = builder.hot_thread_id;
     }
 
     /* loaded from: classes4.dex */
@@ -523,6 +541,7 @@ public final class DataReq extends Message {
         public String email;
         public String forum_name;
         public Integer frs_rn;
+        public Long hot_thread_id;
         public Integer ip_int;
         public String ip_str;
         public Integer is_good;
@@ -551,6 +570,7 @@ public final class DataReq extends Message {
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
+        public String shoubai_cuid;
         public Integer smile_grade;
         public Integer sort_type;
         public Integer st_param;
@@ -625,6 +645,8 @@ public final class DataReq extends Message {
                 this.call_url = dataReq.call_url;
                 this.is_selection = dataReq.is_selection;
                 this.call_from = dataReq.call_from;
+                this.shoubai_cuid = dataReq.shoubai_cuid;
+                this.hot_thread_id = dataReq.hot_thread_id;
             }
         }
 
