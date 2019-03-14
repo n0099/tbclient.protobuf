@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetTagList/DataRes.proto";
+
+message GetTagListResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

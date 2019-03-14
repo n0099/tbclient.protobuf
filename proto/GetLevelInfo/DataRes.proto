@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "LevelInfo.proto";
+
+message DataRes {
+    repeated LevelInfo level_info = 1;
+    int32 is_like = 2;
+    int32 user_level = 3;
+    string level_name = 4;
+}

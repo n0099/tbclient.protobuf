@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetTagList/ResponseTagInfo.proto";
+
+message DataRes {
+    repeated ResponseTagInfo sex_taglist = 1;
+    repeated ResponseTagInfo taglist = 2;
+}

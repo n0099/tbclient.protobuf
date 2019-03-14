@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "SearchSug/ForumInfo.proto";
+
+message DataRes {
+    int32 forum_loc = 1;
+    repeated string list = 2;
+    repeated ForumInfo forum_list = 3;
+}

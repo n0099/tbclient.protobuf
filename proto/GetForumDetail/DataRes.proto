@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "ManagerApplyInfo.proto";
+import "PriManagerApplyInfo.proto";
+import "RecommendForumInfo.proto";
+import "SimpleThreadInfo.proto";
+
+message DataRes {
+    RecommendForumInfo forum_info = 1;
+    repeated SimpleThreadInfo thread_list = 2;
+    int32 is_bawu_show = 4;
+    ManagerApplyInfo bz_apply_info = 5;
+    int32 is_complaint_show = 6;
+    PriManagerApplyInfo pribz_apply_info = 7;
+}

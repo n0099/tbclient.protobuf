@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "MFollow/MFollowResult.proto";
+
+message DataRes {
+    repeated MFollowResult follow_results = 1;
+}

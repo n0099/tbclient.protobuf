@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "SearchPostForum/SearchForum.proto";
+
+message DataRes {
+    SearchForum exact_match = 1;
+    repeated SearchForum fuzzy_match = 2;
+}

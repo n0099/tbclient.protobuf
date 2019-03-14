@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "ExcPbPage/ExcContent.proto";
+import "ExcPbPage/ZanInfo.proto";
+import "ExcPbPage/postForumInfo.proto";
+
+message ExcellentPbThreadInfo {
+    uint64 excid = 1;
+    uint64 thread_id = 2;
+    uint64 tag_code = 3;
+    string tag_name = 4;
+    string title = 5;
+    string _abstract = 6;
+    repeated ExcContent content = 7;
+    postForumInfo forum = 8;
+    string abtest = 9;
+    uint32 source = 10;
+    int32 publish_time = 11;
+    uint64 post_id = 12;
+    ZanInfo zan = 13;
+    uint64 post_num = 14;
+}

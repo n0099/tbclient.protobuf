@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "QueryCollectUpdateNum/DataReq.proto";
+
+message QueryCollectUpdateNumReqIdl {
+    DataReq data = 1;
+}

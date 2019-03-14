@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message ChannelInfo {
+    uint64 channel_id = 1;
+    string channel_name = 2;
+    string channel_cover = 3;
+    string channel_avatar = 4;
+    string description = 5;
+    uint64 user_id = 6;
+    string user_name = 7;
+    string portrait = 8;
+    uint32 video_count = 9;
+    uint32 fans_count = 10;
+    uint32 video_play_count = 11;
+    uint32 is_subscribe = 12;
+    uint32 push_switch = 13;
+    string channel_small_cover = 14;
+}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Lego/DataReq.proto";
-
-message LegoReqIdl {
-    DataReq data = 1;
-}
