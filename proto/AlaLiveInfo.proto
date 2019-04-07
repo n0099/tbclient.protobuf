@@ -32,4 +32,5 @@ message AlaLiveInfo {
     repeated AlaStageDislikeInfo stage_dislike_info = 23;
     AlaCoverLabel label = 24;
     AlaChallengeInfo challenge_info = 25;
+    int32 frs_toplive_type = 26;
 }
