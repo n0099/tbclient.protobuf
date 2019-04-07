@@ -29,6 +29,8 @@ public final class AlaLiveInfo extends Message {
     public final Long distance;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer duration;
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    public final Integer frs_toplive_type;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long group_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -77,6 +79,7 @@ public final class AlaLiveInfo extends Message {
     public static final Long DEFAULT_DISTANCE = 0L;
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final List<AlaStageDislikeInfo> DEFAULT_STAGE_DISLIKE_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_FRS_TOPLIVE_TYPE = 0;
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -190,7 +193,13 @@ public final class AlaLiveInfo extends Message {
             }
             this.label = builder.label;
             this.challenge_info = builder.challenge_info;
-            return;
+            if (builder.frs_toplive_type == null) {
+                this.frs_toplive_type = DEFAULT_FRS_TOPLIVE_TYPE;
+                return;
+            } else {
+                this.frs_toplive_type = builder.frs_toplive_type;
+                return;
+            }
         }
         this.live_id = builder.live_id;
         this.cover = builder.cover;
@@ -217,6 +226,7 @@ public final class AlaLiveInfo extends Message {
         this.stage_dislike_info = immutableCopyOf(builder.stage_dislike_info);
         this.label = builder.label;
         this.challenge_info = builder.challenge_info;
+        this.frs_toplive_type = builder.frs_toplive_type;
     }
 
     /* loaded from: classes4.dex */
@@ -227,6 +237,7 @@ public final class AlaLiveInfo extends Message {
         public String description;
         public Long distance;
         public Integer duration;
+        public Integer frs_toplive_type;
         public Long group_id;
         public String hls_url;
         public AlaCoverLabel label;
@@ -278,6 +289,7 @@ public final class AlaLiveInfo extends Message {
                 this.stage_dislike_info = AlaLiveInfo.copyOf(alaLiveInfo.stage_dislike_info);
                 this.label = alaLiveInfo.label;
                 this.challenge_info = alaLiveInfo.challenge_info;
+                this.frs_toplive_type = alaLiveInfo.frs_toplive_type;
             }
         }
 
