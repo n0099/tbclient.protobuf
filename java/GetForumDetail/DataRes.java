@@ -4,7 +4,6 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ManagerApplyInfo;
 import tbclient.PriManagerApplyInfo;
 import tbclient.RecommendForumInfo;
 import tbclient.SimpleThreadInfo;
@@ -12,6 +11,10 @@ import tbclient.SimpleThreadInfo;
 public final class DataRes extends Message {
     @ProtoField(tag = 5)
     public final ManagerApplyInfo bz_apply_info;
+    @ProtoField(tag = 3)
+    public final BzApplySwitch bz_apply_switch;
+    @ProtoField(tag = 8)
+    public final ManagerElectionTab election_tab;
     @ProtoField(tag = 1)
     public final RecommendForumInfo forum_info;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -35,6 +38,7 @@ public final class DataRes extends Message {
             } else {
                 this.thread_list = immutableCopyOf(builder.thread_list);
             }
+            this.bz_apply_switch = builder.bz_apply_switch;
             if (builder.is_bawu_show == null) {
                 this.is_bawu_show = DEFAULT_IS_BAWU_SHOW;
             } else {
@@ -47,19 +51,24 @@ public final class DataRes extends Message {
                 this.is_complaint_show = builder.is_complaint_show;
             }
             this.pribz_apply_info = builder.pribz_apply_info;
+            this.election_tab = builder.election_tab;
             return;
         }
         this.forum_info = builder.forum_info;
         this.thread_list = immutableCopyOf(builder.thread_list);
+        this.bz_apply_switch = builder.bz_apply_switch;
         this.is_bawu_show = builder.is_bawu_show;
         this.bz_apply_info = builder.bz_apply_info;
         this.is_complaint_show = builder.is_complaint_show;
         this.pribz_apply_info = builder.pribz_apply_info;
+        this.election_tab = builder.election_tab;
     }
 
     /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ManagerApplyInfo bz_apply_info;
+        public BzApplySwitch bz_apply_switch;
+        public ManagerElectionTab election_tab;
         public RecommendForumInfo forum_info;
         public Integer is_bawu_show;
         public Integer is_complaint_show;
@@ -74,10 +83,12 @@ public final class DataRes extends Message {
             if (dataRes != null) {
                 this.forum_info = dataRes.forum_info;
                 this.thread_list = DataRes.copyOf(dataRes.thread_list);
+                this.bz_apply_switch = dataRes.bz_apply_switch;
                 this.is_bawu_show = dataRes.is_bawu_show;
                 this.bz_apply_info = dataRes.bz_apply_info;
                 this.is_complaint_show = dataRes.is_complaint_show;
                 this.pribz_apply_info = dataRes.pribz_apply_info;
+                this.election_tab = dataRes.election_tab;
             }
         }
 

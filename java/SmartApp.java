@@ -19,12 +19,21 @@ public final class SmartApp extends Message {
     public final String h5_url;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String id;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer is_game;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer is_recom;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String link;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String pic;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT64)
+    public final Long swan_app_id;
+    public static final Long DEFAULT_SWAN_APP_ID = 0L;
+    public static final Integer DEFAULT_IS_RECOM = 0;
+    public static final Integer DEFAULT_IS_GAME = 0;
 
     private SmartApp(Builder builder, boolean z) {
         super(builder);
@@ -61,9 +70,24 @@ public final class SmartApp extends Message {
             }
             if (builder.link == null) {
                 this.link = "";
-                return;
             } else {
                 this.link = builder.link;
+            }
+            if (builder.swan_app_id == null) {
+                this.swan_app_id = DEFAULT_SWAN_APP_ID;
+            } else {
+                this.swan_app_id = builder.swan_app_id;
+            }
+            if (builder.is_recom == null) {
+                this.is_recom = DEFAULT_IS_RECOM;
+            } else {
+                this.is_recom = builder.is_recom;
+            }
+            if (builder.is_game == null) {
+                this.is_game = DEFAULT_IS_GAME;
+                return;
+            } else {
+                this.is_game = builder.is_game;
                 return;
             }
         }
@@ -74,6 +98,9 @@ public final class SmartApp extends Message {
         this.h5_url = builder.h5_url;
         this.id = builder.id;
         this.link = builder.link;
+        this.swan_app_id = builder.swan_app_id;
+        this.is_recom = builder.is_recom;
+        this.is_game = builder.is_game;
     }
 
     /* loaded from: classes4.dex */
@@ -82,9 +109,12 @@ public final class SmartApp extends Message {
         public String avatar;
         public String h5_url;
         public String id;
+        public Integer is_game;
+        public Integer is_recom;
         public String link;
         public String name;
         public String pic;
+        public Long swan_app_id;
 
         public Builder() {
         }
@@ -99,6 +129,9 @@ public final class SmartApp extends Message {
                 this.h5_url = smartApp.h5_url;
                 this.id = smartApp.id;
                 this.link = smartApp.link;
+                this.swan_app_id = smartApp.swan_app_id;
+                this.is_recom = smartApp.is_recom;
+                this.is_game = smartApp.is_game;
             }
         }
 

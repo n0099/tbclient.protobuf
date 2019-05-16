@@ -10,6 +10,7 @@ import tbclient.BannerList;
 import tbclient.FineBannerPb;
 import tbclient.GraffitiRankListInfo;
 import tbclient.Lbs;
+import tbclient.ManagerElection;
 import tbclient.NaGuide;
 import tbclient.Page;
 import tbclient.PbHotPost;
@@ -82,6 +83,8 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 9)
     public final Lbs location;
+    @ProtoField(tag = 51)
+    public final ManagerElection manager_election;
     @ProtoField(tag = 47, type = Message.Datatype.STRING)
     public final String multi_forum_text;
     @ProtoField(tag = 42)
@@ -302,11 +305,11 @@ public final class DataRes extends Message {
             }
             if (builder.sort_type == null) {
                 this.sort_type = DEFAULT_SORT_TYPE;
-                return;
             } else {
                 this.sort_type = builder.sort_type;
-                return;
             }
+            this.manager_election = builder.manager_election;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -358,6 +361,7 @@ public final class DataRes extends Message {
         this.thread_topic = immutableCopyOf(builder.thread_topic);
         this.pb_sort_info = immutableCopyOf(builder.pb_sort_info);
         this.sort_type = builder.sort_type;
+        this.manager_election = builder.manager_election;
     }
 
     /* loaded from: classes4.dex */
@@ -388,6 +392,7 @@ public final class DataRes extends Message {
         public Integer is_follow_current_channel;
         public Integer is_new_url;
         public Lbs location;
+        public ManagerElection manager_election;
         public String multi_forum_text;
         public NaGuide na_guide;
         public List<SimpleUser> new_agree_user;
@@ -469,6 +474,7 @@ public final class DataRes extends Message {
                 this.thread_topic = DataRes.copyOf(dataRes.thread_topic);
                 this.pb_sort_info = DataRes.copyOf(dataRes.pb_sort_info);
                 this.sort_type = dataRes.sort_type;
+                this.manager_election = dataRes.manager_election;
             }
         }
 

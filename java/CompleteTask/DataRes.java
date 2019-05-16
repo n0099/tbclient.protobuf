@@ -5,10 +5,13 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_BTN_CANCEL = "";
+    public static final String DEFAULT_BTN_COLOR = "";
     public static final String DEFAULT_BTN_CONFIRM = "";
     public static final String DEFAULT_BTN_TEXT = "";
+    public static final String DEFAULT_BTN_TEXT_COLOR = "";
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_MESSAGE = "";
+    public static final String DEFAULT_MESSAGE_COLOR = "";
     public static final String DEFAULT_SCHEMA = "";
     public static final String DEFAULT_TOKEN = "";
     public static final String DEFAULT_URL = "";
@@ -18,16 +21,28 @@ public final class DataRes extends Message {
     public final Integer ahead_type;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String btn_cancel;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String btn_color;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String btn_confirm;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String btn_text;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String btn_text_color;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String img_url;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer interface_type;
+    @ProtoField(tag = 19, type = Message.Datatype.INT32)
+    public final Integer is_not_complete;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String message;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String message_color;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer mission_id;
+    @ProtoField(tag = 14, type = Message.Datatype.DOUBLE)
+    public final Double opacity;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String schema;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -43,6 +58,9 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_TOAST_DURATION = 0;
     public static final Integer DEFAULT_ACTIVITY_ID = 0;
     public static final Integer DEFAULT_MISSION_ID = 0;
+    public static final Double DEFAULT_OPACITY = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_INTERFACE_TYPE = 0;
+    public static final Integer DEFAULT_IS_NOT_COMPLETE = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -109,9 +127,39 @@ public final class DataRes extends Message {
             }
             if (builder.mission_id == null) {
                 this.mission_id = DEFAULT_MISSION_ID;
-                return;
             } else {
                 this.mission_id = builder.mission_id;
+            }
+            if (builder.opacity == null) {
+                this.opacity = DEFAULT_OPACITY;
+            } else {
+                this.opacity = builder.opacity;
+            }
+            if (builder.btn_color == null) {
+                this.btn_color = "";
+            } else {
+                this.btn_color = builder.btn_color;
+            }
+            if (builder.message_color == null) {
+                this.message_color = "";
+            } else {
+                this.message_color = builder.message_color;
+            }
+            if (builder.btn_text_color == null) {
+                this.btn_text_color = "";
+            } else {
+                this.btn_text_color = builder.btn_text_color;
+            }
+            if (builder.interface_type == null) {
+                this.interface_type = DEFAULT_INTERFACE_TYPE;
+            } else {
+                this.interface_type = builder.interface_type;
+            }
+            if (builder.is_not_complete == null) {
+                this.is_not_complete = DEFAULT_IS_NOT_COMPLETE;
+                return;
+            } else {
+                this.is_not_complete = builder.is_not_complete;
                 return;
             }
         }
@@ -128,6 +176,12 @@ public final class DataRes extends Message {
         this.token = builder.token;
         this.activity_id = builder.activity_id;
         this.mission_id = builder.mission_id;
+        this.opacity = builder.opacity;
+        this.btn_color = builder.btn_color;
+        this.message_color = builder.message_color;
+        this.btn_text_color = builder.btn_text_color;
+        this.interface_type = builder.interface_type;
+        this.is_not_complete = builder.is_not_complete;
     }
 
     /* loaded from: classes4.dex */
@@ -135,11 +189,17 @@ public final class DataRes extends Message {
         public Integer activity_id;
         public Integer ahead_type;
         public String btn_cancel;
+        public String btn_color;
         public String btn_confirm;
         public String btn_text;
+        public String btn_text_color;
         public String img_url;
+        public Integer interface_type;
+        public Integer is_not_complete;
         public String message;
+        public String message_color;
         public Integer mission_id;
+        public Double opacity;
         public String schema;
         public Integer show_type;
         public Integer toast_duration;
@@ -165,6 +225,12 @@ public final class DataRes extends Message {
                 this.token = dataRes.token;
                 this.activity_id = dataRes.activity_id;
                 this.mission_id = dataRes.mission_id;
+                this.opacity = dataRes.opacity;
+                this.btn_color = dataRes.btn_color;
+                this.message_color = dataRes.message_color;
+                this.btn_text_color = dataRes.btn_text_color;
+                this.interface_type = dataRes.interface_type;
+                this.is_not_complete = dataRes.is_not_complete;
             }
         }
 

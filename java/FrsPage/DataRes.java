@@ -148,6 +148,8 @@ public final class DataRes extends Message {
     public final Page page;
     @ProtoField(tag = 62, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
+    @ProtoField(tag = 98)
+    public final ForumActiveInfo private_forum_active_info;
     @ProtoField(tag = 97)
     public final PrivateForumTotalInfo private_forum_info;
     @ProtoField(tag = 29)
@@ -511,6 +513,7 @@ public final class DataRes extends Message {
             this.smart_app = builder.smart_app;
             this.nebula_hot_threads = builder.nebula_hot_threads;
             this.private_forum_info = builder.private_forum_info;
+            this.private_forum_active_info = builder.private_forum_active_info;
             return;
         }
         this.user = builder.user;
@@ -602,6 +605,7 @@ public final class DataRes extends Message {
         this.smart_app = builder.smart_app;
         this.nebula_hot_threads = builder.nebula_hot_threads;
         this.private_forum_info = builder.private_forum_info;
+        this.private_forum_active_info = builder.private_forum_active_info;
     }
 
     /* loaded from: classes4.dex */
@@ -663,6 +667,7 @@ public final class DataRes extends Message {
         public NtSpreadInfo ntspread;
         public Page page;
         public String partial_visible_toast;
+        public ForumActiveInfo private_forum_active_info;
         public PrivateForumTotalInfo private_forum_info;
         public PushThreadInfo push_thread_info;
         public RecomPostTopic recom_post_topic;
@@ -791,6 +796,7 @@ public final class DataRes extends Message {
                 this.smart_app = dataRes.smart_app;
                 this.nebula_hot_threads = dataRes.nebula_hot_threads;
                 this.private_forum_info = dataRes.private_forum_info;
+                this.private_forum_active_info = dataRes.private_forum_active_info;
             }
         }
 

@@ -4,19 +4,28 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.SportPageHeadInfo;
+import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
 /* loaded from: classes4.dex */
 public final class DataRes extends Message {
-    public static final List<ThreadInfo> DEFAULT_GENERAL_LIST = Collections.emptyList();
-    public static final Integer DEFAULT_HAS_MORE = 0;
-    public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<ThreadInfo> general_list;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer has_more;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer new_thread_num;
+    @ProtoField(tag = 5)
+    public final SportPageHeadInfo sport_head_info;
+    @ProtoField(tag = 4)
+    public final SportScheduleInfo sport_schedule_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<User> user_list;
+    public static final List<ThreadInfo> DEFAULT_GENERAL_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_HAS_MORE = 0;
+    public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_NEW_THREAD_NUM = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -33,21 +42,34 @@ public final class DataRes extends Message {
             }
             if (builder.user_list == null) {
                 this.user_list = DEFAULT_USER_LIST;
-                return;
             } else {
                 this.user_list = immutableCopyOf(builder.user_list);
+            }
+            this.sport_schedule_info = builder.sport_schedule_info;
+            this.sport_head_info = builder.sport_head_info;
+            if (builder.new_thread_num == null) {
+                this.new_thread_num = DEFAULT_NEW_THREAD_NUM;
+                return;
+            } else {
+                this.new_thread_num = builder.new_thread_num;
                 return;
             }
         }
         this.general_list = immutableCopyOf(builder.general_list);
         this.has_more = builder.has_more;
         this.user_list = immutableCopyOf(builder.user_list);
+        this.sport_schedule_info = builder.sport_schedule_info;
+        this.sport_head_info = builder.sport_head_info;
+        this.new_thread_num = builder.new_thread_num;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThreadInfo> general_list;
         public Integer has_more;
+        public Integer new_thread_num;
+        public SportPageHeadInfo sport_head_info;
+        public SportScheduleInfo sport_schedule_info;
         public List<User> user_list;
 
         public Builder() {
@@ -59,6 +81,9 @@ public final class DataRes extends Message {
                 this.general_list = DataRes.copyOf(dataRes.general_list);
                 this.has_more = dataRes.has_more;
                 this.user_list = DataRes.copyOf(dataRes.user_list);
+                this.sport_schedule_info = dataRes.sport_schedule_info;
+                this.sport_head_info = dataRes.sport_head_info;
+                this.new_thread_num = dataRes.new_thread_num;
             }
         }
 

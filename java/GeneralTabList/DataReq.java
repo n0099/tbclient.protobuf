@@ -9,6 +9,8 @@ public final class DataReq extends Message {
     public final CommonReq common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
+    @ProtoField(tag = 9, type = Message.Datatype.INT64)
+    public final Long last_thread_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -28,6 +30,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_W = 0;
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Integer DEFAULT_SCR_DIP = 0;
+    public static final Long DEFAULT_LAST_THREAD_ID = 0L;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -65,9 +68,14 @@ public final class DataReq extends Message {
             }
             if (builder.scr_dip == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
-                return;
             } else {
                 this.scr_dip = builder.scr_dip;
+            }
+            if (builder.last_thread_id == null) {
+                this.last_thread_id = DEFAULT_LAST_THREAD_ID;
+                return;
+            } else {
+                this.last_thread_id = builder.last_thread_id;
                 return;
             }
         }
@@ -79,12 +87,14 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
+        this.last_thread_id = builder.last_thread_id;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long forum_id;
+        public Long last_thread_id;
         public Integer pn;
         public Integer rn;
         public Integer scr_dip;
@@ -106,6 +116,7 @@ public final class DataReq extends Message {
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;
                 this.scr_dip = dataReq.scr_dip;
+                this.last_thread_id = dataReq.last_thread_id;
             }
         }
 

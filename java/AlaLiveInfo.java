@@ -8,6 +8,7 @@ import java.util.List;
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
+    public static final String DEFAULT_FRS_TOPLIVE_PIC = "";
     public static final String DEFAULT_HLS_URL = "";
     public static final String DEFAULT_LABEL_NAME = "";
     public static final String DEFAULT_MEDIA_ID = "";
@@ -29,6 +30,10 @@ public final class AlaLiveInfo extends Message {
     public final Long distance;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer duration;
+    @ProtoField(tag = 28, type = Message.Datatype.INT32)
+    public final Integer frs_toplive_force;
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
+    public final String frs_toplive_pic;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer frs_toplive_type;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
@@ -80,6 +85,7 @@ public final class AlaLiveInfo extends Message {
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final List<AlaStageDislikeInfo> DEFAULT_STAGE_DISLIKE_INFO = Collections.emptyList();
     public static final Integer DEFAULT_FRS_TOPLIVE_TYPE = 0;
+    public static final Integer DEFAULT_FRS_TOPLIVE_FORCE = 0;
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -195,9 +201,19 @@ public final class AlaLiveInfo extends Message {
             this.challenge_info = builder.challenge_info;
             if (builder.frs_toplive_type == null) {
                 this.frs_toplive_type = DEFAULT_FRS_TOPLIVE_TYPE;
-                return;
             } else {
                 this.frs_toplive_type = builder.frs_toplive_type;
+            }
+            if (builder.frs_toplive_pic == null) {
+                this.frs_toplive_pic = "";
+            } else {
+                this.frs_toplive_pic = builder.frs_toplive_pic;
+            }
+            if (builder.frs_toplive_force == null) {
+                this.frs_toplive_force = DEFAULT_FRS_TOPLIVE_FORCE;
+                return;
+            } else {
+                this.frs_toplive_force = builder.frs_toplive_force;
                 return;
             }
         }
@@ -227,6 +243,8 @@ public final class AlaLiveInfo extends Message {
         this.label = builder.label;
         this.challenge_info = builder.challenge_info;
         this.frs_toplive_type = builder.frs_toplive_type;
+        this.frs_toplive_pic = builder.frs_toplive_pic;
+        this.frs_toplive_force = builder.frs_toplive_force;
     }
 
     /* loaded from: classes4.dex */
@@ -237,6 +255,8 @@ public final class AlaLiveInfo extends Message {
         public String description;
         public Long distance;
         public Integer duration;
+        public Integer frs_toplive_force;
+        public String frs_toplive_pic;
         public Integer frs_toplive_type;
         public Long group_id;
         public String hls_url;
@@ -290,6 +310,8 @@ public final class AlaLiveInfo extends Message {
                 this.label = alaLiveInfo.label;
                 this.challenge_info = alaLiveInfo.challenge_info;
                 this.frs_toplive_type = alaLiveInfo.frs_toplive_type;
+                this.frs_toplive_pic = alaLiveInfo.frs_toplive_pic;
+                this.frs_toplive_force = alaLiveInfo.frs_toplive_force;
             }
         }
 

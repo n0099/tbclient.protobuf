@@ -15,6 +15,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_ECOM = "";
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FROM = "";
+    public static final String DEFAULT_IS_TOP_IMG = "";
     public static final String DEFAULT_LAST_TIME = "";
     public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_LIVECOVER_SRC = "";
@@ -31,6 +32,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_TOPIC_H5_URL = "";
     public static final String DEFAULT_TOPIC_USER_NAME = "";
+    public static final String DEFAULT_T_SHARE_IMG = "";
     public static final String DEFAULT_VIDEO = "";
     public static final String DEFAULT_VIDEO_COVER = "";
     public static final String DEFAULT_VIDEO_ID = "";
@@ -182,6 +184,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_tbread_dispatch;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_top;
+    @ProtoField(tag = 158, type = Message.Datatype.STRING)
+    public final String is_top_img;
     @ProtoField(tag = 148, type = Message.Datatype.INT32)
     public final Integer is_topic;
     @ProtoField(tag = 153, type = Message.Datatype.INT32)
@@ -282,6 +286,8 @@ public final class ThreadInfo extends Message {
     public final Integer storecount;
     @ProtoField(tag = 156)
     public final SmartApp swan_info;
+    @ProtoField(tag = 159, type = Message.Datatype.STRING)
+    public final String t_share_img;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
     @ProtoField(tag = 116)
@@ -306,6 +312,8 @@ public final class ThreadInfo extends Message {
     public final Topic topic;
     @ProtoField(tag = BaseActivity.SHOW_SOFT_KEYBOARD_DELAY, type = Message.Datatype.STRING)
     public final String topic_h5_url;
+    @ProtoField(tag = 160)
+    public final TopicModule topic_module;
     @ProtoField(tag = 149, type = Message.Datatype.STRING)
     public final String topic_user_name;
     @ProtoField(tag = 145, type = Message.Datatype.UINT64)
@@ -1035,6 +1043,17 @@ public final class ThreadInfo extends Message {
             this.forum_info = builder.forum_info;
             this.swan_info = builder.swan_info;
             this.video_segment = builder.video_segment;
+            if (builder.is_top_img == null) {
+                this.is_top_img = "";
+            } else {
+                this.is_top_img = builder.is_top_img;
+            }
+            if (builder.t_share_img == null) {
+                this.t_share_img = "";
+            } else {
+                this.t_share_img = builder.t_share_img;
+            }
+            this.topic_module = builder.topic_module;
             return;
         }
         this.id = builder.id;
@@ -1190,6 +1209,9 @@ public final class ThreadInfo extends Message {
         this.forum_info = builder.forum_info;
         this.swan_info = builder.swan_info;
         this.video_segment = builder.video_segment;
+        this.is_top_img = builder.is_top_img;
+        this.t_share_img = builder.t_share_img;
+        this.topic_module = builder.topic_module;
     }
 
     /* loaded from: classes4.dex */
@@ -1267,6 +1289,7 @@ public final class ThreadInfo extends Message {
         public Integer is_story_audit;
         public Integer is_tbread_dispatch;
         public Integer is_top;
+        public String is_top_img;
         public Integer is_topic;
         public Integer is_videobiggie_recomthread;
         public Integer is_voice_thread;
@@ -1317,6 +1340,7 @@ public final class ThreadInfo extends Message {
         public StarRankIcon star_rank_icon;
         public Integer storecount;
         public SmartApp swan_info;
+        public String t_share_img;
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
         public Integer thread_type;
@@ -1329,6 +1353,7 @@ public final class ThreadInfo extends Message {
         public Post top_agree_post;
         public Topic topic;
         public String topic_h5_url;
+        public TopicModule topic_module;
         public String topic_user_name;
         public Long trans_num;
         public ZhiBoInfoTW twzhibo_info;
@@ -1507,6 +1532,9 @@ public final class ThreadInfo extends Message {
                 this.forum_info = threadInfo.forum_info;
                 this.swan_info = threadInfo.swan_info;
                 this.video_segment = threadInfo.video_segment;
+                this.is_top_img = threadInfo.is_top_img;
+                this.t_share_img = threadInfo.t_share_img;
+                this.topic_module = threadInfo.topic_module;
             }
         }
 

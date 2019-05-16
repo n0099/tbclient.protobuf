@@ -13,6 +13,7 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FIRST_CLASS = "";
     public static final String DEFAULT_FORUM_GAME_LABEL = "";
+    public static final String DEFAULT_F_SHARE_IMG = "";
     public static final String DEFAULT_GAME_NAME = "";
     public static final String DEFAULT_GAME_URL = "";
     public static final String DEFAULT_IS_READONLY = "";
@@ -51,6 +52,8 @@ public final class ForumInfo extends Message {
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
+    @ProtoField(tag = 78, type = Message.Datatype.STRING)
+    public final String f_share_img;
     @ProtoField(tag = 37, type = Message.Datatype.INT32)
     public final Integer favo_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -105,6 +108,8 @@ public final class ForumInfo extends Message {
     public final Integer is_search_people;
     @ProtoField(tag = 72, type = Message.Datatype.INT32)
     public final Integer is_show_all_top_thread;
+    @ProtoField(tag = 77, type = Message.Datatype.INT32)
+    public final Integer is_show_bawutask;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
@@ -210,6 +215,7 @@ public final class ForumInfo extends Message {
     public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
     public static final Integer DEFAULT_IS_SHOW_ALL_TOP_THREAD = 0;
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
+    public static final Integer DEFAULT_IS_SHOW_BAWUTASK = 0;
 
     private ForumInfo(Builder builder, boolean z) {
         super(builder);
@@ -497,9 +503,19 @@ public final class ForumInfo extends Message {
             }
             if (builder.is_private_forum == null) {
                 this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
-                return;
             } else {
                 this.is_private_forum = builder.is_private_forum;
+            }
+            if (builder.is_show_bawutask == null) {
+                this.is_show_bawutask = DEFAULT_IS_SHOW_BAWUTASK;
+            } else {
+                this.is_show_bawutask = builder.is_show_bawutask;
+            }
+            if (builder.f_share_img == null) {
+                this.f_share_img = "";
+                return;
+            } else {
+                this.f_share_img = builder.f_share_img;
                 return;
             }
         }
@@ -577,6 +593,8 @@ public final class ForumInfo extends Message {
         this.theme_color = builder.theme_color;
         this.is_top_img = builder.is_top_img;
         this.is_private_forum = builder.is_private_forum;
+        this.is_show_bawutask = builder.is_show_bawutask;
+        this.f_share_img = builder.f_share_img;
     }
 
     /* loaded from: classes4.dex */
@@ -593,6 +611,7 @@ public final class ForumInfo extends Message {
         public BannerList banner_list;
         public Integer can_use_accelerate;
         public Integer cur_score;
+        public String f_share_img;
         public Integer favo_type;
         public String first_class;
         public ForumButton forum_button;
@@ -620,6 +639,7 @@ public final class ForumInfo extends Message {
         public String is_readonly;
         public Integer is_search_people;
         public Integer is_show_all_top_thread;
+        public Integer is_show_bawutask;
         public Integer is_stage_forum;
         public Integer is_support_local;
         public String is_top_img;
@@ -736,6 +756,8 @@ public final class ForumInfo extends Message {
                 this.theme_color = forumInfo.theme_color;
                 this.is_top_img = forumInfo.is_top_img;
                 this.is_private_forum = forumInfo.is_private_forum;
+                this.is_show_bawutask = forumInfo.is_show_bawutask;
+                this.f_share_img = forumInfo.f_share_img;
             }
         }
 

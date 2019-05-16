@@ -5,6 +5,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes4.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_HISTORY_SWAN = "";
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 9)
     public final CommonReq common;
@@ -12,6 +13,8 @@ public final class DataReq extends Message {
     public final Long friend_uid;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer has_plist;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String history_swan;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_from_usercenter;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -121,9 +124,14 @@ public final class DataReq extends Message {
             }
             if (builder.page == null) {
                 this.page = DEFAULT_PAGE;
-                return;
             } else {
                 this.page = builder.page;
+            }
+            if (builder.history_swan == null) {
+                this.history_swan = "";
+                return;
+            } else {
+                this.history_swan = builder.history_swan;
                 return;
             }
         }
@@ -142,6 +150,7 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
         this.is_from_usercenter = builder.is_from_usercenter;
         this.page = builder.page;
+        this.history_swan = builder.history_swan;
     }
 
     /* loaded from: classes4.dex */
@@ -149,6 +158,7 @@ public final class DataReq extends Message {
         public CommonReq common;
         public Long friend_uid;
         public Integer has_plist;
+        public String history_swan;
         public Integer is_from_usercenter;
         public Integer is_guest;
         public Integer need_post_count;
@@ -183,6 +193,7 @@ public final class DataReq extends Message {
                 this.scr_dip = dataReq.scr_dip;
                 this.is_from_usercenter = dataReq.is_from_usercenter;
                 this.page = dataReq.page;
+                this.history_swan = dataReq.history_swan;
             }
         }
 

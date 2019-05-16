@@ -17,6 +17,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_OBJ_SOURCE = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_QUERY_WORD = "";
+    public static final String DEFAULT_SHOUBAI_CUID = "";
     public static final String DEFAULT_ST_FROM = "";
     public static final String DEFAULT_ST_LINK = "";
     public static final String DEFAULT_ST_TYPE = "";
@@ -108,6 +109,8 @@ public final class DataReq extends Message {
     public final Integer scr_h;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer scr_w;
+    @ProtoField(tag = 61, type = Message.Datatype.STRING)
+    public final String shoubai_cuid;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String st_from;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
@@ -416,9 +419,14 @@ public final class DataReq extends Message {
             }
             if (builder.call_url == null) {
                 this.call_url = "";
-                return;
             } else {
                 this.call_url = builder.call_url;
+            }
+            if (builder.shoubai_cuid == null) {
+                this.shoubai_cuid = "";
+                return;
+            } else {
+                this.shoubai_cuid = builder.shoubai_cuid;
                 return;
             }
         }
@@ -475,6 +483,7 @@ public final class DataReq extends Message {
         this.ad_param = builder.ad_param;
         this.need_log = builder.need_log;
         this.call_url = builder.call_url;
+        this.shoubai_cuid = builder.shoubai_cuid;
     }
 
     /* loaded from: classes4.dex */
@@ -522,6 +531,7 @@ public final class DataReq extends Message {
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
+        public String shoubai_cuid;
         public String st_from;
         public String st_link;
         public Integer st_stat;
@@ -592,6 +602,7 @@ public final class DataReq extends Message {
                 this.ad_param = dataReq.ad_param;
                 this.need_log = dataReq.need_log;
                 this.call_url = dataReq.call_url;
+                this.shoubai_cuid = dataReq.shoubai_cuid;
             }
         }
 

@@ -14,6 +14,7 @@ import tbclient.ForumDynamic;
 import tbclient.Highlist;
 import tbclient.ModuleInfo;
 import tbclient.PostInfoList;
+import tbclient.SmartApp;
 import tbclient.TbBookrack;
 import tbclient.UcCard;
 import tbclient.User;
@@ -43,6 +44,8 @@ public final class DataRes extends Message {
     public final NicknameInfo nickname_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<PostInfoList> post_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 23)
+    public final List<SmartApp> recom_swan_list;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer show_answer;
     @ProtoField(tag = 3)
@@ -70,6 +73,7 @@ public final class DataRes extends Message {
     public static final List<UserMap> DEFAULT_URL_MAP = Collections.emptyList();
     public static final Integer DEFAULT_SHOW_ANSWER = 0;
     public static final List<BannerImage> DEFAULT_BANNER = Collections.emptyList();
+    public static final List<SmartApp> DEFAULT_RECOM_SWAN_LIST = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -120,9 +124,14 @@ public final class DataRes extends Message {
             }
             if (builder.banner == null) {
                 this.banner = DEFAULT_BANNER;
-                return;
             } else {
                 this.banner = immutableCopyOf(builder.banner);
+            }
+            if (builder.recom_swan_list == null) {
+                this.recom_swan_list = DEFAULT_RECOM_SWAN_LIST;
+                return;
+            } else {
+                this.recom_swan_list = immutableCopyOf(builder.recom_swan_list);
                 return;
             }
         }
@@ -147,6 +156,7 @@ public final class DataRes extends Message {
         this.url_map = immutableCopyOf(builder.url_map);
         this.show_answer = builder.show_answer;
         this.banner = immutableCopyOf(builder.banner);
+        this.recom_swan_list = immutableCopyOf(builder.recom_swan_list);
     }
 
     /* loaded from: classes4.dex */
@@ -162,6 +172,7 @@ public final class DataRes extends Message {
         public ModuleInfo module_info;
         public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
+        public List<SmartApp> recom_swan_list;
         public Integer show_answer;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
@@ -200,6 +211,7 @@ public final class DataRes extends Message {
                 this.url_map = DataRes.copyOf(dataRes.url_map);
                 this.show_answer = dataRes.show_answer;
                 this.banner = DataRes.copyOf(dataRes.banner);
+                this.recom_swan_list = DataRes.copyOf(dataRes.recom_swan_list);
             }
         }
 
