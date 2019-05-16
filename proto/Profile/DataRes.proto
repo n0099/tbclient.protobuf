@@ -14,6 +14,7 @@ import "Profile/NicknameInfo.proto";
 import "Profile/TAInfo.proto";
 import "Profile/UserAgreeInfo.proto";
 import "Profile/UserGodInfo.proto";
+import "SmartApp.proto";
 import "TbBookrack.proto";
 import "UcCard.proto";
 import "User.proto";
@@ -42,4 +43,5 @@ message DataRes {
     repeated UserMap url_map = 20;
     int32 show_answer = 21;
     repeated BannerImage banner = 22;
+    repeated SmartApp recom_swan_list = 23;
 }

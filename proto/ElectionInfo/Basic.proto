@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message Basic {
+    string begin_apply_time = 1;
+    string begin_vote_time = 2;
+    string begin_public_time = 3;
+    int32 status = 4;
+    string remind_time = 5;
+    uint32 candidate_num = 6;
+    uint32 total_vote_num = 7;
+    bool is_voted = 8;
+}

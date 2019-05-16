@@ -6,6 +6,7 @@ import "BannerList.proto";
 import "FineBannerPb.proto";
 import "GraffitiRankListInfo.proto";
 import "Lbs.proto";
+import "ManagerElection.proto";
 import "NaGuide.proto";
 import "Page.proto";
 import "PbHotPost.proto";
@@ -83,4 +84,5 @@ message DataRes {
     repeated RecomTopicList thread_topic = 48;
     repeated PbSortType pb_sort_info = 49;
     int32 sort_type = 50;
+    ManagerElection manager_election = 51;
 }

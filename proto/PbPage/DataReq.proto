@@ -58,4 +58,5 @@ message DataReq {
     AdParam ad_param = 58;
     int32 need_log = 59;
     string call_url = 60;
+    string shoubai_cuid = 61;
 }

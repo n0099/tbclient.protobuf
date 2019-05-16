@@ -14,4 +14,10 @@ message DataRes {
     string token = 11;
     int32 activity_id = 12;
     int32 mission_id = 13;
+    double opacity = 14;
+    string btn_color = 15;
+    string message_color = 16;
+    string btn_text_color = 17;
+    int32 interface_type = 18;
+    int32 is_not_complete = 19;
 }

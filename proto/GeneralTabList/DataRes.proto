@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "SportPageHeadInfo.proto";
+import "SportScheduleInfo.proto";
 import "ThreadInfo.proto";
 import "User.proto";
 
@@ -7,4 +9,7 @@ message DataRes {
     repeated ThreadInfo general_list = 1;
     int32 has_more = 2;
     repeated User user_list = 3;
+    SportScheduleInfo sport_schedule_info = 4;
+    SportPageHeadInfo sport_head_info = 5;
+    int32 new_thread_num = 6;
 }

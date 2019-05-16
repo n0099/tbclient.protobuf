@@ -19,6 +19,7 @@ import "FrsPage/BrandForumInfo.proto";
 import "FrsPage/CarrierEnter.proto";
 import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
+import "FrsPage/ForumActiveInfo.proto";
 import "FrsPage/ForumBookInfo.proto";
 import "FrsPage/ForumHeadIcon.proto";
 import "FrsPage/ForumHeadlineImgInfo.proto";
@@ -147,4 +148,5 @@ message DataRes {
     SmartApp smart_app = 95;
     NebulaHotThreads nebula_hot_threads = 96;
     PrivateForumTotalInfo private_forum_info = 97;
+    ForumActiveInfo private_forum_active_info = 98;
 }

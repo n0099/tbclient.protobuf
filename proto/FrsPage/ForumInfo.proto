@@ -102,4 +102,6 @@ message ForumInfo {
     ThemeColorInfo theme_color = 73;
     string is_top_img = 74;
     int32 is_private_forum = 75;
+    int32 is_show_bawutask = 77;
+    string f_share_img = 78;
 }

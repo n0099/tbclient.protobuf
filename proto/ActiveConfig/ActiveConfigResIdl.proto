@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ActiveConfig/DataRes.proto";
+import "Error.proto";
+
+message ActiveConfigResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

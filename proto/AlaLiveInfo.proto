@@ -33,4 +33,6 @@ message AlaLiveInfo {
     AlaCoverLabel label = 24;
     AlaChallengeInfo challenge_info = 25;
     int32 frs_toplive_type = 26;
+    string frs_toplive_pic = 27;
+    int32 frs_toplive_force = 28;
 }
