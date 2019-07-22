@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "RecomVertical/ClassInfo.proto";
+import "RecomVertical/ThreadPersonalized.proto";
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated ThreadInfo thread_list = 2;
+    repeated ThreadPersonalized thread_personalized = 3;
+    ClassInfo class_info = 4;
+    uint32 need_rechoose = 5;
+}

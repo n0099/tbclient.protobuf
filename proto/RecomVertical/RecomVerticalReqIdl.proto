@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "RecomVertical/DataReq.proto";
+
+message RecomVerticalReqIdl {
+    DataReq data = 1;
+}
