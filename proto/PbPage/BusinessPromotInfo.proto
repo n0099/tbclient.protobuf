@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message BusinessPromotInfo {
+    int32 is_promot = 1;
+}

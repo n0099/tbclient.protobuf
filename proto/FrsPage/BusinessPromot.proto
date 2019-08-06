@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "FrsPage/BusinessPromotCommentList.proto";
+
+message BusinessPromot {
+    string title = 1;
+    string img = 2;
+    string img_popup = 3;
+    int32 type = 4;
+    string thread_id = 5;
+    string url = 6;
+    int32 join_num = 7;
+    repeated BusinessPromotCommentList comment_list = 8;
+    int64 id = 9;
+}

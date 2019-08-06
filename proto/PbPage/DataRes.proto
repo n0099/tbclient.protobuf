@@ -12,6 +12,7 @@ import "Page.proto";
 import "PbHotPost.proto";
 import "PbPage/AddPost.proto";
 import "PbPage/AppealInfo.proto";
+import "PbPage/BusinessPromotInfo.proto";
 import "PbPage/FeedExtInfo.proto";
 import "PbPage/ForumHeadlineImgInfo.proto";
 import "PbPage/GodCard.proto";
@@ -85,4 +86,5 @@ message DataRes {
     repeated PbSortType pb_sort_info = 49;
     int32 sort_type = 50;
     ManagerElection manager_election = 51;
+    BusinessPromotInfo business_promot_info = 53;
 }

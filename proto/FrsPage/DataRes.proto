@@ -16,6 +16,7 @@ import "FrsPage/AlaLiveInsert.proto";
 import "FrsPage/BannerThreadInfo.proto";
 import "FrsPage/Bottle.proto";
 import "FrsPage/BrandForumInfo.proto";
+import "FrsPage/BusinessPromot.proto";
 import "FrsPage/CarrierEnter.proto";
 import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
@@ -149,4 +150,5 @@ message DataRes {
     NebulaHotThreads nebula_hot_threads = 96;
     PrivateForumTotalInfo private_forum_info = 97;
     ForumActiveInfo private_forum_active_info = 98;
+    BusinessPromot business_promot = 99;
 }

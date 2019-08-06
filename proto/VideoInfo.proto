@@ -22,4 +22,6 @@ message VideoInfo {
     VideoDesc video_h265 = 16;
     string mcn_lead_page = 17;
     McnAdInfo mcn_ad_card = 18;
+    double wth_mid_loc = 19;
+    double hth_mid_loc = 20;
 }
