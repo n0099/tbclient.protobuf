@@ -43,6 +43,8 @@ public final class DataRes extends Message {
     public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
+    @ProtoField(tag = 53)
+    public final BusinessPromotInfo business_promot_info;
     @ProtoField(tag = 39)
     public final SimpleForum display_forum;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
@@ -309,6 +311,7 @@ public final class DataRes extends Message {
                 this.sort_type = builder.sort_type;
             }
             this.manager_election = builder.manager_election;
+            this.business_promot_info = builder.business_promot_info;
             return;
         }
         this.user = builder.user;
@@ -362,6 +365,7 @@ public final class DataRes extends Message {
         this.pb_sort_info = immutableCopyOf(builder.pb_sort_info);
         this.sort_type = builder.sort_type;
         this.manager_election = builder.manager_election;
+        this.business_promot_info = builder.business_promot_info;
     }
 
     /* loaded from: classes4.dex */
@@ -372,6 +376,7 @@ public final class DataRes extends Message {
         public AppealInfo appeal_info;
         public String asp_shown_info;
         public BannerList banner_list;
+        public BusinessPromotInfo business_promot_info;
         public SimpleForum display_forum;
         public Integer exp_guide_today;
         public Integer exp_news_today;
@@ -475,6 +480,7 @@ public final class DataRes extends Message {
                 this.pb_sort_info = DataRes.copyOf(dataRes.pb_sort_info);
                 this.sort_type = dataRes.sort_type;
                 this.manager_election = dataRes.manager_election;
+                this.business_promot_info = dataRes.business_promot_info;
             }
         }
 

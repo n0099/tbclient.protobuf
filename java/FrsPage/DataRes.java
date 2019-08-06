@@ -68,6 +68,8 @@ public final class DataRes extends Message {
     public final List<BottomMenu> bottom_menu;
     @ProtoField(tag = 91)
     public final BrandForumInfo brand_forum_info;
+    @ProtoField(tag = 99)
+    public final BusinessPromot business_promot;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<ThreadInfo> card_shipin_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 55)
@@ -514,6 +516,7 @@ public final class DataRes extends Message {
             this.nebula_hot_threads = builder.nebula_hot_threads;
             this.private_forum_info = builder.private_forum_info;
             this.private_forum_active_info = builder.private_forum_active_info;
+            this.business_promot = builder.business_promot;
             return;
         }
         this.user = builder.user;
@@ -606,6 +609,7 @@ public final class DataRes extends Message {
         this.nebula_hot_threads = builder.nebula_hot_threads;
         this.private_forum_info = builder.private_forum_info;
         this.private_forum_active_info = builder.private_forum_active_info;
+        this.business_promot = builder.business_promot;
     }
 
     /* loaded from: classes4.dex */
@@ -627,6 +631,7 @@ public final class DataRes extends Message {
         public Bottle bottle;
         public List<BottomMenu> bottom_menu;
         public BrandForumInfo brand_forum_info;
+        public BusinessPromot business_promot;
         public List<ThreadInfo> card_shipin_info;
         public List<ThreadInfo> card_shipin_new;
         public List<Integer> card_shipin_pos;
@@ -797,6 +802,7 @@ public final class DataRes extends Message {
                 this.nebula_hot_threads = dataRes.nebula_hot_threads;
                 this.private_forum_info = dataRes.private_forum_info;
                 this.private_forum_active_info = dataRes.private_forum_active_info;
+                this.business_promot = dataRes.business_promot;
             }
         }
 

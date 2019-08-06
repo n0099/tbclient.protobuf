@@ -11,6 +11,8 @@ public final class VideoInfo extends Message {
     public static final String DEFAULT_THUMBNAIL_URL = "";
     public static final String DEFAULT_VIDEO_MD5 = "";
     public static final String DEFAULT_VIDEO_URL = "";
+    @ProtoField(tag = 20, type = Message.Datatype.DOUBLE)
+    public final Double hth_mid_loc;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer is_vertical;
     @ProtoField(tag = 18)
@@ -47,6 +49,8 @@ public final class VideoInfo extends Message {
     public final String video_url;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer video_width;
+    @ProtoField(tag = 19, type = Message.Datatype.DOUBLE)
+    public final Double wth_mid_loc;
     public static final Integer DEFAULT_VIDEO_DURATION = 0;
     public static final Integer DEFAULT_VIDEO_WIDTH = 0;
     public static final Integer DEFAULT_VIDEO_HEIGHT = 0;
@@ -58,6 +62,8 @@ public final class VideoInfo extends Message {
     public static final Integer DEFAULT_VIDEO_SELECT_FLAG = 0;
     public static final Integer DEFAULT_VIDEO_TYPE = 0;
     public static final Integer DEFAULT_IS_VERTICAL = 0;
+    public static final Double DEFAULT_WTH_MID_LOC = Double.valueOf(0.0d);
+    public static final Double DEFAULT_HTH_MID_LOC = Double.valueOf(0.0d);
 
     private VideoInfo(Builder builder, boolean z) {
         super(builder);
@@ -144,7 +150,18 @@ public final class VideoInfo extends Message {
                 this.mcn_lead_page = builder.mcn_lead_page;
             }
             this.mcn_ad_card = builder.mcn_ad_card;
-            return;
+            if (builder.wth_mid_loc == null) {
+                this.wth_mid_loc = DEFAULT_WTH_MID_LOC;
+            } else {
+                this.wth_mid_loc = builder.wth_mid_loc;
+            }
+            if (builder.hth_mid_loc == null) {
+                this.hth_mid_loc = DEFAULT_HTH_MID_LOC;
+                return;
+            } else {
+                this.hth_mid_loc = builder.hth_mid_loc;
+                return;
+            }
         }
         this.video_md5 = builder.video_md5;
         this.video_url = builder.video_url;
@@ -164,10 +181,13 @@ public final class VideoInfo extends Message {
         this.video_h265 = builder.video_h265;
         this.mcn_lead_page = builder.mcn_lead_page;
         this.mcn_ad_card = builder.mcn_ad_card;
+        this.wth_mid_loc = builder.wth_mid_loc;
+        this.hth_mid_loc = builder.hth_mid_loc;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
+        public Double hth_mid_loc;
         public Integer is_vertical;
         public McnAdInfo mcn_ad_card;
         public String mcn_lead_page;
@@ -186,6 +206,7 @@ public final class VideoInfo extends Message {
         public Integer video_type;
         public String video_url;
         public Integer video_width;
+        public Double wth_mid_loc;
 
         public Builder() {
         }
@@ -211,6 +232,8 @@ public final class VideoInfo extends Message {
                 this.video_h265 = videoInfo.video_h265;
                 this.mcn_lead_page = videoInfo.mcn_lead_page;
                 this.mcn_ad_card = videoInfo.mcn_ad_card;
+                this.wth_mid_loc = videoInfo.wth_mid_loc;
+                this.hth_mid_loc = videoInfo.hth_mid_loc;
             }
         }
 
