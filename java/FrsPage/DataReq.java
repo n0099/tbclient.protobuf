@@ -65,6 +65,8 @@ public final class DataReq extends Message {
     public final Integer ip_int;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String ip_str;
+    @ProtoField(tag = 59, type = Message.Datatype.INT32)
+    public final Integer is_default_navtab;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_good;
     @ProtoField(tag = 55, type = Message.Datatype.INT32)
@@ -177,6 +179,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_SELECTION = 0;
     public static final Integer DEFAULT_CALL_FROM = 0;
     public static final Long DEFAULT_HOT_THREAD_ID = 0L;
+    public static final Integer DEFAULT_IS_DEFAULT_NAVTAB = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -456,9 +459,14 @@ public final class DataReq extends Message {
             }
             if (builder.hot_thread_id == null) {
                 this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
-                return;
             } else {
                 this.hot_thread_id = builder.hot_thread_id;
+            }
+            if (builder.is_default_navtab == null) {
+                this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
+                return;
+            } else {
+                this.is_default_navtab = builder.is_default_navtab;
                 return;
             }
         }
@@ -520,6 +528,7 @@ public final class DataReq extends Message {
         this.call_from = builder.call_from;
         this.shoubai_cuid = builder.shoubai_cuid;
         this.hot_thread_id = builder.hot_thread_id;
+        this.is_default_navtab = builder.is_default_navtab;
     }
 
     /* loaded from: classes4.dex */
@@ -544,6 +553,7 @@ public final class DataReq extends Message {
         public Long hot_thread_id;
         public Integer ip_int;
         public String ip_str;
+        public Integer is_default_navtab;
         public Integer is_good;
         public Integer is_selection;
         public Integer issdk;
@@ -647,6 +657,7 @@ public final class DataReq extends Message {
                 this.call_from = dataReq.call_from;
                 this.shoubai_cuid = dataReq.shoubai_cuid;
                 this.hot_thread_id = dataReq.hot_thread_id;
+                this.is_default_navtab = dataReq.is_default_navtab;
             }
         }
 

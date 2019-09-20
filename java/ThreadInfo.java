@@ -148,6 +148,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_godthread_recommend;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
+    @ProtoField(tag = 165, type = Message.Datatype.INT32)
+    public final Integer is_headlinepost;
     @ProtoField(tag = 128, type = Message.Datatype.INT32)
     public final Integer is_link_thread;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
@@ -434,6 +436,7 @@ public final class ThreadInfo extends Message {
     public static final Long DEFAULT_TRANS_NUM = 0L;
     public static final Integer DEFAULT_IS_TOPIC = 0;
     public static final Integer DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD = 0;
+    public static final Integer DEFAULT_IS_HEADLINEPOST = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1054,7 +1057,13 @@ public final class ThreadInfo extends Message {
                 this.t_share_img = builder.t_share_img;
             }
             this.topic_module = builder.topic_module;
-            return;
+            if (builder.is_headlinepost == null) {
+                this.is_headlinepost = DEFAULT_IS_HEADLINEPOST;
+                return;
+            } else {
+                this.is_headlinepost = builder.is_headlinepost;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1212,6 +1221,7 @@ public final class ThreadInfo extends Message {
         this.is_top_img = builder.is_top_img;
         this.t_share_img = builder.t_share_img;
         this.topic_module = builder.topic_module;
+        this.is_headlinepost = builder.is_headlinepost;
     }
 
     /* loaded from: classes4.dex */
@@ -1271,6 +1281,7 @@ public final class ThreadInfo extends Message {
         public Integer is_god;
         public Integer is_godthread_recommend;
         public Integer is_good;
+        public Integer is_headlinepost;
         public Integer is_link_thread;
         public Integer is_livepost;
         public Integer is_meizhi;
@@ -1535,6 +1546,7 @@ public final class ThreadInfo extends Message {
                 this.is_top_img = threadInfo.is_top_img;
                 this.t_share_img = threadInfo.t_share_img;
                 this.topic_module = threadInfo.topic_module;
+                this.is_headlinepost = threadInfo.is_headlinepost;
             }
         }
 

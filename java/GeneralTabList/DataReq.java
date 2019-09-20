@@ -9,6 +9,8 @@ public final class DataReq extends Message {
     public final CommonReq common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer is_default_navtab;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long last_thread_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -31,6 +33,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Integer DEFAULT_SCR_DIP = 0;
     public static final Long DEFAULT_LAST_THREAD_ID = 0L;
+    public static final Integer DEFAULT_IS_DEFAULT_NAVTAB = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -73,9 +76,14 @@ public final class DataReq extends Message {
             }
             if (builder.last_thread_id == null) {
                 this.last_thread_id = DEFAULT_LAST_THREAD_ID;
-                return;
             } else {
                 this.last_thread_id = builder.last_thread_id;
+            }
+            if (builder.is_default_navtab == null) {
+                this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
+                return;
+            } else {
+                this.is_default_navtab = builder.is_default_navtab;
                 return;
             }
         }
@@ -88,12 +96,14 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
         this.last_thread_id = builder.last_thread_id;
+        this.is_default_navtab = builder.is_default_navtab;
     }
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public CommonReq common;
         public Long forum_id;
+        public Integer is_default_navtab;
         public Long last_thread_id;
         public Integer pn;
         public Integer rn;
@@ -117,6 +127,7 @@ public final class DataReq extends Message {
                 this.scr_h = dataReq.scr_h;
                 this.scr_dip = dataReq.scr_dip;
                 this.last_thread_id = dataReq.last_thread_id;
+                this.is_default_navtab = dataReq.is_default_navtab;
             }
         }
 
