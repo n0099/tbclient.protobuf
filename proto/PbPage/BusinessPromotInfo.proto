@@ -1,5 +1,6 @@
 syntax = "proto3";
 
 message BusinessPromotInfo {
-    int32 is_promot = 1;
+    int64 is_promot = 1;
+    int32 is_headlinepost = 2;
 }

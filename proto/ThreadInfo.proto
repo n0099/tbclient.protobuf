@@ -208,4 +208,5 @@ message ThreadInfo {
     string is_top_img = 158;
     string t_share_img = 159;
     TopicModule topic_module = 160;
+    int32 is_headlinepost = 165;
 }

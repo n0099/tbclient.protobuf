@@ -63,4 +63,5 @@ message DataReq {
     int32 call_from = 56;
     string shoubai_cuid = 57;
     int64 hot_thread_id = 58;
+    int32 is_default_navtab = 59;
 }

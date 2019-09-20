@@ -12,4 +12,5 @@ message DataReq {
     int32 scr_h = 7;
     int32 scr_dip = 8;
     int64 last_thread_id = 9;
+    int32 is_default_navtab = 10;
 }
