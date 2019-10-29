@@ -1,6 +1,6 @@
 package tbclient;
 
-import com.baidu.tbadk.BaseActivity;
+import com.baidu.android.imsdk.internal.Constants;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -48,7 +48,7 @@ public final class ThreadInfo extends Message {
     public final ActivityInfo activity_info;
     @ProtoField(tag = 126)
     public final Agree agree;
-    @ProtoField(tag = 124, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY_MEMBER, type = Message.Datatype.INT32)
     public final Integer agree_num;
     @ProtoField(tag = 113)
     public final AlaLiveInfo ala_info;
@@ -88,7 +88,7 @@ public final class ThreadInfo extends Message {
     public final String daily_paper_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = 121)
+    @ProtoField(label = Message.Label.REPEATED, tag = Constants.METHOD_IM_FRIEND_GROUP_DROP)
     public final List<DeclareInfo> declare_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
@@ -158,7 +158,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_meizhi;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer is_membertop;
-    @ProtoField(tag = 123, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY, type = Message.Datatype.INT32)
     public final Integer is_multiforum_thread;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_notice;
@@ -308,11 +308,11 @@ public final class ThreadInfo extends Message {
     public final Integer timeline;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
-    @ProtoField(tag = 125)
+    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_ASSIGN)
     public final Post top_agree_post;
     @ProtoField(tag = 47)
     public final Topic topic;
-    @ProtoField(tag = BaseActivity.SHOW_SOFT_KEYBOARD_DELAY, type = Message.Datatype.STRING)
+    @ProtoField(tag = 150, type = Message.Datatype.STRING)
     public final String topic_h5_url;
     @ProtoField(tag = 160)
     public final TopicModule topic_module;
