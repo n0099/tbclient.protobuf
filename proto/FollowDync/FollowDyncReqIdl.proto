@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "FollowDync/DataReq.proto";
+
+message FollowDyncReqIdl {
+    DataReq data = 1;
+}

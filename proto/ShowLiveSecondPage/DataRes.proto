@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated ThreadInfo live = 1;
+    uint32 has_more = 2;
+    uint32 is_refresh = 3;
+}

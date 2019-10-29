@@ -1,11 +1,11 @@
 syntax = "proto3";
 
+import "Banner.proto";
 import "BannerList.proto";
 import "FrsPage/AcrossForumIcon.proto";
 import "FrsPage/Adkiller.proto";
 import "FrsPage/AnchorPower.proto";
 import "FrsPage/Badges.proto";
-import "FrsPage/Banner.proto";
 import "FrsPage/Calendar.proto";
 import "FrsPage/Classify.proto";
 import "FrsPage/ForumButton.proto";
