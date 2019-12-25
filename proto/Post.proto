@@ -68,4 +68,6 @@ message Post {
     int32 is_top_agree_post = 45;
     int64 tid = 46;
     int32 show_squared = 47;
+    int32 is_bjh = 48;
+    string quote_id = 50;
 }

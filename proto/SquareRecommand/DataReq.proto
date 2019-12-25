@@ -3,7 +3,6 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
-    CommonReq common = 1;
     uint32 pn = 2;
     uint32 scr_w = 3;
     uint32 scr_h = 4;

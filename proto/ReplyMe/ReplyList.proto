@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "Baijiahao.proto";
 import "OriginThreadInfo.proto";
 import "User.proto";
 import "Zan.proto";
@@ -30,4 +31,6 @@ message ReplyList {
     int32 is_share_thread = 23;
     string thread_img_url = 24;
     User thread_author_user = 25;
+    int32 is_bjh = 26;
+    Baijiahao baijiahao = 27;
 }

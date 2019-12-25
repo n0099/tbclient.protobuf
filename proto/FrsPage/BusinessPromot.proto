@@ -12,4 +12,5 @@ message BusinessPromot {
     int32 join_num = 7;
     repeated BusinessPromotCommentList comment_list = 8;
     int64 id = 9;
+    int32 thread_type = 10;
 }

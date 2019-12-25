@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "ChannelPage.proto";
-import "ChannelVideoInfo.proto";
-
-message VideoList {
-    repeated ChannelVideoInfo list = 1;
-    ChannelPage page = 2;
-}

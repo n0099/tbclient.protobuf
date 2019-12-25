@@ -4,6 +4,7 @@ import "Abstract.proto";
 import "Agree.proto";
 import "AlaLiveInfo.proto";
 import "AnchorInfo.proto";
+import "BaijiahaoInfo.proto";
 import "DealInfo.proto";
 import "LbsInfo.proto";
 import "Media.proto";
@@ -65,4 +66,7 @@ message PostInfoList {
     repeated PbContent rich_title = 45;
     repeated PbContent rich_abstract = 46;
     int32 is_ntitle = 47;
+    string article_cover = 48;
+    repeated PbContent first_post_content = 49;
+    BaijiahaoInfo baijiahao_info = 50;
 }

@@ -4,5 +4,4 @@ import "CommonReq.proto";
 
 message DataReq {
     string game_id = 1;
-    CommonReq common = 2;
 }

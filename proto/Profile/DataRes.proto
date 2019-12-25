@@ -10,12 +10,14 @@ import "ForumDynamic.proto";
 import "Highlist.proto";
 import "ModuleInfo.proto";
 import "PostInfoList.proto";
+import "Profile/Duxiaoman.proto";
 import "Profile/NicknameInfo.proto";
 import "Profile/TAInfo.proto";
 import "Profile/UserAgreeInfo.proto";
 import "Profile/UserGodInfo.proto";
 import "SmartApp.proto";
 import "TbBookrack.proto";
+import "ThreadInfo.proto";
 import "UcCard.proto";
 import "User.proto";
 import "UserManChannelInfo.proto";
@@ -44,4 +46,6 @@ message DataRes {
     int32 show_answer = 21;
     repeated BannerImage banner = 22;
     repeated SmartApp recom_swan_list = 23;
+    Duxiaoman duxiaoman = 24;
+    repeated ThreadInfo newest_dynamic_list = 25;
 }

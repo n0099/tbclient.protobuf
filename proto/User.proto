@@ -3,7 +3,9 @@ syntax = "proto3";
 import "ActivitySponsor.proto";
 import "AlaLiveInfo.proto";
 import "AlaUserInfo.proto";
+import "BaijiahaoInfo.proto";
 import "Balv.proto";
+import "BirthdayInfo.proto";
 import "ConsumeInfo.proto";
 import "Ecom.proto";
 import "EsportInfo.proto";
@@ -126,4 +128,8 @@ message User {
     int32 priv_thread = 92;
     int32 is_videobiggie = 93;
     int32 is_show_redpacket = 94;
+    BaijiahaoInfo baijiahao_info = 95;
+    BirthdayInfo birthday_info = 96;
+    int32 can_modify_avatar = 97;
+    string modify_avatar_desc = 98;
 }

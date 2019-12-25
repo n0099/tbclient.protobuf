@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "ThreadInfo.proto";
+import "User.proto";
 import "Userlike/PostData.proto";
 
 message ConcernData {
@@ -8,4 +9,5 @@ message ConcernData {
     PostData post_data = 2;
     int32 recom_type = 3;
     int32 source = 4;
+    repeated User recom_user_list = 5;
 }

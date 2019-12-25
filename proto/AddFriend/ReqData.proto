@@ -6,5 +6,4 @@ message ReqData {
     int64 friend_id = 1;
     string message = 2;
     string st_type = 3;
-    CommonReq common = 4;
 }

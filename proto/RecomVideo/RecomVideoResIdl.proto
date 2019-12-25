@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 import "Error.proto";
-import "GetChannelInfo/DataRes.proto";
+import "RecomVideo/DataRes.proto";
 
-message GetChannelInfoResIdl {
+message RecomVideoResIdl {
     Error error = 1;
     DataRes data = 2;
 }

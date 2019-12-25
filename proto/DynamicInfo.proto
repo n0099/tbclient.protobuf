@@ -10,4 +10,5 @@ message DynamicInfo {
     ForumDynamic forum_dynamic = 3;
     UserDynamic user_dynamic = 4;
     int32 type = 5;
+    string is_hide = 6;
 }

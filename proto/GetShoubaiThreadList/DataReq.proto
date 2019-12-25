@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    int64 uid = 2;
+    int64 cursor = 3;
+    int32 page_size = 4;
+}

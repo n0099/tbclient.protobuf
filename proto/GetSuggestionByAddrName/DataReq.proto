@@ -4,5 +4,4 @@ import "CommonReq.proto";
 
 message DataReq {
     string addr_name = 1;
-    CommonReq common = 2;
 }

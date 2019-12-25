@@ -24,6 +24,7 @@ import "PbPage/PostBanner.proto";
 import "PbPage/RecommendBook.proto";
 import "PbTopAgreePost.proto";
 import "Post.proto";
+import "Promotion.proto";
 import "PsRankListItem.proto";
 import "RecomTopicList.proto";
 import "RecommendThread.proto";
@@ -86,5 +87,7 @@ message DataRes {
     repeated PbSortType pb_sort_info = 49;
     int32 sort_type = 50;
     ManagerElection manager_election = 51;
+    repeated ThreadInfo bjh_recommend = 52;
     BusinessPromotInfo business_promot_info = 53;
+    Promotion promotion = 54;
 }

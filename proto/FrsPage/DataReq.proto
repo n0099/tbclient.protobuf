@@ -43,7 +43,6 @@ message DataReq {
     string email = 36;
     bool debug = 37;
     string cookie = 38;
-    CommonReq common = 39;
     string lastids = 40;
     int32 issdk = 41;
     string da_idfa = 42;

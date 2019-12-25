@@ -11,12 +11,10 @@ message DataReq {
     uint32 pn = 6;
     uint32 rn = 7;
     uint32 has_plist = 8;
-    CommonReq common = 9;
     uint32 scr_w = 10;
     uint32 scr_h = 11;
     uint32 q_type = 12;
     double scr_dip = 13;
     int32 is_from_usercenter = 14;
     int32 page = 15;
-    string history_swan = 16;
 }

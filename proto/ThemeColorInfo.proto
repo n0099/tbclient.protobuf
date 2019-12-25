@@ -5,4 +5,5 @@ import "ThemeElement.proto";
 message ThemeColorInfo {
     ThemeElement day = 1;
     ThemeElement night = 2;
+    ThemeElement dark = 3;
 }
