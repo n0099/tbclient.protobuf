@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class User extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
@@ -14,6 +14,7 @@ public final class User extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_IP = "";
+    public static final String DEFAULT_MODIFY_AVATAR_DESC = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PASSWD = "";
@@ -32,6 +33,8 @@ public final class User extends Message {
     public final AlaUserInfo ala_info;
     @ProtoField(tag = 85)
     public final AlaLiveInfo ala_live_info;
+    @ProtoField(tag = 95)
+    public final BaijiahaoInfo baijiahao_info;
     @ProtoField(tag = 10)
     public final Balv balv;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
@@ -42,10 +45,14 @@ public final class User extends Message {
     public final Integer bimg_end_time;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String bimg_url;
+    @ProtoField(tag = 96)
+    public final BirthdayInfo birthday_info;
     @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer bookmark_count;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer bookmark_new_count;
+    @ProtoField(tag = 97, type = Message.Datatype.INT32)
+    public final Integer can_modify_avatar;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer concern_num;
     @ProtoField(tag = 68)
@@ -130,6 +137,8 @@ public final class User extends Message {
     public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
+    @ProtoField(tag = 98, type = Message.Datatype.STRING)
+    public final String modify_avatar_desc;
     @ProtoField(label = Message.Label.REPEATED, tag = 55)
     public final List<SimpleUser> mute_user;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
@@ -266,6 +275,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_PRIV_THREAD = 0;
     public static final Integer DEFAULT_IS_VIDEOBIGGIE = 0;
     public static final Integer DEFAULT_IS_SHOW_REDPACKET = 0;
+    public static final Integer DEFAULT_CAN_MODIFY_AVATAR = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -649,9 +659,21 @@ public final class User extends Message {
             }
             if (builder.is_show_redpacket == null) {
                 this.is_show_redpacket = DEFAULT_IS_SHOW_REDPACKET;
-                return;
             } else {
                 this.is_show_redpacket = builder.is_show_redpacket;
+            }
+            this.baijiahao_info = builder.baijiahao_info;
+            this.birthday_info = builder.birthday_info;
+            if (builder.can_modify_avatar == null) {
+                this.can_modify_avatar = DEFAULT_CAN_MODIFY_AVATAR;
+            } else {
+                this.can_modify_avatar = builder.can_modify_avatar;
+            }
+            if (builder.modify_avatar_desc == null) {
+                this.modify_avatar_desc = "";
+                return;
+            } else {
+                this.modify_avatar_desc = builder.modify_avatar_desc;
                 return;
             }
         }
@@ -749,22 +771,29 @@ public final class User extends Message {
         this.priv_thread = builder.priv_thread;
         this.is_videobiggie = builder.is_videobiggie;
         this.is_show_redpacket = builder.is_show_redpacket;
+        this.baijiahao_info = builder.baijiahao_info;
+        this.birthday_info = builder.birthday_info;
+        this.can_modify_avatar = builder.can_modify_avatar;
+        this.modify_avatar_desc = builder.modify_avatar_desc;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;
         public Integer agree_num;
         public AlaUserInfo ala_info;
         public AlaLiveInfo ala_live_info;
+        public BaijiahaoInfo baijiahao_info;
         public Balv balv;
         public String bawu_type;
         public String bg_pic;
         public Integer bimg_end_time;
         public String bimg_url;
+        public BirthdayInfo birthday_info;
         public Integer bookmark_count;
         public Integer bookmark_new_count;
+        public Integer can_modify_avatar;
         public Integer concern_num;
         public ConsumeInfo consume_info;
         public Integer each_other_friend;
@@ -807,6 +836,7 @@ public final class User extends Message {
         public Integer level_id;
         public List<LikeForumInfo> likeForum;
         public Integer meizhi_level;
+        public String modify_avatar_desc;
         public List<SimpleUser> mute_user;
         public Integer my_like_num;
         public String name;
@@ -948,6 +978,10 @@ public final class User extends Message {
                 this.priv_thread = user.priv_thread;
                 this.is_videobiggie = user.is_videobiggie;
                 this.is_show_redpacket = user.is_show_redpacket;
+                this.baijiahao_info = user.baijiahao_info;
+                this.birthday_info = user.birthday_info;
+                this.can_modify_avatar = user.can_modify_avatar;
+                this.modify_avatar_desc = user.modify_avatar_desc;
             }
         }
 

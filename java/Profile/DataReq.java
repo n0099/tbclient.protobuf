@@ -3,18 +3,17 @@ package tbclient.Profile;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
-    public static final String DEFAULT_HISTORY_SWAN = "";
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 9)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1154common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer has_plist;
-    @ProtoField(tag = 16, type = Message.Datatype.STRING)
-    public final String history_swan;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_from_usercenter;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -96,7 +95,7 @@ public final class DataReq extends Message {
             } else {
                 this.has_plist = builder.has_plist;
             }
-            this.common = builder.common;
+            this.f1154common = builder.f1155common;
             if (builder.scr_w == null) {
                 this.scr_w = DEFAULT_SCR_W;
             } else {
@@ -124,14 +123,9 @@ public final class DataReq extends Message {
             }
             if (builder.page == null) {
                 this.page = DEFAULT_PAGE;
-            } else {
-                this.page = builder.page;
-            }
-            if (builder.history_swan == null) {
-                this.history_swan = "";
                 return;
             } else {
-                this.history_swan = builder.history_swan;
+                this.page = builder.page;
                 return;
             }
         }
@@ -143,22 +137,22 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
-        this.common = builder.common;
+        this.f1154common = builder.f1155common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
         this.scr_dip = builder.scr_dip;
         this.is_from_usercenter = builder.is_from_usercenter;
         this.page = builder.page;
-        this.history_swan = builder.history_swan;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1155common;
         public Long friend_uid;
         public Integer has_plist;
-        public String history_swan;
         public Integer is_from_usercenter;
         public Integer is_guest;
         public Integer need_post_count;
@@ -186,14 +180,13 @@ public final class DataReq extends Message {
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;
                 this.has_plist = dataReq.has_plist;
-                this.common = dataReq.common;
+                this.f1155common = dataReq.f1154common;
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;
                 this.q_type = dataReq.q_type;
                 this.scr_dip = dataReq.scr_dip;
                 this.is_from_usercenter = dataReq.is_from_usercenter;
                 this.page = dataReq.page;
-                this.history_swan = dataReq.history_swan;
             }
         }
 

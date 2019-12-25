@@ -3,12 +3,14 @@ package tbclient.ExcZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer action;
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1030common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long excid;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
@@ -23,7 +25,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1030common = builder.f1031common;
             if (builder.excid == null) {
                 this.excid = DEFAULT_EXCID;
             } else {
@@ -47,17 +49,19 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1030common = builder.f1031common;
         this.excid = builder.excid;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;
         this.action = builder.action;
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer action;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1031common;
         public Long excid;
         public Long post_id;
         public Long thread_id;
@@ -68,7 +72,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1031common = dataReq.f1030common;
                 this.excid = dataReq.excid;
                 this.thread_id = dataReq.thread_id;
                 this.post_id = dataReq.post_id;

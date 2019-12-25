@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AppInfo extends Message {
     public static final String DEFAULT_AD_APK_PACKAGE_NAME = "";
     public static final String DEFAULT_AD_NAME = "";
@@ -58,7 +58,7 @@ public final class AppInfo extends Message {
         this.app_size = builder.app_size;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<AppInfo> {
         public String ad_apk_package_name;
         public Integer ad_id;

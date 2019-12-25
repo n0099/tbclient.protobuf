@@ -3,13 +3,15 @@ package tbclient.RecomVertical;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLASS_ID = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String class_id;
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1164common;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -35,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1164common = builder.f1165common;
             if (builder.class_id == null) {
                 this.class_id = "";
             } else {
@@ -79,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1164common = builder.f1165common;
         this.class_id = builder.class_id;
         this.sub_class_id = builder.sub_class_id;
         this.scr_w = builder.scr_w;
@@ -90,10 +92,12 @@ public final class DataReq extends Message {
         this.page_thread_count = builder.page_thread_count;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String class_id;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1165common;
         public Integer load_type;
         public Integer new_net_type;
         public Integer page_thread_count;
@@ -108,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1165common = dataReq.f1164common;
                 this.class_id = dataReq.class_id;
                 this.sub_class_id = dataReq.sub_class_id;
                 this.scr_w = dataReq.scr_w;

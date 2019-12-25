@@ -2,7 +2,7 @@ package tbclient.PassFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final friendInfo friend_info;
@@ -16,7 +16,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public friendInfo friend_info;
 

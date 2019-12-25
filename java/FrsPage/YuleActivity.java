@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class YuleActivity extends Message {
     public static final String DEFAULT_ACTIVITY_ALL_ICON = "";
     public static final String DEFAULT_ACTIVITY_HALF_ICON = "";
@@ -58,7 +58,7 @@ public final class YuleActivity extends Message {
         this.activity_half_icon = builder.activity_half_icon;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<YuleActivity> {
         public String activity_all_icon;
         public String activity_half_icon;

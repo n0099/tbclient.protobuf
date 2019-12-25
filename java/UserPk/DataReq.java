@@ -3,12 +3,14 @@ package tbclient.UserPk;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer click_type;
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1214common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long pk_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -29,7 +31,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1214common = builder.f1215common;
             if (builder.pk_id == null) {
                 this.pk_id = DEFAULT_PK_ID;
             } else {
@@ -63,7 +65,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1214common = builder.f1215common;
         this.pk_id = builder.pk_id;
         this.topic_id = builder.topic_id;
         this.pk_index = builder.pk_index;
@@ -72,10 +74,12 @@ public final class DataReq extends Message {
         this.user_pk_id = builder.user_pk_id;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer click_type;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1215common;
         public Long pk_id;
         public Integer pk_index;
         public Integer pk_type;
@@ -88,7 +92,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1215common = dataReq.f1214common;
                 this.pk_id = dataReq.pk_id;
                 this.topic_id = dataReq.topic_id;
                 this.pk_index = dataReq.pk_index;

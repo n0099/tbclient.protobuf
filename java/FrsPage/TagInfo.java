@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TagInfo extends Message {
     public static final String DEFAULT_TAG_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -103,7 +103,7 @@ public final class TagInfo extends Message {
         this.op_time = builder.op_time;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<TagInfo> {
         public Integer color;
         public Long forum_id;

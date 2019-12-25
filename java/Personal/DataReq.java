@@ -3,10 +3,12 @@ package tbclient.Personal;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1150common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -29,7 +31,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1150common = builder.f1151common;
             if (builder.uid == null) {
                 this.uid = DEFAULT_UID;
             } else {
@@ -63,7 +65,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1150common = builder.f1151common;
         this.uid = builder.uid;
         this.pn = builder.pn;
         this.scr_w = builder.scr_w;
@@ -72,9 +74,11 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1151common;
         public Integer pn;
         public Integer q_type;
         public Double scr_dip;
@@ -88,7 +92,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1151common = dataReq.f1150common;
                 this.uid = dataReq.uid;
                 this.pn = dataReq.pn;
                 this.scr_w = dataReq.scr_w;

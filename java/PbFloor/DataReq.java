@@ -3,15 +3,31 @@ package tbclient.PbFloor;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_ORI_UGC_NID = "";
+    public static final String DEFAULT_ORI_UGC_TID = "";
+    public static final String DEFAULT_ORI_UGC_VID = "";
     public static final String DEFAULT_ST_TYPE = "";
+    public static final String DEFAULT_TOP_UGC_PID = "";
     @ProtoField(tag = 9)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1146common;
+    @ProtoField(tag = 11, type = Message.Datatype.INT64)
+    public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long kz;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String ori_ugc_nid;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String ori_ugc_tid;
+    @ProtoField(tag = 15, type = Message.Datatype.INT32)
+    public final Integer ori_ugc_type;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String ori_ugc_vid;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long pid;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -26,6 +42,8 @@ public final class DataReq extends Message {
     public final Long spid;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String st_type;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String top_ugc_pid;
     public static final Long DEFAULT_KZ = 0L;
     public static final Long DEFAULT_PID = 0L;
     public static final Long DEFAULT_SPID = 0L;
@@ -34,6 +52,8 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
     public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -78,12 +98,42 @@ public final class DataReq extends Message {
             } else {
                 this.st_type = builder.st_type;
             }
-            this.common = builder.common;
+            this.f1146common = builder.f1147common;
             if (builder.is_comm_reverse == null) {
                 this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
-                return;
             } else {
                 this.is_comm_reverse = builder.is_comm_reverse;
+            }
+            if (builder.forum_id == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = builder.forum_id;
+            }
+            if (builder.ori_ugc_nid == null) {
+                this.ori_ugc_nid = "";
+            } else {
+                this.ori_ugc_nid = builder.ori_ugc_nid;
+            }
+            if (builder.ori_ugc_tid == null) {
+                this.ori_ugc_tid = "";
+            } else {
+                this.ori_ugc_tid = builder.ori_ugc_tid;
+            }
+            if (builder.ori_ugc_type == null) {
+                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
+            } else {
+                this.ori_ugc_type = builder.ori_ugc_type;
+            }
+            if (builder.ori_ugc_vid == null) {
+                this.ori_ugc_vid = "";
+            } else {
+                this.ori_ugc_vid = builder.ori_ugc_vid;
+            }
+            if (builder.top_ugc_pid == null) {
+                this.top_ugc_pid = "";
+                return;
+            } else {
+                this.top_ugc_pid = builder.top_ugc_pid;
                 return;
             }
         }
@@ -95,15 +145,28 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
         this.st_type = builder.st_type;
-        this.common = builder.common;
+        this.f1146common = builder.f1147common;
         this.is_comm_reverse = builder.is_comm_reverse;
+        this.forum_id = builder.forum_id;
+        this.ori_ugc_nid = builder.ori_ugc_nid;
+        this.ori_ugc_tid = builder.ori_ugc_tid;
+        this.ori_ugc_type = builder.ori_ugc_type;
+        this.ori_ugc_vid = builder.ori_ugc_vid;
+        this.top_ugc_pid = builder.top_ugc_pid;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1147common;
+        public Long forum_id;
         public Integer is_comm_reverse;
         public Long kz;
+        public String ori_ugc_nid;
+        public String ori_ugc_tid;
+        public Integer ori_ugc_type;
+        public String ori_ugc_vid;
         public Long pid;
         public Integer pn;
         public Double scr_dip;
@@ -111,6 +174,7 @@ public final class DataReq extends Message {
         public Integer scr_w;
         public Long spid;
         public String st_type;
+        public String top_ugc_pid;
 
         public Builder() {
         }
@@ -126,8 +190,14 @@ public final class DataReq extends Message {
                 this.scr_h = dataReq.scr_h;
                 this.scr_dip = dataReq.scr_dip;
                 this.st_type = dataReq.st_type;
-                this.common = dataReq.common;
+                this.f1147common = dataReq.f1146common;
                 this.is_comm_reverse = dataReq.is_comm_reverse;
+                this.forum_id = dataReq.forum_id;
+                this.ori_ugc_nid = dataReq.ori_ugc_nid;
+                this.ori_ugc_tid = dataReq.ori_ugc_tid;
+                this.ori_ugc_type = dataReq.ori_ugc_type;
+                this.ori_ugc_vid = dataReq.ori_ugc_vid;
+                this.top_ugc_pid = dataReq.top_ugc_pid;
             }
         }
 

@@ -28,7 +28,7 @@ import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
@@ -612,7 +612,7 @@ public final class DataRes extends Message {
         this.business_promot = builder.business_promot;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityConfig activity_config;
         public ActivityHead activityhead;

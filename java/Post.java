@@ -4,12 +4,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Post extends Message {
     public static final String DEFAULT_BIMG_URL = "";
     public static final String DEFAULT_FOLD_TIP = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_LEGO_CARD = "";
+    public static final String DEFAULT_QUOTE_ID = "";
     public static final String DEFAULT_TIME_EX = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VOTE_CRYPT = "";
@@ -47,6 +48,8 @@ public final class Post extends Message {
     public final Integer img_num_abtest;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String ios_bimg_format;
+    @ProtoField(tag = 48, type = Message.Datatype.INT32)
+    public final Integer is_bjh;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer is_bub;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
@@ -77,6 +80,8 @@ public final class Post extends Message {
     public final PbPostZan post_zan;
     @ProtoField(tag = 28)
     public final PbPresent present;
+    @ProtoField(tag = 50, type = Message.Datatype.STRING)
+    public final String quote_id;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer show_squared;
     @ProtoField(tag = 21)
@@ -129,6 +134,7 @@ public final class Post extends Message {
     public static final Integer DEFAULT_IS_TOP_AGREE_POST = 0;
     public static final Long DEFAULT_TID = 0L;
     public static final Integer DEFAULT_SHOW_SQUARED = 0;
+    public static final Integer DEFAULT_IS_BJH = 0;
 
     private Post(Builder builder, boolean z) {
         super(builder);
@@ -293,9 +299,19 @@ public final class Post extends Message {
             }
             if (builder.show_squared == null) {
                 this.show_squared = DEFAULT_SHOW_SQUARED;
-                return;
             } else {
                 this.show_squared = builder.show_squared;
+            }
+            if (builder.is_bjh == null) {
+                this.is_bjh = DEFAULT_IS_BJH;
+            } else {
+                this.is_bjh = builder.is_bjh;
+            }
+            if (builder.quote_id == null) {
+                this.quote_id = "";
+                return;
+            } else {
+                this.quote_id = builder.quote_id;
                 return;
             }
         }
@@ -346,9 +362,11 @@ public final class Post extends Message {
         this.is_top_agree_post = builder.is_top_agree_post;
         this.tid = builder.tid;
         this.show_squared = builder.show_squared;
+        this.is_bjh = builder.is_bjh;
+        this.quote_id = builder.quote_id;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<Post> {
         public ActPost act_post;
         public AddPostList add_post_list;
@@ -367,6 +385,7 @@ public final class Post extends Message {
         public Long id;
         public Integer img_num_abtest;
         public String ios_bimg_format;
+        public Integer is_bjh;
         public Integer is_bub;
         public Integer is_fold;
         public Integer is_hot_post;
@@ -382,6 +401,7 @@ public final class Post extends Message {
         public DealInfo pb_deal_info;
         public PbPostZan post_zan;
         public PbPresent present;
+        public String quote_id;
         public Integer show_squared;
         public SignatureData signature;
         public SkinInfo skin_info;
@@ -451,6 +471,8 @@ public final class Post extends Message {
                 this.is_top_agree_post = post.is_top_agree_post;
                 this.tid = post.tid;
                 this.show_squared = post.show_squared;
+                this.is_bjh = post.is_bjh;
+                this.quote_id = post.quote_id;
             }
         }
 

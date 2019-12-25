@@ -3,12 +3,14 @@ package tbclient.AlaTab;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_LAST_VIEWED_FEEDS = "";
     public static final Integer DEFAULT_PN = 0;
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1004common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String last_viewed_feeds;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -17,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1004common = builder.f1005common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -31,14 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1004common = builder.f1005common;
         this.pn = builder.pn;
         this.last_viewed_feeds = builder.last_viewed_feeds;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1005common;
         public String last_viewed_feeds;
         public Integer pn;
 
@@ -48,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1005common = dataReq.f1004common;
                 this.pn = dataReq.pn;
                 this.last_viewed_feeds = dataReq.last_viewed_feeds;
             }

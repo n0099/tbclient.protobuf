@@ -3,10 +3,12 @@ package tbclient.UserMuteCheck;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1210common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer mute_type;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -20,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1210common = builder.f1211common;
             if (builder.user_id_f == null) {
                 this.user_id_f = DEFAULT_USER_ID_F;
             } else {
@@ -39,15 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1210common = builder.f1211common;
         this.user_id_f = builder.user_id_f;
         this.user_id_t = builder.user_id_t;
         this.mute_type = builder.mute_type;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1211common;
         public Integer mute_type;
         public Long user_id_f;
         public Long user_id_t;
@@ -58,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1211common = dataReq.f1210common;
                 this.user_id_f = dataReq.user_id_f;
                 this.user_id_t = dataReq.user_id_t;
                 this.mute_type = dataReq.mute_type;

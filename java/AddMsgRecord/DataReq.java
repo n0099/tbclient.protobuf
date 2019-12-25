@@ -5,18 +5,20 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final List<MsgRecord> DEFAULT_RECORDS = Collections.emptyList();
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f998common;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<MsgRecord> records;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f998common = builder.f999common;
             if (builder.records == null) {
                 this.records = DEFAULT_RECORDS;
                 return;
@@ -25,13 +27,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f998common = builder.f999common;
         this.records = immutableCopyOf(builder.records);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f999common;
         public List<MsgRecord> records;
 
         public Builder() {
@@ -40,7 +44,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f999common = dataReq.f998common;
                 this.records = DataReq.copyOf(dataReq.records);
             }
         }

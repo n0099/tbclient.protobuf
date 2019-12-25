@@ -3,11 +3,13 @@ package tbclient.LiveSquare;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_NETWORK_TYPE = "";
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1126common;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_refresh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -35,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1126common = builder.f1127common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -79,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1126common = builder.f1127common;
         this.pn = builder.pn;
         this.ps = builder.ps;
         this.network_type = builder.network_type;
@@ -90,9 +92,11 @@ public final class DataReq extends Message {
         this.is_refresh = builder.is_refresh;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1127common;
         public Integer is_refresh;
         public String network_type;
         public Integer pn;
@@ -108,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1127common = dataReq.f1126common;
                 this.pn = dataReq.pn;
                 this.ps = dataReq.ps;
                 this.network_type = dataReq.network_type;

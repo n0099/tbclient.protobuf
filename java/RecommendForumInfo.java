@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RecommendForumInfo extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_AUTHEN = "";
@@ -168,7 +168,7 @@ public final class RecommendForumInfo extends Message {
         this.is_private_forum = builder.is_private_forum;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<RecommendForumInfo> {
         public String abtest_tag;
         public String authen;

@@ -3,7 +3,7 @@ package tbclient.CommitCardInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_CARD_TYPE = 0;
     public static final String DEFAULT_IMAGE_INFO = "";
@@ -11,7 +11,9 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer card_type;
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1014common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String image_info;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -20,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1014common = builder.f1015common;
             if (builder.resource_id == null) {
                 this.resource_id = "";
             } else {
@@ -39,16 +41,18 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1014common = builder.f1015common;
         this.resource_id = builder.resource_id;
         this.card_type = builder.card_type;
         this.image_info = builder.image_info;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer card_type;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1015common;
         public String image_info;
         public String resource_id;
 
@@ -58,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1015common = dataReq.f1014common;
                 this.resource_id = dataReq.resource_id;
                 this.card_type = dataReq.card_type;
                 this.image_info = dataReq.image_info;

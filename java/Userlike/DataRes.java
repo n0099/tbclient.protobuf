@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.BannerFollowLive;
 import tbclient.BannerUserStory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_LAST_TIPS = "";
     public static final String DEFAULT_PAGE_TAG = "";
@@ -109,7 +109,7 @@ public final class DataRes extends Message {
         this.banner_follow_live = builder.banner_follow_live;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public BannerFollowLive banner_follow_live;
         public BannerUserStory banner_user_story;

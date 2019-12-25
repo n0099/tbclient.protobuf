@@ -3,11 +3,13 @@ package tbclient.ShowLiveSecondPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_NETWORK_TYPE = "";
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1190common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer entry_type;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
@@ -41,7 +43,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1190common = builder.f1191common;
             if (builder.entry_type == null) {
                 this.entry_type = DEFAULT_ENTRY_TYPE;
             } else {
@@ -95,7 +97,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1190common = builder.f1191common;
         this.entry_type = builder.entry_type;
         this.pn = builder.pn;
         this.ps = builder.ps;
@@ -108,9 +110,11 @@ public final class DataReq extends Message {
         this.lng = builder.lng;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1191common;
         public Integer entry_type;
         public Double lat;
         public Double lng;
@@ -128,7 +132,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1191common = dataReq.f1190common;
                 this.entry_type = dataReq.entry_type;
                 this.pn = dataReq.pn;
                 this.ps = dataReq.ps;

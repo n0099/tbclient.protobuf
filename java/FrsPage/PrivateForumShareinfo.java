@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PrivateForumShareinfo extends Message {
     public static final Integer DEFAULT_CREATE_TIME = 0;
     public static final String DEFAULT_MANAGER_PORTRAIT = "";
@@ -49,7 +49,7 @@ public final class PrivateForumShareinfo extends Message {
         this.manager_portrait = builder.manager_portrait;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<PrivateForumShareinfo> {
         public Integer create_time;
         public String manager_portrait;

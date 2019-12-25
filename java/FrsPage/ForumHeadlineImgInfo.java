@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForumHeadlineImgInfo extends Message {
     public static final String DEFAULT_HEADLINE_URL = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -76,7 +76,7 @@ public final class ForumHeadlineImgInfo extends Message {
         this.headline_url = builder.headline_url;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ForumHeadlineImgInfo> {
         public String headline_url;
         public String img_url;

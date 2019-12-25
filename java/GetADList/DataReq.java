@@ -3,13 +3,15 @@ package tbclient.GetADList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FID = 0L;
     public static final Long DEFAULT_OFFSET = 0L;
     public static final Integer DEFAULT_RN = 0;
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1050common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
@@ -20,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1050common = builder.f1051common;
             if (builder.fid == null) {
                 this.fid = DEFAULT_FID;
             } else {
@@ -39,15 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1050common = builder.f1051common;
         this.fid = builder.fid;
         this.offset = builder.offset;
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1051common;
         public Long fid;
         public Long offset;
         public Integer rn;
@@ -58,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1051common = dataReq.f1050common;
                 this.fid = dataReq.fid;
                 this.offset = dataReq.offset;
                 this.rn = dataReq.rn;

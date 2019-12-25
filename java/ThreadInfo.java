@@ -1,13 +1,15 @@
 package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.location.BDLocation;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ThreadInfo extends Message {
     public static final String DEFAULT_AB_TAG = "";
+    public static final String DEFAULT_ARTICLE_COVER = "";
     public static final String DEFAULT_CATEGORY_NAME = "";
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
@@ -22,12 +24,14 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_LIVE_POST_TYPE = "";
     public static final String DEFAULT_MEIZHI_PIC = "";
     public static final String DEFAULT_MULTI_FORUM_TEXT = "";
+    public static final String DEFAULT_NID = "";
     public static final String DEFAULT_PIDS = "";
     public static final String DEFAULT_PRESENTATION_STYLE = "";
     public static final String DEFAULT_RECOM_EXTRA = "";
     public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_RECOM_SOURCE = "";
     public static final String DEFAULT_RECOM_WEIGHT = "";
+    public static final String DEFAULT_SCARD_PACKET_ID = "";
     public static final String DEFAULT_TIEBA_GAME_INFORMATION_SOURCE = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_TOPIC_H5_URL = "";
@@ -60,12 +64,18 @@ public final class ThreadInfo extends Message {
     public final AppCode app_code;
     @ProtoField(tag = 117)
     public final AppInfo app_info;
+    @ProtoField(tag = BDLocation.TypeServerDecryptError, type = Message.Datatype.STRING)
+    public final String article_cover;
     @ProtoField(tag = 138, type = Message.Datatype.INT64)
     public final Long audit_time;
     @ProtoField(tag = 18)
     public final User author;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long author_id;
+    @ProtoField(tag = 169)
+    public final Baijiahao baijiahao;
+    @ProtoField(tag = 163, type = Message.Datatype.INT32)
+    public final Integer bjh_content_tag;
     @ProtoField(tag = 102)
     public final BookThread book_chapter;
     @ProtoField(tag = 92)
@@ -88,7 +98,7 @@ public final class ThreadInfo extends Message {
     public final String daily_paper_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = Constants.METHOD_IM_FRIEND_GROUP_DROP)
+    @ProtoField(label = Message.Label.REPEATED, tag = 121)
     public final List<DeclareInfo> declare_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
@@ -130,6 +140,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
+    @ProtoField(tag = BDLocation.TypeNetWorkLocation, type = Message.Datatype.INT32)
+    public final Integer is_bjh;
     @ProtoField(tag = 103, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
@@ -178,6 +190,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_pic;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
+    @ProtoField(tag = Constants.METHOD_IM_GET_USER_PROFILE_BY_BAIDU_UID, type = Message.Datatype.UINT32)
+    public final Integer is_s_card;
     @ProtoField(tag = 143, type = Message.Datatype.INT32)
     public final Integer is_share_thread;
     @ProtoField(tag = 134, type = Message.Datatype.INT32)
@@ -230,6 +244,8 @@ public final class ThreadInfo extends Message {
     public final String multi_forum_text;
     @ProtoField(label = Message.Label.REPEATED, tag = 122)
     public final List<MultipleForum> multiple_forum_list;
+    @ProtoField(tag = 164, type = Message.Datatype.STRING)
+    public final String nid;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
     @ProtoField(tag = 152)
@@ -276,6 +292,8 @@ public final class ThreadInfo extends Message {
     public final List<PbContent> rich_abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 111)
     public final List<PbContent> rich_title;
+    @ProtoField(tag = Constants.METHOD_IM_GET_USERS_PROFILE_BATCH_BY_BAIDU_UID, type = Message.Datatype.STRING)
+    public final String scard_packet_id;
     @ProtoField(tag = 135, type = Message.Datatype.INT64)
     public final Long share_num;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
@@ -436,7 +454,10 @@ public final class ThreadInfo extends Message {
     public static final Long DEFAULT_TRANS_NUM = 0L;
     public static final Integer DEFAULT_IS_TOPIC = 0;
     public static final Integer DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD = 0;
+    public static final Integer DEFAULT_IS_BJH = 0;
+    public static final Integer DEFAULT_BJH_CONTENT_TAG = 0;
     public static final Integer DEFAULT_IS_HEADLINEPOST = 0;
+    public static final Integer DEFAULT_IS_S_CARD = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1057,11 +1078,42 @@ public final class ThreadInfo extends Message {
                 this.t_share_img = builder.t_share_img;
             }
             this.topic_module = builder.topic_module;
+            if (builder.is_bjh == null) {
+                this.is_bjh = DEFAULT_IS_BJH;
+            } else {
+                this.is_bjh = builder.is_bjh;
+            }
+            if (builder.article_cover == null) {
+                this.article_cover = "";
+            } else {
+                this.article_cover = builder.article_cover;
+            }
+            if (builder.bjh_content_tag == null) {
+                this.bjh_content_tag = DEFAULT_BJH_CONTENT_TAG;
+            } else {
+                this.bjh_content_tag = builder.bjh_content_tag;
+            }
+            if (builder.nid == null) {
+                this.nid = "";
+            } else {
+                this.nid = builder.nid;
+            }
             if (builder.is_headlinepost == null) {
                 this.is_headlinepost = DEFAULT_IS_HEADLINEPOST;
-                return;
             } else {
                 this.is_headlinepost = builder.is_headlinepost;
+            }
+            this.baijiahao = builder.baijiahao;
+            if (builder.is_s_card == null) {
+                this.is_s_card = DEFAULT_IS_S_CARD;
+            } else {
+                this.is_s_card = builder.is_s_card;
+            }
+            if (builder.scard_packet_id == null) {
+                this.scard_packet_id = "";
+                return;
+            } else {
+                this.scard_packet_id = builder.scard_packet_id;
                 return;
             }
         }
@@ -1221,10 +1273,17 @@ public final class ThreadInfo extends Message {
         this.is_top_img = builder.is_top_img;
         this.t_share_img = builder.t_share_img;
         this.topic_module = builder.topic_module;
+        this.is_bjh = builder.is_bjh;
+        this.article_cover = builder.article_cover;
+        this.bjh_content_tag = builder.bjh_content_tag;
+        this.nid = builder.nid;
         this.is_headlinepost = builder.is_headlinepost;
+        this.baijiahao = builder.baijiahao;
+        this.is_s_card = builder.is_s_card;
+        this.scard_packet_id = builder.scard_packet_id;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
         public String ab_tag;
@@ -1237,9 +1296,12 @@ public final class ThreadInfo extends Message {
         public AnimationThread animation_info;
         public AppCode app_code;
         public AppInfo app_info;
+        public String article_cover;
         public Long audit_time;
         public User author;
         public Long author_id;
+        public Baijiahao baijiahao;
+        public Integer bjh_content_tag;
         public BookThread book_chapter;
         public CartoonThread cartoon_info;
         public String category_name;
@@ -1272,6 +1334,7 @@ public final class ThreadInfo extends Message {
         public Integer is_activity;
         public Integer is_ad;
         public Integer is_bakan;
+        public Integer is_bjh;
         public Integer is_book_chapter;
         public Integer is_bub;
         public Integer is_called;
@@ -1296,6 +1359,7 @@ public final class ThreadInfo extends Message {
         public Integer is_partial_visible;
         public Integer is_pic;
         public Integer is_protal;
+        public Integer is_s_card;
         public Integer is_share_thread;
         public Integer is_story_audit;
         public Integer is_tbread_dispatch;
@@ -1322,6 +1386,7 @@ public final class ThreadInfo extends Message {
         public Integer middle_page_pass_flag;
         public String multi_forum_text;
         public List<MultipleForum> multiple_forum_list;
+        public String nid;
         public Integer operator_flag;
         public OriForumInfo ori_forum_info;
         public OriginThreadInfo origin_thread_info;
@@ -1345,6 +1410,7 @@ public final class ThreadInfo extends Message {
         public Integer repost_num;
         public List<PbContent> rich_abstract;
         public List<PbContent> rich_title;
+        public String scard_packet_id;
         public Long share_num;
         public Integer show_commented;
         public SkinInfo skin_info;
@@ -1546,7 +1612,14 @@ public final class ThreadInfo extends Message {
                 this.is_top_img = threadInfo.is_top_img;
                 this.t_share_img = threadInfo.t_share_img;
                 this.topic_module = threadInfo.topic_module;
+                this.is_bjh = threadInfo.is_bjh;
+                this.article_cover = threadInfo.article_cover;
+                this.bjh_content_tag = threadInfo.bjh_content_tag;
+                this.nid = threadInfo.nid;
                 this.is_headlinepost = threadInfo.is_headlinepost;
+                this.baijiahao = threadInfo.baijiahao;
+                this.is_s_card = threadInfo.is_s_card;
+                this.scard_packet_id = threadInfo.scard_packet_id;
             }
         }
 

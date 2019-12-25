@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<ForumSpaceForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;
@@ -33,7 +33,7 @@ public final class DataRes extends Message {
         this.has_more = builder.has_more;
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ForumSpaceForumInfo> forum_info;
         public Integer has_more;

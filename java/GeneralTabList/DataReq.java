@@ -3,10 +3,12 @@ package tbclient.GeneralTabList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1048common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -38,7 +40,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1048common = builder.f1049common;
             if (builder.tab_id == null) {
                 this.tab_id = DEFAULT_TAB_ID;
             } else {
@@ -87,7 +89,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1048common = builder.f1049common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;
@@ -99,9 +101,11 @@ public final class DataReq extends Message {
         this.is_default_navtab = builder.is_default_navtab;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1049common;
         public Long forum_id;
         public Integer is_default_navtab;
         public Long last_thread_id;
@@ -118,7 +122,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1049common = dataReq.f1048common;
                 this.tab_id = dataReq.tab_id;
                 this.forum_id = dataReq.forum_id;
                 this.pn = dataReq.pn;

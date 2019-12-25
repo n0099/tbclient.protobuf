@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class High extends Message {
     public static final String DEFAULT_PIC_URL = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -112,7 +112,7 @@ public final class High extends Message {
         this.user_name = builder.user_name;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<High> {
         public Long album_id;
         public Integer create_time;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Page extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer cur_good_id;
@@ -14,6 +14,8 @@ public final class Page extends Message {
     public final Integer has_prev;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer lz_total_floor;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer new_total_page;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer offset;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -43,6 +45,7 @@ public final class Page extends Message {
     public static final Integer DEFAULT_TNUM = 0;
     public static final Integer DEFAULT_TOTAL_NUM = 0;
     public static final Integer DEFAULT_LZ_TOTAL_FLOOR = 0;
+    public static final Integer DEFAULT_NEW_TOTAL_PAGE = 0;
 
     private Page(Builder builder, boolean z) {
         super(builder);
@@ -109,9 +112,14 @@ public final class Page extends Message {
             }
             if (builder.lz_total_floor == null) {
                 this.lz_total_floor = DEFAULT_LZ_TOTAL_FLOOR;
-                return;
             } else {
                 this.lz_total_floor = builder.lz_total_floor;
+            }
+            if (builder.new_total_page == null) {
+                this.new_total_page = DEFAULT_NEW_TOTAL_PAGE;
+                return;
+            } else {
+                this.new_total_page = builder.new_total_page;
                 return;
             }
         }
@@ -128,15 +136,17 @@ public final class Page extends Message {
         this.tnum = builder.tnum;
         this.total_num = builder.total_num;
         this.lz_total_floor = builder.lz_total_floor;
+        this.new_total_page = builder.new_total_page;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<Page> {
         public Integer cur_good_id;
         public Integer current_page;
         public Integer has_more;
         public Integer has_prev;
         public Integer lz_total_floor;
+        public Integer new_total_page;
         public Integer offset;
         public Integer page_size;
         public Integer pnum;
@@ -165,6 +175,7 @@ public final class Page extends Message {
                 this.tnum = page.tnum;
                 this.total_num = page.total_num;
                 this.lz_total_floor = page.lz_total_floor;
+                this.new_total_page = page.new_total_page;
             }
         }
 

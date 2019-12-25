@@ -5,18 +5,20 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final List<String> DEFAULT_PORTRAIT = Collections.emptyList();
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1134common;
     @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
     public final List<String> portrait;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1134common = builder.f1135common;
             if (builder.portrait == null) {
                 this.portrait = DEFAULT_PORTRAIT;
                 return;
@@ -25,13 +27,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1134common = builder.f1135common;
         this.portrait = immutableCopyOf(builder.portrait);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1135common;
         public List<String> portrait;
 
         public Builder() {
@@ -40,7 +44,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1135common = dataReq.f1134common;
                 this.portrait = DataReq.copyOf(dataReq.portrait);
             }
         }

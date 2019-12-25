@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AgreeList extends Message {
     @ProtoField(tag = 8)
     public final User agreeer;
@@ -60,7 +60,7 @@ public final class AgreeList extends Message {
         this.post_info = builder.post_info;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<AgreeList> {
         public User agreeer;
         public Long id;

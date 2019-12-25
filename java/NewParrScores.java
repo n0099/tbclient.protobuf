@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NewParrScores extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long i_total;
@@ -40,7 +40,7 @@ public final class NewParrScores extends Message {
         this.i_total = builder.i_total;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<NewParrScores> {
         public Long i_total;
         public Long scores_total;

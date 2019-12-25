@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DailyInfo extends Message {
     public static final String DEFAULT_TAB_NAME = "";
     public static final String DEFAULT_UPDATE_TIME = "";
@@ -51,7 +51,7 @@ public final class DailyInfo extends Message {
         this.has_more = builder.has_more;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DailyInfo> {
         public Integer has_more;
         public String tab_name;

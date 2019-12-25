@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class OriForumInfo extends Message {
     public static final String DEFAULT_ORI_AVATAR = "";
     public static final String DEFAULT_ORI_FNAME = "";
@@ -49,7 +49,7 @@ public final class OriForumInfo extends Message {
         this.ori_member_num = builder.ori_member_num;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<OriForumInfo> {
         public String ori_avatar;
         public Long ori_fid;

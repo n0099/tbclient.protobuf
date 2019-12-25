@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RealTime extends Message {
     public static final String DEFAULT_ICON = "";
     public static final Long DEFAULT_TASK_ID = 0L;
@@ -40,7 +40,7 @@ public final class RealTime extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<RealTime> {
         public String icon;
         public Long task_id;

@@ -3,13 +3,15 @@ package tbclient.QueryCollectUpdateNum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_COLLECT_MARK = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer collect_mark;
     @ProtoField(tag = 2)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1160common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -19,17 +21,19 @@ public final class DataReq extends Message {
             } else {
                 this.collect_mark = builder.collect_mark;
             }
-            this.common = builder.common;
+            this.f1160common = builder.f1161common;
             return;
         }
         this.collect_mark = builder.collect_mark;
-        this.common = builder.common;
+        this.f1160common = builder.f1161common;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer collect_mark;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1161common;
 
         public Builder() {
         }
@@ -38,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.collect_mark = dataReq.collect_mark;
-                this.common = dataReq.common;
+                this.f1161common = dataReq.f1160common;
             }
         }
 

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Superscript extends Message {
     public static final String DEFAULT_COLOR = "";
     public static final String DEFAULT_DESC = "";
@@ -31,7 +31,7 @@ public final class Superscript extends Message {
         this.color = builder.color;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<Superscript> {
         public String color;
         public String desc;

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WorldCupNews extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
@@ -31,7 +31,7 @@ public final class WorldCupNews extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<WorldCupNews> {
         public String title;
         public String url;

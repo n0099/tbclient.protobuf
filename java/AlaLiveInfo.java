@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
@@ -247,7 +247,7 @@ public final class AlaLiveInfo extends Message {
         this.frs_toplive_force = builder.frs_toplive_force;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
         public Integer audience_count;
         public AlaChallengeInfo challenge_info;

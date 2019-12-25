@@ -2,8 +2,10 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ThemeColorInfo extends Message {
+    @ProtoField(tag = 3)
+    public final ThemeElement dark;
     @ProtoField(tag = 1)
     public final ThemeElement day;
     @ProtoField(tag = 2)
@@ -14,14 +16,17 @@ public final class ThemeColorInfo extends Message {
         if (z) {
             this.day = builder.day;
             this.night = builder.night;
+            this.dark = builder.dark;
             return;
         }
         this.day = builder.day;
         this.night = builder.night;
+        this.dark = builder.dark;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ThemeColorInfo> {
+        public ThemeElement dark;
         public ThemeElement day;
         public ThemeElement night;
 
@@ -33,6 +38,7 @@ public final class ThemeColorInfo extends Message {
             if (themeColorInfo != null) {
                 this.day = themeColorInfo.day;
                 this.night = themeColorInfo.night;
+                this.dark = themeColorInfo.dark;
             }
         }
 

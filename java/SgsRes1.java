@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SgsRes1 extends Message {
     public static final Integer DEFAULT_AA = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -22,7 +22,7 @@ public final class SgsRes1 extends Message {
         this.aa = builder.aa;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<SgsRes1> {
         public Integer aa;
 

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_DA_IDFA = "";
@@ -15,6 +15,9 @@ public final class DataReq extends Message {
     public static final String DEFAULT_OBJ_LOCATE = "";
     public static final String DEFAULT_OBJ_PARAM1 = "";
     public static final String DEFAULT_OBJ_SOURCE = "";
+    public static final String DEFAULT_ORI_UGC_NID = "";
+    public static final String DEFAULT_ORI_UGC_TID = "";
+    public static final String DEFAULT_ORI_UGC_VID = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_QUERY_WORD = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
@@ -36,7 +39,9 @@ public final class DataReq extends Message {
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String call_url;
     @ProtoField(tag = 25)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1148common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -85,6 +90,14 @@ public final class DataReq extends Message {
     public final String obj_param1;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String obj_source;
+    @ProtoField(tag = 62, type = Message.Datatype.STRING)
+    public final String ori_ugc_nid;
+    @ProtoField(tag = 63, type = Message.Datatype.STRING)
+    public final String ori_ugc_tid;
+    @ProtoField(tag = 65, type = Message.Datatype.INT32)
+    public final Integer ori_ugc_type;
+    @ProtoField(tag = 66, type = Message.Datatype.STRING)
+    public final String ori_ugc_vid;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pb_rn;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -165,6 +178,7 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
+    public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -289,7 +303,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.common = builder.common;
+            this.f1148common = builder.f1149common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -424,9 +438,29 @@ public final class DataReq extends Message {
             }
             if (builder.shoubai_cuid == null) {
                 this.shoubai_cuid = "";
-                return;
             } else {
                 this.shoubai_cuid = builder.shoubai_cuid;
+            }
+            if (builder.ori_ugc_nid == null) {
+                this.ori_ugc_nid = "";
+            } else {
+                this.ori_ugc_nid = builder.ori_ugc_nid;
+            }
+            if (builder.ori_ugc_tid == null) {
+                this.ori_ugc_tid = "";
+            } else {
+                this.ori_ugc_tid = builder.ori_ugc_tid;
+            }
+            if (builder.ori_ugc_type == null) {
+                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
+            } else {
+                this.ori_ugc_type = builder.ori_ugc_type;
+            }
+            if (builder.ori_ugc_vid == null) {
+                this.ori_ugc_vid = "";
+                return;
+            } else {
+                this.ori_ugc_vid = builder.ori_ugc_vid;
                 return;
             }
         }
@@ -454,7 +488,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.common = builder.common;
+        this.f1148common = builder.f1149common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -484,9 +518,13 @@ public final class DataReq extends Message {
         this.need_log = builder.need_log;
         this.call_url = builder.call_url;
         this.shoubai_cuid = builder.shoubai_cuid;
+        this.ori_ugc_nid = builder.ori_ugc_nid;
+        this.ori_ugc_tid = builder.ori_ugc_tid;
+        this.ori_ugc_type = builder.ori_ugc_type;
+        this.ori_ugc_vid = builder.ori_ugc_vid;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public AdParam ad_param;
         public AppPosInfo app_pos;
@@ -494,7 +532,9 @@ public final class DataReq extends Message {
         public Integer back;
         public Integer banner;
         public String call_url;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1149common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -519,6 +559,10 @@ public final class DataReq extends Message {
         public String obj_locate;
         public String obj_param1;
         public String obj_source;
+        public String ori_ugc_nid;
+        public String ori_ugc_tid;
+        public Integer ori_ugc_type;
+        public String ori_ugc_vid;
         public Integer pb_rn;
         public Long pid;
         public String platform;
@@ -573,7 +617,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.common = dataReq.common;
+                this.f1149common = dataReq.f1148common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;
@@ -603,6 +647,10 @@ public final class DataReq extends Message {
                 this.need_log = dataReq.need_log;
                 this.call_url = dataReq.call_url;
                 this.shoubai_cuid = dataReq.shoubai_cuid;
+                this.ori_ugc_nid = dataReq.ori_ugc_nid;
+                this.ori_ugc_tid = dataReq.ori_ugc_tid;
+                this.ori_ugc_type = dataReq.ori_ugc_type;
+                this.ori_ugc_vid = dataReq.ori_ugc_vid;
             }
         }
 

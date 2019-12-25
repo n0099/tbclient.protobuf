@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AdInfo;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final List<AdInfo> DEFAULT_AD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;
@@ -43,7 +43,7 @@ public final class DataRes extends Message {
         this.offset = builder.offset;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<AdInfo> ad_list;
         public Integer has_more;

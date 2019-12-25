@@ -3,7 +3,7 @@ package tbclient.GetMoreMsg;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class GetMoreMsgResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetMoreMsgResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<GetMoreMsgResIdl> {
         public DataRes data;
         public Error error;

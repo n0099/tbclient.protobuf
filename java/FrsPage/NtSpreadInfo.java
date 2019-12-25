@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NtSpreadInfo extends Message {
     public static final String DEFAULT_LINK_URL = "";
     public static final List<String> DEFAULT_PICS = Collections.emptyList();
@@ -96,7 +96,7 @@ public final class NtSpreadInfo extends Message {
         this.publish_date = builder.publish_date;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<NtSpreadInfo> {
         public String link_url;
         public List<String> pics;

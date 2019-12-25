@@ -1,16 +1,16 @@
-package tbclient.GetChannelInfo;
+package tbclient.RecomVideo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
 /* loaded from: classes6.dex */
-public final class GetChannelInfoResIdl extends Message {
+public final class RecomVideoResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    private GetChannelInfoResIdl(Builder builder, boolean z) {
+    private RecomVideoResIdl(Builder builder, boolean z) {
         super(builder);
         if (z) {
             this.error = builder.error;
@@ -22,25 +22,25 @@ public final class GetChannelInfoResIdl extends Message {
     }
 
     /* loaded from: classes6.dex */
-    public static final class Builder extends Message.Builder<GetChannelInfoResIdl> {
+    public static final class Builder extends Message.Builder<RecomVideoResIdl> {
         public DataRes data;
         public Error error;
 
         public Builder() {
         }
 
-        public Builder(GetChannelInfoResIdl getChannelInfoResIdl) {
-            super(getChannelInfoResIdl);
-            if (getChannelInfoResIdl != null) {
-                this.error = getChannelInfoResIdl.error;
-                this.data = getChannelInfoResIdl.data;
+        public Builder(RecomVideoResIdl recomVideoResIdl) {
+            super(recomVideoResIdl);
+            if (recomVideoResIdl != null) {
+                this.error = recomVideoResIdl.error;
+                this.data = recomVideoResIdl.data;
             }
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetChannelInfoResIdl build(boolean z) {
-            return new GetChannelInfoResIdl(this, z);
+        public RecomVideoResIdl build(boolean z) {
+            return new RecomVideoResIdl(this, z);
         }
     }
 }

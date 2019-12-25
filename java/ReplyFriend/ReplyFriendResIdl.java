@@ -3,7 +3,7 @@ package tbclient.ReplyFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ReplyFriendResIdl extends Message {
     @ProtoField(tag = 1)
     public final ResData data;
@@ -21,7 +21,7 @@ public final class ReplyFriendResIdl extends Message {
         this.error = builder.error;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ReplyFriendResIdl> {
         public ResData data;
         public Error error;

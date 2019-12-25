@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Equipment extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -31,7 +31,7 @@ public final class Equipment extends Message {
         this.portrait = builder.portrait;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<Equipment> {
         public String name;
         public String portrait;

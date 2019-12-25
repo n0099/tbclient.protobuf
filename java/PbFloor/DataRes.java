@@ -10,10 +10,12 @@ import tbclient.Post;
 import tbclient.SimpleForum;
 import tbclient.SubPostList;
 import tbclient.ThreadInfo;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final Anti anti;
+    @ProtoField(tag = 8)
+    public final SimpleForum display_forum;
     @ProtoField(tag = 6)
     public final SimpleForum forum;
     @ProtoField(tag = 1)
@@ -44,11 +46,11 @@ public final class DataRes extends Message {
             this.forum = builder.forum;
             if (builder.server_time == null) {
                 this.server_time = DEFAULT_SERVER_TIME;
-                return;
             } else {
                 this.server_time = builder.server_time;
-                return;
             }
+            this.display_forum = builder.display_forum;
+            return;
         }
         this.page = builder.page;
         this.anti = builder.anti;
@@ -57,11 +59,13 @@ public final class DataRes extends Message {
         this.thread = builder.thread;
         this.forum = builder.forum;
         this.server_time = builder.server_time;
+        this.display_forum = builder.display_forum;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Anti anti;
+        public SimpleForum display_forum;
         public SimpleForum forum;
         public Page page;
         public Post post;
@@ -82,6 +86,7 @@ public final class DataRes extends Message {
                 this.thread = dataRes.thread;
                 this.forum = dataRes.forum;
                 this.server_time = dataRes.server_time;
+                this.display_forum = dataRes.display_forum;
             }
         }
 

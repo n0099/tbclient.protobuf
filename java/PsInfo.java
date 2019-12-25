@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PsInfo extends Message {
     public static final String DEFAULT_GAME_INTRO = "";
     public static final String DEFAULT_GAME_PIC_URL = "";
@@ -58,7 +58,7 @@ public final class PsInfo extends Message {
         this.game_intro = builder.game_intro;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<PsInfo> {
         public Long game_id;
         public String game_intro;

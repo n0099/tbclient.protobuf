@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NativeApp extends Message {
     public static final String DEFAULT_DOWNLOAD_AND = "";
     public static final String DEFAULT_DOWNLOAD_IOS = "";
@@ -49,7 +49,7 @@ public final class NativeApp extends Message {
         this.download_ios = builder.download_ios;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<NativeApp> {
         public String download_and;
         public String download_ios;

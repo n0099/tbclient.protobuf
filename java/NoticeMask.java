@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NoticeMask extends Message {
     public static final Integer DEFAULT_ATTR_TYPE = 0;
     public static final String DEFAULT_ATTR_VALUE = "";
@@ -31,7 +31,7 @@ public final class NoticeMask extends Message {
         this.attr_value = builder.attr_value;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<NoticeMask> {
         public Integer attr_type;
         public String attr_value;

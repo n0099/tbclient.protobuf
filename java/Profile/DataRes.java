@@ -16,11 +16,12 @@ import tbclient.ModuleInfo;
 import tbclient.PostInfoList;
 import tbclient.SmartApp;
 import tbclient.TbBookrack;
+import tbclient.ThreadInfo;
 import tbclient.UcCard;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 16)
     public final AlaLiveInfo ala_live_info;
@@ -32,6 +33,8 @@ public final class DataRes extends Message {
     public final List<BannerImage> banner;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<ForumDynamic> concerned_forum_list;
+    @ProtoField(tag = 24)
+    public final Duxiaoman duxiaoman;
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
     public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 10)
@@ -40,6 +43,8 @@ public final class DataRes extends Message {
     public final Highlist highs;
     @ProtoField(tag = 15)
     public final ModuleInfo module_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 25)
+    public final List<ThreadInfo> newest_dynamic_list;
     @ProtoField(tag = 17)
     public final NicknameInfo nickname_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
@@ -74,6 +79,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SHOW_ANSWER = 0;
     public static final List<BannerImage> DEFAULT_BANNER = Collections.emptyList();
     public static final List<SmartApp> DEFAULT_RECOM_SWAN_LIST = Collections.emptyList();
+    public static final List<ThreadInfo> DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -129,9 +135,15 @@ public final class DataRes extends Message {
             }
             if (builder.recom_swan_list == null) {
                 this.recom_swan_list = DEFAULT_RECOM_SWAN_LIST;
-                return;
             } else {
                 this.recom_swan_list = immutableCopyOf(builder.recom_swan_list);
+            }
+            this.duxiaoman = builder.duxiaoman;
+            if (builder.newest_dynamic_list == null) {
+                this.newest_dynamic_list = DEFAULT_NEWEST_DYNAMIC_LIST;
+                return;
+            } else {
+                this.newest_dynamic_list = immutableCopyOf(builder.newest_dynamic_list);
                 return;
             }
         }
@@ -157,19 +169,23 @@ public final class DataRes extends Message {
         this.show_answer = builder.show_answer;
         this.banner = immutableCopyOf(builder.banner);
         this.recom_swan_list = immutableCopyOf(builder.recom_swan_list);
+        this.duxiaoman = builder.duxiaoman;
+        this.newest_dynamic_list = immutableCopyOf(builder.newest_dynamic_list);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AlaLiveInfo ala_live_info;
         public List<AlaLiveInfo> ala_live_record;
         public Anti anti_stat;
         public List<BannerImage> banner;
         public List<ForumDynamic> concerned_forum_list;
+        public Duxiaoman duxiaoman;
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
         public Highlist highs;
         public ModuleInfo module_info;
+        public List<ThreadInfo> newest_dynamic_list;
         public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
         public List<SmartApp> recom_swan_list;
@@ -212,6 +228,8 @@ public final class DataRes extends Message {
                 this.show_answer = dataRes.show_answer;
                 this.banner = DataRes.copyOf(dataRes.banner);
                 this.recom_swan_list = DataRes.copyOf(dataRes.recom_swan_list);
+                this.duxiaoman = dataRes.duxiaoman;
+                this.newest_dynamic_list = DataRes.copyOf(dataRes.newest_dynamic_list);
             }
         }
 

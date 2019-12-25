@@ -2,10 +2,11 @@ package tbclient.ReplyMe;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.Baijiahao;
 import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ReplyList extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FNAME = "";
@@ -14,12 +15,16 @@ public final class ReplyList extends Message {
     public static final String DEFAULT_QUOTE_CONTENT = "";
     public static final String DEFAULT_THREAD_IMG_URL = "";
     public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 27)
+    public final Baijiahao baijiahao;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String fname;
     @ProtoField(tag = 19, type = Message.Datatype.UINT32)
     public final Integer hide_fname;
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    public final Integer is_bjh;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer is_floor;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
@@ -77,6 +82,7 @@ public final class ReplyList extends Message {
     public static final Integer DEFAULT_HIDE_FNAME = 0;
     public static final Integer DEFAULT_IS_STORY = 0;
     public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
+    public static final Integer DEFAULT_IS_BJH = 0;
 
     private ReplyList(Builder builder, boolean z) {
         super(builder);
@@ -186,6 +192,12 @@ public final class ReplyList extends Message {
                 this.thread_img_url = builder.thread_img_url;
             }
             this.thread_author_user = builder.thread_author_user;
+            if (builder.is_bjh == null) {
+                this.is_bjh = DEFAULT_IS_BJH;
+            } else {
+                this.is_bjh = builder.is_bjh;
+            }
+            this.baijiahao = builder.baijiahao;
             return;
         }
         this.thread_id = builder.thread_id;
@@ -213,13 +225,17 @@ public final class ReplyList extends Message {
         this.is_share_thread = builder.is_share_thread;
         this.thread_img_url = builder.thread_img_url;
         this.thread_author_user = builder.thread_author_user;
+        this.is_bjh = builder.is_bjh;
+        this.baijiahao = builder.baijiahao;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ReplyList> {
+        public Baijiahao baijiahao;
         public String content;
         public String fname;
         public Integer hide_fname;
+        public Integer is_bjh;
         public Integer is_floor;
         public Integer is_share_thread;
         public Integer is_story;
@@ -274,6 +290,8 @@ public final class ReplyList extends Message {
                 this.is_share_thread = replyList.is_share_thread;
                 this.thread_img_url = replyList.thread_img_url;
                 this.thread_author_user = replyList.thread_author_user;
+                this.is_bjh = replyList.is_bjh;
+                this.baijiahao = replyList.baijiahao;
             }
         }
 

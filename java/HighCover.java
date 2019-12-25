@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HighCover extends Message {
     public static final String DEFAULT_PIC_URL = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -22,7 +22,7 @@ public final class HighCover extends Message {
         this.pic_url = builder.pic_url;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<HighCover> {
         public String pic_url;
 

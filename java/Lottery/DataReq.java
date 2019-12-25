@@ -3,7 +3,7 @@ package tbclient.Lottery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_USER_NAME = "";
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -11,7 +11,9 @@ public final class DataReq extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.INT64)
     public final Long award_act_id;
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1132common;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long component_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -35,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1132common = builder.f1133common;
             if (builder.user_id == null) {
                 this.user_id = DEFAULT_USER_ID;
             } else {
@@ -79,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1132common = builder.f1133common;
         this.user_id = builder.user_id;
         this.user_name = builder.user_name;
         this.forum_id = builder.forum_id;
@@ -90,11 +92,13 @@ public final class DataReq extends Message {
         this.component_id = builder.component_id;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long activity_id;
         public Long award_act_id;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1133common;
         public Long component_id;
         public Long forum_id;
         public Integer from_type;
@@ -108,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1133common = dataReq.f1132common;
                 this.user_id = dataReq.user_id;
                 this.user_name = dataReq.user_name;
                 this.forum_id = dataReq.forum_id;

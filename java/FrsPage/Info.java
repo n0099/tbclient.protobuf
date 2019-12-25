@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Info extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer post_num;
@@ -42,7 +42,7 @@ public final class Info extends Message {
         this.recm_forum_list = immutableCopyOf(builder.recm_forum_list);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<Info> {
         public Integer post_num;
         public List<RecmForumInfo> recm_forum_list;

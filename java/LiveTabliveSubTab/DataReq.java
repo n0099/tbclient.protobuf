@@ -3,12 +3,14 @@ package tbclient.LiveTabliveSubTab;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ENTRY_NAME = "";
     public static final String DEFAULT_LABEL_NAME = "";
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1128common;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer entry_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -41,7 +43,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1128common = builder.f1129common;
             if (builder.entry_name == null) {
                 this.entry_name = "";
             } else {
@@ -95,7 +97,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1128common = builder.f1129common;
         this.entry_name = builder.entry_name;
         this.pn = builder.pn;
         this.ps = builder.ps;
@@ -108,9 +110,11 @@ public final class DataReq extends Message {
         this.sort_type = builder.sort_type;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1129common;
         public Integer entry_id;
         public String entry_name;
         public String label_name;
@@ -128,7 +132,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1129common = dataReq.f1128common;
                 this.entry_name = dataReq.entry_name;
                 this.pn = dataReq.pn;
                 this.ps = dataReq.ps;

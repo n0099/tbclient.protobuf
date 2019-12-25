@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.FloatStrategy;
 import tbclient.MissionInfo;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ACTIVE_URL = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -53,7 +53,7 @@ public final class DataRes extends Message {
         this.float_list = immutableCopyOf(builder.float_list);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String active_url;
         public List<FloatStrategy> float_list;

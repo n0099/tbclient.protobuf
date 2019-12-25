@@ -4,9 +4,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PostInfoList extends Message {
     public static final String DEFAULT_ABSTRACT = "";
+    public static final String DEFAULT_ARTICLE_COVER = "";
     public static final String DEFAULT_CONTENT_THREAD = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_IP = "";
@@ -28,6 +29,10 @@ public final class PostInfoList extends Message {
     public final AlaLiveInfo ala_info;
     @ProtoField(tag = 24)
     public final AnchorInfo anchor_info;
+    @ProtoField(tag = 48, type = Message.Datatype.STRING)
+    public final String article_cover;
+    @ProtoField(tag = 50)
+    public final BaijiahaoInfo baijiahao_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<PostInfoContent> content;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -36,6 +41,8 @@ public final class PostInfoList extends Message {
     public final Integer create_time;
     @ProtoField(tag = 31)
     public final DealInfo deal_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 49)
+    public final List<PbContent> first_post_content;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -137,6 +144,7 @@ public final class PostInfoList extends Message {
     public static final List<PbContent> DEFAULT_RICH_TITLE = Collections.emptyList();
     public static final List<PbContent> DEFAULT_RICH_ABSTRACT = Collections.emptyList();
     public static final Integer DEFAULT_IS_NTITLE = 0;
+    public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -333,11 +341,21 @@ public final class PostInfoList extends Message {
             }
             if (builder.is_ntitle == null) {
                 this.is_ntitle = DEFAULT_IS_NTITLE;
-                return;
             } else {
                 this.is_ntitle = builder.is_ntitle;
-                return;
             }
+            if (builder.article_cover == null) {
+                this.article_cover = "";
+            } else {
+                this.article_cover = builder.article_cover;
+            }
+            if (builder.first_post_content == null) {
+                this.first_post_content = DEFAULT_FIRST_POST_CONTENT;
+            } else {
+                this.first_post_content = immutableCopyOf(builder.first_post_content);
+            }
+            this.baijiahao_info = builder.baijiahao_info;
+            return;
         }
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
@@ -386,9 +404,12 @@ public final class PostInfoList extends Message {
         this.rich_title = immutableCopyOf(builder.rich_title);
         this.rich_abstract = immutableCopyOf(builder.rich_abstract);
         this.is_ntitle = builder.is_ntitle;
+        this.article_cover = builder.article_cover;
+        this.first_post_content = immutableCopyOf(builder.first_post_content);
+        this.baijiahao_info = builder.baijiahao_info;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;
@@ -396,10 +417,13 @@ public final class PostInfoList extends Message {
         public Integer agree_num;
         public AlaLiveInfo ala_info;
         public AnchorInfo anchor_info;
+        public String article_cover;
+        public BaijiahaoInfo baijiahao_info;
         public List<PostInfoContent> content;
         public String content_thread;
         public Integer create_time;
         public DealInfo deal_info;
+        public List<PbContent> first_post_content;
         public Long forum_id;
         public String forum_name;
         public Integer freq_num;
@@ -491,6 +515,9 @@ public final class PostInfoList extends Message {
                 this.rich_title = PostInfoList.copyOf(postInfoList.rich_title);
                 this.rich_abstract = PostInfoList.copyOf(postInfoList.rich_abstract);
                 this.is_ntitle = postInfoList.is_ntitle;
+                this.article_cover = postInfoList.article_cover;
+                this.first_post_content = PostInfoList.copyOf(postInfoList.first_post_content);
+                this.baijiahao_info = postInfoList.baijiahao_info;
             }
         }
 

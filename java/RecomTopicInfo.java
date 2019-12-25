@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RecomTopicInfo extends Message {
     public static final String DEFAULT_RECOM_TITLE = "";
     public static final List<RecomTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
@@ -33,7 +33,7 @@ public final class RecomTopicInfo extends Message {
         this.topic_list = immutableCopyOf(builder.topic_list);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<RecomTopicInfo> {
         public String recom_title;
         public List<RecomTopicList> topic_list;

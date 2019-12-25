@@ -16,6 +16,7 @@ import tbclient.Page;
 import tbclient.PbHotPost;
 import tbclient.PbTopAgreePost;
 import tbclient.Post;
+import tbclient.Promotion;
 import tbclient.PsRankListItem;
 import tbclient.RecomTopicList;
 import tbclient.RecommendThread;
@@ -25,7 +26,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_FOLD_TIP = "";
@@ -43,6 +44,8 @@ public final class DataRes extends Message {
     public final String asp_shown_info;
     @ProtoField(tag = 12)
     public final BannerList banner_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 52)
+    public final List<ThreadInfo> bjh_recommend;
     @ProtoField(tag = 53)
     public final BusinessPromotInfo business_promot_info;
     @ProtoField(tag = 39)
@@ -107,6 +110,8 @@ public final class DataRes extends Message {
     public final List<PostBanner> post_banner;
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
     public final List<Post> post_list;
+    @ProtoField(tag = 54)
+    public final Promotion promotion;
     @ProtoField(tag = 25)
     public final RecommendBook recommend_book;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
@@ -156,6 +161,7 @@ public final class DataRes extends Message {
     public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC = Collections.emptyList();
     public static final List<PbSortType> DEFAULT_PB_SORT_INFO = Collections.emptyList();
     public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -311,7 +317,13 @@ public final class DataRes extends Message {
                 this.sort_type = builder.sort_type;
             }
             this.manager_election = builder.manager_election;
+            if (builder.bjh_recommend == null) {
+                this.bjh_recommend = DEFAULT_BJH_RECOMMEND;
+            } else {
+                this.bjh_recommend = immutableCopyOf(builder.bjh_recommend);
+            }
             this.business_promot_info = builder.business_promot_info;
+            this.promotion = builder.promotion;
             return;
         }
         this.user = builder.user;
@@ -365,10 +377,12 @@ public final class DataRes extends Message {
         this.pb_sort_info = immutableCopyOf(builder.pb_sort_info);
         this.sort_type = builder.sort_type;
         this.manager_election = builder.manager_election;
+        this.bjh_recommend = immutableCopyOf(builder.bjh_recommend);
         this.business_promot_info = builder.business_promot_info;
+        this.promotion = builder.promotion;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
         public AlaLiveInfo ala_info;
@@ -376,6 +390,7 @@ public final class DataRes extends Message {
         public AppealInfo appeal_info;
         public String asp_shown_info;
         public BannerList banner_list;
+        public List<ThreadInfo> bjh_recommend;
         public BusinessPromotInfo business_promot_info;
         public SimpleForum display_forum;
         public Integer exp_guide_today;
@@ -408,6 +423,7 @@ public final class DataRes extends Message {
         public List<PsRankListItem> play_rank_list;
         public List<PostBanner> post_banner;
         public List<Post> post_list;
+        public Promotion promotion;
         public RecommendBook recommend_book;
         public List<RecommendThread> recommend_threads;
         public List<SimpleForum> repost_recommend_forum_list;
@@ -480,7 +496,9 @@ public final class DataRes extends Message {
                 this.pb_sort_info = DataRes.copyOf(dataRes.pb_sort_info);
                 this.sort_type = dataRes.sort_type;
                 this.manager_election = dataRes.manager_election;
+                this.bjh_recommend = DataRes.copyOf(dataRes.bjh_recommend);
                 this.business_promot_info = dataRes.business_promot_info;
+                this.promotion = dataRes.promotion;
             }
         }
 

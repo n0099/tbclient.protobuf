@@ -2,13 +2,15 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BawuRoleInfoPub extends Message {
     public static final String DEFAULT_LEVEL_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_ROLE_NAME = "";
     public static final String DEFAULT_USER_NAME = "";
+    @ProtoField(tag = 10)
+    public final BaijiahaoInfo baijiahao_info;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -77,11 +79,11 @@ public final class BawuRoleInfoPub extends Message {
             }
             if (builder.name_show == null) {
                 this.name_show = "";
-                return;
             } else {
                 this.name_show = builder.name_show;
-                return;
             }
+            this.baijiahao_info = builder.baijiahao_info;
+            return;
         }
         this.forum_id = builder.forum_id;
         this.user_id = builder.user_id;
@@ -92,10 +94,12 @@ public final class BawuRoleInfoPub extends Message {
         this.level_name = builder.level_name;
         this.user_name = builder.user_name;
         this.name_show = builder.name_show;
+        this.baijiahao_info = builder.baijiahao_info;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<BawuRoleInfoPub> {
+        public BaijiahaoInfo baijiahao_info;
         public Long forum_id;
         public String level_name;
         public String name_show;
@@ -121,6 +125,7 @@ public final class BawuRoleInfoPub extends Message {
                 this.level_name = bawuRoleInfoPub.level_name;
                 this.user_name = bawuRoleInfoPub.user_name;
                 this.name_show = bawuRoleInfoPub.name_show;
+                this.baijiahao_info = bawuRoleInfoPub.baijiahao_info;
             }
         }
 

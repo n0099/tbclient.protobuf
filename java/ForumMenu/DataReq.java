@@ -3,11 +3,13 @@ package tbclient.ForumMenu;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes3.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COOKIE = "";
     @ProtoField(tag = 5)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1040common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -43,19 +45,21 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = builder.cookie;
             }
-            this.common = builder.common;
+            this.f1040common = builder.f1041common;
             return;
         }
         this.update_time = builder.update_time;
         this.forum_id = builder.forum_id;
         this.st_param = builder.st_param;
         this.cookie = builder.cookie;
-        this.common = builder.common;
+        this.f1040common = builder.f1041common;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1041common;
         public String cookie;
         public Integer forum_id;
         public Integer st_param;
@@ -71,7 +75,7 @@ public final class DataReq extends Message {
                 this.forum_id = dataReq.forum_id;
                 this.st_param = dataReq.st_param;
                 this.cookie = dataReq.cookie;
-                this.common = dataReq.common;
+                this.f1041common = dataReq.f1040common;
             }
         }
 

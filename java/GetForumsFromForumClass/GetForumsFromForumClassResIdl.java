@@ -3,7 +3,7 @@ package tbclient.GetForumsFromForumClass;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class GetForumsFromForumClassResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetForumsFromForumClassResIdl extends Message {
         this.error = builder.error;
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GetForumsFromForumClassResIdl> {
         public DataRes data;
         public Error error;

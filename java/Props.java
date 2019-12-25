@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Props extends Message {
     public static final String DEFAULT_END_TIME = "";
     public static final String DEFAULT_EXPIRED_NOTIFY = "";
@@ -150,7 +150,7 @@ public final class Props extends Message {
         this.pattern = immutableCopyOf(builder.pattern);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<Props> {
         public List<String> _word;
         public String end_time;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StarInfo extends Message {
     public static final String DEFAULT_HEAD = "";
     public static final String DEFAULT_STAR_FORUM_HEADIMG = "";
@@ -113,7 +113,7 @@ public final class StarInfo extends Message {
         this.star_forum_headimg = builder.star_forum_headimg;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<StarInfo> {
         public Fans fans;
         public List<Focus> focus;

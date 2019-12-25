@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_COOKIE = "";
@@ -42,7 +42,9 @@ public final class DataReq extends Message {
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer class_id;
     @ProtoField(tag = 39)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1044common;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -374,7 +376,7 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = builder.cookie;
             }
-            this.common = builder.common;
+            this.f1044common = builder.f1045common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -508,7 +510,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.debug = builder.debug;
         this.cookie = builder.cookie;
-        this.common = builder.common;
+        this.f1044common = builder.f1045common;
         this.lastids = builder.lastids;
         this.issdk = builder.issdk;
         this.da_idfa = builder.da_idfa;
@@ -531,7 +533,7 @@ public final class DataReq extends Message {
         this.is_default_navtab = builder.is_default_navtab;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public AdParam ad_param;
         public AppPosInfo app_pos;
@@ -541,7 +543,9 @@ public final class DataReq extends Message {
         public Boolean check_login;
         public Integer cid;
         public Integer class_id;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1045common;
         public String cookie;
         public Integer ctime;
         public String da_idfa;
@@ -637,7 +641,7 @@ public final class DataReq extends Message {
                 this.email = dataReq.email;
                 this.debug = dataReq.debug;
                 this.cookie = dataReq.cookie;
-                this.common = dataReq.common;
+                this.f1045common = dataReq.f1044common;
                 this.lastids = dataReq.lastids;
                 this.issdk = dataReq.issdk;
                 this.da_idfa = dataReq.da_idfa;

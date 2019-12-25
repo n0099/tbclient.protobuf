@@ -2,7 +2,7 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Tshow_Icon extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -40,7 +40,7 @@ public final class Tshow_Icon extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<Tshow_Icon> {
         public String icon;
         public String name;

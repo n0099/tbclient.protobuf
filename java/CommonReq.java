@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CommonReq extends Message {
     public static final String DEFAULT_APID = "";
     public static final String DEFAULT_APPLIST = "";
@@ -22,6 +22,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_M_RESULT = "";
     public static final String DEFAULT_M_SIZE_D = "";
     public static final String DEFAULT_M_SIZE_U = "";
+    public static final String DEFAULT_OAID = "";
     public static final String DEFAULT_PVERSION = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
@@ -86,6 +87,8 @@ public final class CommonReq extends Message {
     public final String model;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer net_type;
+    @ProtoField(tag = 34, type = Message.Datatype.STRING)
+    public final String oaid;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String pversion;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
@@ -269,9 +272,14 @@ public final class CommonReq extends Message {
             }
             if (builder.cuid_gid == null) {
                 this.cuid_gid = "";
-                return;
             } else {
                 this.cuid_gid = builder.cuid_gid;
+            }
+            if (builder.oaid == null) {
+                this.oaid = "";
+                return;
+            } else {
+                this.oaid = builder.oaid;
                 return;
             }
         }
@@ -308,9 +316,10 @@ public final class CommonReq extends Message {
         this.z_id = builder.z_id;
         this.cuid_galaxy2 = builder.cuid_galaxy2;
         this.cuid_gid = builder.cuid_gid;
+        this.oaid = builder.oaid;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
         public String BDUSS;
         public String _client_id;
@@ -338,6 +347,7 @@ public final class CommonReq extends Message {
         public String m_size_u;
         public String model;
         public Integer net_type;
+        public String oaid;
         public String pversion;
         public String sign;
         public String smallflow;
@@ -385,6 +395,7 @@ public final class CommonReq extends Message {
                 this.z_id = commonReq.z_id;
                 this.cuid_galaxy2 = commonReq.cuid_galaxy2;
                 this.cuid_gid = commonReq.cuid_gid;
+                this.oaid = commonReq.oaid;
             }
         }
 

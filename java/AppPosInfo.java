@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AppPosInfo extends Message {
     public static final String DEFAULT_AP_MAC = "";
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
@@ -76,7 +76,7 @@ public final class AppPosInfo extends Message {
         this.asp_shown_info = builder.asp_shown_info;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<AppPosInfo> {
         public Long addr_timestamp;
         public Boolean ap_connected;

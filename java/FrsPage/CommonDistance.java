@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CommonDistance extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer distance;
@@ -40,7 +40,7 @@ public final class CommonDistance extends Message {
         this.is_hide = builder.is_hide;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<CommonDistance> {
         public Integer distance;
         public Integer is_hide;

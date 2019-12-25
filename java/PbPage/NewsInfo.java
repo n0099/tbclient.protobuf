@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NewsInfo extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_NEWS_ICON = "";
@@ -76,7 +76,7 @@ public final class NewsInfo extends Message {
         this.button_text = builder.button_text;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<NewsInfo> {
         public String button_text;
         public String news_icon;

@@ -3,10 +3,12 @@ package tbclient.SquareRecommand;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1194common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -26,7 +28,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1194common = builder.f1195common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -55,7 +57,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1194common = builder.f1195common;
         this.pn = builder.pn;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
@@ -63,9 +65,11 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1195common;
         public Integer pn;
         public Integer q_type;
         public Double scr_dip;
@@ -78,7 +82,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1195common = dataReq.f1194common;
                 this.pn = dataReq.pn;
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BusinessPromot extends Message {
     public static final String DEFAULT_IMG = "";
     public static final String DEFAULT_IMG_POPUP = "";
@@ -23,6 +23,8 @@ public final class BusinessPromot extends Message {
     public final Integer join_num;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String thread_id;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer thread_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -33,6 +35,7 @@ public final class BusinessPromot extends Message {
     public static final Integer DEFAULT_JOIN_NUM = 0;
     public static final List<BusinessPromotCommentList> DEFAULT_COMMENT_LIST = Collections.emptyList();
     public static final Long DEFAULT_ID = 0L;
+    public static final Integer DEFAULT_THREAD_TYPE = 0;
 
     private BusinessPromot(Builder builder, boolean z) {
         super(builder);
@@ -79,9 +82,14 @@ public final class BusinessPromot extends Message {
             }
             if (builder.id == null) {
                 this.id = DEFAULT_ID;
-                return;
             } else {
                 this.id = builder.id;
+            }
+            if (builder.thread_type == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+                return;
+            } else {
+                this.thread_type = builder.thread_type;
                 return;
             }
         }
@@ -94,9 +102,10 @@ public final class BusinessPromot extends Message {
         this.join_num = builder.join_num;
         this.comment_list = immutableCopyOf(builder.comment_list);
         this.id = builder.id;
+        this.thread_type = builder.thread_type;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<BusinessPromot> {
         public List<BusinessPromotCommentList> comment_list;
         public Long id;
@@ -104,6 +113,7 @@ public final class BusinessPromot extends Message {
         public String img_popup;
         public Integer join_num;
         public String thread_id;
+        public Integer thread_type;
         public String title;
         public Integer type;
         public String url;
@@ -123,6 +133,7 @@ public final class BusinessPromot extends Message {
                 this.join_num = businessPromot.join_num;
                 this.comment_list = BusinessPromot.copyOf(businessPromot.comment_list);
                 this.id = businessPromot.id;
+                this.thread_type = businessPromot.thread_type;
             }
         }
 

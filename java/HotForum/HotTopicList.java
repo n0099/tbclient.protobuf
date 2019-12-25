@@ -2,7 +2,7 @@ package tbclient.HotForum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes8.dex */
 public final class HotTopicList extends Message {
     public static final String DEFAULT_TOPIC_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
@@ -58,7 +58,7 @@ public final class HotTopicList extends Message {
         this.tag = builder.tag;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<HotTopicList> {
         public Long discuss_num;
         public Integer tag;

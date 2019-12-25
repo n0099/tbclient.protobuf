@@ -3,13 +3,15 @@ package tbclient.AddFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ReqData extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final String DEFAULT_MESSAGE = "";
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 4)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f994common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -35,18 +37,20 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = builder.st_type;
             }
-            this.common = builder.common;
+            this.f994common = builder.f995common;
             return;
         }
         this.friend_id = builder.friend_id;
         this.message = builder.message;
         this.st_type = builder.st_type;
-        this.common = builder.common;
+        this.f994common = builder.f995common;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ReqData> {
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f995common;
         public Long friend_id;
         public String message;
         public String st_type;
@@ -60,7 +64,7 @@ public final class ReqData extends Message {
                 this.friend_id = reqData.friend_id;
                 this.message = reqData.message;
                 this.st_type = reqData.st_type;
-                this.common = reqData.common;
+                this.f995common = reqData.f994common;
             }
         }
 

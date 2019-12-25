@@ -3,7 +3,7 @@ package tbclient.GetPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.SimpleUser;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ResData extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer forum_num;
@@ -81,7 +81,7 @@ public final class ResData extends Message {
         this.reply = builder.reply;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<ResData> {
         public Integer forum_num;
         public Integer group;

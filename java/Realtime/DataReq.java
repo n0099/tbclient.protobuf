@@ -3,17 +3,34 @@ package tbclient.Realtime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
+    public static final String DEFAULT_ORI_UGC_NID = "";
+    public static final String DEFAULT_ORI_UGC_TID = "";
+    public static final String DEFAULT_ORI_UGC_TYPE = "";
+    public static final String DEFAULT_ORI_UGC_VID = "";
+    public static final String DEFAULT_PAGE = "";
     public static final String DEFAULT_SOURCE = "";
     public static final String DEFAULT_WEIGHT = "";
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String abtest_tag;
     @ProtoField(tag = 1)
-    public final CommonReq common;
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1162common;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer location;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String ori_ugc_nid;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String ori_ugc_tid;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String ori_ugc_type;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String ori_ugc_vid;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String page;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String source;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -29,7 +46,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.common = builder.common;
+            this.f1162common = builder.f1163common;
             if (builder.tid == null) {
                 this.tid = DEFAULT_TID;
             } else {
@@ -57,26 +74,63 @@ public final class DataReq extends Message {
             }
             if (builder.type == null) {
                 this.type = DEFAULT_TYPE;
-                return;
             } else {
                 this.type = builder.type;
+            }
+            if (builder.page == null) {
+                this.page = "";
+            } else {
+                this.page = builder.page;
+            }
+            if (builder.ori_ugc_nid == null) {
+                this.ori_ugc_nid = "";
+            } else {
+                this.ori_ugc_nid = builder.ori_ugc_nid;
+            }
+            if (builder.ori_ugc_tid == null) {
+                this.ori_ugc_tid = "";
+            } else {
+                this.ori_ugc_tid = builder.ori_ugc_tid;
+            }
+            if (builder.ori_ugc_type == null) {
+                this.ori_ugc_type = "";
+            } else {
+                this.ori_ugc_type = builder.ori_ugc_type;
+            }
+            if (builder.ori_ugc_vid == null) {
+                this.ori_ugc_vid = "";
+                return;
+            } else {
+                this.ori_ugc_vid = builder.ori_ugc_vid;
                 return;
             }
         }
-        this.common = builder.common;
+        this.f1162common = builder.f1163common;
         this.tid = builder.tid;
         this.weight = builder.weight;
         this.source = builder.source;
         this.location = builder.location;
         this.abtest_tag = builder.abtest_tag;
         this.type = builder.type;
+        this.page = builder.page;
+        this.ori_ugc_nid = builder.ori_ugc_nid;
+        this.ori_ugc_tid = builder.ori_ugc_tid;
+        this.ori_ugc_type = builder.ori_ugc_type;
+        this.ori_ugc_vid = builder.ori_ugc_vid;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String abtest_tag;
-        public CommonReq common;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1163common;
         public Integer location;
+        public String ori_ugc_nid;
+        public String ori_ugc_tid;
+        public String ori_ugc_type;
+        public String ori_ugc_vid;
+        public String page;
         public String source;
         public Long tid;
         public Integer type;
@@ -88,13 +142,18 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.common = dataReq.common;
+                this.f1163common = dataReq.f1162common;
                 this.tid = dataReq.tid;
                 this.weight = dataReq.weight;
                 this.source = dataReq.source;
                 this.location = dataReq.location;
                 this.abtest_tag = dataReq.abtest_tag;
                 this.type = dataReq.type;
+                this.page = dataReq.page;
+                this.ori_ugc_nid = dataReq.ori_ugc_nid;
+                this.ori_ugc_tid = dataReq.ori_ugc_tid;
+                this.ori_ugc_type = dataReq.ori_ugc_type;
+                this.ori_ugc_vid = dataReq.ori_ugc_vid;
             }
         }
 

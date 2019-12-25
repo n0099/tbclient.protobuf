@@ -2,7 +2,7 @@ package tbclient.GetForumsFromForumClass;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes5.dex */
+/* loaded from: classes7.dex */
 public final class ForumSpaceForumInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -85,7 +85,7 @@ public final class ForumSpaceForumInfo extends Message {
         this.rank = builder.rank;
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumSpaceForumInfo> {
         public String _abstract;
         public String avatar;
