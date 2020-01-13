@@ -3,7 +3,7 @@ package tbclient.Bigvip;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes10.dex */
+/* loaded from: classes11.dex */
 public final class BigvipResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class BigvipResIdl extends Message {
         this.error = builder.error;
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes11.dex */
     public static final class Builder extends Message.Builder<BigvipResIdl> {
         public DataRes data;
         public Error error;

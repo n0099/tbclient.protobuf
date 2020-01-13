@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class RecomTopicList extends Message {
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final String DEFAULT_TOPIC_NAME = "";
@@ -76,7 +76,7 @@ public final class RecomTopicList extends Message {
         this.topic_pic = builder.topic_pic;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecomTopicList> {
         public Long discuss_num;
         public Integer tag;

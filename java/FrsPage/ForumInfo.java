@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BannerList;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -597,7 +597,7 @@ public final class ForumInfo extends Message {
         this.f_share_img = builder.f_share_img;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
         public AcrossForumIcon across_forum_hide;

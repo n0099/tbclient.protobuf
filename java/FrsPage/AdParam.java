@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class AdParam extends Message {
     public static final Integer DEFAULT_LOAD_COUNT = 0;
     public static final Integer DEFAULT_REFRESH_COUNT = 0;
@@ -40,7 +40,7 @@ public final class AdParam extends Message {
         this.yoga_lib_version = builder.yoga_lib_version;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AdParam> {
         public Integer load_count;
         public Integer refresh_count;

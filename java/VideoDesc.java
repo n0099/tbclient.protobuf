@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class VideoDesc extends Message {
     public static final String DEFAULT_VIDEO_HEIGHT = "";
     public static final Integer DEFAULT_VIDEO_ID = 0;
@@ -58,7 +58,7 @@ public final class VideoDesc extends Message {
         this.video_height = builder.video_height;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VideoDesc> {
         public String video_height;
         public Integer video_id;

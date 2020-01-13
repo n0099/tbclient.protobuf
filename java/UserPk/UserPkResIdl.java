@@ -3,7 +3,7 @@ package tbclient.UserPk;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class UserPkResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class UserPkResIdl extends Message {
         this.error = builder.error;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserPkResIdl> {
         public DataRes data;
         public Error error;

@@ -3,7 +3,7 @@ package tbclient.Search;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class SearchResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class SearchResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<SearchResIdl> {
         public DataRes data;
         public Error error;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class SubPostList extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 9)
@@ -85,7 +85,7 @@ public final class SubPostList extends Message {
         this.agree = builder.agree;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<SubPostList> {
         public Agree agree;
         public User author;

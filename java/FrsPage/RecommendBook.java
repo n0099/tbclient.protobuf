@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class RecommendBook extends Message {
     public static final String DEFAULT_BOOK_ID = "";
     public static final String DEFAULT_IMAGE = "";
@@ -69,7 +69,7 @@ public final class RecommendBook extends Message {
         this.link_url = builder.link_url;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecommendBook> {
         public String book_id;
         public List<String> desc;

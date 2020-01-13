@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class LiveAnswer extends Message {
     public static final String DEFAULT_BANNER_URL = "";
     public static final String DEFAULT_JUMP_URL = "";
@@ -49,7 +49,7 @@ public final class LiveAnswer extends Message {
         this.jump_url = builder.jump_url;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<LiveAnswer> {
         public Integer banner_high;
         public String banner_url;

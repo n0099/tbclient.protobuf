@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class TbVipInfo extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_V_DETAIL = "";
@@ -40,7 +40,7 @@ public final class TbVipInfo extends Message {
         this.v_detail = builder.v_detail;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TbVipInfo> {
         public String intro;
         public String v_detail;

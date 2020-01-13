@@ -3,7 +3,7 @@ package tbclient.FineFrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class FineBanner extends Message {
     public static final String DEFAULT_LINK_URL = "";
     public static final String DEFAULT_PIC_URL = "";
@@ -62,7 +62,7 @@ public final class FineBanner extends Message {
         this.twzhibo_info = builder.twzhibo_info;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<FineBanner> {
         public Long ftid;
         public String link_url;

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class ActivityConfig extends Message {
     public static final String DEFAULT_ADDTHREAD_ICON = "";
     public static final String DEFAULT_ADDTHREAD_TEXT = "";
@@ -94,7 +94,7 @@ public final class ActivityConfig extends Message {
         this.addthread_text = builder.addthread_text;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ActivityConfig> {
         public Long activity_id;
         public String addthread_icon;

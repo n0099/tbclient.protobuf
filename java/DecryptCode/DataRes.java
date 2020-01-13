@@ -2,7 +2,7 @@ package tbclient.DecryptCode;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_BTN_CANCEL = "";
     public static final String DEFAULT_BTN_SURE = "";
@@ -85,7 +85,7 @@ public final class DataRes extends Message {
         this.type = builder.type;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer acitivity_id;
         public String btn_cancel;

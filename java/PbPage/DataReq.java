@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_DA_IDFA = "";
@@ -41,7 +41,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1148common;
+    public final CommonReq f1145common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -303,7 +303,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.f1148common = builder.f1149common;
+            this.f1145common = builder.f1146common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -488,7 +488,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f1148common = builder.f1149common;
+        this.f1145common = builder.f1146common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -524,7 +524,7 @@ public final class DataReq extends Message {
         this.ori_ugc_vid = builder.ori_ugc_vid;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public AdParam ad_param;
         public AppPosInfo app_pos;
@@ -534,7 +534,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1149common;
+        public CommonReq f1146common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -617,7 +617,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.f1149common = dataReq.f1148common;
+                this.f1146common = dataReq.f1145common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;

@@ -6,7 +6,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class ThreadInfo extends Message {
     public static final String DEFAULT_AB_TAG = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -1283,7 +1283,7 @@ public final class ThreadInfo extends Message {
         this.scard_packet_id = builder.scard_packet_id;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
         public String ab_tag;

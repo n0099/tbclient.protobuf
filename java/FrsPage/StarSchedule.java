@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class StarSchedule extends Message {
     public static final String DEFAULT_DESC = "";
     public static final Integer DEFAULT_TIME = 0;
@@ -49,7 +49,7 @@ public final class StarSchedule extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<StarSchedule> {
         public String desc;
         public Integer time;

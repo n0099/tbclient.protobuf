@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class CarrierEnter extends Message {
     public static final String DEFAULT_HEADLINE_COVER = "";
     public static final String DEFAULT_OBJ_ID = "";
@@ -58,7 +58,7 @@ public final class CarrierEnter extends Message {
         this.obj_id = builder.obj_id;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<CarrierEnter> {
         public String headline_cover;
         public String obj_id;

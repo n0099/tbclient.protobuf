@@ -21,7 +21,7 @@ import tbclient.UcCard;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 16)
     public final AlaLiveInfo ala_live_info;
@@ -173,7 +173,7 @@ public final class DataRes extends Message {
         this.newest_dynamic_list = immutableCopyOf(builder.newest_dynamic_list);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AlaLiveInfo ala_live_info;
         public List<AlaLiveInfo> ala_live_record;

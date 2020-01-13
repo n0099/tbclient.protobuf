@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class ZhiBoInfoTW extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FIELD_EX = "";
@@ -188,7 +188,7 @@ public final class ZhiBoInfoTW extends Message {
         this.field_ex = builder.field_ex;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ZhiBoInfoTW> {
         public String content;
         public Integer copythread_remind;

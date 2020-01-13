@@ -3,7 +3,7 @@ package tbclient.NewTopicList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -11,12 +11,12 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1140common;
+    public final CommonReq f1137common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1140common = builder.f1141common;
+            this.f1137common = builder.f1138common;
             if (builder.call_from == null) {
                 this.call_from = "";
                 return;
@@ -25,16 +25,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1140common = builder.f1141common;
+        this.f1137common = builder.f1138common;
         this.call_from = builder.call_from;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1141common;
+        public CommonReq f1138common;
 
         public Builder() {
         }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1141common = dataReq.f1140common;
+                this.f1138common = dataReq.f1137common;
                 this.call_from = dataReq.call_from;
             }
         }

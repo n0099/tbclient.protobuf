@@ -2,7 +2,7 @@ package tbclient.RecommendFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class LbsInfo extends Message {
     public static final String DEFAULT_DISTANCE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -40,7 +40,7 @@ public final class LbsInfo extends Message {
         this.is_hide = builder.is_hide;
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<LbsInfo> {
         public String distance;
         public Integer is_hide;

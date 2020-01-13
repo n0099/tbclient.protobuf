@@ -3,20 +3,20 @@ package tbclient.GetWebviewCacheInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_WEBVIEW_VERSION = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1112common;
+    public final CommonReq f1109common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String webview_version;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1112common = builder.f1113common;
+            this.f1109common = builder.f1110common;
             if (builder.webview_version == null) {
                 this.webview_version = "";
                 return;
@@ -25,15 +25,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1112common = builder.f1113common;
+        this.f1109common = builder.f1110common;
         this.webview_version = builder.webview_version;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1113common;
+        public CommonReq f1110common;
         public String webview_version;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1113common = dataReq.f1112common;
+                this.f1110common = dataReq.f1109common;
                 this.webview_version = dataReq.webview_version;
             }
         }

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AGE_TAG = "";
     public static final String DEFAULT_DA_IDFA = "";
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1152common;
+    public final CommonReq f1149common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 25, type = Message.Datatype.INT64)
@@ -96,7 +96,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1152common = builder.f1153common;
+            this.f1149common = builder.f1150common;
             if (builder.tag_code == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
             } else {
@@ -235,7 +235,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1152common = builder.f1153common;
+        this.f1149common = builder.f1150common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;
@@ -265,12 +265,12 @@ public final class DataReq extends Message {
         this.invoke_source = builder.invoke_source;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String age_tag;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1153common;
+        public CommonReq f1150common;
         public String da_idfa;
         public Long from_tid;
         public List<String> interest_tag;
@@ -304,7 +304,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1153common = dataReq.f1152common;
+                this.f1150common = dataReq.f1149common;
                 this.tag_code = dataReq.tag_code;
                 this.need_tags = dataReq.need_tags;
                 this.load_type = dataReq.load_type;

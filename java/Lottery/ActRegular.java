@@ -2,7 +2,7 @@ package tbclient.Lottery;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class ActRegular extends Message {
     public static final String DEFAULT_BTN_NAME = "";
     public static final String DEFAULT_URL = "";
@@ -49,7 +49,7 @@ public final class ActRegular extends Message {
         this.btn_name = builder.btn_name;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ActRegular> {
         public String btn_name;
         public Integer chance;

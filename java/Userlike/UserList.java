@@ -3,7 +3,7 @@ package tbclient.Userlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class UserList extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_NAME = "";
@@ -107,7 +107,7 @@ public final class UserList extends Message {
         this.thread_info = builder.thread_info;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserList> {
         public Integer fans_num;
         public Long id;

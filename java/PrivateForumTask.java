@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class PrivateForumTask extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer active_status;
@@ -58,7 +58,7 @@ public final class PrivateForumTask extends Message {
         this.task_left_time = builder.task_left_time;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PrivateForumTask> {
         public Integer active_status;
         public Integer audit_status;

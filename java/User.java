@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class User extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
@@ -777,7 +777,7 @@ public final class User extends Message {
         this.modify_avatar_desc = builder.modify_avatar_desc;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;

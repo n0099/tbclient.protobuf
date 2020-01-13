@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class TopNotice extends Message {
     public static final String DEFAULT_AUTHOR = "";
     public static final Integer DEFAULT_ID = 0;
@@ -49,7 +49,7 @@ public final class TopNotice extends Message {
         this.id = builder.id;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TopNotice> {
         public String author;
         public Integer id;

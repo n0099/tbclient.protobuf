@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.SimpleUser;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class AgreeBanner extends Message {
     public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_TEXT = "";
@@ -52,7 +52,7 @@ public final class AgreeBanner extends Message {
         this.top_agree_user = immutableCopyOf(builder.top_agree_user);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AgreeBanner> {
         public String icon_url;
         public String text;

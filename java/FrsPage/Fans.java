@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class Fans extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_get;
@@ -58,7 +58,7 @@ public final class Fans extends Message {
         this.num = builder.num;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Fans> {
         public Integer is_get;
         public Integer left_time;

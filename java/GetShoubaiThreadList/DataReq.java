@@ -3,12 +3,12 @@ package tbclient.GetShoubaiThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1098common;
+    public final CommonReq f1095common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long cursor;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1098common = builder.f1099common;
+            this.f1095common = builder.f1096common;
             if (builder.uid == null) {
                 this.uid = DEFAULT_UID;
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1098common = builder.f1099common;
+        this.f1095common = builder.f1096common;
         this.uid = builder.uid;
         this.cursor = builder.cursor;
         this.page_size = builder.page_size;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1099common;
+        public CommonReq f1096common;
         public Long cursor;
         public Integer page_size;
         public Long uid;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1099common = dataReq.f1098common;
+                this.f1096common = dataReq.f1095common;
                 this.uid = dataReq.uid;
                 this.cursor = dataReq.cursor;
                 this.page_size = dataReq.page_size;

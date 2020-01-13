@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class PbPresentList extends Message {
     public static final String DEFAULT_GIFT_NAME = "";
     public static final String DEFAULT_THUMBNAIL_URL = "";
@@ -49,7 +49,7 @@ public final class PbPresentList extends Message {
         this.num = builder.num;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PbPresentList> {
         public Integer gift_id;
         public String gift_name;

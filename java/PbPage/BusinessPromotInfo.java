@@ -3,7 +3,7 @@ package tbclient.PbPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.SendCardInfo;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class BusinessPromotInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_headlinepost;
@@ -44,7 +44,7 @@ public final class BusinessPromotInfo extends Message {
         this.send_card_info = builder.send_card_info;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<BusinessPromotInfo> {
         public Integer is_headlinepost;
         public Long is_promot;

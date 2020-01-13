@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class WorldCupPk extends Message {
     public static final String DEFAULT_PRIZE_URL = "";
     public static final String DEFAULT_SUM_BONUS = "";
@@ -49,7 +49,7 @@ public final class WorldCupPk extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<WorldCupPk> {
         public String prize_url;
         public String sum_bonus;

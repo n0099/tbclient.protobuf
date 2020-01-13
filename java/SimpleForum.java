@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class SimpleForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_EXT = "";
@@ -134,7 +134,7 @@ public final class SimpleForum extends Message {
         this.is_brand_forum = builder.is_brand_forum;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<SimpleForum> {
         public String avatar;
         public String ext;

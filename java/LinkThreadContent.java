@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class LinkThreadContent extends Message {
     public static final String DEFAULT_LINK_ABSTRACT = "";
     public static final String DEFAULT_LINK_HEAD_BIG_PIC = "";
@@ -67,7 +67,7 @@ public final class LinkThreadContent extends Message {
         this.link_head_big_pic = builder.link_head_big_pic;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<LinkThreadContent> {
         public String link_abstract;
         public String link_head_big_pic;

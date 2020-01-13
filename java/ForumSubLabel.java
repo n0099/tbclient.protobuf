@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class ForumSubLabel extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final String DEFAULT_SUB_LABEL_NAME = "";
@@ -31,7 +31,7 @@ public final class ForumSubLabel extends Message {
         this.sub_label_name = builder.sub_label_name;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumSubLabel> {
         public Integer id;
         public String sub_label_name;

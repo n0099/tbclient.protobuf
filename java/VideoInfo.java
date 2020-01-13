@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class VideoInfo extends Message {
     public static final String DEFAULT_MCN_LEAD_PAGE = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
@@ -185,7 +185,7 @@ public final class VideoInfo extends Message {
         this.hth_mid_loc = builder.hth_mid_loc;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public Double hth_mid_loc;
         public Integer is_vertical;

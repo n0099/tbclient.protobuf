@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class UserVideoChannelInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer follow_channel;
@@ -31,7 +31,7 @@ public final class UserVideoChannelInfo extends Message {
         this.follow_channel = builder.follow_channel;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserVideoChannelInfo> {
         public Integer follow_channel;
         public Integer man_channel;

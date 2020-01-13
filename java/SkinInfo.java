@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class SkinInfo extends Message {
     public static final String DEFAULT_MONITOR_ID = "";
     public static final String DEFAULT_OBJ_ID = "";
@@ -58,7 +58,7 @@ public final class SkinInfo extends Message {
         this.monitor_id = builder.monitor_id;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<SkinInfo> {
         public String monitor_id;
         public String obj_id;
