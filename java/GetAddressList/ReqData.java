@@ -9,7 +9,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1049common;
+    public final CommonReq f1050common;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer timestamp;
 
@@ -21,18 +21,18 @@ public final class ReqData extends Message {
             } else {
                 this.timestamp = builder.timestamp;
             }
-            this.f1049common = builder.f1050common;
+            this.f1050common = builder.f1051common;
             return;
         }
         this.timestamp = builder.timestamp;
-        this.f1049common = builder.f1050common;
+        this.f1050common = builder.f1051common;
     }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1050common;
+        public CommonReq f1051common;
         public Integer timestamp;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class ReqData extends Message {
             super(reqData);
             if (reqData != null) {
                 this.timestamp = reqData.timestamp;
-                this.f1050common = reqData.f1049common;
+                this.f1051common = reqData.f1050common;
             }
         }
 

@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1143common;
+    public final CommonReq f1144common;
     @ProtoField(tag = 11, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -98,7 +98,7 @@ public final class DataReq extends Message {
             } else {
                 this.st_type = builder.st_type;
             }
-            this.f1143common = builder.f1144common;
+            this.f1144common = builder.f1145common;
             if (builder.is_comm_reverse == null) {
                 this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
             } else {
@@ -145,7 +145,7 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
         this.st_type = builder.st_type;
-        this.f1143common = builder.f1144common;
+        this.f1144common = builder.f1145common;
         this.is_comm_reverse = builder.is_comm_reverse;
         this.forum_id = builder.forum_id;
         this.ori_ugc_nid = builder.ori_ugc_nid;
@@ -159,7 +159,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1144common;
+        public CommonReq f1145common;
         public Long forum_id;
         public Integer is_comm_reverse;
         public Long kz;
@@ -190,7 +190,7 @@ public final class DataReq extends Message {
                 this.scr_h = dataReq.scr_h;
                 this.scr_dip = dataReq.scr_dip;
                 this.st_type = dataReq.st_type;
-                this.f1144common = dataReq.f1143common;
+                this.f1145common = dataReq.f1144common;
                 this.is_comm_reverse = dataReq.is_comm_reverse;
                 this.forum_id = dataReq.forum_id;
                 this.ori_ugc_nid = dataReq.ori_ugc_nid;

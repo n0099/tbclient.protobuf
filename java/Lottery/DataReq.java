@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1129common;
+    public final CommonReq f1130common;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long component_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -37,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1129common = builder.f1130common;
+            this.f1130common = builder.f1131common;
             if (builder.user_id == null) {
                 this.user_id = DEFAULT_USER_ID;
             } else {
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1129common = builder.f1130common;
+        this.f1130common = builder.f1131common;
         this.user_id = builder.user_id;
         this.user_name = builder.user_name;
         this.forum_id = builder.forum_id;
@@ -98,7 +98,7 @@ public final class DataReq extends Message {
         public Long award_act_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1130common;
+        public CommonReq f1131common;
         public Long component_id;
         public Long forum_id;
         public Integer from_type;
@@ -112,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1130common = dataReq.f1129common;
+                this.f1131common = dataReq.f1130common;
                 this.user_id = dataReq.user_id;
                 this.user_name = dataReq.user_name;
                 this.forum_id = dataReq.forum_id;

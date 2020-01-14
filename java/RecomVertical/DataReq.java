@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1161common;
+    public final CommonReq f1162common;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -37,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1161common = builder.f1162common;
+            this.f1162common = builder.f1163common;
             if (builder.class_id == null) {
                 this.class_id = "";
             } else {
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1161common = builder.f1162common;
+        this.f1162common = builder.f1163common;
         this.class_id = builder.class_id;
         this.sub_class_id = builder.sub_class_id;
         this.scr_w = builder.scr_w;
@@ -97,7 +97,7 @@ public final class DataReq extends Message {
         public String class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1162common;
+        public CommonReq f1163common;
         public Integer load_type;
         public Integer new_net_type;
         public Integer page_thread_count;
@@ -112,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1162common = dataReq.f1161common;
+                this.f1163common = dataReq.f1162common;
                 this.class_id = dataReq.class_id;
                 this.sub_class_id = dataReq.sub_class_id;
                 this.scr_w = dataReq.scr_w;
