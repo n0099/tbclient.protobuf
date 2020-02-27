@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class Wares extends Message {
     public static final String DEFAULT_NEW_PROPS_ID = "";
     public static final String DEFAULT_WARS_ITEM = "";
@@ -67,7 +67,7 @@ public final class Wares extends Message {
         this.new_props_id = builder.new_props_id;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Wares> {
         public Integer money;
         public String new_props_id;

@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class UserAgreeInfo extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long ala_agree_num;
@@ -67,7 +67,7 @@ public final class UserAgreeInfo extends Message {
         this.has_user_agree = builder.has_user_agree;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<UserAgreeInfo> {
         public Long ala_agree_num;
         public Integer has_user_agree;

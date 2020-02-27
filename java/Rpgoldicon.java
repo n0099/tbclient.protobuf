@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class Rpgoldicon extends Message {
     public static final String DEFAULT_KEY = "";
     public static final String DEFAULT_VALUE = "";
@@ -31,7 +31,7 @@ public final class Rpgoldicon extends Message {
         this.value = builder.value;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Rpgoldicon> {
         public String key;
         public String value;

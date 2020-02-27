@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class ThemeSkinPropMain extends Message {
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_EXAMPLE_URL = "";
@@ -139,7 +139,7 @@ public final class ThemeSkinPropMain extends Message {
         this.end_time = builder.end_time;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ThemeSkinPropMain> {
         public String activity_url;
         public Integer daily_privilege_status;

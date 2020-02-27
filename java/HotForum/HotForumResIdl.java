@@ -3,7 +3,7 @@ package tbclient.HotForum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes9.dex */
+/* loaded from: classes11.dex */
 public final class HotForumResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class HotForumResIdl extends Message {
         this.error = builder.error;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes11.dex */
     public static final class Builder extends Message.Builder<HotForumResIdl> {
         public DataRes data;
         public Error error;

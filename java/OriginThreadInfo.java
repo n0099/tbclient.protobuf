@@ -4,15 +4,19 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class OriginThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_TID = "";
     public static final String DEFAULT_TITLE = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Abstract> _abstract;
+    @ProtoField(tag = 19)
+    public final Agree agree;
     @ProtoField(tag = 6)
     public final AlaLiveInfo ala_info;
+    @ProtoField(tag = 18)
+    public final User author;
     @ProtoField(label = Message.Label.REPEATED, tag = 14)
     public final List<PbContent> content;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -29,6 +33,10 @@ public final class OriginThreadInfo extends Message {
     public final List<Media> media;
     @ProtoField(tag = 11)
     public final Baijiahao ori_ugc_info;
+    @ProtoField(tag = 16, type = Message.Datatype.INT32)
+    public final Integer reply_num;
+    @ProtoField(tag = 20, type = Message.Datatype.INT32)
+    public final Integer shared_num;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -48,6 +56,8 @@ public final class OriginThreadInfo extends Message {
     public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
     public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
     public static final Integer DEFAULT_IS_NEW_STYLE = 0;
+    public static final Integer DEFAULT_REPLY_NUM = 0;
+    public static final Integer DEFAULT_SHARED_NUM = 0;
 
     private OriginThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -112,9 +122,21 @@ public final class OriginThreadInfo extends Message {
             }
             if (builder.is_new_style == null) {
                 this.is_new_style = DEFAULT_IS_NEW_STYLE;
-                return;
             } else {
                 this.is_new_style = builder.is_new_style;
+            }
+            if (builder.reply_num == null) {
+                this.reply_num = DEFAULT_REPLY_NUM;
+            } else {
+                this.reply_num = builder.reply_num;
+            }
+            this.author = builder.author;
+            this.agree = builder.agree;
+            if (builder.shared_num == null) {
+                this.shared_num = DEFAULT_SHARED_NUM;
+                return;
+            } else {
+                this.shared_num = builder.shared_num;
                 return;
             }
         }
@@ -133,12 +155,18 @@ public final class OriginThreadInfo extends Message {
         this.video_info = builder.video_info;
         this.content = immutableCopyOf(builder.content);
         this.is_new_style = builder.is_new_style;
+        this.reply_num = builder.reply_num;
+        this.author = builder.author;
+        this.agree = builder.agree;
+        this.shared_num = builder.shared_num;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<OriginThreadInfo> {
         public List<Abstract> _abstract;
+        public Agree agree;
         public AlaLiveInfo ala_info;
+        public User author;
         public List<PbContent> content;
         public Long fid;
         public String fname;
@@ -147,6 +175,8 @@ public final class OriginThreadInfo extends Message {
         public Integer is_ugc;
         public List<Media> media;
         public Baijiahao ori_ugc_info;
+        public Integer reply_num;
+        public Integer shared_num;
         public Integer thread_type;
         public String tid;
         public String title;
@@ -174,6 +204,10 @@ public final class OriginThreadInfo extends Message {
                 this.video_info = originThreadInfo.video_info;
                 this.content = OriginThreadInfo.copyOf(originThreadInfo.content);
                 this.is_new_style = originThreadInfo.is_new_style;
+                this.reply_num = originThreadInfo.reply_num;
+                this.author = originThreadInfo.author;
+                this.agree = originThreadInfo.agree;
+                this.shared_num = originThreadInfo.shared_num;
             }
         }
 

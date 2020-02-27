@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class BannerUserStory extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer _switch;
@@ -42,7 +42,7 @@ public final class BannerUserStory extends Message {
         this.ala_live_list = immutableCopyOf(builder.ala_live_list);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BannerUserStory> {
         public Integer _switch;
         public List<AlaLiveInfo> ala_live_list;

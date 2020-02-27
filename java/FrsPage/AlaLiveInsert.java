@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class AlaLiveInsert extends Message {
     public static final List<ThreadInfo> DEFAULT_ALA_LIVE_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -25,7 +25,7 @@ public final class AlaLiveInsert extends Message {
         this.ala_live_list = immutableCopyOf(builder.ala_live_list);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<AlaLiveInsert> {
         public List<ThreadInfo> ala_live_list;
 

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class AlaChallengeInfo extends Message {
     public static final String DEFAULT_EXT = "";
     public static final String DEFAULT_RIVAL_HLS_URL = "";
@@ -67,7 +67,7 @@ public final class AlaChallengeInfo extends Message {
         this.ext = builder.ext;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<AlaChallengeInfo> {
         public Long challenge_id;
         public String ext;

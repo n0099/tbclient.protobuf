@@ -2,7 +2,7 @@ package tbclient.GetAddressList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class friendList extends Message {
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -62,7 +62,7 @@ public final class friendList extends Message {
         this.name_show = builder.name_show;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<friendList> {
         public LbsInfo location;
         public String name_show;

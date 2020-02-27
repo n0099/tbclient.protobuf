@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class SignInfo extends Message {
     @ProtoField(tag = 2)
     public final SignForum forum_info;
@@ -20,7 +20,7 @@ public final class SignInfo extends Message {
         this.forum_info = builder.forum_info;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<SignInfo> {
         public SignForum forum_info;
         public SignUser user_info;

@@ -3,7 +3,7 @@ package tbclient.GetWebviewCacheInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class GetWebviewCacheInfoResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetWebviewCacheInfoResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GetWebviewCacheInfoResIdl> {
         public DataRes data;
         public Error error;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class deleteList extends Message {
     public static final List<friendList> DEFAULT_FRIEND_LIST = Collections.emptyList();
     public static final String DEFAULT_KEY = "";
@@ -33,7 +33,7 @@ public final class deleteList extends Message {
         this.friend_list = immutableCopyOf(builder.friend_list);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<deleteList> {
         public List<friendList> friend_list;
         public String key;

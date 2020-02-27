@@ -2,7 +2,7 @@ package tbclient.UserPk;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static final Long DEFAULT_PK_ID = 0L;
     public static final Long DEFAULT_USER_PK_ID = 0L;
@@ -31,7 +31,7 @@ public final class DataRes extends Message {
         this.user_pk_id = builder.user_pk_id;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Long pk_id;
         public Long user_pk_id;

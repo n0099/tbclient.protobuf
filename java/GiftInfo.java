@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class GiftInfo extends Message {
     public static final String DEFAULT_GIFT_NAME = "";
     public static final String DEFAULT_ICON = "";
@@ -76,7 +76,7 @@ public final class GiftInfo extends Message {
         this.sender_name = builder.sender_name;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GiftInfo> {
         public Integer gift_id;
         public String gift_name;

@@ -2,7 +2,7 @@ package tbclient.RecommendFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes8.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_COMMON_FORUM = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -22,7 +22,7 @@ public final class ForumInfo extends Message {
         this.common_forum = builder.common_forum;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String common_forum;
 

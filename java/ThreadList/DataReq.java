@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 8)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1200common;
+    public final CommonReq f1260common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -98,7 +98,7 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = builder.q_type;
             }
-            this.f1200common = builder.f1201common;
+            this.f1260common = builder.f1261common;
             if (builder.user_id == null) {
                 this.user_id = DEFAULT_USER_ID;
             } else {
@@ -150,7 +150,7 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
-        this.f1200common = builder.f1201common;
+        this.f1260common = builder.f1261common;
         this.user_id = builder.user_id;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
@@ -163,13 +163,13 @@ public final class DataReq extends Message {
         this.ad_param = builder.ad_param;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public AdParam ad_param;
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1201common;
+        public CommonReq f1261common;
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
@@ -199,7 +199,7 @@ public final class DataReq extends Message {
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;
                 this.q_type = dataReq.q_type;
-                this.f1201common = dataReq.f1200common;
+                this.f1261common = dataReq.f1260common;
                 this.user_id = dataReq.user_id;
                 this.da_idfa = dataReq.da_idfa;
                 this.platform = dataReq.platform;

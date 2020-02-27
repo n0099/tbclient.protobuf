@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class LastViewFeeds extends Message {
     public static final List<Integer> DEFAULT_LIVE = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.UINT32)
@@ -24,7 +24,7 @@ public final class LastViewFeeds extends Message {
         this.live = immutableCopyOf(builder.live);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<LastViewFeeds> {
         public List<Integer> live;
 

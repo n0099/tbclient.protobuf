@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class ForumCreateInfo extends Message {
     public static final String DEFAULT_CAN_CREATE_ERRDATA = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -49,7 +49,7 @@ public final class ForumCreateInfo extends Message {
         this.can_create_errdata = builder.can_create_errdata;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ForumCreateInfo> {
         public String can_create_errdata;
         public Integer can_create_errno;

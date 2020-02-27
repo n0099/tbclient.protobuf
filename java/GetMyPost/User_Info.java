@@ -3,7 +3,7 @@ package tbclient.GetMyPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.GodInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class User_Info extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
@@ -157,7 +157,7 @@ public final class User_Info extends Message {
         this.bawu_type = builder.bawu_type;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<User_Info> {
         public Balv balv;
         public String bawu_type;

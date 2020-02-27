@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.ForumMember;
 import tbclient.MemberGroupInfo;
 import tbclient.PriManagerApplyInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final ForumMember forum_member_info;
@@ -60,7 +60,7 @@ public final class DataRes extends Message {
         this.primanager_apply_info = builder.primanager_apply_info;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ForumMember forum_member_info;
         public Integer is_bawuapply_show;

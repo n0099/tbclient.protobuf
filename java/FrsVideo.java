@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class FrsVideo extends Message {
     @ProtoField(tag = 1)
     public final ActBtn video_act;
@@ -16,7 +16,7 @@ public final class FrsVideo extends Message {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FrsVideo> {
         public ActBtn video_act;
 

@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.Banner;
 import tbclient.Entry;
 import tbclient.ThreadInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<Banner> banner;
@@ -94,7 +94,7 @@ public final class DataRes extends Message {
         this.is_small_follow = builder.is_small_follow;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public List<Entry> entry;

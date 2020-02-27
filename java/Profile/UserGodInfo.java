@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class UserGodInfo extends Message {
     public static final String DEFAULT_ADDRESS = "";
     public static final String DEFAULT_TOTAL_THREAD = "";
@@ -92,7 +92,7 @@ public final class UserGodInfo extends Message {
         this.total_thread = builder.total_thread;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<UserGodInfo> {
         public String address;
         public Integer age;

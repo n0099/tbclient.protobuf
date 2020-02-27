@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class ManagerElection extends Message {
     public static final String DEFAULT_TAIL_TEXT = "";
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -96,7 +96,7 @@ public final class ManagerElection extends Message {
         this.status = builder.status;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ManagerElection> {
         public Integer begin_vote_time;
         public Integer can_vote;

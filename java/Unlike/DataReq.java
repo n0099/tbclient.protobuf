@@ -3,14 +3,14 @@ package tbclient.Unlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Integer DEFAULT_TYPE = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1204common;
+    public final CommonReq f1264common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1204common = builder.f1205common;
+            this.f1264common = builder.f1265common;
             if (builder.thread_id == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1204common = builder.f1205common;
+        this.f1264common = builder.f1265common;
         this.thread_id = builder.thread_id;
         this.type = builder.type;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1205common;
+        public CommonReq f1265common;
         public Long thread_id;
         public Integer type;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1205common = dataReq.f1204common;
+                this.f1265common = dataReq.f1264common;
                 this.thread_id = dataReq.thread_id;
                 this.type = dataReq.type;
             }

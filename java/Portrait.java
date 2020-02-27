@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class Portrait extends Message {
     public static final String DEFAULT_URL = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -40,7 +40,7 @@ public final class Portrait extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Portrait> {
         public Integer end_time;
         public Integer props_id;

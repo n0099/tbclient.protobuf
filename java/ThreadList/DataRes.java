@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BannerList;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
@@ -49,7 +49,7 @@ public final class DataRes extends Message {
         this.asp_shown_info = builder.asp_shown_info;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String asp_shown_info;
         public BannerList banner_list;

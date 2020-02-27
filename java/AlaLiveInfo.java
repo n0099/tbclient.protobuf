@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
@@ -15,9 +15,12 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_MEDIA_PIC = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_MEDIA_URL = "";
+    public static final String DEFAULT_ROUTER_TYPE = "";
     public static final String DEFAULT_RTMP_URL = "";
     public static final String DEFAULT_SESSION_ID = "";
     public static final String DEFAULT_THIRD_APP_ID = "";
+    public static final String DEFAULT_THIRD_LIVE_TYPE = "";
+    public static final String DEFAULT_THIRD_ROOM_ID = "";
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer audience_count;
     @ProtoField(tag = 25)
@@ -44,6 +47,8 @@ public final class AlaLiveInfo extends Message {
     public final AlaCoverLabel label;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String label_name;
+    @ProtoField(tag = 29, type = Message.Datatype.INT32)
+    public final Integer live_from;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long live_id;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
@@ -58,6 +63,8 @@ public final class AlaLiveInfo extends Message {
     public final String media_subtitle;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String media_url;
+    @ProtoField(tag = 32, type = Message.Datatype.STRING)
+    public final String router_type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String rtmp_url;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
@@ -70,8 +77,14 @@ public final class AlaLiveInfo extends Message {
     public final List<AlaStageDislikeInfo> stage_dislike_info;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String third_app_id;
+    @ProtoField(tag = 33, type = Message.Datatype.STRING)
+    public final String third_live_type;
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
+    public final String third_room_id;
     @ProtoField(tag = 22, type = Message.Datatype.UINT64)
     public final Long thread_id;
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
+    public final Integer thread_live_type;
     @ProtoField(tag = 12)
     public final AlaUserInfo user_info;
     public static final Long DEFAULT_LIVE_ID = 0L;
@@ -86,6 +99,8 @@ public final class AlaLiveInfo extends Message {
     public static final List<AlaStageDislikeInfo> DEFAULT_STAGE_DISLIKE_INFO = Collections.emptyList();
     public static final Integer DEFAULT_FRS_TOPLIVE_TYPE = 0;
     public static final Integer DEFAULT_FRS_TOPLIVE_FORCE = 0;
+    public static final Integer DEFAULT_LIVE_FROM = 0;
+    public static final Integer DEFAULT_THREAD_LIVE_TYPE = 0;
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -211,9 +226,34 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.frs_toplive_force == null) {
                 this.frs_toplive_force = DEFAULT_FRS_TOPLIVE_FORCE;
-                return;
             } else {
                 this.frs_toplive_force = builder.frs_toplive_force;
+            }
+            if (builder.live_from == null) {
+                this.live_from = DEFAULT_LIVE_FROM;
+            } else {
+                this.live_from = builder.live_from;
+            }
+            if (builder.thread_live_type == null) {
+                this.thread_live_type = DEFAULT_THREAD_LIVE_TYPE;
+            } else {
+                this.thread_live_type = builder.thread_live_type;
+            }
+            if (builder.third_room_id == null) {
+                this.third_room_id = "";
+            } else {
+                this.third_room_id = builder.third_room_id;
+            }
+            if (builder.router_type == null) {
+                this.router_type = "";
+            } else {
+                this.router_type = builder.router_type;
+            }
+            if (builder.third_live_type == null) {
+                this.third_live_type = "";
+                return;
+            } else {
+                this.third_live_type = builder.third_live_type;
                 return;
             }
         }
@@ -245,9 +285,14 @@ public final class AlaLiveInfo extends Message {
         this.frs_toplive_type = builder.frs_toplive_type;
         this.frs_toplive_pic = builder.frs_toplive_pic;
         this.frs_toplive_force = builder.frs_toplive_force;
+        this.live_from = builder.live_from;
+        this.thread_live_type = builder.thread_live_type;
+        this.third_room_id = builder.third_room_id;
+        this.router_type = builder.router_type;
+        this.third_live_type = builder.third_live_type;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
         public Integer audience_count;
         public AlaChallengeInfo challenge_info;
@@ -262,6 +307,7 @@ public final class AlaLiveInfo extends Message {
         public String hls_url;
         public AlaCoverLabel label;
         public String label_name;
+        public Integer live_from;
         public Long live_id;
         public Integer live_status;
         public Integer live_type;
@@ -269,13 +315,17 @@ public final class AlaLiveInfo extends Message {
         public String media_pic;
         public String media_subtitle;
         public String media_url;
+        public String router_type;
         public String rtmp_url;
         public Integer screen_direction;
         public String session_id;
         public AlaShareInfo share_info;
         public List<AlaStageDislikeInfo> stage_dislike_info;
         public String third_app_id;
+        public String third_live_type;
+        public String third_room_id;
         public Long thread_id;
+        public Integer thread_live_type;
         public AlaUserInfo user_info;
 
         public Builder() {
@@ -312,6 +362,11 @@ public final class AlaLiveInfo extends Message {
                 this.frs_toplive_type = alaLiveInfo.frs_toplive_type;
                 this.frs_toplive_pic = alaLiveInfo.frs_toplive_pic;
                 this.frs_toplive_force = alaLiveInfo.frs_toplive_force;
+                this.live_from = alaLiveInfo.live_from;
+                this.thread_live_type = alaLiveInfo.thread_live_type;
+                this.third_room_id = alaLiveInfo.third_room_id;
+                this.router_type = alaLiveInfo.router_type;
+                this.third_live_type = alaLiveInfo.third_live_type;
             }
         }
 

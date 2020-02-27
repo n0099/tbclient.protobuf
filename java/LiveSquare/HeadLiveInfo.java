@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class HeadLiveInfo extends Message {
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
     public static final List<ThreadInfo> DEFAULT_HEAD_LIVE = Collections.emptyList();
@@ -52,7 +52,7 @@ public final class HeadLiveInfo extends Message {
         this.is_set = builder.is_set;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<HeadLiveInfo> {
         public String bitmap_wh_ratio;
         public List<ThreadInfo> head_live;

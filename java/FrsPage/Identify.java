@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class Identify extends Message {
     public static final String DEFAULT_ID = "";
     public static final Integer DEFAULT_IS_IDENTIFY = 0;
@@ -31,7 +31,7 @@ public final class Identify extends Message {
         this.id = builder.id;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Identify> {
         public String id;
         public Integer is_identify;

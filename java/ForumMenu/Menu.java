@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes11.dex */
+/* loaded from: classes13.dex */
 public final class Menu extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_NAME = "";
@@ -87,7 +87,7 @@ public final class Menu extends Message {
         this.sub_menu = immutableCopyOf(builder.sub_menu);
     }
 
-    /* loaded from: classes11.dex */
+    /* loaded from: classes13.dex */
     public static final class Builder extends Message.Builder<Menu> {
         public Integer action_type;
         public String content;

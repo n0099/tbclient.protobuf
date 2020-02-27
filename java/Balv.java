@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class Balv extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer days_tofree;
@@ -40,7 +40,7 @@ public final class Balv extends Message {
         this.days_tofree = builder.days_tofree;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Balv> {
         public Integer days_tofree;
         public Integer is_black;

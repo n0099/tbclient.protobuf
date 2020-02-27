@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class GodDetailInfo extends Message {
     public static final String DEFAULT_DETAIL_INTRO = "";
     public static final String DEFAULT_INTRO = "";
@@ -49,7 +49,7 @@ public final class GodDetailInfo extends Message {
         this.detail_intro = builder.detail_intro;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GodDetailInfo> {
         public String detail_intro;
         public Long god_id;

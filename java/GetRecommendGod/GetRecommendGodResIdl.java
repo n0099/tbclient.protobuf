@@ -3,7 +3,7 @@ package tbclient.GetRecommendGod;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes9.dex */
+/* loaded from: classes11.dex */
 public final class GetRecommendGodResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetRecommendGodResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes11.dex */
     public static final class Builder extends Message.Builder<GetRecommendGodResIdl> {
         public DataRes data;
         public Error error;

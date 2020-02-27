@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class UserBfbInfo extends Message {
     public static final String DEFAULT_BFB_URL = "";
     public static final String DEFAULT_MASTE_URL = "";
@@ -52,7 +52,7 @@ public final class UserBfbInfo extends Message {
         this.android_bfb_sdk = builder.android_bfb_sdk;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<UserBfbInfo> {
         public Integer activity_status;
         public AndroidBfbSdk android_bfb_sdk;

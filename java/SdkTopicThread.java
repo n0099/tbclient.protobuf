@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class SdkTopicThread extends Message {
     public static final String DEFAULT_PIC_URL = "";
     public static final String DEFAULT_TITLE = "";
@@ -67,7 +67,7 @@ public final class SdkTopicThread extends Message {
         this.need_topic = builder.need_topic;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<SdkTopicThread> {
         public Integer need_topic;
         public String pic_url;

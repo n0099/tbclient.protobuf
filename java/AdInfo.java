@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class AdInfo extends Message {
     public static final String DEFAULT_AD_DESC = "";
     public static final String DEFAULT_AD_NAME = "";
@@ -87,7 +87,7 @@ public final class AdInfo extends Message {
         this.media = immutableCopyOf(builder.media);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<AdInfo> {
         public String ad_desc;
         public String ad_name;

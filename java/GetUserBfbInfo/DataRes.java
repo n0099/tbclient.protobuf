@@ -3,7 +3,7 @@ package tbclient.GetUserBfbInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.UserBfbInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes11.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final UserBfbInfo bfb;
@@ -17,7 +17,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes11.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public UserBfbInfo bfb;
 

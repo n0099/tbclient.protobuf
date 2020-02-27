@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class FineThreadInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_FROMFNAME = "";
@@ -137,7 +137,7 @@ public final class FineThreadInfo extends Message {
         this.forder = builder.forder;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FineThreadInfo> {
         public String _abstract;
         public Integer forder;

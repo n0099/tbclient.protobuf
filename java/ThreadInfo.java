@@ -1,12 +1,13 @@
 package tbclient;
 
+import com.alibaba.fastjson.asm.Opcodes;
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.location.BDLocation;
+import com.baidu.android.imsdk.upload.action.pb.IMPushPb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class ThreadInfo extends Message {
     public static final String DEFAULT_AB_TAG = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -17,6 +18,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_ECOM = "";
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FROM = "";
+    public static final String DEFAULT_IF_COMMENT_INFO = "";
     public static final String DEFAULT_IS_TOP_IMG = "";
     public static final String DEFAULT_LAST_TIME = "";
     public static final String DEFAULT_LEGO_CARD = "";
@@ -32,6 +34,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_RECOM_SOURCE = "";
     public static final String DEFAULT_RECOM_WEIGHT = "";
     public static final String DEFAULT_SCARD_PACKET_ID = "";
+    public static final String DEFAULT_THREAD_SHARE_LINK = "";
     public static final String DEFAULT_TIEBA_GAME_INFORMATION_SOURCE = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_TOPIC_H5_URL = "";
@@ -48,9 +51,9 @@ public final class ThreadInfo extends Message {
     public final String ab_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<ActInfo> act_info;
-    @ProtoField(tag = 132)
+    @ProtoField(tag = IMPushPb.PushImClient.ACTIONS_FIELD_NUMBER)
     public final ActivityInfo activity_info;
-    @ProtoField(tag = 126)
+    @ProtoField(tag = Opcodes.IAND)
     public final Agree agree;
     @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY_MEMBER, type = Message.Datatype.INT32)
     public final Integer agree_num;
@@ -64,7 +67,7 @@ public final class ThreadInfo extends Message {
     public final AppCode app_code;
     @ProtoField(tag = 117)
     public final AppInfo app_info;
-    @ProtoField(tag = BDLocation.TypeServerDecryptError, type = Message.Datatype.STRING)
+    @ProtoField(tag = 162, type = Message.Datatype.STRING)
     public final String article_cover;
     @ProtoField(tag = 138, type = Message.Datatype.INT64)
     public final Long audit_time;
@@ -72,9 +75,9 @@ public final class ThreadInfo extends Message {
     public final User author;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long author_id;
-    @ProtoField(tag = 169)
+    @ProtoField(tag = Opcodes.RET)
     public final Baijiahao baijiahao;
-    @ProtoField(tag = 163, type = Message.Datatype.INT32)
+    @ProtoField(tag = Opcodes.IF_ICMPGT, type = Message.Datatype.INT32)
     public final Integer bjh_content_tag;
     @ProtoField(tag = 102)
     public final BookThread book_chapter;
@@ -94,7 +97,7 @@ public final class ThreadInfo extends Message {
     public final Integer comment_num;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
-    @ProtoField(tag = 154, type = Message.Datatype.STRING)
+    @ProtoField(tag = Opcodes.IFNE, type = Message.Datatype.STRING)
     public final String daily_paper_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
@@ -116,7 +119,7 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = 155)
     public final SimpleForum forum_info;
-    @ProtoField(tag = 130, type = Message.Datatype.INT64)
+    @ProtoField(tag = IMPushPb.PushImClient.SDK_NAME_FIELD_NUMBER, type = Message.Datatype.INT64)
     public final Long freq_num;
     @ProtoField(tag = 49, type = Message.Datatype.STRING)
     public final String from;
@@ -132,6 +135,10 @@ public final class ThreadInfo extends Message {
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
+    @ProtoField(tag = 173, type = Message.Datatype.INT32)
+    public final Integer if_comment;
+    @ProtoField(tag = 174, type = Message.Datatype.STRING)
+    public final String if_comment_info;
     @ProtoField(tag = 58, type = Message.Datatype.UINT32)
     public final Integer isLzDeleteAll;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
@@ -140,7 +147,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_ad;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
-    @ProtoField(tag = BDLocation.TypeNetWorkLocation, type = Message.Datatype.INT32)
+    @ProtoField(tag = 161, type = Message.Datatype.INT32)
     public final Integer is_bjh;
     @ProtoField(tag = 103, type = Message.Datatype.UINT32)
     public final Integer is_book_chapter;
@@ -154,13 +161,13 @@ public final class ThreadInfo extends Message {
     public final Integer is_deal;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
-    @ProtoField(tag = 131, type = Message.Datatype.INT32)
+    @ProtoField(tag = IMPushPb.PushImClient.SDK_VERSION_FIELD_NUMBER, type = Message.Datatype.INT32)
     public final Integer is_god;
     @ProtoField(tag = 85, type = Message.Datatype.INT32)
     public final Integer is_godthread_recommend;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = 165, type = Message.Datatype.INT32)
+    @ProtoField(tag = Opcodes.IF_ACMPEQ, type = Message.Datatype.INT32)
     public final Integer is_headlinepost;
     @ProtoField(tag = 128, type = Message.Datatype.INT32)
     public final Integer is_link_thread;
@@ -200,11 +207,11 @@ public final class ThreadInfo extends Message {
     public final Integer is_tbread_dispatch;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_top;
-    @ProtoField(tag = 158, type = Message.Datatype.STRING)
+    @ProtoField(tag = Opcodes.IFLE, type = Message.Datatype.STRING)
     public final String is_top_img;
-    @ProtoField(tag = 148, type = Message.Datatype.INT32)
+    @ProtoField(tag = Opcodes.LCMP, type = Message.Datatype.INT32)
     public final Integer is_topic;
-    @ProtoField(tag = 153, type = Message.Datatype.INT32)
+    @ProtoField(tag = Opcodes.IFEQ, type = Message.Datatype.INT32)
     public final Integer is_videobiggie_recomthread;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_voice_thread;
@@ -266,7 +273,7 @@ public final class ThreadInfo extends Message {
     public final List<PostList> post_list;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = 151, type = Message.Datatype.STRING)
+    @ProtoField(tag = Opcodes.DCMPL, type = Message.Datatype.STRING)
     public final String presentation_style;
     @ProtoField(tag = 101)
     public final PsInfo ps_info;
@@ -306,12 +313,14 @@ public final class ThreadInfo extends Message {
     public final Integer storecount;
     @ProtoField(tag = 156)
     public final SmartApp swan_info;
-    @ProtoField(tag = 159, type = Message.Datatype.STRING)
+    @ProtoField(tag = Opcodes.IF_ICMPEQ, type = Message.Datatype.STRING)
     public final String t_share_img;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
     @ProtoField(tag = 116)
     public final TbreadDispatch tbread_dispatch_info;
+    @ProtoField(tag = 172, type = Message.Datatype.STRING)
+    public final String thread_share_link;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -334,7 +343,7 @@ public final class ThreadInfo extends Message {
     public final String topic_h5_url;
     @ProtoField(tag = 160)
     public final TopicModule topic_module;
-    @ProtoField(tag = 149, type = Message.Datatype.STRING)
+    @ProtoField(tag = Opcodes.FCMPL, type = Message.Datatype.STRING)
     public final String topic_user_name;
     @ProtoField(tag = 145, type = Message.Datatype.UINT64)
     public final Long trans_num;
@@ -458,6 +467,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_BJH_CONTENT_TAG = 0;
     public static final Integer DEFAULT_IS_HEADLINEPOST = 0;
     public static final Integer DEFAULT_IS_S_CARD = 0;
+    public static final Integer DEFAULT_IF_COMMENT = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1111,9 +1121,24 @@ public final class ThreadInfo extends Message {
             }
             if (builder.scard_packet_id == null) {
                 this.scard_packet_id = "";
-                return;
             } else {
                 this.scard_packet_id = builder.scard_packet_id;
+            }
+            if (builder.thread_share_link == null) {
+                this.thread_share_link = "";
+            } else {
+                this.thread_share_link = builder.thread_share_link;
+            }
+            if (builder.if_comment == null) {
+                this.if_comment = DEFAULT_IF_COMMENT;
+            } else {
+                this.if_comment = builder.if_comment;
+            }
+            if (builder.if_comment_info == null) {
+                this.if_comment_info = "";
+                return;
+            } else {
+                this.if_comment_info = builder.if_comment_info;
                 return;
             }
         }
@@ -1281,9 +1306,12 @@ public final class ThreadInfo extends Message {
         this.baijiahao = builder.baijiahao;
         this.is_s_card = builder.is_s_card;
         this.scard_packet_id = builder.scard_packet_id;
+        this.thread_share_link = builder.thread_share_link;
+        this.if_comment = builder.if_comment;
+        this.if_comment_info = builder.if_comment_info;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
         public String ab_tag;
@@ -1330,6 +1358,8 @@ public final class ThreadInfo extends Message {
         public HotTWThreadInfo hotTWInfo;
         public Integer hot_weight;
         public Long id;
+        public Integer if_comment;
+        public String if_comment_info;
         public Integer isLzDeleteAll;
         public Integer is_activity;
         public Integer is_ad;
@@ -1420,6 +1450,7 @@ public final class ThreadInfo extends Message {
         public String t_share_img;
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
+        public String thread_share_link;
         public Integer thread_type;
         public Integer thread_types;
         public Long tid;
@@ -1620,6 +1651,9 @@ public final class ThreadInfo extends Message {
                 this.baijiahao = threadInfo.baijiahao;
                 this.is_s_card = threadInfo.is_s_card;
                 this.scard_packet_id = threadInfo.scard_packet_id;
+                this.thread_share_link = threadInfo.thread_share_link;
+                this.if_comment = threadInfo.if_comment;
+                this.if_comment_info = threadInfo.if_comment_info;
             }
         }
 

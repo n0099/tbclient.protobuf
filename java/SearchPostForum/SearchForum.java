@@ -2,7 +2,7 @@ package tbclient.SearchPostForum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes11.dex */
 public final class SearchForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_CONCERN_NUM = "";
@@ -85,7 +85,7 @@ public final class SearchForum extends Message {
         this.has_concerned = builder.has_concerned;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes11.dex */
     public static final class Builder extends Message.Builder<SearchForum> {
         public String avatar;
         public String concern_num;

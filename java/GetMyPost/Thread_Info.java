@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class Thread_Info extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_LAST_TIME = "";
@@ -238,7 +238,7 @@ public final class Thread_Info extends Message {
         this.zan = builder.zan;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Thread_Info> {
         public String _abstract;
         public Integer comment_num;

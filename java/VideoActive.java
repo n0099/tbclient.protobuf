@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class VideoActive extends Message {
     public static final String DEFAULT_ACTIVE_NAME = "";
     public static final String DEFAULT_ACTIVE_URL = "";
@@ -87,7 +87,7 @@ public final class VideoActive extends Message {
         this.thread_list = immutableCopyOf(builder.thread_list);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VideoActive> {
         public String active_name;
         public String active_url;

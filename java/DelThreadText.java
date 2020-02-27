@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DelThreadText extends Message {
     public static final Integer DEFAULT_TEXT_ID = 0;
     public static final String DEFAULT_TEXT_INFO = "";
@@ -31,7 +31,7 @@ public final class DelThreadText extends Message {
         this.text_info = builder.text_info;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DelThreadText> {
         public Integer text_id;
         public String text_info;

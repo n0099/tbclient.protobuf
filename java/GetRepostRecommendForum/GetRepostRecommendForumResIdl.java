@@ -3,7 +3,7 @@ package tbclient.GetRepostRecommendForum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes11.dex */
+/* loaded from: classes13.dex */
 public final class GetRepostRecommendForumResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetRepostRecommendForumResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes11.dex */
+    /* loaded from: classes13.dex */
     public static final class Builder extends Message.Builder<GetRepostRecommendForumResIdl> {
         public DataRes data;
         public Error error;

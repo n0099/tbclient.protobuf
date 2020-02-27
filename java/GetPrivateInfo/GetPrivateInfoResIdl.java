@@ -3,7 +3,7 @@ package tbclient.GetPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class GetPrivateInfoResIdl extends Message {
     @ProtoField(tag = 1)
     public final ResData data;
@@ -21,7 +21,7 @@ public final class GetPrivateInfoResIdl extends Message {
         this.error = builder.error;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GetPrivateInfoResIdl> {
         public ResData data;
         public Error error;

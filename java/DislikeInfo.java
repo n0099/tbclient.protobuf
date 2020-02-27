@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DislikeInfo extends Message {
     public static final Integer DEFAULT_DISLIKE_ID = 0;
     public static final String DEFAULT_DISLIKE_REASON = "";
@@ -31,7 +31,7 @@ public final class DislikeInfo extends Message {
         this.dislike_id = builder.dislike_id;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DislikeInfo> {
         public Integer dislike_id;
         public String dislike_reason;

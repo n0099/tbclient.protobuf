@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class PbPostZan extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer has_zan;
@@ -31,7 +31,7 @@ public final class PbPostZan extends Message {
         this.has_zan = builder.has_zan;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PbPostZan> {
         public Integer has_zan;
         public Long zan_num;

@@ -3,27 +3,27 @@ package tbclient.UnreadTip;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1206common;
+    public final CommonReq f1266common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1206common = builder.f1207common;
+            this.f1266common = builder.f1267common;
         } else {
-            this.f1206common = builder.f1207common;
+            this.f1266common = builder.f1267common;
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1207common;
+        public CommonReq f1267common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1207common = dataReq.f1206common;
+                this.f1267common = dataReq.f1266common;
             }
         }
 

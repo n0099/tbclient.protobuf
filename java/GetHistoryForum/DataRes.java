@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.HistoryForumInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static final List<HistoryForumInfo> DEFAULT_HISTORY_FORUM = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -25,7 +25,7 @@ public final class DataRes extends Message {
         this.history_forum = immutableCopyOf(builder.history_forum);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<HistoryForumInfo> history_forum;
 

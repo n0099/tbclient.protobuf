@@ -8,7 +8,7 @@ import tbclient.ForumCreateInfo;
 import tbclient.FrequentlyForumInfo;
 import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -165,7 +165,7 @@ public final class DataRes extends Message {
         this.private_forum_popinfo = builder.private_forum_popinfo;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public ForumCreateInfo forum_create_info;

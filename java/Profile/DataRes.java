@@ -11,6 +11,7 @@ import tbclient.DealWindow;
 import tbclient.DynamicInfo;
 import tbclient.Feedback;
 import tbclient.ForumDynamic;
+import tbclient.GoodsWin;
 import tbclient.Highlist;
 import tbclient.ModuleInfo;
 import tbclient.PostInfoList;
@@ -21,7 +22,7 @@ import tbclient.UcCard;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 16)
     public final AlaLiveInfo ala_live_info;
@@ -39,6 +40,8 @@ public final class DataRes extends Message {
     public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 10)
     public final Feedback feedback;
+    @ProtoField(tag = 26)
+    public final GoodsWin goods_win;
     @ProtoField(tag = 7)
     public final Highlist highs;
     @ProtoField(tag = 15)
@@ -141,11 +144,11 @@ public final class DataRes extends Message {
             this.duxiaoman = builder.duxiaoman;
             if (builder.newest_dynamic_list == null) {
                 this.newest_dynamic_list = DEFAULT_NEWEST_DYNAMIC_LIST;
-                return;
             } else {
                 this.newest_dynamic_list = immutableCopyOf(builder.newest_dynamic_list);
-                return;
             }
+            this.goods_win = builder.goods_win;
+            return;
         }
         this.user = builder.user;
         this.anti_stat = builder.anti_stat;
@@ -171,9 +174,10 @@ public final class DataRes extends Message {
         this.recom_swan_list = immutableCopyOf(builder.recom_swan_list);
         this.duxiaoman = builder.duxiaoman;
         this.newest_dynamic_list = immutableCopyOf(builder.newest_dynamic_list);
+        this.goods_win = builder.goods_win;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AlaLiveInfo ala_live_info;
         public List<AlaLiveInfo> ala_live_record;
@@ -183,6 +187,7 @@ public final class DataRes extends Message {
         public Duxiaoman duxiaoman;
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
+        public GoodsWin goods_win;
         public Highlist highs;
         public ModuleInfo module_info;
         public List<ThreadInfo> newest_dynamic_list;
@@ -230,6 +235,7 @@ public final class DataRes extends Message {
                 this.recom_swan_list = DataRes.copyOf(dataRes.recom_swan_list);
                 this.duxiaoman = dataRes.duxiaoman;
                 this.newest_dynamic_list = DataRes.copyOf(dataRes.newest_dynamic_list);
+                this.goods_win = dataRes.goods_win;
             }
         }
 

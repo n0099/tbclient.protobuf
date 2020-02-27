@@ -3,15 +3,18 @@ package tbclient.Profile;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_FRIEND_UID_PORTRAIT = "";
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1152common;
+    public final CommonReq f1212common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String friend_uid_portrait;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer has_plist;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -95,7 +98,7 @@ public final class DataReq extends Message {
             } else {
                 this.has_plist = builder.has_plist;
             }
-            this.f1152common = builder.f1153common;
+            this.f1212common = builder.f1213common;
             if (builder.scr_w == null) {
                 this.scr_w = DEFAULT_SCR_W;
             } else {
@@ -123,9 +126,14 @@ public final class DataReq extends Message {
             }
             if (builder.page == null) {
                 this.page = DEFAULT_PAGE;
-                return;
             } else {
                 this.page = builder.page;
+            }
+            if (builder.friend_uid_portrait == null) {
+                this.friend_uid_portrait = "";
+                return;
+            } else {
+                this.friend_uid_portrait = builder.friend_uid_portrait;
                 return;
             }
         }
@@ -137,21 +145,23 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
-        this.f1152common = builder.f1153common;
+        this.f1212common = builder.f1213common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
         this.scr_dip = builder.scr_dip;
         this.is_from_usercenter = builder.is_from_usercenter;
         this.page = builder.page;
+        this.friend_uid_portrait = builder.friend_uid_portrait;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1153common;
+        public CommonReq f1213common;
         public Long friend_uid;
+        public String friend_uid_portrait;
         public Integer has_plist;
         public Integer is_from_usercenter;
         public Integer is_guest;
@@ -180,13 +190,14 @@ public final class DataReq extends Message {
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;
                 this.has_plist = dataReq.has_plist;
-                this.f1153common = dataReq.f1152common;
+                this.f1213common = dataReq.f1212common;
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;
                 this.q_type = dataReq.q_type;
                 this.scr_dip = dataReq.scr_dip;
                 this.is_from_usercenter = dataReq.is_from_usercenter;
                 this.page = dataReq.page;
+                this.friend_uid_portrait = dataReq.friend_uid_portrait;
             }
         }
 

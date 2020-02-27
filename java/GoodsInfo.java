@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes9.dex */
 public final class GoodsInfo extends Message {
     public static final String DEFAULT_AD_SOURCE = "";
     public static final String DEFAULT_BRAND_ICON = "";
@@ -265,7 +265,7 @@ public final class GoodsInfo extends Message {
         this.close_info = builder.close_info;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GoodsInfo> {
         public String ad_source;
         public String brand_icon;
