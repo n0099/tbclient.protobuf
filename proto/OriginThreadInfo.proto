@@ -1,10 +1,12 @@
 syntax = "proto3";
 
 import "Abstract.proto";
+import "Agree.proto";
 import "AlaLiveInfo.proto";
 import "Baijiahao.proto";
 import "Media.proto";
 import "PbContent.proto";
+import "User.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
 
@@ -24,4 +26,8 @@ message OriginThreadInfo {
     VideoInfo video_info = 13;
     repeated PbContent content = 14;
     int32 is_new_style = 15;
+    int32 reply_num = 16;
+    User author = 18;
+    Agree agree = 19;
+    int32 shared_num = 20;
 }

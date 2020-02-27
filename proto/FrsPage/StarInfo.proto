@@ -13,7 +13,6 @@ import "FrsPage/Video.proto";
 
 message StarInfo {
     int32 has_frs_star = 1;
-    string top = 2;
     string head = 3;
     int32 gender = 4;
     Info info = 5;

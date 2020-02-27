@@ -7,6 +7,7 @@ import "DealWindow.proto";
 import "DynamicInfo.proto";
 import "Feedback.proto";
 import "ForumDynamic.proto";
+import "GoodsWin.proto";
 import "Highlist.proto";
 import "ModuleInfo.proto";
 import "PostInfoList.proto";
@@ -48,4 +49,5 @@ message DataRes {
     repeated SmartApp recom_swan_list = 23;
     Duxiaoman duxiaoman = 24;
     repeated ThreadInfo newest_dynamic_list = 25;
+    GoodsWin goods_win = 26;
 }

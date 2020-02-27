@@ -35,4 +35,9 @@ message AlaLiveInfo {
     int32 frs_toplive_type = 26;
     string frs_toplive_pic = 27;
     int32 frs_toplive_force = 28;
+    int32 live_from = 29;
+    int32 thread_live_type = 30;
+    string third_room_id = 31;
+    string router_type = 32;
+    string third_live_type = 33;
 }

@@ -62,4 +62,5 @@ message DataReq {
     string ori_ugc_tid = 63;
     int32 ori_ugc_type = 65;
     string ori_ugc_vid = 66;
+    int32 after_ad_thread_count = 67;
 }

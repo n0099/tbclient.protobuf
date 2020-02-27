@@ -13,7 +13,6 @@ import "FrsPage/Manager.proto";
 import "FrsPage/MemberShowIcon.proto";
 import "FrsPage/PostPrefix.proto";
 import "FrsPage/PostTopic.proto";
-import "FrsPage/RealTime.proto";
 import "FrsPage/RecomUserInfo.proto";
 import "FrsPage/RecommendForum.proto";
 import "FrsPage/SignInfo.proto";
@@ -76,7 +75,6 @@ message ForumInfo {
     int32 has_game = 46;
     string game_url = 47;
     RecomUserInfo recommend_user_info = 48;
-    int32 can_use_accelerate = 49;
     string accelerate_cotent = 50;
     TopCode top_code = 51;
     TopNews news_info = 52;
@@ -85,13 +83,10 @@ message ForumInfo {
     MemberShowIcon forumvip_show_icon = 55;
     Adkiller adkiller_data = 56;
     Yule yule = 57;
-    RealTime realtime_data = 58;
     AcrossForumIcon across_forum_show = 60;
     PostTopic post_topic = 61;
     AcrossForumIcon across_forum_hide = 62;
     int32 is_live_game_forum = 63;
-    int32 is_live_game = 64;
-    int32 is_new_game_forum = 65;
     string forum_game_label = 66;
     string warning_msg = 67;
     string special_forum_type = 68;
@@ -104,4 +99,5 @@ message ForumInfo {
     int32 is_private_forum = 75;
     int32 is_show_bawutask = 77;
     string f_share_img = 78;
+    string forum_share_link = 79;
 }
