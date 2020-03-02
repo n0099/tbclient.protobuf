@@ -8,7 +8,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1106common;
+    public final CommonReq f1105common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -40,7 +40,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1106common = builder.f1107common;
+            this.f1105common = builder.f1106common;
             if (builder.tab_id == null) {
                 this.tab_id = DEFAULT_TAB_ID;
             } else {
@@ -89,7 +89,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1106common = builder.f1107common;
+        this.f1105common = builder.f1106common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;
@@ -105,7 +105,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1107common;
+        public CommonReq f1106common;
         public Long forum_id;
         public Integer is_default_navtab;
         public Long last_thread_id;
@@ -122,7 +122,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1107common = dataReq.f1106common;
+                this.f1106common = dataReq.f1105common;
                 this.tab_id = dataReq.tab_id;
                 this.forum_id = dataReq.forum_id;
                 this.pn = dataReq.pn;

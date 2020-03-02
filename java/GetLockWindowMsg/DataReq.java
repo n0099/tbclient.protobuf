@@ -8,7 +8,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1134common;
+    public final CommonReq f1133common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long task_id;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1134common = builder.f1135common;
+            this.f1133common = builder.f1134common;
             if (builder.tid == null) {
                 this.tid = DEFAULT_TID;
             } else {
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1134common = builder.f1135common;
+        this.f1133common = builder.f1134common;
         this.tid = builder.tid;
         this.task_id = builder.task_id;
     }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1135common;
+        public CommonReq f1134common;
         public Long task_id;
         public Long tid;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1135common = dataReq.f1134common;
+                this.f1134common = dataReq.f1133common;
                 this.tid = dataReq.tid;
                 this.task_id = dataReq.task_id;
             }

@@ -38,7 +38,7 @@ public final class StarInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
 
     /* renamed from: top  reason: collision with root package name */
-    public final String f1102top;
+    public final String f1101top;
     @ProtoField(tag = 14)
     public final Size top_size;
     @ProtoField(tag = 16)
@@ -57,10 +57,10 @@ public final class StarInfo extends Message {
             } else {
                 this.has_frs_star = builder.has_frs_star;
             }
-            if (builder.f1103top == null) {
-                this.f1102top = "";
+            if (builder.f1102top == null) {
+                this.f1101top = "";
             } else {
-                this.f1102top = builder.f1103top;
+                this.f1101top = builder.f1102top;
             }
             if (builder.head == null) {
                 this.head = "";
@@ -97,7 +97,7 @@ public final class StarInfo extends Message {
             }
         }
         this.has_frs_star = builder.has_frs_star;
-        this.f1102top = builder.f1103top;
+        this.f1101top = builder.f1102top;
         this.head = builder.head;
         this.gender = builder.gender;
         this.info = builder.info;
@@ -132,7 +132,7 @@ public final class StarInfo extends Message {
         public String star_forum_headimg;
 
         /* renamed from: top  reason: collision with root package name */
-        public String f1103top;
+        public String f1102top;
         public Size top_size;
         public Ticket trade;
         public Video video;
@@ -144,7 +144,7 @@ public final class StarInfo extends Message {
             super(starInfo);
             if (starInfo != null) {
                 this.has_frs_star = starInfo.has_frs_star;
-                this.f1103top = starInfo.f1102top;
+                this.f1102top = starInfo.f1101top;
                 this.head = starInfo.head;
                 this.gender = starInfo.gender;
                 this.info = starInfo.info;
