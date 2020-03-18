@@ -8,6 +8,8 @@ public final class FrsTabInfo extends Message {
     public static final String DEFAULT_TAB_NAME = "";
     public static final String DEFAULT_TAB_TITLE = "";
     public static final String DEFAULT_TAB_URL = "";
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer is_general_tab;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String tab_gid;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -22,6 +24,7 @@ public final class FrsTabInfo extends Message {
     public final String tab_url;
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final Integer DEFAULT_TAB_TYPE = 0;
+    public static final Integer DEFAULT_IS_GENERAL_TAB = 0;
 
     private FrsTabInfo(Builder builder, boolean z) {
         super(builder);
@@ -53,9 +56,14 @@ public final class FrsTabInfo extends Message {
             }
             if (builder.tab_title == null) {
                 this.tab_title = "";
-                return;
             } else {
                 this.tab_title = builder.tab_title;
+            }
+            if (builder.is_general_tab == null) {
+                this.is_general_tab = DEFAULT_IS_GENERAL_TAB;
+                return;
+            } else {
+                this.is_general_tab = builder.is_general_tab;
                 return;
             }
         }
@@ -65,10 +73,12 @@ public final class FrsTabInfo extends Message {
         this.tab_url = builder.tab_url;
         this.tab_gid = builder.tab_gid;
         this.tab_title = builder.tab_title;
+        this.is_general_tab = builder.is_general_tab;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FrsTabInfo> {
+        public Integer is_general_tab;
         public String tab_gid;
         public Integer tab_id;
         public String tab_name;
@@ -88,6 +98,7 @@ public final class FrsTabInfo extends Message {
                 this.tab_url = frsTabInfo.tab_url;
                 this.tab_gid = frsTabInfo.tab_gid;
                 this.tab_title = frsTabInfo.tab_title;
+                this.is_general_tab = frsTabInfo.is_general_tab;
             }
         }
 

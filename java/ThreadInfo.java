@@ -34,6 +34,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_RECOM_SOURCE = "";
     public static final String DEFAULT_RECOM_WEIGHT = "";
     public static final String DEFAULT_SCARD_PACKET_ID = "";
+    public static final String DEFAULT_TAB_NAME = "";
     public static final String DEFAULT_THREAD_SHARE_LINK = "";
     public static final String DEFAULT_TIEBA_GAME_INFORMATION_SOURCE = "";
     public static final String DEFAULT_TITLE = "";
@@ -315,6 +316,10 @@ public final class ThreadInfo extends Message {
     public final SmartApp swan_info;
     @ProtoField(tag = Opcodes.IF_ICMPEQ, type = Message.Datatype.STRING)
     public final String t_share_img;
+    @ProtoField(tag = 175, type = Message.Datatype.INT32)
+    public final Integer tab_id;
+    @ProtoField(tag = Opcodes.ARETURN, type = Message.Datatype.STRING)
+    public final String tab_name;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
     @ProtoField(tag = 116)
@@ -468,6 +473,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_HEADLINEPOST = 0;
     public static final Integer DEFAULT_IS_S_CARD = 0;
     public static final Integer DEFAULT_IF_COMMENT = 0;
+    public static final Integer DEFAULT_TAB_ID = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1136,9 +1142,19 @@ public final class ThreadInfo extends Message {
             }
             if (builder.if_comment_info == null) {
                 this.if_comment_info = "";
-                return;
             } else {
                 this.if_comment_info = builder.if_comment_info;
+            }
+            if (builder.tab_id == null) {
+                this.tab_id = DEFAULT_TAB_ID;
+            } else {
+                this.tab_id = builder.tab_id;
+            }
+            if (builder.tab_name == null) {
+                this.tab_name = "";
+                return;
+            } else {
+                this.tab_name = builder.tab_name;
                 return;
             }
         }
@@ -1309,6 +1325,8 @@ public final class ThreadInfo extends Message {
         this.thread_share_link = builder.thread_share_link;
         this.if_comment = builder.if_comment;
         this.if_comment_info = builder.if_comment_info;
+        this.tab_id = builder.tab_id;
+        this.tab_name = builder.tab_name;
     }
 
     /* loaded from: classes9.dex */
@@ -1448,6 +1466,8 @@ public final class ThreadInfo extends Message {
         public Integer storecount;
         public SmartApp swan_info;
         public String t_share_img;
+        public Integer tab_id;
+        public String tab_name;
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
         public String thread_share_link;
@@ -1654,6 +1674,8 @@ public final class ThreadInfo extends Message {
                 this.thread_share_link = threadInfo.thread_share_link;
                 this.if_comment = threadInfo.if_comment;
                 this.if_comment_info = threadInfo.if_comment_info;
+                this.tab_id = threadInfo.tab_id;
+                this.tab_name = threadInfo.tab_name;
             }
         }
 

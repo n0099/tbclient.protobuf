@@ -50,6 +50,8 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> thread_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
     public final List<ThreadPersonalized> thread_personalized;
+    @ProtoField(tag = 20)
+    public final UserFollowLive user_follow_live;
     public static final List<TagInfo> DEFAULT_TAG_LIST = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final List<Resource> DEFAULT_RESOURCE_LIST = Collections.emptyList();
@@ -137,6 +139,7 @@ public final class DataRes extends Message {
             this.live_answer = builder.live_answer;
             this.float_info = builder.float_info;
             this.recom_post_topic = builder.recom_post_topic;
+            this.user_follow_live = builder.user_follow_live;
             return;
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
@@ -158,6 +161,7 @@ public final class DataRes extends Message {
         this.live_answer = builder.live_answer;
         this.float_info = builder.float_info;
         this.recom_post_topic = builder.recom_post_topic;
+        this.user_follow_live = builder.user_follow_live;
     }
 
     /* loaded from: classes9.dex */
@@ -181,6 +185,7 @@ public final class DataRes extends Message {
         public List<TagInfo> tag_list;
         public List<ThreadInfo> thread_list;
         public List<ThreadPersonalized> thread_personalized;
+        public UserFollowLive user_follow_live;
 
         public Builder() {
         }
@@ -207,6 +212,7 @@ public final class DataRes extends Message {
                 this.live_answer = dataRes.live_answer;
                 this.float_info = dataRes.float_info;
                 this.recom_post_topic = dataRes.recom_post_topic;
+                this.user_follow_live = dataRes.user_follow_live;
             }
         }
 

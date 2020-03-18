@@ -2,6 +2,9 @@ package tbclient.SearchPostForum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
+import tbclient.FrsTabInfo;
 /* loaded from: classes11.dex */
 public final class SearchForum extends Message {
     public static final String DEFAULT_AVATAR = "";
@@ -26,8 +29,11 @@ public final class SearchForum extends Message {
     public final String post_num;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String slogan;
+    @ProtoField(label = Message.Label.REPEATED, tag = 9)
+    public final List<FrsTabInfo> tab_info;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_HAS_CONCERNED = 0;
+    public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
 
     private SearchForum(Builder builder, boolean z) {
         super(builder);
@@ -69,9 +75,14 @@ public final class SearchForum extends Message {
             }
             if (builder.has_concerned == null) {
                 this.has_concerned = DEFAULT_HAS_CONCERNED;
-                return;
             } else {
                 this.has_concerned = builder.has_concerned;
+            }
+            if (builder.tab_info == null) {
+                this.tab_info = DEFAULT_TAB_INFO;
+                return;
+            } else {
+                this.tab_info = immutableCopyOf(builder.tab_info);
                 return;
             }
         }
@@ -83,6 +94,7 @@ public final class SearchForum extends Message {
         this.slogan = builder.slogan;
         this.intro = builder.intro;
         this.has_concerned = builder.has_concerned;
+        this.tab_info = immutableCopyOf(builder.tab_info);
     }
 
     /* loaded from: classes11.dex */
@@ -95,6 +107,7 @@ public final class SearchForum extends Message {
         public String intro;
         public String post_num;
         public String slogan;
+        public List<FrsTabInfo> tab_info;
 
         public Builder() {
         }
@@ -110,6 +123,7 @@ public final class SearchForum extends Message {
                 this.slogan = searchForum.slogan;
                 this.intro = searchForum.intro;
                 this.has_concerned = searchForum.has_concerned;
+                this.tab_info = SearchForum.copyOf(searchForum.tab_info);
             }
         }
 

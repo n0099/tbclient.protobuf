@@ -16,6 +16,8 @@ public final class DataRes extends Message {
     public final Integer has_more;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer new_thread_num;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer sort_type;
     @ProtoField(tag = 5)
     public final SportPageHeadInfo sport_head_info;
     @ProtoField(tag = 4)
@@ -26,6 +28,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_HAS_MORE = 0;
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
     public static final Integer DEFAULT_NEW_THREAD_NUM = 0;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -49,9 +52,14 @@ public final class DataRes extends Message {
             this.sport_head_info = builder.sport_head_info;
             if (builder.new_thread_num == null) {
                 this.new_thread_num = DEFAULT_NEW_THREAD_NUM;
-                return;
             } else {
                 this.new_thread_num = builder.new_thread_num;
+            }
+            if (builder.sort_type == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.sort_type = builder.sort_type;
                 return;
             }
         }
@@ -61,6 +69,7 @@ public final class DataRes extends Message {
         this.sport_schedule_info = builder.sport_schedule_info;
         this.sport_head_info = builder.sport_head_info;
         this.new_thread_num = builder.new_thread_num;
+        this.sort_type = builder.sort_type;
     }
 
     /* loaded from: classes9.dex */
@@ -68,6 +77,7 @@ public final class DataRes extends Message {
         public List<ThreadInfo> general_list;
         public Integer has_more;
         public Integer new_thread_num;
+        public Integer sort_type;
         public SportPageHeadInfo sport_head_info;
         public SportScheduleInfo sport_schedule_info;
         public List<User> user_list;
@@ -84,6 +94,7 @@ public final class DataRes extends Message {
                 this.sport_schedule_info = dataRes.sport_schedule_info;
                 this.sport_head_info = dataRes.sport_head_info;
                 this.new_thread_num = dataRes.new_thread_num;
+                this.sort_type = dataRes.sort_type;
             }
         }
 

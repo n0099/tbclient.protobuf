@@ -5,6 +5,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_TAB_NAME = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
@@ -13,6 +14,8 @@ public final class DataReq extends Message {
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_default_navtab;
+    @ProtoField(tag = 12, type = Message.Datatype.INT32)
+    public final Integer is_general_tab;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long last_thread_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -25,8 +28,12 @@ public final class DataReq extends Message {
     public final Integer scr_h;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer scr_w;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer sort_type;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer tab_id;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String tab_name;
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_PN = 0;
@@ -36,6 +43,8 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_DIP = 0;
     public static final Long DEFAULT_LAST_THREAD_ID = 0L;
     public static final Integer DEFAULT_IS_DEFAULT_NAVTAB = 0;
+    public static final Integer DEFAULT_IS_GENERAL_TAB = 0;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -83,9 +92,24 @@ public final class DataReq extends Message {
             }
             if (builder.is_default_navtab == null) {
                 this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
-                return;
             } else {
                 this.is_default_navtab = builder.is_default_navtab;
+            }
+            if (builder.tab_name == null) {
+                this.tab_name = "";
+            } else {
+                this.tab_name = builder.tab_name;
+            }
+            if (builder.is_general_tab == null) {
+                this.is_general_tab = DEFAULT_IS_GENERAL_TAB;
+            } else {
+                this.is_general_tab = builder.is_general_tab;
+            }
+            if (builder.sort_type == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.sort_type = builder.sort_type;
                 return;
             }
         }
@@ -99,6 +123,9 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
         this.last_thread_id = builder.last_thread_id;
         this.is_default_navtab = builder.is_default_navtab;
+        this.tab_name = builder.tab_name;
+        this.is_general_tab = builder.is_general_tab;
+        this.sort_type = builder.sort_type;
     }
 
     /* loaded from: classes9.dex */
@@ -108,13 +135,16 @@ public final class DataReq extends Message {
         public CommonReq f1106common;
         public Long forum_id;
         public Integer is_default_navtab;
+        public Integer is_general_tab;
         public Long last_thread_id;
         public Integer pn;
         public Integer rn;
         public Integer scr_dip;
         public Integer scr_h;
         public Integer scr_w;
+        public Integer sort_type;
         public Integer tab_id;
+        public String tab_name;
 
         public Builder() {
         }
@@ -132,6 +162,9 @@ public final class DataReq extends Message {
                 this.scr_dip = dataReq.scr_dip;
                 this.last_thread_id = dataReq.last_thread_id;
                 this.is_default_navtab = dataReq.is_default_navtab;
+                this.tab_name = dataReq.tab_name;
+                this.is_general_tab = dataReq.is_general_tab;
+                this.sort_type = dataReq.sort_type;
             }
         }
 

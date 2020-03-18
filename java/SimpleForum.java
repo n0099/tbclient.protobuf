@@ -2,6 +2,8 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes9.dex */
 public final class SimpleForum extends Message {
     public static final String DEFAULT_AVATAR = "";
@@ -37,6 +39,8 @@ public final class SimpleForum extends Message {
     public final Integer post_num;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String second_class;
+    @ProtoField(label = Message.Label.REPEATED, tag = 15)
+    public final List<FrsTabInfo> tab_info;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_IS_EXISTS = 0;
     public static final Integer DEFAULT_IS_LIKED = 0;
@@ -45,6 +49,7 @@ public final class SimpleForum extends Message {
     public static final Integer DEFAULT_MEMBER_NUM = 0;
     public static final Integer DEFAULT_POST_NUM = 0;
     public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
+    public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
 
     private SimpleForum(Builder builder, boolean z) {
         super(builder);
@@ -112,9 +117,14 @@ public final class SimpleForum extends Message {
             }
             if (builder.is_brand_forum == null) {
                 this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
-                return;
             } else {
                 this.is_brand_forum = builder.is_brand_forum;
+            }
+            if (builder.tab_info == null) {
+                this.tab_info = DEFAULT_TAB_INFO;
+                return;
+            } else {
+                this.tab_info = immutableCopyOf(builder.tab_info);
                 return;
             }
         }
@@ -132,6 +142,7 @@ public final class SimpleForum extends Message {
         this.member_num = builder.member_num;
         this.post_num = builder.post_num;
         this.is_brand_forum = builder.is_brand_forum;
+        this.tab_info = immutableCopyOf(builder.tab_info);
     }
 
     /* loaded from: classes9.dex */
@@ -150,6 +161,7 @@ public final class SimpleForum extends Message {
         public String name;
         public Integer post_num;
         public String second_class;
+        public List<FrsTabInfo> tab_info;
 
         public Builder() {
         }
@@ -171,6 +183,7 @@ public final class SimpleForum extends Message {
                 this.member_num = simpleForum.member_num;
                 this.post_num = simpleForum.post_num;
                 this.is_brand_forum = simpleForum.is_brand_forum;
+                this.tab_info = SimpleForum.copyOf(simpleForum.tab_info);
             }
         }
 

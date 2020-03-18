@@ -8,6 +8,7 @@ public final class AlaUserInfo extends Message {
     public static final String DEFAULT_GREAT_ANCHOR_DESC_GRADE = "";
     public static final String DEFAULT_GREAT_ANCHOR_DESC_ROLE = "";
     public static final String DEFAULT_GREAT_ANCHOR_ICON = "";
+    public static final String DEFAULT_LEVEL_NAME = "";
     public static final String DEFAULT_LOCATION = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_SEX = "";
@@ -37,6 +38,8 @@ public final class AlaUserInfo extends Message {
     public final Long level_exp;
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer level_id;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String level_name;
     @ProtoField(tag = 9, type = Message.Datatype.UINT64)
     public final Long live_id;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
@@ -51,6 +54,8 @@ public final class AlaUserInfo extends Message {
     public final String sex;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer update_time;
+    @ProtoField(tag = 23, type = Message.Datatype.UINT64)
+    public final Long user_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
@@ -67,6 +72,7 @@ public final class AlaUserInfo extends Message {
     public static final Long DEFAULT_LEVEL_EXP = 0L;
     public static final Integer DEFAULT_IS_OFFICIAL = 0;
     public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
 
     private AlaUserInfo(Builder builder, boolean z) {
         super(builder);
@@ -173,9 +179,19 @@ public final class AlaUserInfo extends Message {
             }
             if (builder.great_anchor_desc_role == null) {
                 this.great_anchor_desc_role = "";
-                return;
             } else {
                 this.great_anchor_desc_role = builder.great_anchor_desc_role;
+            }
+            if (builder.level_name == null) {
+                this.level_name = "";
+            } else {
+                this.level_name = builder.level_name;
+            }
+            if (builder.user_id == null) {
+                this.user_id = DEFAULT_USER_ID;
+                return;
+            } else {
+                this.user_id = builder.user_id;
                 return;
             }
         }
@@ -200,6 +216,8 @@ public final class AlaUserInfo extends Message {
         this.great_anchor_icon = builder.great_anchor_icon;
         this.great_anchor_desc_grade = builder.great_anchor_desc_grade;
         this.great_anchor_desc_role = builder.great_anchor_desc_role;
+        this.level_name = builder.level_name;
+        this.user_id = builder.user_id;
     }
 
     /* loaded from: classes9.dex */
@@ -216,6 +234,7 @@ public final class AlaUserInfo extends Message {
         public Double lat;
         public Long level_exp;
         public Integer level_id;
+        public String level_name;
         public Long live_id;
         public Integer live_status;
         public Double lng;
@@ -223,6 +242,7 @@ public final class AlaUserInfo extends Message {
         public String portrait;
         public String sex;
         public Integer update_time;
+        public Long user_id;
         public String user_name;
         public String verify_status;
 
@@ -253,6 +273,8 @@ public final class AlaUserInfo extends Message {
                 this.great_anchor_icon = alaUserInfo.great_anchor_icon;
                 this.great_anchor_desc_grade = alaUserInfo.great_anchor_desc_grade;
                 this.great_anchor_desc_role = alaUserInfo.great_anchor_desc_role;
+                this.level_name = alaUserInfo.level_name;
+                this.user_id = alaUserInfo.user_id;
             }
         }
 
