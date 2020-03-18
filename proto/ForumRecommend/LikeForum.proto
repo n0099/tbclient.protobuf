@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FrsTabInfo.proto";
 import "PrivateForumInfo.proto";
 import "ThemeColorInfo.proto";
 
@@ -9,6 +10,7 @@ message LikeForum {
     string avatar = 3;
     int32 is_sign = 4;
     int32 level_id = 5;
+    int32 is_liveforum = 6;
     uint32 is_brand_forum = 7;
     string content = 9;
     int32 is_top = 10;
@@ -19,4 +21,5 @@ message LikeForum {
     int32 is_manager = 18;
     PrivateForumInfo private_forum_info = 19;
     int64 hot_thread_id = 20;
+    repeated FrsTabInfo tab_info = 21;
 }

@@ -22,4 +22,6 @@ message AlaUserInfo {
     string great_anchor_icon = 19;
     string great_anchor_desc_grade = 20;
     string great_anchor_desc_role = 21;
+    string level_name = 22;
+    uint64 user_id = 23;
 }

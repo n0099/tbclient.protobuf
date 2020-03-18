@@ -12,6 +12,7 @@ import "Personalized/Resource.proto";
 import "Personalized/TagInfo.proto";
 import "Personalized/TagStruct.proto";
 import "Personalized/ThreadPersonalized.proto";
+import "Personalized/UserFollowLive.proto";
 import "RecomPostTopic.proto";
 import "SimpleForum.proto";
 import "ThreadInfo.proto";
@@ -36,4 +37,5 @@ message DataRes {
     LiveAnswer live_answer = 17;
     FloatInfo float_info = 18;
     RecomPostTopic recom_post_topic = 19;
+    UserFollowLive user_follow_live = 20;
 }

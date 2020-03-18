@@ -198,4 +198,5 @@ message ThreadInfo {
     string thread_share_link = 172;
     int32 if_comment = 173;
     string if_comment_info = 174;
+    int32 tab_id = 175;
 }
