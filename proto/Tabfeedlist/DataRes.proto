@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "GeneralResource.proto";
+import "HotUserRankEntry.proto";
+import "RecommendForumInfo.proto";
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated ThreadInfo thread_list = 1;
+    repeated GeneralResource resource_list = 2;
+    HotUserRankEntry hot_userrank_entry = 3;
+    repeated RecommendForumInfo recommend_forum_info = 4;
+    int32 is_new_url = 5;
+}

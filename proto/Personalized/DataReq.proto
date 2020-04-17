@@ -30,4 +30,5 @@ message DataReq {
     int32 new_install = 27;
     int32 request_times = 28;
     string invoke_source = 29;
+    string ad_context_list = 30;
 }

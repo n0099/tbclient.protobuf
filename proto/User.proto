@@ -132,4 +132,6 @@ message User {
     BirthdayInfo birthday_info = 96;
     int32 can_modify_avatar = 97;
     string modify_avatar_desc = 98;
+    int32 influence = 99;
+    string level_influence = 100;
 }

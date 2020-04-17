@@ -3,7 +3,7 @@ syntax = "proto3";
 import "FrsPage/CommonDistance.proto";
 import "FrsPage/CommonForum.proto";
 import "FrsPage/PostInfo.proto";
-import "FrsPage/UserInfo.proto";
+import "UserInfo.proto";
 
 message RecomUserInfo {
     UserInfo user_info = 1;

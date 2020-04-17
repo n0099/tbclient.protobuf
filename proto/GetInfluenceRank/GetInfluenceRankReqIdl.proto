@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetInfluenceRank/DataReq.proto";
+
+message GetInfluenceRankReqIdl {
+    DataReq data = 1;
+}

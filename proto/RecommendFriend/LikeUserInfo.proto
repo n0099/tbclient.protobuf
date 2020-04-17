@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "RecommendFriend/ForumInfo.proto";
 import "RecommendFriend/PostInfo.proto";
-import "RecommendFriend/UserInfo.proto";
+import "UserInfo.proto";
 
 message LikeUserInfo {
     UserInfo user_info = 1;

@@ -3,4 +3,6 @@ syntax = "proto3";
 message Manager {
     int64 id = 1;
     string name = 2;
+    string show_name = 3;
+    string portrait = 4;
 }

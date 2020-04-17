@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 import "ExcPbPage/ExcellentPbThreadInfo.proto";
-import "ExcPbPage/UserInfo.proto";
 import "Post.proto";
 import "User.proto";
+import "UserInfo.proto";
 
 message DataRes {
     ExcellentPbThreadInfo thread_info = 1;

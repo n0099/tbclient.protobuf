@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetForumSquare/DataReq.proto";
+
+message GetForumSquareReqIdl {
+    DataReq data = 1;
+}

@@ -43,6 +43,7 @@ import "FrsPage/WorldcupSkin.proto";
 import "FrsPageUserExtend.proto";
 import "FrsTabInfo.proto";
 import "FrsVideo.proto";
+import "HotUserRankEntry.proto";
 import "NaGuide.proto";
 import "Novel.proto";
 import "Page.proto";
@@ -51,6 +52,7 @@ import "RecomPostTopic.proto";
 import "RecommendInfo.proto";
 import "RedpacketRain.proto";
 import "SdkTopicThread.proto";
+import "ServiceArea.proto";
 import "SmartApp.proto";
 import "StarVoice.proto";
 import "ThreadInfo.proto";
@@ -151,4 +153,7 @@ message DataRes {
     PrivateForumTotalInfo private_forum_info = 97;
     ForumActiveInfo private_forum_active_info = 98;
     BusinessPromot business_promot = 99;
+    repeated ServiceArea service_area = 100;
+    WindowToast bazhu_exam_fail = 101;
+    HotUserRankEntry hot_user_entry = 102;
 }

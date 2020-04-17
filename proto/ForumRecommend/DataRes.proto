@@ -6,6 +6,7 @@ import "ForumRecommend/HotSearch.proto";
 import "ForumRecommend/LikeForum.proto";
 import "ForumRecommend/NewRecommend.proto";
 import "FrequentlyForumInfo.proto";
+import "FrsTabInfo.proto";
 import "PrivatePopInfo.proto";
 import "RecommendForumInfo.proto";
 
@@ -28,4 +29,5 @@ message DataRes {
     int32 sort_type = 18;
     ForumCreateInfo forum_create_info = 19;
     PrivatePopInfo private_forum_popinfo = 20;
+    repeated FrsTabInfo nav_tab_info = 21;
 }

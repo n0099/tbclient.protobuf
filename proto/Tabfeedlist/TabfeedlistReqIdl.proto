@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Tabfeedlist/DataReq.proto";
+
+message TabfeedlistReqIdl {
+    DataReq data = 1;
+}

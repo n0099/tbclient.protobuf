@@ -63,4 +63,6 @@ message DataReq {
     int32 ori_ugc_type = 65;
     string ori_ugc_vid = 66;
     int32 after_ad_thread_count = 67;
+    string ad_context_list = 68;
+    string up_schema = 69;
 }

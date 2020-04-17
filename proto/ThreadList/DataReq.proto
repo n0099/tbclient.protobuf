@@ -22,4 +22,5 @@ message DataReq {
     int32 sort_type = 16;
     AppPosInfo app_pos = 17;
     AdParam ad_param = 18;
+    string ad_context_list = 19;
 }
