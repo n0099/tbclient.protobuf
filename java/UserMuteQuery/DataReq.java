@@ -8,7 +8,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1269common;
+    public final CommonReq f1275common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer mute_type;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
             } else {
                 this.user_id = builder.user_id;
             }
-            this.f1269common = builder.f1270common;
+            this.f1275common = builder.f1276common;
             if (builder.mute_type == null) {
                 this.mute_type = DEFAULT_MUTE_TYPE;
             } else {
@@ -50,7 +50,7 @@ public final class DataReq extends Message {
             }
         }
         this.user_id = builder.user_id;
-        this.f1269common = builder.f1270common;
+        this.f1275common = builder.f1276common;
         this.mute_type = builder.mute_type;
         this.pn = builder.pn;
         this.rn = builder.rn;
@@ -60,7 +60,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1270common;
+        public CommonReq f1276common;
         public Integer mute_type;
         public Integer pn;
         public Integer rn;
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.user_id = dataReq.user_id;
-                this.f1270common = dataReq.f1269common;
+                this.f1276common = dataReq.f1275common;
                 this.mute_type = dataReq.mute_type;
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;

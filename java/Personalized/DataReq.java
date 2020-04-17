@@ -7,6 +7,7 @@ import java.util.List;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AGE_TAG = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_INVOKE_SOURCE = "";
@@ -14,12 +15,14 @@ public final class DataReq extends Message {
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_SEX_TAG = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
+    @ProtoField(tag = 30, type = Message.Datatype.STRING)
+    public final String ad_context_list;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String age_tag;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1209common;
+    public final CommonReq f1213common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 25, type = Message.Datatype.INT64)
@@ -96,7 +99,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1209common = builder.f1210common;
+            this.f1213common = builder.f1214common;
             if (builder.tag_code == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
             } else {
@@ -229,13 +232,18 @@ public final class DataReq extends Message {
             }
             if (builder.invoke_source == null) {
                 this.invoke_source = "";
-                return;
             } else {
                 this.invoke_source = builder.invoke_source;
+            }
+            if (builder.ad_context_list == null) {
+                this.ad_context_list = "";
+                return;
+            } else {
+                this.ad_context_list = builder.ad_context_list;
                 return;
             }
         }
-        this.f1209common = builder.f1210common;
+        this.f1213common = builder.f1214common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;
@@ -263,14 +271,16 @@ public final class DataReq extends Message {
         this.new_install = builder.new_install;
         this.request_times = builder.request_times;
         this.invoke_source = builder.invoke_source;
+        this.ad_context_list = builder.ad_context_list;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public String ad_context_list;
         public String age_tag;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1210common;
+        public CommonReq f1214common;
         public String da_idfa;
         public Long from_tid;
         public List<String> interest_tag;
@@ -304,7 +314,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1210common = dataReq.f1209common;
+                this.f1214common = dataReq.f1213common;
                 this.tag_code = dataReq.tag_code;
                 this.need_tags = dataReq.need_tags;
                 this.load_type = dataReq.load_type;
@@ -332,6 +342,7 @@ public final class DataReq extends Message {
                 this.new_install = dataReq.new_install;
                 this.request_times = dataReq.request_times;
                 this.invoke_source = dataReq.invoke_source;
+                this.ad_context_list = dataReq.ad_context_list;
             }
         }
 

@@ -4,12 +4,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class FrsTabInfo extends Message {
+    public static final String DEFAULT_TAB_CODE = "";
     public static final String DEFAULT_TAB_GID = "";
     public static final String DEFAULT_TAB_NAME = "";
     public static final String DEFAULT_TAB_TITLE = "";
     public static final String DEFAULT_TAB_URL = "";
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_general_tab;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String tab_code;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String tab_gid;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -22,9 +25,12 @@ public final class FrsTabInfo extends Message {
     public final Integer tab_type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String tab_url;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+    public final Integer tab_version;
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final Integer DEFAULT_TAB_TYPE = 0;
     public static final Integer DEFAULT_IS_GENERAL_TAB = 0;
+    public static final Integer DEFAULT_TAB_VERSION = 0;
 
     private FrsTabInfo(Builder builder, boolean z) {
         super(builder);
@@ -61,9 +67,19 @@ public final class FrsTabInfo extends Message {
             }
             if (builder.is_general_tab == null) {
                 this.is_general_tab = DEFAULT_IS_GENERAL_TAB;
-                return;
             } else {
                 this.is_general_tab = builder.is_general_tab;
+            }
+            if (builder.tab_code == null) {
+                this.tab_code = "";
+            } else {
+                this.tab_code = builder.tab_code;
+            }
+            if (builder.tab_version == null) {
+                this.tab_version = DEFAULT_TAB_VERSION;
+                return;
+            } else {
+                this.tab_version = builder.tab_version;
                 return;
             }
         }
@@ -74,17 +90,21 @@ public final class FrsTabInfo extends Message {
         this.tab_gid = builder.tab_gid;
         this.tab_title = builder.tab_title;
         this.is_general_tab = builder.is_general_tab;
+        this.tab_code = builder.tab_code;
+        this.tab_version = builder.tab_version;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FrsTabInfo> {
         public Integer is_general_tab;
+        public String tab_code;
         public String tab_gid;
         public Integer tab_id;
         public String tab_name;
         public String tab_title;
         public Integer tab_type;
         public String tab_url;
+        public Integer tab_version;
 
         public Builder() {
         }
@@ -99,6 +119,8 @@ public final class FrsTabInfo extends Message {
                 this.tab_gid = frsTabInfo.tab_gid;
                 this.tab_title = frsTabInfo.tab_title;
                 this.is_general_tab = frsTabInfo.is_general_tab;
+                this.tab_code = frsTabInfo.tab_code;
+                this.tab_version = frsTabInfo.tab_version;
             }
         }
 

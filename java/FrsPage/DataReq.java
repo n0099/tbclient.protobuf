@@ -6,6 +6,7 @@ import tbclient.AppPosInfo;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_COOKIE = "";
     public static final String DEFAULT_DA_IDFA = "";
@@ -22,9 +23,12 @@ public final class DataReq extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
     public static final String DEFAULT_ST_TYPE = "";
+    public static final String DEFAULT_UP_SCHEMA = "";
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
+    @ProtoField(tag = 60, type = Message.Datatype.STRING)
+    public final String ad_context_list;
     @ProtoField(tag = 51)
     public final AdParam ad_param;
     @ProtoField(tag = 50)
@@ -133,6 +137,8 @@ public final class DataReq extends Message {
     public final String st_type;
     @ProtoField(tag = 29, type = Message.Datatype.BOOL)
     public final Boolean support_noun;
+    @ProtoField(tag = 61, type = Message.Datatype.STRING)
+    public final String up_schema;
     @ProtoField(tag = 31, type = Message.Datatype.INT64)
     public final Long user_id;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
@@ -466,9 +472,19 @@ public final class DataReq extends Message {
             }
             if (builder.is_default_navtab == null) {
                 this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
-                return;
             } else {
                 this.is_default_navtab = builder.is_default_navtab;
+            }
+            if (builder.ad_context_list == null) {
+                this.ad_context_list = "";
+            } else {
+                this.ad_context_list = builder.ad_context_list;
+            }
+            if (builder.up_schema == null) {
+                this.up_schema = "";
+                return;
+            } else {
+                this.up_schema = builder.up_schema;
                 return;
             }
         }
@@ -531,10 +547,13 @@ public final class DataReq extends Message {
         this.shoubai_cuid = builder.shoubai_cuid;
         this.hot_thread_id = builder.hot_thread_id;
         this.is_default_navtab = builder.is_default_navtab;
+        this.ad_context_list = builder.ad_context_list;
+        this.up_schema = builder.up_schema;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public String ad_context_list;
         public AdParam ad_param;
         public AppPosInfo app_pos;
         public Integer call_from;
@@ -590,6 +609,7 @@ public final class DataReq extends Message {
         public Integer st_param;
         public String st_type;
         public Boolean support_noun;
+        public String up_schema;
         public Long user_id;
         public String user_name;
         public Integer with_group;
@@ -662,6 +682,8 @@ public final class DataReq extends Message {
                 this.shoubai_cuid = dataReq.shoubai_cuid;
                 this.hot_thread_id = dataReq.hot_thread_id;
                 this.is_default_navtab = dataReq.is_default_navtab;
+                this.ad_context_list = dataReq.ad_context_list;
+                this.up_schema = dataReq.up_schema;
             }
         }
 

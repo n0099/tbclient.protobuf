@@ -15,6 +15,7 @@ import tbclient.ForumArIno;
 import tbclient.ForumPresentInfo;
 import tbclient.FrsTabInfo;
 import tbclient.FrsVideo;
+import tbclient.HotUserRankEntry;
 import tbclient.NaGuide;
 import tbclient.Novel;
 import tbclient.Page;
@@ -22,6 +23,7 @@ import tbclient.PopInfo;
 import tbclient.RecommendInfo;
 import tbclient.RedpacketRain;
 import tbclient.SdkTopicThread;
+import tbclient.ServiceArea;
 import tbclient.SmartApp;
 import tbclient.ThreadInfo;
 import tbclient.User;
@@ -60,6 +62,8 @@ public final class DataRes extends Message {
     public final BannerUserStory banner_user_story;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String bawu_enter_url;
+    @ProtoField(tag = 101)
+    public final WindowToast bazhu_exam_fail;
     @ProtoField(tag = 50)
     public final ForumBookInfo book_info;
     @ProtoField(tag = 58)
@@ -124,6 +128,8 @@ public final class DataRes extends Message {
     public final HeadSdk head_sdk;
     @ProtoField(tag = 26)
     public final ZhiBoInfoTW hot_twzhibo_info;
+    @ProtoField(tag = 102)
+    public final HotUserRankEntry hot_user_entry;
     @ProtoField(tag = 15)
     public final Info info;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
@@ -170,6 +176,8 @@ public final class DataRes extends Message {
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer server_time;
+    @ProtoField(label = Message.Label.REPEATED, tag = 100)
+    public final List<ServiceArea> service_area;
     @ProtoField(tag = 95)
     public final SmartApp smart_app;
     @ProtoField(label = Message.Label.REPEATED, tag = 94, type = Message.Datatype.STRING)
@@ -254,6 +262,7 @@ public final class DataRes extends Message {
     public static final List<BottomMenu> DEFAULT_BOTTOM_MENU = Collections.emptyList();
     public static final Integer DEFAULT_VIDEO_AUTO_PLAY = 0;
     public static final List<String> DEFAULT_SMART_APP_AVATAR = Collections.emptyList();
+    public static final List<ServiceArea> DEFAULT_SERVICE_AREA = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -517,6 +526,13 @@ public final class DataRes extends Message {
             this.private_forum_info = builder.private_forum_info;
             this.private_forum_active_info = builder.private_forum_active_info;
             this.business_promot = builder.business_promot;
+            if (builder.service_area == null) {
+                this.service_area = DEFAULT_SERVICE_AREA;
+            } else {
+                this.service_area = immutableCopyOf(builder.service_area);
+            }
+            this.bazhu_exam_fail = builder.bazhu_exam_fail;
+            this.hot_user_entry = builder.hot_user_entry;
             return;
         }
         this.user = builder.user;
@@ -610,6 +626,9 @@ public final class DataRes extends Message {
         this.private_forum_info = builder.private_forum_info;
         this.private_forum_active_info = builder.private_forum_active_info;
         this.business_promot = builder.business_promot;
+        this.service_area = immutableCopyOf(builder.service_area);
+        this.bazhu_exam_fail = builder.bazhu_exam_fail;
+        this.hot_user_entry = builder.hot_user_entry;
     }
 
     /* loaded from: classes9.dex */
@@ -627,6 +646,7 @@ public final class DataRes extends Message {
         public List<BannerThreadInfo> banner_thread_list;
         public BannerUserStory banner_user_story;
         public String bawu_enter_url;
+        public WindowToast bazhu_exam_fail;
         public ForumBookInfo book_info;
         public Bottle bottle;
         public List<BottomMenu> bottom_menu;
@@ -659,6 +679,7 @@ public final class DataRes extends Message {
         public Group group;
         public HeadSdk head_sdk;
         public ZhiBoInfoTW hot_twzhibo_info;
+        public HotUserRankEntry hot_user_entry;
         public Info info;
         public Integer is_auto_play_forumheadvideo;
         public Integer is_new_url;
@@ -682,6 +703,7 @@ public final class DataRes extends Message {
         public Integer school_recom_pos;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
+        public List<ServiceArea> service_area;
         public SmartApp smart_app;
         public List<String> smart_app_avatar;
         public Integer smart_frs_type;
@@ -803,6 +825,9 @@ public final class DataRes extends Message {
                 this.private_forum_info = dataRes.private_forum_info;
                 this.private_forum_active_info = dataRes.private_forum_active_info;
                 this.business_promot = dataRes.business_promot;
+                this.service_area = DataRes.copyOf(dataRes.service_area);
+                this.bazhu_exam_fail = dataRes.bazhu_exam_fail;
+                this.hot_user_entry = dataRes.hot_user_entry;
             }
         }
 

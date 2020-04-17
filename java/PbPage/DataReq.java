@@ -6,6 +6,7 @@ import tbclient.AppPosInfo;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FEED_NID = "";
@@ -24,8 +25,11 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ST_FROM = "";
     public static final String DEFAULT_ST_LINK = "";
     public static final String DEFAULT_ST_TYPE = "";
+    public static final String DEFAULT_UP_SCHEMA = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
+    @ProtoField(tag = 68, type = Message.Datatype.STRING)
+    public final String ad_context_list;
     @ProtoField(tag = 58)
     public final AdParam ad_param;
     @ProtoField(tag = 67, type = Message.Datatype.INT32)
@@ -43,7 +47,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1205common;
+    public final CommonReq f1209common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -138,6 +142,8 @@ public final class DataReq extends Message {
     public final String st_type;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer thread_type;
+    @ProtoField(tag = 69, type = Message.Datatype.STRING)
+    public final String up_schema;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer weipost;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -306,7 +312,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.f1205common = builder.f1206common;
+            this.f1209common = builder.f1210common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -466,9 +472,19 @@ public final class DataReq extends Message {
             }
             if (builder.after_ad_thread_count == null) {
                 this.after_ad_thread_count = DEFAULT_AFTER_AD_THREAD_COUNT;
-                return;
             } else {
                 this.after_ad_thread_count = builder.after_ad_thread_count;
+            }
+            if (builder.ad_context_list == null) {
+                this.ad_context_list = "";
+            } else {
+                this.ad_context_list = builder.ad_context_list;
+            }
+            if (builder.up_schema == null) {
+                this.up_schema = "";
+                return;
+            } else {
+                this.up_schema = builder.up_schema;
                 return;
             }
         }
@@ -496,7 +512,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f1205common = builder.f1206common;
+        this.f1209common = builder.f1210common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -531,10 +547,13 @@ public final class DataReq extends Message {
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_vid = builder.ori_ugc_vid;
         this.after_ad_thread_count = builder.after_ad_thread_count;
+        this.ad_context_list = builder.ad_context_list;
+        this.up_schema = builder.up_schema;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public String ad_context_list;
         public AdParam ad_param;
         public Integer after_ad_thread_count;
         public AppPosInfo app_pos;
@@ -544,7 +563,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1206common;
+        public CommonReq f1210common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -592,6 +611,7 @@ public final class DataReq extends Message {
         public Long st_task;
         public String st_type;
         public Integer thread_type;
+        public String up_schema;
         public Integer weipost;
         public Integer with_floor;
         public String yuelaou_locate;
@@ -627,7 +647,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.f1206common = dataReq.f1205common;
+                this.f1210common = dataReq.f1209common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;
@@ -662,6 +682,8 @@ public final class DataReq extends Message {
                 this.ori_ugc_type = dataReq.ori_ugc_type;
                 this.ori_ugc_vid = dataReq.ori_ugc_vid;
                 this.after_ad_thread_count = dataReq.after_ad_thread_count;
+                this.ad_context_list = dataReq.ad_context_list;
+                this.up_schema = dataReq.up_schema;
             }
         }
 

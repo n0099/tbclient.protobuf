@@ -14,6 +14,7 @@ public final class User extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_IP = "";
+    public static final String DEFAULT_LEVEL_INFLUENCE = "";
     public static final String DEFAULT_MODIFY_AVATAR_DESC = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
@@ -89,6 +90,8 @@ public final class User extends Message {
     public final List<Icon> iconinfo;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long id;
+    @ProtoField(tag = 99, type = Message.Datatype.INT32)
+    public final Integer influence;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String intro;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
@@ -133,6 +136,8 @@ public final class User extends Message {
     public final Integer left_call_num;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer level_id;
+    @ProtoField(tag = 100, type = Message.Datatype.STRING)
+    public final String level_influence;
     @ProtoField(label = Message.Label.REPEATED, tag = 47)
     public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -276,6 +281,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_IS_VIDEOBIGGIE = 0;
     public static final Integer DEFAULT_IS_SHOW_REDPACKET = 0;
     public static final Integer DEFAULT_CAN_MODIFY_AVATAR = 0;
+    public static final Integer DEFAULT_INFLUENCE = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -671,9 +677,19 @@ public final class User extends Message {
             }
             if (builder.modify_avatar_desc == null) {
                 this.modify_avatar_desc = "";
-                return;
             } else {
                 this.modify_avatar_desc = builder.modify_avatar_desc;
+            }
+            if (builder.influence == null) {
+                this.influence = DEFAULT_INFLUENCE;
+            } else {
+                this.influence = builder.influence;
+            }
+            if (builder.level_influence == null) {
+                this.level_influence = "";
+                return;
+            } else {
+                this.level_influence = builder.level_influence;
                 return;
             }
         }
@@ -775,6 +791,8 @@ public final class User extends Message {
         this.birthday_info = builder.birthday_info;
         this.can_modify_avatar = builder.can_modify_avatar;
         this.modify_avatar_desc = builder.modify_avatar_desc;
+        this.influence = builder.influence;
+        this.level_influence = builder.level_influence;
     }
 
     /* loaded from: classes9.dex */
@@ -812,6 +830,7 @@ public final class User extends Message {
         public Integer heavy_user;
         public List<Icon> iconinfo;
         public Long id;
+        public Integer influence;
         public String intro;
         public String ios_bimg_format;
         public String ip;
@@ -834,6 +853,7 @@ public final class User extends Message {
         public Integer is_videobiggie;
         public Integer left_call_num;
         public Integer level_id;
+        public String level_influence;
         public List<LikeForumInfo> likeForum;
         public Integer meizhi_level;
         public String modify_avatar_desc;
@@ -982,6 +1002,8 @@ public final class User extends Message {
                 this.birthday_info = user.birthday_info;
                 this.can_modify_avatar = user.can_modify_avatar;
                 this.modify_avatar_desc = user.modify_avatar_desc;
+                this.influence = user.influence;
+                this.level_influence = user.level_influence;
             }
         }
 

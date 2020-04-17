@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ForumCreateInfo;
 import tbclient.FrequentlyForumInfo;
+import tbclient.FrsTabInfo;
 import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
 /* loaded from: classes9.dex */
@@ -31,6 +32,8 @@ public final class DataRes extends Message {
     public final String msign_text;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer msign_valid;
+    @ProtoField(label = Message.Label.REPEATED, tag = 21)
+    public final List<FrsTabInfo> nav_tab_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<Banner> new_banner_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
@@ -61,6 +64,7 @@ public final class DataRes extends Message {
     public static final List<FrequentlyForumInfo> DEFAULT_FREQUENTLY_FORUM_INFO = Collections.emptyList();
     public static final List<RecommendForumInfo> DEFAULT_TAG_RECOMMEND_FORUM = Collections.emptyList();
     public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final List<FrsTabInfo> DEFAULT_NAV_TAB_INFO = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -143,7 +147,13 @@ public final class DataRes extends Message {
             }
             this.forum_create_info = builder.forum_create_info;
             this.private_forum_popinfo = builder.private_forum_popinfo;
-            return;
+            if (builder.nav_tab_info == null) {
+                this.nav_tab_info = DEFAULT_NAV_TAB_INFO;
+                return;
+            } else {
+                this.nav_tab_info = immutableCopyOf(builder.nav_tab_info);
+                return;
+            }
         }
         this.like_forum = immutableCopyOf(builder.like_forum);
         this.banner = immutableCopyOf(builder.banner);
@@ -163,6 +173,7 @@ public final class DataRes extends Message {
         this.sort_type = builder.sort_type;
         this.forum_create_info = builder.forum_create_info;
         this.private_forum_popinfo = builder.private_forum_popinfo;
+        this.nav_tab_info = immutableCopyOf(builder.nav_tab_info);
     }
 
     /* loaded from: classes9.dex */
@@ -177,6 +188,7 @@ public final class DataRes extends Message {
         public Integer msign_level;
         public String msign_text;
         public Integer msign_valid;
+        public List<FrsTabInfo> nav_tab_info;
         public List<Banner> new_banner_info;
         public List<NewRecommend> new_recommend;
         public PrivatePopInfo private_forum_popinfo;
@@ -210,6 +222,7 @@ public final class DataRes extends Message {
                 this.sort_type = dataRes.sort_type;
                 this.forum_create_info = dataRes.forum_create_info;
                 this.private_forum_popinfo = dataRes.private_forum_popinfo;
+                this.nav_tab_info = DataRes.copyOf(dataRes.nav_tab_info);
             }
         }
 
