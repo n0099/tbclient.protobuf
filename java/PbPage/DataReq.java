@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1209common;
+    public final CommonReq f1201common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -312,7 +312,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.f1209common = builder.f1210common;
+            this.f1201common = builder.f1202common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -512,7 +512,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f1209common = builder.f1210common;
+        this.f1201common = builder.f1202common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -563,7 +563,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1210common;
+        public CommonReq f1202common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -647,7 +647,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.f1210common = dataReq.f1209common;
+                this.f1202common = dataReq.f1201common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;

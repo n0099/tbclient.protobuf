@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1213common;
+    public final CommonReq f1205common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 25, type = Message.Datatype.INT64)
@@ -99,7 +99,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1213common = builder.f1214common;
+            this.f1205common = builder.f1206common;
             if (builder.tag_code == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
             } else {
@@ -243,7 +243,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1213common = builder.f1214common;
+        this.f1205common = builder.f1206common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;
@@ -280,7 +280,7 @@ public final class DataReq extends Message {
         public String age_tag;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1214common;
+        public CommonReq f1206common;
         public String da_idfa;
         public Long from_tid;
         public List<String> interest_tag;
@@ -314,7 +314,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1214common = dataReq.f1213common;
+                this.f1206common = dataReq.f1205common;
                 this.tag_code = dataReq.tag_code;
                 this.need_tags = dataReq.need_tags;
                 this.load_type = dataReq.load_type;

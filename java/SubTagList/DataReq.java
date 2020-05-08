@@ -13,12 +13,12 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1259common;
+    public final CommonReq f1251common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1259common = builder.f1260common;
+            this.f1251common = builder.f1252common;
             if (builder.arr_tag_id == null) {
                 this.arr_tag_id = DEFAULT_ARR_TAG_ID;
                 return;
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1259common = builder.f1260common;
+        this.f1251common = builder.f1252common;
         this.arr_tag_id = immutableCopyOf(builder.arr_tag_id);
     }
 
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
         public List<Integer> arr_tag_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1260common;
+        public CommonReq f1252common;
 
         public Builder() {
         }
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1260common = dataReq.f1259common;
+                this.f1252common = dataReq.f1251common;
                 this.arr_tag_id = DataReq.copyOf(dataReq.arr_tag_id);
             }
         }
