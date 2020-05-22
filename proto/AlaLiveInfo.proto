@@ -36,8 +36,15 @@ message AlaLiveInfo {
     string frs_toplive_pic = 27;
     int32 frs_toplive_force = 28;
     int32 live_from = 29;
-    int32 thread_live_type = 30;
     string third_room_id = 31;
     string router_type = 32;
     string third_live_type = 33;
+    string first_headline = 34;
+    string second_headline = 35;
+    uint32 pb_display_type = 36;
+    string recom_reason = 37;
+    uint32 open_recom_reason = 38;
+    uint32 open_recom_location = 39;
+    uint32 open_recom_fans = 40;
+    uint32 open_recom_duration = 41;
 }

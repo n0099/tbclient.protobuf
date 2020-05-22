@@ -8,4 +8,9 @@ message AppPosInfo {
     string latitude = 5;
     int64 addr_timestamp = 6;
     string asp_shown_info = 7;
+    string mercator_lat = 8;
+    string mercator_lon = 9;
+    string mercator_radius = 10;
+    int64 mercator_time = 11;
+    int32 mercator_city = 12;
 }

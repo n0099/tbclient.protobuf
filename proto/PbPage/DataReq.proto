@@ -65,4 +65,5 @@ message DataReq {
     int32 after_ad_thread_count = 67;
     string ad_context_list = 68;
     string up_schema = 69;
+    string pb_test_info = 70;
 }

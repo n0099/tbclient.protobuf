@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AppPosInfo.proto";
 import "CommonReq.proto";
 
 message DataReq {
@@ -31,4 +32,10 @@ message DataReq {
     int32 request_times = 28;
     string invoke_source = 29;
     string ad_context_list = 30;
+    double position_x = 31;
+    double position_y = 32;
+    string query_eqid = 33;
+    string first_dir = 34;
+    string second_dir = 35;
+    AppPosInfo app_pos = 36;
 }

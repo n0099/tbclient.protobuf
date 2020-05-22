@@ -168,6 +168,8 @@ message ThreadInfo {
     repeated DislikeInfo dislike_info = 120;
     repeated DeclareInfo declare_list = 121;
     repeated MultipleForum multiple_forum_list = 122;
+    int32 is_multiforum_thread = 123;
+    int32 agree_num = 124;
     int32 is_partial_visible = 127;
     int32 is_link_thread = 128;
     LinkThreadInfo link_info = 129;

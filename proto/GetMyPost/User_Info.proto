@@ -1,7 +1,9 @@
 syntax = "proto3";
 
+import "BaijiahaoInfo.proto";
 import "Balv.proto";
 import "GodInfo.proto";
+import "NewGodInfo.proto";
 
 message User_Info {
     int32 is_login = 1;
@@ -21,4 +23,6 @@ message User_Info {
     string fans_nickname = 15;
     int32 is_bawu = 16;
     string bawu_type = 17;
+    BaijiahaoInfo baijiahao_info = 18;
+    NewGodInfo new_god_data = 19;
 }

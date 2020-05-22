@@ -14,6 +14,7 @@ import "GodInfo.proto";
 import "Icon.proto";
 import "LikeForumInfo.proto";
 import "MyGroupInfo.proto";
+import "NewGodInfo.proto";
 import "NewParrScores.proto";
 import "NewUser.proto";
 import "NovelFansInfo.proto";
@@ -134,4 +135,5 @@ message User {
     string modify_avatar_desc = 98;
     int32 influence = 99;
     string level_influence = 100;
+    NewGodInfo new_god_data = 101;
 }

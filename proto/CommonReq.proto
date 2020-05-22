@@ -35,4 +35,5 @@ message CommonReq {
     string cuid_galaxy2 = 32;
     string cuid_gid = 33;
     string oaid = 34;
+    string c3_aid = 35;
 }

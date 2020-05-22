@@ -70,4 +70,5 @@ message Post {
     int32 show_squared = 47;
     int32 is_bjh = 48;
     string quote_id = 50;
+    int32 is_wonderful_post = 51;
 }

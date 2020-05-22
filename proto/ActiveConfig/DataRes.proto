@@ -8,4 +8,7 @@ message DataRes {
     string active_url = 3;
     repeated MissionInfo mission_list = 4;
     repeated FloatStrategy float_list = 5;
+    string newuser_pop_clickurl = 6;
+    string newuser_pop_money = 7;
+    string newuser_pop_top = 8;
 }

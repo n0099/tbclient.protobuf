@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    repeated int32 classid_list = 2;
+    int32 begin_id = 3;
+    int32 pn = 4;
+}

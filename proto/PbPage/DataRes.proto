@@ -90,4 +90,7 @@ message DataRes {
     repeated ThreadInfo bjh_recommend = 52;
     BusinessPromotInfo business_promot_info = 53;
     Promotion promotion = 54;
+    AlaLiveInfo recom_ala_info = 55;
+    int32 jumptotab1 = 56;
+    string jumptotab2 = 57;
 }

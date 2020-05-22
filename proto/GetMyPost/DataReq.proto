@@ -10,4 +10,5 @@ message DataReq {
     int32 scr_h = 6;
     double scr_dip = 7;
     int32 q_type = 8;
+    string bfrom = 9;
 }

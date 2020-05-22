@@ -24,4 +24,5 @@ message AlaUserInfo {
     string great_anchor_desc_role = 21;
     string level_name = 22;
     uint64 user_id = 23;
+    int32 anchor_fans = 24;
 }
