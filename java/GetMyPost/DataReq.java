@@ -5,6 +5,9 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_BFROM = "";
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String bfrom;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
@@ -67,9 +70,14 @@ public final class DataReq extends Message {
             }
             if (builder.q_type == null) {
                 this.q_type = DEFAULT_Q_TYPE;
-                return;
             } else {
                 this.q_type = builder.q_type;
+            }
+            if (builder.bfrom == null) {
+                this.bfrom = "";
+                return;
+            } else {
+                this.bfrom = builder.bfrom;
                 return;
             }
         }
@@ -81,10 +89,12 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
         this.q_type = builder.q_type;
+        this.bfrom = builder.bfrom;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public String bfrom;
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1138common;
@@ -110,6 +120,7 @@ public final class DataReq extends Message {
                 this.scr_h = dataReq.scr_h;
                 this.scr_dip = dataReq.scr_dip;
                 this.q_type = dataReq.q_type;
+                this.bfrom = dataReq.bfrom;
             }
         }
 

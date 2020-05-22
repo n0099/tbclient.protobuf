@@ -16,6 +16,8 @@ public final class AlaUserInfo extends Message {
     public static final String DEFAULT_VERIFY_STATUS = "";
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long ala_id;
+    @ProtoField(tag = 24, type = Message.Datatype.INT32)
+    public final Integer anchor_fans;
     @ProtoField(tag = 7, type = Message.Datatype.UINT64)
     public final Long anchor_live;
     @ProtoField(tag = 14, type = Message.Datatype.UINT64)
@@ -73,6 +75,7 @@ public final class AlaUserInfo extends Message {
     public static final Integer DEFAULT_IS_OFFICIAL = 0;
     public static final Integer DEFAULT_LEVEL_ID = 0;
     public static final Long DEFAULT_USER_ID = 0L;
+    public static final Integer DEFAULT_ANCHOR_FANS = 0;
 
     private AlaUserInfo(Builder builder, boolean z) {
         super(builder);
@@ -189,9 +192,14 @@ public final class AlaUserInfo extends Message {
             }
             if (builder.user_id == null) {
                 this.user_id = DEFAULT_USER_ID;
-                return;
             } else {
                 this.user_id = builder.user_id;
+            }
+            if (builder.anchor_fans == null) {
+                this.anchor_fans = DEFAULT_ANCHOR_FANS;
+                return;
+            } else {
+                this.anchor_fans = builder.anchor_fans;
                 return;
             }
         }
@@ -218,11 +226,13 @@ public final class AlaUserInfo extends Message {
         this.great_anchor_desc_role = builder.great_anchor_desc_role;
         this.level_name = builder.level_name;
         this.user_id = builder.user_id;
+        this.anchor_fans = builder.anchor_fans;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<AlaUserInfo> {
         public Long ala_id;
+        public Integer anchor_fans;
         public Long anchor_live;
         public Long charm_count;
         public String description;
@@ -275,6 +285,7 @@ public final class AlaUserInfo extends Message {
                 this.great_anchor_desc_role = alaUserInfo.great_anchor_desc_role;
                 this.level_name = alaUserInfo.level_name;
                 this.user_id = alaUserInfo.user_id;
+                this.anchor_fans = alaUserInfo.anchor_fans;
             }
         }
 

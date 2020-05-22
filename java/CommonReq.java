@@ -9,6 +9,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_BDUSS = "";
     public static final String DEFAULT_BRAND = "";
     public static final String DEFAULT_BRAND_TYPE = "";
+    public static final String DEFAULT_C3_AID = "";
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
@@ -59,6 +60,8 @@ public final class CommonReq extends Message {
     public final String brand;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String brand_type;
+    @ProtoField(tag = 35, type = Message.Datatype.STRING)
+    public final String c3_aid;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String cuid;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
@@ -277,9 +280,14 @@ public final class CommonReq extends Message {
             }
             if (builder.oaid == null) {
                 this.oaid = "";
-                return;
             } else {
                 this.oaid = builder.oaid;
+            }
+            if (builder.c3_aid == null) {
+                this.c3_aid = "";
+                return;
+            } else {
+                this.c3_aid = builder.c3_aid;
                 return;
             }
         }
@@ -317,6 +325,7 @@ public final class CommonReq extends Message {
         this.cuid_galaxy2 = builder.cuid_galaxy2;
         this.cuid_gid = builder.cuid_gid;
         this.oaid = builder.oaid;
+        this.c3_aid = builder.c3_aid;
     }
 
     /* loaded from: classes9.dex */
@@ -333,6 +342,7 @@ public final class CommonReq extends Message {
         public String applist;
         public String brand;
         public String brand_type;
+        public String c3_aid;
         public String cuid;
         public String cuid_galaxy2;
         public String cuid_gid;
@@ -396,6 +406,7 @@ public final class CommonReq extends Message {
                 this.cuid_galaxy2 = commonReq.cuid_galaxy2;
                 this.cuid_gid = commonReq.cuid_gid;
                 this.oaid = commonReq.oaid;
+                this.c3_aid = commonReq.c3_aid;
             }
         }
 

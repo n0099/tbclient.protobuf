@@ -19,6 +19,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ORI_UGC_NID = "";
     public static final String DEFAULT_ORI_UGC_TID = "";
     public static final String DEFAULT_ORI_UGC_VID = "";
+    public static final String DEFAULT_PB_TEST_INFO = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_QUERY_WORD = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
@@ -47,7 +48,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1201common;
+    public final CommonReq f1203common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -106,6 +107,8 @@ public final class DataReq extends Message {
     public final String ori_ugc_vid;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pb_rn;
+    @ProtoField(tag = 70, type = Message.Datatype.STRING)
+    public final String pb_test_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long pid;
     @ProtoField(tag = 43, type = Message.Datatype.STRING)
@@ -312,7 +315,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.f1201common = builder.f1202common;
+            this.f1203common = builder.f1204common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -482,9 +485,14 @@ public final class DataReq extends Message {
             }
             if (builder.up_schema == null) {
                 this.up_schema = "";
-                return;
             } else {
                 this.up_schema = builder.up_schema;
+            }
+            if (builder.pb_test_info == null) {
+                this.pb_test_info = "";
+                return;
+            } else {
+                this.pb_test_info = builder.pb_test_info;
                 return;
             }
         }
@@ -512,7 +520,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f1201common = builder.f1202common;
+        this.f1203common = builder.f1204common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -549,6 +557,7 @@ public final class DataReq extends Message {
         this.after_ad_thread_count = builder.after_ad_thread_count;
         this.ad_context_list = builder.ad_context_list;
         this.up_schema = builder.up_schema;
+        this.pb_test_info = builder.pb_test_info;
     }
 
     /* loaded from: classes9.dex */
@@ -563,7 +572,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1202common;
+        public CommonReq f1204common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -593,6 +602,7 @@ public final class DataReq extends Message {
         public Integer ori_ugc_type;
         public String ori_ugc_vid;
         public Integer pb_rn;
+        public String pb_test_info;
         public Long pid;
         public String platform;
         public Integer pn;
@@ -647,7 +657,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.f1202common = dataReq.f1201common;
+                this.f1204common = dataReq.f1203common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;
@@ -684,6 +694,7 @@ public final class DataReq extends Message {
                 this.after_ad_thread_count = dataReq.after_ad_thread_count;
                 this.ad_context_list = dataReq.ad_context_list;
                 this.up_schema = dataReq.up_schema;
+                this.pb_test_info = dataReq.pb_test_info;
             }
         }
 

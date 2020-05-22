@@ -9,6 +9,9 @@ public final class AppPosInfo extends Message {
     public static final String DEFAULT_COORDINATE_TYPE = "";
     public static final String DEFAULT_LATITUDE = "";
     public static final String DEFAULT_LONGITUDE = "";
+    public static final String DEFAULT_MERCATOR_LAT = "";
+    public static final String DEFAULT_MERCATOR_LON = "";
+    public static final String DEFAULT_MERCATOR_RADIUS = "";
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long addr_timestamp;
     @ProtoField(tag = 2, type = Message.Datatype.BOOL)
@@ -23,8 +26,20 @@ public final class AppPosInfo extends Message {
     public final String latitude;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String longitude;
+    @ProtoField(tag = 12, type = Message.Datatype.INT32)
+    public final Integer mercator_city;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String mercator_lat;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String mercator_lon;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String mercator_radius;
+    @ProtoField(tag = 11, type = Message.Datatype.INT64)
+    public final Long mercator_time;
     public static final Boolean DEFAULT_AP_CONNECTED = false;
     public static final Long DEFAULT_ADDR_TIMESTAMP = 0L;
+    public static final Long DEFAULT_MERCATOR_TIME = 0L;
+    public static final Integer DEFAULT_MERCATOR_CITY = 0;
 
     private AppPosInfo(Builder builder, boolean z) {
         super(builder);
@@ -61,9 +76,34 @@ public final class AppPosInfo extends Message {
             }
             if (builder.asp_shown_info == null) {
                 this.asp_shown_info = "";
-                return;
             } else {
                 this.asp_shown_info = builder.asp_shown_info;
+            }
+            if (builder.mercator_lat == null) {
+                this.mercator_lat = "";
+            } else {
+                this.mercator_lat = builder.mercator_lat;
+            }
+            if (builder.mercator_lon == null) {
+                this.mercator_lon = "";
+            } else {
+                this.mercator_lon = builder.mercator_lon;
+            }
+            if (builder.mercator_radius == null) {
+                this.mercator_radius = "";
+            } else {
+                this.mercator_radius = builder.mercator_radius;
+            }
+            if (builder.mercator_time == null) {
+                this.mercator_time = DEFAULT_MERCATOR_TIME;
+            } else {
+                this.mercator_time = builder.mercator_time;
+            }
+            if (builder.mercator_city == null) {
+                this.mercator_city = DEFAULT_MERCATOR_CITY;
+                return;
+            } else {
+                this.mercator_city = builder.mercator_city;
                 return;
             }
         }
@@ -74,6 +114,11 @@ public final class AppPosInfo extends Message {
         this.latitude = builder.latitude;
         this.addr_timestamp = builder.addr_timestamp;
         this.asp_shown_info = builder.asp_shown_info;
+        this.mercator_lat = builder.mercator_lat;
+        this.mercator_lon = builder.mercator_lon;
+        this.mercator_radius = builder.mercator_radius;
+        this.mercator_time = builder.mercator_time;
+        this.mercator_city = builder.mercator_city;
     }
 
     /* loaded from: classes9.dex */
@@ -85,6 +130,11 @@ public final class AppPosInfo extends Message {
         public String coordinate_type;
         public String latitude;
         public String longitude;
+        public Integer mercator_city;
+        public String mercator_lat;
+        public String mercator_lon;
+        public String mercator_radius;
+        public Long mercator_time;
 
         public Builder() {
         }
@@ -99,6 +149,11 @@ public final class AppPosInfo extends Message {
                 this.latitude = appPosInfo.latitude;
                 this.addr_timestamp = appPosInfo.addr_timestamp;
                 this.asp_shown_info = appPosInfo.asp_shown_info;
+                this.mercator_lat = appPosInfo.mercator_lat;
+                this.mercator_lon = appPosInfo.mercator_lon;
+                this.mercator_radius = appPosInfo.mercator_radius;
+                this.mercator_time = appPosInfo.mercator_time;
+                this.mercator_city = appPosInfo.mercator_city;
             }
         }
 

@@ -66,6 +66,8 @@ public final class Post extends Message {
     public final Integer is_voice;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer is_vote;
+    @ProtoField(tag = 51, type = Message.Datatype.INT32)
+    public final Integer is_wonderful_post;
     @ProtoField(tag = 7)
     public final Lbs lbs_info;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -135,6 +137,7 @@ public final class Post extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final Integer DEFAULT_SHOW_SQUARED = 0;
     public static final Integer DEFAULT_IS_BJH = 0;
+    public static final Integer DEFAULT_IS_WONDERFUL_POST = 0;
 
     private Post(Builder builder, boolean z) {
         super(builder);
@@ -309,9 +312,14 @@ public final class Post extends Message {
             }
             if (builder.quote_id == null) {
                 this.quote_id = "";
-                return;
             } else {
                 this.quote_id = builder.quote_id;
+            }
+            if (builder.is_wonderful_post == null) {
+                this.is_wonderful_post = DEFAULT_IS_WONDERFUL_POST;
+                return;
+            } else {
+                this.is_wonderful_post = builder.is_wonderful_post;
                 return;
             }
         }
@@ -364,6 +372,7 @@ public final class Post extends Message {
         this.show_squared = builder.show_squared;
         this.is_bjh = builder.is_bjh;
         this.quote_id = builder.quote_id;
+        this.is_wonderful_post = builder.is_wonderful_post;
     }
 
     /* loaded from: classes9.dex */
@@ -394,6 +403,7 @@ public final class Post extends Message {
         public Integer is_top_agree_post;
         public Integer is_voice;
         public Integer is_vote;
+        public Integer is_wonderful_post;
         public Lbs lbs_info;
         public String lego_card;
         public Integer need_log;
@@ -473,6 +483,7 @@ public final class Post extends Message {
                 this.show_squared = post.show_squared;
                 this.is_bjh = post.is_bjh;
                 this.quote_id = post.quote_id;
+                this.is_wonderful_post = post.is_wonderful_post;
             }
         }
 

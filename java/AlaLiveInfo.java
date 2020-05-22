@@ -8,6 +8,7 @@ import java.util.List;
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
+    public static final String DEFAULT_FIRST_HEADLINE = "";
     public static final String DEFAULT_FRS_TOPLIVE_PIC = "";
     public static final String DEFAULT_HLS_URL = "";
     public static final String DEFAULT_LABEL_NAME = "";
@@ -15,8 +16,10 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_MEDIA_PIC = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_MEDIA_URL = "";
+    public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_ROUTER_TYPE = "";
     public static final String DEFAULT_RTMP_URL = "";
+    public static final String DEFAULT_SECOND_HEADLINE = "";
     public static final String DEFAULT_SESSION_ID = "";
     public static final String DEFAULT_THIRD_APP_ID = "";
     public static final String DEFAULT_THIRD_LIVE_TYPE = "";
@@ -33,6 +36,8 @@ public final class AlaLiveInfo extends Message {
     public final Long distance;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer duration;
+    @ProtoField(tag = 34, type = Message.Datatype.STRING)
+    public final String first_headline;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer frs_toplive_force;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
@@ -63,12 +68,26 @@ public final class AlaLiveInfo extends Message {
     public final String media_subtitle;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String media_url;
+    @ProtoField(tag = 41, type = Message.Datatype.UINT32)
+    public final Integer open_recom_duration;
+    @ProtoField(tag = 40, type = Message.Datatype.UINT32)
+    public final Integer open_recom_fans;
+    @ProtoField(tag = 39, type = Message.Datatype.UINT32)
+    public final Integer open_recom_location;
+    @ProtoField(tag = 38, type = Message.Datatype.UINT32)
+    public final Integer open_recom_reason;
+    @ProtoField(tag = 36, type = Message.Datatype.UINT32)
+    public final Integer pb_display_type;
+    @ProtoField(tag = 37, type = Message.Datatype.STRING)
+    public final String recom_reason;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String router_type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String rtmp_url;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer screen_direction;
+    @ProtoField(tag = 35, type = Message.Datatype.STRING)
+    public final String second_headline;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String session_id;
     @ProtoField(tag = 19)
@@ -83,8 +102,6 @@ public final class AlaLiveInfo extends Message {
     public final String third_room_id;
     @ProtoField(tag = 22, type = Message.Datatype.UINT64)
     public final Long thread_id;
-    @ProtoField(tag = 30, type = Message.Datatype.INT32)
-    public final Integer thread_live_type;
     @ProtoField(tag = 12)
     public final AlaUserInfo user_info;
     public static final Long DEFAULT_LIVE_ID = 0L;
@@ -100,7 +117,11 @@ public final class AlaLiveInfo extends Message {
     public static final Integer DEFAULT_FRS_TOPLIVE_TYPE = 0;
     public static final Integer DEFAULT_FRS_TOPLIVE_FORCE = 0;
     public static final Integer DEFAULT_LIVE_FROM = 0;
-    public static final Integer DEFAULT_THREAD_LIVE_TYPE = 0;
+    public static final Integer DEFAULT_PB_DISPLAY_TYPE = 0;
+    public static final Integer DEFAULT_OPEN_RECOM_REASON = 0;
+    public static final Integer DEFAULT_OPEN_RECOM_LOCATION = 0;
+    public static final Integer DEFAULT_OPEN_RECOM_FANS = 0;
+    public static final Integer DEFAULT_OPEN_RECOM_DURATION = 0;
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -234,11 +255,6 @@ public final class AlaLiveInfo extends Message {
             } else {
                 this.live_from = builder.live_from;
             }
-            if (builder.thread_live_type == null) {
-                this.thread_live_type = DEFAULT_THREAD_LIVE_TYPE;
-            } else {
-                this.thread_live_type = builder.thread_live_type;
-            }
             if (builder.third_room_id == null) {
                 this.third_room_id = "";
             } else {
@@ -251,9 +267,49 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.third_live_type == null) {
                 this.third_live_type = "";
-                return;
             } else {
                 this.third_live_type = builder.third_live_type;
+            }
+            if (builder.first_headline == null) {
+                this.first_headline = "";
+            } else {
+                this.first_headline = builder.first_headline;
+            }
+            if (builder.second_headline == null) {
+                this.second_headline = "";
+            } else {
+                this.second_headline = builder.second_headline;
+            }
+            if (builder.pb_display_type == null) {
+                this.pb_display_type = DEFAULT_PB_DISPLAY_TYPE;
+            } else {
+                this.pb_display_type = builder.pb_display_type;
+            }
+            if (builder.recom_reason == null) {
+                this.recom_reason = "";
+            } else {
+                this.recom_reason = builder.recom_reason;
+            }
+            if (builder.open_recom_reason == null) {
+                this.open_recom_reason = DEFAULT_OPEN_RECOM_REASON;
+            } else {
+                this.open_recom_reason = builder.open_recom_reason;
+            }
+            if (builder.open_recom_location == null) {
+                this.open_recom_location = DEFAULT_OPEN_RECOM_LOCATION;
+            } else {
+                this.open_recom_location = builder.open_recom_location;
+            }
+            if (builder.open_recom_fans == null) {
+                this.open_recom_fans = DEFAULT_OPEN_RECOM_FANS;
+            } else {
+                this.open_recom_fans = builder.open_recom_fans;
+            }
+            if (builder.open_recom_duration == null) {
+                this.open_recom_duration = DEFAULT_OPEN_RECOM_DURATION;
+                return;
+            } else {
+                this.open_recom_duration = builder.open_recom_duration;
                 return;
             }
         }
@@ -286,10 +342,17 @@ public final class AlaLiveInfo extends Message {
         this.frs_toplive_pic = builder.frs_toplive_pic;
         this.frs_toplive_force = builder.frs_toplive_force;
         this.live_from = builder.live_from;
-        this.thread_live_type = builder.thread_live_type;
         this.third_room_id = builder.third_room_id;
         this.router_type = builder.router_type;
         this.third_live_type = builder.third_live_type;
+        this.first_headline = builder.first_headline;
+        this.second_headline = builder.second_headline;
+        this.pb_display_type = builder.pb_display_type;
+        this.recom_reason = builder.recom_reason;
+        this.open_recom_reason = builder.open_recom_reason;
+        this.open_recom_location = builder.open_recom_location;
+        this.open_recom_fans = builder.open_recom_fans;
+        this.open_recom_duration = builder.open_recom_duration;
     }
 
     /* loaded from: classes9.dex */
@@ -300,6 +363,7 @@ public final class AlaLiveInfo extends Message {
         public String description;
         public Long distance;
         public Integer duration;
+        public String first_headline;
         public Integer frs_toplive_force;
         public String frs_toplive_pic;
         public Integer frs_toplive_type;
@@ -315,9 +379,16 @@ public final class AlaLiveInfo extends Message {
         public String media_pic;
         public String media_subtitle;
         public String media_url;
+        public Integer open_recom_duration;
+        public Integer open_recom_fans;
+        public Integer open_recom_location;
+        public Integer open_recom_reason;
+        public Integer pb_display_type;
+        public String recom_reason;
         public String router_type;
         public String rtmp_url;
         public Integer screen_direction;
+        public String second_headline;
         public String session_id;
         public AlaShareInfo share_info;
         public List<AlaStageDislikeInfo> stage_dislike_info;
@@ -325,7 +396,6 @@ public final class AlaLiveInfo extends Message {
         public String third_live_type;
         public String third_room_id;
         public Long thread_id;
-        public Integer thread_live_type;
         public AlaUserInfo user_info;
 
         public Builder() {
@@ -363,10 +433,17 @@ public final class AlaLiveInfo extends Message {
                 this.frs_toplive_pic = alaLiveInfo.frs_toplive_pic;
                 this.frs_toplive_force = alaLiveInfo.frs_toplive_force;
                 this.live_from = alaLiveInfo.live_from;
-                this.thread_live_type = alaLiveInfo.thread_live_type;
                 this.third_room_id = alaLiveInfo.third_room_id;
                 this.router_type = alaLiveInfo.router_type;
                 this.third_live_type = alaLiveInfo.third_live_type;
+                this.first_headline = alaLiveInfo.first_headline;
+                this.second_headline = alaLiveInfo.second_headline;
+                this.pb_display_type = alaLiveInfo.pb_display_type;
+                this.recom_reason = alaLiveInfo.recom_reason;
+                this.open_recom_reason = alaLiveInfo.open_recom_reason;
+                this.open_recom_location = alaLiveInfo.open_recom_location;
+                this.open_recom_fans = alaLiveInfo.open_recom_fans;
+                this.open_recom_duration = alaLiveInfo.open_recom_duration;
             }
         }
 

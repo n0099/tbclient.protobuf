@@ -2,7 +2,9 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.BaijiahaoInfo;
 import tbclient.GodInfo;
+import tbclient.NewGodInfo;
 /* loaded from: classes9.dex */
 public final class User_Info extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
@@ -10,6 +12,8 @@ public final class User_Info extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
+    @ProtoField(tag = 18)
+    public final BaijiahaoInfo baijiahao_info;
     @ProtoField(tag = 12)
     public final Balv balv;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
@@ -38,6 +42,8 @@ public final class User_Info extends Message {
     public final String name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String name_show;
+    @ProtoField(tag = 19)
+    public final NewGodInfo new_god_data;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -132,11 +138,12 @@ public final class User_Info extends Message {
             }
             if (builder.bawu_type == null) {
                 this.bawu_type = "";
-                return;
             } else {
                 this.bawu_type = builder.bawu_type;
-                return;
             }
+            this.baijiahao_info = builder.baijiahao_info;
+            this.new_god_data = builder.new_god_data;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -155,10 +162,13 @@ public final class User_Info extends Message {
         this.fans_nickname = builder.fans_nickname;
         this.is_bawu = builder.is_bawu;
         this.bawu_type = builder.bawu_type;
+        this.baijiahao_info = builder.baijiahao_info;
+        this.new_god_data = builder.new_god_data;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<User_Info> {
+        public BaijiahaoInfo baijiahao_info;
         public Balv balv;
         public String bawu_type;
         public String fans_nickname;
@@ -173,6 +183,7 @@ public final class User_Info extends Message {
         public Integer is_select_tail;
         public String name;
         public String name_show;
+        public NewGodInfo new_god_data;
         public String portrait;
         public Integer type;
         public Integer userhide;
@@ -200,6 +211,8 @@ public final class User_Info extends Message {
                 this.fans_nickname = user_Info.fans_nickname;
                 this.is_bawu = user_Info.is_bawu;
                 this.bawu_type = user_Info.bawu_type;
+                this.baijiahao_info = user_Info.baijiahao_info;
+                this.new_god_data = user_Info.new_god_data;
             }
         }
 

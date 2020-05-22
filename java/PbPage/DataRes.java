@@ -30,6 +30,7 @@ import tbclient.User;
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_FOLD_TIP = "";
+    public static final String DEFAULT_JUMPTOTAB2 = "";
     public static final String DEFAULT_MULTI_FORUM_TEXT = "";
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
     @ProtoField(tag = 5)
@@ -86,6 +87,10 @@ public final class DataRes extends Message {
     public final Integer is_follow_current_channel;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_new_url;
+    @ProtoField(tag = 56, type = Message.Datatype.INT32)
+    public final Integer jumptotab1;
+    @ProtoField(tag = 57, type = Message.Datatype.STRING)
+    public final String jumptotab2;
     @ProtoField(tag = 9)
     public final Lbs location;
     @ProtoField(tag = 51)
@@ -112,6 +117,8 @@ public final class DataRes extends Message {
     public final List<Post> post_list;
     @ProtoField(tag = 54)
     public final Promotion promotion;
+    @ProtoField(tag = 55)
+    public final AlaLiveInfo recom_ala_info;
     @ProtoField(tag = 25)
     public final RecommendBook recommend_book;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
@@ -162,6 +169,7 @@ public final class DataRes extends Message {
     public static final List<PbSortType> DEFAULT_PB_SORT_INFO = Collections.emptyList();
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND = Collections.emptyList();
+    public static final Integer DEFAULT_JUMPTOTAB1 = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -324,7 +332,19 @@ public final class DataRes extends Message {
             }
             this.business_promot_info = builder.business_promot_info;
             this.promotion = builder.promotion;
-            return;
+            this.recom_ala_info = builder.recom_ala_info;
+            if (builder.jumptotab1 == null) {
+                this.jumptotab1 = DEFAULT_JUMPTOTAB1;
+            } else {
+                this.jumptotab1 = builder.jumptotab1;
+            }
+            if (builder.jumptotab2 == null) {
+                this.jumptotab2 = "";
+                return;
+            } else {
+                this.jumptotab2 = builder.jumptotab2;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -380,6 +400,9 @@ public final class DataRes extends Message {
         this.bjh_recommend = immutableCopyOf(builder.bjh_recommend);
         this.business_promot_info = builder.business_promot_info;
         this.promotion = builder.promotion;
+        this.recom_ala_info = builder.recom_ala_info;
+        this.jumptotab1 = builder.jumptotab1;
+        this.jumptotab2 = builder.jumptotab2;
     }
 
     /* loaded from: classes9.dex */
@@ -411,6 +434,8 @@ public final class DataRes extends Message {
         public PbHotPost hot_post_list;
         public Integer is_follow_current_channel;
         public Integer is_new_url;
+        public Integer jumptotab1;
+        public String jumptotab2;
         public Lbs location;
         public ManagerElection manager_election;
         public String multi_forum_text;
@@ -424,6 +449,7 @@ public final class DataRes extends Message {
         public List<PostBanner> post_banner;
         public List<Post> post_list;
         public Promotion promotion;
+        public AlaLiveInfo recom_ala_info;
         public RecommendBook recommend_book;
         public List<RecommendThread> recommend_threads;
         public List<SimpleForum> repost_recommend_forum_list;
@@ -499,6 +525,9 @@ public final class DataRes extends Message {
                 this.bjh_recommend = DataRes.copyOf(dataRes.bjh_recommend);
                 this.business_promot_info = dataRes.business_promot_info;
                 this.promotion = dataRes.promotion;
+                this.recom_ala_info = dataRes.recom_ala_info;
+                this.jumptotab1 = dataRes.jumptotab1;
+                this.jumptotab2 = dataRes.jumptotab2;
             }
         }
 

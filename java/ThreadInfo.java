@@ -46,6 +46,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_VIDEO_ID = "";
     public static final String DEFAULT_VIDEO_MOBILE_URL = "";
     public static final String DEFAULT_VIDEO_SWF = "";
+    public static final String DEFAULT_WONDERFUL_POST_INFO = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
     @ProtoField(tag = 108, type = Message.Datatype.STRING)
@@ -56,7 +57,7 @@ public final class ThreadInfo extends Message {
     public final ActivityInfo activity_info;
     @ProtoField(tag = Opcodes.IAND)
     public final Agree agree;
-    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY_MEMBER, type = Message.Datatype.INT32)
+    @ProtoField(tag = 124, type = Message.Datatype.INT32)
     public final Integer agree_num;
     @ProtoField(tag = 113)
     public final AlaLiveInfo ala_info;
@@ -178,7 +179,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_meizhi;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer is_membertop;
-    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY, type = Message.Datatype.INT32)
+    @ProtoField(tag = 123, type = Message.Datatype.INT32)
     public final Integer is_multiforum_thread;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_notice;
@@ -380,6 +381,8 @@ public final class ThreadInfo extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
+    @ProtoField(tag = Opcodes.RETURN, type = Message.Datatype.STRING)
+    public final String wonderful_post_info;
     @ProtoField(tag = 88)
     public final YulePostActivity yule_post_activity;
     @ProtoField(tag = 41)
@@ -1152,9 +1155,14 @@ public final class ThreadInfo extends Message {
             }
             if (builder.tab_name == null) {
                 this.tab_name = "";
-                return;
             } else {
                 this.tab_name = builder.tab_name;
+            }
+            if (builder.wonderful_post_info == null) {
+                this.wonderful_post_info = "";
+                return;
+            } else {
+                this.wonderful_post_info = builder.wonderful_post_info;
                 return;
             }
         }
@@ -1327,6 +1335,7 @@ public final class ThreadInfo extends Message {
         this.if_comment_info = builder.if_comment_info;
         this.tab_id = builder.tab_id;
         this.tab_name = builder.tab_name;
+        this.wonderful_post_info = builder.wonderful_post_info;
     }
 
     /* loaded from: classes9.dex */
@@ -1498,6 +1507,7 @@ public final class ThreadInfo extends Message {
         public VideoActive videoactive_info;
         public Integer view_num;
         public List<Voice> voice_info;
+        public String wonderful_post_info;
         public YulePostActivity yule_post_activity;
         public Zan zan;
 
@@ -1676,6 +1686,7 @@ public final class ThreadInfo extends Message {
                 this.if_comment_info = threadInfo.if_comment_info;
                 this.tab_id = threadInfo.tab_id;
                 this.tab_name = threadInfo.tab_name;
+                this.wonderful_post_info = threadInfo.wonderful_post_info;
             }
         }
 

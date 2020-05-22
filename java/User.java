@@ -152,6 +152,8 @@ public final class User extends Message {
     public final String name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String name_show;
+    @ProtoField(tag = 101)
+    public final NewGodInfo new_god_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<TshowInfo> new_tshow_icon;
     @ProtoField(tag = 8)
@@ -687,11 +689,11 @@ public final class User extends Message {
             }
             if (builder.level_influence == null) {
                 this.level_influence = "";
-                return;
             } else {
                 this.level_influence = builder.level_influence;
-                return;
             }
+            this.new_god_data = builder.new_god_data;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -793,6 +795,7 @@ public final class User extends Message {
         this.modify_avatar_desc = builder.modify_avatar_desc;
         this.influence = builder.influence;
         this.level_influence = builder.level_influence;
+        this.new_god_data = builder.new_god_data;
     }
 
     /* loaded from: classes9.dex */
@@ -861,6 +864,7 @@ public final class User extends Message {
         public Integer my_like_num;
         public String name;
         public String name_show;
+        public NewGodInfo new_god_data;
         public List<TshowInfo> new_tshow_icon;
         public NewUser new_user_info;
         public Integer nickname_update_time;
@@ -1004,6 +1008,7 @@ public final class User extends Message {
                 this.modify_avatar_desc = user.modify_avatar_desc;
                 this.influence = user.influence;
                 this.level_influence = user.level_influence;
+                this.new_god_data = user.new_god_data;
             }
         }
 

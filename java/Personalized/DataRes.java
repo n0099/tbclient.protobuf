@@ -26,6 +26,8 @@ public final class DataRes extends Message {
     public final List<CardTopic> card_topic;
     @ProtoField(tag = 18)
     public final FloatInfo float_info;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer fresh_ctrl_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
     public final List<TagStruct> interestion;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -64,6 +66,7 @@ public final class DataRes extends Message {
     public static final List<CardGod> DEFAULT_CARD_GOD = Collections.emptyList();
     public static final List<SimpleForum> DEFAULT_LIKE_FORUMS = Collections.emptyList();
     public static final Integer DEFAULT_STYLE_AB_TAG = 0;
+    public static final Integer DEFAULT_FRESH_CTRL_NUM = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -140,7 +143,13 @@ public final class DataRes extends Message {
             this.float_info = builder.float_info;
             this.recom_post_topic = builder.recom_post_topic;
             this.user_follow_live = builder.user_follow_live;
-            return;
+            if (builder.fresh_ctrl_num == null) {
+                this.fresh_ctrl_num = DEFAULT_FRESH_CTRL_NUM;
+                return;
+            } else {
+                this.fresh_ctrl_num = builder.fresh_ctrl_num;
+                return;
+            }
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
         this.thread_list = immutableCopyOf(builder.thread_list);
@@ -162,6 +171,7 @@ public final class DataRes extends Message {
         this.float_info = builder.float_info;
         this.recom_post_topic = builder.recom_post_topic;
         this.user_follow_live = builder.user_follow_live;
+        this.fresh_ctrl_num = builder.fresh_ctrl_num;
     }
 
     /* loaded from: classes9.dex */
@@ -173,6 +183,7 @@ public final class DataRes extends Message {
         public List<CardGod> card_god;
         public List<CardTopic> card_topic;
         public FloatInfo float_info;
+        public Integer fresh_ctrl_num;
         public List<TagStruct> interestion;
         public Integer is_new_url;
         public List<SimpleForum> like_forums;
@@ -213,6 +224,7 @@ public final class DataRes extends Message {
                 this.float_info = dataRes.float_info;
                 this.recom_post_topic = dataRes.recom_post_topic;
                 this.user_follow_live = dataRes.user_follow_live;
+                this.fresh_ctrl_num = dataRes.fresh_ctrl_num;
             }
         }
 
