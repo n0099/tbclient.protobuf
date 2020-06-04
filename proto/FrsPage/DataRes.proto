@@ -44,6 +44,7 @@ import "FrsPageUserExtend.proto";
 import "FrsTabInfo.proto";
 import "FrsVideo.proto";
 import "HotUserRankEntry.proto";
+import "ItemInfo.proto";
 import "NaGuide.proto";
 import "Novel.proto";
 import "Page.proto";
@@ -156,4 +157,5 @@ message DataRes {
     repeated ServiceArea service_area = 100;
     WindowToast bazhu_exam_fail = 101;
     HotUserRankEntry hot_user_entry = 102;
+    ItemInfo item_info = 103;
 }

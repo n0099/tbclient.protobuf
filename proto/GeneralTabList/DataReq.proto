@@ -15,4 +15,5 @@ message DataReq {
     string tab_name = 11;
     int32 is_general_tab = 12;
     int32 sort_type = 13;
+    int32 tab_type = 14;
 }

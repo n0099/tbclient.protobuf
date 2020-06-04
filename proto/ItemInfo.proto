@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message ItemInfo {
+    uint32 id = 1;
+    string name = 2;
+    string icon_url = 3;
+    string brief = 4;
+    repeated string tags = 5;
+}

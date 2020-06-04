@@ -1,5 +1,6 @@
 syntax = "proto3";
 
 message ForumActiveInfo {
-    
+    string forum_brief = 1;
+    string forum_share_url = 2;
 }
