@@ -7,11 +7,11 @@ public final class ForumActiveInfo extends Message {
     public static final String DEFAULT_FORUM_BRIEF = "";
     public static final String DEFAULT_FORUM_SHARE_URL = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public String forum_brief;
+    public final String forum_brief;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public String forum_share_url;
+    public final String forum_share_url;
 
-    public ForumActiveInfo(Builder builder, boolean z) {
+    private ForumActiveInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
             if (builder.forum_brief == null) {

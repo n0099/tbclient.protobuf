@@ -16,6 +16,7 @@ import tbclient.ForumPresentInfo;
 import tbclient.FrsTabInfo;
 import tbclient.FrsVideo;
 import tbclient.HotUserRankEntry;
+import tbclient.ItemInfo;
 import tbclient.NaGuide;
 import tbclient.Novel;
 import tbclient.Page;
@@ -136,6 +137,8 @@ public final class DataRes extends Message {
     public final Integer is_auto_play_forumheadvideo;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
+    @ProtoField(tag = 103)
+    public final ItemInfo item_info;
     @ProtoField(tag = 69)
     public final AlaLiveNotify live_frs_notify;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
@@ -533,6 +536,7 @@ public final class DataRes extends Message {
             }
             this.bazhu_exam_fail = builder.bazhu_exam_fail;
             this.hot_user_entry = builder.hot_user_entry;
+            this.item_info = builder.item_info;
             return;
         }
         this.user = builder.user;
@@ -629,6 +633,7 @@ public final class DataRes extends Message {
         this.service_area = immutableCopyOf(builder.service_area);
         this.bazhu_exam_fail = builder.bazhu_exam_fail;
         this.hot_user_entry = builder.hot_user_entry;
+        this.item_info = builder.item_info;
     }
 
     /* loaded from: classes9.dex */
@@ -683,6 +688,7 @@ public final class DataRes extends Message {
         public Info info;
         public Integer is_auto_play_forumheadvideo;
         public Integer is_new_url;
+        public ItemInfo item_info;
         public AlaLiveNotify live_frs_notify;
         public Long logid;
         public NaGuide na_guide;
@@ -828,6 +834,7 @@ public final class DataRes extends Message {
                 this.service_area = DataRes.copyOf(dataRes.service_area);
                 this.bazhu_exam_fail = dataRes.bazhu_exam_fail;
                 this.hot_user_entry = dataRes.hot_user_entry;
+                this.item_info = dataRes.item_info;
             }
         }
 

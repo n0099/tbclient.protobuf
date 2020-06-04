@@ -49,6 +49,8 @@ public final class ForumInfo extends Message {
     public final Banner banner;
     @ProtoField(tag = 33)
     public final BannerList banner_list;
+    @ProtoField(tag = 49, type = Message.Datatype.INT32)
+    public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
     @ProtoField(tag = 78, type = Message.Datatype.STRING)
@@ -93,10 +95,14 @@ public final class ForumInfo extends Message {
     public final Integer is_forbidden;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
+    @ProtoField(tag = 64, type = Message.Datatype.INT32)
+    public final Integer is_live_game;
     @ProtoField(tag = 63, type = Message.Datatype.INT32)
     public final Integer is_live_game_forum;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_local_effect;
+    @ProtoField(tag = 65, type = Message.Datatype.INT32)
+    public final Integer is_new_game_forum;
     @ProtoField(tag = 75, type = Message.Datatype.INT32)
     public final Integer is_private_forum;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
@@ -135,6 +141,8 @@ public final class ForumInfo extends Message {
     public final PostPrefix post_prefix;
     @ProtoField(tag = 61)
     public final PostTopic post_topic;
+    @ProtoField(tag = 58)
+    public final RealTime realtime_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 43)
     public final List<RecommendForum> recommend_forum;
     @ProtoField(tag = 48)
@@ -411,6 +419,11 @@ public final class ForumInfo extends Message {
                 this.game_url = builder.game_url;
             }
             this.recommend_user_info = builder.recommend_user_info;
+            if (builder.can_use_accelerate == null) {
+                this.can_use_accelerate = DEFAULT_CAN_USE_ACCELERATE;
+            } else {
+                this.can_use_accelerate = builder.can_use_accelerate;
+            }
             if (builder.accelerate_cotent == null) {
                 this.accelerate_cotent = "";
             } else {
@@ -431,6 +444,7 @@ public final class ForumInfo extends Message {
             this.forumvip_show_icon = builder.forumvip_show_icon;
             this.adkiller_data = builder.adkiller_data;
             this.yule = builder.yule;
+            this.realtime_data = builder.realtime_data;
             this.across_forum_show = builder.across_forum_show;
             this.post_topic = builder.post_topic;
             this.across_forum_hide = builder.across_forum_hide;
@@ -438,6 +452,16 @@ public final class ForumInfo extends Message {
                 this.is_live_game_forum = DEFAULT_IS_LIVE_GAME_FORUM;
             } else {
                 this.is_live_game_forum = builder.is_live_game_forum;
+            }
+            if (builder.is_live_game == null) {
+                this.is_live_game = DEFAULT_IS_LIVE_GAME;
+            } else {
+                this.is_live_game = builder.is_live_game;
+            }
+            if (builder.is_new_game_forum == null) {
+                this.is_new_game_forum = DEFAULT_IS_NEW_GAME_FORUM;
+            } else {
+                this.is_new_game_forum = builder.is_new_game_forum;
             }
             if (builder.forum_game_label == null) {
                 this.forum_game_label = "";
@@ -551,6 +575,7 @@ public final class ForumInfo extends Message {
         this.has_game = builder.has_game;
         this.game_url = builder.game_url;
         this.recommend_user_info = builder.recommend_user_info;
+        this.can_use_accelerate = builder.can_use_accelerate;
         this.accelerate_cotent = builder.accelerate_cotent;
         this.top_code = builder.top_code;
         this.news_info = builder.news_info;
@@ -559,10 +584,13 @@ public final class ForumInfo extends Message {
         this.forumvip_show_icon = builder.forumvip_show_icon;
         this.adkiller_data = builder.adkiller_data;
         this.yule = builder.yule;
+        this.realtime_data = builder.realtime_data;
         this.across_forum_show = builder.across_forum_show;
         this.post_topic = builder.post_topic;
         this.across_forum_hide = builder.across_forum_hide;
         this.is_live_game_forum = builder.is_live_game_forum;
+        this.is_live_game = builder.is_live_game;
+        this.is_new_game_forum = builder.is_new_game_forum;
         this.forum_game_label = builder.forum_game_label;
         this.warning_msg = builder.warning_msg;
         this.special_forum_type = builder.special_forum_type;
@@ -712,6 +740,7 @@ public final class ForumInfo extends Message {
                 this.has_game = forumInfo.has_game;
                 this.game_url = forumInfo.game_url;
                 this.recommend_user_info = forumInfo.recommend_user_info;
+                this.can_use_accelerate = forumInfo.can_use_accelerate;
                 this.accelerate_cotent = forumInfo.accelerate_cotent;
                 this.top_code = forumInfo.top_code;
                 this.news_info = forumInfo.news_info;
@@ -720,10 +749,13 @@ public final class ForumInfo extends Message {
                 this.forumvip_show_icon = forumInfo.forumvip_show_icon;
                 this.adkiller_data = forumInfo.adkiller_data;
                 this.yule = forumInfo.yule;
+                this.realtime_data = forumInfo.realtime_data;
                 this.across_forum_show = forumInfo.across_forum_show;
                 this.post_topic = forumInfo.post_topic;
                 this.across_forum_hide = forumInfo.across_forum_hide;
                 this.is_live_game_forum = forumInfo.is_live_game_forum;
+                this.is_live_game = forumInfo.is_live_game;
+                this.is_new_game_forum = forumInfo.is_new_game_forum;
                 this.forum_game_label = forumInfo.forum_game_label;
                 this.warning_msg = forumInfo.warning_msg;
                 this.special_forum_type = forumInfo.special_forum_type;

@@ -34,6 +34,8 @@ public final class DataReq extends Message {
     public final Integer tab_id;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String tab_name;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer tab_type;
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_PN = 0;
@@ -45,6 +47,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_DEFAULT_NAVTAB = 0;
     public static final Integer DEFAULT_IS_GENERAL_TAB = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final Integer DEFAULT_TAB_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -107,9 +110,14 @@ public final class DataReq extends Message {
             }
             if (builder.sort_type == null) {
                 this.sort_type = DEFAULT_SORT_TYPE;
-                return;
             } else {
                 this.sort_type = builder.sort_type;
+            }
+            if (builder.tab_type == null) {
+                this.tab_type = DEFAULT_TAB_TYPE;
+                return;
+            } else {
+                this.tab_type = builder.tab_type;
                 return;
             }
         }
@@ -126,6 +134,7 @@ public final class DataReq extends Message {
         this.tab_name = builder.tab_name;
         this.is_general_tab = builder.is_general_tab;
         this.sort_type = builder.sort_type;
+        this.tab_type = builder.tab_type;
     }
 
     /* loaded from: classes9.dex */
@@ -145,6 +154,7 @@ public final class DataReq extends Message {
         public Integer sort_type;
         public Integer tab_id;
         public String tab_name;
+        public Integer tab_type;
 
         public Builder() {
         }
@@ -165,6 +175,7 @@ public final class DataReq extends Message {
                 this.tab_name = dataReq.tab_name;
                 this.is_general_tab = dataReq.is_general_tab;
                 this.sort_type = dataReq.sort_type;
+                this.tab_type = dataReq.tab_type;
             }
         }
 
