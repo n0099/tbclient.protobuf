@@ -135,6 +135,8 @@ public final class DataRes extends Message {
     public final Info info;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer is_auto_play_forumheadvideo;
+    @ProtoField(tag = 104, type = Message.Datatype.INT32)
+    public final Integer is_get_horse_race_lamp;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(tag = 103)
@@ -266,6 +268,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_VIDEO_AUTO_PLAY = 0;
     public static final List<String> DEFAULT_SMART_APP_AVATAR = Collections.emptyList();
     public static final List<ServiceArea> DEFAULT_SERVICE_AREA = Collections.emptyList();
+    public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -537,7 +540,13 @@ public final class DataRes extends Message {
             this.bazhu_exam_fail = builder.bazhu_exam_fail;
             this.hot_user_entry = builder.hot_user_entry;
             this.item_info = builder.item_info;
-            return;
+            if (builder.is_get_horse_race_lamp == null) {
+                this.is_get_horse_race_lamp = DEFAULT_IS_GET_HORSE_RACE_LAMP;
+                return;
+            } else {
+                this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -634,6 +643,7 @@ public final class DataRes extends Message {
         this.bazhu_exam_fail = builder.bazhu_exam_fail;
         this.hot_user_entry = builder.hot_user_entry;
         this.item_info = builder.item_info;
+        this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
     }
 
     /* loaded from: classes9.dex */
@@ -687,6 +697,7 @@ public final class DataRes extends Message {
         public HotUserRankEntry hot_user_entry;
         public Info info;
         public Integer is_auto_play_forumheadvideo;
+        public Integer is_get_horse_race_lamp;
         public Integer is_new_url;
         public ItemInfo item_info;
         public AlaLiveNotify live_frs_notify;
@@ -835,6 +846,7 @@ public final class DataRes extends Message {
                 this.bazhu_exam_fail = dataRes.bazhu_exam_fail;
                 this.hot_user_entry = dataRes.hot_user_entry;
                 this.item_info = dataRes.item_info;
+                this.is_get_horse_race_lamp = dataRes.is_get_horse_race_lamp;
             }
         }
 

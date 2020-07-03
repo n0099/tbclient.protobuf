@@ -8,12 +8,15 @@ import java.util.List;
 public final class PollInfo extends Message {
     public static final String DEFAULT_POLLED_VALUE = "";
     public static final String DEFAULT_TIPS = "";
+    public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer end_time;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_multi;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer is_polled;
+    @ProtoField(tag = 13, type = Message.Datatype.UINT32)
+    public final Integer last_time;
     @ProtoField(label = Message.Label.REPEATED, tag = 9)
     public final List<PollOption> options;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -24,6 +27,8 @@ public final class PollInfo extends Message {
     public final Integer status;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String tips;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String title;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long total_num;
     @ProtoField(tag = 11, type = Message.Datatype.INT64)
@@ -39,6 +44,7 @@ public final class PollInfo extends Message {
     public static final List<PollOption> DEFAULT_OPTIONS = Collections.emptyList();
     public static final Integer DEFAULT_STATUS = 0;
     public static final Long DEFAULT_TOTAL_POLL = 0L;
+    public static final Integer DEFAULT_LAST_TIME = 0;
 
     private PollInfo(Builder builder, boolean z) {
         super(builder);
@@ -95,9 +101,19 @@ public final class PollInfo extends Message {
             }
             if (builder.total_poll == null) {
                 this.total_poll = DEFAULT_TOTAL_POLL;
-                return;
             } else {
                 this.total_poll = builder.total_poll;
+            }
+            if (builder.title == null) {
+                this.title = "";
+            } else {
+                this.title = builder.title;
+            }
+            if (builder.last_time == null) {
+                this.last_time = DEFAULT_LAST_TIME;
+                return;
+            } else {
+                this.last_time = builder.last_time;
                 return;
             }
         }
@@ -112,6 +128,8 @@ public final class PollInfo extends Message {
         this.options = immutableCopyOf(builder.options);
         this.status = builder.status;
         this.total_poll = builder.total_poll;
+        this.title = builder.title;
+        this.last_time = builder.last_time;
     }
 
     /* loaded from: classes9.dex */
@@ -119,11 +137,13 @@ public final class PollInfo extends Message {
         public Integer end_time;
         public Integer is_multi;
         public Integer is_polled;
+        public Integer last_time;
         public List<PollOption> options;
         public Integer options_count;
         public String polled_value;
         public Integer status;
         public String tips;
+        public String title;
         public Long total_num;
         public Long total_poll;
         public Integer type;
@@ -145,6 +165,8 @@ public final class PollInfo extends Message {
                 this.options = PollInfo.copyOf(pollInfo.options);
                 this.status = pollInfo.status;
                 this.total_poll = pollInfo.total_poll;
+                this.title = pollInfo.title;
+                this.last_time = pollInfo.last_time;
             }
         }
 

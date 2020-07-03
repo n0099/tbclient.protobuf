@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1087common;
+    public final CommonReq f1098common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -45,21 +45,21 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = builder.cookie;
             }
-            this.f1087common = builder.f1088common;
+            this.f1098common = builder.f1099common;
             return;
         }
         this.update_time = builder.update_time;
         this.forum_id = builder.forum_id;
         this.st_param = builder.st_param;
         this.cookie = builder.cookie;
-        this.f1087common = builder.f1088common;
+        this.f1098common = builder.f1099common;
     }
 
     /* loaded from: classes13.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1088common;
+        public CommonReq f1099common;
         public String cookie;
         public Integer forum_id;
         public Integer st_param;
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
                 this.forum_id = dataReq.forum_id;
                 this.st_param = dataReq.st_param;
                 this.cookie = dataReq.cookie;
-                this.f1088common = dataReq.f1087common;
+                this.f1099common = dataReq.f1098common;
             }
         }
 

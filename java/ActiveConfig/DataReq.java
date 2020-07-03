@@ -8,22 +8,43 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1039common;
+    public final CommonReq f1048common;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer is_first_up;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer is_schema_up;
+    public static final Integer DEFAULT_IS_SCHEMA_UP = 0;
+    public static final Integer DEFAULT_IS_FIRST_UP = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1039common = builder.f1040common;
-        } else {
-            this.f1039common = builder.f1040common;
+            this.f1048common = builder.f1049common;
+            if (builder.is_schema_up == null) {
+                this.is_schema_up = DEFAULT_IS_SCHEMA_UP;
+            } else {
+                this.is_schema_up = builder.is_schema_up;
+            }
+            if (builder.is_first_up == null) {
+                this.is_first_up = DEFAULT_IS_FIRST_UP;
+                return;
+            } else {
+                this.is_first_up = builder.is_first_up;
+                return;
+            }
         }
+        this.f1048common = builder.f1049common;
+        this.is_schema_up = builder.is_schema_up;
+        this.is_first_up = builder.is_first_up;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1040common;
+        public CommonReq f1049common;
+        public Integer is_first_up;
+        public Integer is_schema_up;
 
         public Builder() {
         }
@@ -31,7 +52,9 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1040common = dataReq.f1039common;
+                this.f1049common = dataReq.f1048common;
+                this.is_schema_up = dataReq.is_schema_up;
+                this.is_first_up = dataReq.is_first_up;
             }
         }
 

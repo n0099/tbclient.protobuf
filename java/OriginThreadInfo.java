@@ -29,10 +29,16 @@ public final class OriginThreadInfo extends Message {
     public final Integer is_new_style;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_ugc;
+    @ProtoField(tag = 22)
+    public final Item item;
+    @ProtoField(label = Message.Label.REPEATED, tag = 23)
+    public final List<HeadItem> item_star;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Media> media;
     @ProtoField(tag = 11)
     public final Baijiahao ori_ugc_info;
+    @ProtoField(tag = 21)
+    public final PollInfo poll_info;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer reply_num;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
@@ -58,6 +64,7 @@ public final class OriginThreadInfo extends Message {
     public static final Integer DEFAULT_IS_NEW_STYLE = 0;
     public static final Integer DEFAULT_REPLY_NUM = 0;
     public static final Integer DEFAULT_SHARED_NUM = 0;
+    public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
 
     private OriginThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -134,9 +141,16 @@ public final class OriginThreadInfo extends Message {
             this.agree = builder.agree;
             if (builder.shared_num == null) {
                 this.shared_num = DEFAULT_SHARED_NUM;
-                return;
             } else {
                 this.shared_num = builder.shared_num;
+            }
+            this.poll_info = builder.poll_info;
+            this.item = builder.item;
+            if (builder.item_star == null) {
+                this.item_star = DEFAULT_ITEM_STAR;
+                return;
+            } else {
+                this.item_star = immutableCopyOf(builder.item_star);
                 return;
             }
         }
@@ -159,6 +173,9 @@ public final class OriginThreadInfo extends Message {
         this.author = builder.author;
         this.agree = builder.agree;
         this.shared_num = builder.shared_num;
+        this.poll_info = builder.poll_info;
+        this.item = builder.item;
+        this.item_star = immutableCopyOf(builder.item_star);
     }
 
     /* loaded from: classes9.dex */
@@ -173,8 +190,11 @@ public final class OriginThreadInfo extends Message {
         public Integer is_deleted;
         public Integer is_new_style;
         public Integer is_ugc;
+        public Item item;
+        public List<HeadItem> item_star;
         public List<Media> media;
         public Baijiahao ori_ugc_info;
+        public PollInfo poll_info;
         public Integer reply_num;
         public Integer shared_num;
         public Integer thread_type;
@@ -208,6 +228,9 @@ public final class OriginThreadInfo extends Message {
                 this.author = originThreadInfo.author;
                 this.agree = originThreadInfo.agree;
                 this.shared_num = originThreadInfo.shared_num;
+                this.poll_info = originThreadInfo.poll_info;
+                this.item = originThreadInfo.item;
+                this.item_star = OriginThreadInfo.copyOf(originThreadInfo.item_star);
             }
         }
 

@@ -17,6 +17,7 @@ public final class PostInfoList extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_USER_PORTRAIT = "";
+    public static final String DEFAULT_WONDERFUL_POST_INFO = "";
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
@@ -67,6 +68,10 @@ public final class PostInfoList extends Message {
     public final Integer is_thread;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_view_year;
+    @ProtoField(tag = 52)
+    public final Item item;
+    @ProtoField(label = Message.Label.REPEATED, tag = 53)
+    public final List<HeadItem> item_star;
     @ProtoField(tag = 21)
     public final LbsInfo lbs_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
@@ -77,6 +82,8 @@ public final class PostInfoList extends Message {
     public final String name_show;
     @ProtoField(tag = 42)
     public final OriginThreadInfo origin_thread_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 54)
+    public final List<PbLinkInfo> pb_link_info;
     @ProtoField(tag = 28)
     public final PollInfo poll_info;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -117,6 +124,8 @@ public final class PostInfoList extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
+    @ProtoField(tag = 51, type = Message.Datatype.STRING)
+    public final String wonderful_post_info;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Long DEFAULT_POST_ID = 0L;
@@ -145,6 +154,8 @@ public final class PostInfoList extends Message {
     public static final List<PbContent> DEFAULT_RICH_ABSTRACT = Collections.emptyList();
     public static final Integer DEFAULT_IS_NTITLE = 0;
     public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
+    public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
+    public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -355,7 +366,24 @@ public final class PostInfoList extends Message {
                 this.first_post_content = immutableCopyOf(builder.first_post_content);
             }
             this.baijiahao_info = builder.baijiahao_info;
-            return;
+            if (builder.wonderful_post_info == null) {
+                this.wonderful_post_info = "";
+            } else {
+                this.wonderful_post_info = builder.wonderful_post_info;
+            }
+            this.item = builder.item;
+            if (builder.item_star == null) {
+                this.item_star = DEFAULT_ITEM_STAR;
+            } else {
+                this.item_star = immutableCopyOf(builder.item_star);
+            }
+            if (builder.pb_link_info == null) {
+                this.pb_link_info = DEFAULT_PB_LINK_INFO;
+                return;
+            } else {
+                this.pb_link_info = immutableCopyOf(builder.pb_link_info);
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
@@ -407,6 +435,10 @@ public final class PostInfoList extends Message {
         this.article_cover = builder.article_cover;
         this.first_post_content = immutableCopyOf(builder.first_post_content);
         this.baijiahao_info = builder.baijiahao_info;
+        this.wonderful_post_info = builder.wonderful_post_info;
+        this.item = builder.item;
+        this.item_star = immutableCopyOf(builder.item_star);
+        this.pb_link_info = immutableCopyOf(builder.pb_link_info);
     }
 
     /* loaded from: classes9.dex */
@@ -436,11 +468,14 @@ public final class PostInfoList extends Message {
         public Integer is_share_thread;
         public Integer is_thread;
         public Integer is_view_year;
+        public Item item;
+        public List<HeadItem> item_star;
         public LbsInfo lbs_info;
         public List<Media> media;
         public List<MultipleForum> multiple_forum_list;
         public String name_show;
         public OriginThreadInfo origin_thread_info;
+        public List<PbLinkInfo> pb_link_info;
         public PollInfo poll_info;
         public Long post_id;
         public String post_type;
@@ -461,6 +496,7 @@ public final class PostInfoList extends Message {
         public VideoInfo video_info;
         public Integer view_num;
         public List<Voice> voice_info;
+        public String wonderful_post_info;
 
         public Builder() {
         }
@@ -518,6 +554,10 @@ public final class PostInfoList extends Message {
                 this.article_cover = postInfoList.article_cover;
                 this.first_post_content = PostInfoList.copyOf(postInfoList.first_post_content);
                 this.baijiahao_info = postInfoList.baijiahao_info;
+                this.wonderful_post_info = postInfoList.wonderful_post_info;
+                this.item = postInfoList.item;
+                this.item_star = PostInfoList.copyOf(postInfoList.item_star);
+                this.pb_link_info = PostInfoList.copyOf(postInfoList.pb_link_info);
             }
         }
 

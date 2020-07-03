@@ -48,7 +48,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1203common;
+    public final CommonReq f1222common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -59,6 +59,8 @@ public final class DataReq extends Message {
     public final Integer floor_rn;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long forum_id;
+    @ProtoField(tag = 71, type = Message.Datatype.INT32)
+    public final Integer from_push;
     @ProtoField(tag = 54, type = Message.Datatype.UINT32)
     public final Integer from_smart_frs;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
@@ -191,6 +193,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_NEED_LOG = 0;
     public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
     public static final Integer DEFAULT_AFTER_AD_THREAD_COUNT = 0;
+    public static final Integer DEFAULT_FROM_PUSH = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -315,7 +318,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.f1203common = builder.f1204common;
+            this.f1222common = builder.f1223common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -490,9 +493,14 @@ public final class DataReq extends Message {
             }
             if (builder.pb_test_info == null) {
                 this.pb_test_info = "";
-                return;
             } else {
                 this.pb_test_info = builder.pb_test_info;
+            }
+            if (builder.from_push == null) {
+                this.from_push = DEFAULT_FROM_PUSH;
+                return;
+            } else {
+                this.from_push = builder.from_push;
                 return;
             }
         }
@@ -520,7 +528,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f1203common = builder.f1204common;
+        this.f1222common = builder.f1223common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -558,6 +566,7 @@ public final class DataReq extends Message {
         this.ad_context_list = builder.ad_context_list;
         this.up_schema = builder.up_schema;
         this.pb_test_info = builder.pb_test_info;
+        this.from_push = builder.from_push;
     }
 
     /* loaded from: classes9.dex */
@@ -572,12 +581,13 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1204common;
+        public CommonReq f1223common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
         public Integer floor_rn;
         public Long forum_id;
+        public Integer from_push;
         public Integer from_smart_frs;
         public Integer is_comm_reverse;
         public Integer is_jumpfloor;
@@ -657,7 +667,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.f1204common = dataReq.f1203common;
+                this.f1223common = dataReq.f1222common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;
@@ -695,6 +705,7 @@ public final class DataReq extends Message {
                 this.ad_context_list = dataReq.ad_context_list;
                 this.up_schema = dataReq.up_schema;
                 this.pb_test_info = dataReq.pb_test_info;
+                this.from_push = dataReq.from_push;
             }
         }
 

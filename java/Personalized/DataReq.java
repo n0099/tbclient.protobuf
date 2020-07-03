@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1207common;
+    public final CommonReq f1226common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -61,10 +61,6 @@ public final class DataReq extends Message {
     public final String platform;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer pn;
-    @ProtoField(tag = 31, type = Message.Datatype.DOUBLE)
-    public final Double position_x;
-    @ProtoField(tag = 32, type = Message.Datatype.DOUBLE)
-    public final Double position_y;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer pre_ad_thread_count;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
@@ -111,13 +107,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PRE_AD_THREAD_COUNT = 0;
     public static final Integer DEFAULT_NEW_INSTALL = 0;
     public static final Integer DEFAULT_REQUEST_TIMES = 0;
-    public static final Double DEFAULT_POSITION_X = Double.valueOf(0.0d);
-    public static final Double DEFAULT_POSITION_Y = Double.valueOf(0.0d);
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1207common = builder.f1208common;
+            this.f1226common = builder.f1227common;
             if (builder.tag_code == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
             } else {
@@ -258,16 +252,6 @@ public final class DataReq extends Message {
             } else {
                 this.ad_context_list = builder.ad_context_list;
             }
-            if (builder.position_x == null) {
-                this.position_x = DEFAULT_POSITION_X;
-            } else {
-                this.position_x = builder.position_x;
-            }
-            if (builder.position_y == null) {
-                this.position_y = DEFAULT_POSITION_Y;
-            } else {
-                this.position_y = builder.position_y;
-            }
             if (builder.query_eqid == null) {
                 this.query_eqid = "";
             } else {
@@ -286,7 +270,7 @@ public final class DataReq extends Message {
             this.app_pos = builder.app_pos;
             return;
         }
-        this.f1207common = builder.f1208common;
+        this.f1226common = builder.f1227common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;
@@ -315,8 +299,6 @@ public final class DataReq extends Message {
         this.request_times = builder.request_times;
         this.invoke_source = builder.invoke_source;
         this.ad_context_list = builder.ad_context_list;
-        this.position_x = builder.position_x;
-        this.position_y = builder.position_y;
         this.query_eqid = builder.query_eqid;
         this.first_dir = builder.first_dir;
         this.second_dir = builder.second_dir;
@@ -330,7 +312,7 @@ public final class DataReq extends Message {
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1208common;
+        public CommonReq f1227common;
         public String da_idfa;
         public String first_dir;
         public Long from_tid;
@@ -347,8 +329,6 @@ public final class DataReq extends Message {
         public Integer page_thread_count;
         public String platform;
         public Integer pn;
-        public Double position_x;
-        public Double position_y;
         public Integer pre_ad_thread_count;
         public Integer q_type;
         public String query_eqid;
@@ -369,7 +349,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1208common = dataReq.f1207common;
+                this.f1227common = dataReq.f1226common;
                 this.tag_code = dataReq.tag_code;
                 this.need_tags = dataReq.need_tags;
                 this.load_type = dataReq.load_type;
@@ -398,8 +378,6 @@ public final class DataReq extends Message {
                 this.request_times = dataReq.request_times;
                 this.invoke_source = dataReq.invoke_source;
                 this.ad_context_list = dataReq.ad_context_list;
-                this.position_x = dataReq.position_x;
-                this.position_y = dataReq.position_y;
                 this.query_eqid = dataReq.query_eqid;
                 this.first_dir = dataReq.first_dir;
                 this.second_dir = dataReq.second_dir;

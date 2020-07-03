@@ -46,6 +46,8 @@ public final class Anti extends Message {
     public final Integer multi_delthread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer need_vcode;
+    @ProtoField(tag = 26, type = Message.Datatype.UINT32)
+    public final Integer poll_level;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String poll_message;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
@@ -80,6 +82,7 @@ public final class Anti extends Message {
     public static final Integer DEFAULT_REPLY_PRIVATE_FLAG = 0;
     public static final List<DelThreadText> DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
     public static final Integer DEFAULT_MULTI_DELTHREAD = 0;
+    public static final Integer DEFAULT_POLL_LEVEL = 0;
 
     private Anti(Builder builder, boolean z) {
         super(builder);
@@ -202,9 +205,14 @@ public final class Anti extends Message {
             }
             if (builder.multi_delthread == null) {
                 this.multi_delthread = DEFAULT_MULTI_DELTHREAD;
-                return;
             } else {
                 this.multi_delthread = builder.multi_delthread;
+            }
+            if (builder.poll_level == null) {
+                this.poll_level = DEFAULT_POLL_LEVEL;
+                return;
+            } else {
+                this.poll_level = builder.poll_level;
                 return;
             }
         }
@@ -233,6 +241,7 @@ public final class Anti extends Message {
         this.reply_private_flag = builder.reply_private_flag;
         this.del_thread_text = immutableCopyOf(builder.del_thread_text);
         this.multi_delthread = builder.multi_delthread;
+        this.poll_level = builder.poll_level;
     }
 
     /* loaded from: classes9.dex */
@@ -252,6 +261,7 @@ public final class Anti extends Message {
         public String ifxiaoying;
         public Integer multi_delthread;
         public Integer need_vcode;
+        public Integer poll_level;
         public String poll_message;
         public Integer reply_private_flag;
         public String tbs;
@@ -294,6 +304,7 @@ public final class Anti extends Message {
                 this.reply_private_flag = anti.reply_private_flag;
                 this.del_thread_text = Anti.copyOf(anti.del_thread_text);
                 this.multi_delthread = anti.multi_delthread;
+                this.poll_level = anti.poll_level;
             }
         }
 

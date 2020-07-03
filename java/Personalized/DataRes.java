@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.ActiveCenter;
 import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.RecomPostTopic;
@@ -12,6 +13,8 @@ import tbclient.ThreadInfo;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_STAT_KEY = "";
+    @ProtoField(tag = 22)
+    public final ActiveCenter active_center;
     @ProtoField(tag = 10)
     public final AgeSexModule age_sex;
     @ProtoField(tag = 16)
@@ -145,11 +148,11 @@ public final class DataRes extends Message {
             this.user_follow_live = builder.user_follow_live;
             if (builder.fresh_ctrl_num == null) {
                 this.fresh_ctrl_num = DEFAULT_FRESH_CTRL_NUM;
-                return;
             } else {
                 this.fresh_ctrl_num = builder.fresh_ctrl_num;
-                return;
             }
+            this.active_center = builder.active_center;
+            return;
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
         this.thread_list = immutableCopyOf(builder.thread_list);
@@ -172,10 +175,12 @@ public final class DataRes extends Message {
         this.recom_post_topic = builder.recom_post_topic;
         this.user_follow_live = builder.user_follow_live;
         this.fresh_ctrl_num = builder.fresh_ctrl_num;
+        this.active_center = builder.active_center;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public ActiveCenter active_center;
         public AgeSexModule age_sex;
         public Anti anti;
         public BannerList banner_list;
@@ -225,6 +230,7 @@ public final class DataRes extends Message {
                 this.recom_post_topic = dataRes.recom_post_topic;
                 this.user_follow_live = dataRes.user_follow_live;
                 this.fresh_ctrl_num = dataRes.fresh_ctrl_num;
+                this.active_center = dataRes.active_center;
             }
         }
 

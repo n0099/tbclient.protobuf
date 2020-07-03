@@ -219,6 +219,10 @@ public final class ThreadInfo extends Message {
     public final Integer is_voice_thread;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_vote;
+    @ProtoField(tag = 179)
+    public final Item item;
+    @ProtoField(label = Message.Label.REPEATED, tag = 180)
+    public final List<HeadItem> item_star;
     @ProtoField(tag = 75)
     public final JNews jid;
     @ProtoField(tag = 106, type = Message.Datatype.UINT64)
@@ -261,6 +265,8 @@ public final class ThreadInfo extends Message {
     public final OriForumInfo ori_forum_info;
     @ProtoField(tag = 141)
     public final OriginThreadInfo origin_thread_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = Opcodes.GETSTATIC)
+    public final List<PbLinkInfo> pb_link_info;
     @ProtoField(tag = 133)
     public final Media pic_info;
     @ProtoField(tag = 84, type = Message.Datatype.UINT32)
@@ -477,6 +483,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_S_CARD = 0;
     public static final Integer DEFAULT_IF_COMMENT = 0;
     public static final Integer DEFAULT_TAB_ID = 0;
+    public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
+    public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1160,9 +1168,20 @@ public final class ThreadInfo extends Message {
             }
             if (builder.wonderful_post_info == null) {
                 this.wonderful_post_info = "";
-                return;
             } else {
                 this.wonderful_post_info = builder.wonderful_post_info;
+            }
+            if (builder.pb_link_info == null) {
+                this.pb_link_info = DEFAULT_PB_LINK_INFO;
+            } else {
+                this.pb_link_info = immutableCopyOf(builder.pb_link_info);
+            }
+            this.item = builder.item;
+            if (builder.item_star == null) {
+                this.item_star = DEFAULT_ITEM_STAR;
+                return;
+            } else {
+                this.item_star = immutableCopyOf(builder.item_star);
                 return;
             }
         }
@@ -1336,6 +1355,9 @@ public final class ThreadInfo extends Message {
         this.tab_id = builder.tab_id;
         this.tab_name = builder.tab_name;
         this.wonderful_post_info = builder.wonderful_post_info;
+        this.pb_link_info = immutableCopyOf(builder.pb_link_info);
+        this.item = builder.item;
+        this.item_star = immutableCopyOf(builder.item_star);
     }
 
     /* loaded from: classes9.dex */
@@ -1426,6 +1448,8 @@ public final class ThreadInfo extends Message {
         public Integer is_videobiggie_recomthread;
         public Integer is_voice_thread;
         public Integer is_vote;
+        public Item item;
+        public List<HeadItem> item_star;
         public JNews jid;
         public Long last_read_pid;
         public User last_replyer;
@@ -1447,6 +1471,7 @@ public final class ThreadInfo extends Message {
         public Integer operator_flag;
         public OriForumInfo ori_forum_info;
         public OriginThreadInfo origin_thread_info;
+        public List<PbLinkInfo> pb_link_info;
         public Media pic_info;
         public Integer pic_num;
         public String pids;
@@ -1687,6 +1712,9 @@ public final class ThreadInfo extends Message {
                 this.tab_id = threadInfo.tab_id;
                 this.tab_name = threadInfo.tab_name;
                 this.wonderful_post_info = threadInfo.wonderful_post_info;
+                this.pb_link_info = ThreadInfo.copyOf(threadInfo.pb_link_info);
+                this.item = threadInfo.item;
+                this.item_star = ThreadInfo.copyOf(threadInfo.item_star);
             }
         }
 

@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1255common;
+    public final CommonReq f1274common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -37,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1255common = builder.f1256common;
+            this.f1274common = builder.f1275common;
             if (builder.tab_name == null) {
                 this.tab_name = "";
             } else {
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1255common = builder.f1256common;
+        this.f1274common = builder.f1275common;
         this.tab_name = builder.tab_name;
         this.tab_code = builder.tab_code;
         this.load_type = builder.load_type;
@@ -96,7 +96,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1256common;
+        public CommonReq f1275common;
         public Integer load_type;
         public Integer pn;
         public Integer rn;
@@ -112,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1256common = dataReq.f1255common;
+                this.f1275common = dataReq.f1274common;
                 this.tab_name = dataReq.tab_name;
                 this.tab_code = dataReq.tab_code;
                 this.load_type = dataReq.load_type;

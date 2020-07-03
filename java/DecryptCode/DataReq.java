@@ -9,14 +9,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1067common;
+    public final CommonReq f1078common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tieba_code;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1067common = builder.f1068common;
+            this.f1078common = builder.f1079common;
             if (builder.tieba_code == null) {
                 this.tieba_code = "";
                 return;
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1067common = builder.f1068common;
+        this.f1078common = builder.f1079common;
         this.tieba_code = builder.tieba_code;
     }
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1068common;
+        public CommonReq f1079common;
         public String tieba_code;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1068common = dataReq.f1067common;
+                this.f1079common = dataReq.f1078common;
                 this.tieba_code = dataReq.tieba_code;
             }
         }

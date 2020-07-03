@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.ActiveCenter;
 import tbclient.FloatStrategy;
 import tbclient.MissionInfo;
 /* loaded from: classes9.dex */
@@ -12,6 +13,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_NEWUSER_POP_CLICKURL = "";
     public static final String DEFAULT_NEWUSER_POP_MONEY = "";
     public static final String DEFAULT_NEWUSER_POP_TOP = "";
+    @ProtoField(tag = 9)
+    public final ActiveCenter active_center;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String active_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
@@ -65,11 +68,11 @@ public final class DataRes extends Message {
             }
             if (builder.newuser_pop_top == null) {
                 this.newuser_pop_top = "";
-                return;
             } else {
                 this.newuser_pop_top = builder.newuser_pop_top;
-                return;
             }
+            this.active_center = builder.active_center;
+            return;
         }
         this.is_new_user = builder.is_new_user;
         this.active_url = builder.active_url;
@@ -78,10 +81,12 @@ public final class DataRes extends Message {
         this.newuser_pop_clickurl = builder.newuser_pop_clickurl;
         this.newuser_pop_money = builder.newuser_pop_money;
         this.newuser_pop_top = builder.newuser_pop_top;
+        this.active_center = builder.active_center;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public ActiveCenter active_center;
         public String active_url;
         public List<FloatStrategy> float_list;
         public Integer is_new_user;
@@ -103,6 +108,7 @@ public final class DataRes extends Message {
                 this.newuser_pop_clickurl = dataRes.newuser_pop_clickurl;
                 this.newuser_pop_money = dataRes.newuser_pop_money;
                 this.newuser_pop_top = dataRes.newuser_pop_top;
+                this.active_center = dataRes.active_center;
             }
         }
 

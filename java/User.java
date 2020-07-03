@@ -38,8 +38,12 @@ public final class User extends Message {
     public final BaijiahaoInfo baijiahao_info;
     @ProtoField(tag = 10)
     public final Balv balv;
+    @ProtoField(tag = 103)
+    public final BawuThrones bawu_thrones;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String bawu_type;
+    @ProtoField(tag = 105)
+    public final BazhuSign bazhu_grade;
     @ProtoField(tag = 58, type = Message.Datatype.STRING)
     public final String bg_pic;
     @ProtoField(tag = 40, type = Message.Datatype.INT32)
@@ -52,6 +56,8 @@ public final class User extends Message {
     public final Integer bookmark_count;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer bookmark_new_count;
+    @ProtoField(tag = 104)
+    public final CallFansInfo call_fans_info;
     @ProtoField(tag = 97, type = Message.Datatype.INT32)
     public final Integer can_modify_avatar;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
@@ -693,6 +699,9 @@ public final class User extends Message {
                 this.level_influence = builder.level_influence;
             }
             this.new_god_data = builder.new_god_data;
+            this.bawu_thrones = builder.bawu_thrones;
+            this.call_fans_info = builder.call_fans_info;
+            this.bazhu_grade = builder.bazhu_grade;
             return;
         }
         this.is_login = builder.is_login;
@@ -796,6 +805,9 @@ public final class User extends Message {
         this.influence = builder.influence;
         this.level_influence = builder.level_influence;
         this.new_god_data = builder.new_god_data;
+        this.bawu_thrones = builder.bawu_thrones;
+        this.call_fans_info = builder.call_fans_info;
+        this.bazhu_grade = builder.bazhu_grade;
     }
 
     /* loaded from: classes9.dex */
@@ -807,13 +819,16 @@ public final class User extends Message {
         public AlaLiveInfo ala_live_info;
         public BaijiahaoInfo baijiahao_info;
         public Balv balv;
+        public BawuThrones bawu_thrones;
         public String bawu_type;
+        public BazhuSign bazhu_grade;
         public String bg_pic;
         public Integer bimg_end_time;
         public String bimg_url;
         public BirthdayInfo birthday_info;
         public Integer bookmark_count;
         public Integer bookmark_new_count;
+        public CallFansInfo call_fans_info;
         public Integer can_modify_avatar;
         public Integer concern_num;
         public ConsumeInfo consume_info;
@@ -1009,6 +1024,9 @@ public final class User extends Message {
                 this.influence = user.influence;
                 this.level_influence = user.level_influence;
                 this.new_god_data = user.new_god_data;
+                this.bawu_thrones = user.bawu_thrones;
+                this.call_fans_info = user.call_fans_info;
+                this.bazhu_grade = user.bazhu_grade;
             }
         }
 

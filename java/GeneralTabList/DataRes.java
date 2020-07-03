@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.ItemInfo;
 import tbclient.SportPageHeadInfo;
 import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
@@ -14,6 +15,8 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> general_list;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer has_more;
+    @ProtoField(tag = 8)
+    public final ItemInfo item_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer new_thread_num;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -57,11 +60,11 @@ public final class DataRes extends Message {
             }
             if (builder.sort_type == null) {
                 this.sort_type = DEFAULT_SORT_TYPE;
-                return;
             } else {
                 this.sort_type = builder.sort_type;
-                return;
             }
+            this.item_info = builder.item_info;
+            return;
         }
         this.general_list = immutableCopyOf(builder.general_list);
         this.has_more = builder.has_more;
@@ -70,12 +73,14 @@ public final class DataRes extends Message {
         this.sport_head_info = builder.sport_head_info;
         this.new_thread_num = builder.new_thread_num;
         this.sort_type = builder.sort_type;
+        this.item_info = builder.item_info;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThreadInfo> general_list;
         public Integer has_more;
+        public ItemInfo item_info;
         public Integer new_thread_num;
         public Integer sort_type;
         public SportPageHeadInfo sport_head_info;
@@ -95,6 +100,7 @@ public final class DataRes extends Message {
                 this.sport_head_info = dataRes.sport_head_info;
                 this.new_thread_num = dataRes.new_thread_num;
                 this.sort_type = dataRes.sort_type;
+                this.item_info = dataRes.item_info;
             }
         }
 
