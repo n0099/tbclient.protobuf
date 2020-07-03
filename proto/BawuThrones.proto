@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message BawuThrones {
+    int32 total_recommend_num = 1;
+    int32 used_recommend_num = 2;
+    string bazhu_level = 3;
+}

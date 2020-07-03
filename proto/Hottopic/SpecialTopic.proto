@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message SpecialTopic {
+    string title = 1;
+    repeated ThreadInfo thread_list = 2;
+}

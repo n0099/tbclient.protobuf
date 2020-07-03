@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+import "User.proto";
+
+message ResourceInfo {
+    string type = 1;
+    ThreadInfo thread = 2;
+    string hot_topic = 3;
+    string special_column = 4;
+    string recommend_forum = 5;
+    repeated User recommend_user = 6;
+}

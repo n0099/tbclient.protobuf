@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "UserInfo.proto";
+
+message JoinUser {
+    repeated UserInfo join_user = 1;
+    int64 join_user_num = 2;
+}

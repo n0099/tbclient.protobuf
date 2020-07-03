@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ActivityPage/DataRes.proto";
+import "Error.proto";
+
+message ActivityPageResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

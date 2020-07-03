@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "Hottopic/CommonInteraction.proto";
+import "Hottopic/HotThread.proto";
+import "Hottopic/MagicPost.proto";
+import "Hottopic/RelateForum.proto";
+import "Hottopic/SpecialTopic.proto";
+import "Hottopic/TopicInfo.proto";
+import "PkModule.proto";
+import "ThreadModule.proto";
+
+message DataRes {
+    repeated RelateForum relate_forum = 1;
+    MagicPost magic_post = 2;
+    HotThread hot_thread = 3;
+    TopicInfo topic_info = 4;
+    ThreadModule thread_module = 5;
+    PkModule pk_module = 6;
+    CommonInteraction bless_module = 7;
+    CommonInteraction candle_module = 8;
+    HotThread good_threads = 9;
+    int32 is_new_url = 10;
+    repeated RelateForum post_forum = 11;
+    uint32 is_global_block = 12;
+    repeated SpecialTopic special_topic = 13;
+    string relate_forum_title = 14;
+    CommonInteraction weiguan_module = 15;
+}

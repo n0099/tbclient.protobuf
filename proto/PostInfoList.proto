@@ -6,11 +6,14 @@ import "AlaLiveInfo.proto";
 import "AnchorInfo.proto";
 import "BaijiahaoInfo.proto";
 import "DealInfo.proto";
+import "HeadItem.proto";
+import "Item.proto";
 import "LbsInfo.proto";
 import "Media.proto";
 import "MultipleForum.proto";
 import "OriginThreadInfo.proto";
 import "PbContent.proto";
+import "PbLinkInfo.proto";
 import "PollInfo.proto";
 import "PostInfoContent.proto";
 import "Quote.proto";
@@ -69,4 +72,8 @@ message PostInfoList {
     string article_cover = 48;
     repeated PbContent first_post_content = 49;
     BaijiahaoInfo baijiahao_info = 50;
+    string wonderful_post_info = 51;
+    Item item = 52;
+    repeated HeadItem item_star = 53;
+    repeated PbLinkInfo pb_link_info = 54;
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "HotThreadList/DataRes.proto";
+
+message HotThreadListResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "RecommendForumInfo.proto";
+
+message RecommendForumList {
+    uint32 floor_position = 1;
+    string class_name = 2;
+    repeated RecommendForumInfo forum_list = 3;
+}

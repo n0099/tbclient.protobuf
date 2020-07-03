@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "Hottopic/JoinUser.proto";
+import "VideoInfo.proto";
+
+message TopicInfo {
+    uint64 topic_id = 1;
+    string topic_name = 2;
+    string desc = 3;
+    uint64 total_post_num = 4;
+    string head_photo_url = 5;
+    string share_title = 6;
+    string share_pic = 7;
+    uint64 idx_num = 8;
+    string discuss_forum = 9;
+    string bang_title = 10;
+    string bang_jump_desc = 11;
+    VideoInfo video_info = 12;
+    string tag_list_type = 13;
+    uint64 pmy_topic_id = 14;
+    uint32 pmy_source = 15;
+    JoinUser join_info = 16;
+    string head_photo_jump_url = 17;
+    int32 topic_tag = 18;
+}

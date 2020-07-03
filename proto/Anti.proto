@@ -29,4 +29,5 @@ message Anti {
     int32 reply_private_flag = 23;
     repeated DelThreadText del_thread_text = 24;
     int32 multi_delthread = 25;
+    uint32 poll_level = 26;
 }

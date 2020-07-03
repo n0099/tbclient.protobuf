@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "VideoInfo.proto";
+
+message MediaTopic {
+    uint64 topic_id = 1;
+    string topic_name = 2;
+    VideoInfo video_info = 3;
+    string pic_url = 4;
+}

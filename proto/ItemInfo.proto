@@ -1,9 +1,16 @@
 syntax = "proto3";
 
+import "ItemOptions.proto";
+import "ItemTable.proto";
+
 message ItemInfo {
     uint32 id = 1;
     string name = 2;
     string icon_url = 3;
     string brief = 4;
     repeated string tags = 5;
+    double icon_size = 6;
+    repeated ItemOptions item_options = 7;
+    ItemTable score = 8;
+    uint32 is_school = 9;
 }

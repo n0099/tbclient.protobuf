@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetHorseRaceLampList/DataReq.proto";
+
+message GetHorseRaceLampListReqIdl {
+    DataReq data = 1;
+}

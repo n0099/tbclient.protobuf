@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ActivityPage/SpecialColumn.proto";
+
+message SpecialColumnList {
+    uint32 floor_position = 1;
+    string special_column_name = 2;
+    repeated SpecialColumn item_list = 3;
+}

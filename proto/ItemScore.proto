@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ItemScore {
+    string key = 1;
+    int32 score = 2;
+}

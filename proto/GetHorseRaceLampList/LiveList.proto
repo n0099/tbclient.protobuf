@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message LiveList {
+    uint64 live_id = 1;
+    string live_title = 2;
+    uint64 user_id = 3;
+    string user_nickname = 4;
+    int32 amount = 5;
+    uint64 rob_end_tm = 6;
+    int32 screen_direction = 7;
+}

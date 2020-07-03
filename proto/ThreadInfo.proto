@@ -14,7 +14,9 @@ import "DealInfo.proto";
 import "DeclareInfo.proto";
 import "DislikeInfo.proto";
 import "Guess.proto";
+import "HeadItem.proto";
 import "HotTWThreadInfo.proto";
+import "Item.proto";
 import "JNews.proto";
 import "Lbs.proto";
 import "LinkThreadInfo.proto";
@@ -201,4 +203,6 @@ message ThreadInfo {
     int32 if_comment = 173;
     string if_comment_info = 174;
     int32 tab_id = 175;
+    Item item = 179;
+    repeated HeadItem item_star = 180;
 }

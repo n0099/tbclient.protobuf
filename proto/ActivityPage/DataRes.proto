@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "ActivityPage/HotTopic.proto";
+import "ActivityPage/RecommendForumList.proto";
+import "ActivityPage/RecommendUserList.proto";
+import "ActivityPage/SpecialColumnList.proto";
+import "BannerImage.proto";
+import "Page.proto";
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated BannerImage banner_image = 1;
+    repeated BannerImage grid = 2;
+    repeated ThreadInfo thread_list = 3;
+    HotTopic hot_topic = 4;
+    SpecialColumnList special_column = 5;
+    RecommendForumList recommend_forum = 6;
+    RecommendUserList recommend_user = 7;
+    Page page_info = 8;
+}

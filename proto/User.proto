@@ -5,7 +5,10 @@ import "AlaLiveInfo.proto";
 import "AlaUserInfo.proto";
 import "BaijiahaoInfo.proto";
 import "Balv.proto";
+import "BawuThrones.proto";
+import "BazhuSign.proto";
 import "BirthdayInfo.proto";
+import "CallFansInfo.proto";
 import "ConsumeInfo.proto";
 import "Ecom.proto";
 import "EsportInfo.proto";
@@ -136,4 +139,7 @@ message User {
     int32 influence = 99;
     string level_influence = 100;
     NewGodInfo new_god_data = 101;
+    BawuThrones bawu_thrones = 103;
+    CallFansInfo call_fans_info = 104;
+    BazhuSign bazhu_grade = 105;
 }

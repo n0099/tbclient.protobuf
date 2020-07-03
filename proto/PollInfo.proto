@@ -14,4 +14,6 @@ message PollInfo {
     repeated PollOption options = 9;
     int32 status = 10;
     int64 total_poll = 11;
+    string title = 12;
+    uint32 last_time = 13;
 }

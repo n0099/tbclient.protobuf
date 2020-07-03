@@ -4,8 +4,11 @@ import "Abstract.proto";
 import "Agree.proto";
 import "AlaLiveInfo.proto";
 import "Baijiahao.proto";
+import "HeadItem.proto";
+import "Item.proto";
 import "Media.proto";
 import "PbContent.proto";
+import "PollInfo.proto";
 import "User.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
@@ -30,4 +33,7 @@ message OriginThreadInfo {
     User author = 18;
     Agree agree = 19;
     int32 shared_num = 20;
+    PollInfo poll_info = 21;
+    Item item = 22;
+    repeated HeadItem item_star = 23;
 }

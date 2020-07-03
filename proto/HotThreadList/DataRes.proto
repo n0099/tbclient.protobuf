@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "RecomTopicList.proto";
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated RecomTopicList topic_list = 1;
+    repeated ThreadInfo thread_info = 2;
+}

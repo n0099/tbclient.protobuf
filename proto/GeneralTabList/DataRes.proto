@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "ItemInfo.proto";
 import "SportPageHeadInfo.proto";
 import "SportScheduleInfo.proto";
 import "ThreadInfo.proto";
@@ -13,4 +14,5 @@ message DataRes {
     SportPageHeadInfo sport_head_info = 5;
     int32 new_thread_num = 6;
     int32 sort_type = 7;
+    ItemInfo item_info = 8;
 }

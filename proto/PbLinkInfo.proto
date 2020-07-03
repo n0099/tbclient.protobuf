@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message PbLinkInfo {
+    string title = 1;
+    string to_url = 2;
+    string pic_url = 3;
+}

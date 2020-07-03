@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "User.proto";
+
+message RecommendUserList {
+    uint32 floor_position = 1;
+    repeated User user_list = 2;
+}

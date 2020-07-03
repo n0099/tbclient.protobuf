@@ -4,6 +4,8 @@ import "ActPost.proto";
 import "AddPostList.proto";
 import "Agree.proto";
 import "DealInfo.proto";
+import "HeadItem.proto";
+import "Item.proto";
 import "Lbs.proto";
 import "OriginThreadInfo.proto";
 import "PbContent.proto";
@@ -71,4 +73,6 @@ message Post {
     int32 is_bjh = 48;
     string quote_id = 50;
     int32 is_wonderful_post = 51;
+    repeated HeadItem item_star = 52;
+    Item item = 53;
 }
