@@ -9,7 +9,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1080common;
+    public final CommonReq f1081common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
 
@@ -21,18 +21,18 @@ public final class ReqData extends Message {
             } else {
                 this.friend_id = builder.friend_id;
             }
-            this.f1080common = builder.f1081common;
+            this.f1081common = builder.f1082common;
             return;
         }
         this.friend_id = builder.friend_id;
-        this.f1080common = builder.f1081common;
+        this.f1081common = builder.f1082common;
     }
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1081common;
+        public CommonReq f1082common;
         public Long friend_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class ReqData extends Message {
             super(reqData);
             if (reqData != null) {
                 this.friend_id = reqData.friend_id;
-                this.f1081common = reqData.f1080common;
+                this.f1082common = reqData.f1081common;
             }
         }
 

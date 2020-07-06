@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1062common;
+    public final CommonReq f1063common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String last_viewed_feeds;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1062common = builder.f1063common;
+            this.f1063common = builder.f1064common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1062common = builder.f1063common;
+        this.f1063common = builder.f1064common;
         this.pn = builder.pn;
         this.last_viewed_feeds = builder.last_viewed_feeds;
     }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1063common;
+        public CommonReq f1064common;
         public String last_viewed_feeds;
         public Integer pn;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1063common = dataReq.f1062common;
+                this.f1064common = dataReq.f1063common;
                 this.pn = dataReq.pn;
                 this.last_viewed_feeds = dataReq.last_viewed_feeds;
             }

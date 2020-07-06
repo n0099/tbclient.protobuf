@@ -9,14 +9,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1256common;
+    public final CommonReq f1257common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String word;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1256common = builder.f1257common;
+            this.f1257common = builder.f1258common;
             if (builder.word == null) {
                 this.word = "";
                 return;
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1256common = builder.f1257common;
+        this.f1257common = builder.f1258common;
         this.word = builder.word;
     }
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1257common;
+        public CommonReq f1258common;
         public String word;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1257common = dataReq.f1256common;
+                this.f1258common = dataReq.f1257common;
                 this.word = dataReq.word;
             }
         }
