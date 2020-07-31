@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class StarInfo extends Message {
     public static final String DEFAULT_HEAD = "";
     public static final String DEFAULT_STAR_FORUM_HEADIMG = "";
@@ -36,9 +36,7 @@ public final class StarInfo extends Message {
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String star_forum_headimg;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
-
-    /* renamed from: top  reason: collision with root package name */
-    public final String f1105top;
+    public final String top;
     @ProtoField(tag = 14)
     public final Size top_size;
     @ProtoField(tag = 16)
@@ -57,10 +55,10 @@ public final class StarInfo extends Message {
             } else {
                 this.has_frs_star = builder.has_frs_star;
             }
-            if (builder.f1106top == null) {
-                this.f1105top = "";
+            if (builder.top == null) {
+                this.top = "";
             } else {
-                this.f1105top = builder.f1106top;
+                this.top = builder.top;
             }
             if (builder.head == null) {
                 this.head = "";
@@ -97,7 +95,7 @@ public final class StarInfo extends Message {
             }
         }
         this.has_frs_star = builder.has_frs_star;
-        this.f1105top = builder.f1106top;
+        this.top = builder.top;
         this.head = builder.head;
         this.gender = builder.gender;
         this.info = builder.info;
@@ -115,7 +113,7 @@ public final class StarInfo extends Message {
         this.star_forum_headimg = builder.star_forum_headimg;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<StarInfo> {
         public Fans fans;
         public List<Focus> focus;
@@ -130,9 +128,7 @@ public final class StarInfo extends Message {
         public Music mv;
         public PhotoInfo photo;
         public String star_forum_headimg;
-
-        /* renamed from: top  reason: collision with root package name */
-        public String f1106top;
+        public String top;
         public Size top_size;
         public Ticket trade;
         public Video video;
@@ -144,7 +140,7 @@ public final class StarInfo extends Message {
             super(starInfo);
             if (starInfo != null) {
                 this.has_frs_star = starInfo.has_frs_star;
-                this.f1106top = starInfo.f1105top;
+                this.top = starInfo.top;
                 this.head = starInfo.head;
                 this.gender = starInfo.gender;
                 this.info = starInfo.info;

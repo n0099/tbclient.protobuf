@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class User extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
@@ -108,6 +108,8 @@ public final class User extends Message {
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_coreuser;
+    @ProtoField(tag = 106, type = Message.Datatype.INT32)
+    public final Integer is_default_avatar;
     @ProtoField(tag = 91, type = Message.Datatype.INT32)
     public final Integer is_fans;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
@@ -290,6 +292,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_IS_SHOW_REDPACKET = 0;
     public static final Integer DEFAULT_CAN_MODIFY_AVATAR = 0;
     public static final Integer DEFAULT_INFLUENCE = 0;
+    public static final Integer DEFAULT_IS_DEFAULT_AVATAR = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -702,7 +705,13 @@ public final class User extends Message {
             this.bawu_thrones = builder.bawu_thrones;
             this.call_fans_info = builder.call_fans_info;
             this.bazhu_grade = builder.bazhu_grade;
-            return;
+            if (builder.is_default_avatar == null) {
+                this.is_default_avatar = DEFAULT_IS_DEFAULT_AVATAR;
+                return;
+            } else {
+                this.is_default_avatar = builder.is_default_avatar;
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -808,9 +817,10 @@ public final class User extends Message {
         this.bawu_thrones = builder.bawu_thrones;
         this.call_fans_info = builder.call_fans_info;
         this.bazhu_grade = builder.bazhu_grade;
+        this.is_default_avatar = builder.is_default_avatar;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;
@@ -854,6 +864,7 @@ public final class User extends Message {
         public String ip;
         public Integer is_bawu;
         public Integer is_coreuser;
+        public Integer is_default_avatar;
         public Integer is_fans;
         public Integer is_friend;
         public Integer is_guanfang;
@@ -1027,6 +1038,7 @@ public final class User extends Message {
                 this.bawu_thrones = user.bawu_thrones;
                 this.call_fans_info = user.call_fans_info;
                 this.bazhu_grade = user.bazhu_grade;
+                this.is_default_avatar = user.is_default_avatar;
             }
         }
 

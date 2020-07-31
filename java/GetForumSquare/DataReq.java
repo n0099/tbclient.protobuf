@@ -3,7 +3,7 @@ package tbclient.GetForumSquare;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final Integer DEFAULT_PN = 0;
@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1127common;
+    public final CommonReq f1073common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1127common = builder.f1128common;
+            this.f1073common = builder.f1074common;
             if (builder.class_name == null) {
                 this.class_name = "";
             } else {
@@ -49,19 +49,19 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1127common = builder.f1128common;
+        this.f1073common = builder.f1074common;
         this.class_name = builder.class_name;
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.user_id = builder.user_id;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String class_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1128common;
+        public CommonReq f1074common;
         public Integer pn;
         public Integer rn;
         public Long user_id;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1128common = dataReq.f1127common;
+                this.f1074common = dataReq.f1073common;
                 this.class_name = dataReq.class_name;
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;

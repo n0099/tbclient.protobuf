@@ -4,9 +4,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
+    public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FEED_NID = "";
@@ -31,6 +32,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_YUELAOU_PARAMS = "";
     @ProtoField(tag = 68, type = Message.Datatype.STRING)
     public final String ad_context_list;
+    @ProtoField(tag = 72, type = Message.Datatype.STRING)
+    public final String ad_ext_params;
     @ProtoField(tag = 58)
     public final AdParam ad_param;
     @ProtoField(tag = 67, type = Message.Datatype.INT32)
@@ -43,12 +46,14 @@ public final class DataReq extends Message {
     public final Integer back;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer banner;
+    @ProtoField(tag = 73, type = Message.Datatype.INT64)
+    public final Long broadcast_id;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String call_url;
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1223common;
+    public final CommonReq f1169common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -194,6 +199,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
     public static final Integer DEFAULT_AFTER_AD_THREAD_COUNT = 0;
     public static final Integer DEFAULT_FROM_PUSH = 0;
+    public static final Long DEFAULT_BROADCAST_ID = 0L;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -318,7 +324,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.f1223common = builder.f1224common;
+            this.f1169common = builder.f1170common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -498,9 +504,19 @@ public final class DataReq extends Message {
             }
             if (builder.from_push == null) {
                 this.from_push = DEFAULT_FROM_PUSH;
-                return;
             } else {
                 this.from_push = builder.from_push;
+            }
+            if (builder.ad_ext_params == null) {
+                this.ad_ext_params = "";
+            } else {
+                this.ad_ext_params = builder.ad_ext_params;
+            }
+            if (builder.broadcast_id == null) {
+                this.broadcast_id = DEFAULT_BROADCAST_ID;
+                return;
+            } else {
+                this.broadcast_id = builder.broadcast_id;
                 return;
             }
         }
@@ -528,7 +544,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f1223common = builder.f1224common;
+        this.f1169common = builder.f1170common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -567,21 +583,25 @@ public final class DataReq extends Message {
         this.up_schema = builder.up_schema;
         this.pb_test_info = builder.pb_test_info;
         this.from_push = builder.from_push;
+        this.ad_ext_params = builder.ad_ext_params;
+        this.broadcast_id = builder.broadcast_id;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
+        public String ad_ext_params;
         public AdParam ad_param;
         public Integer after_ad_thread_count;
         public AppPosInfo app_pos;
         public Integer arround;
         public Integer back;
         public Integer banner;
+        public Long broadcast_id;
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1224common;
+        public CommonReq f1170common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -667,7 +687,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.f1224common = dataReq.f1223common;
+                this.f1170common = dataReq.f1169common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;
@@ -706,6 +726,8 @@ public final class DataReq extends Message {
                 this.up_schema = dataReq.up_schema;
                 this.pb_test_info = dataReq.pb_test_info;
                 this.from_push = dataReq.from_push;
+                this.ad_ext_params = dataReq.ad_ext_params;
+                this.broadcast_id = dataReq.broadcast_id;
             }
         }
 

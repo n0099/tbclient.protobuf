@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class YulePostActivity extends Message {
     public static final String DEFAULT_ACTIVITY_BANNER = "";
     public static final String DEFAULT_ACTIVITY_BUTTON = "";
@@ -67,7 +67,7 @@ public final class YulePostActivity extends Message {
         this.activity_button = builder.activity_button;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<YulePostActivity> {
         public String activity_banner;
         public String activity_button;

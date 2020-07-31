@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class HotUserRankEntry extends Message {
     public static final List<ShortUserInfo> DEFAULT_HOT_USER = Collections.emptyList();
     public static final String DEFAULT_MODULE_ICON = "";
@@ -42,7 +42,7 @@ public final class HotUserRankEntry extends Message {
         this.module_icon = builder.module_icon;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<HotUserRankEntry> {
         public List<ShortUserInfo> hot_user;
         public String module_icon;

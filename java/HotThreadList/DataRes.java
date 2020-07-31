@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.RecomTopicList;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThreadInfo> thread_info;
@@ -35,7 +35,7 @@ public final class DataRes extends Message {
         this.thread_info = immutableCopyOf(builder.thread_info);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThreadInfo> thread_info;
         public List<RecomTopicList> topic_list;

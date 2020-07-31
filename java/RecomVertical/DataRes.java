@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 4)
     public final ClassInfo class_info;
@@ -47,7 +47,7 @@ public final class DataRes extends Message {
         this.need_rechoose = builder.need_rechoose;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ClassInfo class_info;
         public Integer need_rechoose;

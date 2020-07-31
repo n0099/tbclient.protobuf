@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class RecommendBook extends Message {
     public static final String DEFAULT_BOOK_COVER = "";
     public static final String DEFAULT_BOOK_ID = "";
@@ -105,7 +105,7 @@ public final class RecommendBook extends Message {
         this.subscript_icon = builder.subscript_icon;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<RecommendBook> {
         public String book_cover;
         public String book_id;

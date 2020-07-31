@@ -2,7 +2,7 @@ package tbclient.GodFollowRecommend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes11.dex */
+/* loaded from: classes18.dex */
 public final class GodUserInfo extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_INTRO = "";
@@ -58,7 +58,7 @@ public final class GodUserInfo extends Message {
         this.intro = builder.intro;
     }
 
-    /* loaded from: classes11.dex */
+    /* loaded from: classes18.dex */
     public static final class Builder extends Message.Builder<GodUserInfo> {
         public String forum_name;
         public String intro;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class ForumMember extends Message {
     public static final String DEFAULT_LEVEL_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -58,7 +58,7 @@ public final class ForumMember extends Message {
         this.levelup_score = builder.levelup_score;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<ForumMember> {
         public Integer cur_score;
         public Integer is_like;

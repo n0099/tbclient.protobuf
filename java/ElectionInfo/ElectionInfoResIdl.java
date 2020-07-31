@@ -3,7 +3,7 @@ package tbclient.ElectionInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes8.dex */
+/* loaded from: classes15.dex */
 public final class ElectionInfoResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class ElectionInfoResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes15.dex */
     public static final class Builder extends Message.Builder<ElectionInfoResIdl> {
         public DataRes data;
         public Error error;

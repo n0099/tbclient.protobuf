@@ -3,13 +3,13 @@ package tbclient.DeleteFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class ReqData extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1081common;
+    public final CommonReq f1027common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
 
@@ -21,18 +21,18 @@ public final class ReqData extends Message {
             } else {
                 this.friend_id = builder.friend_id;
             }
-            this.f1081common = builder.f1082common;
+            this.f1027common = builder.f1028common;
             return;
         }
         this.friend_id = builder.friend_id;
-        this.f1081common = builder.f1082common;
+        this.f1027common = builder.f1028common;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1082common;
+        public CommonReq f1028common;
         public Long friend_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class ReqData extends Message {
             super(reqData);
             if (reqData != null) {
                 this.friend_id = reqData.friend_id;
-                this.f1082common = reqData.f1081common;
+                this.f1028common = reqData.f1027common;
             }
         }
 

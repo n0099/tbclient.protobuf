@@ -3,13 +3,13 @@ package tbclient.GetMemberInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes17.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1147common;
+    public final CommonReq f1093common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long forum_id;
 
@@ -21,18 +21,18 @@ public final class DataReq extends Message {
             } else {
                 this.forum_id = builder.forum_id;
             }
-            this.f1147common = builder.f1148common;
+            this.f1093common = builder.f1094common;
             return;
         }
         this.forum_id = builder.forum_id;
-        this.f1147common = builder.f1148common;
+        this.f1093common = builder.f1094common;
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes17.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1148common;
+        public CommonReq f1094common;
         public Long forum_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.forum_id = dataReq.forum_id;
-                this.f1148common = dataReq.f1147common;
+                this.f1094common = dataReq.f1093common;
             }
         }
 

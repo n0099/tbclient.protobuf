@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class Media extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_BSIZE = "";
@@ -220,7 +220,7 @@ public final class Media extends Message {
         this.hth_mid_loc = builder.hth_mid_loc;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<Media> {
         public String big_pic;
         public String bsize;

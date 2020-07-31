@@ -3,13 +3,13 @@ package tbclient.Bigvip;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes13.dex */
+/* loaded from: classes20.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1065common;
+    public final CommonReq f1011common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long user_id;
 
@@ -21,18 +21,18 @@ public final class DataReq extends Message {
             } else {
                 this.user_id = builder.user_id;
             }
-            this.f1065common = builder.f1066common;
+            this.f1011common = builder.f1012common;
             return;
         }
         this.user_id = builder.user_id;
-        this.f1065common = builder.f1066common;
+        this.f1011common = builder.f1012common;
     }
 
-    /* loaded from: classes13.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1066common;
+        public CommonReq f1012common;
         public Long user_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.user_id = dataReq.user_id;
-                this.f1066common = dataReq.f1065common;
+                this.f1012common = dataReq.f1011common;
             }
         }
 

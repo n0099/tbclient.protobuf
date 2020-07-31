@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.LiveLabelInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer has_more;
@@ -44,7 +44,7 @@ public final class DataRes extends Message {
         this.label = immutableCopyOf(builder.label);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer has_more;
         public List<LiveLabelInfo> label;

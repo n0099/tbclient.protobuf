@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.SmartApp;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     public static final List<SmartApp> DEFAULT_SWAN_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -25,7 +25,7 @@ public final class DataRes extends Message {
         this.swan_list = immutableCopyOf(builder.swan_list);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<SmartApp> swan_list;
 

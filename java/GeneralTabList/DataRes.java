@@ -9,7 +9,7 @@ import tbclient.SportPageHeadInfo;
 import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<ThreadInfo> general_list;
@@ -76,7 +76,7 @@ public final class DataRes extends Message {
         this.item_info = builder.item_info;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThreadInfo> general_list;
         public Integer has_more;

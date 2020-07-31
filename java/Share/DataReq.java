@@ -3,12 +3,12 @@ package tbclient.Share;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1263common;
+    public final CommonReq f1209common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1263common = builder.f1264common;
+            this.f1209common = builder.f1210common;
             if (builder.tid == null) {
                 this.tid = DEFAULT_TID;
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1263common = builder.f1264common;
+        this.f1209common = builder.f1210common;
         this.tid = builder.tid;
         this.from = builder.from;
         this.fid = builder.fid;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1264common;
+        public CommonReq f1210common;
         public Long fid;
         public Integer from;
         public Long tid;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1264common = dataReq.f1263common;
+                this.f1210common = dataReq.f1209common;
                 this.tid = dataReq.tid;
                 this.from = dataReq.from;
                 this.fid = dataReq.fid;

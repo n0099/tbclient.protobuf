@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class App extends Message {
     public static final String DEFAULT_ABTEST = "";
     public static final String DEFAULT_AD_ID = "";
@@ -303,7 +303,7 @@ public final class App extends Message {
         this.deep_url = builder.deep_url;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<App> {
         public String abtest;
         public String ad_id;

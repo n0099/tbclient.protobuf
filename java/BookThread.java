@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class BookThread extends Message {
     public static final String DEFAULT_BOOK_ID = "";
     public static final Integer DEFAULT_BOOK_TYPE = 0;
@@ -40,7 +40,7 @@ public final class BookThread extends Message {
         this.chapter_id = builder.chapter_id;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<BookThread> {
         public String book_id;
         public Integer book_type;

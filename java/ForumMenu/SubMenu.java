@@ -2,7 +2,7 @@ package tbclient.ForumMenu;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes13.dex */
+/* loaded from: classes20.dex */
 public final class SubMenu extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_NAME = "";
@@ -85,7 +85,7 @@ public final class SubMenu extends Message {
         this.content = builder.content;
     }
 
-    /* loaded from: classes13.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<SubMenu> {
         public Integer action_type;
         public String content;

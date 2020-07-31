@@ -10,7 +10,7 @@ import tbclient.BannerList;
 import tbclient.RecomPostTopic;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_STAT_KEY = "";
     @ProtoField(tag = 22)
@@ -178,7 +178,7 @@ public final class DataRes extends Message {
         this.active_center = builder.active_center;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActiveCenter active_center;
         public AgeSexModule age_sex;

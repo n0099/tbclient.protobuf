@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class UserVInfo extends Message {
     public static final Integer DEFAULT_V_TYPE = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -22,7 +22,7 @@ public final class UserVInfo extends Message {
         this.v_type = builder.v_type;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<UserVInfo> {
         public Integer v_type;
 

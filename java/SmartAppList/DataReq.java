@@ -3,7 +3,7 @@ package tbclient.SmartAppList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FID = 0L;
     public static final Integer DEFAULT_PN = 0;
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1267common;
+    public final CommonReq f1213common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1267common = builder.f1268common;
+            this.f1213common = builder.f1214common;
             if (builder.fid == null) {
                 this.fid = DEFAULT_FID;
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1267common = builder.f1268common;
+        this.f1213common = builder.f1214common;
         this.fid = builder.fid;
         this.pn = builder.pn;
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1268common;
+        public CommonReq f1214common;
         public Long fid;
         public Integer pn;
         public String rn;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1268common = dataReq.f1267common;
+                this.f1214common = dataReq.f1213common;
                 this.fid = dataReq.fid;
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;

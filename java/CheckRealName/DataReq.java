@@ -3,20 +3,20 @@ package tbclient.CheckRealName;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_OBJ_SOURCE = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1069common;
+    public final CommonReq f1015common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String obj_source;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1069common = builder.f1070common;
+            this.f1015common = builder.f1016common;
             if (builder.obj_source == null) {
                 this.obj_source = "";
                 return;
@@ -25,15 +25,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1069common = builder.f1070common;
+        this.f1015common = builder.f1016common;
         this.obj_source = builder.obj_source;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1070common;
+        public CommonReq f1016common;
         public String obj_source;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1070common = dataReq.f1069common;
+                this.f1016common = dataReq.f1015common;
                 this.obj_source = dataReq.obj_source;
             }
         }

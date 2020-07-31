@@ -3,27 +3,27 @@ package tbclient.RedNotify;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1249common;
+    public final CommonReq f1195common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1249common = builder.f1250common;
+            this.f1195common = builder.f1196common;
         } else {
-            this.f1249common = builder.f1250common;
+            this.f1195common = builder.f1196common;
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1250common;
+        public CommonReq f1196common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1250common = dataReq.f1249common;
+                this.f1196common = dataReq.f1195common;
             }
         }
 

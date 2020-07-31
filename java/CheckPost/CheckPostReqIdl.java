@@ -2,7 +2,7 @@ package tbclient.CheckPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class CheckPostReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;
@@ -16,7 +16,7 @@ public final class CheckPostReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<CheckPostReqIdl> {
         public ReqData data;
 

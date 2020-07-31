@@ -2,7 +2,7 @@ package tbclient.FinePbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes17.dex */
 public final class User_Info extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -49,7 +49,7 @@ public final class User_Info extends Message {
         this.gender = builder.gender;
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes17.dex */
     public static final class Builder extends Message.Builder<User_Info> {
         public Long gender;
         public Long id;

@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes15.dex */
 public final class UserInfo extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final Long DEFAULT_USER_ID = 0L;
@@ -40,7 +40,7 @@ public final class UserInfo extends Message {
         this.portrait = builder.portrait;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes15.dex */
     public static final class Builder extends Message.Builder<UserInfo> {
         public String portrait;
         public Long user_id;

@@ -3,27 +3,27 @@ package tbclient.RecommendForumListForBottle;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1243common;
+    public final CommonReq f1189common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1243common = builder.f1244common;
+            this.f1189common = builder.f1190common;
         } else {
-            this.f1243common = builder.f1244common;
+            this.f1189common = builder.f1190common;
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1244common;
+        public CommonReq f1190common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1244common = dataReq.f1243common;
+                this.f1190common = dataReq.f1189common;
             }
         }
 

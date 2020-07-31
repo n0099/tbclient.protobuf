@@ -3,14 +3,14 @@ package tbclient.Userlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_LAST_REQ_UNIX = 0L;
     public static final String DEFAULT_PAGE_TAG = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1295common;
+    public final CommonReq f1241common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long last_req_unix;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1295common = builder.f1296common;
+            this.f1241common = builder.f1242common;
             if (builder.page_tag == null) {
                 this.page_tag = "";
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1295common = builder.f1296common;
+        this.f1241common = builder.f1242common;
         this.page_tag = builder.page_tag;
         this.last_req_unix = builder.last_req_unix;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1296common;
+        public CommonReq f1242common;
         public Long last_req_unix;
         public String page_tag;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1296common = dataReq.f1295common;
+                this.f1242common = dataReq.f1241common;
                 this.page_tag = dataReq.page_tag;
                 this.last_req_unix = dataReq.last_req_unix;
             }

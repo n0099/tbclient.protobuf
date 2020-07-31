@@ -2,7 +2,7 @@ package tbclient.GetMoreMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes15.dex */
 public final class MsgContent extends Message {
     public static final String DEFAULT_ID = "";
     public static final String DEFAULT_SRC = "";
@@ -58,7 +58,7 @@ public final class MsgContent extends Message {
         this.src = builder.src;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes15.dex */
     public static final class Builder extends Message.Builder<MsgContent> {
         public String id;
         public String src;

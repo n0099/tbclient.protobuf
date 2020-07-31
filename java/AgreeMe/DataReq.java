@@ -3,12 +3,12 @@ package tbclient.AgreeMe;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1061common;
+    public final CommonReq f1007common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long id;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1061common = builder.f1062common;
+            this.f1007common = builder.f1008common;
             if (builder.id == null) {
                 this.id = DEFAULT_ID;
             } else {
@@ -65,7 +65,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1061common = builder.f1062common;
+        this.f1007common = builder.f1008common;
         this.id = builder.id;
         this.rn = builder.rn;
         this.scr_w = builder.scr_w;
@@ -74,11 +74,11 @@ public final class DataReq extends Message {
         this.q_type = builder.q_type;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1062common;
+        public CommonReq f1008common;
         public Long id;
         public Integer q_type;
         public Integer rn;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1062common = dataReq.f1061common;
+                this.f1008common = dataReq.f1007common;
                 this.id = dataReq.id;
                 this.rn = dataReq.rn;
                 this.scr_w = dataReq.scr_w;

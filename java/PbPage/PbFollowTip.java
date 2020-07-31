@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class PbFollowTip extends Message {
     public static final Integer DEFAULT_IS_TOAST_TIP = 0;
     public static final String DEFAULT_TIP_TEXT = "";
@@ -31,7 +31,7 @@ public final class PbFollowTip extends Message {
         this.tip_text = builder.tip_text;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<PbFollowTip> {
         public Integer is_toast_tip;
         public String tip_text;

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class RecommendForumList extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final Integer DEFAULT_FLOOR_POSITION = 0;
@@ -43,7 +43,7 @@ public final class RecommendForumList extends Message {
         this.forum_list = immutableCopyOf(builder.forum_list);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<RecommendForumList> {
         public String class_name;
         public Integer floor_position;

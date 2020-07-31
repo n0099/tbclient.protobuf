@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class Novel extends Message {
     public static final String DEFAULT_ANDROID_DETAIL_PARAMS = "";
     public static final String DEFAULT_ANDROID_LAST_CHARPTER_PARAMS = "";
@@ -166,7 +166,7 @@ public final class Novel extends Message {
         this.ios_last_read_params = builder.ios_last_read_params;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<Novel> {
         public String android_detail_params;
         public String android_last_charpter_params;

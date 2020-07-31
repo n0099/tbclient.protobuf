@@ -2,7 +2,7 @@ package tbclient.ExcFrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class ExcellentTagInfo extends Message {
     public static final Long DEFAULT_TAG_CODE = 0L;
     public static final String DEFAULT_TAG_NAME = "";
@@ -31,7 +31,7 @@ public final class ExcellentTagInfo extends Message {
         this.tag_name = builder.tag_name;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<ExcellentTagInfo> {
         public Long tag_code;
         public String tag_name;

@@ -2,7 +2,7 @@ package tbclient.ZoneRight;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_HAS_RIGHT = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -25,7 +25,7 @@ public final class DataRes extends Message {
         this.toast = builder.toast;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer has_right;
         public Toast toast;

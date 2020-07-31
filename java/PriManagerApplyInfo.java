@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class PriManagerApplyInfo extends Message {
     public static final String DEFAULT_ASSIST_APPLY_URL = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -40,7 +40,7 @@ public final class PriManagerApplyInfo extends Message {
         this.assist_apply_status = builder.assist_apply_status;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<PriManagerApplyInfo> {
         public Integer assist_apply_status;
         public String assist_apply_url;

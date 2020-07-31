@@ -5,17 +5,20 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ForumCreateInfo;
+import tbclient.ForumPopupInfo;
 import tbclient.FrequentlyForumInfo;
 import tbclient.FrsTabInfo;
 import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Banner> banner;
     @ProtoField(tag = 19)
     public final ForumCreateInfo forum_create_info;
+    @ProtoField(tag = 22)
+    public final ForumPopupInfo forum_popup_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 14)
     public final List<FrequentlyForumInfo> frequently_forum_info;
     @ProtoField(tag = 11)
@@ -149,11 +152,11 @@ public final class DataRes extends Message {
             this.private_forum_popinfo = builder.private_forum_popinfo;
             if (builder.nav_tab_info == null) {
                 this.nav_tab_info = DEFAULT_NAV_TAB_INFO;
-                return;
             } else {
                 this.nav_tab_info = immutableCopyOf(builder.nav_tab_info);
-                return;
             }
+            this.forum_popup_info = builder.forum_popup_info;
+            return;
         }
         this.like_forum = immutableCopyOf(builder.like_forum);
         this.banner = immutableCopyOf(builder.banner);
@@ -174,12 +177,14 @@ public final class DataRes extends Message {
         this.forum_create_info = builder.forum_create_info;
         this.private_forum_popinfo = builder.private_forum_popinfo;
         this.nav_tab_info = immutableCopyOf(builder.nav_tab_info);
+        this.forum_popup_info = builder.forum_popup_info;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public ForumCreateInfo forum_create_info;
+        public ForumPopupInfo forum_popup_info;
         public List<FrequentlyForumInfo> frequently_forum_info;
         public HotSearch hot_search;
         public Integer is_login;
@@ -223,6 +228,7 @@ public final class DataRes extends Message {
                 this.forum_create_info = dataRes.forum_create_info;
                 this.private_forum_popinfo = dataRes.private_forum_popinfo;
                 this.nav_tab_info = DataRes.copyOf(dataRes.nav_tab_info);
+                this.forum_popup_info = dataRes.forum_popup_info;
             }
         }
 

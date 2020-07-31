@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AgreeList;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<AgreeList> agree_list;
@@ -34,7 +34,7 @@ public final class DataRes extends Message {
         this.agree_list = immutableCopyOf(builder.agree_list);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<AgreeList> agree_list;
         public Integer has_more;

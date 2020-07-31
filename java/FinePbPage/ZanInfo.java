@@ -2,7 +2,7 @@ package tbclient.FinePbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes17.dex */
 public final class ZanInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.BOOL)
     public final Boolean is_zan;
@@ -31,7 +31,7 @@ public final class ZanInfo extends Message {
         this.is_zan = builder.is_zan;
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes17.dex */
     public static final class Builder extends Message.Builder<ZanInfo> {
         public Boolean is_zan;
         public Long zansum;

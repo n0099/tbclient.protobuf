@@ -2,7 +2,7 @@ package tbclient.SetCommonForumState;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class SetCommonForumStateReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class SetCommonForumStateReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<SetCommonForumStateReqIdl> {
         public DataReq data;
 

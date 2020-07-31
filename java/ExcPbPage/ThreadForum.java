@@ -2,7 +2,7 @@ package tbclient.ExcPbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes17.dex */
 public final class ThreadForum extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -22,7 +22,7 @@ public final class ThreadForum extends Message {
         this.forum_id = builder.forum_id;
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes17.dex */
     public static final class Builder extends Message.Builder<ThreadForum> {
         public Long forum_id;
 

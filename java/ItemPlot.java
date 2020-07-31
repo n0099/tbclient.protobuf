@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class ItemPlot extends Message {
     public static final Integer DEFAULT_LEVEL = 0;
     public static final Integer DEFAULT_NUM = 0;
@@ -31,7 +31,7 @@ public final class ItemPlot extends Message {
         this.num = builder.num;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<ItemPlot> {
         public Integer level;
         public Integer num;

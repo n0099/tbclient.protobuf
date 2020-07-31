@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
@@ -32,6 +32,8 @@ public final class AlaLiveInfo extends Message {
     public final String cover;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String description;
+    @ProtoField(label = Message.Label.REPEATED, tag = 43)
+    public final List<DislikeInfo> dislike_info;
     @ProtoField(tag = 20, type = Message.Datatype.UINT64)
     public final Long distance;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
@@ -122,6 +124,7 @@ public final class AlaLiveInfo extends Message {
     public static final Integer DEFAULT_OPEN_RECOM_LOCATION = 0;
     public static final Integer DEFAULT_OPEN_RECOM_FANS = 0;
     public static final Integer DEFAULT_OPEN_RECOM_DURATION = 0;
+    public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO = Collections.emptyList();
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -307,9 +310,14 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.open_recom_duration == null) {
                 this.open_recom_duration = DEFAULT_OPEN_RECOM_DURATION;
-                return;
             } else {
                 this.open_recom_duration = builder.open_recom_duration;
+            }
+            if (builder.dislike_info == null) {
+                this.dislike_info = DEFAULT_DISLIKE_INFO;
+                return;
+            } else {
+                this.dislike_info = immutableCopyOf(builder.dislike_info);
                 return;
             }
         }
@@ -353,14 +361,16 @@ public final class AlaLiveInfo extends Message {
         this.open_recom_location = builder.open_recom_location;
         this.open_recom_fans = builder.open_recom_fans;
         this.open_recom_duration = builder.open_recom_duration;
+        this.dislike_info = immutableCopyOf(builder.dislike_info);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
         public Integer audience_count;
         public AlaChallengeInfo challenge_info;
         public String cover;
         public String description;
+        public List<DislikeInfo> dislike_info;
         public Long distance;
         public Integer duration;
         public String first_headline;
@@ -444,6 +454,7 @@ public final class AlaLiveInfo extends Message {
                 this.open_recom_location = alaLiveInfo.open_recom_location;
                 this.open_recom_fans = alaLiveInfo.open_recom_fans;
                 this.open_recom_duration = alaLiveInfo.open_recom_duration;
+                this.dislike_info = AlaLiveInfo.copyOf(alaLiveInfo.dislike_info);
             }
         }
 

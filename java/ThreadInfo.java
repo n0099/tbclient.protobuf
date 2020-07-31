@@ -7,7 +7,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class ThreadInfo extends Message {
     public static final String DEFAULT_AB_TAG = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -161,6 +161,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_copythread;
     @ProtoField(tag = 97, type = Message.Datatype.INT32)
     public final Integer is_deal;
+    @ProtoField(tag = Opcodes.PUTFIELD, type = Message.Datatype.INT32)
+    public final Integer is_deleted;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = IMPushPb.PushImClient.SDK_VERSION_FIELD_NUMBER, type = Message.Datatype.INT32)
@@ -485,6 +487,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
     public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
+    public static final Integer DEFAULT_IS_DELETED = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1179,9 +1182,14 @@ public final class ThreadInfo extends Message {
             this.item = builder.item;
             if (builder.item_star == null) {
                 this.item_star = DEFAULT_ITEM_STAR;
-                return;
             } else {
                 this.item_star = immutableCopyOf(builder.item_star);
+            }
+            if (builder.is_deleted == null) {
+                this.is_deleted = DEFAULT_IS_DELETED;
+                return;
+            } else {
+                this.is_deleted = builder.is_deleted;
                 return;
             }
         }
@@ -1358,9 +1366,10 @@ public final class ThreadInfo extends Message {
         this.pb_link_info = immutableCopyOf(builder.pb_link_info);
         this.item = builder.item;
         this.item_star = immutableCopyOf(builder.item_star);
+        this.is_deleted = builder.is_deleted;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
         public String ab_tag;
@@ -1419,6 +1428,7 @@ public final class ThreadInfo extends Message {
         public Integer is_called;
         public Integer is_copythread;
         public Integer is_deal;
+        public Integer is_deleted;
         public Integer is_global_top;
         public Integer is_god;
         public Integer is_godthread_recommend;
@@ -1715,6 +1725,7 @@ public final class ThreadInfo extends Message {
                 this.pb_link_info = ThreadInfo.copyOf(threadInfo.pb_link_info);
                 this.item = threadInfo.item;
                 this.item_star = ThreadInfo.copyOf(threadInfo.item_star);
+                this.is_deleted = threadInfo.is_deleted;
             }
         }
 

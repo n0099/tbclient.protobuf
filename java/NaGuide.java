@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class NaGuide extends Message {
     public static final String DEFAULT_DWNL_URL = "";
     public static final List<RecGuide> DEFAULT_REC_INFO = Collections.emptyList();
@@ -33,7 +33,7 @@ public final class NaGuide extends Message {
         this.rec_info = immutableCopyOf(builder.rec_info);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<NaGuide> {
         public String dwnl_url;
         public List<RecGuide> rec_info;

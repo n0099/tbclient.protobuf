@@ -3,12 +3,12 @@ package tbclient.GetUserInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1179common;
+    public final CommonReq f1125common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer scr_w;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1179common = builder.f1180common;
+            this.f1125common = builder.f1126common;
             if (builder.uid == null) {
                 this.uid = DEFAULT_UID;
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1179common = builder.f1180common;
+        this.f1125common = builder.f1126common;
         this.uid = builder.uid;
         this.scr_w = builder.scr_w;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1180common;
+        public CommonReq f1126common;
         public Integer scr_w;
         public Long uid;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1180common = dataReq.f1179common;
+                this.f1126common = dataReq.f1125common;
                 this.uid = dataReq.uid;
                 this.scr_w = dataReq.scr_w;
             }

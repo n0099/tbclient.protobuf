@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class BawuTeam extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<BawuRoleDes> bawu_team_list;
@@ -33,7 +33,7 @@ public final class BawuTeam extends Message {
         this.bawu_team_list = immutableCopyOf(builder.bawu_team_list);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<BawuTeam> {
         public List<BawuRoleDes> bawu_team_list;
         public Integer total_num;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class EsportInfo extends Message {
     public static final String DEFAULT_INTRO = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -22,7 +22,7 @@ public final class EsportInfo extends Message {
         this.intro = builder.intro;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<EsportInfo> {
         public String intro;
 

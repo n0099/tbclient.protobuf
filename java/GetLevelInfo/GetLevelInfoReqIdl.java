@@ -2,7 +2,7 @@ package tbclient.GetLevelInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes17.dex */
 public final class GetLevelInfoReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class GetLevelInfoReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes17.dex */
     public static final class Builder extends Message.Builder<GetLevelInfoReqIdl> {
         public DataReq data;
 

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class FrequentlyForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -105,7 +105,7 @@ public final class FrequentlyForumInfo extends Message {
         this.is_sign = builder.is_sign;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<FrequentlyForumInfo> {
         public Integer access_flag;
         public String avatar;

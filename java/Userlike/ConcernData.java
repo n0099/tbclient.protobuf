@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class ConcernData extends Message {
     @ProtoField(tag = 2)
     public final PostData post_data;
@@ -52,7 +52,7 @@ public final class ConcernData extends Message {
         this.recom_user_list = immutableCopyOf(builder.recom_user_list);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<ConcernData> {
         public PostData post_data;
         public Integer recom_type;

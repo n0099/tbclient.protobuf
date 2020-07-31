@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class StarVoice extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_DESC = "";
@@ -49,7 +49,7 @@ public final class StarVoice extends Message {
         this.voice_md5 = builder.voice_md5;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<StarVoice> {
         public String avatar;
         public String desc;

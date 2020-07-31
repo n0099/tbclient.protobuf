@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class PostInfoContent extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long create_time;
@@ -51,7 +51,7 @@ public final class PostInfoContent extends Message {
         this.post_id = builder.post_id;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<PostInfoContent> {
         public Long create_time;
         public List<Abstract> post_content;

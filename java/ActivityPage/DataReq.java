@@ -3,7 +3,7 @@ package tbclient.ActivityPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ACTIVITY_NAME = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1051common;
+    public final CommonReq f997common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -34,7 +34,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1051common = builder.f1052common;
+            this.f997common = builder.f998common;
             if (builder.activity_name == null) {
                 this.activity_name = "";
             } else {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1051common = builder.f1052common;
+        this.f997common = builder.f998common;
         this.activity_name = builder.activity_name;
         this.pn = builder.pn;
         this.rn = builder.rn;
@@ -83,12 +83,12 @@ public final class DataReq extends Message {
         this.q_type = builder.q_type;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String activity_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1052common;
+        public CommonReq f998common;
         public Integer pn;
         public Integer q_type;
         public Integer rn;
@@ -102,7 +102,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1052common = dataReq.f1051common;
+                this.f998common = dataReq.f997common;
                 this.activity_name = dataReq.activity_name;
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;

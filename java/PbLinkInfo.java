@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class PbLinkInfo extends Message {
     public static final String DEFAULT_PIC_URL = "";
     public static final String DEFAULT_TITLE = "";
@@ -40,7 +40,7 @@ public final class PbLinkInfo extends Message {
         this.pic_url = builder.pic_url;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<PbLinkInfo> {
         public String pic_url;
         public String title;

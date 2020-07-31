@@ -3,20 +3,20 @@ package tbclient.HotThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TAB_ID = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1195common;
+    public final CommonReq f1141common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tab_id;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1195common = builder.f1196common;
+            this.f1141common = builder.f1142common;
             if (builder.tab_id == null) {
                 this.tab_id = "";
                 return;
@@ -25,15 +25,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1195common = builder.f1196common;
+        this.f1141common = builder.f1142common;
         this.tab_id = builder.tab_id;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1196common;
+        public CommonReq f1142common;
         public String tab_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1196common = dataReq.f1195common;
+                this.f1142common = dataReq.f1141common;
                 this.tab_id = dataReq.tab_id;
             }
         }

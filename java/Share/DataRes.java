@@ -2,7 +2,7 @@ package tbclient.Share;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataRes extends Message {
     public static final Long DEFAULT_TID = 0L;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -22,7 +22,7 @@ public final class DataRes extends Message {
         this.tid = builder.tid;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Long tid;
 

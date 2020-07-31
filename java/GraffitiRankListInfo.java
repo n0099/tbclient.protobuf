@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class GraffitiRankListInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<User> consent_list;
@@ -87,7 +87,7 @@ public final class GraffitiRankListInfo extends Message {
         this.consent_list = immutableCopyOf(builder.consent_list);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<GraffitiRankListInfo> {
         public List<User> consent_list;
         public Integer has_more;

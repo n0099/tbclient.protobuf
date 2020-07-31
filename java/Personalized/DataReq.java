@@ -6,9 +6,10 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes16.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
+    public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_AGE_TAG = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FIRST_DIR = "";
@@ -21,6 +22,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_SHOUBAI_CUID = "";
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String ad_context_list;
+    @ProtoField(tag = 37, type = Message.Datatype.STRING)
+    public final String ad_ext_params;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String age_tag;
     @ProtoField(tag = 36)
@@ -28,7 +31,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1227common;
+    public final CommonReq f1173common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -111,7 +114,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1227common = builder.f1228common;
+            this.f1173common = builder.f1174common;
             if (builder.tag_code == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
             } else {
@@ -268,9 +271,15 @@ public final class DataReq extends Message {
                 this.second_dir = builder.second_dir;
             }
             this.app_pos = builder.app_pos;
-            return;
+            if (builder.ad_ext_params == null) {
+                this.ad_ext_params = "";
+                return;
+            } else {
+                this.ad_ext_params = builder.ad_ext_params;
+                return;
+            }
         }
-        this.f1227common = builder.f1228common;
+        this.f1173common = builder.f1174common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;
@@ -303,16 +312,18 @@ public final class DataReq extends Message {
         this.first_dir = builder.first_dir;
         this.second_dir = builder.second_dir;
         this.app_pos = builder.app_pos;
+        this.ad_ext_params = builder.ad_ext_params;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
+        public String ad_ext_params;
         public String age_tag;
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1228common;
+        public CommonReq f1174common;
         public String da_idfa;
         public String first_dir;
         public Long from_tid;
@@ -349,7 +360,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1228common = dataReq.f1227common;
+                this.f1174common = dataReq.f1173common;
                 this.tag_code = dataReq.tag_code;
                 this.need_tags = dataReq.need_tags;
                 this.load_type = dataReq.load_type;
@@ -382,6 +393,7 @@ public final class DataReq extends Message {
                 this.first_dir = dataReq.first_dir;
                 this.second_dir = dataReq.second_dir;
                 this.app_pos = dataReq.app_pos;
+                this.ad_ext_params = dataReq.ad_ext_params;
             }
         }
 
