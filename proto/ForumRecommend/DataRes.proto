@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "Banner.proto";
 import "ForumCreateInfo.proto";
+import "ForumPopupInfo.proto";
 import "ForumRecommend/HotSearch.proto";
 import "ForumRecommend/LikeForum.proto";
 import "ForumRecommend/NewRecommend.proto";
@@ -30,4 +31,5 @@ message DataRes {
     ForumCreateInfo forum_create_info = 19;
     PrivatePopInfo private_forum_popinfo = 20;
     repeated FrsTabInfo nav_tab_info = 21;
+    ForumPopupInfo forum_popup_info = 22;
 }

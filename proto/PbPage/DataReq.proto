@@ -67,4 +67,6 @@ message DataReq {
     string up_schema = 69;
     string pb_test_info = 70;
     int32 from_push = 71;
+    string ad_ext_params = 72;
+    int64 broadcast_id = 73;
 }

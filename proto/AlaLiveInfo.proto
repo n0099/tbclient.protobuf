@@ -5,6 +5,7 @@ import "AlaCoverLabel.proto";
 import "AlaShareInfo.proto";
 import "AlaStageDislikeInfo.proto";
 import "AlaUserInfo.proto";
+import "DislikeInfo.proto";
 
 message AlaLiveInfo {
     uint64 live_id = 1;
@@ -47,4 +48,5 @@ message AlaLiveInfo {
     uint32 open_recom_location = 39;
     uint32 open_recom_fans = 40;
     uint32 open_recom_duration = 41;
+    repeated DislikeInfo dislike_info = 43;
 }

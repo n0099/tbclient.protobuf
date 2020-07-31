@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "BroadcastInfo.proto";
+import "Page.proto";
+
+message DataRes {
+    repeated BroadcastInfo bcast_infos = 1;
+    Page page = 3;
+}

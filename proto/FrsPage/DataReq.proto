@@ -65,4 +65,5 @@ message DataReq {
     int32 is_default_navtab = 59;
     string ad_context_list = 60;
     string up_schema = 61;
+    string ad_ext_params = 62;
 }

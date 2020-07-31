@@ -142,4 +142,5 @@ message User {
     BawuThrones bawu_thrones = 103;
     CallFansInfo call_fans_info = 104;
     BazhuSign bazhu_grade = 105;
+    int32 is_default_avatar = 106;
 }
