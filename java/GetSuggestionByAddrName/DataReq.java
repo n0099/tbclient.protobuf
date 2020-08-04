@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1115common;
+    public final CommonReq f1118common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -21,11 +21,11 @@ public final class DataReq extends Message {
             } else {
                 this.addr_name = builder.addr_name;
             }
-            this.f1115common = builder.f1116common;
+            this.f1118common = builder.f1119common;
             return;
         }
         this.addr_name = builder.addr_name;
-        this.f1115common = builder.f1116common;
+        this.f1118common = builder.f1119common;
     }
 
     /* loaded from: classes17.dex */
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public String addr_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1116common;
+        public CommonReq f1119common;
 
         public Builder() {
         }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.addr_name = dataReq.addr_name;
-                this.f1116common = dataReq.f1115common;
+                this.f1119common = dataReq.f1118common;
             }
         }
 

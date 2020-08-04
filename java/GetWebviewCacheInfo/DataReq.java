@@ -9,14 +9,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1129common;
+    public final CommonReq f1132common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String webview_version;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1129common = builder.f1130common;
+            this.f1132common = builder.f1133common;
             if (builder.webview_version == null) {
                 this.webview_version = "";
                 return;
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1129common = builder.f1130common;
+        this.f1132common = builder.f1133common;
         this.webview_version = builder.webview_version;
     }
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1130common;
+        public CommonReq f1133common;
         public String webview_version;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1130common = dataReq.f1129common;
+                this.f1133common = dataReq.f1132common;
                 this.webview_version = dataReq.webview_version;
             }
         }

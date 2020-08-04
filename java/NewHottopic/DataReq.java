@@ -12,14 +12,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1159common;
+    public final CommonReq f1162common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long topic_id;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1159common = builder.f1160common;
+            this.f1162common = builder.f1163common;
             if (builder.topic_id == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
             } else {
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1159common = builder.f1160common;
+        this.f1162common = builder.f1163common;
         this.topic_id = builder.topic_id;
         this.call_from = builder.call_from;
     }
@@ -43,7 +43,7 @@ public final class DataReq extends Message {
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1160common;
+        public CommonReq f1163common;
         public Long topic_id;
 
         public Builder() {
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1160common = dataReq.f1159common;
+                this.f1163common = dataReq.f1162common;
                 this.topic_id = dataReq.topic_id;
                 this.call_from = dataReq.call_from;
             }

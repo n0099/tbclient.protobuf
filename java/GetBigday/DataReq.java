@@ -8,7 +8,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1061common;
+    public final CommonReq f1064common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer scr_h;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1061common = builder.f1062common;
+            this.f1064common = builder.f1065common;
             if (builder.scr_w == null) {
                 this.scr_w = DEFAULT_SCR_W;
             } else {
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1061common = builder.f1062common;
+        this.f1064common = builder.f1065common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
     }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1062common;
+        public CommonReq f1065common;
         public Integer scr_h;
         public Integer scr_w;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1062common = dataReq.f1061common;
+                this.f1065common = dataReq.f1064common;
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;
             }
