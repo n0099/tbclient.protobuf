@@ -8,14 +8,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1102common;
+    public final CommonReq f1104common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1102common = builder.f1103common;
+            this.f1104common = builder.f1105common;
         } else {
-            this.f1102common = builder.f1103common;
+            this.f1104common = builder.f1105common;
         }
     }
 
@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1103common;
+        public CommonReq f1105common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1103common = dataReq.f1102common;
+                this.f1105common = dataReq.f1104common;
             }
         }
 

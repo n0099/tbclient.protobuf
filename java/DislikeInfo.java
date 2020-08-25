@@ -2,19 +2,20 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import org.json.JSONObject;
 /* loaded from: classes16.dex */
 public final class DislikeInfo extends Message {
     public static final Integer DEFAULT_DISLIKE_ID = 0;
     public static final String DEFAULT_DISLIKE_REASON = "";
     public static final String DEFAULT_EXTRA = "";
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public final Integer dislike_id;
+    public Integer dislike_id;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String dislike_reason;
+    public String dislike_reason;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String extra;
 
-    private DislikeInfo(Builder builder, boolean z) {
+    public DislikeInfo(Builder builder, boolean z) {
         super(builder);
         if (z) {
             if (builder.dislike_reason == null) {
@@ -62,6 +63,13 @@ public final class DislikeInfo extends Message {
         @Override // com.squareup.wire.Message.Builder
         public DislikeInfo build(boolean z) {
             return new DislikeInfo(this, z);
+        }
+    }
+
+    public void parseJson(JSONObject jSONObject) {
+        if (jSONObject != null) {
+            this.dislike_reason = jSONObject.optString("dislike_reason");
+            this.dislike_id = Integer.valueOf(jSONObject.optInt("dislike_id"));
         }
     }
 }

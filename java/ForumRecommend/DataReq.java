@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1050common;
+    public final CommonReq f1052common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer like_forum;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -43,7 +43,7 @@ public final class DataReq extends Message {
             } else {
                 this.recommend = builder.recommend;
             }
-            this.f1050common = builder.f1051common;
+            this.f1052common = builder.f1053common;
             if (builder.visit_history == null) {
                 this.visit_history = "";
             } else {
@@ -60,7 +60,7 @@ public final class DataReq extends Message {
         this.like_forum = builder.like_forum;
         this.topic = builder.topic;
         this.recommend = builder.recommend;
-        this.f1050common = builder.f1051common;
+        this.f1052common = builder.f1053common;
         this.visit_history = builder.visit_history;
         this.sort_type = builder.sort_type;
     }
@@ -69,7 +69,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1051common;
+        public CommonReq f1053common;
         public Integer like_forum;
         public Integer recommend;
         public Integer sort_type;
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
                 this.like_forum = dataReq.like_forum;
                 this.topic = dataReq.topic;
                 this.recommend = dataReq.recommend;
-                this.f1051common = dataReq.f1050common;
+                this.f1053common = dataReq.f1052common;
                 this.visit_history = dataReq.visit_history;
                 this.sort_type = dataReq.sort_type;
             }

@@ -57,7 +57,7 @@ public final class ThreadInfo extends Message {
     public final ActivityInfo activity_info;
     @ProtoField(tag = Opcodes.IAND)
     public final Agree agree;
-    @ProtoField(tag = 124, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY_MEMBER, type = Message.Datatype.INT32)
     public final Integer agree_num;
     @ProtoField(tag = 113)
     public final AlaLiveInfo ala_info;
@@ -103,7 +103,7 @@ public final class ThreadInfo extends Message {
     public final String daily_paper_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = 121)
+    @ProtoField(label = Message.Label.REPEATED, tag = Constants.METHOD_IM_FRIEND_GROUP_DROP)
     public final List<DeclareInfo> declare_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
@@ -133,6 +133,8 @@ public final class ThreadInfo extends Message {
     public final TogetherHi high_together;
     @ProtoField(tag = 71)
     public final HotTWThreadInfo hotTWInfo;
+    @ProtoField(tag = Opcodes.INVOKEVIRTUAL, type = Message.Datatype.INT32)
+    public final Integer hot_num;
     @ProtoField(tag = 66, type = Message.Datatype.INT32)
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -181,7 +183,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_meizhi;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer is_membertop;
-    @ProtoField(tag = 123, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY, type = Message.Datatype.INT32)
     public final Integer is_multiforum_thread;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_notice;
@@ -267,6 +269,8 @@ public final class ThreadInfo extends Message {
     public final OriForumInfo ori_forum_info;
     @ProtoField(tag = 141)
     public final OriginThreadInfo origin_thread_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 183)
+    public final List<PbGoodsInfo> pb_goods_info;
     @ProtoField(label = Message.Label.REPEATED, tag = Opcodes.GETSTATIC)
     public final List<PbLinkInfo> pb_link_info;
     @ProtoField(tag = 133)
@@ -488,6 +492,8 @@ public final class ThreadInfo extends Message {
     public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
     public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
     public static final Integer DEFAULT_IS_DELETED = 0;
+    public static final Integer DEFAULT_HOT_NUM = 0;
+    public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO = Collections.emptyList();
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1187,9 +1193,19 @@ public final class ThreadInfo extends Message {
             }
             if (builder.is_deleted == null) {
                 this.is_deleted = DEFAULT_IS_DELETED;
-                return;
             } else {
                 this.is_deleted = builder.is_deleted;
+            }
+            if (builder.hot_num == null) {
+                this.hot_num = DEFAULT_HOT_NUM;
+            } else {
+                this.hot_num = builder.hot_num;
+            }
+            if (builder.pb_goods_info == null) {
+                this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
+                return;
+            } else {
+                this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
                 return;
             }
         }
@@ -1367,6 +1383,8 @@ public final class ThreadInfo extends Message {
         this.item = builder.item;
         this.item_star = immutableCopyOf(builder.item_star);
         this.is_deleted = builder.is_deleted;
+        this.hot_num = builder.hot_num;
+        this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
     }
 
     /* loaded from: classes16.dex */
@@ -1414,6 +1432,7 @@ public final class ThreadInfo extends Message {
         public Integer has_commented;
         public TogetherHi high_together;
         public HotTWThreadInfo hotTWInfo;
+        public Integer hot_num;
         public Integer hot_weight;
         public Long id;
         public Integer if_comment;
@@ -1481,6 +1500,7 @@ public final class ThreadInfo extends Message {
         public Integer operator_flag;
         public OriForumInfo ori_forum_info;
         public OriginThreadInfo origin_thread_info;
+        public List<PbGoodsInfo> pb_goods_info;
         public List<PbLinkInfo> pb_link_info;
         public Media pic_info;
         public Integer pic_num;
@@ -1726,6 +1746,8 @@ public final class ThreadInfo extends Message {
                 this.item = threadInfo.item;
                 this.item_star = ThreadInfo.copyOf(threadInfo.item_star);
                 this.is_deleted = threadInfo.is_deleted;
+                this.hot_num = threadInfo.hot_num;
+                this.pb_goods_info = ThreadInfo.copyOf(threadInfo.pb_goods_info);
             }
         }
 

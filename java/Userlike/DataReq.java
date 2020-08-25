@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1244common;
+    public final CommonReq f1250common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long last_req_unix;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1244common = builder.f1245common;
+            this.f1250common = builder.f1251common;
             if (builder.page_tag == null) {
                 this.page_tag = "";
             } else {
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1244common = builder.f1245common;
+        this.f1250common = builder.f1251common;
         this.page_tag = builder.page_tag;
         this.last_req_unix = builder.last_req_unix;
     }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1245common;
+        public CommonReq f1251common;
         public Long last_req_unix;
         public String page_tag;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1245common = dataReq.f1244common;
+                this.f1251common = dataReq.f1250common;
                 this.page_tag = dataReq.page_tag;
                 this.last_req_unix = dataReq.last_req_unix;
             }

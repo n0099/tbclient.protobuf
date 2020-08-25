@@ -25,6 +25,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_M_SIZE_U = "";
     public static final String DEFAULT_OAID = "";
     public static final String DEFAULT_PVERSION = "";
+    public static final String DEFAULT_SAMPLE_ID = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
     public static final String DEFAULT_STOKEN = "";
@@ -94,6 +95,8 @@ public final class CommonReq extends Message {
     public final String oaid;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String pversion;
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    public final String sample_id;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String sign;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
@@ -285,9 +288,14 @@ public final class CommonReq extends Message {
             }
             if (builder.c3_aid == null) {
                 this.c3_aid = "";
-                return;
             } else {
                 this.c3_aid = builder.c3_aid;
+            }
+            if (builder.sample_id == null) {
+                this.sample_id = "";
+                return;
+            } else {
+                this.sample_id = builder.sample_id;
                 return;
             }
         }
@@ -326,6 +334,7 @@ public final class CommonReq extends Message {
         this.cuid_gid = builder.cuid_gid;
         this.oaid = builder.oaid;
         this.c3_aid = builder.c3_aid;
+        this.sample_id = builder.sample_id;
     }
 
     /* loaded from: classes16.dex */
@@ -359,6 +368,7 @@ public final class CommonReq extends Message {
         public Integer net_type;
         public String oaid;
         public String pversion;
+        public String sample_id;
         public String sign;
         public String smallflow;
         public String stoken;
@@ -407,6 +417,7 @@ public final class CommonReq extends Message {
                 this.cuid_gid = commonReq.cuid_gid;
                 this.oaid = commonReq.oaid;
                 this.c3_aid = commonReq.c3_aid;
+                this.sample_id = commonReq.sample_id;
             }
         }
 

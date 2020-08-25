@@ -21,6 +21,9 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_IS_TOP_IMG = "";
     public static final String DEFAULT_LEVEL_NAME = "";
     public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_RISK_TIP_NOTICE = "";
+    public static final String DEFAULT_RISK_TIP_POP = "";
+    public static final String DEFAULT_RISK_TIP_POP_TITLE = "";
     public static final String DEFAULT_SECOND_CLASS = "";
     public static final String DEFAULT_SLOGAN = "";
     public static final String DEFAULT_SPECIAL_FORUM_TYPE = "";
@@ -147,6 +150,12 @@ public final class ForumInfo extends Message {
     public final List<RecommendForum> recommend_forum;
     @ProtoField(tag = 48)
     public final RecomUserInfo recommend_user_info;
+    @ProtoField(tag = 81, type = Message.Datatype.STRING)
+    public final String risk_tip_notice;
+    @ProtoField(tag = 80, type = Message.Datatype.STRING)
+    public final String risk_tip_pop;
+    @ProtoField(tag = 82, type = Message.Datatype.STRING)
+    public final String risk_tip_pop_title;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String second_class;
     @ProtoField(tag = 15)
@@ -521,9 +530,24 @@ public final class ForumInfo extends Message {
             }
             if (builder.forum_share_link == null) {
                 this.forum_share_link = "";
-                return;
             } else {
                 this.forum_share_link = builder.forum_share_link;
+            }
+            if (builder.risk_tip_pop == null) {
+                this.risk_tip_pop = "";
+            } else {
+                this.risk_tip_pop = builder.risk_tip_pop;
+            }
+            if (builder.risk_tip_notice == null) {
+                this.risk_tip_notice = "";
+            } else {
+                this.risk_tip_notice = builder.risk_tip_notice;
+            }
+            if (builder.risk_tip_pop_title == null) {
+                this.risk_tip_pop_title = "";
+                return;
+            } else {
+                this.risk_tip_pop_title = builder.risk_tip_pop_title;
                 return;
             }
         }
@@ -604,6 +628,9 @@ public final class ForumInfo extends Message {
         this.is_show_bawutask = builder.is_show_bawutask;
         this.f_share_img = builder.f_share_img;
         this.forum_share_link = builder.forum_share_link;
+        this.risk_tip_pop = builder.risk_tip_pop;
+        this.risk_tip_notice = builder.risk_tip_notice;
+        this.risk_tip_pop_title = builder.risk_tip_pop_title;
     }
 
     /* loaded from: classes16.dex */
@@ -667,6 +694,9 @@ public final class ForumInfo extends Message {
         public RealTime realtime_data;
         public List<RecommendForum> recommend_forum;
         public RecomUserInfo recommend_user_info;
+        public String risk_tip_notice;
+        public String risk_tip_pop;
+        public String risk_tip_pop_title;
         public String second_class;
         public SignInfo sign_in_info;
         public String slogan;
@@ -769,6 +799,9 @@ public final class ForumInfo extends Message {
                 this.is_show_bawutask = forumInfo.is_show_bawutask;
                 this.f_share_img = forumInfo.f_share_img;
                 this.forum_share_link = forumInfo.forum_share_link;
+                this.risk_tip_pop = forumInfo.risk_tip_pop;
+                this.risk_tip_notice = forumInfo.risk_tip_notice;
+                this.risk_tip_pop_title = forumInfo.risk_tip_pop_title;
             }
         }
 

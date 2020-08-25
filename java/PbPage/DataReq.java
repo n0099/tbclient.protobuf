@@ -53,7 +53,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1172common;
+    public final CommonReq f1176common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -62,6 +62,8 @@ public final class DataReq extends Message {
     public final Long fid;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
+    @ProtoField(tag = 74, type = Message.Datatype.INT32)
+    public final Integer floor_sort_type;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 71, type = Message.Datatype.INT32)
@@ -200,6 +202,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_AFTER_AD_THREAD_COUNT = 0;
     public static final Integer DEFAULT_FROM_PUSH = 0;
     public static final Long DEFAULT_BROADCAST_ID = 0L;
+    public static final Integer DEFAULT_FLOOR_SORT_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -324,7 +327,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.f1172common = builder.f1173common;
+            this.f1176common = builder.f1177common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -514,9 +517,14 @@ public final class DataReq extends Message {
             }
             if (builder.broadcast_id == null) {
                 this.broadcast_id = DEFAULT_BROADCAST_ID;
-                return;
             } else {
                 this.broadcast_id = builder.broadcast_id;
+            }
+            if (builder.floor_sort_type == null) {
+                this.floor_sort_type = DEFAULT_FLOOR_SORT_TYPE;
+                return;
+            } else {
+                this.floor_sort_type = builder.floor_sort_type;
                 return;
             }
         }
@@ -544,7 +552,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f1172common = builder.f1173common;
+        this.f1176common = builder.f1177common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -585,6 +593,7 @@ public final class DataReq extends Message {
         this.from_push = builder.from_push;
         this.ad_ext_params = builder.ad_ext_params;
         this.broadcast_id = builder.broadcast_id;
+        this.floor_sort_type = builder.floor_sort_type;
     }
 
     /* loaded from: classes16.dex */
@@ -601,11 +610,12 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1173common;
+        public CommonReq f1177common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
         public Integer floor_rn;
+        public Integer floor_sort_type;
         public Long forum_id;
         public Integer from_push;
         public Integer from_smart_frs;
@@ -687,7 +697,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.f1173common = dataReq.f1172common;
+                this.f1177common = dataReq.f1176common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;
@@ -728,6 +738,7 @@ public final class DataReq extends Message {
                 this.from_push = dataReq.from_push;
                 this.ad_ext_params = dataReq.ad_ext_params;
                 this.broadcast_id = dataReq.broadcast_id;
+                this.floor_sort_type = dataReq.floor_sort_type;
             }
         }
 

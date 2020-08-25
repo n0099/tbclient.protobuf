@@ -24,6 +24,7 @@ public final class User extends Message {
     public static final String DEFAULT_RANK = "";
     public static final String DEFAULT_SEAL_PREFIX = "";
     public static final String DEFAULT_TB_AGE = "";
+    public static final String DEFAULT_UK = "";
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String BDUSS;
     @ProtoField(tag = 71)
@@ -218,6 +219,8 @@ public final class User extends Message {
     public final TwZhiBoUser tw_anchor_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer type;
+    @ProtoField(tag = 107, type = Message.Datatype.STRING)
+    public final String uk;
     @ProtoField(label = Message.Label.REPEATED, tag = 44)
     public final List<UserPics> user_pics;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
@@ -707,9 +710,14 @@ public final class User extends Message {
             this.bazhu_grade = builder.bazhu_grade;
             if (builder.is_default_avatar == null) {
                 this.is_default_avatar = DEFAULT_IS_DEFAULT_AVATAR;
-                return;
             } else {
                 this.is_default_avatar = builder.is_default_avatar;
+            }
+            if (builder.uk == null) {
+                this.uk = "";
+                return;
+            } else {
+                this.uk = builder.uk;
                 return;
             }
         }
@@ -818,6 +826,7 @@ public final class User extends Message {
         this.call_fans_info = builder.call_fans_info;
         this.bazhu_grade = builder.bazhu_grade;
         this.is_default_avatar = builder.is_default_avatar;
+        this.uk = builder.uk;
     }
 
     /* loaded from: classes16.dex */
@@ -919,6 +928,7 @@ public final class User extends Message {
         public List<TshowInfo> tshow_icon;
         public TwZhiBoUser tw_anchor_info;
         public Integer type;
+        public String uk;
         public List<UserPics> user_pics;
         public Integer user_type;
         public Integer userhide;
@@ -1039,6 +1049,7 @@ public final class User extends Message {
                 this.call_fans_info = user.call_fans_info;
                 this.bazhu_grade = user.bazhu_grade;
                 this.is_default_avatar = user.is_default_avatar;
+                this.uk = user.uk;
             }
         }
 

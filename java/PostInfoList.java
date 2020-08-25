@@ -82,6 +82,8 @@ public final class PostInfoList extends Message {
     public final String name_show;
     @ProtoField(tag = 42)
     public final OriginThreadInfo origin_thread_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 55)
+    public final List<PbGoodsInfo> pb_goods_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 54)
     public final List<PbLinkInfo> pb_link_info;
     @ProtoField(tag = 28)
@@ -156,6 +158,7 @@ public final class PostInfoList extends Message {
     public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
     public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
     public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
+    public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO = Collections.emptyList();
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -379,9 +382,14 @@ public final class PostInfoList extends Message {
             }
             if (builder.pb_link_info == null) {
                 this.pb_link_info = DEFAULT_PB_LINK_INFO;
-                return;
             } else {
                 this.pb_link_info = immutableCopyOf(builder.pb_link_info);
+            }
+            if (builder.pb_goods_info == null) {
+                this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
+                return;
+            } else {
+                this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
                 return;
             }
         }
@@ -439,6 +447,7 @@ public final class PostInfoList extends Message {
         this.item = builder.item;
         this.item_star = immutableCopyOf(builder.item_star);
         this.pb_link_info = immutableCopyOf(builder.pb_link_info);
+        this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
     }
 
     /* loaded from: classes16.dex */
@@ -475,6 +484,7 @@ public final class PostInfoList extends Message {
         public List<MultipleForum> multiple_forum_list;
         public String name_show;
         public OriginThreadInfo origin_thread_info;
+        public List<PbGoodsInfo> pb_goods_info;
         public List<PbLinkInfo> pb_link_info;
         public PollInfo poll_info;
         public Long post_id;
@@ -558,6 +568,7 @@ public final class PostInfoList extends Message {
                 this.item = postInfoList.item;
                 this.item_star = PostInfoList.copyOf(postInfoList.item_star);
                 this.pb_link_info = PostInfoList.copyOf(postInfoList.pb_link_info);
+                this.pb_goods_info = PostInfoList.copyOf(postInfoList.pb_goods_info);
             }
         }
 

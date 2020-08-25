@@ -10,6 +10,7 @@ public final class Anti extends Message {
     public static final String DEFAULT_IFXIAOYING = "";
     public static final String DEFAULT_POLL_MESSAGE = "";
     public static final String DEFAULT_TBS = "";
+    public static final String DEFAULT_TEENMODE_INTERVAL = "";
     public static final String DEFAULT_USER_MUTE = "";
     public static final String DEFAULT_VCODE_MD5 = "";
     public static final String DEFAULT_VCODE_PIC_URL = "";
@@ -20,6 +21,8 @@ public final class Anti extends Message {
     public final BlockPopInfo block_pop_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer block_stat;
+    @ProtoField(tag = 27, type = Message.Datatype.INT32)
+    public final Integer can_goods;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer days_tofree;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
@@ -42,6 +45,8 @@ public final class Anti extends Message {
     public final Integer ifvoice;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String ifxiaoying;
+    @ProtoField(tag = 28, type = Message.Datatype.BOOL)
+    public final Boolean is_sexyforum;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer multi_delthread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -54,6 +59,8 @@ public final class Anti extends Message {
     public final Integer reply_private_flag;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tbs;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String teenmode_interval;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String user_mute;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -83,6 +90,8 @@ public final class Anti extends Message {
     public static final List<DelThreadText> DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
     public static final Integer DEFAULT_MULTI_DELTHREAD = 0;
     public static final Integer DEFAULT_POLL_LEVEL = 0;
+    public static final Boolean DEFAULT_IS_SEXYFORUM = false;
+    public static final Integer DEFAULT_CAN_GOODS = 0;
 
     private Anti(Builder builder, boolean z) {
         super(builder);
@@ -210,9 +219,24 @@ public final class Anti extends Message {
             }
             if (builder.poll_level == null) {
                 this.poll_level = DEFAULT_POLL_LEVEL;
-                return;
             } else {
                 this.poll_level = builder.poll_level;
+            }
+            if (builder.is_sexyforum == null) {
+                this.is_sexyforum = DEFAULT_IS_SEXYFORUM;
+            } else {
+                this.is_sexyforum = builder.is_sexyforum;
+            }
+            if (builder.teenmode_interval == null) {
+                this.teenmode_interval = "";
+            } else {
+                this.teenmode_interval = builder.teenmode_interval;
+            }
+            if (builder.can_goods == null) {
+                this.can_goods = DEFAULT_CAN_GOODS;
+                return;
+            } else {
+                this.can_goods = builder.can_goods;
                 return;
             }
         }
@@ -242,12 +266,16 @@ public final class Anti extends Message {
         this.del_thread_text = immutableCopyOf(builder.del_thread_text);
         this.multi_delthread = builder.multi_delthread;
         this.poll_level = builder.poll_level;
+        this.is_sexyforum = builder.is_sexyforum;
+        this.teenmode_interval = builder.teenmode_interval;
+        this.can_goods = builder.can_goods;
     }
 
     /* loaded from: classes16.dex */
     public static final class Builder extends Message.Builder<Anti> {
         public BlockPopInfo block_pop_info;
         public Integer block_stat;
+        public Integer can_goods;
         public Integer days_tofree;
         public List<DelThreadText> del_thread_text;
         public Integer forbid_flag;
@@ -259,12 +287,14 @@ public final class Anti extends Message {
         public Integer ifposta;
         public Integer ifvoice;
         public String ifxiaoying;
+        public Boolean is_sexyforum;
         public Integer multi_delthread;
         public Integer need_vcode;
         public Integer poll_level;
         public String poll_message;
         public Integer reply_private_flag;
         public String tbs;
+        public String teenmode_interval;
         public String user_mute;
         public String vcode_md5;
         public String vcode_pic_url;
@@ -305,6 +335,9 @@ public final class Anti extends Message {
                 this.del_thread_text = Anti.copyOf(anti.del_thread_text);
                 this.multi_delthread = anti.multi_delthread;
                 this.poll_level = anti.poll_level;
+                this.is_sexyforum = anti.is_sexyforum;
+                this.teenmode_interval = anti.teenmode_interval;
+                this.can_goods = anti.can_goods;
             }
         }
 

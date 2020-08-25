@@ -13,6 +13,7 @@ import tbclient.Feedback;
 import tbclient.ForumDynamic;
 import tbclient.GoodsWin;
 import tbclient.Highlist;
+import tbclient.HotUserRankEntry;
 import tbclient.ModuleInfo;
 import tbclient.PostInfoList;
 import tbclient.SmartApp;
@@ -24,6 +25,7 @@ import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
 /* loaded from: classes16.dex */
 public final class DataRes extends Message {
+    public static final String DEFAULT_UK = "";
     @ProtoField(tag = 16)
     public final AlaLiveInfo ala_live_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 19)
@@ -46,6 +48,8 @@ public final class DataRes extends Message {
     public final Highlist highs;
     @ProtoField(tag = 15)
     public final ModuleInfo module_info;
+    @ProtoField(tag = 27)
+    public final HotUserRankEntry new_god_rankinfo;
     @ProtoField(label = Message.Label.REPEATED, tag = 25)
     public final List<ThreadInfo> newest_dynamic_list;
     @ProtoField(tag = 17)
@@ -62,6 +66,8 @@ public final class DataRes extends Message {
     public final TbBookrack tbbookrack;
     @ProtoField(tag = 6)
     public final UcCard uc_card;
+    @ProtoField(tag = 28, type = Message.Datatype.STRING)
+    public final String uk;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<UserMap> url_map;
     @ProtoField(tag = 1)
@@ -148,7 +154,14 @@ public final class DataRes extends Message {
                 this.newest_dynamic_list = immutableCopyOf(builder.newest_dynamic_list);
             }
             this.goods_win = builder.goods_win;
-            return;
+            this.new_god_rankinfo = builder.new_god_rankinfo;
+            if (builder.uk == null) {
+                this.uk = "";
+                return;
+            } else {
+                this.uk = builder.uk;
+                return;
+            }
         }
         this.user = builder.user;
         this.anti_stat = builder.anti_stat;
@@ -175,6 +188,8 @@ public final class DataRes extends Message {
         this.duxiaoman = builder.duxiaoman;
         this.newest_dynamic_list = immutableCopyOf(builder.newest_dynamic_list);
         this.goods_win = builder.goods_win;
+        this.new_god_rankinfo = builder.new_god_rankinfo;
+        this.uk = builder.uk;
     }
 
     /* loaded from: classes16.dex */
@@ -190,6 +205,7 @@ public final class DataRes extends Message {
         public GoodsWin goods_win;
         public Highlist highs;
         public ModuleInfo module_info;
+        public HotUserRankEntry new_god_rankinfo;
         public List<ThreadInfo> newest_dynamic_list;
         public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
@@ -198,6 +214,7 @@ public final class DataRes extends Message {
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
+        public String uk;
         public List<UserMap> url_map;
         public User user;
         public UserAgreeInfo user_agree_info;
@@ -236,6 +253,8 @@ public final class DataRes extends Message {
                 this.duxiaoman = dataRes.duxiaoman;
                 this.newest_dynamic_list = DataRes.copyOf(dataRes.newest_dynamic_list);
                 this.goods_win = dataRes.goods_win;
+                this.new_god_rankinfo = dataRes.new_god_rankinfo;
+                this.uk = dataRes.uk;
             }
         }
 

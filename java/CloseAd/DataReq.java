@@ -9,14 +9,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1020common;
+    public final CommonReq f1022common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer vip_close;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1020common = builder.f1021common;
+            this.f1022common = builder.f1023common;
             if (builder.vip_close == null) {
                 this.vip_close = DEFAULT_VIP_CLOSE;
                 return;
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1020common = builder.f1021common;
+        this.f1022common = builder.f1023common;
         this.vip_close = builder.vip_close;
     }
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1021common;
+        public CommonReq f1023common;
         public Integer vip_close;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1021common = dataReq.f1020common;
+                this.f1023common = dataReq.f1022common;
                 this.vip_close = dataReq.vip_close;
             }
         }

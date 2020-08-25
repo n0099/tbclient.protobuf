@@ -6,6 +6,9 @@ import com.squareup.wire.ProtoField;
 public final class PbSortType extends Message {
     public static final String DEFAULT_SORT_NAME = "";
     public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final int SORT_TYPE_ASC = 0;
+    public static final int SORT_TYPE_DESC = 1;
+    public static final int SORT_TYPE_HOT = 2;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String sort_name;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
