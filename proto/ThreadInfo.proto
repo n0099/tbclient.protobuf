@@ -11,7 +11,6 @@ import "AppInfo.proto";
 import "BookThread.proto";
 import "CartoonThread.proto";
 import "DealInfo.proto";
-import "DeclareInfo.proto";
 import "DislikeInfo.proto";
 import "Guess.proto";
 import "HeadItem.proto";
@@ -26,6 +25,7 @@ import "MultipleForum.proto";
 import "OriForumInfo.proto";
 import "OriginThreadInfo.proto";
 import "PbContent.proto";
+import "PbGoodsInfo.proto";
 import "PollInfo.proto";
 import "PostList.proto";
 import "PsInfo.proto";
@@ -168,10 +168,7 @@ message ThreadInfo {
     repeated ReportInfo report_info = 118;
     VideoChannelInfo video_channel_info = 119;
     repeated DislikeInfo dislike_info = 120;
-    repeated DeclareInfo declare_list = 121;
     repeated MultipleForum multiple_forum_list = 122;
-    int32 is_multiforum_thread = 123;
-    int32 agree_num = 124;
     int32 is_partial_visible = 127;
     int32 is_link_thread = 128;
     LinkThreadInfo link_info = 129;
@@ -205,4 +202,5 @@ message ThreadInfo {
     int32 tab_id = 175;
     Item item = 179;
     repeated HeadItem item_star = 180;
+    repeated PbGoodsInfo pb_goods_info = 183;
 }

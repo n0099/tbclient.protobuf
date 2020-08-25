@@ -105,4 +105,7 @@ message ForumInfo {
     int32 is_show_bawutask = 77;
     string f_share_img = 78;
     string forum_share_link = 79;
+    string risk_tip_pop = 80;
+    string risk_tip_notice = 81;
+    string risk_tip_pop_title = 82;
 }

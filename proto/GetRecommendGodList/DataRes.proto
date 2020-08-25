@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "User.proto";
+
+message DataRes {
+    repeated User recom_user_list = 1;
+    int32 current_page = 2;
+    int32 has_more = 3;
+}

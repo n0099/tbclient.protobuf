@@ -69,4 +69,5 @@ message DataReq {
     int32 from_push = 71;
     string ad_ext_params = 72;
     int64 broadcast_id = 73;
+    int32 floor_sort_type = 74;
 }

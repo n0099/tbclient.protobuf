@@ -13,6 +13,7 @@ import "Media.proto";
 import "MultipleForum.proto";
 import "OriginThreadInfo.proto";
 import "PbContent.proto";
+import "PbGoodsInfo.proto";
 import "PbLinkInfo.proto";
 import "PollInfo.proto";
 import "PostInfoContent.proto";
@@ -76,4 +77,5 @@ message PostInfoList {
     Item item = 52;
     repeated HeadItem item_star = 53;
     repeated PbLinkInfo pb_link_info = 54;
+    repeated PbGoodsInfo pb_goods_info = 55;
 }

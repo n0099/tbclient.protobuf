@@ -30,4 +30,7 @@ message Anti {
     repeated DelThreadText del_thread_text = 24;
     int32 multi_delthread = 25;
     uint32 poll_level = 26;
+    int32 can_goods = 27;
+    bool is_sexyforum = 28;
+    string teenmode_interval = 29;
 }

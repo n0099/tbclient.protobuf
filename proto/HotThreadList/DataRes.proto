@@ -1,9 +1,11 @@
 syntax = "proto3";
 
+import "FrsTabInfo.proto";
 import "RecomTopicList.proto";
 import "ThreadInfo.proto";
 
 message DataRes {
     repeated RecomTopicList topic_list = 1;
     repeated ThreadInfo thread_info = 2;
+    repeated FrsTabInfo hot_thread_tab_info = 3;
 }

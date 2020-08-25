@@ -9,6 +9,7 @@ import "Feedback.proto";
 import "ForumDynamic.proto";
 import "GoodsWin.proto";
 import "Highlist.proto";
+import "HotUserRankEntry.proto";
 import "ModuleInfo.proto";
 import "PostInfoList.proto";
 import "Profile/Duxiaoman.proto";
@@ -50,4 +51,6 @@ message DataRes {
     Duxiaoman duxiaoman = 24;
     repeated ThreadInfo newest_dynamic_list = 25;
     GoodsWin goods_win = 26;
+    HotUserRankEntry new_god_rankinfo = 27;
+    string uk = 28;
 }

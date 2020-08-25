@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    int64 forum_id = 2;
+    int32 link_num = 3;
+    string url = 4;
+}

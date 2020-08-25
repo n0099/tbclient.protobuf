@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "UrlParser/DataReq.proto";
+
+message UrlParserReqIdl {
+    DataReq data = 1;
+}

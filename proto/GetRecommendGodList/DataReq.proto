@@ -3,6 +3,6 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
-    string tab_id = 2;
-    string tab_code = 3;
+    string portrait = 2;
+    int32 pn = 3;
 }
