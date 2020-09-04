@@ -8,7 +8,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1048common;
+    public final CommonReq f1047common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1048common = builder.f1049common;
+            this.f1047common = builder.f1048common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -65,7 +65,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1048common = builder.f1049common;
+        this.f1047common = builder.f1048common;
         this.pn = builder.pn;
         this.ps = builder.ps;
         this.scr_w = builder.scr_w;
@@ -78,7 +78,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1049common;
+        public CommonReq f1048common;
         public Integer pn;
         public Integer ps;
         public Integer q_type;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1049common = dataReq.f1048common;
+                this.f1048common = dataReq.f1047common;
                 this.pn = dataReq.pn;
                 this.ps = dataReq.ps;
                 this.scr_w = dataReq.scr_w;

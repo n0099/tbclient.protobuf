@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1218common;
+    public final CommonReq f1217common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer entry_type;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
@@ -43,7 +43,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1218common = builder.f1219common;
+            this.f1217common = builder.f1218common;
             if (builder.entry_type == null) {
                 this.entry_type = DEFAULT_ENTRY_TYPE;
             } else {
@@ -97,7 +97,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1218common = builder.f1219common;
+        this.f1217common = builder.f1218common;
         this.entry_type = builder.entry_type;
         this.pn = builder.pn;
         this.ps = builder.ps;
@@ -114,7 +114,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1219common;
+        public CommonReq f1218common;
         public Integer entry_type;
         public Double lat;
         public Double lng;
@@ -132,7 +132,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1219common = dataReq.f1218common;
+                this.f1218common = dataReq.f1217common;
                 this.entry_type = dataReq.entry_type;
                 this.pn = dataReq.pn;
                 this.ps = dataReq.ps;

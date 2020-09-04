@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1006common;
+    public final CommonReq f1005common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer from_type;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1006common = builder.f1007common;
+            this.f1005common = builder.f1006common;
             if (builder.award_act_id == null) {
                 this.award_act_id = DEFAULT_AWARD_ACT_ID;
             } else {
@@ -49,7 +49,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1006common = builder.f1007common;
+        this.f1005common = builder.f1006common;
         this.award_act_id = builder.award_act_id;
         this.user_id = builder.user_id;
         this.from_type = builder.from_type;
@@ -61,7 +61,7 @@ public final class DataReq extends Message {
         public Long award_act_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1007common;
+        public CommonReq f1006common;
         public Integer from_type;
         public Long thread_id;
         public Long user_id;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1007common = dataReq.f1006common;
+                this.f1006common = dataReq.f1005common;
                 this.award_act_id = dataReq.award_act_id;
                 this.user_id = dataReq.user_id;
                 this.from_type = dataReq.from_type;
