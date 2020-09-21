@@ -5,4 +5,6 @@ import "CommonReq.proto";
 message DataReq {
     string page_tag = 2;
     uint64 last_req_unix = 3;
+    int32 follow_type = 4;
+    int32 load_type = 5;
 }

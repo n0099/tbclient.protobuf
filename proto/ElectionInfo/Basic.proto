@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "ElectionInfo/NoticeContent.proto";
+
 message Basic {
     string begin_apply_time = 1;
     string begin_vote_time = 2;
@@ -9,4 +11,5 @@ message Basic {
     uint32 candidate_num = 6;
     uint32 total_vote_num = 7;
     bool is_voted = 8;
+    NoticeContent notice = 9;
 }

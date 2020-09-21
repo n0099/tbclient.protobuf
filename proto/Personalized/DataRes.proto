@@ -3,6 +3,7 @@ syntax = "proto3";
 import "ActiveCenter.proto";
 import "Anti.proto";
 import "BannerList.proto";
+import "DiscoverHotForum.proto";
 import "Personalized/AgeSexModule.proto";
 import "Personalized/CardForum.proto";
 import "Personalized/CardGod.proto";
@@ -41,4 +42,5 @@ message DataRes {
     UserFollowLive user_follow_live = 20;
     int32 fresh_ctrl_num = 21;
     ActiveCenter active_center = 22;
+    DiscoverHotForum hot_recomforum = 23;
 }

@@ -9,4 +9,6 @@ message BlockPopInfo {
     int32 ahead_type = 6;
     int32 appeal_status = 7;
     string appeal_msg = 8;
+    string is_like = 9;
+    string is_nclass = 10;
 }

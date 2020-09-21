@@ -203,4 +203,6 @@ message ThreadInfo {
     Item item = 179;
     repeated HeadItem item_star = 180;
     repeated PbGoodsInfo pb_goods_info = 183;
+    uint32 distance = 185;
+    string distance_text = 186;
 }

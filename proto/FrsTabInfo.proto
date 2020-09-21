@@ -10,4 +10,5 @@ message FrsTabInfo {
     int32 is_general_tab = 7;
     string tab_code = 8;
     uint32 tab_version = 9;
+    int32 is_default = 10;
 }

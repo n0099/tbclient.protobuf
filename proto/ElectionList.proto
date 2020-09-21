@@ -14,4 +14,5 @@ message ElectionList {
     string apply_declaration = 11;
     int64 tid = 12;
     int32 is_cheat = 13;
+    int32 is_pass_audit = 14;
 }

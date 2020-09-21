@@ -17,6 +17,7 @@ import "PbGoodsInfo.proto";
 import "PbLinkInfo.proto";
 import "PollInfo.proto";
 import "PostInfoContent.proto";
+import "PrivSets.proto";
 import "Quote.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
@@ -78,4 +79,5 @@ message PostInfoList {
     repeated HeadItem item_star = 53;
     repeated PbLinkInfo pb_link_info = 54;
     repeated PbGoodsInfo pb_goods_info = 55;
+    repeated PrivSets priv_sets = 56;
 }

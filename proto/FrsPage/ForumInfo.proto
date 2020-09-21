@@ -11,7 +11,6 @@ import "FrsPage/Classify.proto";
 import "FrsPage/ForumButton.proto";
 import "FrsPage/Manager.proto";
 import "FrsPage/MemberShowIcon.proto";
-import "FrsPage/PostPrefix.proto";
 import "FrsPage/PostTopic.proto";
 import "FrsPage/RealTime.proto";
 import "FrsPage/RecomUserInfo.proto";
@@ -25,6 +24,7 @@ import "FrsPage/WorldCup.proto";
 import "FrsPage/Yule.proto";
 import "FrsPage/Zhibo.proto";
 import "GameInfo.proto";
+import "PostPrefix.proto";
 import "ThemeColorInfo.proto";
 
 message ForumInfo {

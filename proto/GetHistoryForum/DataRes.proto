@@ -1,7 +1,10 @@
 syntax = "proto3";
 
+import "FrsTabInfo.proto";
 import "HistoryForumInfo.proto";
 
 message DataRes {
     repeated HistoryForumInfo history_forum = 1;
+    repeated FrsTabInfo nav_tab_info = 2;
+    repeated HistoryForumInfo this_week_forums = 3;
 }

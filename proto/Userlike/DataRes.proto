@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "BannerFollowLive.proto";
 import "BannerUserStory.proto";
+import "DiscoverHotForum.proto";
 import "Userlike/ConcernData.proto";
 import "Userlike/UserList.proto";
 
@@ -18,4 +19,6 @@ message DataRes {
     int32 user_tips_type = 11;
     string top_tips = 12;
     BannerFollowLive banner_follow_live = 13;
+    DiscoverHotForum hot_recomforum = 14;
+    string abtest_tag = 15;
 }

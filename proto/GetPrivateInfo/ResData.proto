@@ -11,4 +11,6 @@ message ResData {
     int32 live = 6;
     int32 forum_num = 7;
     int32 reply = 8;
+    int32 bazhu_show_inside = 9;
+    int32 bazhu_show_outside = 10;
 }
