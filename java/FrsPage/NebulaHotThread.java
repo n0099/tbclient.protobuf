@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class NebulaHotThread extends Message {
     public static final String DEFAULT_GROUP_NAME = "";
     public static final String DEFAULT_THREAD_ID = "";
@@ -88,7 +88,7 @@ public final class NebulaHotThread extends Message {
         this.content = immutableCopyOf(builder.content);
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<NebulaHotThread> {
         public Integer comment_number;
         public List<PbContent> content;

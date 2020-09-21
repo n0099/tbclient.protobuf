@@ -2,7 +2,7 @@ package tbclient.Bigvip;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes20.dex */
+/* loaded from: classes25.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final UserInfoBigVip user_info;
@@ -16,7 +16,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes20.dex */
+    /* loaded from: classes25.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public UserInfoBigVip user_info;
 

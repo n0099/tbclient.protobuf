@@ -2,8 +2,9 @@ package tbclient.Userlike;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.NewGodInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class UserList extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_NAME = "";
@@ -22,6 +23,8 @@ public final class UserList extends Message {
     public final Integer level;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
+    @ProtoField(tag = 12)
+    public final NewGodInfo new_god_data;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -92,6 +95,7 @@ public final class UserList extends Message {
                 this.level = builder.level;
             }
             this.thread_info = builder.thread_info;
+            this.new_god_data = builder.new_god_data;
             return;
         }
         this.name = builder.name;
@@ -105,9 +109,10 @@ public final class UserList extends Message {
         this.is_god = builder.is_god;
         this.level = builder.level;
         this.thread_info = builder.thread_info;
+        this.new_god_data = builder.new_god_data;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<UserList> {
         public Integer fans_num;
         public Long id;
@@ -115,6 +120,7 @@ public final class UserList extends Message {
         public Integer is_god;
         public Integer level;
         public String name;
+        public NewGodInfo new_god_data;
         public String portrait;
         public Integer post_num;
         public String prefix;
@@ -138,6 +144,7 @@ public final class UserList extends Message {
                 this.is_god = userList.is_god;
                 this.level = userList.level;
                 this.thread_info = userList.thread_info;
+                this.new_god_data = userList.new_god_data;
             }
         }
 

@@ -3,13 +3,13 @@ package tbclient.GetInfluenceRank;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TIEBA_NAME = "";
     @ProtoField(tag = 6)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1089common;
+    public final CommonReq f1090common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -45,21 +45,21 @@ public final class DataReq extends Message {
             } else {
                 this.pn = builder.pn;
             }
-            this.f1089common = builder.f1090common;
+            this.f1090common = builder.f1091common;
             return;
         }
         this.tieba_name = builder.tieba_name;
         this.forum_id = builder.forum_id;
         this.rn = builder.rn;
         this.pn = builder.pn;
-        this.f1089common = builder.f1090common;
+        this.f1090common = builder.f1091common;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1090common;
+        public CommonReq f1091common;
         public Long forum_id;
         public Integer pn;
         public Integer rn;
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
                 this.forum_id = dataReq.forum_id;
                 this.rn = dataReq.rn;
                 this.pn = dataReq.pn;
-                this.f1090common = dataReq.f1089common;
+                this.f1091common = dataReq.f1090common;
             }
         }
 

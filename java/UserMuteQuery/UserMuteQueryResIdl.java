@@ -3,7 +3,7 @@ package tbclient.UserMuteQuery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes20.dex */
+/* loaded from: classes25.dex */
 public final class UserMuteQueryResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class UserMuteQueryResIdl extends Message {
         this.error = builder.error;
     }
 
-    /* loaded from: classes20.dex */
+    /* loaded from: classes25.dex */
     public static final class Builder extends Message.Builder<UserMuteQueryResIdl> {
         public DataRes data;
         public Error error;

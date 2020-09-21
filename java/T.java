@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class T extends Message {
     public static final String DEFAULT_DESCRIBE = "";
     public static final List<TwAnchorPKItem> DEFAULT_PK_LIST = Collections.emptyList();
@@ -33,7 +33,7 @@ public final class T extends Message {
         this.pk_list = immutableCopyOf(builder.pk_list);
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<T> {
         public String describe;
         public List<TwAnchorPKItem> pk_list;

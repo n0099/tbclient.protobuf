@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes17.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     public static final List<ResponseTagInfo> DEFAULT_SEX_TAGLIST = Collections.emptyList();
     public static final List<ResponseTagInfo> DEFAULT_TAGLIST = Collections.emptyList();
@@ -33,7 +33,7 @@ public final class DataRes extends Message {
         this.taglist = immutableCopyOf(builder.taglist);
     }
 
-    /* loaded from: classes17.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ResponseTagInfo> sex_taglist;
         public List<ResponseTagInfo> taglist;

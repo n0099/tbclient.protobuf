@@ -3,7 +3,7 @@ package tbclient.PbPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class PbPageResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class PbPageResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PbPageResIdl> {
         public DataRes data;
         public Error error;

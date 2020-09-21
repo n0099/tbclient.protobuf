@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class TwAnchorPKItem extends Message {
     public static final String DEFAULT_FANS_NUM = "";
     public static final String DEFAULT_HEAD_URL = "";
@@ -67,7 +67,7 @@ public final class TwAnchorPKItem extends Message {
         this.user_sex = builder.user_sex;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<TwAnchorPKItem> {
         public String fans_num;
         public String head_url;

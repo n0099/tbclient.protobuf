@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class BfbSdkParam extends Message {
     public static final List<Integer> DEFAULT_ACTIVITY_NO = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.INT32)
@@ -24,7 +24,7 @@ public final class BfbSdkParam extends Message {
         this.activity_no = immutableCopyOf(builder.activity_no);
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<BfbSdkParam> {
         public List<Integer> activity_no;
 

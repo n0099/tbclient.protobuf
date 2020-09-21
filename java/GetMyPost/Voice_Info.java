@@ -2,7 +2,7 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class Voice_Info extends Message {
     public static final String DEFAULT_MD5 = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -58,7 +58,7 @@ public final class Voice_Info extends Message {
         this.type = builder.type;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<Voice_Info> {
         public Integer durning_time;
         public String md5;

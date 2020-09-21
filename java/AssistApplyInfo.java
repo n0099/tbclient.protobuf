@@ -1,7 +1,7 @@
 package tbclient;
 
 import com.squareup.wire.Message;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class AssistApplyInfo extends Message {
     private AssistApplyInfo(Builder builder, boolean z) {
         super(builder);
@@ -9,7 +9,7 @@ public final class AssistApplyInfo extends Message {
         }
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<AssistApplyInfo> {
         public Builder() {
         }

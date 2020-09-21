@@ -3,27 +3,27 @@ package tbclient.HistorySwan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1141common;
+    public final CommonReq f1142common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1141common = builder.f1142common;
+            this.f1142common = builder.f1143common;
         } else {
-            this.f1141common = builder.f1142common;
+            this.f1142common = builder.f1143common;
         }
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1142common;
+        public CommonReq f1143common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1142common = dataReq.f1141common;
+                this.f1143common = dataReq.f1142common;
             }
         }
 

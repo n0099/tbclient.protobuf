@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PrivateForumInfo;
 import tbclient.PrivatePopInfo;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class PrivateForumTotalInfo extends Message {
     public static final Integer DEFAULT_PRIVATE_FORUM_TASKPERCENT = 0;
     @ProtoField(tag = 5)
@@ -39,7 +39,7 @@ public final class PrivateForumTotalInfo extends Message {
         this.head_imgs = builder.head_imgs;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PrivateForumTotalInfo> {
         public HeadImgs head_imgs;
         public PrivateForumInfo private_forum_info;

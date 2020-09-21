@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes15.dex */
+/* loaded from: classes20.dex */
 public final class CommonThread extends Message {
     public static final String DEFAULT_MODULE_NAME = "";
     public static final List<GoodThread> DEFAULT_THREAD_LIST = Collections.emptyList();
@@ -33,7 +33,7 @@ public final class CommonThread extends Message {
         this.thread_list = immutableCopyOf(builder.thread_list);
     }
 
-    /* loaded from: classes15.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<CommonThread> {
         public String module_name;
         public List<GoodThread> thread_list;

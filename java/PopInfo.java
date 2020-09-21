@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class PopInfo extends Message {
     public static final String DEFAULT_AHEAD_INFO = "";
     public static final String DEFAULT_AHEAD_URL = "";
@@ -67,7 +67,7 @@ public final class PopInfo extends Message {
         this.ok_info = builder.ok_info;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PopInfo> {
         public String ahead_info;
         public String ahead_url;

@@ -31,7 +31,7 @@ import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
@@ -646,7 +646,7 @@ public final class DataRes extends Message {
         this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityConfig activity_config;
         public ActivityHead activityhead;

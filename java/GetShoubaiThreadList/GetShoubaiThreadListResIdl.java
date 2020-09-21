@@ -3,7 +3,7 @@ package tbclient.GetShoubaiThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class GetShoubaiThreadListResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetShoubaiThreadListResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<GetShoubaiThreadListResIdl> {
         public DataRes data;
         public Error error;

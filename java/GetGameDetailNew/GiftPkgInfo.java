@@ -2,7 +2,7 @@ package tbclient.GetGameDetailNew;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes20.dex */
+/* loaded from: classes25.dex */
 public final class GiftPkgInfo extends Message {
     public static final Long DEFAULT_ACQUIRE_NUM = 0L;
     public static final String DEFAULT_BUTTON_TEXT = "";
@@ -67,7 +67,7 @@ public final class GiftPkgInfo extends Message {
         this.giftpkg_url = builder.giftpkg_url;
     }
 
-    /* loaded from: classes20.dex */
+    /* loaded from: classes25.dex */
     public static final class Builder extends Message.Builder<GiftPkgInfo> {
         public Long acquire_num;
         public String button_text;

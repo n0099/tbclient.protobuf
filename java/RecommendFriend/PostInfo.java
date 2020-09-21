@@ -2,7 +2,7 @@ package tbclient.RecommendFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes15.dex */
+/* loaded from: classes20.dex */
 public final class PostInfo extends Message {
     public static final String DEFAULT_COMMON_POST_PIC = "";
     public static final String DEFAULT_LARGE_POST_PIC = "";
@@ -31,7 +31,7 @@ public final class PostInfo extends Message {
         this.large_post_pic = builder.large_post_pic;
     }
 
-    /* loaded from: classes15.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<PostInfo> {
         public String common_post_pic;
         public String large_post_pic;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DealMedia extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_SMALL_PIC = "";
@@ -49,7 +49,7 @@ public final class DealMedia extends Message {
         this.water_pic = builder.water_pic;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DealMedia> {
         public String big_pic;
         public String small_pic;

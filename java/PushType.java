@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class PushType extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -40,7 +40,7 @@ public final class PushType extends Message {
         this.icon = builder.icon;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PushType> {
         public String icon;
         public String name;

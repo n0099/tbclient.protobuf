@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<EverydayThread> everyday_thread;
@@ -60,7 +60,7 @@ public final class DataRes extends Message {
         this.hot_thread = immutableCopyOf(builder.hot_thread);
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<EverydayThread> everyday_thread;
         public List<FineBanner> fine_banner;

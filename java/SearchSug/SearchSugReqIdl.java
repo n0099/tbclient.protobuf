@@ -2,7 +2,7 @@ package tbclient.SearchSug;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes18.dex */
+/* loaded from: classes23.dex */
 public final class SearchSugReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class SearchSugReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes18.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<SearchSugReqIdl> {
         public DataReq data;
 

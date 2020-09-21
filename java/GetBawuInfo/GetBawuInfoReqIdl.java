@@ -2,7 +2,7 @@ package tbclient.GetBawuInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes17.dex */
+/* loaded from: classes22.dex */
 public final class GetBawuInfoReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class GetBawuInfoReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes17.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<GetBawuInfoReqIdl> {
         public DataReq data;
 

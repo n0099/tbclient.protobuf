@@ -3,13 +3,13 @@ package tbclient.AddPollPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_OPTIONS = "";
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1009common;
+    public final CommonReq f1008common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             } else {
                 this.options = builder.options;
             }
-            this.f1009common = builder.f1010common;
+            this.f1008common = builder.f1009common;
             if (builder.forum_id == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
                 return;
@@ -43,15 +43,15 @@ public final class DataReq extends Message {
         }
         this.thread_id = builder.thread_id;
         this.options = builder.options;
-        this.f1009common = builder.f1010common;
+        this.f1008common = builder.f1009common;
         this.forum_id = builder.forum_id;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1010common;
+        public CommonReq f1009common;
         public Long forum_id;
         public String options;
         public Long thread_id;
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             if (dataReq != null) {
                 this.thread_id = dataReq.thread_id;
                 this.options = dataReq.options;
-                this.f1010common = dataReq.f1009common;
+                this.f1009common = dataReq.f1008common;
                 this.forum_id = dataReq.forum_id;
             }
         }

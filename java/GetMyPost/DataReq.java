@@ -3,7 +3,7 @@ package tbclient.GetMyPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_BFROM = "";
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1101common;
+    public final CommonReq f1102common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -37,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1101common = builder.f1102common;
+            this.f1102common = builder.f1103common;
             if (builder.thread_id == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
             } else {
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1101common = builder.f1102common;
+        this.f1102common = builder.f1103common;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;
         this.forum_id = builder.forum_id;
@@ -92,12 +92,12 @@ public final class DataReq extends Message {
         this.bfrom = builder.bfrom;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String bfrom;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1102common;
+        public CommonReq f1103common;
         public Long forum_id;
         public Long post_id;
         public Integer q_type;
@@ -112,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1102common = dataReq.f1101common;
+                this.f1103common = dataReq.f1102common;
                 this.thread_id = dataReq.thread_id;
                 this.post_id = dataReq.post_id;
                 this.forum_id = dataReq.forum_id;

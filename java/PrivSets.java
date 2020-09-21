@@ -2,8 +2,12 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class PrivSets extends Message {
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer bazhu_show_inside;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer bazhu_show_outside;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer friend;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -16,12 +20,17 @@ public final class PrivSets extends Message {
     public final Integer location;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer post;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer reply;
     public static final Integer DEFAULT_LOCATION = 0;
     public static final Integer DEFAULT_LIKE = 0;
     public static final Integer DEFAULT_GROUP = 0;
     public static final Integer DEFAULT_POST = 0;
     public static final Integer DEFAULT_FRIEND = 0;
     public static final Integer DEFAULT_LIVE = 0;
+    public static final Integer DEFAULT_REPLY = 0;
+    public static final Integer DEFAULT_BAZHU_SHOW_INSIDE = 0;
+    public static final Integer DEFAULT_BAZHU_SHOW_OUTSIDE = 0;
 
     private PrivSets(Builder builder, boolean z) {
         super(builder);
@@ -53,9 +62,24 @@ public final class PrivSets extends Message {
             }
             if (builder.live == null) {
                 this.live = DEFAULT_LIVE;
-                return;
             } else {
                 this.live = builder.live;
+            }
+            if (builder.reply == null) {
+                this.reply = DEFAULT_REPLY;
+            } else {
+                this.reply = builder.reply;
+            }
+            if (builder.bazhu_show_inside == null) {
+                this.bazhu_show_inside = DEFAULT_BAZHU_SHOW_INSIDE;
+            } else {
+                this.bazhu_show_inside = builder.bazhu_show_inside;
+            }
+            if (builder.bazhu_show_outside == null) {
+                this.bazhu_show_outside = DEFAULT_BAZHU_SHOW_OUTSIDE;
+                return;
+            } else {
+                this.bazhu_show_outside = builder.bazhu_show_outside;
                 return;
             }
         }
@@ -65,16 +89,22 @@ public final class PrivSets extends Message {
         this.post = builder.post;
         this.friend = builder.friend;
         this.live = builder.live;
+        this.reply = builder.reply;
+        this.bazhu_show_inside = builder.bazhu_show_inside;
+        this.bazhu_show_outside = builder.bazhu_show_outside;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PrivSets> {
+        public Integer bazhu_show_inside;
+        public Integer bazhu_show_outside;
         public Integer friend;
         public Integer group;
         public Integer like;
         public Integer live;
         public Integer location;
         public Integer post;
+        public Integer reply;
 
         public Builder() {
         }
@@ -88,6 +118,9 @@ public final class PrivSets extends Message {
                 this.post = privSets.post;
                 this.friend = privSets.friend;
                 this.live = privSets.live;
+                this.reply = privSets.reply;
+                this.bazhu_show_inside = privSets.bazhu_show_inside;
+                this.bazhu_show_outside = privSets.bazhu_show_outside;
             }
         }
 

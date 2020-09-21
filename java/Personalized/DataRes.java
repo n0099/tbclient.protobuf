@@ -7,10 +7,11 @@ import java.util.List;
 import tbclient.ActiveCenter;
 import tbclient.Anti;
 import tbclient.BannerList;
+import tbclient.DiscoverHotForum;
 import tbclient.RecomPostTopic;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_STAT_KEY = "";
     @ProtoField(tag = 22)
@@ -31,6 +32,8 @@ public final class DataRes extends Message {
     public final FloatInfo float_info;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer fresh_ctrl_num;
+    @ProtoField(tag = 23)
+    public final DiscoverHotForum hot_recomforum;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
     public final List<TagStruct> interestion;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -152,6 +155,7 @@ public final class DataRes extends Message {
                 this.fresh_ctrl_num = builder.fresh_ctrl_num;
             }
             this.active_center = builder.active_center;
+            this.hot_recomforum = builder.hot_recomforum;
             return;
         }
         this.tag_list = immutableCopyOf(builder.tag_list);
@@ -176,9 +180,10 @@ public final class DataRes extends Message {
         this.user_follow_live = builder.user_follow_live;
         this.fresh_ctrl_num = builder.fresh_ctrl_num;
         this.active_center = builder.active_center;
+        this.hot_recomforum = builder.hot_recomforum;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActiveCenter active_center;
         public AgeSexModule age_sex;
@@ -189,6 +194,7 @@ public final class DataRes extends Message {
         public List<CardTopic> card_topic;
         public FloatInfo float_info;
         public Integer fresh_ctrl_num;
+        public DiscoverHotForum hot_recomforum;
         public List<TagStruct> interestion;
         public Integer is_new_url;
         public List<SimpleForum> like_forums;
@@ -231,6 +237,7 @@ public final class DataRes extends Message {
                 this.user_follow_live = dataRes.user_follow_live;
                 this.fresh_ctrl_num = dataRes.fresh_ctrl_num;
                 this.active_center = dataRes.active_center;
+                this.hot_recomforum = dataRes.hot_recomforum;
             }
         }
 

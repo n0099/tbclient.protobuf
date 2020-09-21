@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes15.dex */
+/* loaded from: classes20.dex */
 public final class GoodThread extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_FNAME = "";
@@ -94,7 +94,7 @@ public final class GoodThread extends Message {
         this.head_pic = builder.head_pic;
     }
 
-    /* loaded from: classes15.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<GoodThread> {
         public String _abstract;
         public Long fid;

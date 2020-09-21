@@ -2,7 +2,7 @@ package tbclient.Userlike;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class UserAlaInfo extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -67,7 +67,7 @@ public final class UserAlaInfo extends Message {
         this.live_status = builder.live_status;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<UserAlaInfo> {
         public Integer live_id;
         public Integer live_status;

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
 import tbclient.User;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class PostData extends Message {
     public static final String DEFAULT_POST_TITLE = "";
     @ProtoField(tag = 4)
@@ -57,7 +57,7 @@ public final class PostData extends Message {
         this.time = builder.time;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PostData> {
         public User author;
         public List<PbContent> content;

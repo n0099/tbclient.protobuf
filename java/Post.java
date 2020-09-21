@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class Post extends Message {
     public static final String DEFAULT_BIMG_URL = "";
     public static final String DEFAULT_FOLD_TIP = "";
@@ -387,7 +387,7 @@ public final class Post extends Message {
         this.item = builder.item;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<Post> {
         public ActPost act_post;
         public AddPostList add_post_list;

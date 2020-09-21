@@ -3,12 +3,12 @@ package tbclient.GetForumsFromForumClass;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes17.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1079common;
+    public final CommonReq f1080common;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer limit;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -34,7 +34,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1079common = builder.f1080common;
+            this.f1080common = builder.f1081common;
             if (builder.scr_w == null) {
                 this.scr_w = DEFAULT_SCR_W;
             } else {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1079common = builder.f1080common;
+        this.f1080common = builder.f1081common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
@@ -83,11 +83,11 @@ public final class DataReq extends Message {
         this.limit = builder.limit;
     }
 
-    /* loaded from: classes17.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1080common;
+        public CommonReq f1081common;
         public Integer limit;
         public Integer pn;
         public Long q_type;
@@ -102,7 +102,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1080common = dataReq.f1079common;
+                this.f1081common = dataReq.f1080common;
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;
                 this.scr_dip = dataReq.scr_dip;

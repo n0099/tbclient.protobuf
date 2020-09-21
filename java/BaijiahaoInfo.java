@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class BaijiahaoInfo extends Message {
     public static final String DEFAULT_AUTH_DESC = "";
     public static final String DEFAULT_AVATAR = "";
@@ -76,7 +76,7 @@ public final class BaijiahaoInfo extends Message {
         this.can_modify_avatar = builder.can_modify_avatar;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<BaijiahaoInfo> {
         public String auth_desc;
         public Integer auth_id;

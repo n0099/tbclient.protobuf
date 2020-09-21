@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class GodBanner extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_LINK_URL = "";
@@ -40,7 +40,7 @@ public final class GodBanner extends Message {
         this.intro = builder.intro;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<GodBanner> {
         public String intro;
         public String link_url;

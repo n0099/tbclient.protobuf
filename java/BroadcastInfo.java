@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class BroadcastInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_CTR = "";
@@ -102,7 +102,7 @@ public final class BroadcastInfo extends Message {
         this.pic_url = builder.pic_url;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<BroadcastInfo> {
         public Integer audit_status;
         public Long bcast_id;

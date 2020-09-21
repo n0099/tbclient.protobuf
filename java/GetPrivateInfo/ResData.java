@@ -3,8 +3,12 @@ package tbclient.GetPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.SimpleUser;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class ResData extends Message {
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer bazhu_show_inside;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer bazhu_show_outside;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer forum_num;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -28,6 +32,8 @@ public final class ResData extends Message {
     public static final Integer DEFAULT_LIVE = 0;
     public static final Integer DEFAULT_FORUM_NUM = 0;
     public static final Integer DEFAULT_REPLY = 0;
+    public static final Integer DEFAULT_BAZHU_SHOW_INSIDE = 0;
+    public static final Integer DEFAULT_BAZHU_SHOW_OUTSIDE = 0;
 
     private ResData(Builder builder, boolean z) {
         super(builder);
@@ -65,9 +71,19 @@ public final class ResData extends Message {
             }
             if (builder.reply == null) {
                 this.reply = DEFAULT_REPLY;
-                return;
             } else {
                 this.reply = builder.reply;
+            }
+            if (builder.bazhu_show_inside == null) {
+                this.bazhu_show_inside = DEFAULT_BAZHU_SHOW_INSIDE;
+            } else {
+                this.bazhu_show_inside = builder.bazhu_show_inside;
+            }
+            if (builder.bazhu_show_outside == null) {
+                this.bazhu_show_outside = DEFAULT_BAZHU_SHOW_OUTSIDE;
+                return;
+            } else {
+                this.bazhu_show_outside = builder.bazhu_show_outside;
                 return;
             }
         }
@@ -79,10 +95,14 @@ public final class ResData extends Message {
         this.live = builder.live;
         this.forum_num = builder.forum_num;
         this.reply = builder.reply;
+        this.bazhu_show_inside = builder.bazhu_show_inside;
+        this.bazhu_show_outside = builder.bazhu_show_outside;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ResData> {
+        public Integer bazhu_show_inside;
+        public Integer bazhu_show_outside;
         public Integer forum_num;
         public Integer group;
         public Integer like;
@@ -106,6 +126,8 @@ public final class ResData extends Message {
                 this.live = resData.live;
                 this.forum_num = resData.forum_num;
                 this.reply = resData.reply;
+                this.bazhu_show_inside = resData.bazhu_show_inside;
+                this.bazhu_show_outside = resData.bazhu_show_outside;
             }
         }
 

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class AdCloseInfo extends Message {
     public static final String DEFAULT_CONFIRM_TITLE = "";
     public static final String DEFAULT_TITLE = "";
@@ -54,7 +54,7 @@ public final class AdCloseInfo extends Message {
         this.action_control = builder.action_control;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<AdCloseInfo> {
         public ActionControl action_control;
         public String confirm_title;

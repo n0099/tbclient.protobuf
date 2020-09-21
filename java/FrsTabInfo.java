@@ -2,13 +2,15 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class FrsTabInfo extends Message {
     public static final String DEFAULT_TAB_CODE = "";
     public static final String DEFAULT_TAB_GID = "";
     public static final String DEFAULT_TAB_NAME = "";
     public static final String DEFAULT_TAB_TITLE = "";
     public static final String DEFAULT_TAB_URL = "";
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer is_default;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_general_tab;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -31,6 +33,7 @@ public final class FrsTabInfo extends Message {
     public static final Integer DEFAULT_TAB_TYPE = 0;
     public static final Integer DEFAULT_IS_GENERAL_TAB = 0;
     public static final Integer DEFAULT_TAB_VERSION = 0;
+    public static final Integer DEFAULT_IS_DEFAULT = 0;
 
     private FrsTabInfo(Builder builder, boolean z) {
         super(builder);
@@ -77,9 +80,14 @@ public final class FrsTabInfo extends Message {
             }
             if (builder.tab_version == null) {
                 this.tab_version = DEFAULT_TAB_VERSION;
-                return;
             } else {
                 this.tab_version = builder.tab_version;
+            }
+            if (builder.is_default == null) {
+                this.is_default = DEFAULT_IS_DEFAULT;
+                return;
+            } else {
+                this.is_default = builder.is_default;
                 return;
             }
         }
@@ -92,10 +100,12 @@ public final class FrsTabInfo extends Message {
         this.is_general_tab = builder.is_general_tab;
         this.tab_code = builder.tab_code;
         this.tab_version = builder.tab_version;
+        this.is_default = builder.is_default;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<FrsTabInfo> {
+        public Integer is_default;
         public Integer is_general_tab;
         public String tab_code;
         public String tab_gid;
@@ -121,6 +131,7 @@ public final class FrsTabInfo extends Message {
                 this.is_general_tab = frsTabInfo.is_general_tab;
                 this.tab_code = frsTabInfo.tab_code;
                 this.tab_version = frsTabInfo.tab_version;
+                this.is_default = frsTabInfo.is_default;
             }
         }
 

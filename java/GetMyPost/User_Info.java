@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.BaijiahaoInfo;
 import tbclient.GodInfo;
 import tbclient.NewGodInfo;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class User_Info extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
@@ -166,7 +166,7 @@ public final class User_Info extends Message {
         this.new_god_data = builder.new_god_data;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<User_Info> {
         public BaijiahaoInfo baijiahao_info;
         public Balv balv;

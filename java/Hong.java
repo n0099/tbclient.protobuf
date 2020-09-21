@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class Hong extends Message {
     public static final String DEFAULT_TEST = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -22,7 +22,7 @@ public final class Hong extends Message {
         this.test = builder.test;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<Hong> {
         public String test;
 

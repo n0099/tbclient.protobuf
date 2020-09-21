@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class AvatarFrame extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer end_time;
@@ -31,7 +31,7 @@ public final class AvatarFrame extends Message {
         this.end_time = builder.end_time;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<AvatarFrame> {
         public Integer end_time;
         public Integer props_id;

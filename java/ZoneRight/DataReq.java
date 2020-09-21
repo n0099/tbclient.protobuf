@@ -3,12 +3,12 @@ package tbclient.ZoneRight;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1253common;
+    public final CommonReq f1254common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1253common = builder.f1254common;
+            this.f1254common = builder.f1255common;
             if (builder.thread_id == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1253common = builder.f1254common;
+        this.f1254common = builder.f1255common;
         this.thread_id = builder.thread_id;
         this.forum_id = builder.forum_id;
         this.req_type = builder.req_type;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1254common;
+        public CommonReq f1255common;
         public Long forum_id;
         public Integer req_type;
         public Long thread_id;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1254common = dataReq.f1253common;
+                this.f1255common = dataReq.f1254common;
                 this.thread_id = dataReq.thread_id;
                 this.forum_id = dataReq.forum_id;
                 this.req_type = dataReq.req_type;

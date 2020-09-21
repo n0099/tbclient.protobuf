@@ -3,7 +3,7 @@ package tbclient.GetSuggestionByAddrName;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes17.dex */
+/* loaded from: classes22.dex */
 public final class GetSuggestionByAddrNameResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetSuggestionByAddrNameResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes17.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<GetSuggestionByAddrNameResIdl> {
         public DataRes data;
         public Error error;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class PkModule extends Message {
     public static final Long DEFAULT_PK_ID = 0L;
     public static final Long DEFAULT_USER_PK_ID = 0L;
@@ -38,7 +38,7 @@ public final class PkModule extends Message {
         this.disagree = builder.disagree;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PkModule> {
         public PkItem agree;
         public PkItem disagree;

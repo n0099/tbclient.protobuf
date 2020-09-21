@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class Baijiahao extends Message {
     public static final String DEFAULT_FORWARD_URL = "";
     public static final String DEFAULT_ORI_UGC_NID = "";
@@ -58,7 +58,7 @@ public final class Baijiahao extends Message {
         this.forward_url = builder.forward_url;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<Baijiahao> {
         public String forward_url;
         public String ori_ugc_nid;

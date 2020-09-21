@@ -4,14 +4,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class RecommendForumInfo extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_AUTHEN = "";
     public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_AVATAR_ORIGIN = "";
     public static final String DEFAULT_EXTRA = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_HOT_TEXT = "";
+    public static final String DEFAULT_LV1_NAME = "";
+    public static final String DEFAULT_LV2_NAME = "";
     public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_SLOGAN = "";
     public static final String DEFAULT_SOURCE = "";
@@ -21,6 +24,8 @@ public final class RecommendForumInfo extends Message {
     public final String authen;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String avatar;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String avatar_origin;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<PbContent> content;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -31,14 +36,22 @@ public final class RecommendForumInfo extends Message {
     public final String forum_name;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer forum_type;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer hot_num;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String hot_text;
+    @ProtoField(tag = 22, type = Message.Datatype.UINT64)
+    public final Long hot_thread_id;
     @ProtoField(tag = 12, type = Message.Datatype.UINT32)
     public final Integer is_brand_forum;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer is_like;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer is_private_forum;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String lv1_name;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String lv2_name;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer member_count;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -57,6 +70,8 @@ public final class RecommendForumInfo extends Message {
     public static final Integer DEFAULT_FORUM_TYPE = 0;
     public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
+    public static final Integer DEFAULT_HOT_NUM = 0;
+    public static final Long DEFAULT_HOT_THREAD_ID = 0L;
 
     private RecommendForumInfo(Builder builder, boolean z) {
         super(builder);
@@ -143,9 +158,34 @@ public final class RecommendForumInfo extends Message {
             }
             if (builder.is_private_forum == null) {
                 this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
-                return;
             } else {
                 this.is_private_forum = builder.is_private_forum;
+            }
+            if (builder.lv1_name == null) {
+                this.lv1_name = "";
+            } else {
+                this.lv1_name = builder.lv1_name;
+            }
+            if (builder.lv2_name == null) {
+                this.lv2_name = "";
+            } else {
+                this.lv2_name = builder.lv2_name;
+            }
+            if (builder.avatar_origin == null) {
+                this.avatar_origin = "";
+            } else {
+                this.avatar_origin = builder.avatar_origin;
+            }
+            if (builder.hot_num == null) {
+                this.hot_num = DEFAULT_HOT_NUM;
+            } else {
+                this.hot_num = builder.hot_num;
+            }
+            if (builder.hot_thread_id == null) {
+                this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
+                return;
+            } else {
+                this.hot_thread_id = builder.hot_thread_id;
                 return;
             }
         }
@@ -166,22 +206,32 @@ public final class RecommendForumInfo extends Message {
         this.source = builder.source;
         this.extra = builder.extra;
         this.is_private_forum = builder.is_private_forum;
+        this.lv1_name = builder.lv1_name;
+        this.lv2_name = builder.lv2_name;
+        this.avatar_origin = builder.avatar_origin;
+        this.hot_num = builder.hot_num;
+        this.hot_thread_id = builder.hot_thread_id;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<RecommendForumInfo> {
         public String abtest_tag;
         public String authen;
         public String avatar;
+        public String avatar_origin;
         public List<PbContent> content;
         public String extra;
         public Long forum_id;
         public String forum_name;
         public Integer forum_type;
+        public Integer hot_num;
         public String hot_text;
+        public Long hot_thread_id;
         public Integer is_brand_forum;
         public Integer is_like;
         public Integer is_private_forum;
+        public String lv1_name;
+        public String lv2_name;
         public Integer member_count;
         public String recom_reason;
         public String slogan;
@@ -211,6 +261,11 @@ public final class RecommendForumInfo extends Message {
                 this.source = recommendForumInfo.source;
                 this.extra = recommendForumInfo.extra;
                 this.is_private_forum = recommendForumInfo.is_private_forum;
+                this.lv1_name = recommendForumInfo.lv1_name;
+                this.lv2_name = recommendForumInfo.lv2_name;
+                this.avatar_origin = recommendForumInfo.avatar_origin;
+                this.hot_num = recommendForumInfo.hot_num;
+                this.hot_thread_id = recommendForumInfo.hot_thread_id;
             }
         }
 

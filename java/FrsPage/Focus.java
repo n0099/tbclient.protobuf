@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class Focus extends Message {
     public static final String DEFAULT_LINK = "";
     public static final Integer DEFAULT_TIME = 0;
@@ -40,7 +40,7 @@ public final class Focus extends Message {
         this.link = builder.link;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<Focus> {
         public String link;
         public Integer time;

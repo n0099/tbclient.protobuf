@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FrsTabInfo;
-/* loaded from: classes18.dex */
+/* loaded from: classes23.dex */
 public final class SearchForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_CONCERN_NUM = "";
@@ -97,7 +97,7 @@ public final class SearchForum extends Message {
         this.tab_info = immutableCopyOf(builder.tab_info);
     }
 
-    /* loaded from: classes18.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<SearchForum> {
         public String avatar;
         public String concern_num;

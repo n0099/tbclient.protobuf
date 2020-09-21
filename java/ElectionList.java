@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes15.dex */
+/* loaded from: classes20.dex */
 public final class ElectionList extends Message {
     public static final String DEFAULT_APPLY_DECLARATION = "";
     public static final String DEFAULT_NAME_SHOW = "";
@@ -17,6 +17,8 @@ public final class ElectionList extends Message {
     public final Integer forum_level;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_cheat;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer is_pass_audit;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String name_show;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -43,6 +45,7 @@ public final class ElectionList extends Message {
     public static final Integer DEFAULT_POST_NUM = 0;
     public static final Long DEFAULT_TID = 0L;
     public static final Integer DEFAULT_IS_CHEAT = 0;
+    public static final Integer DEFAULT_IS_PASS_AUDIT = 0;
 
     private ElectionList(Builder builder, boolean z) {
         super(builder);
@@ -109,9 +112,14 @@ public final class ElectionList extends Message {
             }
             if (builder.is_cheat == null) {
                 this.is_cheat = DEFAULT_IS_CHEAT;
-                return;
             } else {
                 this.is_cheat = builder.is_cheat;
+            }
+            if (builder.is_pass_audit == null) {
+                this.is_pass_audit = DEFAULT_IS_PASS_AUDIT;
+                return;
+            } else {
+                this.is_pass_audit = builder.is_pass_audit;
                 return;
             }
         }
@@ -128,15 +136,17 @@ public final class ElectionList extends Message {
         this.apply_declaration = builder.apply_declaration;
         this.tid = builder.tid;
         this.is_cheat = builder.is_cheat;
+        this.is_pass_audit = builder.is_pass_audit;
     }
 
-    /* loaded from: classes15.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<ElectionList> {
         public Integer agree_num;
         public String apply_declaration;
         public Integer apply_id;
         public Integer forum_level;
         public Integer is_cheat;
+        public Integer is_pass_audit;
         public String name_show;
         public String portrait;
         public Integer post_num;
@@ -165,6 +175,7 @@ public final class ElectionList extends Message {
                 this.apply_declaration = electionList.apply_declaration;
                 this.tid = electionList.tid;
                 this.is_cheat = electionList.is_cheat;
+                this.is_pass_audit = electionList.is_pass_audit;
             }
         }
 

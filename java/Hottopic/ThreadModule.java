@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes15.dex */
+/* loaded from: classes20.dex */
 public final class ThreadModule extends Message {
     @ProtoField(tag = 1)
     public final CommonThread thread_module_1;
@@ -24,7 +24,7 @@ public final class ThreadModule extends Message {
         this.thread_module_3 = builder.thread_module_3;
     }
 
-    /* loaded from: classes15.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<ThreadModule> {
         public CommonThread thread_module_1;
         public CommonThread thread_module_2;

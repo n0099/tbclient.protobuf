@@ -2,12 +2,14 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class BlockPopInfo extends Message {
     public static final String DEFAULT_AHEAD_INFO = "";
     public static final String DEFAULT_AHEAD_URL = "";
     public static final String DEFAULT_APPEAL_MSG = "";
     public static final String DEFAULT_BLOCK_INFO = "";
+    public static final String DEFAULT_IS_LIKE = "";
+    public static final String DEFAULT_IS_NCLASS = "";
     public static final String DEFAULT_OK_INFO = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String ahead_info;
@@ -23,6 +25,10 @@ public final class BlockPopInfo extends Message {
     public final String block_info;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer can_post;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String is_like;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String is_nclass;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String ok_info;
     public static final Integer DEFAULT_CAN_POST = 0;
@@ -69,9 +75,19 @@ public final class BlockPopInfo extends Message {
             }
             if (builder.appeal_msg == null) {
                 this.appeal_msg = "";
-                return;
             } else {
                 this.appeal_msg = builder.appeal_msg;
+            }
+            if (builder.is_like == null) {
+                this.is_like = "";
+            } else {
+                this.is_like = builder.is_like;
+            }
+            if (builder.is_nclass == null) {
+                this.is_nclass = "";
+                return;
+            } else {
+                this.is_nclass = builder.is_nclass;
                 return;
             }
         }
@@ -83,9 +99,11 @@ public final class BlockPopInfo extends Message {
         this.ahead_type = builder.ahead_type;
         this.appeal_status = builder.appeal_status;
         this.appeal_msg = builder.appeal_msg;
+        this.is_like = builder.is_like;
+        this.is_nclass = builder.is_nclass;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<BlockPopInfo> {
         public String ahead_info;
         public Integer ahead_type;
@@ -94,6 +112,8 @@ public final class BlockPopInfo extends Message {
         public Integer appeal_status;
         public String block_info;
         public Integer can_post;
+        public String is_like;
+        public String is_nclass;
         public String ok_info;
 
         public Builder() {
@@ -110,6 +130,8 @@ public final class BlockPopInfo extends Message {
                 this.ahead_type = blockPopInfo.ahead_type;
                 this.appeal_status = blockPopInfo.appeal_status;
                 this.appeal_msg = blockPopInfo.appeal_msg;
+                this.is_like = blockPopInfo.is_like;
+                this.is_nclass = blockPopInfo.is_nclass;
             }
         }
 

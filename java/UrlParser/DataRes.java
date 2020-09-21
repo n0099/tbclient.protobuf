@@ -2,7 +2,7 @@ package tbclient.UrlParser;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_IMAGE = "";
@@ -85,7 +85,7 @@ public final class DataRes extends Message {
         this.description = builder.description;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String description;
         public String image;

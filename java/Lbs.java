@@ -2,12 +2,15 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class Lbs extends Message {
+    public static final String DEFAULT_DISTANCE = "";
     public static final String DEFAULT_LAT = "";
     public static final String DEFAULT_LNG = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_SN = "";
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String distance;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String lat;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -37,9 +40,14 @@ public final class Lbs extends Message {
             }
             if (builder.sn == null) {
                 this.sn = "";
-                return;
             } else {
                 this.sn = builder.sn;
+            }
+            if (builder.distance == null) {
+                this.distance = "";
+                return;
+            } else {
+                this.distance = builder.distance;
                 return;
             }
         }
@@ -47,10 +55,12 @@ public final class Lbs extends Message {
         this.lng = builder.lng;
         this.name = builder.name;
         this.sn = builder.sn;
+        this.distance = builder.distance;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<Lbs> {
+        public String distance;
         public String lat;
         public String lng;
         public String name;
@@ -66,6 +76,7 @@ public final class Lbs extends Message {
                 this.lng = lbs.lng;
                 this.name = lbs.name;
                 this.sn = lbs.sn;
+                this.distance = lbs.distance;
             }
         }
 

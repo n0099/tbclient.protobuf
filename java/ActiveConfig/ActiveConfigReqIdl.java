@@ -2,7 +2,7 @@ package tbclient.ActiveConfig;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class ActiveConfigReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class ActiveConfigReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ActiveConfigReqIdl> {
         public DataReq data;
 

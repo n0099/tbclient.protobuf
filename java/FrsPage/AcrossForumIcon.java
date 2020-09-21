@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class AcrossForumIcon extends Message {
     public static final String DEFAULT_ICON_URL = "";
     public static final Integer DEFAULT_PIC_TYPE = 0;
@@ -31,7 +31,7 @@ public final class AcrossForumIcon extends Message {
         this.pic_type = builder.pic_type;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<AcrossForumIcon> {
         public String icon_url;
         public Integer pic_type;

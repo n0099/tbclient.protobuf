@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class CommonReq extends Message {
     public static final String DEFAULT_APID = "";
     public static final String DEFAULT_APPLIST = "";
@@ -337,7 +337,7 @@ public final class CommonReq extends Message {
         this.sample_id = builder.sample_id;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
         public String BDUSS;
         public String _client_id;

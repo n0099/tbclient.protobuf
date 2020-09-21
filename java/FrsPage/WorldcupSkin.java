@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class WorldcupSkin extends Message {
     public static final String DEFAULT_WORLDCUP_BOTTOM = "";
     public static final String DEFAULT_WORLDCUP_BOTTOM_NIGHT = "";
@@ -69,7 +69,7 @@ public final class WorldcupSkin extends Message {
         this.tab_skin = immutableCopyOf(builder.tab_skin);
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<WorldcupSkin> {
         public List<TabSkin> tab_skin;
         public String worldcup_bottom;

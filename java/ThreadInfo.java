@@ -7,7 +7,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class ThreadInfo extends Message {
     public static final String DEFAULT_AB_TAG = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -15,6 +15,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
     public static final String DEFAULT_DAILY_PAPER_TIME = "";
+    public static final String DEFAULT_DISTANCE_TEXT = "";
     public static final String DEFAULT_ECOM = "";
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FROM = "";
@@ -107,6 +108,10 @@ public final class ThreadInfo extends Message {
     public final List<DeclareInfo> declare_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
+    @ProtoField(tag = 185, type = Message.Datatype.UINT32)
+    public final Integer distance;
+    @ProtoField(tag = 186, type = Message.Datatype.STRING)
+    public final String distance_text;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
     @ProtoField(label = Message.Label.REPEATED, tag = 90)
@@ -179,6 +184,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_link_thread;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_livepost;
+    @ProtoField(tag = Opcodes.INVOKESTATIC, type = Message.Datatype.UINT32)
+    public final Integer is_local;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
@@ -494,6 +501,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_DELETED = 0;
     public static final Integer DEFAULT_HOT_NUM = 0;
     public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_IS_LOCAL = 0;
+    public static final Integer DEFAULT_DISTANCE = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1203,9 +1212,24 @@ public final class ThreadInfo extends Message {
             }
             if (builder.pb_goods_info == null) {
                 this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
-                return;
             } else {
                 this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
+            }
+            if (builder.is_local == null) {
+                this.is_local = DEFAULT_IS_LOCAL;
+            } else {
+                this.is_local = builder.is_local;
+            }
+            if (builder.distance == null) {
+                this.distance = DEFAULT_DISTANCE;
+            } else {
+                this.distance = builder.distance;
+            }
+            if (builder.distance_text == null) {
+                this.distance_text = "";
+                return;
+            } else {
+                this.distance_text = builder.distance_text;
                 return;
             }
         }
@@ -1385,9 +1409,12 @@ public final class ThreadInfo extends Message {
         this.is_deleted = builder.is_deleted;
         this.hot_num = builder.hot_num;
         this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
+        this.is_local = builder.is_local;
+        this.distance = builder.distance;
+        this.distance_text = builder.distance_text;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
         public String ab_tag;
@@ -1419,6 +1446,8 @@ public final class ThreadInfo extends Message {
         public DealInfo deal_info;
         public List<DeclareInfo> declare_list;
         public List<DislikeInfo> dislike_info;
+        public Integer distance;
+        public String distance_text;
         public String ecom;
         public List<TailInfo> ext_tails;
         public Long fid;
@@ -1455,6 +1484,7 @@ public final class ThreadInfo extends Message {
         public Integer is_headlinepost;
         public Integer is_link_thread;
         public Integer is_livepost;
+        public Integer is_local;
         public Integer is_meizhi;
         public Integer is_membertop;
         public Integer is_multiforum_thread;
@@ -1748,6 +1778,9 @@ public final class ThreadInfo extends Message {
                 this.is_deleted = threadInfo.is_deleted;
                 this.hot_num = threadInfo.hot_num;
                 this.pb_goods_info = ThreadInfo.copyOf(threadInfo.pb_goods_info);
+                this.is_local = threadInfo.is_local;
+                this.distance = threadInfo.distance;
+                this.distance_text = threadInfo.distance_text;
             }
         }
 

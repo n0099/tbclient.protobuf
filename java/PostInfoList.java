@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class PostInfoList extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -92,6 +92,8 @@ public final class PostInfoList extends Message {
     public final Long post_id;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String post_type;
+    @ProtoField(label = Message.Label.REPEATED, tag = 56)
+    public final List<PrivSets> priv_sets;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String ptype;
     @ProtoField(tag = 22)
@@ -159,6 +161,7 @@ public final class PostInfoList extends Message {
     public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
     public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
     public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO = Collections.emptyList();
+    public static final List<PrivSets> DEFAULT_PRIV_SETS = Collections.emptyList();
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -387,9 +390,14 @@ public final class PostInfoList extends Message {
             }
             if (builder.pb_goods_info == null) {
                 this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
-                return;
             } else {
                 this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
+            }
+            if (builder.priv_sets == null) {
+                this.priv_sets = DEFAULT_PRIV_SETS;
+                return;
+            } else {
+                this.priv_sets = immutableCopyOf(builder.priv_sets);
                 return;
             }
         }
@@ -448,9 +456,10 @@ public final class PostInfoList extends Message {
         this.item_star = immutableCopyOf(builder.item_star);
         this.pb_link_info = immutableCopyOf(builder.pb_link_info);
         this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
+        this.priv_sets = immutableCopyOf(builder.priv_sets);
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;
@@ -489,6 +498,7 @@ public final class PostInfoList extends Message {
         public PollInfo poll_info;
         public Long post_id;
         public String post_type;
+        public List<PrivSets> priv_sets;
         public String ptype;
         public Quote quote;
         public Integer reply_num;
@@ -569,6 +579,7 @@ public final class PostInfoList extends Message {
                 this.item_star = PostInfoList.copyOf(postInfoList.item_star);
                 this.pb_link_info = PostInfoList.copyOf(postInfoList.pb_link_info);
                 this.pb_goods_info = PostInfoList.copyOf(postInfoList.pb_goods_info);
+                this.priv_sets = PostInfoList.copyOf(postInfoList.priv_sets);
             }
         }
 

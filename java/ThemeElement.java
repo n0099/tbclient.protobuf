@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes16.dex */
+/* loaded from: classes21.dex */
 public final class ThemeElement extends Message {
     public static final String DEFAULT_COMMON_COLOR = "";
     public static final String DEFAULT_DARK_COLOR = "";
@@ -58,7 +58,7 @@ public final class ThemeElement extends Message {
         this.font_color = builder.font_color;
     }
 
-    /* loaded from: classes16.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ThemeElement> {
         public String common_color;
         public String dark_color;
