@@ -2,7 +2,7 @@ package tbclient.Recommforum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class TestInfo extends Message {
     public static final String DEFAULT_IMAGE_URL = "";
     public static final String DEFAULT_RESULT_IMG = "";
@@ -70,7 +70,7 @@ public final class TestInfo extends Message {
         this.recomm_forum = builder.recomm_forum;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<TestInfo> {
         public Integer answered;
         public Integer create_time;

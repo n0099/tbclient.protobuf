@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class PbLinkInfo extends Message {
     public static final String DEFAULT_EXT_TXT = "";
     public static final String DEFAULT_LINK_FROM = "";
@@ -76,7 +76,7 @@ public final class PbLinkInfo extends Message {
         this.url_type = builder.url_type;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<PbLinkInfo> {
         public String ext_txt;
         public String link_from;

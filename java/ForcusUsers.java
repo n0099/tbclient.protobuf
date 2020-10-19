@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ForcusUsers extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final Long DEFAULT_THREAD_ID = 0L;
@@ -49,7 +49,7 @@ public final class ForcusUsers extends Message {
         this.portrait = builder.portrait;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ForcusUsers> {
         public String portrait;
         public Long thread_id;

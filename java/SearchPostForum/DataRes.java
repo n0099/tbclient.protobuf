@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes23.dex */
+/* loaded from: classes24.dex */
 public final class DataRes extends Message {
     public static final List<SearchForum> DEFAULT_FUZZY_MATCH = Collections.emptyList();
     @ProtoField(tag = 1)
@@ -28,7 +28,7 @@ public final class DataRes extends Message {
         this.fuzzy_match = immutableCopyOf(builder.fuzzy_match);
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes24.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public SearchForum exact_match;
         public List<SearchForum> fuzzy_match;

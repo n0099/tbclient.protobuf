@@ -3,12 +3,12 @@ package tbclient.Personal;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1178common;
+    public final CommonReq f5314common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1178common = builder.f1179common;
+            this.f5314common = builder.f5315common;
             if (builder.uid == null) {
                 this.uid = DEFAULT_UID;
             } else {
@@ -65,7 +65,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1178common = builder.f1179common;
+        this.f5314common = builder.f5315common;
         this.uid = builder.uid;
         this.pn = builder.pn;
         this.scr_w = builder.scr_w;
@@ -74,11 +74,11 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1179common;
+        public CommonReq f5315common;
         public Integer pn;
         public Integer q_type;
         public Double scr_dip;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1179common = dataReq.f1178common;
+                this.f5315common = dataReq.f5314common;
                 this.uid = dataReq.uid;
                 this.pn = dataReq.pn;
                 this.scr_w = dataReq.scr_w;

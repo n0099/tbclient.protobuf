@@ -3,14 +3,14 @@ package tbclient.Tabfeedlist;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TAB_CODE = "";
     public static final String DEFAULT_TAB_NAME = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1228common;
+    public final CommonReq f5364common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -37,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1228common = builder.f1229common;
+            this.f5364common = builder.f5365common;
             if (builder.tab_name == null) {
                 this.tab_name = "";
             } else {
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1228common = builder.f1229common;
+        this.f5364common = builder.f5365common;
         this.tab_name = builder.tab_name;
         this.tab_code = builder.tab_code;
         this.load_type = builder.load_type;
@@ -92,11 +92,11 @@ public final class DataReq extends Message {
         this.scr_d = builder.scr_d;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1229common;
+        public CommonReq f5365common;
         public Integer load_type;
         public Integer pn;
         public Integer rn;
@@ -112,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1229common = dataReq.f1228common;
+                this.f5365common = dataReq.f5364common;
                 this.tab_name = dataReq.tab_name;
                 this.tab_code = dataReq.tab_code;
                 this.load_type = dataReq.load_type;

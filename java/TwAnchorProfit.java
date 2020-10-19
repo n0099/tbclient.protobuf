@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class TwAnchorProfit extends Message {
     public static final List<TwAnchorProfitItem> DEFAULT_PROFIT_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -24,7 +24,7 @@ public final class TwAnchorProfit extends Message {
         this.profit_list = immutableCopyOf(builder.profit_list);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<TwAnchorProfit> {
         public List<TwAnchorProfitItem> profit_list;
 

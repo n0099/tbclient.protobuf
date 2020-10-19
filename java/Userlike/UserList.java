@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.NewGodInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class UserList extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_NAME = "";
@@ -112,7 +112,7 @@ public final class UserList extends Message {
         this.new_god_data = builder.new_god_data;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<UserList> {
         public Integer fans_num;
         public Long id;

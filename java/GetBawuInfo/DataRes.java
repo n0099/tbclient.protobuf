@@ -3,7 +3,7 @@ package tbclient.GetBawuInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.BawuTeam;
-/* loaded from: classes22.dex */
+/* loaded from: classes23.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
     @ProtoField(tag = 1)
@@ -31,7 +31,7 @@ public final class DataRes extends Message {
         this.is_private_forum = builder.is_private_forum;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public BawuTeam bawu_team_info;
         public Integer is_private_forum;

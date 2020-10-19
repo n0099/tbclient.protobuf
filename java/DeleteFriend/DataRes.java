@@ -2,7 +2,7 @@ package tbclient.DeleteFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -22,7 +22,7 @@ public final class DataRes extends Message {
         this.friend_id = builder.friend_id;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Long friend_id;
 

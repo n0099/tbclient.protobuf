@@ -3,7 +3,7 @@ package tbclient.TopicList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes20.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     public static final Long DEFAULT_FID = 0L;
@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1236common;
+    public final CommonReq f5372common;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1236common = builder.f1237common;
+            this.f5372common = builder.f5373common;
             if (builder.call_from == null) {
                 this.call_from = "";
             } else {
@@ -49,19 +49,19 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1236common = builder.f1237common;
+        this.f5372common = builder.f5373common;
         this.call_from = builder.call_from;
         this.list_type = builder.list_type;
         this.need_tab_list = builder.need_tab_list;
         this.fid = builder.fid;
     }
 
-    /* loaded from: classes20.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1237common;
+        public CommonReq f5373common;
         public Long fid;
         public String list_type;
         public String need_tab_list;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1237common = dataReq.f1236common;
+                this.f5373common = dataReq.f5372common;
                 this.call_from = dataReq.call_from;
                 this.list_type = dataReq.list_type;
                 this.need_tab_list = dataReq.need_tab_list;

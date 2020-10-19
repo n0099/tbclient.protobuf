@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class NewGodInfo extends Message {
     public static final String DEFAULT_FIELD_NAME = "";
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -40,7 +40,7 @@ public final class NewGodInfo extends Message {
         this.field_name = builder.field_name;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<NewGodInfo> {
         public Integer field_id;
         public String field_name;

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Lbs;
-/* loaded from: classes22.dex */
+/* loaded from: classes23.dex */
 public final class DataRes extends Message {
     public static final List<Lbs> DEFAULT_POI_INFO = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -25,7 +25,7 @@ public final class DataRes extends Message {
         this.poi_info = immutableCopyOf(builder.poi_info);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Lbs> poi_info;
 

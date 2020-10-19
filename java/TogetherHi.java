@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class TogetherHi extends Message {
     public static final String DEFAULT_ALBUM_NAME = "";
     public static final String DEFAULT_LOCATION = "";
@@ -96,7 +96,7 @@ public final class TogetherHi extends Message {
         this.pic_urls = immutableCopyOf(builder.pic_urls);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<TogetherHi> {
         public Long album_id;
         public String album_name;

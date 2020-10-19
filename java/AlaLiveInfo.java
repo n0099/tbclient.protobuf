@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
@@ -17,6 +17,7 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_MEDIA_URL = "";
     public static final String DEFAULT_RECOM_REASON = "";
+    public static final String DEFAULT_ROOM_NAME = "";
     public static final String DEFAULT_ROUTER_TYPE = "";
     public static final String DEFAULT_RTMP_URL = "";
     public static final String DEFAULT_SECOND_HEADLINE = "";
@@ -82,6 +83,12 @@ public final class AlaLiveInfo extends Message {
     public final Integer pb_display_type;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String recom_reason;
+    @ProtoField(tag = 44, type = Message.Datatype.UINT64)
+    public final Long room_id;
+    @ProtoField(tag = 46, type = Message.Datatype.STRING)
+    public final String room_name;
+    @ProtoField(tag = 45, type = Message.Datatype.INT32)
+    public final Integer room_status;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String router_type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -125,6 +132,8 @@ public final class AlaLiveInfo extends Message {
     public static final Integer DEFAULT_OPEN_RECOM_FANS = 0;
     public static final Integer DEFAULT_OPEN_RECOM_DURATION = 0;
     public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO = Collections.emptyList();
+    public static final Long DEFAULT_ROOM_ID = 0L;
+    public static final Integer DEFAULT_ROOM_STATUS = 0;
 
     private AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
@@ -315,9 +324,24 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.dislike_info == null) {
                 this.dislike_info = DEFAULT_DISLIKE_INFO;
-                return;
             } else {
                 this.dislike_info = immutableCopyOf(builder.dislike_info);
+            }
+            if (builder.room_id == null) {
+                this.room_id = DEFAULT_ROOM_ID;
+            } else {
+                this.room_id = builder.room_id;
+            }
+            if (builder.room_status == null) {
+                this.room_status = DEFAULT_ROOM_STATUS;
+            } else {
+                this.room_status = builder.room_status;
+            }
+            if (builder.room_name == null) {
+                this.room_name = "";
+                return;
+            } else {
+                this.room_name = builder.room_name;
                 return;
             }
         }
@@ -362,9 +386,12 @@ public final class AlaLiveInfo extends Message {
         this.open_recom_fans = builder.open_recom_fans;
         this.open_recom_duration = builder.open_recom_duration;
         this.dislike_info = immutableCopyOf(builder.dislike_info);
+        this.room_id = builder.room_id;
+        this.room_status = builder.room_status;
+        this.room_name = builder.room_name;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
         public Integer audience_count;
         public AlaChallengeInfo challenge_info;
@@ -395,6 +422,9 @@ public final class AlaLiveInfo extends Message {
         public Integer open_recom_reason;
         public Integer pb_display_type;
         public String recom_reason;
+        public Long room_id;
+        public String room_name;
+        public Integer room_status;
         public String router_type;
         public String rtmp_url;
         public Integer screen_direction;
@@ -455,6 +485,9 @@ public final class AlaLiveInfo extends Message {
                 this.open_recom_fans = alaLiveInfo.open_recom_fans;
                 this.open_recom_duration = alaLiveInfo.open_recom_duration;
                 this.dislike_info = AlaLiveInfo.copyOf(alaLiveInfo.dislike_info);
+                this.room_id = alaLiveInfo.room_id;
+                this.room_status = alaLiveInfo.room_status;
+                this.room_name = alaLiveInfo.room_name;
             }
         }
 

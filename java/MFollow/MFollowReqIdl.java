@@ -2,7 +2,7 @@ package tbclient.MFollow;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes23.dex */
+/* loaded from: classes24.dex */
 public final class MFollowReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class MFollowReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes24.dex */
     public static final class Builder extends Message.Builder<MFollowReqIdl> {
         public DataReq data;
 

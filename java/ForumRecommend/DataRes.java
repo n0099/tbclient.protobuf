@@ -10,7 +10,7 @@ import tbclient.FrequentlyForumInfo;
 import tbclient.FrsTabInfo;
 import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -180,7 +180,7 @@ public final class DataRes extends Message {
         this.forum_popup_info = builder.forum_popup_info;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public ForumCreateInfo forum_create_info;

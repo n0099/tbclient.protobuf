@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class BannerList extends Message {
     public static final String DEFAULT_APPLIST = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -59,7 +59,7 @@ public final class BannerList extends Message {
         this.video_recommend_ad = immutableCopyOf(builder.video_recommend_ad);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<BannerList> {
         public List<App> app;
         public String applist;

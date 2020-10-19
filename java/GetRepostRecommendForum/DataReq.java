@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1116common;
+    public final CommonReq f5252common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1116common = builder.f1117common;
+            this.f5252common = builder.f5253common;
             if (builder.title == null) {
                 this.title = "";
             } else {
@@ -41,7 +41,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1116common = builder.f1117common;
+        this.f5252common = builder.f5253common;
         this.title = builder.title;
         this.content = builder.content;
         this.forum_id = builder.forum_id;
@@ -51,7 +51,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1117common;
+        public CommonReq f5253common;
         public String content;
         public Long forum_id;
         public String title;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1117common = dataReq.f1116common;
+                this.f5253common = dataReq.f5252common;
                 this.title = dataReq.title;
                 this.content = dataReq.content;
                 this.forum_id = dataReq.forum_id;

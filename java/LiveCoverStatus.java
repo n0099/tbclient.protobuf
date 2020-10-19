@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class LiveCoverStatus extends Message {
     public static final String DEFAULT_STATUS = "";
     public static final Integer DEFAULT_STATUS_NUM = 0;
@@ -31,7 +31,7 @@ public final class LiveCoverStatus extends Message {
         this.status = builder.status;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<LiveCoverStatus> {
         public String status;
         public Integer status_num;

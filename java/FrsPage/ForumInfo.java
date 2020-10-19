@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BannerList;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -174,6 +174,8 @@ public final class ForumInfo extends Message {
     public final Integer thread_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String tids;
+    @ProtoField(label = Message.Label.REPEATED, tag = 83)
+    public final List<TipInfo> tip_list;
     @ProtoField(tag = 51)
     public final TopCode top_code;
     @ProtoField(tag = 28)
@@ -228,6 +230,7 @@ public final class ForumInfo extends Message {
     public static final Integer DEFAULT_IS_SHOW_ALL_TOP_THREAD = 0;
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
     public static final Integer DEFAULT_IS_SHOW_BAWUTASK = 0;
+    public static final List<TipInfo> DEFAULT_TIP_LIST = Collections.emptyList();
 
     private ForumInfo(Builder builder, boolean z) {
         super(builder);
@@ -545,9 +548,14 @@ public final class ForumInfo extends Message {
             }
             if (builder.risk_tip_pop_title == null) {
                 this.risk_tip_pop_title = "";
-                return;
             } else {
                 this.risk_tip_pop_title = builder.risk_tip_pop_title;
+            }
+            if (builder.tip_list == null) {
+                this.tip_list = DEFAULT_TIP_LIST;
+                return;
+            } else {
+                this.tip_list = immutableCopyOf(builder.tip_list);
                 return;
             }
         }
@@ -631,9 +639,10 @@ public final class ForumInfo extends Message {
         this.risk_tip_pop = builder.risk_tip_pop;
         this.risk_tip_notice = builder.risk_tip_notice;
         this.risk_tip_pop_title = builder.risk_tip_pop_title;
+        this.tip_list = immutableCopyOf(builder.tip_list);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
         public AcrossForumIcon across_forum_hide;
@@ -706,6 +715,7 @@ public final class ForumInfo extends Message {
         public ThemeColorInfo theme_color;
         public Integer thread_num;
         public String tids;
+        public List<TipInfo> tip_list;
         public TopCode top_code;
         public TopNotice top_notice;
         public String topic_special_icon;
@@ -802,6 +812,7 @@ public final class ForumInfo extends Message {
                 this.risk_tip_pop = forumInfo.risk_tip_pop;
                 this.risk_tip_notice = forumInfo.risk_tip_notice;
                 this.risk_tip_pop_title = forumInfo.risk_tip_pop_title;
+                this.tip_list = ForumInfo.copyOf(forumInfo.tip_list);
             }
         }
 

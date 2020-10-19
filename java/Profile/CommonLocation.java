@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class CommonLocation extends Message {
     public static final String DEFAULT_DISTANCE = "";
     public static final Long DEFAULT_TIME = 0L;
@@ -31,7 +31,7 @@ public final class CommonLocation extends Message {
         this.time = builder.time;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<CommonLocation> {
         public String distance;
         public Long time;

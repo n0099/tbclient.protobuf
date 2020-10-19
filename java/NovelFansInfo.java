@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class NovelFansInfo extends Message {
     public static final Integer DEFAULT_LEVEL = 0;
     public static final String DEFAULT_LEVEL_ICON = "";
@@ -40,7 +40,7 @@ public final class NovelFansInfo extends Message {
         this.level_icon = builder.level_icon;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<NovelFansInfo> {
         public Integer level;
         public String level_icon;

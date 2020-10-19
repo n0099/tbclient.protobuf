@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class User extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
@@ -65,6 +65,8 @@ public final class User extends Message {
     public final Integer concern_num;
     @ProtoField(tag = 68)
     public final ConsumeInfo consume_info;
+    @ProtoField(tag = 108)
+    public final CreationData creation_data;
     @ProtoField(tag = 83, type = Message.Datatype.INT32)
     public final Integer each_other_friend;
     @ProtoField(tag = 74)
@@ -75,6 +77,8 @@ public final class User extends Message {
     public final String fans_nickname;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer fans_num;
+    @ProtoField(tag = 109, type = Message.Datatype.INT32)
+    public final Integer favorite_num;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long friend_num;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
@@ -149,6 +153,8 @@ public final class User extends Message {
     public final String level_influence;
     @ProtoField(label = Message.Label.REPEATED, tag = 47)
     public final List<LikeForumInfo> likeForum;
+    @ProtoField(tag = 110)
+    public final LiveRoomInfo live_room_info;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
     @ProtoField(tag = 98, type = Message.Datatype.STRING)
@@ -296,6 +302,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_CAN_MODIFY_AVATAR = 0;
     public static final Integer DEFAULT_INFLUENCE = 0;
     public static final Integer DEFAULT_IS_DEFAULT_AVATAR = 0;
+    public static final Integer DEFAULT_FAVORITE_NUM = 0;
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -715,11 +722,17 @@ public final class User extends Message {
             }
             if (builder.uk == null) {
                 this.uk = "";
-                return;
             } else {
                 this.uk = builder.uk;
-                return;
             }
+            this.creation_data = builder.creation_data;
+            if (builder.favorite_num == null) {
+                this.favorite_num = DEFAULT_FAVORITE_NUM;
+            } else {
+                this.favorite_num = builder.favorite_num;
+            }
+            this.live_room_info = builder.live_room_info;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -827,9 +840,12 @@ public final class User extends Message {
         this.bazhu_grade = builder.bazhu_grade;
         this.is_default_avatar = builder.is_default_avatar;
         this.uk = builder.uk;
+        this.creation_data = builder.creation_data;
+        this.favorite_num = builder.favorite_num;
+        this.live_room_info = builder.live_room_info;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;
@@ -851,11 +867,13 @@ public final class User extends Message {
         public Integer can_modify_avatar;
         public Integer concern_num;
         public ConsumeInfo consume_info;
+        public CreationData creation_data;
         public Integer each_other_friend;
         public Ecom ecom;
         public EsportInfo esport_data;
         public String fans_nickname;
         public Integer fans_num;
+        public Integer favorite_num;
         public Long friend_num;
         public Integer gender;
         public List<GiftInfo> gift_list;
@@ -893,6 +911,7 @@ public final class User extends Message {
         public Integer level_id;
         public String level_influence;
         public List<LikeForumInfo> likeForum;
+        public LiveRoomInfo live_room_info;
         public Integer meizhi_level;
         public String modify_avatar_desc;
         public List<SimpleUser> mute_user;
@@ -1050,6 +1069,9 @@ public final class User extends Message {
                 this.bazhu_grade = user.bazhu_grade;
                 this.is_default_avatar = user.is_default_avatar;
                 this.uk = user.uk;
+                this.creation_data = user.creation_data;
+                this.favorite_num = user.favorite_num;
+                this.live_room_info = user.live_room_info;
             }
         }
 

@@ -3,13 +3,13 @@ package tbclient.ForumRecommend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_VISIT_HISTORY = "";
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1052common;
+    public final CommonReq f5188common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer like_forum;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -43,7 +43,7 @@ public final class DataReq extends Message {
             } else {
                 this.recommend = builder.recommend;
             }
-            this.f1052common = builder.f1053common;
+            this.f5188common = builder.f5189common;
             if (builder.visit_history == null) {
                 this.visit_history = "";
             } else {
@@ -60,16 +60,16 @@ public final class DataReq extends Message {
         this.like_forum = builder.like_forum;
         this.topic = builder.topic;
         this.recommend = builder.recommend;
-        this.f1052common = builder.f1053common;
+        this.f5188common = builder.f5189common;
         this.visit_history = builder.visit_history;
         this.sort_type = builder.sort_type;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1053common;
+        public CommonReq f5189common;
         public Integer like_forum;
         public Integer recommend;
         public Integer sort_type;
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
                 this.like_forum = dataReq.like_forum;
                 this.topic = dataReq.topic;
                 this.recommend = dataReq.recommend;
-                this.f1053common = dataReq.f1052common;
+                this.f5189common = dataReq.f5188common;
                 this.visit_history = dataReq.visit_history;
                 this.sort_type = dataReq.sort_type;
             }

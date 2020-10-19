@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class PrivSets extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer bazhu_show_inside;
@@ -94,7 +94,7 @@ public final class PrivSets extends Message {
         this.bazhu_show_outside = builder.bazhu_show_outside;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<PrivSets> {
         public Integer bazhu_show_inside;
         public Integer bazhu_show_outside;

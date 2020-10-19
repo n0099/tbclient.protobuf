@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class PbTopAgreePost extends Message {
     public static final String DEFAULT_FORUM_TOP_LIST = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -42,7 +42,7 @@ public final class PbTopAgreePost extends Message {
         this.forum_top_list = builder.forum_top_list;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<PbTopAgreePost> {
         public String forum_top_list;
         public List<Long> post_id_list;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ItemTable extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer comment_star;
@@ -60,7 +60,7 @@ public final class ItemTable extends Message {
         this.item_plot = immutableCopyOf(builder.item_plot);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ItemTable> {
         public Integer comment_star;
         public Integer is_commented;

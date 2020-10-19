@@ -3,7 +3,7 @@ package tbclient.CloseAd;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.VipCloseAd;
-/* loaded from: classes25.dex */
+/* loaded from: classes26.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final VipCloseAd vip_close_ad;
@@ -17,7 +17,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes25.dex */
+    /* loaded from: classes26.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public VipCloseAd vip_close_ad;
 

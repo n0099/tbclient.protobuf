@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class CommonReq extends Message {
     public static final String DEFAULT_APID = "";
     public static final String DEFAULT_APPLIST = "";
@@ -71,6 +71,8 @@ public final class CommonReq extends Message {
     public final String cuid_gid;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String from;
+    @ProtoField(tag = 41, type = Message.Datatype.INT32)
+    public final Integer is_teenager;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String ka;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
@@ -112,6 +114,7 @@ public final class CommonReq extends Message {
     public static final Integer DEFAULT__CLIENT_TYPE = 0;
     public static final Long DEFAULT__TIMESTAMP = 0L;
     public static final Integer DEFAULT_NET_TYPE = 0;
+    public static final Integer DEFAULT_IS_TEENAGER = 0;
 
     private CommonReq(Builder builder, boolean z) {
         super(builder);
@@ -293,9 +296,14 @@ public final class CommonReq extends Message {
             }
             if (builder.sample_id == null) {
                 this.sample_id = "";
-                return;
             } else {
                 this.sample_id = builder.sample_id;
+            }
+            if (builder.is_teenager == null) {
+                this.is_teenager = DEFAULT_IS_TEENAGER;
+                return;
+            } else {
+                this.is_teenager = builder.is_teenager;
                 return;
             }
         }
@@ -335,9 +343,10 @@ public final class CommonReq extends Message {
         this.oaid = builder.oaid;
         this.c3_aid = builder.c3_aid;
         this.sample_id = builder.sample_id;
+        this.is_teenager = builder.is_teenager;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
         public String BDUSS;
         public String _client_id;
@@ -356,6 +365,7 @@ public final class CommonReq extends Message {
         public String cuid_galaxy2;
         public String cuid_gid;
         public String from;
+        public Integer is_teenager;
         public String ka;
         public String lego_lib_version;
         public String m_api;
@@ -418,6 +428,7 @@ public final class CommonReq extends Message {
                 this.oaid = commonReq.oaid;
                 this.c3_aid = commonReq.c3_aid;
                 this.sample_id = commonReq.sample_id;
+                this.is_teenager = commonReq.is_teenager;
             }
         }
 

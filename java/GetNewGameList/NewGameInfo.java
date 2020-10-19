@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes25.dex */
+/* loaded from: classes26.dex */
 public final class NewGameInfo extends Message {
     public static final String DEFAULT_ANDR_PK_NAME = "";
     public static final String DEFAULT_API_KEY = "";
@@ -501,7 +501,7 @@ public final class NewGameInfo extends Message {
         this.category_name_sim = builder.category_name_sim;
     }
 
-    /* loaded from: classes25.dex */
+    /* loaded from: classes26.dex */
     public static final class Builder extends Message.Builder<NewGameInfo> {
         public String andr_pk_name;
         public String api_key;

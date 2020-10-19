@@ -2,7 +2,7 @@ package tbclient.GetForumsFromForumClass;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes23.dex */
 public final class WeeklyForum extends Message {
     public static final Integer DEFAULT_HOT_RANK = 0;
     @ProtoField(tag = 1)
@@ -26,7 +26,7 @@ public final class WeeklyForum extends Message {
         this.hot_rank = builder.hot_rank;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<WeeklyForum> {
         public ForumSpaceForumInfo forum_info;
         public Integer hot_rank;

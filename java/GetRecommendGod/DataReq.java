@@ -3,20 +3,20 @@ package tbclient.GetRecommendGod;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes23.dex */
+/* loaded from: classes24.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1112common;
+    public final CommonReq f5248common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long user_id;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1112common = builder.f1113common;
+            this.f5248common = builder.f5249common;
             if (builder.user_id == null) {
                 this.user_id = DEFAULT_USER_ID;
                 return;
@@ -25,15 +25,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1112common = builder.f1113common;
+        this.f5248common = builder.f5249common;
         this.user_id = builder.user_id;
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes24.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1113common;
+        public CommonReq f5249common;
         public Long user_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1113common = dataReq.f1112common;
+                this.f5249common = dataReq.f5248common;
                 this.user_id = dataReq.user_id;
             }
         }

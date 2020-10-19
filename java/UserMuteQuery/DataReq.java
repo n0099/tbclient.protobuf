@@ -3,12 +3,12 @@ package tbclient.UserMuteQuery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes25.dex */
+/* loaded from: classes26.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1246common;
+    public final CommonReq f5382common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer mute_type;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
             } else {
                 this.user_id = builder.user_id;
             }
-            this.f1246common = builder.f1247common;
+            this.f5382common = builder.f5383common;
             if (builder.mute_type == null) {
                 this.mute_type = DEFAULT_MUTE_TYPE;
             } else {
@@ -50,17 +50,17 @@ public final class DataReq extends Message {
             }
         }
         this.user_id = builder.user_id;
-        this.f1246common = builder.f1247common;
+        this.f5382common = builder.f5383common;
         this.mute_type = builder.mute_type;
         this.pn = builder.pn;
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes25.dex */
+    /* loaded from: classes26.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1247common;
+        public CommonReq f5383common;
         public Integer mute_type;
         public Integer pn;
         public Integer rn;
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.user_id = dataReq.user_id;
-                this.f1247common = dataReq.f1246common;
+                this.f5383common = dataReq.f5382common;
                 this.mute_type = dataReq.mute_type;
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;

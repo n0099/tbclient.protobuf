@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ThreadModule extends Message {
     public static final String DEFAULT_MODULE_NAME = "";
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -51,7 +51,7 @@ public final class ThreadModule extends Message {
         this.show_num = builder.show_num;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ThreadModule> {
         public Long module_id;
         public String module_name;

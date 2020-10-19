@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class PbHotPost extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<HotPost> hot_post_list;
@@ -51,7 +51,7 @@ public final class PbHotPost extends Message {
         this.hot_post_list = immutableCopyOf(builder.hot_post_list);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<PbHotPost> {
         public List<HotPost> hot_post_list;
         public Integer need_hot_post;

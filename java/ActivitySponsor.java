@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ActivitySponsor extends Message {
     public static final Integer DEFAULT_IS_SPONSOR = 0;
     public static final String DEFAULT_SPONSOR_URL = "";
@@ -31,7 +31,7 @@ public final class ActivitySponsor extends Message {
         this.sponsor_url = builder.sponsor_url;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ActivitySponsor> {
         public Integer is_sponsor;
         public String sponsor_url;

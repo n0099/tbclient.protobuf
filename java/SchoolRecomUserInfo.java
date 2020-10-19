@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class SchoolRecomUserInfo extends Message {
     public static final String DEFAULT_INSTITUTE = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -58,7 +58,7 @@ public final class SchoolRecomUserInfo extends Message {
         this.is_liked = builder.is_liked;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<SchoolRecomUserInfo> {
         public String institute;
         public Integer is_liked;

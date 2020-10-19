@@ -3,12 +3,12 @@ package tbclient.PushThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1184common;
+    public final CommonReq f5320common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1184common = builder.f1185common;
+            this.f5320common = builder.f5321common;
             if (builder.forum_id == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
             } else {
@@ -49,18 +49,18 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1184common = builder.f1185common;
+        this.f5320common = builder.f5321common;
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
         this.push_type = builder.push_type;
         this.user_id = builder.user_id;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1185common;
+        public CommonReq f5321common;
         public Long forum_id;
         public Integer push_type;
         public Long thread_id;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f1185common = dataReq.f1184common;
+                this.f5321common = dataReq.f5320common;
                 this.forum_id = dataReq.forum_id;
                 this.thread_id = dataReq.thread_id;
                 this.push_type = dataReq.push_type;

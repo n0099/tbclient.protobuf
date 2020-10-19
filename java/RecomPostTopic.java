@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class RecomPostTopic extends Message {
     public static final String DEFAULT_RECOM_TITLE = "";
     public static final String DEFAULT_RECOM_TOPIC = "";
@@ -40,7 +40,7 @@ public final class RecomPostTopic extends Message {
         this.uniq_topicid = builder.uniq_topicid;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<RecomPostTopic> {
         public String recom_title;
         public String recom_topic;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class AgeSexModule extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<TagStruct> age_tag;
@@ -33,7 +33,7 @@ public final class AgeSexModule extends Message {
         this.age_tag = immutableCopyOf(builder.age_tag);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<AgeSexModule> {
         public List<TagStruct> age_tag;
         public List<TagStruct> sex_tag;
