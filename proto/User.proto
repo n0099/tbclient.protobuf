@@ -10,12 +10,14 @@ import "BazhuSign.proto";
 import "BirthdayInfo.proto";
 import "CallFansInfo.proto";
 import "ConsumeInfo.proto";
+import "CreationData.proto";
 import "Ecom.proto";
 import "EsportInfo.proto";
 import "GiftInfo.proto";
 import "GodInfo.proto";
 import "Icon.proto";
 import "LikeForumInfo.proto";
+import "LiveRoomInfo.proto";
 import "MyGroupInfo.proto";
 import "NewGodInfo.proto";
 import "NewParrScores.proto";
@@ -144,4 +146,7 @@ message User {
     BazhuSign bazhu_grade = 105;
     int32 is_default_avatar = 106;
     string uk = 107;
+    CreationData creation_data = 108;
+    int32 favorite_num = 109;
+    LiveRoomInfo live_room_info = 110;
 }

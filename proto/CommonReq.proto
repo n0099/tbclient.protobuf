@@ -37,4 +37,5 @@ message CommonReq {
     string oaid = 34;
     string c3_aid = 35;
     string sample_id = 36;
+    int32 is_teenager = 41;
 }

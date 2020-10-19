@@ -17,6 +17,7 @@ import "FrsPage/RecomUserInfo.proto";
 import "FrsPage/RecommendForum.proto";
 import "FrsPage/SignInfo.proto";
 import "FrsPage/TagInfo.proto";
+import "FrsPage/TipInfo.proto";
 import "FrsPage/TopCode.proto";
 import "FrsPage/TopNews.proto";
 import "FrsPage/TopNotice.proto";
@@ -108,4 +109,5 @@ message ForumInfo {
     string risk_tip_pop = 80;
     string risk_tip_notice = 81;
     string risk_tip_pop_title = 82;
+    repeated TipInfo tip_list = 83;
 }

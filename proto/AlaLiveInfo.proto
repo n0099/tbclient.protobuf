@@ -49,4 +49,7 @@ message AlaLiveInfo {
     uint32 open_recom_fans = 40;
     uint32 open_recom_duration = 41;
     repeated DislikeInfo dislike_info = 43;
+    uint64 room_id = 44;
+    int32 room_status = 45;
+    string room_name = 46;
 }

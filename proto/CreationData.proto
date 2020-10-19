@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message CreationData {
+    int32 view_count = 1;
+    int32 agree_count = 2;
+    int32 view_count_trend = 3;
+    int32 agree_count_trend = 4;
+}
