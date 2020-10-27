@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5294common;
+    public final CommonReq f5292common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -23,11 +23,11 @@ public final class DataReq extends Message {
             } else {
                 this.Ad = immutableCopyOf(builder.Ad);
             }
-            this.f5294common = builder.f5295common;
+            this.f5292common = builder.f5293common;
             return;
         }
         this.Ad = immutableCopyOf(builder.Ad);
-        this.f5294common = builder.f5295common;
+        this.f5292common = builder.f5293common;
     }
 
     /* loaded from: classes22.dex */
@@ -35,7 +35,7 @@ public final class DataReq extends Message {
         public List<AdReq> Ad;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5295common;
+        public CommonReq f5293common;
 
         public Builder() {
         }
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.Ad = DataReq.copyOf(dataReq.Ad);
-                this.f5295common = dataReq.f5294common;
+                this.f5293common = dataReq.f5292common;
             }
         }
 

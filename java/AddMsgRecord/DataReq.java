@@ -11,14 +11,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5142common;
+    public final CommonReq f5140common;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<MsgRecord> records;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5142common = builder.f5143common;
+            this.f5140common = builder.f5141common;
             if (builder.records == null) {
                 this.records = DEFAULT_RECORDS;
                 return;
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5142common = builder.f5143common;
+        this.f5140common = builder.f5141common;
         this.records = immutableCopyOf(builder.records);
     }
 
@@ -35,7 +35,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5143common;
+        public CommonReq f5141common;
         public List<MsgRecord> records;
 
         public Builder() {
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5143common = dataReq.f5142common;
+                this.f5141common = dataReq.f5140common;
                 this.records = DataReq.copyOf(dataReq.records);
             }
         }

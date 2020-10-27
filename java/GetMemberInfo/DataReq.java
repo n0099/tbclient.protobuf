@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5234common;
+    public final CommonReq f5232common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long forum_id;
 
@@ -21,18 +21,18 @@ public final class DataReq extends Message {
             } else {
                 this.forum_id = builder.forum_id;
             }
-            this.f5234common = builder.f5235common;
+            this.f5232common = builder.f5233common;
             return;
         }
         this.forum_id = builder.forum_id;
-        this.f5234common = builder.f5235common;
+        this.f5232common = builder.f5233common;
     }
 
     /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5235common;
+        public CommonReq f5233common;
         public Long forum_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.forum_id = dataReq.forum_id;
-                this.f5235common = dataReq.f5234common;
+                this.f5233common = dataReq.f5232common;
             }
         }
 
