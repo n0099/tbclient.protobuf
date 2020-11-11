@@ -11,7 +11,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5136common;
+    public final CommonReq f5138common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -37,20 +37,20 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = builder.st_type;
             }
-            this.f5136common = builder.f5137common;
+            this.f5138common = builder.f5139common;
             return;
         }
         this.friend_id = builder.friend_id;
         this.message = builder.message;
         this.st_type = builder.st_type;
-        this.f5136common = builder.f5137common;
+        this.f5138common = builder.f5139common;
     }
 
     /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5137common;
+        public CommonReq f5139common;
         public Long friend_id;
         public String message;
         public String st_type;
@@ -64,7 +64,7 @@ public final class ReqData extends Message {
                 this.friend_id = reqData.friend_id;
                 this.message = reqData.message;
                 this.st_type = reqData.st_type;
-                this.f5137common = reqData.f5136common;
+                this.f5139common = reqData.f5138common;
             }
         }
 

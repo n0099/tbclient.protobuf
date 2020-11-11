@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5240common;
+    public final CommonReq f5242common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String lat;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -29,19 +29,19 @@ public final class DataReq extends Message {
             } else {
                 this.lng = builder.lng;
             }
-            this.f5240common = builder.f5241common;
+            this.f5242common = builder.f5243common;
             return;
         }
         this.lat = builder.lat;
         this.lng = builder.lng;
-        this.f5240common = builder.f5241common;
+        this.f5242common = builder.f5243common;
     }
 
     /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5241common;
+        public CommonReq f5243common;
         public String lat;
         public String lng;
 
@@ -53,7 +53,7 @@ public final class DataReq extends Message {
             if (dataReq != null) {
                 this.lat = dataReq.lat;
                 this.lng = dataReq.lng;
-                this.f5241common = dataReq.f5240common;
+                this.f5243common = dataReq.f5242common;
             }
         }
 
