@@ -38,4 +38,7 @@ message CommonReq {
     string c3_aid = 35;
     string sample_id = 36;
     int32 is_teenager = 41;
+    string sdk_ver = 42;
+    string framework_ver = 43;
+    string swan_game_ver = 44;
 }
