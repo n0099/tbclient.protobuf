@@ -2,7 +2,7 @@ package tbclient.ActivityPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class SpecialColumn extends Message {
     public static final String DEFAULT_IMAGE = "";
     public static final String DEFAULT_TEXT = "";
@@ -85,7 +85,7 @@ public final class SpecialColumn extends Message {
         this.agree_num = builder.agree_num;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<SpecialColumn> {
         public Integer agree_num;
         public Integer freq_num;

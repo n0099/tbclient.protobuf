@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Error;
 import tbclient.Page;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     public static final List<ConsentUser> DEFAULT_CONSENT = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -33,7 +33,7 @@ public final class DataRes extends Message {
         this.page = builder.page;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ConsentUser> consent;
         public Error error;

@@ -3,7 +3,7 @@ package tbclient.ForumMenu;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes26.dex */
+/* loaded from: classes25.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COOKIE = "";
     @ProtoField(tag = 5)
@@ -55,7 +55,7 @@ public final class DataReq extends Message {
         this.f5186common = builder.f5187common;
     }
 
-    /* loaded from: classes26.dex */
+    /* loaded from: classes25.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

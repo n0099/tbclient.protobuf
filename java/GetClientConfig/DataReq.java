@@ -2,7 +2,7 @@ package tbclient.GetClientConfig;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TYPE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
         this.type = builder.type;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String type;
 

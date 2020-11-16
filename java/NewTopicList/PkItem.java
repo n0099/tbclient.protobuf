@@ -2,7 +2,7 @@ package tbclient.NewTopicList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class PkItem extends Message {
     public static final String DEFAULT_LAST_USERNAME = "";
     public static final String DEFAULT_PK_DESC = "";
@@ -76,7 +76,7 @@ public final class PkItem extends Message {
         this.pk_icon_after = builder.pk_icon_after;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PkItem> {
         public Long has_clicked;
         public String last_username;

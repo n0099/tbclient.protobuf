@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class HeadImgs extends Message {
     public static final String DEFAULT_BTN_TEXT = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -76,7 +76,7 @@ public final class HeadImgs extends Message {
         this.tag_name_wh = builder.tag_name_wh;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<HeadImgs> {
         public String btn_text;
         public String img_url;

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class BusinessPromotCommentList extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_USERNAME = "";
@@ -49,7 +49,7 @@ public final class BusinessPromotCommentList extends Message {
         this.is_lz = builder.is_lz;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<BusinessPromotCommentList> {
         public Integer is_lz;
         public String title;

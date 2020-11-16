@@ -3,7 +3,7 @@ package tbclient.NewTopicThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
         this.last_feed_id = builder.last_feed_id;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String call_from;
 

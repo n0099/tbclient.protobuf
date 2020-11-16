@@ -3,7 +3,7 @@ package tbclient.LogTogether;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class LogTogetherResIdl extends Message {
     @ProtoField(tag = 1)
     public final Error error;
@@ -17,7 +17,7 @@ public final class LogTogetherResIdl extends Message {
         }
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<LogTogetherResIdl> {
         public Error error;
 

@@ -3,7 +3,7 @@ package tbclient.FineZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes23.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ACTION = "";
     public static final Long DEFAULT_FTID = 0L;
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         this.ftid = builder.ftid;
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String action;
 

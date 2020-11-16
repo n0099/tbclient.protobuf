@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FrsTabInfo;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class NavTabInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<FrsTabInfo> head;
@@ -43,7 +43,7 @@ public final class NavTabInfo extends Message {
         this.head = immutableCopyOf(builder.head);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<NavTabInfo> {
         public List<FrsTabInfo> head;
         public List<FrsTabInfo> menu;

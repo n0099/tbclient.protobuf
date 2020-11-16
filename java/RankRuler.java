@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class RankRuler extends Message {
     public static final String DEFAULT_BOTTOM_LINK = "";
     public static final String DEFAULT_TOP_LINK = "";
@@ -31,7 +31,7 @@ public final class RankRuler extends Message {
         this.bottom_link = builder.bottom_link;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<RankRuler> {
         public String bottom_link;
         public String top_link;

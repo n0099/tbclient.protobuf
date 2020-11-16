@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes24.dex */
+/* loaded from: classes23.dex */
 public final class DataReq extends Message {
     public static final List<String> DEFAULT_PORTRAIT = Collections.emptyList();
     @ProtoField(tag = 1)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         this.portrait = immutableCopyOf(builder.portrait);
     }
 
-    /* loaded from: classes24.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

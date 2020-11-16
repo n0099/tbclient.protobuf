@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class SignUser extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer c_sign_num;
@@ -112,7 +112,7 @@ public final class SignUser extends Message {
         this.miss_sign_num = builder.miss_sign_num;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<SignUser> {
         public Integer c_sign_num;
         public Integer cont_sign_num;

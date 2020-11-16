@@ -3,7 +3,7 @@ package tbclient.FineFrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TAG = "";
     @ProtoField(tag = 1)
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
         this.forder = builder.forder;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

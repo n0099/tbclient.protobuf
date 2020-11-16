@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class AlaShareInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -49,7 +49,7 @@ public final class AlaShareInfo extends Message {
         this.record_tid = builder.record_tid;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<AlaShareInfo> {
         public String content;
         public Long record_tid;

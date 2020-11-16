@@ -3,7 +3,7 @@ package tbclient.GetLevelInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes23.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     @ProtoField(tag = 2)
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
         this.f5228common = builder.f5229common;
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

@@ -3,7 +3,7 @@ package tbclient.GetForumSquare;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final Integer DEFAULT_PN = 0;
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
         this.user_id = builder.user_id;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String class_name;
 

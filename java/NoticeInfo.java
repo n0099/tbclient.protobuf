@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class NoticeInfo extends Message {
     public static final String DEFAULT_NOTICE = "";
     public static final Integer DEFAULT_PULLCOMMENTFREQUENCE = 0;
@@ -31,7 +31,7 @@ public final class NoticeInfo extends Message {
         this.pullCommentFrequence = builder.pullCommentFrequence;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<NoticeInfo> {
         public String notice;
         public Integer pullCommentFrequence;

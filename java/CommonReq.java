@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class CommonReq extends Message {
     public static final String DEFAULT_APID = "";
     public static final String DEFAULT_APPLIST = "";
@@ -13,6 +13,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
+    public static final String DEFAULT_FRAMEWORK_VERSION = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_KA = "";
     public static final String DEFAULT_LEGO_LIB_VERSION = "";
@@ -26,11 +27,13 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_OAID = "";
     public static final String DEFAULT_PVERSION = "";
     public static final String DEFAULT_SAMPLE_ID = "";
+    public static final String DEFAULT_SDK_VERSION = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
     public static final String DEFAULT_STOKEN = "";
     public static final String DEFAULT_SUBAPP_TYPE = "";
     public static final String DEFAULT_TBS = "";
+    public static final String DEFAULT_WAN_GAME_VERSION = "";
     public static final String DEFAULT_Z_ID = "";
     public static final String DEFAULT__CLIENT_ID = "";
     public static final String DEFAULT__CLIENT_VERSION = "";
@@ -69,6 +72,8 @@ public final class CommonReq extends Message {
     public final String cuid_galaxy2;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String cuid_gid;
+    @ProtoField(tag = 43, type = Message.Datatype.STRING)
+    public final String framework_ver;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String from;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
@@ -99,6 +104,8 @@ public final class CommonReq extends Message {
     public final String pversion;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String sample_id;
+    @ProtoField(tag = 42, type = Message.Datatype.STRING)
+    public final String sdk_ver;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String sign;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
@@ -107,6 +114,8 @@ public final class CommonReq extends Message {
     public final String stoken;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String subapp_type;
+    @ProtoField(tag = 44, type = Message.Datatype.STRING)
+    public final String swan_game_ver;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String tbs;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
@@ -301,9 +310,24 @@ public final class CommonReq extends Message {
             }
             if (builder.is_teenager == null) {
                 this.is_teenager = DEFAULT_IS_TEENAGER;
-                return;
             } else {
                 this.is_teenager = builder.is_teenager;
+            }
+            if (builder.sdk_ver == null) {
+                this.sdk_ver = "";
+            } else {
+                this.sdk_ver = builder.sdk_ver;
+            }
+            if (builder.framework_ver == null) {
+                this.framework_ver = "";
+            } else {
+                this.framework_ver = builder.framework_ver;
+            }
+            if (builder.swan_game_ver == null) {
+                this.swan_game_ver = "";
+                return;
+            } else {
+                this.swan_game_ver = builder.swan_game_ver;
                 return;
             }
         }
@@ -344,9 +368,12 @@ public final class CommonReq extends Message {
         this.c3_aid = builder.c3_aid;
         this.sample_id = builder.sample_id;
         this.is_teenager = builder.is_teenager;
+        this.sdk_ver = builder.sdk_ver;
+        this.framework_ver = builder.framework_ver;
+        this.swan_game_ver = builder.swan_game_ver;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
         public String BDUSS;
         public String _client_id;
@@ -364,6 +391,7 @@ public final class CommonReq extends Message {
         public String cuid;
         public String cuid_galaxy2;
         public String cuid_gid;
+        public String framework_ver;
         public String from;
         public Integer is_teenager;
         public String ka;
@@ -379,10 +407,12 @@ public final class CommonReq extends Message {
         public String oaid;
         public String pversion;
         public String sample_id;
+        public String sdk_ver;
         public String sign;
         public String smallflow;
         public String stoken;
         public String subapp_type;
+        public String swan_game_ver;
         public String tbs;
         public String z_id;
 
@@ -429,6 +459,9 @@ public final class CommonReq extends Message {
                 this.c3_aid = commonReq.c3_aid;
                 this.sample_id = commonReq.sample_id;
                 this.is_teenager = commonReq.is_teenager;
+                this.sdk_ver = commonReq.sdk_ver;
+                this.framework_ver = commonReq.framework_ver;
+                this.swan_game_ver = commonReq.swan_game_ver;
             }
         }
 

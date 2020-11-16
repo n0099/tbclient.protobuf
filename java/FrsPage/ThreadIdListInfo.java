@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class ThreadIdListInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
@@ -31,7 +31,7 @@ public final class ThreadIdListInfo extends Message {
         this.is_partial_visible = builder.is_partial_visible;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ThreadIdListInfo> {
         public Integer is_partial_visible;
         public Long tid;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class ConcernAlbum extends Message {
     public static final List<ConcernUser> DEFAULT_CONCERN_USER = Collections.emptyList();
     public static final Integer DEFAULT_NUM_USER = 0;
@@ -36,7 +36,7 @@ public final class ConcernAlbum extends Message {
         this.album = builder.album;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ConcernAlbum> {
         public Album album;
         public List<ConcernUser> concern_user;

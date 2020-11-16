@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final List<Long> DEFAULT_ARR_FORUM_ID = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.UINT64)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         this.arr_forum_id = immutableCopyOf(builder.arr_forum_id);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<Long> arr_forum_id;
 

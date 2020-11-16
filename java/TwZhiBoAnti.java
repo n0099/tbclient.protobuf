@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class TwZhiBoAnti extends Message {
     public static final Integer DEFAULT_CAN_ADD_LIVE_POST = 0;
     public static final Integer DEFAULT_CAN_DEL_LIVE_POST = 0;
@@ -40,7 +40,7 @@ public final class TwZhiBoAnti extends Message {
         this.can_show_pb_headline = builder.can_show_pb_headline;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<TwZhiBoAnti> {
         public Integer can_add_live_post;
         public Integer can_del_live_post;

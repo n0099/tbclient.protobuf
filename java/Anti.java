@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class Anti extends Message {
     public static final String DEFAULT_FORBID_INFO = "";
     public static final String DEFAULT_IFXIAOYING = "";
@@ -271,7 +271,7 @@ public final class Anti extends Message {
         this.can_goods = builder.can_goods;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<Anti> {
         public BlockPopInfo block_pop_info;
         public Integer block_stat;

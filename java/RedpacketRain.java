@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class RedpacketRain extends Message {
     public static final String DEFAULT_ACTIVITY_ID = "";
     public static final String DEFAULT_FLOAT_URL = "";
@@ -78,7 +78,7 @@ public final class RedpacketRain extends Message {
         this.show_type = builder.show_type;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<RedpacketRain> {
         public String activity_id;
         public List<String> dynamic_img;

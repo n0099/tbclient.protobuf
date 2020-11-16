@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class ServiceArea extends Message {
     public static final String DEFAULT_PICURL = "";
     public static final String DEFAULT_SERVICENAME = "";
@@ -61,7 +61,7 @@ public final class ServiceArea extends Message {
         this.area_smart_app = builder.area_smart_app;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ServiceArea> {
         public SmartApp area_smart_app;
         public String picurl;

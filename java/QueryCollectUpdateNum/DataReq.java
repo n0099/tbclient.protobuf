@@ -3,7 +3,7 @@ package tbclient.QueryCollectUpdateNum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes24.dex */
+/* loaded from: classes23.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_COLLECT_MARK = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
         this.f5324common = builder.f5325common;
     }
 
-    /* loaded from: classes24.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer collect_mark;
 

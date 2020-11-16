@@ -3,7 +3,7 @@ package tbclient.RecommendFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes20.dex */
 public final class ReqData extends Message {
     @ProtoField(tag = 5)
 
@@ -55,7 +55,7 @@ public final class ReqData extends Message {
         this.f5334common = builder.f5335common;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */

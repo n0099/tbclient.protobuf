@@ -3,7 +3,7 @@ package tbclient.TopicList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes20.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     public static final Long DEFAULT_FID = 0L;
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
         this.fid = builder.fid;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String call_from;
 

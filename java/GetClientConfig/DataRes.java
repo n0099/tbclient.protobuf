@@ -2,7 +2,7 @@ package tbclient.GetClientConfig;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final CLocalDialog local_dialog;
@@ -20,7 +20,7 @@ public final class DataRes extends Message {
         this.local_dialog = builder.local_dialog;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public CLocalDialog local_dialog;
         public CPayType payType;

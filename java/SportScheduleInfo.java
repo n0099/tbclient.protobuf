@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class SportScheduleInfo extends Message {
     public static final String DEFAULT_GUEST_TEAM_ICON = "";
     public static final String DEFAULT_GUEST_TEAM_NAME = "";
@@ -103,7 +103,7 @@ public final class SportScheduleInfo extends Message {
         this.update_time = builder.update_time;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<SportScheduleInfo> {
         public String guest_team_icon;
         public String guest_team_name;

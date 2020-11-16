@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes20.dex */
 public final class Myrecord extends Message {
     public static final String DEFAULT_APPLY_DECLARATION = "";
     public static final String DEFAULT_NAME_SHOW = "";
@@ -121,7 +121,7 @@ public final class Myrecord extends Message {
         this.tid = builder.tid;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<Myrecord> {
         public Integer agree_num;
         public String apply_declaration;

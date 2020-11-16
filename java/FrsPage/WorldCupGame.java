@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class WorldCupGame extends Message {
     public static final String DEFAULT_STATUS = "";
     public static final List<WorldCupGameTeam> DEFAULT_TEAM = Collections.emptyList();
@@ -51,7 +51,7 @@ public final class WorldCupGame extends Message {
         this.team = immutableCopyOf(builder.team);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<WorldCupGame> {
         public String status;
         public List<WorldCupGameTeam> team;

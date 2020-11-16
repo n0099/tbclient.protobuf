@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes24.dex */
+/* loaded from: classes23.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ForumInfo> forum_list;
@@ -42,7 +42,7 @@ public final class DataRes extends Message {
         this.forum_list = immutableCopyOf(builder.forum_list);
     }
 
-    /* loaded from: classes24.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ForumInfo> forum_list;
         public Integer forum_loc;

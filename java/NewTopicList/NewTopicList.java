@@ -3,7 +3,7 @@ package tbclient.NewTopicList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Post;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class NewTopicList extends Message {
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final String DEFAULT_TOPIC_IMAGE = "";
@@ -66,7 +66,7 @@ public final class NewTopicList extends Message {
         this.pk_module = builder.pk_module;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<NewTopicList> {
         public Long discuss_num;
         public PkModule pk_module;

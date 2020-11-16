@@ -2,7 +2,7 @@ package tbclient.GetMoreMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes20.dex */
 public final class GetMoreMsgReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class GetMoreMsgReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<GetMoreMsgReqIdl> {
         public DataReq data;
 

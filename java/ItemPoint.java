@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class ItemPoint extends Message {
     public static final Double DEFAULT_POINT = Double.valueOf(0.0d);
     public static final String DEFAULT_TIME_INTVAL = "";
@@ -31,7 +31,7 @@ public final class ItemPoint extends Message {
         this.point = builder.point;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ItemPoint> {
         public Double point;
         public String time_intval;

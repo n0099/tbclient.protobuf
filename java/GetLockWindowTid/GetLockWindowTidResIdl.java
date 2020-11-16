@@ -3,7 +3,7 @@ package tbclient.GetLockWindowTid;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes21.dex */
+/* loaded from: classes20.dex */
 public final class GetLockWindowTidResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetLockWindowTidResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<GetLockWindowTidResIdl> {
         public DataRes data;
         public Error error;

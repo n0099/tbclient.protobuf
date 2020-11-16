@@ -3,7 +3,7 @@ package tbclient.Search;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes20.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_APPLY_ID = 0;
     public static final Long DEFAULT_FID = 0L;
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         this.fid = builder.fid;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes20.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer apply_id;
 

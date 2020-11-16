@@ -3,7 +3,7 @@ package tbclient.GetToken;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_SHOUBAICUID = "";
     public static final String DEFAULT_TOKEN = "";
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         this.shoubaicuid = builder.shoubaicuid;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

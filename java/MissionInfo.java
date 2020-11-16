@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class MissionInfo extends Message {
     public static final String DEFAULT_BROWSETIMEPAGE = "";
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -94,7 +94,7 @@ public final class MissionInfo extends Message {
         this.cleartime = builder.cleartime;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<MissionInfo> {
         public Integer activityid;
         public Integer browsetime;

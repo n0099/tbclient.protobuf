@@ -2,7 +2,7 @@ package tbclient.GetPrivateInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class GetPrivateInfoReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;
@@ -16,7 +16,7 @@ public final class GetPrivateInfoReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<GetPrivateInfoReqIdl> {
         public ReqData data;
 

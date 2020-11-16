@@ -3,7 +3,7 @@ package tbclient.GetGameDetail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes26.dex */
+/* loaded from: classes25.dex */
 public final class GetGameDetailResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetGameDetailResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes26.dex */
+    /* loaded from: classes25.dex */
     public static final class Builder extends Message.Builder<GetGameDetailResIdl> {
         public DataRes data;
         public Error error;

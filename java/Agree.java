@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class Agree extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long agree_num;
@@ -58,7 +58,7 @@ public final class Agree extends Message {
         this.diff_agree_num = builder.diff_agree_num;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<Agree> {
         public Long agree_num;
         public Integer agree_type;

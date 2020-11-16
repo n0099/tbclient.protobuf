@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class FrsTabInfo extends Message {
     public static final String DEFAULT_TAB_CODE = "";
     public static final String DEFAULT_TAB_GID = "";
@@ -103,7 +103,7 @@ public final class FrsTabInfo extends Message {
         this.is_default = builder.is_default;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<FrsTabInfo> {
         public Integer is_default;
         public Integer is_general_tab;

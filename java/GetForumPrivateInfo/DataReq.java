@@ -3,7 +3,7 @@ package tbclient.GetForumPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes26.dex */
+/* loaded from: classes25.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     @ProtoField(tag = 1)
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
     }
 
-    /* loaded from: classes26.dex */
+    /* loaded from: classes25.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

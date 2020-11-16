@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class PushStatus extends Message {
     public static final Integer DEFAULT_STATUS = 0;
     public static final List<PushType> DEFAULT_TYPES = Collections.emptyList();
@@ -33,7 +33,7 @@ public final class PushStatus extends Message {
         this.types = immutableCopyOf(builder.types);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<PushStatus> {
         public Integer status;
         public List<PushType> types;

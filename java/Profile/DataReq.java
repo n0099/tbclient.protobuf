@@ -3,7 +3,7 @@ package tbclient.Profile;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_FRIEND_UID_PORTRAIT = "";
     public static final String DEFAULT_ST_TYPE = "";
@@ -155,7 +155,7 @@ public final class DataReq extends Message {
         this.friend_uid_portrait = builder.friend_uid_portrait;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

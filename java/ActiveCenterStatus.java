@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class ActiveCenterStatus extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_MISSION = "";
@@ -58,7 +58,7 @@ public final class ActiveCenterStatus extends Message {
         this.desc = builder.desc;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ActiveCenterStatus> {
         public Integer day;
         public String desc;

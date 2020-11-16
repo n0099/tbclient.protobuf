@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DiscoverHotForum extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer floor;
@@ -33,7 +33,7 @@ public final class DiscoverHotForum extends Message {
         this.floor = builder.floor;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DiscoverHotForum> {
         public Integer floor;
         public List<DiscoverTabCard> tab_list;

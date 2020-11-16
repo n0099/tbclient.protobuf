@@ -3,7 +3,7 @@ package tbclient.GetForumSquare;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class GetForumSquareResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetForumSquareResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<GetForumSquareResIdl> {
         public DataRes data;
         public Error error;

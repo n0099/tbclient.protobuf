@@ -3,7 +3,7 @@ package tbclient.UserPk;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer click_type;
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
         this.user_pk_id = builder.user_pk_id;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer click_type;
 

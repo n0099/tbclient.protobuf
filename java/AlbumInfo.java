@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class AlbumInfo extends Message {
     public static final String DEFAULT_ALBUM_NAME = "";
     public static final String DEFAULT_LOCATION = "";
@@ -148,7 +148,7 @@ public final class AlbumInfo extends Message {
         this.has_collect = builder.has_collect;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<AlbumInfo> {
         public Long album_id;
         public String album_name;

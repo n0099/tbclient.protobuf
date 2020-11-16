@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class HotThreadInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer cid;
@@ -67,7 +67,7 @@ public final class HotThreadInfo extends Message {
         this.hot_weight = builder.hot_weight;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<HotThreadInfo> {
         public Integer cid;
         public Integer hmtype;

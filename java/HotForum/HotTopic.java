@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes24.dex */
+/* loaded from: classes23.dex */
 public final class HotTopic extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final List<HotTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
@@ -33,7 +33,7 @@ public final class HotTopic extends Message {
         this.topic_list = immutableCopyOf(builder.topic_list);
     }
 
-    /* loaded from: classes24.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<HotTopic> {
         public String title;
         public List<HotTopicList> topic_list;

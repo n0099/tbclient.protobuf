@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class GraffitiInfo extends Message {
     public static final Long DEFAULT_GID = 0L;
     public static final String DEFAULT_URL = "";
@@ -31,7 +31,7 @@ public final class GraffitiInfo extends Message {
         this.gid = builder.gid;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<GraffitiInfo> {
         public Long gid;
         public String url;

@@ -2,7 +2,7 @@ package tbclient.LogTogether;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class AdReq extends Message {
     public static final String DEFAULT_DA_CPID = "";
     public static final String DEFAULT_DA_EXT_INFO = "";
@@ -175,7 +175,7 @@ public final class AdReq extends Message {
         this.da_pn = builder.da_pn;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<AdReq> {
         public String da_cpid;
         public String da_ext_info;

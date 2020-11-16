@@ -2,7 +2,7 @@ package tbclient.GetBawuInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes23.dex */
+/* loaded from: classes22.dex */
 public final class ManagerApplyInfo extends Message {
     public static final String DEFAULT_ASSIST_APPLY_URL = "";
     public static final String DEFAULT_MANAGER_APPLY_URL = "";
@@ -49,7 +49,7 @@ public final class ManagerApplyInfo extends Message {
         this.assist_apply_url = builder.assist_apply_url;
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ManagerApplyInfo> {
         public String assist_apply_url;
         public Integer assist_left_num;

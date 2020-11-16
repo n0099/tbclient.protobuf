@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Page;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     public static final List<ReplyList> DEFAULT_REPLY_LIST = Collections.emptyList();
     @ProtoField(tag = 1)
@@ -29,7 +29,7 @@ public final class DataRes extends Message {
         this.reply_list = immutableCopyOf(builder.reply_list);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Page page;
         public List<ReplyList> reply_list;

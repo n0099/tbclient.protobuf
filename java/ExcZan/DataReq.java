@@ -3,7 +3,7 @@ package tbclient.ExcZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes23.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer action;
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
         this.action = builder.action;
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer action;
 

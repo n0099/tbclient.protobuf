@@ -3,7 +3,7 @@ package tbclient.NewHottopic;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     public static final Long DEFAULT_TOPIC_ID = 0L;
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         this.call_from = builder.call_from;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String call_from;
 

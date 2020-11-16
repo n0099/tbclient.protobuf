@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class RecGuide extends Message {
     public static final String DEFAULT_DOCUMENT = "";
     public static final String DEFAULT_PIC = "";
@@ -40,7 +40,7 @@ public final class RecGuide extends Message {
         this.pic = builder.pic;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<RecGuide> {
         public String document;
         public String pic;

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Page;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -48,7 +48,7 @@ public final class DataRes extends Message {
         this.class_name = builder.class_name;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String class_name;
         public List<RecommendForumInfo> forum_info;

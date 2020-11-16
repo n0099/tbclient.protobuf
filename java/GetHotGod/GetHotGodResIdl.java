@@ -3,7 +3,7 @@ package tbclient.GetHotGod;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes24.dex */
+/* loaded from: classes23.dex */
 public final class GetHotGodResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetHotGodResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes24.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<GetHotGodResIdl> {
         public DataRes data;
         public Error error;

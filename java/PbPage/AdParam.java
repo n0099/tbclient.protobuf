@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class AdParam extends Message {
     public static final String DEFAULT_YOGA_LIB_VERSION = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -49,7 +49,7 @@ public final class AdParam extends Message {
         this.is_req_ad = builder.is_req_ad;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<AdParam> {
         public Integer is_req_ad;
         public Integer load_count;

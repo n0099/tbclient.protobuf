@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class BusinessPromot extends Message {
     public static final String DEFAULT_IMG = "";
     public static final String DEFAULT_IMG_POPUP = "";
@@ -105,7 +105,7 @@ public final class BusinessPromot extends Message {
         this.thread_type = builder.thread_type;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<BusinessPromot> {
         public List<BusinessPromotCommentList> comment_list;
         public Long id;

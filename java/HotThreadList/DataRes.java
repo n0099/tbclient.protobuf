@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 import tbclient.RecomTopicList;
 import tbclient.ThreadInfo;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<FrsTabInfo> hot_thread_tab_info;
@@ -45,7 +45,7 @@ public final class DataRes extends Message {
         this.hot_thread_tab_info = immutableCopyOf(builder.hot_thread_tab_info);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<FrsTabInfo> hot_thread_tab_info;
         public List<ThreadInfo> thread_info;

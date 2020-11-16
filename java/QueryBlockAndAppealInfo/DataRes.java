@@ -2,7 +2,7 @@ package tbclient.QueryBlockAndAppealInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_AHEAD_INFO = "";
     public static final String DEFAULT_AHEAD_URL = "";
@@ -67,7 +67,7 @@ public final class DataRes extends Message {
         this.win_type = builder.win_type;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String ahead_info;
         public String ahead_url;

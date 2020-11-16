@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.RecomTopicList;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class HotTopic extends Message {
     public static final Integer DEFAULT_FLOOR_POSITION = 0;
     public static final List<RecomTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
@@ -34,7 +34,7 @@ public final class HotTopic extends Message {
         this.topic_list = immutableCopyOf(builder.topic_list);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<HotTopic> {
         public Integer floor_position;
         public List<RecomTopicList> topic_list;

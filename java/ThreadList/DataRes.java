@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BannerList;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
@@ -58,7 +58,7 @@ public final class DataRes extends Message {
         this.partial_visible_toast = builder.partial_visible_toast;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String asp_shown_info;
         public BannerList banner_list;

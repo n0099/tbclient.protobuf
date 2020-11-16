@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class FineBannerPb extends Message {
     public static final Long DEFAULT_FTID = 0L;
     public static final String DEFAULT_LINK_URL = "";
@@ -49,7 +49,7 @@ public final class FineBannerPb extends Message {
         this.link_url = builder.link_url;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<FineBannerPb> {
         public Long ftid;
         public String link_url;

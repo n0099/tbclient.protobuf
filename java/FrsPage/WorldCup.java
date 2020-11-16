@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class WorldCup extends Message {
     @ProtoField(tag = 4)
     public final WorldCupGame game;
@@ -28,7 +28,7 @@ public final class WorldCup extends Message {
         this.game = builder.game;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<WorldCup> {
         public WorldCupGame game;
         public WorldCupLottery lottery;

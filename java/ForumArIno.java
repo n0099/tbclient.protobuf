@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes21.dex */
 public final class ForumArIno extends Message {
     public static final String DEFAULT_ANIMATION_URL = "";
     public static final String DEFAULT_SUSPENSION_URL = "";
@@ -67,7 +67,7 @@ public final class ForumArIno extends Message {
         this.suspension_url = builder.suspension_url;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<ForumArIno> {
         public Integer _switch;
         public String animation_url;
