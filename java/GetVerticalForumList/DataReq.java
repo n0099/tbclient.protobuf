@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer begin_id;
@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5270common;
+    public final CommonReq f5040common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer pn;
     public static final List<Integer> DEFAULT_CLASSID_LIST = Collections.emptyList();
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5270common = builder.f5271common;
+            this.f5040common = builder.f5041common;
             if (builder.classid_list == null) {
                 this.classid_list = DEFAULT_CLASSID_LIST;
             } else {
@@ -43,19 +43,19 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5270common = builder.f5271common;
+        this.f5040common = builder.f5041common;
         this.classid_list = immutableCopyOf(builder.classid_list);
         this.begin_id = builder.begin_id;
         this.pn = builder.pn;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer begin_id;
         public List<Integer> classid_list;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5271common;
+        public CommonReq f5041common;
         public Integer pn;
 
         public Builder() {
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5271common = dataReq.f5270common;
+                this.f5041common = dataReq.f5040common;
                 this.classid_list = DataReq.copyOf(dataReq.classid_list);
                 this.begin_id = dataReq.begin_id;
                 this.pn = dataReq.pn;

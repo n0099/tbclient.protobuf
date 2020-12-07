@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class CreationData extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer agree_count;
@@ -49,7 +49,7 @@ public final class CreationData extends Message {
         this.agree_count_trend = builder.agree_count_trend;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<CreationData> {
         public Integer agree_count;
         public Integer agree_count_trend;

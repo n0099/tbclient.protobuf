@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.RankRuler;
 import tbclient.TiebaFieldsInfo;
 import tbclient.User;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final User current_user;
@@ -57,7 +57,7 @@ public final class DataRes extends Message {
         this.has_more = builder.has_more;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public User current_user;
         public TiebaFieldsInfo field_info;

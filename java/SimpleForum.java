@@ -4,19 +4,24 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class SimpleForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_EXT = "";
     public static final String DEFAULT_FIRST_CLASS = "";
+    public static final String DEFAULT_FORUM_TOUTU = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_SECOND_CLASS = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String avatar;
+    @ProtoField(tag = 17)
+    public final DeletedReasonInfo deleted_reason_info;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String ext;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String first_class;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String forum_toutu;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -122,11 +127,16 @@ public final class SimpleForum extends Message {
             }
             if (builder.tab_info == null) {
                 this.tab_info = DEFAULT_TAB_INFO;
-                return;
             } else {
                 this.tab_info = immutableCopyOf(builder.tab_info);
-                return;
             }
+            if (builder.forum_toutu == null) {
+                this.forum_toutu = "";
+            } else {
+                this.forum_toutu = builder.forum_toutu;
+            }
+            this.deleted_reason_info = builder.deleted_reason_info;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -143,13 +153,17 @@ public final class SimpleForum extends Message {
         this.post_num = builder.post_num;
         this.is_brand_forum = builder.is_brand_forum;
         this.tab_info = immutableCopyOf(builder.tab_info);
+        this.forum_toutu = builder.forum_toutu;
+        this.deleted_reason_info = builder.deleted_reason_info;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<SimpleForum> {
         public String avatar;
+        public DeletedReasonInfo deleted_reason_info;
         public String ext;
         public String first_class;
+        public String forum_toutu;
         public Long id;
         public Integer is_brand_forum;
         public Integer is_exists;
@@ -184,6 +198,8 @@ public final class SimpleForum extends Message {
                 this.post_num = simpleForum.post_num;
                 this.is_brand_forum = simpleForum.is_brand_forum;
                 this.tab_info = SimpleForum.copyOf(simpleForum.tab_info);
+                this.forum_toutu = simpleForum.forum_toutu;
+                this.deleted_reason_info = simpleForum.deleted_reason_info;
             }
         }
 

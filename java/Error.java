@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class Error extends Message {
     public static final String DEFAULT_ERRMSG = "";
     public static final Integer DEFAULT_ERRORNO = 0;
@@ -40,7 +40,7 @@ public final class Error extends Message {
         this.usermsg = builder.usermsg;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<Error> {
         public String errmsg;
         public Integer errorno;

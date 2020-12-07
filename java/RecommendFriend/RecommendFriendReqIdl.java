@@ -2,7 +2,7 @@ package tbclient.RecommendFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes20.dex */
+/* loaded from: classes21.dex */
 public final class RecommendFriendReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;
@@ -16,7 +16,7 @@ public final class RecommendFriendReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes20.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<RecommendFriendReqIdl> {
         public ReqData data;
 

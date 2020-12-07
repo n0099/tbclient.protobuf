@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ColorEgg extends Message {
     public static final List<String> DEFAULT_HOLIDAY_WORDS = Collections.emptyList();
     public static final Integer DEFAULT_STYLE_FLAG = 0;
@@ -33,7 +33,7 @@ public final class ColorEgg extends Message {
         this.style_flag = builder.style_flag;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ColorEgg> {
         public List<String> holiday_words;
         public Integer style_flag;

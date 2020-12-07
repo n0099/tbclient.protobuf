@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class TipInfo extends Message {
     public static final String DEFAULT_TIP_INTERVAL = "";
     public static final String DEFAULT_TIP_NAME = "";
@@ -58,7 +58,7 @@ public final class TipInfo extends Message {
         this.tip_interval = builder.tip_interval;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<TipInfo> {
         public String tip_interval;
         public String tip_name;

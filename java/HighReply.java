@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class HighReply extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -76,7 +76,7 @@ public final class HighReply extends Message {
         this.id = builder.id;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<HighReply> {
         public String content;
         public Integer create_time;

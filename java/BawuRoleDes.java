@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class BawuRoleDes extends Message {
     public static final List<BawuRoleInfoPub> DEFAULT_ROLE_INFO = Collections.emptyList();
     public static final String DEFAULT_ROLE_NAME = "";
@@ -33,7 +33,7 @@ public final class BawuRoleDes extends Message {
         this.role_info = immutableCopyOf(builder.role_info);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<BawuRoleDes> {
         public List<BawuRoleInfoPub> role_info;
         public String role_name;

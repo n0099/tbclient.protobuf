@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class Voice extends Message {
     public static final String DEFAULT_VOICE_MD5 = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -40,7 +40,7 @@ public final class Voice extends Message {
         this.voice_md5 = builder.voice_md5;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<Voice> {
         public Integer during_time;
         public Integer type;

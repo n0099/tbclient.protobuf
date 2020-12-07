@@ -3,13 +3,13 @@ package tbclient.GeneralTabList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TAB_NAME = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5194common;
+    public final CommonReq f4964common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5194common = builder.f5195common;
+            this.f4964common = builder.f4965common;
             if (builder.tab_id == null) {
                 this.tab_id = DEFAULT_TAB_ID;
             } else {
@@ -121,7 +121,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5194common = builder.f5195common;
+        this.f4964common = builder.f4965common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;
@@ -137,11 +137,11 @@ public final class DataReq extends Message {
         this.tab_type = builder.tab_type;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5195common;
+        public CommonReq f4965common;
         public Long forum_id;
         public Integer is_default_navtab;
         public Integer is_general_tab;
@@ -162,7 +162,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5195common = dataReq.f5194common;
+                this.f4965common = dataReq.f4964common;
                 this.tab_id = dataReq.tab_id;
                 this.forum_id = dataReq.forum_id;
                 this.pn = dataReq.pn;

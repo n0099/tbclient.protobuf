@@ -3,13 +3,16 @@ package tbclient.Userlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_PAGE_TAG = "";
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String ad_ext_params;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5386common;
+    public final CommonReq f5156common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer follow_type;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -25,7 +28,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5386common = builder.f5387common;
+            this.f5156common = builder.f5157common;
             if (builder.page_tag == null) {
                 this.page_tag = "";
             } else {
@@ -43,24 +46,31 @@ public final class DataReq extends Message {
             }
             if (builder.load_type == null) {
                 this.load_type = DEFAULT_LOAD_TYPE;
-                return;
             } else {
                 this.load_type = builder.load_type;
+            }
+            if (builder.ad_ext_params == null) {
+                this.ad_ext_params = "";
+                return;
+            } else {
+                this.ad_ext_params = builder.ad_ext_params;
                 return;
             }
         }
-        this.f5386common = builder.f5387common;
+        this.f5156common = builder.f5157common;
         this.page_tag = builder.page_tag;
         this.last_req_unix = builder.last_req_unix;
         this.follow_type = builder.follow_type;
         this.load_type = builder.load_type;
+        this.ad_ext_params = builder.ad_ext_params;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5387common;
+        public CommonReq f5157common;
         public Integer follow_type;
         public Long last_req_unix;
         public Integer load_type;
@@ -72,11 +82,12 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5387common = dataReq.f5386common;
+                this.f5157common = dataReq.f5156common;
                 this.page_tag = dataReq.page_tag;
                 this.last_req_unix = dataReq.last_req_unix;
                 this.follow_type = dataReq.follow_type;
                 this.load_type = dataReq.load_type;
+                this.ad_ext_params = dataReq.ad_ext_params;
             }
         }
 

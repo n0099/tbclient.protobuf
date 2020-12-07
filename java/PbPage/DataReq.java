@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -53,7 +53,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5312common;
+    public final CommonReq f5082common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -142,6 +142,8 @@ public final class DataReq extends Message {
     public final Integer scr_w;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String shoubai_cuid;
+    @ProtoField(tag = 75, type = Message.Datatype.INT32)
+    public final Integer source_type;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String st_from;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
@@ -203,6 +205,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FROM_PUSH = 0;
     public static final Long DEFAULT_BROADCAST_ID = 0L;
     public static final Integer DEFAULT_FLOOR_SORT_TYPE = 0;
+    public static final Integer DEFAULT_SOURCE_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -327,7 +330,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = builder.msg_click;
             }
-            this.f5312common = builder.f5313common;
+            this.f5082common = builder.f5083common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -522,9 +525,14 @@ public final class DataReq extends Message {
             }
             if (builder.floor_sort_type == null) {
                 this.floor_sort_type = DEFAULT_FLOOR_SORT_TYPE;
-                return;
             } else {
                 this.floor_sort_type = builder.floor_sort_type;
+            }
+            if (builder.source_type == null) {
+                this.source_type = DEFAULT_SOURCE_TYPE;
+                return;
+            } else {
+                this.source_type = builder.source_type;
                 return;
             }
         }
@@ -552,7 +560,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f5312common = builder.f5313common;
+        this.f5082common = builder.f5083common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -594,9 +602,10 @@ public final class DataReq extends Message {
         this.ad_ext_params = builder.ad_ext_params;
         this.broadcast_id = builder.broadcast_id;
         this.floor_sort_type = builder.floor_sort_type;
+        this.source_type = builder.source_type;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
         public String ad_ext_params;
@@ -610,7 +619,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5313common;
+        public CommonReq f5083common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -655,6 +664,7 @@ public final class DataReq extends Message {
         public Integer scr_h;
         public Integer scr_w;
         public String shoubai_cuid;
+        public Integer source_type;
         public String st_from;
         public String st_link;
         public Integer st_stat;
@@ -697,7 +707,7 @@ public final class DataReq extends Message {
                 this.arround = dataReq.arround;
                 this.last = dataReq.last;
                 this.msg_click = dataReq.msg_click;
-                this.f5313common = dataReq.f5312common;
+                this.f5083common = dataReq.f5082common;
                 this.lastids = dataReq.lastids;
                 this.st_from = dataReq.st_from;
                 this.st_link = dataReq.st_link;
@@ -739,6 +749,7 @@ public final class DataReq extends Message {
                 this.ad_ext_params = dataReq.ad_ext_params;
                 this.broadcast_id = dataReq.broadcast_id;
                 this.floor_sort_type = dataReq.floor_sort_type;
+                this.source_type = dataReq.source_type;
             }
         }
 

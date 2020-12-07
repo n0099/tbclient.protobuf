@@ -2,7 +2,7 @@ package tbclient.AddMsgRecord;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_STATUS = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -22,7 +22,7 @@ public final class DataRes extends Message {
         this.status = builder.status;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer status;
 

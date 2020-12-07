@@ -3,13 +3,13 @@ package tbclient.GetGameDetail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes25.dex */
+/* loaded from: classes26.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_GAME_ID = "";
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5218common;
+    public final CommonReq f4988common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String game_id;
 
@@ -21,18 +21,18 @@ public final class DataReq extends Message {
             } else {
                 this.game_id = builder.game_id;
             }
-            this.f5218common = builder.f5219common;
+            this.f4988common = builder.f4989common;
             return;
         }
         this.game_id = builder.game_id;
-        this.f5218common = builder.f5219common;
+        this.f4988common = builder.f4989common;
     }
 
-    /* loaded from: classes25.dex */
+    /* loaded from: classes26.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5219common;
+        public CommonReq f4989common;
         public String game_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.game_id = dataReq.game_id;
-                this.f5219common = dataReq.f5218common;
+                this.f4989common = dataReq.f4988common;
             }
         }
 

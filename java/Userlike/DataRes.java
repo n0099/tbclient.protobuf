@@ -4,9 +4,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.App;
 import tbclient.BannerUserStory;
 import tbclient.DiscoverHotForum;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_LAST_TIPS = "";
@@ -15,6 +16,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_USER_TIPS = "";
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String abtest_tag;
+    @ProtoField(label = Message.Label.REPEATED, tag = 16)
+    public final List<App> app_list;
     @ProtoField(tag = 13)
     public final BannerFollowLive banner_follow_live;
     @ProtoField(tag = 6)
@@ -46,6 +49,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_HAS_MORE = 0;
     public static final Long DEFAULT_REQ_UNIX = 0L;
     public static final Integer DEFAULT_USER_TIPS_TYPE = 0;
+    public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -101,9 +105,14 @@ public final class DataRes extends Message {
             this.hot_recomforum = builder.hot_recomforum;
             if (builder.abtest_tag == null) {
                 this.abtest_tag = "";
-                return;
             } else {
                 this.abtest_tag = builder.abtest_tag;
+            }
+            if (builder.app_list == null) {
+                this.app_list = DEFAULT_APP_LIST;
+                return;
+            } else {
+                this.app_list = builder.app_list;
                 return;
             }
         }
@@ -121,11 +130,13 @@ public final class DataRes extends Message {
         this.banner_follow_live = builder.banner_follow_live;
         this.hot_recomforum = builder.hot_recomforum;
         this.abtest_tag = builder.abtest_tag;
+        this.app_list = builder.app_list;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String abtest_tag;
+        public List<App> app_list;
         public BannerFollowLive banner_follow_live;
         public BannerUserStory banner_user_story;
         public Integer has_more;
@@ -160,6 +171,7 @@ public final class DataRes extends Message {
                 this.banner_follow_live = dataRes.banner_follow_live;
                 this.hot_recomforum = dataRes.hot_recomforum;
                 this.abtest_tag = dataRes.abtest_tag;
+                this.app_list = dataRes.app_list;
             }
         }
 

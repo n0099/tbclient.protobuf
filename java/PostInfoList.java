@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class PostInfoList extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -459,7 +459,7 @@ public final class PostInfoList extends Message {
         this.priv_sets = immutableCopyOf(builder.priv_sets);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;

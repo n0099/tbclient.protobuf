@@ -13,6 +13,7 @@ import tbclient.CategoryInfo;
 import tbclient.Esport;
 import tbclient.ForumArIno;
 import tbclient.ForumPresentInfo;
+import tbclient.ForumRuleStatus;
 import tbclient.FrsTabInfo;
 import tbclient.FrsVideo;
 import tbclient.HotUserRankEntry;
@@ -31,7 +32,7 @@ import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
@@ -111,6 +112,8 @@ public final class DataRes extends Message {
     public final List<AnchorInfo> forum_livegroup_list;
     @ProtoField(tag = 51)
     public final ForumPresentInfo forum_present_info;
+    @ProtoField(tag = 105)
+    public final ForumRuleStatus forum_rule;
     @ProtoField(label = Message.Label.REPEATED, tag = 68)
     public final List<FrsTabInfo> frs_game_tab_info;
     @ProtoField(tag = 3)
@@ -542,11 +545,11 @@ public final class DataRes extends Message {
             this.item_info = builder.item_info;
             if (builder.is_get_horse_race_lamp == null) {
                 this.is_get_horse_race_lamp = DEFAULT_IS_GET_HORSE_RACE_LAMP;
-                return;
             } else {
                 this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
-                return;
             }
+            this.forum_rule = builder.forum_rule;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -644,9 +647,10 @@ public final class DataRes extends Message {
         this.hot_user_entry = builder.hot_user_entry;
         this.item_info = builder.item_info;
         this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
+        this.forum_rule = builder.forum_rule;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityConfig activity_config;
         public ActivityHead activityhead;
@@ -685,6 +689,7 @@ public final class DataRes extends Message {
         public ForumHeadlineImgInfo forum_headline_img_info;
         public List<AnchorInfo> forum_livegroup_list;
         public ForumPresentInfo forum_present_info;
+        public ForumRuleStatus forum_rule;
         public List<FrsTabInfo> frs_game_tab_info;
         public StarInfo frs_star;
         public Integer frs_tab_default;
@@ -847,6 +852,7 @@ public final class DataRes extends Message {
                 this.hot_user_entry = dataRes.hot_user_entry;
                 this.item_info = dataRes.item_info;
                 this.is_get_horse_race_lamp = dataRes.is_get_horse_race_lamp;
+                this.forum_rule = dataRes.forum_rule;
             }
         }
 

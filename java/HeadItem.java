@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class HeadItem extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_NAME = "";
@@ -40,7 +40,7 @@ public final class HeadItem extends Message {
         this.type = builder.type;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<HeadItem> {
         public String content;
         public String name;

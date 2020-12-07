@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ResourceInfo extends Message {
     public static final String DEFAULT_HOT_TOPIC = "";
     public static final String DEFAULT_RECOMMEND_FORUM = "";
@@ -66,7 +66,7 @@ public final class ResourceInfo extends Message {
         this.recommend_user = immutableCopyOf(builder.recommend_user);
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ResourceInfo> {
         public String hot_topic;
         public String recommend_forum;

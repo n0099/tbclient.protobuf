@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class HistoryForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -23,6 +23,8 @@ public final class HistoryForumInfo extends Message {
     public final Boolean has_postpre;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer hot_num;
+    @ProtoField(tag = 20, type = Message.Datatype.INT32)
+    public final Integer is_forum_business_account;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_liveforum;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
@@ -48,6 +50,7 @@ public final class HistoryForumInfo extends Message {
     public static final Integer DEFAULT_LEVEL_ID = 0;
     public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
     public static final Boolean DEFAULT_HAS_POSTPRE = false;
+    public static final Integer DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
 
     private HistoryForumInfo(Builder builder, boolean z) {
         super(builder);
@@ -115,7 +118,13 @@ public final class HistoryForumInfo extends Message {
                 this.has_postpre = builder.has_postpre;
             }
             this.post_prefix = builder.post_prefix;
-            return;
+            if (builder.is_forum_business_account == null) {
+                this.is_forum_business_account = DEFAULT_IS_FORUM_BUSINESS_ACCOUNT;
+                return;
+            } else {
+                this.is_forum_business_account = builder.is_forum_business_account;
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.forum_name = builder.forum_name;
@@ -132,9 +141,10 @@ public final class HistoryForumInfo extends Message {
         this.tab_info = immutableCopyOf(builder.tab_info);
         this.has_postpre = builder.has_postpre;
         this.post_prefix = builder.post_prefix;
+        this.is_forum_business_account = builder.is_forum_business_account;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<HistoryForumInfo> {
         public String avatar;
         public BlockPopInfo block_pop_info;
@@ -143,6 +153,7 @@ public final class HistoryForumInfo extends Message {
         public String forum_name;
         public Boolean has_postpre;
         public Integer hot_num;
+        public Integer is_forum_business_account;
         public Integer is_liveforum;
         public Integer level_id;
         public Boolean need_trans;
@@ -173,6 +184,7 @@ public final class HistoryForumInfo extends Message {
                 this.tab_info = HistoryForumInfo.copyOf(historyForumInfo.tab_info);
                 this.has_postpre = historyForumInfo.has_postpre;
                 this.post_prefix = historyForumInfo.post_prefix;
+                this.is_forum_business_account = historyForumInfo.is_forum_business_account;
             }
         }
 

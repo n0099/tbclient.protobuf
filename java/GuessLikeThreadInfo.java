@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class GuessLikeThreadInfo extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_RECOM_COVER = "";
@@ -76,7 +76,7 @@ public final class GuessLikeThreadInfo extends Message {
         this.title = builder.title;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<GuessLikeThreadInfo> {
         public Long forum_id;
         public String forum_name;

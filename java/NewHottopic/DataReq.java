@@ -3,7 +3,7 @@ package tbclient.NewHottopic;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     public static final Long DEFAULT_TOPIC_ID = 0L;
@@ -12,14 +12,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5302common;
+    public final CommonReq f5072common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long topic_id;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5302common = builder.f5303common;
+            this.f5072common = builder.f5073common;
             if (builder.topic_id == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
             } else {
@@ -33,17 +33,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5302common = builder.f5303common;
+        this.f5072common = builder.f5073common;
         this.topic_id = builder.topic_id;
         this.call_from = builder.call_from;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5303common;
+        public CommonReq f5073common;
         public Long topic_id;
 
         public Builder() {
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5303common = dataReq.f5302common;
+                this.f5073common = dataReq.f5072common;
                 this.topic_id = dataReq.topic_id;
                 this.call_from = dataReq.call_from;
             }

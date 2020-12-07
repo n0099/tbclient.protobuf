@@ -3,7 +3,7 @@ package tbclient.GetGameDetail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.GameInfo;
-/* loaded from: classes25.dex */
+/* loaded from: classes26.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final GameInfo game_info;
@@ -21,7 +21,7 @@ public final class DataRes extends Message {
         this.rank_info = builder.rank_info;
     }
 
-    /* loaded from: classes25.dex */
+    /* loaded from: classes26.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public GameInfo game_info;
         public RankInfo rank_info;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class VideoChannelInfo extends Message {
     public static final String DEFAULT_CHANNEL_AVATAR = "";
     public static final Long DEFAULT_CHANNEL_ID = 0L;
@@ -40,7 +40,7 @@ public final class VideoChannelInfo extends Message {
         this.channel_avatar = builder.channel_avatar;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<VideoChannelInfo> {
         public String channel_avatar;
         public Long channel_id;

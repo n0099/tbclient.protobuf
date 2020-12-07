@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class Timgs extends Message {
     public static final String DEFAULT_BIG_CDN_URL = "";
     public static final String DEFAULT_BSIZE = "";
@@ -76,7 +76,7 @@ public final class Timgs extends Message {
         this.big_cdn_url = builder.big_cdn_url;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<Timgs> {
         public String big_cdn_url;
         public String bsize;

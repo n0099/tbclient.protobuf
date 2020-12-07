@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer has_more;
@@ -43,7 +43,7 @@ public final class DataRes extends Message {
         this.is_follow_dync = builder.is_follow_dync;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer has_more;
         public Integer is_follow_dync;

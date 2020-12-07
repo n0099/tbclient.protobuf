@@ -3,27 +3,27 @@ package tbclient.GetLockWindowTid;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes20.dex */
+/* loaded from: classes21.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5232common;
+    public final CommonReq f5002common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5232common = builder.f5233common;
+            this.f5002common = builder.f5003common;
         } else {
-            this.f5232common = builder.f5233common;
+            this.f5002common = builder.f5003common;
         }
     }
 
-    /* loaded from: classes20.dex */
+    /* loaded from: classes21.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5233common;
+        public CommonReq f5003common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5233common = dataReq.f5232common;
+                this.f5003common = dataReq.f5002common;
             }
         }
 

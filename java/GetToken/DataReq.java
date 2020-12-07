@@ -3,14 +3,14 @@ package tbclient.GetToken;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_SHOUBAICUID = "";
     public static final String DEFAULT_TOKEN = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5262common;
+    public final CommonReq f5032common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String shoubaicuid;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5262common = builder.f5263common;
+            this.f5032common = builder.f5033common;
             if (builder.token == null) {
                 this.token = "";
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5262common = builder.f5263common;
+        this.f5032common = builder.f5033common;
         this.token = builder.token;
         this.shoubaicuid = builder.shoubaicuid;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5263common;
+        public CommonReq f5033common;
         public String shoubaicuid;
         public String token;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5263common = dataReq.f5262common;
+                this.f5033common = dataReq.f5032common;
                 this.token = dataReq.token;
                 this.shoubaicuid = dataReq.shoubaicuid;
             }

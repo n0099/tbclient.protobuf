@@ -3,14 +3,14 @@ package tbclient.GetHotGod;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes23.dex */
+/* loaded from: classes24.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5224common;
+    public final CommonReq f4994common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5224common = builder.f5225common;
+            this.f4994common = builder.f4995common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5224common = builder.f5225common;
+        this.f4994common = builder.f4995common;
         this.pn = builder.pn;
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes24.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5225common;
+        public CommonReq f4995common;
         public Integer pn;
         public Integer rn;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5225common = dataReq.f5224common;
+                this.f4995common = dataReq.f4994common;
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;
             }

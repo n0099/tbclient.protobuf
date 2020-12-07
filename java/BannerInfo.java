@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class BannerInfo extends Message {
     public static final List<GodBanner> DEFAULT_GOD_BANNER_LIST = Collections.emptyList();
     public static final String DEFAULT_GOD_GOOD_URL = "";
@@ -42,7 +42,7 @@ public final class BannerInfo extends Message {
         this.god_rank_url = builder.god_rank_url;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<BannerInfo> {
         public List<GodBanner> god_banner_list;
         public String god_good_url;

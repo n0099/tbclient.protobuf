@@ -3,7 +3,7 @@ package tbclient.GetSuggestionByAddrName;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes23.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ADDR_NAME = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5258common;
+    public final CommonReq f5028common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -21,19 +21,19 @@ public final class DataReq extends Message {
             } else {
                 this.addr_name = builder.addr_name;
             }
-            this.f5258common = builder.f5259common;
+            this.f5028common = builder.f5029common;
             return;
         }
         this.addr_name = builder.addr_name;
-        this.f5258common = builder.f5259common;
+        this.f5028common = builder.f5029common;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes23.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String addr_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5259common;
+        public CommonReq f5029common;
 
         public Builder() {
         }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.addr_name = dataReq.addr_name;
-                this.f5259common = dataReq.f5258common;
+                this.f5029common = dataReq.f5028common;
             }
         }
 

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class TwZhiBoUser extends Message {
     public static final String DEFAULT_FIELD_EX = "";
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -40,7 +40,7 @@ public final class TwZhiBoUser extends Message {
         this.field_ex = builder.field_ex;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<TwZhiBoUser> {
         public Integer anchor_level;
         public String field_ex;

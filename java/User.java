@@ -4,8 +4,9 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class User extends Message {
+    public static final String DEFAULT_APPEAL_THREAD_POPOVER = "";
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
     public static final String DEFAULT_BG_PIC = "";
@@ -35,6 +36,8 @@ public final class User extends Message {
     public final AlaUserInfo ala_info;
     @ProtoField(tag = 85)
     public final AlaLiveInfo ala_live_info;
+    @ProtoField(tag = 112, type = Message.Datatype.STRING)
+    public final String appeal_thread_popover;
     @ProtoField(tag = 95)
     public final BaijiahaoInfo baijiahao_info;
     @ProtoField(tag = 10)
@@ -57,6 +60,8 @@ public final class User extends Message {
     public final Integer bookmark_count;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer bookmark_new_count;
+    @ProtoField(tag = 111)
+    public final BusinessAccountInfo business_account_info;
     @ProtoField(tag = 104)
     public final CallFansInfo call_fans_info;
     @ProtoField(tag = 97, type = Message.Datatype.INT32)
@@ -732,7 +737,14 @@ public final class User extends Message {
                 this.favorite_num = builder.favorite_num;
             }
             this.live_room_info = builder.live_room_info;
-            return;
+            this.business_account_info = builder.business_account_info;
+            if (builder.appeal_thread_popover == null) {
+                this.appeal_thread_popover = "";
+                return;
+            } else {
+                this.appeal_thread_popover = builder.appeal_thread_popover;
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -843,15 +855,18 @@ public final class User extends Message {
         this.creation_data = builder.creation_data;
         this.favorite_num = builder.favorite_num;
         this.live_room_info = builder.live_room_info;
+        this.business_account_info = builder.business_account_info;
+        this.appeal_thread_popover = builder.appeal_thread_popover;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;
         public Integer agree_num;
         public AlaUserInfo ala_info;
         public AlaLiveInfo ala_live_info;
+        public String appeal_thread_popover;
         public BaijiahaoInfo baijiahao_info;
         public Balv balv;
         public BawuThrones bawu_thrones;
@@ -863,6 +878,7 @@ public final class User extends Message {
         public BirthdayInfo birthday_info;
         public Integer bookmark_count;
         public Integer bookmark_new_count;
+        public BusinessAccountInfo business_account_info;
         public CallFansInfo call_fans_info;
         public Integer can_modify_avatar;
         public Integer concern_num;
@@ -1072,6 +1088,8 @@ public final class User extends Message {
                 this.creation_data = user.creation_data;
                 this.favorite_num = user.favorite_num;
                 this.live_room_info = user.live_room_info;
+                this.business_account_info = user.business_account_info;
+                this.appeal_thread_popover = user.appeal_thread_popover;
             }
         }
 

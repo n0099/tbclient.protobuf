@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class Classify extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final String DEFAULT_NAME = "";
@@ -49,7 +49,7 @@ public final class Classify extends Message {
         this.class_name = builder.class_name;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<Classify> {
         public Integer class_id;
         public String class_name;

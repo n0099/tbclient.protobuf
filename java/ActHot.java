@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ActHot extends Message {
     public static final String DEFAULT_AUTHOR_NAME = "";
     public static final String DEFAULT_BSIZE = "";
@@ -67,7 +67,7 @@ public final class ActHot extends Message {
         this.img_type = builder.img_type;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ActHot> {
         public String author_name;
         public String bsize;

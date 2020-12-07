@@ -7,7 +7,9 @@ import java.util.List;
 import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerList;
+import tbclient.BusinessAccountInfo;
 import tbclient.FineBannerPb;
+import tbclient.ForumRuleStatus;
 import tbclient.GraffitiRankListInfo;
 import tbclient.Lbs;
 import tbclient.ManagerElection;
@@ -26,7 +28,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_FOLD_TIP = "";
@@ -47,6 +49,8 @@ public final class DataRes extends Message {
     public final BannerList banner_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 52)
     public final List<ThreadInfo> bjh_recommend;
+    @ProtoField(tag = 58)
+    public final BusinessAccountInfo business_account_info;
     @ProtoField(tag = 53)
     public final BusinessPromotInfo business_promot_info;
     @ProtoField(tag = 39)
@@ -71,6 +75,8 @@ public final class DataRes extends Message {
     public final SimpleForum forum;
     @ProtoField(tag = 27)
     public final ForumHeadlineImgInfo forum_headline_img_info;
+    @ProtoField(tag = 60)
+    public final ForumRuleStatus forum_rule;
     @ProtoField(label = Message.Label.REPEATED, tag = 36)
     public final List<SimpleForum> from_forum_list;
     @ProtoField(tag = 23)
@@ -119,6 +125,8 @@ public final class DataRes extends Message {
     public final Promotion promotion;
     @ProtoField(tag = 55)
     public final AlaLiveInfo recom_ala_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 59)
+    public final List<ThreadInfo> recom_thread_info;
     @ProtoField(tag = 25)
     public final RecommendBook recommend_book;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
@@ -170,6 +178,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND = Collections.emptyList();
     public static final Integer DEFAULT_JUMPTOTAB1 = 0;
+    public static final List<ThreadInfo> DEFAULT_RECOM_THREAD_INFO = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -340,11 +349,17 @@ public final class DataRes extends Message {
             }
             if (builder.jumptotab2 == null) {
                 this.jumptotab2 = "";
-                return;
             } else {
                 this.jumptotab2 = builder.jumptotab2;
-                return;
             }
+            this.business_account_info = builder.business_account_info;
+            if (builder.recom_thread_info == null) {
+                this.recom_thread_info = DEFAULT_RECOM_THREAD_INFO;
+            } else {
+                this.recom_thread_info = immutableCopyOf(builder.recom_thread_info);
+            }
+            this.forum_rule = builder.forum_rule;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -403,9 +418,12 @@ public final class DataRes extends Message {
         this.recom_ala_info = builder.recom_ala_info;
         this.jumptotab1 = builder.jumptotab1;
         this.jumptotab2 = builder.jumptotab2;
+        this.business_account_info = builder.business_account_info;
+        this.recom_thread_info = immutableCopyOf(builder.recom_thread_info);
+        this.forum_rule = builder.forum_rule;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
         public AlaLiveInfo ala_info;
@@ -414,6 +432,7 @@ public final class DataRes extends Message {
         public String asp_shown_info;
         public BannerList banner_list;
         public List<ThreadInfo> bjh_recommend;
+        public BusinessAccountInfo business_account_info;
         public BusinessPromotInfo business_promot_info;
         public SimpleForum display_forum;
         public Integer exp_guide_today;
@@ -426,6 +445,7 @@ public final class DataRes extends Message {
         public PbFollowTip follow_tip;
         public SimpleForum forum;
         public ForumHeadlineImgInfo forum_headline_img_info;
+        public ForumRuleStatus forum_rule;
         public List<SimpleForum> from_forum_list;
         public GodCard god_card;
         public GraffitiRankListInfo graffiti_rank_list_info;
@@ -450,6 +470,7 @@ public final class DataRes extends Message {
         public List<Post> post_list;
         public Promotion promotion;
         public AlaLiveInfo recom_ala_info;
+        public List<ThreadInfo> recom_thread_info;
         public RecommendBook recommend_book;
         public List<RecommendThread> recommend_threads;
         public List<SimpleForum> repost_recommend_forum_list;
@@ -528,6 +549,9 @@ public final class DataRes extends Message {
                 this.recom_ala_info = dataRes.recom_ala_info;
                 this.jumptotab1 = dataRes.jumptotab1;
                 this.jumptotab2 = dataRes.jumptotab2;
+                this.business_account_info = dataRes.business_account_info;
+                this.recom_thread_info = DataRes.copyOf(dataRes.recom_thread_info);
+                this.forum_rule = dataRes.forum_rule;
             }
         }
 

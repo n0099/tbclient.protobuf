@@ -3,14 +3,14 @@ package tbclient.GetRecommendGodList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final String DEFAULT_PORTRAIT = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5250common;
+    public final CommonReq f5020common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5250common = builder.f5251common;
+            this.f5020common = builder.f5021common;
             if (builder.portrait == null) {
                 this.portrait = "";
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5250common = builder.f5251common;
+        this.f5020common = builder.f5021common;
         this.portrait = builder.portrait;
         this.pn = builder.pn;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5251common;
+        public CommonReq f5021common;
         public Integer pn;
         public String portrait;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5251common = dataReq.f5250common;
+                this.f5021common = dataReq.f5020common;
                 this.portrait = dataReq.portrait;
                 this.pn = dataReq.pn;
             }

@@ -5,9 +5,10 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.BannerList;
+import tbclient.DeletedReasonInfo;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -56,6 +57,8 @@ public final class ForumInfo extends Message {
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer cur_score;
+    @ProtoField(tag = 85)
+    public final DeletedReasonInfo deleted_reason_info;
     @ProtoField(tag = 78, type = Message.Datatype.STRING)
     public final String f_share_img;
     @ProtoField(tag = 37, type = Message.Datatype.INT32)
@@ -116,6 +119,8 @@ public final class ForumInfo extends Message {
     public final Integer is_show_all_top_thread;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer is_show_bawutask;
+    @ProtoField(tag = 84, type = Message.Datatype.INT32)
+    public final Integer is_show_forumrule;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_stage_forum;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
@@ -231,6 +236,7 @@ public final class ForumInfo extends Message {
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
     public static final Integer DEFAULT_IS_SHOW_BAWUTASK = 0;
     public static final List<TipInfo> DEFAULT_TIP_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SHOW_FORUMRULE = 0;
 
     private ForumInfo(Builder builder, boolean z) {
         super(builder);
@@ -553,11 +559,16 @@ public final class ForumInfo extends Message {
             }
             if (builder.tip_list == null) {
                 this.tip_list = DEFAULT_TIP_LIST;
-                return;
             } else {
                 this.tip_list = immutableCopyOf(builder.tip_list);
-                return;
             }
+            if (builder.is_show_forumrule == null) {
+                this.is_show_forumrule = DEFAULT_IS_SHOW_FORUMRULE;
+            } else {
+                this.is_show_forumrule = builder.is_show_forumrule;
+            }
+            this.deleted_reason_info = builder.deleted_reason_info;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -640,9 +651,11 @@ public final class ForumInfo extends Message {
         this.risk_tip_notice = builder.risk_tip_notice;
         this.risk_tip_pop_title = builder.risk_tip_pop_title;
         this.tip_list = immutableCopyOf(builder.tip_list);
+        this.is_show_forumrule = builder.is_show_forumrule;
+        this.deleted_reason_info = builder.deleted_reason_info;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
         public AcrossForumIcon across_forum_hide;
@@ -656,6 +669,7 @@ public final class ForumInfo extends Message {
         public BannerList banner_list;
         public Integer can_use_accelerate;
         public Integer cur_score;
+        public DeletedReasonInfo deleted_reason_info;
         public String f_share_img;
         public Integer favo_type;
         public String first_class;
@@ -686,6 +700,7 @@ public final class ForumInfo extends Message {
         public Integer is_search_people;
         public Integer is_show_all_top_thread;
         public Integer is_show_bawutask;
+        public Integer is_show_forumrule;
         public Integer is_stage_forum;
         public Integer is_support_local;
         public String is_top_img;
@@ -813,6 +828,8 @@ public final class ForumInfo extends Message {
                 this.risk_tip_notice = forumInfo.risk_tip_notice;
                 this.risk_tip_pop_title = forumInfo.risk_tip_pop_title;
                 this.tip_list = ForumInfo.copyOf(forumInfo.tip_list);
+                this.is_show_forumrule = forumInfo.is_show_forumrule;
+                this.deleted_reason_info = forumInfo.deleted_reason_info;
             }
         }
 

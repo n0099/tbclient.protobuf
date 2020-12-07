@@ -3,27 +3,27 @@ package tbclient.Recommforum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5336common;
+    public final CommonReq f5106common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5336common = builder.f5337common;
+            this.f5106common = builder.f5107common;
         } else {
-            this.f5336common = builder.f5337common;
+            this.f5106common = builder.f5107common;
         }
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5337common;
+        public CommonReq f5107common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5337common = dataReq.f5336common;
+                this.f5107common = dataReq.f5106common;
             }
         }
 

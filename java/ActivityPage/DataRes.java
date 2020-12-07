@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BannerImage;
 import tbclient.Page;
 import tbclient.ThreadInfo;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataRes extends Message {
     public static final List<BannerImage> DEFAULT_BANNER_IMAGE = Collections.emptyList();
     public static final List<BannerImage> DEFAULT_GRID = Collections.emptyList();
@@ -64,7 +64,7 @@ public final class DataRes extends Message {
         this.page_info = builder.page_info;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<BannerImage> banner_image;
         public List<BannerImage> grid;

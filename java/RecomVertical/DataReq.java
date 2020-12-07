@@ -3,7 +3,7 @@ package tbclient.RecomVertical;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes22.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLASS_ID = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5328common;
+    public final CommonReq f5098common;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -37,7 +37,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5328common = builder.f5329common;
+            this.f5098common = builder.f5099common;
             if (builder.class_id == null) {
                 this.class_id = "";
             } else {
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5328common = builder.f5329common;
+        this.f5098common = builder.f5099common;
         this.class_id = builder.class_id;
         this.sub_class_id = builder.sub_class_id;
         this.scr_w = builder.scr_w;
@@ -92,12 +92,12 @@ public final class DataReq extends Message {
         this.page_thread_count = builder.page_thread_count;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes22.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5329common;
+        public CommonReq f5099common;
         public Integer load_type;
         public Integer new_net_type;
         public Integer page_thread_count;
@@ -112,7 +112,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5329common = dataReq.f5328common;
+                this.f5099common = dataReq.f5098common;
                 this.class_id = dataReq.class_id;
                 this.sub_class_id = dataReq.sub_class_id;
                 this.scr_w = dataReq.scr_w;
