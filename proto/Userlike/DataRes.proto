@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "App.proto";
 import "BannerFollowLive.proto";
 import "BannerUserStory.proto";
 import "DiscoverHotForum.proto";
@@ -21,4 +22,5 @@ message DataRes {
     BannerFollowLive banner_follow_live = 13;
     DiscoverHotForum hot_recomforum = 14;
     string abtest_tag = 15;
+    repeated App app_list = 16;
 }

@@ -3,7 +3,9 @@ syntax = "proto3";
 import "AlaLiveInfo.proto";
 import "Anti.proto";
 import "BannerList.proto";
+import "BusinessAccountInfo.proto";
 import "FineBannerPb.proto";
+import "ForumRuleStatus.proto";
 import "GraffitiRankListInfo.proto";
 import "Lbs.proto";
 import "ManagerElection.proto";
@@ -93,4 +95,7 @@ message DataRes {
     AlaLiveInfo recom_ala_info = 55;
     int32 jumptotab1 = 56;
     string jumptotab2 = 57;
+    BusinessAccountInfo business_account_info = 58;
+    repeated ThreadInfo recom_thread_info = 59;
+    ForumRuleStatus forum_rule = 60;
 }

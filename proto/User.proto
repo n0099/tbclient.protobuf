@@ -8,6 +8,7 @@ import "Balv.proto";
 import "BawuThrones.proto";
 import "BazhuSign.proto";
 import "BirthdayInfo.proto";
+import "BusinessAccountInfo.proto";
 import "CallFansInfo.proto";
 import "ConsumeInfo.proto";
 import "CreationData.proto";
@@ -149,4 +150,6 @@ message User {
     CreationData creation_data = 108;
     int32 favorite_num = 109;
     LiveRoomInfo live_room_info = 110;
+    BusinessAccountInfo business_account_info = 111;
+    string appeal_thread_popover = 112;
 }

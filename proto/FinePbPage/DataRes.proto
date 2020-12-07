@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-import "FinePbPage/ForumInfo.proto";
 import "FinePbPage/User_Info.proto";
+import "ForumInfo.proto";
 import "Post.proto";
 import "User.proto";
 

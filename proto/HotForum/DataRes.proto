@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "HotForum/ForumInfo.proto";
+import "ForumInfo.proto";
 import "HotForum/HotSearch.proto";
 import "HotForum/HotTopic.proto";
 

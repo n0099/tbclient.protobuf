@@ -8,7 +8,9 @@ import "BottomMenu.proto";
 import "CategoryInfo.proto";
 import "Esport.proto";
 import "ForumArIno.proto";
+import "ForumInfo.proto";
 import "ForumPresentInfo.proto";
+import "ForumRuleStatus.proto";
 import "FrsPage/ActivityConfig.proto";
 import "FrsPage/ActivityHead.proto";
 import "FrsPage/AgreeBanner.proto";
@@ -24,7 +26,6 @@ import "FrsPage/ForumActiveInfo.proto";
 import "FrsPage/ForumBookInfo.proto";
 import "FrsPage/ForumHeadIcon.proto";
 import "FrsPage/ForumHeadlineImgInfo.proto";
-import "FrsPage/ForumInfo.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
 import "FrsPage/HeadSdk.proto";
@@ -159,4 +160,5 @@ message DataRes {
     HotUserRankEntry hot_user_entry = 102;
     ItemInfo item_info = 103;
     int32 is_get_horse_race_lamp = 104;
+    ForumRuleStatus forum_rule = 105;
 }

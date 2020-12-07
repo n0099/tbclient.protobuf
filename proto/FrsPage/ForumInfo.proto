@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "Banner.proto";
 import "BannerList.proto";
+import "DeletedReasonInfo.proto";
 import "FrsPage/AcrossForumIcon.proto";
 import "FrsPage/Adkiller.proto";
 import "FrsPage/AnchorPower.proto";
@@ -110,4 +111,6 @@ message ForumInfo {
     string risk_tip_notice = 81;
     string risk_tip_pop_title = 82;
     repeated TipInfo tip_list = 83;
+    int32 is_show_forumrule = 84;
+    DeletedReasonInfo deleted_reason_info = 85;
 }

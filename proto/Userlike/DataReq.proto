@@ -7,4 +7,5 @@ message DataReq {
     uint64 last_req_unix = 3;
     int32 follow_type = 4;
     int32 load_type = 5;
+    string ad_ext_params = 6;
 }
