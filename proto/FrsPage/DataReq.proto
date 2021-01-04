@@ -66,4 +66,5 @@ message DataReq {
     string ad_context_list = 60;
     string up_schema = 61;
     string ad_ext_params = 62;
+    int32 default_sort_type = 63;
 }

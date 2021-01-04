@@ -14,6 +14,7 @@ import "ConsumeInfo.proto";
 import "CreationData.proto";
 import "Ecom.proto";
 import "EsportInfo.proto";
+import "ForumToolPerm.proto";
 import "GiftInfo.proto";
 import "GodInfo.proto";
 import "Icon.proto";
@@ -152,4 +153,5 @@ message User {
     LiveRoomInfo live_room_info = 110;
     BusinessAccountInfo business_account_info = 111;
     string appeal_thread_popover = 112;
+    repeated ForumToolPerm forum_tool_auth = 113;
 }

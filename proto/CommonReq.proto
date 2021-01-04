@@ -37,8 +37,18 @@ message CommonReq {
     string oaid = 34;
     string c3_aid = 35;
     string sample_id = 36;
+    int32 scr_w = 37;
+    int32 scr_h = 38;
+    double scr_dip = 39;
+    int32 q_type = 40;
     int32 is_teenager = 41;
     string sdk_ver = 42;
     string framework_ver = 43;
     string swan_game_ver = 44;
+    string idfa = 45;
+    string caid = 46;
+    int64 active_timestamp = 49;
+    int64 first_install_time = 50;
+    int64 last_update_time = 51;
+    string event_day = 53;
 }
