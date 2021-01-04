@@ -2,7 +2,7 @@ package tbclient.HotForum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes24.dex */
+/* loaded from: classes8.dex */
 public final class HotSearch extends Message {
     public static final String DEFAULT_SEARCH_TITLE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -25,7 +25,7 @@ public final class HotSearch extends Message {
         this.search_value = builder.search_value;
     }
 
-    /* loaded from: classes24.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<HotSearch> {
         public String search_title;
         public SearchValue search_value;

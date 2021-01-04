@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class MparrProps extends Message {
     public static final List<Props> DEFAULT_PROPS = Collections.emptyList();
     @ProtoField(tag = 1)
@@ -36,7 +36,7 @@ public final class MparrProps extends Message {
         this.props = immutableCopyOf(builder.props);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<MparrProps> {
         public AvatarFrame avatarframe;
         public Level level;

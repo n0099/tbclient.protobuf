@@ -3,12 +3,12 @@ package tbclient.RecomVideo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5100common;
+    public final CommonReq f14893common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5100common = builder.f5101common;
+            this.f14893common = builder.f14894common;
             if (builder.scr_w == null) {
                 this.scr_w = DEFAULT_SCR_W;
             } else {
@@ -65,7 +65,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5100common = builder.f5101common;
+        this.f14893common = builder.f14894common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
@@ -74,11 +74,11 @@ public final class DataReq extends Message {
         this.page_thread_count = builder.page_thread_count;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5101common;
+        public CommonReq f14894common;
         public Integer load_type;
         public Integer new_net_type;
         public Integer page_thread_count;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5101common = dataReq.f5100common;
+                this.f14894common = dataReq.f14893common;
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;
                 this.scr_dip = dataReq.scr_dip;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class OrderData extends Message {
     @ProtoField(tag = 3)
     public final DefaultInfo default_info;
@@ -36,7 +36,7 @@ public final class OrderData extends Message {
         this.default_info = builder.default_info;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<OrderData> {
         public DefaultInfo default_info;
         public Integer hasmore;

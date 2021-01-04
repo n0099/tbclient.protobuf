@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class AnimationThread extends Message {
     public static final String DEFAULT_JUMP_URL = "";
     public static final String DEFAULT_VIDEO_PIC = "";
@@ -31,7 +31,7 @@ public final class AnimationThread extends Message {
         this.jump_url = builder.jump_url;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AnimationThread> {
         public String jump_url;
         public String video_pic;

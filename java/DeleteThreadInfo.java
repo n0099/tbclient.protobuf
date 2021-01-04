@@ -2,7 +2,7 @@ package tbclient;
 
 import java.io.Serializable;
 import org.json.JSONObject;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DeleteThreadInfo implements Serializable {
     public int text_id;
     public String text_info;

@@ -2,7 +2,7 @@ package tbclient.GetLockWindowMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes8.dex */
 public final class LockWindowContent extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_LINK = "";
@@ -103,7 +103,7 @@ public final class LockWindowContent extends Message {
         this.src = builder.src;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<LockWindowContent> {
         public String big_pic;
         public Integer during_time;

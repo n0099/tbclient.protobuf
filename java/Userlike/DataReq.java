@@ -3,7 +3,7 @@ package tbclient.Userlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_PAGE_TAG = "";
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5156common;
+    public final CommonReq f14949common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer follow_type;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5156common = builder.f5157common;
+            this.f14949common = builder.f14950common;
             if (builder.page_tag == null) {
                 this.page_tag = "";
             } else {
@@ -57,7 +57,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5156common = builder.f5157common;
+        this.f14949common = builder.f14950common;
         this.page_tag = builder.page_tag;
         this.last_req_unix = builder.last_req_unix;
         this.follow_type = builder.follow_type;
@@ -65,12 +65,12 @@ public final class DataReq extends Message {
         this.ad_ext_params = builder.ad_ext_params;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5157common;
+        public CommonReq f14950common;
         public Integer follow_type;
         public Long last_req_unix;
         public Integer load_type;
@@ -82,7 +82,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5157common = dataReq.f5156common;
+                this.f14950common = dataReq.f14949common;
                 this.page_tag = dataReq.page_tag;
                 this.last_req_unix = dataReq.last_req_unix;
                 this.follow_type = dataReq.follow_type;

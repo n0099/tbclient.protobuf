@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class AlaLiveNotify extends Message {
     public static final String DEFAULT_NOTI_CONTENT = "";
     public static final String DEFAULT_NOTI_URL = "";
@@ -31,7 +31,7 @@ public final class AlaLiveNotify extends Message {
         this.noti_url = builder.noti_url;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AlaLiveNotify> {
         public String noti_content;
         public String noti_url;

@@ -3,13 +3,16 @@ package tbclient.GeneralTabList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_TAB_NAME = "";
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String ad_ext_params;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4964common;
+    public final CommonReq f14757common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -52,7 +55,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f4964common = builder.f4965common;
+            this.f14757common = builder.f14758common;
             if (builder.tab_id == null) {
                 this.tab_id = DEFAULT_TAB_ID;
             } else {
@@ -115,13 +118,18 @@ public final class DataReq extends Message {
             }
             if (builder.tab_type == null) {
                 this.tab_type = DEFAULT_TAB_TYPE;
-                return;
             } else {
                 this.tab_type = builder.tab_type;
+            }
+            if (builder.ad_ext_params == null) {
+                this.ad_ext_params = "";
+                return;
+            } else {
+                this.ad_ext_params = builder.ad_ext_params;
                 return;
             }
         }
-        this.f4964common = builder.f4965common;
+        this.f14757common = builder.f14758common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;
@@ -135,13 +143,15 @@ public final class DataReq extends Message {
         this.is_general_tab = builder.is_general_tab;
         this.sort_type = builder.sort_type;
         this.tab_type = builder.tab_type;
+        this.ad_ext_params = builder.ad_ext_params;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4965common;
+        public CommonReq f14758common;
         public Long forum_id;
         public Integer is_default_navtab;
         public Integer is_general_tab;
@@ -162,7 +172,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f4965common = dataReq.f4964common;
+                this.f14758common = dataReq.f14757common;
                 this.tab_id = dataReq.tab_id;
                 this.forum_id = dataReq.forum_id;
                 this.pn = dataReq.pn;
@@ -176,6 +186,7 @@ public final class DataReq extends Message {
                 this.is_general_tab = dataReq.is_general_tab;
                 this.sort_type = dataReq.sort_type;
                 this.tab_type = dataReq.tab_type;
+                this.ad_ext_params = dataReq.ad_ext_params;
             }
         }
 

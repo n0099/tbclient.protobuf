@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class SpringVirtualUser extends Message {
     public static final Integer DEFAULT_IS_VIRTUAL = 0;
     public static final String DEFAULT_URL = "";
@@ -31,7 +31,7 @@ public final class SpringVirtualUser extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SpringVirtualUser> {
         public Integer is_virtual;
         public String url;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Quote;
 import tbclient.Zan;
-/* loaded from: classes21.dex */
+/* loaded from: classes8.dex */
 public final class MagicPostList extends Message {
     public static final String DEFAULT_CONTENT_TEXT = "";
     public static final String DEFAULT_TITLE = "";
@@ -89,7 +89,7 @@ public final class MagicPostList extends Message {
         this.quote = builder.quote;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<MagicPostList> {
         public String content_text;
         public Integer create_time;

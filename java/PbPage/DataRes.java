@@ -28,7 +28,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_FOLD_TIP = "";
@@ -423,7 +423,7 @@ public final class DataRes extends Message {
         this.forum_rule = builder.forum_rule;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
         public AlaLiveInfo ala_info;

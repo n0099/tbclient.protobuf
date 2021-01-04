@@ -3,12 +3,12 @@ package tbclient.GodThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5046common;
+    public final CommonReq f14839common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer num;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -34,7 +34,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5046common = builder.f5047common;
+            this.f14839common = builder.f14840common;
             if (builder.user_id == null) {
                 this.user_id = DEFAULT_USER_ID;
             } else {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5046common = builder.f5047common;
+        this.f14839common = builder.f14840common;
         this.user_id = builder.user_id;
         this.pn = builder.pn;
         this.num = builder.num;
@@ -83,11 +83,11 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5047common;
+        public CommonReq f14840common;
         public Integer num;
         public Integer pn;
         public Integer q_type;
@@ -102,7 +102,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5047common = dataReq.f5046common;
+                this.f14840common = dataReq.f14839common;
                 this.user_id = dataReq.user_id;
                 this.pn = dataReq.pn;
                 this.num = dataReq.num;

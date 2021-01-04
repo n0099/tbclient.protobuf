@@ -8,7 +8,7 @@ import tbclient.BannerList;
 import tbclient.DeletedReasonInfo;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -655,7 +655,7 @@ public final class ForumInfo extends Message {
         this.deleted_reason_info = builder.deleted_reason_info;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
         public AcrossForumIcon across_forum_hide;

@@ -2,7 +2,7 @@ package tbclient.Lottery;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_STATUS = 0;
     public static final String DEFAULT_STATUS_MSG = "";
@@ -39,7 +39,7 @@ public final class DataRes extends Message {
         this.status_msg = builder.status_msg;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public DrawInfo award_info;
         public UserChance chance;

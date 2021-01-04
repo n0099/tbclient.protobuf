@@ -4,13 +4,16 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.App;
 import tbclient.ItemInfo;
 import tbclient.SportPageHeadInfo;
 import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
+    @ProtoField(label = Message.Label.REPEATED, tag = 10)
+    public final List<App> app_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<ThreadInfo> general_list;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -32,6 +35,7 @@ public final class DataRes extends Message {
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
     public static final Integer DEFAULT_NEW_THREAD_NUM = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -64,7 +68,13 @@ public final class DataRes extends Message {
                 this.sort_type = builder.sort_type;
             }
             this.item_info = builder.item_info;
-            return;
+            if (builder.app_list == null) {
+                this.app_list = DEFAULT_APP_LIST;
+                return;
+            } else {
+                this.app_list = immutableCopyOf(builder.app_list);
+                return;
+            }
         }
         this.general_list = immutableCopyOf(builder.general_list);
         this.has_more = builder.has_more;
@@ -74,10 +84,12 @@ public final class DataRes extends Message {
         this.new_thread_num = builder.new_thread_num;
         this.sort_type = builder.sort_type;
         this.item_info = builder.item_info;
+        this.app_list = immutableCopyOf(builder.app_list);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public List<App> app_list;
         public List<ThreadInfo> general_list;
         public Integer has_more;
         public ItemInfo item_info;
@@ -101,6 +113,7 @@ public final class DataRes extends Message {
                 this.new_thread_num = dataRes.new_thread_num;
                 this.sort_type = dataRes.sort_type;
                 this.item_info = dataRes.item_info;
+                this.app_list = DataRes.copyOf(dataRes.app_list);
             }
         }
 

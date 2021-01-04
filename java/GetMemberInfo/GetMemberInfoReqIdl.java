@@ -2,7 +2,7 @@ package tbclient.GetMemberInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes23.dex */
+/* loaded from: classes8.dex */
 public final class GetMemberInfoReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
@@ -16,7 +16,7 @@ public final class GetMemberInfoReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GetMemberInfoReqIdl> {
         public DataReq data;
 

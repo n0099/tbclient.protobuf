@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes21.dex */
+/* loaded from: classes8.dex */
 public final class JoinUser extends Message {
     public static final List<UserInfo> DEFAULT_JOIN_USER = Collections.emptyList();
     public static final Long DEFAULT_JOIN_USER_NUM = 0L;
@@ -33,7 +33,7 @@ public final class JoinUser extends Message {
         this.join_user_num = builder.join_user_num;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<JoinUser> {
         public List<UserInfo> join_user;
         public Long join_user_num;

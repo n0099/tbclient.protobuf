@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class User extends Message {
     public static final String DEFAULT_APPEAL_THREAD_POPOVER = "";
     public static final String DEFAULT_BAWU_TYPE = "";
@@ -84,6 +84,8 @@ public final class User extends Message {
     public final Integer fans_num;
     @ProtoField(tag = 109, type = Message.Datatype.INT32)
     public final Integer favorite_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 113)
+    public final List<ForumToolPerm> forum_tool_auth;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long friend_num;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
@@ -308,6 +310,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_INFLUENCE = 0;
     public static final Integer DEFAULT_IS_DEFAULT_AVATAR = 0;
     public static final Integer DEFAULT_FAVORITE_NUM = 0;
+    public static final List<ForumToolPerm> DEFAULT_FORUM_TOOL_AUTH = Collections.emptyList();
 
     private User(Builder builder, boolean z) {
         super(builder);
@@ -740,9 +743,14 @@ public final class User extends Message {
             this.business_account_info = builder.business_account_info;
             if (builder.appeal_thread_popover == null) {
                 this.appeal_thread_popover = "";
-                return;
             } else {
                 this.appeal_thread_popover = builder.appeal_thread_popover;
+            }
+            if (builder.forum_tool_auth == null) {
+                this.forum_tool_auth = DEFAULT_FORUM_TOOL_AUTH;
+                return;
+            } else {
+                this.forum_tool_auth = immutableCopyOf(builder.forum_tool_auth);
                 return;
             }
         }
@@ -857,9 +865,10 @@ public final class User extends Message {
         this.live_room_info = builder.live_room_info;
         this.business_account_info = builder.business_account_info;
         this.appeal_thread_popover = builder.appeal_thread_popover;
+        this.forum_tool_auth = immutableCopyOf(builder.forum_tool_auth);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;
@@ -890,6 +899,7 @@ public final class User extends Message {
         public String fans_nickname;
         public Integer fans_num;
         public Integer favorite_num;
+        public List<ForumToolPerm> forum_tool_auth;
         public Long friend_num;
         public Integer gender;
         public List<GiftInfo> gift_list;
@@ -1090,6 +1100,7 @@ public final class User extends Message {
                 this.live_room_info = user.live_room_info;
                 this.business_account_info = user.business_account_info;
                 this.appeal_thread_popover = user.appeal_thread_popover;
+                this.forum_tool_auth = User.copyOf(user.forum_tool_auth);
             }
         }
 

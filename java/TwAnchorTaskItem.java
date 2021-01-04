@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class TwAnchorTaskItem extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -67,7 +67,7 @@ public final class TwAnchorTaskItem extends Message {
         this.icon = builder.icon;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TwAnchorTaskItem> {
         public Integer complete;
         public String icon;

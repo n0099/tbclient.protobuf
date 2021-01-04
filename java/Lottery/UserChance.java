@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class UserChance extends Message {
     public static final Long DEFAULT_CHANCE_COUNT = 0L;
     public static final Long DEFAULT_ENABLE_GET_CHANCE = 0L;
@@ -42,7 +42,7 @@ public final class UserChance extends Message {
         this.regular = immutableCopyOf(builder.regular);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserChance> {
         public Long chance_count;
         public Long enable_get_chance;

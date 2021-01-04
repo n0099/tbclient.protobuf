@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class Duxiaoman extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer is_end;
@@ -31,7 +31,7 @@ public final class Duxiaoman extends Message {
         this.is_end = builder.is_end;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Duxiaoman> {
         public Integer is_end;
         public Integer total_cash;

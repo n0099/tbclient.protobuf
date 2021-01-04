@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -51,7 +51,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 39)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4960common;
+    public final CommonReq f14753common;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -62,6 +62,8 @@ public final class DataReq extends Message {
     public final Integer data_size;
     @ProtoField(tag = 37, type = Message.Datatype.BOOL)
     public final Boolean debug;
+    @ProtoField(tag = 63, type = Message.Datatype.INT32)
+    public final Integer default_sort_type;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String email;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -191,6 +193,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_CALL_FROM = 0;
     public static final Long DEFAULT_HOT_THREAD_ID = 0L;
     public static final Integer DEFAULT_IS_DEFAULT_NAVTAB = 0;
+    public static final Integer DEFAULT_DEFAULT_SORT_TYPE = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -385,7 +388,7 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = builder.cookie;
             }
-            this.f4960common = builder.f4961common;
+            this.f14753common = builder.f14754common;
             if (builder.lastids == null) {
                 this.lastids = "";
             } else {
@@ -490,9 +493,14 @@ public final class DataReq extends Message {
             }
             if (builder.ad_ext_params == null) {
                 this.ad_ext_params = "";
-                return;
             } else {
                 this.ad_ext_params = builder.ad_ext_params;
+            }
+            if (builder.default_sort_type == null) {
+                this.default_sort_type = DEFAULT_DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.default_sort_type = builder.default_sort_type;
                 return;
             }
         }
@@ -534,7 +542,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.debug = builder.debug;
         this.cookie = builder.cookie;
-        this.f4960common = builder.f4961common;
+        this.f14753common = builder.f14754common;
         this.lastids = builder.lastids;
         this.issdk = builder.issdk;
         this.da_idfa = builder.da_idfa;
@@ -558,9 +566,10 @@ public final class DataReq extends Message {
         this.ad_context_list = builder.ad_context_list;
         this.up_schema = builder.up_schema;
         this.ad_ext_params = builder.ad_ext_params;
+        this.default_sort_type = builder.default_sort_type;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
         public String ad_ext_params;
@@ -574,12 +583,13 @@ public final class DataReq extends Message {
         public Integer class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4961common;
+        public CommonReq f14754common;
         public String cookie;
         public Integer ctime;
         public String da_idfa;
         public Integer data_size;
         public Boolean debug;
+        public Integer default_sort_type;
         public String email;
         public String forum_name;
         public Integer frs_rn;
@@ -671,7 +681,7 @@ public final class DataReq extends Message {
                 this.email = dataReq.email;
                 this.debug = dataReq.debug;
                 this.cookie = dataReq.cookie;
-                this.f4961common = dataReq.f4960common;
+                this.f14754common = dataReq.f14753common;
                 this.lastids = dataReq.lastids;
                 this.issdk = dataReq.issdk;
                 this.da_idfa = dataReq.da_idfa;
@@ -695,6 +705,7 @@ public final class DataReq extends Message {
                 this.ad_context_list = dataReq.ad_context_list;
                 this.up_schema = dataReq.up_schema;
                 this.ad_ext_params = dataReq.ad_ext_params;
+                this.default_sort_type = dataReq.default_sort_type;
             }
         }
 

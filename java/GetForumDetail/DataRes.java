@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.PriManagerApplyInfo;
 import tbclient.RecommendForumInfo;
 import tbclient.SimpleThreadInfo;
-/* loaded from: classes26.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 5)
     public final ManagerApplyInfo bz_apply_info;
@@ -64,7 +64,7 @@ public final class DataRes extends Message {
         this.election_tab = builder.election_tab;
     }
 
-    /* loaded from: classes26.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ManagerApplyInfo bz_apply_info;
         public BzApplySwitch bz_apply_switch;

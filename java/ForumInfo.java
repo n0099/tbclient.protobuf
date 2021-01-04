@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_CONCERN_NUM = "";
@@ -67,7 +67,7 @@ public final class ForumInfo extends Message {
         this.has_concerned = builder.has_concerned;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String avatar;
         public String concern_num;

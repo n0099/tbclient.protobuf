@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5086common;
+    public final CommonReq f14879common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -114,7 +114,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5086common = builder.f5087common;
+            this.f14879common = builder.f14880common;
             if (builder.tag_code == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
             } else {
@@ -279,7 +279,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5086common = builder.f5087common;
+        this.f14879common = builder.f14880common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;
@@ -315,7 +315,7 @@ public final class DataReq extends Message {
         this.ad_ext_params = builder.ad_ext_params;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
         public String ad_ext_params;
@@ -323,7 +323,7 @@ public final class DataReq extends Message {
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5087common;
+        public CommonReq f14880common;
         public String da_idfa;
         public String first_dir;
         public Long from_tid;
@@ -360,7 +360,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5087common = dataReq.f5086common;
+                this.f14880common = dataReq.f14879common;
                 this.tag_code = dataReq.tag_code;
                 this.need_tags = dataReq.need_tags;
                 this.load_type = dataReq.load_type;

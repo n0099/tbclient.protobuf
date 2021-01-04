@@ -3,7 +3,7 @@ package tbclient.GetADList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FID = 0L;
     public static final Long DEFAULT_OFFSET = 0L;
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4966common;
+    public final CommonReq f14759common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f4966common = builder.f4967common;
+            this.f14759common = builder.f14760common;
             if (builder.fid == null) {
                 this.fid = DEFAULT_FID;
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f4966common = builder.f4967common;
+        this.f14759common = builder.f14760common;
         this.fid = builder.fid;
         this.offset = builder.offset;
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4967common;
+        public CommonReq f14760common;
         public Long fid;
         public Long offset;
         public Integer rn;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f4967common = dataReq.f4966common;
+                this.f14760common = dataReq.f14759common;
                 this.fid = dataReq.fid;
                 this.offset = dataReq.offset;
                 this.rn = dataReq.rn;

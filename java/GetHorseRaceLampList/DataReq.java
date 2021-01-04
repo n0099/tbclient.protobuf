@@ -3,20 +3,20 @@ package tbclient.GetHorseRaceLampList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4992common;
+    public final CommonReq f14785common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long forum_id;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f4992common = builder.f4993common;
+            this.f14785common = builder.f14786common;
             if (builder.forum_id == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
                 return;
@@ -25,15 +25,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f4992common = builder.f4993common;
+        this.f14785common = builder.f14786common;
         this.forum_id = builder.forum_id;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4993common;
+        public CommonReq f14786common;
         public Long forum_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f4993common = dataReq.f4992common;
+                this.f14786common = dataReq.f14785common;
                 this.forum_id = dataReq.forum_id;
             }
         }

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class StarTaskInfo extends Message {
     public static final String DEFAULT_TASK_DESC = "";
     public static final String DEFAULT_TASK_SCORE_DESC = "";
@@ -49,7 +49,7 @@ public final class StarTaskInfo extends Message {
         this.task_status = builder.task_status;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<StarTaskInfo> {
         public String task_desc;
         public String task_score_desc;

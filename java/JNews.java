@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class JNews extends Message {
     public static final String DEFAULT_FROM = "";
     public static final Long DEFAULT_JID = 0L;
@@ -40,7 +40,7 @@ public final class JNews extends Message {
         this.from = builder.from;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<JNews> {
         public String from;
         public Long jid;

@@ -3,14 +3,14 @@ package tbclient.GetConsentList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long author_id;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4974common;
+    public final CommonReq f14767common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long gid;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -34,7 +34,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f4974common = builder.f4975common;
+            this.f14767common = builder.f14768common;
             if (builder.author_id == null) {
                 this.author_id = DEFAULT_AUTHOR_ID;
             } else {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f4974common = builder.f4975common;
+        this.f14767common = builder.f14768common;
         this.author_id = builder.author_id;
         this.user_id = builder.user_id;
         this.gid = builder.gid;
@@ -83,12 +83,12 @@ public final class DataReq extends Message {
         this.res_num = builder.res_num;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long author_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4975common;
+        public CommonReq f14768common;
         public Long gid;
         public Long page_num;
         public Long post_id;
@@ -102,7 +102,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f4975common = dataReq.f4974common;
+                this.f14768common = dataReq.f14767common;
                 this.author_id = dataReq.author_id;
                 this.user_id = dataReq.user_id;
                 this.gid = dataReq.gid;

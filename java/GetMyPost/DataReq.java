@@ -3,15 +3,17 @@ package tbclient.GetMyPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_BFROM = "";
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String bfrom;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer call_from;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5008common;
+    public final CommonReq f14801common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -33,11 +35,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
     public static final Integer DEFAULT_Q_TYPE = 0;
+    public static final Integer DEFAULT_CALL_FROM = 0;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5008common = builder.f5009common;
+            this.f14801common = builder.f14802common;
             if (builder.thread_id == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
             } else {
@@ -75,13 +78,18 @@ public final class DataReq extends Message {
             }
             if (builder.bfrom == null) {
                 this.bfrom = "";
-                return;
             } else {
                 this.bfrom = builder.bfrom;
+            }
+            if (builder.call_from == null) {
+                this.call_from = DEFAULT_CALL_FROM;
+                return;
+            } else {
+                this.call_from = builder.call_from;
                 return;
             }
         }
-        this.f5008common = builder.f5009common;
+        this.f14801common = builder.f14802common;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;
         this.forum_id = builder.forum_id;
@@ -90,14 +98,16 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
         this.q_type = builder.q_type;
         this.bfrom = builder.bfrom;
+        this.call_from = builder.call_from;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String bfrom;
+        public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5009common;
+        public CommonReq f14802common;
         public Long forum_id;
         public Long post_id;
         public Integer q_type;
@@ -112,7 +122,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5009common = dataReq.f5008common;
+                this.f14802common = dataReq.f14801common;
                 this.thread_id = dataReq.thread_id;
                 this.post_id = dataReq.post_id;
                 this.forum_id = dataReq.forum_id;
@@ -121,6 +131,7 @@ public final class DataReq extends Message {
                 this.scr_dip = dataReq.scr_dip;
                 this.q_type = dataReq.q_type;
                 this.bfrom = dataReq.bfrom;
+                this.call_from = dataReq.call_from;
             }
         }
 

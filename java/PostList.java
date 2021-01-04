@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class PostList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Abstract> _abstract;
@@ -73,7 +73,7 @@ public final class PostList extends Message {
         this.author_id = builder.author_id;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PostList> {
         public List<Abstract> _abstract;
         public User author;

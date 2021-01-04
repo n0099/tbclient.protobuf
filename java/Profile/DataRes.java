@@ -23,7 +23,7 @@ import tbclient.UcCard;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_UK = "";
     @ProtoField(tag = 16)
@@ -192,7 +192,7 @@ public final class DataRes extends Message {
         this.uk = builder.uk;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AlaLiveInfo ala_live_info;
         public List<AlaLiveInfo> ala_live_record;

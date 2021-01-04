@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class ActiveCenter extends Message {
     public static final String DEFAULT_WIN_DESC = "";
     public static final String DEFAULT_WIN_TITLE = "";
@@ -73,7 +73,7 @@ public final class ActiveCenter extends Message {
         this.is_first_up = builder.is_first_up;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ActiveCenter> {
         public Integer is_first_up;
         public Integer is_new_window;

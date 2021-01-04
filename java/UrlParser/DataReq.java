@@ -3,7 +3,7 @@ package tbclient.UrlParser;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_LINK_NUM = 0;
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5148common;
+    public final CommonReq f14941common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5148common = builder.f5149common;
+            this.f14941common = builder.f14942common;
             if (builder.forum_id == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5148common = builder.f5149common;
+        this.f14941common = builder.f14942common;
         this.forum_id = builder.forum_id;
         this.link_num = builder.link_num;
         this.url = builder.url;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5149common;
+        public CommonReq f14942common;
         public Long forum_id;
         public Integer link_num;
         public String url;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5149common = dataReq.f5148common;
+                this.f14942common = dataReq.f14941common;
                 this.forum_id = dataReq.forum_id;
                 this.link_num = dataReq.link_num;
                 this.url = dataReq.url;

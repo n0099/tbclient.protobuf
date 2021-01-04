@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes10.dex */
 public final class Banner extends Message {
     public static final String DEFAULT_DESC = "";
     public static final Integer DEFAULT_ID = 0;
@@ -62,7 +62,7 @@ public final class Banner extends Message {
         this.id = builder.id;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Banner> {
         public String desc;
         public Integer id;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DeletedReasonInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_boomgrow;
@@ -31,7 +31,7 @@ public final class DeletedReasonInfo extends Message {
         this.is_boomgrow = builder.is_boomgrow;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DeletedReasonInfo> {
         public Integer is_boomgrow;
         public Integer is_grays_cale_forum;

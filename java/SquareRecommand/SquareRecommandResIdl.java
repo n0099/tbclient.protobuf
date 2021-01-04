@@ -3,7 +3,7 @@ package tbclient.SquareRecommand;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes6.dex */
+/* loaded from: classes10.dex */
 public final class SquareRecommandResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class SquareRecommandResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<SquareRecommandResIdl> {
         public DataRes data;
         public Error error;

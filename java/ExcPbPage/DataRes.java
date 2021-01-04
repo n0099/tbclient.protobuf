@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Post;
 import tbclient.User;
-/* loaded from: classes23.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
@@ -42,7 +42,7 @@ public final class DataRes extends Message {
         this.user_info = builder.user_info;
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Post> post_list;
         public ExcellentPbThreadInfo thread_info;

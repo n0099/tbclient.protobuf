@@ -2,7 +2,7 @@ package tbclient.CheckPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class ResData extends Message {
     public static final String DEFAULT_FNAME = "";
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -58,7 +58,7 @@ public final class ResData extends Message {
         this.fname = builder.fname;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ResData> {
         public String fname;
         public Long forumId;

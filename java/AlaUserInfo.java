@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class AlaUserInfo extends Message {
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_GREAT_ANCHOR_DESC_GRADE = "";
@@ -229,7 +229,7 @@ public final class AlaUserInfo extends Message {
         this.anchor_fans = builder.anchor_fans;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AlaUserInfo> {
         public Long ala_id;
         public Integer anchor_fans;

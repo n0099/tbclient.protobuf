@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class SimpleForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_EXT = "";
@@ -157,7 +157,7 @@ public final class SimpleForum extends Message {
         this.deleted_reason_info = builder.deleted_reason_info;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SimpleForum> {
         public String avatar;
         public DeletedReasonInfo deleted_reason_info;

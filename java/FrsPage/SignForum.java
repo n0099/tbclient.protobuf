@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class SignForum extends Message {
     public static final String DEFAULT_LEVEL1_DIR_NAME = "";
     public static final String DEFAULT_LEVEL2_DIR_NAME = "";
@@ -78,7 +78,7 @@ public final class SignForum extends Message {
         this.forum_id = builder.forum_id;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SignForum> {
         public RankInfo current_rank_info;
         public Long forum_id;

@@ -2,7 +2,7 @@ package tbclient.UserMuteCheck;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_IS_MUTE = "";
     public static final String DEFAULT_MUTE_CONFIRM = "";
@@ -31,7 +31,7 @@ public final class DataRes extends Message {
         this.mute_confirm = builder.mute_confirm;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String is_mute;
         public String mute_confirm;

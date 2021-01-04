@@ -3,7 +3,7 @@ package tbclient.AddFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final String DEFAULT_MESSAGE = "";
@@ -11,7 +11,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4908common;
+    public final CommonReq f14701common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -37,20 +37,20 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = builder.st_type;
             }
-            this.f4908common = builder.f4909common;
+            this.f14701common = builder.f14702common;
             return;
         }
         this.friend_id = builder.friend_id;
         this.message = builder.message;
         this.st_type = builder.st_type;
-        this.f4908common = builder.f4909common;
+        this.f14701common = builder.f14702common;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4909common;
+        public CommonReq f14702common;
         public Long friend_id;
         public String message;
         public String st_type;
@@ -64,7 +64,7 @@ public final class ReqData extends Message {
                 this.friend_id = reqData.friend_id;
                 this.message = reqData.message;
                 this.st_type = reqData.st_type;
-                this.f4909common = reqData.f4908common;
+                this.f14702common = reqData.f14701common;
             }
         }
 

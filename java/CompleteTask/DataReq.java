@@ -3,7 +3,7 @@ package tbclient.CompleteTask;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COMPELETE_ID = "";
     public static final String DEFAULT_SHOUBAICUID = "";
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4932common;
+    public final CommonReq f14725common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String compelete_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f4932common = builder.f4933common;
+            this.f14725common = builder.f14726common;
             if (builder.shoubaicuid == null) {
                 this.shoubaicuid = "";
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f4932common = builder.f4933common;
+        this.f14725common = builder.f14726common;
         this.shoubaicuid = builder.shoubaicuid;
         this.compelete_id = builder.compelete_id;
         this.token = builder.token;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4933common;
+        public CommonReq f14726common;
         public String compelete_id;
         public String shoubaicuid;
         public String token;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f4933common = dataReq.f4932common;
+                this.f14726common = dataReq.f14725common;
                 this.shoubaicuid = dataReq.shoubaicuid;
                 this.compelete_id = dataReq.compelete_id;
                 this.token = dataReq.token;

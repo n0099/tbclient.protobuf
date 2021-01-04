@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class CommonReq extends Message {
     public static final String DEFAULT_APID = "";
     public static final String DEFAULT_APPLIST = "";
@@ -10,11 +10,14 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_BRAND = "";
     public static final String DEFAULT_BRAND_TYPE = "";
     public static final String DEFAULT_C3_AID = "";
+    public static final String DEFAULT_CAID = "";
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
-    public static final String DEFAULT_FRAMEWORK_VERSION = "";
+    public static final String DEFAULT_EVENT_DAY = "";
+    public static final String DEFAULT_FRAMEWORK_VER = "";
     public static final String DEFAULT_FROM = "";
+    public static final String DEFAULT_IDFA = "";
     public static final String DEFAULT_KA = "";
     public static final String DEFAULT_LEGO_LIB_VERSION = "";
     public static final String DEFAULT_MODEL = "";
@@ -27,13 +30,13 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_OAID = "";
     public static final String DEFAULT_PVERSION = "";
     public static final String DEFAULT_SAMPLE_ID = "";
-    public static final String DEFAULT_SDK_VERSION = "";
+    public static final String DEFAULT_SDK_VER = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
     public static final String DEFAULT_STOKEN = "";
     public static final String DEFAULT_SUBAPP_TYPE = "";
+    public static final String DEFAULT_SWAN_GAME_VER = "";
     public static final String DEFAULT_TBS = "";
-    public static final String DEFAULT_WAN_GAME_VERSION = "";
     public static final String DEFAULT_Z_ID = "";
     public static final String DEFAULT__CLIENT_ID = "";
     public static final String DEFAULT__CLIENT_VERSION = "";
@@ -56,6 +59,8 @@ public final class CommonReq extends Message {
     public final String _phone_newimei;
     @ProtoField(tag = 8, type = Message.Datatype.INT64)
     public final Long _timestamp;
+    @ProtoField(tag = 49, type = Message.Datatype.INT64)
+    public final Long active_timestamp;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String apid;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
@@ -66,20 +71,30 @@ public final class CommonReq extends Message {
     public final String brand_type;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String c3_aid;
+    @ProtoField(tag = 46, type = Message.Datatype.STRING)
+    public final String caid;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String cuid;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String cuid_galaxy2;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String cuid_gid;
+    @ProtoField(tag = 53, type = Message.Datatype.STRING)
+    public final String event_day;
+    @ProtoField(tag = 50, type = Message.Datatype.INT64)
+    public final Long first_install_time;
     @ProtoField(tag = 43, type = Message.Datatype.STRING)
     public final String framework_ver;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String from;
+    @ProtoField(tag = 45, type = Message.Datatype.STRING)
+    public final String idfa;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_teenager;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String ka;
+    @ProtoField(tag = 51, type = Message.Datatype.INT64)
+    public final Long last_update_time;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String lego_lib_version;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -102,8 +117,16 @@ public final class CommonReq extends Message {
     public final String oaid;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String pversion;
+    @ProtoField(tag = 40, type = Message.Datatype.INT32)
+    public final Integer q_type;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String sample_id;
+    @ProtoField(tag = 39, type = Message.Datatype.DOUBLE)
+    public final Double scr_dip;
+    @ProtoField(tag = 38, type = Message.Datatype.INT32)
+    public final Integer scr_h;
+    @ProtoField(tag = 37, type = Message.Datatype.INT32)
+    public final Integer scr_w;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String sdk_ver;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
@@ -123,7 +146,14 @@ public final class CommonReq extends Message {
     public static final Integer DEFAULT__CLIENT_TYPE = 0;
     public static final Long DEFAULT__TIMESTAMP = 0L;
     public static final Integer DEFAULT_NET_TYPE = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_Q_TYPE = 0;
     public static final Integer DEFAULT_IS_TEENAGER = 0;
+    public static final Long DEFAULT_ACTIVE_TIMESTAMP = 0L;
+    public static final Long DEFAULT_FIRST_INSTALL_TIME = 0L;
+    public static final Long DEFAULT_LAST_UPDATE_TIME = 0L;
 
     private CommonReq(Builder builder, boolean z) {
         super(builder);
@@ -308,6 +338,26 @@ public final class CommonReq extends Message {
             } else {
                 this.sample_id = builder.sample_id;
             }
+            if (builder.scr_w == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = builder.scr_w;
+            }
+            if (builder.scr_h == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = builder.scr_h;
+            }
+            if (builder.scr_dip == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = builder.scr_dip;
+            }
+            if (builder.q_type == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = builder.q_type;
+            }
             if (builder.is_teenager == null) {
                 this.is_teenager = DEFAULT_IS_TEENAGER;
             } else {
@@ -325,9 +375,39 @@ public final class CommonReq extends Message {
             }
             if (builder.swan_game_ver == null) {
                 this.swan_game_ver = "";
-                return;
             } else {
                 this.swan_game_ver = builder.swan_game_ver;
+            }
+            if (builder.idfa == null) {
+                this.idfa = "";
+            } else {
+                this.idfa = builder.idfa;
+            }
+            if (builder.caid == null) {
+                this.caid = "";
+            } else {
+                this.caid = builder.caid;
+            }
+            if (builder.active_timestamp == null) {
+                this.active_timestamp = DEFAULT_ACTIVE_TIMESTAMP;
+            } else {
+                this.active_timestamp = builder.active_timestamp;
+            }
+            if (builder.first_install_time == null) {
+                this.first_install_time = DEFAULT_FIRST_INSTALL_TIME;
+            } else {
+                this.first_install_time = builder.first_install_time;
+            }
+            if (builder.last_update_time == null) {
+                this.last_update_time = DEFAULT_LAST_UPDATE_TIME;
+            } else {
+                this.last_update_time = builder.last_update_time;
+            }
+            if (builder.event_day == null) {
+                this.event_day = "";
+                return;
+            } else {
+                this.event_day = builder.event_day;
                 return;
             }
         }
@@ -367,13 +447,23 @@ public final class CommonReq extends Message {
         this.oaid = builder.oaid;
         this.c3_aid = builder.c3_aid;
         this.sample_id = builder.sample_id;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
         this.is_teenager = builder.is_teenager;
         this.sdk_ver = builder.sdk_ver;
         this.framework_ver = builder.framework_ver;
         this.swan_game_ver = builder.swan_game_ver;
+        this.idfa = builder.idfa;
+        this.caid = builder.caid;
+        this.active_timestamp = builder.active_timestamp;
+        this.first_install_time = builder.first_install_time;
+        this.last_update_time = builder.last_update_time;
+        this.event_day = builder.event_day;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
         public String BDUSS;
         public String _client_id;
@@ -383,18 +473,24 @@ public final class CommonReq extends Message {
         public String _phone_imei;
         public String _phone_newimei;
         public Long _timestamp;
+        public Long active_timestamp;
         public String apid;
         public String applist;
         public String brand;
         public String brand_type;
         public String c3_aid;
+        public String caid;
         public String cuid;
         public String cuid_galaxy2;
         public String cuid_gid;
+        public String event_day;
+        public Long first_install_time;
         public String framework_ver;
         public String from;
+        public String idfa;
         public Integer is_teenager;
         public String ka;
+        public Long last_update_time;
         public String lego_lib_version;
         public String m_api;
         public String m_cost;
@@ -406,7 +502,11 @@ public final class CommonReq extends Message {
         public Integer net_type;
         public String oaid;
         public String pversion;
+        public Integer q_type;
         public String sample_id;
+        public Double scr_dip;
+        public Integer scr_h;
+        public Integer scr_w;
         public String sdk_ver;
         public String sign;
         public String smallflow;
@@ -458,10 +558,20 @@ public final class CommonReq extends Message {
                 this.oaid = commonReq.oaid;
                 this.c3_aid = commonReq.c3_aid;
                 this.sample_id = commonReq.sample_id;
+                this.scr_w = commonReq.scr_w;
+                this.scr_h = commonReq.scr_h;
+                this.scr_dip = commonReq.scr_dip;
+                this.q_type = commonReq.q_type;
                 this.is_teenager = commonReq.is_teenager;
                 this.sdk_ver = commonReq.sdk_ver;
                 this.framework_ver = commonReq.framework_ver;
                 this.swan_game_ver = commonReq.swan_game_ver;
+                this.idfa = commonReq.idfa;
+                this.caid = commonReq.caid;
+                this.active_timestamp = commonReq.active_timestamp;
+                this.first_install_time = commonReq.first_install_time;
+                this.last_update_time = commonReq.last_update_time;
+                this.event_day = commonReq.event_day;
             }
         }
 

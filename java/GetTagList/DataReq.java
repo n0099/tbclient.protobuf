@@ -3,20 +3,20 @@ package tbclient.GetTagList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes23.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_FROM = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5030common;
+    public final CommonReq f14823common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer from;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5030common = builder.f5031common;
+            this.f14823common = builder.f14824common;
             if (builder.from == null) {
                 this.from = DEFAULT_FROM;
                 return;
@@ -25,15 +25,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5030common = builder.f5031common;
+        this.f14823common = builder.f14824common;
         this.from = builder.from;
     }
 
-    /* loaded from: classes23.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5031common;
+        public CommonReq f14824common;
         public Integer from;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5031common = dataReq.f5030common;
+                this.f14824common = dataReq.f14823common;
                 this.from = dataReq.from;
             }
         }

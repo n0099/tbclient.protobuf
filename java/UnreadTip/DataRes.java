@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_SHOW_TIP = "";
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -60,7 +60,7 @@ public final class DataRes extends Message {
         this.thread_count = builder.thread_count;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Long hide_unix;
         public List<String> portrait_list;

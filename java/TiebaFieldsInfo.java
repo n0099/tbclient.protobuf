@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class TiebaFieldsInfo extends Message {
     public static final String DEFAULT_TIEBA_NAME = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
@@ -42,7 +42,7 @@ public final class TiebaFieldsInfo extends Message {
         this.user_rank = immutableCopyOf(builder.user_rank);
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TiebaFieldsInfo> {
         public List<String> tieba_fields;
         public String tieba_name;

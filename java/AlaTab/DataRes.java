@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ForcusRecommand;
 import tbclient.ThreadInfo;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 4)
     public final ForcusRecommand forcus_recommand;
@@ -47,7 +47,7 @@ public final class DataRes extends Message {
         this.forcus_recommand = builder.forcus_recommand;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ForcusRecommand forcus_recommand;
         public Integer has_more;

@@ -3,7 +3,7 @@ package tbclient.GetMyPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -31,7 +31,7 @@ public final class DataRes extends Message {
         this.partial_visible_toast = builder.partial_visible_toast;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String partial_visible_toast;
         public ThreadInfo thread_info;

@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.AddBawuPopInfo;
 import tbclient.AlaLiveNotify;
 import tbclient.AnchorInfo;
 import tbclient.Anti;
@@ -26,13 +27,14 @@ import tbclient.RecommendInfo;
 import tbclient.RedpacketRain;
 import tbclient.SdkTopicThread;
 import tbclient.ServiceArea;
+import tbclient.SignActivityInfo;
 import tbclient.SmartApp;
 import tbclient.ThreadInfo;
 import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
@@ -42,6 +44,8 @@ public final class DataRes extends Message {
     public final ActivityConfig activity_config;
     @ProtoField(tag = 23)
     public final ActivityHead activityhead;
+    @ProtoField(tag = 107)
+    public final AddBawuPopInfo add_bawu_pop;
     @ProtoField(tag = 65)
     public final AgreeBanner agree_banner;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
@@ -186,6 +190,10 @@ public final class DataRes extends Message {
     public final Integer server_time;
     @ProtoField(label = Message.Label.REPEATED, tag = 100)
     public final List<ServiceArea> service_area;
+    @ProtoField(tag = 108, type = Message.Datatype.INT32)
+    public final Integer show_adsense;
+    @ProtoField(tag = 106)
+    public final SignActivityInfo sign_activity_info;
     @ProtoField(tag = 95)
     public final SmartApp smart_app;
     @ProtoField(label = Message.Label.REPEATED, tag = 94, type = Message.Datatype.STRING)
@@ -272,6 +280,7 @@ public final class DataRes extends Message {
     public static final List<String> DEFAULT_SMART_APP_AVATAR = Collections.emptyList();
     public static final List<ServiceArea> DEFAULT_SERVICE_AREA = Collections.emptyList();
     public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP = 0;
+    public static final Integer DEFAULT_SHOW_ADSENSE = 0;
 
     private DataRes(Builder builder, boolean z) {
         super(builder);
@@ -549,7 +558,15 @@ public final class DataRes extends Message {
                 this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
             }
             this.forum_rule = builder.forum_rule;
-            return;
+            this.sign_activity_info = builder.sign_activity_info;
+            this.add_bawu_pop = builder.add_bawu_pop;
+            if (builder.show_adsense == null) {
+                this.show_adsense = DEFAULT_SHOW_ADSENSE;
+                return;
+            } else {
+                this.show_adsense = builder.show_adsense;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -648,12 +665,16 @@ public final class DataRes extends Message {
         this.item_info = builder.item_info;
         this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
         this.forum_rule = builder.forum_rule;
+        this.sign_activity_info = builder.sign_activity_info;
+        this.add_bawu_pop = builder.add_bawu_pop;
+        this.show_adsense = builder.show_adsense;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityConfig activity_config;
         public ActivityHead activityhead;
+        public AddBawuPopInfo add_bawu_pop;
         public AgreeBanner agree_banner;
         public Integer ala_insert_floor;
         public List<ThreadInfo> ala_insert_thread;
@@ -726,6 +747,8 @@ public final class DataRes extends Message {
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
         public List<ServiceArea> service_area;
+        public Integer show_adsense;
+        public SignActivityInfo sign_activity_info;
         public SmartApp smart_app;
         public List<String> smart_app_avatar;
         public Integer smart_frs_type;
@@ -853,6 +876,9 @@ public final class DataRes extends Message {
                 this.item_info = dataRes.item_info;
                 this.is_get_horse_race_lamp = dataRes.is_get_horse_race_lamp;
                 this.forum_rule = dataRes.forum_rule;
+                this.sign_activity_info = dataRes.sign_activity_info;
+                this.add_bawu_pop = dataRes.add_bawu_pop;
+                this.show_adsense = dataRes.show_adsense;
             }
         }
 

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class BusinessAccountInfo extends Message {
     public static final String DEFAULT_BUSINESS_NAME = "";
     public static final String DEFAULT_IDENTIFI_EXPLAIN = "";
@@ -49,7 +49,7 @@ public final class BusinessAccountInfo extends Message {
         this.identifi_explain = builder.identifi_explain;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<BusinessAccountInfo> {
         public String business_name;
         public String identifi_explain;

@@ -3,20 +3,20 @@ package tbclient.IncrForumAccessCount;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5058common;
+    public final CommonReq f14851common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long forum_id;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5058common = builder.f5059common;
+            this.f14851common = builder.f14852common;
             if (builder.forum_id == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
                 return;
@@ -25,15 +25,15 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5058common = builder.f5059common;
+        this.f14851common = builder.f14852common;
         this.forum_id = builder.forum_id;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5059common;
+        public CommonReq f14852common;
         public Long forum_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5059common = dataReq.f5058common;
+                this.f14852common = dataReq.f14851common;
                 this.forum_id = dataReq.forum_id;
             }
         }

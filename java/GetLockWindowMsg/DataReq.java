@@ -3,12 +3,12 @@ package tbclient.GetLockWindowMsg;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5000common;
+    public final CommonReq f14793common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long task_id;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5000common = builder.f5001common;
+            this.f14793common = builder.f14794common;
             if (builder.tid == null) {
                 this.tid = DEFAULT_TID;
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5000common = builder.f5001common;
+        this.f14793common = builder.f14794common;
         this.tid = builder.tid;
         this.task_id = builder.task_id;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5001common;
+        public CommonReq f14794common;
         public Long task_id;
         public Long tid;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5001common = dataReq.f5000common;
+                this.f14794common = dataReq.f14793common;
                 this.tid = dataReq.tid;
                 this.task_id = dataReq.task_id;
             }

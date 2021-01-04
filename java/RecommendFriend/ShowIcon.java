@@ -2,7 +2,7 @@ package tbclient.RecommendFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes21.dex */
+/* loaded from: classes8.dex */
 public final class ShowIcon extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -40,7 +40,7 @@ public final class ShowIcon extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ShowIcon> {
         public String icon;
         public String name;

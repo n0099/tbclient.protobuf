@@ -2,7 +2,7 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class Pay_Member_Info extends Message {
     public static final String DEFAULT_EXPIRE_REMIND = "";
     public static final String DEFAULT_URL = "";
@@ -49,7 +49,7 @@ public final class Pay_Member_Info extends Message {
         this.expire_remind = builder.expire_remind;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Pay_Member_Info> {
         public Integer end_time;
         public String expire_remind;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class McnAdInfo extends Message {
     public static final String DEFAULT_BUTTON_TITLE = "";
     public static final String DEFAULT_CARD_TITLE = "";
@@ -96,7 +96,7 @@ public final class McnAdInfo extends Message {
         return sb.toString();
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<McnAdInfo> {
         public Long ad_end_time;
         public Long ad_start_time;

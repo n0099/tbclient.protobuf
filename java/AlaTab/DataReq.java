@@ -3,14 +3,14 @@ package tbclient.AlaTab;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_LAST_VIEWED_FEEDS = "";
     public static final Integer DEFAULT_PN = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4918common;
+    public final CommonReq f14711common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String last_viewed_feeds;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f4918common = builder.f4919common;
+            this.f14711common = builder.f14712common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f4918common = builder.f4919common;
+        this.f14711common = builder.f14712common;
         this.pn = builder.pn;
         this.last_viewed_feeds = builder.last_viewed_feeds;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4919common;
+        public CommonReq f14712common;
         public String last_viewed_feeds;
         public Integer pn;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f4919common = dataReq.f4918common;
+                this.f14712common = dataReq.f14711common;
                 this.pn = dataReq.pn;
                 this.last_viewed_feeds = dataReq.last_viewed_feeds;
             }

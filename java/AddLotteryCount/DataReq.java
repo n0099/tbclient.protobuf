@@ -3,14 +3,14 @@ package tbclient.AddLotteryCount;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long award_act_id;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4910common;
+    public final CommonReq f14703common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer from_type;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f4910common = builder.f4911common;
+            this.f14703common = builder.f14704common;
             if (builder.award_act_id == null) {
                 this.award_act_id = DEFAULT_AWARD_ACT_ID;
             } else {
@@ -49,19 +49,19 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f4910common = builder.f4911common;
+        this.f14703common = builder.f14704common;
         this.award_act_id = builder.award_act_id;
         this.user_id = builder.user_id;
         this.from_type = builder.from_type;
         this.thread_id = builder.thread_id;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long award_act_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4911common;
+        public CommonReq f14704common;
         public Integer from_type;
         public Long thread_id;
         public Long user_id;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f4911common = dataReq.f4910common;
+                this.f14704common = dataReq.f14703common;
                 this.award_act_id = dataReq.award_act_id;
                 this.user_id = dataReq.user_id;
                 this.from_type = dataReq.from_type;

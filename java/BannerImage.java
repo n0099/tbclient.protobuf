@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class BannerImage extends Message {
     public static final String DEFAULT_AHEAD_URL = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -40,7 +40,7 @@ public final class BannerImage extends Message {
         this.title = builder.title;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<BannerImage> {
         public String ahead_url;
         public String img_url;

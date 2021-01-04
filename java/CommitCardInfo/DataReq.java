@@ -3,7 +3,7 @@ package tbclient.CommitCardInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes21.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_CARD_TYPE = 0;
     public static final String DEFAULT_IMAGE_INFO = "";
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f4930common;
+    public final CommonReq f14723common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String image_info;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f4930common = builder.f4931common;
+            this.f14723common = builder.f14724common;
             if (builder.resource_id == null) {
                 this.resource_id = "";
             } else {
@@ -41,18 +41,18 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f4930common = builder.f4931common;
+        this.f14723common = builder.f14724common;
         this.resource_id = builder.resource_id;
         this.card_type = builder.card_type;
         this.image_info = builder.image_info;
     }
 
-    /* loaded from: classes21.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer card_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f4931common;
+        public CommonReq f14724common;
         public String image_info;
         public String resource_id;
 
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f4931common = dataReq.f4930common;
+                this.f14724common = dataReq.f14723common;
                 this.resource_id = dataReq.resource_id;
                 this.card_type = dataReq.card_type;
                 this.image_info = dataReq.image_info;

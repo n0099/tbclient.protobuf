@@ -5,12 +5,12 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes22.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f5014common;
+    public final CommonReq f14807common;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f5014common = builder.f5015common;
+            this.f14807common = builder.f14808common;
             if (builder.kz == null) {
                 this.kz = DEFAULT_KZ;
             } else {
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f5014common = builder.f5015common;
+        this.f14807common = builder.f14808common;
         this.kz = builder.kz;
         this.with_floor = builder.with_floor;
         this.post_id = immutableCopyOf(builder.post_id);
@@ -85,11 +85,11 @@ public final class DataReq extends Message {
         this.is_comm_reverse = builder.is_comm_reverse;
     }
 
-    /* loaded from: classes22.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f5015common;
+        public CommonReq f14808common;
         public Integer is_comm_reverse;
         public Long kz;
         public List<Long> post_id;
@@ -104,7 +104,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f5015common = dataReq.f5014common;
+                this.f14808common = dataReq.f14807common;
                 this.kz = dataReq.kz;
                 this.with_floor = dataReq.with_floor;
                 this.post_id = DataReq.copyOf(dataReq.post_id);
