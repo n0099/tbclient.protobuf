@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14887common;
+    public final CommonReq f14954common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -21,11 +21,11 @@ public final class DataReq extends Message {
             } else {
                 this.collect_mark = builder.collect_mark;
             }
-            this.f14887common = builder.f14888common;
+            this.f14954common = builder.f14955common;
             return;
         }
         this.collect_mark = builder.collect_mark;
-        this.f14887common = builder.f14888common;
+        this.f14954common = builder.f14955common;
     }
 
     /* loaded from: classes8.dex */
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public Integer collect_mark;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14888common;
+        public CommonReq f14955common;
 
         public Builder() {
         }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.collect_mark = dataReq.collect_mark;
-                this.f14888common = dataReq.f14887common;
+                this.f14955common = dataReq.f14954common;
             }
         }
 

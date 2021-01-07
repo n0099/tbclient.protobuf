@@ -12,7 +12,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14717common;
+    public final CommonReq f14722common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String forumName;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -52,7 +52,7 @@ public final class ReqData extends Message {
             } else {
                 this.forumName = builder.forumName;
             }
-            this.f14717common = builder.f14718common;
+            this.f14722common = builder.f14723common;
             if (builder.tid == null) {
                 this.tid = DEFAULT_TID;
             } else {
@@ -84,7 +84,7 @@ public final class ReqData extends Message {
         this.pid = builder.pid;
         this.postType = builder.postType;
         this.forumName = builder.forumName;
-        this.f14717common = builder.f14718common;
+        this.f14722common = builder.f14723common;
         this.tid = builder.tid;
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_nid = builder.ori_ugc_nid;
@@ -96,7 +96,7 @@ public final class ReqData extends Message {
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14718common;
+        public CommonReq f14723common;
         public String forumName;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -115,7 +115,7 @@ public final class ReqData extends Message {
                 this.pid = reqData.pid;
                 this.postType = reqData.postType;
                 this.forumName = reqData.forumName;
-                this.f14718common = reqData.f14717common;
+                this.f14723common = reqData.f14722common;
                 this.tid = reqData.tid;
                 this.ori_ugc_type = reqData.ori_ugc_type;
                 this.ori_ugc_nid = reqData.ori_ugc_nid;
