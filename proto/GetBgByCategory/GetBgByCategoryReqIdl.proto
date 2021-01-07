@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetBgByCategory/DataReq.proto";
+
+message GetBgByCategoryReqIdl {
+    DataReq data = 1;
+}

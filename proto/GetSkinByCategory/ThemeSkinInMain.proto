@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ThemeSkinPropMain.proto";
+
+message ThemeSkinInMain {
+    string skin_category = 1;
+    repeated ThemeSkinPropMain props = 2;
+}

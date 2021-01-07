@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "GetMemberTaskList/ImgInfo.proto";
+import "GetMemberTaskList/PointTaskInfo.proto";
+import "GetMemberTaskList/UserPointInfo.proto";
+
+message DataRes {
+    repeated PointTaskInfo task_list = 1;
+    repeated ImgInfo img_list = 2;
+    UserPointInfo user_point_info = 3;
+}

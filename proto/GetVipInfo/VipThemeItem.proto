@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message VipThemeItem {
+    string img_url = 1;
+    string title = 2;
+    uint32 props_id = 3;
+    uint32 props_category = 4;
+    string props_category_name = 5;
+    string desc = 6;
+    string link = 7;
+    string tag_img_url = 8;
+    string update_time = 10;
+    uint32 type = 11;
+    uint32 id = 12;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message ReqData {
+    string tailContent = 1;
+    string fontColor = 2;
+    string fontKeyName = 3;
+}

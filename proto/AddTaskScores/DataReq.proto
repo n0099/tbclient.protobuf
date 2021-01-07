@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    uint64 user_id = 2;
+    uint32 task_id = 3;
+}

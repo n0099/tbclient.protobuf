@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetMemberTaskList/DataReq.proto";
+
+message GetMemberTaskListReqIdl {
+    DataReq data = 1;
+}

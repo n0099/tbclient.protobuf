@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message VipUpgrade {
+    uint32 normal = 1;
+    uint32 pay = 2;
+    string text = 3;
+    string button = 4;
+    string link = 5;
+    string svip = 6;
+    string expire = 7;
+    string card_id = 8;
+}

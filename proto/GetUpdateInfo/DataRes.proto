@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetUpdateInfo/ThemeSkinUpdateInfo.proto";
+
+message DataRes {
+    repeated ThemeSkinUpdateInfo props = 1;
+}

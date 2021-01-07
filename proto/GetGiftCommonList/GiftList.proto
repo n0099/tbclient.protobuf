@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Item.proto";
+
+message GiftList {
+    string type_name = 1;
+    uint32 type_id = 2;
+    repeated Item item = 3;
+}

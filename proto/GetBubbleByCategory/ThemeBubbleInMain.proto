@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ThemeBgProp.proto";
+
+message ThemeBubbleInMain {
+    string bubble_category = 1;
+    repeated ThemeBgProp props = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "DoDailyTask/RetDataList.proto";
+
+message DataRes {
+    RetDataList ret_data = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message VipParrScores {
+    uint32 scores_total = 1;
+    uint32 scores_fetch = 2;
+    uint32 scores_money = 3;
+    uint32 scores_other = 4;
+    uint32 update_time = 5;
+    uint32 i_total = 6;
+    uint32 i_money = 7;
+    uint32 i_other = 8;
+    uint32 level = 9;
+    uint32 limit = 10;
+}

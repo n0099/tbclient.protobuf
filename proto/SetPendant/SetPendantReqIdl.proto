@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "SetPendant/DataReq.proto";
+
+message SetPendantReqIdl {
+    DataReq data = 1;
+}

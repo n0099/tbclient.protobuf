@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "AutoPayInfo.proto";
+import "GetVipInfo/VipBannerList.proto";
+import "GetVipInfo/VipBasicList.proto";
+import "GetVipInfo/VipDailyList.proto";
+import "GetVipInfo/VipRank.proto";
+import "GetVipInfo/VipSpecialList.proto";
+import "GetVipInfo/VipTaskList.proto";
+import "GetVipInfo/VipThemeList.proto";
+import "GetVipInfo/VipUpgrade.proto";
+import "GetVipInfo/VipUser.proto";
+
+message DataRes {
+    VipUser user = 1;
+    string grade_intro_title = 2;
+    string grade_intro_link = 3;
+    VipUpgrade upgrade = 4;
+    VipSpecialList special_list = 5;
+    VipThemeList theme_list = 6;
+    VipBannerList banner_list = 7;
+    VipTaskList task_list = 8;
+    VipRank rank = 9;
+    uint32 today_get_score = 10;
+    uint32 today_unget_score = 11;
+    repeated string card_order = 12;
+    uint32 update_time = 13;
+    VipSpecialList cooperate_list = 14;
+    repeated VipBasicList basic_list = 15;
+    VipDailyList daily_list = 16;
+    AutoPayInfo autopay_info = 17;
+}

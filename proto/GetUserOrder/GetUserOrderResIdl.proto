@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetUserOrder/DataRes.proto";
+
+message GetUserOrderResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

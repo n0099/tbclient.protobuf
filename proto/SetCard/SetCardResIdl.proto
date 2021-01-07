@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "SetCard/DataRes.proto";
+
+message SetCardResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

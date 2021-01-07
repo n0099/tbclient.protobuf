@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "Lego/DataRes.proto";
+
+message LegoResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "GetIconList/Discount.proto";
+
+message IconInfo {
+    string name = 1;
+    string iconId = 2;
+    string picUrl = 3;
+    int32 non_member_t = 4;
+    int32 dubi = 5;
+    int32 duration = 6;
+    int32 hide = 7;
+    repeated Discount discount = 8;
+    string sign = 9;
+    string tag_name = 10;
+}

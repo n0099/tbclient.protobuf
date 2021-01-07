@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "GetVipInfo/VipSpecialItem.proto";
+
+message VipBasicList {
+    repeated VipSpecialItem item = 1;
+    uint32 card_type = 8;
+    string class_name = 9;
+    string class_url_name = 10;
+    string class_url = 11;
+    string card_id = 12;
+}

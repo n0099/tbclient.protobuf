@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message PointTaskInfo {
+    int64 task_id = 1;
+    string task_name = 2;
+    string task_intro = 3;
+    int32 is_finish = 4;
+    int32 type = 5;
+    int32 points_add = 6;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "FinishMemberTask/DataReq.proto";
+
+message FinishMemberTaskReqIdl {
+    DataReq data = 1;
+}

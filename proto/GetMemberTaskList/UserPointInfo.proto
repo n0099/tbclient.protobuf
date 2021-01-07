@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message UserPointInfo {
+    int64 points_total = 1;
+}

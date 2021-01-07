@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ThemeRecommand.proto";
+import "ThemeSkinPropMain.proto";
+
+message DataRes {
+    repeated ThemeSkinPropMain skins = 1;
+    ThemeRecommand recommend = 2;
+    uint32 hasmore = 3;
+}

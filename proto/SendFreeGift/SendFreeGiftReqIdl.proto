@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "SendFreeGift/DataReq.proto";
+
+message SendFreeGiftReqIdl {
+    DataReq data = 1;
+}

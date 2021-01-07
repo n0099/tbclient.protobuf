@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetCardByCategory/DataReq.proto";
+
+message GetCardByCategoryReqIdl {
+    DataReq data = 1;
+}

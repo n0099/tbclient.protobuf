@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message DataRes {
+    string title = 1;
+    string description = 2;
+    string pic_url = 3;
+    string permission = 4;
+    string props_state_img = 5;
+    string activity_url = 6;
+    int32 free_user_level = 7;
+    int32 is_finished = 8;
+    uint32 daily_previlege_status = 9;
+}

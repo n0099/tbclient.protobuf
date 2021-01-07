@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    int32 pn = 2;
+    int32 rn = 3;
+    int32 order_type = 4;
+    int32 show_member = 5;
+}

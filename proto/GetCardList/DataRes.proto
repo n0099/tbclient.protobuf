@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "ThemeCardPropMain.proto";
+import "ThemeRecommand.proto";
+
+message DataRes {
+    ThemeRecommand recommend = 1;
+    repeated ThemeCardPropMain cards = 2;
+    uint32 has_more = 3;
+    uint32 is_default = 4;
+}

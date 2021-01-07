@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "DeleteTail/ReqData.proto";
+
+message DeleteTailReqIdl {
+    ReqData data = 1;
+}

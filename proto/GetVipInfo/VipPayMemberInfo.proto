@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message VipPayMemberInfo {
+    uint32 props_id = 1;
+    uint32 end_time = 2;
+    string pic_url = 3;
+    uint32 now_time = 4;
+}

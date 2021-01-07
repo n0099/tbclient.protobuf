@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "DoDailyTask/DialogItem.proto";
+import "DoDailyTask/TaskInfoItem.proto";
+
+message RetDataList {
+    DialogItem dialog = 1;
+    TaskInfoItem task_info = 2;
+    uint32 need_dialog = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message DataRes {
+    string page_info = 1;
+    repeated string cards = 2;
+    int32 has_more = 3;
+}

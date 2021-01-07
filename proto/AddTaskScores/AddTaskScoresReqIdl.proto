@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "AddTaskScores/DataReq.proto";
+
+message AddTaskScoresReqIdl {
+    DataReq data = 1;
+}

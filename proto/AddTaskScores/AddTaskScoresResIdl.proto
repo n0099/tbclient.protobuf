@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "AddTaskScores/DataRes.proto";
+import "Error.proto";
+
+message AddTaskScoresResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}
