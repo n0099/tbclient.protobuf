@@ -3,14 +3,14 @@ package tbclient.SearchSug;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ISFORUM = "";
     public static final String DEFAULT_WORD = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14978common;
+    public final CommonReq f14681common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String isforum;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14978common = builder.f14979common;
+            this.f14681common = builder.f14682common;
             if (builder.word == null) {
                 this.word = "";
             } else {
@@ -33,16 +33,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14978common = builder.f14979common;
+        this.f14681common = builder.f14682common;
         this.word = builder.word;
         this.isforum = builder.isforum;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14979common;
+        public CommonReq f14682common;
         public String isforum;
         public String word;
 
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14979common = dataReq.f14978common;
+                this.f14682common = dataReq.f14681common;
                 this.word = dataReq.word;
                 this.isforum = dataReq.isforum;
             }

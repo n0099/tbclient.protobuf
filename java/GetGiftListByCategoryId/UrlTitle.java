@@ -2,7 +2,7 @@ package tbclient.GetGiftListByCategoryId;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class UrlTitle extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_URL = "";
@@ -31,7 +31,7 @@ public final class UrlTitle extends Message {
         this.url = builder.url;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<UrlTitle> {
         public String name;
         public String url;

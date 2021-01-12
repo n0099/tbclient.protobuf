@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final List<Integer> DEFAULT_ARR_TAG_ID = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.INT32)
@@ -13,12 +13,12 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f15006common;
+    public final CommonReq f14709common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f15006common = builder.f15007common;
+            this.f14709common = builder.f14710common;
             if (builder.arr_tag_id == null) {
                 this.arr_tag_id = DEFAULT_ARR_TAG_ID;
                 return;
@@ -27,16 +27,16 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f15006common = builder.f15007common;
+        this.f14709common = builder.f14710common;
         this.arr_tag_id = immutableCopyOf(builder.arr_tag_id);
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<Integer> arr_tag_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f15007common;
+        public CommonReq f14710common;
 
         public Builder() {
         }
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f15007common = dataReq.f15006common;
+                this.f14710common = dataReq.f14709common;
                 this.arr_tag_id = DataReq.copyOf(dataReq.arr_tag_id);
             }
         }

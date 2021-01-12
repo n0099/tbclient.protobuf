@@ -3,13 +3,13 @@ package tbclient.SendGiftAndroid;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_PASSWORD = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14982common;
+    public final CommonReq f14685common;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long gift_from;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14982common = builder.f14983common;
+            this.f14685common = builder.f14686common;
             if (builder.receiver_id == null) {
                 this.receiver_id = DEFAULT_RECEIVER_ID;
             } else {
@@ -65,7 +65,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14982common = builder.f14983common;
+        this.f14685common = builder.f14686common;
         this.receiver_id = builder.receiver_id;
         this.gift_id = builder.gift_id;
         this.price = builder.price;
@@ -74,11 +74,11 @@ public final class DataReq extends Message {
         this.password = builder.password;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14983common;
+        public CommonReq f14686common;
         public Long gift_from;
         public Integer gift_id;
         public Integer num;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14983common = dataReq.f14982common;
+                this.f14686common = dataReq.f14685common;
                 this.receiver_id = dataReq.receiver_id;
                 this.gift_id = dataReq.gift_id;
                 this.price = dataReq.price;

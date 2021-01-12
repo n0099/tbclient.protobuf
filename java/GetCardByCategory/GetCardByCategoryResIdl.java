@@ -3,7 +3,7 @@ package tbclient.GetCardByCategory;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class GetCardByCategoryResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetCardByCategoryResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GetCardByCategoryResIdl> {
         public DataRes data;
         public Error error;

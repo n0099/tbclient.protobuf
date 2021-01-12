@@ -3,7 +3,7 @@ package tbclient.TopicList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.VideoInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class MediaTopic extends Message {
     public static final String DEFAULT_PIC_URL = "";
     public static final Long DEFAULT_TOPIC_ID = 0L;
@@ -45,7 +45,7 @@ public final class MediaTopic extends Message {
         this.pic_url = builder.pic_url;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<MediaTopic> {
         public String pic_url;
         public Long topic_id;

@@ -3,13 +3,13 @@ package tbclient.GetTails;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14876common;
+    public final CommonReq f14579common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String st_type;
 
@@ -21,18 +21,18 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = builder.st_type;
             }
-            this.f14876common = builder.f14877common;
+            this.f14579common = builder.f14580common;
             return;
         }
         this.st_type = builder.st_type;
-        this.f14876common = builder.f14877common;
+        this.f14579common = builder.f14580common;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14877common;
+        public CommonReq f14580common;
         public String st_type;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class ReqData extends Message {
             super(reqData);
             if (reqData != null) {
                 this.st_type = reqData.st_type;
-                this.f14877common = reqData.f14876common;
+                this.f14580common = reqData.f14579common;
             }
         }
 

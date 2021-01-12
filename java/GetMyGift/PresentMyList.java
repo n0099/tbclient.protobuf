@@ -2,7 +2,7 @@ package tbclient.GetMyGift;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class PresentMyList extends Message {
     public static final String DEFAULT_CURRENCY_TYPE = "";
     public static final String DEFAULT_GIFT_NAME = "";
@@ -130,7 +130,7 @@ public final class PresentMyList extends Message {
         this.name_show = builder.name_show;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<PresentMyList> {
         public Integer create_time;
         public String currency_type;

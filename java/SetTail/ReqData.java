@@ -3,12 +3,12 @@ package tbclient.SetTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class ReqData extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14994common;
+    public final CommonReq f14697common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer tailId;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -29,19 +29,19 @@ public final class ReqData extends Message {
             } else {
                 this.tailId = builder.tailId;
             }
-            this.f14994common = builder.f14995common;
+            this.f14697common = builder.f14698common;
             return;
         }
         this.type = builder.type;
         this.tailId = builder.tailId;
-        this.f14994common = builder.f14995common;
+        this.f14697common = builder.f14698common;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14995common;
+        public CommonReq f14698common;
         public Integer tailId;
         public Integer type;
 
@@ -53,7 +53,7 @@ public final class ReqData extends Message {
             if (reqData != null) {
                 this.type = reqData.type;
                 this.tailId = reqData.tailId;
-                this.f14995common = reqData.f14994common;
+                this.f14698common = reqData.f14697common;
             }
         }
 

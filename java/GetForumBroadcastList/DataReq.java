@@ -5,14 +5,14 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.INT64)
     public final List<Long> bcast_ids;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14798common;
+    public final CommonReq f14501common;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14798common = builder.f14799common;
+            this.f14501common = builder.f14502common;
             if (builder.query_type == null) {
                 this.query_type = DEFAULT_QUERY_TYPE;
             } else {
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14798common = builder.f14799common;
+        this.f14501common = builder.f14502common;
         this.query_type = builder.query_type;
         this.staff_id = builder.staff_id;
         this.need_cnt = builder.need_cnt;
@@ -76,12 +76,12 @@ public final class DataReq extends Message {
         this.staff_id64 = builder.staff_id64;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<Long> bcast_ids;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14799common;
+        public CommonReq f14502common;
         public Long forum_id;
         public Integer need_cnt;
         public Integer query_type;
@@ -94,7 +94,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14799common = dataReq.f14798common;
+                this.f14502common = dataReq.f14501common;
                 this.query_type = dataReq.query_type;
                 this.staff_id = dataReq.staff_id;
                 this.need_cnt = dataReq.need_cnt;

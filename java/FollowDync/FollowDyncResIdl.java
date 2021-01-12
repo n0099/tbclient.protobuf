@@ -3,7 +3,7 @@ package tbclient.FollowDync;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class FollowDyncResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class FollowDyncResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FollowDyncResIdl> {
         public DataRes data;
         public Error error;
