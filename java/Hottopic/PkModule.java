@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class PkModule extends Message {
     public static final String DEFAULT_MODULE_NAME = "";
     public static final String DEFAULT_QUES_DESC = "";
@@ -79,7 +79,7 @@ public final class PkModule extends Message {
         this.user_pk_id = builder.user_pk_id;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<PkModule> {
         public String module_name;
         public PkView pk_1;

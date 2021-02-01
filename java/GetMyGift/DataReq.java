@@ -3,7 +3,7 @@ package tbclient.GetMyGift;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14545common;
+    public final CommonReq f14553common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
             } else {
                 this.uid = builder.uid;
             }
-            this.f14545common = builder.f14546common;
+            this.f14553common = builder.f14554common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -50,18 +50,18 @@ public final class DataReq extends Message {
             }
         }
         this.uid = builder.uid;
-        this.f14545common = builder.f14546common;
+        this.f14553common = builder.f14554common;
         this.pn = builder.pn;
         this.st_type = builder.st_type;
         this.account_type = builder.account_type;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer account_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14546common;
+        public CommonReq f14554common;
         public Integer pn;
         public String st_type;
         public Long uid;
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.uid = dataReq.uid;
-                this.f14546common = dataReq.f14545common;
+                this.f14554common = dataReq.f14553common;
                 this.pn = dataReq.pn;
                 this.st_type = dataReq.st_type;
                 this.account_type = dataReq.account_type;

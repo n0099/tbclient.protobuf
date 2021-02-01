@@ -5,6 +5,7 @@ import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.android.imsdk.upload.action.pb.IMPushPb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import com.thunder.livesdk.system.ThunderNetStateService;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes2.dex */
@@ -154,6 +155,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_activity;
     @ProtoField(tag = 59, type = Message.Datatype.UINT32)
     public final Integer is_ad;
+    @ProtoField(tag = 186, type = Message.Datatype.INT32)
+    public final Integer is_author_view;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
     @ProtoField(tag = 161, type = Message.Datatype.INT32)
@@ -204,7 +207,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_ntitle;
     @ProtoField(tag = 114, type = Message.Datatype.UINT32)
     public final Integer is_operate_thread;
-    @ProtoField(tag = 127, type = Message.Datatype.INT32)
+    @ProtoField(tag = ThunderNetStateService.NetState.SYSNET_UNKNOWN, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
@@ -503,6 +506,7 @@ public final class ThreadInfo extends Message {
     public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO = Collections.emptyList();
     public static final Integer DEFAULT_IS_LOCAL = 0;
     public static final Integer DEFAULT_DISTANCE = 0;
+    public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
 
     private ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1227,9 +1231,14 @@ public final class ThreadInfo extends Message {
             }
             if (builder.distance_text == null) {
                 this.distance_text = "";
-                return;
             } else {
                 this.distance_text = builder.distance_text;
+            }
+            if (builder.is_author_view == null) {
+                this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
+                return;
+            } else {
+                this.is_author_view = builder.is_author_view;
                 return;
             }
         }
@@ -1412,6 +1421,7 @@ public final class ThreadInfo extends Message {
         this.is_local = builder.is_local;
         this.distance = builder.distance;
         this.distance_text = builder.distance_text;
+        this.is_author_view = builder.is_author_view;
     }
 
     /* loaded from: classes2.dex */
@@ -1469,6 +1479,7 @@ public final class ThreadInfo extends Message {
         public Integer isLzDeleteAll;
         public Integer is_activity;
         public Integer is_ad;
+        public Integer is_author_view;
         public Integer is_bakan;
         public Integer is_bjh;
         public Integer is_book_chapter;
@@ -1781,6 +1792,7 @@ public final class ThreadInfo extends Message {
                 this.is_local = threadInfo.is_local;
                 this.distance = threadInfo.distance;
                 this.distance_text = threadInfo.distance_text;
+                this.is_author_view = threadInfo.is_author_view;
             }
         }
 

@@ -7,12 +7,15 @@ import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
+    public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_THREAD_IDS = "";
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String ad_context_list;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String ad_ext_params;
     @ProtoField(tag = 18)
     public final AdParam ad_param;
     @ProtoField(tag = 17)
@@ -20,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 8)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14715common;
+    public final CommonReq f14725common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -101,7 +104,7 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = builder.q_type;
             }
-            this.f14715common = builder.f14716common;
+            this.f14725common = builder.f14726common;
             if (builder.user_id == null) {
                 this.user_id = DEFAULT_USER_ID;
             } else {
@@ -146,9 +149,14 @@ public final class DataReq extends Message {
             this.ad_param = builder.ad_param;
             if (builder.ad_context_list == null) {
                 this.ad_context_list = "";
-                return;
             } else {
                 this.ad_context_list = builder.ad_context_list;
+            }
+            if (builder.ad_ext_params == null) {
+                this.ad_ext_params = "";
+                return;
+            } else {
+                this.ad_ext_params = builder.ad_context_list;
                 return;
             }
         }
@@ -159,7 +167,7 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
-        this.f14715common = builder.f14716common;
+        this.f14725common = builder.f14726common;
         this.user_id = builder.user_id;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
@@ -171,16 +179,18 @@ public final class DataReq extends Message {
         this.app_pos = builder.app_pos;
         this.ad_param = builder.ad_param;
         this.ad_context_list = builder.ad_context_list;
+        this.ad_ext_params = builder.ad_ext_params;
     }
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
+        public String ad_ext_params;
         public AdParam ad_param;
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14716common;
+        public CommonReq f14726common;
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
@@ -210,7 +220,7 @@ public final class DataReq extends Message {
                 this.scr_w = dataReq.scr_w;
                 this.scr_h = dataReq.scr_h;
                 this.q_type = dataReq.q_type;
-                this.f14716common = dataReq.f14715common;
+                this.f14726common = dataReq.f14725common;
                 this.user_id = dataReq.user_id;
                 this.da_idfa = dataReq.da_idfa;
                 this.platform = dataReq.platform;
@@ -222,6 +232,7 @@ public final class DataReq extends Message {
                 this.app_pos = dataReq.app_pos;
                 this.ad_param = dataReq.ad_param;
                 this.ad_context_list = dataReq.ad_context_list;
+                this.ad_ext_params = dataReq.ad_ext_params;
             }
         }
 

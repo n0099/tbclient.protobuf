@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<ThreadInfo> activity_list;
@@ -52,7 +52,7 @@ public final class DataRes extends Message {
         this.activity_list = immutableCopyOf(builder.activity_list);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThreadInfo> activity_list;
         public Integer has_more;

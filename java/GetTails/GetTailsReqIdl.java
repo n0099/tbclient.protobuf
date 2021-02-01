@@ -2,7 +2,7 @@ package tbclient.GetTails;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class GetTailsReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;
@@ -16,7 +16,7 @@ public final class GetTailsReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GetTailsReqIdl> {
         public ReqData data;
 

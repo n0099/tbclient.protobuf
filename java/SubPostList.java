@@ -19,8 +19,14 @@ public final class SubPostList extends Message {
     public final Integer floor;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
+    @ProtoField(tag = 12, type = Message.Datatype.INT32)
+    public final Integer is_author_view;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer is_fake_top;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_giftpost;
+    @ProtoField(tag = 10)
+    public final Lbs location;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer time;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -31,6 +37,8 @@ public final class SubPostList extends Message {
     public static final Long DEFAULT_AUTHOR_ID = 0L;
     public static final Integer DEFAULT_FLOOR = 0;
     public static final Integer DEFAULT_IS_GIFTPOST = 0;
+    public static final Integer DEFAULT_IS_FAKE_TOP = 0;
+    public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
 
     private SubPostList(Builder builder, boolean z) {
         super(builder);
@@ -72,7 +80,19 @@ public final class SubPostList extends Message {
                 this.is_giftpost = builder.is_giftpost;
             }
             this.agree = builder.agree;
-            return;
+            this.location = builder.location;
+            if (builder.is_fake_top == null) {
+                this.is_fake_top = DEFAULT_IS_FAKE_TOP;
+            } else {
+                this.is_fake_top = builder.is_fake_top;
+            }
+            if (builder.is_author_view == null) {
+                this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
+                return;
+            } else {
+                this.is_author_view = builder.is_author_view;
+                return;
+            }
         }
         this.id = builder.id;
         this.content = immutableCopyOf(builder.content);
@@ -83,6 +103,9 @@ public final class SubPostList extends Message {
         this.author = builder.author;
         this.is_giftpost = builder.is_giftpost;
         this.agree = builder.agree;
+        this.location = builder.location;
+        this.is_fake_top = builder.is_fake_top;
+        this.is_author_view = builder.is_author_view;
     }
 
     /* loaded from: classes2.dex */
@@ -93,7 +116,10 @@ public final class SubPostList extends Message {
         public List<PbContent> content;
         public Integer floor;
         public Long id;
+        public Integer is_author_view;
+        public Integer is_fake_top;
         public Integer is_giftpost;
+        public Lbs location;
         public Integer time;
         public String title;
 
@@ -112,6 +138,9 @@ public final class SubPostList extends Message {
                 this.author = subPostList.author;
                 this.is_giftpost = subPostList.is_giftpost;
                 this.agree = subPostList.agree;
+                this.location = subPostList.location;
+                this.is_fake_top = subPostList.is_fake_top;
+                this.is_author_view = subPostList.is_author_view;
             }
         }
 

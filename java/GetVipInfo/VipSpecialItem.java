@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class VipSpecialItem extends Message {
     public static final String DEFAULT_BUTTON_TEXT_FINISH = "";
     public static final String DEFAULT_BUTTON_TEXT_INITIAL = "";
@@ -121,7 +121,7 @@ public final class VipSpecialItem extends Message {
         this.button_text_finish = builder.button_text_finish;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VipSpecialItem> {
         public String button_text_finish;
         public String button_text_initial;

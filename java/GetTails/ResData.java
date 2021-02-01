@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class ResData extends Message {
     public static final String DEFAULT_DEFAULT_COLOR = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -42,7 +42,7 @@ public final class ResData extends Message {
         this.default_color = builder.default_color;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ResData> {
         public List<ColorInfo> colorList;
         public String default_color;

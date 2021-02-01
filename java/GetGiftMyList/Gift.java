@@ -2,7 +2,7 @@ package tbclient.GetGiftMyList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class Gift extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PLAY_URL = "";
@@ -67,7 +67,7 @@ public final class Gift extends Message {
         this.num = builder.num;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Gift> {
         public Integer gift_id;
         public String name;

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Post;
 import tbclient.User;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long nextftid;
@@ -61,7 +61,7 @@ public final class DataRes extends Message {
         this.user_list = immutableCopyOf(builder.user_list);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Long nextftid;
         public List<Post> post_list;

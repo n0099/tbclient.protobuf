@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class AutoPayInfo extends Message {
     public static final String DEFAULT_AUTOPAY_URL = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -49,7 +49,7 @@ public final class AutoPayInfo extends Message {
         this.autopay_url = builder.autopay_url;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<AutoPayInfo> {
         public String autopay_url;
         public Long begin_time;

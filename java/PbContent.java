@@ -21,6 +21,7 @@ public final class PbContent extends Message {
     public static final String DEFAULT_SRC = "";
     public static final String DEFAULT_STATIC = "";
     public static final String DEFAULT_TEXT = "";
+    public static final String DEFAULT_TOPIC_SPECIAL_ICON = "";
     public static final String DEFAULT_VOICE_MD5 = "";
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String _static;
@@ -62,6 +63,8 @@ public final class PbContent extends Message {
     public final Integer is_native_app;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer is_sub;
+    @ProtoField(tag = 38, type = Message.Datatype.UINT64)
+    public final Long item_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
@@ -84,6 +87,8 @@ public final class PbContent extends Message {
     public final String src;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String text;
+    @ProtoField(tag = 37, type = Message.Datatype.STRING)
+    public final String topic_special_icon;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer type;
     @ProtoField(tag = 15, type = Message.Datatype.INT64)
@@ -108,6 +113,7 @@ public final class PbContent extends Message {
     public static final Integer DEFAULT_URL_TYPE = 0;
     public static final Integer DEFAULT_IS_LONG_PIC = 0;
     public static final Integer DEFAULT_SHOW_ORIGINAL_BTN = 0;
+    public static final Long DEFAULT_ITEM_ID = 0L;
 
     private PbContent(Builder builder, boolean z) {
         super(builder);
@@ -273,9 +279,19 @@ public final class PbContent extends Message {
             }
             if (builder.cdn_src_active == null) {
                 this.cdn_src_active = "";
-                return;
             } else {
                 this.cdn_src_active = builder.cdn_src_active;
+            }
+            if (builder.topic_special_icon == null) {
+                this.topic_special_icon = "";
+            } else {
+                this.topic_special_icon = builder.topic_special_icon;
+            }
+            if (builder.item_id == null) {
+                this.item_id = DEFAULT_ITEM_ID;
+                return;
+            } else {
+                this.item_id = builder.item_id;
                 return;
             }
         }
@@ -315,6 +331,8 @@ public final class PbContent extends Message {
         this.is_long_pic = builder.is_long_pic;
         this.show_original_btn = builder.show_original_btn;
         this.cdn_src_active = builder.cdn_src_active;
+        this.topic_special_icon = builder.topic_special_icon;
+        this.item_id = builder.item_id;
     }
 
     /* loaded from: classes2.dex */
@@ -339,6 +357,7 @@ public final class PbContent extends Message {
         public Integer is_long_pic;
         public Integer is_native_app;
         public Integer is_sub;
+        public Long item_id;
         public String link;
         public String media_subtitle;
         public MemeInfo meme_info;
@@ -350,6 +369,7 @@ public final class PbContent extends Message {
         public Integer show_original_btn;
         public String src;
         public String text;
+        public String topic_special_icon;
         public Integer type;
         public Long uid;
         public Integer url_type;
@@ -398,6 +418,8 @@ public final class PbContent extends Message {
                 this.is_long_pic = pbContent.is_long_pic;
                 this.show_original_btn = pbContent.show_original_btn;
                 this.cdn_src_active = pbContent.cdn_src_active;
+                this.topic_special_icon = pbContent.topic_special_icon;
+                this.item_id = pbContent.item_id;
             }
         }
 

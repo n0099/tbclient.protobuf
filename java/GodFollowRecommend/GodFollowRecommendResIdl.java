@@ -3,7 +3,7 @@ package tbclient.GodFollowRecommend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class GodFollowRecommendResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GodFollowRecommendResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GodFollowRecommendResIdl> {
         public DataRes data;
         public Error error;

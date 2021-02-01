@@ -3,13 +3,13 @@ package tbclient.ShowLiveSecondPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_NETWORK_TYPE = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14701common;
+    public final CommonReq f14711common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer entry_type;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
@@ -43,7 +43,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14701common = builder.f14702common;
+            this.f14711common = builder.f14712common;
             if (builder.entry_type == null) {
                 this.entry_type = DEFAULT_ENTRY_TYPE;
             } else {
@@ -97,7 +97,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14701common = builder.f14702common;
+        this.f14711common = builder.f14712common;
         this.entry_type = builder.entry_type;
         this.pn = builder.pn;
         this.ps = builder.ps;
@@ -110,11 +110,11 @@ public final class DataReq extends Message {
         this.lng = builder.lng;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14702common;
+        public CommonReq f14712common;
         public Integer entry_type;
         public Double lat;
         public Double lng;
@@ -132,7 +132,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14702common = dataReq.f14701common;
+                this.f14712common = dataReq.f14711common;
                 this.entry_type = dataReq.entry_type;
                 this.pn = dataReq.pn;
                 this.ps = dataReq.ps;

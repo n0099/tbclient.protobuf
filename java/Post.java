@@ -80,6 +80,8 @@ public final class Post extends Message {
     public final Integer need_log;
     @ProtoField(tag = 42)
     public final OriginThreadInfo origin_thread_info;
+    @ProtoField(tag = 54)
+    public final Item outer_item;
     @ProtoField(tag = 35)
     public final DealInfo pb_deal_info;
     @ProtoField(tag = 30)
@@ -331,6 +333,7 @@ public final class Post extends Message {
                 this.item_star = immutableCopyOf(builder.item_star);
             }
             this.item = builder.item;
+            this.outer_item = builder.outer_item;
             return;
         }
         this.id = builder.id;
@@ -385,6 +388,7 @@ public final class Post extends Message {
         this.is_wonderful_post = builder.is_wonderful_post;
         this.item_star = immutableCopyOf(builder.item_star);
         this.item = builder.item;
+        this.outer_item = builder.outer_item;
     }
 
     /* loaded from: classes2.dex */
@@ -422,6 +426,7 @@ public final class Post extends Message {
         public String lego_card;
         public Integer need_log;
         public OriginThreadInfo origin_thread_info;
+        public Item outer_item;
         public DealInfo pb_deal_info;
         public PbPostZan post_zan;
         public PbPresent present;
@@ -500,6 +505,7 @@ public final class Post extends Message {
                 this.is_wonderful_post = post.is_wonderful_post;
                 this.item_star = Post.copyOf(post.item_star);
                 this.item = post.item;
+                this.outer_item = post.outer_item;
             }
         }
 

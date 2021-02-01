@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class RelateForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_DESC = "";
@@ -85,7 +85,7 @@ public final class RelateForum extends Message {
         this.is_liked = builder.is_liked;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<RelateForum> {
         public String avatar;
         public String desc;

@@ -3,27 +3,27 @@ package tbclient.GetPendantByCategory;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14551common;
+    public final CommonReq f14559common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14551common = builder.f14552common;
+            this.f14559common = builder.f14560common;
         } else {
-            this.f14551common = builder.f14552common;
+            this.f14559common = builder.f14560common;
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14552common;
+        public CommonReq f14560common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14552common = dataReq.f14551common;
+                this.f14560common = dataReq.f14559common;
             }
         }
 

@@ -2,7 +2,7 @@ package tbclient.GetGiftList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class PresentNumInfo extends Message {
     public static final String DEFAULT_NAME = "";
     public static final Integer DEFAULT_NUM = 0;
@@ -31,7 +31,7 @@ public final class PresentNumInfo extends Message {
         this.name = builder.name;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PresentNumInfo> {
         public String name;
         public Integer num;

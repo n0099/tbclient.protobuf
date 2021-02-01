@@ -3,7 +3,7 @@ package tbclient.GetRepostRecommendForum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final Long DEFAULT_FORUM_ID = 0L;
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14563common;
+    public final CommonReq f14571common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14563common = builder.f14564common;
+            this.f14571common = builder.f14572common;
             if (builder.title == null) {
                 this.title = "";
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14563common = builder.f14564common;
+        this.f14571common = builder.f14572common;
         this.title = builder.title;
         this.content = builder.content;
         this.forum_id = builder.forum_id;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14564common;
+        public CommonReq f14572common;
         public String content;
         public Long forum_id;
         public String title;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14564common = dataReq.f14563common;
+                this.f14572common = dataReq.f14571common;
                 this.title = dataReq.title;
                 this.content = dataReq.content;
                 this.forum_id = dataReq.forum_id;

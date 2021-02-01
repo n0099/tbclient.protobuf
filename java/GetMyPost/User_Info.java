@@ -3,6 +3,7 @@ package tbclient.GetMyPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.BaijiahaoInfo;
+import tbclient.BusinessAccountInfo;
 import tbclient.GodInfo;
 import tbclient.NewGodInfo;
 /* loaded from: classes2.dex */
@@ -18,6 +19,8 @@ public final class User_Info extends Message {
     public final Balv balv;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String bawu_type;
+    @ProtoField(tag = 20)
+    public final BusinessAccountInfo business_account_info;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String fans_nickname;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -143,6 +146,7 @@ public final class User_Info extends Message {
             }
             this.baijiahao_info = builder.baijiahao_info;
             this.new_god_data = builder.new_god_data;
+            this.business_account_info = builder.business_account_info;
             return;
         }
         this.is_login = builder.is_login;
@@ -164,6 +168,7 @@ public final class User_Info extends Message {
         this.bawu_type = builder.bawu_type;
         this.baijiahao_info = builder.baijiahao_info;
         this.new_god_data = builder.new_god_data;
+        this.business_account_info = builder.business_account_info;
     }
 
     /* loaded from: classes2.dex */
@@ -171,6 +176,7 @@ public final class User_Info extends Message {
         public BaijiahaoInfo baijiahao_info;
         public Balv balv;
         public String bawu_type;
+        public BusinessAccountInfo business_account_info;
         public String fans_nickname;
         public Integer fans_num;
         public Integer gender;
@@ -213,6 +219,7 @@ public final class User_Info extends Message {
                 this.bawu_type = user_Info.bawu_type;
                 this.baijiahao_info = user_Info.baijiahao_info;
                 this.new_god_data = user_Info.new_god_data;
+                this.business_account_info = user_Info.business_account_info;
             }
         }
 

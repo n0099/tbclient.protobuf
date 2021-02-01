@@ -3,7 +3,7 @@ package tbclient.GetGiftMyList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class GetGiftMyListResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetGiftMyListResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GetGiftMyListResIdl> {
         public DataRes data;
         public Error error;

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AutoPayInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_GRADE_INTRO_LINK = "";
     public static final String DEFAULT_GRADE_INTRO_TITLE = "";
@@ -118,7 +118,7 @@ public final class DataRes extends Message {
         this.autopay_info = builder.autopay_info;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AutoPayInfo autopay_info;
         public VipBannerList banner_list;

@@ -2,7 +2,7 @@ package tbclient.DoDailyTask;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class RetDataList extends Message {
     public static final Integer DEFAULT_NEED_DIALOG = 0;
     @ProtoField(tag = 1)
@@ -30,7 +30,7 @@ public final class RetDataList extends Message {
         this.need_dialog = builder.need_dialog;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<RetDataList> {
         public DialogItem dialog;
         public Integer need_dialog;

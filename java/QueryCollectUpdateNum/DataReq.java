@@ -3,7 +3,7 @@ package tbclient.QueryCollectUpdateNum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_COLLECT_MARK = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14657common;
+    public final CommonReq f14667common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
@@ -21,19 +21,19 @@ public final class DataReq extends Message {
             } else {
                 this.collect_mark = builder.collect_mark;
             }
-            this.f14657common = builder.f14658common;
+            this.f14667common = builder.f14668common;
             return;
         }
         this.collect_mark = builder.collect_mark;
-        this.f14657common = builder.f14658common;
+        this.f14667common = builder.f14668common;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer collect_mark;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14658common;
+        public CommonReq f14668common;
 
         public Builder() {
         }
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.collect_mark = dataReq.collect_mark;
-                this.f14658common = dataReq.f14657common;
+                this.f14668common = dataReq.f14667common;
             }
         }
 

@@ -2,7 +2,7 @@ package tbclient.GetMemberTaskList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class PointTaskInfo extends Message {
     public static final String DEFAULT_TASK_INTRO = "";
     public static final String DEFAULT_TASK_NAME = "";
@@ -67,7 +67,7 @@ public final class PointTaskInfo extends Message {
         this.points_add = builder.points_add;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PointTaskInfo> {
         public Integer is_finish;
         public Integer points_add;

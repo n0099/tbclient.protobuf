@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static final List<String> DEFAULT_CARDS = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;
@@ -42,7 +42,7 @@ public final class DataRes extends Message {
         this.has_more = builder.has_more;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<String> cards;
         public Integer has_more;

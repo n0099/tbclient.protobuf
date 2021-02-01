@@ -9,6 +9,7 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_FIRST_HEADLINE = "";
+    public static final String DEFAULT_FORUM_USER_LIVE_MSG = "";
     public static final String DEFAULT_FRS_TOPLIVE_PIC = "";
     public static final String DEFAULT_HLS_URL = "";
     public static final String DEFAULT_LABEL_NAME = "";
@@ -41,6 +42,8 @@ public final class AlaLiveInfo extends Message {
     public final Integer duration;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String first_headline;
+    @ProtoField(tag = 47, type = Message.Datatype.STRING)
+    public final String forum_user_live_msg;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
     public final Integer frs_toplive_force;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
@@ -339,9 +342,14 @@ public final class AlaLiveInfo extends Message {
             }
             if (builder.room_name == null) {
                 this.room_name = "";
-                return;
             } else {
                 this.room_name = builder.room_name;
+            }
+            if (builder.forum_user_live_msg == null) {
+                this.forum_user_live_msg = "";
+                return;
+            } else {
+                this.forum_user_live_msg = builder.forum_user_live_msg;
                 return;
             }
         }
@@ -389,6 +397,7 @@ public final class AlaLiveInfo extends Message {
         this.room_id = builder.room_id;
         this.room_status = builder.room_status;
         this.room_name = builder.room_name;
+        this.forum_user_live_msg = builder.forum_user_live_msg;
     }
 
     /* loaded from: classes2.dex */
@@ -401,6 +410,7 @@ public final class AlaLiveInfo extends Message {
         public Long distance;
         public Integer duration;
         public String first_headline;
+        public String forum_user_live_msg;
         public Integer frs_toplive_force;
         public String frs_toplive_pic;
         public Integer frs_toplive_type;
@@ -488,6 +498,7 @@ public final class AlaLiveInfo extends Message {
                 this.room_id = alaLiveInfo.room_id;
                 this.room_status = alaLiveInfo.room_status;
                 this.room_name = alaLiveInfo.room_name;
+                this.forum_user_live_msg = alaLiveInfo.forum_user_live_msg;
             }
         }
 

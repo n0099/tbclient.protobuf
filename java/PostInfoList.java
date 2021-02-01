@@ -54,6 +54,8 @@ public final class PostInfoList extends Message {
     public final Integer hide_post;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String ip;
+    @ProtoField(tag = 57, type = Message.Datatype.INT32)
+    public final Integer is_author_view;
     @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean is_deal;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
@@ -162,6 +164,7 @@ public final class PostInfoList extends Message {
     public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
     public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO = Collections.emptyList();
     public static final List<PrivSets> DEFAULT_PRIV_SETS = Collections.emptyList();
+    public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
 
     private PostInfoList(Builder builder, boolean z) {
         super(builder);
@@ -395,9 +398,14 @@ public final class PostInfoList extends Message {
             }
             if (builder.priv_sets == null) {
                 this.priv_sets = DEFAULT_PRIV_SETS;
-                return;
             } else {
                 this.priv_sets = immutableCopyOf(builder.priv_sets);
+            }
+            if (builder.is_author_view == null) {
+                this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
+                return;
+            } else {
+                this.is_author_view = builder.is_author_view;
                 return;
             }
         }
@@ -457,6 +465,7 @@ public final class PostInfoList extends Message {
         this.pb_link_info = immutableCopyOf(builder.pb_link_info);
         this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
         this.priv_sets = immutableCopyOf(builder.priv_sets);
+        this.is_author_view = builder.is_author_view;
     }
 
     /* loaded from: classes2.dex */
@@ -479,6 +488,7 @@ public final class PostInfoList extends Message {
         public Integer freq_num;
         public Integer hide_post;
         public String ip;
+        public Integer is_author_view;
         public Boolean is_deal;
         public Integer is_ntitle;
         public Integer is_post_deleted;
@@ -580,6 +590,7 @@ public final class PostInfoList extends Message {
                 this.pb_link_info = PostInfoList.copyOf(postInfoList.pb_link_info);
                 this.pb_goods_info = PostInfoList.copyOf(postInfoList.pb_goods_info);
                 this.priv_sets = PostInfoList.copyOf(postInfoList.priv_sets);
+                this.is_author_view = postInfoList.is_author_view;
             }
         }
 

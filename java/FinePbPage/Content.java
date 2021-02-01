@@ -2,7 +2,7 @@ package tbclient.FinePbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Content extends Message {
     public static final String DEFAULT_BIG_CDN_SRC = "";
     public static final String DEFAULT_BIG_SIZE = "";
@@ -130,7 +130,7 @@ public final class Content extends Message {
         this.size = builder.size;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Content> {
         public Integer align;
         public String big_cdn_src;

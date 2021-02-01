@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class RankInfo extends Message {
     public static final List<RankItem> DEFAULT_RANK_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -24,7 +24,7 @@ public final class RankInfo extends Message {
         this.rank_list = immutableCopyOf(builder.rank_list);
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<RankInfo> {
         public List<RankItem> rank_list;
 

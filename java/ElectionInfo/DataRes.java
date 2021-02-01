@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.ElectionList;
 import tbclient.ManagerElection;
 import tbclient.Myrecord;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final List<ElectionList> DEFAULT_ELECTION_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;
@@ -47,7 +47,7 @@ public final class DataRes extends Message {
         this.vote_limit = builder.vote_limit;
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Basic basic;
         public List<ElectionList> election_list;

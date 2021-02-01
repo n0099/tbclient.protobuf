@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeRecommand;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static final List<ThemeSkinInMain> DEFAULT_SKINS = Collections.emptyList();
     @ProtoField(tag = 1)
@@ -29,7 +29,7 @@ public final class DataRes extends Message {
         this.skins = immutableCopyOf(builder.skins);
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ThemeRecommand recommend;
         public List<ThemeSkinInMain> skins;

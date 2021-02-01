@@ -2,7 +2,7 @@ package tbclient.GetUpdateInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class ThemeSkinUpdateInfo extends Message {
     public static final String DEFAULT_PACKAGE_URL = "";
     public static final Integer DEFAULT_PROPS_ID = 0;
@@ -40,7 +40,7 @@ public final class ThemeSkinUpdateInfo extends Message {
         this.package_url = builder.package_url;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ThemeSkinUpdateInfo> {
         public String package_url;
         public Integer props_id;

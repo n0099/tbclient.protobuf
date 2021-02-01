@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class VipInfo extends Message {
     public static final String DEFAULT_ICON_URL = "";
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -85,7 +85,7 @@ public final class VipInfo extends Message {
         this.icon_url = builder.icon_url;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VipInfo> {
         public Integer a_score;
         public Integer e_time;

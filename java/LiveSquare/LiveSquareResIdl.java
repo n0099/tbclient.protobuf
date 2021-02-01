@@ -3,7 +3,7 @@ package tbclient.LiveSquare;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class LiveSquareResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class LiveSquareResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LiveSquareResIdl> {
         public DataRes data;
         public Error error;

@@ -3,7 +3,7 @@ package tbclient.GetBubbleByCategory;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class GetBubbleByCategoryResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetBubbleByCategoryResIdl extends Message {
         this.error = builder.error;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GetBubbleByCategoryResIdl> {
         public DataRes data;
         public Error error;
