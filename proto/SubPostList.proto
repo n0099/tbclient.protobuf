@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "Agree.proto";
+import "Lbs.proto";
 import "PbContent.proto";
 import "User.proto";
 
@@ -14,4 +15,7 @@ message SubPostList {
     User author = 7;
     int32 is_giftpost = 8;
     Agree agree = 9;
+    Lbs location = 10;
+    int32 is_fake_top = 11;
+    int32 is_author_view = 12;
 }

@@ -80,4 +80,5 @@ message PostInfoList {
     repeated PbLinkInfo pb_link_info = 54;
     repeated PbGoodsInfo pb_goods_info = 55;
     repeated PrivSets priv_sets = 56;
+    int32 is_author_view = 57;
 }

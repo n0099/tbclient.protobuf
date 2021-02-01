@@ -75,4 +75,5 @@ message Post {
     int32 is_wonderful_post = 51;
     repeated HeadItem item_star = 52;
     Item item = 53;
+    Item outer_item = 54;
 }

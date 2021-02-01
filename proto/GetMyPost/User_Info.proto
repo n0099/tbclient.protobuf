@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "BaijiahaoInfo.proto";
 import "Balv.proto";
+import "BusinessAccountInfo.proto";
 import "GodInfo.proto";
 import "NewGodInfo.proto";
 
@@ -25,4 +26,5 @@ message User_Info {
     string bawu_type = 17;
     BaijiahaoInfo baijiahao_info = 18;
     NewGodInfo new_god_data = 19;
+    BusinessAccountInfo business_account_info = 20;
 }

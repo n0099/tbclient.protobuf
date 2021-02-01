@@ -23,4 +23,5 @@ message DataReq {
     AppPosInfo app_pos = 17;
     AdParam ad_param = 18;
     string ad_context_list = 19;
+    string ad_ext_params = 20;
 }

@@ -52,4 +52,5 @@ message AlaLiveInfo {
     uint64 room_id = 44;
     int32 room_status = 45;
     string room_name = 46;
+    string forum_user_live_msg = 47;
 }

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated ThreadInfo hot_thread_info = 1;
+}
