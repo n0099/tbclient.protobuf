@@ -1,7 +1,11 @@
 package tbclient;
 
+import com.baidu.live.tbadk.core.sharedpref.SharedPrefConfig;
+import com.baidu.tbadk.core.atomData.BigdayActivityConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import org.json.JSONException;
+import org.json.JSONObject;
 /* loaded from: classes2.dex */
 public final class McnAdInfo extends Message {
     public static final String DEFAULT_BUTTON_TITLE = "";
@@ -128,6 +132,43 @@ public final class McnAdInfo extends Message {
         @Override // com.squareup.wire.Message.Builder
         public McnAdInfo build(boolean z) {
             return new McnAdInfo(this, z);
+        }
+    }
+
+    public static McnAdInfo parseFromJson(JSONObject jSONObject) {
+        if (jSONObject == null) {
+            return null;
+        }
+        Builder builder = new Builder();
+        builder.ad_start_time = Long.valueOf(jSONObject.optLong(SharedPrefConfig.AD_START_TIME));
+        builder.ad_end_time = Long.valueOf(jSONObject.optLong(SharedPrefConfig.AD_END_TIME));
+        builder.pic_url = jSONObject.optString("pic_url");
+        builder.jump_url = jSONObject.optString(BigdayActivityConfig.JUMP_URL);
+        builder.card_title = jSONObject.optString("card_title");
+        builder.button_title = jSONObject.optString("button_title");
+        builder.effect_time = Long.valueOf(jSONObject.optLong("effect_time"));
+        builder.expire_time = Long.valueOf(jSONObject.optLong("expire_time"));
+        return builder.build(false);
+    }
+
+    public static JSONObject toJson(McnAdInfo mcnAdInfo) {
+        if (mcnAdInfo == null) {
+            return null;
+        }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put(SharedPrefConfig.AD_START_TIME, mcnAdInfo.ad_start_time);
+            jSONObject.put(SharedPrefConfig.AD_END_TIME, mcnAdInfo.ad_end_time);
+            jSONObject.put("pic_url", mcnAdInfo.pic_url);
+            jSONObject.put(BigdayActivityConfig.JUMP_URL, mcnAdInfo.jump_url);
+            jSONObject.put("card_title", mcnAdInfo.card_title);
+            jSONObject.put("button_title", mcnAdInfo.button_title);
+            jSONObject.put("effect_time", mcnAdInfo.effect_time);
+            jSONObject.put("expire_time", mcnAdInfo.expire_time);
+            return jSONObject;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return jSONObject;
         }
     }
 }

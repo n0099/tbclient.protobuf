@@ -1,9 +1,15 @@
 package tbclient;
 
+import com.baidu.tbadk.core.atomData.MissonDetailsActivityConfig;
+import com.baidu.tbadk.core.atomData.WriteActivityConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 /* loaded from: classes2.dex */
 public final class GoodsInfo extends Message {
     public static final String DEFAULT_AD_SOURCE = "";
@@ -340,5 +346,93 @@ public final class GoodsInfo extends Message {
         public GoodsInfo build(boolean z) {
             return new GoodsInfo(this, z);
         }
+    }
+
+    public static GoodsInfo parseFromJson(JSONObject jSONObject) {
+        if (jSONObject == null) {
+            return null;
+        }
+        Builder builder = new Builder();
+        builder.id = Integer.valueOf(jSONObject.optInt("id"));
+        builder.user_name = jSONObject.optString("user_name");
+        builder.user_portrait = jSONObject.optString("user_portrait");
+        builder.thread_title = jSONObject.optString(MissonDetailsActivityConfig.THREAD_TITLE);
+        builder.thread_pic = jSONObject.optString("thread_pic");
+        builder.pop_window_text = jSONObject.optString("pop_window_text");
+        builder.goods_style = Integer.valueOf(jSONObject.optInt("goods_style"));
+        ArrayList arrayList = new ArrayList();
+        JSONArray optJSONArray = jSONObject.optJSONArray("thread_pic_list");
+        int length = optJSONArray.length();
+        for (int i = 0; i < length; i++) {
+            arrayList.add(ThreadPicList.parseFromJson(optJSONArray.optJSONObject(i)));
+        }
+        builder.thread_pic_list = arrayList;
+        builder.label_visible = Integer.valueOf(jSONObject.optInt("label_visible"));
+        builder.label_text = jSONObject.optString("label_text");
+        builder.rank_level = Integer.valueOf(jSONObject.optInt("rank_level"));
+        builder.thread_type = jSONObject.optString("thread_type");
+        builder.button_text = jSONObject.optString("button_text");
+        builder.card_desc = jSONObject.optString("card_desc");
+        builder.card_tag = jSONObject.optString("card_tag");
+        builder.width = Integer.valueOf(jSONObject.optInt("width"));
+        builder.height = Integer.valueOf(jSONObject.optInt("height"));
+        builder.label_measure = Integer.valueOf(jSONObject.optInt("label_measure"));
+        builder.thread_content = jSONObject.optString("thread_content");
+        builder.lego_card = jSONObject.optString("lego_card");
+        builder.video_info = VideoInfo.parseFromJson(jSONObject.optJSONObject(WriteActivityConfig.VIDEO_INFO));
+        builder.tag_name = jSONObject.optString("tag_name");
+        builder.button_url = jSONObject.optString("button_url");
+        builder.ad_source = jSONObject.optString("ad_source");
+        builder.tag_name_url = jSONObject.optString("tag_name_url");
+        builder.tag_name_wh = jSONObject.optString("tag_name_wh");
+        builder.brand_icon = jSONObject.optString("brand_icon");
+        builder.brand_icon_wh = jSONObject.optString("brand_icon_wh");
+        builder.close_info = AdCloseInfo.parseFromJson(jSONObject.optJSONObject("close_info"));
+        return builder.build(false);
+    }
+
+    public static JSONObject toJson(GoodsInfo goodsInfo) {
+        if (goodsInfo == null) {
+            return null;
+        }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("id", goodsInfo.id);
+            jSONObject.put("user_name", goodsInfo.user_name);
+            jSONObject.put("user_portrait", goodsInfo.user_portrait);
+            jSONObject.put(MissonDetailsActivityConfig.THREAD_TITLE, goodsInfo.thread_title);
+            jSONObject.put("thread_pic", goodsInfo.thread_pic);
+            jSONObject.put("pop_window_text", goodsInfo.pop_window_text);
+            jSONObject.put("goods_style", goodsInfo.goods_style);
+            JSONArray jSONArray = new JSONArray();
+            for (ThreadPicList threadPicList : goodsInfo.thread_pic_list) {
+                jSONArray.put(ThreadPicList.toJson(threadPicList));
+            }
+            jSONObject.put("thread_pic_list", jSONArray);
+            jSONObject.put("label_visible", goodsInfo.label_visible);
+            jSONObject.put("label_text", goodsInfo.label_text);
+            jSONObject.put("rank_level", goodsInfo.rank_level);
+            jSONObject.put("thread_type", goodsInfo.thread_type);
+            jSONObject.put("button_text", goodsInfo.button_text);
+            jSONObject.put("card_desc", goodsInfo.card_desc);
+            jSONObject.put("card_tag", goodsInfo.card_tag);
+            jSONObject.put("width", goodsInfo.width);
+            jSONObject.put("height", goodsInfo.height);
+            jSONObject.put("label_measure", goodsInfo.label_measure);
+            jSONObject.put("thread_content", goodsInfo.thread_content);
+            jSONObject.put("lego_card", goodsInfo.lego_card);
+            jSONObject.put(WriteActivityConfig.VIDEO_INFO, VideoInfo.toJson(goodsInfo.video_info));
+            jSONObject.put("tag_name", goodsInfo.tag_name);
+            jSONObject.put("button_url", goodsInfo.button_url);
+            jSONObject.put("ad_source", goodsInfo.ad_source);
+            jSONObject.put("tag_name_url", goodsInfo.tag_name_url);
+            jSONObject.put("tag_name_wh", goodsInfo.tag_name_wh);
+            jSONObject.put("brand_icon", goodsInfo.brand_icon);
+            jSONObject.put("brand_icon_wh", goodsInfo.brand_icon_wh);
+            jSONObject.put("close_info", AdCloseInfo.toJson(goodsInfo.close_info));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jSONObject;
     }
 }

@@ -2,8 +2,12 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 /* loaded from: classes2.dex */
 public final class AdCloseInfo extends Message {
     public static final String DEFAULT_CONFIRM_TITLE = "";
@@ -81,5 +85,48 @@ public final class AdCloseInfo extends Message {
         public AdCloseInfo build(boolean z) {
             return new AdCloseInfo(this, z);
         }
+    }
+
+    public static AdCloseInfo parseFromJson(JSONObject jSONObject) {
+        if (jSONObject == null) {
+            return null;
+        }
+        Builder builder = new Builder();
+        builder.support_close = Integer.valueOf(jSONObject.optInt("support_close"));
+        builder.title = jSONObject.optString("title");
+        ArrayList arrayList = new ArrayList();
+        JSONArray optJSONArray = jSONObject.optJSONArray("reasons");
+        int length = optJSONArray.length();
+        for (int i = 0; i < length; i++) {
+            try {
+                arrayList.add(optJSONArray.getString(i));
+            } catch (Exception e) {
+            }
+        }
+        builder.reasons = arrayList;
+        builder.confirm_title = jSONObject.optString("confirm_title");
+        builder.action_control = ActionControl.parseFromJson(jSONObject.optJSONObject("action_control"));
+        return builder.build(false);
+    }
+
+    public static JSONObject toJson(AdCloseInfo adCloseInfo) {
+        if (adCloseInfo == null) {
+            return null;
+        }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("support_close", adCloseInfo.support_close);
+            jSONObject.put("title", adCloseInfo.title);
+            JSONArray jSONArray = new JSONArray();
+            for (String str : adCloseInfo.reasons) {
+                jSONArray.put(str);
+            }
+            jSONObject.put("reasons", jSONArray);
+            jSONObject.put("confirm_title", adCloseInfo.confirm_title);
+            jSONObject.put("action_control", ActionControl.toJson(adCloseInfo.action_control));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jSONObject;
     }
 }

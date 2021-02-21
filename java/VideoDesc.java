@@ -2,6 +2,8 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import org.json.JSONException;
+import org.json.JSONObject;
 /* loaded from: classes2.dex */
 public final class VideoDesc extends Message {
     public static final String DEFAULT_VIDEO_HEIGHT = "";
@@ -84,6 +86,37 @@ public final class VideoDesc extends Message {
         @Override // com.squareup.wire.Message.Builder
         public VideoDesc build(boolean z) {
             return new VideoDesc(this, z);
+        }
+    }
+
+    public static VideoDesc parseFromJson(JSONObject jSONObject) {
+        if (jSONObject == null) {
+            return null;
+        }
+        Builder builder = new Builder();
+        builder.video_id = Integer.valueOf(jSONObject.optInt("video_id"));
+        builder.video_md5 = jSONObject.optString("video_md5");
+        builder.video_url = jSONObject.optString("video_url");
+        builder.video_width = jSONObject.optString("video_width");
+        builder.video_height = jSONObject.optString("video_height");
+        return builder.build(false);
+    }
+
+    public static JSONObject toJson(VideoDesc videoDesc) {
+        if (videoDesc == null) {
+            return null;
+        }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("video_id", videoDesc.video_id);
+            jSONObject.put("video_md5", videoDesc.video_md5);
+            jSONObject.put("video_url", videoDesc.video_url);
+            jSONObject.put("video_width", videoDesc.video_width);
+            jSONObject.put("video_height", videoDesc.video_height);
+            return jSONObject;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return jSONObject;
         }
     }
 }

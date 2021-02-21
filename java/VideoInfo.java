@@ -1,9 +1,15 @@
 package tbclient;
 
+import com.baidu.live.tbadk.log.LogConfig;
+import com.baidu.tieba.recapp.activity.newstyle.AdWebVideoActivityConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 /* loaded from: classes2.dex */
 public final class VideoInfo extends Message {
     public static final String DEFAULT_MCN_LEAD_PAGE = "";
@@ -242,5 +248,75 @@ public final class VideoInfo extends Message {
         public VideoInfo build(boolean z) {
             return new VideoInfo(this, z);
         }
+    }
+
+    public static VideoInfo parseFromJson(JSONObject jSONObject) {
+        if (jSONObject == null) {
+            return null;
+        }
+        Builder builder = new Builder();
+        builder.video_md5 = jSONObject.optString("video_md5");
+        builder.video_url = jSONObject.optString("video_url");
+        builder.video_duration = Integer.valueOf(jSONObject.optInt(AdWebVideoActivityConfig.KEY_VIDEO_DURATION));
+        builder.video_width = Integer.valueOf(jSONObject.optInt("video_width"));
+        builder.video_height = Integer.valueOf(jSONObject.optInt("video_height"));
+        builder.thumbnail_url = jSONObject.optString("thumbnail_url");
+        builder.thumbnail_width = Integer.valueOf(jSONObject.optInt("thumbnail_width"));
+        builder.thumbnail_height = Integer.valueOf(jSONObject.optInt("thumbnail_height"));
+        builder.video_length = Integer.valueOf(jSONObject.optInt("video_length"));
+        builder.play_count = Integer.valueOf(jSONObject.optInt("play_count"));
+        builder.media_subtitle = jSONObject.optString("media_subtitle");
+        ArrayList arrayList = new ArrayList();
+        JSONArray optJSONArray = jSONObject.optJSONArray("video_desc");
+        int length = optJSONArray.length();
+        for (int i = 0; i < length; i++) {
+            arrayList.add(VideoDesc.parseFromJson(optJSONArray.optJSONObject(i)));
+        }
+        builder.video_desc = arrayList;
+        builder.video_select_flag = Integer.valueOf(jSONObject.optInt("video_select_flag"));
+        builder.video_type = Integer.valueOf(jSONObject.optInt(LogConfig.LOG_VIDEO_TYPE));
+        builder.is_vertical = Integer.valueOf(jSONObject.optInt("is_vertical"));
+        builder.video_h265 = VideoDesc.parseFromJson(jSONObject.optJSONObject("video_h265"));
+        builder.mcn_lead_page = jSONObject.optString("mcn_lead_page");
+        builder.mcn_ad_card = McnAdInfo.parseFromJson(jSONObject.optJSONObject("mcn_ad_card"));
+        builder.wth_mid_loc = Double.valueOf(jSONObject.optDouble("wth_mid_loc"));
+        builder.hth_mid_loc = Double.valueOf(jSONObject.optDouble("hth_mid_loc"));
+        return builder.build(false);
+    }
+
+    public static JSONObject toJson(VideoInfo videoInfo) {
+        if (videoInfo == null) {
+            return null;
+        }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("video_md5", videoInfo.video_md5);
+            jSONObject.put("video_url", videoInfo.video_url);
+            jSONObject.put(AdWebVideoActivityConfig.KEY_VIDEO_DURATION, videoInfo.video_duration);
+            jSONObject.put("video_width", videoInfo.video_width);
+            jSONObject.put("video_height", videoInfo.video_height);
+            jSONObject.put("thumbnail_url", videoInfo.thumbnail_url);
+            jSONObject.put("thumbnail_width", videoInfo.thumbnail_width);
+            jSONObject.put("thumbnail_height", videoInfo.thumbnail_height);
+            jSONObject.put("video_length", videoInfo.video_length);
+            jSONObject.put("play_count", videoInfo.play_count);
+            jSONObject.put("media_subtitle", videoInfo.media_subtitle);
+            JSONArray jSONArray = new JSONArray();
+            for (VideoDesc videoDesc : videoInfo.video_desc) {
+                jSONArray.put(VideoDesc.toJson(videoDesc));
+            }
+            jSONObject.put("video_desc", jSONArray);
+            jSONObject.put("video_select_flag", videoInfo.video_select_flag);
+            jSONObject.put(LogConfig.LOG_VIDEO_TYPE, videoInfo.video_type);
+            jSONObject.put("is_vertical", videoInfo.is_vertical);
+            jSONObject.put("video_h265", VideoDesc.toJson(videoInfo.video_h265));
+            jSONObject.put("mcn_lead_page", videoInfo.mcn_lead_page);
+            jSONObject.put("mcn_ad_card", McnAdInfo.toJson(videoInfo.mcn_ad_card));
+            jSONObject.put("wth_mid_loc", videoInfo.wth_mid_loc);
+            jSONObject.put("hth_mid_loc", videoInfo.hth_mid_loc);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jSONObject;
     }
 }

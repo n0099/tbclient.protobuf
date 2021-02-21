@@ -2,6 +2,8 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import org.json.JSONException;
+import org.json.JSONObject;
 /* loaded from: classes2.dex */
 public final class ActionControl extends Message {
     public static final String DEFAULT_NAME = "";
@@ -73,6 +75,35 @@ public final class ActionControl extends Message {
         @Override // com.squareup.wire.Message.Builder
         public ActionControl build(boolean z) {
             return new ActionControl(this, z);
+        }
+    }
+
+    public static ActionControl parseFromJson(JSONObject jSONObject) {
+        if (jSONObject == null) {
+            return null;
+        }
+        Builder builder = new Builder();
+        builder.url = jSONObject.optString("url");
+        builder.name = jSONObject.optString("name");
+        builder.text_color = jSONObject.optString("text_color");
+        builder.text_color_pressed = jSONObject.optString("text_color_pressed");
+        return builder.build(false);
+    }
+
+    public static JSONObject toJson(ActionControl actionControl) {
+        if (actionControl == null) {
+            return null;
+        }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("url", actionControl.url);
+            jSONObject.put("name", actionControl.name);
+            jSONObject.put("text_color", actionControl.text_color);
+            jSONObject.put("text_color_pressed", actionControl.text_color_pressed);
+            return jSONObject;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return jSONObject;
         }
     }
 }
