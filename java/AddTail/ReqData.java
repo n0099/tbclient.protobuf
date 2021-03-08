@@ -3,7 +3,7 @@ package tbclient.AddTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -11,7 +11,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14419common;
+    public final CommonReq f8649common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String fontColor;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -37,20 +37,20 @@ public final class ReqData extends Message {
             } else {
                 this.fontKeyName = builder.fontKeyName;
             }
-            this.f14419common = builder.f14420common;
+            this.f8649common = builder.f8650common;
             return;
         }
         this.tailContent = builder.tailContent;
         this.fontColor = builder.fontColor;
         this.fontKeyName = builder.fontKeyName;
-        this.f14419common = builder.f14420common;
+        this.f8649common = builder.f8650common;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14420common;
+        public CommonReq f8650common;
         public String fontColor;
         public String fontKeyName;
         public String tailContent;
@@ -64,7 +64,7 @@ public final class ReqData extends Message {
                 this.tailContent = reqData.tailContent;
                 this.fontColor = reqData.fontColor;
                 this.fontKeyName = reqData.fontKeyName;
-                this.f14420common = reqData.f14419common;
+                this.f8650common = reqData.f8649common;
             }
         }
 

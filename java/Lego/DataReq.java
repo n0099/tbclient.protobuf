@@ -3,7 +3,7 @@ package tbclient.Lego;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_FLIP_ID = "";
     public static final String DEFAULT_ITEM_ID = "";
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14627common;
+    public final CommonReq f8857common;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String flip_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -43,7 +43,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14627common = builder.f14628common;
+            this.f8857common = builder.f8858common;
             if (builder.page_id == null) {
                 this.page_id = DEFAULT_PAGE_ID;
             } else {
@@ -97,7 +97,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14627common = builder.f14628common;
+        this.f8857common = builder.f8858common;
         this.page_id = builder.page_id;
         this.page_type = builder.page_type;
         this.pn = builder.pn;
@@ -110,11 +110,11 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14628common;
+        public CommonReq f8858common;
         public String flip_id;
         public String item_id;
         public Long page_id;
@@ -132,7 +132,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14628common = dataReq.f14627common;
+                this.f8858common = dataReq.f8857common;
                 this.page_id = dataReq.page_id;
                 this.page_type = dataReq.page_type;
                 this.pn = dataReq.pn;

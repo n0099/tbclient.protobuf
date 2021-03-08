@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeBgProp;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class ThemeBubbleInMain extends Message {
     public static final String DEFAULT_BUBBLE_CATEGORY = "";
     public static final List<ThemeBgProp> DEFAULT_PROPS = Collections.emptyList();
@@ -34,7 +34,7 @@ public final class ThemeBubbleInMain extends Message {
         this.props = immutableCopyOf(builder.props);
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThemeBubbleInMain> {
         public String bubble_category;
         public List<ThemeBgProp> props;

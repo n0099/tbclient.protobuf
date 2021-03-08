@@ -3,7 +3,7 @@ package tbclient.GetCardList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class GetCardListResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
@@ -21,7 +21,7 @@ public final class GetCardListResIdl extends Message {
         this.data = builder.data;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GetCardListResIdl> {
         public DataRes data;
         public Error error;

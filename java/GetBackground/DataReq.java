@@ -3,13 +3,13 @@ package tbclient.GetBackground;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14483common;
+    public final CommonReq f8713common;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer props_id;
 
@@ -21,18 +21,18 @@ public final class DataReq extends Message {
             } else {
                 this.props_id = builder.props_id;
             }
-            this.f14483common = builder.f14484common;
+            this.f8713common = builder.f8714common;
             return;
         }
         this.props_id = builder.props_id;
-        this.f14483common = builder.f14484common;
+        this.f8713common = builder.f8714common;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14484common;
+        public CommonReq f8714common;
         public Integer props_id;
 
         public Builder() {
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.props_id = dataReq.props_id;
-                this.f14484common = dataReq.f14483common;
+                this.f8714common = dataReq.f8713common;
             }
         }
 

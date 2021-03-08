@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.LevelInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_LEVEL_NAME = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -52,7 +52,7 @@ public final class DataRes extends Message {
         this.level_name = builder.level_name;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer is_like;
         public List<LevelInfo> level_info;

@@ -3,13 +3,13 @@ package tbclient.GetTopicRelateThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TOPIC_NAME = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14593common;
+    public final CommonReq f8823common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long last_id;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -49,7 +49,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14593common = builder.f14594common;
+            this.f8823common = builder.f8824common;
             if (builder.topic_id == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
             } else {
@@ -113,7 +113,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14593common = builder.f14594common;
+        this.f8823common = builder.f8824common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.rn = builder.rn;
@@ -128,11 +128,11 @@ public final class DataReq extends Message {
         this.sort_type = builder.sort_type;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14594common;
+        public CommonReq f8824common;
         public Long last_id;
         public Integer page_no;
         public Integer pmy_source;
@@ -152,7 +152,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14594common = dataReq.f14593common;
+                this.f8824common = dataReq.f8823common;
                 this.topic_id = dataReq.topic_id;
                 this.topic_name = dataReq.topic_name;
                 this.rn = dataReq.rn;

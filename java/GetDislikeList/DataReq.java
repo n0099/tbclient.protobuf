@@ -3,12 +3,12 @@ package tbclient.GetDislikeList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14505common;
+    public final CommonReq f8735common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14505common = builder.f14506common;
+            this.f8735common = builder.f8736common;
             if (builder.user_id == null) {
                 this.user_id = DEFAULT_USER_ID;
             } else {
@@ -41,17 +41,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14505common = builder.f14506common;
+        this.f8735common = builder.f8736common;
         this.user_id = builder.user_id;
         this.pn = builder.pn;
         this.rn = builder.rn;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14506common;
+        public CommonReq f8736common;
         public Integer pn;
         public Integer rn;
         public Long user_id;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14506common = dataReq.f14505common;
+                this.f8736common = dataReq.f8735common;
                 this.user_id = dataReq.user_id;
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;

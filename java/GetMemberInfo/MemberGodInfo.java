@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.User;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class MemberGodInfo extends Message {
     public static final List<User> DEFAULT_FORUM_GOD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_FORUM_GOD_NUM = 0;
@@ -34,7 +34,7 @@ public final class MemberGodInfo extends Message {
         this.forum_god_num = builder.forum_god_num;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<MemberGodInfo> {
         public List<User> forum_god_list;
         public Integer forum_god_num;

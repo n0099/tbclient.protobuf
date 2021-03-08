@@ -2,7 +2,7 @@ package tbclient.GetGiftMyList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class GiftList extends Message {
     @ProtoField(tag = 2)
     public final Gift gift;
@@ -20,7 +20,7 @@ public final class GiftList extends Message {
         this.gift = builder.gift;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GiftList> {
         public Gift gift;
         public Sender sender;

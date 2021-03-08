@@ -2,7 +2,7 @@ package tbclient.LiveSquare;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class FunctionListInfo extends Message {
     public static final String DEFAULT_DESCRIBE = "";
     public static final String DEFAULT_ICON = "";
@@ -67,7 +67,7 @@ public final class FunctionListInfo extends Message {
         this.icon = builder.icon;
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FunctionListInfo> {
         public String describe;
         public String icon;

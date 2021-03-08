@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeBgProp;
 import tbclient.ThemeRecommand;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final List<ThemeBgProp> DEFAULT_BUBBLES = Collections.emptyList();
     public static final Integer DEFAULT_HASMORE = 0;
@@ -48,7 +48,7 @@ public final class DataRes extends Message {
         this.is_default = builder.is_default;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThemeBgProp> bubbles;
         public Integer hasmore;

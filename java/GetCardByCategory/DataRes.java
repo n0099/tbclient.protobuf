@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeRecommand;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final List<ThemeCardInMain> DEFAULT_CARDS = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;
@@ -38,7 +38,7 @@ public final class DataRes extends Message {
         this.has_more = builder.has_more;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThemeCardInMain> cards;
         public Integer has_more;

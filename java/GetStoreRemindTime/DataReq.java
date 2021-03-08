@@ -3,27 +3,27 @@ package tbclient.GetStoreRemindTime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14581common;
+    public final CommonReq f8811common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14581common = builder.f14582common;
+            this.f8811common = builder.f8812common;
         } else {
-            this.f14581common = builder.f14582common;
+            this.f8811common = builder.f8812common;
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14582common;
+        public CommonReq f8812common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14582common = dataReq.f14581common;
+                this.f8812common = dataReq.f8811common;
             }
         }
 

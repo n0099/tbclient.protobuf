@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ForumList;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer cur_page;
@@ -43,7 +43,7 @@ public final class DataRes extends Message {
         this.cur_page = builder.cur_page;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer cur_page;
         public List<ForumList> forum_list;

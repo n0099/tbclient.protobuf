@@ -3,7 +3,7 @@ package tbclient.FineZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ACTION = "";
     public static final Long DEFAULT_FTID = 0L;
@@ -12,14 +12,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14463common;
+    public final CommonReq f8693common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long ftid;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14463common = builder.f14464common;
+            this.f8693common = builder.f8694common;
             if (builder.action == null) {
                 this.action = "";
             } else {
@@ -33,17 +33,17 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14463common = builder.f14464common;
+        this.f8693common = builder.f8694common;
         this.action = builder.action;
         this.ftid = builder.ftid;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String action;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14464common;
+        public CommonReq f8694common;
         public Long ftid;
 
         public Builder() {
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14464common = dataReq.f14463common;
+                this.f8694common = dataReq.f8693common;
                 this.action = dataReq.action;
                 this.ftid = dataReq.ftid;
             }

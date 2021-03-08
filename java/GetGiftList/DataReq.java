@@ -3,7 +3,7 @@ package tbclient.GetGiftList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_BENEFIT_USERID = 0L;
     public static final String DEFAULT_SCENE_FROM = "";
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14523common;
+    public final CommonReq f8753common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String scene_from;
 
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
             } else {
                 this.scene_from = builder.scene_from;
             }
-            this.f14523common = builder.f14524common;
+            this.f8753common = builder.f8754common;
             if (builder.benefit_userid == null) {
                 this.benefit_userid = DEFAULT_BENEFIT_USERID;
                 return;
@@ -34,16 +34,16 @@ public final class DataReq extends Message {
             }
         }
         this.scene_from = builder.scene_from;
-        this.f14523common = builder.f14524common;
+        this.f8753common = builder.f8754common;
         this.benefit_userid = builder.benefit_userid;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long benefit_userid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14524common;
+        public CommonReq f8754common;
         public String scene_from;
 
         public Builder() {
@@ -53,7 +53,7 @@ public final class DataReq extends Message {
             super(dataReq);
             if (dataReq != null) {
                 this.scene_from = dataReq.scene_from;
-                this.f14524common = dataReq.f14523common;
+                this.f8754common = dataReq.f8753common;
                 this.benefit_userid = dataReq.benefit_userid;
             }
         }

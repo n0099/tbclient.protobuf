@@ -13,12 +13,12 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14641common;
+    public final CommonReq f8871common;
 
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14641common = builder.f14642common;
+            this.f8871common = builder.f8872common;
             if (builder.arr_forum_id == null) {
                 this.arr_forum_id = DEFAULT_ARR_FORUM_ID;
                 return;
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14641common = builder.f14642common;
+        this.f8871common = builder.f8872common;
         this.arr_forum_id = immutableCopyOf(builder.arr_forum_id);
     }
 
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
         public List<Long> arr_forum_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14642common;
+        public CommonReq f8872common;
 
         public Builder() {
         }
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14642common = dataReq.f14641common;
+                this.f8872common = dataReq.f8871common;
                 this.arr_forum_id = DataReq.copyOf(dataReq.arr_forum_id);
             }
         }

@@ -3,12 +3,12 @@ package tbclient.FollowDync;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14467common;
+    public final CommonReq f8697common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14467common = builder.f14468common;
+            this.f8697common = builder.f8698common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -65,7 +65,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14467common = builder.f14468common;
+        this.f8697common = builder.f8698common;
         this.pn = builder.pn;
         this.ps = builder.ps;
         this.scr_w = builder.scr_w;
@@ -74,11 +74,11 @@ public final class DataReq extends Message {
         this.scr_dip = builder.scr_dip;
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14468common;
+        public CommonReq f8698common;
         public Integer pn;
         public Integer ps;
         public Integer q_type;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14468common = dataReq.f14467common;
+                this.f8698common = dataReq.f8697common;
                 this.pn = dataReq.pn;
                 this.ps = dataReq.ps;
                 this.scr_w = dataReq.scr_w;

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeRecommand;
 import tbclient.ThemeSkinPropMain;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer hasmore;
@@ -39,7 +39,7 @@ public final class DataRes extends Message {
         this.hasmore = builder.hasmore;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer hasmore;
         public ThemeRecommand recommend;

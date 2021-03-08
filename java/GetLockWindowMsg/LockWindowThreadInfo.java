@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
-/* loaded from: classes8.dex */
+/* loaded from: classes7.dex */
 public final class LockWindowThreadInfo extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
@@ -52,7 +52,7 @@ public final class LockWindowThreadInfo extends Message {
         this.post_num = builder.post_num;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<LockWindowThreadInfo> {
         public List<PbContent> content;
         public Integer post_num;

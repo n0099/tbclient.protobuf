@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14563common;
+    public final CommonReq f8793common;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14563common = builder.f14564common;
+            this.f8793common = builder.f8794common;
             if (builder.kz == null) {
                 this.kz = DEFAULT_KZ;
             } else {
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14563common = builder.f14564common;
+        this.f8793common = builder.f8794common;
         this.kz = builder.kz;
         this.with_floor = builder.with_floor;
         this.post_id = immutableCopyOf(builder.post_id);
@@ -89,7 +89,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14564common;
+        public CommonReq f8794common;
         public Integer is_comm_reverse;
         public Long kz;
         public List<Long> post_id;
@@ -104,7 +104,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14564common = dataReq.f14563common;
+                this.f8794common = dataReq.f8793common;
                 this.kz = dataReq.kz;
                 this.with_floor = dataReq.with_floor;
                 this.post_id = DataReq.copyOf(dataReq.post_id);

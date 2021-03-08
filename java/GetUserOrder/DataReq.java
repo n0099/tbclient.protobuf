@@ -3,12 +3,12 @@ package tbclient.GetUserOrder;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14603common;
+    public final CommonReq f8833common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer order_type;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14603common = builder.f14604common;
+            this.f8833common = builder.f8834common;
             if (builder.pn == null) {
                 this.pn = DEFAULT_PN;
             } else {
@@ -49,18 +49,18 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14603common = builder.f14604common;
+        this.f8833common = builder.f8834common;
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.order_type = builder.order_type;
         this.show_member = builder.show_member;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14604common;
+        public CommonReq f8834common;
         public Integer order_type;
         public Integer pn;
         public Integer rn;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14604common = dataReq.f14603common;
+                this.f8834common = dataReq.f8833common;
                 this.pn = dataReq.pn;
                 this.rn = dataReq.rn;
                 this.order_type = dataReq.order_type;

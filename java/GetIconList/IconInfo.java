@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class IconInfo extends Message {
     public static final String DEFAULT_ICONID = "";
     public static final String DEFAULT_NAME = "";
@@ -105,7 +105,7 @@ public final class IconInfo extends Message {
         this.tag_name = builder.tag_name;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<IconInfo> {
         public List<Discount> discount;
         public Integer dubi;

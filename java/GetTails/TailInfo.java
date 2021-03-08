@@ -2,7 +2,7 @@ package tbclient.GetTails;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class TailInfo extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -58,7 +58,7 @@ public final class TailInfo extends Message {
         this.fontKeyName = builder.fontKeyName;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TailInfo> {
         public String fontColor;
         public String fontKeyName;

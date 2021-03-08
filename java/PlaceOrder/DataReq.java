@@ -3,7 +3,7 @@ package tbclient.PlaceOrder;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_BENEFIT_USERNAME = "";
     public static final String DEFAULT_SCENE_FROM = "";
@@ -18,7 +18,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f14659common;
+    public final CommonReq f8889common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer gift_id;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -40,7 +40,7 @@ public final class DataReq extends Message {
     private DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f14659common = builder.f14660common;
+            this.f8889common = builder.f8890common;
             if (builder.scene_from == null) {
                 this.scene_from = "";
             } else {
@@ -89,7 +89,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f14659common = builder.f14660common;
+        this.f8889common = builder.f8890common;
         this.scene_from = builder.scene_from;
         this.gift_id = builder.gift_id;
         this.benefit_userid = builder.benefit_userid;
@@ -101,7 +101,7 @@ public final class DataReq extends Message {
         this.account_type = builder.account_type;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long account_id;
         public Integer account_type;
@@ -109,7 +109,7 @@ public final class DataReq extends Message {
         public String benefit_username;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f14660common;
+        public CommonReq f8890common;
         public Integer gift_id;
         public Integer num;
         public Long post_id;
@@ -122,7 +122,7 @@ public final class DataReq extends Message {
         public Builder(DataReq dataReq) {
             super(dataReq);
             if (dataReq != null) {
-                this.f14660common = dataReq.f14659common;
+                this.f8890common = dataReq.f8889common;
                 this.scene_from = dataReq.scene_from;
                 this.gift_id = dataReq.gift_id;
                 this.benefit_userid = dataReq.benefit_userid;
