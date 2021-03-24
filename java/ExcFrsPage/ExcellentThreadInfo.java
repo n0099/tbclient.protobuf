@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ExcellentThreadInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ABTEST = "";
@@ -67,131 +67,7 @@ public final class ExcellentThreadInfo extends Message {
     public static final Long DEFAULT_RANK = 0L;
     public static final Integer DEFAULT_PUBLISH_TIME = 0;
 
-    private ExcellentThreadInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.excid == null) {
-                this.excid = DEFAULT_EXCID;
-            } else {
-                this.excid = builder.excid;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.frs_type == null) {
-                this.frs_type = DEFAULT_FRS_TYPE;
-            } else {
-                this.frs_type = builder.frs_type;
-            }
-            if (builder.pb_type == null) {
-                this.pb_type = DEFAULT_PB_TYPE;
-            } else {
-                this.pb_type = builder.pb_type;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder._abstract == null) {
-                this._abstract = "";
-            } else {
-                this._abstract = builder._abstract;
-            }
-            if (builder.thumbnail == null) {
-                this.thumbnail = DEFAULT_THUMBNAIL;
-            } else {
-                this.thumbnail = immutableCopyOf(builder.thumbnail);
-            }
-            if (builder.tag_code == null) {
-                this.tag_code = DEFAULT_TAG_CODE;
-            } else {
-                this.tag_code = builder.tag_code;
-            }
-            if (builder.tag_name == null) {
-                this.tag_name = "";
-            } else {
-                this.tag_name = builder.tag_name;
-            }
-            if (builder.zansum == null) {
-                this.zansum = DEFAULT_ZANSUM;
-            } else {
-                this.zansum = builder.zansum;
-            }
-            if (builder.post_num == null) {
-                this.post_num = DEFAULT_POST_NUM;
-            } else {
-                this.post_num = builder.post_num;
-            }
-            if (builder.thread_type == null) {
-                this.thread_type = DEFAULT_THREAD_TYPE;
-            } else {
-                this.thread_type = builder.thread_type;
-            }
-            this.twzhibo_info = builder.twzhibo_info;
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.abtest == null) {
-                this.abtest = "";
-            } else {
-                this.abtest = builder.abtest;
-            }
-            if (builder.source == null) {
-                this.source = DEFAULT_SOURCE;
-            } else {
-                this.source = builder.source;
-            }
-            if (builder.rank == null) {
-                this.rank = DEFAULT_RANK;
-            } else {
-                this.rank = builder.rank;
-            }
-            if (builder.publish_time == null) {
-                this.publish_time = DEFAULT_PUBLISH_TIME;
-            } else {
-                this.publish_time = builder.publish_time;
-            }
-            if (builder.lego_card == null) {
-                this.lego_card = "";
-                return;
-            } else {
-                this.lego_card = builder.lego_card;
-                return;
-            }
-        }
-        this.excid = builder.excid;
-        this.thread_id = builder.thread_id;
-        this.frs_type = builder.frs_type;
-        this.pb_type = builder.pb_type;
-        this.title = builder.title;
-        this._abstract = builder._abstract;
-        this.thumbnail = immutableCopyOf(builder.thumbnail);
-        this.tag_code = builder.tag_code;
-        this.tag_name = builder.tag_name;
-        this.zansum = builder.zansum;
-        this.post_num = builder.post_num;
-        this.thread_type = builder.thread_type;
-        this.twzhibo_info = builder.twzhibo_info;
-        this.forum_id = builder.forum_id;
-        this.forum_name = builder.forum_name;
-        this.abtest = builder.abtest;
-        this.source = builder.source;
-        this.rank = builder.rank;
-        this.publish_time = builder.publish_time;
-        this.lego_card = builder.lego_card;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ExcellentThreadInfo> {
         public String _abstract;
         public String abtest;
@@ -219,28 +95,29 @@ public final class ExcellentThreadInfo extends Message {
 
         public Builder(ExcellentThreadInfo excellentThreadInfo) {
             super(excellentThreadInfo);
-            if (excellentThreadInfo != null) {
-                this.excid = excellentThreadInfo.excid;
-                this.thread_id = excellentThreadInfo.thread_id;
-                this.frs_type = excellentThreadInfo.frs_type;
-                this.pb_type = excellentThreadInfo.pb_type;
-                this.title = excellentThreadInfo.title;
-                this._abstract = excellentThreadInfo._abstract;
-                this.thumbnail = ExcellentThreadInfo.copyOf(excellentThreadInfo.thumbnail);
-                this.tag_code = excellentThreadInfo.tag_code;
-                this.tag_name = excellentThreadInfo.tag_name;
-                this.zansum = excellentThreadInfo.zansum;
-                this.post_num = excellentThreadInfo.post_num;
-                this.thread_type = excellentThreadInfo.thread_type;
-                this.twzhibo_info = excellentThreadInfo.twzhibo_info;
-                this.forum_id = excellentThreadInfo.forum_id;
-                this.forum_name = excellentThreadInfo.forum_name;
-                this.abtest = excellentThreadInfo.abtest;
-                this.source = excellentThreadInfo.source;
-                this.rank = excellentThreadInfo.rank;
-                this.publish_time = excellentThreadInfo.publish_time;
-                this.lego_card = excellentThreadInfo.lego_card;
+            if (excellentThreadInfo == null) {
+                return;
             }
+            this.excid = excellentThreadInfo.excid;
+            this.thread_id = excellentThreadInfo.thread_id;
+            this.frs_type = excellentThreadInfo.frs_type;
+            this.pb_type = excellentThreadInfo.pb_type;
+            this.title = excellentThreadInfo.title;
+            this._abstract = excellentThreadInfo._abstract;
+            this.thumbnail = Message.copyOf(excellentThreadInfo.thumbnail);
+            this.tag_code = excellentThreadInfo.tag_code;
+            this.tag_name = excellentThreadInfo.tag_name;
+            this.zansum = excellentThreadInfo.zansum;
+            this.post_num = excellentThreadInfo.post_num;
+            this.thread_type = excellentThreadInfo.thread_type;
+            this.twzhibo_info = excellentThreadInfo.twzhibo_info;
+            this.forum_id = excellentThreadInfo.forum_id;
+            this.forum_name = excellentThreadInfo.forum_name;
+            this.abtest = excellentThreadInfo.abtest;
+            this.source = excellentThreadInfo.source;
+            this.rank = excellentThreadInfo.rank;
+            this.publish_time = excellentThreadInfo.publish_time;
+            this.lego_card = excellentThreadInfo.lego_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -248,5 +125,148 @@ public final class ExcellentThreadInfo extends Message {
         public ExcellentThreadInfo build(boolean z) {
             return new ExcellentThreadInfo(this, z);
         }
+    }
+
+    public ExcellentThreadInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.excid;
+            if (l == null) {
+                this.excid = DEFAULT_EXCID;
+            } else {
+                this.excid = l;
+            }
+            Long l2 = builder.thread_id;
+            if (l2 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l2;
+            }
+            Integer num = builder.frs_type;
+            if (num == null) {
+                this.frs_type = DEFAULT_FRS_TYPE;
+            } else {
+                this.frs_type = num;
+            }
+            Integer num2 = builder.pb_type;
+            if (num2 == null) {
+                this.pb_type = DEFAULT_PB_TYPE;
+            } else {
+                this.pb_type = num2;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder._abstract;
+            if (str2 == null) {
+                this._abstract = "";
+            } else {
+                this._abstract = str2;
+            }
+            List<String> list = builder.thumbnail;
+            if (list == null) {
+                this.thumbnail = DEFAULT_THUMBNAIL;
+            } else {
+                this.thumbnail = Message.immutableCopyOf(list);
+            }
+            Long l3 = builder.tag_code;
+            if (l3 == null) {
+                this.tag_code = DEFAULT_TAG_CODE;
+            } else {
+                this.tag_code = l3;
+            }
+            String str3 = builder.tag_name;
+            if (str3 == null) {
+                this.tag_name = "";
+            } else {
+                this.tag_name = str3;
+            }
+            Long l4 = builder.zansum;
+            if (l4 == null) {
+                this.zansum = DEFAULT_ZANSUM;
+            } else {
+                this.zansum = l4;
+            }
+            Long l5 = builder.post_num;
+            if (l5 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = l5;
+            }
+            Integer num3 = builder.thread_type;
+            if (num3 == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+            } else {
+                this.thread_type = num3;
+            }
+            this.twzhibo_info = builder.twzhibo_info;
+            Long l6 = builder.forum_id;
+            if (l6 == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l6;
+            }
+            String str4 = builder.forum_name;
+            if (str4 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str4;
+            }
+            String str5 = builder.abtest;
+            if (str5 == null) {
+                this.abtest = "";
+            } else {
+                this.abtest = str5;
+            }
+            Integer num4 = builder.source;
+            if (num4 == null) {
+                this.source = DEFAULT_SOURCE;
+            } else {
+                this.source = num4;
+            }
+            Long l7 = builder.rank;
+            if (l7 == null) {
+                this.rank = DEFAULT_RANK;
+            } else {
+                this.rank = l7;
+            }
+            Integer num5 = builder.publish_time;
+            if (num5 == null) {
+                this.publish_time = DEFAULT_PUBLISH_TIME;
+            } else {
+                this.publish_time = num5;
+            }
+            String str6 = builder.lego_card;
+            if (str6 == null) {
+                this.lego_card = "";
+                return;
+            } else {
+                this.lego_card = str6;
+                return;
+            }
+        }
+        this.excid = builder.excid;
+        this.thread_id = builder.thread_id;
+        this.frs_type = builder.frs_type;
+        this.pb_type = builder.pb_type;
+        this.title = builder.title;
+        this._abstract = builder._abstract;
+        this.thumbnail = Message.immutableCopyOf(builder.thumbnail);
+        this.tag_code = builder.tag_code;
+        this.tag_name = builder.tag_name;
+        this.zansum = builder.zansum;
+        this.post_num = builder.post_num;
+        this.thread_type = builder.thread_type;
+        this.twzhibo_info = builder.twzhibo_info;
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.abtest = builder.abtest;
+        this.source = builder.source;
+        this.rank = builder.rank;
+        this.publish_time = builder.publish_time;
+        this.lego_card = builder.lego_card;
     }
 }

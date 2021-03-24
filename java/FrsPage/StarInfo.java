@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class StarInfo extends Message {
     public static final String DEFAULT_HEAD = "";
     public static final String DEFAULT_STAR_FORUM_HEADIMG = "";
@@ -47,73 +47,7 @@ public final class StarInfo extends Message {
     public static final Integer DEFAULT_GENDER = 0;
     public static final List<Focus> DEFAULT_FOCUS = Collections.emptyList();
 
-    private StarInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.has_frs_star == null) {
-                this.has_frs_star = DEFAULT_HAS_FRS_STAR;
-            } else {
-                this.has_frs_star = builder.has_frs_star;
-            }
-            if (builder.top == null) {
-                this.top = "";
-            } else {
-                this.top = builder.top;
-            }
-            if (builder.head == null) {
-                this.head = "";
-            } else {
-                this.head = builder.head;
-            }
-            if (builder.gender == null) {
-                this.gender = DEFAULT_GENDER;
-            } else {
-                this.gender = builder.gender;
-            }
-            this.info = builder.info;
-            this.fans = builder.fans;
-            if (builder.focus == null) {
-                this.focus = DEFAULT_FOCUS;
-            } else {
-                this.focus = immutableCopyOf(builder.focus);
-            }
-            this.photo = builder.photo;
-            this.video = builder.video;
-            this.music = builder.music;
-            this.mv = builder.mv;
-            this.good = builder.good;
-            this.identify = builder.identify;
-            this.top_size = builder.top_size;
-            this.head_size = builder.head_size;
-            this.trade = builder.trade;
-            if (builder.star_forum_headimg == null) {
-                this.star_forum_headimg = "";
-                return;
-            } else {
-                this.star_forum_headimg = builder.star_forum_headimg;
-                return;
-            }
-        }
-        this.has_frs_star = builder.has_frs_star;
-        this.top = builder.top;
-        this.head = builder.head;
-        this.gender = builder.gender;
-        this.info = builder.info;
-        this.fans = builder.fans;
-        this.focus = immutableCopyOf(builder.focus);
-        this.photo = builder.photo;
-        this.video = builder.video;
-        this.music = builder.music;
-        this.mv = builder.mv;
-        this.good = builder.good;
-        this.identify = builder.identify;
-        this.top_size = builder.top_size;
-        this.head_size = builder.head_size;
-        this.trade = builder.trade;
-        this.star_forum_headimg = builder.star_forum_headimg;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<StarInfo> {
         public Fans fans;
         public List<Focus> focus;
@@ -138,25 +72,26 @@ public final class StarInfo extends Message {
 
         public Builder(StarInfo starInfo) {
             super(starInfo);
-            if (starInfo != null) {
-                this.has_frs_star = starInfo.has_frs_star;
-                this.top = starInfo.top;
-                this.head = starInfo.head;
-                this.gender = starInfo.gender;
-                this.info = starInfo.info;
-                this.fans = starInfo.fans;
-                this.focus = StarInfo.copyOf(starInfo.focus);
-                this.photo = starInfo.photo;
-                this.video = starInfo.video;
-                this.music = starInfo.music;
-                this.mv = starInfo.mv;
-                this.good = starInfo.good;
-                this.identify = starInfo.identify;
-                this.top_size = starInfo.top_size;
-                this.head_size = starInfo.head_size;
-                this.trade = starInfo.trade;
-                this.star_forum_headimg = starInfo.star_forum_headimg;
+            if (starInfo == null) {
+                return;
             }
+            this.has_frs_star = starInfo.has_frs_star;
+            this.top = starInfo.top;
+            this.head = starInfo.head;
+            this.gender = starInfo.gender;
+            this.info = starInfo.info;
+            this.fans = starInfo.fans;
+            this.focus = Message.copyOf(starInfo.focus);
+            this.photo = starInfo.photo;
+            this.video = starInfo.video;
+            this.music = starInfo.music;
+            this.mv = starInfo.mv;
+            this.good = starInfo.good;
+            this.identify = starInfo.identify;
+            this.top_size = starInfo.top_size;
+            this.head_size = starInfo.head_size;
+            this.trade = starInfo.trade;
+            this.star_forum_headimg = starInfo.star_forum_headimg;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -164,5 +99,77 @@ public final class StarInfo extends Message {
         public StarInfo build(boolean z) {
             return new StarInfo(this, z);
         }
+    }
+
+    public StarInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.has_frs_star;
+            if (num == null) {
+                this.has_frs_star = DEFAULT_HAS_FRS_STAR;
+            } else {
+                this.has_frs_star = num;
+            }
+            String str = builder.top;
+            if (str == null) {
+                this.top = "";
+            } else {
+                this.top = str;
+            }
+            String str2 = builder.head;
+            if (str2 == null) {
+                this.head = "";
+            } else {
+                this.head = str2;
+            }
+            Integer num2 = builder.gender;
+            if (num2 == null) {
+                this.gender = DEFAULT_GENDER;
+            } else {
+                this.gender = num2;
+            }
+            this.info = builder.info;
+            this.fans = builder.fans;
+            List<Focus> list = builder.focus;
+            if (list == null) {
+                this.focus = DEFAULT_FOCUS;
+            } else {
+                this.focus = Message.immutableCopyOf(list);
+            }
+            this.photo = builder.photo;
+            this.video = builder.video;
+            this.music = builder.music;
+            this.mv = builder.mv;
+            this.good = builder.good;
+            this.identify = builder.identify;
+            this.top_size = builder.top_size;
+            this.head_size = builder.head_size;
+            this.trade = builder.trade;
+            String str3 = builder.star_forum_headimg;
+            if (str3 == null) {
+                this.star_forum_headimg = "";
+                return;
+            } else {
+                this.star_forum_headimg = str3;
+                return;
+            }
+        }
+        this.has_frs_star = builder.has_frs_star;
+        this.top = builder.top;
+        this.head = builder.head;
+        this.gender = builder.gender;
+        this.info = builder.info;
+        this.fans = builder.fans;
+        this.focus = Message.immutableCopyOf(builder.focus);
+        this.photo = builder.photo;
+        this.video = builder.video;
+        this.music = builder.music;
+        this.mv = builder.mv;
+        this.good = builder.good;
+        this.identify = builder.identify;
+        this.top_size = builder.top_size;
+        this.head_size = builder.head_size;
+        this.trade = builder.trade;
+        this.star_forum_headimg = builder.star_forum_headimg;
     }
 }

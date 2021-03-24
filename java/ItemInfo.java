@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ItemInfo extends Message {
     public static final String DEFAULT_BRIEF = "";
     public static final String DEFAULT_ICON_URL = "";
@@ -33,65 +33,7 @@ public final class ItemInfo extends Message {
     public static final List<ItemOptions> DEFAULT_ITEM_OPTIONS = Collections.emptyList();
     public static final Integer DEFAULT_IS_SCHOOL = 0;
 
-    private ItemInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.icon_url == null) {
-                this.icon_url = "";
-            } else {
-                this.icon_url = builder.icon_url;
-            }
-            if (builder.brief == null) {
-                this.brief = "";
-            } else {
-                this.brief = builder.brief;
-            }
-            if (builder.tags == null) {
-                this.tags = DEFAULT_TAGS;
-            } else {
-                this.tags = immutableCopyOf(builder.tags);
-            }
-            if (builder.icon_size == null) {
-                this.icon_size = DEFAULT_ICON_SIZE;
-            } else {
-                this.icon_size = builder.icon_size;
-            }
-            if (builder.item_options == null) {
-                this.item_options = DEFAULT_ITEM_OPTIONS;
-            } else {
-                this.item_options = immutableCopyOf(builder.item_options);
-            }
-            this.score = builder.score;
-            if (builder.is_school == null) {
-                this.is_school = DEFAULT_IS_SCHOOL;
-                return;
-            } else {
-                this.is_school = builder.is_school;
-                return;
-            }
-        }
-        this.id = builder.id;
-        this.name = builder.name;
-        this.icon_url = builder.icon_url;
-        this.brief = builder.brief;
-        this.tags = immutableCopyOf(builder.tags);
-        this.icon_size = builder.icon_size;
-        this.item_options = immutableCopyOf(builder.item_options);
-        this.score = builder.score;
-        this.is_school = builder.is_school;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ItemInfo> {
         public String brief;
         public Double icon_size;
@@ -108,17 +50,18 @@ public final class ItemInfo extends Message {
 
         public Builder(ItemInfo itemInfo) {
             super(itemInfo);
-            if (itemInfo != null) {
-                this.id = itemInfo.id;
-                this.name = itemInfo.name;
-                this.icon_url = itemInfo.icon_url;
-                this.brief = itemInfo.brief;
-                this.tags = ItemInfo.copyOf(itemInfo.tags);
-                this.icon_size = itemInfo.icon_size;
-                this.item_options = ItemInfo.copyOf(itemInfo.item_options);
-                this.score = itemInfo.score;
-                this.is_school = itemInfo.is_school;
+            if (itemInfo == null) {
+                return;
             }
+            this.id = itemInfo.id;
+            this.name = itemInfo.name;
+            this.icon_url = itemInfo.icon_url;
+            this.brief = itemInfo.brief;
+            this.tags = Message.copyOf(itemInfo.tags);
+            this.icon_size = itemInfo.icon_size;
+            this.item_options = Message.copyOf(itemInfo.item_options);
+            this.score = itemInfo.score;
+            this.is_school = itemInfo.is_school;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -126,5 +69,71 @@ public final class ItemInfo extends Message {
         public ItemInfo build(boolean z) {
             return new ItemInfo(this, z);
         }
+    }
+
+    public ItemInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = num;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.icon_url;
+            if (str2 == null) {
+                this.icon_url = "";
+            } else {
+                this.icon_url = str2;
+            }
+            String str3 = builder.brief;
+            if (str3 == null) {
+                this.brief = "";
+            } else {
+                this.brief = str3;
+            }
+            List<String> list = builder.tags;
+            if (list == null) {
+                this.tags = DEFAULT_TAGS;
+            } else {
+                this.tags = Message.immutableCopyOf(list);
+            }
+            Double d2 = builder.icon_size;
+            if (d2 == null) {
+                this.icon_size = DEFAULT_ICON_SIZE;
+            } else {
+                this.icon_size = d2;
+            }
+            List<ItemOptions> list2 = builder.item_options;
+            if (list2 == null) {
+                this.item_options = DEFAULT_ITEM_OPTIONS;
+            } else {
+                this.item_options = Message.immutableCopyOf(list2);
+            }
+            this.score = builder.score;
+            Integer num2 = builder.is_school;
+            if (num2 == null) {
+                this.is_school = DEFAULT_IS_SCHOOL;
+                return;
+            } else {
+                this.is_school = num2;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.name = builder.name;
+        this.icon_url = builder.icon_url;
+        this.brief = builder.brief;
+        this.tags = Message.immutableCopyOf(builder.tags);
+        this.icon_size = builder.icon_size;
+        this.item_options = Message.immutableCopyOf(builder.item_options);
+        this.score = builder.score;
+        this.is_school = builder.is_school;
     }
 }

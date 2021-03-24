@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<ThreadInfo> activity_list;
@@ -20,39 +20,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final List<ThreadInfo> DEFAULT_ACTIVITY_LIST = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.thread_list == null) {
-                this.thread_list = DEFAULT_THREAD_LIST;
-            } else {
-                this.thread_list = immutableCopyOf(builder.thread_list);
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-            } else {
-                this.has_more = builder.has_more;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.activity_list == null) {
-                this.activity_list = DEFAULT_ACTIVITY_LIST;
-                return;
-            } else {
-                this.activity_list = immutableCopyOf(builder.activity_list);
-                return;
-            }
-        }
-        this.thread_list = immutableCopyOf(builder.thread_list);
-        this.has_more = builder.has_more;
-        this.pn = builder.pn;
-        this.activity_list = immutableCopyOf(builder.activity_list);
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThreadInfo> activity_list;
         public Integer has_more;
@@ -64,12 +32,13 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.thread_list = DataRes.copyOf(dataRes.thread_list);
-                this.has_more = dataRes.has_more;
-                this.pn = dataRes.pn;
-                this.activity_list = DataRes.copyOf(dataRes.activity_list);
+            if (dataRes == null) {
+                return;
             }
+            this.thread_list = Message.copyOf(dataRes.thread_list);
+            this.has_more = dataRes.has_more;
+            this.pn = dataRes.pn;
+            this.activity_list = Message.copyOf(dataRes.activity_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -77,5 +46,41 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ThreadInfo> list = builder.thread_list;
+            if (list == null) {
+                this.thread_list = DEFAULT_THREAD_LIST;
+            } else {
+                this.thread_list = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            Integer num2 = builder.pn;
+            if (num2 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num2;
+            }
+            List<ThreadInfo> list2 = builder.activity_list;
+            if (list2 == null) {
+                this.activity_list = DEFAULT_ACTIVITY_LIST;
+                return;
+            } else {
+                this.activity_list = Message.immutableCopyOf(list2);
+                return;
+            }
+        }
+        this.thread_list = Message.immutableCopyOf(builder.thread_list);
+        this.has_more = builder.has_more;
+        this.pn = builder.pn;
+        this.activity_list = Message.immutableCopyOf(builder.activity_list);
     }
 }

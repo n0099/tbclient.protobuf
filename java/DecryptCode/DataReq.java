@@ -3,37 +3,21 @@ package tbclient.DecryptCode;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TIEBA_CODE = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8673common;
+    public final CommonReq f68337common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tieba_code;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8673common = builder.f8674common;
-            if (builder.tieba_code == null) {
-                this.tieba_code = "";
-                return;
-            } else {
-                this.tieba_code = builder.tieba_code;
-                return;
-            }
-        }
-        this.f8673common = builder.f8674common;
-        this.tieba_code = builder.tieba_code;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8674common;
+        public CommonReq f68338common;
         public String tieba_code;
 
         public Builder() {
@@ -41,10 +25,11 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8674common = dataReq.f8673common;
-                this.tieba_code = dataReq.tieba_code;
+            if (dataReq == null) {
+                return;
             }
+            this.f68338common = dataReq.f68337common;
+            this.tieba_code = dataReq.tieba_code;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +37,22 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68337common = builder.f68338common;
+            String str = builder.tieba_code;
+            if (str == null) {
+                this.tieba_code = "";
+                return;
+            } else {
+                this.tieba_code = str;
+                return;
+            }
+        }
+        this.f68337common = builder.f68338common;
+        this.tieba_code = builder.tieba_code;
     }
 }

@@ -3,45 +3,24 @@ package tbclient.PassFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ReqData extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8879common;
+    public final CommonReq f68553common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String st_type;
 
-    private ReqData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.friend_id == null) {
-                this.friend_id = DEFAULT_FRIEND_ID;
-            } else {
-                this.friend_id = builder.friend_id;
-            }
-            if (builder.st_type == null) {
-                this.st_type = "";
-            } else {
-                this.st_type = builder.st_type;
-            }
-            this.f8879common = builder.f8880common;
-            return;
-        }
-        this.friend_id = builder.friend_id;
-        this.st_type = builder.st_type;
-        this.f8879common = builder.f8880common;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8880common;
+        public CommonReq f68554common;
         public Long friend_id;
         public String st_type;
 
@@ -50,11 +29,12 @@ public final class ReqData extends Message {
 
         public Builder(ReqData reqData) {
             super(reqData);
-            if (reqData != null) {
-                this.friend_id = reqData.friend_id;
-                this.st_type = reqData.st_type;
-                this.f8880common = reqData.f8879common;
+            if (reqData == null) {
+                return;
             }
+            this.friend_id = reqData.friend_id;
+            this.st_type = reqData.st_type;
+            this.f68554common = reqData.f68553common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -62,5 +42,28 @@ public final class ReqData extends Message {
         public ReqData build(boolean z) {
             return new ReqData(this, z);
         }
+    }
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.friend_id;
+            if (l == null) {
+                this.friend_id = DEFAULT_FRIEND_ID;
+            } else {
+                this.friend_id = l;
+            }
+            String str = builder.st_type;
+            if (str == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str;
+            }
+            this.f68553common = builder.f68554common;
+            return;
+        }
+        this.friend_id = builder.friend_id;
+        this.st_type = builder.st_type;
+        this.f68553common = builder.f68554common;
     }
 }

@@ -1,7 +1,8 @@
 package tbclient;
 
-import com.baidu.live.tbadk.log.LogConfig;
-import com.baidu.tieba.recapp.activity.newstyle.AdWebVideoActivityConfig;
+import com.baidu.tbadk.core.util.TiebaStatic;
+import com.baidu.tieba.recapp.activity.AdWebVideoActivityConfig;
+import com.baidu.tieba.tbadkCore.videoupload.VideoFinishResult;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.ArrayList;
@@ -10,13 +11,15 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class VideoInfo extends Message {
+    public static final Double DEFAULT_HTH_MID_LOC;
     public static final String DEFAULT_MCN_LEAD_PAGE = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_THUMBNAIL_URL = "";
     public static final String DEFAULT_VIDEO_MD5 = "";
     public static final String DEFAULT_VIDEO_URL = "";
+    public static final Double DEFAULT_WTH_MID_LOC;
     @ProtoField(tag = 20, type = Message.Datatype.DOUBLE)
     public final Double hth_mid_loc;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
@@ -68,130 +71,8 @@ public final class VideoInfo extends Message {
     public static final Integer DEFAULT_VIDEO_SELECT_FLAG = 0;
     public static final Integer DEFAULT_VIDEO_TYPE = 0;
     public static final Integer DEFAULT_IS_VERTICAL = 0;
-    public static final Double DEFAULT_WTH_MID_LOC = Double.valueOf(0.0d);
-    public static final Double DEFAULT_HTH_MID_LOC = Double.valueOf(0.0d);
 
-    private VideoInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.video_md5 == null) {
-                this.video_md5 = "";
-            } else {
-                this.video_md5 = builder.video_md5;
-            }
-            if (builder.video_url == null) {
-                this.video_url = "";
-            } else {
-                this.video_url = builder.video_url;
-            }
-            if (builder.video_duration == null) {
-                this.video_duration = DEFAULT_VIDEO_DURATION;
-            } else {
-                this.video_duration = builder.video_duration;
-            }
-            if (builder.video_width == null) {
-                this.video_width = DEFAULT_VIDEO_WIDTH;
-            } else {
-                this.video_width = builder.video_width;
-            }
-            if (builder.video_height == null) {
-                this.video_height = DEFAULT_VIDEO_HEIGHT;
-            } else {
-                this.video_height = builder.video_height;
-            }
-            if (builder.thumbnail_url == null) {
-                this.thumbnail_url = "";
-            } else {
-                this.thumbnail_url = builder.thumbnail_url;
-            }
-            if (builder.thumbnail_width == null) {
-                this.thumbnail_width = DEFAULT_THUMBNAIL_WIDTH;
-            } else {
-                this.thumbnail_width = builder.thumbnail_width;
-            }
-            if (builder.thumbnail_height == null) {
-                this.thumbnail_height = DEFAULT_THUMBNAIL_HEIGHT;
-            } else {
-                this.thumbnail_height = builder.thumbnail_height;
-            }
-            if (builder.video_length == null) {
-                this.video_length = DEFAULT_VIDEO_LENGTH;
-            } else {
-                this.video_length = builder.video_length;
-            }
-            if (builder.play_count == null) {
-                this.play_count = DEFAULT_PLAY_COUNT;
-            } else {
-                this.play_count = builder.play_count;
-            }
-            if (builder.media_subtitle == null) {
-                this.media_subtitle = "";
-            } else {
-                this.media_subtitle = builder.media_subtitle;
-            }
-            if (builder.video_desc == null) {
-                this.video_desc = DEFAULT_VIDEO_DESC;
-            } else {
-                this.video_desc = immutableCopyOf(builder.video_desc);
-            }
-            if (builder.video_select_flag == null) {
-                this.video_select_flag = DEFAULT_VIDEO_SELECT_FLAG;
-            } else {
-                this.video_select_flag = builder.video_select_flag;
-            }
-            if (builder.video_type == null) {
-                this.video_type = DEFAULT_VIDEO_TYPE;
-            } else {
-                this.video_type = builder.video_type;
-            }
-            if (builder.is_vertical == null) {
-                this.is_vertical = DEFAULT_IS_VERTICAL;
-            } else {
-                this.is_vertical = builder.is_vertical;
-            }
-            this.video_h265 = builder.video_h265;
-            if (builder.mcn_lead_page == null) {
-                this.mcn_lead_page = "";
-            } else {
-                this.mcn_lead_page = builder.mcn_lead_page;
-            }
-            this.mcn_ad_card = builder.mcn_ad_card;
-            if (builder.wth_mid_loc == null) {
-                this.wth_mid_loc = DEFAULT_WTH_MID_LOC;
-            } else {
-                this.wth_mid_loc = builder.wth_mid_loc;
-            }
-            if (builder.hth_mid_loc == null) {
-                this.hth_mid_loc = DEFAULT_HTH_MID_LOC;
-                return;
-            } else {
-                this.hth_mid_loc = builder.hth_mid_loc;
-                return;
-            }
-        }
-        this.video_md5 = builder.video_md5;
-        this.video_url = builder.video_url;
-        this.video_duration = builder.video_duration;
-        this.video_width = builder.video_width;
-        this.video_height = builder.video_height;
-        this.thumbnail_url = builder.thumbnail_url;
-        this.thumbnail_width = builder.thumbnail_width;
-        this.thumbnail_height = builder.thumbnail_height;
-        this.video_length = builder.video_length;
-        this.play_count = builder.play_count;
-        this.media_subtitle = builder.media_subtitle;
-        this.video_desc = immutableCopyOf(builder.video_desc);
-        this.video_select_flag = builder.video_select_flag;
-        this.video_type = builder.video_type;
-        this.is_vertical = builder.is_vertical;
-        this.video_h265 = builder.video_h265;
-        this.mcn_lead_page = builder.mcn_lead_page;
-        this.mcn_ad_card = builder.mcn_ad_card;
-        this.wth_mid_loc = builder.wth_mid_loc;
-        this.hth_mid_loc = builder.hth_mid_loc;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public Double hth_mid_loc;
         public Integer is_vertical;
@@ -219,28 +100,29 @@ public final class VideoInfo extends Message {
 
         public Builder(VideoInfo videoInfo) {
             super(videoInfo);
-            if (videoInfo != null) {
-                this.video_md5 = videoInfo.video_md5;
-                this.video_url = videoInfo.video_url;
-                this.video_duration = videoInfo.video_duration;
-                this.video_width = videoInfo.video_width;
-                this.video_height = videoInfo.video_height;
-                this.thumbnail_url = videoInfo.thumbnail_url;
-                this.thumbnail_width = videoInfo.thumbnail_width;
-                this.thumbnail_height = videoInfo.thumbnail_height;
-                this.video_length = videoInfo.video_length;
-                this.play_count = videoInfo.play_count;
-                this.media_subtitle = videoInfo.media_subtitle;
-                this.video_desc = VideoInfo.copyOf(videoInfo.video_desc);
-                this.video_select_flag = videoInfo.video_select_flag;
-                this.video_type = videoInfo.video_type;
-                this.is_vertical = videoInfo.is_vertical;
-                this.video_h265 = videoInfo.video_h265;
-                this.mcn_lead_page = videoInfo.mcn_lead_page;
-                this.mcn_ad_card = videoInfo.mcn_ad_card;
-                this.wth_mid_loc = videoInfo.wth_mid_loc;
-                this.hth_mid_loc = videoInfo.hth_mid_loc;
+            if (videoInfo == null) {
+                return;
             }
+            this.video_md5 = videoInfo.video_md5;
+            this.video_url = videoInfo.video_url;
+            this.video_duration = videoInfo.video_duration;
+            this.video_width = videoInfo.video_width;
+            this.video_height = videoInfo.video_height;
+            this.thumbnail_url = videoInfo.thumbnail_url;
+            this.thumbnail_width = videoInfo.thumbnail_width;
+            this.thumbnail_height = videoInfo.thumbnail_height;
+            this.video_length = videoInfo.video_length;
+            this.play_count = videoInfo.play_count;
+            this.media_subtitle = videoInfo.media_subtitle;
+            this.video_desc = Message.copyOf(videoInfo.video_desc);
+            this.video_select_flag = videoInfo.video_select_flag;
+            this.video_type = videoInfo.video_type;
+            this.is_vertical = videoInfo.is_vertical;
+            this.video_h265 = videoInfo.video_h265;
+            this.mcn_lead_page = videoInfo.mcn_lead_page;
+            this.mcn_ad_card = videoInfo.mcn_ad_card;
+            this.wth_mid_loc = videoInfo.wth_mid_loc;
+            this.hth_mid_loc = videoInfo.hth_mid_loc;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -250,12 +132,18 @@ public final class VideoInfo extends Message {
         }
     }
 
+    static {
+        Double valueOf = Double.valueOf(0.0d);
+        DEFAULT_WTH_MID_LOC = valueOf;
+        DEFAULT_HTH_MID_LOC = valueOf;
+    }
+
     public static VideoInfo parseFromJson(JSONObject jSONObject) {
         if (jSONObject == null) {
             return null;
         }
         Builder builder = new Builder();
-        builder.video_md5 = jSONObject.optString("video_md5");
+        builder.video_md5 = jSONObject.optString(VideoFinishResult.KEY_VIDEO_MD5);
         builder.video_url = jSONObject.optString("video_url");
         builder.video_duration = Integer.valueOf(jSONObject.optInt(AdWebVideoActivityConfig.KEY_VIDEO_DURATION));
         builder.video_width = Integer.valueOf(jSONObject.optInt("video_width"));
@@ -274,8 +162,8 @@ public final class VideoInfo extends Message {
         }
         builder.video_desc = arrayList;
         builder.video_select_flag = Integer.valueOf(jSONObject.optInt("video_select_flag"));
-        builder.video_type = Integer.valueOf(jSONObject.optInt(LogConfig.LOG_VIDEO_TYPE));
-        builder.is_vertical = Integer.valueOf(jSONObject.optInt("is_vertical"));
+        builder.video_type = Integer.valueOf(jSONObject.optInt("video_type"));
+        builder.is_vertical = Integer.valueOf(jSONObject.optInt(TiebaStatic.Params.IS_VERTICAL));
         builder.video_h265 = VideoDesc.parseFromJson(jSONObject.optJSONObject("video_h265"));
         builder.mcn_lead_page = jSONObject.optString("mcn_lead_page");
         builder.mcn_ad_card = McnAdInfo.parseFromJson(jSONObject.optJSONObject("mcn_ad_card"));
@@ -290,7 +178,7 @@ public final class VideoInfo extends Message {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("video_md5", videoInfo.video_md5);
+            jSONObject.put(VideoFinishResult.KEY_VIDEO_MD5, videoInfo.video_md5);
             jSONObject.put("video_url", videoInfo.video_url);
             jSONObject.put(AdWebVideoActivityConfig.KEY_VIDEO_DURATION, videoInfo.video_duration);
             jSONObject.put("video_width", videoInfo.video_width);
@@ -307,16 +195,154 @@ public final class VideoInfo extends Message {
             }
             jSONObject.put("video_desc", jSONArray);
             jSONObject.put("video_select_flag", videoInfo.video_select_flag);
-            jSONObject.put(LogConfig.LOG_VIDEO_TYPE, videoInfo.video_type);
-            jSONObject.put("is_vertical", videoInfo.is_vertical);
+            jSONObject.put("video_type", videoInfo.video_type);
+            jSONObject.put(TiebaStatic.Params.IS_VERTICAL, videoInfo.is_vertical);
             jSONObject.put("video_h265", VideoDesc.toJson(videoInfo.video_h265));
             jSONObject.put("mcn_lead_page", videoInfo.mcn_lead_page);
             jSONObject.put("mcn_ad_card", McnAdInfo.toJson(videoInfo.mcn_ad_card));
             jSONObject.put("wth_mid_loc", videoInfo.wth_mid_loc);
             jSONObject.put("hth_mid_loc", videoInfo.hth_mid_loc);
-        } catch (JSONException e) {
-            e.printStackTrace();
+        } catch (JSONException e2) {
+            e2.printStackTrace();
         }
         return jSONObject;
+    }
+
+    public VideoInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.video_md5;
+            if (str == null) {
+                this.video_md5 = "";
+            } else {
+                this.video_md5 = str;
+            }
+            String str2 = builder.video_url;
+            if (str2 == null) {
+                this.video_url = "";
+            } else {
+                this.video_url = str2;
+            }
+            Integer num = builder.video_duration;
+            if (num == null) {
+                this.video_duration = DEFAULT_VIDEO_DURATION;
+            } else {
+                this.video_duration = num;
+            }
+            Integer num2 = builder.video_width;
+            if (num2 == null) {
+                this.video_width = DEFAULT_VIDEO_WIDTH;
+            } else {
+                this.video_width = num2;
+            }
+            Integer num3 = builder.video_height;
+            if (num3 == null) {
+                this.video_height = DEFAULT_VIDEO_HEIGHT;
+            } else {
+                this.video_height = num3;
+            }
+            String str3 = builder.thumbnail_url;
+            if (str3 == null) {
+                this.thumbnail_url = "";
+            } else {
+                this.thumbnail_url = str3;
+            }
+            Integer num4 = builder.thumbnail_width;
+            if (num4 == null) {
+                this.thumbnail_width = DEFAULT_THUMBNAIL_WIDTH;
+            } else {
+                this.thumbnail_width = num4;
+            }
+            Integer num5 = builder.thumbnail_height;
+            if (num5 == null) {
+                this.thumbnail_height = DEFAULT_THUMBNAIL_HEIGHT;
+            } else {
+                this.thumbnail_height = num5;
+            }
+            Integer num6 = builder.video_length;
+            if (num6 == null) {
+                this.video_length = DEFAULT_VIDEO_LENGTH;
+            } else {
+                this.video_length = num6;
+            }
+            Integer num7 = builder.play_count;
+            if (num7 == null) {
+                this.play_count = DEFAULT_PLAY_COUNT;
+            } else {
+                this.play_count = num7;
+            }
+            String str4 = builder.media_subtitle;
+            if (str4 == null) {
+                this.media_subtitle = "";
+            } else {
+                this.media_subtitle = str4;
+            }
+            List<VideoDesc> list = builder.video_desc;
+            if (list == null) {
+                this.video_desc = DEFAULT_VIDEO_DESC;
+            } else {
+                this.video_desc = Message.immutableCopyOf(list);
+            }
+            Integer num8 = builder.video_select_flag;
+            if (num8 == null) {
+                this.video_select_flag = DEFAULT_VIDEO_SELECT_FLAG;
+            } else {
+                this.video_select_flag = num8;
+            }
+            Integer num9 = builder.video_type;
+            if (num9 == null) {
+                this.video_type = DEFAULT_VIDEO_TYPE;
+            } else {
+                this.video_type = num9;
+            }
+            Integer num10 = builder.is_vertical;
+            if (num10 == null) {
+                this.is_vertical = DEFAULT_IS_VERTICAL;
+            } else {
+                this.is_vertical = num10;
+            }
+            this.video_h265 = builder.video_h265;
+            String str5 = builder.mcn_lead_page;
+            if (str5 == null) {
+                this.mcn_lead_page = "";
+            } else {
+                this.mcn_lead_page = str5;
+            }
+            this.mcn_ad_card = builder.mcn_ad_card;
+            Double d2 = builder.wth_mid_loc;
+            if (d2 == null) {
+                this.wth_mid_loc = DEFAULT_WTH_MID_LOC;
+            } else {
+                this.wth_mid_loc = d2;
+            }
+            Double d3 = builder.hth_mid_loc;
+            if (d3 == null) {
+                this.hth_mid_loc = DEFAULT_HTH_MID_LOC;
+                return;
+            } else {
+                this.hth_mid_loc = d3;
+                return;
+            }
+        }
+        this.video_md5 = builder.video_md5;
+        this.video_url = builder.video_url;
+        this.video_duration = builder.video_duration;
+        this.video_width = builder.video_width;
+        this.video_height = builder.video_height;
+        this.thumbnail_url = builder.thumbnail_url;
+        this.thumbnail_width = builder.thumbnail_width;
+        this.thumbnail_height = builder.thumbnail_height;
+        this.video_length = builder.video_length;
+        this.play_count = builder.play_count;
+        this.media_subtitle = builder.media_subtitle;
+        this.video_desc = Message.immutableCopyOf(builder.video_desc);
+        this.video_select_flag = builder.video_select_flag;
+        this.video_type = builder.video_type;
+        this.is_vertical = builder.is_vertical;
+        this.video_h265 = builder.video_h265;
+        this.mcn_lead_page = builder.mcn_lead_page;
+        this.mcn_ad_card = builder.mcn_ad_card;
+        this.wth_mid_loc = builder.wth_mid_loc;
+        this.hth_mid_loc = builder.hth_mid_loc;
     }
 }

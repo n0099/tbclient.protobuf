@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class NoticeInfo extends Message {
     public static final String DEFAULT_NOTICE = "";
     public static final Integer DEFAULT_PULLCOMMENTFREQUENCE = 0;
@@ -11,27 +11,7 @@ public final class NoticeInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer pullCommentFrequence;
 
-    private NoticeInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.notice == null) {
-                this.notice = "";
-            } else {
-                this.notice = builder.notice;
-            }
-            if (builder.pullCommentFrequence == null) {
-                this.pullCommentFrequence = DEFAULT_PULLCOMMENTFREQUENCE;
-                return;
-            } else {
-                this.pullCommentFrequence = builder.pullCommentFrequence;
-                return;
-            }
-        }
-        this.notice = builder.notice;
-        this.pullCommentFrequence = builder.pullCommentFrequence;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<NoticeInfo> {
         public String notice;
         public Integer pullCommentFrequence;
@@ -41,10 +21,11 @@ public final class NoticeInfo extends Message {
 
         public Builder(NoticeInfo noticeInfo) {
             super(noticeInfo);
-            if (noticeInfo != null) {
-                this.notice = noticeInfo.notice;
-                this.pullCommentFrequence = noticeInfo.pullCommentFrequence;
+            if (noticeInfo == null) {
+                return;
             }
+            this.notice = noticeInfo.notice;
+            this.pullCommentFrequence = noticeInfo.pullCommentFrequence;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class NoticeInfo extends Message {
         public NoticeInfo build(boolean z) {
             return new NoticeInfo(this, z);
         }
+    }
+
+    public NoticeInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.notice;
+            if (str == null) {
+                this.notice = "";
+            } else {
+                this.notice = str;
+            }
+            Integer num = builder.pullCommentFrequence;
+            if (num == null) {
+                this.pullCommentFrequence = DEFAULT_PULLCOMMENTFREQUENCE;
+                return;
+            } else {
+                this.pullCommentFrequence = num;
+                return;
+            }
+        }
+        this.notice = builder.notice;
+        this.pullCommentFrequence = builder.pullCommentFrequence;
     }
 }

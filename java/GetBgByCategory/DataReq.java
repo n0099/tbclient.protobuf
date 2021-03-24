@@ -3,42 +3,43 @@ package tbclient.GetBgByCategory;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8717common;
+    public final CommonReq f68387common;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8717common = builder.f8718common;
-        } else {
-            this.f8717common = builder.f8718common;
-        }
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8718common;
+        public CommonReq f68388common;
 
         public Builder() {
         }
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8718common = dataReq.f8717common;
+            if (dataReq == null) {
+                return;
             }
+            this.f68388common = dataReq.f68387common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
             return new DataReq(this, z);
+        }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68387common = builder.f68388common;
+        } else {
+            this.f68387common = builder.f68388common;
         }
     }
 }

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeBgProp;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class ThemeBgInMain extends Message {
     public static final String DEFAULT_BG_CATEGORY = "";
     public static final List<ThemeBgProp> DEFAULT_PROPS = Collections.emptyList();
@@ -14,27 +14,7 @@ public final class ThemeBgInMain extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThemeBgProp> props;
 
-    private ThemeBgInMain(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.bg_category == null) {
-                this.bg_category = "";
-            } else {
-                this.bg_category = builder.bg_category;
-            }
-            if (builder.props == null) {
-                this.props = DEFAULT_PROPS;
-                return;
-            } else {
-                this.props = immutableCopyOf(builder.props);
-                return;
-            }
-        }
-        this.bg_category = builder.bg_category;
-        this.props = immutableCopyOf(builder.props);
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThemeBgInMain> {
         public String bg_category;
         public List<ThemeBgProp> props;
@@ -44,10 +24,11 @@ public final class ThemeBgInMain extends Message {
 
         public Builder(ThemeBgInMain themeBgInMain) {
             super(themeBgInMain);
-            if (themeBgInMain != null) {
-                this.bg_category = themeBgInMain.bg_category;
-                this.props = ThemeBgInMain.copyOf(themeBgInMain.props);
+            if (themeBgInMain == null) {
+                return;
             }
+            this.bg_category = themeBgInMain.bg_category;
+            this.props = Message.copyOf(themeBgInMain.props);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -55,5 +36,27 @@ public final class ThemeBgInMain extends Message {
         public ThemeBgInMain build(boolean z) {
             return new ThemeBgInMain(this, z);
         }
+    }
+
+    public ThemeBgInMain(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.bg_category;
+            if (str == null) {
+                this.bg_category = "";
+            } else {
+                this.bg_category = str;
+            }
+            List<ThemeBgProp> list = builder.props;
+            if (list == null) {
+                this.props = DEFAULT_PROPS;
+                return;
+            } else {
+                this.props = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.bg_category = builder.bg_category;
+        this.props = Message.immutableCopyOf(builder.props);
     }
 }

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MD5 = "";
     public static final String DEFAULT_SRC = "";
@@ -27,53 +27,7 @@ public final class DataRes extends Message {
     public static final List<PackageInfo> DEFAULT_PATCH = Collections.emptyList();
     public static final List<Offpack> DEFAULT_OFFPACK_LIST = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.src == null) {
-                this.src = "";
-            } else {
-                this.src = builder.src;
-            }
-            if (builder.webview_version == null) {
-                this.webview_version = "";
-            } else {
-                this.webview_version = builder.webview_version;
-            }
-            if (builder.md5 == null) {
-                this.md5 = "";
-            } else {
-                this.md5 = builder.md5;
-            }
-            this.latest = builder.latest;
-            if (builder.patch == null) {
-                this.patch = DEFAULT_PATCH;
-            } else {
-                this.patch = immutableCopyOf(builder.patch);
-            }
-            if (builder.version == null) {
-                this.version = "";
-            } else {
-                this.version = builder.version;
-            }
-            if (builder.offpack_list == null) {
-                this.offpack_list = DEFAULT_OFFPACK_LIST;
-                return;
-            } else {
-                this.offpack_list = immutableCopyOf(builder.offpack_list);
-                return;
-            }
-        }
-        this.src = builder.src;
-        this.webview_version = builder.webview_version;
-        this.md5 = builder.md5;
-        this.latest = builder.latest;
-        this.patch = immutableCopyOf(builder.patch);
-        this.version = builder.version;
-        this.offpack_list = immutableCopyOf(builder.offpack_list);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public PackageInfo latest;
         public String md5;
@@ -88,15 +42,16 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.src = dataRes.src;
-                this.webview_version = dataRes.webview_version;
-                this.md5 = dataRes.md5;
-                this.latest = dataRes.latest;
-                this.patch = DataRes.copyOf(dataRes.patch);
-                this.version = dataRes.version;
-                this.offpack_list = DataRes.copyOf(dataRes.offpack_list);
+            if (dataRes == null) {
+                return;
             }
+            this.src = dataRes.src;
+            this.webview_version = dataRes.webview_version;
+            this.md5 = dataRes.md5;
+            this.latest = dataRes.latest;
+            this.patch = Message.copyOf(dataRes.patch);
+            this.version = dataRes.version;
+            this.offpack_list = Message.copyOf(dataRes.offpack_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -104,5 +59,57 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.src;
+            if (str == null) {
+                this.src = "";
+            } else {
+                this.src = str;
+            }
+            String str2 = builder.webview_version;
+            if (str2 == null) {
+                this.webview_version = "";
+            } else {
+                this.webview_version = str2;
+            }
+            String str3 = builder.md5;
+            if (str3 == null) {
+                this.md5 = "";
+            } else {
+                this.md5 = str3;
+            }
+            this.latest = builder.latest;
+            List<PackageInfo> list = builder.patch;
+            if (list == null) {
+                this.patch = DEFAULT_PATCH;
+            } else {
+                this.patch = Message.immutableCopyOf(list);
+            }
+            String str4 = builder.version;
+            if (str4 == null) {
+                this.version = "";
+            } else {
+                this.version = str4;
+            }
+            List<Offpack> list2 = builder.offpack_list;
+            if (list2 == null) {
+                this.offpack_list = DEFAULT_OFFPACK_LIST;
+                return;
+            } else {
+                this.offpack_list = Message.immutableCopyOf(list2);
+                return;
+            }
+        }
+        this.src = builder.src;
+        this.webview_version = builder.webview_version;
+        this.md5 = builder.md5;
+        this.latest = builder.latest;
+        this.patch = Message.immutableCopyOf(builder.patch);
+        this.version = builder.version;
+        this.offpack_list = Message.immutableCopyOf(builder.offpack_list);
     }
 }

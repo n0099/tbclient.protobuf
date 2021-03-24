@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class StarVoice extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_DESC = "";
@@ -17,39 +17,7 @@ public final class StarVoice extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String voice_md5;
 
-    private StarVoice(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.desc == null) {
-                this.desc = "";
-            } else {
-                this.desc = builder.desc;
-            }
-            if (builder.voice_md5 == null) {
-                this.voice_md5 = "";
-                return;
-            } else {
-                this.voice_md5 = builder.voice_md5;
-                return;
-            }
-        }
-        this.avatar = builder.avatar;
-        this.title = builder.title;
-        this.desc = builder.desc;
-        this.voice_md5 = builder.voice_md5;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<StarVoice> {
         public String avatar;
         public String desc;
@@ -61,12 +29,13 @@ public final class StarVoice extends Message {
 
         public Builder(StarVoice starVoice) {
             super(starVoice);
-            if (starVoice != null) {
-                this.avatar = starVoice.avatar;
-                this.title = starVoice.title;
-                this.desc = starVoice.desc;
-                this.voice_md5 = starVoice.voice_md5;
+            if (starVoice == null) {
+                return;
             }
+            this.avatar = starVoice.avatar;
+            this.title = starVoice.title;
+            this.desc = starVoice.desc;
+            this.voice_md5 = starVoice.voice_md5;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class StarVoice extends Message {
         public StarVoice build(boolean z) {
             return new StarVoice(this, z);
         }
+    }
+
+    public StarVoice(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.avatar;
+            if (str == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.desc;
+            if (str3 == null) {
+                this.desc = "";
+            } else {
+                this.desc = str3;
+            }
+            String str4 = builder.voice_md5;
+            if (str4 == null) {
+                this.voice_md5 = "";
+                return;
+            } else {
+                this.voice_md5 = str4;
+                return;
+            }
+        }
+        this.avatar = builder.avatar;
+        this.title = builder.title;
+        this.desc = builder.desc;
+        this.voice_md5 = builder.voice_md5;
     }
 }

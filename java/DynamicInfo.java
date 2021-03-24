@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DynamicInfo extends Message {
     public static final String DEFAULT_IS_HIDE = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -20,39 +20,7 @@ public final class DynamicInfo extends Message {
     public static final Long DEFAULT_DYNAMIC_TIMESTAMP = 0L;
     public static final Integer DEFAULT_TYPE = 0;
 
-    private DynamicInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.thread_dynamic = builder.thread_dynamic;
-            if (builder.dynamic_timestamp == null) {
-                this.dynamic_timestamp = DEFAULT_DYNAMIC_TIMESTAMP;
-            } else {
-                this.dynamic_timestamp = builder.dynamic_timestamp;
-            }
-            this.forum_dynamic = builder.forum_dynamic;
-            this.user_dynamic = builder.user_dynamic;
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.is_hide == null) {
-                this.is_hide = "";
-                return;
-            } else {
-                this.is_hide = builder.is_hide;
-                return;
-            }
-        }
-        this.thread_dynamic = builder.thread_dynamic;
-        this.dynamic_timestamp = builder.dynamic_timestamp;
-        this.forum_dynamic = builder.forum_dynamic;
-        this.user_dynamic = builder.user_dynamic;
-        this.type = builder.type;
-        this.is_hide = builder.is_hide;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DynamicInfo> {
         public Long dynamic_timestamp;
         public ForumDynamic forum_dynamic;
@@ -66,14 +34,15 @@ public final class DynamicInfo extends Message {
 
         public Builder(DynamicInfo dynamicInfo) {
             super(dynamicInfo);
-            if (dynamicInfo != null) {
-                this.thread_dynamic = dynamicInfo.thread_dynamic;
-                this.dynamic_timestamp = dynamicInfo.dynamic_timestamp;
-                this.forum_dynamic = dynamicInfo.forum_dynamic;
-                this.user_dynamic = dynamicInfo.user_dynamic;
-                this.type = dynamicInfo.type;
-                this.is_hide = dynamicInfo.is_hide;
+            if (dynamicInfo == null) {
+                return;
             }
+            this.thread_dynamic = dynamicInfo.thread_dynamic;
+            this.dynamic_timestamp = dynamicInfo.dynamic_timestamp;
+            this.forum_dynamic = dynamicInfo.forum_dynamic;
+            this.user_dynamic = dynamicInfo.user_dynamic;
+            this.type = dynamicInfo.type;
+            this.is_hide = dynamicInfo.is_hide;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -81,5 +50,40 @@ public final class DynamicInfo extends Message {
         public DynamicInfo build(boolean z) {
             return new DynamicInfo(this, z);
         }
+    }
+
+    public DynamicInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.thread_dynamic = builder.thread_dynamic;
+            Long l = builder.dynamic_timestamp;
+            if (l == null) {
+                this.dynamic_timestamp = DEFAULT_DYNAMIC_TIMESTAMP;
+            } else {
+                this.dynamic_timestamp = l;
+            }
+            this.forum_dynamic = builder.forum_dynamic;
+            this.user_dynamic = builder.user_dynamic;
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            String str = builder.is_hide;
+            if (str == null) {
+                this.is_hide = "";
+                return;
+            } else {
+                this.is_hide = str;
+                return;
+            }
+        }
+        this.thread_dynamic = builder.thread_dynamic;
+        this.dynamic_timestamp = builder.dynamic_timestamp;
+        this.forum_dynamic = builder.forum_dynamic;
+        this.user_dynamic = builder.user_dynamic;
+        this.type = builder.type;
+        this.is_hide = builder.is_hide;
     }
 }

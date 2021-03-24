@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ItemOptions extends Message {
     public static final String DEFAULT_KEY = "";
     public static final String DEFAULT_VALUE = "";
@@ -11,27 +11,7 @@ public final class ItemOptions extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String value;
 
-    private ItemOptions(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.key == null) {
-                this.key = "";
-            } else {
-                this.key = builder.key;
-            }
-            if (builder.value == null) {
-                this.value = "";
-                return;
-            } else {
-                this.value = builder.value;
-                return;
-            }
-        }
-        this.key = builder.key;
-        this.value = builder.value;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ItemOptions> {
         public String key;
         public String value;
@@ -41,10 +21,11 @@ public final class ItemOptions extends Message {
 
         public Builder(ItemOptions itemOptions) {
             super(itemOptions);
-            if (itemOptions != null) {
-                this.key = itemOptions.key;
-                this.value = itemOptions.value;
+            if (itemOptions == null) {
+                return;
             }
+            this.key = itemOptions.key;
+            this.value = itemOptions.value;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class ItemOptions extends Message {
         public ItemOptions build(boolean z) {
             return new ItemOptions(this, z);
         }
+    }
+
+    public ItemOptions(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.key;
+            if (str == null) {
+                this.key = "";
+            } else {
+                this.key = str;
+            }
+            String str2 = builder.value;
+            if (str2 == null) {
+                this.value = "";
+                return;
+            } else {
+                this.value = str2;
+                return;
+            }
+        }
+        this.key = builder.key;
+        this.value = builder.value;
     }
 }

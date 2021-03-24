@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class LbsInfo extends Message {
     public static final String DEFAULT_LAT = "";
     public static final String DEFAULT_LON = "";
@@ -14,33 +14,7 @@ public final class LbsInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String town;
 
-    private LbsInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.lat == null) {
-                this.lat = "";
-            } else {
-                this.lat = builder.lat;
-            }
-            if (builder.lon == null) {
-                this.lon = "";
-            } else {
-                this.lon = builder.lon;
-            }
-            if (builder.town == null) {
-                this.town = "";
-                return;
-            } else {
-                this.town = builder.town;
-                return;
-            }
-        }
-        this.lat = builder.lat;
-        this.lon = builder.lon;
-        this.town = builder.town;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<LbsInfo> {
         public String lat;
         public String lon;
@@ -51,11 +25,12 @@ public final class LbsInfo extends Message {
 
         public Builder(LbsInfo lbsInfo) {
             super(lbsInfo);
-            if (lbsInfo != null) {
-                this.lat = lbsInfo.lat;
-                this.lon = lbsInfo.lon;
-                this.town = lbsInfo.town;
+            if (lbsInfo == null) {
+                return;
             }
+            this.lat = lbsInfo.lat;
+            this.lon = lbsInfo.lon;
+            this.town = lbsInfo.town;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class LbsInfo extends Message {
         public LbsInfo build(boolean z) {
             return new LbsInfo(this, z);
         }
+    }
+
+    public LbsInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.lat;
+            if (str == null) {
+                this.lat = "";
+            } else {
+                this.lat = str;
+            }
+            String str2 = builder.lon;
+            if (str2 == null) {
+                this.lon = "";
+            } else {
+                this.lon = str2;
+            }
+            String str3 = builder.town;
+            if (str3 == null) {
+                this.town = "";
+                return;
+            } else {
+                this.town = str3;
+                return;
+            }
+        }
+        this.lat = builder.lat;
+        this.lon = builder.lon;
+        this.town = builder.town;
     }
 }

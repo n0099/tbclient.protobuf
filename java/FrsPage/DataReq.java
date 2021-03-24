@@ -4,27 +4,42 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
+    public static final Integer DEFAULT_CALL_FROM;
     public static final String DEFAULT_CALL_URL = "";
+    public static final Integer DEFAULT_CATEGORY_ID;
     public static final String DEFAULT_COOKIE = "";
     public static final String DEFAULT_DA_IDFA = "";
+    public static final Boolean DEFAULT_DEBUG;
+    public static final Integer DEFAULT_DEFAULT_SORT_TYPE;
     public static final String DEFAULT_EMAIL = "";
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final Long DEFAULT_HOT_THREAD_ID;
     public static final String DEFAULT_IP_STR = "";
+    public static final Integer DEFAULT_ISSDK;
+    public static final Integer DEFAULT_IS_DEFAULT_NAVTAB;
+    public static final Integer DEFAULT_IS_SELECTION;
     public static final String DEFAULT_KW = "";
     public static final String DEFAULT_LASTIDS = "";
+    public static final Long DEFAULT_LAST_CLICK_TID;
+    public static final Integer DEFAULT_LOAD_TYPE;
+    public static final Boolean DEFAULT_LOGIN;
     public static final String DEFAULT_MOBILE = "";
     public static final String DEFAULT_MODULE_NAME = "";
+    public static final Integer DEFAULT_NO_UN;
     public static final String DEFAULT_OBJ_LOCATE = "";
     public static final String DEFAULT_OBJ_SOURCE = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
+    public static final Integer DEFAULT_SORT_TYPE;
     public static final String DEFAULT_ST_TYPE = "";
+    public static final Boolean DEFAULT_SUPPORT_NOUN;
     public static final String DEFAULT_UP_SCHEMA = "";
+    public static final Long DEFAULT_USER_ID;
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
@@ -51,7 +66,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 39)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8703common;
+    public final CommonReq f68373common;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -173,403 +188,14 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_CTIME = 0;
     public static final Integer DEFAULT_DATA_SIZE = 0;
     public static final Integer DEFAULT_NET_ERROR = 0;
-    public static final Boolean DEFAULT_CHECK_LOGIN = false;
+    public static final Boolean DEFAULT_CHECK_LOGIN = Boolean.FALSE;
     public static final Integer DEFAULT_RESULT_NUM = 0;
     public static final Integer DEFAULT_CLASS_ID = 0;
     public static final Integer DEFAULT_IP_INT = 0;
     public static final Integer DEFAULT_ST_PARAM = 0;
     public static final Integer DEFAULT_SMILE_GRADE = 0;
-    public static final Boolean DEFAULT_SUPPORT_NOUN = false;
-    public static final Boolean DEFAULT_LOGIN = false;
-    public static final Long DEFAULT_USER_ID = 0L;
-    public static final Integer DEFAULT_NO_UN = 0;
-    public static final Boolean DEFAULT_DEBUG = false;
-    public static final Integer DEFAULT_ISSDK = 0;
-    public static final Integer DEFAULT_CATEGORY_ID = 0;
-    public static final Integer DEFAULT_SORT_TYPE = 0;
-    public static final Long DEFAULT_LAST_CLICK_TID = 0L;
-    public static final Integer DEFAULT_LOAD_TYPE = 0;
-    public static final Integer DEFAULT_IS_SELECTION = 0;
-    public static final Integer DEFAULT_CALL_FROM = 0;
-    public static final Long DEFAULT_HOT_THREAD_ID = 0L;
-    public static final Integer DEFAULT_IS_DEFAULT_NAVTAB = 0;
-    public static final Integer DEFAULT_DEFAULT_SORT_TYPE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.kw == null) {
-                this.kw = "";
-            } else {
-                this.kw = builder.kw;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
-            } else {
-                this.rn = builder.rn;
-            }
-            if (builder.rn_need == null) {
-                this.rn_need = DEFAULT_RN_NEED;
-            } else {
-                this.rn_need = builder.rn_need;
-            }
-            if (builder.is_good == null) {
-                this.is_good = DEFAULT_IS_GOOD;
-            } else {
-                this.is_good = builder.is_good;
-            }
-            if (builder.cid == null) {
-                this.cid = DEFAULT_CID;
-            } else {
-                this.cid = builder.cid;
-            }
-            if (builder.withcal == null) {
-                this.withcal = DEFAULT_WITHCAL;
-            } else {
-                this.withcal = builder.withcal;
-            }
-            if (builder.noval == null) {
-                this.noval = DEFAULT_NOVAL;
-            } else {
-                this.noval = builder.noval;
-            }
-            if (builder.with_group == null) {
-                this.with_group = DEFAULT_WITH_GROUP;
-            } else {
-                this.with_group = builder.with_group;
-            }
-            if (builder.need_badge == null) {
-                this.need_badge = DEFAULT_NEED_BADGE;
-            } else {
-                this.need_badge = builder.need_badge;
-            }
-            if (builder.frs_rn == null) {
-                this.frs_rn = DEFAULT_FRS_RN;
-            } else {
-                this.frs_rn = builder.frs_rn;
-            }
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-            } else {
-                this.q_type = builder.q_type;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.st_type == null) {
-                this.st_type = "";
-            } else {
-                this.st_type = builder.st_type;
-            }
-            if (builder.ctime == null) {
-                this.ctime = DEFAULT_CTIME;
-            } else {
-                this.ctime = builder.ctime;
-            }
-            if (builder.data_size == null) {
-                this.data_size = DEFAULT_DATA_SIZE;
-            } else {
-                this.data_size = builder.data_size;
-            }
-            if (builder.net_error == null) {
-                this.net_error = DEFAULT_NET_ERROR;
-            } else {
-                this.net_error = builder.net_error;
-            }
-            if (builder.check_login == null) {
-                this.check_login = DEFAULT_CHECK_LOGIN;
-            } else {
-                this.check_login = builder.check_login;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.result_num == null) {
-                this.result_num = DEFAULT_RESULT_NUM;
-            } else {
-                this.result_num = builder.result_num;
-            }
-            if (builder.class_id == null) {
-                this.class_id = DEFAULT_CLASS_ID;
-            } else {
-                this.class_id = builder.class_id;
-            }
-            if (builder.ip_str == null) {
-                this.ip_str = "";
-            } else {
-                this.ip_str = builder.ip_str;
-            }
-            if (builder.ip_int == null) {
-                this.ip_int = DEFAULT_IP_INT;
-            } else {
-                this.ip_int = builder.ip_int;
-            }
-            if (builder.module_name == null) {
-                this.module_name = "";
-            } else {
-                this.module_name = builder.module_name;
-            }
-            if (builder.st_param == null) {
-                this.st_param = DEFAULT_ST_PARAM;
-            } else {
-                this.st_param = builder.st_param;
-            }
-            if (builder.smile_grade == null) {
-                this.smile_grade = DEFAULT_SMILE_GRADE;
-            } else {
-                this.smile_grade = builder.smile_grade;
-            }
-            if (builder.support_noun == null) {
-                this.support_noun = DEFAULT_SUPPORT_NOUN;
-            } else {
-                this.support_noun = builder.support_noun;
-            }
-            if (builder.login == null) {
-                this.login = DEFAULT_LOGIN;
-            } else {
-                this.login = builder.login;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.no_un == null) {
-                this.no_un = DEFAULT_NO_UN;
-            } else {
-                this.no_un = builder.no_un;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.mobile == null) {
-                this.mobile = "";
-            } else {
-                this.mobile = builder.mobile;
-            }
-            if (builder.email == null) {
-                this.email = "";
-            } else {
-                this.email = builder.email;
-            }
-            if (builder.debug == null) {
-                this.debug = DEFAULT_DEBUG;
-            } else {
-                this.debug = builder.debug;
-            }
-            if (builder.cookie == null) {
-                this.cookie = "";
-            } else {
-                this.cookie = builder.cookie;
-            }
-            this.f8703common = builder.f8704common;
-            if (builder.lastids == null) {
-                this.lastids = "";
-            } else {
-                this.lastids = builder.lastids;
-            }
-            if (builder.issdk == null) {
-                this.issdk = DEFAULT_ISSDK;
-            } else {
-                this.issdk = builder.issdk;
-            }
-            if (builder.da_idfa == null) {
-                this.da_idfa = "";
-            } else {
-                this.da_idfa = builder.da_idfa;
-            }
-            if (builder.platform == null) {
-                this.platform = "";
-            } else {
-                this.platform = builder.platform;
-            }
-            if (builder.category_id == null) {
-                this.category_id = DEFAULT_CATEGORY_ID;
-            } else {
-                this.category_id = builder.category_id;
-            }
-            if (builder.yuelaou_locate == null) {
-                this.yuelaou_locate = "";
-            } else {
-                this.yuelaou_locate = builder.yuelaou_locate;
-            }
-            if (builder.yuelaou_params == null) {
-                this.yuelaou_params = "";
-            } else {
-                this.yuelaou_params = builder.yuelaou_params;
-            }
-            if (builder.sort_type == null) {
-                this.sort_type = DEFAULT_SORT_TYPE;
-            } else {
-                this.sort_type = builder.sort_type;
-            }
-            if (builder.last_click_tid == null) {
-                this.last_click_tid = DEFAULT_LAST_CLICK_TID;
-            } else {
-                this.last_click_tid = builder.last_click_tid;
-            }
-            if (builder.load_type == null) {
-                this.load_type = DEFAULT_LOAD_TYPE;
-            } else {
-                this.load_type = builder.load_type;
-            }
-            this.app_pos = builder.app_pos;
-            this.ad_param = builder.ad_param;
-            if (builder.obj_locate == null) {
-                this.obj_locate = "";
-            } else {
-                this.obj_locate = builder.obj_locate;
-            }
-            if (builder.obj_source == null) {
-                this.obj_source = "";
-            } else {
-                this.obj_source = builder.obj_source;
-            }
-            if (builder.call_url == null) {
-                this.call_url = "";
-            } else {
-                this.call_url = builder.call_url;
-            }
-            if (builder.is_selection == null) {
-                this.is_selection = DEFAULT_IS_SELECTION;
-            } else {
-                this.is_selection = builder.is_selection;
-            }
-            if (builder.call_from == null) {
-                this.call_from = DEFAULT_CALL_FROM;
-            } else {
-                this.call_from = builder.call_from;
-            }
-            if (builder.shoubai_cuid == null) {
-                this.shoubai_cuid = "";
-            } else {
-                this.shoubai_cuid = builder.shoubai_cuid;
-            }
-            if (builder.hot_thread_id == null) {
-                this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
-            } else {
-                this.hot_thread_id = builder.hot_thread_id;
-            }
-            if (builder.is_default_navtab == null) {
-                this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
-            } else {
-                this.is_default_navtab = builder.is_default_navtab;
-            }
-            if (builder.ad_context_list == null) {
-                this.ad_context_list = "";
-            } else {
-                this.ad_context_list = builder.ad_context_list;
-            }
-            if (builder.up_schema == null) {
-                this.up_schema = "";
-            } else {
-                this.up_schema = builder.up_schema;
-            }
-            if (builder.ad_ext_params == null) {
-                this.ad_ext_params = "";
-            } else {
-                this.ad_ext_params = builder.ad_ext_params;
-            }
-            if (builder.default_sort_type == null) {
-                this.default_sort_type = DEFAULT_DEFAULT_SORT_TYPE;
-                return;
-            } else {
-                this.default_sort_type = builder.default_sort_type;
-                return;
-            }
-        }
-        this.kw = builder.kw;
-        this.rn = builder.rn;
-        this.rn_need = builder.rn_need;
-        this.is_good = builder.is_good;
-        this.cid = builder.cid;
-        this.withcal = builder.withcal;
-        this.noval = builder.noval;
-        this.with_group = builder.with_group;
-        this.need_badge = builder.need_badge;
-        this.frs_rn = builder.frs_rn;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.q_type = builder.q_type;
-        this.pn = builder.pn;
-        this.st_type = builder.st_type;
-        this.ctime = builder.ctime;
-        this.data_size = builder.data_size;
-        this.net_error = builder.net_error;
-        this.check_login = builder.check_login;
-        this.forum_name = builder.forum_name;
-        this.result_num = builder.result_num;
-        this.class_id = builder.class_id;
-        this.ip_str = builder.ip_str;
-        this.ip_int = builder.ip_int;
-        this.module_name = builder.module_name;
-        this.st_param = builder.st_param;
-        this.smile_grade = builder.smile_grade;
-        this.support_noun = builder.support_noun;
-        this.login = builder.login;
-        this.user_id = builder.user_id;
-        this.user_name = builder.user_name;
-        this.no_un = builder.no_un;
-        this.portrait = builder.portrait;
-        this.mobile = builder.mobile;
-        this.email = builder.email;
-        this.debug = builder.debug;
-        this.cookie = builder.cookie;
-        this.f8703common = builder.f8704common;
-        this.lastids = builder.lastids;
-        this.issdk = builder.issdk;
-        this.da_idfa = builder.da_idfa;
-        this.platform = builder.platform;
-        this.category_id = builder.category_id;
-        this.yuelaou_locate = builder.yuelaou_locate;
-        this.yuelaou_params = builder.yuelaou_params;
-        this.sort_type = builder.sort_type;
-        this.last_click_tid = builder.last_click_tid;
-        this.load_type = builder.load_type;
-        this.app_pos = builder.app_pos;
-        this.ad_param = builder.ad_param;
-        this.obj_locate = builder.obj_locate;
-        this.obj_source = builder.obj_source;
-        this.call_url = builder.call_url;
-        this.is_selection = builder.is_selection;
-        this.call_from = builder.call_from;
-        this.shoubai_cuid = builder.shoubai_cuid;
-        this.hot_thread_id = builder.hot_thread_id;
-        this.is_default_navtab = builder.is_default_navtab;
-        this.ad_context_list = builder.ad_context_list;
-        this.up_schema = builder.up_schema;
-        this.ad_ext_params = builder.ad_ext_params;
-        this.default_sort_type = builder.default_sort_type;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
         public String ad_ext_params;
@@ -583,7 +209,7 @@ public final class DataReq extends Message {
         public Integer class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8704common;
+        public CommonReq f68374common;
         public String cookie;
         public Integer ctime;
         public String da_idfa;
@@ -642,71 +268,72 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.kw = dataReq.kw;
-                this.rn = dataReq.rn;
-                this.rn_need = dataReq.rn_need;
-                this.is_good = dataReq.is_good;
-                this.cid = dataReq.cid;
-                this.withcal = dataReq.withcal;
-                this.noval = dataReq.noval;
-                this.with_group = dataReq.with_group;
-                this.need_badge = dataReq.need_badge;
-                this.frs_rn = dataReq.frs_rn;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.q_type = dataReq.q_type;
-                this.pn = dataReq.pn;
-                this.st_type = dataReq.st_type;
-                this.ctime = dataReq.ctime;
-                this.data_size = dataReq.data_size;
-                this.net_error = dataReq.net_error;
-                this.check_login = dataReq.check_login;
-                this.forum_name = dataReq.forum_name;
-                this.result_num = dataReq.result_num;
-                this.class_id = dataReq.class_id;
-                this.ip_str = dataReq.ip_str;
-                this.ip_int = dataReq.ip_int;
-                this.module_name = dataReq.module_name;
-                this.st_param = dataReq.st_param;
-                this.smile_grade = dataReq.smile_grade;
-                this.support_noun = dataReq.support_noun;
-                this.login = dataReq.login;
-                this.user_id = dataReq.user_id;
-                this.user_name = dataReq.user_name;
-                this.no_un = dataReq.no_un;
-                this.portrait = dataReq.portrait;
-                this.mobile = dataReq.mobile;
-                this.email = dataReq.email;
-                this.debug = dataReq.debug;
-                this.cookie = dataReq.cookie;
-                this.f8704common = dataReq.f8703common;
-                this.lastids = dataReq.lastids;
-                this.issdk = dataReq.issdk;
-                this.da_idfa = dataReq.da_idfa;
-                this.platform = dataReq.platform;
-                this.category_id = dataReq.category_id;
-                this.yuelaou_locate = dataReq.yuelaou_locate;
-                this.yuelaou_params = dataReq.yuelaou_params;
-                this.sort_type = dataReq.sort_type;
-                this.last_click_tid = dataReq.last_click_tid;
-                this.load_type = dataReq.load_type;
-                this.app_pos = dataReq.app_pos;
-                this.ad_param = dataReq.ad_param;
-                this.obj_locate = dataReq.obj_locate;
-                this.obj_source = dataReq.obj_source;
-                this.call_url = dataReq.call_url;
-                this.is_selection = dataReq.is_selection;
-                this.call_from = dataReq.call_from;
-                this.shoubai_cuid = dataReq.shoubai_cuid;
-                this.hot_thread_id = dataReq.hot_thread_id;
-                this.is_default_navtab = dataReq.is_default_navtab;
-                this.ad_context_list = dataReq.ad_context_list;
-                this.up_schema = dataReq.up_schema;
-                this.ad_ext_params = dataReq.ad_ext_params;
-                this.default_sort_type = dataReq.default_sort_type;
+            if (dataReq == null) {
+                return;
             }
+            this.kw = dataReq.kw;
+            this.rn = dataReq.rn;
+            this.rn_need = dataReq.rn_need;
+            this.is_good = dataReq.is_good;
+            this.cid = dataReq.cid;
+            this.withcal = dataReq.withcal;
+            this.noval = dataReq.noval;
+            this.with_group = dataReq.with_group;
+            this.need_badge = dataReq.need_badge;
+            this.frs_rn = dataReq.frs_rn;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.q_type = dataReq.q_type;
+            this.pn = dataReq.pn;
+            this.st_type = dataReq.st_type;
+            this.ctime = dataReq.ctime;
+            this.data_size = dataReq.data_size;
+            this.net_error = dataReq.net_error;
+            this.check_login = dataReq.check_login;
+            this.forum_name = dataReq.forum_name;
+            this.result_num = dataReq.result_num;
+            this.class_id = dataReq.class_id;
+            this.ip_str = dataReq.ip_str;
+            this.ip_int = dataReq.ip_int;
+            this.module_name = dataReq.module_name;
+            this.st_param = dataReq.st_param;
+            this.smile_grade = dataReq.smile_grade;
+            this.support_noun = dataReq.support_noun;
+            this.login = dataReq.login;
+            this.user_id = dataReq.user_id;
+            this.user_name = dataReq.user_name;
+            this.no_un = dataReq.no_un;
+            this.portrait = dataReq.portrait;
+            this.mobile = dataReq.mobile;
+            this.email = dataReq.email;
+            this.debug = dataReq.debug;
+            this.cookie = dataReq.cookie;
+            this.f68374common = dataReq.f68373common;
+            this.lastids = dataReq.lastids;
+            this.issdk = dataReq.issdk;
+            this.da_idfa = dataReq.da_idfa;
+            this.platform = dataReq.platform;
+            this.category_id = dataReq.category_id;
+            this.yuelaou_locate = dataReq.yuelaou_locate;
+            this.yuelaou_params = dataReq.yuelaou_params;
+            this.sort_type = dataReq.sort_type;
+            this.last_click_tid = dataReq.last_click_tid;
+            this.load_type = dataReq.load_type;
+            this.app_pos = dataReq.app_pos;
+            this.ad_param = dataReq.ad_param;
+            this.obj_locate = dataReq.obj_locate;
+            this.obj_source = dataReq.obj_source;
+            this.call_url = dataReq.call_url;
+            this.is_selection = dataReq.is_selection;
+            this.call_from = dataReq.call_from;
+            this.shoubai_cuid = dataReq.shoubai_cuid;
+            this.hot_thread_id = dataReq.hot_thread_id;
+            this.is_default_navtab = dataReq.is_default_navtab;
+            this.ad_context_list = dataReq.ad_context_list;
+            this.up_schema = dataReq.up_schema;
+            this.ad_ext_params = dataReq.ad_ext_params;
+            this.default_sort_type = dataReq.default_sort_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -714,5 +341,458 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    static {
+        Boolean bool = Boolean.FALSE;
+        DEFAULT_SUPPORT_NOUN = bool;
+        DEFAULT_LOGIN = bool;
+        DEFAULT_USER_ID = 0L;
+        DEFAULT_NO_UN = 0;
+        DEFAULT_DEBUG = Boolean.FALSE;
+        DEFAULT_ISSDK = 0;
+        DEFAULT_CATEGORY_ID = 0;
+        DEFAULT_SORT_TYPE = 0;
+        DEFAULT_LAST_CLICK_TID = 0L;
+        DEFAULT_LOAD_TYPE = 0;
+        DEFAULT_IS_SELECTION = 0;
+        DEFAULT_CALL_FROM = 0;
+        DEFAULT_HOT_THREAD_ID = 0L;
+        DEFAULT_IS_DEFAULT_NAVTAB = 0;
+        DEFAULT_DEFAULT_SORT_TYPE = 0;
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.kw;
+            if (str == null) {
+                this.kw = "";
+            } else {
+                this.kw = str;
+            }
+            Integer num = builder.rn;
+            if (num == null) {
+                this.rn = DEFAULT_RN;
+            } else {
+                this.rn = num;
+            }
+            Integer num2 = builder.rn_need;
+            if (num2 == null) {
+                this.rn_need = DEFAULT_RN_NEED;
+            } else {
+                this.rn_need = num2;
+            }
+            Integer num3 = builder.is_good;
+            if (num3 == null) {
+                this.is_good = DEFAULT_IS_GOOD;
+            } else {
+                this.is_good = num3;
+            }
+            Integer num4 = builder.cid;
+            if (num4 == null) {
+                this.cid = DEFAULT_CID;
+            } else {
+                this.cid = num4;
+            }
+            Integer num5 = builder.withcal;
+            if (num5 == null) {
+                this.withcal = DEFAULT_WITHCAL;
+            } else {
+                this.withcal = num5;
+            }
+            Integer num6 = builder.noval;
+            if (num6 == null) {
+                this.noval = DEFAULT_NOVAL;
+            } else {
+                this.noval = num6;
+            }
+            Integer num7 = builder.with_group;
+            if (num7 == null) {
+                this.with_group = DEFAULT_WITH_GROUP;
+            } else {
+                this.with_group = num7;
+            }
+            Integer num8 = builder.need_badge;
+            if (num8 == null) {
+                this.need_badge = DEFAULT_NEED_BADGE;
+            } else {
+                this.need_badge = num8;
+            }
+            Integer num9 = builder.frs_rn;
+            if (num9 == null) {
+                this.frs_rn = DEFAULT_FRS_RN;
+            } else {
+                this.frs_rn = num9;
+            }
+            Integer num10 = builder.scr_w;
+            if (num10 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num10;
+            }
+            Integer num11 = builder.scr_h;
+            if (num11 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num11;
+            }
+            Double d2 = builder.scr_dip;
+            if (d2 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = d2;
+            }
+            Integer num12 = builder.q_type;
+            if (num12 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = num12;
+            }
+            Integer num13 = builder.pn;
+            if (num13 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num13;
+            }
+            String str2 = builder.st_type;
+            if (str2 == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str2;
+            }
+            Integer num14 = builder.ctime;
+            if (num14 == null) {
+                this.ctime = DEFAULT_CTIME;
+            } else {
+                this.ctime = num14;
+            }
+            Integer num15 = builder.data_size;
+            if (num15 == null) {
+                this.data_size = DEFAULT_DATA_SIZE;
+            } else {
+                this.data_size = num15;
+            }
+            Integer num16 = builder.net_error;
+            if (num16 == null) {
+                this.net_error = DEFAULT_NET_ERROR;
+            } else {
+                this.net_error = num16;
+            }
+            Boolean bool = builder.check_login;
+            if (bool == null) {
+                this.check_login = DEFAULT_CHECK_LOGIN;
+            } else {
+                this.check_login = bool;
+            }
+            String str3 = builder.forum_name;
+            if (str3 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str3;
+            }
+            Integer num17 = builder.result_num;
+            if (num17 == null) {
+                this.result_num = DEFAULT_RESULT_NUM;
+            } else {
+                this.result_num = num17;
+            }
+            Integer num18 = builder.class_id;
+            if (num18 == null) {
+                this.class_id = DEFAULT_CLASS_ID;
+            } else {
+                this.class_id = num18;
+            }
+            String str4 = builder.ip_str;
+            if (str4 == null) {
+                this.ip_str = "";
+            } else {
+                this.ip_str = str4;
+            }
+            Integer num19 = builder.ip_int;
+            if (num19 == null) {
+                this.ip_int = DEFAULT_IP_INT;
+            } else {
+                this.ip_int = num19;
+            }
+            String str5 = builder.module_name;
+            if (str5 == null) {
+                this.module_name = "";
+            } else {
+                this.module_name = str5;
+            }
+            Integer num20 = builder.st_param;
+            if (num20 == null) {
+                this.st_param = DEFAULT_ST_PARAM;
+            } else {
+                this.st_param = num20;
+            }
+            Integer num21 = builder.smile_grade;
+            if (num21 == null) {
+                this.smile_grade = DEFAULT_SMILE_GRADE;
+            } else {
+                this.smile_grade = num21;
+            }
+            Boolean bool2 = builder.support_noun;
+            if (bool2 == null) {
+                this.support_noun = DEFAULT_SUPPORT_NOUN;
+            } else {
+                this.support_noun = bool2;
+            }
+            Boolean bool3 = builder.login;
+            if (bool3 == null) {
+                this.login = DEFAULT_LOGIN;
+            } else {
+                this.login = bool3;
+            }
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            String str6 = builder.user_name;
+            if (str6 == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str6;
+            }
+            Integer num22 = builder.no_un;
+            if (num22 == null) {
+                this.no_un = DEFAULT_NO_UN;
+            } else {
+                this.no_un = num22;
+            }
+            String str7 = builder.portrait;
+            if (str7 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str7;
+            }
+            String str8 = builder.mobile;
+            if (str8 == null) {
+                this.mobile = "";
+            } else {
+                this.mobile = str8;
+            }
+            String str9 = builder.email;
+            if (str9 == null) {
+                this.email = "";
+            } else {
+                this.email = str9;
+            }
+            Boolean bool4 = builder.debug;
+            if (bool4 == null) {
+                this.debug = DEFAULT_DEBUG;
+            } else {
+                this.debug = bool4;
+            }
+            String str10 = builder.cookie;
+            if (str10 == null) {
+                this.cookie = "";
+            } else {
+                this.cookie = str10;
+            }
+            this.f68373common = builder.f68374common;
+            String str11 = builder.lastids;
+            if (str11 == null) {
+                this.lastids = "";
+            } else {
+                this.lastids = str11;
+            }
+            Integer num23 = builder.issdk;
+            if (num23 == null) {
+                this.issdk = DEFAULT_ISSDK;
+            } else {
+                this.issdk = num23;
+            }
+            String str12 = builder.da_idfa;
+            if (str12 == null) {
+                this.da_idfa = "";
+            } else {
+                this.da_idfa = str12;
+            }
+            String str13 = builder.platform;
+            if (str13 == null) {
+                this.platform = "";
+            } else {
+                this.platform = str13;
+            }
+            Integer num24 = builder.category_id;
+            if (num24 == null) {
+                this.category_id = DEFAULT_CATEGORY_ID;
+            } else {
+                this.category_id = num24;
+            }
+            String str14 = builder.yuelaou_locate;
+            if (str14 == null) {
+                this.yuelaou_locate = "";
+            } else {
+                this.yuelaou_locate = str14;
+            }
+            String str15 = builder.yuelaou_params;
+            if (str15 == null) {
+                this.yuelaou_params = "";
+            } else {
+                this.yuelaou_params = str15;
+            }
+            Integer num25 = builder.sort_type;
+            if (num25 == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+            } else {
+                this.sort_type = num25;
+            }
+            Long l2 = builder.last_click_tid;
+            if (l2 == null) {
+                this.last_click_tid = DEFAULT_LAST_CLICK_TID;
+            } else {
+                this.last_click_tid = l2;
+            }
+            Integer num26 = builder.load_type;
+            if (num26 == null) {
+                this.load_type = DEFAULT_LOAD_TYPE;
+            } else {
+                this.load_type = num26;
+            }
+            this.app_pos = builder.app_pos;
+            this.ad_param = builder.ad_param;
+            String str16 = builder.obj_locate;
+            if (str16 == null) {
+                this.obj_locate = "";
+            } else {
+                this.obj_locate = str16;
+            }
+            String str17 = builder.obj_source;
+            if (str17 == null) {
+                this.obj_source = "";
+            } else {
+                this.obj_source = str17;
+            }
+            String str18 = builder.call_url;
+            if (str18 == null) {
+                this.call_url = "";
+            } else {
+                this.call_url = str18;
+            }
+            Integer num27 = builder.is_selection;
+            if (num27 == null) {
+                this.is_selection = DEFAULT_IS_SELECTION;
+            } else {
+                this.is_selection = num27;
+            }
+            Integer num28 = builder.call_from;
+            if (num28 == null) {
+                this.call_from = DEFAULT_CALL_FROM;
+            } else {
+                this.call_from = num28;
+            }
+            String str19 = builder.shoubai_cuid;
+            if (str19 == null) {
+                this.shoubai_cuid = "";
+            } else {
+                this.shoubai_cuid = str19;
+            }
+            Long l3 = builder.hot_thread_id;
+            if (l3 == null) {
+                this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
+            } else {
+                this.hot_thread_id = l3;
+            }
+            Integer num29 = builder.is_default_navtab;
+            if (num29 == null) {
+                this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
+            } else {
+                this.is_default_navtab = num29;
+            }
+            String str20 = builder.ad_context_list;
+            if (str20 == null) {
+                this.ad_context_list = "";
+            } else {
+                this.ad_context_list = str20;
+            }
+            String str21 = builder.up_schema;
+            if (str21 == null) {
+                this.up_schema = "";
+            } else {
+                this.up_schema = str21;
+            }
+            String str22 = builder.ad_ext_params;
+            if (str22 == null) {
+                this.ad_ext_params = "";
+            } else {
+                this.ad_ext_params = str22;
+            }
+            Integer num30 = builder.default_sort_type;
+            if (num30 == null) {
+                this.default_sort_type = DEFAULT_DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.default_sort_type = num30;
+                return;
+            }
+        }
+        this.kw = builder.kw;
+        this.rn = builder.rn;
+        this.rn_need = builder.rn_need;
+        this.is_good = builder.is_good;
+        this.cid = builder.cid;
+        this.withcal = builder.withcal;
+        this.noval = builder.noval;
+        this.with_group = builder.with_group;
+        this.need_badge = builder.need_badge;
+        this.frs_rn = builder.frs_rn;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
+        this.pn = builder.pn;
+        this.st_type = builder.st_type;
+        this.ctime = builder.ctime;
+        this.data_size = builder.data_size;
+        this.net_error = builder.net_error;
+        this.check_login = builder.check_login;
+        this.forum_name = builder.forum_name;
+        this.result_num = builder.result_num;
+        this.class_id = builder.class_id;
+        this.ip_str = builder.ip_str;
+        this.ip_int = builder.ip_int;
+        this.module_name = builder.module_name;
+        this.st_param = builder.st_param;
+        this.smile_grade = builder.smile_grade;
+        this.support_noun = builder.support_noun;
+        this.login = builder.login;
+        this.user_id = builder.user_id;
+        this.user_name = builder.user_name;
+        this.no_un = builder.no_un;
+        this.portrait = builder.portrait;
+        this.mobile = builder.mobile;
+        this.email = builder.email;
+        this.debug = builder.debug;
+        this.cookie = builder.cookie;
+        this.f68373common = builder.f68374common;
+        this.lastids = builder.lastids;
+        this.issdk = builder.issdk;
+        this.da_idfa = builder.da_idfa;
+        this.platform = builder.platform;
+        this.category_id = builder.category_id;
+        this.yuelaou_locate = builder.yuelaou_locate;
+        this.yuelaou_params = builder.yuelaou_params;
+        this.sort_type = builder.sort_type;
+        this.last_click_tid = builder.last_click_tid;
+        this.load_type = builder.load_type;
+        this.app_pos = builder.app_pos;
+        this.ad_param = builder.ad_param;
+        this.obj_locate = builder.obj_locate;
+        this.obj_source = builder.obj_source;
+        this.call_url = builder.call_url;
+        this.is_selection = builder.is_selection;
+        this.call_from = builder.call_from;
+        this.shoubai_cuid = builder.shoubai_cuid;
+        this.hot_thread_id = builder.hot_thread_id;
+        this.is_default_navtab = builder.is_default_navtab;
+        this.ad_context_list = builder.ad_context_list;
+        this.up_schema = builder.up_schema;
+        this.ad_ext_params = builder.ad_ext_params;
+        this.default_sort_type = builder.default_sort_type;
     }
 }

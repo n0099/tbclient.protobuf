@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class BawuRoleInfoPub extends Message {
     public static final String DEFAULT_LEVEL_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
@@ -34,70 +34,7 @@ public final class BawuRoleInfoPub extends Message {
     public static final Integer DEFAULT_ROLE_ID = 0;
     public static final Integer DEFAULT_USER_LEVEL = 0;
 
-    private BawuRoleInfoPub(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.role_id == null) {
-                this.role_id = DEFAULT_ROLE_ID;
-            } else {
-                this.role_id = builder.role_id;
-            }
-            if (builder.role_name == null) {
-                this.role_name = "";
-            } else {
-                this.role_name = builder.role_name;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.user_level == null) {
-                this.user_level = DEFAULT_USER_LEVEL;
-            } else {
-                this.user_level = builder.user_level;
-            }
-            if (builder.level_name == null) {
-                this.level_name = "";
-            } else {
-                this.level_name = builder.level_name;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.name_show == null) {
-                this.name_show = "";
-            } else {
-                this.name_show = builder.name_show;
-            }
-            this.baijiahao_info = builder.baijiahao_info;
-            return;
-        }
-        this.forum_id = builder.forum_id;
-        this.user_id = builder.user_id;
-        this.role_id = builder.role_id;
-        this.role_name = builder.role_name;
-        this.portrait = builder.portrait;
-        this.user_level = builder.user_level;
-        this.level_name = builder.level_name;
-        this.user_name = builder.user_name;
-        this.name_show = builder.name_show;
-        this.baijiahao_info = builder.baijiahao_info;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<BawuRoleInfoPub> {
         public BaijiahaoInfo baijiahao_info;
         public Long forum_id;
@@ -115,18 +52,19 @@ public final class BawuRoleInfoPub extends Message {
 
         public Builder(BawuRoleInfoPub bawuRoleInfoPub) {
             super(bawuRoleInfoPub);
-            if (bawuRoleInfoPub != null) {
-                this.forum_id = bawuRoleInfoPub.forum_id;
-                this.user_id = bawuRoleInfoPub.user_id;
-                this.role_id = bawuRoleInfoPub.role_id;
-                this.role_name = bawuRoleInfoPub.role_name;
-                this.portrait = bawuRoleInfoPub.portrait;
-                this.user_level = bawuRoleInfoPub.user_level;
-                this.level_name = bawuRoleInfoPub.level_name;
-                this.user_name = bawuRoleInfoPub.user_name;
-                this.name_show = bawuRoleInfoPub.name_show;
-                this.baijiahao_info = bawuRoleInfoPub.baijiahao_info;
+            if (bawuRoleInfoPub == null) {
+                return;
             }
+            this.forum_id = bawuRoleInfoPub.forum_id;
+            this.user_id = bawuRoleInfoPub.user_id;
+            this.role_id = bawuRoleInfoPub.role_id;
+            this.role_name = bawuRoleInfoPub.role_name;
+            this.portrait = bawuRoleInfoPub.portrait;
+            this.user_level = bawuRoleInfoPub.user_level;
+            this.level_name = bawuRoleInfoPub.level_name;
+            this.user_name = bawuRoleInfoPub.user_name;
+            this.name_show = bawuRoleInfoPub.name_show;
+            this.baijiahao_info = bawuRoleInfoPub.baijiahao_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -134,5 +72,77 @@ public final class BawuRoleInfoPub extends Message {
         public BawuRoleInfoPub build(boolean z) {
             return new BawuRoleInfoPub(this, z);
         }
+    }
+
+    public BawuRoleInfoPub(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            Long l2 = builder.user_id;
+            if (l2 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l2;
+            }
+            Integer num = builder.role_id;
+            if (num == null) {
+                this.role_id = DEFAULT_ROLE_ID;
+            } else {
+                this.role_id = num;
+            }
+            String str = builder.role_name;
+            if (str == null) {
+                this.role_name = "";
+            } else {
+                this.role_name = str;
+            }
+            String str2 = builder.portrait;
+            if (str2 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str2;
+            }
+            Integer num2 = builder.user_level;
+            if (num2 == null) {
+                this.user_level = DEFAULT_USER_LEVEL;
+            } else {
+                this.user_level = num2;
+            }
+            String str3 = builder.level_name;
+            if (str3 == null) {
+                this.level_name = "";
+            } else {
+                this.level_name = str3;
+            }
+            String str4 = builder.user_name;
+            if (str4 == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str4;
+            }
+            String str5 = builder.name_show;
+            if (str5 == null) {
+                this.name_show = "";
+            } else {
+                this.name_show = str5;
+            }
+            this.baijiahao_info = builder.baijiahao_info;
+            return;
+        }
+        this.forum_id = builder.forum_id;
+        this.user_id = builder.user_id;
+        this.role_id = builder.role_id;
+        this.role_name = builder.role_name;
+        this.portrait = builder.portrait;
+        this.user_level = builder.user_level;
+        this.level_name = builder.level_name;
+        this.user_name = builder.user_name;
+        this.name_show = builder.name_show;
+        this.baijiahao_info = builder.baijiahao_info;
     }
 }

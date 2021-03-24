@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class OrderList extends Message {
     public static final String DEFAULT_ACTIVITY_DESC = "";
     public static final String DEFAULT_ACTIVITY_URL = "";
@@ -41,87 +41,7 @@ public final class OrderList extends Message {
     public static final Long DEFAULT_MONEY = 0L;
     public static final Long DEFAULT_SCORES = 0L;
 
-    private OrderList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.order_id == null) {
-                this.order_id = "";
-            } else {
-                this.order_id = builder.order_id;
-            }
-            if (builder.status == null) {
-                this.status = DEFAULT_STATUS;
-            } else {
-                this.status = builder.status;
-            }
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.finish_time == null) {
-                this.finish_time = DEFAULT_FINISH_TIME;
-            } else {
-                this.finish_time = builder.finish_time;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.activity_desc == null) {
-                this.activity_desc = "";
-            } else {
-                this.activity_desc = builder.activity_desc;
-            }
-            if (builder.activity_url == null) {
-                this.activity_url = "";
-            } else {
-                this.activity_url = builder.activity_url;
-            }
-            if (builder.button_name == null) {
-                this.button_name = "";
-            } else {
-                this.button_name = builder.button_name;
-            }
-            if (builder.scene_id == null) {
-                this.scene_id = DEFAULT_SCENE_ID;
-            } else {
-                this.scene_id = builder.scene_id;
-            }
-            if (builder.money == null) {
-                this.money = DEFAULT_MONEY;
-            } else {
-                this.money = builder.money;
-            }
-            if (builder.scores == null) {
-                this.scores = DEFAULT_SCORES;
-            } else {
-                this.scores = builder.scores;
-            }
-            if (builder.preg_field == null) {
-                this.preg_field = "";
-                return;
-            } else {
-                this.preg_field = builder.preg_field;
-                return;
-            }
-        }
-        this.order_id = builder.order_id;
-        this.status = builder.status;
-        this.create_time = builder.create_time;
-        this.finish_time = builder.finish_time;
-        this.title = builder.title;
-        this.activity_desc = builder.activity_desc;
-        this.activity_url = builder.activity_url;
-        this.button_name = builder.button_name;
-        this.scene_id = builder.scene_id;
-        this.money = builder.money;
-        this.scores = builder.scores;
-        this.preg_field = builder.preg_field;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<OrderList> {
         public String activity_desc;
         public String activity_url;
@@ -141,20 +61,21 @@ public final class OrderList extends Message {
 
         public Builder(OrderList orderList) {
             super(orderList);
-            if (orderList != null) {
-                this.order_id = orderList.order_id;
-                this.status = orderList.status;
-                this.create_time = orderList.create_time;
-                this.finish_time = orderList.finish_time;
-                this.title = orderList.title;
-                this.activity_desc = orderList.activity_desc;
-                this.activity_url = orderList.activity_url;
-                this.button_name = orderList.button_name;
-                this.scene_id = orderList.scene_id;
-                this.money = orderList.money;
-                this.scores = orderList.scores;
-                this.preg_field = orderList.preg_field;
+            if (orderList == null) {
+                return;
             }
+            this.order_id = orderList.order_id;
+            this.status = orderList.status;
+            this.create_time = orderList.create_time;
+            this.finish_time = orderList.finish_time;
+            this.title = orderList.title;
+            this.activity_desc = orderList.activity_desc;
+            this.activity_url = orderList.activity_url;
+            this.button_name = orderList.button_name;
+            this.scene_id = orderList.scene_id;
+            this.money = orderList.money;
+            this.scores = orderList.scores;
+            this.preg_field = orderList.preg_field;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -162,5 +83,97 @@ public final class OrderList extends Message {
         public OrderList build(boolean z) {
             return new OrderList(this, z);
         }
+    }
+
+    public OrderList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.order_id;
+            if (str == null) {
+                this.order_id = "";
+            } else {
+                this.order_id = str;
+            }
+            Integer num = builder.status;
+            if (num == null) {
+                this.status = DEFAULT_STATUS;
+            } else {
+                this.status = num;
+            }
+            Long l = builder.create_time;
+            if (l == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = l;
+            }
+            Long l2 = builder.finish_time;
+            if (l2 == null) {
+                this.finish_time = DEFAULT_FINISH_TIME;
+            } else {
+                this.finish_time = l2;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.activity_desc;
+            if (str3 == null) {
+                this.activity_desc = "";
+            } else {
+                this.activity_desc = str3;
+            }
+            String str4 = builder.activity_url;
+            if (str4 == null) {
+                this.activity_url = "";
+            } else {
+                this.activity_url = str4;
+            }
+            String str5 = builder.button_name;
+            if (str5 == null) {
+                this.button_name = "";
+            } else {
+                this.button_name = str5;
+            }
+            Integer num2 = builder.scene_id;
+            if (num2 == null) {
+                this.scene_id = DEFAULT_SCENE_ID;
+            } else {
+                this.scene_id = num2;
+            }
+            Long l3 = builder.money;
+            if (l3 == null) {
+                this.money = DEFAULT_MONEY;
+            } else {
+                this.money = l3;
+            }
+            Long l4 = builder.scores;
+            if (l4 == null) {
+                this.scores = DEFAULT_SCORES;
+            } else {
+                this.scores = l4;
+            }
+            String str6 = builder.preg_field;
+            if (str6 == null) {
+                this.preg_field = "";
+                return;
+            } else {
+                this.preg_field = str6;
+                return;
+            }
+        }
+        this.order_id = builder.order_id;
+        this.status = builder.status;
+        this.create_time = builder.create_time;
+        this.finish_time = builder.finish_time;
+        this.title = builder.title;
+        this.activity_desc = builder.activity_desc;
+        this.activity_url = builder.activity_url;
+        this.button_name = builder.button_name;
+        this.scene_id = builder.scene_id;
+        this.money = builder.money;
+        this.scores = builder.scores;
+        this.preg_field = builder.preg_field;
     }
 }

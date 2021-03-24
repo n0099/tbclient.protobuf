@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PollInfo extends Message {
     public static final String DEFAULT_POLLED_VALUE = "";
     public static final String DEFAULT_TIPS = "";
@@ -46,93 +46,7 @@ public final class PollInfo extends Message {
     public static final Long DEFAULT_TOTAL_POLL = 0L;
     public static final Integer DEFAULT_LAST_TIME = 0;
 
-    private PollInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.is_multi == null) {
-                this.is_multi = DEFAULT_IS_MULTI;
-            } else {
-                this.is_multi = builder.is_multi;
-            }
-            if (builder.total_num == null) {
-                this.total_num = DEFAULT_TOTAL_NUM;
-            } else {
-                this.total_num = builder.total_num;
-            }
-            if (builder.options_count == null) {
-                this.options_count = DEFAULT_OPTIONS_COUNT;
-            } else {
-                this.options_count = builder.options_count;
-            }
-            if (builder.is_polled == null) {
-                this.is_polled = DEFAULT_IS_POLLED;
-            } else {
-                this.is_polled = builder.is_polled;
-            }
-            if (builder.polled_value == null) {
-                this.polled_value = "";
-            } else {
-                this.polled_value = builder.polled_value;
-            }
-            if (builder.tips == null) {
-                this.tips = "";
-            } else {
-                this.tips = builder.tips;
-            }
-            if (builder.end_time == null) {
-                this.end_time = DEFAULT_END_TIME;
-            } else {
-                this.end_time = builder.end_time;
-            }
-            if (builder.options == null) {
-                this.options = DEFAULT_OPTIONS;
-            } else {
-                this.options = immutableCopyOf(builder.options);
-            }
-            if (builder.status == null) {
-                this.status = DEFAULT_STATUS;
-            } else {
-                this.status = builder.status;
-            }
-            if (builder.total_poll == null) {
-                this.total_poll = DEFAULT_TOTAL_POLL;
-            } else {
-                this.total_poll = builder.total_poll;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.last_time == null) {
-                this.last_time = DEFAULT_LAST_TIME;
-                return;
-            } else {
-                this.last_time = builder.last_time;
-                return;
-            }
-        }
-        this.type = builder.type;
-        this.is_multi = builder.is_multi;
-        this.total_num = builder.total_num;
-        this.options_count = builder.options_count;
-        this.is_polled = builder.is_polled;
-        this.polled_value = builder.polled_value;
-        this.tips = builder.tips;
-        this.end_time = builder.end_time;
-        this.options = immutableCopyOf(builder.options);
-        this.status = builder.status;
-        this.total_poll = builder.total_poll;
-        this.title = builder.title;
-        this.last_time = builder.last_time;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PollInfo> {
         public Integer end_time;
         public Integer is_multi;
@@ -153,21 +67,22 @@ public final class PollInfo extends Message {
 
         public Builder(PollInfo pollInfo) {
             super(pollInfo);
-            if (pollInfo != null) {
-                this.type = pollInfo.type;
-                this.is_multi = pollInfo.is_multi;
-                this.total_num = pollInfo.total_num;
-                this.options_count = pollInfo.options_count;
-                this.is_polled = pollInfo.is_polled;
-                this.polled_value = pollInfo.polled_value;
-                this.tips = pollInfo.tips;
-                this.end_time = pollInfo.end_time;
-                this.options = PollInfo.copyOf(pollInfo.options);
-                this.status = pollInfo.status;
-                this.total_poll = pollInfo.total_poll;
-                this.title = pollInfo.title;
-                this.last_time = pollInfo.last_time;
+            if (pollInfo == null) {
+                return;
             }
+            this.type = pollInfo.type;
+            this.is_multi = pollInfo.is_multi;
+            this.total_num = pollInfo.total_num;
+            this.options_count = pollInfo.options_count;
+            this.is_polled = pollInfo.is_polled;
+            this.polled_value = pollInfo.polled_value;
+            this.tips = pollInfo.tips;
+            this.end_time = pollInfo.end_time;
+            this.options = Message.copyOf(pollInfo.options);
+            this.status = pollInfo.status;
+            this.total_poll = pollInfo.total_poll;
+            this.title = pollInfo.title;
+            this.last_time = pollInfo.last_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -175,5 +90,104 @@ public final class PollInfo extends Message {
         public PollInfo build(boolean z) {
             return new PollInfo(this, z);
         }
+    }
+
+    public PollInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            Integer num2 = builder.is_multi;
+            if (num2 == null) {
+                this.is_multi = DEFAULT_IS_MULTI;
+            } else {
+                this.is_multi = num2;
+            }
+            Long l = builder.total_num;
+            if (l == null) {
+                this.total_num = DEFAULT_TOTAL_NUM;
+            } else {
+                this.total_num = l;
+            }
+            Integer num3 = builder.options_count;
+            if (num3 == null) {
+                this.options_count = DEFAULT_OPTIONS_COUNT;
+            } else {
+                this.options_count = num3;
+            }
+            Integer num4 = builder.is_polled;
+            if (num4 == null) {
+                this.is_polled = DEFAULT_IS_POLLED;
+            } else {
+                this.is_polled = num4;
+            }
+            String str = builder.polled_value;
+            if (str == null) {
+                this.polled_value = "";
+            } else {
+                this.polled_value = str;
+            }
+            String str2 = builder.tips;
+            if (str2 == null) {
+                this.tips = "";
+            } else {
+                this.tips = str2;
+            }
+            Integer num5 = builder.end_time;
+            if (num5 == null) {
+                this.end_time = DEFAULT_END_TIME;
+            } else {
+                this.end_time = num5;
+            }
+            List<PollOption> list = builder.options;
+            if (list == null) {
+                this.options = DEFAULT_OPTIONS;
+            } else {
+                this.options = Message.immutableCopyOf(list);
+            }
+            Integer num6 = builder.status;
+            if (num6 == null) {
+                this.status = DEFAULT_STATUS;
+            } else {
+                this.status = num6;
+            }
+            Long l2 = builder.total_poll;
+            if (l2 == null) {
+                this.total_poll = DEFAULT_TOTAL_POLL;
+            } else {
+                this.total_poll = l2;
+            }
+            String str3 = builder.title;
+            if (str3 == null) {
+                this.title = "";
+            } else {
+                this.title = str3;
+            }
+            Integer num7 = builder.last_time;
+            if (num7 == null) {
+                this.last_time = DEFAULT_LAST_TIME;
+                return;
+            } else {
+                this.last_time = num7;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.is_multi = builder.is_multi;
+        this.total_num = builder.total_num;
+        this.options_count = builder.options_count;
+        this.is_polled = builder.is_polled;
+        this.polled_value = builder.polled_value;
+        this.tips = builder.tips;
+        this.end_time = builder.end_time;
+        this.options = Message.immutableCopyOf(builder.options);
+        this.status = builder.status;
+        this.total_poll = builder.total_poll;
+        this.title = builder.title;
+        this.last_time = builder.last_time;
     }
 }

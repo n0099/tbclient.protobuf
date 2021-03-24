@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BannerList;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
@@ -24,41 +24,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<User> user_list;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.thread_list == null) {
-                this.thread_list = DEFAULT_THREAD_LIST;
-            } else {
-                this.thread_list = immutableCopyOf(builder.thread_list);
-            }
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-            }
-            this.banner_list = builder.banner_list;
-            if (builder.asp_shown_info == null) {
-                this.asp_shown_info = "";
-            } else {
-                this.asp_shown_info = builder.asp_shown_info;
-            }
-            if (builder.partial_visible_toast == null) {
-                this.partial_visible_toast = "";
-                return;
-            } else {
-                this.partial_visible_toast = builder.partial_visible_toast;
-                return;
-            }
-        }
-        this.thread_list = immutableCopyOf(builder.thread_list);
-        this.user_list = immutableCopyOf(builder.user_list);
-        this.banner_list = builder.banner_list;
-        this.asp_shown_info = builder.asp_shown_info;
-        this.partial_visible_toast = builder.partial_visible_toast;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String asp_shown_info;
         public BannerList banner_list;
@@ -71,13 +37,14 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.thread_list = DataRes.copyOf(dataRes.thread_list);
-                this.user_list = DataRes.copyOf(dataRes.user_list);
-                this.banner_list = dataRes.banner_list;
-                this.asp_shown_info = dataRes.asp_shown_info;
-                this.partial_visible_toast = dataRes.partial_visible_toast;
+            if (dataRes == null) {
+                return;
             }
+            this.thread_list = Message.copyOf(dataRes.thread_list);
+            this.user_list = Message.copyOf(dataRes.user_list);
+            this.banner_list = dataRes.banner_list;
+            this.asp_shown_info = dataRes.asp_shown_info;
+            this.partial_visible_toast = dataRes.partial_visible_toast;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +52,43 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ThreadInfo> list = builder.thread_list;
+            if (list == null) {
+                this.thread_list = DEFAULT_THREAD_LIST;
+            } else {
+                this.thread_list = Message.immutableCopyOf(list);
+            }
+            List<User> list2 = builder.user_list;
+            if (list2 == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list2);
+            }
+            this.banner_list = builder.banner_list;
+            String str = builder.asp_shown_info;
+            if (str == null) {
+                this.asp_shown_info = "";
+            } else {
+                this.asp_shown_info = str;
+            }
+            String str2 = builder.partial_visible_toast;
+            if (str2 == null) {
+                this.partial_visible_toast = "";
+                return;
+            } else {
+                this.partial_visible_toast = str2;
+                return;
+            }
+        }
+        this.thread_list = Message.immutableCopyOf(builder.thread_list);
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.banner_list = builder.banner_list;
+        this.asp_shown_info = builder.asp_shown_info;
+        this.partial_visible_toast = builder.partial_visible_toast;
     }
 }

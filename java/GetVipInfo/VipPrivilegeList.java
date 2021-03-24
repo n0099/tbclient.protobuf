@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class VipPrivilegeList extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final String DEFAULT_CLASS_URL = "";
@@ -19,39 +19,7 @@ public final class VipPrivilegeList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<VipPrivilegeItem> item;
 
-    private VipPrivilegeList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.class_name == null) {
-                this.class_name = "";
-            } else {
-                this.class_name = builder.class_name;
-            }
-            if (builder.class_url_name == null) {
-                this.class_url_name = "";
-            } else {
-                this.class_url_name = builder.class_url_name;
-            }
-            if (builder.class_url == null) {
-                this.class_url = "";
-            } else {
-                this.class_url = builder.class_url;
-            }
-            if (builder.item == null) {
-                this.item = DEFAULT_ITEM;
-                return;
-            } else {
-                this.item = immutableCopyOf(builder.item);
-                return;
-            }
-        }
-        this.class_name = builder.class_name;
-        this.class_url_name = builder.class_url_name;
-        this.class_url = builder.class_url;
-        this.item = immutableCopyOf(builder.item);
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VipPrivilegeList> {
         public String class_name;
         public String class_url;
@@ -63,12 +31,13 @@ public final class VipPrivilegeList extends Message {
 
         public Builder(VipPrivilegeList vipPrivilegeList) {
             super(vipPrivilegeList);
-            if (vipPrivilegeList != null) {
-                this.class_name = vipPrivilegeList.class_name;
-                this.class_url_name = vipPrivilegeList.class_url_name;
-                this.class_url = vipPrivilegeList.class_url;
-                this.item = VipPrivilegeList.copyOf(vipPrivilegeList.item);
+            if (vipPrivilegeList == null) {
+                return;
             }
+            this.class_name = vipPrivilegeList.class_name;
+            this.class_url_name = vipPrivilegeList.class_url_name;
+            this.class_url = vipPrivilegeList.class_url;
+            this.item = Message.copyOf(vipPrivilegeList.item);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -76,5 +45,41 @@ public final class VipPrivilegeList extends Message {
         public VipPrivilegeList build(boolean z) {
             return new VipPrivilegeList(this, z);
         }
+    }
+
+    public VipPrivilegeList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.class_name;
+            if (str == null) {
+                this.class_name = "";
+            } else {
+                this.class_name = str;
+            }
+            String str2 = builder.class_url_name;
+            if (str2 == null) {
+                this.class_url_name = "";
+            } else {
+                this.class_url_name = str2;
+            }
+            String str3 = builder.class_url;
+            if (str3 == null) {
+                this.class_url = "";
+            } else {
+                this.class_url = str3;
+            }
+            List<VipPrivilegeItem> list = builder.item;
+            if (list == null) {
+                this.item = DEFAULT_ITEM;
+                return;
+            } else {
+                this.item = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.class_name = builder.class_name;
+        this.class_url_name = builder.class_url_name;
+        this.class_url = builder.class_url;
+        this.item = Message.immutableCopyOf(builder.item);
     }
 }

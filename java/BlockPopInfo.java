@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class BlockPopInfo extends Message {
     public static final String DEFAULT_AHEAD_INFO = "";
     public static final String DEFAULT_AHEAD_URL = "";
@@ -38,81 +38,7 @@ public final class BlockPopInfo extends Message {
     public static final Integer DEFAULT_AHEAD_TYPE = 0;
     public static final Integer DEFAULT_APPEAL_STATUS = 0;
 
-    private BlockPopInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.can_post == null) {
-                this.can_post = DEFAULT_CAN_POST;
-            } else {
-                this.can_post = builder.can_post;
-            }
-            if (builder.block_info == null) {
-                this.block_info = "";
-            } else {
-                this.block_info = builder.block_info;
-            }
-            if (builder.ahead_info == null) {
-                this.ahead_info = "";
-            } else {
-                this.ahead_info = builder.ahead_info;
-            }
-            if (builder.ahead_url == null) {
-                this.ahead_url = "";
-            } else {
-                this.ahead_url = builder.ahead_url;
-            }
-            if (builder.ok_info == null) {
-                this.ok_info = "";
-            } else {
-                this.ok_info = builder.ok_info;
-            }
-            if (builder.ahead_type == null) {
-                this.ahead_type = DEFAULT_AHEAD_TYPE;
-            } else {
-                this.ahead_type = builder.ahead_type;
-            }
-            if (builder.appeal_status == null) {
-                this.appeal_status = DEFAULT_APPEAL_STATUS;
-            } else {
-                this.appeal_status = builder.appeal_status;
-            }
-            if (builder.appeal_msg == null) {
-                this.appeal_msg = "";
-            } else {
-                this.appeal_msg = builder.appeal_msg;
-            }
-            if (builder.is_like == null) {
-                this.is_like = "";
-            } else {
-                this.is_like = builder.is_like;
-            }
-            if (builder.is_nclass == null) {
-                this.is_nclass = "";
-            } else {
-                this.is_nclass = builder.is_nclass;
-            }
-            if (builder.sub_block_info == null) {
-                this.sub_block_info = "";
-                return;
-            } else {
-                this.sub_block_info = builder.sub_block_info;
-                return;
-            }
-        }
-        this.can_post = builder.can_post;
-        this.block_info = builder.block_info;
-        this.ahead_info = builder.ahead_info;
-        this.ahead_url = builder.ahead_url;
-        this.ok_info = builder.ok_info;
-        this.ahead_type = builder.ahead_type;
-        this.appeal_status = builder.appeal_status;
-        this.appeal_msg = builder.appeal_msg;
-        this.is_like = builder.is_like;
-        this.is_nclass = builder.is_nclass;
-        this.sub_block_info = builder.sub_block_info;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<BlockPopInfo> {
         public String ahead_info;
         public Integer ahead_type;
@@ -131,19 +57,20 @@ public final class BlockPopInfo extends Message {
 
         public Builder(BlockPopInfo blockPopInfo) {
             super(blockPopInfo);
-            if (blockPopInfo != null) {
-                this.can_post = blockPopInfo.can_post;
-                this.block_info = blockPopInfo.block_info;
-                this.ahead_info = blockPopInfo.ahead_info;
-                this.ahead_url = blockPopInfo.ahead_url;
-                this.ok_info = blockPopInfo.ok_info;
-                this.ahead_type = blockPopInfo.ahead_type;
-                this.appeal_status = blockPopInfo.appeal_status;
-                this.appeal_msg = blockPopInfo.appeal_msg;
-                this.is_like = blockPopInfo.is_like;
-                this.is_nclass = blockPopInfo.is_nclass;
-                this.sub_block_info = blockPopInfo.sub_block_info;
+            if (blockPopInfo == null) {
+                return;
             }
+            this.can_post = blockPopInfo.can_post;
+            this.block_info = blockPopInfo.block_info;
+            this.ahead_info = blockPopInfo.ahead_info;
+            this.ahead_url = blockPopInfo.ahead_url;
+            this.ok_info = blockPopInfo.ok_info;
+            this.ahead_type = blockPopInfo.ahead_type;
+            this.appeal_status = blockPopInfo.appeal_status;
+            this.appeal_msg = blockPopInfo.appeal_msg;
+            this.is_like = blockPopInfo.is_like;
+            this.is_nclass = blockPopInfo.is_nclass;
+            this.sub_block_info = blockPopInfo.sub_block_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -151,5 +78,90 @@ public final class BlockPopInfo extends Message {
         public BlockPopInfo build(boolean z) {
             return new BlockPopInfo(this, z);
         }
+    }
+
+    public BlockPopInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.can_post;
+            if (num == null) {
+                this.can_post = DEFAULT_CAN_POST;
+            } else {
+                this.can_post = num;
+            }
+            String str = builder.block_info;
+            if (str == null) {
+                this.block_info = "";
+            } else {
+                this.block_info = str;
+            }
+            String str2 = builder.ahead_info;
+            if (str2 == null) {
+                this.ahead_info = "";
+            } else {
+                this.ahead_info = str2;
+            }
+            String str3 = builder.ahead_url;
+            if (str3 == null) {
+                this.ahead_url = "";
+            } else {
+                this.ahead_url = str3;
+            }
+            String str4 = builder.ok_info;
+            if (str4 == null) {
+                this.ok_info = "";
+            } else {
+                this.ok_info = str4;
+            }
+            Integer num2 = builder.ahead_type;
+            if (num2 == null) {
+                this.ahead_type = DEFAULT_AHEAD_TYPE;
+            } else {
+                this.ahead_type = num2;
+            }
+            Integer num3 = builder.appeal_status;
+            if (num3 == null) {
+                this.appeal_status = DEFAULT_APPEAL_STATUS;
+            } else {
+                this.appeal_status = num3;
+            }
+            String str5 = builder.appeal_msg;
+            if (str5 == null) {
+                this.appeal_msg = "";
+            } else {
+                this.appeal_msg = str5;
+            }
+            String str6 = builder.is_like;
+            if (str6 == null) {
+                this.is_like = "";
+            } else {
+                this.is_like = str6;
+            }
+            String str7 = builder.is_nclass;
+            if (str7 == null) {
+                this.is_nclass = "";
+            } else {
+                this.is_nclass = str7;
+            }
+            String str8 = builder.sub_block_info;
+            if (str8 == null) {
+                this.sub_block_info = "";
+                return;
+            } else {
+                this.sub_block_info = str8;
+                return;
+            }
+        }
+        this.can_post = builder.can_post;
+        this.block_info = builder.block_info;
+        this.ahead_info = builder.ahead_info;
+        this.ahead_url = builder.ahead_url;
+        this.ok_info = builder.ok_info;
+        this.ahead_type = builder.ahead_type;
+        this.appeal_status = builder.appeal_status;
+        this.appeal_msg = builder.appeal_msg;
+        this.is_like = builder.is_like;
+        this.is_nclass = builder.is_nclass;
+        this.sub_block_info = builder.sub_block_info;
     }
 }

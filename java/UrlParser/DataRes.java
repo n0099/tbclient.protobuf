@@ -2,7 +2,7 @@ package tbclient.UrlParser;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_IMAGE = "";
@@ -29,63 +29,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_STATUS = 0;
     public static final Integer DEFAULT_IS_RECOGNIZE = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.url_type == null) {
-                this.url_type = DEFAULT_URL_TYPE;
-            } else {
-                this.url_type = builder.url_type;
-            }
-            if (builder.status == null) {
-                this.status = DEFAULT_STATUS;
-            } else {
-                this.status = builder.status;
-            }
-            if (builder.image == null) {
-                this.image = "";
-            } else {
-                this.image = builder.image;
-            }
-            if (builder.link_from == null) {
-                this.link_from = "";
-            } else {
-                this.link_from = builder.link_from;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.price_txt == null) {
-                this.price_txt = "";
-            } else {
-                this.price_txt = builder.price_txt;
-            }
-            if (builder.is_recognize == null) {
-                this.is_recognize = DEFAULT_IS_RECOGNIZE;
-            } else {
-                this.is_recognize = builder.is_recognize;
-            }
-            if (builder.description == null) {
-                this.description = "";
-                return;
-            } else {
-                this.description = builder.description;
-                return;
-            }
-        }
-        this.url_type = builder.url_type;
-        this.status = builder.status;
-        this.image = builder.image;
-        this.link_from = builder.link_from;
-        this.title = builder.title;
-        this.price_txt = builder.price_txt;
-        this.is_recognize = builder.is_recognize;
-        this.description = builder.description;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String description;
         public String image;
@@ -101,16 +45,17 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.url_type = dataRes.url_type;
-                this.status = dataRes.status;
-                this.image = dataRes.image;
-                this.link_from = dataRes.link_from;
-                this.title = dataRes.title;
-                this.price_txt = dataRes.price_txt;
-                this.is_recognize = dataRes.is_recognize;
-                this.description = dataRes.description;
+            if (dataRes == null) {
+                return;
             }
+            this.url_type = dataRes.url_type;
+            this.status = dataRes.status;
+            this.image = dataRes.image;
+            this.link_from = dataRes.link_from;
+            this.title = dataRes.title;
+            this.price_txt = dataRes.price_txt;
+            this.is_recognize = dataRes.is_recognize;
+            this.description = dataRes.description;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +63,69 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.url_type;
+            if (num == null) {
+                this.url_type = DEFAULT_URL_TYPE;
+            } else {
+                this.url_type = num;
+            }
+            Integer num2 = builder.status;
+            if (num2 == null) {
+                this.status = DEFAULT_STATUS;
+            } else {
+                this.status = num2;
+            }
+            String str = builder.image;
+            if (str == null) {
+                this.image = "";
+            } else {
+                this.image = str;
+            }
+            String str2 = builder.link_from;
+            if (str2 == null) {
+                this.link_from = "";
+            } else {
+                this.link_from = str2;
+            }
+            String str3 = builder.title;
+            if (str3 == null) {
+                this.title = "";
+            } else {
+                this.title = str3;
+            }
+            String str4 = builder.price_txt;
+            if (str4 == null) {
+                this.price_txt = "";
+            } else {
+                this.price_txt = str4;
+            }
+            Integer num3 = builder.is_recognize;
+            if (num3 == null) {
+                this.is_recognize = DEFAULT_IS_RECOGNIZE;
+            } else {
+                this.is_recognize = num3;
+            }
+            String str5 = builder.description;
+            if (str5 == null) {
+                this.description = "";
+                return;
+            } else {
+                this.description = str5;
+                return;
+            }
+        }
+        this.url_type = builder.url_type;
+        this.status = builder.status;
+        this.image = builder.image;
+        this.link_from = builder.link_from;
+        this.title = builder.title;
+        this.price_txt = builder.price_txt;
+        this.is_recognize = builder.is_recognize;
+        this.description = builder.description;
     }
 }

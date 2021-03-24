@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ADDFREE_URL = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -30,58 +30,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SCENE_ID = 0;
     public static final Integer DEFAULT_CURRENCY_TYPE = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.list == null) {
-                this.list = DEFAULT_LIST;
-            } else {
-                this.list = immutableCopyOf(builder.list);
-            }
-            if (builder.num_info == null) {
-                this.num_info = DEFAULT_NUM_INFO;
-            } else {
-                this.num_info = immutableCopyOf(builder.num_info);
-            }
-            if (builder.addfree_url == null) {
-                this.addfree_url = "";
-            } else {
-                this.addfree_url = builder.addfree_url;
-            }
-            if (builder.gift_list == null) {
-                this.gift_list = DEFAULT_GIFT_LIST;
-            } else {
-                this.gift_list = immutableCopyOf(builder.gift_list);
-            }
-            if (builder.free_chance == null) {
-                this.free_chance = DEFAULT_FREE_CHANCE;
-            } else {
-                this.free_chance = builder.free_chance;
-            }
-            if (builder.scene_id == null) {
-                this.scene_id = DEFAULT_SCENE_ID;
-            } else {
-                this.scene_id = builder.scene_id;
-            }
-            if (builder.currency_type == null) {
-                this.currency_type = DEFAULT_CURRENCY_TYPE;
-            } else {
-                this.currency_type = builder.currency_type;
-            }
-            this.currency_txt = builder.currency_txt;
-            return;
-        }
-        this.list = immutableCopyOf(builder.list);
-        this.num_info = immutableCopyOf(builder.num_info);
-        this.addfree_url = builder.addfree_url;
-        this.gift_list = immutableCopyOf(builder.gift_list);
-        this.free_chance = builder.free_chance;
-        this.scene_id = builder.scene_id;
-        this.currency_type = builder.currency_type;
-        this.currency_txt = builder.currency_txt;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String addfree_url;
         public UrlTitle currency_txt;
@@ -97,16 +46,17 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.list = DataRes.copyOf(dataRes.list);
-                this.num_info = DataRes.copyOf(dataRes.num_info);
-                this.addfree_url = dataRes.addfree_url;
-                this.gift_list = DataRes.copyOf(dataRes.gift_list);
-                this.free_chance = dataRes.free_chance;
-                this.scene_id = dataRes.scene_id;
-                this.currency_type = dataRes.currency_type;
-                this.currency_txt = dataRes.currency_txt;
+            if (dataRes == null) {
+                return;
             }
+            this.list = Message.copyOf(dataRes.list);
+            this.num_info = Message.copyOf(dataRes.num_info);
+            this.addfree_url = dataRes.addfree_url;
+            this.gift_list = Message.copyOf(dataRes.gift_list);
+            this.free_chance = dataRes.free_chance;
+            this.scene_id = dataRes.scene_id;
+            this.currency_type = dataRes.currency_type;
+            this.currency_txt = dataRes.currency_txt;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -114,5 +64,63 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<PresentCategoryList> list = builder.list;
+            if (list == null) {
+                this.list = DEFAULT_LIST;
+            } else {
+                this.list = Message.immutableCopyOf(list);
+            }
+            List<PresentNumInfo> list2 = builder.num_info;
+            if (list2 == null) {
+                this.num_info = DEFAULT_NUM_INFO;
+            } else {
+                this.num_info = Message.immutableCopyOf(list2);
+            }
+            String str = builder.addfree_url;
+            if (str == null) {
+                this.addfree_url = "";
+            } else {
+                this.addfree_url = str;
+            }
+            List<PresentGiftList1> list3 = builder.gift_list;
+            if (list3 == null) {
+                this.gift_list = DEFAULT_GIFT_LIST;
+            } else {
+                this.gift_list = Message.immutableCopyOf(list3);
+            }
+            Integer num = builder.free_chance;
+            if (num == null) {
+                this.free_chance = DEFAULT_FREE_CHANCE;
+            } else {
+                this.free_chance = num;
+            }
+            Integer num2 = builder.scene_id;
+            if (num2 == null) {
+                this.scene_id = DEFAULT_SCENE_ID;
+            } else {
+                this.scene_id = num2;
+            }
+            Integer num3 = builder.currency_type;
+            if (num3 == null) {
+                this.currency_type = DEFAULT_CURRENCY_TYPE;
+            } else {
+                this.currency_type = num3;
+            }
+            this.currency_txt = builder.currency_txt;
+            return;
+        }
+        this.list = Message.immutableCopyOf(builder.list);
+        this.num_info = Message.immutableCopyOf(builder.num_info);
+        this.addfree_url = builder.addfree_url;
+        this.gift_list = Message.immutableCopyOf(builder.gift_list);
+        this.free_chance = builder.free_chance;
+        this.scene_id = builder.scene_id;
+        this.currency_type = builder.currency_type;
+        this.currency_txt = builder.currency_txt;
     }
 }

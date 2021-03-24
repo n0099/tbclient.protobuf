@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class VipThemeItem extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -38,81 +38,7 @@ public final class VipThemeItem extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_ID = 0;
 
-    private VipThemeItem(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.img_url == null) {
-                this.img_url = "";
-            } else {
-                this.img_url = builder.img_url;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.props_id == null) {
-                this.props_id = DEFAULT_PROPS_ID;
-            } else {
-                this.props_id = builder.props_id;
-            }
-            if (builder.props_category == null) {
-                this.props_category = DEFAULT_PROPS_CATEGORY;
-            } else {
-                this.props_category = builder.props_category;
-            }
-            if (builder.props_category_name == null) {
-                this.props_category_name = "";
-            } else {
-                this.props_category_name = builder.props_category_name;
-            }
-            if (builder.desc == null) {
-                this.desc = "";
-            } else {
-                this.desc = builder.desc;
-            }
-            if (builder.link == null) {
-                this.link = "";
-            } else {
-                this.link = builder.link;
-            }
-            if (builder.tag_img_url == null) {
-                this.tag_img_url = "";
-            } else {
-                this.tag_img_url = builder.tag_img_url;
-            }
-            if (builder.update_time == null) {
-                this.update_time = "";
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-                return;
-            } else {
-                this.id = builder.id;
-                return;
-            }
-        }
-        this.img_url = builder.img_url;
-        this.title = builder.title;
-        this.props_id = builder.props_id;
-        this.props_category = builder.props_category;
-        this.props_category_name = builder.props_category_name;
-        this.desc = builder.desc;
-        this.link = builder.link;
-        this.tag_img_url = builder.tag_img_url;
-        this.update_time = builder.update_time;
-        this.type = builder.type;
-        this.id = builder.id;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VipThemeItem> {
         public String desc;
         public Integer id;
@@ -131,19 +57,20 @@ public final class VipThemeItem extends Message {
 
         public Builder(VipThemeItem vipThemeItem) {
             super(vipThemeItem);
-            if (vipThemeItem != null) {
-                this.img_url = vipThemeItem.img_url;
-                this.title = vipThemeItem.title;
-                this.props_id = vipThemeItem.props_id;
-                this.props_category = vipThemeItem.props_category;
-                this.props_category_name = vipThemeItem.props_category_name;
-                this.desc = vipThemeItem.desc;
-                this.link = vipThemeItem.link;
-                this.tag_img_url = vipThemeItem.tag_img_url;
-                this.update_time = vipThemeItem.update_time;
-                this.type = vipThemeItem.type;
-                this.id = vipThemeItem.id;
+            if (vipThemeItem == null) {
+                return;
             }
+            this.img_url = vipThemeItem.img_url;
+            this.title = vipThemeItem.title;
+            this.props_id = vipThemeItem.props_id;
+            this.props_category = vipThemeItem.props_category;
+            this.props_category_name = vipThemeItem.props_category_name;
+            this.desc = vipThemeItem.desc;
+            this.link = vipThemeItem.link;
+            this.tag_img_url = vipThemeItem.tag_img_url;
+            this.update_time = vipThemeItem.update_time;
+            this.type = vipThemeItem.type;
+            this.id = vipThemeItem.id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -151,5 +78,90 @@ public final class VipThemeItem extends Message {
         public VipThemeItem build(boolean z) {
             return new VipThemeItem(this, z);
         }
+    }
+
+    public VipThemeItem(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.img_url;
+            if (str == null) {
+                this.img_url = "";
+            } else {
+                this.img_url = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            Integer num = builder.props_id;
+            if (num == null) {
+                this.props_id = DEFAULT_PROPS_ID;
+            } else {
+                this.props_id = num;
+            }
+            Integer num2 = builder.props_category;
+            if (num2 == null) {
+                this.props_category = DEFAULT_PROPS_CATEGORY;
+            } else {
+                this.props_category = num2;
+            }
+            String str3 = builder.props_category_name;
+            if (str3 == null) {
+                this.props_category_name = "";
+            } else {
+                this.props_category_name = str3;
+            }
+            String str4 = builder.desc;
+            if (str4 == null) {
+                this.desc = "";
+            } else {
+                this.desc = str4;
+            }
+            String str5 = builder.link;
+            if (str5 == null) {
+                this.link = "";
+            } else {
+                this.link = str5;
+            }
+            String str6 = builder.tag_img_url;
+            if (str6 == null) {
+                this.tag_img_url = "";
+            } else {
+                this.tag_img_url = str6;
+            }
+            String str7 = builder.update_time;
+            if (str7 == null) {
+                this.update_time = "";
+            } else {
+                this.update_time = str7;
+            }
+            Integer num3 = builder.type;
+            if (num3 == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num3;
+            }
+            Integer num4 = builder.id;
+            if (num4 == null) {
+                this.id = DEFAULT_ID;
+                return;
+            } else {
+                this.id = num4;
+                return;
+            }
+        }
+        this.img_url = builder.img_url;
+        this.title = builder.title;
+        this.props_id = builder.props_id;
+        this.props_category = builder.props_category;
+        this.props_category_name = builder.props_category_name;
+        this.desc = builder.desc;
+        this.link = builder.link;
+        this.tag_img_url = builder.tag_img_url;
+        this.update_time = builder.update_time;
+        this.type = builder.type;
+        this.id = builder.id;
     }
 }

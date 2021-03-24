@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class HotUserRankEntry extends Message {
     public static final String DEFAULT_MODULE_ICON = "";
     public static final String DEFAULT_MODULE_NAME = "";
@@ -23,53 +23,9 @@ public final class HotUserRankEntry extends Message {
     public static final List<ShortUserInfo> DEFAULT_HOT_USER = Collections.emptyList();
     public static final Integer DEFAULT_TODAY_RANK = 0;
     public static final Integer DEFAULT_YESTERDAY_RANK = 0;
-    public static final Boolean DEFAULT_IS_IN_RANK = false;
+    public static final Boolean DEFAULT_IS_IN_RANK = Boolean.FALSE;
 
-    private HotUserRankEntry(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.hot_user == null) {
-                this.hot_user = DEFAULT_HOT_USER;
-            } else {
-                this.hot_user = immutableCopyOf(builder.hot_user);
-            }
-            if (builder.module_name == null) {
-                this.module_name = "";
-            } else {
-                this.module_name = builder.module_name;
-            }
-            if (builder.module_icon == null) {
-                this.module_icon = "";
-            } else {
-                this.module_icon = builder.module_icon;
-            }
-            if (builder.today_rank == null) {
-                this.today_rank = DEFAULT_TODAY_RANK;
-            } else {
-                this.today_rank = builder.today_rank;
-            }
-            if (builder.yesterday_rank == null) {
-                this.yesterday_rank = DEFAULT_YESTERDAY_RANK;
-            } else {
-                this.yesterday_rank = builder.yesterday_rank;
-            }
-            if (builder.is_in_rank == null) {
-                this.is_in_rank = DEFAULT_IS_IN_RANK;
-                return;
-            } else {
-                this.is_in_rank = builder.is_in_rank;
-                return;
-            }
-        }
-        this.hot_user = immutableCopyOf(builder.hot_user);
-        this.module_name = builder.module_name;
-        this.module_icon = builder.module_icon;
-        this.today_rank = builder.today_rank;
-        this.yesterday_rank = builder.yesterday_rank;
-        this.is_in_rank = builder.is_in_rank;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<HotUserRankEntry> {
         public List<ShortUserInfo> hot_user;
         public Boolean is_in_rank;
@@ -83,14 +39,15 @@ public final class HotUserRankEntry extends Message {
 
         public Builder(HotUserRankEntry hotUserRankEntry) {
             super(hotUserRankEntry);
-            if (hotUserRankEntry != null) {
-                this.hot_user = HotUserRankEntry.copyOf(hotUserRankEntry.hot_user);
-                this.module_name = hotUserRankEntry.module_name;
-                this.module_icon = hotUserRankEntry.module_icon;
-                this.today_rank = hotUserRankEntry.today_rank;
-                this.yesterday_rank = hotUserRankEntry.yesterday_rank;
-                this.is_in_rank = hotUserRankEntry.is_in_rank;
+            if (hotUserRankEntry == null) {
+                return;
             }
+            this.hot_user = Message.copyOf(hotUserRankEntry.hot_user);
+            this.module_name = hotUserRankEntry.module_name;
+            this.module_icon = hotUserRankEntry.module_icon;
+            this.today_rank = hotUserRankEntry.today_rank;
+            this.yesterday_rank = hotUserRankEntry.yesterday_rank;
+            this.is_in_rank = hotUserRankEntry.is_in_rank;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -98,5 +55,55 @@ public final class HotUserRankEntry extends Message {
         public HotUserRankEntry build(boolean z) {
             return new HotUserRankEntry(this, z);
         }
+    }
+
+    public HotUserRankEntry(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ShortUserInfo> list = builder.hot_user;
+            if (list == null) {
+                this.hot_user = DEFAULT_HOT_USER;
+            } else {
+                this.hot_user = Message.immutableCopyOf(list);
+            }
+            String str = builder.module_name;
+            if (str == null) {
+                this.module_name = "";
+            } else {
+                this.module_name = str;
+            }
+            String str2 = builder.module_icon;
+            if (str2 == null) {
+                this.module_icon = "";
+            } else {
+                this.module_icon = str2;
+            }
+            Integer num = builder.today_rank;
+            if (num == null) {
+                this.today_rank = DEFAULT_TODAY_RANK;
+            } else {
+                this.today_rank = num;
+            }
+            Integer num2 = builder.yesterday_rank;
+            if (num2 == null) {
+                this.yesterday_rank = DEFAULT_YESTERDAY_RANK;
+            } else {
+                this.yesterday_rank = num2;
+            }
+            Boolean bool = builder.is_in_rank;
+            if (bool == null) {
+                this.is_in_rank = DEFAULT_IS_IN_RANK;
+                return;
+            } else {
+                this.is_in_rank = bool;
+                return;
+            }
+        }
+        this.hot_user = Message.immutableCopyOf(builder.hot_user);
+        this.module_name = builder.module_name;
+        this.module_icon = builder.module_icon;
+        this.today_rank = builder.today_rank;
+        this.yesterday_rank = builder.yesterday_rank;
+        this.is_in_rank = builder.is_in_rank;
     }
 }

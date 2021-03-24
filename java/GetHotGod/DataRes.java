@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.User;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer cur_page;
@@ -23,44 +23,6 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_HAS_MORE = 0;
     public static final Integer DEFAULT_CUR_PAGE = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-            }
-            if (builder.hot_uid_list == null) {
-                this.hot_uid_list = DEFAULT_HOT_UID_LIST;
-            } else {
-                this.hot_uid_list = immutableCopyOf(builder.hot_uid_list);
-            }
-            if (builder.recommend_uid_list == null) {
-                this.recommend_uid_list = DEFAULT_RECOMMEND_UID_LIST;
-            } else {
-                this.recommend_uid_list = immutableCopyOf(builder.recommend_uid_list);
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-            } else {
-                this.has_more = builder.has_more;
-            }
-            if (builder.cur_page == null) {
-                this.cur_page = DEFAULT_CUR_PAGE;
-                return;
-            } else {
-                this.cur_page = builder.cur_page;
-                return;
-            }
-        }
-        this.user_list = immutableCopyOf(builder.user_list);
-        this.hot_uid_list = immutableCopyOf(builder.hot_uid_list);
-        this.recommend_uid_list = immutableCopyOf(builder.recommend_uid_list);
-        this.has_more = builder.has_more;
-        this.cur_page = builder.cur_page;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer cur_page;
@@ -74,13 +36,14 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.user_list = DataRes.copyOf(dataRes.user_list);
-                this.hot_uid_list = DataRes.copyOf(dataRes.hot_uid_list);
-                this.recommend_uid_list = DataRes.copyOf(dataRes.recommend_uid_list);
-                this.has_more = dataRes.has_more;
-                this.cur_page = dataRes.cur_page;
+            if (dataRes == null) {
+                return;
             }
+            this.user_list = Message.copyOf(dataRes.user_list);
+            this.hot_uid_list = Message.copyOf(dataRes.hot_uid_list);
+            this.recommend_uid_list = Message.copyOf(dataRes.recommend_uid_list);
+            this.has_more = dataRes.has_more;
+            this.cur_page = dataRes.cur_page;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -88,5 +51,48 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<User> list = builder.user_list;
+            if (list == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list);
+            }
+            List<Long> list2 = builder.hot_uid_list;
+            if (list2 == null) {
+                this.hot_uid_list = DEFAULT_HOT_UID_LIST;
+            } else {
+                this.hot_uid_list = Message.immutableCopyOf(list2);
+            }
+            List<Long> list3 = builder.recommend_uid_list;
+            if (list3 == null) {
+                this.recommend_uid_list = DEFAULT_RECOMMEND_UID_LIST;
+            } else {
+                this.recommend_uid_list = Message.immutableCopyOf(list3);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            Integer num2 = builder.cur_page;
+            if (num2 == null) {
+                this.cur_page = DEFAULT_CUR_PAGE;
+                return;
+            } else {
+                this.cur_page = num2;
+                return;
+            }
+        }
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.hot_uid_list = Message.immutableCopyOf(builder.hot_uid_list);
+        this.recommend_uid_list = Message.immutableCopyOf(builder.recommend_uid_list);
+        this.has_more = builder.has_more;
+        this.cur_page = builder.cur_page;
     }
 }

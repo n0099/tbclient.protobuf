@@ -3,25 +3,14 @@ package tbclient.PushThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PushThreadResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    private PushThreadResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PushThreadResIdl> {
         public DataRes data;
         public Error error;
@@ -31,10 +20,11 @@ public final class PushThreadResIdl extends Message {
 
         public Builder(PushThreadResIdl pushThreadResIdl) {
             super(pushThreadResIdl);
-            if (pushThreadResIdl != null) {
-                this.error = pushThreadResIdl.error;
-                this.data = pushThreadResIdl.data;
+            if (pushThreadResIdl == null) {
+                return;
             }
+            this.error = pushThreadResIdl.error;
+            this.data = pushThreadResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class PushThreadResIdl extends Message {
         public PushThreadResIdl build(boolean z) {
             return new PushThreadResIdl(this, z);
         }
+    }
+
+    public PushThreadResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

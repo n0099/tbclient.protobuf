@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class UserVipInfo extends Message {
     public static final String DEFAULT_ICON_URL = "";
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -29,63 +29,7 @@ public final class UserVipInfo extends Message {
     public static final Integer DEFAULT_A_SCORE = 0;
     public static final Integer DEFAULT_N_SCORE = 0;
 
-    private UserVipInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.v_status == null) {
-                this.v_status = DEFAULT_V_STATUS;
-            } else {
-                this.v_status = builder.v_status;
-            }
-            if (builder.s_time == null) {
-                this.s_time = DEFAULT_S_TIME;
-            } else {
-                this.s_time = builder.s_time;
-            }
-            if (builder.e_time == null) {
-                this.e_time = DEFAULT_E_TIME;
-            } else {
-                this.e_time = builder.e_time;
-            }
-            if (builder.ext_score == null) {
-                this.ext_score = DEFAULT_EXT_SCORE;
-            } else {
-                this.ext_score = builder.ext_score;
-            }
-            if (builder.v_level == null) {
-                this.v_level = DEFAULT_V_LEVEL;
-            } else {
-                this.v_level = builder.v_level;
-            }
-            if (builder.a_score == null) {
-                this.a_score = DEFAULT_A_SCORE;
-            } else {
-                this.a_score = builder.a_score;
-            }
-            if (builder.n_score == null) {
-                this.n_score = DEFAULT_N_SCORE;
-            } else {
-                this.n_score = builder.n_score;
-            }
-            if (builder.icon_url == null) {
-                this.icon_url = "";
-                return;
-            } else {
-                this.icon_url = builder.icon_url;
-                return;
-            }
-        }
-        this.v_status = builder.v_status;
-        this.s_time = builder.s_time;
-        this.e_time = builder.e_time;
-        this.ext_score = builder.ext_score;
-        this.v_level = builder.v_level;
-        this.a_score = builder.a_score;
-        this.n_score = builder.n_score;
-        this.icon_url = builder.icon_url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserVipInfo> {
         public Integer a_score;
         public Integer e_time;
@@ -101,16 +45,17 @@ public final class UserVipInfo extends Message {
 
         public Builder(UserVipInfo userVipInfo) {
             super(userVipInfo);
-            if (userVipInfo != null) {
-                this.v_status = userVipInfo.v_status;
-                this.s_time = userVipInfo.s_time;
-                this.e_time = userVipInfo.e_time;
-                this.ext_score = userVipInfo.ext_score;
-                this.v_level = userVipInfo.v_level;
-                this.a_score = userVipInfo.a_score;
-                this.n_score = userVipInfo.n_score;
-                this.icon_url = userVipInfo.icon_url;
+            if (userVipInfo == null) {
+                return;
             }
+            this.v_status = userVipInfo.v_status;
+            this.s_time = userVipInfo.s_time;
+            this.e_time = userVipInfo.e_time;
+            this.ext_score = userVipInfo.ext_score;
+            this.v_level = userVipInfo.v_level;
+            this.a_score = userVipInfo.a_score;
+            this.n_score = userVipInfo.n_score;
+            this.icon_url = userVipInfo.icon_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +63,69 @@ public final class UserVipInfo extends Message {
         public UserVipInfo build(boolean z) {
             return new UserVipInfo(this, z);
         }
+    }
+
+    public UserVipInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.v_status;
+            if (num == null) {
+                this.v_status = DEFAULT_V_STATUS;
+            } else {
+                this.v_status = num;
+            }
+            Integer num2 = builder.s_time;
+            if (num2 == null) {
+                this.s_time = DEFAULT_S_TIME;
+            } else {
+                this.s_time = num2;
+            }
+            Integer num3 = builder.e_time;
+            if (num3 == null) {
+                this.e_time = DEFAULT_E_TIME;
+            } else {
+                this.e_time = num3;
+            }
+            Integer num4 = builder.ext_score;
+            if (num4 == null) {
+                this.ext_score = DEFAULT_EXT_SCORE;
+            } else {
+                this.ext_score = num4;
+            }
+            Integer num5 = builder.v_level;
+            if (num5 == null) {
+                this.v_level = DEFAULT_V_LEVEL;
+            } else {
+                this.v_level = num5;
+            }
+            Integer num6 = builder.a_score;
+            if (num6 == null) {
+                this.a_score = DEFAULT_A_SCORE;
+            } else {
+                this.a_score = num6;
+            }
+            Integer num7 = builder.n_score;
+            if (num7 == null) {
+                this.n_score = DEFAULT_N_SCORE;
+            } else {
+                this.n_score = num7;
+            }
+            String str = builder.icon_url;
+            if (str == null) {
+                this.icon_url = "";
+                return;
+            } else {
+                this.icon_url = str;
+                return;
+            }
+        }
+        this.v_status = builder.v_status;
+        this.s_time = builder.s_time;
+        this.e_time = builder.e_time;
+        this.ext_score = builder.ext_score;
+        this.v_level = builder.v_level;
+        this.a_score = builder.a_score;
+        this.n_score = builder.n_score;
+        this.icon_url = builder.icon_url;
     }
 }

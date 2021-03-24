@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final List<ForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -13,23 +13,6 @@ public final class DataRes extends Message {
     public final HotSearch hot_search;
     @ProtoField(tag = 3)
     public final HotTopic hot_topic;
-
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_info == null) {
-                this.forum_info = DEFAULT_FORUM_INFO;
-            } else {
-                this.forum_info = immutableCopyOf(builder.forum_info);
-            }
-            this.hot_search = builder.hot_search;
-            this.hot_topic = builder.hot_topic;
-            return;
-        }
-        this.forum_info = immutableCopyOf(builder.forum_info);
-        this.hot_search = builder.hot_search;
-        this.hot_topic = builder.hot_topic;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -42,11 +25,12 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.forum_info = DataRes.copyOf(dataRes.forum_info);
-                this.hot_search = dataRes.hot_search;
-                this.hot_topic = dataRes.hot_topic;
+            if (dataRes == null) {
+                return;
             }
+            this.forum_info = Message.copyOf(dataRes.forum_info);
+            this.hot_search = dataRes.hot_search;
+            this.hot_topic = dataRes.hot_topic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -54,5 +38,23 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ForumInfo> list = builder.forum_info;
+            if (list == null) {
+                this.forum_info = DEFAULT_FORUM_INFO;
+            } else {
+                this.forum_info = Message.immutableCopyOf(list);
+            }
+            this.hot_search = builder.hot_search;
+            this.hot_topic = builder.hot_topic;
+            return;
+        }
+        this.forum_info = Message.immutableCopyOf(builder.forum_info);
+        this.hot_search = builder.hot_search;
+        this.hot_topic = builder.hot_topic;
     }
 }

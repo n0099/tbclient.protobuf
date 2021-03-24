@@ -3,7 +3,7 @@ package tbclient.AddTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -11,7 +11,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8649common;
+    public final CommonReq f68313common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String fontColor;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -19,38 +19,11 @@ public final class ReqData extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tailContent;
 
-    private ReqData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tailContent == null) {
-                this.tailContent = "";
-            } else {
-                this.tailContent = builder.tailContent;
-            }
-            if (builder.fontColor == null) {
-                this.fontColor = "";
-            } else {
-                this.fontColor = builder.fontColor;
-            }
-            if (builder.fontKeyName == null) {
-                this.fontKeyName = "";
-            } else {
-                this.fontKeyName = builder.fontKeyName;
-            }
-            this.f8649common = builder.f8650common;
-            return;
-        }
-        this.tailContent = builder.tailContent;
-        this.fontColor = builder.fontColor;
-        this.fontKeyName = builder.fontKeyName;
-        this.f8649common = builder.f8650common;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8650common;
+        public CommonReq f68314common;
         public String fontColor;
         public String fontKeyName;
         public String tailContent;
@@ -60,12 +33,13 @@ public final class ReqData extends Message {
 
         public Builder(ReqData reqData) {
             super(reqData);
-            if (reqData != null) {
-                this.tailContent = reqData.tailContent;
-                this.fontColor = reqData.fontColor;
-                this.fontKeyName = reqData.fontKeyName;
-                this.f8650common = reqData.f8649common;
+            if (reqData == null) {
+                return;
             }
+            this.tailContent = reqData.tailContent;
+            this.fontColor = reqData.fontColor;
+            this.fontKeyName = reqData.fontKeyName;
+            this.f68314common = reqData.f68313common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -73,5 +47,35 @@ public final class ReqData extends Message {
         public ReqData build(boolean z) {
             return new ReqData(this, z);
         }
+    }
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.tailContent;
+            if (str == null) {
+                this.tailContent = "";
+            } else {
+                this.tailContent = str;
+            }
+            String str2 = builder.fontColor;
+            if (str2 == null) {
+                this.fontColor = "";
+            } else {
+                this.fontColor = str2;
+            }
+            String str3 = builder.fontKeyName;
+            if (str3 == null) {
+                this.fontKeyName = "";
+            } else {
+                this.fontKeyName = str3;
+            }
+            this.f68313common = builder.f68314common;
+            return;
+        }
+        this.tailContent = builder.tailContent;
+        this.fontColor = builder.fontColor;
+        this.fontKeyName = builder.fontKeyName;
+        this.f68313common = builder.f68314common;
     }
 }

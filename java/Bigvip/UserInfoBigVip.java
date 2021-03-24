@@ -2,7 +2,7 @@ package tbclient.Bigvip;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class UserInfoBigVip extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_PORTRAITH = "";
@@ -26,56 +26,6 @@ public final class UserInfoBigVip extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_MESSAGE_ACCEPT = 0;
 
-    private UserInfoBigVip(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.user_type == null) {
-                this.user_type = "";
-            } else {
-                this.user_type = builder.user_type;
-            }
-            if (builder.user_detail == null) {
-                this.user_detail = "";
-            } else {
-                this.user_detail = builder.user_detail;
-            }
-            if (builder.message_accept == null) {
-                this.message_accept = DEFAULT_MESSAGE_ACCEPT;
-            } else {
-                this.message_accept = builder.message_accept;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.portraith == null) {
-                this.portraith = "";
-                return;
-            } else {
-                this.portraith = builder.portraith;
-                return;
-            }
-        }
-        this.user_id = builder.user_id;
-        this.user_name = builder.user_name;
-        this.user_type = builder.user_type;
-        this.user_detail = builder.user_detail;
-        this.message_accept = builder.message_accept;
-        this.portrait = builder.portrait;
-        this.portraith = builder.portraith;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserInfoBigVip> {
         public Integer message_accept;
@@ -91,15 +41,16 @@ public final class UserInfoBigVip extends Message {
 
         public Builder(UserInfoBigVip userInfoBigVip) {
             super(userInfoBigVip);
-            if (userInfoBigVip != null) {
-                this.user_id = userInfoBigVip.user_id;
-                this.user_name = userInfoBigVip.user_name;
-                this.user_type = userInfoBigVip.user_type;
-                this.user_detail = userInfoBigVip.user_detail;
-                this.message_accept = userInfoBigVip.message_accept;
-                this.portrait = userInfoBigVip.portrait;
-                this.portraith = userInfoBigVip.portraith;
+            if (userInfoBigVip == null) {
+                return;
             }
+            this.user_id = userInfoBigVip.user_id;
+            this.user_name = userInfoBigVip.user_name;
+            this.user_type = userInfoBigVip.user_type;
+            this.user_detail = userInfoBigVip.user_detail;
+            this.message_accept = userInfoBigVip.message_accept;
+            this.portrait = userInfoBigVip.portrait;
+            this.portraith = userInfoBigVip.portraith;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +58,62 @@ public final class UserInfoBigVip extends Message {
         public UserInfoBigVip build(boolean z) {
             return new UserInfoBigVip(this, z);
         }
+    }
+
+    public UserInfoBigVip(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.user_type;
+            if (str2 == null) {
+                this.user_type = "";
+            } else {
+                this.user_type = str2;
+            }
+            String str3 = builder.user_detail;
+            if (str3 == null) {
+                this.user_detail = "";
+            } else {
+                this.user_detail = str3;
+            }
+            Integer num = builder.message_accept;
+            if (num == null) {
+                this.message_accept = DEFAULT_MESSAGE_ACCEPT;
+            } else {
+                this.message_accept = num;
+            }
+            String str4 = builder.portrait;
+            if (str4 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str4;
+            }
+            String str5 = builder.portraith;
+            if (str5 == null) {
+                this.portraith = "";
+                return;
+            } else {
+                this.portraith = str5;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.user_name = builder.user_name;
+        this.user_type = builder.user_type;
+        this.user_detail = builder.user_detail;
+        this.message_accept = builder.message_accept;
+        this.portrait = builder.portrait;
+        this.portraith = builder.portraith;
     }
 }

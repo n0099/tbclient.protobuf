@@ -2,7 +2,7 @@ package tbclient.GetMyGift;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class PresentMyList extends Message {
     public static final String DEFAULT_CURRENCY_TYPE = "";
     public static final String DEFAULT_GIFT_NAME = "";
@@ -44,93 +44,7 @@ public final class PresentMyList extends Message {
     public static final Integer DEFAULT_CURRENCY_UNIT = 0;
     public static final Long DEFAULT_PRESENT_SCORES = 0L;
 
-    private PresentMyList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pay_userid == null) {
-                this.pay_userid = DEFAULT_PAY_USERID;
-            } else {
-                this.pay_userid = builder.pay_userid;
-            }
-            if (builder.pay_username == null) {
-                this.pay_username = "";
-            } else {
-                this.pay_username = builder.pay_username;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.gift_id == null) {
-                this.gift_id = DEFAULT_GIFT_ID;
-            } else {
-                this.gift_id = builder.gift_id;
-            }
-            if (builder.gift_name == null) {
-                this.gift_name = "";
-            } else {
-                this.gift_name = builder.gift_name;
-            }
-            if (builder.play_url == null) {
-                this.play_url = "";
-            } else {
-                this.play_url = builder.play_url;
-            }
-            if (builder.thumbnail_url == null) {
-                this.thumbnail_url = "";
-            } else {
-                this.thumbnail_url = builder.thumbnail_url;
-            }
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.num == null) {
-                this.num = DEFAULT_NUM;
-            } else {
-                this.num = builder.num;
-            }
-            if (builder.currency_unit == null) {
-                this.currency_unit = DEFAULT_CURRENCY_UNIT;
-            } else {
-                this.currency_unit = builder.currency_unit;
-            }
-            if (builder.currency_type == null) {
-                this.currency_type = "";
-            } else {
-                this.currency_type = builder.currency_type;
-            }
-            if (builder.present_scores == null) {
-                this.present_scores = DEFAULT_PRESENT_SCORES;
-            } else {
-                this.present_scores = builder.present_scores;
-            }
-            if (builder.name_show == null) {
-                this.name_show = "";
-                return;
-            } else {
-                this.name_show = builder.name_show;
-                return;
-            }
-        }
-        this.pay_userid = builder.pay_userid;
-        this.pay_username = builder.pay_username;
-        this.portrait = builder.portrait;
-        this.gift_id = builder.gift_id;
-        this.gift_name = builder.gift_name;
-        this.play_url = builder.play_url;
-        this.thumbnail_url = builder.thumbnail_url;
-        this.create_time = builder.create_time;
-        this.num = builder.num;
-        this.currency_unit = builder.currency_unit;
-        this.currency_type = builder.currency_type;
-        this.present_scores = builder.present_scores;
-        this.name_show = builder.name_show;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PresentMyList> {
         public Integer create_time;
         public String currency_type;
@@ -151,21 +65,22 @@ public final class PresentMyList extends Message {
 
         public Builder(PresentMyList presentMyList) {
             super(presentMyList);
-            if (presentMyList != null) {
-                this.pay_userid = presentMyList.pay_userid;
-                this.pay_username = presentMyList.pay_username;
-                this.portrait = presentMyList.portrait;
-                this.gift_id = presentMyList.gift_id;
-                this.gift_name = presentMyList.gift_name;
-                this.play_url = presentMyList.play_url;
-                this.thumbnail_url = presentMyList.thumbnail_url;
-                this.create_time = presentMyList.create_time;
-                this.num = presentMyList.num;
-                this.currency_unit = presentMyList.currency_unit;
-                this.currency_type = presentMyList.currency_type;
-                this.present_scores = presentMyList.present_scores;
-                this.name_show = presentMyList.name_show;
+            if (presentMyList == null) {
+                return;
             }
+            this.pay_userid = presentMyList.pay_userid;
+            this.pay_username = presentMyList.pay_username;
+            this.portrait = presentMyList.portrait;
+            this.gift_id = presentMyList.gift_id;
+            this.gift_name = presentMyList.gift_name;
+            this.play_url = presentMyList.play_url;
+            this.thumbnail_url = presentMyList.thumbnail_url;
+            this.create_time = presentMyList.create_time;
+            this.num = presentMyList.num;
+            this.currency_unit = presentMyList.currency_unit;
+            this.currency_type = presentMyList.currency_type;
+            this.present_scores = presentMyList.present_scores;
+            this.name_show = presentMyList.name_show;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -173,5 +88,104 @@ public final class PresentMyList extends Message {
         public PresentMyList build(boolean z) {
             return new PresentMyList(this, z);
         }
+    }
+
+    public PresentMyList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.pay_userid;
+            if (l == null) {
+                this.pay_userid = DEFAULT_PAY_USERID;
+            } else {
+                this.pay_userid = l;
+            }
+            String str = builder.pay_username;
+            if (str == null) {
+                this.pay_username = "";
+            } else {
+                this.pay_username = str;
+            }
+            String str2 = builder.portrait;
+            if (str2 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str2;
+            }
+            Integer num = builder.gift_id;
+            if (num == null) {
+                this.gift_id = DEFAULT_GIFT_ID;
+            } else {
+                this.gift_id = num;
+            }
+            String str3 = builder.gift_name;
+            if (str3 == null) {
+                this.gift_name = "";
+            } else {
+                this.gift_name = str3;
+            }
+            String str4 = builder.play_url;
+            if (str4 == null) {
+                this.play_url = "";
+            } else {
+                this.play_url = str4;
+            }
+            String str5 = builder.thumbnail_url;
+            if (str5 == null) {
+                this.thumbnail_url = "";
+            } else {
+                this.thumbnail_url = str5;
+            }
+            Integer num2 = builder.create_time;
+            if (num2 == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num2;
+            }
+            Integer num3 = builder.num;
+            if (num3 == null) {
+                this.num = DEFAULT_NUM;
+            } else {
+                this.num = num3;
+            }
+            Integer num4 = builder.currency_unit;
+            if (num4 == null) {
+                this.currency_unit = DEFAULT_CURRENCY_UNIT;
+            } else {
+                this.currency_unit = num4;
+            }
+            String str6 = builder.currency_type;
+            if (str6 == null) {
+                this.currency_type = "";
+            } else {
+                this.currency_type = str6;
+            }
+            Long l2 = builder.present_scores;
+            if (l2 == null) {
+                this.present_scores = DEFAULT_PRESENT_SCORES;
+            } else {
+                this.present_scores = l2;
+            }
+            String str7 = builder.name_show;
+            if (str7 == null) {
+                this.name_show = "";
+                return;
+            } else {
+                this.name_show = str7;
+                return;
+            }
+        }
+        this.pay_userid = builder.pay_userid;
+        this.pay_username = builder.pay_username;
+        this.portrait = builder.portrait;
+        this.gift_id = builder.gift_id;
+        this.gift_name = builder.gift_name;
+        this.play_url = builder.play_url;
+        this.thumbnail_url = builder.thumbnail_url;
+        this.create_time = builder.create_time;
+        this.num = builder.num;
+        this.currency_unit = builder.currency_unit;
+        this.currency_type = builder.currency_type;
+        this.present_scores = builder.present_scores;
+        this.name_show = builder.name_show;
     }
 }

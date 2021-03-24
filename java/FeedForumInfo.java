@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class FeedForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -29,63 +29,7 @@ public final class FeedForumInfo extends Message {
     public static final Integer DEFAULT_POS = 0;
     public static final Integer DEFAULT_IS_LIKE = 0;
 
-    private FeedForumInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.member_count == null) {
-                this.member_count = DEFAULT_MEMBER_COUNT;
-            } else {
-                this.member_count = builder.member_count;
-            }
-            if (builder.post_num == null) {
-                this.post_num = DEFAULT_POST_NUM;
-            } else {
-                this.post_num = builder.post_num;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.reason == null) {
-                this.reason = "";
-            } else {
-                this.reason = builder.reason;
-            }
-            if (builder.pos == null) {
-                this.pos = DEFAULT_POS;
-            } else {
-                this.pos = builder.pos;
-            }
-            if (builder.is_like == null) {
-                this.is_like = DEFAULT_IS_LIKE;
-                return;
-            } else {
-                this.is_like = builder.is_like;
-                return;
-            }
-        }
-        this.forum_id = builder.forum_id;
-        this.forum_name = builder.forum_name;
-        this.member_count = builder.member_count;
-        this.post_num = builder.post_num;
-        this.avatar = builder.avatar;
-        this.reason = builder.reason;
-        this.pos = builder.pos;
-        this.is_like = builder.is_like;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<FeedForumInfo> {
         public String avatar;
         public Long forum_id;
@@ -101,16 +45,17 @@ public final class FeedForumInfo extends Message {
 
         public Builder(FeedForumInfo feedForumInfo) {
             super(feedForumInfo);
-            if (feedForumInfo != null) {
-                this.forum_id = feedForumInfo.forum_id;
-                this.forum_name = feedForumInfo.forum_name;
-                this.member_count = feedForumInfo.member_count;
-                this.post_num = feedForumInfo.post_num;
-                this.avatar = feedForumInfo.avatar;
-                this.reason = feedForumInfo.reason;
-                this.pos = feedForumInfo.pos;
-                this.is_like = feedForumInfo.is_like;
+            if (feedForumInfo == null) {
+                return;
             }
+            this.forum_id = feedForumInfo.forum_id;
+            this.forum_name = feedForumInfo.forum_name;
+            this.member_count = feedForumInfo.member_count;
+            this.post_num = feedForumInfo.post_num;
+            this.avatar = feedForumInfo.avatar;
+            this.reason = feedForumInfo.reason;
+            this.pos = feedForumInfo.pos;
+            this.is_like = feedForumInfo.is_like;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +63,69 @@ public final class FeedForumInfo extends Message {
         public FeedForumInfo build(boolean z) {
             return new FeedForumInfo(this, z);
         }
+    }
+
+    public FeedForumInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            Integer num = builder.member_count;
+            if (num == null) {
+                this.member_count = DEFAULT_MEMBER_COUNT;
+            } else {
+                this.member_count = num;
+            }
+            Integer num2 = builder.post_num;
+            if (num2 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = num2;
+            }
+            String str2 = builder.avatar;
+            if (str2 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str2;
+            }
+            String str3 = builder.reason;
+            if (str3 == null) {
+                this.reason = "";
+            } else {
+                this.reason = str3;
+            }
+            Integer num3 = builder.pos;
+            if (num3 == null) {
+                this.pos = DEFAULT_POS;
+            } else {
+                this.pos = num3;
+            }
+            Integer num4 = builder.is_like;
+            if (num4 == null) {
+                this.is_like = DEFAULT_IS_LIKE;
+                return;
+            } else {
+                this.is_like = num4;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.member_count = builder.member_count;
+        this.post_num = builder.post_num;
+        this.avatar = builder.avatar;
+        this.reason = builder.reason;
+        this.pos = builder.pos;
+        this.is_like = builder.is_like;
     }
 }

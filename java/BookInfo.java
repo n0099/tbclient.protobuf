@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class BookInfo extends Message {
     public static final String DEFAULT_AD_CODE = "";
     public static final String DEFAULT_AUTHOR = "";
@@ -142,285 +142,7 @@ public final class BookInfo extends Message {
     public static final Integer DEFAULT_CHARGE_TYPE = 0;
     public static final Integer DEFAULT_MEMBER_SHOW_TYPE = 0;
 
-    private BookInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.book_id == null) {
-                this.book_id = "";
-            } else {
-                this.book_id = builder.book_id;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.cover == null) {
-                this.cover = "";
-            } else {
-                this.cover = builder.cover;
-            }
-            if (builder.book_type == null) {
-                this.book_type = DEFAULT_BOOK_TYPE;
-            } else {
-                this.book_type = builder.book_type;
-            }
-            if (builder.class_id == null) {
-                this.class_id = DEFAULT_CLASS_ID;
-            } else {
-                this.class_id = builder.class_id;
-            }
-            if (builder.class_name == null) {
-                this.class_name = "";
-            } else {
-                this.class_name = builder.class_name;
-            }
-            if (builder.sub_class_id == null) {
-                this.sub_class_id = DEFAULT_SUB_CLASS_ID;
-            } else {
-                this.sub_class_id = builder.sub_class_id;
-            }
-            if (builder.sub_class_name == null) {
-                this.sub_class_name = "";
-            } else {
-                this.sub_class_name = builder.sub_class_name;
-            }
-            if (builder.book_size == null) {
-                this.book_size = DEFAULT_BOOK_SIZE;
-            } else {
-                this.book_size = builder.book_size;
-            }
-            if (builder.intro == null) {
-                this.intro = "";
-            } else {
-                this.intro = builder.intro;
-            }
-            if (builder.author == null) {
-                this.author = "";
-            } else {
-                this.author = builder.author;
-            }
-            if (builder.author_intro == null) {
-                this.author_intro = "";
-            } else {
-                this.author_intro = builder.author_intro;
-            }
-            if (builder.tags == null) {
-                this.tags = DEFAULT_TAGS;
-            } else {
-                this.tags = immutableCopyOf(builder.tags);
-            }
-            if (builder.total_chapter == null) {
-                this.total_chapter = DEFAULT_TOTAL_CHAPTER;
-            } else {
-                this.total_chapter = builder.total_chapter;
-            }
-            if (builder.words == null) {
-                this.words = DEFAULT_WORDS;
-            } else {
-                this.words = builder.words;
-            }
-            if (builder.orignal_price == null) {
-                this.orignal_price = DEFAULT_ORIGNAL_PRICE;
-            } else {
-                this.orignal_price = builder.orignal_price;
-            }
-            if (builder.price == null) {
-                this.price = DEFAULT_PRICE;
-            } else {
-                this.price = builder.price;
-            }
-            if (builder.discount_ratio == null) {
-                this.discount_ratio = "";
-            } else {
-                this.discount_ratio = builder.discount_ratio;
-            }
-            if (builder.is_finish == null) {
-                this.is_finish = DEFAULT_IS_FINISH;
-            } else {
-                this.is_finish = builder.is_finish;
-            }
-            if (builder.ad_code == null) {
-                this.ad_code = "";
-            } else {
-                this.ad_code = builder.ad_code;
-            }
-            if (builder.is_buy == null) {
-                this.is_buy = DEFAULT_IS_BUY;
-            } else {
-                this.is_buy = builder.is_buy;
-            }
-            if (builder.free_info == null) {
-                this.free_info = "";
-            } else {
-                this.free_info = builder.free_info;
-            }
-            if (builder.publisher == null) {
-                this.publisher = "";
-            } else {
-                this.publisher = builder.publisher;
-            }
-            if (builder.isbn == null) {
-                this.isbn = "";
-            } else {
-                this.isbn = builder.isbn;
-            }
-            if (builder.copyright == null) {
-                this.copyright = "";
-            } else {
-                this.copyright = builder.copyright;
-            }
-            if (builder.publish_text == null) {
-                this.publish_text = "";
-            } else {
-                this.publish_text = builder.publish_text;
-            }
-            if (builder.copyright_text == null) {
-                this.copyright_text = "";
-            } else {
-                this.copyright_text = builder.copyright_text;
-            }
-            if (builder.publish_time == null) {
-                this.publish_time = "";
-            } else {
-                this.publish_time = builder.publish_time;
-            }
-            if (builder.publish_type == null) {
-                this.publish_type = "";
-            } else {
-                this.publish_type = builder.publish_type;
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.big_cover == null) {
-                this.big_cover = "";
-            } else {
-                this.big_cover = builder.big_cover;
-            }
-            if (builder.discount_type == null) {
-                this.discount_type = DEFAULT_DISCOUNT_TYPE;
-            } else {
-                this.discount_type = builder.discount_type;
-            }
-            if (builder.discount_icon == null) {
-                this.discount_icon = "";
-            } else {
-                this.discount_icon = builder.discount_icon;
-            }
-            if (builder.read_count == null) {
-                this.read_count = DEFAULT_READ_COUNT;
-            } else {
-                this.read_count = builder.read_count;
-            }
-            if (builder.total_page == null) {
-                this.total_page = DEFAULT_TOTAL_PAGE;
-            } else {
-                this.total_page = builder.total_page;
-            }
-            if (builder.book_ver == null) {
-                this.book_ver = "";
-            } else {
-                this.book_ver = builder.book_ver;
-            }
-            if (builder.chapter_ver == null) {
-                this.chapter_ver = "";
-            } else {
-                this.chapter_ver = builder.chapter_ver;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.discuss == null) {
-                this.discuss = "";
-            } else {
-                this.discuss = builder.discuss;
-            }
-            if (builder.cp_id == null) {
-                this.cp_id = "";
-            } else {
-                this.cp_id = builder.cp_id;
-            }
-            if (builder.paper_price == null) {
-                this.paper_price = "";
-            } else {
-                this.paper_price = builder.paper_price;
-            }
-            if (builder.first_chapter == null) {
-                this.first_chapter = DEFAULT_FIRST_CHAPTER;
-            } else {
-                this.first_chapter = builder.first_chapter;
-            }
-            if (builder.charge_type == null) {
-                this.charge_type = DEFAULT_CHARGE_TYPE;
-            } else {
-                this.charge_type = builder.charge_type;
-            }
-            if (builder.member_show_type == null) {
-                this.member_show_type = DEFAULT_MEMBER_SHOW_TYPE;
-                return;
-            } else {
-                this.member_show_type = builder.member_show_type;
-                return;
-            }
-        }
-        this.book_id = builder.book_id;
-        this.title = builder.title;
-        this.cover = builder.cover;
-        this.book_type = builder.book_type;
-        this.class_id = builder.class_id;
-        this.class_name = builder.class_name;
-        this.sub_class_id = builder.sub_class_id;
-        this.sub_class_name = builder.sub_class_name;
-        this.book_size = builder.book_size;
-        this.intro = builder.intro;
-        this.author = builder.author;
-        this.author_intro = builder.author_intro;
-        this.tags = immutableCopyOf(builder.tags);
-        this.total_chapter = builder.total_chapter;
-        this.words = builder.words;
-        this.orignal_price = builder.orignal_price;
-        this.price = builder.price;
-        this.discount_ratio = builder.discount_ratio;
-        this.is_finish = builder.is_finish;
-        this.ad_code = builder.ad_code;
-        this.is_buy = builder.is_buy;
-        this.free_info = builder.free_info;
-        this.publisher = builder.publisher;
-        this.isbn = builder.isbn;
-        this.copyright = builder.copyright;
-        this.publish_text = builder.publish_text;
-        this.copyright_text = builder.copyright_text;
-        this.publish_time = builder.publish_time;
-        this.publish_type = builder.publish_type;
-        this.update_time = builder.update_time;
-        this.big_cover = builder.big_cover;
-        this.discount_type = builder.discount_type;
-        this.discount_icon = builder.discount_icon;
-        this.read_count = builder.read_count;
-        this.total_page = builder.total_page;
-        this.book_ver = builder.book_ver;
-        this.chapter_ver = builder.chapter_ver;
-        this.forum_id = builder.forum_id;
-        this.forum_name = builder.forum_name;
-        this.discuss = builder.discuss;
-        this.cp_id = builder.cp_id;
-        this.paper_price = builder.paper_price;
-        this.first_chapter = builder.first_chapter;
-        this.charge_type = builder.charge_type;
-        this.member_show_type = builder.member_show_type;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<BookInfo> {
         public String ad_code;
         public String author;
@@ -473,53 +195,54 @@ public final class BookInfo extends Message {
 
         public Builder(BookInfo bookInfo) {
             super(bookInfo);
-            if (bookInfo != null) {
-                this.book_id = bookInfo.book_id;
-                this.title = bookInfo.title;
-                this.cover = bookInfo.cover;
-                this.book_type = bookInfo.book_type;
-                this.class_id = bookInfo.class_id;
-                this.class_name = bookInfo.class_name;
-                this.sub_class_id = bookInfo.sub_class_id;
-                this.sub_class_name = bookInfo.sub_class_name;
-                this.book_size = bookInfo.book_size;
-                this.intro = bookInfo.intro;
-                this.author = bookInfo.author;
-                this.author_intro = bookInfo.author_intro;
-                this.tags = BookInfo.copyOf(bookInfo.tags);
-                this.total_chapter = bookInfo.total_chapter;
-                this.words = bookInfo.words;
-                this.orignal_price = bookInfo.orignal_price;
-                this.price = bookInfo.price;
-                this.discount_ratio = bookInfo.discount_ratio;
-                this.is_finish = bookInfo.is_finish;
-                this.ad_code = bookInfo.ad_code;
-                this.is_buy = bookInfo.is_buy;
-                this.free_info = bookInfo.free_info;
-                this.publisher = bookInfo.publisher;
-                this.isbn = bookInfo.isbn;
-                this.copyright = bookInfo.copyright;
-                this.publish_text = bookInfo.publish_text;
-                this.copyright_text = bookInfo.copyright_text;
-                this.publish_time = bookInfo.publish_time;
-                this.publish_type = bookInfo.publish_type;
-                this.update_time = bookInfo.update_time;
-                this.big_cover = bookInfo.big_cover;
-                this.discount_type = bookInfo.discount_type;
-                this.discount_icon = bookInfo.discount_icon;
-                this.read_count = bookInfo.read_count;
-                this.total_page = bookInfo.total_page;
-                this.book_ver = bookInfo.book_ver;
-                this.chapter_ver = bookInfo.chapter_ver;
-                this.forum_id = bookInfo.forum_id;
-                this.forum_name = bookInfo.forum_name;
-                this.discuss = bookInfo.discuss;
-                this.cp_id = bookInfo.cp_id;
-                this.paper_price = bookInfo.paper_price;
-                this.first_chapter = bookInfo.first_chapter;
-                this.charge_type = bookInfo.charge_type;
-                this.member_show_type = bookInfo.member_show_type;
+            if (bookInfo == null) {
+                return;
             }
+            this.book_id = bookInfo.book_id;
+            this.title = bookInfo.title;
+            this.cover = bookInfo.cover;
+            this.book_type = bookInfo.book_type;
+            this.class_id = bookInfo.class_id;
+            this.class_name = bookInfo.class_name;
+            this.sub_class_id = bookInfo.sub_class_id;
+            this.sub_class_name = bookInfo.sub_class_name;
+            this.book_size = bookInfo.book_size;
+            this.intro = bookInfo.intro;
+            this.author = bookInfo.author;
+            this.author_intro = bookInfo.author_intro;
+            this.tags = Message.copyOf(bookInfo.tags);
+            this.total_chapter = bookInfo.total_chapter;
+            this.words = bookInfo.words;
+            this.orignal_price = bookInfo.orignal_price;
+            this.price = bookInfo.price;
+            this.discount_ratio = bookInfo.discount_ratio;
+            this.is_finish = bookInfo.is_finish;
+            this.ad_code = bookInfo.ad_code;
+            this.is_buy = bookInfo.is_buy;
+            this.free_info = bookInfo.free_info;
+            this.publisher = bookInfo.publisher;
+            this.isbn = bookInfo.isbn;
+            this.copyright = bookInfo.copyright;
+            this.publish_text = bookInfo.publish_text;
+            this.copyright_text = bookInfo.copyright_text;
+            this.publish_time = bookInfo.publish_time;
+            this.publish_type = bookInfo.publish_type;
+            this.update_time = bookInfo.update_time;
+            this.big_cover = bookInfo.big_cover;
+            this.discount_type = bookInfo.discount_type;
+            this.discount_icon = bookInfo.discount_icon;
+            this.read_count = bookInfo.read_count;
+            this.total_page = bookInfo.total_page;
+            this.book_ver = bookInfo.book_ver;
+            this.chapter_ver = bookInfo.chapter_ver;
+            this.forum_id = bookInfo.forum_id;
+            this.forum_name = bookInfo.forum_name;
+            this.discuss = bookInfo.discuss;
+            this.cp_id = bookInfo.cp_id;
+            this.paper_price = bookInfo.paper_price;
+            this.first_chapter = bookInfo.first_chapter;
+            this.charge_type = bookInfo.charge_type;
+            this.member_show_type = bookInfo.member_show_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -527,5 +250,328 @@ public final class BookInfo extends Message {
         public BookInfo build(boolean z) {
             return new BookInfo(this, z);
         }
+    }
+
+    public BookInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.book_id;
+            if (str == null) {
+                this.book_id = "";
+            } else {
+                this.book_id = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.cover;
+            if (str3 == null) {
+                this.cover = "";
+            } else {
+                this.cover = str3;
+            }
+            Integer num = builder.book_type;
+            if (num == null) {
+                this.book_type = DEFAULT_BOOK_TYPE;
+            } else {
+                this.book_type = num;
+            }
+            Integer num2 = builder.class_id;
+            if (num2 == null) {
+                this.class_id = DEFAULT_CLASS_ID;
+            } else {
+                this.class_id = num2;
+            }
+            String str4 = builder.class_name;
+            if (str4 == null) {
+                this.class_name = "";
+            } else {
+                this.class_name = str4;
+            }
+            Integer num3 = builder.sub_class_id;
+            if (num3 == null) {
+                this.sub_class_id = DEFAULT_SUB_CLASS_ID;
+            } else {
+                this.sub_class_id = num3;
+            }
+            String str5 = builder.sub_class_name;
+            if (str5 == null) {
+                this.sub_class_name = "";
+            } else {
+                this.sub_class_name = str5;
+            }
+            Integer num4 = builder.book_size;
+            if (num4 == null) {
+                this.book_size = DEFAULT_BOOK_SIZE;
+            } else {
+                this.book_size = num4;
+            }
+            String str6 = builder.intro;
+            if (str6 == null) {
+                this.intro = "";
+            } else {
+                this.intro = str6;
+            }
+            String str7 = builder.author;
+            if (str7 == null) {
+                this.author = "";
+            } else {
+                this.author = str7;
+            }
+            String str8 = builder.author_intro;
+            if (str8 == null) {
+                this.author_intro = "";
+            } else {
+                this.author_intro = str8;
+            }
+            List<BookTag> list = builder.tags;
+            if (list == null) {
+                this.tags = DEFAULT_TAGS;
+            } else {
+                this.tags = Message.immutableCopyOf(list);
+            }
+            Integer num5 = builder.total_chapter;
+            if (num5 == null) {
+                this.total_chapter = DEFAULT_TOTAL_CHAPTER;
+            } else {
+                this.total_chapter = num5;
+            }
+            Integer num6 = builder.words;
+            if (num6 == null) {
+                this.words = DEFAULT_WORDS;
+            } else {
+                this.words = num6;
+            }
+            Integer num7 = builder.orignal_price;
+            if (num7 == null) {
+                this.orignal_price = DEFAULT_ORIGNAL_PRICE;
+            } else {
+                this.orignal_price = num7;
+            }
+            Integer num8 = builder.price;
+            if (num8 == null) {
+                this.price = DEFAULT_PRICE;
+            } else {
+                this.price = num8;
+            }
+            String str9 = builder.discount_ratio;
+            if (str9 == null) {
+                this.discount_ratio = "";
+            } else {
+                this.discount_ratio = str9;
+            }
+            Integer num9 = builder.is_finish;
+            if (num9 == null) {
+                this.is_finish = DEFAULT_IS_FINISH;
+            } else {
+                this.is_finish = num9;
+            }
+            String str10 = builder.ad_code;
+            if (str10 == null) {
+                this.ad_code = "";
+            } else {
+                this.ad_code = str10;
+            }
+            Integer num10 = builder.is_buy;
+            if (num10 == null) {
+                this.is_buy = DEFAULT_IS_BUY;
+            } else {
+                this.is_buy = num10;
+            }
+            String str11 = builder.free_info;
+            if (str11 == null) {
+                this.free_info = "";
+            } else {
+                this.free_info = str11;
+            }
+            String str12 = builder.publisher;
+            if (str12 == null) {
+                this.publisher = "";
+            } else {
+                this.publisher = str12;
+            }
+            String str13 = builder.isbn;
+            if (str13 == null) {
+                this.isbn = "";
+            } else {
+                this.isbn = str13;
+            }
+            String str14 = builder.copyright;
+            if (str14 == null) {
+                this.copyright = "";
+            } else {
+                this.copyright = str14;
+            }
+            String str15 = builder.publish_text;
+            if (str15 == null) {
+                this.publish_text = "";
+            } else {
+                this.publish_text = str15;
+            }
+            String str16 = builder.copyright_text;
+            if (str16 == null) {
+                this.copyright_text = "";
+            } else {
+                this.copyright_text = str16;
+            }
+            String str17 = builder.publish_time;
+            if (str17 == null) {
+                this.publish_time = "";
+            } else {
+                this.publish_time = str17;
+            }
+            String str18 = builder.publish_type;
+            if (str18 == null) {
+                this.publish_type = "";
+            } else {
+                this.publish_type = str18;
+            }
+            Integer num11 = builder.update_time;
+            if (num11 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num11;
+            }
+            String str19 = builder.big_cover;
+            if (str19 == null) {
+                this.big_cover = "";
+            } else {
+                this.big_cover = str19;
+            }
+            Integer num12 = builder.discount_type;
+            if (num12 == null) {
+                this.discount_type = DEFAULT_DISCOUNT_TYPE;
+            } else {
+                this.discount_type = num12;
+            }
+            String str20 = builder.discount_icon;
+            if (str20 == null) {
+                this.discount_icon = "";
+            } else {
+                this.discount_icon = str20;
+            }
+            Integer num13 = builder.read_count;
+            if (num13 == null) {
+                this.read_count = DEFAULT_READ_COUNT;
+            } else {
+                this.read_count = num13;
+            }
+            Integer num14 = builder.total_page;
+            if (num14 == null) {
+                this.total_page = DEFAULT_TOTAL_PAGE;
+            } else {
+                this.total_page = num14;
+            }
+            String str21 = builder.book_ver;
+            if (str21 == null) {
+                this.book_ver = "";
+            } else {
+                this.book_ver = str21;
+            }
+            String str22 = builder.chapter_ver;
+            if (str22 == null) {
+                this.chapter_ver = "";
+            } else {
+                this.chapter_ver = str22;
+            }
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str23 = builder.forum_name;
+            if (str23 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str23;
+            }
+            String str24 = builder.discuss;
+            if (str24 == null) {
+                this.discuss = "";
+            } else {
+                this.discuss = str24;
+            }
+            String str25 = builder.cp_id;
+            if (str25 == null) {
+                this.cp_id = "";
+            } else {
+                this.cp_id = str25;
+            }
+            String str26 = builder.paper_price;
+            if (str26 == null) {
+                this.paper_price = "";
+            } else {
+                this.paper_price = str26;
+            }
+            Integer num15 = builder.first_chapter;
+            if (num15 == null) {
+                this.first_chapter = DEFAULT_FIRST_CHAPTER;
+            } else {
+                this.first_chapter = num15;
+            }
+            Integer num16 = builder.charge_type;
+            if (num16 == null) {
+                this.charge_type = DEFAULT_CHARGE_TYPE;
+            } else {
+                this.charge_type = num16;
+            }
+            Integer num17 = builder.member_show_type;
+            if (num17 == null) {
+                this.member_show_type = DEFAULT_MEMBER_SHOW_TYPE;
+                return;
+            } else {
+                this.member_show_type = num17;
+                return;
+            }
+        }
+        this.book_id = builder.book_id;
+        this.title = builder.title;
+        this.cover = builder.cover;
+        this.book_type = builder.book_type;
+        this.class_id = builder.class_id;
+        this.class_name = builder.class_name;
+        this.sub_class_id = builder.sub_class_id;
+        this.sub_class_name = builder.sub_class_name;
+        this.book_size = builder.book_size;
+        this.intro = builder.intro;
+        this.author = builder.author;
+        this.author_intro = builder.author_intro;
+        this.tags = Message.immutableCopyOf(builder.tags);
+        this.total_chapter = builder.total_chapter;
+        this.words = builder.words;
+        this.orignal_price = builder.orignal_price;
+        this.price = builder.price;
+        this.discount_ratio = builder.discount_ratio;
+        this.is_finish = builder.is_finish;
+        this.ad_code = builder.ad_code;
+        this.is_buy = builder.is_buy;
+        this.free_info = builder.free_info;
+        this.publisher = builder.publisher;
+        this.isbn = builder.isbn;
+        this.copyright = builder.copyright;
+        this.publish_text = builder.publish_text;
+        this.copyright_text = builder.copyright_text;
+        this.publish_time = builder.publish_time;
+        this.publish_type = builder.publish_type;
+        this.update_time = builder.update_time;
+        this.big_cover = builder.big_cover;
+        this.discount_type = builder.discount_type;
+        this.discount_icon = builder.discount_icon;
+        this.read_count = builder.read_count;
+        this.total_page = builder.total_page;
+        this.book_ver = builder.book_ver;
+        this.chapter_ver = builder.chapter_ver;
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.discuss = builder.discuss;
+        this.cp_id = builder.cp_id;
+        this.paper_price = builder.paper_price;
+        this.first_chapter = builder.first_chapter;
+        this.charge_type = builder.charge_type;
+        this.member_show_type = builder.member_show_type;
     }
 }

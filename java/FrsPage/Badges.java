@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Badges extends Message {
     public static final Integer DEFAULT_BADGE_ID = 0;
     public static final String DEFAULT_BADGE_URL = "";
@@ -14,33 +14,7 @@ public final class Badges extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String webview;
 
-    private Badges(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.badge_id == null) {
-                this.badge_id = DEFAULT_BADGE_ID;
-            } else {
-                this.badge_id = builder.badge_id;
-            }
-            if (builder.badge_url == null) {
-                this.badge_url = "";
-            } else {
-                this.badge_url = builder.badge_url;
-            }
-            if (builder.webview == null) {
-                this.webview = "";
-                return;
-            } else {
-                this.webview = builder.webview;
-                return;
-            }
-        }
-        this.badge_id = builder.badge_id;
-        this.badge_url = builder.badge_url;
-        this.webview = builder.webview;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Badges> {
         public Integer badge_id;
         public String badge_url;
@@ -51,11 +25,12 @@ public final class Badges extends Message {
 
         public Builder(Badges badges) {
             super(badges);
-            if (badges != null) {
-                this.badge_id = badges.badge_id;
-                this.badge_url = badges.badge_url;
-                this.webview = badges.webview;
+            if (badges == null) {
+                return;
             }
+            this.badge_id = badges.badge_id;
+            this.badge_url = badges.badge_url;
+            this.webview = badges.webview;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class Badges extends Message {
         public Badges build(boolean z) {
             return new Badges(this, z);
         }
+    }
+
+    public Badges(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.badge_id;
+            if (num == null) {
+                this.badge_id = DEFAULT_BADGE_ID;
+            } else {
+                this.badge_id = num;
+            }
+            String str = builder.badge_url;
+            if (str == null) {
+                this.badge_url = "";
+            } else {
+                this.badge_url = str;
+            }
+            String str2 = builder.webview;
+            if (str2 == null) {
+                this.webview = "";
+                return;
+            } else {
+                this.webview = str2;
+                return;
+            }
+        }
+        this.badge_id = builder.badge_id;
+        this.badge_url = builder.badge_url;
+        this.webview = builder.webview;
     }
 }

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeBgProp;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class ThemePendantInMain extends Message {
     public static final String DEFAULT_PENDANT_CATEGORY = "";
     public static final List<ThemeBgProp> DEFAULT_PROPS = Collections.emptyList();
@@ -14,27 +14,7 @@ public final class ThemePendantInMain extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThemeBgProp> props;
 
-    private ThemePendantInMain(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pendant_category == null) {
-                this.pendant_category = "";
-            } else {
-                this.pendant_category = builder.pendant_category;
-            }
-            if (builder.props == null) {
-                this.props = DEFAULT_PROPS;
-                return;
-            } else {
-                this.props = immutableCopyOf(builder.props);
-                return;
-            }
-        }
-        this.pendant_category = builder.pendant_category;
-        this.props = immutableCopyOf(builder.props);
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThemePendantInMain> {
         public String pendant_category;
         public List<ThemeBgProp> props;
@@ -44,10 +24,11 @@ public final class ThemePendantInMain extends Message {
 
         public Builder(ThemePendantInMain themePendantInMain) {
             super(themePendantInMain);
-            if (themePendantInMain != null) {
-                this.pendant_category = themePendantInMain.pendant_category;
-                this.props = ThemePendantInMain.copyOf(themePendantInMain.props);
+            if (themePendantInMain == null) {
+                return;
             }
+            this.pendant_category = themePendantInMain.pendant_category;
+            this.props = Message.copyOf(themePendantInMain.props);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -55,5 +36,27 @@ public final class ThemePendantInMain extends Message {
         public ThemePendantInMain build(boolean z) {
             return new ThemePendantInMain(this, z);
         }
+    }
+
+    public ThemePendantInMain(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.pendant_category;
+            if (str == null) {
+                this.pendant_category = "";
+            } else {
+                this.pendant_category = str;
+            }
+            List<ThemeBgProp> list = builder.props;
+            if (list == null) {
+                this.props = DEFAULT_PROPS;
+                return;
+            } else {
+                this.props = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.pendant_category = builder.pendant_category;
+        this.props = Message.immutableCopyOf(builder.props);
     }
 }

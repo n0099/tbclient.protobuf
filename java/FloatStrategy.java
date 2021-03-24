@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class FloatStrategy extends Message {
     public static final String DEFAULT_BROWSETIMEPAGE = "";
     public static final String DEFAULT_TOAST = "";
@@ -26,57 +26,7 @@ public final class FloatStrategy extends Message {
     public static final Long DEFAULT_SHOW_TIME_END = 0L;
     public static final Integer DEFAULT_SHOW_NUM = 0;
 
-    private FloatStrategy(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.un_do_mission == null) {
-                this.un_do_mission = DEFAULT_UN_DO_MISSION;
-            } else {
-                this.un_do_mission = builder.un_do_mission;
-            }
-            if (builder.browsetimepage == null) {
-                this.browsetimepage = "";
-            } else {
-                this.browsetimepage = builder.browsetimepage;
-            }
-            if (builder.duration == null) {
-                this.duration = DEFAULT_DURATION;
-            } else {
-                this.duration = builder.duration;
-            }
-            if (builder.show_time_begin == null) {
-                this.show_time_begin = DEFAULT_SHOW_TIME_BEGIN;
-            } else {
-                this.show_time_begin = builder.show_time_begin;
-            }
-            if (builder.show_time_end == null) {
-                this.show_time_end = DEFAULT_SHOW_TIME_END;
-            } else {
-                this.show_time_end = builder.show_time_end;
-            }
-            if (builder.show_num == null) {
-                this.show_num = DEFAULT_SHOW_NUM;
-            } else {
-                this.show_num = builder.show_num;
-            }
-            if (builder.toast == null) {
-                this.toast = "";
-                return;
-            } else {
-                this.toast = builder.toast;
-                return;
-            }
-        }
-        this.un_do_mission = builder.un_do_mission;
-        this.browsetimepage = builder.browsetimepage;
-        this.duration = builder.duration;
-        this.show_time_begin = builder.show_time_begin;
-        this.show_time_end = builder.show_time_end;
-        this.show_num = builder.show_num;
-        this.toast = builder.toast;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<FloatStrategy> {
         public String browsetimepage;
         public Integer duration;
@@ -91,15 +41,16 @@ public final class FloatStrategy extends Message {
 
         public Builder(FloatStrategy floatStrategy) {
             super(floatStrategy);
-            if (floatStrategy != null) {
-                this.un_do_mission = floatStrategy.un_do_mission;
-                this.browsetimepage = floatStrategy.browsetimepage;
-                this.duration = floatStrategy.duration;
-                this.show_time_begin = floatStrategy.show_time_begin;
-                this.show_time_end = floatStrategy.show_time_end;
-                this.show_num = floatStrategy.show_num;
-                this.toast = floatStrategy.toast;
+            if (floatStrategy == null) {
+                return;
             }
+            this.un_do_mission = floatStrategy.un_do_mission;
+            this.browsetimepage = floatStrategy.browsetimepage;
+            this.duration = floatStrategy.duration;
+            this.show_time_begin = floatStrategy.show_time_begin;
+            this.show_time_end = floatStrategy.show_time_end;
+            this.show_num = floatStrategy.show_num;
+            this.toast = floatStrategy.toast;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +58,62 @@ public final class FloatStrategy extends Message {
         public FloatStrategy build(boolean z) {
             return new FloatStrategy(this, z);
         }
+    }
+
+    public FloatStrategy(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.un_do_mission;
+            if (num == null) {
+                this.un_do_mission = DEFAULT_UN_DO_MISSION;
+            } else {
+                this.un_do_mission = num;
+            }
+            String str = builder.browsetimepage;
+            if (str == null) {
+                this.browsetimepage = "";
+            } else {
+                this.browsetimepage = str;
+            }
+            Integer num2 = builder.duration;
+            if (num2 == null) {
+                this.duration = DEFAULT_DURATION;
+            } else {
+                this.duration = num2;
+            }
+            Long l = builder.show_time_begin;
+            if (l == null) {
+                this.show_time_begin = DEFAULT_SHOW_TIME_BEGIN;
+            } else {
+                this.show_time_begin = l;
+            }
+            Long l2 = builder.show_time_end;
+            if (l2 == null) {
+                this.show_time_end = DEFAULT_SHOW_TIME_END;
+            } else {
+                this.show_time_end = l2;
+            }
+            Integer num3 = builder.show_num;
+            if (num3 == null) {
+                this.show_num = DEFAULT_SHOW_NUM;
+            } else {
+                this.show_num = num3;
+            }
+            String str2 = builder.toast;
+            if (str2 == null) {
+                this.toast = "";
+                return;
+            } else {
+                this.toast = str2;
+                return;
+            }
+        }
+        this.un_do_mission = builder.un_do_mission;
+        this.browsetimepage = builder.browsetimepage;
+        this.duration = builder.duration;
+        this.show_time_begin = builder.show_time_begin;
+        this.show_time_end = builder.show_time_end;
+        this.show_num = builder.show_num;
+        this.toast = builder.toast;
     }
 }

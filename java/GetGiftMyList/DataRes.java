@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Page;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<GiftList> gift_list;
@@ -21,36 +21,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_TOTAL_NUM = 0;
     public static final Integer DEFAULT_MONEY = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.gift_list == null) {
-                this.gift_list = DEFAULT_GIFT_LIST;
-            } else {
-                this.gift_list = immutableCopyOf(builder.gift_list);
-            }
-            if (builder.total_num == null) {
-                this.total_num = DEFAULT_TOTAL_NUM;
-            } else {
-                this.total_num = builder.total_num;
-            }
-            if (builder.money == null) {
-                this.money = DEFAULT_MONEY;
-            } else {
-                this.money = builder.money;
-            }
-            this.money_txt = builder.money_txt;
-            this.page = builder.page;
-            return;
-        }
-        this.gift_list = immutableCopyOf(builder.gift_list);
-        this.total_num = builder.total_num;
-        this.money = builder.money;
-        this.money_txt = builder.money_txt;
-        this.page = builder.page;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<GiftList> gift_list;
         public Integer money;
@@ -63,13 +34,14 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.gift_list = DataRes.copyOf(dataRes.gift_list);
-                this.total_num = dataRes.total_num;
-                this.money = dataRes.money;
-                this.money_txt = dataRes.money_txt;
-                this.page = dataRes.page;
+            if (dataRes == null) {
+                return;
             }
+            this.gift_list = Message.copyOf(dataRes.gift_list);
+            this.total_num = dataRes.total_num;
+            this.money = dataRes.money;
+            this.money_txt = dataRes.money_txt;
+            this.page = dataRes.page;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -77,5 +49,37 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<GiftList> list = builder.gift_list;
+            if (list == null) {
+                this.gift_list = DEFAULT_GIFT_LIST;
+            } else {
+                this.gift_list = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.total_num;
+            if (num == null) {
+                this.total_num = DEFAULT_TOTAL_NUM;
+            } else {
+                this.total_num = num;
+            }
+            Integer num2 = builder.money;
+            if (num2 == null) {
+                this.money = DEFAULT_MONEY;
+            } else {
+                this.money = num2;
+            }
+            this.money_txt = builder.money_txt;
+            this.page = builder.page;
+            return;
+        }
+        this.gift_list = Message.immutableCopyOf(builder.gift_list);
+        this.total_num = builder.total_num;
+        this.money = builder.money;
+        this.money_txt = builder.money_txt;
+        this.page = builder.page;
     }
 }

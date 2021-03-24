@@ -3,23 +3,12 @@ package tbclient.RecommendFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class RecommendFriendResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
-
-    private RecommendFriendResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecommendFriendResIdl> {
@@ -31,10 +20,11 @@ public final class RecommendFriendResIdl extends Message {
 
         public Builder(RecommendFriendResIdl recommendFriendResIdl) {
             super(recommendFriendResIdl);
-            if (recommendFriendResIdl != null) {
-                this.error = recommendFriendResIdl.error;
-                this.data = recommendFriendResIdl.data;
+            if (recommendFriendResIdl == null) {
+                return;
             }
+            this.error = recommendFriendResIdl.error;
+            this.data = recommendFriendResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class RecommendFriendResIdl extends Message {
         public RecommendFriendResIdl build(boolean z) {
             return new RecommendFriendResIdl(this, z);
         }
+    }
+
+    public RecommendFriendResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

@@ -3,7 +3,7 @@ package tbclient.RecomVertical;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLASS_ID = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8901common;
+    public final CommonReq f68577common;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -34,70 +34,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_LOAD_TYPE = 0;
     public static final Integer DEFAULT_PAGE_THREAD_COUNT = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8901common = builder.f8902common;
-            if (builder.class_id == null) {
-                this.class_id = "";
-            } else {
-                this.class_id = builder.class_id;
-            }
-            if (builder.sub_class_id == null) {
-                this.sub_class_id = DEFAULT_SUB_CLASS_ID;
-            } else {
-                this.sub_class_id = builder.sub_class_id;
-            }
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.new_net_type == null) {
-                this.new_net_type = DEFAULT_NEW_NET_TYPE;
-            } else {
-                this.new_net_type = builder.new_net_type;
-            }
-            if (builder.load_type == null) {
-                this.load_type = DEFAULT_LOAD_TYPE;
-            } else {
-                this.load_type = builder.load_type;
-            }
-            if (builder.page_thread_count == null) {
-                this.page_thread_count = DEFAULT_PAGE_THREAD_COUNT;
-                return;
-            } else {
-                this.page_thread_count = builder.page_thread_count;
-                return;
-            }
-        }
-        this.f8901common = builder.f8902common;
-        this.class_id = builder.class_id;
-        this.sub_class_id = builder.sub_class_id;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.new_net_type = builder.new_net_type;
-        this.load_type = builder.load_type;
-        this.page_thread_count = builder.page_thread_count;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8902common;
+        public CommonReq f68578common;
         public Integer load_type;
         public Integer new_net_type;
         public Integer page_thread_count;
@@ -111,17 +53,18 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8902common = dataReq.f8901common;
-                this.class_id = dataReq.class_id;
-                this.sub_class_id = dataReq.sub_class_id;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.new_net_type = dataReq.new_net_type;
-                this.load_type = dataReq.load_type;
-                this.page_thread_count = dataReq.page_thread_count;
+            if (dataReq == null) {
+                return;
             }
+            this.f68578common = dataReq.f68577common;
+            this.class_id = dataReq.class_id;
+            this.sub_class_id = dataReq.sub_class_id;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.new_net_type = dataReq.new_net_type;
+            this.load_type = dataReq.load_type;
+            this.page_thread_count = dataReq.page_thread_count;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -129,5 +72,71 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68577common = builder.f68578common;
+            String str = builder.class_id;
+            if (str == null) {
+                this.class_id = "";
+            } else {
+                this.class_id = str;
+            }
+            Integer num = builder.sub_class_id;
+            if (num == null) {
+                this.sub_class_id = DEFAULT_SUB_CLASS_ID;
+            } else {
+                this.sub_class_id = num;
+            }
+            Integer num2 = builder.scr_w;
+            if (num2 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num2;
+            }
+            Integer num3 = builder.scr_h;
+            if (num3 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num3;
+            }
+            Double d2 = builder.scr_dip;
+            if (d2 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = d2;
+            }
+            Integer num4 = builder.new_net_type;
+            if (num4 == null) {
+                this.new_net_type = DEFAULT_NEW_NET_TYPE;
+            } else {
+                this.new_net_type = num4;
+            }
+            Integer num5 = builder.load_type;
+            if (num5 == null) {
+                this.load_type = DEFAULT_LOAD_TYPE;
+            } else {
+                this.load_type = num5;
+            }
+            Integer num6 = builder.page_thread_count;
+            if (num6 == null) {
+                this.page_thread_count = DEFAULT_PAGE_THREAD_COUNT;
+                return;
+            } else {
+                this.page_thread_count = num6;
+                return;
+            }
+        }
+        this.f68577common = builder.f68578common;
+        this.class_id = builder.class_id;
+        this.sub_class_id = builder.sub_class_id;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.new_net_type = builder.new_net_type;
+        this.load_type = builder.load_type;
+        this.page_thread_count = builder.page_thread_count;
     }
 }

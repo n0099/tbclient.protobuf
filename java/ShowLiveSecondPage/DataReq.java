@@ -3,13 +3,16 @@ package tbclient.ShowLiveSecondPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
+    public static final Double DEFAULT_LAT;
+    public static final Double DEFAULT_LNG;
     public static final String DEFAULT_NETWORK_TYPE = "";
+    public static final Double DEFAULT_SCR_DIP;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8941common;
+    public final CommonReq f68619common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer entry_type;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
@@ -36,85 +39,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_W = 0;
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Integer DEFAULT_Q_TYPE = 0;
-    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
-    public static final Double DEFAULT_LAT = Double.valueOf(0.0d);
-    public static final Double DEFAULT_LNG = Double.valueOf(0.0d);
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8941common = builder.f8942common;
-            if (builder.entry_type == null) {
-                this.entry_type = DEFAULT_ENTRY_TYPE;
-            } else {
-                this.entry_type = builder.entry_type;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.ps == null) {
-                this.ps = DEFAULT_PS;
-            } else {
-                this.ps = builder.ps;
-            }
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-            } else {
-                this.q_type = builder.q_type;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.network_type == null) {
-                this.network_type = "";
-            } else {
-                this.network_type = builder.network_type;
-            }
-            if (builder.lat == null) {
-                this.lat = DEFAULT_LAT;
-            } else {
-                this.lat = builder.lat;
-            }
-            if (builder.lng == null) {
-                this.lng = DEFAULT_LNG;
-                return;
-            } else {
-                this.lng = builder.lng;
-                return;
-            }
-        }
-        this.f8941common = builder.f8942common;
-        this.entry_type = builder.entry_type;
-        this.pn = builder.pn;
-        this.ps = builder.ps;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.q_type = builder.q_type;
-        this.scr_dip = builder.scr_dip;
-        this.network_type = builder.network_type;
-        this.lat = builder.lat;
-        this.lng = builder.lng;
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8942common;
+        public CommonReq f68620common;
         public Integer entry_type;
         public Double lat;
         public Double lng;
@@ -131,19 +61,20 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8942common = dataReq.f8941common;
-                this.entry_type = dataReq.entry_type;
-                this.pn = dataReq.pn;
-                this.ps = dataReq.ps;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.q_type = dataReq.q_type;
-                this.scr_dip = dataReq.scr_dip;
-                this.network_type = dataReq.network_type;
-                this.lat = dataReq.lat;
-                this.lng = dataReq.lng;
+            if (dataReq == null) {
+                return;
             }
+            this.f68620common = dataReq.f68619common;
+            this.entry_type = dataReq.entry_type;
+            this.pn = dataReq.pn;
+            this.ps = dataReq.ps;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.q_type = dataReq.q_type;
+            this.scr_dip = dataReq.scr_dip;
+            this.network_type = dataReq.network_type;
+            this.lat = dataReq.lat;
+            this.lng = dataReq.lng;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -151,5 +82,92 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    static {
+        Double valueOf = Double.valueOf(0.0d);
+        DEFAULT_SCR_DIP = valueOf;
+        DEFAULT_LAT = valueOf;
+        DEFAULT_LNG = valueOf;
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68619common = builder.f68620common;
+            Integer num = builder.entry_type;
+            if (num == null) {
+                this.entry_type = DEFAULT_ENTRY_TYPE;
+            } else {
+                this.entry_type = num;
+            }
+            Integer num2 = builder.pn;
+            if (num2 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num2;
+            }
+            Integer num3 = builder.ps;
+            if (num3 == null) {
+                this.ps = DEFAULT_PS;
+            } else {
+                this.ps = num3;
+            }
+            Integer num4 = builder.scr_w;
+            if (num4 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num4;
+            }
+            Integer num5 = builder.scr_h;
+            if (num5 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num5;
+            }
+            Integer num6 = builder.q_type;
+            if (num6 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = num6;
+            }
+            Double d2 = builder.scr_dip;
+            if (d2 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = d2;
+            }
+            String str = builder.network_type;
+            if (str == null) {
+                this.network_type = "";
+            } else {
+                this.network_type = str;
+            }
+            Double d3 = builder.lat;
+            if (d3 == null) {
+                this.lat = DEFAULT_LAT;
+            } else {
+                this.lat = d3;
+            }
+            Double d4 = builder.lng;
+            if (d4 == null) {
+                this.lng = DEFAULT_LNG;
+                return;
+            } else {
+                this.lng = d4;
+                return;
+            }
+        }
+        this.f68619common = builder.f68620common;
+        this.entry_type = builder.entry_type;
+        this.pn = builder.pn;
+        this.ps = builder.ps;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.q_type = builder.q_type;
+        this.scr_dip = builder.scr_dip;
+        this.network_type = builder.network_type;
+        this.lat = builder.lat;
+        this.lng = builder.lng;
     }
 }

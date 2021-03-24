@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ForumArIno extends Message {
     public static final String DEFAULT_ANIMATION_URL = "";
     public static final String DEFAULT_SUSPENSION_URL = "";
@@ -23,51 +23,7 @@ public final class ForumArIno extends Message {
     public static final Integer DEFAULT_AR_ID = 0;
     public static final Integer DEFAULT_AR_TYPE = 0;
 
-    private ForumArIno(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder._switch == null) {
-                this._switch = DEFAULT_SWITCH;
-            } else {
-                this._switch = builder._switch;
-            }
-            if (builder.ar_id == null) {
-                this.ar_id = DEFAULT_AR_ID;
-            } else {
-                this.ar_id = builder.ar_id;
-            }
-            if (builder.ar_type == null) {
-                this.ar_type = DEFAULT_AR_TYPE;
-            } else {
-                this.ar_type = builder.ar_type;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.animation_url == null) {
-                this.animation_url = "";
-            } else {
-                this.animation_url = builder.animation_url;
-            }
-            if (builder.suspension_url == null) {
-                this.suspension_url = "";
-                return;
-            } else {
-                this.suspension_url = builder.suspension_url;
-                return;
-            }
-        }
-        this._switch = builder._switch;
-        this.ar_id = builder.ar_id;
-        this.ar_type = builder.ar_type;
-        this.title = builder.title;
-        this.animation_url = builder.animation_url;
-        this.suspension_url = builder.suspension_url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumArIno> {
         public Integer _switch;
         public String animation_url;
@@ -81,14 +37,15 @@ public final class ForumArIno extends Message {
 
         public Builder(ForumArIno forumArIno) {
             super(forumArIno);
-            if (forumArIno != null) {
-                this._switch = forumArIno._switch;
-                this.ar_id = forumArIno.ar_id;
-                this.ar_type = forumArIno.ar_type;
-                this.title = forumArIno.title;
-                this.animation_url = forumArIno.animation_url;
-                this.suspension_url = forumArIno.suspension_url;
+            if (forumArIno == null) {
+                return;
             }
+            this._switch = forumArIno._switch;
+            this.ar_id = forumArIno.ar_id;
+            this.ar_type = forumArIno.ar_type;
+            this.title = forumArIno.title;
+            this.animation_url = forumArIno.animation_url;
+            this.suspension_url = forumArIno.suspension_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +53,55 @@ public final class ForumArIno extends Message {
         public ForumArIno build(boolean z) {
             return new ForumArIno(this, z);
         }
+    }
+
+    public ForumArIno(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder._switch;
+            if (num == null) {
+                this._switch = DEFAULT_SWITCH;
+            } else {
+                this._switch = num;
+            }
+            Integer num2 = builder.ar_id;
+            if (num2 == null) {
+                this.ar_id = DEFAULT_AR_ID;
+            } else {
+                this.ar_id = num2;
+            }
+            Integer num3 = builder.ar_type;
+            if (num3 == null) {
+                this.ar_type = DEFAULT_AR_TYPE;
+            } else {
+                this.ar_type = num3;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.animation_url;
+            if (str2 == null) {
+                this.animation_url = "";
+            } else {
+                this.animation_url = str2;
+            }
+            String str3 = builder.suspension_url;
+            if (str3 == null) {
+                this.suspension_url = "";
+                return;
+            } else {
+                this.suspension_url = str3;
+                return;
+            }
+        }
+        this._switch = builder._switch;
+        this.ar_id = builder.ar_id;
+        this.ar_type = builder.ar_type;
+        this.title = builder.title;
+        this.animation_url = builder.animation_url;
+        this.suspension_url = builder.suspension_url;
     }
 }

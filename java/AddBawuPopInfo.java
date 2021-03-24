@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AddBawuPopInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -17,39 +17,7 @@ public final class AddBawuPopInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    private AddBawuPopInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.content == null) {
-                this.content = "";
-            } else {
-                this.content = builder.content;
-            }
-            if (builder.img_url == null) {
-                this.img_url = "";
-            } else {
-                this.img_url = builder.img_url;
-            }
-            if (builder.jump_url == null) {
-                this.jump_url = "";
-                return;
-            } else {
-                this.jump_url = builder.jump_url;
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.content = builder.content;
-        this.img_url = builder.img_url;
-        this.jump_url = builder.jump_url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AddBawuPopInfo> {
         public String content;
         public String img_url;
@@ -61,12 +29,13 @@ public final class AddBawuPopInfo extends Message {
 
         public Builder(AddBawuPopInfo addBawuPopInfo) {
             super(addBawuPopInfo);
-            if (addBawuPopInfo != null) {
-                this.title = addBawuPopInfo.title;
-                this.content = addBawuPopInfo.content;
-                this.img_url = addBawuPopInfo.img_url;
-                this.jump_url = addBawuPopInfo.jump_url;
+            if (addBawuPopInfo == null) {
+                return;
             }
+            this.title = addBawuPopInfo.title;
+            this.content = addBawuPopInfo.content;
+            this.img_url = addBawuPopInfo.img_url;
+            this.jump_url = addBawuPopInfo.jump_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class AddBawuPopInfo extends Message {
         public AddBawuPopInfo build(boolean z) {
             return new AddBawuPopInfo(this, z);
         }
+    }
+
+    public AddBawuPopInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.content;
+            if (str2 == null) {
+                this.content = "";
+            } else {
+                this.content = str2;
+            }
+            String str3 = builder.img_url;
+            if (str3 == null) {
+                this.img_url = "";
+            } else {
+                this.img_url = str3;
+            }
+            String str4 = builder.jump_url;
+            if (str4 == null) {
+                this.jump_url = "";
+                return;
+            } else {
+                this.jump_url = str4;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.content = builder.content;
+        this.img_url = builder.img_url;
+        this.jump_url = builder.jump_url;
     }
 }

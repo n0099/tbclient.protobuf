@@ -3,7 +3,7 @@ package tbclient.Hottopic;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.VideoInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class TopicInfo extends Message {
     public static final String DEFAULT_BANG_JUMP_DESC = "";
     public static final String DEFAULT_BANG_TITLE = "";
@@ -58,114 +58,6 @@ public final class TopicInfo extends Message {
     public static final Integer DEFAULT_PMY_SOURCE = 0;
     public static final Integer DEFAULT_TOPIC_TAG = 0;
 
-    private TopicInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.topic_id == null) {
-                this.topic_id = DEFAULT_TOPIC_ID;
-            } else {
-                this.topic_id = builder.topic_id;
-            }
-            if (builder.topic_name == null) {
-                this.topic_name = "";
-            } else {
-                this.topic_name = builder.topic_name;
-            }
-            if (builder.desc == null) {
-                this.desc = "";
-            } else {
-                this.desc = builder.desc;
-            }
-            if (builder.total_post_num == null) {
-                this.total_post_num = DEFAULT_TOTAL_POST_NUM;
-            } else {
-                this.total_post_num = builder.total_post_num;
-            }
-            if (builder.head_photo_url == null) {
-                this.head_photo_url = "";
-            } else {
-                this.head_photo_url = builder.head_photo_url;
-            }
-            if (builder.share_title == null) {
-                this.share_title = "";
-            } else {
-                this.share_title = builder.share_title;
-            }
-            if (builder.share_pic == null) {
-                this.share_pic = "";
-            } else {
-                this.share_pic = builder.share_pic;
-            }
-            if (builder.idx_num == null) {
-                this.idx_num = DEFAULT_IDX_NUM;
-            } else {
-                this.idx_num = builder.idx_num;
-            }
-            if (builder.discuss_forum == null) {
-                this.discuss_forum = "";
-            } else {
-                this.discuss_forum = builder.discuss_forum;
-            }
-            if (builder.bang_title == null) {
-                this.bang_title = "";
-            } else {
-                this.bang_title = builder.bang_title;
-            }
-            if (builder.bang_jump_desc == null) {
-                this.bang_jump_desc = "";
-            } else {
-                this.bang_jump_desc = builder.bang_jump_desc;
-            }
-            this.video_info = builder.video_info;
-            if (builder.tag_list_type == null) {
-                this.tag_list_type = "";
-            } else {
-                this.tag_list_type = builder.tag_list_type;
-            }
-            if (builder.pmy_topic_id == null) {
-                this.pmy_topic_id = DEFAULT_PMY_TOPIC_ID;
-            } else {
-                this.pmy_topic_id = builder.pmy_topic_id;
-            }
-            if (builder.pmy_source == null) {
-                this.pmy_source = DEFAULT_PMY_SOURCE;
-            } else {
-                this.pmy_source = builder.pmy_source;
-            }
-            this.join_info = builder.join_info;
-            if (builder.head_photo_jump_url == null) {
-                this.head_photo_jump_url = "";
-            } else {
-                this.head_photo_jump_url = builder.head_photo_jump_url;
-            }
-            if (builder.topic_tag == null) {
-                this.topic_tag = DEFAULT_TOPIC_TAG;
-                return;
-            } else {
-                this.topic_tag = builder.topic_tag;
-                return;
-            }
-        }
-        this.topic_id = builder.topic_id;
-        this.topic_name = builder.topic_name;
-        this.desc = builder.desc;
-        this.total_post_num = builder.total_post_num;
-        this.head_photo_url = builder.head_photo_url;
-        this.share_title = builder.share_title;
-        this.share_pic = builder.share_pic;
-        this.idx_num = builder.idx_num;
-        this.discuss_forum = builder.discuss_forum;
-        this.bang_title = builder.bang_title;
-        this.bang_jump_desc = builder.bang_jump_desc;
-        this.video_info = builder.video_info;
-        this.tag_list_type = builder.tag_list_type;
-        this.pmy_topic_id = builder.pmy_topic_id;
-        this.pmy_source = builder.pmy_source;
-        this.join_info = builder.join_info;
-        this.head_photo_jump_url = builder.head_photo_jump_url;
-        this.topic_tag = builder.topic_tag;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TopicInfo> {
         public String bang_jump_desc;
@@ -192,26 +84,27 @@ public final class TopicInfo extends Message {
 
         public Builder(TopicInfo topicInfo) {
             super(topicInfo);
-            if (topicInfo != null) {
-                this.topic_id = topicInfo.topic_id;
-                this.topic_name = topicInfo.topic_name;
-                this.desc = topicInfo.desc;
-                this.total_post_num = topicInfo.total_post_num;
-                this.head_photo_url = topicInfo.head_photo_url;
-                this.share_title = topicInfo.share_title;
-                this.share_pic = topicInfo.share_pic;
-                this.idx_num = topicInfo.idx_num;
-                this.discuss_forum = topicInfo.discuss_forum;
-                this.bang_title = topicInfo.bang_title;
-                this.bang_jump_desc = topicInfo.bang_jump_desc;
-                this.video_info = topicInfo.video_info;
-                this.tag_list_type = topicInfo.tag_list_type;
-                this.pmy_topic_id = topicInfo.pmy_topic_id;
-                this.pmy_source = topicInfo.pmy_source;
-                this.join_info = topicInfo.join_info;
-                this.head_photo_jump_url = topicInfo.head_photo_jump_url;
-                this.topic_tag = topicInfo.topic_tag;
+            if (topicInfo == null) {
+                return;
             }
+            this.topic_id = topicInfo.topic_id;
+            this.topic_name = topicInfo.topic_name;
+            this.desc = topicInfo.desc;
+            this.total_post_num = topicInfo.total_post_num;
+            this.head_photo_url = topicInfo.head_photo_url;
+            this.share_title = topicInfo.share_title;
+            this.share_pic = topicInfo.share_pic;
+            this.idx_num = topicInfo.idx_num;
+            this.discuss_forum = topicInfo.discuss_forum;
+            this.bang_title = topicInfo.bang_title;
+            this.bang_jump_desc = topicInfo.bang_jump_desc;
+            this.video_info = topicInfo.video_info;
+            this.tag_list_type = topicInfo.tag_list_type;
+            this.pmy_topic_id = topicInfo.pmy_topic_id;
+            this.pmy_source = topicInfo.pmy_source;
+            this.join_info = topicInfo.join_info;
+            this.head_photo_jump_url = topicInfo.head_photo_jump_url;
+            this.topic_tag = topicInfo.topic_tag;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -219,5 +112,129 @@ public final class TopicInfo extends Message {
         public TopicInfo build(boolean z) {
             return new TopicInfo(this, z);
         }
+    }
+
+    public TopicInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.topic_id;
+            if (l == null) {
+                this.topic_id = DEFAULT_TOPIC_ID;
+            } else {
+                this.topic_id = l;
+            }
+            String str = builder.topic_name;
+            if (str == null) {
+                this.topic_name = "";
+            } else {
+                this.topic_name = str;
+            }
+            String str2 = builder.desc;
+            if (str2 == null) {
+                this.desc = "";
+            } else {
+                this.desc = str2;
+            }
+            Long l2 = builder.total_post_num;
+            if (l2 == null) {
+                this.total_post_num = DEFAULT_TOTAL_POST_NUM;
+            } else {
+                this.total_post_num = l2;
+            }
+            String str3 = builder.head_photo_url;
+            if (str3 == null) {
+                this.head_photo_url = "";
+            } else {
+                this.head_photo_url = str3;
+            }
+            String str4 = builder.share_title;
+            if (str4 == null) {
+                this.share_title = "";
+            } else {
+                this.share_title = str4;
+            }
+            String str5 = builder.share_pic;
+            if (str5 == null) {
+                this.share_pic = "";
+            } else {
+                this.share_pic = str5;
+            }
+            Long l3 = builder.idx_num;
+            if (l3 == null) {
+                this.idx_num = DEFAULT_IDX_NUM;
+            } else {
+                this.idx_num = l3;
+            }
+            String str6 = builder.discuss_forum;
+            if (str6 == null) {
+                this.discuss_forum = "";
+            } else {
+                this.discuss_forum = str6;
+            }
+            String str7 = builder.bang_title;
+            if (str7 == null) {
+                this.bang_title = "";
+            } else {
+                this.bang_title = str7;
+            }
+            String str8 = builder.bang_jump_desc;
+            if (str8 == null) {
+                this.bang_jump_desc = "";
+            } else {
+                this.bang_jump_desc = str8;
+            }
+            this.video_info = builder.video_info;
+            String str9 = builder.tag_list_type;
+            if (str9 == null) {
+                this.tag_list_type = "";
+            } else {
+                this.tag_list_type = str9;
+            }
+            Long l4 = builder.pmy_topic_id;
+            if (l4 == null) {
+                this.pmy_topic_id = DEFAULT_PMY_TOPIC_ID;
+            } else {
+                this.pmy_topic_id = l4;
+            }
+            Integer num = builder.pmy_source;
+            if (num == null) {
+                this.pmy_source = DEFAULT_PMY_SOURCE;
+            } else {
+                this.pmy_source = num;
+            }
+            this.join_info = builder.join_info;
+            String str10 = builder.head_photo_jump_url;
+            if (str10 == null) {
+                this.head_photo_jump_url = "";
+            } else {
+                this.head_photo_jump_url = str10;
+            }
+            Integer num2 = builder.topic_tag;
+            if (num2 == null) {
+                this.topic_tag = DEFAULT_TOPIC_TAG;
+                return;
+            } else {
+                this.topic_tag = num2;
+                return;
+            }
+        }
+        this.topic_id = builder.topic_id;
+        this.topic_name = builder.topic_name;
+        this.desc = builder.desc;
+        this.total_post_num = builder.total_post_num;
+        this.head_photo_url = builder.head_photo_url;
+        this.share_title = builder.share_title;
+        this.share_pic = builder.share_pic;
+        this.idx_num = builder.idx_num;
+        this.discuss_forum = builder.discuss_forum;
+        this.bang_title = builder.bang_title;
+        this.bang_jump_desc = builder.bang_jump_desc;
+        this.video_info = builder.video_info;
+        this.tag_list_type = builder.tag_list_type;
+        this.pmy_topic_id = builder.pmy_topic_id;
+        this.pmy_source = builder.pmy_source;
+        this.join_info = builder.join_info;
+        this.head_photo_jump_url = builder.head_photo_jump_url;
+        this.topic_tag = builder.topic_tag;
     }
 }

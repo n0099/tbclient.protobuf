@@ -2,7 +2,7 @@ package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class BzApplySwitch extends Message {
     public static final Integer DEFAULT_APPLY_SWITCH = 0;
     public static final String DEFAULT_ASSIST_LINK = "";
@@ -13,32 +13,6 @@ public final class BzApplySwitch extends Message {
     public final String assist_link;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String manager_link;
-
-    private BzApplySwitch(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.apply_switch == null) {
-                this.apply_switch = DEFAULT_APPLY_SWITCH;
-            } else {
-                this.apply_switch = builder.apply_switch;
-            }
-            if (builder.manager_link == null) {
-                this.manager_link = "";
-            } else {
-                this.manager_link = builder.manager_link;
-            }
-            if (builder.assist_link == null) {
-                this.assist_link = "";
-                return;
-            } else {
-                this.assist_link = builder.assist_link;
-                return;
-            }
-        }
-        this.apply_switch = builder.apply_switch;
-        this.manager_link = builder.manager_link;
-        this.assist_link = builder.assist_link;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<BzApplySwitch> {
@@ -51,11 +25,12 @@ public final class BzApplySwitch extends Message {
 
         public Builder(BzApplySwitch bzApplySwitch) {
             super(bzApplySwitch);
-            if (bzApplySwitch != null) {
-                this.apply_switch = bzApplySwitch.apply_switch;
-                this.manager_link = bzApplySwitch.manager_link;
-                this.assist_link = bzApplySwitch.assist_link;
+            if (bzApplySwitch == null) {
+                return;
             }
+            this.apply_switch = bzApplySwitch.apply_switch;
+            this.manager_link = bzApplySwitch.manager_link;
+            this.assist_link = bzApplySwitch.assist_link;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class BzApplySwitch extends Message {
         public BzApplySwitch build(boolean z) {
             return new BzApplySwitch(this, z);
         }
+    }
+
+    public BzApplySwitch(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.apply_switch;
+            if (num == null) {
+                this.apply_switch = DEFAULT_APPLY_SWITCH;
+            } else {
+                this.apply_switch = num;
+            }
+            String str = builder.manager_link;
+            if (str == null) {
+                this.manager_link = "";
+            } else {
+                this.manager_link = str;
+            }
+            String str2 = builder.assist_link;
+            if (str2 == null) {
+                this.assist_link = "";
+                return;
+            } else {
+                this.assist_link = str2;
+                return;
+            }
+        }
+        this.apply_switch = builder.apply_switch;
+        this.manager_link = builder.manager_link;
+        this.assist_link = builder.assist_link;
     }
 }

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ConcernData extends Message {
     @ProtoField(tag = 2)
     public final PostData post_data;
@@ -22,37 +22,7 @@ public final class ConcernData extends Message {
     public static final Integer DEFAULT_SOURCE = 0;
     public static final List<User> DEFAULT_RECOM_USER_LIST = Collections.emptyList();
 
-    private ConcernData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.thread_list = builder.thread_list;
-            this.post_data = builder.post_data;
-            if (builder.recom_type == null) {
-                this.recom_type = DEFAULT_RECOM_TYPE;
-            } else {
-                this.recom_type = builder.recom_type;
-            }
-            if (builder.source == null) {
-                this.source = DEFAULT_SOURCE;
-            } else {
-                this.source = builder.source;
-            }
-            if (builder.recom_user_list == null) {
-                this.recom_user_list = DEFAULT_RECOM_USER_LIST;
-                return;
-            } else {
-                this.recom_user_list = immutableCopyOf(builder.recom_user_list);
-                return;
-            }
-        }
-        this.thread_list = builder.thread_list;
-        this.post_data = builder.post_data;
-        this.recom_type = builder.recom_type;
-        this.source = builder.source;
-        this.recom_user_list = immutableCopyOf(builder.recom_user_list);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ConcernData> {
         public PostData post_data;
         public Integer recom_type;
@@ -65,13 +35,14 @@ public final class ConcernData extends Message {
 
         public Builder(ConcernData concernData) {
             super(concernData);
-            if (concernData != null) {
-                this.thread_list = concernData.thread_list;
-                this.post_data = concernData.post_data;
-                this.recom_type = concernData.recom_type;
-                this.source = concernData.source;
-                this.recom_user_list = ConcernData.copyOf(concernData.recom_user_list);
+            if (concernData == null) {
+                return;
             }
+            this.thread_list = concernData.thread_list;
+            this.post_data = concernData.post_data;
+            this.recom_type = concernData.recom_type;
+            this.source = concernData.source;
+            this.recom_user_list = Message.copyOf(concernData.recom_user_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -79,5 +50,38 @@ public final class ConcernData extends Message {
         public ConcernData build(boolean z) {
             return new ConcernData(this, z);
         }
+    }
+
+    public ConcernData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.thread_list = builder.thread_list;
+            this.post_data = builder.post_data;
+            Integer num = builder.recom_type;
+            if (num == null) {
+                this.recom_type = DEFAULT_RECOM_TYPE;
+            } else {
+                this.recom_type = num;
+            }
+            Integer num2 = builder.source;
+            if (num2 == null) {
+                this.source = DEFAULT_SOURCE;
+            } else {
+                this.source = num2;
+            }
+            List<User> list = builder.recom_user_list;
+            if (list == null) {
+                this.recom_user_list = DEFAULT_RECOM_USER_LIST;
+                return;
+            } else {
+                this.recom_user_list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.thread_list = builder.thread_list;
+        this.post_data = builder.post_data;
+        this.recom_type = builder.recom_type;
+        this.source = builder.source;
+        this.recom_user_list = Message.immutableCopyOf(builder.recom_user_list);
     }
 }

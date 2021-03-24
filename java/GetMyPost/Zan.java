@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Zan extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long author_id;
@@ -22,45 +22,7 @@ public final class Zan extends Message {
     public static final List<Long> DEFAULT_LIKER_ID = Collections.emptyList();
     public static final Long DEFAULT_AUTHOR_ID = 0L;
 
-    private Zan(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.num == null) {
-                this.num = DEFAULT_NUM;
-            } else {
-                this.num = builder.num;
-            }
-            if (builder.is_liked == null) {
-                this.is_liked = DEFAULT_IS_LIKED;
-            } else {
-                this.is_liked = builder.is_liked;
-            }
-            if (builder.last_time == null) {
-                this.last_time = DEFAULT_LAST_TIME;
-            } else {
-                this.last_time = builder.last_time;
-            }
-            if (builder.liker_id == null) {
-                this.liker_id = DEFAULT_LIKER_ID;
-            } else {
-                this.liker_id = immutableCopyOf(builder.liker_id);
-            }
-            if (builder.author_id == null) {
-                this.author_id = DEFAULT_AUTHOR_ID;
-                return;
-            } else {
-                this.author_id = builder.author_id;
-                return;
-            }
-        }
-        this.num = builder.num;
-        this.is_liked = builder.is_liked;
-        this.last_time = builder.last_time;
-        this.liker_id = immutableCopyOf(builder.liker_id);
-        this.author_id = builder.author_id;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Zan> {
         public Long author_id;
         public Integer is_liked;
@@ -73,13 +35,14 @@ public final class Zan extends Message {
 
         public Builder(Zan zan) {
             super(zan);
-            if (zan != null) {
-                this.num = zan.num;
-                this.is_liked = zan.is_liked;
-                this.last_time = zan.last_time;
-                this.liker_id = Zan.copyOf(zan.liker_id);
-                this.author_id = zan.author_id;
+            if (zan == null) {
+                return;
             }
+            this.num = zan.num;
+            this.is_liked = zan.is_liked;
+            this.last_time = zan.last_time;
+            this.liker_id = Message.copyOf(zan.liker_id);
+            this.author_id = zan.author_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -87,5 +50,48 @@ public final class Zan extends Message {
         public Zan build(boolean z) {
             return new Zan(this, z);
         }
+    }
+
+    public Zan(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.num;
+            if (num == null) {
+                this.num = DEFAULT_NUM;
+            } else {
+                this.num = num;
+            }
+            Integer num2 = builder.is_liked;
+            if (num2 == null) {
+                this.is_liked = DEFAULT_IS_LIKED;
+            } else {
+                this.is_liked = num2;
+            }
+            Integer num3 = builder.last_time;
+            if (num3 == null) {
+                this.last_time = DEFAULT_LAST_TIME;
+            } else {
+                this.last_time = num3;
+            }
+            List<Long> list = builder.liker_id;
+            if (list == null) {
+                this.liker_id = DEFAULT_LIKER_ID;
+            } else {
+                this.liker_id = Message.immutableCopyOf(list);
+            }
+            Long l = builder.author_id;
+            if (l == null) {
+                this.author_id = DEFAULT_AUTHOR_ID;
+                return;
+            } else {
+                this.author_id = l;
+                return;
+            }
+        }
+        this.num = builder.num;
+        this.is_liked = builder.is_liked;
+        this.last_time = builder.last_time;
+        this.liker_id = Message.immutableCopyOf(builder.liker_id);
+        this.author_id = builder.author_id;
     }
 }

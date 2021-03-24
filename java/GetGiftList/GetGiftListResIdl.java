@@ -3,25 +3,14 @@ package tbclient.GetGiftList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class GetGiftListResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
     @ProtoField(tag = 2)
     public final Error error;
 
-    private GetGiftListResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.data = builder.data;
-            this.error = builder.error;
-            return;
-        }
-        this.data = builder.data;
-        this.error = builder.error;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GetGiftListResIdl> {
         public DataRes data;
         public Error error;
@@ -31,10 +20,11 @@ public final class GetGiftListResIdl extends Message {
 
         public Builder(GetGiftListResIdl getGiftListResIdl) {
             super(getGiftListResIdl);
-            if (getGiftListResIdl != null) {
-                this.data = getGiftListResIdl.data;
-                this.error = getGiftListResIdl.error;
+            if (getGiftListResIdl == null) {
+                return;
             }
+            this.data = getGiftListResIdl.data;
+            this.error = getGiftListResIdl.error;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class GetGiftListResIdl extends Message {
         public GetGiftListResIdl build(boolean z) {
             return new GetGiftListResIdl(this, z);
         }
+    }
+
+    public GetGiftListResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
 }

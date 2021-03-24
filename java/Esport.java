@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Esport extends Message {
     @ProtoField(tag = 1)
     public final EsportStatic _static;
@@ -15,29 +15,7 @@ public final class Esport extends Message {
     public static final Integer DEFAULT_FLOOR_NO = 0;
     public static final List<EsportRank> DEFAULT_BILLBOARD = Collections.emptyList();
 
-    private Esport(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this._static = builder._static;
-            if (builder.floor_no == null) {
-                this.floor_no = DEFAULT_FLOOR_NO;
-            } else {
-                this.floor_no = builder.floor_no;
-            }
-            if (builder.billboard == null) {
-                this.billboard = DEFAULT_BILLBOARD;
-                return;
-            } else {
-                this.billboard = immutableCopyOf(builder.billboard);
-                return;
-            }
-        }
-        this._static = builder._static;
-        this.floor_no = builder.floor_no;
-        this.billboard = immutableCopyOf(builder.billboard);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Esport> {
         public EsportStatic _static;
         public List<EsportRank> billboard;
@@ -48,11 +26,12 @@ public final class Esport extends Message {
 
         public Builder(Esport esport) {
             super(esport);
-            if (esport != null) {
-                this._static = esport._static;
-                this.floor_no = esport.floor_no;
-                this.billboard = Esport.copyOf(esport.billboard);
+            if (esport == null) {
+                return;
             }
+            this._static = esport._static;
+            this.floor_no = esport.floor_no;
+            this.billboard = Message.copyOf(esport.billboard);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -60,5 +39,29 @@ public final class Esport extends Message {
         public Esport build(boolean z) {
             return new Esport(this, z);
         }
+    }
+
+    public Esport(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this._static = builder._static;
+            Integer num = builder.floor_no;
+            if (num == null) {
+                this.floor_no = DEFAULT_FLOOR_NO;
+            } else {
+                this.floor_no = num;
+            }
+            List<EsportRank> list = builder.billboard;
+            if (list == null) {
+                this.billboard = DEFAULT_BILLBOARD;
+                return;
+            } else {
+                this.billboard = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this._static = builder._static;
+        this.floor_no = builder.floor_no;
+        this.billboard = Message.immutableCopyOf(builder.billboard);
     }
 }

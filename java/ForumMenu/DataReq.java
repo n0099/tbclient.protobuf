@@ -3,13 +3,13 @@ package tbclient.ForumMenu;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COOKIE = "";
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8699common;
+    public final CommonReq f68367common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -22,44 +22,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FORUM_ID = 0;
     public static final Integer DEFAULT_ST_PARAM = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.st_param == null) {
-                this.st_param = DEFAULT_ST_PARAM;
-            } else {
-                this.st_param = builder.st_param;
-            }
-            if (builder.cookie == null) {
-                this.cookie = "";
-            } else {
-                this.cookie = builder.cookie;
-            }
-            this.f8699common = builder.f8700common;
-            return;
-        }
-        this.update_time = builder.update_time;
-        this.forum_id = builder.forum_id;
-        this.st_param = builder.st_param;
-        this.cookie = builder.cookie;
-        this.f8699common = builder.f8700common;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8700common;
+        public CommonReq f68368common;
         public String cookie;
         public Integer forum_id;
         public Integer st_param;
@@ -70,13 +37,14 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.update_time = dataReq.update_time;
-                this.forum_id = dataReq.forum_id;
-                this.st_param = dataReq.st_param;
-                this.cookie = dataReq.cookie;
-                this.f8700common = dataReq.f8699common;
+            if (dataReq == null) {
+                return;
             }
+            this.update_time = dataReq.update_time;
+            this.forum_id = dataReq.forum_id;
+            this.st_param = dataReq.st_param;
+            this.cookie = dataReq.cookie;
+            this.f68368common = dataReq.f68367common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -84,5 +52,42 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.update_time;
+            if (num == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num;
+            }
+            Integer num2 = builder.forum_id;
+            if (num2 == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = num2;
+            }
+            Integer num3 = builder.st_param;
+            if (num3 == null) {
+                this.st_param = DEFAULT_ST_PARAM;
+            } else {
+                this.st_param = num3;
+            }
+            String str = builder.cookie;
+            if (str == null) {
+                this.cookie = "";
+            } else {
+                this.cookie = str;
+            }
+            this.f68367common = builder.f68368common;
+            return;
+        }
+        this.update_time = builder.update_time;
+        this.forum_id = builder.forum_id;
+        this.st_param = builder.st_param;
+        this.cookie = builder.cookie;
+        this.f68367common = builder.f68368common;
     }
 }

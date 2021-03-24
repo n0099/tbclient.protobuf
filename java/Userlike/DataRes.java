@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.App;
 import tbclient.BannerUserStory;
 import tbclient.DiscoverHotForum;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_LAST_TIPS = "";
@@ -51,89 +51,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_USER_TIPS_TYPE = 0;
     public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.thread_info == null) {
-                this.thread_info = DEFAULT_THREAD_INFO;
-            } else {
-                this.thread_info = immutableCopyOf(builder.thread_info);
-            }
-            if (builder.page_tag == null) {
-                this.page_tag = "";
-            } else {
-                this.page_tag = builder.page_tag;
-            }
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-            } else {
-                this.has_more = builder.has_more;
-            }
-            if (builder.user_tips == null) {
-                this.user_tips = "";
-            } else {
-                this.user_tips = builder.user_tips;
-            }
-            this.banner_user_story = builder.banner_user_story;
-            if (builder.last_tips == null) {
-                this.last_tips = "";
-            } else {
-                this.last_tips = builder.last_tips;
-            }
-            this.top_user_info = builder.top_user_info;
-            if (builder.req_unix == null) {
-                this.req_unix = DEFAULT_REQ_UNIX;
-            } else {
-                this.req_unix = builder.req_unix;
-            }
-            if (builder.user_tips_type == null) {
-                this.user_tips_type = DEFAULT_USER_TIPS_TYPE;
-            } else {
-                this.user_tips_type = builder.user_tips_type;
-            }
-            if (builder.top_tips == null) {
-                this.top_tips = "";
-            } else {
-                this.top_tips = builder.top_tips;
-            }
-            this.banner_follow_live = builder.banner_follow_live;
-            this.hot_recomforum = builder.hot_recomforum;
-            if (builder.abtest_tag == null) {
-                this.abtest_tag = "";
-            } else {
-                this.abtest_tag = builder.abtest_tag;
-            }
-            if (builder.app_list == null) {
-                this.app_list = DEFAULT_APP_LIST;
-                return;
-            } else {
-                this.app_list = builder.app_list;
-                return;
-            }
-        }
-        this.thread_info = immutableCopyOf(builder.thread_info);
-        this.page_tag = builder.page_tag;
-        this.user_list = immutableCopyOf(builder.user_list);
-        this.has_more = builder.has_more;
-        this.user_tips = builder.user_tips;
-        this.banner_user_story = builder.banner_user_story;
-        this.last_tips = builder.last_tips;
-        this.top_user_info = builder.top_user_info;
-        this.req_unix = builder.req_unix;
-        this.user_tips_type = builder.user_tips_type;
-        this.top_tips = builder.top_tips;
-        this.banner_follow_live = builder.banner_follow_live;
-        this.hot_recomforum = builder.hot_recomforum;
-        this.abtest_tag = builder.abtest_tag;
-        this.app_list = builder.app_list;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String abtest_tag;
         public List<App> app_list;
@@ -156,23 +74,24 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.thread_info = DataRes.copyOf(dataRes.thread_info);
-                this.page_tag = dataRes.page_tag;
-                this.user_list = DataRes.copyOf(dataRes.user_list);
-                this.has_more = dataRes.has_more;
-                this.user_tips = dataRes.user_tips;
-                this.banner_user_story = dataRes.banner_user_story;
-                this.last_tips = dataRes.last_tips;
-                this.top_user_info = dataRes.top_user_info;
-                this.req_unix = dataRes.req_unix;
-                this.user_tips_type = dataRes.user_tips_type;
-                this.top_tips = dataRes.top_tips;
-                this.banner_follow_live = dataRes.banner_follow_live;
-                this.hot_recomforum = dataRes.hot_recomforum;
-                this.abtest_tag = dataRes.abtest_tag;
-                this.app_list = dataRes.app_list;
+            if (dataRes == null) {
+                return;
             }
+            this.thread_info = Message.copyOf(dataRes.thread_info);
+            this.page_tag = dataRes.page_tag;
+            this.user_list = Message.copyOf(dataRes.user_list);
+            this.has_more = dataRes.has_more;
+            this.user_tips = dataRes.user_tips;
+            this.banner_user_story = dataRes.banner_user_story;
+            this.last_tips = dataRes.last_tips;
+            this.top_user_info = dataRes.top_user_info;
+            this.req_unix = dataRes.req_unix;
+            this.user_tips_type = dataRes.user_tips_type;
+            this.top_tips = dataRes.top_tips;
+            this.banner_follow_live = dataRes.banner_follow_live;
+            this.hot_recomforum = dataRes.hot_recomforum;
+            this.abtest_tag = dataRes.abtest_tag;
+            this.app_list = dataRes.app_list;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -180,5 +99,98 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ConcernData> list = builder.thread_info;
+            if (list == null) {
+                this.thread_info = DEFAULT_THREAD_INFO;
+            } else {
+                this.thread_info = Message.immutableCopyOf(list);
+            }
+            String str = builder.page_tag;
+            if (str == null) {
+                this.page_tag = "";
+            } else {
+                this.page_tag = str;
+            }
+            List<UserList> list2 = builder.user_list;
+            if (list2 == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list2);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            String str2 = builder.user_tips;
+            if (str2 == null) {
+                this.user_tips = "";
+            } else {
+                this.user_tips = str2;
+            }
+            this.banner_user_story = builder.banner_user_story;
+            String str3 = builder.last_tips;
+            if (str3 == null) {
+                this.last_tips = "";
+            } else {
+                this.last_tips = str3;
+            }
+            this.top_user_info = builder.top_user_info;
+            Long l = builder.req_unix;
+            if (l == null) {
+                this.req_unix = DEFAULT_REQ_UNIX;
+            } else {
+                this.req_unix = l;
+            }
+            Integer num2 = builder.user_tips_type;
+            if (num2 == null) {
+                this.user_tips_type = DEFAULT_USER_TIPS_TYPE;
+            } else {
+                this.user_tips_type = num2;
+            }
+            String str4 = builder.top_tips;
+            if (str4 == null) {
+                this.top_tips = "";
+            } else {
+                this.top_tips = str4;
+            }
+            this.banner_follow_live = builder.banner_follow_live;
+            this.hot_recomforum = builder.hot_recomforum;
+            String str5 = builder.abtest_tag;
+            if (str5 == null) {
+                this.abtest_tag = "";
+            } else {
+                this.abtest_tag = str5;
+            }
+            List<App> list3 = builder.app_list;
+            if (list3 == null) {
+                this.app_list = DEFAULT_APP_LIST;
+                return;
+            } else {
+                this.app_list = list3;
+                return;
+            }
+        }
+        this.thread_info = Message.immutableCopyOf(builder.thread_info);
+        this.page_tag = builder.page_tag;
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.has_more = builder.has_more;
+        this.user_tips = builder.user_tips;
+        this.banner_user_story = builder.banner_user_story;
+        this.last_tips = builder.last_tips;
+        this.top_user_info = builder.top_user_info;
+        this.req_unix = builder.req_unix;
+        this.user_tips_type = builder.user_tips_type;
+        this.top_tips = builder.top_tips;
+        this.banner_follow_live = builder.banner_follow_live;
+        this.hot_recomforum = builder.hot_recomforum;
+        this.abtest_tag = builder.abtest_tag;
+        this.app_list = builder.app_list;
     }
 }

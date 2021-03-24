@@ -3,23 +3,12 @@ package tbclient.GetUserBfbInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class GetUserBfbInfoResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
-
-    private GetUserBfbInfoResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GetUserBfbInfoResIdl> {
@@ -31,10 +20,11 @@ public final class GetUserBfbInfoResIdl extends Message {
 
         public Builder(GetUserBfbInfoResIdl getUserBfbInfoResIdl) {
             super(getUserBfbInfoResIdl);
-            if (getUserBfbInfoResIdl != null) {
-                this.error = getUserBfbInfoResIdl.error;
-                this.data = getUserBfbInfoResIdl.data;
+            if (getUserBfbInfoResIdl == null) {
+                return;
             }
+            this.error = getUserBfbInfoResIdl.error;
+            this.data = getUserBfbInfoResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class GetUserBfbInfoResIdl extends Message {
         public GetUserBfbInfoResIdl build(boolean z) {
             return new GetUserBfbInfoResIdl(this, z);
         }
+    }
+
+    public GetUserBfbInfoResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

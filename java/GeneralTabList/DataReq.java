@@ -3,7 +3,7 @@ package tbclient.GeneralTabList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_TAB_NAME = "";
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8707common;
+    public final CommonReq f68377common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -52,106 +52,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final Integer DEFAULT_TAB_TYPE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8707common = builder.f8708common;
-            if (builder.tab_id == null) {
-                this.tab_id = DEFAULT_TAB_ID;
-            } else {
-                this.tab_id = builder.tab_id;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
-            } else {
-                this.rn = builder.rn;
-            }
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.last_thread_id == null) {
-                this.last_thread_id = DEFAULT_LAST_THREAD_ID;
-            } else {
-                this.last_thread_id = builder.last_thread_id;
-            }
-            if (builder.is_default_navtab == null) {
-                this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
-            } else {
-                this.is_default_navtab = builder.is_default_navtab;
-            }
-            if (builder.tab_name == null) {
-                this.tab_name = "";
-            } else {
-                this.tab_name = builder.tab_name;
-            }
-            if (builder.is_general_tab == null) {
-                this.is_general_tab = DEFAULT_IS_GENERAL_TAB;
-            } else {
-                this.is_general_tab = builder.is_general_tab;
-            }
-            if (builder.sort_type == null) {
-                this.sort_type = DEFAULT_SORT_TYPE;
-            } else {
-                this.sort_type = builder.sort_type;
-            }
-            if (builder.tab_type == null) {
-                this.tab_type = DEFAULT_TAB_TYPE;
-            } else {
-                this.tab_type = builder.tab_type;
-            }
-            if (builder.ad_ext_params == null) {
-                this.ad_ext_params = "";
-                return;
-            } else {
-                this.ad_ext_params = builder.ad_ext_params;
-                return;
-            }
-        }
-        this.f8707common = builder.f8708common;
-        this.tab_id = builder.tab_id;
-        this.forum_id = builder.forum_id;
-        this.pn = builder.pn;
-        this.rn = builder.rn;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.last_thread_id = builder.last_thread_id;
-        this.is_default_navtab = builder.is_default_navtab;
-        this.tab_name = builder.tab_name;
-        this.is_general_tab = builder.is_general_tab;
-        this.sort_type = builder.sort_type;
-        this.tab_type = builder.tab_type;
-        this.ad_ext_params = builder.ad_ext_params;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8708common;
+        public CommonReq f68378common;
         public Long forum_id;
         public Integer is_default_navtab;
         public Integer is_general_tab;
@@ -171,23 +77,24 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8708common = dataReq.f8707common;
-                this.tab_id = dataReq.tab_id;
-                this.forum_id = dataReq.forum_id;
-                this.pn = dataReq.pn;
-                this.rn = dataReq.rn;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.last_thread_id = dataReq.last_thread_id;
-                this.is_default_navtab = dataReq.is_default_navtab;
-                this.tab_name = dataReq.tab_name;
-                this.is_general_tab = dataReq.is_general_tab;
-                this.sort_type = dataReq.sort_type;
-                this.tab_type = dataReq.tab_type;
-                this.ad_ext_params = dataReq.ad_ext_params;
+            if (dataReq == null) {
+                return;
             }
+            this.f68378common = dataReq.f68377common;
+            this.tab_id = dataReq.tab_id;
+            this.forum_id = dataReq.forum_id;
+            this.pn = dataReq.pn;
+            this.rn = dataReq.rn;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.last_thread_id = dataReq.last_thread_id;
+            this.is_default_navtab = dataReq.is_default_navtab;
+            this.tab_name = dataReq.tab_name;
+            this.is_general_tab = dataReq.is_general_tab;
+            this.sort_type = dataReq.sort_type;
+            this.tab_type = dataReq.tab_type;
+            this.ad_ext_params = dataReq.ad_ext_params;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -195,5 +102,113 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68377common = builder.f68378common;
+            Integer num = builder.tab_id;
+            if (num == null) {
+                this.tab_id = DEFAULT_TAB_ID;
+            } else {
+                this.tab_id = num;
+            }
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            Integer num2 = builder.pn;
+            if (num2 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num2;
+            }
+            Integer num3 = builder.rn;
+            if (num3 == null) {
+                this.rn = DEFAULT_RN;
+            } else {
+                this.rn = num3;
+            }
+            Integer num4 = builder.scr_w;
+            if (num4 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num4;
+            }
+            Integer num5 = builder.scr_h;
+            if (num5 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num5;
+            }
+            Integer num6 = builder.scr_dip;
+            if (num6 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = num6;
+            }
+            Long l2 = builder.last_thread_id;
+            if (l2 == null) {
+                this.last_thread_id = DEFAULT_LAST_THREAD_ID;
+            } else {
+                this.last_thread_id = l2;
+            }
+            Integer num7 = builder.is_default_navtab;
+            if (num7 == null) {
+                this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
+            } else {
+                this.is_default_navtab = num7;
+            }
+            String str = builder.tab_name;
+            if (str == null) {
+                this.tab_name = "";
+            } else {
+                this.tab_name = str;
+            }
+            Integer num8 = builder.is_general_tab;
+            if (num8 == null) {
+                this.is_general_tab = DEFAULT_IS_GENERAL_TAB;
+            } else {
+                this.is_general_tab = num8;
+            }
+            Integer num9 = builder.sort_type;
+            if (num9 == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+            } else {
+                this.sort_type = num9;
+            }
+            Integer num10 = builder.tab_type;
+            if (num10 == null) {
+                this.tab_type = DEFAULT_TAB_TYPE;
+            } else {
+                this.tab_type = num10;
+            }
+            String str2 = builder.ad_ext_params;
+            if (str2 == null) {
+                this.ad_ext_params = "";
+                return;
+            } else {
+                this.ad_ext_params = str2;
+                return;
+            }
+        }
+        this.f68377common = builder.f68378common;
+        this.tab_id = builder.tab_id;
+        this.forum_id = builder.forum_id;
+        this.pn = builder.pn;
+        this.rn = builder.rn;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.last_thread_id = builder.last_thread_id;
+        this.is_default_navtab = builder.is_default_navtab;
+        this.tab_name = builder.tab_name;
+        this.is_general_tab = builder.is_general_tab;
+        this.sort_type = builder.sort_type;
+        this.tab_type = builder.tab_type;
+        this.ad_ext_params = builder.ad_ext_params;
     }
 }

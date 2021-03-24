@@ -8,7 +8,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AdCloseInfo extends Message {
     public static final String DEFAULT_CONFIRM_TITLE = "";
     public static final String DEFAULT_TITLE = "";
@@ -25,40 +25,7 @@ public final class AdCloseInfo extends Message {
     public static final Integer DEFAULT_SUPPORT_CLOSE = 0;
     public static final List<String> DEFAULT_REASONS = Collections.emptyList();
 
-    private AdCloseInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.support_close == null) {
-                this.support_close = DEFAULT_SUPPORT_CLOSE;
-            } else {
-                this.support_close = builder.support_close;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.reasons == null) {
-                this.reasons = DEFAULT_REASONS;
-            } else {
-                this.reasons = immutableCopyOf(builder.reasons);
-            }
-            if (builder.confirm_title == null) {
-                this.confirm_title = "";
-            } else {
-                this.confirm_title = builder.confirm_title;
-            }
-            this.action_control = builder.action_control;
-            return;
-        }
-        this.support_close = builder.support_close;
-        this.title = builder.title;
-        this.reasons = immutableCopyOf(builder.reasons);
-        this.confirm_title = builder.confirm_title;
-        this.action_control = builder.action_control;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AdCloseInfo> {
         public ActionControl action_control;
         public String confirm_title;
@@ -71,13 +38,14 @@ public final class AdCloseInfo extends Message {
 
         public Builder(AdCloseInfo adCloseInfo) {
             super(adCloseInfo);
-            if (adCloseInfo != null) {
-                this.support_close = adCloseInfo.support_close;
-                this.title = adCloseInfo.title;
-                this.reasons = AdCloseInfo.copyOf(adCloseInfo.reasons);
-                this.confirm_title = adCloseInfo.confirm_title;
-                this.action_control = adCloseInfo.action_control;
+            if (adCloseInfo == null) {
+                return;
             }
+            this.support_close = adCloseInfo.support_close;
+            this.title = adCloseInfo.title;
+            this.reasons = Message.copyOf(adCloseInfo.reasons);
+            this.confirm_title = adCloseInfo.confirm_title;
+            this.action_control = adCloseInfo.action_control;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -100,7 +68,7 @@ public final class AdCloseInfo extends Message {
         for (int i = 0; i < length; i++) {
             try {
                 arrayList.add(optJSONArray.getString(i));
-            } catch (Exception e) {
+            } catch (Exception unused) {
             }
         }
         builder.reasons = arrayList;
@@ -124,9 +92,46 @@ public final class AdCloseInfo extends Message {
             jSONObject.put("reasons", jSONArray);
             jSONObject.put("confirm_title", adCloseInfo.confirm_title);
             jSONObject.put("action_control", ActionControl.toJson(adCloseInfo.action_control));
-        } catch (JSONException e) {
-            e.printStackTrace();
+        } catch (JSONException e2) {
+            e2.printStackTrace();
         }
         return jSONObject;
+    }
+
+    public AdCloseInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.support_close;
+            if (num == null) {
+                this.support_close = DEFAULT_SUPPORT_CLOSE;
+            } else {
+                this.support_close = num;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            List<String> list = builder.reasons;
+            if (list == null) {
+                this.reasons = DEFAULT_REASONS;
+            } else {
+                this.reasons = Message.immutableCopyOf(list);
+            }
+            String str2 = builder.confirm_title;
+            if (str2 == null) {
+                this.confirm_title = "";
+            } else {
+                this.confirm_title = str2;
+            }
+            this.action_control = builder.action_control;
+            return;
+        }
+        this.support_close = builder.support_close;
+        this.title = builder.title;
+        this.reasons = Message.immutableCopyOf(builder.reasons);
+        this.confirm_title = builder.confirm_title;
+        this.action_control = builder.action_control;
     }
 }

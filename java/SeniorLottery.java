@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class SeniorLottery extends Message {
     public static final String DEFAULT_ACT_DESC = "";
     public static final String DEFAULT_MYAWARD = "";
@@ -24,47 +24,7 @@ public final class SeniorLottery extends Message {
     public static final List<AwardUser> DEFAULT_LUCK_USERS = Collections.emptyList();
     public static final List<LotteryRegular> DEFAULT_ACT_REGULAR = Collections.emptyList();
 
-    private SeniorLottery(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.theme = builder.theme;
-            if (builder.award_info == null) {
-                this.award_info = DEFAULT_AWARD_INFO;
-            } else {
-                this.award_info = immutableCopyOf(builder.award_info);
-            }
-            if (builder.myaward == null) {
-                this.myaward = "";
-            } else {
-                this.myaward = builder.myaward;
-            }
-            if (builder.luck_users == null) {
-                this.luck_users = DEFAULT_LUCK_USERS;
-            } else {
-                this.luck_users = immutableCopyOf(builder.luck_users);
-            }
-            if (builder.act_desc == null) {
-                this.act_desc = "";
-            } else {
-                this.act_desc = builder.act_desc;
-            }
-            if (builder.act_regular == null) {
-                this.act_regular = DEFAULT_ACT_REGULAR;
-                return;
-            } else {
-                this.act_regular = immutableCopyOf(builder.act_regular);
-                return;
-            }
-        }
-        this.theme = builder.theme;
-        this.award_info = immutableCopyOf(builder.award_info);
-        this.myaward = builder.myaward;
-        this.luck_users = immutableCopyOf(builder.luck_users);
-        this.act_desc = builder.act_desc;
-        this.act_regular = immutableCopyOf(builder.act_regular);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<SeniorLottery> {
         public String act_desc;
         public List<LotteryRegular> act_regular;
@@ -78,14 +38,15 @@ public final class SeniorLottery extends Message {
 
         public Builder(SeniorLottery seniorLottery) {
             super(seniorLottery);
-            if (seniorLottery != null) {
-                this.theme = seniorLottery.theme;
-                this.award_info = SeniorLottery.copyOf(seniorLottery.award_info);
-                this.myaward = seniorLottery.myaward;
-                this.luck_users = SeniorLottery.copyOf(seniorLottery.luck_users);
-                this.act_desc = seniorLottery.act_desc;
-                this.act_regular = SeniorLottery.copyOf(seniorLottery.act_regular);
+            if (seniorLottery == null) {
+                return;
             }
+            this.theme = seniorLottery.theme;
+            this.award_info = Message.copyOf(seniorLottery.award_info);
+            this.myaward = seniorLottery.myaward;
+            this.luck_users = Message.copyOf(seniorLottery.luck_users);
+            this.act_desc = seniorLottery.act_desc;
+            this.act_regular = Message.copyOf(seniorLottery.act_regular);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -93,5 +54,50 @@ public final class SeniorLottery extends Message {
         public SeniorLottery build(boolean z) {
             return new SeniorLottery(this, z);
         }
+    }
+
+    public SeniorLottery(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.theme = builder.theme;
+            List<AwardInfo> list = builder.award_info;
+            if (list == null) {
+                this.award_info = DEFAULT_AWARD_INFO;
+            } else {
+                this.award_info = Message.immutableCopyOf(list);
+            }
+            String str = builder.myaward;
+            if (str == null) {
+                this.myaward = "";
+            } else {
+                this.myaward = str;
+            }
+            List<AwardUser> list2 = builder.luck_users;
+            if (list2 == null) {
+                this.luck_users = DEFAULT_LUCK_USERS;
+            } else {
+                this.luck_users = Message.immutableCopyOf(list2);
+            }
+            String str2 = builder.act_desc;
+            if (str2 == null) {
+                this.act_desc = "";
+            } else {
+                this.act_desc = str2;
+            }
+            List<LotteryRegular> list3 = builder.act_regular;
+            if (list3 == null) {
+                this.act_regular = DEFAULT_ACT_REGULAR;
+                return;
+            } else {
+                this.act_regular = Message.immutableCopyOf(list3);
+                return;
+            }
+        }
+        this.theme = builder.theme;
+        this.award_info = Message.immutableCopyOf(builder.award_info);
+        this.myaward = builder.myaward;
+        this.luck_users = Message.immutableCopyOf(builder.luck_users);
+        this.act_desc = builder.act_desc;
+        this.act_regular = Message.immutableCopyOf(builder.act_regular);
     }
 }

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Media;
 import tbclient.VideoInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class TopicList extends Message {
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final String DEFAULT_TOPIC_H5_URL = "";
@@ -47,88 +47,6 @@ public final class TopicList extends Message {
     public static final Long DEFAULT_TOPIC_TID = 0L;
     public static final Integer DEFAULT_TOPIC_THREAD_TYPES = 0;
 
-    private TopicList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.topic_id == null) {
-                this.topic_id = DEFAULT_TOPIC_ID;
-            } else {
-                this.topic_id = builder.topic_id;
-            }
-            if (builder.topic_name == null) {
-                this.topic_name = "";
-            } else {
-                this.topic_name = builder.topic_name;
-            }
-            if (builder.discuss_num == null) {
-                this.discuss_num = DEFAULT_DISCUSS_NUM;
-            } else {
-                this.discuss_num = builder.discuss_num;
-            }
-            if (builder.tag == null) {
-                this.tag = DEFAULT_TAG;
-            } else {
-                this.tag = builder.tag;
-            }
-            if (builder.topic_desc == null) {
-                this.topic_desc = "";
-            } else {
-                this.topic_desc = builder.topic_desc;
-            }
-            if (builder.topic_pic == null) {
-                this.topic_pic = "";
-            } else {
-                this.topic_pic = builder.topic_pic;
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.topic_user_name == null) {
-                this.topic_user_name = "";
-            } else {
-                this.topic_user_name = builder.topic_user_name;
-            }
-            if (builder.media == null) {
-                this.media = DEFAULT_MEDIA;
-            } else {
-                this.media = immutableCopyOf(builder.media);
-            }
-            if (builder.topic_tid == null) {
-                this.topic_tid = DEFAULT_TOPIC_TID;
-            } else {
-                this.topic_tid = builder.topic_tid;
-            }
-            if (builder.topic_h5_url == null) {
-                this.topic_h5_url = "";
-            } else {
-                this.topic_h5_url = builder.topic_h5_url;
-            }
-            this.video_info = builder.video_info;
-            if (builder.topic_thread_types == null) {
-                this.topic_thread_types = DEFAULT_TOPIC_THREAD_TYPES;
-                return;
-            } else {
-                this.topic_thread_types = builder.topic_thread_types;
-                return;
-            }
-        }
-        this.topic_id = builder.topic_id;
-        this.topic_name = builder.topic_name;
-        this.discuss_num = builder.discuss_num;
-        this.tag = builder.tag;
-        this.topic_desc = builder.topic_desc;
-        this.topic_pic = builder.topic_pic;
-        this.update_time = builder.update_time;
-        this.topic_user_name = builder.topic_user_name;
-        this.media = immutableCopyOf(builder.media);
-        this.topic_tid = builder.topic_tid;
-        this.topic_h5_url = builder.topic_h5_url;
-        this.video_info = builder.video_info;
-        this.topic_thread_types = builder.topic_thread_types;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TopicList> {
         public Long discuss_num;
@@ -150,21 +68,22 @@ public final class TopicList extends Message {
 
         public Builder(TopicList topicList) {
             super(topicList);
-            if (topicList != null) {
-                this.topic_id = topicList.topic_id;
-                this.topic_name = topicList.topic_name;
-                this.discuss_num = topicList.discuss_num;
-                this.tag = topicList.tag;
-                this.topic_desc = topicList.topic_desc;
-                this.topic_pic = topicList.topic_pic;
-                this.update_time = topicList.update_time;
-                this.topic_user_name = topicList.topic_user_name;
-                this.media = TopicList.copyOf(topicList.media);
-                this.topic_tid = topicList.topic_tid;
-                this.topic_h5_url = topicList.topic_h5_url;
-                this.video_info = topicList.video_info;
-                this.topic_thread_types = topicList.topic_thread_types;
+            if (topicList == null) {
+                return;
             }
+            this.topic_id = topicList.topic_id;
+            this.topic_name = topicList.topic_name;
+            this.discuss_num = topicList.discuss_num;
+            this.tag = topicList.tag;
+            this.topic_desc = topicList.topic_desc;
+            this.topic_pic = topicList.topic_pic;
+            this.update_time = topicList.update_time;
+            this.topic_user_name = topicList.topic_user_name;
+            this.media = Message.copyOf(topicList.media);
+            this.topic_tid = topicList.topic_tid;
+            this.topic_h5_url = topicList.topic_h5_url;
+            this.video_info = topicList.video_info;
+            this.topic_thread_types = topicList.topic_thread_types;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -172,5 +91,99 @@ public final class TopicList extends Message {
         public TopicList build(boolean z) {
             return new TopicList(this, z);
         }
+    }
+
+    public TopicList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.topic_id;
+            if (l == null) {
+                this.topic_id = DEFAULT_TOPIC_ID;
+            } else {
+                this.topic_id = l;
+            }
+            String str = builder.topic_name;
+            if (str == null) {
+                this.topic_name = "";
+            } else {
+                this.topic_name = str;
+            }
+            Long l2 = builder.discuss_num;
+            if (l2 == null) {
+                this.discuss_num = DEFAULT_DISCUSS_NUM;
+            } else {
+                this.discuss_num = l2;
+            }
+            Integer num = builder.tag;
+            if (num == null) {
+                this.tag = DEFAULT_TAG;
+            } else {
+                this.tag = num;
+            }
+            String str2 = builder.topic_desc;
+            if (str2 == null) {
+                this.topic_desc = "";
+            } else {
+                this.topic_desc = str2;
+            }
+            String str3 = builder.topic_pic;
+            if (str3 == null) {
+                this.topic_pic = "";
+            } else {
+                this.topic_pic = str3;
+            }
+            Long l3 = builder.update_time;
+            if (l3 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = l3;
+            }
+            String str4 = builder.topic_user_name;
+            if (str4 == null) {
+                this.topic_user_name = "";
+            } else {
+                this.topic_user_name = str4;
+            }
+            List<Media> list = builder.media;
+            if (list == null) {
+                this.media = DEFAULT_MEDIA;
+            } else {
+                this.media = Message.immutableCopyOf(list);
+            }
+            Long l4 = builder.topic_tid;
+            if (l4 == null) {
+                this.topic_tid = DEFAULT_TOPIC_TID;
+            } else {
+                this.topic_tid = l4;
+            }
+            String str5 = builder.topic_h5_url;
+            if (str5 == null) {
+                this.topic_h5_url = "";
+            } else {
+                this.topic_h5_url = str5;
+            }
+            this.video_info = builder.video_info;
+            Integer num2 = builder.topic_thread_types;
+            if (num2 == null) {
+                this.topic_thread_types = DEFAULT_TOPIC_THREAD_TYPES;
+                return;
+            } else {
+                this.topic_thread_types = num2;
+                return;
+            }
+        }
+        this.topic_id = builder.topic_id;
+        this.topic_name = builder.topic_name;
+        this.discuss_num = builder.discuss_num;
+        this.tag = builder.tag;
+        this.topic_desc = builder.topic_desc;
+        this.topic_pic = builder.topic_pic;
+        this.update_time = builder.update_time;
+        this.topic_user_name = builder.topic_user_name;
+        this.media = Message.immutableCopyOf(builder.media);
+        this.topic_tid = builder.topic_tid;
+        this.topic_h5_url = builder.topic_h5_url;
+        this.video_info = builder.video_info;
+        this.topic_thread_types = builder.topic_thread_types;
     }
 }

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ForumHeadlineImgInfo extends Message {
     public static final String DEFAULT_HEADLINE_URL = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -26,57 +26,7 @@ public final class ForumHeadlineImgInfo extends Message {
     public static final Long DEFAULT_THREAD_USER_ID = 0L;
     public static final Long DEFAULT_IMG_USER_ID = 0L;
 
-    private ForumHeadlineImgInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.thread_user_name == null) {
-                this.thread_user_name = "";
-            } else {
-                this.thread_user_name = builder.thread_user_name;
-            }
-            if (builder.img_user_name == null) {
-                this.img_user_name = "";
-            } else {
-                this.img_user_name = builder.img_user_name;
-            }
-            if (builder.img_url == null) {
-                this.img_url = "";
-            } else {
-                this.img_url = builder.img_url;
-            }
-            if (builder.thread_user_id == null) {
-                this.thread_user_id = DEFAULT_THREAD_USER_ID;
-            } else {
-                this.thread_user_id = builder.thread_user_id;
-            }
-            if (builder.img_user_id == null) {
-                this.img_user_id = DEFAULT_IMG_USER_ID;
-            } else {
-                this.img_user_id = builder.img_user_id;
-            }
-            if (builder.headline_url == null) {
-                this.headline_url = "";
-                return;
-            } else {
-                this.headline_url = builder.headline_url;
-                return;
-            }
-        }
-        this.thread_id = builder.thread_id;
-        this.thread_user_name = builder.thread_user_name;
-        this.img_user_name = builder.img_user_name;
-        this.img_url = builder.img_url;
-        this.thread_user_id = builder.thread_user_id;
-        this.img_user_id = builder.img_user_id;
-        this.headline_url = builder.headline_url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumHeadlineImgInfo> {
         public String headline_url;
         public String img_url;
@@ -91,15 +41,16 @@ public final class ForumHeadlineImgInfo extends Message {
 
         public Builder(ForumHeadlineImgInfo forumHeadlineImgInfo) {
             super(forumHeadlineImgInfo);
-            if (forumHeadlineImgInfo != null) {
-                this.thread_id = forumHeadlineImgInfo.thread_id;
-                this.thread_user_name = forumHeadlineImgInfo.thread_user_name;
-                this.img_user_name = forumHeadlineImgInfo.img_user_name;
-                this.img_url = forumHeadlineImgInfo.img_url;
-                this.thread_user_id = forumHeadlineImgInfo.thread_user_id;
-                this.img_user_id = forumHeadlineImgInfo.img_user_id;
-                this.headline_url = forumHeadlineImgInfo.headline_url;
+            if (forumHeadlineImgInfo == null) {
+                return;
             }
+            this.thread_id = forumHeadlineImgInfo.thread_id;
+            this.thread_user_name = forumHeadlineImgInfo.thread_user_name;
+            this.img_user_name = forumHeadlineImgInfo.img_user_name;
+            this.img_url = forumHeadlineImgInfo.img_url;
+            this.thread_user_id = forumHeadlineImgInfo.thread_user_id;
+            this.img_user_id = forumHeadlineImgInfo.img_user_id;
+            this.headline_url = forumHeadlineImgInfo.headline_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +58,62 @@ public final class ForumHeadlineImgInfo extends Message {
         public ForumHeadlineImgInfo build(boolean z) {
             return new ForumHeadlineImgInfo(this, z);
         }
+    }
+
+    public ForumHeadlineImgInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.thread_id;
+            if (l == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l;
+            }
+            String str = builder.thread_user_name;
+            if (str == null) {
+                this.thread_user_name = "";
+            } else {
+                this.thread_user_name = str;
+            }
+            String str2 = builder.img_user_name;
+            if (str2 == null) {
+                this.img_user_name = "";
+            } else {
+                this.img_user_name = str2;
+            }
+            String str3 = builder.img_url;
+            if (str3 == null) {
+                this.img_url = "";
+            } else {
+                this.img_url = str3;
+            }
+            Long l2 = builder.thread_user_id;
+            if (l2 == null) {
+                this.thread_user_id = DEFAULT_THREAD_USER_ID;
+            } else {
+                this.thread_user_id = l2;
+            }
+            Long l3 = builder.img_user_id;
+            if (l3 == null) {
+                this.img_user_id = DEFAULT_IMG_USER_ID;
+            } else {
+                this.img_user_id = l3;
+            }
+            String str4 = builder.headline_url;
+            if (str4 == null) {
+                this.headline_url = "";
+                return;
+            } else {
+                this.headline_url = str4;
+                return;
+            }
+        }
+        this.thread_id = builder.thread_id;
+        this.thread_user_name = builder.thread_user_name;
+        this.img_user_name = builder.img_user_name;
+        this.img_url = builder.img_url;
+        this.thread_user_id = builder.thread_user_id;
+        this.img_user_id = builder.img_user_id;
+        this.headline_url = builder.headline_url;
     }
 }

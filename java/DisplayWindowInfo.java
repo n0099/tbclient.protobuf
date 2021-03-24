@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DisplayWindowInfo extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_TITLE = "";
@@ -31,65 +31,7 @@ public final class DisplayWindowInfo extends Message {
     public static final Integer DEFAULT_IS_DISPLAY = 0;
     public static final Long DEFAULT_SALES = 0L;
 
-    private DisplayWindowInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.product_id == null) {
-                this.product_id = DEFAULT_PRODUCT_ID;
-            } else {
-                this.product_id = builder.product_id;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.intro == null) {
-                this.intro = "";
-            } else {
-                this.intro = builder.intro;
-            }
-            this.img = builder.img;
-            if (builder.unit_price == null) {
-                this.unit_price = DEFAULT_UNIT_PRICE;
-            } else {
-                this.unit_price = builder.unit_price;
-            }
-            if (builder.stock == null) {
-                this.stock = DEFAULT_STOCK;
-            } else {
-                this.stock = builder.stock;
-            }
-            if (builder.ship_fee == null) {
-                this.ship_fee = DEFAULT_SHIP_FEE;
-            } else {
-                this.ship_fee = builder.ship_fee;
-            }
-            if (builder.is_display == null) {
-                this.is_display = DEFAULT_IS_DISPLAY;
-            } else {
-                this.is_display = builder.is_display;
-            }
-            if (builder.sales == null) {
-                this.sales = DEFAULT_SALES;
-                return;
-            } else {
-                this.sales = builder.sales;
-                return;
-            }
-        }
-        this.product_id = builder.product_id;
-        this.title = builder.title;
-        this.intro = builder.intro;
-        this.img = builder.img;
-        this.unit_price = builder.unit_price;
-        this.stock = builder.stock;
-        this.ship_fee = builder.ship_fee;
-        this.is_display = builder.is_display;
-        this.sales = builder.sales;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DisplayWindowInfo> {
         public DealMedia img;
         public String intro;
@@ -106,17 +48,18 @@ public final class DisplayWindowInfo extends Message {
 
         public Builder(DisplayWindowInfo displayWindowInfo) {
             super(displayWindowInfo);
-            if (displayWindowInfo != null) {
-                this.product_id = displayWindowInfo.product_id;
-                this.title = displayWindowInfo.title;
-                this.intro = displayWindowInfo.intro;
-                this.img = displayWindowInfo.img;
-                this.unit_price = displayWindowInfo.unit_price;
-                this.stock = displayWindowInfo.stock;
-                this.ship_fee = displayWindowInfo.ship_fee;
-                this.is_display = displayWindowInfo.is_display;
-                this.sales = displayWindowInfo.sales;
+            if (displayWindowInfo == null) {
+                return;
             }
+            this.product_id = displayWindowInfo.product_id;
+            this.title = displayWindowInfo.title;
+            this.intro = displayWindowInfo.intro;
+            this.img = displayWindowInfo.img;
+            this.unit_price = displayWindowInfo.unit_price;
+            this.stock = displayWindowInfo.stock;
+            this.ship_fee = displayWindowInfo.ship_fee;
+            this.is_display = displayWindowInfo.is_display;
+            this.sales = displayWindowInfo.sales;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -124,5 +67,71 @@ public final class DisplayWindowInfo extends Message {
         public DisplayWindowInfo build(boolean z) {
             return new DisplayWindowInfo(this, z);
         }
+    }
+
+    public DisplayWindowInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.product_id;
+            if (l == null) {
+                this.product_id = DEFAULT_PRODUCT_ID;
+            } else {
+                this.product_id = l;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.intro;
+            if (str2 == null) {
+                this.intro = "";
+            } else {
+                this.intro = str2;
+            }
+            this.img = builder.img;
+            Long l2 = builder.unit_price;
+            if (l2 == null) {
+                this.unit_price = DEFAULT_UNIT_PRICE;
+            } else {
+                this.unit_price = l2;
+            }
+            Long l3 = builder.stock;
+            if (l3 == null) {
+                this.stock = DEFAULT_STOCK;
+            } else {
+                this.stock = l3;
+            }
+            Long l4 = builder.ship_fee;
+            if (l4 == null) {
+                this.ship_fee = DEFAULT_SHIP_FEE;
+            } else {
+                this.ship_fee = l4;
+            }
+            Integer num = builder.is_display;
+            if (num == null) {
+                this.is_display = DEFAULT_IS_DISPLAY;
+            } else {
+                this.is_display = num;
+            }
+            Long l5 = builder.sales;
+            if (l5 == null) {
+                this.sales = DEFAULT_SALES;
+                return;
+            } else {
+                this.sales = l5;
+                return;
+            }
+        }
+        this.product_id = builder.product_id;
+        this.title = builder.title;
+        this.intro = builder.intro;
+        this.img = builder.img;
+        this.unit_price = builder.unit_price;
+        this.stock = builder.stock;
+        this.ship_fee = builder.ship_fee;
+        this.is_display = builder.is_display;
+        this.sales = builder.sales;
     }
 }

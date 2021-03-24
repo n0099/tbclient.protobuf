@@ -2,7 +2,7 @@ package tbclient.GetGiftMyList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class MoneyTxt extends Message {
     public static final String DEFAULT_TXT = "";
     public static final String DEFAULT_URL = "";
@@ -11,27 +11,7 @@ public final class MoneyTxt extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    private MoneyTxt(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.txt == null) {
-                this.txt = "";
-            } else {
-                this.txt = builder.txt;
-            }
-            if (builder.url == null) {
-                this.url = "";
-                return;
-            } else {
-                this.url = builder.url;
-                return;
-            }
-        }
-        this.txt = builder.txt;
-        this.url = builder.url;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<MoneyTxt> {
         public String txt;
         public String url;
@@ -41,10 +21,11 @@ public final class MoneyTxt extends Message {
 
         public Builder(MoneyTxt moneyTxt) {
             super(moneyTxt);
-            if (moneyTxt != null) {
-                this.txt = moneyTxt.txt;
-                this.url = moneyTxt.url;
+            if (moneyTxt == null) {
+                return;
             }
+            this.txt = moneyTxt.txt;
+            this.url = moneyTxt.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class MoneyTxt extends Message {
         public MoneyTxt build(boolean z) {
             return new MoneyTxt(this, z);
         }
+    }
+
+    public MoneyTxt(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.txt;
+            if (str == null) {
+                this.txt = "";
+            } else {
+                this.txt = str;
+            }
+            String str2 = builder.url;
+            if (str2 == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str2;
+                return;
+            }
+        }
+        this.txt = builder.txt;
+        this.url = builder.url;
     }
 }

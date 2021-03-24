@@ -2,7 +2,7 @@ package tbclient.GetWebviewCacheInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Offpack extends Message {
     public static final Integer DEFAULT_IS_USE = 0;
     public static final String DEFAULT_MD5 = "";
@@ -20,45 +20,7 @@ public final class Offpack extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String webview_version;
 
-    private Offpack(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.mod_name == null) {
-                this.mod_name = "";
-            } else {
-                this.mod_name = builder.mod_name;
-            }
-            if (builder.src == null) {
-                this.src = "";
-            } else {
-                this.src = builder.src;
-            }
-            if (builder.md5 == null) {
-                this.md5 = "";
-            } else {
-                this.md5 = builder.md5;
-            }
-            if (builder.webview_version == null) {
-                this.webview_version = "";
-            } else {
-                this.webview_version = builder.webview_version;
-            }
-            if (builder.is_use == null) {
-                this.is_use = DEFAULT_IS_USE;
-                return;
-            } else {
-                this.is_use = builder.is_use;
-                return;
-            }
-        }
-        this.mod_name = builder.mod_name;
-        this.src = builder.src;
-        this.md5 = builder.md5;
-        this.webview_version = builder.webview_version;
-        this.is_use = builder.is_use;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Offpack> {
         public Integer is_use;
         public String md5;
@@ -71,13 +33,14 @@ public final class Offpack extends Message {
 
         public Builder(Offpack offpack) {
             super(offpack);
-            if (offpack != null) {
-                this.mod_name = offpack.mod_name;
-                this.src = offpack.src;
-                this.md5 = offpack.md5;
-                this.webview_version = offpack.webview_version;
-                this.is_use = offpack.is_use;
+            if (offpack == null) {
+                return;
             }
+            this.mod_name = offpack.mod_name;
+            this.src = offpack.src;
+            this.md5 = offpack.md5;
+            this.webview_version = offpack.webview_version;
+            this.is_use = offpack.is_use;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class Offpack extends Message {
         public Offpack build(boolean z) {
             return new Offpack(this, z);
         }
+    }
+
+    public Offpack(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.mod_name;
+            if (str == null) {
+                this.mod_name = "";
+            } else {
+                this.mod_name = str;
+            }
+            String str2 = builder.src;
+            if (str2 == null) {
+                this.src = "";
+            } else {
+                this.src = str2;
+            }
+            String str3 = builder.md5;
+            if (str3 == null) {
+                this.md5 = "";
+            } else {
+                this.md5 = str3;
+            }
+            String str4 = builder.webview_version;
+            if (str4 == null) {
+                this.webview_version = "";
+            } else {
+                this.webview_version = str4;
+            }
+            Integer num = builder.is_use;
+            if (num == null) {
+                this.is_use = DEFAULT_IS_USE;
+                return;
+            } else {
+                this.is_use = num;
+                return;
+            }
+        }
+        this.mod_name = builder.mod_name;
+        this.src = builder.src;
+        this.md5 = builder.md5;
+        this.webview_version = builder.webview_version;
+        this.is_use = builder.is_use;
     }
 }

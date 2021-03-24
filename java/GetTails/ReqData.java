@@ -3,36 +3,21 @@ package tbclient.GetTails;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8817common;
+    public final CommonReq f68489common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String st_type;
 
-    private ReqData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.st_type == null) {
-                this.st_type = "";
-            } else {
-                this.st_type = builder.st_type;
-            }
-            this.f8817common = builder.f8818common;
-            return;
-        }
-        this.st_type = builder.st_type;
-        this.f8817common = builder.f8818common;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8818common;
+        public CommonReq f68490common;
         public String st_type;
 
         public Builder() {
@@ -40,10 +25,11 @@ public final class ReqData extends Message {
 
         public Builder(ReqData reqData) {
             super(reqData);
-            if (reqData != null) {
-                this.st_type = reqData.st_type;
-                this.f8818common = reqData.f8817common;
+            if (reqData == null) {
+                return;
             }
+            this.st_type = reqData.st_type;
+            this.f68490common = reqData.f68489common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -51,5 +37,21 @@ public final class ReqData extends Message {
         public ReqData build(boolean z) {
             return new ReqData(this, z);
         }
+    }
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.st_type;
+            if (str == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str;
+            }
+            this.f68489common = builder.f68490common;
+            return;
+        }
+        this.st_type = builder.st_type;
+        this.f68489common = builder.f68490common;
     }
 }

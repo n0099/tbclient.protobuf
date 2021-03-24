@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class RecomPostTopic extends Message {
     public static final String DEFAULT_RECOM_TITLE = "";
     public static final String DEFAULT_RECOM_TOPIC = "";
@@ -14,33 +14,7 @@ public final class RecomPostTopic extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long uniq_topicid;
 
-    private RecomPostTopic(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.recom_title == null) {
-                this.recom_title = "";
-            } else {
-                this.recom_title = builder.recom_title;
-            }
-            if (builder.recom_topic == null) {
-                this.recom_topic = "";
-            } else {
-                this.recom_topic = builder.recom_topic;
-            }
-            if (builder.uniq_topicid == null) {
-                this.uniq_topicid = DEFAULT_UNIQ_TOPICID;
-                return;
-            } else {
-                this.uniq_topicid = builder.uniq_topicid;
-                return;
-            }
-        }
-        this.recom_title = builder.recom_title;
-        this.recom_topic = builder.recom_topic;
-        this.uniq_topicid = builder.uniq_topicid;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecomPostTopic> {
         public String recom_title;
         public String recom_topic;
@@ -51,11 +25,12 @@ public final class RecomPostTopic extends Message {
 
         public Builder(RecomPostTopic recomPostTopic) {
             super(recomPostTopic);
-            if (recomPostTopic != null) {
-                this.recom_title = recomPostTopic.recom_title;
-                this.recom_topic = recomPostTopic.recom_topic;
-                this.uniq_topicid = recomPostTopic.uniq_topicid;
+            if (recomPostTopic == null) {
+                return;
             }
+            this.recom_title = recomPostTopic.recom_title;
+            this.recom_topic = recomPostTopic.recom_topic;
+            this.uniq_topicid = recomPostTopic.uniq_topicid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class RecomPostTopic extends Message {
         public RecomPostTopic build(boolean z) {
             return new RecomPostTopic(this, z);
         }
+    }
+
+    public RecomPostTopic(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.recom_title;
+            if (str == null) {
+                this.recom_title = "";
+            } else {
+                this.recom_title = str;
+            }
+            String str2 = builder.recom_topic;
+            if (str2 == null) {
+                this.recom_topic = "";
+            } else {
+                this.recom_topic = str2;
+            }
+            Long l = builder.uniq_topicid;
+            if (l == null) {
+                this.uniq_topicid = DEFAULT_UNIQ_TOPICID;
+                return;
+            } else {
+                this.uniq_topicid = l;
+                return;
+            }
+        }
+        this.recom_title = builder.recom_title;
+        this.recom_topic = builder.recom_topic;
+        this.uniq_topicid = builder.uniq_topicid;
     }
 }

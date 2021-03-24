@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AgreeList extends Message {
     @ProtoField(tag = 8)
     public final User agreeer;
@@ -23,44 +23,7 @@ public final class AgreeList extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Long DEFAULT_ID = 0L;
 
-    private AgreeList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.thread_info = builder.thread_info;
-            if (builder.time == null) {
-                this.time = DEFAULT_TIME;
-            } else {
-                this.time = builder.time;
-            }
-            if (builder.is_del == null) {
-                this.is_del = DEFAULT_IS_DEL;
-            } else {
-                this.is_del = builder.is_del;
-            }
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            this.agreeer = builder.agreeer;
-            this.post_info = builder.post_info;
-            return;
-        }
-        this.thread_info = builder.thread_info;
-        this.time = builder.time;
-        this.is_del = builder.is_del;
-        this.type = builder.type;
-        this.id = builder.id;
-        this.agreeer = builder.agreeer;
-        this.post_info = builder.post_info;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AgreeList> {
         public User agreeer;
         public Long id;
@@ -75,15 +38,16 @@ public final class AgreeList extends Message {
 
         public Builder(AgreeList agreeList) {
             super(agreeList);
-            if (agreeList != null) {
-                this.thread_info = agreeList.thread_info;
-                this.time = agreeList.time;
-                this.is_del = agreeList.is_del;
-                this.type = agreeList.type;
-                this.id = agreeList.id;
-                this.agreeer = agreeList.agreeer;
-                this.post_info = agreeList.post_info;
+            if (agreeList == null) {
+                return;
             }
+            this.thread_info = agreeList.thread_info;
+            this.time = agreeList.time;
+            this.is_del = agreeList.is_del;
+            this.type = agreeList.type;
+            this.id = agreeList.id;
+            this.agreeer = agreeList.agreeer;
+            this.post_info = agreeList.post_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -91,5 +55,46 @@ public final class AgreeList extends Message {
         public AgreeList build(boolean z) {
             return new AgreeList(this, z);
         }
+    }
+
+    public AgreeList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.thread_info = builder.thread_info;
+            Integer num = builder.time;
+            if (num == null) {
+                this.time = DEFAULT_TIME;
+            } else {
+                this.time = num;
+            }
+            Integer num2 = builder.is_del;
+            if (num2 == null) {
+                this.is_del = DEFAULT_IS_DEL;
+            } else {
+                this.is_del = num2;
+            }
+            Integer num3 = builder.type;
+            if (num3 == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num3;
+            }
+            Long l = builder.id;
+            if (l == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = l;
+            }
+            this.agreeer = builder.agreeer;
+            this.post_info = builder.post_info;
+            return;
+        }
+        this.thread_info = builder.thread_info;
+        this.time = builder.time;
+        this.is_del = builder.is_del;
+        this.type = builder.type;
+        this.id = builder.id;
+        this.agreeer = builder.agreeer;
+        this.post_info = builder.post_info;
     }
 }

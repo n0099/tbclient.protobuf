@@ -10,7 +10,7 @@ import tbclient.SportPageHeadInfo;
 import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 10)
     public final List<App> app_list;
@@ -37,57 +37,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.general_list == null) {
-                this.general_list = DEFAULT_GENERAL_LIST;
-            } else {
-                this.general_list = immutableCopyOf(builder.general_list);
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-            } else {
-                this.has_more = builder.has_more;
-            }
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-            }
-            this.sport_schedule_info = builder.sport_schedule_info;
-            this.sport_head_info = builder.sport_head_info;
-            if (builder.new_thread_num == null) {
-                this.new_thread_num = DEFAULT_NEW_THREAD_NUM;
-            } else {
-                this.new_thread_num = builder.new_thread_num;
-            }
-            if (builder.sort_type == null) {
-                this.sort_type = DEFAULT_SORT_TYPE;
-            } else {
-                this.sort_type = builder.sort_type;
-            }
-            this.item_info = builder.item_info;
-            if (builder.app_list == null) {
-                this.app_list = DEFAULT_APP_LIST;
-                return;
-            } else {
-                this.app_list = immutableCopyOf(builder.app_list);
-                return;
-            }
-        }
-        this.general_list = immutableCopyOf(builder.general_list);
-        this.has_more = builder.has_more;
-        this.user_list = immutableCopyOf(builder.user_list);
-        this.sport_schedule_info = builder.sport_schedule_info;
-        this.sport_head_info = builder.sport_head_info;
-        this.new_thread_num = builder.new_thread_num;
-        this.sort_type = builder.sort_type;
-        this.item_info = builder.item_info;
-        this.app_list = immutableCopyOf(builder.app_list);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<App> app_list;
         public List<ThreadInfo> general_list;
@@ -104,17 +54,18 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.general_list = DataRes.copyOf(dataRes.general_list);
-                this.has_more = dataRes.has_more;
-                this.user_list = DataRes.copyOf(dataRes.user_list);
-                this.sport_schedule_info = dataRes.sport_schedule_info;
-                this.sport_head_info = dataRes.sport_head_info;
-                this.new_thread_num = dataRes.new_thread_num;
-                this.sort_type = dataRes.sort_type;
-                this.item_info = dataRes.item_info;
-                this.app_list = DataRes.copyOf(dataRes.app_list);
+            if (dataRes == null) {
+                return;
             }
+            this.general_list = Message.copyOf(dataRes.general_list);
+            this.has_more = dataRes.has_more;
+            this.user_list = Message.copyOf(dataRes.user_list);
+            this.sport_schedule_info = dataRes.sport_schedule_info;
+            this.sport_head_info = dataRes.sport_head_info;
+            this.new_thread_num = dataRes.new_thread_num;
+            this.sort_type = dataRes.sort_type;
+            this.item_info = dataRes.item_info;
+            this.app_list = Message.copyOf(dataRes.app_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -122,5 +73,61 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ThreadInfo> list = builder.general_list;
+            if (list == null) {
+                this.general_list = DEFAULT_GENERAL_LIST;
+            } else {
+                this.general_list = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            List<User> list2 = builder.user_list;
+            if (list2 == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list2);
+            }
+            this.sport_schedule_info = builder.sport_schedule_info;
+            this.sport_head_info = builder.sport_head_info;
+            Integer num2 = builder.new_thread_num;
+            if (num2 == null) {
+                this.new_thread_num = DEFAULT_NEW_THREAD_NUM;
+            } else {
+                this.new_thread_num = num2;
+            }
+            Integer num3 = builder.sort_type;
+            if (num3 == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+            } else {
+                this.sort_type = num3;
+            }
+            this.item_info = builder.item_info;
+            List<App> list3 = builder.app_list;
+            if (list3 == null) {
+                this.app_list = DEFAULT_APP_LIST;
+                return;
+            } else {
+                this.app_list = Message.immutableCopyOf(list3);
+                return;
+            }
+        }
+        this.general_list = Message.immutableCopyOf(builder.general_list);
+        this.has_more = builder.has_more;
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.sport_schedule_info = builder.sport_schedule_info;
+        this.sport_head_info = builder.sport_head_info;
+        this.new_thread_num = builder.new_thread_num;
+        this.sort_type = builder.sort_type;
+        this.item_info = builder.item_info;
+        this.app_list = Message.immutableCopyOf(builder.app_list);
     }
 }

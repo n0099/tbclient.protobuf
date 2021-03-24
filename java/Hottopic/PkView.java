@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class PkView extends Message {
     public static final String DEFAULT_PK_DESC = "";
     public static final String DEFAULT_PK_ICON = "";
@@ -23,50 +23,6 @@ public final class PkView extends Message {
     public static final Integer DEFAULT_PK_INDEX = 0;
     public static final Integer DEFAULT_HAS_CLICKED = 0;
 
-    private PkView(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pk_desc == null) {
-                this.pk_desc = "";
-            } else {
-                this.pk_desc = builder.pk_desc;
-            }
-            if (builder.pk_num == null) {
-                this.pk_num = DEFAULT_PK_NUM;
-            } else {
-                this.pk_num = builder.pk_num;
-            }
-            if (builder.pk_index == null) {
-                this.pk_index = DEFAULT_PK_INDEX;
-            } else {
-                this.pk_index = builder.pk_index;
-            }
-            if (builder.has_clicked == null) {
-                this.has_clicked = DEFAULT_HAS_CLICKED;
-            } else {
-                this.has_clicked = builder.has_clicked;
-            }
-            if (builder.pk_icon == null) {
-                this.pk_icon = "";
-            } else {
-                this.pk_icon = builder.pk_icon;
-            }
-            if (builder.pk_icon_after == null) {
-                this.pk_icon_after = "";
-                return;
-            } else {
-                this.pk_icon_after = builder.pk_icon_after;
-                return;
-            }
-        }
-        this.pk_desc = builder.pk_desc;
-        this.pk_num = builder.pk_num;
-        this.pk_index = builder.pk_index;
-        this.has_clicked = builder.has_clicked;
-        this.pk_icon = builder.pk_icon;
-        this.pk_icon_after = builder.pk_icon_after;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PkView> {
         public Integer has_clicked;
@@ -81,14 +37,15 @@ public final class PkView extends Message {
 
         public Builder(PkView pkView) {
             super(pkView);
-            if (pkView != null) {
-                this.pk_desc = pkView.pk_desc;
-                this.pk_num = pkView.pk_num;
-                this.pk_index = pkView.pk_index;
-                this.has_clicked = pkView.has_clicked;
-                this.pk_icon = pkView.pk_icon;
-                this.pk_icon_after = pkView.pk_icon_after;
+            if (pkView == null) {
+                return;
             }
+            this.pk_desc = pkView.pk_desc;
+            this.pk_num = pkView.pk_num;
+            this.pk_index = pkView.pk_index;
+            this.has_clicked = pkView.has_clicked;
+            this.pk_icon = pkView.pk_icon;
+            this.pk_icon_after = pkView.pk_icon_after;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +53,55 @@ public final class PkView extends Message {
         public PkView build(boolean z) {
             return new PkView(this, z);
         }
+    }
+
+    public PkView(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.pk_desc;
+            if (str == null) {
+                this.pk_desc = "";
+            } else {
+                this.pk_desc = str;
+            }
+            Long l = builder.pk_num;
+            if (l == null) {
+                this.pk_num = DEFAULT_PK_NUM;
+            } else {
+                this.pk_num = l;
+            }
+            Integer num = builder.pk_index;
+            if (num == null) {
+                this.pk_index = DEFAULT_PK_INDEX;
+            } else {
+                this.pk_index = num;
+            }
+            Integer num2 = builder.has_clicked;
+            if (num2 == null) {
+                this.has_clicked = DEFAULT_HAS_CLICKED;
+            } else {
+                this.has_clicked = num2;
+            }
+            String str2 = builder.pk_icon;
+            if (str2 == null) {
+                this.pk_icon = "";
+            } else {
+                this.pk_icon = str2;
+            }
+            String str3 = builder.pk_icon_after;
+            if (str3 == null) {
+                this.pk_icon_after = "";
+                return;
+            } else {
+                this.pk_icon_after = str3;
+                return;
+            }
+        }
+        this.pk_desc = builder.pk_desc;
+        this.pk_num = builder.pk_num;
+        this.pk_index = builder.pk_index;
+        this.has_clicked = builder.has_clicked;
+        this.pk_icon = builder.pk_icon;
+        this.pk_icon_after = builder.pk_icon_after;
     }
 }

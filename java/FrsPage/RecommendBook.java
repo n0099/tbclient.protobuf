@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class RecommendBook extends Message {
     public static final String DEFAULT_BOOK_ID = "";
     public static final String DEFAULT_IMAGE = "";
@@ -25,51 +25,7 @@ public final class RecommendBook extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final List<String> DEFAULT_DESC = Collections.emptyList();
 
-    private RecommendBook(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.book_id == null) {
-                this.book_id = "";
-            } else {
-                this.book_id = builder.book_id;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.image == null) {
-                this.image = "";
-            } else {
-                this.image = builder.image;
-            }
-            if (builder.desc == null) {
-                this.desc = DEFAULT_DESC;
-            } else {
-                this.desc = immutableCopyOf(builder.desc);
-            }
-            if (builder.link_url == null) {
-                this.link_url = "";
-                return;
-            } else {
-                this.link_url = builder.link_url;
-                return;
-            }
-        }
-        this.type = builder.type;
-        this.book_id = builder.book_id;
-        this.title = builder.title;
-        this.image = builder.image;
-        this.desc = immutableCopyOf(builder.desc);
-        this.link_url = builder.link_url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecommendBook> {
         public String book_id;
         public List<String> desc;
@@ -83,14 +39,15 @@ public final class RecommendBook extends Message {
 
         public Builder(RecommendBook recommendBook) {
             super(recommendBook);
-            if (recommendBook != null) {
-                this.type = recommendBook.type;
-                this.book_id = recommendBook.book_id;
-                this.title = recommendBook.title;
-                this.image = recommendBook.image;
-                this.desc = RecommendBook.copyOf(recommendBook.desc);
-                this.link_url = recommendBook.link_url;
+            if (recommendBook == null) {
+                return;
             }
+            this.type = recommendBook.type;
+            this.book_id = recommendBook.book_id;
+            this.title = recommendBook.title;
+            this.image = recommendBook.image;
+            this.desc = Message.copyOf(recommendBook.desc);
+            this.link_url = recommendBook.link_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -98,5 +55,55 @@ public final class RecommendBook extends Message {
         public RecommendBook build(boolean z) {
             return new RecommendBook(this, z);
         }
+    }
+
+    public RecommendBook(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            String str = builder.book_id;
+            if (str == null) {
+                this.book_id = "";
+            } else {
+                this.book_id = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.image;
+            if (str3 == null) {
+                this.image = "";
+            } else {
+                this.image = str3;
+            }
+            List<String> list = builder.desc;
+            if (list == null) {
+                this.desc = DEFAULT_DESC;
+            } else {
+                this.desc = Message.immutableCopyOf(list);
+            }
+            String str4 = builder.link_url;
+            if (str4 == null) {
+                this.link_url = "";
+                return;
+            } else {
+                this.link_url = str4;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.book_id = builder.book_id;
+        this.title = builder.title;
+        this.image = builder.image;
+        this.desc = Message.immutableCopyOf(builder.desc);
+        this.link_url = builder.link_url;
     }
 }

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Anti extends Message {
     public static final String DEFAULT_FORBID_INFO = "";
     public static final String DEFAULT_IFXIAOYING = "";
@@ -90,188 +90,10 @@ public final class Anti extends Message {
     public static final List<DelThreadText> DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
     public static final Integer DEFAULT_MULTI_DELTHREAD = 0;
     public static final Integer DEFAULT_POLL_LEVEL = 0;
-    public static final Boolean DEFAULT_IS_SEXYFORUM = false;
+    public static final Boolean DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
     public static final Integer DEFAULT_CAN_GOODS = 0;
 
-    private Anti(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tbs == null) {
-                this.tbs = "";
-            } else {
-                this.tbs = builder.tbs;
-            }
-            if (builder.ifpost == null) {
-                this.ifpost = DEFAULT_IFPOST;
-            } else {
-                this.ifpost = builder.ifpost;
-            }
-            if (builder.ifposta == null) {
-                this.ifposta = DEFAULT_IFPOSTA;
-            } else {
-                this.ifposta = builder.ifposta;
-            }
-            if (builder.forbid_flag == null) {
-                this.forbid_flag = DEFAULT_FORBID_FLAG;
-            } else {
-                this.forbid_flag = builder.forbid_flag;
-            }
-            if (builder.forbid_info == null) {
-                this.forbid_info = "";
-            } else {
-                this.forbid_info = builder.forbid_info;
-            }
-            if (builder.block_stat == null) {
-                this.block_stat = DEFAULT_BLOCK_STAT;
-            } else {
-                this.block_stat = builder.block_stat;
-            }
-            if (builder.hide_stat == null) {
-                this.hide_stat = DEFAULT_HIDE_STAT;
-            } else {
-                this.hide_stat = builder.hide_stat;
-            }
-            if (builder.vcode_stat == null) {
-                this.vcode_stat = DEFAULT_VCODE_STAT;
-            } else {
-                this.vcode_stat = builder.vcode_stat;
-            }
-            if (builder.days_tofree == null) {
-                this.days_tofree = DEFAULT_DAYS_TOFREE;
-            } else {
-                this.days_tofree = builder.days_tofree;
-            }
-            if (builder.has_chance == null) {
-                this.has_chance = DEFAULT_HAS_CHANCE;
-            } else {
-                this.has_chance = builder.has_chance;
-            }
-            if (builder.ifvoice == null) {
-                this.ifvoice = DEFAULT_IFVOICE;
-            } else {
-                this.ifvoice = builder.ifvoice;
-            }
-            if (builder.voice_message == null) {
-                this.voice_message = "";
-            } else {
-                this.voice_message = builder.voice_message;
-            }
-            if (builder.ifaddition == null) {
-                this.ifaddition = DEFAULT_IFADDITION;
-            } else {
-                this.ifaddition = builder.ifaddition;
-            }
-            if (builder.need_vcode == null) {
-                this.need_vcode = DEFAULT_NEED_VCODE;
-            } else {
-                this.need_vcode = builder.need_vcode;
-            }
-            if (builder.vcode_md5 == null) {
-                this.vcode_md5 = "";
-            } else {
-                this.vcode_md5 = builder.vcode_md5;
-            }
-            if (builder.vcode_pic_url == null) {
-                this.vcode_pic_url = "";
-            } else {
-                this.vcode_pic_url = builder.vcode_pic_url;
-            }
-            if (builder.user_mute == null) {
-                this.user_mute = "";
-            } else {
-                this.user_mute = builder.user_mute;
-            }
-            if (builder.ifxiaoying == null) {
-                this.ifxiaoying = "";
-            } else {
-                this.ifxiaoying = builder.ifxiaoying;
-            }
-            if (builder.poll_message == null) {
-                this.poll_message = "";
-            } else {
-                this.poll_message = builder.poll_message;
-            }
-            if (builder.video_message == null) {
-                this.video_message = "";
-            } else {
-                this.video_message = builder.video_message;
-            }
-            if (builder.video_local_message == null) {
-                this.video_local_message = "";
-            } else {
-                this.video_local_message = builder.video_local_message;
-            }
-            this.block_pop_info = builder.block_pop_info;
-            if (builder.reply_private_flag == null) {
-                this.reply_private_flag = DEFAULT_REPLY_PRIVATE_FLAG;
-            } else {
-                this.reply_private_flag = builder.reply_private_flag;
-            }
-            if (builder.del_thread_text == null) {
-                this.del_thread_text = DEFAULT_DEL_THREAD_TEXT;
-            } else {
-                this.del_thread_text = immutableCopyOf(builder.del_thread_text);
-            }
-            if (builder.multi_delthread == null) {
-                this.multi_delthread = DEFAULT_MULTI_DELTHREAD;
-            } else {
-                this.multi_delthread = builder.multi_delthread;
-            }
-            if (builder.poll_level == null) {
-                this.poll_level = DEFAULT_POLL_LEVEL;
-            } else {
-                this.poll_level = builder.poll_level;
-            }
-            if (builder.is_sexyforum == null) {
-                this.is_sexyforum = DEFAULT_IS_SEXYFORUM;
-            } else {
-                this.is_sexyforum = builder.is_sexyforum;
-            }
-            if (builder.teenmode_interval == null) {
-                this.teenmode_interval = "";
-            } else {
-                this.teenmode_interval = builder.teenmode_interval;
-            }
-            if (builder.can_goods == null) {
-                this.can_goods = DEFAULT_CAN_GOODS;
-                return;
-            } else {
-                this.can_goods = builder.can_goods;
-                return;
-            }
-        }
-        this.tbs = builder.tbs;
-        this.ifpost = builder.ifpost;
-        this.ifposta = builder.ifposta;
-        this.forbid_flag = builder.forbid_flag;
-        this.forbid_info = builder.forbid_info;
-        this.block_stat = builder.block_stat;
-        this.hide_stat = builder.hide_stat;
-        this.vcode_stat = builder.vcode_stat;
-        this.days_tofree = builder.days_tofree;
-        this.has_chance = builder.has_chance;
-        this.ifvoice = builder.ifvoice;
-        this.voice_message = builder.voice_message;
-        this.ifaddition = builder.ifaddition;
-        this.need_vcode = builder.need_vcode;
-        this.vcode_md5 = builder.vcode_md5;
-        this.vcode_pic_url = builder.vcode_pic_url;
-        this.user_mute = builder.user_mute;
-        this.ifxiaoying = builder.ifxiaoying;
-        this.poll_message = builder.poll_message;
-        this.video_message = builder.video_message;
-        this.video_local_message = builder.video_local_message;
-        this.block_pop_info = builder.block_pop_info;
-        this.reply_private_flag = builder.reply_private_flag;
-        this.del_thread_text = immutableCopyOf(builder.del_thread_text);
-        this.multi_delthread = builder.multi_delthread;
-        this.poll_level = builder.poll_level;
-        this.is_sexyforum = builder.is_sexyforum;
-        this.teenmode_interval = builder.teenmode_interval;
-        this.can_goods = builder.can_goods;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Anti> {
         public BlockPopInfo block_pop_info;
         public Integer block_stat;
@@ -308,37 +130,38 @@ public final class Anti extends Message {
 
         public Builder(Anti anti) {
             super(anti);
-            if (anti != null) {
-                this.tbs = anti.tbs;
-                this.ifpost = anti.ifpost;
-                this.ifposta = anti.ifposta;
-                this.forbid_flag = anti.forbid_flag;
-                this.forbid_info = anti.forbid_info;
-                this.block_stat = anti.block_stat;
-                this.hide_stat = anti.hide_stat;
-                this.vcode_stat = anti.vcode_stat;
-                this.days_tofree = anti.days_tofree;
-                this.has_chance = anti.has_chance;
-                this.ifvoice = anti.ifvoice;
-                this.voice_message = anti.voice_message;
-                this.ifaddition = anti.ifaddition;
-                this.need_vcode = anti.need_vcode;
-                this.vcode_md5 = anti.vcode_md5;
-                this.vcode_pic_url = anti.vcode_pic_url;
-                this.user_mute = anti.user_mute;
-                this.ifxiaoying = anti.ifxiaoying;
-                this.poll_message = anti.poll_message;
-                this.video_message = anti.video_message;
-                this.video_local_message = anti.video_local_message;
-                this.block_pop_info = anti.block_pop_info;
-                this.reply_private_flag = anti.reply_private_flag;
-                this.del_thread_text = Anti.copyOf(anti.del_thread_text);
-                this.multi_delthread = anti.multi_delthread;
-                this.poll_level = anti.poll_level;
-                this.is_sexyforum = anti.is_sexyforum;
-                this.teenmode_interval = anti.teenmode_interval;
-                this.can_goods = anti.can_goods;
+            if (anti == null) {
+                return;
             }
+            this.tbs = anti.tbs;
+            this.ifpost = anti.ifpost;
+            this.ifposta = anti.ifposta;
+            this.forbid_flag = anti.forbid_flag;
+            this.forbid_info = anti.forbid_info;
+            this.block_stat = anti.block_stat;
+            this.hide_stat = anti.hide_stat;
+            this.vcode_stat = anti.vcode_stat;
+            this.days_tofree = anti.days_tofree;
+            this.has_chance = anti.has_chance;
+            this.ifvoice = anti.ifvoice;
+            this.voice_message = anti.voice_message;
+            this.ifaddition = anti.ifaddition;
+            this.need_vcode = anti.need_vcode;
+            this.vcode_md5 = anti.vcode_md5;
+            this.vcode_pic_url = anti.vcode_pic_url;
+            this.user_mute = anti.user_mute;
+            this.ifxiaoying = anti.ifxiaoying;
+            this.poll_message = anti.poll_message;
+            this.video_message = anti.video_message;
+            this.video_local_message = anti.video_local_message;
+            this.block_pop_info = anti.block_pop_info;
+            this.reply_private_flag = anti.reply_private_flag;
+            this.del_thread_text = Message.copyOf(anti.del_thread_text);
+            this.multi_delthread = anti.multi_delthread;
+            this.poll_level = anti.poll_level;
+            this.is_sexyforum = anti.is_sexyforum;
+            this.teenmode_interval = anti.teenmode_interval;
+            this.can_goods = anti.can_goods;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -346,5 +169,211 @@ public final class Anti extends Message {
         public Anti build(boolean z) {
             return new Anti(this, z);
         }
+    }
+
+    public Anti(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.tbs;
+            if (str == null) {
+                this.tbs = "";
+            } else {
+                this.tbs = str;
+            }
+            Integer num = builder.ifpost;
+            if (num == null) {
+                this.ifpost = DEFAULT_IFPOST;
+            } else {
+                this.ifpost = num;
+            }
+            Integer num2 = builder.ifposta;
+            if (num2 == null) {
+                this.ifposta = DEFAULT_IFPOSTA;
+            } else {
+                this.ifposta = num2;
+            }
+            Integer num3 = builder.forbid_flag;
+            if (num3 == null) {
+                this.forbid_flag = DEFAULT_FORBID_FLAG;
+            } else {
+                this.forbid_flag = num3;
+            }
+            String str2 = builder.forbid_info;
+            if (str2 == null) {
+                this.forbid_info = "";
+            } else {
+                this.forbid_info = str2;
+            }
+            Integer num4 = builder.block_stat;
+            if (num4 == null) {
+                this.block_stat = DEFAULT_BLOCK_STAT;
+            } else {
+                this.block_stat = num4;
+            }
+            Integer num5 = builder.hide_stat;
+            if (num5 == null) {
+                this.hide_stat = DEFAULT_HIDE_STAT;
+            } else {
+                this.hide_stat = num5;
+            }
+            Integer num6 = builder.vcode_stat;
+            if (num6 == null) {
+                this.vcode_stat = DEFAULT_VCODE_STAT;
+            } else {
+                this.vcode_stat = num6;
+            }
+            Integer num7 = builder.days_tofree;
+            if (num7 == null) {
+                this.days_tofree = DEFAULT_DAYS_TOFREE;
+            } else {
+                this.days_tofree = num7;
+            }
+            Integer num8 = builder.has_chance;
+            if (num8 == null) {
+                this.has_chance = DEFAULT_HAS_CHANCE;
+            } else {
+                this.has_chance = num8;
+            }
+            Integer num9 = builder.ifvoice;
+            if (num9 == null) {
+                this.ifvoice = DEFAULT_IFVOICE;
+            } else {
+                this.ifvoice = num9;
+            }
+            String str3 = builder.voice_message;
+            if (str3 == null) {
+                this.voice_message = "";
+            } else {
+                this.voice_message = str3;
+            }
+            Integer num10 = builder.ifaddition;
+            if (num10 == null) {
+                this.ifaddition = DEFAULT_IFADDITION;
+            } else {
+                this.ifaddition = num10;
+            }
+            Integer num11 = builder.need_vcode;
+            if (num11 == null) {
+                this.need_vcode = DEFAULT_NEED_VCODE;
+            } else {
+                this.need_vcode = num11;
+            }
+            String str4 = builder.vcode_md5;
+            if (str4 == null) {
+                this.vcode_md5 = "";
+            } else {
+                this.vcode_md5 = str4;
+            }
+            String str5 = builder.vcode_pic_url;
+            if (str5 == null) {
+                this.vcode_pic_url = "";
+            } else {
+                this.vcode_pic_url = str5;
+            }
+            String str6 = builder.user_mute;
+            if (str6 == null) {
+                this.user_mute = "";
+            } else {
+                this.user_mute = str6;
+            }
+            String str7 = builder.ifxiaoying;
+            if (str7 == null) {
+                this.ifxiaoying = "";
+            } else {
+                this.ifxiaoying = str7;
+            }
+            String str8 = builder.poll_message;
+            if (str8 == null) {
+                this.poll_message = "";
+            } else {
+                this.poll_message = str8;
+            }
+            String str9 = builder.video_message;
+            if (str9 == null) {
+                this.video_message = "";
+            } else {
+                this.video_message = str9;
+            }
+            String str10 = builder.video_local_message;
+            if (str10 == null) {
+                this.video_local_message = "";
+            } else {
+                this.video_local_message = str10;
+            }
+            this.block_pop_info = builder.block_pop_info;
+            Integer num12 = builder.reply_private_flag;
+            if (num12 == null) {
+                this.reply_private_flag = DEFAULT_REPLY_PRIVATE_FLAG;
+            } else {
+                this.reply_private_flag = num12;
+            }
+            List<DelThreadText> list = builder.del_thread_text;
+            if (list == null) {
+                this.del_thread_text = DEFAULT_DEL_THREAD_TEXT;
+            } else {
+                this.del_thread_text = Message.immutableCopyOf(list);
+            }
+            Integer num13 = builder.multi_delthread;
+            if (num13 == null) {
+                this.multi_delthread = DEFAULT_MULTI_DELTHREAD;
+            } else {
+                this.multi_delthread = num13;
+            }
+            Integer num14 = builder.poll_level;
+            if (num14 == null) {
+                this.poll_level = DEFAULT_POLL_LEVEL;
+            } else {
+                this.poll_level = num14;
+            }
+            Boolean bool = builder.is_sexyforum;
+            if (bool == null) {
+                this.is_sexyforum = DEFAULT_IS_SEXYFORUM;
+            } else {
+                this.is_sexyforum = bool;
+            }
+            String str11 = builder.teenmode_interval;
+            if (str11 == null) {
+                this.teenmode_interval = "";
+            } else {
+                this.teenmode_interval = str11;
+            }
+            Integer num15 = builder.can_goods;
+            if (num15 == null) {
+                this.can_goods = DEFAULT_CAN_GOODS;
+                return;
+            } else {
+                this.can_goods = num15;
+                return;
+            }
+        }
+        this.tbs = builder.tbs;
+        this.ifpost = builder.ifpost;
+        this.ifposta = builder.ifposta;
+        this.forbid_flag = builder.forbid_flag;
+        this.forbid_info = builder.forbid_info;
+        this.block_stat = builder.block_stat;
+        this.hide_stat = builder.hide_stat;
+        this.vcode_stat = builder.vcode_stat;
+        this.days_tofree = builder.days_tofree;
+        this.has_chance = builder.has_chance;
+        this.ifvoice = builder.ifvoice;
+        this.voice_message = builder.voice_message;
+        this.ifaddition = builder.ifaddition;
+        this.need_vcode = builder.need_vcode;
+        this.vcode_md5 = builder.vcode_md5;
+        this.vcode_pic_url = builder.vcode_pic_url;
+        this.user_mute = builder.user_mute;
+        this.ifxiaoying = builder.ifxiaoying;
+        this.poll_message = builder.poll_message;
+        this.video_message = builder.video_message;
+        this.video_local_message = builder.video_local_message;
+        this.block_pop_info = builder.block_pop_info;
+        this.reply_private_flag = builder.reply_private_flag;
+        this.del_thread_text = Message.immutableCopyOf(builder.del_thread_text);
+        this.multi_delthread = builder.multi_delthread;
+        this.poll_level = builder.poll_level;
+        this.is_sexyforum = builder.is_sexyforum;
+        this.teenmode_interval = builder.teenmode_interval;
+        this.can_goods = builder.can_goods;
     }
 }

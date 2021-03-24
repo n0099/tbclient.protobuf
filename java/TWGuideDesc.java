@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TWGuideDesc extends Message {
     public static final String DEFAULT_LINK = "";
     public static final Integer DEFAULT_ORDER = 0;
@@ -14,33 +14,7 @@ public final class TWGuideDesc extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    private TWGuideDesc(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.order == null) {
-                this.order = DEFAULT_ORDER;
-            } else {
-                this.order = builder.order;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.link == null) {
-                this.link = "";
-                return;
-            } else {
-                this.link = builder.link;
-                return;
-            }
-        }
-        this.order = builder.order;
-        this.title = builder.title;
-        this.link = builder.link;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TWGuideDesc> {
         public String link;
         public Integer order;
@@ -51,11 +25,12 @@ public final class TWGuideDesc extends Message {
 
         public Builder(TWGuideDesc tWGuideDesc) {
             super(tWGuideDesc);
-            if (tWGuideDesc != null) {
-                this.order = tWGuideDesc.order;
-                this.title = tWGuideDesc.title;
-                this.link = tWGuideDesc.link;
+            if (tWGuideDesc == null) {
+                return;
             }
+            this.order = tWGuideDesc.order;
+            this.title = tWGuideDesc.title;
+            this.link = tWGuideDesc.link;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class TWGuideDesc extends Message {
         public TWGuideDesc build(boolean z) {
             return new TWGuideDesc(this, z);
         }
+    }
+
+    public TWGuideDesc(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.order;
+            if (num == null) {
+                this.order = DEFAULT_ORDER;
+            } else {
+                this.order = num;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.link;
+            if (str2 == null) {
+                this.link = "";
+                return;
+            } else {
+                this.link = str2;
+                return;
+            }
+        }
+        this.order = builder.order;
+        this.title = builder.title;
+        this.link = builder.link;
     }
 }

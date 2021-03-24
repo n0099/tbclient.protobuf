@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ForumVDetailInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_DETAIL_INFO = "";
@@ -26,57 +26,7 @@ public final class ForumVDetailInfo extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_FORUM_ID = 0L;
 
-    private ForumVDetailInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.v_id == null) {
-                this.v_id = DEFAULT_V_ID;
-            } else {
-                this.v_id = builder.v_id;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.intro == null) {
-                this.intro = "";
-            } else {
-                this.intro = builder.intro;
-            }
-            if (builder.detail_info == null) {
-                this.detail_info = "";
-            } else {
-                this.detail_info = builder.detail_info;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-                return;
-            } else {
-                this.avatar = builder.avatar;
-                return;
-            }
-        }
-        this.v_id = builder.v_id;
-        this.user_id = builder.user_id;
-        this.intro = builder.intro;
-        this.detail_info = builder.detail_info;
-        this.forum_id = builder.forum_id;
-        this.forum_name = builder.forum_name;
-        this.avatar = builder.avatar;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumVDetailInfo> {
         public String avatar;
         public String detail_info;
@@ -91,15 +41,16 @@ public final class ForumVDetailInfo extends Message {
 
         public Builder(ForumVDetailInfo forumVDetailInfo) {
             super(forumVDetailInfo);
-            if (forumVDetailInfo != null) {
-                this.v_id = forumVDetailInfo.v_id;
-                this.user_id = forumVDetailInfo.user_id;
-                this.intro = forumVDetailInfo.intro;
-                this.detail_info = forumVDetailInfo.detail_info;
-                this.forum_id = forumVDetailInfo.forum_id;
-                this.forum_name = forumVDetailInfo.forum_name;
-                this.avatar = forumVDetailInfo.avatar;
+            if (forumVDetailInfo == null) {
+                return;
             }
+            this.v_id = forumVDetailInfo.v_id;
+            this.user_id = forumVDetailInfo.user_id;
+            this.intro = forumVDetailInfo.intro;
+            this.detail_info = forumVDetailInfo.detail_info;
+            this.forum_id = forumVDetailInfo.forum_id;
+            this.forum_name = forumVDetailInfo.forum_name;
+            this.avatar = forumVDetailInfo.avatar;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +58,62 @@ public final class ForumVDetailInfo extends Message {
         public ForumVDetailInfo build(boolean z) {
             return new ForumVDetailInfo(this, z);
         }
+    }
+
+    public ForumVDetailInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.v_id;
+            if (l == null) {
+                this.v_id = DEFAULT_V_ID;
+            } else {
+                this.v_id = l;
+            }
+            Long l2 = builder.user_id;
+            if (l2 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l2;
+            }
+            String str = builder.intro;
+            if (str == null) {
+                this.intro = "";
+            } else {
+                this.intro = str;
+            }
+            String str2 = builder.detail_info;
+            if (str2 == null) {
+                this.detail_info = "";
+            } else {
+                this.detail_info = str2;
+            }
+            Long l3 = builder.forum_id;
+            if (l3 == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l3;
+            }
+            String str3 = builder.forum_name;
+            if (str3 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str3;
+            }
+            String str4 = builder.avatar;
+            if (str4 == null) {
+                this.avatar = "";
+                return;
+            } else {
+                this.avatar = str4;
+                return;
+            }
+        }
+        this.v_id = builder.v_id;
+        this.user_id = builder.user_id;
+        this.intro = builder.intro;
+        this.detail_info = builder.detail_info;
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.avatar = builder.avatar;
     }
 }

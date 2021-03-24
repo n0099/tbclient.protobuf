@@ -2,14 +2,16 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Calendar extends Message {
     public static final Integer DEFAULT_D = 0;
     public static final Integer DEFAULT_RANK = 0;
     public static final Integer DEFAULT_SIGN_TYPE = 0;
     public static final String DEFAULT_T = "";
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer d;
+
+    /* renamed from: d  reason: collision with root package name */
+    public final Integer f68371d;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer rank;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -17,41 +19,11 @@ public final class Calendar extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String t;
 
-    private Calendar(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.d == null) {
-                this.d = DEFAULT_D;
-            } else {
-                this.d = builder.d;
-            }
-            if (builder.t == null) {
-                this.t = "";
-            } else {
-                this.t = builder.t;
-            }
-            if (builder.rank == null) {
-                this.rank = DEFAULT_RANK;
-            } else {
-                this.rank = builder.rank;
-            }
-            if (builder.sign_type == null) {
-                this.sign_type = DEFAULT_SIGN_TYPE;
-                return;
-            } else {
-                this.sign_type = builder.sign_type;
-                return;
-            }
-        }
-        this.d = builder.d;
-        this.t = builder.t;
-        this.rank = builder.rank;
-        this.sign_type = builder.sign_type;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Calendar> {
-        public Integer d;
+
+        /* renamed from: d  reason: collision with root package name */
+        public Integer f68372d;
         public Integer rank;
         public Integer sign_type;
         public String t;
@@ -61,12 +33,13 @@ public final class Calendar extends Message {
 
         public Builder(Calendar calendar) {
             super(calendar);
-            if (calendar != null) {
-                this.d = calendar.d;
-                this.t = calendar.t;
-                this.rank = calendar.rank;
-                this.sign_type = calendar.sign_type;
+            if (calendar == null) {
+                return;
             }
+            this.f68372d = calendar.f68371d;
+            this.t = calendar.t;
+            this.rank = calendar.rank;
+            this.sign_type = calendar.sign_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +47,41 @@ public final class Calendar extends Message {
         public Calendar build(boolean z) {
             return new Calendar(this, z);
         }
+    }
+
+    public Calendar(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.f68372d;
+            if (num == null) {
+                this.f68371d = DEFAULT_D;
+            } else {
+                this.f68371d = num;
+            }
+            String str = builder.t;
+            if (str == null) {
+                this.t = "";
+            } else {
+                this.t = str;
+            }
+            Integer num2 = builder.rank;
+            if (num2 == null) {
+                this.rank = DEFAULT_RANK;
+            } else {
+                this.rank = num2;
+            }
+            Integer num3 = builder.sign_type;
+            if (num3 == null) {
+                this.sign_type = DEFAULT_SIGN_TYPE;
+                return;
+            } else {
+                this.sign_type = num3;
+                return;
+            }
+        }
+        this.f68371d = builder.f68372d;
+        this.t = builder.t;
+        this.rank = builder.rank;
+        this.sign_type = builder.sign_type;
     }
 }

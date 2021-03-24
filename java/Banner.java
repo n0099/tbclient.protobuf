@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class Banner extends Message {
     public static final String DEFAULT_DESC = "";
     public static final Integer DEFAULT_ID = 0;
@@ -22,47 +22,7 @@ public final class Banner extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String url;
 
-    private Banner(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.desc == null) {
-                this.desc = "";
-            } else {
-                this.desc = builder.desc;
-            }
-            if (builder.pic == null) {
-                this.pic = "";
-            } else {
-                this.pic = builder.pic;
-            }
-            this.thread_info = builder.thread_info;
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-                return;
-            } else {
-                this.id = builder.id;
-                return;
-            }
-        }
-        this.name = builder.name;
-        this.desc = builder.desc;
-        this.pic = builder.pic;
-        this.thread_info = builder.thread_info;
-        this.url = builder.url;
-        this.id = builder.id;
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Banner> {
         public String desc;
         public Integer id;
@@ -76,14 +36,15 @@ public final class Banner extends Message {
 
         public Builder(Banner banner) {
             super(banner);
-            if (banner != null) {
-                this.name = banner.name;
-                this.desc = banner.desc;
-                this.pic = banner.pic;
-                this.thread_info = banner.thread_info;
-                this.url = banner.url;
-                this.id = banner.id;
+            if (banner == null) {
+                return;
             }
+            this.name = banner.name;
+            this.desc = banner.desc;
+            this.pic = banner.pic;
+            this.thread_info = banner.thread_info;
+            this.url = banner.url;
+            this.id = banner.id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -91,5 +52,50 @@ public final class Banner extends Message {
         public Banner build(boolean z) {
             return new Banner(this, z);
         }
+    }
+
+    public Banner(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.desc;
+            if (str2 == null) {
+                this.desc = "";
+            } else {
+                this.desc = str2;
+            }
+            String str3 = builder.pic;
+            if (str3 == null) {
+                this.pic = "";
+            } else {
+                this.pic = str3;
+            }
+            this.thread_info = builder.thread_info;
+            String str4 = builder.url;
+            if (str4 == null) {
+                this.url = "";
+            } else {
+                this.url = str4;
+            }
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+                return;
+            } else {
+                this.id = num;
+                return;
+            }
+        }
+        this.name = builder.name;
+        this.desc = builder.desc;
+        this.pic = builder.pic;
+        this.thread_info = builder.thread_info;
+        this.url = builder.url;
+        this.id = builder.id;
     }
 }

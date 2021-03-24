@@ -5,12 +5,12 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8793common;
+    public final CommonReq f68465common;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -33,63 +33,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_ST_TYPE = 0;
     public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8793common = builder.f8794common;
-            if (builder.kz == null) {
-                this.kz = DEFAULT_KZ;
-            } else {
-                this.kz = builder.kz;
-            }
-            if (builder.with_floor == null) {
-                this.with_floor = DEFAULT_WITH_FLOOR;
-            } else {
-                this.with_floor = builder.with_floor;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = immutableCopyOf(builder.post_id);
-            }
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.st_type == null) {
-                this.st_type = DEFAULT_ST_TYPE;
-            } else {
-                this.st_type = builder.st_type;
-            }
-            if (builder.is_comm_reverse == null) {
-                this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
-                return;
-            } else {
-                this.is_comm_reverse = builder.is_comm_reverse;
-                return;
-            }
-        }
-        this.f8793common = builder.f8794common;
-        this.kz = builder.kz;
-        this.with_floor = builder.with_floor;
-        this.post_id = immutableCopyOf(builder.post_id);
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.st_type = builder.st_type;
-        this.is_comm_reverse = builder.is_comm_reverse;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8794common;
+        public CommonReq f68466common;
         public Integer is_comm_reverse;
         public Long kz;
         public List<Long> post_id;
@@ -103,16 +51,17 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8794common = dataReq.f8793common;
-                this.kz = dataReq.kz;
-                this.with_floor = dataReq.with_floor;
-                this.post_id = DataReq.copyOf(dataReq.post_id);
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.st_type = dataReq.st_type;
-                this.is_comm_reverse = dataReq.is_comm_reverse;
+            if (dataReq == null) {
+                return;
             }
+            this.f68466common = dataReq.f68465common;
+            this.kz = dataReq.kz;
+            this.with_floor = dataReq.with_floor;
+            this.post_id = Message.copyOf(dataReq.post_id);
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.st_type = dataReq.st_type;
+            this.is_comm_reverse = dataReq.is_comm_reverse;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -120,5 +69,64 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68465common = builder.f68466common;
+            Long l = builder.kz;
+            if (l == null) {
+                this.kz = DEFAULT_KZ;
+            } else {
+                this.kz = l;
+            }
+            Integer num = builder.with_floor;
+            if (num == null) {
+                this.with_floor = DEFAULT_WITH_FLOOR;
+            } else {
+                this.with_floor = num;
+            }
+            List<Long> list = builder.post_id;
+            if (list == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = Message.immutableCopyOf(list);
+            }
+            Integer num2 = builder.scr_w;
+            if (num2 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num2;
+            }
+            Integer num3 = builder.scr_h;
+            if (num3 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num3;
+            }
+            Integer num4 = builder.st_type;
+            if (num4 == null) {
+                this.st_type = DEFAULT_ST_TYPE;
+            } else {
+                this.st_type = num4;
+            }
+            Integer num5 = builder.is_comm_reverse;
+            if (num5 == null) {
+                this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
+                return;
+            } else {
+                this.is_comm_reverse = num5;
+                return;
+            }
+        }
+        this.f68465common = builder.f68466common;
+        this.kz = builder.kz;
+        this.with_floor = builder.with_floor;
+        this.post_id = Message.immutableCopyOf(builder.post_id);
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.st_type = builder.st_type;
+        this.is_comm_reverse = builder.is_comm_reverse;
     }
 }

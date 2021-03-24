@@ -3,7 +3,7 @@ package tbclient.Userlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_PAGE_TAG = "";
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8975common;
+    public final CommonReq f68653common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer follow_type;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -25,52 +25,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FOLLOW_TYPE = 0;
     public static final Integer DEFAULT_LOAD_TYPE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8975common = builder.f8976common;
-            if (builder.page_tag == null) {
-                this.page_tag = "";
-            } else {
-                this.page_tag = builder.page_tag;
-            }
-            if (builder.last_req_unix == null) {
-                this.last_req_unix = DEFAULT_LAST_REQ_UNIX;
-            } else {
-                this.last_req_unix = builder.last_req_unix;
-            }
-            if (builder.follow_type == null) {
-                this.follow_type = DEFAULT_FOLLOW_TYPE;
-            } else {
-                this.follow_type = builder.follow_type;
-            }
-            if (builder.load_type == null) {
-                this.load_type = DEFAULT_LOAD_TYPE;
-            } else {
-                this.load_type = builder.load_type;
-            }
-            if (builder.ad_ext_params == null) {
-                this.ad_ext_params = "";
-                return;
-            } else {
-                this.ad_ext_params = builder.ad_ext_params;
-                return;
-            }
-        }
-        this.f8975common = builder.f8976common;
-        this.page_tag = builder.page_tag;
-        this.last_req_unix = builder.last_req_unix;
-        this.follow_type = builder.follow_type;
-        this.load_type = builder.load_type;
-        this.ad_ext_params = builder.ad_ext_params;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8976common;
+        public CommonReq f68654common;
         public Integer follow_type;
         public Long last_req_unix;
         public Integer load_type;
@@ -81,14 +41,15 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8976common = dataReq.f8975common;
-                this.page_tag = dataReq.page_tag;
-                this.last_req_unix = dataReq.last_req_unix;
-                this.follow_type = dataReq.follow_type;
-                this.load_type = dataReq.load_type;
-                this.ad_ext_params = dataReq.ad_ext_params;
+            if (dataReq == null) {
+                return;
             }
+            this.f68654common = dataReq.f68653common;
+            this.page_tag = dataReq.page_tag;
+            this.last_req_unix = dataReq.last_req_unix;
+            this.follow_type = dataReq.follow_type;
+            this.load_type = dataReq.load_type;
+            this.ad_ext_params = dataReq.ad_ext_params;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +57,50 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68653common = builder.f68654common;
+            String str = builder.page_tag;
+            if (str == null) {
+                this.page_tag = "";
+            } else {
+                this.page_tag = str;
+            }
+            Long l = builder.last_req_unix;
+            if (l == null) {
+                this.last_req_unix = DEFAULT_LAST_REQ_UNIX;
+            } else {
+                this.last_req_unix = l;
+            }
+            Integer num = builder.follow_type;
+            if (num == null) {
+                this.follow_type = DEFAULT_FOLLOW_TYPE;
+            } else {
+                this.follow_type = num;
+            }
+            Integer num2 = builder.load_type;
+            if (num2 == null) {
+                this.load_type = DEFAULT_LOAD_TYPE;
+            } else {
+                this.load_type = num2;
+            }
+            String str2 = builder.ad_ext_params;
+            if (str2 == null) {
+                this.ad_ext_params = "";
+                return;
+            } else {
+                this.ad_ext_params = str2;
+                return;
+            }
+        }
+        this.f68653common = builder.f68654common;
+        this.page_tag = builder.page_tag;
+        this.last_req_unix = builder.last_req_unix;
+        this.follow_type = builder.follow_type;
+        this.load_type = builder.load_type;
+        this.ad_ext_params = builder.ad_ext_params;
     }
 }

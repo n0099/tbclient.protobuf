@@ -2,7 +2,7 @@ package tbclient.LiveSquare;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class FunctionListInfo extends Message {
     public static final String DEFAULT_DESCRIBE = "";
     public static final String DEFAULT_ICON = "";
@@ -23,51 +23,7 @@ public final class FunctionListInfo extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Long DEFAULT_UPDATE_TIME = 0L;
 
-    private FunctionListInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.describe == null) {
-                this.describe = "";
-            } else {
-                this.describe = builder.describe;
-            }
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.icon == null) {
-                this.icon = "";
-                return;
-            } else {
-                this.icon = builder.icon;
-                return;
-            }
-        }
-        this.id = builder.id;
-        this.title = builder.title;
-        this.describe = builder.describe;
-        this.url = builder.url;
-        this.update_time = builder.update_time;
-        this.icon = builder.icon;
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<FunctionListInfo> {
         public String describe;
         public String icon;
@@ -81,14 +37,15 @@ public final class FunctionListInfo extends Message {
 
         public Builder(FunctionListInfo functionListInfo) {
             super(functionListInfo);
-            if (functionListInfo != null) {
-                this.id = functionListInfo.id;
-                this.title = functionListInfo.title;
-                this.describe = functionListInfo.describe;
-                this.url = functionListInfo.url;
-                this.update_time = functionListInfo.update_time;
-                this.icon = functionListInfo.icon;
+            if (functionListInfo == null) {
+                return;
             }
+            this.id = functionListInfo.id;
+            this.title = functionListInfo.title;
+            this.describe = functionListInfo.describe;
+            this.url = functionListInfo.url;
+            this.update_time = functionListInfo.update_time;
+            this.icon = functionListInfo.icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +53,55 @@ public final class FunctionListInfo extends Message {
         public FunctionListInfo build(boolean z) {
             return new FunctionListInfo(this, z);
         }
+    }
+
+    public FunctionListInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = num;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.describe;
+            if (str2 == null) {
+                this.describe = "";
+            } else {
+                this.describe = str2;
+            }
+            String str3 = builder.url;
+            if (str3 == null) {
+                this.url = "";
+            } else {
+                this.url = str3;
+            }
+            Long l = builder.update_time;
+            if (l == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = l;
+            }
+            String str4 = builder.icon;
+            if (str4 == null) {
+                this.icon = "";
+                return;
+            } else {
+                this.icon = str4;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.title = builder.title;
+        this.describe = builder.describe;
+        this.url = builder.url;
+        this.update_time = builder.update_time;
+        this.icon = builder.icon;
     }
 }

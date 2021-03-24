@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class PkModule extends Message {
     public static final String DEFAULT_MODULE_NAME = "";
     public static final String DEFAULT_QUES_DESC = "";
@@ -29,56 +29,6 @@ public final class PkModule extends Message {
     public static final Long DEFAULT_PK_ID = 0L;
     public static final Long DEFAULT_USER_PK_ID = 0L;
 
-    private PkModule(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.module_name == null) {
-                this.module_name = "";
-            } else {
-                this.module_name = builder.module_name;
-            }
-            if (builder.ques_desc == null) {
-                this.ques_desc = "";
-            } else {
-                this.ques_desc = builder.ques_desc;
-            }
-            this.pk_1 = builder.pk_1;
-            this.pk_2 = builder.pk_2;
-            this.pk_3 = builder.pk_3;
-            if (builder.pk_type == null) {
-                this.pk_type = DEFAULT_PK_TYPE;
-            } else {
-                this.pk_type = builder.pk_type;
-            }
-            if (builder.user_pk_index == null) {
-                this.user_pk_index = DEFAULT_USER_PK_INDEX;
-            } else {
-                this.user_pk_index = builder.user_pk_index;
-            }
-            if (builder.pk_id == null) {
-                this.pk_id = DEFAULT_PK_ID;
-            } else {
-                this.pk_id = builder.pk_id;
-            }
-            if (builder.user_pk_id == null) {
-                this.user_pk_id = DEFAULT_USER_PK_ID;
-                return;
-            } else {
-                this.user_pk_id = builder.user_pk_id;
-                return;
-            }
-        }
-        this.module_name = builder.module_name;
-        this.ques_desc = builder.ques_desc;
-        this.pk_1 = builder.pk_1;
-        this.pk_2 = builder.pk_2;
-        this.pk_3 = builder.pk_3;
-        this.pk_type = builder.pk_type;
-        this.user_pk_index = builder.user_pk_index;
-        this.pk_id = builder.pk_id;
-        this.user_pk_id = builder.user_pk_id;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PkModule> {
         public String module_name;
@@ -96,17 +46,18 @@ public final class PkModule extends Message {
 
         public Builder(PkModule pkModule) {
             super(pkModule);
-            if (pkModule != null) {
-                this.module_name = pkModule.module_name;
-                this.ques_desc = pkModule.ques_desc;
-                this.pk_1 = pkModule.pk_1;
-                this.pk_2 = pkModule.pk_2;
-                this.pk_3 = pkModule.pk_3;
-                this.pk_type = pkModule.pk_type;
-                this.user_pk_index = pkModule.user_pk_index;
-                this.pk_id = pkModule.pk_id;
-                this.user_pk_id = pkModule.user_pk_id;
+            if (pkModule == null) {
+                return;
             }
+            this.module_name = pkModule.module_name;
+            this.ques_desc = pkModule.ques_desc;
+            this.pk_1 = pkModule.pk_1;
+            this.pk_2 = pkModule.pk_2;
+            this.pk_3 = pkModule.pk_3;
+            this.pk_type = pkModule.pk_type;
+            this.user_pk_index = pkModule.user_pk_index;
+            this.pk_id = pkModule.pk_id;
+            this.user_pk_id = pkModule.user_pk_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -114,5 +65,61 @@ public final class PkModule extends Message {
         public PkModule build(boolean z) {
             return new PkModule(this, z);
         }
+    }
+
+    public PkModule(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.module_name;
+            if (str == null) {
+                this.module_name = "";
+            } else {
+                this.module_name = str;
+            }
+            String str2 = builder.ques_desc;
+            if (str2 == null) {
+                this.ques_desc = "";
+            } else {
+                this.ques_desc = str2;
+            }
+            this.pk_1 = builder.pk_1;
+            this.pk_2 = builder.pk_2;
+            this.pk_3 = builder.pk_3;
+            Integer num = builder.pk_type;
+            if (num == null) {
+                this.pk_type = DEFAULT_PK_TYPE;
+            } else {
+                this.pk_type = num;
+            }
+            Integer num2 = builder.user_pk_index;
+            if (num2 == null) {
+                this.user_pk_index = DEFAULT_USER_PK_INDEX;
+            } else {
+                this.user_pk_index = num2;
+            }
+            Long l = builder.pk_id;
+            if (l == null) {
+                this.pk_id = DEFAULT_PK_ID;
+            } else {
+                this.pk_id = l;
+            }
+            Long l2 = builder.user_pk_id;
+            if (l2 == null) {
+                this.user_pk_id = DEFAULT_USER_PK_ID;
+                return;
+            } else {
+                this.user_pk_id = l2;
+                return;
+            }
+        }
+        this.module_name = builder.module_name;
+        this.ques_desc = builder.ques_desc;
+        this.pk_1 = builder.pk_1;
+        this.pk_2 = builder.pk_2;
+        this.pk_3 = builder.pk_3;
+        this.pk_type = builder.pk_type;
+        this.user_pk_index = builder.user_pk_index;
+        this.pk_id = builder.pk_id;
+        this.user_pk_id = builder.user_pk_id;
     }
 }

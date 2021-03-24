@@ -3,23 +3,12 @@ package tbclient.GodFollowRecommend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class GodFollowRecommendResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
-
-    private GodFollowRecommendResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GodFollowRecommendResIdl> {
@@ -31,10 +20,11 @@ public final class GodFollowRecommendResIdl extends Message {
 
         public Builder(GodFollowRecommendResIdl godFollowRecommendResIdl) {
             super(godFollowRecommendResIdl);
-            if (godFollowRecommendResIdl != null) {
-                this.error = godFollowRecommendResIdl.error;
-                this.data = godFollowRecommendResIdl.data;
+            if (godFollowRecommendResIdl == null) {
+                return;
             }
+            this.error = godFollowRecommendResIdl.error;
+            this.data = godFollowRecommendResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class GodFollowRecommendResIdl extends Message {
         public GodFollowRecommendResIdl build(boolean z) {
             return new GodFollowRecommendResIdl(this, z);
         }
+    }
+
+    public GodFollowRecommendResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

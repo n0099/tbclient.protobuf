@@ -3,12 +3,12 @@ package tbclient.DoDailyTask;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8679common;
+    public final CommonReq f68343common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long task_id;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -16,33 +16,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_TASK_ID = 0L;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8679common = builder.f8680common;
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.task_id == null) {
-                this.task_id = DEFAULT_TASK_ID;
-                return;
-            } else {
-                this.task_id = builder.task_id;
-                return;
-            }
-        }
-        this.f8679common = builder.f8680common;
-        this.user_id = builder.user_id;
-        this.task_id = builder.task_id;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8680common;
+        public CommonReq f68344common;
         public Long task_id;
         public Long user_id;
 
@@ -51,11 +29,12 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8680common = dataReq.f8679common;
-                this.user_id = dataReq.user_id;
-                this.task_id = dataReq.task_id;
+            if (dataReq == null) {
+                return;
             }
+            this.f68344common = dataReq.f68343common;
+            this.user_id = dataReq.user_id;
+            this.task_id = dataReq.task_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +42,29 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68343common = builder.f68344common;
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            Long l2 = builder.task_id;
+            if (l2 == null) {
+                this.task_id = DEFAULT_TASK_ID;
+                return;
+            } else {
+                this.task_id = l2;
+                return;
+            }
+        }
+        this.f68343common = builder.f68344common;
+        this.user_id = builder.user_id;
+        this.task_id = builder.task_id;
     }
 }

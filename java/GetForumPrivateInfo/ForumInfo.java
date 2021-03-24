@@ -2,7 +2,7 @@ package tbclient.GetForumPrivateInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -20,44 +20,6 @@ public final class ForumInfo extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_LEVEL_ID = 0;
 
-    private ForumInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.level_id == null) {
-                this.level_id = DEFAULT_LEVEL_ID;
-            } else {
-                this.level_id = builder.level_id;
-            }
-            if (builder.is_hide == null) {
-                this.is_hide = "";
-                return;
-            } else {
-                this.is_hide = builder.is_hide;
-                return;
-            }
-        }
-        this.forum_id = builder.forum_id;
-        this.forum_name = builder.forum_name;
-        this.avatar = builder.avatar;
-        this.level_id = builder.level_id;
-        this.is_hide = builder.is_hide;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String avatar;
@@ -71,13 +33,14 @@ public final class ForumInfo extends Message {
 
         public Builder(ForumInfo forumInfo) {
             super(forumInfo);
-            if (forumInfo != null) {
-                this.forum_id = forumInfo.forum_id;
-                this.forum_name = forumInfo.forum_name;
-                this.avatar = forumInfo.avatar;
-                this.level_id = forumInfo.level_id;
-                this.is_hide = forumInfo.is_hide;
+            if (forumInfo == null) {
+                return;
             }
+            this.forum_id = forumInfo.forum_id;
+            this.forum_name = forumInfo.forum_name;
+            this.avatar = forumInfo.avatar;
+            this.level_id = forumInfo.level_id;
+            this.is_hide = forumInfo.is_hide;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class ForumInfo extends Message {
         public ForumInfo build(boolean z) {
             return new ForumInfo(this, z);
         }
+    }
+
+    public ForumInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            String str2 = builder.avatar;
+            if (str2 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str2;
+            }
+            Integer num = builder.level_id;
+            if (num == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num;
+            }
+            String str3 = builder.is_hide;
+            if (str3 == null) {
+                this.is_hide = "";
+                return;
+            } else {
+                this.is_hide = str3;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.avatar = builder.avatar;
+        this.level_id = builder.level_id;
+        this.is_hide = builder.is_hide;
     }
 }

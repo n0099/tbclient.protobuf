@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PersonalForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -23,51 +23,7 @@ public final class PersonalForum extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_IS_LIKE = 0;
 
-    private PersonalForum(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.is_like == null) {
-                this.is_like = DEFAULT_IS_LIKE;
-            } else {
-                this.is_like = builder.is_like;
-            }
-            if (builder.weight == null) {
-                this.weight = "";
-            } else {
-                this.weight = builder.weight;
-            }
-            if (builder.recom_reason == null) {
-                this.recom_reason = "";
-                return;
-            } else {
-                this.recom_reason = builder.recom_reason;
-                return;
-            }
-        }
-        this.forum_id = builder.forum_id;
-        this.forum_name = builder.forum_name;
-        this.avatar = builder.avatar;
-        this.is_like = builder.is_like;
-        this.weight = builder.weight;
-        this.recom_reason = builder.recom_reason;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PersonalForum> {
         public String avatar;
         public Long forum_id;
@@ -81,14 +37,15 @@ public final class PersonalForum extends Message {
 
         public Builder(PersonalForum personalForum) {
             super(personalForum);
-            if (personalForum != null) {
-                this.forum_id = personalForum.forum_id;
-                this.forum_name = personalForum.forum_name;
-                this.avatar = personalForum.avatar;
-                this.is_like = personalForum.is_like;
-                this.weight = personalForum.weight;
-                this.recom_reason = personalForum.recom_reason;
+            if (personalForum == null) {
+                return;
             }
+            this.forum_id = personalForum.forum_id;
+            this.forum_name = personalForum.forum_name;
+            this.avatar = personalForum.avatar;
+            this.is_like = personalForum.is_like;
+            this.weight = personalForum.weight;
+            this.recom_reason = personalForum.recom_reason;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +53,55 @@ public final class PersonalForum extends Message {
         public PersonalForum build(boolean z) {
             return new PersonalForum(this, z);
         }
+    }
+
+    public PersonalForum(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            String str2 = builder.avatar;
+            if (str2 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str2;
+            }
+            Integer num = builder.is_like;
+            if (num == null) {
+                this.is_like = DEFAULT_IS_LIKE;
+            } else {
+                this.is_like = num;
+            }
+            String str3 = builder.weight;
+            if (str3 == null) {
+                this.weight = "";
+            } else {
+                this.weight = str3;
+            }
+            String str4 = builder.recom_reason;
+            if (str4 == null) {
+                this.recom_reason = "";
+                return;
+            } else {
+                this.recom_reason = str4;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.avatar = builder.avatar;
+        this.is_like = builder.is_like;
+        this.weight = builder.weight;
+        this.recom_reason = builder.recom_reason;
     }
 }

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ThemeColorInfo extends Message {
     @ProtoField(tag = 3)
     public final ThemeElement dark;
@@ -11,20 +11,7 @@ public final class ThemeColorInfo extends Message {
     @ProtoField(tag = 2)
     public final ThemeElement night;
 
-    private ThemeColorInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.day = builder.day;
-            this.night = builder.night;
-            this.dark = builder.dark;
-            return;
-        }
-        this.day = builder.day;
-        this.night = builder.night;
-        this.dark = builder.dark;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThemeColorInfo> {
         public ThemeElement dark;
         public ThemeElement day;
@@ -35,11 +22,12 @@ public final class ThemeColorInfo extends Message {
 
         public Builder(ThemeColorInfo themeColorInfo) {
             super(themeColorInfo);
-            if (themeColorInfo != null) {
-                this.day = themeColorInfo.day;
-                this.night = themeColorInfo.night;
-                this.dark = themeColorInfo.dark;
+            if (themeColorInfo == null) {
+                return;
             }
+            this.day = themeColorInfo.day;
+            this.night = themeColorInfo.night;
+            this.dark = themeColorInfo.dark;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -47,5 +35,18 @@ public final class ThemeColorInfo extends Message {
         public ThemeColorInfo build(boolean z) {
             return new ThemeColorInfo(this, z);
         }
+    }
+
+    public ThemeColorInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.day = builder.day;
+            this.night = builder.night;
+            this.dark = builder.dark;
+            return;
+        }
+        this.day = builder.day;
+        this.night = builder.night;
+        this.dark = builder.dark;
     }
 }

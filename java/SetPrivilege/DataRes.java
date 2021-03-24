@@ -2,27 +2,13 @@ package tbclient.SetPrivilege;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_FIELD_TEXT = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String field_text;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.field_text == null) {
-                this.field_text = "";
-                return;
-            } else {
-                this.field_text = builder.field_text;
-                return;
-            }
-        }
-        this.field_text = builder.field_text;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String field_text;
 
@@ -31,9 +17,10 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.field_text = dataRes.field_text;
+            if (dataRes == null) {
+                return;
             }
+            this.field_text = dataRes.field_text;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -41,5 +28,20 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.field_text;
+            if (str == null) {
+                this.field_text = "";
+                return;
+            } else {
+                this.field_text = str;
+                return;
+            }
+        }
+        this.field_text = builder.field_text;
     }
 }

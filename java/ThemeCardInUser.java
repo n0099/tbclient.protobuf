@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ThemeCardInUser extends Message {
     public static final String DEFAULT_COORDINATE = "";
     public static final String DEFAULT_IMG_ANDROID = "";
@@ -20,45 +20,7 @@ public final class ThemeCardInUser extends Message {
     public static final Long DEFAULT_PROPS_ID = 0L;
     public static final Integer DEFAULT_LEVEL = 0;
 
-    private ThemeCardInUser(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.props_id == null) {
-                this.props_id = DEFAULT_PROPS_ID;
-            } else {
-                this.props_id = builder.props_id;
-            }
-            if (builder.img_ios == null) {
-                this.img_ios = "";
-            } else {
-                this.img_ios = builder.img_ios;
-            }
-            if (builder.coordinate == null) {
-                this.coordinate = "";
-            } else {
-                this.coordinate = builder.coordinate;
-            }
-            if (builder.img_android == null) {
-                this.img_android = "";
-            } else {
-                this.img_android = builder.img_android;
-            }
-            if (builder.level == null) {
-                this.level = DEFAULT_LEVEL;
-                return;
-            } else {
-                this.level = builder.level;
-                return;
-            }
-        }
-        this.props_id = builder.props_id;
-        this.img_ios = builder.img_ios;
-        this.coordinate = builder.coordinate;
-        this.img_android = builder.img_android;
-        this.level = builder.level;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThemeCardInUser> {
         public String coordinate;
         public String img_android;
@@ -71,13 +33,14 @@ public final class ThemeCardInUser extends Message {
 
         public Builder(ThemeCardInUser themeCardInUser) {
             super(themeCardInUser);
-            if (themeCardInUser != null) {
-                this.props_id = themeCardInUser.props_id;
-                this.img_ios = themeCardInUser.img_ios;
-                this.coordinate = themeCardInUser.coordinate;
-                this.img_android = themeCardInUser.img_android;
-                this.level = themeCardInUser.level;
+            if (themeCardInUser == null) {
+                return;
             }
+            this.props_id = themeCardInUser.props_id;
+            this.img_ios = themeCardInUser.img_ios;
+            this.coordinate = themeCardInUser.coordinate;
+            this.img_android = themeCardInUser.img_android;
+            this.level = themeCardInUser.level;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class ThemeCardInUser extends Message {
         public ThemeCardInUser build(boolean z) {
             return new ThemeCardInUser(this, z);
         }
+    }
+
+    public ThemeCardInUser(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.props_id;
+            if (l == null) {
+                this.props_id = DEFAULT_PROPS_ID;
+            } else {
+                this.props_id = l;
+            }
+            String str = builder.img_ios;
+            if (str == null) {
+                this.img_ios = "";
+            } else {
+                this.img_ios = str;
+            }
+            String str2 = builder.coordinate;
+            if (str2 == null) {
+                this.coordinate = "";
+            } else {
+                this.coordinate = str2;
+            }
+            String str3 = builder.img_android;
+            if (str3 == null) {
+                this.img_android = "";
+            } else {
+                this.img_android = str3;
+            }
+            Integer num = builder.level;
+            if (num == null) {
+                this.level = DEFAULT_LEVEL;
+                return;
+            } else {
+                this.level = num;
+                return;
+            }
+        }
+        this.props_id = builder.props_id;
+        this.img_ios = builder.img_ios;
+        this.coordinate = builder.coordinate;
+        this.img_android = builder.img_android;
+        this.level = builder.level;
     }
 }

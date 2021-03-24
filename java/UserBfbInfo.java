@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class UserBfbInfo extends Message {
     public static final String DEFAULT_BFB_URL = "";
     public static final String DEFAULT_MASTE_URL = "";
@@ -19,40 +19,7 @@ public final class UserBfbInfo extends Message {
     public static final Integer DEFAULT_ACTIVITY_STATUS = 0;
     public static final Integer DEFAULT_RES_NO = 0;
 
-    private UserBfbInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.activity_status == null) {
-                this.activity_status = DEFAULT_ACTIVITY_STATUS;
-            } else {
-                this.activity_status = builder.activity_status;
-            }
-            if (builder.bfb_url == null) {
-                this.bfb_url = "";
-            } else {
-                this.bfb_url = builder.bfb_url;
-            }
-            if (builder.maste_url == null) {
-                this.maste_url = "";
-            } else {
-                this.maste_url = builder.maste_url;
-            }
-            if (builder.res_no == null) {
-                this.res_no = DEFAULT_RES_NO;
-            } else {
-                this.res_no = builder.res_no;
-            }
-            this.android_bfb_sdk = builder.android_bfb_sdk;
-            return;
-        }
-        this.activity_status = builder.activity_status;
-        this.bfb_url = builder.bfb_url;
-        this.maste_url = builder.maste_url;
-        this.res_no = builder.res_no;
-        this.android_bfb_sdk = builder.android_bfb_sdk;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserBfbInfo> {
         public Integer activity_status;
         public AndroidBfbSdk android_bfb_sdk;
@@ -65,13 +32,14 @@ public final class UserBfbInfo extends Message {
 
         public Builder(UserBfbInfo userBfbInfo) {
             super(userBfbInfo);
-            if (userBfbInfo != null) {
-                this.activity_status = userBfbInfo.activity_status;
-                this.bfb_url = userBfbInfo.bfb_url;
-                this.maste_url = userBfbInfo.maste_url;
-                this.res_no = userBfbInfo.res_no;
-                this.android_bfb_sdk = userBfbInfo.android_bfb_sdk;
+            if (userBfbInfo == null) {
+                return;
             }
+            this.activity_status = userBfbInfo.activity_status;
+            this.bfb_url = userBfbInfo.bfb_url;
+            this.maste_url = userBfbInfo.maste_url;
+            this.res_no = userBfbInfo.res_no;
+            this.android_bfb_sdk = userBfbInfo.android_bfb_sdk;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -79,5 +47,42 @@ public final class UserBfbInfo extends Message {
         public UserBfbInfo build(boolean z) {
             return new UserBfbInfo(this, z);
         }
+    }
+
+    public UserBfbInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.activity_status;
+            if (num == null) {
+                this.activity_status = DEFAULT_ACTIVITY_STATUS;
+            } else {
+                this.activity_status = num;
+            }
+            String str = builder.bfb_url;
+            if (str == null) {
+                this.bfb_url = "";
+            } else {
+                this.bfb_url = str;
+            }
+            String str2 = builder.maste_url;
+            if (str2 == null) {
+                this.maste_url = "";
+            } else {
+                this.maste_url = str2;
+            }
+            Integer num2 = builder.res_no;
+            if (num2 == null) {
+                this.res_no = DEFAULT_RES_NO;
+            } else {
+                this.res_no = num2;
+            }
+            this.android_bfb_sdk = builder.android_bfb_sdk;
+            return;
+        }
+        this.activity_status = builder.activity_status;
+        this.bfb_url = builder.bfb_url;
+        this.maste_url = builder.maste_url;
+        this.res_no = builder.res_no;
+        this.android_bfb_sdk = builder.android_bfb_sdk;
     }
 }

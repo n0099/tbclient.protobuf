@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Size extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer height;
@@ -11,27 +11,7 @@ public final class Size extends Message {
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
 
-    private Size(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.width == null) {
-                this.width = DEFAULT_WIDTH;
-            } else {
-                this.width = builder.width;
-            }
-            if (builder.height == null) {
-                this.height = DEFAULT_HEIGHT;
-                return;
-            } else {
-                this.height = builder.height;
-                return;
-            }
-        }
-        this.width = builder.width;
-        this.height = builder.height;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Size> {
         public Integer height;
         public Integer width;
@@ -41,10 +21,11 @@ public final class Size extends Message {
 
         public Builder(Size size) {
             super(size);
-            if (size != null) {
-                this.width = size.width;
-                this.height = size.height;
+            if (size == null) {
+                return;
             }
+            this.width = size.width;
+            this.height = size.height;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class Size extends Message {
         public Size build(boolean z) {
             return new Size(this, z);
         }
+    }
+
+    public Size(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.width;
+            if (num == null) {
+                this.width = DEFAULT_WIDTH;
+            } else {
+                this.width = num;
+            }
+            Integer num2 = builder.height;
+            if (num2 == null) {
+                this.height = DEFAULT_HEIGHT;
+                return;
+            } else {
+                this.height = num2;
+                return;
+            }
+        }
+        this.width = builder.width;
+        this.height = builder.height;
     }
 }

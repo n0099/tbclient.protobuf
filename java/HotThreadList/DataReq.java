@@ -3,46 +3,24 @@ package tbclient.HotThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TAB_CODE = "";
     public static final String DEFAULT_TAB_ID = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8851common;
+    public final CommonReq f68525common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String tab_code;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tab_id;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8851common = builder.f8852common;
-            if (builder.tab_id == null) {
-                this.tab_id = "";
-            } else {
-                this.tab_id = builder.tab_id;
-            }
-            if (builder.tab_code == null) {
-                this.tab_code = "";
-                return;
-            } else {
-                this.tab_code = builder.tab_code;
-                return;
-            }
-        }
-        this.f8851common = builder.f8852common;
-        this.tab_id = builder.tab_id;
-        this.tab_code = builder.tab_code;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8852common;
+        public CommonReq f68526common;
         public String tab_code;
         public String tab_id;
 
@@ -51,11 +29,12 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8852common = dataReq.f8851common;
-                this.tab_id = dataReq.tab_id;
-                this.tab_code = dataReq.tab_code;
+            if (dataReq == null) {
+                return;
             }
+            this.f68526common = dataReq.f68525common;
+            this.tab_id = dataReq.tab_id;
+            this.tab_code = dataReq.tab_code;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +42,29 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68525common = builder.f68526common;
+            String str = builder.tab_id;
+            if (str == null) {
+                this.tab_id = "";
+            } else {
+                this.tab_id = str;
+            }
+            String str2 = builder.tab_code;
+            if (str2 == null) {
+                this.tab_code = "";
+                return;
+            } else {
+                this.tab_code = str2;
+                return;
+            }
+        }
+        this.f68525common = builder.f68526common;
+        this.tab_id = builder.tab_id;
+        this.tab_code = builder.tab_code;
     }
 }

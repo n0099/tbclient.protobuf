@@ -2,27 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ShowData extends Message {
     public static final Integer DEFAULT_SHOW = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer show;
 
-    private ShowData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.show == null) {
-                this.show = DEFAULT_SHOW;
-                return;
-            } else {
-                this.show = builder.show;
-                return;
-            }
-        }
-        this.show = builder.show;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ShowData> {
         public Integer show;
 
@@ -31,9 +17,10 @@ public final class ShowData extends Message {
 
         public Builder(ShowData showData) {
             super(showData);
-            if (showData != null) {
-                this.show = showData.show;
+            if (showData == null) {
+                return;
             }
+            this.show = showData.show;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -41,5 +28,20 @@ public final class ShowData extends Message {
         public ShowData build(boolean z) {
             return new ShowData(this, z);
         }
+    }
+
+    public ShowData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.show;
+            if (num == null) {
+                this.show = DEFAULT_SHOW;
+                return;
+            } else {
+                this.show = num;
+                return;
+            }
+        }
+        this.show = builder.show;
     }
 }

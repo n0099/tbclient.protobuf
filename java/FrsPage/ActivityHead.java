@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ActivityHead extends Message {
     public static final String DEFAULT_ACTIVITY_TITLE = "";
     public static final Integer DEFAULT_ACTIVITY_TYPE = 0;
@@ -21,41 +21,7 @@ public final class ActivityHead extends Message {
     @ProtoField(tag = 4)
     public final Size top_size;
 
-    private ActivityHead(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.activity_type == null) {
-                this.activity_type = DEFAULT_ACTIVITY_TYPE;
-            } else {
-                this.activity_type = builder.activity_type;
-            }
-            if (builder.activity_title == null) {
-                this.activity_title = "";
-            } else {
-                this.activity_title = builder.activity_title;
-            }
-            if (builder.head_imgs == null) {
-                this.head_imgs = DEFAULT_HEAD_IMGS;
-            } else {
-                this.head_imgs = immutableCopyOf(builder.head_imgs);
-            }
-            this.top_size = builder.top_size;
-            if (builder.obj_id == null) {
-                this.obj_id = "";
-                return;
-            } else {
-                this.obj_id = builder.obj_id;
-                return;
-            }
-        }
-        this.activity_type = builder.activity_type;
-        this.activity_title = builder.activity_title;
-        this.head_imgs = immutableCopyOf(builder.head_imgs);
-        this.top_size = builder.top_size;
-        this.obj_id = builder.obj_id;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ActivityHead> {
         public String activity_title;
         public Integer activity_type;
@@ -68,13 +34,14 @@ public final class ActivityHead extends Message {
 
         public Builder(ActivityHead activityHead) {
             super(activityHead);
-            if (activityHead != null) {
-                this.activity_type = activityHead.activity_type;
-                this.activity_title = activityHead.activity_title;
-                this.head_imgs = ActivityHead.copyOf(activityHead.head_imgs);
-                this.top_size = activityHead.top_size;
-                this.obj_id = activityHead.obj_id;
+            if (activityHead == null) {
+                return;
             }
+            this.activity_type = activityHead.activity_type;
+            this.activity_title = activityHead.activity_title;
+            this.head_imgs = Message.copyOf(activityHead.head_imgs);
+            this.top_size = activityHead.top_size;
+            this.obj_id = activityHead.obj_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -82,5 +49,43 @@ public final class ActivityHead extends Message {
         public ActivityHead build(boolean z) {
             return new ActivityHead(this, z);
         }
+    }
+
+    public ActivityHead(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.activity_type;
+            if (num == null) {
+                this.activity_type = DEFAULT_ACTIVITY_TYPE;
+            } else {
+                this.activity_type = num;
+            }
+            String str = builder.activity_title;
+            if (str == null) {
+                this.activity_title = "";
+            } else {
+                this.activity_title = str;
+            }
+            List<HeadImgs> list = builder.head_imgs;
+            if (list == null) {
+                this.head_imgs = DEFAULT_HEAD_IMGS;
+            } else {
+                this.head_imgs = Message.immutableCopyOf(list);
+            }
+            this.top_size = builder.top_size;
+            String str2 = builder.obj_id;
+            if (str2 == null) {
+                this.obj_id = "";
+                return;
+            } else {
+                this.obj_id = str2;
+                return;
+            }
+        }
+        this.activity_type = builder.activity_type;
+        this.activity_title = builder.activity_title;
+        this.head_imgs = Message.immutableCopyOf(builder.head_imgs);
+        this.top_size = builder.top_size;
+        this.obj_id = builder.obj_id;
     }
 }

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class NoticeMask extends Message {
     public static final Integer DEFAULT_ATTR_TYPE = 0;
     public static final String DEFAULT_ATTR_VALUE = "";
@@ -11,27 +11,7 @@ public final class NoticeMask extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String attr_value;
 
-    private NoticeMask(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.attr_type == null) {
-                this.attr_type = DEFAULT_ATTR_TYPE;
-            } else {
-                this.attr_type = builder.attr_type;
-            }
-            if (builder.attr_value == null) {
-                this.attr_value = "";
-                return;
-            } else {
-                this.attr_value = builder.attr_value;
-                return;
-            }
-        }
-        this.attr_type = builder.attr_type;
-        this.attr_value = builder.attr_value;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<NoticeMask> {
         public Integer attr_type;
         public String attr_value;
@@ -41,10 +21,11 @@ public final class NoticeMask extends Message {
 
         public Builder(NoticeMask noticeMask) {
             super(noticeMask);
-            if (noticeMask != null) {
-                this.attr_type = noticeMask.attr_type;
-                this.attr_value = noticeMask.attr_value;
+            if (noticeMask == null) {
+                return;
             }
+            this.attr_type = noticeMask.attr_type;
+            this.attr_value = noticeMask.attr_value;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class NoticeMask extends Message {
         public NoticeMask build(boolean z) {
             return new NoticeMask(this, z);
         }
+    }
+
+    public NoticeMask(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.attr_type;
+            if (num == null) {
+                this.attr_type = DEFAULT_ATTR_TYPE;
+            } else {
+                this.attr_type = num;
+            }
+            String str = builder.attr_value;
+            if (str == null) {
+                this.attr_value = "";
+                return;
+            } else {
+                this.attr_value = str;
+                return;
+            }
+        }
+        this.attr_type = builder.attr_type;
+        this.attr_value = builder.attr_value;
     }
 }

@@ -4,27 +4,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ThreadPicList extends Message {
     public static final String DEFAULT_PIC = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic;
 
-    private ThreadPicList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pic == null) {
-                this.pic = "";
-                return;
-            } else {
-                this.pic = builder.pic;
-                return;
-            }
-        }
-        this.pic = builder.pic;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThreadPicList> {
         public String pic;
 
@@ -33,9 +19,10 @@ public final class ThreadPicList extends Message {
 
         public Builder(ThreadPicList threadPicList) {
             super(threadPicList);
-            if (threadPicList != null) {
-                this.pic = threadPicList.pic;
+            if (threadPicList == null) {
+                return;
             }
+            this.pic = threadPicList.pic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -61,10 +48,24 @@ public final class ThreadPicList extends Message {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("pic", threadPicList.pic);
-            return jSONObject;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return jSONObject;
+        } catch (JSONException e2) {
+            e2.printStackTrace();
         }
+        return jSONObject;
+    }
+
+    public ThreadPicList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.pic;
+            if (str == null) {
+                this.pic = "";
+                return;
+            } else {
+                this.pic = str;
+                return;
+            }
+        }
+        this.pic = builder.pic;
     }
 }

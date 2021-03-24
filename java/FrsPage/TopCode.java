@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TopCode extends Message {
     public static final String DEFAULT_CODE_LINK = "";
     public static final String DEFAULT_GAME_LINK = "";
@@ -32,69 +32,7 @@ public final class TopCode extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String type_text;
 
-    private TopCode(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.img_url == null) {
-                this.img_url = "";
-            } else {
-                this.img_url = builder.img_url;
-            }
-            if (builder.game_link == null) {
-                this.game_link = "";
-            } else {
-                this.game_link = builder.game_link;
-            }
-            if (builder.summary == null) {
-                this.summary = "";
-            } else {
-                this.summary = builder.summary;
-            }
-            if (builder.code_link == null) {
-                this.code_link = "";
-            } else {
-                this.code_link = builder.code_link;
-            }
-            if (builder.get_type == null) {
-                this.get_type = DEFAULT_GET_TYPE;
-            } else {
-                this.get_type = builder.get_type;
-            }
-            if (builder.surplusgift == null) {
-                this.surplusgift = "";
-            } else {
-                this.surplusgift = builder.surplusgift;
-            }
-            if (builder.giftworth == null) {
-                this.giftworth = DEFAULT_GIFTWORTH;
-            } else {
-                this.giftworth = builder.giftworth;
-            }
-            if (builder.type_text == null) {
-                this.type_text = "";
-            } else {
-                this.type_text = builder.type_text;
-            }
-            if (builder.subtitle == null) {
-                this.subtitle = "";
-                return;
-            } else {
-                this.subtitle = builder.subtitle;
-                return;
-            }
-        }
-        this.img_url = builder.img_url;
-        this.game_link = builder.game_link;
-        this.summary = builder.summary;
-        this.code_link = builder.code_link;
-        this.get_type = builder.get_type;
-        this.surplusgift = builder.surplusgift;
-        this.giftworth = builder.giftworth;
-        this.type_text = builder.type_text;
-        this.subtitle = builder.subtitle;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TopCode> {
         public String code_link;
         public String game_link;
@@ -111,17 +49,18 @@ public final class TopCode extends Message {
 
         public Builder(TopCode topCode) {
             super(topCode);
-            if (topCode != null) {
-                this.img_url = topCode.img_url;
-                this.game_link = topCode.game_link;
-                this.summary = topCode.summary;
-                this.code_link = topCode.code_link;
-                this.get_type = topCode.get_type;
-                this.surplusgift = topCode.surplusgift;
-                this.giftworth = topCode.giftworth;
-                this.type_text = topCode.type_text;
-                this.subtitle = topCode.subtitle;
+            if (topCode == null) {
+                return;
             }
+            this.img_url = topCode.img_url;
+            this.game_link = topCode.game_link;
+            this.summary = topCode.summary;
+            this.code_link = topCode.code_link;
+            this.get_type = topCode.get_type;
+            this.surplusgift = topCode.surplusgift;
+            this.giftworth = topCode.giftworth;
+            this.type_text = topCode.type_text;
+            this.subtitle = topCode.subtitle;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -129,5 +68,76 @@ public final class TopCode extends Message {
         public TopCode build(boolean z) {
             return new TopCode(this, z);
         }
+    }
+
+    public TopCode(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.img_url;
+            if (str == null) {
+                this.img_url = "";
+            } else {
+                this.img_url = str;
+            }
+            String str2 = builder.game_link;
+            if (str2 == null) {
+                this.game_link = "";
+            } else {
+                this.game_link = str2;
+            }
+            String str3 = builder.summary;
+            if (str3 == null) {
+                this.summary = "";
+            } else {
+                this.summary = str3;
+            }
+            String str4 = builder.code_link;
+            if (str4 == null) {
+                this.code_link = "";
+            } else {
+                this.code_link = str4;
+            }
+            Integer num = builder.get_type;
+            if (num == null) {
+                this.get_type = DEFAULT_GET_TYPE;
+            } else {
+                this.get_type = num;
+            }
+            String str5 = builder.surplusgift;
+            if (str5 == null) {
+                this.surplusgift = "";
+            } else {
+                this.surplusgift = str5;
+            }
+            Long l = builder.giftworth;
+            if (l == null) {
+                this.giftworth = DEFAULT_GIFTWORTH;
+            } else {
+                this.giftworth = l;
+            }
+            String str6 = builder.type_text;
+            if (str6 == null) {
+                this.type_text = "";
+            } else {
+                this.type_text = str6;
+            }
+            String str7 = builder.subtitle;
+            if (str7 == null) {
+                this.subtitle = "";
+                return;
+            } else {
+                this.subtitle = str7;
+                return;
+            }
+        }
+        this.img_url = builder.img_url;
+        this.game_link = builder.game_link;
+        this.summary = builder.summary;
+        this.code_link = builder.code_link;
+        this.get_type = builder.get_type;
+        this.surplusgift = builder.surplusgift;
+        this.giftworth = builder.giftworth;
+        this.type_text = builder.type_text;
+        this.subtitle = builder.subtitle;
     }
 }

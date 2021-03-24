@@ -2,7 +2,7 @@ package tbclient.RecommendFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class LbsInfo extends Message {
     public static final String DEFAULT_DISTANCE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -13,32 +13,6 @@ public final class LbsInfo extends Message {
     public final Long time;
     public static final Long DEFAULT_TIME = 0L;
     public static final Integer DEFAULT_IS_HIDE = 0;
-
-    private LbsInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.distance == null) {
-                this.distance = "";
-            } else {
-                this.distance = builder.distance;
-            }
-            if (builder.time == null) {
-                this.time = DEFAULT_TIME;
-            } else {
-                this.time = builder.time;
-            }
-            if (builder.is_hide == null) {
-                this.is_hide = DEFAULT_IS_HIDE;
-                return;
-            } else {
-                this.is_hide = builder.is_hide;
-                return;
-            }
-        }
-        this.distance = builder.distance;
-        this.time = builder.time;
-        this.is_hide = builder.is_hide;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<LbsInfo> {
@@ -51,11 +25,12 @@ public final class LbsInfo extends Message {
 
         public Builder(LbsInfo lbsInfo) {
             super(lbsInfo);
-            if (lbsInfo != null) {
-                this.distance = lbsInfo.distance;
-                this.time = lbsInfo.time;
-                this.is_hide = lbsInfo.is_hide;
+            if (lbsInfo == null) {
+                return;
             }
+            this.distance = lbsInfo.distance;
+            this.time = lbsInfo.time;
+            this.is_hide = lbsInfo.is_hide;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class LbsInfo extends Message {
         public LbsInfo build(boolean z) {
             return new LbsInfo(this, z);
         }
+    }
+
+    public LbsInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.distance;
+            if (str == null) {
+                this.distance = "";
+            } else {
+                this.distance = str;
+            }
+            Long l = builder.time;
+            if (l == null) {
+                this.time = DEFAULT_TIME;
+            } else {
+                this.time = l;
+            }
+            Integer num = builder.is_hide;
+            if (num == null) {
+                this.is_hide = DEFAULT_IS_HIDE;
+                return;
+            } else {
+                this.is_hide = num;
+                return;
+            }
+        }
+        this.distance = builder.distance;
+        this.time = builder.time;
+        this.is_hide = builder.is_hide;
     }
 }

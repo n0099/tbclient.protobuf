@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer has_more;
@@ -17,33 +17,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_HAS_MORE = 0;
     public static final Integer DEFAULT_IS_REFRESH = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.live == null) {
-                this.live = DEFAULT_LIVE;
-            } else {
-                this.live = immutableCopyOf(builder.live);
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-            } else {
-                this.has_more = builder.has_more;
-            }
-            if (builder.is_refresh == null) {
-                this.is_refresh = DEFAULT_IS_REFRESH;
-                return;
-            } else {
-                this.is_refresh = builder.is_refresh;
-                return;
-            }
-        }
-        this.live = immutableCopyOf(builder.live);
-        this.has_more = builder.has_more;
-        this.is_refresh = builder.is_refresh;
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer has_more;
         public Integer is_refresh;
@@ -54,11 +28,12 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.live = DataRes.copyOf(dataRes.live);
-                this.has_more = dataRes.has_more;
-                this.is_refresh = dataRes.is_refresh;
+            if (dataRes == null) {
+                return;
             }
+            this.live = Message.copyOf(dataRes.live);
+            this.has_more = dataRes.has_more;
+            this.is_refresh = dataRes.is_refresh;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -66,5 +41,34 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ThreadInfo> list = builder.live;
+            if (list == null) {
+                this.live = DEFAULT_LIVE;
+            } else {
+                this.live = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            Integer num2 = builder.is_refresh;
+            if (num2 == null) {
+                this.is_refresh = DEFAULT_IS_REFRESH;
+                return;
+            } else {
+                this.is_refresh = num2;
+                return;
+            }
+        }
+        this.live = Message.immutableCopyOf(builder.live);
+        this.has_more = builder.has_more;
+        this.is_refresh = builder.is_refresh;
     }
 }

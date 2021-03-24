@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AwardUser extends Message {
     public static final String DEFAULT_AWARD_NAME = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -17,39 +17,7 @@ public final class AwardUser extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_AWARD_TIME = 0;
 
-    private AwardUser(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.award_name == null) {
-                this.award_name = "";
-            } else {
-                this.award_name = builder.award_name;
-            }
-            if (builder.award_time == null) {
-                this.award_time = DEFAULT_AWARD_TIME;
-                return;
-            } else {
-                this.award_time = builder.award_time;
-                return;
-            }
-        }
-        this.user_id = builder.user_id;
-        this.user_name = builder.user_name;
-        this.award_name = builder.award_name;
-        this.award_time = builder.award_time;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AwardUser> {
         public String award_name;
         public Integer award_time;
@@ -61,12 +29,13 @@ public final class AwardUser extends Message {
 
         public Builder(AwardUser awardUser) {
             super(awardUser);
-            if (awardUser != null) {
-                this.user_id = awardUser.user_id;
-                this.user_name = awardUser.user_name;
-                this.award_name = awardUser.award_name;
-                this.award_time = awardUser.award_time;
+            if (awardUser == null) {
+                return;
             }
+            this.user_id = awardUser.user_id;
+            this.user_name = awardUser.user_name;
+            this.award_name = awardUser.award_name;
+            this.award_time = awardUser.award_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class AwardUser extends Message {
         public AwardUser build(boolean z) {
             return new AwardUser(this, z);
         }
+    }
+
+    public AwardUser(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.award_name;
+            if (str2 == null) {
+                this.award_name = "";
+            } else {
+                this.award_name = str2;
+            }
+            Integer num = builder.award_time;
+            if (num == null) {
+                this.award_time = DEFAULT_AWARD_TIME;
+                return;
+            } else {
+                this.award_time = num;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.user_name = builder.user_name;
+        this.award_name = builder.award_name;
+        this.award_time = builder.award_time;
     }
 }

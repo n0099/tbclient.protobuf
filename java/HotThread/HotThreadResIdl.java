@@ -3,23 +3,12 @@ package tbclient.HotThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class HotThreadResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
-
-    private HotThreadResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<HotThreadResIdl> {
@@ -31,10 +20,11 @@ public final class HotThreadResIdl extends Message {
 
         public Builder(HotThreadResIdl hotThreadResIdl) {
             super(hotThreadResIdl);
-            if (hotThreadResIdl != null) {
-                this.error = hotThreadResIdl.error;
-                this.data = hotThreadResIdl.data;
+            if (hotThreadResIdl == null) {
+                return;
             }
+            this.error = hotThreadResIdl.error;
+            this.data = hotThreadResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class HotThreadResIdl extends Message {
         public HotThreadResIdl build(boolean z) {
             return new HotThreadResIdl(this, z);
         }
+    }
+
+    public HotThreadResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

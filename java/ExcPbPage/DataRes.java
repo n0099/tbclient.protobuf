@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Post;
 import tbclient.User;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
@@ -18,29 +18,6 @@ public final class DataRes extends Message {
     public final UserInfo user_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<User> user_list;
-
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.thread_info = builder.thread_info;
-            if (builder.post_list == null) {
-                this.post_list = DEFAULT_POST_LIST;
-            } else {
-                this.post_list = immutableCopyOf(builder.post_list);
-            }
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-            }
-            this.user_info = builder.user_info;
-            return;
-        }
-        this.thread_info = builder.thread_info;
-        this.post_list = immutableCopyOf(builder.post_list);
-        this.user_list = immutableCopyOf(builder.user_list);
-        this.user_info = builder.user_info;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -54,12 +31,13 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.thread_info = dataRes.thread_info;
-                this.post_list = DataRes.copyOf(dataRes.post_list);
-                this.user_list = DataRes.copyOf(dataRes.user_list);
-                this.user_info = dataRes.user_info;
+            if (dataRes == null) {
+                return;
             }
+            this.thread_info = dataRes.thread_info;
+            this.post_list = Message.copyOf(dataRes.post_list);
+            this.user_list = Message.copyOf(dataRes.user_list);
+            this.user_info = dataRes.user_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -67,5 +45,30 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.thread_info = builder.thread_info;
+            List<Post> list = builder.post_list;
+            if (list == null) {
+                this.post_list = DEFAULT_POST_LIST;
+            } else {
+                this.post_list = Message.immutableCopyOf(list);
+            }
+            List<User> list2 = builder.user_list;
+            if (list2 == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list2);
+            }
+            this.user_info = builder.user_info;
+            return;
+        }
+        this.thread_info = builder.thread_info;
+        this.post_list = Message.immutableCopyOf(builder.post_list);
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.user_info = builder.user_info;
     }
 }

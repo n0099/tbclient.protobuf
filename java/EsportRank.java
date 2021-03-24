@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class EsportRank extends Message {
     public static final Integer DEFAULT_RANK = 0;
     public static final String DEFAULT_TEXT = "";
@@ -19,41 +19,7 @@ public final class EsportRank extends Message {
     @ProtoField(tag = 3)
     public final EsportUser user;
 
-    private EsportRank(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.rank == null) {
-                this.rank = DEFAULT_RANK;
-            } else {
-                this.rank = builder.rank;
-            }
-            this.user = builder.user;
-            if (builder.text == null) {
-                this.text = "";
-            } else {
-                this.text = builder.text;
-            }
-            if (builder.url == null) {
-                this.url = "";
-                return;
-            } else {
-                this.url = builder.url;
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.rank = builder.rank;
-        this.user = builder.user;
-        this.text = builder.text;
-        this.url = builder.url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<EsportRank> {
         public Integer rank;
         public String text;
@@ -66,13 +32,14 @@ public final class EsportRank extends Message {
 
         public Builder(EsportRank esportRank) {
             super(esportRank);
-            if (esportRank != null) {
-                this.title = esportRank.title;
-                this.rank = esportRank.rank;
-                this.user = esportRank.user;
-                this.text = esportRank.text;
-                this.url = esportRank.url;
+            if (esportRank == null) {
+                return;
             }
+            this.title = esportRank.title;
+            this.rank = esportRank.rank;
+            this.user = esportRank.user;
+            this.text = esportRank.text;
+            this.url = esportRank.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -80,5 +47,43 @@ public final class EsportRank extends Message {
         public EsportRank build(boolean z) {
             return new EsportRank(this, z);
         }
+    }
+
+    public EsportRank(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            Integer num = builder.rank;
+            if (num == null) {
+                this.rank = DEFAULT_RANK;
+            } else {
+                this.rank = num;
+            }
+            this.user = builder.user;
+            String str2 = builder.text;
+            if (str2 == null) {
+                this.text = "";
+            } else {
+                this.text = str2;
+            }
+            String str3 = builder.url;
+            if (str3 == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str3;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.rank = builder.rank;
+        this.user = builder.user;
+        this.text = builder.text;
+        this.url = builder.url;
     }
 }

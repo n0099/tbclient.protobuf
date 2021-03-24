@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PrivSets extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer bazhu_show_inside;
@@ -32,69 +32,7 @@ public final class PrivSets extends Message {
     public static final Integer DEFAULT_BAZHU_SHOW_INSIDE = 0;
     public static final Integer DEFAULT_BAZHU_SHOW_OUTSIDE = 0;
 
-    private PrivSets(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.location == null) {
-                this.location = DEFAULT_LOCATION;
-            } else {
-                this.location = builder.location;
-            }
-            if (builder.like == null) {
-                this.like = DEFAULT_LIKE;
-            } else {
-                this.like = builder.like;
-            }
-            if (builder.group == null) {
-                this.group = DEFAULT_GROUP;
-            } else {
-                this.group = builder.group;
-            }
-            if (builder.post == null) {
-                this.post = DEFAULT_POST;
-            } else {
-                this.post = builder.post;
-            }
-            if (builder.friend == null) {
-                this.friend = DEFAULT_FRIEND;
-            } else {
-                this.friend = builder.friend;
-            }
-            if (builder.live == null) {
-                this.live = DEFAULT_LIVE;
-            } else {
-                this.live = builder.live;
-            }
-            if (builder.reply == null) {
-                this.reply = DEFAULT_REPLY;
-            } else {
-                this.reply = builder.reply;
-            }
-            if (builder.bazhu_show_inside == null) {
-                this.bazhu_show_inside = DEFAULT_BAZHU_SHOW_INSIDE;
-            } else {
-                this.bazhu_show_inside = builder.bazhu_show_inside;
-            }
-            if (builder.bazhu_show_outside == null) {
-                this.bazhu_show_outside = DEFAULT_BAZHU_SHOW_OUTSIDE;
-                return;
-            } else {
-                this.bazhu_show_outside = builder.bazhu_show_outside;
-                return;
-            }
-        }
-        this.location = builder.location;
-        this.like = builder.like;
-        this.group = builder.group;
-        this.post = builder.post;
-        this.friend = builder.friend;
-        this.live = builder.live;
-        this.reply = builder.reply;
-        this.bazhu_show_inside = builder.bazhu_show_inside;
-        this.bazhu_show_outside = builder.bazhu_show_outside;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PrivSets> {
         public Integer bazhu_show_inside;
         public Integer bazhu_show_outside;
@@ -111,17 +49,18 @@ public final class PrivSets extends Message {
 
         public Builder(PrivSets privSets) {
             super(privSets);
-            if (privSets != null) {
-                this.location = privSets.location;
-                this.like = privSets.like;
-                this.group = privSets.group;
-                this.post = privSets.post;
-                this.friend = privSets.friend;
-                this.live = privSets.live;
-                this.reply = privSets.reply;
-                this.bazhu_show_inside = privSets.bazhu_show_inside;
-                this.bazhu_show_outside = privSets.bazhu_show_outside;
+            if (privSets == null) {
+                return;
             }
+            this.location = privSets.location;
+            this.like = privSets.like;
+            this.group = privSets.group;
+            this.post = privSets.post;
+            this.friend = privSets.friend;
+            this.live = privSets.live;
+            this.reply = privSets.reply;
+            this.bazhu_show_inside = privSets.bazhu_show_inside;
+            this.bazhu_show_outside = privSets.bazhu_show_outside;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -129,5 +68,76 @@ public final class PrivSets extends Message {
         public PrivSets build(boolean z) {
             return new PrivSets(this, z);
         }
+    }
+
+    public PrivSets(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.location;
+            if (num == null) {
+                this.location = DEFAULT_LOCATION;
+            } else {
+                this.location = num;
+            }
+            Integer num2 = builder.like;
+            if (num2 == null) {
+                this.like = DEFAULT_LIKE;
+            } else {
+                this.like = num2;
+            }
+            Integer num3 = builder.group;
+            if (num3 == null) {
+                this.group = DEFAULT_GROUP;
+            } else {
+                this.group = num3;
+            }
+            Integer num4 = builder.post;
+            if (num4 == null) {
+                this.post = DEFAULT_POST;
+            } else {
+                this.post = num4;
+            }
+            Integer num5 = builder.friend;
+            if (num5 == null) {
+                this.friend = DEFAULT_FRIEND;
+            } else {
+                this.friend = num5;
+            }
+            Integer num6 = builder.live;
+            if (num6 == null) {
+                this.live = DEFAULT_LIVE;
+            } else {
+                this.live = num6;
+            }
+            Integer num7 = builder.reply;
+            if (num7 == null) {
+                this.reply = DEFAULT_REPLY;
+            } else {
+                this.reply = num7;
+            }
+            Integer num8 = builder.bazhu_show_inside;
+            if (num8 == null) {
+                this.bazhu_show_inside = DEFAULT_BAZHU_SHOW_INSIDE;
+            } else {
+                this.bazhu_show_inside = num8;
+            }
+            Integer num9 = builder.bazhu_show_outside;
+            if (num9 == null) {
+                this.bazhu_show_outside = DEFAULT_BAZHU_SHOW_OUTSIDE;
+                return;
+            } else {
+                this.bazhu_show_outside = num9;
+                return;
+            }
+        }
+        this.location = builder.location;
+        this.like = builder.like;
+        this.group = builder.group;
+        this.post = builder.post;
+        this.friend = builder.friend;
+        this.live = builder.live;
+        this.reply = builder.reply;
+        this.bazhu_show_inside = builder.bazhu_show_inside;
+        this.bazhu_show_outside = builder.bazhu_show_outside;
     }
 }

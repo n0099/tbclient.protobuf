@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class Custom extends Message {
     public static final String DEFAULT_CREATE_TIME = "";
     public static final String DEFAULT_ICON_ID = "";
@@ -73,147 +73,7 @@ public final class Custom extends Message {
     public static final Integer DEFAULT_VALIDITY = 0;
     public static final Integer DEFAULT_IS_CUSTOM_PRICE = 0;
 
-    private Custom(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.non_member_t == null) {
-                this.non_member_t = DEFAULT_NON_MEMBER_T;
-            } else {
-                this.non_member_t = builder.non_member_t;
-            }
-            if (builder.non_member_i == null) {
-                this.non_member_i = DEFAULT_NON_MEMBER_I;
-            } else {
-                this.non_member_i = builder.non_member_i;
-            }
-            if (builder.dubi == null) {
-                this.dubi = DEFAULT_DUBI;
-            } else {
-                this.dubi = builder.dubi;
-            }
-            if (builder.dubi_ios == null) {
-                this.dubi_ios = DEFAULT_DUBI_IOS;
-            } else {
-                this.dubi_ios = builder.dubi_ios;
-            }
-            if (builder.ios_display == null) {
-                this.ios_display = DEFAULT_IOS_DISPLAY;
-            } else {
-                this.ios_display = builder.ios_display;
-            }
-            if (builder.duration == null) {
-                this.duration = DEFAULT_DURATION;
-            } else {
-                this.duration = builder.duration;
-            }
-            if (builder.hide == null) {
-                this.hide = DEFAULT_HIDE;
-            } else {
-                this.hide = builder.hide;
-            }
-            if (builder.discount == null) {
-                this.discount = DEFAULT_DISCOUNT;
-            } else {
-                this.discount = immutableCopyOf(builder.discount);
-            }
-            if (builder.props_id == null) {
-                this.props_id = DEFAULT_PROPS_ID;
-            } else {
-                this.props_id = builder.props_id;
-            }
-            if (builder.ios_icon_id == null) {
-                this.ios_icon_id = "";
-            } else {
-                this.ios_icon_id = builder.ios_icon_id;
-            }
-            if (builder.validity == null) {
-                this.validity = DEFAULT_VALIDITY;
-            } else {
-                this.validity = builder.validity;
-            }
-            if (builder.update_time == null) {
-                this.update_time = "";
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.create_time == null) {
-                this.create_time = "";
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.package_pic == null) {
-                this.package_pic = "";
-            } else {
-                this.package_pic = builder.package_pic;
-            }
-            if (builder.is_custom_price == null) {
-                this.is_custom_price = DEFAULT_IS_CUSTOM_PRICE;
-            } else {
-                this.is_custom_price = builder.is_custom_price;
-            }
-            if (builder.tag_name == null) {
-                this.tag_name = "";
-            } else {
-                this.tag_name = builder.tag_name;
-            }
-            if (builder.product_id == null) {
-                this.product_id = "";
-            } else {
-                this.product_id = builder.product_id;
-            }
-            if (builder.icon_id == null) {
-                this.icon_id = "";
-            } else {
-                this.icon_id = builder.icon_id;
-            }
-            if (builder.pic_url == null) {
-                this.pic_url = "";
-            } else {
-                this.pic_url = builder.pic_url;
-            }
-            if (builder.icon_name == null) {
-                this.icon_name = "";
-            } else {
-                this.icon_name = builder.icon_name;
-            }
-            if (builder.icon_pic == null) {
-                this.icon_pic = "";
-                return;
-            } else {
-                this.icon_pic = builder.icon_pic;
-                return;
-            }
-        }
-        this.name = builder.name;
-        this.non_member_t = builder.non_member_t;
-        this.non_member_i = builder.non_member_i;
-        this.dubi = builder.dubi;
-        this.dubi_ios = builder.dubi_ios;
-        this.ios_display = builder.ios_display;
-        this.duration = builder.duration;
-        this.hide = builder.hide;
-        this.discount = immutableCopyOf(builder.discount);
-        this.props_id = builder.props_id;
-        this.ios_icon_id = builder.ios_icon_id;
-        this.validity = builder.validity;
-        this.update_time = builder.update_time;
-        this.create_time = builder.create_time;
-        this.package_pic = builder.package_pic;
-        this.is_custom_price = builder.is_custom_price;
-        this.tag_name = builder.tag_name;
-        this.product_id = builder.product_id;
-        this.icon_id = builder.icon_id;
-        this.pic_url = builder.pic_url;
-        this.icon_name = builder.icon_name;
-        this.icon_pic = builder.icon_pic;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Custom> {
         public String create_time;
         public List<Discount> discount;
@@ -243,30 +103,31 @@ public final class Custom extends Message {
 
         public Builder(Custom custom) {
             super(custom);
-            if (custom != null) {
-                this.name = custom.name;
-                this.non_member_t = custom.non_member_t;
-                this.non_member_i = custom.non_member_i;
-                this.dubi = custom.dubi;
-                this.dubi_ios = custom.dubi_ios;
-                this.ios_display = custom.ios_display;
-                this.duration = custom.duration;
-                this.hide = custom.hide;
-                this.discount = Custom.copyOf(custom.discount);
-                this.props_id = custom.props_id;
-                this.ios_icon_id = custom.ios_icon_id;
-                this.validity = custom.validity;
-                this.update_time = custom.update_time;
-                this.create_time = custom.create_time;
-                this.package_pic = custom.package_pic;
-                this.is_custom_price = custom.is_custom_price;
-                this.tag_name = custom.tag_name;
-                this.product_id = custom.product_id;
-                this.icon_id = custom.icon_id;
-                this.pic_url = custom.pic_url;
-                this.icon_name = custom.icon_name;
-                this.icon_pic = custom.icon_pic;
+            if (custom == null) {
+                return;
             }
+            this.name = custom.name;
+            this.non_member_t = custom.non_member_t;
+            this.non_member_i = custom.non_member_i;
+            this.dubi = custom.dubi;
+            this.dubi_ios = custom.dubi_ios;
+            this.ios_display = custom.ios_display;
+            this.duration = custom.duration;
+            this.hide = custom.hide;
+            this.discount = Message.copyOf(custom.discount);
+            this.props_id = custom.props_id;
+            this.ios_icon_id = custom.ios_icon_id;
+            this.validity = custom.validity;
+            this.update_time = custom.update_time;
+            this.create_time = custom.create_time;
+            this.package_pic = custom.package_pic;
+            this.is_custom_price = custom.is_custom_price;
+            this.tag_name = custom.tag_name;
+            this.product_id = custom.product_id;
+            this.icon_id = custom.icon_id;
+            this.pic_url = custom.pic_url;
+            this.icon_name = custom.icon_name;
+            this.icon_pic = custom.icon_pic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -274,5 +135,167 @@ public final class Custom extends Message {
         public Custom build(boolean z) {
             return new Custom(this, z);
         }
+    }
+
+    public Custom(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            Integer num = builder.non_member_t;
+            if (num == null) {
+                this.non_member_t = DEFAULT_NON_MEMBER_T;
+            } else {
+                this.non_member_t = num;
+            }
+            Integer num2 = builder.non_member_i;
+            if (num2 == null) {
+                this.non_member_i = DEFAULT_NON_MEMBER_I;
+            } else {
+                this.non_member_i = num2;
+            }
+            Integer num3 = builder.dubi;
+            if (num3 == null) {
+                this.dubi = DEFAULT_DUBI;
+            } else {
+                this.dubi = num3;
+            }
+            Integer num4 = builder.dubi_ios;
+            if (num4 == null) {
+                this.dubi_ios = DEFAULT_DUBI_IOS;
+            } else {
+                this.dubi_ios = num4;
+            }
+            Integer num5 = builder.ios_display;
+            if (num5 == null) {
+                this.ios_display = DEFAULT_IOS_DISPLAY;
+            } else {
+                this.ios_display = num5;
+            }
+            Integer num6 = builder.duration;
+            if (num6 == null) {
+                this.duration = DEFAULT_DURATION;
+            } else {
+                this.duration = num6;
+            }
+            Integer num7 = builder.hide;
+            if (num7 == null) {
+                this.hide = DEFAULT_HIDE;
+            } else {
+                this.hide = num7;
+            }
+            List<Discount> list = builder.discount;
+            if (list == null) {
+                this.discount = DEFAULT_DISCOUNT;
+            } else {
+                this.discount = Message.immutableCopyOf(list);
+            }
+            Integer num8 = builder.props_id;
+            if (num8 == null) {
+                this.props_id = DEFAULT_PROPS_ID;
+            } else {
+                this.props_id = num8;
+            }
+            String str2 = builder.ios_icon_id;
+            if (str2 == null) {
+                this.ios_icon_id = "";
+            } else {
+                this.ios_icon_id = str2;
+            }
+            Integer num9 = builder.validity;
+            if (num9 == null) {
+                this.validity = DEFAULT_VALIDITY;
+            } else {
+                this.validity = num9;
+            }
+            String str3 = builder.update_time;
+            if (str3 == null) {
+                this.update_time = "";
+            } else {
+                this.update_time = str3;
+            }
+            String str4 = builder.create_time;
+            if (str4 == null) {
+                this.create_time = "";
+            } else {
+                this.create_time = str4;
+            }
+            String str5 = builder.package_pic;
+            if (str5 == null) {
+                this.package_pic = "";
+            } else {
+                this.package_pic = str5;
+            }
+            Integer num10 = builder.is_custom_price;
+            if (num10 == null) {
+                this.is_custom_price = DEFAULT_IS_CUSTOM_PRICE;
+            } else {
+                this.is_custom_price = num10;
+            }
+            String str6 = builder.tag_name;
+            if (str6 == null) {
+                this.tag_name = "";
+            } else {
+                this.tag_name = str6;
+            }
+            String str7 = builder.product_id;
+            if (str7 == null) {
+                this.product_id = "";
+            } else {
+                this.product_id = str7;
+            }
+            String str8 = builder.icon_id;
+            if (str8 == null) {
+                this.icon_id = "";
+            } else {
+                this.icon_id = str8;
+            }
+            String str9 = builder.pic_url;
+            if (str9 == null) {
+                this.pic_url = "";
+            } else {
+                this.pic_url = str9;
+            }
+            String str10 = builder.icon_name;
+            if (str10 == null) {
+                this.icon_name = "";
+            } else {
+                this.icon_name = str10;
+            }
+            String str11 = builder.icon_pic;
+            if (str11 == null) {
+                this.icon_pic = "";
+                return;
+            } else {
+                this.icon_pic = str11;
+                return;
+            }
+        }
+        this.name = builder.name;
+        this.non_member_t = builder.non_member_t;
+        this.non_member_i = builder.non_member_i;
+        this.dubi = builder.dubi;
+        this.dubi_ios = builder.dubi_ios;
+        this.ios_display = builder.ios_display;
+        this.duration = builder.duration;
+        this.hide = builder.hide;
+        this.discount = Message.immutableCopyOf(builder.discount);
+        this.props_id = builder.props_id;
+        this.ios_icon_id = builder.ios_icon_id;
+        this.validity = builder.validity;
+        this.update_time = builder.update_time;
+        this.create_time = builder.create_time;
+        this.package_pic = builder.package_pic;
+        this.is_custom_price = builder.is_custom_price;
+        this.tag_name = builder.tag_name;
+        this.product_id = builder.product_id;
+        this.icon_id = builder.icon_id;
+        this.pic_url = builder.pic_url;
+        this.icon_name = builder.icon_name;
+        this.icon_pic = builder.icon_pic;
     }
 }

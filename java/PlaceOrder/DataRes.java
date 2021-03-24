@@ -2,7 +2,7 @@ package tbclient.PlaceOrder;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_GOODS_NAME = "";
     public static final String DEFAULT_GOODS_PIC = "";
@@ -56,117 +56,7 @@ public final class DataRes extends Message {
     public static final Long DEFAULT_OPEN_ID = 0L;
     public static final Integer DEFAULT_GIFT_COUNT = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.order_id == null) {
-                this.order_id = "";
-            } else {
-                this.order_id = builder.order_id;
-            }
-            if (builder.goods_unit == null) {
-                this.goods_unit = "";
-            } else {
-                this.goods_unit = builder.goods_unit;
-            }
-            if (builder.tdou_num == null) {
-                this.tdou_num = DEFAULT_TDOU_NUM;
-            } else {
-                this.tdou_num = builder.tdou_num;
-            }
-            if (builder.goods_price == null) {
-                this.goods_price = DEFAULT_GOODS_PRICE;
-            } else {
-                this.goods_price = builder.goods_price;
-            }
-            if (builder.goods_num == null) {
-                this.goods_num = DEFAULT_GOODS_NUM;
-            } else {
-                this.goods_num = builder.goods_num;
-            }
-            if (builder.pay_type == null) {
-                this.pay_type = DEFAULT_PAY_TYPE;
-            } else {
-                this.pay_type = builder.pay_type;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.tb_timestamp == null) {
-                this.tb_timestamp = DEFAULT_TB_TIMESTAMP;
-            } else {
-                this.tb_timestamp = builder.tb_timestamp;
-            }
-            if (builder.timestamp == null) {
-                this.timestamp = DEFAULT_TIMESTAMP;
-            } else {
-                this.timestamp = builder.timestamp;
-            }
-            if (builder.goods_name == null) {
-                this.goods_name = "";
-            } else {
-                this.goods_name = builder.goods_name;
-            }
-            if (builder.scene_id == null) {
-                this.scene_id = DEFAULT_SCENE_ID;
-            } else {
-                this.scene_id = builder.scene_id;
-            }
-            if (builder.goods_user_level == null) {
-                this.goods_user_level = DEFAULT_GOODS_USER_LEVEL;
-            } else {
-                this.goods_user_level = builder.goods_user_level;
-            }
-            if (builder.goods_duration == null) {
-                this.goods_duration = DEFAULT_GOODS_DURATION;
-            } else {
-                this.goods_duration = builder.goods_duration;
-            }
-            if (builder.goods_pic == null) {
-                this.goods_pic = "";
-            } else {
-                this.goods_pic = builder.goods_pic;
-            }
-            if (builder.terminal == null) {
-                this.terminal = DEFAULT_TERMINAL;
-            } else {
-                this.terminal = builder.terminal;
-            }
-            if (builder.open_id == null) {
-                this.open_id = DEFAULT_OPEN_ID;
-            } else {
-                this.open_id = builder.open_id;
-            }
-            if (builder.gift_count == null) {
-                this.gift_count = DEFAULT_GIFT_COUNT;
-                return;
-            } else {
-                this.gift_count = builder.gift_count;
-                return;
-            }
-        }
-        this.order_id = builder.order_id;
-        this.goods_unit = builder.goods_unit;
-        this.tdou_num = builder.tdou_num;
-        this.goods_price = builder.goods_price;
-        this.goods_num = builder.goods_num;
-        this.pay_type = builder.pay_type;
-        this.user_id = builder.user_id;
-        this.tb_timestamp = builder.tb_timestamp;
-        this.timestamp = builder.timestamp;
-        this.goods_name = builder.goods_name;
-        this.scene_id = builder.scene_id;
-        this.goods_user_level = builder.goods_user_level;
-        this.goods_duration = builder.goods_duration;
-        this.goods_pic = builder.goods_pic;
-        this.terminal = builder.terminal;
-        this.open_id = builder.open_id;
-        this.gift_count = builder.gift_count;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer gift_count;
         public Integer goods_duration;
@@ -191,25 +81,26 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.order_id = dataRes.order_id;
-                this.goods_unit = dataRes.goods_unit;
-                this.tdou_num = dataRes.tdou_num;
-                this.goods_price = dataRes.goods_price;
-                this.goods_num = dataRes.goods_num;
-                this.pay_type = dataRes.pay_type;
-                this.user_id = dataRes.user_id;
-                this.tb_timestamp = dataRes.tb_timestamp;
-                this.timestamp = dataRes.timestamp;
-                this.goods_name = dataRes.goods_name;
-                this.scene_id = dataRes.scene_id;
-                this.goods_user_level = dataRes.goods_user_level;
-                this.goods_duration = dataRes.goods_duration;
-                this.goods_pic = dataRes.goods_pic;
-                this.terminal = dataRes.terminal;
-                this.open_id = dataRes.open_id;
-                this.gift_count = dataRes.gift_count;
+            if (dataRes == null) {
+                return;
             }
+            this.order_id = dataRes.order_id;
+            this.goods_unit = dataRes.goods_unit;
+            this.tdou_num = dataRes.tdou_num;
+            this.goods_price = dataRes.goods_price;
+            this.goods_num = dataRes.goods_num;
+            this.pay_type = dataRes.pay_type;
+            this.user_id = dataRes.user_id;
+            this.tb_timestamp = dataRes.tb_timestamp;
+            this.timestamp = dataRes.timestamp;
+            this.goods_name = dataRes.goods_name;
+            this.scene_id = dataRes.scene_id;
+            this.goods_user_level = dataRes.goods_user_level;
+            this.goods_duration = dataRes.goods_duration;
+            this.goods_pic = dataRes.goods_pic;
+            this.terminal = dataRes.terminal;
+            this.open_id = dataRes.open_id;
+            this.gift_count = dataRes.gift_count;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -217,5 +108,132 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.order_id;
+            if (str == null) {
+                this.order_id = "";
+            } else {
+                this.order_id = str;
+            }
+            String str2 = builder.goods_unit;
+            if (str2 == null) {
+                this.goods_unit = "";
+            } else {
+                this.goods_unit = str2;
+            }
+            Integer num = builder.tdou_num;
+            if (num == null) {
+                this.tdou_num = DEFAULT_TDOU_NUM;
+            } else {
+                this.tdou_num = num;
+            }
+            Integer num2 = builder.goods_price;
+            if (num2 == null) {
+                this.goods_price = DEFAULT_GOODS_PRICE;
+            } else {
+                this.goods_price = num2;
+            }
+            Integer num3 = builder.goods_num;
+            if (num3 == null) {
+                this.goods_num = DEFAULT_GOODS_NUM;
+            } else {
+                this.goods_num = num3;
+            }
+            Integer num4 = builder.pay_type;
+            if (num4 == null) {
+                this.pay_type = DEFAULT_PAY_TYPE;
+            } else {
+                this.pay_type = num4;
+            }
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            Integer num5 = builder.tb_timestamp;
+            if (num5 == null) {
+                this.tb_timestamp = DEFAULT_TB_TIMESTAMP;
+            } else {
+                this.tb_timestamp = num5;
+            }
+            Integer num6 = builder.timestamp;
+            if (num6 == null) {
+                this.timestamp = DEFAULT_TIMESTAMP;
+            } else {
+                this.timestamp = num6;
+            }
+            String str3 = builder.goods_name;
+            if (str3 == null) {
+                this.goods_name = "";
+            } else {
+                this.goods_name = str3;
+            }
+            Integer num7 = builder.scene_id;
+            if (num7 == null) {
+                this.scene_id = DEFAULT_SCENE_ID;
+            } else {
+                this.scene_id = num7;
+            }
+            Integer num8 = builder.goods_user_level;
+            if (num8 == null) {
+                this.goods_user_level = DEFAULT_GOODS_USER_LEVEL;
+            } else {
+                this.goods_user_level = num8;
+            }
+            Integer num9 = builder.goods_duration;
+            if (num9 == null) {
+                this.goods_duration = DEFAULT_GOODS_DURATION;
+            } else {
+                this.goods_duration = num9;
+            }
+            String str4 = builder.goods_pic;
+            if (str4 == null) {
+                this.goods_pic = "";
+            } else {
+                this.goods_pic = str4;
+            }
+            Integer num10 = builder.terminal;
+            if (num10 == null) {
+                this.terminal = DEFAULT_TERMINAL;
+            } else {
+                this.terminal = num10;
+            }
+            Long l2 = builder.open_id;
+            if (l2 == null) {
+                this.open_id = DEFAULT_OPEN_ID;
+            } else {
+                this.open_id = l2;
+            }
+            Integer num11 = builder.gift_count;
+            if (num11 == null) {
+                this.gift_count = DEFAULT_GIFT_COUNT;
+                return;
+            } else {
+                this.gift_count = num11;
+                return;
+            }
+        }
+        this.order_id = builder.order_id;
+        this.goods_unit = builder.goods_unit;
+        this.tdou_num = builder.tdou_num;
+        this.goods_price = builder.goods_price;
+        this.goods_num = builder.goods_num;
+        this.pay_type = builder.pay_type;
+        this.user_id = builder.user_id;
+        this.tb_timestamp = builder.tb_timestamp;
+        this.timestamp = builder.timestamp;
+        this.goods_name = builder.goods_name;
+        this.scene_id = builder.scene_id;
+        this.goods_user_level = builder.goods_user_level;
+        this.goods_duration = builder.goods_duration;
+        this.goods_pic = builder.goods_pic;
+        this.terminal = builder.terminal;
+        this.open_id = builder.open_id;
+        this.gift_count = builder.gift_count;
     }
 }

@@ -3,12 +3,12 @@ package tbclient.FinePbPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8691common;
+    public final CommonReq f68359common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long ftid;
     @ProtoField(tag = 5, type = Message.Datatype.UINT64)
@@ -25,51 +25,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_Q_TYPE = 0L;
     public static final Long DEFAULT_FTID = 0L;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8691common = builder.f8692common;
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-            } else {
-                this.q_type = builder.q_type;
-            }
-            if (builder.ftid == null) {
-                this.ftid = DEFAULT_FTID;
-                return;
-            } else {
-                this.ftid = builder.ftid;
-                return;
-            }
-        }
-        this.f8691common = builder.f8692common;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.q_type = builder.q_type;
-        this.ftid = builder.ftid;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8692common;
+        public CommonReq f68360common;
         public Long ftid;
         public Long q_type;
         public Long scr_dip;
@@ -81,14 +41,15 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8692common = dataReq.f8691common;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.q_type = dataReq.q_type;
-                this.ftid = dataReq.ftid;
+            if (dataReq == null) {
+                return;
             }
+            this.f68360common = dataReq.f68359common;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.q_type = dataReq.q_type;
+            this.ftid = dataReq.ftid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +57,50 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68359common = builder.f68360common;
+            Long l = builder.scr_w;
+            if (l == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = l;
+            }
+            Long l2 = builder.scr_h;
+            if (l2 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = l2;
+            }
+            Long l3 = builder.scr_dip;
+            if (l3 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = l3;
+            }
+            Long l4 = builder.q_type;
+            if (l4 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = l4;
+            }
+            Long l5 = builder.ftid;
+            if (l5 == null) {
+                this.ftid = DEFAULT_FTID;
+                return;
+            } else {
+                this.ftid = l5;
+                return;
+            }
+        }
+        this.f68359common = builder.f68360common;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
+        this.ftid = builder.ftid;
     }
 }

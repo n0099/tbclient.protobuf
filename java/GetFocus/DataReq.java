@@ -3,37 +3,21 @@ package tbclient.GetFocus;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8737common;
+    public final CommonReq f68407common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer pn;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8737common = builder.f8738common;
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-                return;
-            } else {
-                this.pn = builder.pn;
-                return;
-            }
-        }
-        this.f8737common = builder.f8738common;
-        this.pn = builder.pn;
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8738common;
+        public CommonReq f68408common;
         public Integer pn;
 
         public Builder() {
@@ -41,10 +25,11 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8738common = dataReq.f8737common;
-                this.pn = dataReq.pn;
+            if (dataReq == null) {
+                return;
             }
+            this.f68408common = dataReq.f68407common;
+            this.pn = dataReq.pn;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +37,22 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68407common = builder.f68408common;
+            Integer num = builder.pn;
+            if (num == null) {
+                this.pn = DEFAULT_PN;
+                return;
+            } else {
+                this.pn = num;
+                return;
+            }
+        }
+        this.f68407common = builder.f68408common;
+        this.pn = builder.pn;
     }
 }

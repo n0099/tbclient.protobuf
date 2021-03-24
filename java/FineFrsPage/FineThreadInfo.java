@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class FineThreadInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_FROMFNAME = "";
@@ -49,95 +49,7 @@ public final class FineThreadInfo extends Message {
     public static final Integer DEFAULT_THREAD_TYPE = 0;
     public static final Integer DEFAULT_FORDER = 0;
 
-    private FineThreadInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.ftid == null) {
-                this.ftid = DEFAULT_FTID;
-            } else {
-                this.ftid = builder.ftid;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder._abstract == null) {
-                this._abstract = "";
-            } else {
-                this._abstract = builder._abstract;
-            }
-            if (builder.thumbnail == null) {
-                this.thumbnail = DEFAULT_THUMBNAIL;
-            } else {
-                this.thumbnail = immutableCopyOf(builder.thumbnail);
-            }
-            if (builder.publish_time == null) {
-                this.publish_time = DEFAULT_PUBLISH_TIME;
-            } else {
-                this.publish_time = builder.publish_time;
-            }
-            if (builder.tag == null) {
-                this.tag = "";
-            } else {
-                this.tag = builder.tag;
-            }
-            if (builder.zansum == null) {
-                this.zansum = DEFAULT_ZANSUM;
-            } else {
-                this.zansum = builder.zansum;
-            }
-            if (builder.threadsnum == null) {
-                this.threadsnum = DEFAULT_THREADSNUM;
-            } else {
-                this.threadsnum = builder.threadsnum;
-            }
-            if (builder.fromfname == null) {
-                this.fromfname = "";
-            } else {
-                this.fromfname = builder.fromfname;
-            }
-            if (builder.forumid == null) {
-                this.forumid = DEFAULT_FORUMID;
-            } else {
-                this.forumid = builder.forumid;
-            }
-            this.twzhibo_info = builder.twzhibo_info;
-            if (builder.thread_type == null) {
-                this.thread_type = DEFAULT_THREAD_TYPE;
-            } else {
-                this.thread_type = builder.thread_type;
-            }
-            if (builder.forder == null) {
-                this.forder = DEFAULT_FORDER;
-                return;
-            } else {
-                this.forder = builder.forder;
-                return;
-            }
-        }
-        this.ftid = builder.ftid;
-        this.title = builder.title;
-        this.type = builder.type;
-        this._abstract = builder._abstract;
-        this.thumbnail = immutableCopyOf(builder.thumbnail);
-        this.publish_time = builder.publish_time;
-        this.tag = builder.tag;
-        this.zansum = builder.zansum;
-        this.threadsnum = builder.threadsnum;
-        this.fromfname = builder.fromfname;
-        this.forumid = builder.forumid;
-        this.twzhibo_info = builder.twzhibo_info;
-        this.thread_type = builder.thread_type;
-        this.forder = builder.forder;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<FineThreadInfo> {
         public String _abstract;
         public Integer forder;
@@ -159,22 +71,23 @@ public final class FineThreadInfo extends Message {
 
         public Builder(FineThreadInfo fineThreadInfo) {
             super(fineThreadInfo);
-            if (fineThreadInfo != null) {
-                this.ftid = fineThreadInfo.ftid;
-                this.title = fineThreadInfo.title;
-                this.type = fineThreadInfo.type;
-                this._abstract = fineThreadInfo._abstract;
-                this.thumbnail = FineThreadInfo.copyOf(fineThreadInfo.thumbnail);
-                this.publish_time = fineThreadInfo.publish_time;
-                this.tag = fineThreadInfo.tag;
-                this.zansum = fineThreadInfo.zansum;
-                this.threadsnum = fineThreadInfo.threadsnum;
-                this.fromfname = fineThreadInfo.fromfname;
-                this.forumid = fineThreadInfo.forumid;
-                this.twzhibo_info = fineThreadInfo.twzhibo_info;
-                this.thread_type = fineThreadInfo.thread_type;
-                this.forder = fineThreadInfo.forder;
+            if (fineThreadInfo == null) {
+                return;
             }
+            this.ftid = fineThreadInfo.ftid;
+            this.title = fineThreadInfo.title;
+            this.type = fineThreadInfo.type;
+            this._abstract = fineThreadInfo._abstract;
+            this.thumbnail = Message.copyOf(fineThreadInfo.thumbnail);
+            this.publish_time = fineThreadInfo.publish_time;
+            this.tag = fineThreadInfo.tag;
+            this.zansum = fineThreadInfo.zansum;
+            this.threadsnum = fineThreadInfo.threadsnum;
+            this.fromfname = fineThreadInfo.fromfname;
+            this.forumid = fineThreadInfo.forumid;
+            this.twzhibo_info = fineThreadInfo.twzhibo_info;
+            this.thread_type = fineThreadInfo.thread_type;
+            this.forder = fineThreadInfo.forder;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -182,5 +95,106 @@ public final class FineThreadInfo extends Message {
         public FineThreadInfo build(boolean z) {
             return new FineThreadInfo(this, z);
         }
+    }
+
+    public FineThreadInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.ftid;
+            if (l == null) {
+                this.ftid = DEFAULT_FTID;
+            } else {
+                this.ftid = l;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            String str2 = builder._abstract;
+            if (str2 == null) {
+                this._abstract = "";
+            } else {
+                this._abstract = str2;
+            }
+            List<String> list = builder.thumbnail;
+            if (list == null) {
+                this.thumbnail = DEFAULT_THUMBNAIL;
+            } else {
+                this.thumbnail = Message.immutableCopyOf(list);
+            }
+            Integer num2 = builder.publish_time;
+            if (num2 == null) {
+                this.publish_time = DEFAULT_PUBLISH_TIME;
+            } else {
+                this.publish_time = num2;
+            }
+            String str3 = builder.tag;
+            if (str3 == null) {
+                this.tag = "";
+            } else {
+                this.tag = str3;
+            }
+            Long l2 = builder.zansum;
+            if (l2 == null) {
+                this.zansum = DEFAULT_ZANSUM;
+            } else {
+                this.zansum = l2;
+            }
+            Long l3 = builder.threadsnum;
+            if (l3 == null) {
+                this.threadsnum = DEFAULT_THREADSNUM;
+            } else {
+                this.threadsnum = l3;
+            }
+            String str4 = builder.fromfname;
+            if (str4 == null) {
+                this.fromfname = "";
+            } else {
+                this.fromfname = str4;
+            }
+            Long l4 = builder.forumid;
+            if (l4 == null) {
+                this.forumid = DEFAULT_FORUMID;
+            } else {
+                this.forumid = l4;
+            }
+            this.twzhibo_info = builder.twzhibo_info;
+            Integer num3 = builder.thread_type;
+            if (num3 == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+            } else {
+                this.thread_type = num3;
+            }
+            Integer num4 = builder.forder;
+            if (num4 == null) {
+                this.forder = DEFAULT_FORDER;
+                return;
+            } else {
+                this.forder = num4;
+                return;
+            }
+        }
+        this.ftid = builder.ftid;
+        this.title = builder.title;
+        this.type = builder.type;
+        this._abstract = builder._abstract;
+        this.thumbnail = Message.immutableCopyOf(builder.thumbnail);
+        this.publish_time = builder.publish_time;
+        this.tag = builder.tag;
+        this.zansum = builder.zansum;
+        this.threadsnum = builder.threadsnum;
+        this.fromfname = builder.fromfname;
+        this.forumid = builder.forumid;
+        this.twzhibo_info = builder.twzhibo_info;
+        this.thread_type = builder.thread_type;
+        this.forder = builder.forder;
     }
 }

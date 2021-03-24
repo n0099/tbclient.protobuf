@@ -2,10 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AlbumInfo extends Message {
     public static final String DEFAULT_ALBUM_NAME = "";
+    public static final Boolean DEFAULT_HAS_COLLECT;
+    public static final Double DEFAULT_LATD;
     public static final String DEFAULT_LOCATION = "";
+    public static final Double DEFAULT_LONGTD;
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -46,109 +49,8 @@ public final class AlbumInfo extends Message {
     public static final Integer DEFAULT_UPDATE_TIME = 0;
     public static final Integer DEFAULT_NUM_JOIN = 0;
     public static final Integer DEFAULT_NUM_HIGH = 0;
-    public static final Double DEFAULT_LONGTD = Double.valueOf(0.0d);
-    public static final Double DEFAULT_LATD = Double.valueOf(0.0d);
-    public static final Boolean DEFAULT_HAS_COLLECT = false;
 
-    private AlbumInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.album_id == null) {
-                this.album_id = DEFAULT_ALBUM_ID;
-            } else {
-                this.album_id = builder.album_id;
-            }
-            if (builder.album_name == null) {
-                this.album_name = "";
-            } else {
-                this.album_name = builder.album_name;
-            }
-            if (builder.uid == null) {
-                this.uid = DEFAULT_UID;
-            } else {
-                this.uid = builder.uid;
-            }
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.start_time == null) {
-                this.start_time = DEFAULT_START_TIME;
-            } else {
-                this.start_time = builder.start_time;
-            }
-            if (builder.end_time == null) {
-                this.end_time = DEFAULT_END_TIME;
-            } else {
-                this.end_time = builder.end_time;
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.num_join == null) {
-                this.num_join = DEFAULT_NUM_JOIN;
-            } else {
-                this.num_join = builder.num_join;
-            }
-            if (builder.num_high == null) {
-                this.num_high = DEFAULT_NUM_HIGH;
-            } else {
-                this.num_high = builder.num_high;
-            }
-            if (builder.location == null) {
-                this.location = "";
-            } else {
-                this.location = builder.location;
-            }
-            if (builder.longtd == null) {
-                this.longtd = DEFAULT_LONGTD;
-            } else {
-                this.longtd = builder.longtd;
-            }
-            if (builder.latd == null) {
-                this.latd = DEFAULT_LATD;
-            } else {
-                this.latd = builder.latd;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.has_collect == null) {
-                this.has_collect = DEFAULT_HAS_COLLECT;
-                return;
-            } else {
-                this.has_collect = builder.has_collect;
-                return;
-            }
-        }
-        this.album_id = builder.album_id;
-        this.album_name = builder.album_name;
-        this.uid = builder.uid;
-        this.create_time = builder.create_time;
-        this.start_time = builder.start_time;
-        this.end_time = builder.end_time;
-        this.update_time = builder.update_time;
-        this.num_join = builder.num_join;
-        this.num_high = builder.num_high;
-        this.location = builder.location;
-        this.longtd = builder.longtd;
-        this.latd = builder.latd;
-        this.user_name = builder.user_name;
-        this.portrait = builder.portrait;
-        this.has_collect = builder.has_collect;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AlbumInfo> {
         public Long album_id;
         public String album_name;
@@ -171,23 +73,24 @@ public final class AlbumInfo extends Message {
 
         public Builder(AlbumInfo albumInfo) {
             super(albumInfo);
-            if (albumInfo != null) {
-                this.album_id = albumInfo.album_id;
-                this.album_name = albumInfo.album_name;
-                this.uid = albumInfo.uid;
-                this.create_time = albumInfo.create_time;
-                this.start_time = albumInfo.start_time;
-                this.end_time = albumInfo.end_time;
-                this.update_time = albumInfo.update_time;
-                this.num_join = albumInfo.num_join;
-                this.num_high = albumInfo.num_high;
-                this.location = albumInfo.location;
-                this.longtd = albumInfo.longtd;
-                this.latd = albumInfo.latd;
-                this.user_name = albumInfo.user_name;
-                this.portrait = albumInfo.portrait;
-                this.has_collect = albumInfo.has_collect;
+            if (albumInfo == null) {
+                return;
             }
+            this.album_id = albumInfo.album_id;
+            this.album_name = albumInfo.album_name;
+            this.uid = albumInfo.uid;
+            this.create_time = albumInfo.create_time;
+            this.start_time = albumInfo.start_time;
+            this.end_time = albumInfo.end_time;
+            this.update_time = albumInfo.update_time;
+            this.num_join = albumInfo.num_join;
+            this.num_high = albumInfo.num_high;
+            this.location = albumInfo.location;
+            this.longtd = albumInfo.longtd;
+            this.latd = albumInfo.latd;
+            this.user_name = albumInfo.user_name;
+            this.portrait = albumInfo.portrait;
+            this.has_collect = albumInfo.has_collect;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -195,5 +98,125 @@ public final class AlbumInfo extends Message {
         public AlbumInfo build(boolean z) {
             return new AlbumInfo(this, z);
         }
+    }
+
+    static {
+        Double valueOf = Double.valueOf(0.0d);
+        DEFAULT_LONGTD = valueOf;
+        DEFAULT_LATD = valueOf;
+        DEFAULT_HAS_COLLECT = Boolean.FALSE;
+    }
+
+    public AlbumInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.album_id;
+            if (l == null) {
+                this.album_id = DEFAULT_ALBUM_ID;
+            } else {
+                this.album_id = l;
+            }
+            String str = builder.album_name;
+            if (str == null) {
+                this.album_name = "";
+            } else {
+                this.album_name = str;
+            }
+            Long l2 = builder.uid;
+            if (l2 == null) {
+                this.uid = DEFAULT_UID;
+            } else {
+                this.uid = l2;
+            }
+            Integer num = builder.create_time;
+            if (num == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num;
+            }
+            Integer num2 = builder.start_time;
+            if (num2 == null) {
+                this.start_time = DEFAULT_START_TIME;
+            } else {
+                this.start_time = num2;
+            }
+            Integer num3 = builder.end_time;
+            if (num3 == null) {
+                this.end_time = DEFAULT_END_TIME;
+            } else {
+                this.end_time = num3;
+            }
+            Integer num4 = builder.update_time;
+            if (num4 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num4;
+            }
+            Integer num5 = builder.num_join;
+            if (num5 == null) {
+                this.num_join = DEFAULT_NUM_JOIN;
+            } else {
+                this.num_join = num5;
+            }
+            Integer num6 = builder.num_high;
+            if (num6 == null) {
+                this.num_high = DEFAULT_NUM_HIGH;
+            } else {
+                this.num_high = num6;
+            }
+            String str2 = builder.location;
+            if (str2 == null) {
+                this.location = "";
+            } else {
+                this.location = str2;
+            }
+            Double d2 = builder.longtd;
+            if (d2 == null) {
+                this.longtd = DEFAULT_LONGTD;
+            } else {
+                this.longtd = d2;
+            }
+            Double d3 = builder.latd;
+            if (d3 == null) {
+                this.latd = DEFAULT_LATD;
+            } else {
+                this.latd = d3;
+            }
+            String str3 = builder.user_name;
+            if (str3 == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str3;
+            }
+            String str4 = builder.portrait;
+            if (str4 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str4;
+            }
+            Boolean bool = builder.has_collect;
+            if (bool == null) {
+                this.has_collect = DEFAULT_HAS_COLLECT;
+                return;
+            } else {
+                this.has_collect = bool;
+                return;
+            }
+        }
+        this.album_id = builder.album_id;
+        this.album_name = builder.album_name;
+        this.uid = builder.uid;
+        this.create_time = builder.create_time;
+        this.start_time = builder.start_time;
+        this.end_time = builder.end_time;
+        this.update_time = builder.update_time;
+        this.num_join = builder.num_join;
+        this.num_high = builder.num_high;
+        this.location = builder.location;
+        this.longtd = builder.longtd;
+        this.latd = builder.latd;
+        this.user_name = builder.user_name;
+        this.portrait = builder.portrait;
+        this.has_collect = builder.has_collect;
     }
 }

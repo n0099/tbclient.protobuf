@@ -10,7 +10,7 @@ import tbclient.FrequentlyForumInfo;
 import tbclient.FrsTabInfo;
 import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -69,118 +69,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final List<FrsTabInfo> DEFAULT_NAV_TAB_INFO = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.like_forum == null) {
-                this.like_forum = DEFAULT_LIKE_FORUM;
-            } else {
-                this.like_forum = immutableCopyOf(builder.like_forum);
-            }
-            if (builder.banner == null) {
-                this.banner = DEFAULT_BANNER;
-            } else {
-                this.banner = immutableCopyOf(builder.banner);
-            }
-            if (builder.new_recommend == null) {
-                this.new_recommend = DEFAULT_NEW_RECOMMEND;
-            } else {
-                this.new_recommend = immutableCopyOf(builder.new_recommend);
-            }
-            if (builder.is_login == null) {
-                this.is_login = DEFAULT_IS_LOGIN;
-            } else {
-                this.is_login = builder.is_login;
-            }
-            if (builder.msign_valid == null) {
-                this.msign_valid = DEFAULT_MSIGN_VALID;
-            } else {
-                this.msign_valid = builder.msign_valid;
-            }
-            if (builder.msign_text == null) {
-                this.msign_text = "";
-            } else {
-                this.msign_text = builder.msign_text;
-            }
-            if (builder.msign_level == null) {
-                this.msign_level = DEFAULT_MSIGN_LEVEL;
-            } else {
-                this.msign_level = builder.msign_level;
-            }
-            if (builder.time == null) {
-                this.time = DEFAULT_TIME;
-            } else {
-                this.time = builder.time;
-            }
-            if (builder.is_mem == null) {
-                this.is_mem = DEFAULT_IS_MEM;
-            } else {
-                this.is_mem = builder.is_mem;
-            }
-            if (builder.recommend_forum_info == null) {
-                this.recommend_forum_info = DEFAULT_RECOMMEND_FORUM_INFO;
-            } else {
-                this.recommend_forum_info = immutableCopyOf(builder.recommend_forum_info);
-            }
-            this.hot_search = builder.hot_search;
-            if (builder.redirect == null) {
-                this.redirect = DEFAULT_REDIRECT;
-            } else {
-                this.redirect = builder.redirect;
-            }
-            if (builder.new_banner_info == null) {
-                this.new_banner_info = DEFAULT_NEW_BANNER_INFO;
-            } else {
-                this.new_banner_info = immutableCopyOf(builder.new_banner_info);
-            }
-            if (builder.frequently_forum_info == null) {
-                this.frequently_forum_info = DEFAULT_FREQUENTLY_FORUM_INFO;
-            } else {
-                this.frequently_forum_info = immutableCopyOf(builder.frequently_forum_info);
-            }
-            if (builder.tag_recommend_forum == null) {
-                this.tag_recommend_forum = DEFAULT_TAG_RECOMMEND_FORUM;
-            } else {
-                this.tag_recommend_forum = immutableCopyOf(builder.tag_recommend_forum);
-            }
-            if (builder.sort_type == null) {
-                this.sort_type = DEFAULT_SORT_TYPE;
-            } else {
-                this.sort_type = builder.sort_type;
-            }
-            this.forum_create_info = builder.forum_create_info;
-            this.private_forum_popinfo = builder.private_forum_popinfo;
-            if (builder.nav_tab_info == null) {
-                this.nav_tab_info = DEFAULT_NAV_TAB_INFO;
-            } else {
-                this.nav_tab_info = immutableCopyOf(builder.nav_tab_info);
-            }
-            this.forum_popup_info = builder.forum_popup_info;
-            return;
-        }
-        this.like_forum = immutableCopyOf(builder.like_forum);
-        this.banner = immutableCopyOf(builder.banner);
-        this.new_recommend = immutableCopyOf(builder.new_recommend);
-        this.is_login = builder.is_login;
-        this.msign_valid = builder.msign_valid;
-        this.msign_text = builder.msign_text;
-        this.msign_level = builder.msign_level;
-        this.time = builder.time;
-        this.is_mem = builder.is_mem;
-        this.recommend_forum_info = immutableCopyOf(builder.recommend_forum_info);
-        this.hot_search = builder.hot_search;
-        this.redirect = builder.redirect;
-        this.new_banner_info = immutableCopyOf(builder.new_banner_info);
-        this.frequently_forum_info = immutableCopyOf(builder.frequently_forum_info);
-        this.tag_recommend_forum = immutableCopyOf(builder.tag_recommend_forum);
-        this.sort_type = builder.sort_type;
-        this.forum_create_info = builder.forum_create_info;
-        this.private_forum_popinfo = builder.private_forum_popinfo;
-        this.nav_tab_info = immutableCopyOf(builder.nav_tab_info);
-        this.forum_popup_info = builder.forum_popup_info;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public ForumCreateInfo forum_create_info;
@@ -208,28 +97,29 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.like_forum = DataRes.copyOf(dataRes.like_forum);
-                this.banner = DataRes.copyOf(dataRes.banner);
-                this.new_recommend = DataRes.copyOf(dataRes.new_recommend);
-                this.is_login = dataRes.is_login;
-                this.msign_valid = dataRes.msign_valid;
-                this.msign_text = dataRes.msign_text;
-                this.msign_level = dataRes.msign_level;
-                this.time = dataRes.time;
-                this.is_mem = dataRes.is_mem;
-                this.recommend_forum_info = DataRes.copyOf(dataRes.recommend_forum_info);
-                this.hot_search = dataRes.hot_search;
-                this.redirect = dataRes.redirect;
-                this.new_banner_info = DataRes.copyOf(dataRes.new_banner_info);
-                this.frequently_forum_info = DataRes.copyOf(dataRes.frequently_forum_info);
-                this.tag_recommend_forum = DataRes.copyOf(dataRes.tag_recommend_forum);
-                this.sort_type = dataRes.sort_type;
-                this.forum_create_info = dataRes.forum_create_info;
-                this.private_forum_popinfo = dataRes.private_forum_popinfo;
-                this.nav_tab_info = DataRes.copyOf(dataRes.nav_tab_info);
-                this.forum_popup_info = dataRes.forum_popup_info;
+            if (dataRes == null) {
+                return;
             }
+            this.like_forum = Message.copyOf(dataRes.like_forum);
+            this.banner = Message.copyOf(dataRes.banner);
+            this.new_recommend = Message.copyOf(dataRes.new_recommend);
+            this.is_login = dataRes.is_login;
+            this.msign_valid = dataRes.msign_valid;
+            this.msign_text = dataRes.msign_text;
+            this.msign_level = dataRes.msign_level;
+            this.time = dataRes.time;
+            this.is_mem = dataRes.is_mem;
+            this.recommend_forum_info = Message.copyOf(dataRes.recommend_forum_info);
+            this.hot_search = dataRes.hot_search;
+            this.redirect = dataRes.redirect;
+            this.new_banner_info = Message.copyOf(dataRes.new_banner_info);
+            this.frequently_forum_info = Message.copyOf(dataRes.frequently_forum_info);
+            this.tag_recommend_forum = Message.copyOf(dataRes.tag_recommend_forum);
+            this.sort_type = dataRes.sort_type;
+            this.forum_create_info = dataRes.forum_create_info;
+            this.private_forum_popinfo = dataRes.private_forum_popinfo;
+            this.nav_tab_info = Message.copyOf(dataRes.nav_tab_info);
+            this.forum_popup_info = dataRes.forum_popup_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -237,5 +127,132 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<LikeForum> list = builder.like_forum;
+            if (list == null) {
+                this.like_forum = DEFAULT_LIKE_FORUM;
+            } else {
+                this.like_forum = Message.immutableCopyOf(list);
+            }
+            List<Banner> list2 = builder.banner;
+            if (list2 == null) {
+                this.banner = DEFAULT_BANNER;
+            } else {
+                this.banner = Message.immutableCopyOf(list2);
+            }
+            List<NewRecommend> list3 = builder.new_recommend;
+            if (list3 == null) {
+                this.new_recommend = DEFAULT_NEW_RECOMMEND;
+            } else {
+                this.new_recommend = Message.immutableCopyOf(list3);
+            }
+            Integer num = builder.is_login;
+            if (num == null) {
+                this.is_login = DEFAULT_IS_LOGIN;
+            } else {
+                this.is_login = num;
+            }
+            Integer num2 = builder.msign_valid;
+            if (num2 == null) {
+                this.msign_valid = DEFAULT_MSIGN_VALID;
+            } else {
+                this.msign_valid = num2;
+            }
+            String str = builder.msign_text;
+            if (str == null) {
+                this.msign_text = "";
+            } else {
+                this.msign_text = str;
+            }
+            Integer num3 = builder.msign_level;
+            if (num3 == null) {
+                this.msign_level = DEFAULT_MSIGN_LEVEL;
+            } else {
+                this.msign_level = num3;
+            }
+            Integer num4 = builder.time;
+            if (num4 == null) {
+                this.time = DEFAULT_TIME;
+            } else {
+                this.time = num4;
+            }
+            Integer num5 = builder.is_mem;
+            if (num5 == null) {
+                this.is_mem = DEFAULT_IS_MEM;
+            } else {
+                this.is_mem = num5;
+            }
+            List<RecommendForumInfo> list4 = builder.recommend_forum_info;
+            if (list4 == null) {
+                this.recommend_forum_info = DEFAULT_RECOMMEND_FORUM_INFO;
+            } else {
+                this.recommend_forum_info = Message.immutableCopyOf(list4);
+            }
+            this.hot_search = builder.hot_search;
+            Integer num6 = builder.redirect;
+            if (num6 == null) {
+                this.redirect = DEFAULT_REDIRECT;
+            } else {
+                this.redirect = num6;
+            }
+            List<Banner> list5 = builder.new_banner_info;
+            if (list5 == null) {
+                this.new_banner_info = DEFAULT_NEW_BANNER_INFO;
+            } else {
+                this.new_banner_info = Message.immutableCopyOf(list5);
+            }
+            List<FrequentlyForumInfo> list6 = builder.frequently_forum_info;
+            if (list6 == null) {
+                this.frequently_forum_info = DEFAULT_FREQUENTLY_FORUM_INFO;
+            } else {
+                this.frequently_forum_info = Message.immutableCopyOf(list6);
+            }
+            List<RecommendForumInfo> list7 = builder.tag_recommend_forum;
+            if (list7 == null) {
+                this.tag_recommend_forum = DEFAULT_TAG_RECOMMEND_FORUM;
+            } else {
+                this.tag_recommend_forum = Message.immutableCopyOf(list7);
+            }
+            Integer num7 = builder.sort_type;
+            if (num7 == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+            } else {
+                this.sort_type = num7;
+            }
+            this.forum_create_info = builder.forum_create_info;
+            this.private_forum_popinfo = builder.private_forum_popinfo;
+            List<FrsTabInfo> list8 = builder.nav_tab_info;
+            if (list8 == null) {
+                this.nav_tab_info = DEFAULT_NAV_TAB_INFO;
+            } else {
+                this.nav_tab_info = Message.immutableCopyOf(list8);
+            }
+            this.forum_popup_info = builder.forum_popup_info;
+            return;
+        }
+        this.like_forum = Message.immutableCopyOf(builder.like_forum);
+        this.banner = Message.immutableCopyOf(builder.banner);
+        this.new_recommend = Message.immutableCopyOf(builder.new_recommend);
+        this.is_login = builder.is_login;
+        this.msign_valid = builder.msign_valid;
+        this.msign_text = builder.msign_text;
+        this.msign_level = builder.msign_level;
+        this.time = builder.time;
+        this.is_mem = builder.is_mem;
+        this.recommend_forum_info = Message.immutableCopyOf(builder.recommend_forum_info);
+        this.hot_search = builder.hot_search;
+        this.redirect = builder.redirect;
+        this.new_banner_info = Message.immutableCopyOf(builder.new_banner_info);
+        this.frequently_forum_info = Message.immutableCopyOf(builder.frequently_forum_info);
+        this.tag_recommend_forum = Message.immutableCopyOf(builder.tag_recommend_forum);
+        this.sort_type = builder.sort_type;
+        this.forum_create_info = builder.forum_create_info;
+        this.private_forum_popinfo = builder.private_forum_popinfo;
+        this.nav_tab_info = Message.immutableCopyOf(builder.nav_tab_info);
+        this.forum_popup_info = builder.forum_popup_info;
     }
 }

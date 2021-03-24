@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class RecGuide extends Message {
     public static final String DEFAULT_DOCUMENT = "";
     public static final String DEFAULT_PIC = "";
@@ -14,33 +14,7 @@ public final class RecGuide extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    private RecGuide(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.document == null) {
-                this.document = "";
-            } else {
-                this.document = builder.document;
-            }
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.pic == null) {
-                this.pic = "";
-                return;
-            } else {
-                this.pic = builder.pic;
-                return;
-            }
-        }
-        this.document = builder.document;
-        this.url = builder.url;
-        this.pic = builder.pic;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecGuide> {
         public String document;
         public String pic;
@@ -51,11 +25,12 @@ public final class RecGuide extends Message {
 
         public Builder(RecGuide recGuide) {
             super(recGuide);
-            if (recGuide != null) {
-                this.document = recGuide.document;
-                this.url = recGuide.url;
-                this.pic = recGuide.pic;
+            if (recGuide == null) {
+                return;
             }
+            this.document = recGuide.document;
+            this.url = recGuide.url;
+            this.pic = recGuide.pic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class RecGuide extends Message {
         public RecGuide build(boolean z) {
             return new RecGuide(this, z);
         }
+    }
+
+    public RecGuide(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.document;
+            if (str == null) {
+                this.document = "";
+            } else {
+                this.document = str;
+            }
+            String str2 = builder.url;
+            if (str2 == null) {
+                this.url = "";
+            } else {
+                this.url = str2;
+            }
+            String str3 = builder.pic;
+            if (str3 == null) {
+                this.pic = "";
+                return;
+            } else {
+                this.pic = str3;
+                return;
+            }
+        }
+        this.document = builder.document;
+        this.url = builder.url;
+        this.pic = builder.pic;
     }
 }

@@ -11,7 +11,7 @@ import tbclient.DiscoverHotForum;
 import tbclient.RecomPostTopic;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_STAT_KEY = "";
     @ProtoField(tag = 22)
@@ -74,116 +74,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_STYLE_AB_TAG = 0;
     public static final Integer DEFAULT_FRESH_CTRL_NUM = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tag_list == null) {
-                this.tag_list = DEFAULT_TAG_LIST;
-            } else {
-                this.tag_list = immutableCopyOf(builder.tag_list);
-            }
-            if (builder.thread_list == null) {
-                this.thread_list = DEFAULT_THREAD_LIST;
-            } else {
-                this.thread_list = immutableCopyOf(builder.thread_list);
-            }
-            if (builder.resource_list == null) {
-                this.resource_list = DEFAULT_RESOURCE_LIST;
-            } else {
-                this.resource_list = immutableCopyOf(builder.resource_list);
-            }
-            if (builder.card_forum == null) {
-                this.card_forum = DEFAULT_CARD_FORUM;
-            } else {
-                this.card_forum = immutableCopyOf(builder.card_forum);
-            }
-            if (builder.card_topic == null) {
-                this.card_topic = DEFAULT_CARD_TOPIC;
-            } else {
-                this.card_topic = immutableCopyOf(builder.card_topic);
-            }
-            if (builder.sug_seconds == null) {
-                this.sug_seconds = DEFAULT_SUG_SECONDS;
-            } else {
-                this.sug_seconds = builder.sug_seconds;
-            }
-            if (builder.thread_personalized == null) {
-                this.thread_personalized = DEFAULT_THREAD_PERSONALIZED;
-            } else {
-                this.thread_personalized = immutableCopyOf(builder.thread_personalized);
-            }
-            if (builder.is_new_url == null) {
-                this.is_new_url = DEFAULT_IS_NEW_URL;
-            } else {
-                this.is_new_url = builder.is_new_url;
-            }
-            this.banner_list = builder.banner_list;
-            this.age_sex = builder.age_sex;
-            if (builder.interestion == null) {
-                this.interestion = DEFAULT_INTERESTION;
-            } else {
-                this.interestion = immutableCopyOf(builder.interestion);
-            }
-            if (builder.card_god == null) {
-                this.card_god = DEFAULT_CARD_GOD;
-            } else {
-                this.card_god = immutableCopyOf(builder.card_god);
-            }
-            if (builder.stat_key == null) {
-                this.stat_key = "";
-            } else {
-                this.stat_key = builder.stat_key;
-            }
-            if (builder.like_forums == null) {
-                this.like_forums = DEFAULT_LIKE_FORUMS;
-            } else {
-                this.like_forums = immutableCopyOf(builder.like_forums);
-            }
-            if (builder.style_ab_tag == null) {
-                this.style_ab_tag = DEFAULT_STYLE_AB_TAG;
-            } else {
-                this.style_ab_tag = builder.style_ab_tag;
-            }
-            this.anti = builder.anti;
-            this.live_answer = builder.live_answer;
-            this.float_info = builder.float_info;
-            this.recom_post_topic = builder.recom_post_topic;
-            this.user_follow_live = builder.user_follow_live;
-            if (builder.fresh_ctrl_num == null) {
-                this.fresh_ctrl_num = DEFAULT_FRESH_CTRL_NUM;
-            } else {
-                this.fresh_ctrl_num = builder.fresh_ctrl_num;
-            }
-            this.active_center = builder.active_center;
-            this.hot_recomforum = builder.hot_recomforum;
-            return;
-        }
-        this.tag_list = immutableCopyOf(builder.tag_list);
-        this.thread_list = immutableCopyOf(builder.thread_list);
-        this.resource_list = immutableCopyOf(builder.resource_list);
-        this.card_forum = immutableCopyOf(builder.card_forum);
-        this.card_topic = immutableCopyOf(builder.card_topic);
-        this.sug_seconds = builder.sug_seconds;
-        this.thread_personalized = immutableCopyOf(builder.thread_personalized);
-        this.is_new_url = builder.is_new_url;
-        this.banner_list = builder.banner_list;
-        this.age_sex = builder.age_sex;
-        this.interestion = immutableCopyOf(builder.interestion);
-        this.card_god = immutableCopyOf(builder.card_god);
-        this.stat_key = builder.stat_key;
-        this.like_forums = immutableCopyOf(builder.like_forums);
-        this.style_ab_tag = builder.style_ab_tag;
-        this.anti = builder.anti;
-        this.live_answer = builder.live_answer;
-        this.float_info = builder.float_info;
-        this.recom_post_topic = builder.recom_post_topic;
-        this.user_follow_live = builder.user_follow_live;
-        this.fresh_ctrl_num = builder.fresh_ctrl_num;
-        this.active_center = builder.active_center;
-        this.hot_recomforum = builder.hot_recomforum;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActiveCenter active_center;
         public AgeSexModule age_sex;
@@ -214,31 +105,32 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.tag_list = DataRes.copyOf(dataRes.tag_list);
-                this.thread_list = DataRes.copyOf(dataRes.thread_list);
-                this.resource_list = DataRes.copyOf(dataRes.resource_list);
-                this.card_forum = DataRes.copyOf(dataRes.card_forum);
-                this.card_topic = DataRes.copyOf(dataRes.card_topic);
-                this.sug_seconds = dataRes.sug_seconds;
-                this.thread_personalized = DataRes.copyOf(dataRes.thread_personalized);
-                this.is_new_url = dataRes.is_new_url;
-                this.banner_list = dataRes.banner_list;
-                this.age_sex = dataRes.age_sex;
-                this.interestion = DataRes.copyOf(dataRes.interestion);
-                this.card_god = DataRes.copyOf(dataRes.card_god);
-                this.stat_key = dataRes.stat_key;
-                this.like_forums = DataRes.copyOf(dataRes.like_forums);
-                this.style_ab_tag = dataRes.style_ab_tag;
-                this.anti = dataRes.anti;
-                this.live_answer = dataRes.live_answer;
-                this.float_info = dataRes.float_info;
-                this.recom_post_topic = dataRes.recom_post_topic;
-                this.user_follow_live = dataRes.user_follow_live;
-                this.fresh_ctrl_num = dataRes.fresh_ctrl_num;
-                this.active_center = dataRes.active_center;
-                this.hot_recomforum = dataRes.hot_recomforum;
+            if (dataRes == null) {
+                return;
             }
+            this.tag_list = Message.copyOf(dataRes.tag_list);
+            this.thread_list = Message.copyOf(dataRes.thread_list);
+            this.resource_list = Message.copyOf(dataRes.resource_list);
+            this.card_forum = Message.copyOf(dataRes.card_forum);
+            this.card_topic = Message.copyOf(dataRes.card_topic);
+            this.sug_seconds = dataRes.sug_seconds;
+            this.thread_personalized = Message.copyOf(dataRes.thread_personalized);
+            this.is_new_url = dataRes.is_new_url;
+            this.banner_list = dataRes.banner_list;
+            this.age_sex = dataRes.age_sex;
+            this.interestion = Message.copyOf(dataRes.interestion);
+            this.card_god = Message.copyOf(dataRes.card_god);
+            this.stat_key = dataRes.stat_key;
+            this.like_forums = Message.copyOf(dataRes.like_forums);
+            this.style_ab_tag = dataRes.style_ab_tag;
+            this.anti = dataRes.anti;
+            this.live_answer = dataRes.live_answer;
+            this.float_info = dataRes.float_info;
+            this.recom_post_topic = dataRes.recom_post_topic;
+            this.user_follow_live = dataRes.user_follow_live;
+            this.fresh_ctrl_num = dataRes.fresh_ctrl_num;
+            this.active_center = dataRes.active_center;
+            this.hot_recomforum = dataRes.hot_recomforum;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -246,5 +138,128 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<TagInfo> list = builder.tag_list;
+            if (list == null) {
+                this.tag_list = DEFAULT_TAG_LIST;
+            } else {
+                this.tag_list = Message.immutableCopyOf(list);
+            }
+            List<ThreadInfo> list2 = builder.thread_list;
+            if (list2 == null) {
+                this.thread_list = DEFAULT_THREAD_LIST;
+            } else {
+                this.thread_list = Message.immutableCopyOf(list2);
+            }
+            List<Resource> list3 = builder.resource_list;
+            if (list3 == null) {
+                this.resource_list = DEFAULT_RESOURCE_LIST;
+            } else {
+                this.resource_list = Message.immutableCopyOf(list3);
+            }
+            List<CardForum> list4 = builder.card_forum;
+            if (list4 == null) {
+                this.card_forum = DEFAULT_CARD_FORUM;
+            } else {
+                this.card_forum = Message.immutableCopyOf(list4);
+            }
+            List<CardTopic> list5 = builder.card_topic;
+            if (list5 == null) {
+                this.card_topic = DEFAULT_CARD_TOPIC;
+            } else {
+                this.card_topic = Message.immutableCopyOf(list5);
+            }
+            Integer num = builder.sug_seconds;
+            if (num == null) {
+                this.sug_seconds = DEFAULT_SUG_SECONDS;
+            } else {
+                this.sug_seconds = num;
+            }
+            List<ThreadPersonalized> list6 = builder.thread_personalized;
+            if (list6 == null) {
+                this.thread_personalized = DEFAULT_THREAD_PERSONALIZED;
+            } else {
+                this.thread_personalized = Message.immutableCopyOf(list6);
+            }
+            Integer num2 = builder.is_new_url;
+            if (num2 == null) {
+                this.is_new_url = DEFAULT_IS_NEW_URL;
+            } else {
+                this.is_new_url = num2;
+            }
+            this.banner_list = builder.banner_list;
+            this.age_sex = builder.age_sex;
+            List<TagStruct> list7 = builder.interestion;
+            if (list7 == null) {
+                this.interestion = DEFAULT_INTERESTION;
+            } else {
+                this.interestion = Message.immutableCopyOf(list7);
+            }
+            List<CardGod> list8 = builder.card_god;
+            if (list8 == null) {
+                this.card_god = DEFAULT_CARD_GOD;
+            } else {
+                this.card_god = Message.immutableCopyOf(list8);
+            }
+            String str = builder.stat_key;
+            if (str == null) {
+                this.stat_key = "";
+            } else {
+                this.stat_key = str;
+            }
+            List<SimpleForum> list9 = builder.like_forums;
+            if (list9 == null) {
+                this.like_forums = DEFAULT_LIKE_FORUMS;
+            } else {
+                this.like_forums = Message.immutableCopyOf(list9);
+            }
+            Integer num3 = builder.style_ab_tag;
+            if (num3 == null) {
+                this.style_ab_tag = DEFAULT_STYLE_AB_TAG;
+            } else {
+                this.style_ab_tag = num3;
+            }
+            this.anti = builder.anti;
+            this.live_answer = builder.live_answer;
+            this.float_info = builder.float_info;
+            this.recom_post_topic = builder.recom_post_topic;
+            this.user_follow_live = builder.user_follow_live;
+            Integer num4 = builder.fresh_ctrl_num;
+            if (num4 == null) {
+                this.fresh_ctrl_num = DEFAULT_FRESH_CTRL_NUM;
+            } else {
+                this.fresh_ctrl_num = num4;
+            }
+            this.active_center = builder.active_center;
+            this.hot_recomforum = builder.hot_recomforum;
+            return;
+        }
+        this.tag_list = Message.immutableCopyOf(builder.tag_list);
+        this.thread_list = Message.immutableCopyOf(builder.thread_list);
+        this.resource_list = Message.immutableCopyOf(builder.resource_list);
+        this.card_forum = Message.immutableCopyOf(builder.card_forum);
+        this.card_topic = Message.immutableCopyOf(builder.card_topic);
+        this.sug_seconds = builder.sug_seconds;
+        this.thread_personalized = Message.immutableCopyOf(builder.thread_personalized);
+        this.is_new_url = builder.is_new_url;
+        this.banner_list = builder.banner_list;
+        this.age_sex = builder.age_sex;
+        this.interestion = Message.immutableCopyOf(builder.interestion);
+        this.card_god = Message.immutableCopyOf(builder.card_god);
+        this.stat_key = builder.stat_key;
+        this.like_forums = Message.immutableCopyOf(builder.like_forums);
+        this.style_ab_tag = builder.style_ab_tag;
+        this.anti = builder.anti;
+        this.live_answer = builder.live_answer;
+        this.float_info = builder.float_info;
+        this.recom_post_topic = builder.recom_post_topic;
+        this.user_follow_live = builder.user_follow_live;
+        this.fresh_ctrl_num = builder.fresh_ctrl_num;
+        this.active_center = builder.active_center;
+        this.hot_recomforum = builder.hot_recomforum;
     }
 }

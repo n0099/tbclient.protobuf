@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class UcCardInfo extends Message {
     public static final String DEFAULT_JMP = "";
     public static final String DEFAULT_PIC = "";
@@ -20,45 +20,7 @@ public final class UcCardInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    private UcCardInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.pic == null) {
-                this.pic = "";
-            } else {
-                this.pic = builder.pic;
-            }
-            if (builder.jmp == null) {
-                this.jmp = "";
-            } else {
-                this.jmp = builder.jmp;
-            }
-            if (builder.tip == null) {
-                this.tip = "";
-            } else {
-                this.tip = builder.tip;
-            }
-            if (builder.st == null) {
-                this.st = DEFAULT_ST;
-                return;
-            } else {
-                this.st = builder.st;
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.pic = builder.pic;
-        this.jmp = builder.jmp;
-        this.tip = builder.tip;
-        this.st = builder.st;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UcCardInfo> {
         public String jmp;
         public String pic;
@@ -71,13 +33,14 @@ public final class UcCardInfo extends Message {
 
         public Builder(UcCardInfo ucCardInfo) {
             super(ucCardInfo);
-            if (ucCardInfo != null) {
-                this.title = ucCardInfo.title;
-                this.pic = ucCardInfo.pic;
-                this.jmp = ucCardInfo.jmp;
-                this.tip = ucCardInfo.tip;
-                this.st = ucCardInfo.st;
+            if (ucCardInfo == null) {
+                return;
             }
+            this.title = ucCardInfo.title;
+            this.pic = ucCardInfo.pic;
+            this.jmp = ucCardInfo.jmp;
+            this.tip = ucCardInfo.tip;
+            this.st = ucCardInfo.st;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class UcCardInfo extends Message {
         public UcCardInfo build(boolean z) {
             return new UcCardInfo(this, z);
         }
+    }
+
+    public UcCardInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.pic;
+            if (str2 == null) {
+                this.pic = "";
+            } else {
+                this.pic = str2;
+            }
+            String str3 = builder.jmp;
+            if (str3 == null) {
+                this.jmp = "";
+            } else {
+                this.jmp = str3;
+            }
+            String str4 = builder.tip;
+            if (str4 == null) {
+                this.tip = "";
+            } else {
+                this.tip = str4;
+            }
+            Integer num = builder.st;
+            if (num == null) {
+                this.st = DEFAULT_ST;
+                return;
+            } else {
+                this.st = num;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.pic = builder.pic;
+        this.jmp = builder.jmp;
+        this.tip = builder.tip;
+        this.st = builder.st;
     }
 }

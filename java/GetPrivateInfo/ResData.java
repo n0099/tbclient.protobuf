@@ -3,7 +3,7 @@ package tbclient.GetPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.SimpleUser;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ResData extends Message {
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer bazhu_show_inside;
@@ -35,71 +35,7 @@ public final class ResData extends Message {
     public static final Integer DEFAULT_BAZHU_SHOW_INSIDE = 0;
     public static final Integer DEFAULT_BAZHU_SHOW_OUTSIDE = 0;
 
-    private ResData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.location == null) {
-                this.location = DEFAULT_LOCATION;
-            } else {
-                this.location = builder.location;
-            }
-            if (builder.post == null) {
-                this.post = DEFAULT_POST;
-            } else {
-                this.post = builder.post;
-            }
-            if (builder.like == null) {
-                this.like = DEFAULT_LIKE;
-            } else {
-                this.like = builder.like;
-            }
-            if (builder.group == null) {
-                this.group = DEFAULT_GROUP;
-            } else {
-                this.group = builder.group;
-            }
-            this.user = builder.user;
-            if (builder.live == null) {
-                this.live = DEFAULT_LIVE;
-            } else {
-                this.live = builder.live;
-            }
-            if (builder.forum_num == null) {
-                this.forum_num = DEFAULT_FORUM_NUM;
-            } else {
-                this.forum_num = builder.forum_num;
-            }
-            if (builder.reply == null) {
-                this.reply = DEFAULT_REPLY;
-            } else {
-                this.reply = builder.reply;
-            }
-            if (builder.bazhu_show_inside == null) {
-                this.bazhu_show_inside = DEFAULT_BAZHU_SHOW_INSIDE;
-            } else {
-                this.bazhu_show_inside = builder.bazhu_show_inside;
-            }
-            if (builder.bazhu_show_outside == null) {
-                this.bazhu_show_outside = DEFAULT_BAZHU_SHOW_OUTSIDE;
-                return;
-            } else {
-                this.bazhu_show_outside = builder.bazhu_show_outside;
-                return;
-            }
-        }
-        this.location = builder.location;
-        this.post = builder.post;
-        this.like = builder.like;
-        this.group = builder.group;
-        this.user = builder.user;
-        this.live = builder.live;
-        this.forum_num = builder.forum_num;
-        this.reply = builder.reply;
-        this.bazhu_show_inside = builder.bazhu_show_inside;
-        this.bazhu_show_outside = builder.bazhu_show_outside;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ResData> {
         public Integer bazhu_show_inside;
         public Integer bazhu_show_outside;
@@ -117,18 +53,19 @@ public final class ResData extends Message {
 
         public Builder(ResData resData) {
             super(resData);
-            if (resData != null) {
-                this.location = resData.location;
-                this.post = resData.post;
-                this.like = resData.like;
-                this.group = resData.group;
-                this.user = resData.user;
-                this.live = resData.live;
-                this.forum_num = resData.forum_num;
-                this.reply = resData.reply;
-                this.bazhu_show_inside = resData.bazhu_show_inside;
-                this.bazhu_show_outside = resData.bazhu_show_outside;
+            if (resData == null) {
+                return;
             }
+            this.location = resData.location;
+            this.post = resData.post;
+            this.like = resData.like;
+            this.group = resData.group;
+            this.user = resData.user;
+            this.live = resData.live;
+            this.forum_num = resData.forum_num;
+            this.reply = resData.reply;
+            this.bazhu_show_inside = resData.bazhu_show_inside;
+            this.bazhu_show_outside = resData.bazhu_show_outside;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -136,5 +73,78 @@ public final class ResData extends Message {
         public ResData build(boolean z) {
             return new ResData(this, z);
         }
+    }
+
+    public ResData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.location;
+            if (num == null) {
+                this.location = DEFAULT_LOCATION;
+            } else {
+                this.location = num;
+            }
+            Integer num2 = builder.post;
+            if (num2 == null) {
+                this.post = DEFAULT_POST;
+            } else {
+                this.post = num2;
+            }
+            Integer num3 = builder.like;
+            if (num3 == null) {
+                this.like = DEFAULT_LIKE;
+            } else {
+                this.like = num3;
+            }
+            Integer num4 = builder.group;
+            if (num4 == null) {
+                this.group = DEFAULT_GROUP;
+            } else {
+                this.group = num4;
+            }
+            this.user = builder.user;
+            Integer num5 = builder.live;
+            if (num5 == null) {
+                this.live = DEFAULT_LIVE;
+            } else {
+                this.live = num5;
+            }
+            Integer num6 = builder.forum_num;
+            if (num6 == null) {
+                this.forum_num = DEFAULT_FORUM_NUM;
+            } else {
+                this.forum_num = num6;
+            }
+            Integer num7 = builder.reply;
+            if (num7 == null) {
+                this.reply = DEFAULT_REPLY;
+            } else {
+                this.reply = num7;
+            }
+            Integer num8 = builder.bazhu_show_inside;
+            if (num8 == null) {
+                this.bazhu_show_inside = DEFAULT_BAZHU_SHOW_INSIDE;
+            } else {
+                this.bazhu_show_inside = num8;
+            }
+            Integer num9 = builder.bazhu_show_outside;
+            if (num9 == null) {
+                this.bazhu_show_outside = DEFAULT_BAZHU_SHOW_OUTSIDE;
+                return;
+            } else {
+                this.bazhu_show_outside = num9;
+                return;
+            }
+        }
+        this.location = builder.location;
+        this.post = builder.post;
+        this.like = builder.like;
+        this.group = builder.group;
+        this.user = builder.user;
+        this.live = builder.live;
+        this.forum_num = builder.forum_num;
+        this.reply = builder.reply;
+        this.bazhu_show_inside = builder.bazhu_show_inside;
+        this.bazhu_show_outside = builder.bazhu_show_outside;
     }
 }

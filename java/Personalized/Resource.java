@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Resource extends Message {
     public static final String DEFAULT_ICON_TEXT = "";
     public static final String DEFAULT_RES_IMAGE = "";
@@ -32,69 +32,7 @@ public final class Resource extends Message {
     public static final Long DEFAULT_RES_ID = 0L;
     public static final Long DEFAULT_POSITION = 0L;
 
-    private Resource(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.res_id == null) {
-                this.res_id = DEFAULT_RES_ID;
-            } else {
-                this.res_id = builder.res_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.user_image == null) {
-                this.user_image = "";
-            } else {
-                this.user_image = builder.user_image;
-            }
-            if (builder.user_link == null) {
-                this.user_link = "";
-            } else {
-                this.user_link = builder.user_link;
-            }
-            if (builder.res_title == null) {
-                this.res_title = "";
-            } else {
-                this.res_title = builder.res_title;
-            }
-            if (builder.res_image == null) {
-                this.res_image = "";
-            } else {
-                this.res_image = builder.res_image;
-            }
-            if (builder.res_link == null) {
-                this.res_link = "";
-            } else {
-                this.res_link = builder.res_link;
-            }
-            if (builder.position == null) {
-                this.position = DEFAULT_POSITION;
-            } else {
-                this.position = builder.position;
-            }
-            if (builder.icon_text == null) {
-                this.icon_text = "";
-                return;
-            } else {
-                this.icon_text = builder.icon_text;
-                return;
-            }
-        }
-        this.res_id = builder.res_id;
-        this.user_name = builder.user_name;
-        this.user_image = builder.user_image;
-        this.user_link = builder.user_link;
-        this.res_title = builder.res_title;
-        this.res_image = builder.res_image;
-        this.res_link = builder.res_link;
-        this.position = builder.position;
-        this.icon_text = builder.icon_text;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Resource> {
         public String icon_text;
         public Long position;
@@ -111,17 +49,18 @@ public final class Resource extends Message {
 
         public Builder(Resource resource) {
             super(resource);
-            if (resource != null) {
-                this.res_id = resource.res_id;
-                this.user_name = resource.user_name;
-                this.user_image = resource.user_image;
-                this.user_link = resource.user_link;
-                this.res_title = resource.res_title;
-                this.res_image = resource.res_image;
-                this.res_link = resource.res_link;
-                this.position = resource.position;
-                this.icon_text = resource.icon_text;
+            if (resource == null) {
+                return;
             }
+            this.res_id = resource.res_id;
+            this.user_name = resource.user_name;
+            this.user_image = resource.user_image;
+            this.user_link = resource.user_link;
+            this.res_title = resource.res_title;
+            this.res_image = resource.res_image;
+            this.res_link = resource.res_link;
+            this.position = resource.position;
+            this.icon_text = resource.icon_text;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -129,5 +68,76 @@ public final class Resource extends Message {
         public Resource build(boolean z) {
             return new Resource(this, z);
         }
+    }
+
+    public Resource(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.res_id;
+            if (l == null) {
+                this.res_id = DEFAULT_RES_ID;
+            } else {
+                this.res_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.user_image;
+            if (str2 == null) {
+                this.user_image = "";
+            } else {
+                this.user_image = str2;
+            }
+            String str3 = builder.user_link;
+            if (str3 == null) {
+                this.user_link = "";
+            } else {
+                this.user_link = str3;
+            }
+            String str4 = builder.res_title;
+            if (str4 == null) {
+                this.res_title = "";
+            } else {
+                this.res_title = str4;
+            }
+            String str5 = builder.res_image;
+            if (str5 == null) {
+                this.res_image = "";
+            } else {
+                this.res_image = str5;
+            }
+            String str6 = builder.res_link;
+            if (str6 == null) {
+                this.res_link = "";
+            } else {
+                this.res_link = str6;
+            }
+            Long l2 = builder.position;
+            if (l2 == null) {
+                this.position = DEFAULT_POSITION;
+            } else {
+                this.position = l2;
+            }
+            String str7 = builder.icon_text;
+            if (str7 == null) {
+                this.icon_text = "";
+                return;
+            } else {
+                this.icon_text = str7;
+                return;
+            }
+        }
+        this.res_id = builder.res_id;
+        this.user_name = builder.user_name;
+        this.user_image = builder.user_image;
+        this.user_link = builder.user_link;
+        this.res_title = builder.res_title;
+        this.res_image = builder.res_image;
+        this.res_link = builder.res_link;
+        this.position = builder.position;
+        this.icon_text = builder.icon_text;
     }
 }

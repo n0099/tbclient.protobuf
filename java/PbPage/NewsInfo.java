@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class NewsInfo extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_NEWS_ICON = "";
@@ -26,57 +26,7 @@ public final class NewsInfo extends Message {
     public static final Integer DEFAULT_POSITION = 0;
     public static final Integer DEFAULT_NEWS_TYPE = 0;
 
-    private NewsInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.news_link == null) {
-                this.news_link = "";
-            } else {
-                this.news_link = builder.news_link;
-            }
-            if (builder.summary == null) {
-                this.summary = "";
-            } else {
-                this.summary = builder.summary;
-            }
-            if (builder.position == null) {
-                this.position = DEFAULT_POSITION;
-            } else {
-                this.position = builder.position;
-            }
-            if (builder.news_type == null) {
-                this.news_type = DEFAULT_NEWS_TYPE;
-            } else {
-                this.news_type = builder.news_type;
-            }
-            if (builder.news_icon == null) {
-                this.news_icon = "";
-            } else {
-                this.news_icon = builder.news_icon;
-            }
-            if (builder.subtitle == null) {
-                this.subtitle = "";
-            } else {
-                this.subtitle = builder.subtitle;
-            }
-            if (builder.button_text == null) {
-                this.button_text = "";
-                return;
-            } else {
-                this.button_text = builder.button_text;
-                return;
-            }
-        }
-        this.news_link = builder.news_link;
-        this.summary = builder.summary;
-        this.position = builder.position;
-        this.news_type = builder.news_type;
-        this.news_icon = builder.news_icon;
-        this.subtitle = builder.subtitle;
-        this.button_text = builder.button_text;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<NewsInfo> {
         public String button_text;
         public String news_icon;
@@ -91,15 +41,16 @@ public final class NewsInfo extends Message {
 
         public Builder(NewsInfo newsInfo) {
             super(newsInfo);
-            if (newsInfo != null) {
-                this.news_link = newsInfo.news_link;
-                this.summary = newsInfo.summary;
-                this.position = newsInfo.position;
-                this.news_type = newsInfo.news_type;
-                this.news_icon = newsInfo.news_icon;
-                this.subtitle = newsInfo.subtitle;
-                this.button_text = newsInfo.button_text;
+            if (newsInfo == null) {
+                return;
             }
+            this.news_link = newsInfo.news_link;
+            this.summary = newsInfo.summary;
+            this.position = newsInfo.position;
+            this.news_type = newsInfo.news_type;
+            this.news_icon = newsInfo.news_icon;
+            this.subtitle = newsInfo.subtitle;
+            this.button_text = newsInfo.button_text;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +58,62 @@ public final class NewsInfo extends Message {
         public NewsInfo build(boolean z) {
             return new NewsInfo(this, z);
         }
+    }
+
+    public NewsInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.news_link;
+            if (str == null) {
+                this.news_link = "";
+            } else {
+                this.news_link = str;
+            }
+            String str2 = builder.summary;
+            if (str2 == null) {
+                this.summary = "";
+            } else {
+                this.summary = str2;
+            }
+            Integer num = builder.position;
+            if (num == null) {
+                this.position = DEFAULT_POSITION;
+            } else {
+                this.position = num;
+            }
+            Integer num2 = builder.news_type;
+            if (num2 == null) {
+                this.news_type = DEFAULT_NEWS_TYPE;
+            } else {
+                this.news_type = num2;
+            }
+            String str3 = builder.news_icon;
+            if (str3 == null) {
+                this.news_icon = "";
+            } else {
+                this.news_icon = str3;
+            }
+            String str4 = builder.subtitle;
+            if (str4 == null) {
+                this.subtitle = "";
+            } else {
+                this.subtitle = str4;
+            }
+            String str5 = builder.button_text;
+            if (str5 == null) {
+                this.button_text = "";
+                return;
+            } else {
+                this.button_text = str5;
+                return;
+            }
+        }
+        this.news_link = builder.news_link;
+        this.summary = builder.summary;
+        this.position = builder.position;
+        this.news_type = builder.news_type;
+        this.news_icon = builder.news_icon;
+        this.subtitle = builder.subtitle;
+        this.button_text = builder.button_text;
     }
 }

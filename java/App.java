@@ -1,6 +1,6 @@
 package tbclient;
 
-import com.baidu.live.tbadk.core.data.ConstantData;
+import com.baidu.cyberplayer.sdk.statistics.DpStatConstants;
 import com.baidu.sapi2.views.SmsLoginView;
 import com.baidu.tbadk.core.atomData.BigdayActivityConfig;
 import com.baidu.tbadk.core.atomData.LegoListActivityConfig;
@@ -12,7 +12,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class App extends Message {
     public static final String DEFAULT_ABTEST = "";
     public static final String DEFAULT_AD_ID = "";
@@ -111,207 +111,7 @@ public final class App extends Message {
     public static final Integer DEFAULT_PLAN_ID = 0;
     public static final List<GoodsInfo> DEFAULT_GOODS_INFO = Collections.emptyList();
 
-    private App(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.pos == null) {
-                this.pos = DEFAULT_POS;
-            } else {
-                this.pos = builder.pos;
-            }
-            if (builder.icon_url == null) {
-                this.icon_url = "";
-            } else {
-                this.icon_url = builder.icon_url;
-            }
-            if (builder.icon_link == null) {
-                this.icon_link = "";
-            } else {
-                this.icon_link = builder.icon_link;
-            }
-            if (builder.app_name == null) {
-                this.app_name = "";
-            } else {
-                this.app_name = builder.app_name;
-            }
-            if (builder.app_desc == null) {
-                this.app_desc = "";
-            } else {
-                this.app_desc = builder.app_desc;
-            }
-            if (builder.p_name == null) {
-                this.p_name = "";
-            } else {
-                this.p_name = builder.p_name;
-            }
-            if (builder.p_url == null) {
-                this.p_url = "";
-            } else {
-                this.p_url = builder.p_url;
-            }
-            if (builder.img_url == null) {
-                this.img_url = "";
-            } else {
-                this.img_url = builder.img_url;
-            }
-            if (builder.app_time == null) {
-                this.app_time = DEFAULT_APP_TIME;
-            } else {
-                this.app_time = builder.app_time;
-            }
-            if (builder.web_url == null) {
-                this.web_url = "";
-            } else {
-                this.web_url = builder.web_url;
-            }
-            if (builder.ad_id == null) {
-                this.ad_id = "";
-            } else {
-                this.ad_id = builder.ad_id;
-            }
-            if (builder.id == null) {
-                this.id = "";
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.url_type == null) {
-                this.url_type = DEFAULT_URL_TYPE;
-            } else {
-                this.url_type = builder.url_type;
-            }
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.ios_url == null) {
-                this.ios_url = "";
-            } else {
-                this.ios_url = builder.ios_url;
-            }
-            if (builder.apk_url == null) {
-                this.apk_url = "";
-            } else {
-                this.apk_url = builder.apk_url;
-            }
-            if (builder.apk_name == null) {
-                this.apk_name = "";
-            } else {
-                this.apk_name = builder.apk_name;
-            }
-            if (builder.pos_name == null) {
-                this.pos_name = "";
-            } else {
-                this.pos_name = builder.pos_name;
-            }
-            if (builder.first_name == null) {
-                this.first_name = "";
-            } else {
-                this.first_name = builder.first_name;
-            }
-            if (builder.second_name == null) {
-                this.second_name = "";
-            } else {
-                this.second_name = builder.second_name;
-            }
-            if (builder.cpid == null) {
-                this.cpid = DEFAULT_CPID;
-            } else {
-                this.cpid = builder.cpid;
-            }
-            if (builder.abtest == null) {
-                this.abtest = "";
-            } else {
-                this.abtest = builder.abtest;
-            }
-            if (builder.plan_id == null) {
-                this.plan_id = DEFAULT_PLAN_ID;
-            } else {
-                this.plan_id = builder.plan_id;
-            }
-            if (builder.user_id == null) {
-                this.user_id = "";
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.price == null) {
-                this.price = "";
-            } else {
-                this.price = builder.price;
-            }
-            if (builder.verify == null) {
-                this.verify = "";
-            } else {
-                this.verify = builder.verify;
-            }
-            if (builder.ext_info == null) {
-                this.ext_info = "";
-            } else {
-                this.ext_info = builder.ext_info;
-            }
-            if (builder.goods_info == null) {
-                this.goods_info = DEFAULT_GOODS_INFO;
-            } else {
-                this.goods_info = immutableCopyOf(builder.goods_info);
-            }
-            if (builder.loc_code == null) {
-                this.loc_code = "";
-            } else {
-                this.loc_code = builder.loc_code;
-            }
-            if (builder.deep_url == null) {
-                this.deep_url = "";
-                return;
-            } else {
-                this.deep_url = builder.deep_url;
-                return;
-            }
-        }
-        this.type = builder.type;
-        this.pos = builder.pos;
-        this.icon_url = builder.icon_url;
-        this.icon_link = builder.icon_link;
-        this.app_name = builder.app_name;
-        this.app_desc = builder.app_desc;
-        this.p_name = builder.p_name;
-        this.p_url = builder.p_url;
-        this.img_url = builder.img_url;
-        this.app_time = builder.app_time;
-        this.web_url = builder.web_url;
-        this.ad_id = builder.ad_id;
-        this.id = builder.id;
-        this.name = builder.name;
-        this.url_type = builder.url_type;
-        this.url = builder.url;
-        this.ios_url = builder.ios_url;
-        this.apk_url = builder.apk_url;
-        this.apk_name = builder.apk_name;
-        this.pos_name = builder.pos_name;
-        this.first_name = builder.first_name;
-        this.second_name = builder.second_name;
-        this.cpid = builder.cpid;
-        this.abtest = builder.abtest;
-        this.plan_id = builder.plan_id;
-        this.user_id = builder.user_id;
-        this.price = builder.price;
-        this.verify = builder.verify;
-        this.ext_info = builder.ext_info;
-        this.goods_info = immutableCopyOf(builder.goods_info);
-        this.loc_code = builder.loc_code;
-        this.deep_url = builder.deep_url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<App> {
         public String abtest;
         public String ad_id;
@@ -351,40 +151,41 @@ public final class App extends Message {
 
         public Builder(App app) {
             super(app);
-            if (app != null) {
-                this.type = app.type;
-                this.pos = app.pos;
-                this.icon_url = app.icon_url;
-                this.icon_link = app.icon_link;
-                this.app_name = app.app_name;
-                this.app_desc = app.app_desc;
-                this.p_name = app.p_name;
-                this.p_url = app.p_url;
-                this.img_url = app.img_url;
-                this.app_time = app.app_time;
-                this.web_url = app.web_url;
-                this.ad_id = app.ad_id;
-                this.id = app.id;
-                this.name = app.name;
-                this.url_type = app.url_type;
-                this.url = app.url;
-                this.ios_url = app.ios_url;
-                this.apk_url = app.apk_url;
-                this.apk_name = app.apk_name;
-                this.pos_name = app.pos_name;
-                this.first_name = app.first_name;
-                this.second_name = app.second_name;
-                this.cpid = app.cpid;
-                this.abtest = app.abtest;
-                this.plan_id = app.plan_id;
-                this.user_id = app.user_id;
-                this.price = app.price;
-                this.verify = app.verify;
-                this.ext_info = app.ext_info;
-                this.goods_info = App.copyOf(app.goods_info);
-                this.loc_code = app.loc_code;
-                this.deep_url = app.deep_url;
+            if (app == null) {
+                return;
             }
+            this.type = app.type;
+            this.pos = app.pos;
+            this.icon_url = app.icon_url;
+            this.icon_link = app.icon_link;
+            this.app_name = app.app_name;
+            this.app_desc = app.app_desc;
+            this.p_name = app.p_name;
+            this.p_url = app.p_url;
+            this.img_url = app.img_url;
+            this.app_time = app.app_time;
+            this.web_url = app.web_url;
+            this.ad_id = app.ad_id;
+            this.id = app.id;
+            this.name = app.name;
+            this.url_type = app.url_type;
+            this.url = app.url;
+            this.ios_url = app.ios_url;
+            this.apk_url = app.apk_url;
+            this.apk_name = app.apk_name;
+            this.pos_name = app.pos_name;
+            this.first_name = app.first_name;
+            this.second_name = app.second_name;
+            this.cpid = app.cpid;
+            this.abtest = app.abtest;
+            this.plan_id = app.plan_id;
+            this.user_id = app.user_id;
+            this.price = app.price;
+            this.verify = app.verify;
+            this.ext_info = app.ext_info;
+            this.goods_info = Message.copyOf(app.goods_info);
+            this.loc_code = app.loc_code;
+            this.deep_url = app.deep_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -403,7 +204,7 @@ public final class App extends Message {
         builder.pos = Integer.valueOf(jSONObject.optInt("pos"));
         builder.icon_url = jSONObject.optString("icon_url");
         builder.icon_link = jSONObject.optString("icon_link");
-        builder.app_name = jSONObject.optString("app_name");
+        builder.app_name = jSONObject.optString(DpStatConstants.KEY_APP_NAME);
         builder.app_desc = jSONObject.optString("app_desc");
         builder.p_name = jSONObject.optString("p_name");
         builder.p_url = jSONObject.optString("p_url");
@@ -413,11 +214,11 @@ public final class App extends Message {
         builder.ad_id = jSONObject.optString(LegoListActivityConfig.AD_ID);
         builder.id = jSONObject.optString("id");
         builder.name = jSONObject.optString("name");
-        builder.url_type = Integer.valueOf(jSONObject.optInt(ConstantData.Logo.LOGO_JUMP_URL_TPYE));
+        builder.url_type = Integer.valueOf(jSONObject.optInt("url_type"));
         builder.url = jSONObject.optString("url");
         builder.ios_url = jSONObject.optString("ios_url");
-        builder.apk_url = jSONObject.optString(ConstantData.Logo.LOGO_AD_APK_URL);
-        builder.apk_name = jSONObject.optString(ConstantData.Logo.LOGO_AD_APK_PACKAGE_NAME);
+        builder.apk_url = jSONObject.optString("apk_url");
+        builder.apk_name = jSONObject.optString("apk_name");
         builder.pos_name = jSONObject.optString("pos_name");
         builder.first_name = jSONObject.optString("first_name");
         builder.second_name = jSONObject.optString("second_name");
@@ -450,7 +251,7 @@ public final class App extends Message {
             jSONObject.put("pos", app.pos);
             jSONObject.put("icon_url", app.icon_url);
             jSONObject.put("icon_link", app.icon_link);
-            jSONObject.put("app_name", app.app_name);
+            jSONObject.put(DpStatConstants.KEY_APP_NAME, app.app_name);
             jSONObject.put("app_desc", app.app_desc);
             jSONObject.put("p_name", app.p_name);
             jSONObject.put("p_url", app.p_url);
@@ -460,11 +261,11 @@ public final class App extends Message {
             jSONObject.put(LegoListActivityConfig.AD_ID, app.ad_id);
             jSONObject.put("id", app.id);
             jSONObject.put("name", app.name);
-            jSONObject.put(ConstantData.Logo.LOGO_JUMP_URL_TPYE, app.url_type);
+            jSONObject.put("url_type", app.url_type);
             jSONObject.put("url", app.url);
             jSONObject.put("ios_url", app.ios_url);
-            jSONObject.put(ConstantData.Logo.LOGO_AD_APK_URL, app.apk_url);
-            jSONObject.put(ConstantData.Logo.LOGO_AD_APK_PACKAGE_NAME, app.apk_name);
+            jSONObject.put("apk_url", app.apk_url);
+            jSONObject.put("apk_name", app.apk_name);
             jSONObject.put("pos_name", app.pos_name);
             jSONObject.put("first_name", app.first_name);
             jSONObject.put("second_name", app.second_name);
@@ -482,9 +283,241 @@ public final class App extends Message {
             jSONObject.put("goods_info", jSONArray);
             jSONObject.put("loc_code", app.loc_code);
             jSONObject.put("deep_url", app.deep_url);
-        } catch (JSONException e) {
-            e.printStackTrace();
+        } catch (JSONException e2) {
+            e2.printStackTrace();
         }
         return jSONObject;
+    }
+
+    public App(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            Integer num2 = builder.pos;
+            if (num2 == null) {
+                this.pos = DEFAULT_POS;
+            } else {
+                this.pos = num2;
+            }
+            String str = builder.icon_url;
+            if (str == null) {
+                this.icon_url = "";
+            } else {
+                this.icon_url = str;
+            }
+            String str2 = builder.icon_link;
+            if (str2 == null) {
+                this.icon_link = "";
+            } else {
+                this.icon_link = str2;
+            }
+            String str3 = builder.app_name;
+            if (str3 == null) {
+                this.app_name = "";
+            } else {
+                this.app_name = str3;
+            }
+            String str4 = builder.app_desc;
+            if (str4 == null) {
+                this.app_desc = "";
+            } else {
+                this.app_desc = str4;
+            }
+            String str5 = builder.p_name;
+            if (str5 == null) {
+                this.p_name = "";
+            } else {
+                this.p_name = str5;
+            }
+            String str6 = builder.p_url;
+            if (str6 == null) {
+                this.p_url = "";
+            } else {
+                this.p_url = str6;
+            }
+            String str7 = builder.img_url;
+            if (str7 == null) {
+                this.img_url = "";
+            } else {
+                this.img_url = str7;
+            }
+            Integer num3 = builder.app_time;
+            if (num3 == null) {
+                this.app_time = DEFAULT_APP_TIME;
+            } else {
+                this.app_time = num3;
+            }
+            String str8 = builder.web_url;
+            if (str8 == null) {
+                this.web_url = "";
+            } else {
+                this.web_url = str8;
+            }
+            String str9 = builder.ad_id;
+            if (str9 == null) {
+                this.ad_id = "";
+            } else {
+                this.ad_id = str9;
+            }
+            String str10 = builder.id;
+            if (str10 == null) {
+                this.id = "";
+            } else {
+                this.id = str10;
+            }
+            String str11 = builder.name;
+            if (str11 == null) {
+                this.name = "";
+            } else {
+                this.name = str11;
+            }
+            Integer num4 = builder.url_type;
+            if (num4 == null) {
+                this.url_type = DEFAULT_URL_TYPE;
+            } else {
+                this.url_type = num4;
+            }
+            String str12 = builder.url;
+            if (str12 == null) {
+                this.url = "";
+            } else {
+                this.url = str12;
+            }
+            String str13 = builder.ios_url;
+            if (str13 == null) {
+                this.ios_url = "";
+            } else {
+                this.ios_url = str13;
+            }
+            String str14 = builder.apk_url;
+            if (str14 == null) {
+                this.apk_url = "";
+            } else {
+                this.apk_url = str14;
+            }
+            String str15 = builder.apk_name;
+            if (str15 == null) {
+                this.apk_name = "";
+            } else {
+                this.apk_name = str15;
+            }
+            String str16 = builder.pos_name;
+            if (str16 == null) {
+                this.pos_name = "";
+            } else {
+                this.pos_name = str16;
+            }
+            String str17 = builder.first_name;
+            if (str17 == null) {
+                this.first_name = "";
+            } else {
+                this.first_name = str17;
+            }
+            String str18 = builder.second_name;
+            if (str18 == null) {
+                this.second_name = "";
+            } else {
+                this.second_name = str18;
+            }
+            Integer num5 = builder.cpid;
+            if (num5 == null) {
+                this.cpid = DEFAULT_CPID;
+            } else {
+                this.cpid = num5;
+            }
+            String str19 = builder.abtest;
+            if (str19 == null) {
+                this.abtest = "";
+            } else {
+                this.abtest = str19;
+            }
+            Integer num6 = builder.plan_id;
+            if (num6 == null) {
+                this.plan_id = DEFAULT_PLAN_ID;
+            } else {
+                this.plan_id = num6;
+            }
+            String str20 = builder.user_id;
+            if (str20 == null) {
+                this.user_id = "";
+            } else {
+                this.user_id = str20;
+            }
+            String str21 = builder.price;
+            if (str21 == null) {
+                this.price = "";
+            } else {
+                this.price = str21;
+            }
+            String str22 = builder.verify;
+            if (str22 == null) {
+                this.verify = "";
+            } else {
+                this.verify = str22;
+            }
+            String str23 = builder.ext_info;
+            if (str23 == null) {
+                this.ext_info = "";
+            } else {
+                this.ext_info = str23;
+            }
+            List<GoodsInfo> list = builder.goods_info;
+            if (list == null) {
+                this.goods_info = DEFAULT_GOODS_INFO;
+            } else {
+                this.goods_info = Message.immutableCopyOf(list);
+            }
+            String str24 = builder.loc_code;
+            if (str24 == null) {
+                this.loc_code = "";
+            } else {
+                this.loc_code = str24;
+            }
+            String str25 = builder.deep_url;
+            if (str25 == null) {
+                this.deep_url = "";
+                return;
+            } else {
+                this.deep_url = str25;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.pos = builder.pos;
+        this.icon_url = builder.icon_url;
+        this.icon_link = builder.icon_link;
+        this.app_name = builder.app_name;
+        this.app_desc = builder.app_desc;
+        this.p_name = builder.p_name;
+        this.p_url = builder.p_url;
+        this.img_url = builder.img_url;
+        this.app_time = builder.app_time;
+        this.web_url = builder.web_url;
+        this.ad_id = builder.ad_id;
+        this.id = builder.id;
+        this.name = builder.name;
+        this.url_type = builder.url_type;
+        this.url = builder.url;
+        this.ios_url = builder.ios_url;
+        this.apk_url = builder.apk_url;
+        this.apk_name = builder.apk_name;
+        this.pos_name = builder.pos_name;
+        this.first_name = builder.first_name;
+        this.second_name = builder.second_name;
+        this.cpid = builder.cpid;
+        this.abtest = builder.abtest;
+        this.plan_id = builder.plan_id;
+        this.user_id = builder.user_id;
+        this.price = builder.price;
+        this.verify = builder.verify;
+        this.ext_info = builder.ext_info;
+        this.goods_info = Message.immutableCopyOf(builder.goods_info);
+        this.loc_code = builder.loc_code;
+        this.deep_url = builder.deep_url;
     }
 }

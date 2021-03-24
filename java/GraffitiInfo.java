@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class GraffitiInfo extends Message {
     public static final Long DEFAULT_GID = 0L;
     public static final String DEFAULT_URL = "";
@@ -11,27 +11,7 @@ public final class GraffitiInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    private GraffitiInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.gid == null) {
-                this.gid = DEFAULT_GID;
-                return;
-            } else {
-                this.gid = builder.gid;
-                return;
-            }
-        }
-        this.url = builder.url;
-        this.gid = builder.gid;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GraffitiInfo> {
         public Long gid;
         public String url;
@@ -41,10 +21,11 @@ public final class GraffitiInfo extends Message {
 
         public Builder(GraffitiInfo graffitiInfo) {
             super(graffitiInfo);
-            if (graffitiInfo != null) {
-                this.url = graffitiInfo.url;
-                this.gid = graffitiInfo.gid;
+            if (graffitiInfo == null) {
+                return;
             }
+            this.url = graffitiInfo.url;
+            this.gid = graffitiInfo.gid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class GraffitiInfo extends Message {
         public GraffitiInfo build(boolean z) {
             return new GraffitiInfo(this, z);
         }
+    }
+
+    public GraffitiInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+            } else {
+                this.url = str;
+            }
+            Long l = builder.gid;
+            if (l == null) {
+                this.gid = DEFAULT_GID;
+                return;
+            } else {
+                this.gid = l;
+                return;
+            }
+        }
+        this.url = builder.url;
+        this.gid = builder.gid;
     }
 }

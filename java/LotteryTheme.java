@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class LotteryTheme extends Message {
     public static final String DEFAULT_BGCOLOR = "";
     public static final String DEFAULT_BGIMAGE = "";
@@ -11,27 +11,7 @@ public final class LotteryTheme extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String bgimage;
 
-    private LotteryTheme(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.bgcolor == null) {
-                this.bgcolor = "";
-            } else {
-                this.bgcolor = builder.bgcolor;
-            }
-            if (builder.bgimage == null) {
-                this.bgimage = "";
-                return;
-            } else {
-                this.bgimage = builder.bgimage;
-                return;
-            }
-        }
-        this.bgcolor = builder.bgcolor;
-        this.bgimage = builder.bgimage;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<LotteryTheme> {
         public String bgcolor;
         public String bgimage;
@@ -41,10 +21,11 @@ public final class LotteryTheme extends Message {
 
         public Builder(LotteryTheme lotteryTheme) {
             super(lotteryTheme);
-            if (lotteryTheme != null) {
-                this.bgcolor = lotteryTheme.bgcolor;
-                this.bgimage = lotteryTheme.bgimage;
+            if (lotteryTheme == null) {
+                return;
             }
+            this.bgcolor = lotteryTheme.bgcolor;
+            this.bgimage = lotteryTheme.bgimage;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class LotteryTheme extends Message {
         public LotteryTheme build(boolean z) {
             return new LotteryTheme(this, z);
         }
+    }
+
+    public LotteryTheme(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.bgcolor;
+            if (str == null) {
+                this.bgcolor = "";
+            } else {
+                this.bgcolor = str;
+            }
+            String str2 = builder.bgimage;
+            if (str2 == null) {
+                this.bgimage = "";
+                return;
+            } else {
+                this.bgimage = str2;
+                return;
+            }
+        }
+        this.bgcolor = builder.bgcolor;
+        this.bgimage = builder.bgimage;
     }
 }

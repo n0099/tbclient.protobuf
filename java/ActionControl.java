@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ActionControl extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_TEXT_COLOR = "";
@@ -19,39 +19,7 @@ public final class ActionControl extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    private ActionControl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.text_color == null) {
-                this.text_color = "";
-            } else {
-                this.text_color = builder.text_color;
-            }
-            if (builder.text_color_pressed == null) {
-                this.text_color_pressed = "";
-                return;
-            } else {
-                this.text_color_pressed = builder.text_color_pressed;
-                return;
-            }
-        }
-        this.url = builder.url;
-        this.name = builder.name;
-        this.text_color = builder.text_color;
-        this.text_color_pressed = builder.text_color_pressed;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ActionControl> {
         public String name;
         public String text_color;
@@ -63,12 +31,13 @@ public final class ActionControl extends Message {
 
         public Builder(ActionControl actionControl) {
             super(actionControl);
-            if (actionControl != null) {
-                this.url = actionControl.url;
-                this.name = actionControl.name;
-                this.text_color = actionControl.text_color;
-                this.text_color_pressed = actionControl.text_color_pressed;
+            if (actionControl == null) {
+                return;
             }
+            this.url = actionControl.url;
+            this.name = actionControl.name;
+            this.text_color = actionControl.text_color;
+            this.text_color_pressed = actionControl.text_color_pressed;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -100,10 +69,45 @@ public final class ActionControl extends Message {
             jSONObject.put("name", actionControl.name);
             jSONObject.put("text_color", actionControl.text_color);
             jSONObject.put("text_color_pressed", actionControl.text_color_pressed);
-            return jSONObject;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return jSONObject;
+        } catch (JSONException e2) {
+            e2.printStackTrace();
         }
+        return jSONObject;
+    }
+
+    public ActionControl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+            } else {
+                this.url = str;
+            }
+            String str2 = builder.name;
+            if (str2 == null) {
+                this.name = "";
+            } else {
+                this.name = str2;
+            }
+            String str3 = builder.text_color;
+            if (str3 == null) {
+                this.text_color = "";
+            } else {
+                this.text_color = str3;
+            }
+            String str4 = builder.text_color_pressed;
+            if (str4 == null) {
+                this.text_color_pressed = "";
+                return;
+            } else {
+                this.text_color_pressed = str4;
+                return;
+            }
+        }
+        this.url = builder.url;
+        this.name = builder.name;
+        this.text_color = builder.text_color;
+        this.text_color_pressed = builder.text_color_pressed;
     }
 }

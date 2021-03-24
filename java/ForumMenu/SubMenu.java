@@ -2,7 +2,7 @@ package tbclient.ForumMenu;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class SubMenu extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_NAME = "";
@@ -29,62 +29,6 @@ public final class SubMenu extends Message {
     public static final Integer DEFAULT_ACTION_TYPE = 0;
     public static final Integer DEFAULT_UPDATE_TIME = 0;
 
-    private SubMenu(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.level == null) {
-                this.level = DEFAULT_LEVEL;
-            } else {
-                this.level = builder.level;
-            }
-            if (builder.parent_id == null) {
-                this.parent_id = DEFAULT_PARENT_ID;
-            } else {
-                this.parent_id = builder.parent_id;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.action_type == null) {
-                this.action_type = DEFAULT_ACTION_TYPE;
-            } else {
-                this.action_type = builder.action_type;
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.content == null) {
-                this.content = "";
-                return;
-            } else {
-                this.content = builder.content;
-                return;
-            }
-        }
-        this.id = builder.id;
-        this.forum_id = builder.forum_id;
-        this.level = builder.level;
-        this.parent_id = builder.parent_id;
-        this.name = builder.name;
-        this.action_type = builder.action_type;
-        this.update_time = builder.update_time;
-        this.content = builder.content;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<SubMenu> {
         public Integer action_type;
@@ -101,16 +45,17 @@ public final class SubMenu extends Message {
 
         public Builder(SubMenu subMenu) {
             super(subMenu);
-            if (subMenu != null) {
-                this.id = subMenu.id;
-                this.forum_id = subMenu.forum_id;
-                this.level = subMenu.level;
-                this.parent_id = subMenu.parent_id;
-                this.name = subMenu.name;
-                this.action_type = subMenu.action_type;
-                this.update_time = subMenu.update_time;
-                this.content = subMenu.content;
+            if (subMenu == null) {
+                return;
             }
+            this.id = subMenu.id;
+            this.forum_id = subMenu.forum_id;
+            this.level = subMenu.level;
+            this.parent_id = subMenu.parent_id;
+            this.name = subMenu.name;
+            this.action_type = subMenu.action_type;
+            this.update_time = subMenu.update_time;
+            this.content = subMenu.content;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +63,69 @@ public final class SubMenu extends Message {
         public SubMenu build(boolean z) {
             return new SubMenu(this, z);
         }
+    }
+
+    public SubMenu(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = num;
+            }
+            Integer num2 = builder.forum_id;
+            if (num2 == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = num2;
+            }
+            Integer num3 = builder.level;
+            if (num3 == null) {
+                this.level = DEFAULT_LEVEL;
+            } else {
+                this.level = num3;
+            }
+            Integer num4 = builder.parent_id;
+            if (num4 == null) {
+                this.parent_id = DEFAULT_PARENT_ID;
+            } else {
+                this.parent_id = num4;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            Integer num5 = builder.action_type;
+            if (num5 == null) {
+                this.action_type = DEFAULT_ACTION_TYPE;
+            } else {
+                this.action_type = num5;
+            }
+            Integer num6 = builder.update_time;
+            if (num6 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num6;
+            }
+            String str2 = builder.content;
+            if (str2 == null) {
+                this.content = "";
+                return;
+            } else {
+                this.content = str2;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.forum_id = builder.forum_id;
+        this.level = builder.level;
+        this.parent_id = builder.parent_id;
+        this.name = builder.name;
+        this.action_type = builder.action_type;
+        this.update_time = builder.update_time;
+        this.content = builder.content;
     }
 }

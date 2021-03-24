@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.PriManagerApplyInfo;
 import tbclient.RecommendForumInfo;
 import tbclient.SimpleThreadInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 5)
     public final ManagerApplyInfo bz_apply_info;
@@ -29,41 +29,6 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_BAWU_SHOW = 0;
     public static final Integer DEFAULT_IS_COMPLAINT_SHOW = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.forum_info = builder.forum_info;
-            if (builder.thread_list == null) {
-                this.thread_list = DEFAULT_THREAD_LIST;
-            } else {
-                this.thread_list = immutableCopyOf(builder.thread_list);
-            }
-            this.bz_apply_switch = builder.bz_apply_switch;
-            if (builder.is_bawu_show == null) {
-                this.is_bawu_show = DEFAULT_IS_BAWU_SHOW;
-            } else {
-                this.is_bawu_show = builder.is_bawu_show;
-            }
-            this.bz_apply_info = builder.bz_apply_info;
-            if (builder.is_complaint_show == null) {
-                this.is_complaint_show = DEFAULT_IS_COMPLAINT_SHOW;
-            } else {
-                this.is_complaint_show = builder.is_complaint_show;
-            }
-            this.pribz_apply_info = builder.pribz_apply_info;
-            this.election_tab = builder.election_tab;
-            return;
-        }
-        this.forum_info = builder.forum_info;
-        this.thread_list = immutableCopyOf(builder.thread_list);
-        this.bz_apply_switch = builder.bz_apply_switch;
-        this.is_bawu_show = builder.is_bawu_show;
-        this.bz_apply_info = builder.bz_apply_info;
-        this.is_complaint_show = builder.is_complaint_show;
-        this.pribz_apply_info = builder.pribz_apply_info;
-        this.election_tab = builder.election_tab;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ManagerApplyInfo bz_apply_info;
@@ -80,16 +45,17 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.forum_info = dataRes.forum_info;
-                this.thread_list = DataRes.copyOf(dataRes.thread_list);
-                this.bz_apply_switch = dataRes.bz_apply_switch;
-                this.is_bawu_show = dataRes.is_bawu_show;
-                this.bz_apply_info = dataRes.bz_apply_info;
-                this.is_complaint_show = dataRes.is_complaint_show;
-                this.pribz_apply_info = dataRes.pribz_apply_info;
-                this.election_tab = dataRes.election_tab;
+            if (dataRes == null) {
+                return;
             }
+            this.forum_info = dataRes.forum_info;
+            this.thread_list = Message.copyOf(dataRes.thread_list);
+            this.bz_apply_switch = dataRes.bz_apply_switch;
+            this.is_bawu_show = dataRes.is_bawu_show;
+            this.bz_apply_info = dataRes.bz_apply_info;
+            this.is_complaint_show = dataRes.is_complaint_show;
+            this.pribz_apply_info = dataRes.pribz_apply_info;
+            this.election_tab = dataRes.election_tab;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -97,5 +63,43 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.forum_info = builder.forum_info;
+            List<SimpleThreadInfo> list = builder.thread_list;
+            if (list == null) {
+                this.thread_list = DEFAULT_THREAD_LIST;
+            } else {
+                this.thread_list = Message.immutableCopyOf(list);
+            }
+            this.bz_apply_switch = builder.bz_apply_switch;
+            Integer num = builder.is_bawu_show;
+            if (num == null) {
+                this.is_bawu_show = DEFAULT_IS_BAWU_SHOW;
+            } else {
+                this.is_bawu_show = num;
+            }
+            this.bz_apply_info = builder.bz_apply_info;
+            Integer num2 = builder.is_complaint_show;
+            if (num2 == null) {
+                this.is_complaint_show = DEFAULT_IS_COMPLAINT_SHOW;
+            } else {
+                this.is_complaint_show = num2;
+            }
+            this.pribz_apply_info = builder.pribz_apply_info;
+            this.election_tab = builder.election_tab;
+            return;
+        }
+        this.forum_info = builder.forum_info;
+        this.thread_list = Message.immutableCopyOf(builder.thread_list);
+        this.bz_apply_switch = builder.bz_apply_switch;
+        this.is_bawu_show = builder.is_bawu_show;
+        this.bz_apply_info = builder.bz_apply_info;
+        this.is_complaint_show = builder.is_complaint_show;
+        this.pribz_apply_info = builder.pribz_apply_info;
+        this.election_tab = builder.election_tab;
     }
 }

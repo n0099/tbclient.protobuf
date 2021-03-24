@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class HotLiveWithCategory extends Message {
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
     public static final String DEFAULT_ENTRY_NAME = "";
@@ -32,63 +32,7 @@ public final class HotLiveWithCategory extends Message {
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final List<String> DEFAULT_SUB_TYPE_LIST = Collections.emptyList();
 
-    private HotLiveWithCategory(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.entry_name == null) {
-                this.entry_name = "";
-            } else {
-                this.entry_name = builder.entry_name;
-            }
-            if (builder.entry_id == null) {
-                this.entry_id = DEFAULT_ENTRY_ID;
-            } else {
-                this.entry_id = builder.entry_id;
-            }
-            if (builder.bitmap_wh_ratio == null) {
-                this.bitmap_wh_ratio = "";
-            } else {
-                this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
-            }
-            if (builder.live == null) {
-                this.live = DEFAULT_LIVE;
-            } else {
-                this.live = immutableCopyOf(builder.live);
-            }
-            if (builder.label_name == null) {
-                this.label_name = "";
-            } else {
-                this.label_name = builder.label_name;
-            }
-            if (builder.live_tab_type == null) {
-                this.live_tab_type = DEFAULT_LIVE_TAB_TYPE;
-            } else {
-                this.live_tab_type = builder.live_tab_type;
-            }
-            if (builder.tab_id == null) {
-                this.tab_id = DEFAULT_TAB_ID;
-            } else {
-                this.tab_id = builder.tab_id;
-            }
-            if (builder.sub_type_list == null) {
-                this.sub_type_list = DEFAULT_SUB_TYPE_LIST;
-                return;
-            } else {
-                this.sub_type_list = immutableCopyOf(builder.sub_type_list);
-                return;
-            }
-        }
-        this.entry_name = builder.entry_name;
-        this.entry_id = builder.entry_id;
-        this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
-        this.live = immutableCopyOf(builder.live);
-        this.label_name = builder.label_name;
-        this.live_tab_type = builder.live_tab_type;
-        this.tab_id = builder.tab_id;
-        this.sub_type_list = immutableCopyOf(builder.sub_type_list);
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<HotLiveWithCategory> {
         public String bitmap_wh_ratio;
         public Integer entry_id;
@@ -104,16 +48,17 @@ public final class HotLiveWithCategory extends Message {
 
         public Builder(HotLiveWithCategory hotLiveWithCategory) {
             super(hotLiveWithCategory);
-            if (hotLiveWithCategory != null) {
-                this.entry_name = hotLiveWithCategory.entry_name;
-                this.entry_id = hotLiveWithCategory.entry_id;
-                this.bitmap_wh_ratio = hotLiveWithCategory.bitmap_wh_ratio;
-                this.live = HotLiveWithCategory.copyOf(hotLiveWithCategory.live);
-                this.label_name = hotLiveWithCategory.label_name;
-                this.live_tab_type = hotLiveWithCategory.live_tab_type;
-                this.tab_id = hotLiveWithCategory.tab_id;
-                this.sub_type_list = HotLiveWithCategory.copyOf(hotLiveWithCategory.sub_type_list);
+            if (hotLiveWithCategory == null) {
+                return;
             }
+            this.entry_name = hotLiveWithCategory.entry_name;
+            this.entry_id = hotLiveWithCategory.entry_id;
+            this.bitmap_wh_ratio = hotLiveWithCategory.bitmap_wh_ratio;
+            this.live = Message.copyOf(hotLiveWithCategory.live);
+            this.label_name = hotLiveWithCategory.label_name;
+            this.live_tab_type = hotLiveWithCategory.live_tab_type;
+            this.tab_id = hotLiveWithCategory.tab_id;
+            this.sub_type_list = Message.copyOf(hotLiveWithCategory.sub_type_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -121,5 +66,69 @@ public final class HotLiveWithCategory extends Message {
         public HotLiveWithCategory build(boolean z) {
             return new HotLiveWithCategory(this, z);
         }
+    }
+
+    public HotLiveWithCategory(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.entry_name;
+            if (str == null) {
+                this.entry_name = "";
+            } else {
+                this.entry_name = str;
+            }
+            Integer num = builder.entry_id;
+            if (num == null) {
+                this.entry_id = DEFAULT_ENTRY_ID;
+            } else {
+                this.entry_id = num;
+            }
+            String str2 = builder.bitmap_wh_ratio;
+            if (str2 == null) {
+                this.bitmap_wh_ratio = "";
+            } else {
+                this.bitmap_wh_ratio = str2;
+            }
+            List<ThreadInfo> list = builder.live;
+            if (list == null) {
+                this.live = DEFAULT_LIVE;
+            } else {
+                this.live = Message.immutableCopyOf(list);
+            }
+            String str3 = builder.label_name;
+            if (str3 == null) {
+                this.label_name = "";
+            } else {
+                this.label_name = str3;
+            }
+            Integer num2 = builder.live_tab_type;
+            if (num2 == null) {
+                this.live_tab_type = DEFAULT_LIVE_TAB_TYPE;
+            } else {
+                this.live_tab_type = num2;
+            }
+            Integer num3 = builder.tab_id;
+            if (num3 == null) {
+                this.tab_id = DEFAULT_TAB_ID;
+            } else {
+                this.tab_id = num3;
+            }
+            List<String> list2 = builder.sub_type_list;
+            if (list2 == null) {
+                this.sub_type_list = DEFAULT_SUB_TYPE_LIST;
+                return;
+            } else {
+                this.sub_type_list = Message.immutableCopyOf(list2);
+                return;
+            }
+        }
+        this.entry_name = builder.entry_name;
+        this.entry_id = builder.entry_id;
+        this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
+        this.live = Message.immutableCopyOf(builder.live);
+        this.label_name = builder.label_name;
+        this.live_tab_type = builder.live_tab_type;
+        this.tab_id = builder.tab_id;
+        this.sub_type_list = Message.immutableCopyOf(builder.sub_type_list);
     }
 }

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PushType extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -14,33 +14,7 @@ public final class PushType extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
 
-    private PushType(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.icon == null) {
-                this.icon = "";
-                return;
-            } else {
-                this.icon = builder.icon;
-                return;
-            }
-        }
-        this.type = builder.type;
-        this.name = builder.name;
-        this.icon = builder.icon;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PushType> {
         public String icon;
         public String name;
@@ -51,11 +25,12 @@ public final class PushType extends Message {
 
         public Builder(PushType pushType) {
             super(pushType);
-            if (pushType != null) {
-                this.type = pushType.type;
-                this.name = pushType.name;
-                this.icon = pushType.icon;
+            if (pushType == null) {
+                return;
             }
+            this.type = pushType.type;
+            this.name = pushType.name;
+            this.icon = pushType.icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class PushType extends Message {
         public PushType build(boolean z) {
             return new PushType(this, z);
         }
+    }
+
+    public PushType(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.icon;
+            if (str2 == null) {
+                this.icon = "";
+                return;
+            } else {
+                this.icon = str2;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.name = builder.name;
+        this.icon = builder.icon;
     }
 }

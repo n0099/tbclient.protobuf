@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AppCode extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_GAME_ICON = "";
@@ -14,33 +14,7 @@ public final class AppCode extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String post_url;
 
-    private AppCode(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.game_icon == null) {
-                this.game_icon = "";
-            } else {
-                this.game_icon = builder.game_icon;
-            }
-            if (builder.post_url == null) {
-                this.post_url = "";
-            } else {
-                this.post_url = builder.post_url;
-            }
-            if (builder.button_text == null) {
-                this.button_text = "";
-                return;
-            } else {
-                this.button_text = builder.button_text;
-                return;
-            }
-        }
-        this.game_icon = builder.game_icon;
-        this.post_url = builder.post_url;
-        this.button_text = builder.button_text;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AppCode> {
         public String button_text;
         public String game_icon;
@@ -51,11 +25,12 @@ public final class AppCode extends Message {
 
         public Builder(AppCode appCode) {
             super(appCode);
-            if (appCode != null) {
-                this.game_icon = appCode.game_icon;
-                this.post_url = appCode.post_url;
-                this.button_text = appCode.button_text;
+            if (appCode == null) {
+                return;
             }
+            this.game_icon = appCode.game_icon;
+            this.post_url = appCode.post_url;
+            this.button_text = appCode.button_text;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class AppCode extends Message {
         public AppCode build(boolean z) {
             return new AppCode(this, z);
         }
+    }
+
+    public AppCode(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.game_icon;
+            if (str == null) {
+                this.game_icon = "";
+            } else {
+                this.game_icon = str;
+            }
+            String str2 = builder.post_url;
+            if (str2 == null) {
+                this.post_url = "";
+            } else {
+                this.post_url = str2;
+            }
+            String str3 = builder.button_text;
+            if (str3 == null) {
+                this.button_text = "";
+                return;
+            } else {
+                this.button_text = str3;
+                return;
+            }
+        }
+        this.game_icon = builder.game_icon;
+        this.post_url = builder.post_url;
+        this.button_text = builder.button_text;
     }
 }

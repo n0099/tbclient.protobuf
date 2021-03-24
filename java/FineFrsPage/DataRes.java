@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<EverydayThread> everyday_thread;
@@ -22,45 +22,7 @@ public final class DataRes extends Message {
     public static final List<String> DEFAULT_TAG_LIST = Collections.emptyList();
     public static final List<Hot_Thread> DEFAULT_HOT_THREAD = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.fine_banner == null) {
-                this.fine_banner = DEFAULT_FINE_BANNER;
-            } else {
-                this.fine_banner = immutableCopyOf(builder.fine_banner);
-            }
-            if (builder.everyday_thread == null) {
-                this.everyday_thread = DEFAULT_EVERYDAY_THREAD;
-            } else {
-                this.everyday_thread = immutableCopyOf(builder.everyday_thread);
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-            } else {
-                this.has_more = builder.has_more;
-            }
-            if (builder.tag_list == null) {
-                this.tag_list = DEFAULT_TAG_LIST;
-            } else {
-                this.tag_list = immutableCopyOf(builder.tag_list);
-            }
-            if (builder.hot_thread == null) {
-                this.hot_thread = DEFAULT_HOT_THREAD;
-                return;
-            } else {
-                this.hot_thread = immutableCopyOf(builder.hot_thread);
-                return;
-            }
-        }
-        this.fine_banner = immutableCopyOf(builder.fine_banner);
-        this.everyday_thread = immutableCopyOf(builder.everyday_thread);
-        this.has_more = builder.has_more;
-        this.tag_list = immutableCopyOf(builder.tag_list);
-        this.hot_thread = immutableCopyOf(builder.hot_thread);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<EverydayThread> everyday_thread;
         public List<FineBanner> fine_banner;
@@ -73,13 +35,14 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.fine_banner = DataRes.copyOf(dataRes.fine_banner);
-                this.everyday_thread = DataRes.copyOf(dataRes.everyday_thread);
-                this.has_more = dataRes.has_more;
-                this.tag_list = DataRes.copyOf(dataRes.tag_list);
-                this.hot_thread = DataRes.copyOf(dataRes.hot_thread);
+            if (dataRes == null) {
+                return;
             }
+            this.fine_banner = Message.copyOf(dataRes.fine_banner);
+            this.everyday_thread = Message.copyOf(dataRes.everyday_thread);
+            this.has_more = dataRes.has_more;
+            this.tag_list = Message.copyOf(dataRes.tag_list);
+            this.hot_thread = Message.copyOf(dataRes.hot_thread);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -87,5 +50,48 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<FineBanner> list = builder.fine_banner;
+            if (list == null) {
+                this.fine_banner = DEFAULT_FINE_BANNER;
+            } else {
+                this.fine_banner = Message.immutableCopyOf(list);
+            }
+            List<EverydayThread> list2 = builder.everyday_thread;
+            if (list2 == null) {
+                this.everyday_thread = DEFAULT_EVERYDAY_THREAD;
+            } else {
+                this.everyday_thread = Message.immutableCopyOf(list2);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            List<String> list3 = builder.tag_list;
+            if (list3 == null) {
+                this.tag_list = DEFAULT_TAG_LIST;
+            } else {
+                this.tag_list = Message.immutableCopyOf(list3);
+            }
+            List<Hot_Thread> list4 = builder.hot_thread;
+            if (list4 == null) {
+                this.hot_thread = DEFAULT_HOT_THREAD;
+                return;
+            } else {
+                this.hot_thread = Message.immutableCopyOf(list4);
+                return;
+            }
+        }
+        this.fine_banner = Message.immutableCopyOf(builder.fine_banner);
+        this.everyday_thread = Message.immutableCopyOf(builder.everyday_thread);
+        this.has_more = builder.has_more;
+        this.tag_list = Message.immutableCopyOf(builder.tag_list);
+        this.hot_thread = Message.immutableCopyOf(builder.hot_thread);
     }
 }

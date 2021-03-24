@@ -2,7 +2,7 @@ package tbclient.Lottery;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DrawInfo extends Message {
     public static final String DEFAULT_AWARD_DES = "";
     public static final String DEFAULT_AWARD_IMGSRC = "";
@@ -23,51 +23,7 @@ public final class DrawInfo extends Message {
     public static final Integer DEFAULT_DRAW_RES_TYPE = 0;
     public static final Long DEFAULT_AWARD_ID = 0L;
 
-    private DrawInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.draw_res_type == null) {
-                this.draw_res_type = DEFAULT_DRAW_RES_TYPE;
-            } else {
-                this.draw_res_type = builder.draw_res_type;
-            }
-            if (builder.link == null) {
-                this.link = "";
-            } else {
-                this.link = builder.link;
-            }
-            if (builder.award_imgsrc == null) {
-                this.award_imgsrc = "";
-            } else {
-                this.award_imgsrc = builder.award_imgsrc;
-            }
-            if (builder.bsize == null) {
-                this.bsize = "";
-            } else {
-                this.bsize = builder.bsize;
-            }
-            if (builder.award_des == null) {
-                this.award_des = "";
-            } else {
-                this.award_des = builder.award_des;
-            }
-            if (builder.award_id == null) {
-                this.award_id = DEFAULT_AWARD_ID;
-                return;
-            } else {
-                this.award_id = builder.award_id;
-                return;
-            }
-        }
-        this.draw_res_type = builder.draw_res_type;
-        this.link = builder.link;
-        this.award_imgsrc = builder.award_imgsrc;
-        this.bsize = builder.bsize;
-        this.award_des = builder.award_des;
-        this.award_id = builder.award_id;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DrawInfo> {
         public String award_des;
         public Long award_id;
@@ -81,14 +37,15 @@ public final class DrawInfo extends Message {
 
         public Builder(DrawInfo drawInfo) {
             super(drawInfo);
-            if (drawInfo != null) {
-                this.draw_res_type = drawInfo.draw_res_type;
-                this.link = drawInfo.link;
-                this.award_imgsrc = drawInfo.award_imgsrc;
-                this.bsize = drawInfo.bsize;
-                this.award_des = drawInfo.award_des;
-                this.award_id = drawInfo.award_id;
+            if (drawInfo == null) {
+                return;
             }
+            this.draw_res_type = drawInfo.draw_res_type;
+            this.link = drawInfo.link;
+            this.award_imgsrc = drawInfo.award_imgsrc;
+            this.bsize = drawInfo.bsize;
+            this.award_des = drawInfo.award_des;
+            this.award_id = drawInfo.award_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +53,55 @@ public final class DrawInfo extends Message {
         public DrawInfo build(boolean z) {
             return new DrawInfo(this, z);
         }
+    }
+
+    public DrawInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.draw_res_type;
+            if (num == null) {
+                this.draw_res_type = DEFAULT_DRAW_RES_TYPE;
+            } else {
+                this.draw_res_type = num;
+            }
+            String str = builder.link;
+            if (str == null) {
+                this.link = "";
+            } else {
+                this.link = str;
+            }
+            String str2 = builder.award_imgsrc;
+            if (str2 == null) {
+                this.award_imgsrc = "";
+            } else {
+                this.award_imgsrc = str2;
+            }
+            String str3 = builder.bsize;
+            if (str3 == null) {
+                this.bsize = "";
+            } else {
+                this.bsize = str3;
+            }
+            String str4 = builder.award_des;
+            if (str4 == null) {
+                this.award_des = "";
+            } else {
+                this.award_des = str4;
+            }
+            Long l = builder.award_id;
+            if (l == null) {
+                this.award_id = DEFAULT_AWARD_ID;
+                return;
+            } else {
+                this.award_id = l;
+                return;
+            }
+        }
+        this.draw_res_type = builder.draw_res_type;
+        this.link = builder.link;
+        this.award_imgsrc = builder.award_imgsrc;
+        this.bsize = builder.bsize;
+        this.award_des = builder.award_des;
+        this.award_id = builder.award_id;
     }
 }

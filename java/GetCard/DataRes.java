@@ -2,7 +2,7 @@ package tbclient.GetCard;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_DESCRIPTION = "";
@@ -35,75 +35,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IN_USE = 0;
     public static final Integer DEFAULT_DAILY_PREVILEGE_STATUS = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.description == null) {
-                this.description = "";
-            } else {
-                this.description = builder.description;
-            }
-            if (builder.pic_url == null) {
-                this.pic_url = "";
-            } else {
-                this.pic_url = builder.pic_url;
-            }
-            if (builder.props_state_img == null) {
-                this.props_state_img = "";
-            } else {
-                this.props_state_img = builder.props_state_img;
-            }
-            if (builder.permission == null) {
-                this.permission = "";
-            } else {
-                this.permission = builder.permission;
-            }
-            if (builder.free_user_level == null) {
-                this.free_user_level = DEFAULT_FREE_USER_LEVEL;
-            } else {
-                this.free_user_level = builder.free_user_level;
-            }
-            if (builder.activity_url == null) {
-                this.activity_url = "";
-            } else {
-                this.activity_url = builder.activity_url;
-            }
-            if (builder.is_finished == null) {
-                this.is_finished = DEFAULT_IS_FINISHED;
-            } else {
-                this.is_finished = builder.is_finished;
-            }
-            if (builder.in_use == null) {
-                this.in_use = DEFAULT_IN_USE;
-            } else {
-                this.in_use = builder.in_use;
-            }
-            if (builder.daily_previlege_status == null) {
-                this.daily_previlege_status = DEFAULT_DAILY_PREVILEGE_STATUS;
-                return;
-            } else {
-                this.daily_previlege_status = builder.daily_previlege_status;
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.description = builder.description;
-        this.pic_url = builder.pic_url;
-        this.props_state_img = builder.props_state_img;
-        this.permission = builder.permission;
-        this.free_user_level = builder.free_user_level;
-        this.activity_url = builder.activity_url;
-        this.is_finished = builder.is_finished;
-        this.in_use = builder.in_use;
-        this.daily_previlege_status = builder.daily_previlege_status;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String activity_url;
         public Integer daily_previlege_status;
@@ -121,18 +53,19 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.title = dataRes.title;
-                this.description = dataRes.description;
-                this.pic_url = dataRes.pic_url;
-                this.props_state_img = dataRes.props_state_img;
-                this.permission = dataRes.permission;
-                this.free_user_level = dataRes.free_user_level;
-                this.activity_url = dataRes.activity_url;
-                this.is_finished = dataRes.is_finished;
-                this.in_use = dataRes.in_use;
-                this.daily_previlege_status = dataRes.daily_previlege_status;
+            if (dataRes == null) {
+                return;
             }
+            this.title = dataRes.title;
+            this.description = dataRes.description;
+            this.pic_url = dataRes.pic_url;
+            this.props_state_img = dataRes.props_state_img;
+            this.permission = dataRes.permission;
+            this.free_user_level = dataRes.free_user_level;
+            this.activity_url = dataRes.activity_url;
+            this.is_finished = dataRes.is_finished;
+            this.in_use = dataRes.in_use;
+            this.daily_previlege_status = dataRes.daily_previlege_status;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -140,5 +73,83 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.description;
+            if (str2 == null) {
+                this.description = "";
+            } else {
+                this.description = str2;
+            }
+            String str3 = builder.pic_url;
+            if (str3 == null) {
+                this.pic_url = "";
+            } else {
+                this.pic_url = str3;
+            }
+            String str4 = builder.props_state_img;
+            if (str4 == null) {
+                this.props_state_img = "";
+            } else {
+                this.props_state_img = str4;
+            }
+            String str5 = builder.permission;
+            if (str5 == null) {
+                this.permission = "";
+            } else {
+                this.permission = str5;
+            }
+            Integer num = builder.free_user_level;
+            if (num == null) {
+                this.free_user_level = DEFAULT_FREE_USER_LEVEL;
+            } else {
+                this.free_user_level = num;
+            }
+            String str6 = builder.activity_url;
+            if (str6 == null) {
+                this.activity_url = "";
+            } else {
+                this.activity_url = str6;
+            }
+            Integer num2 = builder.is_finished;
+            if (num2 == null) {
+                this.is_finished = DEFAULT_IS_FINISHED;
+            } else {
+                this.is_finished = num2;
+            }
+            Integer num3 = builder.in_use;
+            if (num3 == null) {
+                this.in_use = DEFAULT_IN_USE;
+            } else {
+                this.in_use = num3;
+            }
+            Integer num4 = builder.daily_previlege_status;
+            if (num4 == null) {
+                this.daily_previlege_status = DEFAULT_DAILY_PREVILEGE_STATUS;
+                return;
+            } else {
+                this.daily_previlege_status = num4;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.description = builder.description;
+        this.pic_url = builder.pic_url;
+        this.props_state_img = builder.props_state_img;
+        this.permission = builder.permission;
+        this.free_user_level = builder.free_user_level;
+        this.activity_url = builder.activity_url;
+        this.is_finished = builder.is_finished;
+        this.in_use = builder.in_use;
+        this.daily_previlege_status = builder.daily_previlege_status;
     }
 }

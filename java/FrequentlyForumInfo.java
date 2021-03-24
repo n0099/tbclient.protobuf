@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class FrequentlyForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -37,75 +37,7 @@ public final class FrequentlyForumInfo extends Message {
     public static final Integer DEFAULT_ACCESS_FLAG = 0;
     public static final Integer DEFAULT_IS_SIGN = 0;
 
-    private FrequentlyForumInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.new_thread_num == null) {
-                this.new_thread_num = "";
-            } else {
-                this.new_thread_num = builder.new_thread_num;
-            }
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-            }
-            if (builder.last_access_time == null) {
-                this.last_access_time = DEFAULT_LAST_ACCESS_TIME;
-            } else {
-                this.last_access_time = builder.last_access_time;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.level_id == null) {
-                this.level_id = DEFAULT_LEVEL_ID;
-            } else {
-                this.level_id = builder.level_id;
-            }
-            if (builder.forum_state == null) {
-                this.forum_state = DEFAULT_FORUM_STATE;
-            } else {
-                this.forum_state = builder.forum_state;
-            }
-            if (builder.access_flag == null) {
-                this.access_flag = DEFAULT_ACCESS_FLAG;
-            } else {
-                this.access_flag = builder.access_flag;
-            }
-            if (builder.is_sign == null) {
-                this.is_sign = DEFAULT_IS_SIGN;
-                return;
-            } else {
-                this.is_sign = builder.is_sign;
-                return;
-            }
-        }
-        this.forum_id = builder.forum_id;
-        this.new_thread_num = builder.new_thread_num;
-        this.user_list = immutableCopyOf(builder.user_list);
-        this.last_access_time = builder.last_access_time;
-        this.forum_name = builder.forum_name;
-        this.avatar = builder.avatar;
-        this.level_id = builder.level_id;
-        this.forum_state = builder.forum_state;
-        this.access_flag = builder.access_flag;
-        this.is_sign = builder.is_sign;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<FrequentlyForumInfo> {
         public Integer access_flag;
         public String avatar;
@@ -123,18 +55,19 @@ public final class FrequentlyForumInfo extends Message {
 
         public Builder(FrequentlyForumInfo frequentlyForumInfo) {
             super(frequentlyForumInfo);
-            if (frequentlyForumInfo != null) {
-                this.forum_id = frequentlyForumInfo.forum_id;
-                this.new_thread_num = frequentlyForumInfo.new_thread_num;
-                this.user_list = FrequentlyForumInfo.copyOf(frequentlyForumInfo.user_list);
-                this.last_access_time = frequentlyForumInfo.last_access_time;
-                this.forum_name = frequentlyForumInfo.forum_name;
-                this.avatar = frequentlyForumInfo.avatar;
-                this.level_id = frequentlyForumInfo.level_id;
-                this.forum_state = frequentlyForumInfo.forum_state;
-                this.access_flag = frequentlyForumInfo.access_flag;
-                this.is_sign = frequentlyForumInfo.is_sign;
+            if (frequentlyForumInfo == null) {
+                return;
             }
+            this.forum_id = frequentlyForumInfo.forum_id;
+            this.new_thread_num = frequentlyForumInfo.new_thread_num;
+            this.user_list = Message.copyOf(frequentlyForumInfo.user_list);
+            this.last_access_time = frequentlyForumInfo.last_access_time;
+            this.forum_name = frequentlyForumInfo.forum_name;
+            this.avatar = frequentlyForumInfo.avatar;
+            this.level_id = frequentlyForumInfo.level_id;
+            this.forum_state = frequentlyForumInfo.forum_state;
+            this.access_flag = frequentlyForumInfo.access_flag;
+            this.is_sign = frequentlyForumInfo.is_sign;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -142,5 +75,83 @@ public final class FrequentlyForumInfo extends Message {
         public FrequentlyForumInfo build(boolean z) {
             return new FrequentlyForumInfo(this, z);
         }
+    }
+
+    public FrequentlyForumInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.new_thread_num;
+            if (str == null) {
+                this.new_thread_num = "";
+            } else {
+                this.new_thread_num = str;
+            }
+            List<User> list = builder.user_list;
+            if (list == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list);
+            }
+            Long l2 = builder.last_access_time;
+            if (l2 == null) {
+                this.last_access_time = DEFAULT_LAST_ACCESS_TIME;
+            } else {
+                this.last_access_time = l2;
+            }
+            String str2 = builder.forum_name;
+            if (str2 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str2;
+            }
+            String str3 = builder.avatar;
+            if (str3 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str3;
+            }
+            Integer num = builder.level_id;
+            if (num == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num;
+            }
+            Integer num2 = builder.forum_state;
+            if (num2 == null) {
+                this.forum_state = DEFAULT_FORUM_STATE;
+            } else {
+                this.forum_state = num2;
+            }
+            Integer num3 = builder.access_flag;
+            if (num3 == null) {
+                this.access_flag = DEFAULT_ACCESS_FLAG;
+            } else {
+                this.access_flag = num3;
+            }
+            Integer num4 = builder.is_sign;
+            if (num4 == null) {
+                this.is_sign = DEFAULT_IS_SIGN;
+                return;
+            } else {
+                this.is_sign = num4;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.new_thread_num = builder.new_thread_num;
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.last_access_time = builder.last_access_time;
+        this.forum_name = builder.forum_name;
+        this.avatar = builder.avatar;
+        this.level_id = builder.level_id;
+        this.forum_state = builder.forum_state;
+        this.access_flag = builder.access_flag;
+        this.is_sign = builder.is_sign;
     }
 }

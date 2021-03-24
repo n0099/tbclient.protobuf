@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ForumMember extends Message {
     public static final String DEFAULT_LEVEL_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -20,45 +20,7 @@ public final class ForumMember extends Message {
     public static final Integer DEFAULT_CUR_SCORE = 0;
     public static final Integer DEFAULT_LEVELUP_SCORE = 0;
 
-    private ForumMember(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.is_like == null) {
-                this.is_like = DEFAULT_IS_LIKE;
-            } else {
-                this.is_like = builder.is_like;
-            }
-            if (builder.user_level == null) {
-                this.user_level = DEFAULT_USER_LEVEL;
-            } else {
-                this.user_level = builder.user_level;
-            }
-            if (builder.level_name == null) {
-                this.level_name = "";
-            } else {
-                this.level_name = builder.level_name;
-            }
-            if (builder.cur_score == null) {
-                this.cur_score = DEFAULT_CUR_SCORE;
-            } else {
-                this.cur_score = builder.cur_score;
-            }
-            if (builder.levelup_score == null) {
-                this.levelup_score = DEFAULT_LEVELUP_SCORE;
-                return;
-            } else {
-                this.levelup_score = builder.levelup_score;
-                return;
-            }
-        }
-        this.is_like = builder.is_like;
-        this.user_level = builder.user_level;
-        this.level_name = builder.level_name;
-        this.cur_score = builder.cur_score;
-        this.levelup_score = builder.levelup_score;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumMember> {
         public Integer cur_score;
         public Integer is_like;
@@ -71,13 +33,14 @@ public final class ForumMember extends Message {
 
         public Builder(ForumMember forumMember) {
             super(forumMember);
-            if (forumMember != null) {
-                this.is_like = forumMember.is_like;
-                this.user_level = forumMember.user_level;
-                this.level_name = forumMember.level_name;
-                this.cur_score = forumMember.cur_score;
-                this.levelup_score = forumMember.levelup_score;
+            if (forumMember == null) {
+                return;
             }
+            this.is_like = forumMember.is_like;
+            this.user_level = forumMember.user_level;
+            this.level_name = forumMember.level_name;
+            this.cur_score = forumMember.cur_score;
+            this.levelup_score = forumMember.levelup_score;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class ForumMember extends Message {
         public ForumMember build(boolean z) {
             return new ForumMember(this, z);
         }
+    }
+
+    public ForumMember(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.is_like;
+            if (num == null) {
+                this.is_like = DEFAULT_IS_LIKE;
+            } else {
+                this.is_like = num;
+            }
+            Integer num2 = builder.user_level;
+            if (num2 == null) {
+                this.user_level = DEFAULT_USER_LEVEL;
+            } else {
+                this.user_level = num2;
+            }
+            String str = builder.level_name;
+            if (str == null) {
+                this.level_name = "";
+            } else {
+                this.level_name = str;
+            }
+            Integer num3 = builder.cur_score;
+            if (num3 == null) {
+                this.cur_score = DEFAULT_CUR_SCORE;
+            } else {
+                this.cur_score = num3;
+            }
+            Integer num4 = builder.levelup_score;
+            if (num4 == null) {
+                this.levelup_score = DEFAULT_LEVELUP_SCORE;
+                return;
+            } else {
+                this.levelup_score = num4;
+                return;
+            }
+        }
+        this.is_like = builder.is_like;
+        this.user_level = builder.user_level;
+        this.level_name = builder.level_name;
+        this.cur_score = builder.cur_score;
+        this.levelup_score = builder.levelup_score;
     }
 }

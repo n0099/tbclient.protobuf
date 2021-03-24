@@ -2,7 +2,7 @@ package tbclient.GetGiftListByCategoryId;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class PresentGiftListByCategoryId1 extends Message {
     public static final String DEFAULT_GIFT_DESC = "";
     public static final String DEFAULT_GIFT_NAME = "";
@@ -53,111 +53,7 @@ public final class PresentGiftListByCategoryId1 extends Message {
     public static final Integer DEFAULT_GIFT_COUNT = 0;
     public static final Integer DEFAULT_CURRENCY_UNIT = 0;
 
-    private PresentGiftListByCategoryId1(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.gift_id == null) {
-                this.gift_id = DEFAULT_GIFT_ID;
-            } else {
-                this.gift_id = builder.gift_id;
-            }
-            if (builder.gift_name == null) {
-                this.gift_name = "";
-            } else {
-                this.gift_name = builder.gift_name;
-            }
-            if (builder.price == null) {
-                this.price = DEFAULT_PRICE;
-            } else {
-                this.price = builder.price;
-            }
-            if (builder.thumbnail_url == null) {
-                this.thumbnail_url = "";
-            } else {
-                this.thumbnail_url = builder.thumbnail_url;
-            }
-            if (builder.ios_price == null) {
-                this.ios_price = DEFAULT_IOS_PRICE;
-            } else {
-                this.ios_price = builder.ios_price;
-            }
-            if (builder.gift_desc == null) {
-                this.gift_desc = "";
-            } else {
-                this.gift_desc = builder.gift_desc;
-            }
-            if (builder.activity_type == null) {
-                this.activity_type = DEFAULT_ACTIVITY_TYPE;
-            } else {
-                this.activity_type = builder.activity_type;
-            }
-            if (builder.mark_url == null) {
-                this.mark_url = "";
-            } else {
-                this.mark_url = builder.mark_url;
-            }
-            if (builder.begin_time == null) {
-                this.begin_time = DEFAULT_BEGIN_TIME;
-            } else {
-                this.begin_time = builder.begin_time;
-            }
-            if (builder.end_time == null) {
-                this.end_time = DEFAULT_END_TIME;
-            } else {
-                this.end_time = builder.end_time;
-            }
-            if (builder.discount == null) {
-                this.discount = DEFAULT_DISCOUNT;
-            } else {
-                this.discount = builder.discount;
-            }
-            if (builder.ios_discount == null) {
-                this.ios_discount = DEFAULT_IOS_DISCOUNT;
-            } else {
-                this.ios_discount = builder.ios_discount;
-            }
-            if (builder.proportion == null) {
-                this.proportion = DEFAULT_PROPORTION;
-            } else {
-                this.proportion = builder.proportion;
-            }
-            if (builder.pitch_on == null) {
-                this.pitch_on = DEFAULT_PITCH_ON;
-            } else {
-                this.pitch_on = builder.pitch_on;
-            }
-            if (builder.gift_count == null) {
-                this.gift_count = DEFAULT_GIFT_COUNT;
-            } else {
-                this.gift_count = builder.gift_count;
-            }
-            if (builder.currency_unit == null) {
-                this.currency_unit = DEFAULT_CURRENCY_UNIT;
-                return;
-            } else {
-                this.currency_unit = builder.currency_unit;
-                return;
-            }
-        }
-        this.gift_id = builder.gift_id;
-        this.gift_name = builder.gift_name;
-        this.price = builder.price;
-        this.thumbnail_url = builder.thumbnail_url;
-        this.ios_price = builder.ios_price;
-        this.gift_desc = builder.gift_desc;
-        this.activity_type = builder.activity_type;
-        this.mark_url = builder.mark_url;
-        this.begin_time = builder.begin_time;
-        this.end_time = builder.end_time;
-        this.discount = builder.discount;
-        this.ios_discount = builder.ios_discount;
-        this.proportion = builder.proportion;
-        this.pitch_on = builder.pitch_on;
-        this.gift_count = builder.gift_count;
-        this.currency_unit = builder.currency_unit;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PresentGiftListByCategoryId1> {
         public Integer activity_type;
         public Integer begin_time;
@@ -181,24 +77,25 @@ public final class PresentGiftListByCategoryId1 extends Message {
 
         public Builder(PresentGiftListByCategoryId1 presentGiftListByCategoryId1) {
             super(presentGiftListByCategoryId1);
-            if (presentGiftListByCategoryId1 != null) {
-                this.gift_id = presentGiftListByCategoryId1.gift_id;
-                this.gift_name = presentGiftListByCategoryId1.gift_name;
-                this.price = presentGiftListByCategoryId1.price;
-                this.thumbnail_url = presentGiftListByCategoryId1.thumbnail_url;
-                this.ios_price = presentGiftListByCategoryId1.ios_price;
-                this.gift_desc = presentGiftListByCategoryId1.gift_desc;
-                this.activity_type = presentGiftListByCategoryId1.activity_type;
-                this.mark_url = presentGiftListByCategoryId1.mark_url;
-                this.begin_time = presentGiftListByCategoryId1.begin_time;
-                this.end_time = presentGiftListByCategoryId1.end_time;
-                this.discount = presentGiftListByCategoryId1.discount;
-                this.ios_discount = presentGiftListByCategoryId1.ios_discount;
-                this.proportion = presentGiftListByCategoryId1.proportion;
-                this.pitch_on = presentGiftListByCategoryId1.pitch_on;
-                this.gift_count = presentGiftListByCategoryId1.gift_count;
-                this.currency_unit = presentGiftListByCategoryId1.currency_unit;
+            if (presentGiftListByCategoryId1 == null) {
+                return;
             }
+            this.gift_id = presentGiftListByCategoryId1.gift_id;
+            this.gift_name = presentGiftListByCategoryId1.gift_name;
+            this.price = presentGiftListByCategoryId1.price;
+            this.thumbnail_url = presentGiftListByCategoryId1.thumbnail_url;
+            this.ios_price = presentGiftListByCategoryId1.ios_price;
+            this.gift_desc = presentGiftListByCategoryId1.gift_desc;
+            this.activity_type = presentGiftListByCategoryId1.activity_type;
+            this.mark_url = presentGiftListByCategoryId1.mark_url;
+            this.begin_time = presentGiftListByCategoryId1.begin_time;
+            this.end_time = presentGiftListByCategoryId1.end_time;
+            this.discount = presentGiftListByCategoryId1.discount;
+            this.ios_discount = presentGiftListByCategoryId1.ios_discount;
+            this.proportion = presentGiftListByCategoryId1.proportion;
+            this.pitch_on = presentGiftListByCategoryId1.pitch_on;
+            this.gift_count = presentGiftListByCategoryId1.gift_count;
+            this.currency_unit = presentGiftListByCategoryId1.currency_unit;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -206,5 +103,125 @@ public final class PresentGiftListByCategoryId1 extends Message {
         public PresentGiftListByCategoryId1 build(boolean z) {
             return new PresentGiftListByCategoryId1(this, z);
         }
+    }
+
+    public PresentGiftListByCategoryId1(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.gift_id;
+            if (num == null) {
+                this.gift_id = DEFAULT_GIFT_ID;
+            } else {
+                this.gift_id = num;
+            }
+            String str = builder.gift_name;
+            if (str == null) {
+                this.gift_name = "";
+            } else {
+                this.gift_name = str;
+            }
+            Integer num2 = builder.price;
+            if (num2 == null) {
+                this.price = DEFAULT_PRICE;
+            } else {
+                this.price = num2;
+            }
+            String str2 = builder.thumbnail_url;
+            if (str2 == null) {
+                this.thumbnail_url = "";
+            } else {
+                this.thumbnail_url = str2;
+            }
+            Integer num3 = builder.ios_price;
+            if (num3 == null) {
+                this.ios_price = DEFAULT_IOS_PRICE;
+            } else {
+                this.ios_price = num3;
+            }
+            String str3 = builder.gift_desc;
+            if (str3 == null) {
+                this.gift_desc = "";
+            } else {
+                this.gift_desc = str3;
+            }
+            Integer num4 = builder.activity_type;
+            if (num4 == null) {
+                this.activity_type = DEFAULT_ACTIVITY_TYPE;
+            } else {
+                this.activity_type = num4;
+            }
+            String str4 = builder.mark_url;
+            if (str4 == null) {
+                this.mark_url = "";
+            } else {
+                this.mark_url = str4;
+            }
+            Integer num5 = builder.begin_time;
+            if (num5 == null) {
+                this.begin_time = DEFAULT_BEGIN_TIME;
+            } else {
+                this.begin_time = num5;
+            }
+            Integer num6 = builder.end_time;
+            if (num6 == null) {
+                this.end_time = DEFAULT_END_TIME;
+            } else {
+                this.end_time = num6;
+            }
+            Integer num7 = builder.discount;
+            if (num7 == null) {
+                this.discount = DEFAULT_DISCOUNT;
+            } else {
+                this.discount = num7;
+            }
+            Integer num8 = builder.ios_discount;
+            if (num8 == null) {
+                this.ios_discount = DEFAULT_IOS_DISCOUNT;
+            } else {
+                this.ios_discount = num8;
+            }
+            Integer num9 = builder.proportion;
+            if (num9 == null) {
+                this.proportion = DEFAULT_PROPORTION;
+            } else {
+                this.proportion = num9;
+            }
+            Integer num10 = builder.pitch_on;
+            if (num10 == null) {
+                this.pitch_on = DEFAULT_PITCH_ON;
+            } else {
+                this.pitch_on = num10;
+            }
+            Integer num11 = builder.gift_count;
+            if (num11 == null) {
+                this.gift_count = DEFAULT_GIFT_COUNT;
+            } else {
+                this.gift_count = num11;
+            }
+            Integer num12 = builder.currency_unit;
+            if (num12 == null) {
+                this.currency_unit = DEFAULT_CURRENCY_UNIT;
+                return;
+            } else {
+                this.currency_unit = num12;
+                return;
+            }
+        }
+        this.gift_id = builder.gift_id;
+        this.gift_name = builder.gift_name;
+        this.price = builder.price;
+        this.thumbnail_url = builder.thumbnail_url;
+        this.ios_price = builder.ios_price;
+        this.gift_desc = builder.gift_desc;
+        this.activity_type = builder.activity_type;
+        this.mark_url = builder.mark_url;
+        this.begin_time = builder.begin_time;
+        this.end_time = builder.end_time;
+        this.discount = builder.discount;
+        this.ios_discount = builder.ios_discount;
+        this.proportion = builder.proportion;
+        this.pitch_on = builder.pitch_on;
+        this.gift_count = builder.gift_count;
+        this.currency_unit = builder.currency_unit;
     }
 }

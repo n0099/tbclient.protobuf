@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 import tbclient.RecomTopicList;
 import tbclient.ThreadInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<FrsTabInfo> hot_thread_tab_info;
@@ -19,33 +19,7 @@ public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_THREAD_INFO = Collections.emptyList();
     public static final List<FrsTabInfo> DEFAULT_HOT_THREAD_TAB_INFO = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.topic_list == null) {
-                this.topic_list = DEFAULT_TOPIC_LIST;
-            } else {
-                this.topic_list = immutableCopyOf(builder.topic_list);
-            }
-            if (builder.thread_info == null) {
-                this.thread_info = DEFAULT_THREAD_INFO;
-            } else {
-                this.thread_info = immutableCopyOf(builder.thread_info);
-            }
-            if (builder.hot_thread_tab_info == null) {
-                this.hot_thread_tab_info = DEFAULT_HOT_THREAD_TAB_INFO;
-                return;
-            } else {
-                this.hot_thread_tab_info = immutableCopyOf(builder.hot_thread_tab_info);
-                return;
-            }
-        }
-        this.topic_list = immutableCopyOf(builder.topic_list);
-        this.thread_info = immutableCopyOf(builder.thread_info);
-        this.hot_thread_tab_info = immutableCopyOf(builder.hot_thread_tab_info);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<FrsTabInfo> hot_thread_tab_info;
         public List<ThreadInfo> thread_info;
@@ -56,11 +30,12 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.topic_list = DataRes.copyOf(dataRes.topic_list);
-                this.thread_info = DataRes.copyOf(dataRes.thread_info);
-                this.hot_thread_tab_info = DataRes.copyOf(dataRes.hot_thread_tab_info);
+            if (dataRes == null) {
+                return;
             }
+            this.topic_list = Message.copyOf(dataRes.topic_list);
+            this.thread_info = Message.copyOf(dataRes.thread_info);
+            this.hot_thread_tab_info = Message.copyOf(dataRes.hot_thread_tab_info);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -68,5 +43,34 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<RecomTopicList> list = builder.topic_list;
+            if (list == null) {
+                this.topic_list = DEFAULT_TOPIC_LIST;
+            } else {
+                this.topic_list = Message.immutableCopyOf(list);
+            }
+            List<ThreadInfo> list2 = builder.thread_info;
+            if (list2 == null) {
+                this.thread_info = DEFAULT_THREAD_INFO;
+            } else {
+                this.thread_info = Message.immutableCopyOf(list2);
+            }
+            List<FrsTabInfo> list3 = builder.hot_thread_tab_info;
+            if (list3 == null) {
+                this.hot_thread_tab_info = DEFAULT_HOT_THREAD_TAB_INFO;
+                return;
+            } else {
+                this.hot_thread_tab_info = Message.immutableCopyOf(list3);
+                return;
+            }
+        }
+        this.topic_list = Message.immutableCopyOf(builder.topic_list);
+        this.thread_info = Message.immutableCopyOf(builder.thread_info);
+        this.hot_thread_tab_info = Message.immutableCopyOf(builder.hot_thread_tab_info);
     }
 }

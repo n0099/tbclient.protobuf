@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<RecommForum> recomm_forum;
@@ -13,27 +13,7 @@ public final class DataRes extends Message {
     public static final List<TestInfo> DEFAULT_TEST_INFO = Collections.emptyList();
     public static final List<RecommForum> DEFAULT_RECOMM_FORUM = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.test_info == null) {
-                this.test_info = DEFAULT_TEST_INFO;
-            } else {
-                this.test_info = immutableCopyOf(builder.test_info);
-            }
-            if (builder.recomm_forum == null) {
-                this.recomm_forum = DEFAULT_RECOMM_FORUM;
-                return;
-            } else {
-                this.recomm_forum = immutableCopyOf(builder.recomm_forum);
-                return;
-            }
-        }
-        this.test_info = immutableCopyOf(builder.test_info);
-        this.recomm_forum = immutableCopyOf(builder.recomm_forum);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<RecommForum> recomm_forum;
         public List<TestInfo> test_info;
@@ -43,10 +23,11 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.test_info = DataRes.copyOf(dataRes.test_info);
-                this.recomm_forum = DataRes.copyOf(dataRes.recomm_forum);
+            if (dataRes == null) {
+                return;
             }
+            this.test_info = Message.copyOf(dataRes.test_info);
+            this.recomm_forum = Message.copyOf(dataRes.recomm_forum);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -54,5 +35,27 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<TestInfo> list = builder.test_info;
+            if (list == null) {
+                this.test_info = DEFAULT_TEST_INFO;
+            } else {
+                this.test_info = Message.immutableCopyOf(list);
+            }
+            List<RecommForum> list2 = builder.recomm_forum;
+            if (list2 == null) {
+                this.recomm_forum = DEFAULT_RECOMM_FORUM;
+                return;
+            } else {
+                this.recomm_forum = Message.immutableCopyOf(list2);
+                return;
+            }
+        }
+        this.test_info = Message.immutableCopyOf(builder.test_info);
+        this.recomm_forum = Message.immutableCopyOf(builder.recomm_forum);
     }
 }

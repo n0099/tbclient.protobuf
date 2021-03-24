@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class MemberGroupInfo extends Message {
     public static final String DEFAULT_MEMBER_GROUP_TYPE = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
@@ -16,33 +16,7 @@ public final class MemberGroupInfo extends Message {
     public static final Integer DEFAULT_MEMBER_GROUP_NUM = 0;
     public static final List<BawuRoleInfoPub> DEFAULT_MEMBER_GROUP_LIST = Collections.emptyList();
 
-    private MemberGroupInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.member_group_type == null) {
-                this.member_group_type = "";
-            } else {
-                this.member_group_type = builder.member_group_type;
-            }
-            if (builder.member_group_num == null) {
-                this.member_group_num = DEFAULT_MEMBER_GROUP_NUM;
-            } else {
-                this.member_group_num = builder.member_group_num;
-            }
-            if (builder.member_group_list == null) {
-                this.member_group_list = DEFAULT_MEMBER_GROUP_LIST;
-                return;
-            } else {
-                this.member_group_list = immutableCopyOf(builder.member_group_list);
-                return;
-            }
-        }
-        this.member_group_type = builder.member_group_type;
-        this.member_group_num = builder.member_group_num;
-        this.member_group_list = immutableCopyOf(builder.member_group_list);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<MemberGroupInfo> {
         public List<BawuRoleInfoPub> member_group_list;
         public Integer member_group_num;
@@ -53,11 +27,12 @@ public final class MemberGroupInfo extends Message {
 
         public Builder(MemberGroupInfo memberGroupInfo) {
             super(memberGroupInfo);
-            if (memberGroupInfo != null) {
-                this.member_group_type = memberGroupInfo.member_group_type;
-                this.member_group_num = memberGroupInfo.member_group_num;
-                this.member_group_list = MemberGroupInfo.copyOf(memberGroupInfo.member_group_list);
+            if (memberGroupInfo == null) {
+                return;
             }
+            this.member_group_type = memberGroupInfo.member_group_type;
+            this.member_group_num = memberGroupInfo.member_group_num;
+            this.member_group_list = Message.copyOf(memberGroupInfo.member_group_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -65,5 +40,34 @@ public final class MemberGroupInfo extends Message {
         public MemberGroupInfo build(boolean z) {
             return new MemberGroupInfo(this, z);
         }
+    }
+
+    public MemberGroupInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.member_group_type;
+            if (str == null) {
+                this.member_group_type = "";
+            } else {
+                this.member_group_type = str;
+            }
+            Integer num = builder.member_group_num;
+            if (num == null) {
+                this.member_group_num = DEFAULT_MEMBER_GROUP_NUM;
+            } else {
+                this.member_group_num = num;
+            }
+            List<BawuRoleInfoPub> list = builder.member_group_list;
+            if (list == null) {
+                this.member_group_list = DEFAULT_MEMBER_GROUP_LIST;
+                return;
+            } else {
+                this.member_group_list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.member_group_type = builder.member_group_type;
+        this.member_group_num = builder.member_group_num;
+        this.member_group_list = Message.immutableCopyOf(builder.member_group_list);
     }
 }

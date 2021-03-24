@@ -2,21 +2,12 @@ package tbclient.RedNotify;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final RedNotify notify_data;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.notify_data = builder.notify_data;
-        } else {
-            this.notify_data = builder.notify_data;
-        }
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public RedNotify notify_data;
 
@@ -25,15 +16,25 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.notify_data = dataRes.notify_data;
+            if (dataRes == null) {
+                return;
             }
+            this.notify_data = dataRes.notify_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
             return new DataRes(this, z);
+        }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.notify_data = builder.notify_data;
+        } else {
+            this.notify_data = builder.notify_data;
         }
     }
 }

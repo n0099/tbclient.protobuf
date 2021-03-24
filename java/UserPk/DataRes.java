@@ -2,7 +2,7 @@ package tbclient.UserPk;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final Long DEFAULT_PK_ID = 0L;
     public static final Long DEFAULT_USER_PK_ID = 0L;
@@ -11,27 +11,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long user_pk_id;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pk_id == null) {
-                this.pk_id = DEFAULT_PK_ID;
-            } else {
-                this.pk_id = builder.pk_id;
-            }
-            if (builder.user_pk_id == null) {
-                this.user_pk_id = DEFAULT_USER_PK_ID;
-                return;
-            } else {
-                this.user_pk_id = builder.user_pk_id;
-                return;
-            }
-        }
-        this.pk_id = builder.pk_id;
-        this.user_pk_id = builder.user_pk_id;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Long pk_id;
         public Long user_pk_id;
@@ -41,10 +21,11 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.pk_id = dataRes.pk_id;
-                this.user_pk_id = dataRes.user_pk_id;
+            if (dataRes == null) {
+                return;
             }
+            this.pk_id = dataRes.pk_id;
+            this.user_pk_id = dataRes.user_pk_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.pk_id;
+            if (l == null) {
+                this.pk_id = DEFAULT_PK_ID;
+            } else {
+                this.pk_id = l;
+            }
+            Long l2 = builder.user_pk_id;
+            if (l2 == null) {
+                this.user_pk_id = DEFAULT_USER_PK_ID;
+                return;
+            } else {
+                this.user_pk_id = l2;
+                return;
+            }
+        }
+        this.pk_id = builder.pk_id;
+        this.user_pk_id = builder.user_pk_id;
     }
 }

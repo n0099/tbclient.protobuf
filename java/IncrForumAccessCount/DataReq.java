@@ -3,37 +3,21 @@ package tbclient.IncrForumAccessCount;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8855common;
+    public final CommonReq f68529common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long forum_id;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8855common = builder.f8856common;
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-                return;
-            } else {
-                this.forum_id = builder.forum_id;
-                return;
-            }
-        }
-        this.f8855common = builder.f8856common;
-        this.forum_id = builder.forum_id;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8856common;
+        public CommonReq f68530common;
         public Long forum_id;
 
         public Builder() {
@@ -41,10 +25,11 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8856common = dataReq.f8855common;
-                this.forum_id = dataReq.forum_id;
+            if (dataReq == null) {
+                return;
             }
+            this.f68530common = dataReq.f68529common;
+            this.forum_id = dataReq.forum_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +37,22 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68529common = builder.f68530common;
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+                return;
+            } else {
+                this.forum_id = l;
+                return;
+            }
+        }
+        this.f68529common = builder.f68530common;
+        this.forum_id = builder.forum_id;
     }
 }

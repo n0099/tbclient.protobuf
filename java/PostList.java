@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PostList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Abstract> _abstract;
@@ -27,53 +27,7 @@ public final class PostList extends Message {
     public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
     public static final Long DEFAULT_AUTHOR_ID = 0L;
 
-    private PostList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            this.author = builder.author;
-            if (builder._abstract == null) {
-                this._abstract = DEFAULT_ABSTRACT;
-            } else {
-                this._abstract = immutableCopyOf(builder._abstract);
-            }
-            if (builder.media == null) {
-                this.media = DEFAULT_MEDIA;
-            } else {
-                this.media = immutableCopyOf(builder.media);
-            }
-            if (builder.media_num == null) {
-                this.media_num = DEFAULT_MEDIA_NUM;
-            } else {
-                this.media_num = immutableCopyOf(builder.media_num);
-            }
-            if (builder.voice_info == null) {
-                this.voice_info = DEFAULT_VOICE_INFO;
-            } else {
-                this.voice_info = immutableCopyOf(builder.voice_info);
-            }
-            if (builder.author_id == null) {
-                this.author_id = DEFAULT_AUTHOR_ID;
-                return;
-            } else {
-                this.author_id = builder.author_id;
-                return;
-            }
-        }
-        this.id = builder.id;
-        this.author = builder.author;
-        this._abstract = immutableCopyOf(builder._abstract);
-        this.media = immutableCopyOf(builder.media);
-        this.media_num = immutableCopyOf(builder.media_num);
-        this.voice_info = immutableCopyOf(builder.voice_info);
-        this.author_id = builder.author_id;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PostList> {
         public List<Abstract> _abstract;
         public User author;
@@ -88,15 +42,16 @@ public final class PostList extends Message {
 
         public Builder(PostList postList) {
             super(postList);
-            if (postList != null) {
-                this.id = postList.id;
-                this.author = postList.author;
-                this._abstract = PostList.copyOf(postList._abstract);
-                this.media = PostList.copyOf(postList.media);
-                this.media_num = PostList.copyOf(postList.media_num);
-                this.voice_info = PostList.copyOf(postList.voice_info);
-                this.author_id = postList.author_id;
+            if (postList == null) {
+                return;
             }
+            this.id = postList.id;
+            this.author = postList.author;
+            this._abstract = Message.copyOf(postList._abstract);
+            this.media = Message.copyOf(postList.media);
+            this.media_num = Message.copyOf(postList.media_num);
+            this.voice_info = Message.copyOf(postList.voice_info);
+            this.author_id = postList.author_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -104,5 +59,57 @@ public final class PostList extends Message {
         public PostList build(boolean z) {
             return new PostList(this, z);
         }
+    }
+
+    public PostList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.id;
+            if (l == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = l;
+            }
+            this.author = builder.author;
+            List<Abstract> list = builder._abstract;
+            if (list == null) {
+                this._abstract = DEFAULT_ABSTRACT;
+            } else {
+                this._abstract = Message.immutableCopyOf(list);
+            }
+            List<Media> list2 = builder.media;
+            if (list2 == null) {
+                this.media = DEFAULT_MEDIA;
+            } else {
+                this.media = Message.immutableCopyOf(list2);
+            }
+            List<MediaNum> list3 = builder.media_num;
+            if (list3 == null) {
+                this.media_num = DEFAULT_MEDIA_NUM;
+            } else {
+                this.media_num = Message.immutableCopyOf(list3);
+            }
+            List<Voice> list4 = builder.voice_info;
+            if (list4 == null) {
+                this.voice_info = DEFAULT_VOICE_INFO;
+            } else {
+                this.voice_info = Message.immutableCopyOf(list4);
+            }
+            Long l2 = builder.author_id;
+            if (l2 == null) {
+                this.author_id = DEFAULT_AUTHOR_ID;
+                return;
+            } else {
+                this.author_id = l2;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.author = builder.author;
+        this._abstract = Message.immutableCopyOf(builder._abstract);
+        this.media = Message.immutableCopyOf(builder.media);
+        this.media_num = Message.immutableCopyOf(builder.media_num);
+        this.voice_info = Message.immutableCopyOf(builder.voice_info);
+        this.author_id = builder.author_id;
     }
 }

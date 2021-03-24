@@ -2,7 +2,7 @@ package tbclient.GetTails;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class TailInfo extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -20,45 +20,7 @@ public final class TailInfo extends Message {
     public static final Integer DEFAULT_TAILID = 0;
     public static final Integer DEFAULT_IS_SELECTED = 0;
 
-    private TailInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tailId == null) {
-                this.tailId = DEFAULT_TAILID;
-            } else {
-                this.tailId = builder.tailId;
-            }
-            if (builder.is_selected == null) {
-                this.is_selected = DEFAULT_IS_SELECTED;
-            } else {
-                this.is_selected = builder.is_selected;
-            }
-            if (builder.tailContent == null) {
-                this.tailContent = "";
-            } else {
-                this.tailContent = builder.tailContent;
-            }
-            if (builder.fontColor == null) {
-                this.fontColor = "";
-            } else {
-                this.fontColor = builder.fontColor;
-            }
-            if (builder.fontKeyName == null) {
-                this.fontKeyName = "";
-                return;
-            } else {
-                this.fontKeyName = builder.fontKeyName;
-                return;
-            }
-        }
-        this.tailId = builder.tailId;
-        this.is_selected = builder.is_selected;
-        this.tailContent = builder.tailContent;
-        this.fontColor = builder.fontColor;
-        this.fontKeyName = builder.fontKeyName;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TailInfo> {
         public String fontColor;
         public String fontKeyName;
@@ -71,13 +33,14 @@ public final class TailInfo extends Message {
 
         public Builder(TailInfo tailInfo) {
             super(tailInfo);
-            if (tailInfo != null) {
-                this.tailId = tailInfo.tailId;
-                this.is_selected = tailInfo.is_selected;
-                this.tailContent = tailInfo.tailContent;
-                this.fontColor = tailInfo.fontColor;
-                this.fontKeyName = tailInfo.fontKeyName;
+            if (tailInfo == null) {
+                return;
             }
+            this.tailId = tailInfo.tailId;
+            this.is_selected = tailInfo.is_selected;
+            this.tailContent = tailInfo.tailContent;
+            this.fontColor = tailInfo.fontColor;
+            this.fontKeyName = tailInfo.fontKeyName;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class TailInfo extends Message {
         public TailInfo build(boolean z) {
             return new TailInfo(this, z);
         }
+    }
+
+    public TailInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.tailId;
+            if (num == null) {
+                this.tailId = DEFAULT_TAILID;
+            } else {
+                this.tailId = num;
+            }
+            Integer num2 = builder.is_selected;
+            if (num2 == null) {
+                this.is_selected = DEFAULT_IS_SELECTED;
+            } else {
+                this.is_selected = num2;
+            }
+            String str = builder.tailContent;
+            if (str == null) {
+                this.tailContent = "";
+            } else {
+                this.tailContent = str;
+            }
+            String str2 = builder.fontColor;
+            if (str2 == null) {
+                this.fontColor = "";
+            } else {
+                this.fontColor = str2;
+            }
+            String str3 = builder.fontKeyName;
+            if (str3 == null) {
+                this.fontKeyName = "";
+                return;
+            } else {
+                this.fontKeyName = str3;
+                return;
+            }
+        }
+        this.tailId = builder.tailId;
+        this.is_selected = builder.is_selected;
+        this.tailContent = builder.tailContent;
+        this.fontColor = builder.fontColor;
+        this.fontKeyName = builder.fontKeyName;
     }
 }

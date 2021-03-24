@@ -8,7 +8,7 @@ import tbclient.BannerList;
 import tbclient.DeletedReasonInfo;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -238,424 +238,7 @@ public final class ForumInfo extends Message {
     public static final List<TipInfo> DEFAULT_TIP_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_SHOW_FORUMRULE = 0;
 
-    private ForumInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.first_class == null) {
-                this.first_class = "";
-            } else {
-                this.first_class = builder.first_class;
-            }
-            if (builder.second_class == null) {
-                this.second_class = "";
-            } else {
-                this.second_class = builder.second_class;
-            }
-            if (builder.is_exists == null) {
-                this.is_exists = DEFAULT_IS_EXISTS;
-            } else {
-                this.is_exists = builder.is_exists;
-            }
-            if (builder.is_like == null) {
-                this.is_like = DEFAULT_IS_LIKE;
-            } else {
-                this.is_like = builder.is_like;
-            }
-            if (builder.user_level == null) {
-                this.user_level = DEFAULT_USER_LEVEL;
-            } else {
-                this.user_level = builder.user_level;
-            }
-            if (builder.level_name == null) {
-                this.level_name = "";
-            } else {
-                this.level_name = builder.level_name;
-            }
-            if (builder.member_num == null) {
-                this.member_num = DEFAULT_MEMBER_NUM;
-            } else {
-                this.member_num = builder.member_num;
-            }
-            if (builder.thread_num == null) {
-                this.thread_num = DEFAULT_THREAD_NUM;
-            } else {
-                this.thread_num = builder.thread_num;
-            }
-            if (builder.post_num == null) {
-                this.post_num = DEFAULT_POST_NUM;
-            } else {
-                this.post_num = builder.post_num;
-            }
-            if (builder.has_frs_star == null) {
-                this.has_frs_star = DEFAULT_HAS_FRS_STAR;
-            } else {
-                this.has_frs_star = builder.has_frs_star;
-            }
-            if (builder.cur_score == null) {
-                this.cur_score = DEFAULT_CUR_SCORE;
-            } else {
-                this.cur_score = builder.cur_score;
-            }
-            if (builder.levelup_score == null) {
-                this.levelup_score = DEFAULT_LEVELUP_SCORE;
-            } else {
-                this.levelup_score = builder.levelup_score;
-            }
-            this.sign_in_info = builder.sign_in_info;
-            this.zhibo = builder.zhibo;
-            if (builder.managers == null) {
-                this.managers = DEFAULT_MANAGERS;
-            } else {
-                this.managers = immutableCopyOf(builder.managers);
-            }
-            if (builder.forum_sign_calendar == null) {
-                this.forum_sign_calendar = DEFAULT_FORUM_SIGN_CALENDAR;
-            } else {
-                this.forum_sign_calendar = immutableCopyOf(builder.forum_sign_calendar);
-            }
-            if (builder.is_search_people == null) {
-                this.is_search_people = DEFAULT_IS_SEARCH_PEOPLE;
-            } else {
-                this.is_search_people = builder.is_search_people;
-            }
-            if (builder.tids == null) {
-                this.tids = "";
-            } else {
-                this.tids = builder.tids;
-            }
-            if (builder.good_classify == null) {
-                this.good_classify = DEFAULT_GOOD_CLASSIFY;
-            } else {
-                this.good_classify = immutableCopyOf(builder.good_classify);
-            }
-            if (builder.is_readonly == null) {
-                this.is_readonly = "";
-            } else {
-                this.is_readonly = builder.is_readonly;
-            }
-            if (builder.album_open_photo_frs == null) {
-                this.album_open_photo_frs = DEFAULT_ALBUM_OPEN_PHOTO_FRS;
-            } else {
-                this.album_open_photo_frs = builder.album_open_photo_frs;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.slogan == null) {
-                this.slogan = "";
-            } else {
-                this.slogan = builder.slogan;
-            }
-            if (builder.has_postpre == null) {
-                this.has_postpre = DEFAULT_HAS_POSTPRE;
-            } else {
-                this.has_postpre = builder.has_postpre;
-            }
-            this.forum_button = builder.forum_button;
-            this.top_notice = builder.top_notice;
-            if (builder.has_paper == null) {
-                this.has_paper = DEFAULT_HAS_PAPER;
-            } else {
-                this.has_paper = builder.has_paper;
-            }
-            if (builder.is_stage_forum == null) {
-                this.is_stage_forum = DEFAULT_IS_STAGE_FORUM;
-            } else {
-                this.is_stage_forum = builder.is_stage_forum;
-            }
-            if (builder.meizhi_tag == null) {
-                this.meizhi_tag = DEFAULT_MEIZHI_TAG;
-            } else {
-                this.meizhi_tag = builder.meizhi_tag;
-            }
-            this.banner = builder.banner;
-            this.banner_list = builder.banner_list;
-            if (builder.badges == null) {
-                this.badges = DEFAULT_BADGES;
-            } else {
-                this.badges = immutableCopyOf(builder.badges);
-            }
-            if (builder.level_id == null) {
-                this.level_id = DEFAULT_LEVEL_ID;
-            } else {
-                this.level_id = builder.level_id;
-            }
-            if (builder.is_forbidden == null) {
-                this.is_forbidden = DEFAULT_IS_FORBIDDEN;
-            } else {
-                this.is_forbidden = builder.is_forbidden;
-            }
-            if (builder.favo_type == null) {
-                this.favo_type = DEFAULT_FAVO_TYPE;
-            } else {
-                this.favo_type = builder.favo_type;
-            }
-            this.tag_info = builder.tag_info;
-            this.post_prefix = builder.post_prefix;
-            if (builder.superboy == null) {
-                this.superboy = "";
-            } else {
-                this.superboy = builder.superboy;
-            }
-            if (builder.is_support_local == null) {
-                this.is_support_local = DEFAULT_IS_SUPPORT_LOCAL;
-            } else {
-                this.is_support_local = builder.is_support_local;
-            }
-            if (builder.is_local_effect == null) {
-                this.is_local_effect = DEFAULT_IS_LOCAL_EFFECT;
-            } else {
-                this.is_local_effect = builder.is_local_effect;
-            }
-            if (builder.recommend_forum == null) {
-                this.recommend_forum = DEFAULT_RECOMMEND_FORUM;
-            } else {
-                this.recommend_forum = immutableCopyOf(builder.recommend_forum);
-            }
-            this.anchor_power = builder.anchor_power;
-            this.worldcupinfo = builder.worldcupinfo;
-            if (builder.has_game == null) {
-                this.has_game = DEFAULT_HAS_GAME;
-            } else {
-                this.has_game = builder.has_game;
-            }
-            if (builder.game_url == null) {
-                this.game_url = "";
-            } else {
-                this.game_url = builder.game_url;
-            }
-            this.recommend_user_info = builder.recommend_user_info;
-            if (builder.can_use_accelerate == null) {
-                this.can_use_accelerate = DEFAULT_CAN_USE_ACCELERATE;
-            } else {
-                this.can_use_accelerate = builder.can_use_accelerate;
-            }
-            if (builder.accelerate_cotent == null) {
-                this.accelerate_cotent = "";
-            } else {
-                this.accelerate_cotent = builder.accelerate_cotent;
-            }
-            this.top_code = builder.top_code;
-            this.news_info = builder.news_info;
-            if (builder.game_card == null) {
-                this.game_card = DEFAULT_GAME_CARD;
-            } else {
-                this.game_card = immutableCopyOf(builder.game_card);
-            }
-            if (builder.game_name == null) {
-                this.game_name = "";
-            } else {
-                this.game_name = builder.game_name;
-            }
-            this.forumvip_show_icon = builder.forumvip_show_icon;
-            this.adkiller_data = builder.adkiller_data;
-            this.yule = builder.yule;
-            this.realtime_data = builder.realtime_data;
-            this.across_forum_show = builder.across_forum_show;
-            this.post_topic = builder.post_topic;
-            this.across_forum_hide = builder.across_forum_hide;
-            if (builder.is_live_game_forum == null) {
-                this.is_live_game_forum = DEFAULT_IS_LIVE_GAME_FORUM;
-            } else {
-                this.is_live_game_forum = builder.is_live_game_forum;
-            }
-            if (builder.is_live_game == null) {
-                this.is_live_game = DEFAULT_IS_LIVE_GAME;
-            } else {
-                this.is_live_game = builder.is_live_game;
-            }
-            if (builder.is_new_game_forum == null) {
-                this.is_new_game_forum = DEFAULT_IS_NEW_GAME_FORUM;
-            } else {
-                this.is_new_game_forum = builder.is_new_game_forum;
-            }
-            if (builder.forum_game_label == null) {
-                this.forum_game_label = "";
-            } else {
-                this.forum_game_label = builder.forum_game_label;
-            }
-            if (builder.warning_msg == null) {
-                this.warning_msg = "";
-            } else {
-                this.warning_msg = builder.warning_msg;
-            }
-            if (builder.special_forum_type == null) {
-                this.special_forum_type = "";
-            } else {
-                this.special_forum_type = builder.special_forum_type;
-            }
-            if (builder.topic_special_icon == null) {
-                this.topic_special_icon = "";
-            } else {
-                this.topic_special_icon = builder.topic_special_icon;
-            }
-            if (builder.topic_special_icon_right == null) {
-                this.topic_special_icon_right = "";
-            } else {
-                this.topic_special_icon_right = builder.topic_special_icon_right;
-            }
-            if (builder.is_brand_forum == null) {
-                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
-            } else {
-                this.is_brand_forum = builder.is_brand_forum;
-            }
-            if (builder.is_show_all_top_thread == null) {
-                this.is_show_all_top_thread = DEFAULT_IS_SHOW_ALL_TOP_THREAD;
-            } else {
-                this.is_show_all_top_thread = builder.is_show_all_top_thread;
-            }
-            this.theme_color = builder.theme_color;
-            if (builder.is_top_img == null) {
-                this.is_top_img = "";
-            } else {
-                this.is_top_img = builder.is_top_img;
-            }
-            if (builder.is_private_forum == null) {
-                this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
-            } else {
-                this.is_private_forum = builder.is_private_forum;
-            }
-            if (builder.is_show_bawutask == null) {
-                this.is_show_bawutask = DEFAULT_IS_SHOW_BAWUTASK;
-            } else {
-                this.is_show_bawutask = builder.is_show_bawutask;
-            }
-            if (builder.f_share_img == null) {
-                this.f_share_img = "";
-            } else {
-                this.f_share_img = builder.f_share_img;
-            }
-            if (builder.forum_share_link == null) {
-                this.forum_share_link = "";
-            } else {
-                this.forum_share_link = builder.forum_share_link;
-            }
-            if (builder.risk_tip_pop == null) {
-                this.risk_tip_pop = "";
-            } else {
-                this.risk_tip_pop = builder.risk_tip_pop;
-            }
-            if (builder.risk_tip_notice == null) {
-                this.risk_tip_notice = "";
-            } else {
-                this.risk_tip_notice = builder.risk_tip_notice;
-            }
-            if (builder.risk_tip_pop_title == null) {
-                this.risk_tip_pop_title = "";
-            } else {
-                this.risk_tip_pop_title = builder.risk_tip_pop_title;
-            }
-            if (builder.tip_list == null) {
-                this.tip_list = DEFAULT_TIP_LIST;
-            } else {
-                this.tip_list = immutableCopyOf(builder.tip_list);
-            }
-            if (builder.is_show_forumrule == null) {
-                this.is_show_forumrule = DEFAULT_IS_SHOW_FORUMRULE;
-            } else {
-                this.is_show_forumrule = builder.is_show_forumrule;
-            }
-            this.deleted_reason_info = builder.deleted_reason_info;
-            return;
-        }
-        this.id = builder.id;
-        this.name = builder.name;
-        this.first_class = builder.first_class;
-        this.second_class = builder.second_class;
-        this.is_exists = builder.is_exists;
-        this.is_like = builder.is_like;
-        this.user_level = builder.user_level;
-        this.level_name = builder.level_name;
-        this.member_num = builder.member_num;
-        this.thread_num = builder.thread_num;
-        this.post_num = builder.post_num;
-        this.has_frs_star = builder.has_frs_star;
-        this.cur_score = builder.cur_score;
-        this.levelup_score = builder.levelup_score;
-        this.sign_in_info = builder.sign_in_info;
-        this.zhibo = builder.zhibo;
-        this.managers = immutableCopyOf(builder.managers);
-        this.forum_sign_calendar = immutableCopyOf(builder.forum_sign_calendar);
-        this.is_search_people = builder.is_search_people;
-        this.tids = builder.tids;
-        this.good_classify = immutableCopyOf(builder.good_classify);
-        this.is_readonly = builder.is_readonly;
-        this.album_open_photo_frs = builder.album_open_photo_frs;
-        this.avatar = builder.avatar;
-        this.slogan = builder.slogan;
-        this.has_postpre = builder.has_postpre;
-        this.forum_button = builder.forum_button;
-        this.top_notice = builder.top_notice;
-        this.has_paper = builder.has_paper;
-        this.is_stage_forum = builder.is_stage_forum;
-        this.meizhi_tag = builder.meizhi_tag;
-        this.banner = builder.banner;
-        this.banner_list = builder.banner_list;
-        this.badges = immutableCopyOf(builder.badges);
-        this.level_id = builder.level_id;
-        this.is_forbidden = builder.is_forbidden;
-        this.favo_type = builder.favo_type;
-        this.tag_info = builder.tag_info;
-        this.post_prefix = builder.post_prefix;
-        this.superboy = builder.superboy;
-        this.is_support_local = builder.is_support_local;
-        this.is_local_effect = builder.is_local_effect;
-        this.recommend_forum = immutableCopyOf(builder.recommend_forum);
-        this.anchor_power = builder.anchor_power;
-        this.worldcupinfo = builder.worldcupinfo;
-        this.has_game = builder.has_game;
-        this.game_url = builder.game_url;
-        this.recommend_user_info = builder.recommend_user_info;
-        this.can_use_accelerate = builder.can_use_accelerate;
-        this.accelerate_cotent = builder.accelerate_cotent;
-        this.top_code = builder.top_code;
-        this.news_info = builder.news_info;
-        this.game_card = immutableCopyOf(builder.game_card);
-        this.game_name = builder.game_name;
-        this.forumvip_show_icon = builder.forumvip_show_icon;
-        this.adkiller_data = builder.adkiller_data;
-        this.yule = builder.yule;
-        this.realtime_data = builder.realtime_data;
-        this.across_forum_show = builder.across_forum_show;
-        this.post_topic = builder.post_topic;
-        this.across_forum_hide = builder.across_forum_hide;
-        this.is_live_game_forum = builder.is_live_game_forum;
-        this.is_live_game = builder.is_live_game;
-        this.is_new_game_forum = builder.is_new_game_forum;
-        this.forum_game_label = builder.forum_game_label;
-        this.warning_msg = builder.warning_msg;
-        this.special_forum_type = builder.special_forum_type;
-        this.topic_special_icon = builder.topic_special_icon;
-        this.topic_special_icon_right = builder.topic_special_icon_right;
-        this.is_brand_forum = builder.is_brand_forum;
-        this.is_show_all_top_thread = builder.is_show_all_top_thread;
-        this.theme_color = builder.theme_color;
-        this.is_top_img = builder.is_top_img;
-        this.is_private_forum = builder.is_private_forum;
-        this.is_show_bawutask = builder.is_show_bawutask;
-        this.f_share_img = builder.f_share_img;
-        this.forum_share_link = builder.forum_share_link;
-        this.risk_tip_pop = builder.risk_tip_pop;
-        this.risk_tip_notice = builder.risk_tip_notice;
-        this.risk_tip_pop_title = builder.risk_tip_pop_title;
-        this.tip_list = immutableCopyOf(builder.tip_list);
-        this.is_show_forumrule = builder.is_show_forumrule;
-        this.deleted_reason_info = builder.deleted_reason_info;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String accelerate_cotent;
         public AcrossForumIcon across_forum_hide;
@@ -746,91 +329,92 @@ public final class ForumInfo extends Message {
 
         public Builder(ForumInfo forumInfo) {
             super(forumInfo);
-            if (forumInfo != null) {
-                this.id = forumInfo.id;
-                this.name = forumInfo.name;
-                this.first_class = forumInfo.first_class;
-                this.second_class = forumInfo.second_class;
-                this.is_exists = forumInfo.is_exists;
-                this.is_like = forumInfo.is_like;
-                this.user_level = forumInfo.user_level;
-                this.level_name = forumInfo.level_name;
-                this.member_num = forumInfo.member_num;
-                this.thread_num = forumInfo.thread_num;
-                this.post_num = forumInfo.post_num;
-                this.has_frs_star = forumInfo.has_frs_star;
-                this.cur_score = forumInfo.cur_score;
-                this.levelup_score = forumInfo.levelup_score;
-                this.sign_in_info = forumInfo.sign_in_info;
-                this.zhibo = forumInfo.zhibo;
-                this.managers = ForumInfo.copyOf(forumInfo.managers);
-                this.forum_sign_calendar = ForumInfo.copyOf(forumInfo.forum_sign_calendar);
-                this.is_search_people = forumInfo.is_search_people;
-                this.tids = forumInfo.tids;
-                this.good_classify = ForumInfo.copyOf(forumInfo.good_classify);
-                this.is_readonly = forumInfo.is_readonly;
-                this.album_open_photo_frs = forumInfo.album_open_photo_frs;
-                this.avatar = forumInfo.avatar;
-                this.slogan = forumInfo.slogan;
-                this.has_postpre = forumInfo.has_postpre;
-                this.forum_button = forumInfo.forum_button;
-                this.top_notice = forumInfo.top_notice;
-                this.has_paper = forumInfo.has_paper;
-                this.is_stage_forum = forumInfo.is_stage_forum;
-                this.meizhi_tag = forumInfo.meizhi_tag;
-                this.banner = forumInfo.banner;
-                this.banner_list = forumInfo.banner_list;
-                this.badges = ForumInfo.copyOf(forumInfo.badges);
-                this.level_id = forumInfo.level_id;
-                this.is_forbidden = forumInfo.is_forbidden;
-                this.favo_type = forumInfo.favo_type;
-                this.tag_info = forumInfo.tag_info;
-                this.post_prefix = forumInfo.post_prefix;
-                this.superboy = forumInfo.superboy;
-                this.is_support_local = forumInfo.is_support_local;
-                this.is_local_effect = forumInfo.is_local_effect;
-                this.recommend_forum = ForumInfo.copyOf(forumInfo.recommend_forum);
-                this.anchor_power = forumInfo.anchor_power;
-                this.worldcupinfo = forumInfo.worldcupinfo;
-                this.has_game = forumInfo.has_game;
-                this.game_url = forumInfo.game_url;
-                this.recommend_user_info = forumInfo.recommend_user_info;
-                this.can_use_accelerate = forumInfo.can_use_accelerate;
-                this.accelerate_cotent = forumInfo.accelerate_cotent;
-                this.top_code = forumInfo.top_code;
-                this.news_info = forumInfo.news_info;
-                this.game_card = ForumInfo.copyOf(forumInfo.game_card);
-                this.game_name = forumInfo.game_name;
-                this.forumvip_show_icon = forumInfo.forumvip_show_icon;
-                this.adkiller_data = forumInfo.adkiller_data;
-                this.yule = forumInfo.yule;
-                this.realtime_data = forumInfo.realtime_data;
-                this.across_forum_show = forumInfo.across_forum_show;
-                this.post_topic = forumInfo.post_topic;
-                this.across_forum_hide = forumInfo.across_forum_hide;
-                this.is_live_game_forum = forumInfo.is_live_game_forum;
-                this.is_live_game = forumInfo.is_live_game;
-                this.is_new_game_forum = forumInfo.is_new_game_forum;
-                this.forum_game_label = forumInfo.forum_game_label;
-                this.warning_msg = forumInfo.warning_msg;
-                this.special_forum_type = forumInfo.special_forum_type;
-                this.topic_special_icon = forumInfo.topic_special_icon;
-                this.topic_special_icon_right = forumInfo.topic_special_icon_right;
-                this.is_brand_forum = forumInfo.is_brand_forum;
-                this.is_show_all_top_thread = forumInfo.is_show_all_top_thread;
-                this.theme_color = forumInfo.theme_color;
-                this.is_top_img = forumInfo.is_top_img;
-                this.is_private_forum = forumInfo.is_private_forum;
-                this.is_show_bawutask = forumInfo.is_show_bawutask;
-                this.f_share_img = forumInfo.f_share_img;
-                this.forum_share_link = forumInfo.forum_share_link;
-                this.risk_tip_pop = forumInfo.risk_tip_pop;
-                this.risk_tip_notice = forumInfo.risk_tip_notice;
-                this.risk_tip_pop_title = forumInfo.risk_tip_pop_title;
-                this.tip_list = ForumInfo.copyOf(forumInfo.tip_list);
-                this.is_show_forumrule = forumInfo.is_show_forumrule;
-                this.deleted_reason_info = forumInfo.deleted_reason_info;
+            if (forumInfo == null) {
+                return;
             }
+            this.id = forumInfo.id;
+            this.name = forumInfo.name;
+            this.first_class = forumInfo.first_class;
+            this.second_class = forumInfo.second_class;
+            this.is_exists = forumInfo.is_exists;
+            this.is_like = forumInfo.is_like;
+            this.user_level = forumInfo.user_level;
+            this.level_name = forumInfo.level_name;
+            this.member_num = forumInfo.member_num;
+            this.thread_num = forumInfo.thread_num;
+            this.post_num = forumInfo.post_num;
+            this.has_frs_star = forumInfo.has_frs_star;
+            this.cur_score = forumInfo.cur_score;
+            this.levelup_score = forumInfo.levelup_score;
+            this.sign_in_info = forumInfo.sign_in_info;
+            this.zhibo = forumInfo.zhibo;
+            this.managers = Message.copyOf(forumInfo.managers);
+            this.forum_sign_calendar = Message.copyOf(forumInfo.forum_sign_calendar);
+            this.is_search_people = forumInfo.is_search_people;
+            this.tids = forumInfo.tids;
+            this.good_classify = Message.copyOf(forumInfo.good_classify);
+            this.is_readonly = forumInfo.is_readonly;
+            this.album_open_photo_frs = forumInfo.album_open_photo_frs;
+            this.avatar = forumInfo.avatar;
+            this.slogan = forumInfo.slogan;
+            this.has_postpre = forumInfo.has_postpre;
+            this.forum_button = forumInfo.forum_button;
+            this.top_notice = forumInfo.top_notice;
+            this.has_paper = forumInfo.has_paper;
+            this.is_stage_forum = forumInfo.is_stage_forum;
+            this.meizhi_tag = forumInfo.meizhi_tag;
+            this.banner = forumInfo.banner;
+            this.banner_list = forumInfo.banner_list;
+            this.badges = Message.copyOf(forumInfo.badges);
+            this.level_id = forumInfo.level_id;
+            this.is_forbidden = forumInfo.is_forbidden;
+            this.favo_type = forumInfo.favo_type;
+            this.tag_info = forumInfo.tag_info;
+            this.post_prefix = forumInfo.post_prefix;
+            this.superboy = forumInfo.superboy;
+            this.is_support_local = forumInfo.is_support_local;
+            this.is_local_effect = forumInfo.is_local_effect;
+            this.recommend_forum = Message.copyOf(forumInfo.recommend_forum);
+            this.anchor_power = forumInfo.anchor_power;
+            this.worldcupinfo = forumInfo.worldcupinfo;
+            this.has_game = forumInfo.has_game;
+            this.game_url = forumInfo.game_url;
+            this.recommend_user_info = forumInfo.recommend_user_info;
+            this.can_use_accelerate = forumInfo.can_use_accelerate;
+            this.accelerate_cotent = forumInfo.accelerate_cotent;
+            this.top_code = forumInfo.top_code;
+            this.news_info = forumInfo.news_info;
+            this.game_card = Message.copyOf(forumInfo.game_card);
+            this.game_name = forumInfo.game_name;
+            this.forumvip_show_icon = forumInfo.forumvip_show_icon;
+            this.adkiller_data = forumInfo.adkiller_data;
+            this.yule = forumInfo.yule;
+            this.realtime_data = forumInfo.realtime_data;
+            this.across_forum_show = forumInfo.across_forum_show;
+            this.post_topic = forumInfo.post_topic;
+            this.across_forum_hide = forumInfo.across_forum_hide;
+            this.is_live_game_forum = forumInfo.is_live_game_forum;
+            this.is_live_game = forumInfo.is_live_game;
+            this.is_new_game_forum = forumInfo.is_new_game_forum;
+            this.forum_game_label = forumInfo.forum_game_label;
+            this.warning_msg = forumInfo.warning_msg;
+            this.special_forum_type = forumInfo.special_forum_type;
+            this.topic_special_icon = forumInfo.topic_special_icon;
+            this.topic_special_icon_right = forumInfo.topic_special_icon_right;
+            this.is_brand_forum = forumInfo.is_brand_forum;
+            this.is_show_all_top_thread = forumInfo.is_show_all_top_thread;
+            this.theme_color = forumInfo.theme_color;
+            this.is_top_img = forumInfo.is_top_img;
+            this.is_private_forum = forumInfo.is_private_forum;
+            this.is_show_bawutask = forumInfo.is_show_bawutask;
+            this.f_share_img = forumInfo.f_share_img;
+            this.forum_share_link = forumInfo.forum_share_link;
+            this.risk_tip_pop = forumInfo.risk_tip_pop;
+            this.risk_tip_notice = forumInfo.risk_tip_notice;
+            this.risk_tip_pop_title = forumInfo.risk_tip_pop_title;
+            this.tip_list = Message.copyOf(forumInfo.tip_list);
+            this.is_show_forumrule = forumInfo.is_show_forumrule;
+            this.deleted_reason_info = forumInfo.deleted_reason_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -838,5 +422,483 @@ public final class ForumInfo extends Message {
         public ForumInfo build(boolean z) {
             return new ForumInfo(this, z);
         }
+    }
+
+    public ForumInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.id;
+            if (l == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = l;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.first_class;
+            if (str2 == null) {
+                this.first_class = "";
+            } else {
+                this.first_class = str2;
+            }
+            String str3 = builder.second_class;
+            if (str3 == null) {
+                this.second_class = "";
+            } else {
+                this.second_class = str3;
+            }
+            Integer num = builder.is_exists;
+            if (num == null) {
+                this.is_exists = DEFAULT_IS_EXISTS;
+            } else {
+                this.is_exists = num;
+            }
+            Integer num2 = builder.is_like;
+            if (num2 == null) {
+                this.is_like = DEFAULT_IS_LIKE;
+            } else {
+                this.is_like = num2;
+            }
+            Integer num3 = builder.user_level;
+            if (num3 == null) {
+                this.user_level = DEFAULT_USER_LEVEL;
+            } else {
+                this.user_level = num3;
+            }
+            String str4 = builder.level_name;
+            if (str4 == null) {
+                this.level_name = "";
+            } else {
+                this.level_name = str4;
+            }
+            Integer num4 = builder.member_num;
+            if (num4 == null) {
+                this.member_num = DEFAULT_MEMBER_NUM;
+            } else {
+                this.member_num = num4;
+            }
+            Integer num5 = builder.thread_num;
+            if (num5 == null) {
+                this.thread_num = DEFAULT_THREAD_NUM;
+            } else {
+                this.thread_num = num5;
+            }
+            Integer num6 = builder.post_num;
+            if (num6 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = num6;
+            }
+            Integer num7 = builder.has_frs_star;
+            if (num7 == null) {
+                this.has_frs_star = DEFAULT_HAS_FRS_STAR;
+            } else {
+                this.has_frs_star = num7;
+            }
+            Integer num8 = builder.cur_score;
+            if (num8 == null) {
+                this.cur_score = DEFAULT_CUR_SCORE;
+            } else {
+                this.cur_score = num8;
+            }
+            Integer num9 = builder.levelup_score;
+            if (num9 == null) {
+                this.levelup_score = DEFAULT_LEVELUP_SCORE;
+            } else {
+                this.levelup_score = num9;
+            }
+            this.sign_in_info = builder.sign_in_info;
+            this.zhibo = builder.zhibo;
+            List<Manager> list = builder.managers;
+            if (list == null) {
+                this.managers = DEFAULT_MANAGERS;
+            } else {
+                this.managers = Message.immutableCopyOf(list);
+            }
+            List<Calendar> list2 = builder.forum_sign_calendar;
+            if (list2 == null) {
+                this.forum_sign_calendar = DEFAULT_FORUM_SIGN_CALENDAR;
+            } else {
+                this.forum_sign_calendar = Message.immutableCopyOf(list2);
+            }
+            Integer num10 = builder.is_search_people;
+            if (num10 == null) {
+                this.is_search_people = DEFAULT_IS_SEARCH_PEOPLE;
+            } else {
+                this.is_search_people = num10;
+            }
+            String str5 = builder.tids;
+            if (str5 == null) {
+                this.tids = "";
+            } else {
+                this.tids = str5;
+            }
+            List<Classify> list3 = builder.good_classify;
+            if (list3 == null) {
+                this.good_classify = DEFAULT_GOOD_CLASSIFY;
+            } else {
+                this.good_classify = Message.immutableCopyOf(list3);
+            }
+            String str6 = builder.is_readonly;
+            if (str6 == null) {
+                this.is_readonly = "";
+            } else {
+                this.is_readonly = str6;
+            }
+            Integer num11 = builder.album_open_photo_frs;
+            if (num11 == null) {
+                this.album_open_photo_frs = DEFAULT_ALBUM_OPEN_PHOTO_FRS;
+            } else {
+                this.album_open_photo_frs = num11;
+            }
+            String str7 = builder.avatar;
+            if (str7 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str7;
+            }
+            String str8 = builder.slogan;
+            if (str8 == null) {
+                this.slogan = "";
+            } else {
+                this.slogan = str8;
+            }
+            Integer num12 = builder.has_postpre;
+            if (num12 == null) {
+                this.has_postpre = DEFAULT_HAS_POSTPRE;
+            } else {
+                this.has_postpre = num12;
+            }
+            this.forum_button = builder.forum_button;
+            this.top_notice = builder.top_notice;
+            Integer num13 = builder.has_paper;
+            if (num13 == null) {
+                this.has_paper = DEFAULT_HAS_PAPER;
+            } else {
+                this.has_paper = num13;
+            }
+            Integer num14 = builder.is_stage_forum;
+            if (num14 == null) {
+                this.is_stage_forum = DEFAULT_IS_STAGE_FORUM;
+            } else {
+                this.is_stage_forum = num14;
+            }
+            Integer num15 = builder.meizhi_tag;
+            if (num15 == null) {
+                this.meizhi_tag = DEFAULT_MEIZHI_TAG;
+            } else {
+                this.meizhi_tag = num15;
+            }
+            this.banner = builder.banner;
+            this.banner_list = builder.banner_list;
+            List<Badges> list4 = builder.badges;
+            if (list4 == null) {
+                this.badges = DEFAULT_BADGES;
+            } else {
+                this.badges = Message.immutableCopyOf(list4);
+            }
+            Integer num16 = builder.level_id;
+            if (num16 == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num16;
+            }
+            Integer num17 = builder.is_forbidden;
+            if (num17 == null) {
+                this.is_forbidden = DEFAULT_IS_FORBIDDEN;
+            } else {
+                this.is_forbidden = num17;
+            }
+            Integer num18 = builder.favo_type;
+            if (num18 == null) {
+                this.favo_type = DEFAULT_FAVO_TYPE;
+            } else {
+                this.favo_type = num18;
+            }
+            this.tag_info = builder.tag_info;
+            this.post_prefix = builder.post_prefix;
+            String str9 = builder.superboy;
+            if (str9 == null) {
+                this.superboy = "";
+            } else {
+                this.superboy = str9;
+            }
+            Integer num19 = builder.is_support_local;
+            if (num19 == null) {
+                this.is_support_local = DEFAULT_IS_SUPPORT_LOCAL;
+            } else {
+                this.is_support_local = num19;
+            }
+            Integer num20 = builder.is_local_effect;
+            if (num20 == null) {
+                this.is_local_effect = DEFAULT_IS_LOCAL_EFFECT;
+            } else {
+                this.is_local_effect = num20;
+            }
+            List<RecommendForum> list5 = builder.recommend_forum;
+            if (list5 == null) {
+                this.recommend_forum = DEFAULT_RECOMMEND_FORUM;
+            } else {
+                this.recommend_forum = Message.immutableCopyOf(list5);
+            }
+            this.anchor_power = builder.anchor_power;
+            this.worldcupinfo = builder.worldcupinfo;
+            Integer num21 = builder.has_game;
+            if (num21 == null) {
+                this.has_game = DEFAULT_HAS_GAME;
+            } else {
+                this.has_game = num21;
+            }
+            String str10 = builder.game_url;
+            if (str10 == null) {
+                this.game_url = "";
+            } else {
+                this.game_url = str10;
+            }
+            this.recommend_user_info = builder.recommend_user_info;
+            Integer num22 = builder.can_use_accelerate;
+            if (num22 == null) {
+                this.can_use_accelerate = DEFAULT_CAN_USE_ACCELERATE;
+            } else {
+                this.can_use_accelerate = num22;
+            }
+            String str11 = builder.accelerate_cotent;
+            if (str11 == null) {
+                this.accelerate_cotent = "";
+            } else {
+                this.accelerate_cotent = str11;
+            }
+            this.top_code = builder.top_code;
+            this.news_info = builder.news_info;
+            List<GameInfo> list6 = builder.game_card;
+            if (list6 == null) {
+                this.game_card = DEFAULT_GAME_CARD;
+            } else {
+                this.game_card = Message.immutableCopyOf(list6);
+            }
+            String str12 = builder.game_name;
+            if (str12 == null) {
+                this.game_name = "";
+            } else {
+                this.game_name = str12;
+            }
+            this.forumvip_show_icon = builder.forumvip_show_icon;
+            this.adkiller_data = builder.adkiller_data;
+            this.yule = builder.yule;
+            this.realtime_data = builder.realtime_data;
+            this.across_forum_show = builder.across_forum_show;
+            this.post_topic = builder.post_topic;
+            this.across_forum_hide = builder.across_forum_hide;
+            Integer num23 = builder.is_live_game_forum;
+            if (num23 == null) {
+                this.is_live_game_forum = DEFAULT_IS_LIVE_GAME_FORUM;
+            } else {
+                this.is_live_game_forum = num23;
+            }
+            Integer num24 = builder.is_live_game;
+            if (num24 == null) {
+                this.is_live_game = DEFAULT_IS_LIVE_GAME;
+            } else {
+                this.is_live_game = num24;
+            }
+            Integer num25 = builder.is_new_game_forum;
+            if (num25 == null) {
+                this.is_new_game_forum = DEFAULT_IS_NEW_GAME_FORUM;
+            } else {
+                this.is_new_game_forum = num25;
+            }
+            String str13 = builder.forum_game_label;
+            if (str13 == null) {
+                this.forum_game_label = "";
+            } else {
+                this.forum_game_label = str13;
+            }
+            String str14 = builder.warning_msg;
+            if (str14 == null) {
+                this.warning_msg = "";
+            } else {
+                this.warning_msg = str14;
+            }
+            String str15 = builder.special_forum_type;
+            if (str15 == null) {
+                this.special_forum_type = "";
+            } else {
+                this.special_forum_type = str15;
+            }
+            String str16 = builder.topic_special_icon;
+            if (str16 == null) {
+                this.topic_special_icon = "";
+            } else {
+                this.topic_special_icon = str16;
+            }
+            String str17 = builder.topic_special_icon_right;
+            if (str17 == null) {
+                this.topic_special_icon_right = "";
+            } else {
+                this.topic_special_icon_right = str17;
+            }
+            Integer num26 = builder.is_brand_forum;
+            if (num26 == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+            } else {
+                this.is_brand_forum = num26;
+            }
+            Integer num27 = builder.is_show_all_top_thread;
+            if (num27 == null) {
+                this.is_show_all_top_thread = DEFAULT_IS_SHOW_ALL_TOP_THREAD;
+            } else {
+                this.is_show_all_top_thread = num27;
+            }
+            this.theme_color = builder.theme_color;
+            String str18 = builder.is_top_img;
+            if (str18 == null) {
+                this.is_top_img = "";
+            } else {
+                this.is_top_img = str18;
+            }
+            Integer num28 = builder.is_private_forum;
+            if (num28 == null) {
+                this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
+            } else {
+                this.is_private_forum = num28;
+            }
+            Integer num29 = builder.is_show_bawutask;
+            if (num29 == null) {
+                this.is_show_bawutask = DEFAULT_IS_SHOW_BAWUTASK;
+            } else {
+                this.is_show_bawutask = num29;
+            }
+            String str19 = builder.f_share_img;
+            if (str19 == null) {
+                this.f_share_img = "";
+            } else {
+                this.f_share_img = str19;
+            }
+            String str20 = builder.forum_share_link;
+            if (str20 == null) {
+                this.forum_share_link = "";
+            } else {
+                this.forum_share_link = str20;
+            }
+            String str21 = builder.risk_tip_pop;
+            if (str21 == null) {
+                this.risk_tip_pop = "";
+            } else {
+                this.risk_tip_pop = str21;
+            }
+            String str22 = builder.risk_tip_notice;
+            if (str22 == null) {
+                this.risk_tip_notice = "";
+            } else {
+                this.risk_tip_notice = str22;
+            }
+            String str23 = builder.risk_tip_pop_title;
+            if (str23 == null) {
+                this.risk_tip_pop_title = "";
+            } else {
+                this.risk_tip_pop_title = str23;
+            }
+            List<TipInfo> list7 = builder.tip_list;
+            if (list7 == null) {
+                this.tip_list = DEFAULT_TIP_LIST;
+            } else {
+                this.tip_list = Message.immutableCopyOf(list7);
+            }
+            Integer num30 = builder.is_show_forumrule;
+            if (num30 == null) {
+                this.is_show_forumrule = DEFAULT_IS_SHOW_FORUMRULE;
+            } else {
+                this.is_show_forumrule = num30;
+            }
+            this.deleted_reason_info = builder.deleted_reason_info;
+            return;
+        }
+        this.id = builder.id;
+        this.name = builder.name;
+        this.first_class = builder.first_class;
+        this.second_class = builder.second_class;
+        this.is_exists = builder.is_exists;
+        this.is_like = builder.is_like;
+        this.user_level = builder.user_level;
+        this.level_name = builder.level_name;
+        this.member_num = builder.member_num;
+        this.thread_num = builder.thread_num;
+        this.post_num = builder.post_num;
+        this.has_frs_star = builder.has_frs_star;
+        this.cur_score = builder.cur_score;
+        this.levelup_score = builder.levelup_score;
+        this.sign_in_info = builder.sign_in_info;
+        this.zhibo = builder.zhibo;
+        this.managers = Message.immutableCopyOf(builder.managers);
+        this.forum_sign_calendar = Message.immutableCopyOf(builder.forum_sign_calendar);
+        this.is_search_people = builder.is_search_people;
+        this.tids = builder.tids;
+        this.good_classify = Message.immutableCopyOf(builder.good_classify);
+        this.is_readonly = builder.is_readonly;
+        this.album_open_photo_frs = builder.album_open_photo_frs;
+        this.avatar = builder.avatar;
+        this.slogan = builder.slogan;
+        this.has_postpre = builder.has_postpre;
+        this.forum_button = builder.forum_button;
+        this.top_notice = builder.top_notice;
+        this.has_paper = builder.has_paper;
+        this.is_stage_forum = builder.is_stage_forum;
+        this.meizhi_tag = builder.meizhi_tag;
+        this.banner = builder.banner;
+        this.banner_list = builder.banner_list;
+        this.badges = Message.immutableCopyOf(builder.badges);
+        this.level_id = builder.level_id;
+        this.is_forbidden = builder.is_forbidden;
+        this.favo_type = builder.favo_type;
+        this.tag_info = builder.tag_info;
+        this.post_prefix = builder.post_prefix;
+        this.superboy = builder.superboy;
+        this.is_support_local = builder.is_support_local;
+        this.is_local_effect = builder.is_local_effect;
+        this.recommend_forum = Message.immutableCopyOf(builder.recommend_forum);
+        this.anchor_power = builder.anchor_power;
+        this.worldcupinfo = builder.worldcupinfo;
+        this.has_game = builder.has_game;
+        this.game_url = builder.game_url;
+        this.recommend_user_info = builder.recommend_user_info;
+        this.can_use_accelerate = builder.can_use_accelerate;
+        this.accelerate_cotent = builder.accelerate_cotent;
+        this.top_code = builder.top_code;
+        this.news_info = builder.news_info;
+        this.game_card = Message.immutableCopyOf(builder.game_card);
+        this.game_name = builder.game_name;
+        this.forumvip_show_icon = builder.forumvip_show_icon;
+        this.adkiller_data = builder.adkiller_data;
+        this.yule = builder.yule;
+        this.realtime_data = builder.realtime_data;
+        this.across_forum_show = builder.across_forum_show;
+        this.post_topic = builder.post_topic;
+        this.across_forum_hide = builder.across_forum_hide;
+        this.is_live_game_forum = builder.is_live_game_forum;
+        this.is_live_game = builder.is_live_game;
+        this.is_new_game_forum = builder.is_new_game_forum;
+        this.forum_game_label = builder.forum_game_label;
+        this.warning_msg = builder.warning_msg;
+        this.special_forum_type = builder.special_forum_type;
+        this.topic_special_icon = builder.topic_special_icon;
+        this.topic_special_icon_right = builder.topic_special_icon_right;
+        this.is_brand_forum = builder.is_brand_forum;
+        this.is_show_all_top_thread = builder.is_show_all_top_thread;
+        this.theme_color = builder.theme_color;
+        this.is_top_img = builder.is_top_img;
+        this.is_private_forum = builder.is_private_forum;
+        this.is_show_bawutask = builder.is_show_bawutask;
+        this.f_share_img = builder.f_share_img;
+        this.forum_share_link = builder.forum_share_link;
+        this.risk_tip_pop = builder.risk_tip_pop;
+        this.risk_tip_notice = builder.risk_tip_notice;
+        this.risk_tip_pop_title = builder.risk_tip_pop_title;
+        this.tip_list = Message.immutableCopyOf(builder.tip_list);
+        this.is_show_forumrule = builder.is_show_forumrule;
+        this.deleted_reason_info = builder.deleted_reason_info;
     }
 }

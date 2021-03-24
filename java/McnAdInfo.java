@@ -1,12 +1,10 @@
 package tbclient;
 
-import com.baidu.live.tbadk.core.sharedpref.SharedPrefConfig;
-import com.baidu.tbadk.core.atomData.BigdayActivityConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class McnAdInfo extends Message {
     public static final String DEFAULT_BUTTON_TITLE = "";
     public static final String DEFAULT_CARD_TITLE = "";
@@ -33,74 +31,7 @@ public final class McnAdInfo extends Message {
     public static final Long DEFAULT_EFFECT_TIME = 0L;
     public static final Long DEFAULT_EXPIRE_TIME = 0L;
 
-    private McnAdInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.ad_start_time == null) {
-                this.ad_start_time = DEFAULT_AD_START_TIME;
-            } else {
-                this.ad_start_time = builder.ad_start_time;
-            }
-            if (builder.ad_end_time == null) {
-                this.ad_end_time = DEFAULT_AD_END_TIME;
-            } else {
-                this.ad_end_time = builder.ad_end_time;
-            }
-            if (builder.pic_url == null) {
-                this.pic_url = "";
-            } else {
-                this.pic_url = builder.pic_url;
-            }
-            if (builder.jump_url == null) {
-                this.jump_url = "";
-            } else {
-                this.jump_url = builder.jump_url;
-            }
-            if (builder.card_title == null) {
-                this.card_title = "";
-            } else {
-                this.card_title = builder.card_title;
-            }
-            if (builder.button_title == null) {
-                this.button_title = "";
-            } else {
-                this.button_title = builder.button_title;
-            }
-            if (builder.effect_time == null) {
-                this.effect_time = DEFAULT_EFFECT_TIME;
-            } else {
-                this.effect_time = builder.effect_time;
-            }
-            if (builder.expire_time == null) {
-                this.expire_time = DEFAULT_EXPIRE_TIME;
-                return;
-            } else {
-                this.expire_time = builder.expire_time;
-                return;
-            }
-        }
-        this.ad_start_time = builder.ad_start_time;
-        this.ad_end_time = builder.ad_end_time;
-        this.pic_url = builder.pic_url;
-        this.jump_url = builder.jump_url;
-        this.card_title = builder.card_title;
-        this.button_title = builder.button_title;
-        this.effect_time = builder.effect_time;
-        this.expire_time = builder.expire_time;
-    }
-
-    @Override // com.squareup.wire.Message
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("startTime = " + this.ad_start_time);
-        sb.append(",   ad_end_time = " + this.ad_end_time);
-        sb.append(",   pic_url = " + this.pic_url);
-        sb.append(",   card_title = " + this.card_title);
-        sb.append(",   button_title = " + this.button_title);
-        return sb.toString();
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<McnAdInfo> {
         public Long ad_end_time;
         public Long ad_start_time;
@@ -116,16 +47,17 @@ public final class McnAdInfo extends Message {
 
         public Builder(McnAdInfo mcnAdInfo) {
             super(mcnAdInfo);
-            if (mcnAdInfo != null) {
-                this.ad_start_time = mcnAdInfo.ad_start_time;
-                this.ad_end_time = mcnAdInfo.ad_end_time;
-                this.pic_url = mcnAdInfo.pic_url;
-                this.jump_url = mcnAdInfo.jump_url;
-                this.card_title = mcnAdInfo.card_title;
-                this.button_title = mcnAdInfo.button_title;
-                this.effect_time = mcnAdInfo.effect_time;
-                this.expire_time = mcnAdInfo.expire_time;
+            if (mcnAdInfo == null) {
+                return;
             }
+            this.ad_start_time = mcnAdInfo.ad_start_time;
+            this.ad_end_time = mcnAdInfo.ad_end_time;
+            this.pic_url = mcnAdInfo.pic_url;
+            this.jump_url = mcnAdInfo.jump_url;
+            this.card_title = mcnAdInfo.card_title;
+            this.button_title = mcnAdInfo.button_title;
+            this.effect_time = mcnAdInfo.effect_time;
+            this.expire_time = mcnAdInfo.expire_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -140,10 +72,10 @@ public final class McnAdInfo extends Message {
             return null;
         }
         Builder builder = new Builder();
-        builder.ad_start_time = Long.valueOf(jSONObject.optLong(SharedPrefConfig.AD_START_TIME));
-        builder.ad_end_time = Long.valueOf(jSONObject.optLong(SharedPrefConfig.AD_END_TIME));
+        builder.ad_start_time = Long.valueOf(jSONObject.optLong("ad_start_time"));
+        builder.ad_end_time = Long.valueOf(jSONObject.optLong("ad_end_time"));
         builder.pic_url = jSONObject.optString("pic_url");
-        builder.jump_url = jSONObject.optString(BigdayActivityConfig.JUMP_URL);
+        builder.jump_url = jSONObject.optString("jump_url");
         builder.card_title = jSONObject.optString("card_title");
         builder.button_title = jSONObject.optString("button_title");
         builder.effect_time = Long.valueOf(jSONObject.optLong("effect_time"));
@@ -157,18 +89,92 @@ public final class McnAdInfo extends Message {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put(SharedPrefConfig.AD_START_TIME, mcnAdInfo.ad_start_time);
-            jSONObject.put(SharedPrefConfig.AD_END_TIME, mcnAdInfo.ad_end_time);
+            jSONObject.put("ad_start_time", mcnAdInfo.ad_start_time);
+            jSONObject.put("ad_end_time", mcnAdInfo.ad_end_time);
             jSONObject.put("pic_url", mcnAdInfo.pic_url);
-            jSONObject.put(BigdayActivityConfig.JUMP_URL, mcnAdInfo.jump_url);
+            jSONObject.put("jump_url", mcnAdInfo.jump_url);
             jSONObject.put("card_title", mcnAdInfo.card_title);
             jSONObject.put("button_title", mcnAdInfo.button_title);
             jSONObject.put("effect_time", mcnAdInfo.effect_time);
             jSONObject.put("expire_time", mcnAdInfo.expire_time);
-            return jSONObject;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return jSONObject;
+        } catch (JSONException e2) {
+            e2.printStackTrace();
         }
+        return jSONObject;
+    }
+
+    @Override // com.squareup.wire.Message
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("startTime = " + this.ad_start_time);
+        sb.append(",   ad_end_time = " + this.ad_end_time);
+        sb.append(",   pic_url = " + this.pic_url);
+        sb.append(",   card_title = " + this.card_title);
+        sb.append(",   button_title = " + this.button_title);
+        return sb.toString();
+    }
+
+    public McnAdInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.ad_start_time;
+            if (l == null) {
+                this.ad_start_time = DEFAULT_AD_START_TIME;
+            } else {
+                this.ad_start_time = l;
+            }
+            Long l2 = builder.ad_end_time;
+            if (l2 == null) {
+                this.ad_end_time = DEFAULT_AD_END_TIME;
+            } else {
+                this.ad_end_time = l2;
+            }
+            String str = builder.pic_url;
+            if (str == null) {
+                this.pic_url = "";
+            } else {
+                this.pic_url = str;
+            }
+            String str2 = builder.jump_url;
+            if (str2 == null) {
+                this.jump_url = "";
+            } else {
+                this.jump_url = str2;
+            }
+            String str3 = builder.card_title;
+            if (str3 == null) {
+                this.card_title = "";
+            } else {
+                this.card_title = str3;
+            }
+            String str4 = builder.button_title;
+            if (str4 == null) {
+                this.button_title = "";
+            } else {
+                this.button_title = str4;
+            }
+            Long l3 = builder.effect_time;
+            if (l3 == null) {
+                this.effect_time = DEFAULT_EFFECT_TIME;
+            } else {
+                this.effect_time = l3;
+            }
+            Long l4 = builder.expire_time;
+            if (l4 == null) {
+                this.expire_time = DEFAULT_EXPIRE_TIME;
+                return;
+            } else {
+                this.expire_time = l4;
+                return;
+            }
+        }
+        this.ad_start_time = builder.ad_start_time;
+        this.ad_end_time = builder.ad_end_time;
+        this.pic_url = builder.pic_url;
+        this.jump_url = builder.jump_url;
+        this.card_title = builder.card_title;
+        this.button_title = builder.button_title;
+        this.effect_time = builder.effect_time;
+        this.expire_time = builder.expire_time;
     }
 }

@@ -3,23 +3,12 @@ package tbclient.UserMuteQuery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class UserMuteQueryResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
     @ProtoField(tag = 2)
     public final Error error;
-
-    private UserMuteQueryResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.data = builder.data;
-            this.error = builder.error;
-            return;
-        }
-        this.data = builder.data;
-        this.error = builder.error;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserMuteQueryResIdl> {
@@ -31,10 +20,11 @@ public final class UserMuteQueryResIdl extends Message {
 
         public Builder(UserMuteQueryResIdl userMuteQueryResIdl) {
             super(userMuteQueryResIdl);
-            if (userMuteQueryResIdl != null) {
-                this.data = userMuteQueryResIdl.data;
-                this.error = userMuteQueryResIdl.error;
+            if (userMuteQueryResIdl == null) {
+                return;
             }
+            this.data = userMuteQueryResIdl.data;
+            this.error = userMuteQueryResIdl.error;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class UserMuteQueryResIdl extends Message {
         public UserMuteQueryResIdl build(boolean z) {
             return new UserMuteQueryResIdl(this, z);
         }
+    }
+
+    public UserMuteQueryResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
 }

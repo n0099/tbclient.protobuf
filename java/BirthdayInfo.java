@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class BirthdayInfo extends Message {
     public static final String DEFAULT_CONSTELLATION = "";
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -17,39 +17,7 @@ public final class BirthdayInfo extends Message {
     public static final Integer DEFAULT_BIRTHDAY_SHOW_STATUS = 0;
     public static final Integer DEFAULT_AGE = 0;
 
-    private BirthdayInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.birthday_time == null) {
-                this.birthday_time = DEFAULT_BIRTHDAY_TIME;
-            } else {
-                this.birthday_time = builder.birthday_time;
-            }
-            if (builder.birthday_show_status == null) {
-                this.birthday_show_status = DEFAULT_BIRTHDAY_SHOW_STATUS;
-            } else {
-                this.birthday_show_status = builder.birthday_show_status;
-            }
-            if (builder.constellation == null) {
-                this.constellation = "";
-            } else {
-                this.constellation = builder.constellation;
-            }
-            if (builder.age == null) {
-                this.age = DEFAULT_AGE;
-                return;
-            } else {
-                this.age = builder.age;
-                return;
-            }
-        }
-        this.birthday_time = builder.birthday_time;
-        this.birthday_show_status = builder.birthday_show_status;
-        this.constellation = builder.constellation;
-        this.age = builder.age;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<BirthdayInfo> {
         public Integer age;
         public Integer birthday_show_status;
@@ -61,12 +29,13 @@ public final class BirthdayInfo extends Message {
 
         public Builder(BirthdayInfo birthdayInfo) {
             super(birthdayInfo);
-            if (birthdayInfo != null) {
-                this.birthday_time = birthdayInfo.birthday_time;
-                this.birthday_show_status = birthdayInfo.birthday_show_status;
-                this.constellation = birthdayInfo.constellation;
-                this.age = birthdayInfo.age;
+            if (birthdayInfo == null) {
+                return;
             }
+            this.birthday_time = birthdayInfo.birthday_time;
+            this.birthday_show_status = birthdayInfo.birthday_show_status;
+            this.constellation = birthdayInfo.constellation;
+            this.age = birthdayInfo.age;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class BirthdayInfo extends Message {
         public BirthdayInfo build(boolean z) {
             return new BirthdayInfo(this, z);
         }
+    }
+
+    public BirthdayInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.birthday_time;
+            if (l == null) {
+                this.birthday_time = DEFAULT_BIRTHDAY_TIME;
+            } else {
+                this.birthday_time = l;
+            }
+            Integer num = builder.birthday_show_status;
+            if (num == null) {
+                this.birthday_show_status = DEFAULT_BIRTHDAY_SHOW_STATUS;
+            } else {
+                this.birthday_show_status = num;
+            }
+            String str = builder.constellation;
+            if (str == null) {
+                this.constellation = "";
+            } else {
+                this.constellation = str;
+            }
+            Integer num2 = builder.age;
+            if (num2 == null) {
+                this.age = DEFAULT_AGE;
+                return;
+            } else {
+                this.age = num2;
+                return;
+            }
+        }
+        this.birthday_time = builder.birthday_time;
+        this.birthday_show_status = builder.birthday_show_status;
+        this.constellation = builder.constellation;
+        this.age = builder.age;
     }
 }

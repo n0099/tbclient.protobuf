@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Baijiahao extends Message {
     public static final String DEFAULT_FORWARD_URL = "";
     public static final String DEFAULT_ORI_UGC_NID = "";
@@ -20,45 +20,7 @@ public final class Baijiahao extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String ori_ugc_vid;
 
-    private Baijiahao(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.ori_ugc_nid == null) {
-                this.ori_ugc_nid = "";
-            } else {
-                this.ori_ugc_nid = builder.ori_ugc_nid;
-            }
-            if (builder.ori_ugc_tid == null) {
-                this.ori_ugc_tid = "";
-            } else {
-                this.ori_ugc_tid = builder.ori_ugc_tid;
-            }
-            if (builder.ori_ugc_type == null) {
-                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
-            } else {
-                this.ori_ugc_type = builder.ori_ugc_type;
-            }
-            if (builder.ori_ugc_vid == null) {
-                this.ori_ugc_vid = "";
-            } else {
-                this.ori_ugc_vid = builder.ori_ugc_vid;
-            }
-            if (builder.forward_url == null) {
-                this.forward_url = "";
-                return;
-            } else {
-                this.forward_url = builder.forward_url;
-                return;
-            }
-        }
-        this.ori_ugc_nid = builder.ori_ugc_nid;
-        this.ori_ugc_tid = builder.ori_ugc_tid;
-        this.ori_ugc_type = builder.ori_ugc_type;
-        this.ori_ugc_vid = builder.ori_ugc_vid;
-        this.forward_url = builder.forward_url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Baijiahao> {
         public String forward_url;
         public String ori_ugc_nid;
@@ -71,13 +33,14 @@ public final class Baijiahao extends Message {
 
         public Builder(Baijiahao baijiahao) {
             super(baijiahao);
-            if (baijiahao != null) {
-                this.ori_ugc_nid = baijiahao.ori_ugc_nid;
-                this.ori_ugc_tid = baijiahao.ori_ugc_tid;
-                this.ori_ugc_type = baijiahao.ori_ugc_type;
-                this.ori_ugc_vid = baijiahao.ori_ugc_vid;
-                this.forward_url = baijiahao.forward_url;
+            if (baijiahao == null) {
+                return;
             }
+            this.ori_ugc_nid = baijiahao.ori_ugc_nid;
+            this.ori_ugc_tid = baijiahao.ori_ugc_tid;
+            this.ori_ugc_type = baijiahao.ori_ugc_type;
+            this.ori_ugc_vid = baijiahao.ori_ugc_vid;
+            this.forward_url = baijiahao.forward_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class Baijiahao extends Message {
         public Baijiahao build(boolean z) {
             return new Baijiahao(this, z);
         }
+    }
+
+    public Baijiahao(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.ori_ugc_nid;
+            if (str == null) {
+                this.ori_ugc_nid = "";
+            } else {
+                this.ori_ugc_nid = str;
+            }
+            String str2 = builder.ori_ugc_tid;
+            if (str2 == null) {
+                this.ori_ugc_tid = "";
+            } else {
+                this.ori_ugc_tid = str2;
+            }
+            Integer num = builder.ori_ugc_type;
+            if (num == null) {
+                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
+            } else {
+                this.ori_ugc_type = num;
+            }
+            String str3 = builder.ori_ugc_vid;
+            if (str3 == null) {
+                this.ori_ugc_vid = "";
+            } else {
+                this.ori_ugc_vid = str3;
+            }
+            String str4 = builder.forward_url;
+            if (str4 == null) {
+                this.forward_url = "";
+                return;
+            } else {
+                this.forward_url = str4;
+                return;
+            }
+        }
+        this.ori_ugc_nid = builder.ori_ugc_nid;
+        this.ori_ugc_tid = builder.ori_ugc_tid;
+        this.ori_ugc_type = builder.ori_ugc_type;
+        this.ori_ugc_vid = builder.ori_ugc_vid;
+        this.forward_url = builder.forward_url;
     }
 }

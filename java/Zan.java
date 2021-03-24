@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Zan extends Message {
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer consent_type;
@@ -25,51 +25,7 @@ public final class Zan extends Message {
     public static final List<Long> DEFAULT_LIKER_ID = Collections.emptyList();
     public static final Integer DEFAULT_CONSENT_TYPE = 0;
 
-    private Zan(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.num == null) {
-                this.num = DEFAULT_NUM;
-            } else {
-                this.num = builder.num;
-            }
-            if (builder.liker_list == null) {
-                this.liker_list = DEFAULT_LIKER_LIST;
-            } else {
-                this.liker_list = immutableCopyOf(builder.liker_list);
-            }
-            if (builder.is_liked == null) {
-                this.is_liked = DEFAULT_IS_LIKED;
-            } else {
-                this.is_liked = builder.is_liked;
-            }
-            if (builder.last_time == null) {
-                this.last_time = DEFAULT_LAST_TIME;
-            } else {
-                this.last_time = builder.last_time;
-            }
-            if (builder.liker_id == null) {
-                this.liker_id = DEFAULT_LIKER_ID;
-            } else {
-                this.liker_id = immutableCopyOf(builder.liker_id);
-            }
-            if (builder.consent_type == null) {
-                this.consent_type = DEFAULT_CONSENT_TYPE;
-                return;
-            } else {
-                this.consent_type = builder.consent_type;
-                return;
-            }
-        }
-        this.num = builder.num;
-        this.liker_list = immutableCopyOf(builder.liker_list);
-        this.is_liked = builder.is_liked;
-        this.last_time = builder.last_time;
-        this.liker_id = immutableCopyOf(builder.liker_id);
-        this.consent_type = builder.consent_type;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Zan> {
         public Integer consent_type;
         public Integer is_liked;
@@ -83,14 +39,15 @@ public final class Zan extends Message {
 
         public Builder(Zan zan) {
             super(zan);
-            if (zan != null) {
-                this.num = zan.num;
-                this.liker_list = Zan.copyOf(zan.liker_list);
-                this.is_liked = zan.is_liked;
-                this.last_time = zan.last_time;
-                this.liker_id = Zan.copyOf(zan.liker_id);
-                this.consent_type = zan.consent_type;
+            if (zan == null) {
+                return;
             }
+            this.num = zan.num;
+            this.liker_list = Message.copyOf(zan.liker_list);
+            this.is_liked = zan.is_liked;
+            this.last_time = zan.last_time;
+            this.liker_id = Message.copyOf(zan.liker_id);
+            this.consent_type = zan.consent_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -98,5 +55,55 @@ public final class Zan extends Message {
         public Zan build(boolean z) {
             return new Zan(this, z);
         }
+    }
+
+    public Zan(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.num;
+            if (num == null) {
+                this.num = DEFAULT_NUM;
+            } else {
+                this.num = num;
+            }
+            List<User> list = builder.liker_list;
+            if (list == null) {
+                this.liker_list = DEFAULT_LIKER_LIST;
+            } else {
+                this.liker_list = Message.immutableCopyOf(list);
+            }
+            Integer num2 = builder.is_liked;
+            if (num2 == null) {
+                this.is_liked = DEFAULT_IS_LIKED;
+            } else {
+                this.is_liked = num2;
+            }
+            Integer num3 = builder.last_time;
+            if (num3 == null) {
+                this.last_time = DEFAULT_LAST_TIME;
+            } else {
+                this.last_time = num3;
+            }
+            List<Long> list2 = builder.liker_id;
+            if (list2 == null) {
+                this.liker_id = DEFAULT_LIKER_ID;
+            } else {
+                this.liker_id = Message.immutableCopyOf(list2);
+            }
+            Integer num4 = builder.consent_type;
+            if (num4 == null) {
+                this.consent_type = DEFAULT_CONSENT_TYPE;
+                return;
+            } else {
+                this.consent_type = num4;
+                return;
+            }
+        }
+        this.num = builder.num;
+        this.liker_list = Message.immutableCopyOf(builder.liker_list);
+        this.is_liked = builder.is_liked;
+        this.last_time = builder.last_time;
+        this.liker_id = Message.immutableCopyOf(builder.liker_id);
+        this.consent_type = builder.consent_type;
     }
 }

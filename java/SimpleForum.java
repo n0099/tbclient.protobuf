@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class SimpleForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_EXT = "";
@@ -56,108 +56,7 @@ public final class SimpleForum extends Message {
     public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
     public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
 
-    private SimpleForum(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.is_exists == null) {
-                this.is_exists = DEFAULT_IS_EXISTS;
-            } else {
-                this.is_exists = builder.is_exists;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.is_liked == null) {
-                this.is_liked = DEFAULT_IS_LIKED;
-            } else {
-                this.is_liked = builder.is_liked;
-            }
-            if (builder.is_signed == null) {
-                this.is_signed = DEFAULT_IS_SIGNED;
-            } else {
-                this.is_signed = builder.is_signed;
-            }
-            if (builder.first_class == null) {
-                this.first_class = "";
-            } else {
-                this.first_class = builder.first_class;
-            }
-            if (builder.second_class == null) {
-                this.second_class = "";
-            } else {
-                this.second_class = builder.second_class;
-            }
-            if (builder.ext == null) {
-                this.ext = "";
-            } else {
-                this.ext = builder.ext;
-            }
-            if (builder.level_id == null) {
-                this.level_id = DEFAULT_LEVEL_ID;
-            } else {
-                this.level_id = builder.level_id;
-            }
-            this.multi_forum_perm = builder.multi_forum_perm;
-            if (builder.member_num == null) {
-                this.member_num = DEFAULT_MEMBER_NUM;
-            } else {
-                this.member_num = builder.member_num;
-            }
-            if (builder.post_num == null) {
-                this.post_num = DEFAULT_POST_NUM;
-            } else {
-                this.post_num = builder.post_num;
-            }
-            if (builder.is_brand_forum == null) {
-                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
-            } else {
-                this.is_brand_forum = builder.is_brand_forum;
-            }
-            if (builder.tab_info == null) {
-                this.tab_info = DEFAULT_TAB_INFO;
-            } else {
-                this.tab_info = immutableCopyOf(builder.tab_info);
-            }
-            if (builder.forum_toutu == null) {
-                this.forum_toutu = "";
-            } else {
-                this.forum_toutu = builder.forum_toutu;
-            }
-            this.deleted_reason_info = builder.deleted_reason_info;
-            return;
-        }
-        this.id = builder.id;
-        this.name = builder.name;
-        this.is_exists = builder.is_exists;
-        this.avatar = builder.avatar;
-        this.is_liked = builder.is_liked;
-        this.is_signed = builder.is_signed;
-        this.first_class = builder.first_class;
-        this.second_class = builder.second_class;
-        this.ext = builder.ext;
-        this.level_id = builder.level_id;
-        this.multi_forum_perm = builder.multi_forum_perm;
-        this.member_num = builder.member_num;
-        this.post_num = builder.post_num;
-        this.is_brand_forum = builder.is_brand_forum;
-        this.tab_info = immutableCopyOf(builder.tab_info);
-        this.forum_toutu = builder.forum_toutu;
-        this.deleted_reason_info = builder.deleted_reason_info;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<SimpleForum> {
         public String avatar;
         public DeletedReasonInfo deleted_reason_info;
@@ -182,25 +81,26 @@ public final class SimpleForum extends Message {
 
         public Builder(SimpleForum simpleForum) {
             super(simpleForum);
-            if (simpleForum != null) {
-                this.id = simpleForum.id;
-                this.name = simpleForum.name;
-                this.is_exists = simpleForum.is_exists;
-                this.avatar = simpleForum.avatar;
-                this.is_liked = simpleForum.is_liked;
-                this.is_signed = simpleForum.is_signed;
-                this.first_class = simpleForum.first_class;
-                this.second_class = simpleForum.second_class;
-                this.ext = simpleForum.ext;
-                this.level_id = simpleForum.level_id;
-                this.multi_forum_perm = simpleForum.multi_forum_perm;
-                this.member_num = simpleForum.member_num;
-                this.post_num = simpleForum.post_num;
-                this.is_brand_forum = simpleForum.is_brand_forum;
-                this.tab_info = SimpleForum.copyOf(simpleForum.tab_info);
-                this.forum_toutu = simpleForum.forum_toutu;
-                this.deleted_reason_info = simpleForum.deleted_reason_info;
+            if (simpleForum == null) {
+                return;
             }
+            this.id = simpleForum.id;
+            this.name = simpleForum.name;
+            this.is_exists = simpleForum.is_exists;
+            this.avatar = simpleForum.avatar;
+            this.is_liked = simpleForum.is_liked;
+            this.is_signed = simpleForum.is_signed;
+            this.first_class = simpleForum.first_class;
+            this.second_class = simpleForum.second_class;
+            this.ext = simpleForum.ext;
+            this.level_id = simpleForum.level_id;
+            this.multi_forum_perm = simpleForum.multi_forum_perm;
+            this.member_num = simpleForum.member_num;
+            this.post_num = simpleForum.post_num;
+            this.is_brand_forum = simpleForum.is_brand_forum;
+            this.tab_info = Message.copyOf(simpleForum.tab_info);
+            this.forum_toutu = simpleForum.forum_toutu;
+            this.deleted_reason_info = simpleForum.deleted_reason_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -208,5 +108,121 @@ public final class SimpleForum extends Message {
         public SimpleForum build(boolean z) {
             return new SimpleForum(this, z);
         }
+    }
+
+    public SimpleForum(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.id;
+            if (l == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = l;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            Integer num = builder.is_exists;
+            if (num == null) {
+                this.is_exists = DEFAULT_IS_EXISTS;
+            } else {
+                this.is_exists = num;
+            }
+            String str2 = builder.avatar;
+            if (str2 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str2;
+            }
+            Integer num2 = builder.is_liked;
+            if (num2 == null) {
+                this.is_liked = DEFAULT_IS_LIKED;
+            } else {
+                this.is_liked = num2;
+            }
+            Integer num3 = builder.is_signed;
+            if (num3 == null) {
+                this.is_signed = DEFAULT_IS_SIGNED;
+            } else {
+                this.is_signed = num3;
+            }
+            String str3 = builder.first_class;
+            if (str3 == null) {
+                this.first_class = "";
+            } else {
+                this.first_class = str3;
+            }
+            String str4 = builder.second_class;
+            if (str4 == null) {
+                this.second_class = "";
+            } else {
+                this.second_class = str4;
+            }
+            String str5 = builder.ext;
+            if (str5 == null) {
+                this.ext = "";
+            } else {
+                this.ext = str5;
+            }
+            Integer num4 = builder.level_id;
+            if (num4 == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num4;
+            }
+            this.multi_forum_perm = builder.multi_forum_perm;
+            Integer num5 = builder.member_num;
+            if (num5 == null) {
+                this.member_num = DEFAULT_MEMBER_NUM;
+            } else {
+                this.member_num = num5;
+            }
+            Integer num6 = builder.post_num;
+            if (num6 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = num6;
+            }
+            Integer num7 = builder.is_brand_forum;
+            if (num7 == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+            } else {
+                this.is_brand_forum = num7;
+            }
+            List<FrsTabInfo> list = builder.tab_info;
+            if (list == null) {
+                this.tab_info = DEFAULT_TAB_INFO;
+            } else {
+                this.tab_info = Message.immutableCopyOf(list);
+            }
+            String str6 = builder.forum_toutu;
+            if (str6 == null) {
+                this.forum_toutu = "";
+            } else {
+                this.forum_toutu = str6;
+            }
+            this.deleted_reason_info = builder.deleted_reason_info;
+            return;
+        }
+        this.id = builder.id;
+        this.name = builder.name;
+        this.is_exists = builder.is_exists;
+        this.avatar = builder.avatar;
+        this.is_liked = builder.is_liked;
+        this.is_signed = builder.is_signed;
+        this.first_class = builder.first_class;
+        this.second_class = builder.second_class;
+        this.ext = builder.ext;
+        this.level_id = builder.level_id;
+        this.multi_forum_perm = builder.multi_forum_perm;
+        this.member_num = builder.member_num;
+        this.post_num = builder.post_num;
+        this.is_brand_forum = builder.is_brand_forum;
+        this.tab_info = Message.immutableCopyOf(builder.tab_info);
+        this.forum_toutu = builder.forum_toutu;
+        this.deleted_reason_info = builder.deleted_reason_info;
     }
 }

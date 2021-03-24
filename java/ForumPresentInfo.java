@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ForumPresentInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final List<UserRankPresentInfo> DEFAULT_USER_LIST = Collections.emptyList();
@@ -13,27 +13,7 @@ public final class ForumPresentInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<UserRankPresentInfo> user_list;
 
-    private ForumPresentInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-            }
-            if (builder.content == null) {
-                this.content = "";
-                return;
-            } else {
-                this.content = builder.content;
-                return;
-            }
-        }
-        this.user_list = immutableCopyOf(builder.user_list);
-        this.content = builder.content;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumPresentInfo> {
         public String content;
         public List<UserRankPresentInfo> user_list;
@@ -43,10 +23,11 @@ public final class ForumPresentInfo extends Message {
 
         public Builder(ForumPresentInfo forumPresentInfo) {
             super(forumPresentInfo);
-            if (forumPresentInfo != null) {
-                this.user_list = ForumPresentInfo.copyOf(forumPresentInfo.user_list);
-                this.content = forumPresentInfo.content;
+            if (forumPresentInfo == null) {
+                return;
             }
+            this.user_list = Message.copyOf(forumPresentInfo.user_list);
+            this.content = forumPresentInfo.content;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -54,5 +35,27 @@ public final class ForumPresentInfo extends Message {
         public ForumPresentInfo build(boolean z) {
             return new ForumPresentInfo(this, z);
         }
+    }
+
+    public ForumPresentInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<UserRankPresentInfo> list = builder.user_list;
+            if (list == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list);
+            }
+            String str = builder.content;
+            if (str == null) {
+                this.content = "";
+                return;
+            } else {
+                this.content = str;
+                return;
+            }
+        }
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.content = builder.content;
     }
 }

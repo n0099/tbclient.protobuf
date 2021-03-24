@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class HeadLiveInfo extends Message {
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
     public static final List<ThreadInfo> DEFAULT_HEAD_LIVE = Collections.emptyList();
@@ -20,39 +20,7 @@ public final class HeadLiveInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_set;
 
-    private HeadLiveInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.head_live == null) {
-                this.head_live = DEFAULT_HEAD_LIVE;
-            } else {
-                this.head_live = immutableCopyOf(builder.head_live);
-            }
-            if (builder.head_pic == null) {
-                this.head_pic = DEFAULT_HEAD_PIC;
-            } else {
-                this.head_pic = immutableCopyOf(builder.head_pic);
-            }
-            if (builder.bitmap_wh_ratio == null) {
-                this.bitmap_wh_ratio = "";
-            } else {
-                this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
-            }
-            if (builder.is_set == null) {
-                this.is_set = DEFAULT_IS_SET;
-                return;
-            } else {
-                this.is_set = builder.is_set;
-                return;
-            }
-        }
-        this.head_live = immutableCopyOf(builder.head_live);
-        this.head_pic = immutableCopyOf(builder.head_pic);
-        this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
-        this.is_set = builder.is_set;
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<HeadLiveInfo> {
         public String bitmap_wh_ratio;
         public List<ThreadInfo> head_live;
@@ -64,12 +32,13 @@ public final class HeadLiveInfo extends Message {
 
         public Builder(HeadLiveInfo headLiveInfo) {
             super(headLiveInfo);
-            if (headLiveInfo != null) {
-                this.head_live = HeadLiveInfo.copyOf(headLiveInfo.head_live);
-                this.head_pic = HeadLiveInfo.copyOf(headLiveInfo.head_pic);
-                this.bitmap_wh_ratio = headLiveInfo.bitmap_wh_ratio;
-                this.is_set = headLiveInfo.is_set;
+            if (headLiveInfo == null) {
+                return;
             }
+            this.head_live = Message.copyOf(headLiveInfo.head_live);
+            this.head_pic = Message.copyOf(headLiveInfo.head_pic);
+            this.bitmap_wh_ratio = headLiveInfo.bitmap_wh_ratio;
+            this.is_set = headLiveInfo.is_set;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -77,5 +46,41 @@ public final class HeadLiveInfo extends Message {
         public HeadLiveInfo build(boolean z) {
             return new HeadLiveInfo(this, z);
         }
+    }
+
+    public HeadLiveInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ThreadInfo> list = builder.head_live;
+            if (list == null) {
+                this.head_live = DEFAULT_HEAD_LIVE;
+            } else {
+                this.head_live = Message.immutableCopyOf(list);
+            }
+            List<String> list2 = builder.head_pic;
+            if (list2 == null) {
+                this.head_pic = DEFAULT_HEAD_PIC;
+            } else {
+                this.head_pic = Message.immutableCopyOf(list2);
+            }
+            String str = builder.bitmap_wh_ratio;
+            if (str == null) {
+                this.bitmap_wh_ratio = "";
+            } else {
+                this.bitmap_wh_ratio = str;
+            }
+            Integer num = builder.is_set;
+            if (num == null) {
+                this.is_set = DEFAULT_IS_SET;
+                return;
+            } else {
+                this.is_set = num;
+                return;
+            }
+        }
+        this.head_live = Message.immutableCopyOf(builder.head_live);
+        this.head_pic = Message.immutableCopyOf(builder.head_pic);
+        this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
+        this.is_set = builder.is_set;
     }
 }

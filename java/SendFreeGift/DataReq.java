@@ -3,7 +3,7 @@ package tbclient.SendFreeGift;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_BENEFIT_USERNAME = "";
     public static final String DEFAULT_SCENE_FROM = "";
@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8923common;
+    public final CommonReq f68599common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer gift_id;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -31,65 +31,13 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Long DEFAULT_POST_ID = 0L;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.gift_id == null) {
-                this.gift_id = DEFAULT_GIFT_ID;
-            } else {
-                this.gift_id = builder.gift_id;
-            }
-            if (builder.benefit_userid == null) {
-                this.benefit_userid = DEFAULT_BENEFIT_USERID;
-            } else {
-                this.benefit_userid = builder.benefit_userid;
-            }
-            if (builder.benefit_username == null) {
-                this.benefit_username = "";
-            } else {
-                this.benefit_username = builder.benefit_username;
-            }
-            if (builder.num == null) {
-                this.num = DEFAULT_NUM;
-            } else {
-                this.num = builder.num;
-            }
-            this.f8923common = builder.f8924common;
-            if (builder.scene_from == null) {
-                this.scene_from = "";
-            } else {
-                this.scene_from = builder.scene_from;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-                return;
-            } else {
-                this.post_id = builder.post_id;
-                return;
-            }
-        }
-        this.gift_id = builder.gift_id;
-        this.benefit_userid = builder.benefit_userid;
-        this.benefit_username = builder.benefit_username;
-        this.num = builder.num;
-        this.f8923common = builder.f8924common;
-        this.scene_from = builder.scene_from;
-        this.thread_id = builder.thread_id;
-        this.post_id = builder.post_id;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long benefit_userid;
         public String benefit_username;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8924common;
+        public CommonReq f68600common;
         public Integer gift_id;
         public Integer num;
         public Long post_id;
@@ -101,16 +49,17 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.gift_id = dataReq.gift_id;
-                this.benefit_userid = dataReq.benefit_userid;
-                this.benefit_username = dataReq.benefit_username;
-                this.num = dataReq.num;
-                this.f8924common = dataReq.f8923common;
-                this.scene_from = dataReq.scene_from;
-                this.thread_id = dataReq.thread_id;
-                this.post_id = dataReq.post_id;
+            if (dataReq == null) {
+                return;
             }
+            this.gift_id = dataReq.gift_id;
+            this.benefit_userid = dataReq.benefit_userid;
+            this.benefit_username = dataReq.benefit_username;
+            this.num = dataReq.num;
+            this.f68600common = dataReq.f68599common;
+            this.scene_from = dataReq.scene_from;
+            this.thread_id = dataReq.thread_id;
+            this.post_id = dataReq.post_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +67,64 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.gift_id;
+            if (num == null) {
+                this.gift_id = DEFAULT_GIFT_ID;
+            } else {
+                this.gift_id = num;
+            }
+            Long l = builder.benefit_userid;
+            if (l == null) {
+                this.benefit_userid = DEFAULT_BENEFIT_USERID;
+            } else {
+                this.benefit_userid = l;
+            }
+            String str = builder.benefit_username;
+            if (str == null) {
+                this.benefit_username = "";
+            } else {
+                this.benefit_username = str;
+            }
+            Integer num2 = builder.num;
+            if (num2 == null) {
+                this.num = DEFAULT_NUM;
+            } else {
+                this.num = num2;
+            }
+            this.f68599common = builder.f68600common;
+            String str2 = builder.scene_from;
+            if (str2 == null) {
+                this.scene_from = "";
+            } else {
+                this.scene_from = str2;
+            }
+            Long l2 = builder.thread_id;
+            if (l2 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l2;
+            }
+            Long l3 = builder.post_id;
+            if (l3 == null) {
+                this.post_id = DEFAULT_POST_ID;
+                return;
+            } else {
+                this.post_id = l3;
+                return;
+            }
+        }
+        this.gift_id = builder.gift_id;
+        this.benefit_userid = builder.benefit_userid;
+        this.benefit_username = builder.benefit_username;
+        this.num = builder.num;
+        this.f68599common = builder.f68600common;
+        this.scene_from = builder.scene_from;
+        this.thread_id = builder.thread_id;
+        this.post_id = builder.post_id;
     }
 }

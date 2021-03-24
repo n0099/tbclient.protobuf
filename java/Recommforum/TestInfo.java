@@ -2,7 +2,7 @@ package tbclient.Recommforum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TestInfo extends Message {
     public static final String DEFAULT_IMAGE_URL = "";
     public static final String DEFAULT_RESULT_IMG = "";
@@ -25,52 +25,7 @@ public final class TestInfo extends Message {
     public static final Integer DEFAULT_CREATE_TIME = 0;
     public static final Integer DEFAULT_ANSWERED = 0;
 
-    private TestInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.test_id == null) {
-                this.test_id = DEFAULT_TEST_ID;
-            } else {
-                this.test_id = builder.test_id;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.image_url == null) {
-                this.image_url = "";
-            } else {
-                this.image_url = builder.image_url;
-            }
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.answered == null) {
-                this.answered = DEFAULT_ANSWERED;
-            } else {
-                this.answered = builder.answered;
-            }
-            if (builder.result_img == null) {
-                this.result_img = "";
-            } else {
-                this.result_img = builder.result_img;
-            }
-            this.recomm_forum = builder.recomm_forum;
-            return;
-        }
-        this.test_id = builder.test_id;
-        this.title = builder.title;
-        this.image_url = builder.image_url;
-        this.create_time = builder.create_time;
-        this.answered = builder.answered;
-        this.result_img = builder.result_img;
-        this.recomm_forum = builder.recomm_forum;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TestInfo> {
         public Integer answered;
         public Integer create_time;
@@ -85,15 +40,16 @@ public final class TestInfo extends Message {
 
         public Builder(TestInfo testInfo) {
             super(testInfo);
-            if (testInfo != null) {
-                this.test_id = testInfo.test_id;
-                this.title = testInfo.title;
-                this.image_url = testInfo.image_url;
-                this.create_time = testInfo.create_time;
-                this.answered = testInfo.answered;
-                this.result_img = testInfo.result_img;
-                this.recomm_forum = testInfo.recomm_forum;
+            if (testInfo == null) {
+                return;
             }
+            this.test_id = testInfo.test_id;
+            this.title = testInfo.title;
+            this.image_url = testInfo.image_url;
+            this.create_time = testInfo.create_time;
+            this.answered = testInfo.answered;
+            this.result_img = testInfo.result_img;
+            this.recomm_forum = testInfo.recomm_forum;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -101,5 +57,56 @@ public final class TestInfo extends Message {
         public TestInfo build(boolean z) {
             return new TestInfo(this, z);
         }
+    }
+
+    public TestInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.test_id;
+            if (l == null) {
+                this.test_id = DEFAULT_TEST_ID;
+            } else {
+                this.test_id = l;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.image_url;
+            if (str2 == null) {
+                this.image_url = "";
+            } else {
+                this.image_url = str2;
+            }
+            Integer num = builder.create_time;
+            if (num == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num;
+            }
+            Integer num2 = builder.answered;
+            if (num2 == null) {
+                this.answered = DEFAULT_ANSWERED;
+            } else {
+                this.answered = num2;
+            }
+            String str3 = builder.result_img;
+            if (str3 == null) {
+                this.result_img = "";
+            } else {
+                this.result_img = str3;
+            }
+            this.recomm_forum = builder.recomm_forum;
+            return;
+        }
+        this.test_id = builder.test_id;
+        this.title = builder.title;
+        this.image_url = builder.image_url;
+        this.create_time = builder.create_time;
+        this.answered = builder.answered;
+        this.result_img = builder.result_img;
+        this.recomm_forum = builder.recomm_forum;
     }
 }

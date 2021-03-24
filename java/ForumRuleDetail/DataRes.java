@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BawuRoleInfoPub;
 import tbclient.ForumInfo;
 import tbclient.ForumRule;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_AUDIT_OPINION = "";
     public static final String DEFAULT_CUR_TIME = "";
@@ -41,73 +41,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_MANAGER = 0;
     public static final Long DEFAULT_FORUM_RULE_ID = 0L;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.forum = builder.forum;
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.preface == null) {
-                this.preface = "";
-            } else {
-                this.preface = builder.preface;
-            }
-            if (builder.rules == null) {
-                this.rules = DEFAULT_RULES;
-            } else {
-                this.rules = immutableCopyOf(builder.rules);
-            }
-            if (builder.audit_status == null) {
-                this.audit_status = DEFAULT_AUDIT_STATUS;
-            } else {
-                this.audit_status = builder.audit_status;
-            }
-            if (builder.audit_opinion == null) {
-                this.audit_opinion = "";
-            } else {
-                this.audit_opinion = builder.audit_opinion;
-            }
-            if (builder.is_manager == null) {
-                this.is_manager = DEFAULT_IS_MANAGER;
-            } else {
-                this.is_manager = builder.is_manager;
-            }
-            if (builder.forum_rule_id == null) {
-                this.forum_rule_id = DEFAULT_FORUM_RULE_ID;
-            } else {
-                this.forum_rule_id = builder.forum_rule_id;
-            }
-            if (builder.publish_time == null) {
-                this.publish_time = "";
-            } else {
-                this.publish_time = builder.publish_time;
-            }
-            this.bazhu = builder.bazhu;
-            if (builder.cur_time == null) {
-                this.cur_time = "";
-                return;
-            } else {
-                this.cur_time = builder.cur_time;
-                return;
-            }
-        }
-        this.forum = builder.forum;
-        this.title = builder.title;
-        this.preface = builder.preface;
-        this.rules = immutableCopyOf(builder.rules);
-        this.audit_status = builder.audit_status;
-        this.audit_opinion = builder.audit_opinion;
-        this.is_manager = builder.is_manager;
-        this.forum_rule_id = builder.forum_rule_id;
-        this.publish_time = builder.publish_time;
-        this.bazhu = builder.bazhu;
-        this.cur_time = builder.cur_time;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String audit_opinion;
         public Integer audit_status;
@@ -126,19 +60,20 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.forum = dataRes.forum;
-                this.title = dataRes.title;
-                this.preface = dataRes.preface;
-                this.rules = DataRes.copyOf(dataRes.rules);
-                this.audit_status = dataRes.audit_status;
-                this.audit_opinion = dataRes.audit_opinion;
-                this.is_manager = dataRes.is_manager;
-                this.forum_rule_id = dataRes.forum_rule_id;
-                this.publish_time = dataRes.publish_time;
-                this.bazhu = dataRes.bazhu;
-                this.cur_time = dataRes.cur_time;
+            if (dataRes == null) {
+                return;
             }
+            this.forum = dataRes.forum;
+            this.title = dataRes.title;
+            this.preface = dataRes.preface;
+            this.rules = Message.copyOf(dataRes.rules);
+            this.audit_status = dataRes.audit_status;
+            this.audit_opinion = dataRes.audit_opinion;
+            this.is_manager = dataRes.is_manager;
+            this.forum_rule_id = dataRes.forum_rule_id;
+            this.publish_time = dataRes.publish_time;
+            this.bazhu = dataRes.bazhu;
+            this.cur_time = dataRes.cur_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -146,5 +81,80 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.forum = builder.forum;
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.preface;
+            if (str2 == null) {
+                this.preface = "";
+            } else {
+                this.preface = str2;
+            }
+            List<ForumRule> list = builder.rules;
+            if (list == null) {
+                this.rules = DEFAULT_RULES;
+            } else {
+                this.rules = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.audit_status;
+            if (num == null) {
+                this.audit_status = DEFAULT_AUDIT_STATUS;
+            } else {
+                this.audit_status = num;
+            }
+            String str3 = builder.audit_opinion;
+            if (str3 == null) {
+                this.audit_opinion = "";
+            } else {
+                this.audit_opinion = str3;
+            }
+            Integer num2 = builder.is_manager;
+            if (num2 == null) {
+                this.is_manager = DEFAULT_IS_MANAGER;
+            } else {
+                this.is_manager = num2;
+            }
+            Long l = builder.forum_rule_id;
+            if (l == null) {
+                this.forum_rule_id = DEFAULT_FORUM_RULE_ID;
+            } else {
+                this.forum_rule_id = l;
+            }
+            String str4 = builder.publish_time;
+            if (str4 == null) {
+                this.publish_time = "";
+            } else {
+                this.publish_time = str4;
+            }
+            this.bazhu = builder.bazhu;
+            String str5 = builder.cur_time;
+            if (str5 == null) {
+                this.cur_time = "";
+                return;
+            } else {
+                this.cur_time = str5;
+                return;
+            }
+        }
+        this.forum = builder.forum;
+        this.title = builder.title;
+        this.preface = builder.preface;
+        this.rules = Message.immutableCopyOf(builder.rules);
+        this.audit_status = builder.audit_status;
+        this.audit_opinion = builder.audit_opinion;
+        this.is_manager = builder.is_manager;
+        this.forum_rule_id = builder.forum_rule_id;
+        this.publish_time = builder.publish_time;
+        this.bazhu = builder.bazhu;
+        this.cur_time = builder.cur_time;
     }
 }

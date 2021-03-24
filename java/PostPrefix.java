@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PostPrefix extends Message {
     public static final Integer DEFAULT_MODE = 0;
     public static final String DEFAULT_TEXT = "";
@@ -17,39 +17,7 @@ public final class PostPrefix extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String type;
 
-    private PostPrefix(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.mode == null) {
-                this.mode = DEFAULT_MODE;
-            } else {
-                this.mode = builder.mode;
-            }
-            if (builder.text == null) {
-                this.text = "";
-            } else {
-                this.text = builder.text;
-            }
-            if (builder.type == null) {
-                this.type = "";
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.time == null) {
-                this.time = "";
-                return;
-            } else {
-                this.time = builder.time;
-                return;
-            }
-        }
-        this.mode = builder.mode;
-        this.text = builder.text;
-        this.type = builder.type;
-        this.time = builder.time;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PostPrefix> {
         public Integer mode;
         public String text;
@@ -61,12 +29,13 @@ public final class PostPrefix extends Message {
 
         public Builder(PostPrefix postPrefix) {
             super(postPrefix);
-            if (postPrefix != null) {
-                this.mode = postPrefix.mode;
-                this.text = postPrefix.text;
-                this.type = postPrefix.type;
-                this.time = postPrefix.time;
+            if (postPrefix == null) {
+                return;
             }
+            this.mode = postPrefix.mode;
+            this.text = postPrefix.text;
+            this.type = postPrefix.type;
+            this.time = postPrefix.time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class PostPrefix extends Message {
         public PostPrefix build(boolean z) {
             return new PostPrefix(this, z);
         }
+    }
+
+    public PostPrefix(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.mode;
+            if (num == null) {
+                this.mode = DEFAULT_MODE;
+            } else {
+                this.mode = num;
+            }
+            String str = builder.text;
+            if (str == null) {
+                this.text = "";
+            } else {
+                this.text = str;
+            }
+            String str2 = builder.type;
+            if (str2 == null) {
+                this.type = "";
+            } else {
+                this.type = str2;
+            }
+            String str3 = builder.time;
+            if (str3 == null) {
+                this.time = "";
+                return;
+            } else {
+                this.time = str3;
+                return;
+            }
+        }
+        this.mode = builder.mode;
+        this.text = builder.text;
+        this.type = builder.type;
+        this.time = builder.time;
     }
 }

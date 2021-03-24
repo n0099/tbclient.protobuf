@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class YuleActivity extends Message {
     public static final String DEFAULT_ACTIVITY_ALL_ICON = "";
     public static final String DEFAULT_ACTIVITY_HALF_ICON = "";
@@ -20,45 +20,7 @@ public final class YuleActivity extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String activity_url;
 
-    private YuleActivity(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.activity_id == null) {
-                this.activity_id = DEFAULT_ACTIVITY_ID;
-            } else {
-                this.activity_id = builder.activity_id;
-            }
-            if (builder.activity_type == null) {
-                this.activity_type = DEFAULT_ACTIVITY_TYPE;
-            } else {
-                this.activity_type = builder.activity_type;
-            }
-            if (builder.activity_url == null) {
-                this.activity_url = "";
-            } else {
-                this.activity_url = builder.activity_url;
-            }
-            if (builder.activity_all_icon == null) {
-                this.activity_all_icon = "";
-            } else {
-                this.activity_all_icon = builder.activity_all_icon;
-            }
-            if (builder.activity_half_icon == null) {
-                this.activity_half_icon = "";
-                return;
-            } else {
-                this.activity_half_icon = builder.activity_half_icon;
-                return;
-            }
-        }
-        this.activity_id = builder.activity_id;
-        this.activity_type = builder.activity_type;
-        this.activity_url = builder.activity_url;
-        this.activity_all_icon = builder.activity_all_icon;
-        this.activity_half_icon = builder.activity_half_icon;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<YuleActivity> {
         public String activity_all_icon;
         public String activity_half_icon;
@@ -71,13 +33,14 @@ public final class YuleActivity extends Message {
 
         public Builder(YuleActivity yuleActivity) {
             super(yuleActivity);
-            if (yuleActivity != null) {
-                this.activity_id = yuleActivity.activity_id;
-                this.activity_type = yuleActivity.activity_type;
-                this.activity_url = yuleActivity.activity_url;
-                this.activity_all_icon = yuleActivity.activity_all_icon;
-                this.activity_half_icon = yuleActivity.activity_half_icon;
+            if (yuleActivity == null) {
+                return;
             }
+            this.activity_id = yuleActivity.activity_id;
+            this.activity_type = yuleActivity.activity_type;
+            this.activity_url = yuleActivity.activity_url;
+            this.activity_all_icon = yuleActivity.activity_all_icon;
+            this.activity_half_icon = yuleActivity.activity_half_icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class YuleActivity extends Message {
         public YuleActivity build(boolean z) {
             return new YuleActivity(this, z);
         }
+    }
+
+    public YuleActivity(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.activity_id;
+            if (l == null) {
+                this.activity_id = DEFAULT_ACTIVITY_ID;
+            } else {
+                this.activity_id = l;
+            }
+            Integer num = builder.activity_type;
+            if (num == null) {
+                this.activity_type = DEFAULT_ACTIVITY_TYPE;
+            } else {
+                this.activity_type = num;
+            }
+            String str = builder.activity_url;
+            if (str == null) {
+                this.activity_url = "";
+            } else {
+                this.activity_url = str;
+            }
+            String str2 = builder.activity_all_icon;
+            if (str2 == null) {
+                this.activity_all_icon = "";
+            } else {
+                this.activity_all_icon = str2;
+            }
+            String str3 = builder.activity_half_icon;
+            if (str3 == null) {
+                this.activity_half_icon = "";
+                return;
+            } else {
+                this.activity_half_icon = str3;
+                return;
+            }
+        }
+        this.activity_id = builder.activity_id;
+        this.activity_type = builder.activity_type;
+        this.activity_url = builder.activity_url;
+        this.activity_all_icon = builder.activity_all_icon;
+        this.activity_half_icon = builder.activity_half_icon;
     }
 }

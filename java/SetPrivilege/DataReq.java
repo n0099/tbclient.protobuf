@@ -3,37 +3,21 @@ package tbclient.SetPrivilege;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8935common;
+    public final CommonReq f68611common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer props_id;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8935common = builder.f8936common;
-            if (builder.props_id == null) {
-                this.props_id = DEFAULT_PROPS_ID;
-                return;
-            } else {
-                this.props_id = builder.props_id;
-                return;
-            }
-        }
-        this.f8935common = builder.f8936common;
-        this.props_id = builder.props_id;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8936common;
+        public CommonReq f68612common;
         public Integer props_id;
 
         public Builder() {
@@ -41,10 +25,11 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8936common = dataReq.f8935common;
-                this.props_id = dataReq.props_id;
+            if (dataReq == null) {
+                return;
             }
+            this.f68612common = dataReq.f68611common;
+            this.props_id = dataReq.props_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +37,22 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68611common = builder.f68612common;
+            Integer num = builder.props_id;
+            if (num == null) {
+                this.props_id = DEFAULT_PROPS_ID;
+                return;
+            } else {
+                this.props_id = num;
+                return;
+            }
+        }
+        this.f68611common = builder.f68612common;
+        this.props_id = builder.props_id;
     }
 }

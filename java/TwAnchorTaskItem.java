@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TwAnchorTaskItem extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -23,51 +23,7 @@ public final class TwAnchorTaskItem extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_COMPLETE = 0;
 
-    private TwAnchorTaskItem(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.progress == null) {
-                this.progress = "";
-            } else {
-                this.progress = builder.progress;
-            }
-            if (builder.complete == null) {
-                this.complete = DEFAULT_COMPLETE;
-            } else {
-                this.complete = builder.complete;
-            }
-            if (builder.remark == null) {
-                this.remark = "";
-            } else {
-                this.remark = builder.remark;
-            }
-            if (builder.icon == null) {
-                this.icon = "";
-                return;
-            } else {
-                this.icon = builder.icon;
-                return;
-            }
-        }
-        this.id = builder.id;
-        this.name = builder.name;
-        this.progress = builder.progress;
-        this.complete = builder.complete;
-        this.remark = builder.remark;
-        this.icon = builder.icon;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TwAnchorTaskItem> {
         public Integer complete;
         public String icon;
@@ -81,14 +37,15 @@ public final class TwAnchorTaskItem extends Message {
 
         public Builder(TwAnchorTaskItem twAnchorTaskItem) {
             super(twAnchorTaskItem);
-            if (twAnchorTaskItem != null) {
-                this.id = twAnchorTaskItem.id;
-                this.name = twAnchorTaskItem.name;
-                this.progress = twAnchorTaskItem.progress;
-                this.complete = twAnchorTaskItem.complete;
-                this.remark = twAnchorTaskItem.remark;
-                this.icon = twAnchorTaskItem.icon;
+            if (twAnchorTaskItem == null) {
+                return;
             }
+            this.id = twAnchorTaskItem.id;
+            this.name = twAnchorTaskItem.name;
+            this.progress = twAnchorTaskItem.progress;
+            this.complete = twAnchorTaskItem.complete;
+            this.remark = twAnchorTaskItem.remark;
+            this.icon = twAnchorTaskItem.icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +53,55 @@ public final class TwAnchorTaskItem extends Message {
         public TwAnchorTaskItem build(boolean z) {
             return new TwAnchorTaskItem(this, z);
         }
+    }
+
+    public TwAnchorTaskItem(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = num;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.progress;
+            if (str2 == null) {
+                this.progress = "";
+            } else {
+                this.progress = str2;
+            }
+            Integer num2 = builder.complete;
+            if (num2 == null) {
+                this.complete = DEFAULT_COMPLETE;
+            } else {
+                this.complete = num2;
+            }
+            String str3 = builder.remark;
+            if (str3 == null) {
+                this.remark = "";
+            } else {
+                this.remark = str3;
+            }
+            String str4 = builder.icon;
+            if (str4 == null) {
+                this.icon = "";
+                return;
+            } else {
+                this.icon = str4;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.name = builder.name;
+        this.progress = builder.progress;
+        this.complete = builder.complete;
+        this.remark = builder.remark;
+        this.icon = builder.icon;
     }
 }

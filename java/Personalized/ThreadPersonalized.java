@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ThreadPersonalized extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_EXTRA = "";
@@ -25,51 +25,7 @@ public final class ThreadPersonalized extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final List<DislikeReason> DEFAULT_DISLIKE_RESOURCE = Collections.emptyList();
 
-    private ThreadPersonalized(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tid == null) {
-                this.tid = DEFAULT_TID;
-            } else {
-                this.tid = builder.tid;
-            }
-            if (builder.weight == null) {
-                this.weight = "";
-            } else {
-                this.weight = builder.weight;
-            }
-            if (builder.source == null) {
-                this.source = "";
-            } else {
-                this.source = builder.source;
-            }
-            if (builder.abtest_tag == null) {
-                this.abtest_tag = "";
-            } else {
-                this.abtest_tag = builder.abtest_tag;
-            }
-            if (builder.dislike_resource == null) {
-                this.dislike_resource = DEFAULT_DISLIKE_RESOURCE;
-            } else {
-                this.dislike_resource = immutableCopyOf(builder.dislike_resource);
-            }
-            if (builder.extra == null) {
-                this.extra = "";
-                return;
-            } else {
-                this.extra = builder.extra;
-                return;
-            }
-        }
-        this.tid = builder.tid;
-        this.weight = builder.weight;
-        this.source = builder.source;
-        this.abtest_tag = builder.abtest_tag;
-        this.dislike_resource = immutableCopyOf(builder.dislike_resource);
-        this.extra = builder.extra;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThreadPersonalized> {
         public String abtest_tag;
         public List<DislikeReason> dislike_resource;
@@ -83,14 +39,15 @@ public final class ThreadPersonalized extends Message {
 
         public Builder(ThreadPersonalized threadPersonalized) {
             super(threadPersonalized);
-            if (threadPersonalized != null) {
-                this.tid = threadPersonalized.tid;
-                this.weight = threadPersonalized.weight;
-                this.source = threadPersonalized.source;
-                this.abtest_tag = threadPersonalized.abtest_tag;
-                this.dislike_resource = ThreadPersonalized.copyOf(threadPersonalized.dislike_resource);
-                this.extra = threadPersonalized.extra;
+            if (threadPersonalized == null) {
+                return;
             }
+            this.tid = threadPersonalized.tid;
+            this.weight = threadPersonalized.weight;
+            this.source = threadPersonalized.source;
+            this.abtest_tag = threadPersonalized.abtest_tag;
+            this.dislike_resource = Message.copyOf(threadPersonalized.dislike_resource);
+            this.extra = threadPersonalized.extra;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -98,5 +55,55 @@ public final class ThreadPersonalized extends Message {
         public ThreadPersonalized build(boolean z) {
             return new ThreadPersonalized(this, z);
         }
+    }
+
+    public ThreadPersonalized(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.tid;
+            if (l == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l;
+            }
+            String str = builder.weight;
+            if (str == null) {
+                this.weight = "";
+            } else {
+                this.weight = str;
+            }
+            String str2 = builder.source;
+            if (str2 == null) {
+                this.source = "";
+            } else {
+                this.source = str2;
+            }
+            String str3 = builder.abtest_tag;
+            if (str3 == null) {
+                this.abtest_tag = "";
+            } else {
+                this.abtest_tag = str3;
+            }
+            List<DislikeReason> list = builder.dislike_resource;
+            if (list == null) {
+                this.dislike_resource = DEFAULT_DISLIKE_RESOURCE;
+            } else {
+                this.dislike_resource = Message.immutableCopyOf(list);
+            }
+            String str4 = builder.extra;
+            if (str4 == null) {
+                this.extra = "";
+                return;
+            } else {
+                this.extra = str4;
+                return;
+            }
+        }
+        this.tid = builder.tid;
+        this.weight = builder.weight;
+        this.source = builder.source;
+        this.abtest_tag = builder.abtest_tag;
+        this.dislike_resource = Message.immutableCopyOf(builder.dislike_resource);
+        this.extra = builder.extra;
     }
 }

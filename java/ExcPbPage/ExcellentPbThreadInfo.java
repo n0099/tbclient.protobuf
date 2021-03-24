@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class ExcellentPbThreadInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ABTEST = "";
@@ -47,90 +47,6 @@ public final class ExcellentPbThreadInfo extends Message {
     public static final Long DEFAULT_POST_ID = 0L;
     public static final Long DEFAULT_POST_NUM = 0L;
 
-    private ExcellentPbThreadInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.excid == null) {
-                this.excid = DEFAULT_EXCID;
-            } else {
-                this.excid = builder.excid;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.tag_code == null) {
-                this.tag_code = DEFAULT_TAG_CODE;
-            } else {
-                this.tag_code = builder.tag_code;
-            }
-            if (builder.tag_name == null) {
-                this.tag_name = "";
-            } else {
-                this.tag_name = builder.tag_name;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder._abstract == null) {
-                this._abstract = "";
-            } else {
-                this._abstract = builder._abstract;
-            }
-            if (builder.content == null) {
-                this.content = DEFAULT_CONTENT;
-            } else {
-                this.content = immutableCopyOf(builder.content);
-            }
-            this.forum = builder.forum;
-            if (builder.abtest == null) {
-                this.abtest = "";
-            } else {
-                this.abtest = builder.abtest;
-            }
-            if (builder.source == null) {
-                this.source = DEFAULT_SOURCE;
-            } else {
-                this.source = builder.source;
-            }
-            if (builder.publish_time == null) {
-                this.publish_time = DEFAULT_PUBLISH_TIME;
-            } else {
-                this.publish_time = builder.publish_time;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = builder.post_id;
-            }
-            this.zan = builder.zan;
-            if (builder.post_num == null) {
-                this.post_num = DEFAULT_POST_NUM;
-                return;
-            } else {
-                this.post_num = builder.post_num;
-                return;
-            }
-        }
-        this.excid = builder.excid;
-        this.thread_id = builder.thread_id;
-        this.tag_code = builder.tag_code;
-        this.tag_name = builder.tag_name;
-        this.title = builder.title;
-        this._abstract = builder._abstract;
-        this.content = immutableCopyOf(builder.content);
-        this.forum = builder.forum;
-        this.abtest = builder.abtest;
-        this.source = builder.source;
-        this.publish_time = builder.publish_time;
-        this.post_id = builder.post_id;
-        this.zan = builder.zan;
-        this.post_num = builder.post_num;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ExcellentPbThreadInfo> {
         public String _abstract;
@@ -153,22 +69,23 @@ public final class ExcellentPbThreadInfo extends Message {
 
         public Builder(ExcellentPbThreadInfo excellentPbThreadInfo) {
             super(excellentPbThreadInfo);
-            if (excellentPbThreadInfo != null) {
-                this.excid = excellentPbThreadInfo.excid;
-                this.thread_id = excellentPbThreadInfo.thread_id;
-                this.tag_code = excellentPbThreadInfo.tag_code;
-                this.tag_name = excellentPbThreadInfo.tag_name;
-                this.title = excellentPbThreadInfo.title;
-                this._abstract = excellentPbThreadInfo._abstract;
-                this.content = ExcellentPbThreadInfo.copyOf(excellentPbThreadInfo.content);
-                this.forum = excellentPbThreadInfo.forum;
-                this.abtest = excellentPbThreadInfo.abtest;
-                this.source = excellentPbThreadInfo.source;
-                this.publish_time = excellentPbThreadInfo.publish_time;
-                this.post_id = excellentPbThreadInfo.post_id;
-                this.zan = excellentPbThreadInfo.zan;
-                this.post_num = excellentPbThreadInfo.post_num;
+            if (excellentPbThreadInfo == null) {
+                return;
             }
+            this.excid = excellentPbThreadInfo.excid;
+            this.thread_id = excellentPbThreadInfo.thread_id;
+            this.tag_code = excellentPbThreadInfo.tag_code;
+            this.tag_name = excellentPbThreadInfo.tag_name;
+            this.title = excellentPbThreadInfo.title;
+            this._abstract = excellentPbThreadInfo._abstract;
+            this.content = Message.copyOf(excellentPbThreadInfo.content);
+            this.forum = excellentPbThreadInfo.forum;
+            this.abtest = excellentPbThreadInfo.abtest;
+            this.source = excellentPbThreadInfo.source;
+            this.publish_time = excellentPbThreadInfo.publish_time;
+            this.post_id = excellentPbThreadInfo.post_id;
+            this.zan = excellentPbThreadInfo.zan;
+            this.post_num = excellentPbThreadInfo.post_num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -176,5 +93,101 @@ public final class ExcellentPbThreadInfo extends Message {
         public ExcellentPbThreadInfo build(boolean z) {
             return new ExcellentPbThreadInfo(this, z);
         }
+    }
+
+    public ExcellentPbThreadInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.excid;
+            if (l == null) {
+                this.excid = DEFAULT_EXCID;
+            } else {
+                this.excid = l;
+            }
+            Long l2 = builder.thread_id;
+            if (l2 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l2;
+            }
+            Long l3 = builder.tag_code;
+            if (l3 == null) {
+                this.tag_code = DEFAULT_TAG_CODE;
+            } else {
+                this.tag_code = l3;
+            }
+            String str = builder.tag_name;
+            if (str == null) {
+                this.tag_name = "";
+            } else {
+                this.tag_name = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder._abstract;
+            if (str3 == null) {
+                this._abstract = "";
+            } else {
+                this._abstract = str3;
+            }
+            List<ExcContent> list = builder.content;
+            if (list == null) {
+                this.content = DEFAULT_CONTENT;
+            } else {
+                this.content = Message.immutableCopyOf(list);
+            }
+            this.forum = builder.forum;
+            String str4 = builder.abtest;
+            if (str4 == null) {
+                this.abtest = "";
+            } else {
+                this.abtest = str4;
+            }
+            Integer num = builder.source;
+            if (num == null) {
+                this.source = DEFAULT_SOURCE;
+            } else {
+                this.source = num;
+            }
+            Integer num2 = builder.publish_time;
+            if (num2 == null) {
+                this.publish_time = DEFAULT_PUBLISH_TIME;
+            } else {
+                this.publish_time = num2;
+            }
+            Long l4 = builder.post_id;
+            if (l4 == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = l4;
+            }
+            this.zan = builder.zan;
+            Long l5 = builder.post_num;
+            if (l5 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+                return;
+            } else {
+                this.post_num = l5;
+                return;
+            }
+        }
+        this.excid = builder.excid;
+        this.thread_id = builder.thread_id;
+        this.tag_code = builder.tag_code;
+        this.tag_name = builder.tag_name;
+        this.title = builder.title;
+        this._abstract = builder._abstract;
+        this.content = Message.immutableCopyOf(builder.content);
+        this.forum = builder.forum;
+        this.abtest = builder.abtest;
+        this.source = builder.source;
+        this.publish_time = builder.publish_time;
+        this.post_id = builder.post_id;
+        this.zan = builder.zan;
+        this.post_num = builder.post_num;
     }
 }

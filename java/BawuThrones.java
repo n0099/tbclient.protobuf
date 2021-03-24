@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class BawuThrones extends Message {
     public static final String DEFAULT_BAZHU_LEVEL = "";
     public static final Integer DEFAULT_TOTAL_RECOMMEND_NUM = 0;
@@ -14,33 +14,7 @@ public final class BawuThrones extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer used_recommend_num;
 
-    private BawuThrones(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.total_recommend_num == null) {
-                this.total_recommend_num = DEFAULT_TOTAL_RECOMMEND_NUM;
-            } else {
-                this.total_recommend_num = builder.total_recommend_num;
-            }
-            if (builder.used_recommend_num == null) {
-                this.used_recommend_num = DEFAULT_USED_RECOMMEND_NUM;
-            } else {
-                this.used_recommend_num = builder.used_recommend_num;
-            }
-            if (builder.bazhu_level == null) {
-                this.bazhu_level = "";
-                return;
-            } else {
-                this.bazhu_level = builder.bazhu_level;
-                return;
-            }
-        }
-        this.total_recommend_num = builder.total_recommend_num;
-        this.used_recommend_num = builder.used_recommend_num;
-        this.bazhu_level = builder.bazhu_level;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<BawuThrones> {
         public String bazhu_level;
         public Integer total_recommend_num;
@@ -51,11 +25,12 @@ public final class BawuThrones extends Message {
 
         public Builder(BawuThrones bawuThrones) {
             super(bawuThrones);
-            if (bawuThrones != null) {
-                this.total_recommend_num = bawuThrones.total_recommend_num;
-                this.used_recommend_num = bawuThrones.used_recommend_num;
-                this.bazhu_level = bawuThrones.bazhu_level;
+            if (bawuThrones == null) {
+                return;
             }
+            this.total_recommend_num = bawuThrones.total_recommend_num;
+            this.used_recommend_num = bawuThrones.used_recommend_num;
+            this.bazhu_level = bawuThrones.bazhu_level;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class BawuThrones extends Message {
         public BawuThrones build(boolean z) {
             return new BawuThrones(this, z);
         }
+    }
+
+    public BawuThrones(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.total_recommend_num;
+            if (num == null) {
+                this.total_recommend_num = DEFAULT_TOTAL_RECOMMEND_NUM;
+            } else {
+                this.total_recommend_num = num;
+            }
+            Integer num2 = builder.used_recommend_num;
+            if (num2 == null) {
+                this.used_recommend_num = DEFAULT_USED_RECOMMEND_NUM;
+            } else {
+                this.used_recommend_num = num2;
+            }
+            String str = builder.bazhu_level;
+            if (str == null) {
+                this.bazhu_level = "";
+                return;
+            } else {
+                this.bazhu_level = str;
+                return;
+            }
+        }
+        this.total_recommend_num = builder.total_recommend_num;
+        this.used_recommend_num = builder.used_recommend_num;
+        this.bazhu_level = builder.bazhu_level;
     }
 }

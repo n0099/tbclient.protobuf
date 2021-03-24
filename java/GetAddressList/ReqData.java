@@ -3,36 +3,21 @@ package tbclient.GetAddressList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ReqData extends Message {
     public static final Integer DEFAULT_TIMESTAMP = 0;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8711common;
+    public final CommonReq f68381common;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer timestamp;
 
-    private ReqData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.timestamp == null) {
-                this.timestamp = DEFAULT_TIMESTAMP;
-            } else {
-                this.timestamp = builder.timestamp;
-            }
-            this.f8711common = builder.f8712common;
-            return;
-        }
-        this.timestamp = builder.timestamp;
-        this.f8711common = builder.f8712common;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8712common;
+        public CommonReq f68382common;
         public Integer timestamp;
 
         public Builder() {
@@ -40,10 +25,11 @@ public final class ReqData extends Message {
 
         public Builder(ReqData reqData) {
             super(reqData);
-            if (reqData != null) {
-                this.timestamp = reqData.timestamp;
-                this.f8712common = reqData.f8711common;
+            if (reqData == null) {
+                return;
             }
+            this.timestamp = reqData.timestamp;
+            this.f68382common = reqData.f68381common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -51,5 +37,21 @@ public final class ReqData extends Message {
         public ReqData build(boolean z) {
             return new ReqData(this, z);
         }
+    }
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.timestamp;
+            if (num == null) {
+                this.timestamp = DEFAULT_TIMESTAMP;
+            } else {
+                this.timestamp = num;
+            }
+            this.f68381common = builder.f68382common;
+            return;
+        }
+        this.timestamp = builder.timestamp;
+        this.f68381common = builder.f68382common;
     }
 }

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class ForumList extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_CONTENT = "";
@@ -29,62 +29,6 @@ public final class ForumList extends Message {
     public static final Long DEFAULT_POST_NUM = 0L;
     public static final Long DEFAULT_THREAD_NUM = 0L;
 
-    private ForumList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.member_count == null) {
-                this.member_count = DEFAULT_MEMBER_COUNT;
-            } else {
-                this.member_count = builder.member_count;
-            }
-            if (builder.slogan == null) {
-                this.slogan = "";
-            } else {
-                this.slogan = builder.slogan;
-            }
-            if (builder.content == null) {
-                this.content = "";
-            } else {
-                this.content = builder.content;
-            }
-            if (builder.post_num == null) {
-                this.post_num = DEFAULT_POST_NUM;
-            } else {
-                this.post_num = builder.post_num;
-            }
-            if (builder.thread_num == null) {
-                this.thread_num = DEFAULT_THREAD_NUM;
-                return;
-            } else {
-                this.thread_num = builder.thread_num;
-                return;
-            }
-        }
-        this.forum_id = builder.forum_id;
-        this.forum_name = builder.forum_name;
-        this.avatar = builder.avatar;
-        this.member_count = builder.member_count;
-        this.slogan = builder.slogan;
-        this.content = builder.content;
-        this.post_num = builder.post_num;
-        this.thread_num = builder.thread_num;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumList> {
         public String avatar;
@@ -101,16 +45,17 @@ public final class ForumList extends Message {
 
         public Builder(ForumList forumList) {
             super(forumList);
-            if (forumList != null) {
-                this.forum_id = forumList.forum_id;
-                this.forum_name = forumList.forum_name;
-                this.avatar = forumList.avatar;
-                this.member_count = forumList.member_count;
-                this.slogan = forumList.slogan;
-                this.content = forumList.content;
-                this.post_num = forumList.post_num;
-                this.thread_num = forumList.thread_num;
+            if (forumList == null) {
+                return;
             }
+            this.forum_id = forumList.forum_id;
+            this.forum_name = forumList.forum_name;
+            this.avatar = forumList.avatar;
+            this.member_count = forumList.member_count;
+            this.slogan = forumList.slogan;
+            this.content = forumList.content;
+            this.post_num = forumList.post_num;
+            this.thread_num = forumList.thread_num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +63,69 @@ public final class ForumList extends Message {
         public ForumList build(boolean z) {
             return new ForumList(this, z);
         }
+    }
+
+    public ForumList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            String str2 = builder.avatar;
+            if (str2 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str2;
+            }
+            Integer num = builder.member_count;
+            if (num == null) {
+                this.member_count = DEFAULT_MEMBER_COUNT;
+            } else {
+                this.member_count = num;
+            }
+            String str3 = builder.slogan;
+            if (str3 == null) {
+                this.slogan = "";
+            } else {
+                this.slogan = str3;
+            }
+            String str4 = builder.content;
+            if (str4 == null) {
+                this.content = "";
+            } else {
+                this.content = str4;
+            }
+            Long l2 = builder.post_num;
+            if (l2 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = l2;
+            }
+            Long l3 = builder.thread_num;
+            if (l3 == null) {
+                this.thread_num = DEFAULT_THREAD_NUM;
+                return;
+            } else {
+                this.thread_num = l3;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.avatar = builder.avatar;
+        this.member_count = builder.member_count;
+        this.slogan = builder.slogan;
+        this.content = builder.content;
+        this.post_num = builder.post_num;
+        this.thread_num = builder.thread_num;
     }
 }

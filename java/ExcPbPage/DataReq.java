@@ -3,12 +3,12 @@ package tbclient.ExcPbPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8685common;
+    public final CommonReq f68349common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long excid;
     @ProtoField(tag = 5, type = Message.Datatype.UINT64)
@@ -31,63 +31,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Long DEFAULT_TAG_CODE = 0L;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8685common = builder.f8686common;
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-            } else {
-                this.q_type = builder.q_type;
-            }
-            if (builder.excid == null) {
-                this.excid = DEFAULT_EXCID;
-            } else {
-                this.excid = builder.excid;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.tag_code == null) {
-                this.tag_code = DEFAULT_TAG_CODE;
-                return;
-            } else {
-                this.tag_code = builder.tag_code;
-                return;
-            }
-        }
-        this.f8685common = builder.f8686common;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.q_type = builder.q_type;
-        this.excid = builder.excid;
-        this.thread_id = builder.thread_id;
-        this.tag_code = builder.tag_code;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8686common;
+        public CommonReq f68350common;
         public Long excid;
         public Long q_type;
         public Long scr_dip;
@@ -101,16 +49,17 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8686common = dataReq.f8685common;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.q_type = dataReq.q_type;
-                this.excid = dataReq.excid;
-                this.thread_id = dataReq.thread_id;
-                this.tag_code = dataReq.tag_code;
+            if (dataReq == null) {
+                return;
             }
+            this.f68350common = dataReq.f68349common;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.q_type = dataReq.q_type;
+            this.excid = dataReq.excid;
+            this.thread_id = dataReq.thread_id;
+            this.tag_code = dataReq.tag_code;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +67,64 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68349common = builder.f68350common;
+            Long l = builder.scr_w;
+            if (l == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = l;
+            }
+            Long l2 = builder.scr_h;
+            if (l2 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = l2;
+            }
+            Long l3 = builder.scr_dip;
+            if (l3 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = l3;
+            }
+            Long l4 = builder.q_type;
+            if (l4 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = l4;
+            }
+            Long l5 = builder.excid;
+            if (l5 == null) {
+                this.excid = DEFAULT_EXCID;
+            } else {
+                this.excid = l5;
+            }
+            Long l6 = builder.thread_id;
+            if (l6 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l6;
+            }
+            Long l7 = builder.tag_code;
+            if (l7 == null) {
+                this.tag_code = DEFAULT_TAG_CODE;
+                return;
+            } else {
+                this.tag_code = l7;
+                return;
+            }
+        }
+        this.f68349common = builder.f68350common;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
+        this.excid = builder.excid;
+        this.thread_id = builder.thread_id;
+        this.tag_code = builder.tag_code;
     }
 }

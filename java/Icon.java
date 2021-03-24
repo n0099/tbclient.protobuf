@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Icon extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -29,55 +29,7 @@ public final class Icon extends Message {
     public static final Integer DEFAULT_VALUE = 0;
     public static final List<String> DEFAULT_SPRITE_INFO = Collections.emptyList();
 
-    private Icon(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.weight == null) {
-                this.weight = DEFAULT_WEIGHT;
-            } else {
-                this.weight = builder.weight;
-            }
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.icon == null) {
-                this.icon = "";
-            } else {
-                this.icon = builder.icon;
-            }
-            if (builder.value == null) {
-                this.value = DEFAULT_VALUE;
-            } else {
-                this.value = builder.value;
-            }
-            this.terminal = builder.terminal;
-            this.position = builder.position;
-            if (builder.sprite_info == null) {
-                this.sprite_info = DEFAULT_SPRITE_INFO;
-                return;
-            } else {
-                this.sprite_info = immutableCopyOf(builder.sprite_info);
-                return;
-            }
-        }
-        this.name = builder.name;
-        this.weight = builder.weight;
-        this.url = builder.url;
-        this.icon = builder.icon;
-        this.value = builder.value;
-        this.terminal = builder.terminal;
-        this.position = builder.position;
-        this.sprite_info = immutableCopyOf(builder.sprite_info);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Icon> {
         public String icon;
         public String name;
@@ -93,16 +45,17 @@ public final class Icon extends Message {
 
         public Builder(Icon icon) {
             super(icon);
-            if (icon != null) {
-                this.name = icon.name;
-                this.weight = icon.weight;
-                this.url = icon.url;
-                this.icon = icon.icon;
-                this.value = icon.value;
-                this.terminal = icon.terminal;
-                this.position = icon.position;
-                this.sprite_info = Icon.copyOf(icon.sprite_info);
+            if (icon == null) {
+                return;
             }
+            this.name = icon.name;
+            this.weight = icon.weight;
+            this.url = icon.url;
+            this.icon = icon.icon;
+            this.value = icon.value;
+            this.terminal = icon.terminal;
+            this.position = icon.position;
+            this.sprite_info = Message.copyOf(icon.sprite_info);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -110,5 +63,59 @@ public final class Icon extends Message {
         public Icon build(boolean z) {
             return new Icon(this, z);
         }
+    }
+
+    public Icon(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            Integer num = builder.weight;
+            if (num == null) {
+                this.weight = DEFAULT_WEIGHT;
+            } else {
+                this.weight = num;
+            }
+            String str2 = builder.url;
+            if (str2 == null) {
+                this.url = "";
+            } else {
+                this.url = str2;
+            }
+            String str3 = builder.icon;
+            if (str3 == null) {
+                this.icon = "";
+            } else {
+                this.icon = str3;
+            }
+            Integer num2 = builder.value;
+            if (num2 == null) {
+                this.value = DEFAULT_VALUE;
+            } else {
+                this.value = num2;
+            }
+            this.terminal = builder.terminal;
+            this.position = builder.position;
+            List<String> list = builder.sprite_info;
+            if (list == null) {
+                this.sprite_info = DEFAULT_SPRITE_INFO;
+                return;
+            } else {
+                this.sprite_info = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.name = builder.name;
+        this.weight = builder.weight;
+        this.url = builder.url;
+        this.icon = builder.icon;
+        this.value = builder.value;
+        this.terminal = builder.terminal;
+        this.position = builder.position;
+        this.sprite_info = Message.immutableCopyOf(builder.sprite_info);
     }
 }

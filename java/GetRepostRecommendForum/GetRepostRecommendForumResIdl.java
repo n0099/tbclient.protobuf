@@ -3,23 +3,12 @@ package tbclient.GetRepostRecommendForum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class GetRepostRecommendForumResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
-
-    private GetRepostRecommendForumResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GetRepostRecommendForumResIdl> {
@@ -31,10 +20,11 @@ public final class GetRepostRecommendForumResIdl extends Message {
 
         public Builder(GetRepostRecommendForumResIdl getRepostRecommendForumResIdl) {
             super(getRepostRecommendForumResIdl);
-            if (getRepostRecommendForumResIdl != null) {
-                this.error = getRepostRecommendForumResIdl.error;
-                this.data = getRepostRecommendForumResIdl.data;
+            if (getRepostRecommendForumResIdl == null) {
+                return;
             }
+            this.error = getRepostRecommendForumResIdl.error;
+            this.data = getRepostRecommendForumResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class GetRepostRecommendForumResIdl extends Message {
         public GetRepostRecommendForumResIdl build(boolean z) {
             return new GetRepostRecommendForumResIdl(this, z);
         }
+    }
+
+    public GetRepostRecommendForumResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

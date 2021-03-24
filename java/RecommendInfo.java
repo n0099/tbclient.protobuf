@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class RecommendInfo extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final List<SchoolRecomUserInfo> DEFAULT_USER_LIST = Collections.emptyList();
@@ -13,27 +13,7 @@ public final class RecommendInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<SchoolRecomUserInfo> user_list;
 
-    private RecommendInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-                return;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.user_list = immutableCopyOf(builder.user_list);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecommendInfo> {
         public String title;
         public List<SchoolRecomUserInfo> user_list;
@@ -43,10 +23,11 @@ public final class RecommendInfo extends Message {
 
         public Builder(RecommendInfo recommendInfo) {
             super(recommendInfo);
-            if (recommendInfo != null) {
-                this.title = recommendInfo.title;
-                this.user_list = RecommendInfo.copyOf(recommendInfo.user_list);
+            if (recommendInfo == null) {
+                return;
             }
+            this.title = recommendInfo.title;
+            this.user_list = Message.copyOf(recommendInfo.user_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -54,5 +35,27 @@ public final class RecommendInfo extends Message {
         public RecommendInfo build(boolean z) {
             return new RecommendInfo(this, z);
         }
+    }
+
+    public RecommendInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            List<SchoolRecomUserInfo> list = builder.user_list;
+            if (list == null) {
+                this.user_list = DEFAULT_USER_LIST;
+                return;
+            } else {
+                this.user_list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.user_list = Message.immutableCopyOf(builder.user_list);
     }
 }

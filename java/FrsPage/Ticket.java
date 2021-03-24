@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Ticket extends Message {
     public static final Integer DEFAULT_TIME = 0;
     public static final String DEFAULT_URL = "";
@@ -11,27 +11,7 @@ public final class Ticket extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    private Ticket(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.time == null) {
-                this.time = DEFAULT_TIME;
-            } else {
-                this.time = builder.time;
-            }
-            if (builder.url == null) {
-                this.url = "";
-                return;
-            } else {
-                this.url = builder.url;
-                return;
-            }
-        }
-        this.time = builder.time;
-        this.url = builder.url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Ticket> {
         public Integer time;
         public String url;
@@ -41,10 +21,11 @@ public final class Ticket extends Message {
 
         public Builder(Ticket ticket) {
             super(ticket);
-            if (ticket != null) {
-                this.time = ticket.time;
-                this.url = ticket.url;
+            if (ticket == null) {
+                return;
             }
+            this.time = ticket.time;
+            this.url = ticket.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class Ticket extends Message {
         public Ticket build(boolean z) {
             return new Ticket(this, z);
         }
+    }
+
+    public Ticket(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.time;
+            if (num == null) {
+                this.time = DEFAULT_TIME;
+            } else {
+                this.time = num;
+            }
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str;
+                return;
+            }
+        }
+        this.time = builder.time;
+        this.url = builder.url;
     }
 }

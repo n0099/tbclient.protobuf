@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class SmartApp extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -35,75 +35,7 @@ public final class SmartApp extends Message {
     public static final Integer DEFAULT_IS_RECOM = 0;
     public static final Integer DEFAULT_IS_GAME = 0;
 
-    private SmartApp(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder._abstract == null) {
-                this._abstract = "";
-            } else {
-                this._abstract = builder._abstract;
-            }
-            if (builder.pic == null) {
-                this.pic = "";
-            } else {
-                this.pic = builder.pic;
-            }
-            if (builder.h5_url == null) {
-                this.h5_url = "";
-            } else {
-                this.h5_url = builder.h5_url;
-            }
-            if (builder.id == null) {
-                this.id = "";
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.link == null) {
-                this.link = "";
-            } else {
-                this.link = builder.link;
-            }
-            if (builder.swan_app_id == null) {
-                this.swan_app_id = DEFAULT_SWAN_APP_ID;
-            } else {
-                this.swan_app_id = builder.swan_app_id;
-            }
-            if (builder.is_recom == null) {
-                this.is_recom = DEFAULT_IS_RECOM;
-            } else {
-                this.is_recom = builder.is_recom;
-            }
-            if (builder.is_game == null) {
-                this.is_game = DEFAULT_IS_GAME;
-                return;
-            } else {
-                this.is_game = builder.is_game;
-                return;
-            }
-        }
-        this.avatar = builder.avatar;
-        this.name = builder.name;
-        this._abstract = builder._abstract;
-        this.pic = builder.pic;
-        this.h5_url = builder.h5_url;
-        this.id = builder.id;
-        this.link = builder.link;
-        this.swan_app_id = builder.swan_app_id;
-        this.is_recom = builder.is_recom;
-        this.is_game = builder.is_game;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<SmartApp> {
         public String _abstract;
         public String avatar;
@@ -121,18 +53,19 @@ public final class SmartApp extends Message {
 
         public Builder(SmartApp smartApp) {
             super(smartApp);
-            if (smartApp != null) {
-                this.avatar = smartApp.avatar;
-                this.name = smartApp.name;
-                this._abstract = smartApp._abstract;
-                this.pic = smartApp.pic;
-                this.h5_url = smartApp.h5_url;
-                this.id = smartApp.id;
-                this.link = smartApp.link;
-                this.swan_app_id = smartApp.swan_app_id;
-                this.is_recom = smartApp.is_recom;
-                this.is_game = smartApp.is_game;
+            if (smartApp == null) {
+                return;
             }
+            this.avatar = smartApp.avatar;
+            this.name = smartApp.name;
+            this._abstract = smartApp._abstract;
+            this.pic = smartApp.pic;
+            this.h5_url = smartApp.h5_url;
+            this.id = smartApp.id;
+            this.link = smartApp.link;
+            this.swan_app_id = smartApp.swan_app_id;
+            this.is_recom = smartApp.is_recom;
+            this.is_game = smartApp.is_game;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -140,5 +73,83 @@ public final class SmartApp extends Message {
         public SmartApp build(boolean z) {
             return new SmartApp(this, z);
         }
+    }
+
+    public SmartApp(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.avatar;
+            if (str == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str;
+            }
+            String str2 = builder.name;
+            if (str2 == null) {
+                this.name = "";
+            } else {
+                this.name = str2;
+            }
+            String str3 = builder._abstract;
+            if (str3 == null) {
+                this._abstract = "";
+            } else {
+                this._abstract = str3;
+            }
+            String str4 = builder.pic;
+            if (str4 == null) {
+                this.pic = "";
+            } else {
+                this.pic = str4;
+            }
+            String str5 = builder.h5_url;
+            if (str5 == null) {
+                this.h5_url = "";
+            } else {
+                this.h5_url = str5;
+            }
+            String str6 = builder.id;
+            if (str6 == null) {
+                this.id = "";
+            } else {
+                this.id = str6;
+            }
+            String str7 = builder.link;
+            if (str7 == null) {
+                this.link = "";
+            } else {
+                this.link = str7;
+            }
+            Long l = builder.swan_app_id;
+            if (l == null) {
+                this.swan_app_id = DEFAULT_SWAN_APP_ID;
+            } else {
+                this.swan_app_id = l;
+            }
+            Integer num = builder.is_recom;
+            if (num == null) {
+                this.is_recom = DEFAULT_IS_RECOM;
+            } else {
+                this.is_recom = num;
+            }
+            Integer num2 = builder.is_game;
+            if (num2 == null) {
+                this.is_game = DEFAULT_IS_GAME;
+                return;
+            } else {
+                this.is_game = num2;
+                return;
+            }
+        }
+        this.avatar = builder.avatar;
+        this.name = builder.name;
+        this._abstract = builder._abstract;
+        this.pic = builder.pic;
+        this.h5_url = builder.h5_url;
+        this.id = builder.id;
+        this.link = builder.link;
+        this.swan_app_id = builder.swan_app_id;
+        this.is_recom = builder.is_recom;
+        this.is_game = builder.is_game;
     }
 }

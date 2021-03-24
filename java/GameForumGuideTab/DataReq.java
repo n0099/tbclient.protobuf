@@ -3,12 +3,12 @@ package tbclient.GameForumGuideTab;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8705common;
+    public final CommonReq f68375common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -28,57 +28,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SUB_LABEL_ID = 0;
     public static final Integer DEFAULT_NEED_TAB_STUCT = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8705common = builder.f8706common;
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.ps == null) {
-                this.ps = DEFAULT_PS;
-            } else {
-                this.ps = builder.ps;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.sub_tab_id == null) {
-                this.sub_tab_id = DEFAULT_SUB_TAB_ID;
-            } else {
-                this.sub_tab_id = builder.sub_tab_id;
-            }
-            if (builder.sub_label_id == null) {
-                this.sub_label_id = DEFAULT_SUB_LABEL_ID;
-            } else {
-                this.sub_label_id = builder.sub_label_id;
-            }
-            if (builder.need_tab_stuct == null) {
-                this.need_tab_stuct = DEFAULT_NEED_TAB_STUCT;
-                return;
-            } else {
-                this.need_tab_stuct = builder.need_tab_stuct;
-                return;
-            }
-        }
-        this.f8705common = builder.f8706common;
-        this.pn = builder.pn;
-        this.ps = builder.ps;
-        this.forum_id = builder.forum_id;
-        this.sub_tab_id = builder.sub_tab_id;
-        this.sub_label_id = builder.sub_label_id;
-        this.need_tab_stuct = builder.need_tab_stuct;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8706common;
+        public CommonReq f68376common;
         public Long forum_id;
         public Integer need_tab_stuct;
         public Integer pn;
@@ -91,15 +45,16 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8706common = dataReq.f8705common;
-                this.pn = dataReq.pn;
-                this.ps = dataReq.ps;
-                this.forum_id = dataReq.forum_id;
-                this.sub_tab_id = dataReq.sub_tab_id;
-                this.sub_label_id = dataReq.sub_label_id;
-                this.need_tab_stuct = dataReq.need_tab_stuct;
+            if (dataReq == null) {
+                return;
             }
+            this.f68376common = dataReq.f68375common;
+            this.pn = dataReq.pn;
+            this.ps = dataReq.ps;
+            this.forum_id = dataReq.forum_id;
+            this.sub_tab_id = dataReq.sub_tab_id;
+            this.sub_label_id = dataReq.sub_label_id;
+            this.need_tab_stuct = dataReq.need_tab_stuct;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +62,57 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68375common = builder.f68376common;
+            Integer num = builder.pn;
+            if (num == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num;
+            }
+            Integer num2 = builder.ps;
+            if (num2 == null) {
+                this.ps = DEFAULT_PS;
+            } else {
+                this.ps = num2;
+            }
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            Integer num3 = builder.sub_tab_id;
+            if (num3 == null) {
+                this.sub_tab_id = DEFAULT_SUB_TAB_ID;
+            } else {
+                this.sub_tab_id = num3;
+            }
+            Integer num4 = builder.sub_label_id;
+            if (num4 == null) {
+                this.sub_label_id = DEFAULT_SUB_LABEL_ID;
+            } else {
+                this.sub_label_id = num4;
+            }
+            Integer num5 = builder.need_tab_stuct;
+            if (num5 == null) {
+                this.need_tab_stuct = DEFAULT_NEED_TAB_STUCT;
+                return;
+            } else {
+                this.need_tab_stuct = num5;
+                return;
+            }
+        }
+        this.f68375common = builder.f68376common;
+        this.pn = builder.pn;
+        this.ps = builder.ps;
+        this.forum_id = builder.forum_id;
+        this.sub_tab_id = builder.sub_tab_id;
+        this.sub_label_id = builder.sub_label_id;
+        this.need_tab_stuct = builder.need_tab_stuct;
     }
 }

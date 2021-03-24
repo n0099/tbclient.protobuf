@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class UserChance extends Message {
     public static final Long DEFAULT_CHANCE_COUNT = 0L;
     public static final Long DEFAULT_ENABLE_GET_CHANCE = 0L;
@@ -16,33 +16,7 @@ public final class UserChance extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ActRegular> regular;
 
-    private UserChance(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.chance_count == null) {
-                this.chance_count = DEFAULT_CHANCE_COUNT;
-            } else {
-                this.chance_count = builder.chance_count;
-            }
-            if (builder.enable_get_chance == null) {
-                this.enable_get_chance = DEFAULT_ENABLE_GET_CHANCE;
-            } else {
-                this.enable_get_chance = builder.enable_get_chance;
-            }
-            if (builder.regular == null) {
-                this.regular = DEFAULT_REGULAR;
-                return;
-            } else {
-                this.regular = immutableCopyOf(builder.regular);
-                return;
-            }
-        }
-        this.chance_count = builder.chance_count;
-        this.enable_get_chance = builder.enable_get_chance;
-        this.regular = immutableCopyOf(builder.regular);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserChance> {
         public Long chance_count;
         public Long enable_get_chance;
@@ -53,11 +27,12 @@ public final class UserChance extends Message {
 
         public Builder(UserChance userChance) {
             super(userChance);
-            if (userChance != null) {
-                this.chance_count = userChance.chance_count;
-                this.enable_get_chance = userChance.enable_get_chance;
-                this.regular = UserChance.copyOf(userChance.regular);
+            if (userChance == null) {
+                return;
             }
+            this.chance_count = userChance.chance_count;
+            this.enable_get_chance = userChance.enable_get_chance;
+            this.regular = Message.copyOf(userChance.regular);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -65,5 +40,34 @@ public final class UserChance extends Message {
         public UserChance build(boolean z) {
             return new UserChance(this, z);
         }
+    }
+
+    public UserChance(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.chance_count;
+            if (l == null) {
+                this.chance_count = DEFAULT_CHANCE_COUNT;
+            } else {
+                this.chance_count = l;
+            }
+            Long l2 = builder.enable_get_chance;
+            if (l2 == null) {
+                this.enable_get_chance = DEFAULT_ENABLE_GET_CHANCE;
+            } else {
+                this.enable_get_chance = l2;
+            }
+            List<ActRegular> list = builder.regular;
+            if (list == null) {
+                this.regular = DEFAULT_REGULAR;
+                return;
+            } else {
+                this.regular = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.chance_count = builder.chance_count;
+        this.enable_get_chance = builder.enable_get_chance;
+        this.regular = Message.immutableCopyOf(builder.regular);
     }
 }

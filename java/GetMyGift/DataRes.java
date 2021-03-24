@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer blue_diamond;
@@ -28,50 +28,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SCENE_ID = 0;
     public static final Integer DEFAULT_BLUE_DIAMOND = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.total_num == null) {
-                this.total_num = DEFAULT_TOTAL_NUM;
-            } else {
-                this.total_num = builder.total_num;
-            }
-            if (builder.money == null) {
-                this.money = DEFAULT_MONEY;
-            } else {
-                this.money = builder.money;
-            }
-            this.money_txt = builder.money_txt;
-            if (builder.gift_list == null) {
-                this.gift_list = DEFAULT_GIFT_LIST;
-            } else {
-                this.gift_list = immutableCopyOf(builder.gift_list);
-            }
-            this.page = builder.page;
-            if (builder.scene_id == null) {
-                this.scene_id = DEFAULT_SCENE_ID;
-            } else {
-                this.scene_id = builder.scene_id;
-            }
-            if (builder.blue_diamond == null) {
-                this.blue_diamond = DEFAULT_BLUE_DIAMOND;
-            } else {
-                this.blue_diamond = builder.blue_diamond;
-            }
-            this.blue_diamond_txt = builder.blue_diamond_txt;
-            return;
-        }
-        this.total_num = builder.total_num;
-        this.money = builder.money;
-        this.money_txt = builder.money_txt;
-        this.gift_list = immutableCopyOf(builder.gift_list);
-        this.page = builder.page;
-        this.scene_id = builder.scene_id;
-        this.blue_diamond = builder.blue_diamond;
-        this.blue_diamond_txt = builder.blue_diamond_txt;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer blue_diamond;
         public presentMoneyTxt blue_diamond_txt;
@@ -87,16 +44,17 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.total_num = dataRes.total_num;
-                this.money = dataRes.money;
-                this.money_txt = dataRes.money_txt;
-                this.gift_list = DataRes.copyOf(dataRes.gift_list);
-                this.page = dataRes.page;
-                this.scene_id = dataRes.scene_id;
-                this.blue_diamond = dataRes.blue_diamond;
-                this.blue_diamond_txt = dataRes.blue_diamond_txt;
+            if (dataRes == null) {
+                return;
             }
+            this.total_num = dataRes.total_num;
+            this.money = dataRes.money;
+            this.money_txt = dataRes.money_txt;
+            this.gift_list = Message.copyOf(dataRes.gift_list);
+            this.page = dataRes.page;
+            this.scene_id = dataRes.scene_id;
+            this.blue_diamond = dataRes.blue_diamond;
+            this.blue_diamond_txt = dataRes.blue_diamond_txt;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -104,5 +62,53 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.total_num;
+            if (num == null) {
+                this.total_num = DEFAULT_TOTAL_NUM;
+            } else {
+                this.total_num = num;
+            }
+            Integer num2 = builder.money;
+            if (num2 == null) {
+                this.money = DEFAULT_MONEY;
+            } else {
+                this.money = num2;
+            }
+            this.money_txt = builder.money_txt;
+            List<PresentMyList> list = builder.gift_list;
+            if (list == null) {
+                this.gift_list = DEFAULT_GIFT_LIST;
+            } else {
+                this.gift_list = Message.immutableCopyOf(list);
+            }
+            this.page = builder.page;
+            Integer num3 = builder.scene_id;
+            if (num3 == null) {
+                this.scene_id = DEFAULT_SCENE_ID;
+            } else {
+                this.scene_id = num3;
+            }
+            Integer num4 = builder.blue_diamond;
+            if (num4 == null) {
+                this.blue_diamond = DEFAULT_BLUE_DIAMOND;
+            } else {
+                this.blue_diamond = num4;
+            }
+            this.blue_diamond_txt = builder.blue_diamond_txt;
+            return;
+        }
+        this.total_num = builder.total_num;
+        this.money = builder.money;
+        this.money_txt = builder.money_txt;
+        this.gift_list = Message.immutableCopyOf(builder.gift_list);
+        this.page = builder.page;
+        this.scene_id = builder.scene_id;
+        this.blue_diamond = builder.blue_diamond;
+        this.blue_diamond_txt = builder.blue_diamond_txt;
     }
 }

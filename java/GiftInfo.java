@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class GiftInfo extends Message {
     public static final String DEFAULT_GIFT_NAME = "";
     public static final String DEFAULT_ICON = "";
@@ -26,57 +26,7 @@ public final class GiftInfo extends Message {
     public static final Integer DEFAULT_GIFT_ID = 0;
     public static final Long DEFAULT_SENDER_ID = 0L;
 
-    private GiftInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.icon == null) {
-                this.icon = "";
-            } else {
-                this.icon = builder.icon;
-            }
-            if (builder.num == null) {
-                this.num = DEFAULT_NUM;
-            } else {
-                this.num = builder.num;
-            }
-            if (builder.gift_id == null) {
-                this.gift_id = DEFAULT_GIFT_ID;
-            } else {
-                this.gift_id = builder.gift_id;
-            }
-            if (builder.gift_name == null) {
-                this.gift_name = "";
-            } else {
-                this.gift_name = builder.gift_name;
-            }
-            if (builder.large_thumbnail_url == null) {
-                this.large_thumbnail_url = "";
-            } else {
-                this.large_thumbnail_url = builder.large_thumbnail_url;
-            }
-            if (builder.sender_id == null) {
-                this.sender_id = DEFAULT_SENDER_ID;
-            } else {
-                this.sender_id = builder.sender_id;
-            }
-            if (builder.sender_name == null) {
-                this.sender_name = "";
-                return;
-            } else {
-                this.sender_name = builder.sender_name;
-                return;
-            }
-        }
-        this.icon = builder.icon;
-        this.num = builder.num;
-        this.gift_id = builder.gift_id;
-        this.gift_name = builder.gift_name;
-        this.large_thumbnail_url = builder.large_thumbnail_url;
-        this.sender_id = builder.sender_id;
-        this.sender_name = builder.sender_name;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GiftInfo> {
         public Integer gift_id;
         public String gift_name;
@@ -91,15 +41,16 @@ public final class GiftInfo extends Message {
 
         public Builder(GiftInfo giftInfo) {
             super(giftInfo);
-            if (giftInfo != null) {
-                this.icon = giftInfo.icon;
-                this.num = giftInfo.num;
-                this.gift_id = giftInfo.gift_id;
-                this.gift_name = giftInfo.gift_name;
-                this.large_thumbnail_url = giftInfo.large_thumbnail_url;
-                this.sender_id = giftInfo.sender_id;
-                this.sender_name = giftInfo.sender_name;
+            if (giftInfo == null) {
+                return;
             }
+            this.icon = giftInfo.icon;
+            this.num = giftInfo.num;
+            this.gift_id = giftInfo.gift_id;
+            this.gift_name = giftInfo.gift_name;
+            this.large_thumbnail_url = giftInfo.large_thumbnail_url;
+            this.sender_id = giftInfo.sender_id;
+            this.sender_name = giftInfo.sender_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +58,62 @@ public final class GiftInfo extends Message {
         public GiftInfo build(boolean z) {
             return new GiftInfo(this, z);
         }
+    }
+
+    public GiftInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.icon;
+            if (str == null) {
+                this.icon = "";
+            } else {
+                this.icon = str;
+            }
+            Integer num = builder.num;
+            if (num == null) {
+                this.num = DEFAULT_NUM;
+            } else {
+                this.num = num;
+            }
+            Integer num2 = builder.gift_id;
+            if (num2 == null) {
+                this.gift_id = DEFAULT_GIFT_ID;
+            } else {
+                this.gift_id = num2;
+            }
+            String str2 = builder.gift_name;
+            if (str2 == null) {
+                this.gift_name = "";
+            } else {
+                this.gift_name = str2;
+            }
+            String str3 = builder.large_thumbnail_url;
+            if (str3 == null) {
+                this.large_thumbnail_url = "";
+            } else {
+                this.large_thumbnail_url = str3;
+            }
+            Long l = builder.sender_id;
+            if (l == null) {
+                this.sender_id = DEFAULT_SENDER_ID;
+            } else {
+                this.sender_id = l;
+            }
+            String str4 = builder.sender_name;
+            if (str4 == null) {
+                this.sender_name = "";
+                return;
+            } else {
+                this.sender_name = str4;
+                return;
+            }
+        }
+        this.icon = builder.icon;
+        this.num = builder.num;
+        this.gift_id = builder.gift_id;
+        this.gift_name = builder.gift_name;
+        this.large_thumbnail_url = builder.large_thumbnail_url;
+        this.sender_id = builder.sender_id;
+        this.sender_name = builder.sender_name;
     }
 }

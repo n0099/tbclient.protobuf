@@ -3,14 +3,14 @@ package tbclient.Profile;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_FRIEND_UID_PORTRAIT = "";
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8891common;
+    public final CommonReq f68567common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -55,111 +55,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_FROM_USERCENTER = 0;
     public static final Integer DEFAULT_PAGE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.uid == null) {
-                this.uid = DEFAULT_UID;
-            } else {
-                this.uid = builder.uid;
-            }
-            if (builder.need_post_count == null) {
-                this.need_post_count = DEFAULT_NEED_POST_COUNT;
-            } else {
-                this.need_post_count = builder.need_post_count;
-            }
-            if (builder.friend_uid == null) {
-                this.friend_uid = DEFAULT_FRIEND_UID;
-            } else {
-                this.friend_uid = builder.friend_uid;
-            }
-            if (builder.is_guest == null) {
-                this.is_guest = DEFAULT_IS_GUEST;
-            } else {
-                this.is_guest = builder.is_guest;
-            }
-            if (builder.st_type == null) {
-                this.st_type = "";
-            } else {
-                this.st_type = builder.st_type;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
-            } else {
-                this.rn = builder.rn;
-            }
-            if (builder.has_plist == null) {
-                this.has_plist = DEFAULT_HAS_PLIST;
-            } else {
-                this.has_plist = builder.has_plist;
-            }
-            this.f8891common = builder.f8892common;
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-            } else {
-                this.q_type = builder.q_type;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.is_from_usercenter == null) {
-                this.is_from_usercenter = DEFAULT_IS_FROM_USERCENTER;
-            } else {
-                this.is_from_usercenter = builder.is_from_usercenter;
-            }
-            if (builder.page == null) {
-                this.page = DEFAULT_PAGE;
-            } else {
-                this.page = builder.page;
-            }
-            if (builder.friend_uid_portrait == null) {
-                this.friend_uid_portrait = "";
-                return;
-            } else {
-                this.friend_uid_portrait = builder.friend_uid_portrait;
-                return;
-            }
-        }
-        this.uid = builder.uid;
-        this.need_post_count = builder.need_post_count;
-        this.friend_uid = builder.friend_uid;
-        this.is_guest = builder.is_guest;
-        this.st_type = builder.st_type;
-        this.pn = builder.pn;
-        this.rn = builder.rn;
-        this.has_plist = builder.has_plist;
-        this.f8891common = builder.f8892common;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.q_type = builder.q_type;
-        this.scr_dip = builder.scr_dip;
-        this.is_from_usercenter = builder.is_from_usercenter;
-        this.page = builder.page;
-        this.friend_uid_portrait = builder.friend_uid_portrait;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8892common;
+        public CommonReq f68568common;
         public Long friend_uid;
         public String friend_uid_portrait;
         public Integer has_plist;
@@ -181,24 +81,25 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.uid = dataReq.uid;
-                this.need_post_count = dataReq.need_post_count;
-                this.friend_uid = dataReq.friend_uid;
-                this.is_guest = dataReq.is_guest;
-                this.st_type = dataReq.st_type;
-                this.pn = dataReq.pn;
-                this.rn = dataReq.rn;
-                this.has_plist = dataReq.has_plist;
-                this.f8892common = dataReq.f8891common;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.q_type = dataReq.q_type;
-                this.scr_dip = dataReq.scr_dip;
-                this.is_from_usercenter = dataReq.is_from_usercenter;
-                this.page = dataReq.page;
-                this.friend_uid_portrait = dataReq.friend_uid_portrait;
+            if (dataReq == null) {
+                return;
             }
+            this.uid = dataReq.uid;
+            this.need_post_count = dataReq.need_post_count;
+            this.friend_uid = dataReq.friend_uid;
+            this.is_guest = dataReq.is_guest;
+            this.st_type = dataReq.st_type;
+            this.pn = dataReq.pn;
+            this.rn = dataReq.rn;
+            this.has_plist = dataReq.has_plist;
+            this.f68568common = dataReq.f68567common;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.q_type = dataReq.q_type;
+            this.scr_dip = dataReq.scr_dip;
+            this.is_from_usercenter = dataReq.is_from_usercenter;
+            this.page = dataReq.page;
+            this.friend_uid_portrait = dataReq.friend_uid_portrait;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -206,5 +107,120 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.uid;
+            if (l == null) {
+                this.uid = DEFAULT_UID;
+            } else {
+                this.uid = l;
+            }
+            Integer num = builder.need_post_count;
+            if (num == null) {
+                this.need_post_count = DEFAULT_NEED_POST_COUNT;
+            } else {
+                this.need_post_count = num;
+            }
+            Long l2 = builder.friend_uid;
+            if (l2 == null) {
+                this.friend_uid = DEFAULT_FRIEND_UID;
+            } else {
+                this.friend_uid = l2;
+            }
+            Integer num2 = builder.is_guest;
+            if (num2 == null) {
+                this.is_guest = DEFAULT_IS_GUEST;
+            } else {
+                this.is_guest = num2;
+            }
+            String str = builder.st_type;
+            if (str == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str;
+            }
+            Integer num3 = builder.pn;
+            if (num3 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num3;
+            }
+            Integer num4 = builder.rn;
+            if (num4 == null) {
+                this.rn = DEFAULT_RN;
+            } else {
+                this.rn = num4;
+            }
+            Integer num5 = builder.has_plist;
+            if (num5 == null) {
+                this.has_plist = DEFAULT_HAS_PLIST;
+            } else {
+                this.has_plist = num5;
+            }
+            this.f68567common = builder.f68568common;
+            Integer num6 = builder.scr_w;
+            if (num6 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num6;
+            }
+            Integer num7 = builder.scr_h;
+            if (num7 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num7;
+            }
+            Integer num8 = builder.q_type;
+            if (num8 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = num8;
+            }
+            Double d2 = builder.scr_dip;
+            if (d2 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = d2;
+            }
+            Integer num9 = builder.is_from_usercenter;
+            if (num9 == null) {
+                this.is_from_usercenter = DEFAULT_IS_FROM_USERCENTER;
+            } else {
+                this.is_from_usercenter = num9;
+            }
+            Integer num10 = builder.page;
+            if (num10 == null) {
+                this.page = DEFAULT_PAGE;
+            } else {
+                this.page = num10;
+            }
+            String str2 = builder.friend_uid_portrait;
+            if (str2 == null) {
+                this.friend_uid_portrait = "";
+                return;
+            } else {
+                this.friend_uid_portrait = str2;
+                return;
+            }
+        }
+        this.uid = builder.uid;
+        this.need_post_count = builder.need_post_count;
+        this.friend_uid = builder.friend_uid;
+        this.is_guest = builder.is_guest;
+        this.st_type = builder.st_type;
+        this.pn = builder.pn;
+        this.rn = builder.rn;
+        this.has_plist = builder.has_plist;
+        this.f68567common = builder.f68568common;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.q_type = builder.q_type;
+        this.scr_dip = builder.scr_dip;
+        this.is_from_usercenter = builder.is_from_usercenter;
+        this.page = builder.page;
+        this.friend_uid_portrait = builder.friend_uid_portrait;
     }
 }

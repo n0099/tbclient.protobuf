@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.LiveLabelInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer has_more;
@@ -18,33 +18,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_HAS_MORE = 0;
     public static final List<LiveLabelInfo> DEFAULT_LABEL = Collections.emptyList();
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.live == null) {
-                this.live = DEFAULT_LIVE;
-            } else {
-                this.live = immutableCopyOf(builder.live);
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-            } else {
-                this.has_more = builder.has_more;
-            }
-            if (builder.label == null) {
-                this.label = DEFAULT_LABEL;
-                return;
-            } else {
-                this.label = immutableCopyOf(builder.label);
-                return;
-            }
-        }
-        this.live = immutableCopyOf(builder.live);
-        this.has_more = builder.has_more;
-        this.label = immutableCopyOf(builder.label);
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer has_more;
         public List<LiveLabelInfo> label;
@@ -55,11 +29,12 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.live = DataRes.copyOf(dataRes.live);
-                this.has_more = dataRes.has_more;
-                this.label = DataRes.copyOf(dataRes.label);
+            if (dataRes == null) {
+                return;
             }
+            this.live = Message.copyOf(dataRes.live);
+            this.has_more = dataRes.has_more;
+            this.label = Message.copyOf(dataRes.label);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -67,5 +42,34 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ThreadInfo> list = builder.live;
+            if (list == null) {
+                this.live = DEFAULT_LIVE;
+            } else {
+                this.live = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            List<LiveLabelInfo> list2 = builder.label;
+            if (list2 == null) {
+                this.label = DEFAULT_LABEL;
+                return;
+            } else {
+                this.label = Message.immutableCopyOf(list2);
+                return;
+            }
+        }
+        this.live = Message.immutableCopyOf(builder.live);
+        this.has_more = builder.has_more;
+        this.label = Message.immutableCopyOf(builder.label);
     }
 }

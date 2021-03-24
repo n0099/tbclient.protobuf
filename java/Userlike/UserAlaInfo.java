@@ -2,7 +2,7 @@ package tbclient.Userlike;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class UserAlaInfo extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -23,51 +23,7 @@ public final class UserAlaInfo extends Message {
     public static final Integer DEFAULT_LIVE_ID = 0;
     public static final Integer DEFAULT_LIVE_STATUS = 0;
 
-    private UserAlaInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.user_nickname == null) {
-                this.user_nickname = "";
-            } else {
-                this.user_nickname = builder.user_nickname;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.live_id == null) {
-                this.live_id = DEFAULT_LIVE_ID;
-            } else {
-                this.live_id = builder.live_id;
-            }
-            if (builder.live_status == null) {
-                this.live_status = DEFAULT_LIVE_STATUS;
-                return;
-            } else {
-                this.live_status = builder.live_status;
-                return;
-            }
-        }
-        this.user_id = builder.user_id;
-        this.user_name = builder.user_name;
-        this.user_nickname = builder.user_nickname;
-        this.portrait = builder.portrait;
-        this.live_id = builder.live_id;
-        this.live_status = builder.live_status;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserAlaInfo> {
         public Integer live_id;
         public Integer live_status;
@@ -81,14 +37,15 @@ public final class UserAlaInfo extends Message {
 
         public Builder(UserAlaInfo userAlaInfo) {
             super(userAlaInfo);
-            if (userAlaInfo != null) {
-                this.user_id = userAlaInfo.user_id;
-                this.user_name = userAlaInfo.user_name;
-                this.user_nickname = userAlaInfo.user_nickname;
-                this.portrait = userAlaInfo.portrait;
-                this.live_id = userAlaInfo.live_id;
-                this.live_status = userAlaInfo.live_status;
+            if (userAlaInfo == null) {
+                return;
             }
+            this.user_id = userAlaInfo.user_id;
+            this.user_name = userAlaInfo.user_name;
+            this.user_nickname = userAlaInfo.user_nickname;
+            this.portrait = userAlaInfo.portrait;
+            this.live_id = userAlaInfo.live_id;
+            this.live_status = userAlaInfo.live_status;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +53,55 @@ public final class UserAlaInfo extends Message {
         public UserAlaInfo build(boolean z) {
             return new UserAlaInfo(this, z);
         }
+    }
+
+    public UserAlaInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.user_nickname;
+            if (str2 == null) {
+                this.user_nickname = "";
+            } else {
+                this.user_nickname = str2;
+            }
+            String str3 = builder.portrait;
+            if (str3 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str3;
+            }
+            Integer num = builder.live_id;
+            if (num == null) {
+                this.live_id = DEFAULT_LIVE_ID;
+            } else {
+                this.live_id = num;
+            }
+            Integer num2 = builder.live_status;
+            if (num2 == null) {
+                this.live_status = DEFAULT_LIVE_STATUS;
+                return;
+            } else {
+                this.live_status = num2;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.user_name = builder.user_name;
+        this.user_nickname = builder.user_nickname;
+        this.portrait = builder.portrait;
+        this.live_id = builder.live_id;
+        this.live_status = builder.live_status;
     }
 }

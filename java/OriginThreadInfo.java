@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class OriginThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_TID = "";
@@ -66,119 +66,7 @@ public final class OriginThreadInfo extends Message {
     public static final Integer DEFAULT_SHARED_NUM = 0;
     public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
 
-    private OriginThreadInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.media == null) {
-                this.media = DEFAULT_MEDIA;
-            } else {
-                this.media = immutableCopyOf(builder.media);
-            }
-            if (builder._abstract == null) {
-                this._abstract = DEFAULT_ABSTRACT;
-            } else {
-                this._abstract = immutableCopyOf(builder._abstract);
-            }
-            if (builder.fname == null) {
-                this.fname = "";
-            } else {
-                this.fname = builder.fname;
-            }
-            if (builder.tid == null) {
-                this.tid = "";
-            } else {
-                this.tid = builder.tid;
-            }
-            this.ala_info = builder.ala_info;
-            if (builder.fid == null) {
-                this.fid = DEFAULT_FID;
-            } else {
-                this.fid = builder.fid;
-            }
-            if (builder.thread_type == null) {
-                this.thread_type = DEFAULT_THREAD_TYPE;
-            } else {
-                this.thread_type = builder.thread_type;
-            }
-            if (builder.is_deleted == null) {
-                this.is_deleted = DEFAULT_IS_DELETED;
-            } else {
-                this.is_deleted = builder.is_deleted;
-            }
-            if (builder.is_ugc == null) {
-                this.is_ugc = DEFAULT_IS_UGC;
-            } else {
-                this.is_ugc = builder.is_ugc;
-            }
-            this.ori_ugc_info = builder.ori_ugc_info;
-            if (builder.voice_info == null) {
-                this.voice_info = DEFAULT_VOICE_INFO;
-            } else {
-                this.voice_info = immutableCopyOf(builder.voice_info);
-            }
-            this.video_info = builder.video_info;
-            if (builder.content == null) {
-                this.content = DEFAULT_CONTENT;
-            } else {
-                this.content = immutableCopyOf(builder.content);
-            }
-            if (builder.is_new_style == null) {
-                this.is_new_style = DEFAULT_IS_NEW_STYLE;
-            } else {
-                this.is_new_style = builder.is_new_style;
-            }
-            if (builder.reply_num == null) {
-                this.reply_num = DEFAULT_REPLY_NUM;
-            } else {
-                this.reply_num = builder.reply_num;
-            }
-            this.author = builder.author;
-            this.agree = builder.agree;
-            if (builder.shared_num == null) {
-                this.shared_num = DEFAULT_SHARED_NUM;
-            } else {
-                this.shared_num = builder.shared_num;
-            }
-            this.poll_info = builder.poll_info;
-            this.item = builder.item;
-            if (builder.item_star == null) {
-                this.item_star = DEFAULT_ITEM_STAR;
-                return;
-            } else {
-                this.item_star = immutableCopyOf(builder.item_star);
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.media = immutableCopyOf(builder.media);
-        this._abstract = immutableCopyOf(builder._abstract);
-        this.fname = builder.fname;
-        this.tid = builder.tid;
-        this.ala_info = builder.ala_info;
-        this.fid = builder.fid;
-        this.thread_type = builder.thread_type;
-        this.is_deleted = builder.is_deleted;
-        this.is_ugc = builder.is_ugc;
-        this.ori_ugc_info = builder.ori_ugc_info;
-        this.voice_info = immutableCopyOf(builder.voice_info);
-        this.video_info = builder.video_info;
-        this.content = immutableCopyOf(builder.content);
-        this.is_new_style = builder.is_new_style;
-        this.reply_num = builder.reply_num;
-        this.author = builder.author;
-        this.agree = builder.agree;
-        this.shared_num = builder.shared_num;
-        this.poll_info = builder.poll_info;
-        this.item = builder.item;
-        this.item_star = immutableCopyOf(builder.item_star);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<OriginThreadInfo> {
         public List<Abstract> _abstract;
         public Agree agree;
@@ -208,30 +96,31 @@ public final class OriginThreadInfo extends Message {
 
         public Builder(OriginThreadInfo originThreadInfo) {
             super(originThreadInfo);
-            if (originThreadInfo != null) {
-                this.title = originThreadInfo.title;
-                this.media = OriginThreadInfo.copyOf(originThreadInfo.media);
-                this._abstract = OriginThreadInfo.copyOf(originThreadInfo._abstract);
-                this.fname = originThreadInfo.fname;
-                this.tid = originThreadInfo.tid;
-                this.ala_info = originThreadInfo.ala_info;
-                this.fid = originThreadInfo.fid;
-                this.thread_type = originThreadInfo.thread_type;
-                this.is_deleted = originThreadInfo.is_deleted;
-                this.is_ugc = originThreadInfo.is_ugc;
-                this.ori_ugc_info = originThreadInfo.ori_ugc_info;
-                this.voice_info = OriginThreadInfo.copyOf(originThreadInfo.voice_info);
-                this.video_info = originThreadInfo.video_info;
-                this.content = OriginThreadInfo.copyOf(originThreadInfo.content);
-                this.is_new_style = originThreadInfo.is_new_style;
-                this.reply_num = originThreadInfo.reply_num;
-                this.author = originThreadInfo.author;
-                this.agree = originThreadInfo.agree;
-                this.shared_num = originThreadInfo.shared_num;
-                this.poll_info = originThreadInfo.poll_info;
-                this.item = originThreadInfo.item;
-                this.item_star = OriginThreadInfo.copyOf(originThreadInfo.item_star);
+            if (originThreadInfo == null) {
+                return;
             }
+            this.title = originThreadInfo.title;
+            this.media = Message.copyOf(originThreadInfo.media);
+            this._abstract = Message.copyOf(originThreadInfo._abstract);
+            this.fname = originThreadInfo.fname;
+            this.tid = originThreadInfo.tid;
+            this.ala_info = originThreadInfo.ala_info;
+            this.fid = originThreadInfo.fid;
+            this.thread_type = originThreadInfo.thread_type;
+            this.is_deleted = originThreadInfo.is_deleted;
+            this.is_ugc = originThreadInfo.is_ugc;
+            this.ori_ugc_info = originThreadInfo.ori_ugc_info;
+            this.voice_info = Message.copyOf(originThreadInfo.voice_info);
+            this.video_info = originThreadInfo.video_info;
+            this.content = Message.copyOf(originThreadInfo.content);
+            this.is_new_style = originThreadInfo.is_new_style;
+            this.reply_num = originThreadInfo.reply_num;
+            this.author = originThreadInfo.author;
+            this.agree = originThreadInfo.agree;
+            this.shared_num = originThreadInfo.shared_num;
+            this.poll_info = originThreadInfo.poll_info;
+            this.item = originThreadInfo.item;
+            this.item_star = Message.copyOf(originThreadInfo.item_star);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -239,5 +128,132 @@ public final class OriginThreadInfo extends Message {
         public OriginThreadInfo build(boolean z) {
             return new OriginThreadInfo(this, z);
         }
+    }
+
+    public OriginThreadInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            List<Media> list = builder.media;
+            if (list == null) {
+                this.media = DEFAULT_MEDIA;
+            } else {
+                this.media = Message.immutableCopyOf(list);
+            }
+            List<Abstract> list2 = builder._abstract;
+            if (list2 == null) {
+                this._abstract = DEFAULT_ABSTRACT;
+            } else {
+                this._abstract = Message.immutableCopyOf(list2);
+            }
+            String str2 = builder.fname;
+            if (str2 == null) {
+                this.fname = "";
+            } else {
+                this.fname = str2;
+            }
+            String str3 = builder.tid;
+            if (str3 == null) {
+                this.tid = "";
+            } else {
+                this.tid = str3;
+            }
+            this.ala_info = builder.ala_info;
+            Long l = builder.fid;
+            if (l == null) {
+                this.fid = DEFAULT_FID;
+            } else {
+                this.fid = l;
+            }
+            Integer num = builder.thread_type;
+            if (num == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+            } else {
+                this.thread_type = num;
+            }
+            Integer num2 = builder.is_deleted;
+            if (num2 == null) {
+                this.is_deleted = DEFAULT_IS_DELETED;
+            } else {
+                this.is_deleted = num2;
+            }
+            Integer num3 = builder.is_ugc;
+            if (num3 == null) {
+                this.is_ugc = DEFAULT_IS_UGC;
+            } else {
+                this.is_ugc = num3;
+            }
+            this.ori_ugc_info = builder.ori_ugc_info;
+            List<Voice> list3 = builder.voice_info;
+            if (list3 == null) {
+                this.voice_info = DEFAULT_VOICE_INFO;
+            } else {
+                this.voice_info = Message.immutableCopyOf(list3);
+            }
+            this.video_info = builder.video_info;
+            List<PbContent> list4 = builder.content;
+            if (list4 == null) {
+                this.content = DEFAULT_CONTENT;
+            } else {
+                this.content = Message.immutableCopyOf(list4);
+            }
+            Integer num4 = builder.is_new_style;
+            if (num4 == null) {
+                this.is_new_style = DEFAULT_IS_NEW_STYLE;
+            } else {
+                this.is_new_style = num4;
+            }
+            Integer num5 = builder.reply_num;
+            if (num5 == null) {
+                this.reply_num = DEFAULT_REPLY_NUM;
+            } else {
+                this.reply_num = num5;
+            }
+            this.author = builder.author;
+            this.agree = builder.agree;
+            Integer num6 = builder.shared_num;
+            if (num6 == null) {
+                this.shared_num = DEFAULT_SHARED_NUM;
+            } else {
+                this.shared_num = num6;
+            }
+            this.poll_info = builder.poll_info;
+            this.item = builder.item;
+            List<HeadItem> list5 = builder.item_star;
+            if (list5 == null) {
+                this.item_star = DEFAULT_ITEM_STAR;
+                return;
+            } else {
+                this.item_star = Message.immutableCopyOf(list5);
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.media = Message.immutableCopyOf(builder.media);
+        this._abstract = Message.immutableCopyOf(builder._abstract);
+        this.fname = builder.fname;
+        this.tid = builder.tid;
+        this.ala_info = builder.ala_info;
+        this.fid = builder.fid;
+        this.thread_type = builder.thread_type;
+        this.is_deleted = builder.is_deleted;
+        this.is_ugc = builder.is_ugc;
+        this.ori_ugc_info = builder.ori_ugc_info;
+        this.voice_info = Message.immutableCopyOf(builder.voice_info);
+        this.video_info = builder.video_info;
+        this.content = Message.immutableCopyOf(builder.content);
+        this.is_new_style = builder.is_new_style;
+        this.reply_num = builder.reply_num;
+        this.author = builder.author;
+        this.agree = builder.agree;
+        this.shared_num = builder.shared_num;
+        this.poll_info = builder.poll_info;
+        this.item = builder.item;
+        this.item_star = Message.immutableCopyOf(builder.item_star);
     }
 }

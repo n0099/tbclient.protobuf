@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ForumInfo> forum_list;
@@ -15,32 +15,6 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_FORUM_LOC = 0;
     public static final List<String> DEFAULT_LIST = Collections.emptyList();
     public static final List<ForumInfo> DEFAULT_FORUM_LIST = Collections.emptyList();
-
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_loc == null) {
-                this.forum_loc = DEFAULT_FORUM_LOC;
-            } else {
-                this.forum_loc = builder.forum_loc;
-            }
-            if (builder.list == null) {
-                this.list = DEFAULT_LIST;
-            } else {
-                this.list = immutableCopyOf(builder.list);
-            }
-            if (builder.forum_list == null) {
-                this.forum_list = DEFAULT_FORUM_LIST;
-                return;
-            } else {
-                this.forum_list = immutableCopyOf(builder.forum_list);
-                return;
-            }
-        }
-        this.forum_loc = builder.forum_loc;
-        this.list = immutableCopyOf(builder.list);
-        this.forum_list = immutableCopyOf(builder.forum_list);
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -53,11 +27,12 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.forum_loc = dataRes.forum_loc;
-                this.list = DataRes.copyOf(dataRes.list);
-                this.forum_list = DataRes.copyOf(dataRes.forum_list);
+            if (dataRes == null) {
+                return;
             }
+            this.forum_loc = dataRes.forum_loc;
+            this.list = Message.copyOf(dataRes.list);
+            this.forum_list = Message.copyOf(dataRes.forum_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -65,5 +40,34 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.forum_loc;
+            if (num == null) {
+                this.forum_loc = DEFAULT_FORUM_LOC;
+            } else {
+                this.forum_loc = num;
+            }
+            List<String> list = builder.list;
+            if (list == null) {
+                this.list = DEFAULT_LIST;
+            } else {
+                this.list = Message.immutableCopyOf(list);
+            }
+            List<ForumInfo> list2 = builder.forum_list;
+            if (list2 == null) {
+                this.forum_list = DEFAULT_FORUM_LIST;
+                return;
+            } else {
+                this.forum_list = Message.immutableCopyOf(list2);
+                return;
+            }
+        }
+        this.forum_loc = builder.forum_loc;
+        this.list = Message.immutableCopyOf(builder.list);
+        this.forum_list = Message.immutableCopyOf(builder.forum_list);
     }
 }

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class LabelInfo extends Message {
     public static final String DEFAULT_LABELCONTENT = "";
     public static final Integer DEFAULT_LABELHOT = 0;
@@ -14,33 +14,7 @@ public final class LabelInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String labelId;
 
-    private LabelInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.labelHot == null) {
-                this.labelHot = DEFAULT_LABELHOT;
-            } else {
-                this.labelHot = builder.labelHot;
-            }
-            if (builder.labelContent == null) {
-                this.labelContent = "";
-            } else {
-                this.labelContent = builder.labelContent;
-            }
-            if (builder.labelId == null) {
-                this.labelId = "";
-                return;
-            } else {
-                this.labelId = builder.labelId;
-                return;
-            }
-        }
-        this.labelHot = builder.labelHot;
-        this.labelContent = builder.labelContent;
-        this.labelId = builder.labelId;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<LabelInfo> {
         public String labelContent;
         public Integer labelHot;
@@ -51,11 +25,12 @@ public final class LabelInfo extends Message {
 
         public Builder(LabelInfo labelInfo) {
             super(labelInfo);
-            if (labelInfo != null) {
-                this.labelHot = labelInfo.labelHot;
-                this.labelContent = labelInfo.labelContent;
-                this.labelId = labelInfo.labelId;
+            if (labelInfo == null) {
+                return;
             }
+            this.labelHot = labelInfo.labelHot;
+            this.labelContent = labelInfo.labelContent;
+            this.labelId = labelInfo.labelId;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class LabelInfo extends Message {
         public LabelInfo build(boolean z) {
             return new LabelInfo(this, z);
         }
+    }
+
+    public LabelInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.labelHot;
+            if (num == null) {
+                this.labelHot = DEFAULT_LABELHOT;
+            } else {
+                this.labelHot = num;
+            }
+            String str = builder.labelContent;
+            if (str == null) {
+                this.labelContent = "";
+            } else {
+                this.labelContent = str;
+            }
+            String str2 = builder.labelId;
+            if (str2 == null) {
+                this.labelId = "";
+                return;
+            } else {
+                this.labelId = str2;
+                return;
+            }
+        }
+        this.labelHot = builder.labelHot;
+        this.labelContent = builder.labelContent;
+        this.labelId = builder.labelId;
     }
 }

@@ -3,14 +3,14 @@ package tbclient.AddLotteryCount;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long award_act_id;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8643common;
+    public final CommonReq f68307common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer from_type;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
@@ -22,46 +22,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FROM_TYPE = 0;
     public static final Long DEFAULT_THREAD_ID = 0L;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8643common = builder.f8644common;
-            if (builder.award_act_id == null) {
-                this.award_act_id = DEFAULT_AWARD_ACT_ID;
-            } else {
-                this.award_act_id = builder.award_act_id;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.from_type == null) {
-                this.from_type = DEFAULT_FROM_TYPE;
-            } else {
-                this.from_type = builder.from_type;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-                return;
-            } else {
-                this.thread_id = builder.thread_id;
-                return;
-            }
-        }
-        this.f8643common = builder.f8644common;
-        this.award_act_id = builder.award_act_id;
-        this.user_id = builder.user_id;
-        this.from_type = builder.from_type;
-        this.thread_id = builder.thread_id;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long award_act_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8644common;
+        public CommonReq f68308common;
         public Integer from_type;
         public Long thread_id;
         public Long user_id;
@@ -71,13 +37,14 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8644common = dataReq.f8643common;
-                this.award_act_id = dataReq.award_act_id;
-                this.user_id = dataReq.user_id;
-                this.from_type = dataReq.from_type;
-                this.thread_id = dataReq.thread_id;
+            if (dataReq == null) {
+                return;
             }
+            this.f68308common = dataReq.f68307common;
+            this.award_act_id = dataReq.award_act_id;
+            this.user_id = dataReq.user_id;
+            this.from_type = dataReq.from_type;
+            this.thread_id = dataReq.thread_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +52,43 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68307common = builder.f68308common;
+            Long l = builder.award_act_id;
+            if (l == null) {
+                this.award_act_id = DEFAULT_AWARD_ACT_ID;
+            } else {
+                this.award_act_id = l;
+            }
+            Long l2 = builder.user_id;
+            if (l2 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l2;
+            }
+            Integer num = builder.from_type;
+            if (num == null) {
+                this.from_type = DEFAULT_FROM_TYPE;
+            } else {
+                this.from_type = num;
+            }
+            Long l3 = builder.thread_id;
+            if (l3 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+                return;
+            } else {
+                this.thread_id = l3;
+                return;
+            }
+        }
+        this.f68307common = builder.f68308common;
+        this.award_act_id = builder.award_act_id;
+        this.user_id = builder.user_id;
+        this.from_type = builder.from_type;
+        this.thread_id = builder.thread_id;
     }
 }

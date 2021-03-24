@@ -34,7 +34,7 @@ import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
@@ -282,395 +282,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP = 0;
     public static final Integer DEFAULT_SHOW_ADSENSE = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.user = builder.user;
-            this.forum = builder.forum;
-            this.frs_star = builder.frs_star;
-            this.page = builder.page;
-            this.anti = builder.anti;
-            this.group = builder.group;
-            if (builder.thread_list == null) {
-                this.thread_list = DEFAULT_THREAD_LIST;
-            } else {
-                this.thread_list = immutableCopyOf(builder.thread_list);
-            }
-            if (builder.thread_id_list == null) {
-                this.thread_id_list = DEFAULT_THREAD_ID_LIST;
-            } else {
-                this.thread_id_list = immutableCopyOf(builder.thread_id_list);
-            }
-            if (builder.is_new_url == null) {
-                this.is_new_url = DEFAULT_IS_NEW_URL;
-            } else {
-                this.is_new_url = builder.is_new_url;
-            }
-            if (builder.fortune_bag == null) {
-                this.fortune_bag = DEFAULT_FORTUNE_BAG;
-            } else {
-                this.fortune_bag = builder.fortune_bag;
-            }
-            if (builder.time == null) {
-                this.time = DEFAULT_TIME;
-            } else {
-                this.time = builder.time;
-            }
-            if (builder.ctime == null) {
-                this.ctime = DEFAULT_CTIME;
-            } else {
-                this.ctime = builder.ctime;
-            }
-            if (builder.logid == null) {
-                this.logid = DEFAULT_LOGID;
-            } else {
-                this.logid = builder.logid;
-            }
-            if (builder.server_time == null) {
-                this.server_time = DEFAULT_SERVER_TIME;
-            } else {
-                this.server_time = builder.server_time;
-            }
-            this.info = builder.info;
-            if (builder.forum_livegroup_list == null) {
-                this.forum_livegroup_list = DEFAULT_FORUM_LIVEGROUP_LIST;
-            } else {
-                this.forum_livegroup_list = immutableCopyOf(builder.forum_livegroup_list);
-            }
-            if (builder.user_list == null) {
-                this.user_list = DEFAULT_USER_LIST;
-            } else {
-                this.user_list = immutableCopyOf(builder.user_list);
-            }
-            this.gcon_account = builder.gcon_account;
-            if (builder.fortune_desc == null) {
-                this.fortune_desc = "";
-            } else {
-                this.fortune_desc = builder.fortune_desc;
-            }
-            if (builder.star_enter == null) {
-                this.star_enter = DEFAULT_STAR_ENTER;
-            } else {
-                this.star_enter = immutableCopyOf(builder.star_enter);
-            }
-            if (builder.color_egg == null) {
-                this.color_egg = DEFAULT_COLOR_EGG;
-            } else {
-                this.color_egg = immutableCopyOf(builder.color_egg);
-            }
-            if (builder.frs_tab_info == null) {
-                this.frs_tab_info = DEFAULT_FRS_TAB_INFO;
-            } else {
-                this.frs_tab_info = immutableCopyOf(builder.frs_tab_info);
-            }
-            this.activityhead = builder.activityhead;
-            if (builder.twzhibo_info == null) {
-                this.twzhibo_info = DEFAULT_TWZHIBO_INFO;
-            } else {
-                this.twzhibo_info = immutableCopyOf(builder.twzhibo_info);
-            }
-            this.novel = builder.novel;
-            this.hot_twzhibo_info = builder.hot_twzhibo_info;
-            if (builder.twzhibo_pos == null) {
-                this.twzhibo_pos = DEFAULT_TWZHIBO_POS;
-            } else {
-                this.twzhibo_pos = builder.twzhibo_pos;
-            }
-            if (builder.category_list == null) {
-                this.category_list = DEFAULT_CATEGORY_LIST;
-            } else {
-                this.category_list = immutableCopyOf(builder.category_list);
-            }
-            this.push_thread_info = builder.push_thread_info;
-            this.store_card = builder.store_card;
-            this.sdk_topic_thread = builder.sdk_topic_thread;
-            if (builder.bawu_enter_url == null) {
-                this.bawu_enter_url = "";
-            } else {
-                this.bawu_enter_url = builder.bawu_enter_url;
-            }
-            this.client_platform = builder.client_platform;
-            this.head_sdk = builder.head_sdk;
-            if (builder.card_shipin_info == null) {
-                this.card_shipin_info = DEFAULT_CARD_SHIPIN_INFO;
-            } else {
-                this.card_shipin_info = immutableCopyOf(builder.card_shipin_info);
-            }
-            this.nav_tab_info = builder.nav_tab_info;
-            if (builder.frs_tab_default == null) {
-                this.frs_tab_default = DEFAULT_FRS_TAB_DEFAULT;
-            } else {
-                this.frs_tab_default = builder.frs_tab_default;
-            }
-            if (builder.sort_type == null) {
-                this.sort_type = DEFAULT_SORT_TYPE;
-            } else {
-                this.sort_type = builder.sort_type;
-            }
-            this.school_recom_info = builder.school_recom_info;
-            if (builder.school_recom_pos == null) {
-                this.school_recom_pos = DEFAULT_SCHOOL_RECOM_POS;
-            } else {
-                this.school_recom_pos = builder.school_recom_pos;
-            }
-            this.vitality_info = builder.vitality_info;
-            this.carrier_enter = builder.carrier_enter;
-            if (builder.banner_thread_list == null) {
-                this.banner_thread_list = DEFAULT_BANNER_THREAD_LIST;
-            } else {
-                this.banner_thread_list = immutableCopyOf(builder.banner_thread_list);
-            }
-            this.recommend_book = builder.recommend_book;
-            if (builder.smart_frs_type == null) {
-                this.smart_frs_type = DEFAULT_SMART_FRS_TYPE;
-            } else {
-                this.smart_frs_type = builder.smart_frs_type;
-            }
-            if (builder.need_log == null) {
-                this.need_log = DEFAULT_NEED_LOG;
-            } else {
-                this.need_log = builder.need_log;
-            }
-            if (builder.is_auto_play_forumheadvideo == null) {
-                this.is_auto_play_forumheadvideo = DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
-            } else {
-                this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
-            }
-            this.book_info = builder.book_info;
-            this.forum_present_info = builder.forum_present_info;
-            this.forum_headline_img_info = builder.forum_headline_img_info;
-            this.ntspread = builder.ntspread;
-            if (builder.card_shipin_pos == null) {
-                this.card_shipin_pos = DEFAULT_CARD_SHIPIN_POS;
-            } else {
-                this.card_shipin_pos = immutableCopyOf(builder.card_shipin_pos);
-            }
-            if (builder.card_shipin_new == null) {
-                this.card_shipin_new = DEFAULT_CARD_SHIPIN_NEW;
-            } else {
-                this.card_shipin_new = immutableCopyOf(builder.card_shipin_new);
-            }
-            if (builder.asp_shown_info == null) {
-                this.asp_shown_info = "";
-            } else {
-                this.asp_shown_info = builder.asp_shown_info;
-            }
-            if (builder.ala_live_count == null) {
-                this.ala_live_count = DEFAULT_ALA_LIVE_COUNT;
-            } else {
-                this.ala_live_count = builder.ala_live_count;
-            }
-            this.bottle = builder.bottle;
-            this.enter_pop_info = builder.enter_pop_info;
-            if (builder.partial_visible_toast == null) {
-                this.partial_visible_toast = "";
-            } else {
-                this.partial_visible_toast = builder.partial_visible_toast;
-            }
-            this.esport = builder.esport;
-            if (builder.thread_id_list_info == null) {
-                this.thread_id_list_info = DEFAULT_THREAD_ID_LIST_INFO;
-            } else {
-                this.thread_id_list_info = immutableCopyOf(builder.thread_id_list_info);
-            }
-            this.agree_banner = builder.agree_banner;
-            this.na_guide = builder.na_guide;
-            if (builder.frs_game_tab_info == null) {
-                this.frs_game_tab_info = DEFAULT_FRS_GAME_TAB_INFO;
-            } else {
-                this.frs_game_tab_info = immutableCopyOf(builder.frs_game_tab_info);
-            }
-            this.live_frs_notify = builder.live_frs_notify;
-            this.banner_user_story = builder.banner_user_story;
-            this.user_extend = builder.user_extend;
-            this.forum_head_icon = builder.forum_head_icon;
-            this.video = builder.video;
-            if (builder.game_default_tab_id == null) {
-                this.game_default_tab_id = DEFAULT_GAME_DEFAULT_TAB_ID;
-            } else {
-                this.game_default_tab_id = builder.game_default_tab_id;
-            }
-            if (builder.ala_insert_thread == null) {
-                this.ala_insert_thread = DEFAULT_ALA_INSERT_THREAD;
-            } else {
-                this.ala_insert_thread = immutableCopyOf(builder.ala_insert_thread);
-            }
-            this.ala_live_insert = builder.ala_live_insert;
-            if (builder.ala_insert_floor == null) {
-                this.ala_insert_floor = DEFAULT_ALA_INSERT_FLOOR;
-            } else {
-                this.ala_insert_floor = builder.ala_insert_floor;
-            }
-            this.forum_ar_info = builder.forum_ar_info;
-            if (builder.ala_stage_list == null) {
-                this.ala_stage_list = DEFAULT_ALA_STAGE_LIST;
-            } else {
-                this.ala_stage_list = immutableCopyOf(builder.ala_stage_list);
-            }
-            this.star_rank_info = builder.star_rank_info;
-            if (builder.trends_redpoint == null) {
-                this.trends_redpoint = DEFAULT_TRENDS_REDPOINT;
-            } else {
-                this.trends_redpoint = builder.trends_redpoint;
-            }
-            if (builder.window_toast == null) {
-                this.window_toast = DEFAULT_WINDOW_TOAST;
-            } else {
-                this.window_toast = immutableCopyOf(builder.window_toast);
-            }
-            this.recom_post_topic = builder.recom_post_topic;
-            this.activity_config = builder.activity_config;
-            this.star_voice = builder.star_voice;
-            this.worldcup_skin = builder.worldcup_skin;
-            this.redpacketrain = builder.redpacketrain;
-            this.brand_forum_info = builder.brand_forum_info;
-            if (builder.bottom_menu == null) {
-                this.bottom_menu = DEFAULT_BOTTOM_MENU;
-            } else {
-                this.bottom_menu = immutableCopyOf(builder.bottom_menu);
-            }
-            if (builder.video_auto_play == null) {
-                this.video_auto_play = DEFAULT_VIDEO_AUTO_PLAY;
-            } else {
-                this.video_auto_play = builder.video_auto_play;
-            }
-            if (builder.smart_app_avatar == null) {
-                this.smart_app_avatar = DEFAULT_SMART_APP_AVATAR;
-            } else {
-                this.smart_app_avatar = immutableCopyOf(builder.smart_app_avatar);
-            }
-            this.smart_app = builder.smart_app;
-            this.nebula_hot_threads = builder.nebula_hot_threads;
-            this.private_forum_info = builder.private_forum_info;
-            this.private_forum_active_info = builder.private_forum_active_info;
-            this.business_promot = builder.business_promot;
-            if (builder.service_area == null) {
-                this.service_area = DEFAULT_SERVICE_AREA;
-            } else {
-                this.service_area = immutableCopyOf(builder.service_area);
-            }
-            this.bazhu_exam_fail = builder.bazhu_exam_fail;
-            this.hot_user_entry = builder.hot_user_entry;
-            this.item_info = builder.item_info;
-            if (builder.is_get_horse_race_lamp == null) {
-                this.is_get_horse_race_lamp = DEFAULT_IS_GET_HORSE_RACE_LAMP;
-            } else {
-                this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
-            }
-            this.forum_rule = builder.forum_rule;
-            this.sign_activity_info = builder.sign_activity_info;
-            this.add_bawu_pop = builder.add_bawu_pop;
-            if (builder.show_adsense == null) {
-                this.show_adsense = DEFAULT_SHOW_ADSENSE;
-                return;
-            } else {
-                this.show_adsense = builder.show_adsense;
-                return;
-            }
-        }
-        this.user = builder.user;
-        this.forum = builder.forum;
-        this.frs_star = builder.frs_star;
-        this.page = builder.page;
-        this.anti = builder.anti;
-        this.group = builder.group;
-        this.thread_list = immutableCopyOf(builder.thread_list);
-        this.thread_id_list = immutableCopyOf(builder.thread_id_list);
-        this.is_new_url = builder.is_new_url;
-        this.fortune_bag = builder.fortune_bag;
-        this.time = builder.time;
-        this.ctime = builder.ctime;
-        this.logid = builder.logid;
-        this.server_time = builder.server_time;
-        this.info = builder.info;
-        this.forum_livegroup_list = immutableCopyOf(builder.forum_livegroup_list);
-        this.user_list = immutableCopyOf(builder.user_list);
-        this.gcon_account = builder.gcon_account;
-        this.fortune_desc = builder.fortune_desc;
-        this.star_enter = immutableCopyOf(builder.star_enter);
-        this.color_egg = immutableCopyOf(builder.color_egg);
-        this.frs_tab_info = immutableCopyOf(builder.frs_tab_info);
-        this.activityhead = builder.activityhead;
-        this.twzhibo_info = immutableCopyOf(builder.twzhibo_info);
-        this.novel = builder.novel;
-        this.hot_twzhibo_info = builder.hot_twzhibo_info;
-        this.twzhibo_pos = builder.twzhibo_pos;
-        this.category_list = immutableCopyOf(builder.category_list);
-        this.push_thread_info = builder.push_thread_info;
-        this.store_card = builder.store_card;
-        this.sdk_topic_thread = builder.sdk_topic_thread;
-        this.bawu_enter_url = builder.bawu_enter_url;
-        this.client_platform = builder.client_platform;
-        this.head_sdk = builder.head_sdk;
-        this.card_shipin_info = immutableCopyOf(builder.card_shipin_info);
-        this.nav_tab_info = builder.nav_tab_info;
-        this.frs_tab_default = builder.frs_tab_default;
-        this.sort_type = builder.sort_type;
-        this.school_recom_info = builder.school_recom_info;
-        this.school_recom_pos = builder.school_recom_pos;
-        this.vitality_info = builder.vitality_info;
-        this.carrier_enter = builder.carrier_enter;
-        this.banner_thread_list = immutableCopyOf(builder.banner_thread_list);
-        this.recommend_book = builder.recommend_book;
-        this.smart_frs_type = builder.smart_frs_type;
-        this.need_log = builder.need_log;
-        this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
-        this.book_info = builder.book_info;
-        this.forum_present_info = builder.forum_present_info;
-        this.forum_headline_img_info = builder.forum_headline_img_info;
-        this.ntspread = builder.ntspread;
-        this.card_shipin_pos = immutableCopyOf(builder.card_shipin_pos);
-        this.card_shipin_new = immutableCopyOf(builder.card_shipin_new);
-        this.asp_shown_info = builder.asp_shown_info;
-        this.ala_live_count = builder.ala_live_count;
-        this.bottle = builder.bottle;
-        this.enter_pop_info = builder.enter_pop_info;
-        this.partial_visible_toast = builder.partial_visible_toast;
-        this.esport = builder.esport;
-        this.thread_id_list_info = immutableCopyOf(builder.thread_id_list_info);
-        this.agree_banner = builder.agree_banner;
-        this.na_guide = builder.na_guide;
-        this.frs_game_tab_info = immutableCopyOf(builder.frs_game_tab_info);
-        this.live_frs_notify = builder.live_frs_notify;
-        this.banner_user_story = builder.banner_user_story;
-        this.user_extend = builder.user_extend;
-        this.forum_head_icon = builder.forum_head_icon;
-        this.video = builder.video;
-        this.game_default_tab_id = builder.game_default_tab_id;
-        this.ala_insert_thread = immutableCopyOf(builder.ala_insert_thread);
-        this.ala_live_insert = builder.ala_live_insert;
-        this.ala_insert_floor = builder.ala_insert_floor;
-        this.forum_ar_info = builder.forum_ar_info;
-        this.ala_stage_list = immutableCopyOf(builder.ala_stage_list);
-        this.star_rank_info = builder.star_rank_info;
-        this.trends_redpoint = builder.trends_redpoint;
-        this.window_toast = immutableCopyOf(builder.window_toast);
-        this.recom_post_topic = builder.recom_post_topic;
-        this.activity_config = builder.activity_config;
-        this.star_voice = builder.star_voice;
-        this.worldcup_skin = builder.worldcup_skin;
-        this.redpacketrain = builder.redpacketrain;
-        this.brand_forum_info = builder.brand_forum_info;
-        this.bottom_menu = immutableCopyOf(builder.bottom_menu);
-        this.video_auto_play = builder.video_auto_play;
-        this.smart_app_avatar = immutableCopyOf(builder.smart_app_avatar);
-        this.smart_app = builder.smart_app;
-        this.nebula_hot_threads = builder.nebula_hot_threads;
-        this.private_forum_info = builder.private_forum_info;
-        this.private_forum_active_info = builder.private_forum_active_info;
-        this.business_promot = builder.business_promot;
-        this.service_area = immutableCopyOf(builder.service_area);
-        this.bazhu_exam_fail = builder.bazhu_exam_fail;
-        this.hot_user_entry = builder.hot_user_entry;
-        this.item_info = builder.item_info;
-        this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
-        this.forum_rule = builder.forum_rule;
-        this.sign_activity_info = builder.sign_activity_info;
-        this.add_bawu_pop = builder.add_bawu_pop;
-        this.show_adsense = builder.show_adsense;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityConfig activity_config;
         public ActivityHead activityhead;
@@ -778,108 +390,109 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.user = dataRes.user;
-                this.forum = dataRes.forum;
-                this.frs_star = dataRes.frs_star;
-                this.page = dataRes.page;
-                this.anti = dataRes.anti;
-                this.group = dataRes.group;
-                this.thread_list = DataRes.copyOf(dataRes.thread_list);
-                this.thread_id_list = DataRes.copyOf(dataRes.thread_id_list);
-                this.is_new_url = dataRes.is_new_url;
-                this.fortune_bag = dataRes.fortune_bag;
-                this.time = dataRes.time;
-                this.ctime = dataRes.ctime;
-                this.logid = dataRes.logid;
-                this.server_time = dataRes.server_time;
-                this.info = dataRes.info;
-                this.forum_livegroup_list = DataRes.copyOf(dataRes.forum_livegroup_list);
-                this.user_list = DataRes.copyOf(dataRes.user_list);
-                this.gcon_account = dataRes.gcon_account;
-                this.fortune_desc = dataRes.fortune_desc;
-                this.star_enter = DataRes.copyOf(dataRes.star_enter);
-                this.color_egg = DataRes.copyOf(dataRes.color_egg);
-                this.frs_tab_info = DataRes.copyOf(dataRes.frs_tab_info);
-                this.activityhead = dataRes.activityhead;
-                this.twzhibo_info = DataRes.copyOf(dataRes.twzhibo_info);
-                this.novel = dataRes.novel;
-                this.hot_twzhibo_info = dataRes.hot_twzhibo_info;
-                this.twzhibo_pos = dataRes.twzhibo_pos;
-                this.category_list = DataRes.copyOf(dataRes.category_list);
-                this.push_thread_info = dataRes.push_thread_info;
-                this.store_card = dataRes.store_card;
-                this.sdk_topic_thread = dataRes.sdk_topic_thread;
-                this.bawu_enter_url = dataRes.bawu_enter_url;
-                this.client_platform = dataRes.client_platform;
-                this.head_sdk = dataRes.head_sdk;
-                this.card_shipin_info = DataRes.copyOf(dataRes.card_shipin_info);
-                this.nav_tab_info = dataRes.nav_tab_info;
-                this.frs_tab_default = dataRes.frs_tab_default;
-                this.sort_type = dataRes.sort_type;
-                this.school_recom_info = dataRes.school_recom_info;
-                this.school_recom_pos = dataRes.school_recom_pos;
-                this.vitality_info = dataRes.vitality_info;
-                this.carrier_enter = dataRes.carrier_enter;
-                this.banner_thread_list = DataRes.copyOf(dataRes.banner_thread_list);
-                this.recommend_book = dataRes.recommend_book;
-                this.smart_frs_type = dataRes.smart_frs_type;
-                this.need_log = dataRes.need_log;
-                this.is_auto_play_forumheadvideo = dataRes.is_auto_play_forumheadvideo;
-                this.book_info = dataRes.book_info;
-                this.forum_present_info = dataRes.forum_present_info;
-                this.forum_headline_img_info = dataRes.forum_headline_img_info;
-                this.ntspread = dataRes.ntspread;
-                this.card_shipin_pos = DataRes.copyOf(dataRes.card_shipin_pos);
-                this.card_shipin_new = DataRes.copyOf(dataRes.card_shipin_new);
-                this.asp_shown_info = dataRes.asp_shown_info;
-                this.ala_live_count = dataRes.ala_live_count;
-                this.bottle = dataRes.bottle;
-                this.enter_pop_info = dataRes.enter_pop_info;
-                this.partial_visible_toast = dataRes.partial_visible_toast;
-                this.esport = dataRes.esport;
-                this.thread_id_list_info = DataRes.copyOf(dataRes.thread_id_list_info);
-                this.agree_banner = dataRes.agree_banner;
-                this.na_guide = dataRes.na_guide;
-                this.frs_game_tab_info = DataRes.copyOf(dataRes.frs_game_tab_info);
-                this.live_frs_notify = dataRes.live_frs_notify;
-                this.banner_user_story = dataRes.banner_user_story;
-                this.user_extend = dataRes.user_extend;
-                this.forum_head_icon = dataRes.forum_head_icon;
-                this.video = dataRes.video;
-                this.game_default_tab_id = dataRes.game_default_tab_id;
-                this.ala_insert_thread = DataRes.copyOf(dataRes.ala_insert_thread);
-                this.ala_live_insert = dataRes.ala_live_insert;
-                this.ala_insert_floor = dataRes.ala_insert_floor;
-                this.forum_ar_info = dataRes.forum_ar_info;
-                this.ala_stage_list = DataRes.copyOf(dataRes.ala_stage_list);
-                this.star_rank_info = dataRes.star_rank_info;
-                this.trends_redpoint = dataRes.trends_redpoint;
-                this.window_toast = DataRes.copyOf(dataRes.window_toast);
-                this.recom_post_topic = dataRes.recom_post_topic;
-                this.activity_config = dataRes.activity_config;
-                this.star_voice = dataRes.star_voice;
-                this.worldcup_skin = dataRes.worldcup_skin;
-                this.redpacketrain = dataRes.redpacketrain;
-                this.brand_forum_info = dataRes.brand_forum_info;
-                this.bottom_menu = DataRes.copyOf(dataRes.bottom_menu);
-                this.video_auto_play = dataRes.video_auto_play;
-                this.smart_app_avatar = DataRes.copyOf(dataRes.smart_app_avatar);
-                this.smart_app = dataRes.smart_app;
-                this.nebula_hot_threads = dataRes.nebula_hot_threads;
-                this.private_forum_info = dataRes.private_forum_info;
-                this.private_forum_active_info = dataRes.private_forum_active_info;
-                this.business_promot = dataRes.business_promot;
-                this.service_area = DataRes.copyOf(dataRes.service_area);
-                this.bazhu_exam_fail = dataRes.bazhu_exam_fail;
-                this.hot_user_entry = dataRes.hot_user_entry;
-                this.item_info = dataRes.item_info;
-                this.is_get_horse_race_lamp = dataRes.is_get_horse_race_lamp;
-                this.forum_rule = dataRes.forum_rule;
-                this.sign_activity_info = dataRes.sign_activity_info;
-                this.add_bawu_pop = dataRes.add_bawu_pop;
-                this.show_adsense = dataRes.show_adsense;
+            if (dataRes == null) {
+                return;
             }
+            this.user = dataRes.user;
+            this.forum = dataRes.forum;
+            this.frs_star = dataRes.frs_star;
+            this.page = dataRes.page;
+            this.anti = dataRes.anti;
+            this.group = dataRes.group;
+            this.thread_list = Message.copyOf(dataRes.thread_list);
+            this.thread_id_list = Message.copyOf(dataRes.thread_id_list);
+            this.is_new_url = dataRes.is_new_url;
+            this.fortune_bag = dataRes.fortune_bag;
+            this.time = dataRes.time;
+            this.ctime = dataRes.ctime;
+            this.logid = dataRes.logid;
+            this.server_time = dataRes.server_time;
+            this.info = dataRes.info;
+            this.forum_livegroup_list = Message.copyOf(dataRes.forum_livegroup_list);
+            this.user_list = Message.copyOf(dataRes.user_list);
+            this.gcon_account = dataRes.gcon_account;
+            this.fortune_desc = dataRes.fortune_desc;
+            this.star_enter = Message.copyOf(dataRes.star_enter);
+            this.color_egg = Message.copyOf(dataRes.color_egg);
+            this.frs_tab_info = Message.copyOf(dataRes.frs_tab_info);
+            this.activityhead = dataRes.activityhead;
+            this.twzhibo_info = Message.copyOf(dataRes.twzhibo_info);
+            this.novel = dataRes.novel;
+            this.hot_twzhibo_info = dataRes.hot_twzhibo_info;
+            this.twzhibo_pos = dataRes.twzhibo_pos;
+            this.category_list = Message.copyOf(dataRes.category_list);
+            this.push_thread_info = dataRes.push_thread_info;
+            this.store_card = dataRes.store_card;
+            this.sdk_topic_thread = dataRes.sdk_topic_thread;
+            this.bawu_enter_url = dataRes.bawu_enter_url;
+            this.client_platform = dataRes.client_platform;
+            this.head_sdk = dataRes.head_sdk;
+            this.card_shipin_info = Message.copyOf(dataRes.card_shipin_info);
+            this.nav_tab_info = dataRes.nav_tab_info;
+            this.frs_tab_default = dataRes.frs_tab_default;
+            this.sort_type = dataRes.sort_type;
+            this.school_recom_info = dataRes.school_recom_info;
+            this.school_recom_pos = dataRes.school_recom_pos;
+            this.vitality_info = dataRes.vitality_info;
+            this.carrier_enter = dataRes.carrier_enter;
+            this.banner_thread_list = Message.copyOf(dataRes.banner_thread_list);
+            this.recommend_book = dataRes.recommend_book;
+            this.smart_frs_type = dataRes.smart_frs_type;
+            this.need_log = dataRes.need_log;
+            this.is_auto_play_forumheadvideo = dataRes.is_auto_play_forumheadvideo;
+            this.book_info = dataRes.book_info;
+            this.forum_present_info = dataRes.forum_present_info;
+            this.forum_headline_img_info = dataRes.forum_headline_img_info;
+            this.ntspread = dataRes.ntspread;
+            this.card_shipin_pos = Message.copyOf(dataRes.card_shipin_pos);
+            this.card_shipin_new = Message.copyOf(dataRes.card_shipin_new);
+            this.asp_shown_info = dataRes.asp_shown_info;
+            this.ala_live_count = dataRes.ala_live_count;
+            this.bottle = dataRes.bottle;
+            this.enter_pop_info = dataRes.enter_pop_info;
+            this.partial_visible_toast = dataRes.partial_visible_toast;
+            this.esport = dataRes.esport;
+            this.thread_id_list_info = Message.copyOf(dataRes.thread_id_list_info);
+            this.agree_banner = dataRes.agree_banner;
+            this.na_guide = dataRes.na_guide;
+            this.frs_game_tab_info = Message.copyOf(dataRes.frs_game_tab_info);
+            this.live_frs_notify = dataRes.live_frs_notify;
+            this.banner_user_story = dataRes.banner_user_story;
+            this.user_extend = dataRes.user_extend;
+            this.forum_head_icon = dataRes.forum_head_icon;
+            this.video = dataRes.video;
+            this.game_default_tab_id = dataRes.game_default_tab_id;
+            this.ala_insert_thread = Message.copyOf(dataRes.ala_insert_thread);
+            this.ala_live_insert = dataRes.ala_live_insert;
+            this.ala_insert_floor = dataRes.ala_insert_floor;
+            this.forum_ar_info = dataRes.forum_ar_info;
+            this.ala_stage_list = Message.copyOf(dataRes.ala_stage_list);
+            this.star_rank_info = dataRes.star_rank_info;
+            this.trends_redpoint = dataRes.trends_redpoint;
+            this.window_toast = Message.copyOf(dataRes.window_toast);
+            this.recom_post_topic = dataRes.recom_post_topic;
+            this.activity_config = dataRes.activity_config;
+            this.star_voice = dataRes.star_voice;
+            this.worldcup_skin = dataRes.worldcup_skin;
+            this.redpacketrain = dataRes.redpacketrain;
+            this.brand_forum_info = dataRes.brand_forum_info;
+            this.bottom_menu = Message.copyOf(dataRes.bottom_menu);
+            this.video_auto_play = dataRes.video_auto_play;
+            this.smart_app_avatar = Message.copyOf(dataRes.smart_app_avatar);
+            this.smart_app = dataRes.smart_app;
+            this.nebula_hot_threads = dataRes.nebula_hot_threads;
+            this.private_forum_info = dataRes.private_forum_info;
+            this.private_forum_active_info = dataRes.private_forum_active_info;
+            this.business_promot = dataRes.business_promot;
+            this.service_area = Message.copyOf(dataRes.service_area);
+            this.bazhu_exam_fail = dataRes.bazhu_exam_fail;
+            this.hot_user_entry = dataRes.hot_user_entry;
+            this.item_info = dataRes.item_info;
+            this.is_get_horse_race_lamp = dataRes.is_get_horse_race_lamp;
+            this.forum_rule = dataRes.forum_rule;
+            this.sign_activity_info = dataRes.sign_activity_info;
+            this.add_bawu_pop = dataRes.add_bawu_pop;
+            this.show_adsense = dataRes.show_adsense;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -887,5 +500,438 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.user = builder.user;
+            this.forum = builder.forum;
+            this.frs_star = builder.frs_star;
+            this.page = builder.page;
+            this.anti = builder.anti;
+            this.group = builder.group;
+            List<ThreadInfo> list = builder.thread_list;
+            if (list == null) {
+                this.thread_list = DEFAULT_THREAD_LIST;
+            } else {
+                this.thread_list = Message.immutableCopyOf(list);
+            }
+            List<Long> list2 = builder.thread_id_list;
+            if (list2 == null) {
+                this.thread_id_list = DEFAULT_THREAD_ID_LIST;
+            } else {
+                this.thread_id_list = Message.immutableCopyOf(list2);
+            }
+            Integer num = builder.is_new_url;
+            if (num == null) {
+                this.is_new_url = DEFAULT_IS_NEW_URL;
+            } else {
+                this.is_new_url = num;
+            }
+            Integer num2 = builder.fortune_bag;
+            if (num2 == null) {
+                this.fortune_bag = DEFAULT_FORTUNE_BAG;
+            } else {
+                this.fortune_bag = num2;
+            }
+            Integer num3 = builder.time;
+            if (num3 == null) {
+                this.time = DEFAULT_TIME;
+            } else {
+                this.time = num3;
+            }
+            Integer num4 = builder.ctime;
+            if (num4 == null) {
+                this.ctime = DEFAULT_CTIME;
+            } else {
+                this.ctime = num4;
+            }
+            Long l = builder.logid;
+            if (l == null) {
+                this.logid = DEFAULT_LOGID;
+            } else {
+                this.logid = l;
+            }
+            Integer num5 = builder.server_time;
+            if (num5 == null) {
+                this.server_time = DEFAULT_SERVER_TIME;
+            } else {
+                this.server_time = num5;
+            }
+            this.info = builder.info;
+            List<AnchorInfo> list3 = builder.forum_livegroup_list;
+            if (list3 == null) {
+                this.forum_livegroup_list = DEFAULT_FORUM_LIVEGROUP_LIST;
+            } else {
+                this.forum_livegroup_list = Message.immutableCopyOf(list3);
+            }
+            List<User> list4 = builder.user_list;
+            if (list4 == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list4);
+            }
+            this.gcon_account = builder.gcon_account;
+            String str = builder.fortune_desc;
+            if (str == null) {
+                this.fortune_desc = "";
+            } else {
+                this.fortune_desc = str;
+            }
+            List<StarEnter> list5 = builder.star_enter;
+            if (list5 == null) {
+                this.star_enter = DEFAULT_STAR_ENTER;
+            } else {
+                this.star_enter = Message.immutableCopyOf(list5);
+            }
+            List<ColorEgg> list6 = builder.color_egg;
+            if (list6 == null) {
+                this.color_egg = DEFAULT_COLOR_EGG;
+            } else {
+                this.color_egg = Message.immutableCopyOf(list6);
+            }
+            List<FrsTabInfo> list7 = builder.frs_tab_info;
+            if (list7 == null) {
+                this.frs_tab_info = DEFAULT_FRS_TAB_INFO;
+            } else {
+                this.frs_tab_info = Message.immutableCopyOf(list7);
+            }
+            this.activityhead = builder.activityhead;
+            List<ZhiBoInfoTW> list8 = builder.twzhibo_info;
+            if (list8 == null) {
+                this.twzhibo_info = DEFAULT_TWZHIBO_INFO;
+            } else {
+                this.twzhibo_info = Message.immutableCopyOf(list8);
+            }
+            this.novel = builder.novel;
+            this.hot_twzhibo_info = builder.hot_twzhibo_info;
+            Integer num6 = builder.twzhibo_pos;
+            if (num6 == null) {
+                this.twzhibo_pos = DEFAULT_TWZHIBO_POS;
+            } else {
+                this.twzhibo_pos = num6;
+            }
+            List<CategoryInfo> list9 = builder.category_list;
+            if (list9 == null) {
+                this.category_list = DEFAULT_CATEGORY_LIST;
+            } else {
+                this.category_list = Message.immutableCopyOf(list9);
+            }
+            this.push_thread_info = builder.push_thread_info;
+            this.store_card = builder.store_card;
+            this.sdk_topic_thread = builder.sdk_topic_thread;
+            String str2 = builder.bawu_enter_url;
+            if (str2 == null) {
+                this.bawu_enter_url = "";
+            } else {
+                this.bawu_enter_url = str2;
+            }
+            this.client_platform = builder.client_platform;
+            this.head_sdk = builder.head_sdk;
+            List<ThreadInfo> list10 = builder.card_shipin_info;
+            if (list10 == null) {
+                this.card_shipin_info = DEFAULT_CARD_SHIPIN_INFO;
+            } else {
+                this.card_shipin_info = Message.immutableCopyOf(list10);
+            }
+            this.nav_tab_info = builder.nav_tab_info;
+            Integer num7 = builder.frs_tab_default;
+            if (num7 == null) {
+                this.frs_tab_default = DEFAULT_FRS_TAB_DEFAULT;
+            } else {
+                this.frs_tab_default = num7;
+            }
+            Integer num8 = builder.sort_type;
+            if (num8 == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+            } else {
+                this.sort_type = num8;
+            }
+            this.school_recom_info = builder.school_recom_info;
+            Integer num9 = builder.school_recom_pos;
+            if (num9 == null) {
+                this.school_recom_pos = DEFAULT_SCHOOL_RECOM_POS;
+            } else {
+                this.school_recom_pos = num9;
+            }
+            this.vitality_info = builder.vitality_info;
+            this.carrier_enter = builder.carrier_enter;
+            List<BannerThreadInfo> list11 = builder.banner_thread_list;
+            if (list11 == null) {
+                this.banner_thread_list = DEFAULT_BANNER_THREAD_LIST;
+            } else {
+                this.banner_thread_list = Message.immutableCopyOf(list11);
+            }
+            this.recommend_book = builder.recommend_book;
+            Integer num10 = builder.smart_frs_type;
+            if (num10 == null) {
+                this.smart_frs_type = DEFAULT_SMART_FRS_TYPE;
+            } else {
+                this.smart_frs_type = num10;
+            }
+            Integer num11 = builder.need_log;
+            if (num11 == null) {
+                this.need_log = DEFAULT_NEED_LOG;
+            } else {
+                this.need_log = num11;
+            }
+            Integer num12 = builder.is_auto_play_forumheadvideo;
+            if (num12 == null) {
+                this.is_auto_play_forumheadvideo = DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
+            } else {
+                this.is_auto_play_forumheadvideo = num12;
+            }
+            this.book_info = builder.book_info;
+            this.forum_present_info = builder.forum_present_info;
+            this.forum_headline_img_info = builder.forum_headline_img_info;
+            this.ntspread = builder.ntspread;
+            List<Integer> list12 = builder.card_shipin_pos;
+            if (list12 == null) {
+                this.card_shipin_pos = DEFAULT_CARD_SHIPIN_POS;
+            } else {
+                this.card_shipin_pos = Message.immutableCopyOf(list12);
+            }
+            List<ThreadInfo> list13 = builder.card_shipin_new;
+            if (list13 == null) {
+                this.card_shipin_new = DEFAULT_CARD_SHIPIN_NEW;
+            } else {
+                this.card_shipin_new = Message.immutableCopyOf(list13);
+            }
+            String str3 = builder.asp_shown_info;
+            if (str3 == null) {
+                this.asp_shown_info = "";
+            } else {
+                this.asp_shown_info = str3;
+            }
+            Integer num13 = builder.ala_live_count;
+            if (num13 == null) {
+                this.ala_live_count = DEFAULT_ALA_LIVE_COUNT;
+            } else {
+                this.ala_live_count = num13;
+            }
+            this.bottle = builder.bottle;
+            this.enter_pop_info = builder.enter_pop_info;
+            String str4 = builder.partial_visible_toast;
+            if (str4 == null) {
+                this.partial_visible_toast = "";
+            } else {
+                this.partial_visible_toast = str4;
+            }
+            this.esport = builder.esport;
+            List<ThreadIdListInfo> list14 = builder.thread_id_list_info;
+            if (list14 == null) {
+                this.thread_id_list_info = DEFAULT_THREAD_ID_LIST_INFO;
+            } else {
+                this.thread_id_list_info = Message.immutableCopyOf(list14);
+            }
+            this.agree_banner = builder.agree_banner;
+            this.na_guide = builder.na_guide;
+            List<FrsTabInfo> list15 = builder.frs_game_tab_info;
+            if (list15 == null) {
+                this.frs_game_tab_info = DEFAULT_FRS_GAME_TAB_INFO;
+            } else {
+                this.frs_game_tab_info = Message.immutableCopyOf(list15);
+            }
+            this.live_frs_notify = builder.live_frs_notify;
+            this.banner_user_story = builder.banner_user_story;
+            this.user_extend = builder.user_extend;
+            this.forum_head_icon = builder.forum_head_icon;
+            this.video = builder.video;
+            Integer num14 = builder.game_default_tab_id;
+            if (num14 == null) {
+                this.game_default_tab_id = DEFAULT_GAME_DEFAULT_TAB_ID;
+            } else {
+                this.game_default_tab_id = num14;
+            }
+            List<ThreadInfo> list16 = builder.ala_insert_thread;
+            if (list16 == null) {
+                this.ala_insert_thread = DEFAULT_ALA_INSERT_THREAD;
+            } else {
+                this.ala_insert_thread = Message.immutableCopyOf(list16);
+            }
+            this.ala_live_insert = builder.ala_live_insert;
+            Integer num15 = builder.ala_insert_floor;
+            if (num15 == null) {
+                this.ala_insert_floor = DEFAULT_ALA_INSERT_FLOOR;
+            } else {
+                this.ala_insert_floor = num15;
+            }
+            this.forum_ar_info = builder.forum_ar_info;
+            List<ThreadInfo> list17 = builder.ala_stage_list;
+            if (list17 == null) {
+                this.ala_stage_list = DEFAULT_ALA_STAGE_LIST;
+            } else {
+                this.ala_stage_list = Message.immutableCopyOf(list17);
+            }
+            this.star_rank_info = builder.star_rank_info;
+            Integer num16 = builder.trends_redpoint;
+            if (num16 == null) {
+                this.trends_redpoint = DEFAULT_TRENDS_REDPOINT;
+            } else {
+                this.trends_redpoint = num16;
+            }
+            List<WindowToast> list18 = builder.window_toast;
+            if (list18 == null) {
+                this.window_toast = DEFAULT_WINDOW_TOAST;
+            } else {
+                this.window_toast = Message.immutableCopyOf(list18);
+            }
+            this.recom_post_topic = builder.recom_post_topic;
+            this.activity_config = builder.activity_config;
+            this.star_voice = builder.star_voice;
+            this.worldcup_skin = builder.worldcup_skin;
+            this.redpacketrain = builder.redpacketrain;
+            this.brand_forum_info = builder.brand_forum_info;
+            List<BottomMenu> list19 = builder.bottom_menu;
+            if (list19 == null) {
+                this.bottom_menu = DEFAULT_BOTTOM_MENU;
+            } else {
+                this.bottom_menu = Message.immutableCopyOf(list19);
+            }
+            Integer num17 = builder.video_auto_play;
+            if (num17 == null) {
+                this.video_auto_play = DEFAULT_VIDEO_AUTO_PLAY;
+            } else {
+                this.video_auto_play = num17;
+            }
+            List<String> list20 = builder.smart_app_avatar;
+            if (list20 == null) {
+                this.smart_app_avatar = DEFAULT_SMART_APP_AVATAR;
+            } else {
+                this.smart_app_avatar = Message.immutableCopyOf(list20);
+            }
+            this.smart_app = builder.smart_app;
+            this.nebula_hot_threads = builder.nebula_hot_threads;
+            this.private_forum_info = builder.private_forum_info;
+            this.private_forum_active_info = builder.private_forum_active_info;
+            this.business_promot = builder.business_promot;
+            List<ServiceArea> list21 = builder.service_area;
+            if (list21 == null) {
+                this.service_area = DEFAULT_SERVICE_AREA;
+            } else {
+                this.service_area = Message.immutableCopyOf(list21);
+            }
+            this.bazhu_exam_fail = builder.bazhu_exam_fail;
+            this.hot_user_entry = builder.hot_user_entry;
+            this.item_info = builder.item_info;
+            Integer num18 = builder.is_get_horse_race_lamp;
+            if (num18 == null) {
+                this.is_get_horse_race_lamp = DEFAULT_IS_GET_HORSE_RACE_LAMP;
+            } else {
+                this.is_get_horse_race_lamp = num18;
+            }
+            this.forum_rule = builder.forum_rule;
+            this.sign_activity_info = builder.sign_activity_info;
+            this.add_bawu_pop = builder.add_bawu_pop;
+            Integer num19 = builder.show_adsense;
+            if (num19 == null) {
+                this.show_adsense = DEFAULT_SHOW_ADSENSE;
+                return;
+            } else {
+                this.show_adsense = num19;
+                return;
+            }
+        }
+        this.user = builder.user;
+        this.forum = builder.forum;
+        this.frs_star = builder.frs_star;
+        this.page = builder.page;
+        this.anti = builder.anti;
+        this.group = builder.group;
+        this.thread_list = Message.immutableCopyOf(builder.thread_list);
+        this.thread_id_list = Message.immutableCopyOf(builder.thread_id_list);
+        this.is_new_url = builder.is_new_url;
+        this.fortune_bag = builder.fortune_bag;
+        this.time = builder.time;
+        this.ctime = builder.ctime;
+        this.logid = builder.logid;
+        this.server_time = builder.server_time;
+        this.info = builder.info;
+        this.forum_livegroup_list = Message.immutableCopyOf(builder.forum_livegroup_list);
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.gcon_account = builder.gcon_account;
+        this.fortune_desc = builder.fortune_desc;
+        this.star_enter = Message.immutableCopyOf(builder.star_enter);
+        this.color_egg = Message.immutableCopyOf(builder.color_egg);
+        this.frs_tab_info = Message.immutableCopyOf(builder.frs_tab_info);
+        this.activityhead = builder.activityhead;
+        this.twzhibo_info = Message.immutableCopyOf(builder.twzhibo_info);
+        this.novel = builder.novel;
+        this.hot_twzhibo_info = builder.hot_twzhibo_info;
+        this.twzhibo_pos = builder.twzhibo_pos;
+        this.category_list = Message.immutableCopyOf(builder.category_list);
+        this.push_thread_info = builder.push_thread_info;
+        this.store_card = builder.store_card;
+        this.sdk_topic_thread = builder.sdk_topic_thread;
+        this.bawu_enter_url = builder.bawu_enter_url;
+        this.client_platform = builder.client_platform;
+        this.head_sdk = builder.head_sdk;
+        this.card_shipin_info = Message.immutableCopyOf(builder.card_shipin_info);
+        this.nav_tab_info = builder.nav_tab_info;
+        this.frs_tab_default = builder.frs_tab_default;
+        this.sort_type = builder.sort_type;
+        this.school_recom_info = builder.school_recom_info;
+        this.school_recom_pos = builder.school_recom_pos;
+        this.vitality_info = builder.vitality_info;
+        this.carrier_enter = builder.carrier_enter;
+        this.banner_thread_list = Message.immutableCopyOf(builder.banner_thread_list);
+        this.recommend_book = builder.recommend_book;
+        this.smart_frs_type = builder.smart_frs_type;
+        this.need_log = builder.need_log;
+        this.is_auto_play_forumheadvideo = builder.is_auto_play_forumheadvideo;
+        this.book_info = builder.book_info;
+        this.forum_present_info = builder.forum_present_info;
+        this.forum_headline_img_info = builder.forum_headline_img_info;
+        this.ntspread = builder.ntspread;
+        this.card_shipin_pos = Message.immutableCopyOf(builder.card_shipin_pos);
+        this.card_shipin_new = Message.immutableCopyOf(builder.card_shipin_new);
+        this.asp_shown_info = builder.asp_shown_info;
+        this.ala_live_count = builder.ala_live_count;
+        this.bottle = builder.bottle;
+        this.enter_pop_info = builder.enter_pop_info;
+        this.partial_visible_toast = builder.partial_visible_toast;
+        this.esport = builder.esport;
+        this.thread_id_list_info = Message.immutableCopyOf(builder.thread_id_list_info);
+        this.agree_banner = builder.agree_banner;
+        this.na_guide = builder.na_guide;
+        this.frs_game_tab_info = Message.immutableCopyOf(builder.frs_game_tab_info);
+        this.live_frs_notify = builder.live_frs_notify;
+        this.banner_user_story = builder.banner_user_story;
+        this.user_extend = builder.user_extend;
+        this.forum_head_icon = builder.forum_head_icon;
+        this.video = builder.video;
+        this.game_default_tab_id = builder.game_default_tab_id;
+        this.ala_insert_thread = Message.immutableCopyOf(builder.ala_insert_thread);
+        this.ala_live_insert = builder.ala_live_insert;
+        this.ala_insert_floor = builder.ala_insert_floor;
+        this.forum_ar_info = builder.forum_ar_info;
+        this.ala_stage_list = Message.immutableCopyOf(builder.ala_stage_list);
+        this.star_rank_info = builder.star_rank_info;
+        this.trends_redpoint = builder.trends_redpoint;
+        this.window_toast = Message.immutableCopyOf(builder.window_toast);
+        this.recom_post_topic = builder.recom_post_topic;
+        this.activity_config = builder.activity_config;
+        this.star_voice = builder.star_voice;
+        this.worldcup_skin = builder.worldcup_skin;
+        this.redpacketrain = builder.redpacketrain;
+        this.brand_forum_info = builder.brand_forum_info;
+        this.bottom_menu = Message.immutableCopyOf(builder.bottom_menu);
+        this.video_auto_play = builder.video_auto_play;
+        this.smart_app_avatar = Message.immutableCopyOf(builder.smart_app_avatar);
+        this.smart_app = builder.smart_app;
+        this.nebula_hot_threads = builder.nebula_hot_threads;
+        this.private_forum_info = builder.private_forum_info;
+        this.private_forum_active_info = builder.private_forum_active_info;
+        this.business_promot = builder.business_promot;
+        this.service_area = Message.immutableCopyOf(builder.service_area);
+        this.bazhu_exam_fail = builder.bazhu_exam_fail;
+        this.hot_user_entry = builder.hot_user_entry;
+        this.item_info = builder.item_info;
+        this.is_get_horse_race_lamp = builder.is_get_horse_race_lamp;
+        this.forum_rule = builder.forum_rule;
+        this.sign_activity_info = builder.sign_activity_info;
+        this.add_bawu_pop = builder.add_bawu_pop;
+        this.show_adsense = builder.show_adsense;
     }
 }

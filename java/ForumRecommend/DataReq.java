@@ -3,13 +3,13 @@ package tbclient.ForumRecommend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_VISIT_HISTORY = "";
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8701common;
+    public final CommonReq f68369common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer like_forum;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -25,51 +25,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_RECOMMEND = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.like_forum == null) {
-                this.like_forum = DEFAULT_LIKE_FORUM;
-            } else {
-                this.like_forum = builder.like_forum;
-            }
-            if (builder.topic == null) {
-                this.topic = DEFAULT_TOPIC;
-            } else {
-                this.topic = builder.topic;
-            }
-            if (builder.recommend == null) {
-                this.recommend = DEFAULT_RECOMMEND;
-            } else {
-                this.recommend = builder.recommend;
-            }
-            this.f8701common = builder.f8702common;
-            if (builder.visit_history == null) {
-                this.visit_history = "";
-            } else {
-                this.visit_history = builder.visit_history;
-            }
-            if (builder.sort_type == null) {
-                this.sort_type = DEFAULT_SORT_TYPE;
-                return;
-            } else {
-                this.sort_type = builder.sort_type;
-                return;
-            }
-        }
-        this.like_forum = builder.like_forum;
-        this.topic = builder.topic;
-        this.recommend = builder.recommend;
-        this.f8701common = builder.f8702common;
-        this.visit_history = builder.visit_history;
-        this.sort_type = builder.sort_type;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8702common;
+        public CommonReq f68370common;
         public Integer like_forum;
         public Integer recommend;
         public Integer sort_type;
@@ -81,14 +41,15 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.like_forum = dataReq.like_forum;
-                this.topic = dataReq.topic;
-                this.recommend = dataReq.recommend;
-                this.f8702common = dataReq.f8701common;
-                this.visit_history = dataReq.visit_history;
-                this.sort_type = dataReq.sort_type;
+            if (dataReq == null) {
+                return;
             }
+            this.like_forum = dataReq.like_forum;
+            this.topic = dataReq.topic;
+            this.recommend = dataReq.recommend;
+            this.f68370common = dataReq.f68369common;
+            this.visit_history = dataReq.visit_history;
+            this.sort_type = dataReq.sort_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +57,50 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.like_forum;
+            if (num == null) {
+                this.like_forum = DEFAULT_LIKE_FORUM;
+            } else {
+                this.like_forum = num;
+            }
+            Integer num2 = builder.topic;
+            if (num2 == null) {
+                this.topic = DEFAULT_TOPIC;
+            } else {
+                this.topic = num2;
+            }
+            Integer num3 = builder.recommend;
+            if (num3 == null) {
+                this.recommend = DEFAULT_RECOMMEND;
+            } else {
+                this.recommend = num3;
+            }
+            this.f68369common = builder.f68370common;
+            String str = builder.visit_history;
+            if (str == null) {
+                this.visit_history = "";
+            } else {
+                this.visit_history = str;
+            }
+            Integer num4 = builder.sort_type;
+            if (num4 == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+                return;
+            } else {
+                this.sort_type = num4;
+                return;
+            }
+        }
+        this.like_forum = builder.like_forum;
+        this.topic = builder.topic;
+        this.recommend = builder.recommend;
+        this.f68369common = builder.f68370common;
+        this.visit_history = builder.visit_history;
+        this.sort_type = builder.sort_type;
     }
 }

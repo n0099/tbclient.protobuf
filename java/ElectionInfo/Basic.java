@@ -2,7 +2,7 @@ package tbclient.ElectionInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class Basic extends Message {
     public static final String DEFAULT_BEGIN_APPLY_TIME = "";
     public static final String DEFAULT_BEGIN_PUBLIC_TIME = "";
@@ -29,64 +29,7 @@ public final class Basic extends Message {
     public static final Integer DEFAULT_STATUS = 0;
     public static final Integer DEFAULT_CANDIDATE_NUM = 0;
     public static final Integer DEFAULT_TOTAL_VOTE_NUM = 0;
-    public static final Boolean DEFAULT_IS_VOTED = false;
-
-    private Basic(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.begin_apply_time == null) {
-                this.begin_apply_time = "";
-            } else {
-                this.begin_apply_time = builder.begin_apply_time;
-            }
-            if (builder.begin_vote_time == null) {
-                this.begin_vote_time = "";
-            } else {
-                this.begin_vote_time = builder.begin_vote_time;
-            }
-            if (builder.begin_public_time == null) {
-                this.begin_public_time = "";
-            } else {
-                this.begin_public_time = builder.begin_public_time;
-            }
-            if (builder.status == null) {
-                this.status = DEFAULT_STATUS;
-            } else {
-                this.status = builder.status;
-            }
-            if (builder.remind_time == null) {
-                this.remind_time = "";
-            } else {
-                this.remind_time = builder.remind_time;
-            }
-            if (builder.candidate_num == null) {
-                this.candidate_num = DEFAULT_CANDIDATE_NUM;
-            } else {
-                this.candidate_num = builder.candidate_num;
-            }
-            if (builder.total_vote_num == null) {
-                this.total_vote_num = DEFAULT_TOTAL_VOTE_NUM;
-            } else {
-                this.total_vote_num = builder.total_vote_num;
-            }
-            if (builder.is_voted == null) {
-                this.is_voted = DEFAULT_IS_VOTED;
-            } else {
-                this.is_voted = builder.is_voted;
-            }
-            this.notice = builder.notice;
-            return;
-        }
-        this.begin_apply_time = builder.begin_apply_time;
-        this.begin_vote_time = builder.begin_vote_time;
-        this.begin_public_time = builder.begin_public_time;
-        this.status = builder.status;
-        this.remind_time = builder.remind_time;
-        this.candidate_num = builder.candidate_num;
-        this.total_vote_num = builder.total_vote_num;
-        this.is_voted = builder.is_voted;
-        this.notice = builder.notice;
-    }
+    public static final Boolean DEFAULT_IS_VOTED = Boolean.FALSE;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Basic> {
@@ -105,17 +48,18 @@ public final class Basic extends Message {
 
         public Builder(Basic basic) {
             super(basic);
-            if (basic != null) {
-                this.begin_apply_time = basic.begin_apply_time;
-                this.begin_vote_time = basic.begin_vote_time;
-                this.begin_public_time = basic.begin_public_time;
-                this.status = basic.status;
-                this.remind_time = basic.remind_time;
-                this.candidate_num = basic.candidate_num;
-                this.total_vote_num = basic.total_vote_num;
-                this.is_voted = basic.is_voted;
-                this.notice = basic.notice;
+            if (basic == null) {
+                return;
             }
+            this.begin_apply_time = basic.begin_apply_time;
+            this.begin_vote_time = basic.begin_vote_time;
+            this.begin_public_time = basic.begin_public_time;
+            this.status = basic.status;
+            this.remind_time = basic.remind_time;
+            this.candidate_num = basic.candidate_num;
+            this.total_vote_num = basic.total_vote_num;
+            this.is_voted = basic.is_voted;
+            this.notice = basic.notice;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -123,5 +67,70 @@ public final class Basic extends Message {
         public Basic build(boolean z) {
             return new Basic(this, z);
         }
+    }
+
+    public Basic(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.begin_apply_time;
+            if (str == null) {
+                this.begin_apply_time = "";
+            } else {
+                this.begin_apply_time = str;
+            }
+            String str2 = builder.begin_vote_time;
+            if (str2 == null) {
+                this.begin_vote_time = "";
+            } else {
+                this.begin_vote_time = str2;
+            }
+            String str3 = builder.begin_public_time;
+            if (str3 == null) {
+                this.begin_public_time = "";
+            } else {
+                this.begin_public_time = str3;
+            }
+            Integer num = builder.status;
+            if (num == null) {
+                this.status = DEFAULT_STATUS;
+            } else {
+                this.status = num;
+            }
+            String str4 = builder.remind_time;
+            if (str4 == null) {
+                this.remind_time = "";
+            } else {
+                this.remind_time = str4;
+            }
+            Integer num2 = builder.candidate_num;
+            if (num2 == null) {
+                this.candidate_num = DEFAULT_CANDIDATE_NUM;
+            } else {
+                this.candidate_num = num2;
+            }
+            Integer num3 = builder.total_vote_num;
+            if (num3 == null) {
+                this.total_vote_num = DEFAULT_TOTAL_VOTE_NUM;
+            } else {
+                this.total_vote_num = num3;
+            }
+            Boolean bool = builder.is_voted;
+            if (bool == null) {
+                this.is_voted = DEFAULT_IS_VOTED;
+            } else {
+                this.is_voted = bool;
+            }
+            this.notice = builder.notice;
+            return;
+        }
+        this.begin_apply_time = builder.begin_apply_time;
+        this.begin_vote_time = builder.begin_vote_time;
+        this.begin_public_time = builder.begin_public_time;
+        this.status = builder.status;
+        this.remind_time = builder.remind_time;
+        this.candidate_num = builder.candidate_num;
+        this.total_vote_num = builder.total_vote_num;
+        this.is_voted = builder.is_voted;
+        this.notice = builder.notice;
     }
 }

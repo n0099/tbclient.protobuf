@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ThreadIdListInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_partial_visible;
@@ -11,27 +11,7 @@ public final class ThreadIdListInfo extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final Integer DEFAULT_IS_PARTIAL_VISIBLE = 0;
 
-    private ThreadIdListInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tid == null) {
-                this.tid = DEFAULT_TID;
-            } else {
-                this.tid = builder.tid;
-            }
-            if (builder.is_partial_visible == null) {
-                this.is_partial_visible = DEFAULT_IS_PARTIAL_VISIBLE;
-                return;
-            } else {
-                this.is_partial_visible = builder.is_partial_visible;
-                return;
-            }
-        }
-        this.tid = builder.tid;
-        this.is_partial_visible = builder.is_partial_visible;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThreadIdListInfo> {
         public Integer is_partial_visible;
         public Long tid;
@@ -41,10 +21,11 @@ public final class ThreadIdListInfo extends Message {
 
         public Builder(ThreadIdListInfo threadIdListInfo) {
             super(threadIdListInfo);
-            if (threadIdListInfo != null) {
-                this.tid = threadIdListInfo.tid;
-                this.is_partial_visible = threadIdListInfo.is_partial_visible;
+            if (threadIdListInfo == null) {
+                return;
             }
+            this.tid = threadIdListInfo.tid;
+            this.is_partial_visible = threadIdListInfo.is_partial_visible;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class ThreadIdListInfo extends Message {
         public ThreadIdListInfo build(boolean z) {
             return new ThreadIdListInfo(this, z);
         }
+    }
+
+    public ThreadIdListInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.tid;
+            if (l == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l;
+            }
+            Integer num = builder.is_partial_visible;
+            if (num == null) {
+                this.is_partial_visible = DEFAULT_IS_PARTIAL_VISIBLE;
+                return;
+            } else {
+                this.is_partial_visible = num;
+                return;
+            }
+        }
+        this.tid = builder.tid;
+        this.is_partial_visible = builder.is_partial_visible;
     }
 }

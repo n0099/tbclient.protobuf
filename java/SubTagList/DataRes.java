@@ -3,11 +3,6 @@ package tbclient.SubTagList;
 import com.squareup.wire.Message;
 /* loaded from: classes7.dex */
 public final class DataRes extends Message {
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-        }
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -23,5 +18,9 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
     }
 }

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class StarRank extends Message {
     public static final String DEFAULT_RANK_NAME = "";
     public static final String DEFAULT_URL = "";
@@ -31,63 +31,7 @@ public final class StarRank extends Message {
     public static final Integer DEFAULT_USER_CONTRI_SCORE = 0;
     public static final List<StarTaskInfo> DEFAULT_USER_TASK_INFO = Collections.emptyList();
 
-    private StarRank(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.rank_name == null) {
-                this.rank_name = "";
-            } else {
-                this.rank_name = builder.rank_name;
-            }
-            if (builder.rank_ranking == null) {
-                this.rank_ranking = DEFAULT_RANK_RANKING;
-            } else {
-                this.rank_ranking = builder.rank_ranking;
-            }
-            if (builder.contri_record_list == null) {
-                this.contri_record_list = DEFAULT_CONTRI_RECORD_LIST;
-            } else {
-                this.contri_record_list = immutableCopyOf(builder.contri_record_list);
-            }
-            if (builder.user_contri_score == null) {
-                this.user_contri_score = DEFAULT_USER_CONTRI_SCORE;
-            } else {
-                this.user_contri_score = builder.user_contri_score;
-            }
-            if (builder.user_task_notice == null) {
-                this.user_task_notice = "";
-            } else {
-                this.user_task_notice = builder.user_task_notice;
-            }
-            if (builder.user_task_info == null) {
-                this.user_task_info = DEFAULT_USER_TASK_INFO;
-            } else {
-                this.user_task_info = immutableCopyOf(builder.user_task_info);
-            }
-            if (builder.user_current_score_notice == null) {
-                this.user_current_score_notice = "";
-            } else {
-                this.user_current_score_notice = builder.user_current_score_notice;
-            }
-            if (builder.url == null) {
-                this.url = "";
-                return;
-            } else {
-                this.url = builder.url;
-                return;
-            }
-        }
-        this.rank_name = builder.rank_name;
-        this.rank_ranking = builder.rank_ranking;
-        this.contri_record_list = immutableCopyOf(builder.contri_record_list);
-        this.user_contri_score = builder.user_contri_score;
-        this.user_task_notice = builder.user_task_notice;
-        this.user_task_info = immutableCopyOf(builder.user_task_info);
-        this.user_current_score_notice = builder.user_current_score_notice;
-        this.url = builder.url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<StarRank> {
         public List<StarContriRecord> contri_record_list;
         public String rank_name;
@@ -103,16 +47,17 @@ public final class StarRank extends Message {
 
         public Builder(StarRank starRank) {
             super(starRank);
-            if (starRank != null) {
-                this.rank_name = starRank.rank_name;
-                this.rank_ranking = starRank.rank_ranking;
-                this.contri_record_list = StarRank.copyOf(starRank.contri_record_list);
-                this.user_contri_score = starRank.user_contri_score;
-                this.user_task_notice = starRank.user_task_notice;
-                this.user_task_info = StarRank.copyOf(starRank.user_task_info);
-                this.user_current_score_notice = starRank.user_current_score_notice;
-                this.url = starRank.url;
+            if (starRank == null) {
+                return;
             }
+            this.rank_name = starRank.rank_name;
+            this.rank_ranking = starRank.rank_ranking;
+            this.contri_record_list = Message.copyOf(starRank.contri_record_list);
+            this.user_contri_score = starRank.user_contri_score;
+            this.user_task_notice = starRank.user_task_notice;
+            this.user_task_info = Message.copyOf(starRank.user_task_info);
+            this.user_current_score_notice = starRank.user_current_score_notice;
+            this.url = starRank.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -120,5 +65,69 @@ public final class StarRank extends Message {
         public StarRank build(boolean z) {
             return new StarRank(this, z);
         }
+    }
+
+    public StarRank(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.rank_name;
+            if (str == null) {
+                this.rank_name = "";
+            } else {
+                this.rank_name = str;
+            }
+            Integer num = builder.rank_ranking;
+            if (num == null) {
+                this.rank_ranking = DEFAULT_RANK_RANKING;
+            } else {
+                this.rank_ranking = num;
+            }
+            List<StarContriRecord> list = builder.contri_record_list;
+            if (list == null) {
+                this.contri_record_list = DEFAULT_CONTRI_RECORD_LIST;
+            } else {
+                this.contri_record_list = Message.immutableCopyOf(list);
+            }
+            Integer num2 = builder.user_contri_score;
+            if (num2 == null) {
+                this.user_contri_score = DEFAULT_USER_CONTRI_SCORE;
+            } else {
+                this.user_contri_score = num2;
+            }
+            String str2 = builder.user_task_notice;
+            if (str2 == null) {
+                this.user_task_notice = "";
+            } else {
+                this.user_task_notice = str2;
+            }
+            List<StarTaskInfo> list2 = builder.user_task_info;
+            if (list2 == null) {
+                this.user_task_info = DEFAULT_USER_TASK_INFO;
+            } else {
+                this.user_task_info = Message.immutableCopyOf(list2);
+            }
+            String str3 = builder.user_current_score_notice;
+            if (str3 == null) {
+                this.user_current_score_notice = "";
+            } else {
+                this.user_current_score_notice = str3;
+            }
+            String str4 = builder.url;
+            if (str4 == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str4;
+                return;
+            }
+        }
+        this.rank_name = builder.rank_name;
+        this.rank_ranking = builder.rank_ranking;
+        this.contri_record_list = Message.immutableCopyOf(builder.contri_record_list);
+        this.user_contri_score = builder.user_contri_score;
+        this.user_task_notice = builder.user_task_notice;
+        this.user_task_info = Message.immutableCopyOf(builder.user_task_info);
+        this.user_current_score_notice = builder.user_current_score_notice;
+        this.url = builder.url;
     }
 }

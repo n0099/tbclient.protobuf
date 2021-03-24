@@ -4,27 +4,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TwAnchorProfit extends Message {
     public static final List<TwAnchorProfitItem> DEFAULT_PROFIT_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<TwAnchorProfitItem> profit_list;
 
-    private TwAnchorProfit(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.profit_list == null) {
-                this.profit_list = DEFAULT_PROFIT_LIST;
-                return;
-            } else {
-                this.profit_list = immutableCopyOf(builder.profit_list);
-                return;
-            }
-        }
-        this.profit_list = immutableCopyOf(builder.profit_list);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TwAnchorProfit> {
         public List<TwAnchorProfitItem> profit_list;
 
@@ -33,9 +19,10 @@ public final class TwAnchorProfit extends Message {
 
         public Builder(TwAnchorProfit twAnchorProfit) {
             super(twAnchorProfit);
-            if (twAnchorProfit != null) {
-                this.profit_list = TwAnchorProfit.copyOf(twAnchorProfit.profit_list);
+            if (twAnchorProfit == null) {
+                return;
             }
+            this.profit_list = Message.copyOf(twAnchorProfit.profit_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -43,5 +30,20 @@ public final class TwAnchorProfit extends Message {
         public TwAnchorProfit build(boolean z) {
             return new TwAnchorProfit(this, z);
         }
+    }
+
+    public TwAnchorProfit(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<TwAnchorProfitItem> list = builder.profit_list;
+            if (list == null) {
+                this.profit_list = DEFAULT_PROFIT_LIST;
+                return;
+            } else {
+                this.profit_list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.profit_list = Message.immutableCopyOf(builder.profit_list);
     }
 }

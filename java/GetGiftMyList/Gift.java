@@ -2,7 +2,7 @@ package tbclient.GetGiftMyList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class Gift extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PLAY_URL = "";
@@ -23,51 +23,7 @@ public final class Gift extends Message {
     public static final Integer DEFAULT_SEND_TIME = 0;
     public static final Integer DEFAULT_NUM = 0;
 
-    private Gift(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.gift_id == null) {
-                this.gift_id = DEFAULT_GIFT_ID;
-            } else {
-                this.gift_id = builder.gift_id;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.play_url == null) {
-                this.play_url = "";
-            } else {
-                this.play_url = builder.play_url;
-            }
-            if (builder.thumbnail_url == null) {
-                this.thumbnail_url = "";
-            } else {
-                this.thumbnail_url = builder.thumbnail_url;
-            }
-            if (builder.send_time == null) {
-                this.send_time = DEFAULT_SEND_TIME;
-            } else {
-                this.send_time = builder.send_time;
-            }
-            if (builder.num == null) {
-                this.num = DEFAULT_NUM;
-                return;
-            } else {
-                this.num = builder.num;
-                return;
-            }
-        }
-        this.gift_id = builder.gift_id;
-        this.name = builder.name;
-        this.play_url = builder.play_url;
-        this.thumbnail_url = builder.thumbnail_url;
-        this.send_time = builder.send_time;
-        this.num = builder.num;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Gift> {
         public Integer gift_id;
         public String name;
@@ -81,14 +37,15 @@ public final class Gift extends Message {
 
         public Builder(Gift gift) {
             super(gift);
-            if (gift != null) {
-                this.gift_id = gift.gift_id;
-                this.name = gift.name;
-                this.play_url = gift.play_url;
-                this.thumbnail_url = gift.thumbnail_url;
-                this.send_time = gift.send_time;
-                this.num = gift.num;
+            if (gift == null) {
+                return;
             }
+            this.gift_id = gift.gift_id;
+            this.name = gift.name;
+            this.play_url = gift.play_url;
+            this.thumbnail_url = gift.thumbnail_url;
+            this.send_time = gift.send_time;
+            this.num = gift.num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,5 +53,55 @@ public final class Gift extends Message {
         public Gift build(boolean z) {
             return new Gift(this, z);
         }
+    }
+
+    public Gift(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.gift_id;
+            if (num == null) {
+                this.gift_id = DEFAULT_GIFT_ID;
+            } else {
+                this.gift_id = num;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.play_url;
+            if (str2 == null) {
+                this.play_url = "";
+            } else {
+                this.play_url = str2;
+            }
+            String str3 = builder.thumbnail_url;
+            if (str3 == null) {
+                this.thumbnail_url = "";
+            } else {
+                this.thumbnail_url = str3;
+            }
+            Integer num2 = builder.send_time;
+            if (num2 == null) {
+                this.send_time = DEFAULT_SEND_TIME;
+            } else {
+                this.send_time = num2;
+            }
+            Integer num3 = builder.num;
+            if (num3 == null) {
+                this.num = DEFAULT_NUM;
+                return;
+            } else {
+                this.num = num3;
+                return;
+            }
+        }
+        this.gift_id = builder.gift_id;
+        this.name = builder.name;
+        this.play_url = builder.play_url;
+        this.thumbnail_url = builder.thumbnail_url;
+        this.send_time = builder.send_time;
+        this.num = builder.num;
     }
 }

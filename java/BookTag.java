@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class BookTag extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
@@ -11,27 +11,7 @@ public final class BookTag extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    private BookTag(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.url == null) {
-                this.url = "";
-                return;
-            } else {
-                this.url = builder.url;
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.url = builder.url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<BookTag> {
         public String title;
         public String url;
@@ -41,10 +21,11 @@ public final class BookTag extends Message {
 
         public Builder(BookTag bookTag) {
             super(bookTag);
-            if (bookTag != null) {
-                this.title = bookTag.title;
-                this.url = bookTag.url;
+            if (bookTag == null) {
+                return;
             }
+            this.title = bookTag.title;
+            this.url = bookTag.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class BookTag extends Message {
         public BookTag build(boolean z) {
             return new BookTag(this, z);
         }
+    }
+
+    public BookTag(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.url;
+            if (str2 == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str2;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.url = builder.url;
     }
 }

@@ -2,7 +2,7 @@ package tbclient.NewHottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TimeLineInfo extends Message {
     public static final String DEFAULT_BG_COLOR = "";
     public static final String DEFAULT_SHOW_TIME = "";
@@ -20,45 +20,7 @@ public final class TimeLineInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    private TimeLineInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tid == null) {
-                this.tid = DEFAULT_TID;
-            } else {
-                this.tid = builder.tid;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.show_time == null) {
-                this.show_time = "";
-            } else {
-                this.show_time = builder.show_time;
-            }
-            if (builder.bg_color == null) {
-                this.bg_color = "";
-            } else {
-                this.bg_color = builder.bg_color;
-            }
-            if (builder.small_title == null) {
-                this.small_title = "";
-                return;
-            } else {
-                this.small_title = builder.small_title;
-                return;
-            }
-        }
-        this.tid = builder.tid;
-        this.title = builder.title;
-        this.show_time = builder.show_time;
-        this.bg_color = builder.bg_color;
-        this.small_title = builder.small_title;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TimeLineInfo> {
         public String bg_color;
         public String show_time;
@@ -71,13 +33,14 @@ public final class TimeLineInfo extends Message {
 
         public Builder(TimeLineInfo timeLineInfo) {
             super(timeLineInfo);
-            if (timeLineInfo != null) {
-                this.tid = timeLineInfo.tid;
-                this.title = timeLineInfo.title;
-                this.show_time = timeLineInfo.show_time;
-                this.bg_color = timeLineInfo.bg_color;
-                this.small_title = timeLineInfo.small_title;
+            if (timeLineInfo == null) {
+                return;
             }
+            this.tid = timeLineInfo.tid;
+            this.title = timeLineInfo.title;
+            this.show_time = timeLineInfo.show_time;
+            this.bg_color = timeLineInfo.bg_color;
+            this.small_title = timeLineInfo.small_title;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class TimeLineInfo extends Message {
         public TimeLineInfo build(boolean z) {
             return new TimeLineInfo(this, z);
         }
+    }
+
+    public TimeLineInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.tid;
+            if (l == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.show_time;
+            if (str2 == null) {
+                this.show_time = "";
+            } else {
+                this.show_time = str2;
+            }
+            String str3 = builder.bg_color;
+            if (str3 == null) {
+                this.bg_color = "";
+            } else {
+                this.bg_color = str3;
+            }
+            String str4 = builder.small_title;
+            if (str4 == null) {
+                this.small_title = "";
+                return;
+            } else {
+                this.small_title = str4;
+                return;
+            }
+        }
+        this.tid = builder.tid;
+        this.title = builder.title;
+        this.show_time = builder.show_time;
+        this.bg_color = builder.bg_color;
+        this.small_title = builder.small_title;
     }
 }

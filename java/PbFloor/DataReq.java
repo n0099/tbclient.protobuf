@@ -3,7 +3,7 @@ package tbclient.PbFloor;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ORI_UGC_NID = "";
     public static final String DEFAULT_ORI_UGC_TID = "";
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8881common;
+    public final CommonReq f68557common;
     @ProtoField(tag = 11, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -55,111 +55,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.kz == null) {
-                this.kz = DEFAULT_KZ;
-            } else {
-                this.kz = builder.kz;
-            }
-            if (builder.pid == null) {
-                this.pid = DEFAULT_PID;
-            } else {
-                this.pid = builder.pid;
-            }
-            if (builder.spid == null) {
-                this.spid = DEFAULT_SPID;
-            } else {
-                this.spid = builder.spid;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.st_type == null) {
-                this.st_type = "";
-            } else {
-                this.st_type = builder.st_type;
-            }
-            this.f8881common = builder.f8882common;
-            if (builder.is_comm_reverse == null) {
-                this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
-            } else {
-                this.is_comm_reverse = builder.is_comm_reverse;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.ori_ugc_nid == null) {
-                this.ori_ugc_nid = "";
-            } else {
-                this.ori_ugc_nid = builder.ori_ugc_nid;
-            }
-            if (builder.ori_ugc_tid == null) {
-                this.ori_ugc_tid = "";
-            } else {
-                this.ori_ugc_tid = builder.ori_ugc_tid;
-            }
-            if (builder.ori_ugc_type == null) {
-                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
-            } else {
-                this.ori_ugc_type = builder.ori_ugc_type;
-            }
-            if (builder.ori_ugc_vid == null) {
-                this.ori_ugc_vid = "";
-            } else {
-                this.ori_ugc_vid = builder.ori_ugc_vid;
-            }
-            if (builder.top_ugc_pid == null) {
-                this.top_ugc_pid = "";
-                return;
-            } else {
-                this.top_ugc_pid = builder.top_ugc_pid;
-                return;
-            }
-        }
-        this.kz = builder.kz;
-        this.pid = builder.pid;
-        this.spid = builder.spid;
-        this.pn = builder.pn;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.st_type = builder.st_type;
-        this.f8881common = builder.f8882common;
-        this.is_comm_reverse = builder.is_comm_reverse;
-        this.forum_id = builder.forum_id;
-        this.ori_ugc_nid = builder.ori_ugc_nid;
-        this.ori_ugc_tid = builder.ori_ugc_tid;
-        this.ori_ugc_type = builder.ori_ugc_type;
-        this.ori_ugc_vid = builder.ori_ugc_vid;
-        this.top_ugc_pid = builder.top_ugc_pid;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8882common;
+        public CommonReq f68558common;
         public Long forum_id;
         public Integer is_comm_reverse;
         public Long kz;
@@ -181,24 +81,25 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.kz = dataReq.kz;
-                this.pid = dataReq.pid;
-                this.spid = dataReq.spid;
-                this.pn = dataReq.pn;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.st_type = dataReq.st_type;
-                this.f8882common = dataReq.f8881common;
-                this.is_comm_reverse = dataReq.is_comm_reverse;
-                this.forum_id = dataReq.forum_id;
-                this.ori_ugc_nid = dataReq.ori_ugc_nid;
-                this.ori_ugc_tid = dataReq.ori_ugc_tid;
-                this.ori_ugc_type = dataReq.ori_ugc_type;
-                this.ori_ugc_vid = dataReq.ori_ugc_vid;
-                this.top_ugc_pid = dataReq.top_ugc_pid;
+            if (dataReq == null) {
+                return;
             }
+            this.kz = dataReq.kz;
+            this.pid = dataReq.pid;
+            this.spid = dataReq.spid;
+            this.pn = dataReq.pn;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.st_type = dataReq.st_type;
+            this.f68558common = dataReq.f68557common;
+            this.is_comm_reverse = dataReq.is_comm_reverse;
+            this.forum_id = dataReq.forum_id;
+            this.ori_ugc_nid = dataReq.ori_ugc_nid;
+            this.ori_ugc_tid = dataReq.ori_ugc_tid;
+            this.ori_ugc_type = dataReq.ori_ugc_type;
+            this.ori_ugc_vid = dataReq.ori_ugc_vid;
+            this.top_ugc_pid = dataReq.top_ugc_pid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -206,5 +107,120 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.kz;
+            if (l == null) {
+                this.kz = DEFAULT_KZ;
+            } else {
+                this.kz = l;
+            }
+            Long l2 = builder.pid;
+            if (l2 == null) {
+                this.pid = DEFAULT_PID;
+            } else {
+                this.pid = l2;
+            }
+            Long l3 = builder.spid;
+            if (l3 == null) {
+                this.spid = DEFAULT_SPID;
+            } else {
+                this.spid = l3;
+            }
+            Integer num = builder.pn;
+            if (num == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num;
+            }
+            Integer num2 = builder.scr_w;
+            if (num2 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num2;
+            }
+            Integer num3 = builder.scr_h;
+            if (num3 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num3;
+            }
+            Double d2 = builder.scr_dip;
+            if (d2 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = d2;
+            }
+            String str = builder.st_type;
+            if (str == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str;
+            }
+            this.f68557common = builder.f68558common;
+            Integer num4 = builder.is_comm_reverse;
+            if (num4 == null) {
+                this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
+            } else {
+                this.is_comm_reverse = num4;
+            }
+            Long l4 = builder.forum_id;
+            if (l4 == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l4;
+            }
+            String str2 = builder.ori_ugc_nid;
+            if (str2 == null) {
+                this.ori_ugc_nid = "";
+            } else {
+                this.ori_ugc_nid = str2;
+            }
+            String str3 = builder.ori_ugc_tid;
+            if (str3 == null) {
+                this.ori_ugc_tid = "";
+            } else {
+                this.ori_ugc_tid = str3;
+            }
+            Integer num5 = builder.ori_ugc_type;
+            if (num5 == null) {
+                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
+            } else {
+                this.ori_ugc_type = num5;
+            }
+            String str4 = builder.ori_ugc_vid;
+            if (str4 == null) {
+                this.ori_ugc_vid = "";
+            } else {
+                this.ori_ugc_vid = str4;
+            }
+            String str5 = builder.top_ugc_pid;
+            if (str5 == null) {
+                this.top_ugc_pid = "";
+                return;
+            } else {
+                this.top_ugc_pid = str5;
+                return;
+            }
+        }
+        this.kz = builder.kz;
+        this.pid = builder.pid;
+        this.spid = builder.spid;
+        this.pn = builder.pn;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.st_type = builder.st_type;
+        this.f68557common = builder.f68558common;
+        this.is_comm_reverse = builder.is_comm_reverse;
+        this.forum_id = builder.forum_id;
+        this.ori_ugc_nid = builder.ori_ugc_nid;
+        this.ori_ugc_tid = builder.ori_ugc_tid;
+        this.ori_ugc_type = builder.ori_ugc_type;
+        this.ori_ugc_vid = builder.ori_ugc_vid;
+        this.top_ugc_pid = builder.top_ugc_pid;
     }
 }

@@ -3,37 +3,21 @@ package tbclient.GetRecommendGod;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8797common;
+    public final CommonReq f68469common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long user_id;
-
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8797common = builder.f8798common;
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-                return;
-            } else {
-                this.user_id = builder.user_id;
-                return;
-            }
-        }
-        this.f8797common = builder.f8798common;
-        this.user_id = builder.user_id;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8798common;
+        public CommonReq f68470common;
         public Long user_id;
 
         public Builder() {
@@ -41,10 +25,11 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8798common = dataReq.f8797common;
-                this.user_id = dataReq.user_id;
+            if (dataReq == null) {
+                return;
             }
+            this.f68470common = dataReq.f68469common;
+            this.user_id = dataReq.user_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +37,22 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68469common = builder.f68470common;
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+                return;
+            } else {
+                this.user_id = l;
+                return;
+            }
+        }
+        this.f68469common = builder.f68470common;
+        this.user_id = builder.user_id;
     }
 }

@@ -2,7 +2,7 @@ package tbclient.GetMoreMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class MsgContent extends Message {
     public static final String DEFAULT_ID = "";
     public static final String DEFAULT_SRC = "";
@@ -20,44 +20,6 @@ public final class MsgContent extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    private MsgContent(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = "";
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.text == null) {
-                this.text = "";
-            } else {
-                this.text = builder.text;
-            }
-            if (builder.src == null) {
-                this.src = "";
-                return;
-            } else {
-                this.src = builder.src;
-                return;
-            }
-        }
-        this.id = builder.id;
-        this.title = builder.title;
-        this.url = builder.url;
-        this.text = builder.text;
-        this.src = builder.src;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<MsgContent> {
         public String id;
@@ -71,13 +33,14 @@ public final class MsgContent extends Message {
 
         public Builder(MsgContent msgContent) {
             super(msgContent);
-            if (msgContent != null) {
-                this.id = msgContent.id;
-                this.title = msgContent.title;
-                this.url = msgContent.url;
-                this.text = msgContent.text;
-                this.src = msgContent.src;
+            if (msgContent == null) {
+                return;
             }
+            this.id = msgContent.id;
+            this.title = msgContent.title;
+            this.url = msgContent.url;
+            this.text = msgContent.text;
+            this.src = msgContent.src;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class MsgContent extends Message {
         public MsgContent build(boolean z) {
             return new MsgContent(this, z);
         }
+    }
+
+    public MsgContent(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.id;
+            if (str == null) {
+                this.id = "";
+            } else {
+                this.id = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.url;
+            if (str3 == null) {
+                this.url = "";
+            } else {
+                this.url = str3;
+            }
+            String str4 = builder.text;
+            if (str4 == null) {
+                this.text = "";
+            } else {
+                this.text = str4;
+            }
+            String str5 = builder.src;
+            if (str5 == null) {
+                this.src = "";
+                return;
+            } else {
+                this.src = str5;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.title = builder.title;
+        this.url = builder.url;
+        this.text = builder.text;
+        this.src = builder.src;
     }
 }

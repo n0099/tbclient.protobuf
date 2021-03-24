@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class MissionInfo extends Message {
     public static final String DEFAULT_BROWSETIMEPAGE = "";
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -32,69 +32,7 @@ public final class MissionInfo extends Message {
     public static final Integer DEFAULT_CLEARTYPE = 0;
     public static final Integer DEFAULT_CLEARTIME = 0;
 
-    private MissionInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.missionid == null) {
-                this.missionid = DEFAULT_MISSIONID;
-            } else {
-                this.missionid = builder.missionid;
-            }
-            if (builder.total_limit == null) {
-                this.total_limit = DEFAULT_TOTAL_LIMIT;
-            } else {
-                this.total_limit = builder.total_limit;
-            }
-            if (builder.browsetime == null) {
-                this.browsetime = DEFAULT_BROWSETIME;
-            } else {
-                this.browsetime = builder.browsetime;
-            }
-            if (builder.tasktype == null) {
-                this.tasktype = DEFAULT_TASKTYPE;
-            } else {
-                this.tasktype = builder.tasktype;
-            }
-            if (builder.threadnum == null) {
-                this.threadnum = DEFAULT_THREADNUM;
-            } else {
-                this.threadnum = builder.threadnum;
-            }
-            if (builder.browsetimepage == null) {
-                this.browsetimepage = "";
-            } else {
-                this.browsetimepage = builder.browsetimepage;
-            }
-            if (builder.activityid == null) {
-                this.activityid = DEFAULT_ACTIVITYID;
-            } else {
-                this.activityid = builder.activityid;
-            }
-            if (builder.cleartype == null) {
-                this.cleartype = DEFAULT_CLEARTYPE;
-            } else {
-                this.cleartype = builder.cleartype;
-            }
-            if (builder.cleartime == null) {
-                this.cleartime = DEFAULT_CLEARTIME;
-                return;
-            } else {
-                this.cleartime = builder.cleartime;
-                return;
-            }
-        }
-        this.missionid = builder.missionid;
-        this.total_limit = builder.total_limit;
-        this.browsetime = builder.browsetime;
-        this.tasktype = builder.tasktype;
-        this.threadnum = builder.threadnum;
-        this.browsetimepage = builder.browsetimepage;
-        this.activityid = builder.activityid;
-        this.cleartype = builder.cleartype;
-        this.cleartime = builder.cleartime;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<MissionInfo> {
         public Integer activityid;
         public Integer browsetime;
@@ -111,17 +49,18 @@ public final class MissionInfo extends Message {
 
         public Builder(MissionInfo missionInfo) {
             super(missionInfo);
-            if (missionInfo != null) {
-                this.missionid = missionInfo.missionid;
-                this.total_limit = missionInfo.total_limit;
-                this.browsetime = missionInfo.browsetime;
-                this.tasktype = missionInfo.tasktype;
-                this.threadnum = missionInfo.threadnum;
-                this.browsetimepage = missionInfo.browsetimepage;
-                this.activityid = missionInfo.activityid;
-                this.cleartype = missionInfo.cleartype;
-                this.cleartime = missionInfo.cleartime;
+            if (missionInfo == null) {
+                return;
             }
+            this.missionid = missionInfo.missionid;
+            this.total_limit = missionInfo.total_limit;
+            this.browsetime = missionInfo.browsetime;
+            this.tasktype = missionInfo.tasktype;
+            this.threadnum = missionInfo.threadnum;
+            this.browsetimepage = missionInfo.browsetimepage;
+            this.activityid = missionInfo.activityid;
+            this.cleartype = missionInfo.cleartype;
+            this.cleartime = missionInfo.cleartime;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -129,5 +68,76 @@ public final class MissionInfo extends Message {
         public MissionInfo build(boolean z) {
             return new MissionInfo(this, z);
         }
+    }
+
+    public MissionInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.missionid;
+            if (num == null) {
+                this.missionid = DEFAULT_MISSIONID;
+            } else {
+                this.missionid = num;
+            }
+            Integer num2 = builder.total_limit;
+            if (num2 == null) {
+                this.total_limit = DEFAULT_TOTAL_LIMIT;
+            } else {
+                this.total_limit = num2;
+            }
+            Integer num3 = builder.browsetime;
+            if (num3 == null) {
+                this.browsetime = DEFAULT_BROWSETIME;
+            } else {
+                this.browsetime = num3;
+            }
+            Integer num4 = builder.tasktype;
+            if (num4 == null) {
+                this.tasktype = DEFAULT_TASKTYPE;
+            } else {
+                this.tasktype = num4;
+            }
+            Integer num5 = builder.threadnum;
+            if (num5 == null) {
+                this.threadnum = DEFAULT_THREADNUM;
+            } else {
+                this.threadnum = num5;
+            }
+            String str = builder.browsetimepage;
+            if (str == null) {
+                this.browsetimepage = "";
+            } else {
+                this.browsetimepage = str;
+            }
+            Integer num6 = builder.activityid;
+            if (num6 == null) {
+                this.activityid = DEFAULT_ACTIVITYID;
+            } else {
+                this.activityid = num6;
+            }
+            Integer num7 = builder.cleartype;
+            if (num7 == null) {
+                this.cleartype = DEFAULT_CLEARTYPE;
+            } else {
+                this.cleartype = num7;
+            }
+            Integer num8 = builder.cleartime;
+            if (num8 == null) {
+                this.cleartime = DEFAULT_CLEARTIME;
+                return;
+            } else {
+                this.cleartime = num8;
+                return;
+            }
+        }
+        this.missionid = builder.missionid;
+        this.total_limit = builder.total_limit;
+        this.browsetime = builder.browsetime;
+        this.tasktype = builder.tasktype;
+        this.threadnum = builder.threadnum;
+        this.browsetimepage = builder.browsetimepage;
+        this.activityid = builder.activityid;
+        this.cleartype = builder.cleartype;
+        this.cleartime = builder.cleartime;
     }
 }

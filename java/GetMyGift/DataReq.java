@@ -3,7 +3,7 @@ package tbclient.GetMyGift;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8783common;
+    public final CommonReq f68453common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -22,46 +22,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_ACCOUNT_TYPE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.uid == null) {
-                this.uid = DEFAULT_UID;
-            } else {
-                this.uid = builder.uid;
-            }
-            this.f8783common = builder.f8784common;
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.st_type == null) {
-                this.st_type = "";
-            } else {
-                this.st_type = builder.st_type;
-            }
-            if (builder.account_type == null) {
-                this.account_type = DEFAULT_ACCOUNT_TYPE;
-                return;
-            } else {
-                this.account_type = builder.account_type;
-                return;
-            }
-        }
-        this.uid = builder.uid;
-        this.f8783common = builder.f8784common;
-        this.pn = builder.pn;
-        this.st_type = builder.st_type;
-        this.account_type = builder.account_type;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer account_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8784common;
+        public CommonReq f68454common;
         public Integer pn;
         public String st_type;
         public Long uid;
@@ -71,13 +37,14 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.uid = dataReq.uid;
-                this.f8784common = dataReq.f8783common;
-                this.pn = dataReq.pn;
-                this.st_type = dataReq.st_type;
-                this.account_type = dataReq.account_type;
+            if (dataReq == null) {
+                return;
             }
+            this.uid = dataReq.uid;
+            this.f68454common = dataReq.f68453common;
+            this.pn = dataReq.pn;
+            this.st_type = dataReq.st_type;
+            this.account_type = dataReq.account_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +52,43 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.uid;
+            if (l == null) {
+                this.uid = DEFAULT_UID;
+            } else {
+                this.uid = l;
+            }
+            this.f68453common = builder.f68454common;
+            Integer num = builder.pn;
+            if (num == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num;
+            }
+            String str = builder.st_type;
+            if (str == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str;
+            }
+            Integer num2 = builder.account_type;
+            if (num2 == null) {
+                this.account_type = DEFAULT_ACCOUNT_TYPE;
+                return;
+            } else {
+                this.account_type = num2;
+                return;
+            }
+        }
+        this.uid = builder.uid;
+        this.f68453common = builder.f68454common;
+        this.pn = builder.pn;
+        this.st_type = builder.st_type;
+        this.account_type = builder.account_type;
     }
 }

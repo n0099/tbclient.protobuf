@@ -3,14 +3,14 @@ package tbclient.ExcZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer action;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8687common;
+    public final CommonReq f68353common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long excid;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
@@ -22,46 +22,12 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_POST_ID = 0L;
     public static final Integer DEFAULT_ACTION = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8687common = builder.f8688common;
-            if (builder.excid == null) {
-                this.excid = DEFAULT_EXCID;
-            } else {
-                this.excid = builder.excid;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = builder.post_id;
-            }
-            if (builder.action == null) {
-                this.action = DEFAULT_ACTION;
-                return;
-            } else {
-                this.action = builder.action;
-                return;
-            }
-        }
-        this.f8687common = builder.f8688common;
-        this.excid = builder.excid;
-        this.thread_id = builder.thread_id;
-        this.post_id = builder.post_id;
-        this.action = builder.action;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer action;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8688common;
+        public CommonReq f68354common;
         public Long excid;
         public Long post_id;
         public Long thread_id;
@@ -71,13 +37,14 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8688common = dataReq.f8687common;
-                this.excid = dataReq.excid;
-                this.thread_id = dataReq.thread_id;
-                this.post_id = dataReq.post_id;
-                this.action = dataReq.action;
+            if (dataReq == null) {
+                return;
             }
+            this.f68354common = dataReq.f68353common;
+            this.excid = dataReq.excid;
+            this.thread_id = dataReq.thread_id;
+            this.post_id = dataReq.post_id;
+            this.action = dataReq.action;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +52,43 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68353common = builder.f68354common;
+            Long l = builder.excid;
+            if (l == null) {
+                this.excid = DEFAULT_EXCID;
+            } else {
+                this.excid = l;
+            }
+            Long l2 = builder.thread_id;
+            if (l2 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l2;
+            }
+            Long l3 = builder.post_id;
+            if (l3 == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = l3;
+            }
+            Integer num = builder.action;
+            if (num == null) {
+                this.action = DEFAULT_ACTION;
+                return;
+            } else {
+                this.action = num;
+                return;
+            }
+        }
+        this.f68353common = builder.f68354common;
+        this.excid = builder.excid;
+        this.thread_id = builder.thread_id;
+        this.post_id = builder.post_id;
+        this.action = builder.action;
     }
 }

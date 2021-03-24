@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PbFollowTip extends Message {
     public static final Integer DEFAULT_IS_TOAST_TIP = 0;
     public static final String DEFAULT_TIP_TEXT = "";
@@ -11,27 +11,7 @@ public final class PbFollowTip extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tip_text;
 
-    private PbFollowTip(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.is_toast_tip == null) {
-                this.is_toast_tip = DEFAULT_IS_TOAST_TIP;
-            } else {
-                this.is_toast_tip = builder.is_toast_tip;
-            }
-            if (builder.tip_text == null) {
-                this.tip_text = "";
-                return;
-            } else {
-                this.tip_text = builder.tip_text;
-                return;
-            }
-        }
-        this.is_toast_tip = builder.is_toast_tip;
-        this.tip_text = builder.tip_text;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PbFollowTip> {
         public Integer is_toast_tip;
         public String tip_text;
@@ -41,10 +21,11 @@ public final class PbFollowTip extends Message {
 
         public Builder(PbFollowTip pbFollowTip) {
             super(pbFollowTip);
-            if (pbFollowTip != null) {
-                this.is_toast_tip = pbFollowTip.is_toast_tip;
-                this.tip_text = pbFollowTip.tip_text;
+            if (pbFollowTip == null) {
+                return;
             }
+            this.is_toast_tip = pbFollowTip.is_toast_tip;
+            this.tip_text = pbFollowTip.tip_text;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class PbFollowTip extends Message {
         public PbFollowTip build(boolean z) {
             return new PbFollowTip(this, z);
         }
+    }
+
+    public PbFollowTip(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.is_toast_tip;
+            if (num == null) {
+                this.is_toast_tip = DEFAULT_IS_TOAST_TIP;
+            } else {
+                this.is_toast_tip = num;
+            }
+            String str = builder.tip_text;
+            if (str == null) {
+                this.tip_text = "";
+                return;
+            } else {
+                this.tip_text = str;
+                return;
+            }
+        }
+        this.is_toast_tip = builder.is_toast_tip;
+        this.tip_text = builder.tip_text;
     }
 }

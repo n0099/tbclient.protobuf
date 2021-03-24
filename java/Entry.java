@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class Entry extends Message {
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
     public static final String DEFAULT_ICON = "";
@@ -20,45 +20,7 @@ public final class Entry extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_ICON_TYPE = 0;
 
-    private Entry(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.icon == null) {
-                this.icon = "";
-            } else {
-                this.icon = builder.icon;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.bitmap_wh_ratio == null) {
-                this.bitmap_wh_ratio = "";
-            } else {
-                this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
-            }
-            if (builder.icon_type == null) {
-                this.icon_type = DEFAULT_ICON_TYPE;
-                return;
-            } else {
-                this.icon_type = builder.icon_type;
-                return;
-            }
-        }
-        this.icon = builder.icon;
-        this.name = builder.name;
-        this.id = builder.id;
-        this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
-        this.icon_type = builder.icon_type;
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Entry> {
         public String bitmap_wh_ratio;
         public String icon;
@@ -71,13 +33,14 @@ public final class Entry extends Message {
 
         public Builder(Entry entry) {
             super(entry);
-            if (entry != null) {
-                this.icon = entry.icon;
-                this.name = entry.name;
-                this.id = entry.id;
-                this.bitmap_wh_ratio = entry.bitmap_wh_ratio;
-                this.icon_type = entry.icon_type;
+            if (entry == null) {
+                return;
             }
+            this.icon = entry.icon;
+            this.name = entry.name;
+            this.id = entry.id;
+            this.bitmap_wh_ratio = entry.bitmap_wh_ratio;
+            this.icon_type = entry.icon_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class Entry extends Message {
         public Entry build(boolean z) {
             return new Entry(this, z);
         }
+    }
+
+    public Entry(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.icon;
+            if (str == null) {
+                this.icon = "";
+            } else {
+                this.icon = str;
+            }
+            String str2 = builder.name;
+            if (str2 == null) {
+                this.name = "";
+            } else {
+                this.name = str2;
+            }
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = num;
+            }
+            String str3 = builder.bitmap_wh_ratio;
+            if (str3 == null) {
+                this.bitmap_wh_ratio = "";
+            } else {
+                this.bitmap_wh_ratio = str3;
+            }
+            Integer num2 = builder.icon_type;
+            if (num2 == null) {
+                this.icon_type = DEFAULT_ICON_TYPE;
+                return;
+            } else {
+                this.icon_type = num2;
+                return;
+            }
+        }
+        this.icon = builder.icon;
+        this.name = builder.name;
+        this.id = builder.id;
+        this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
+        this.icon_type = builder.icon_type;
     }
 }

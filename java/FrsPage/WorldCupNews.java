@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class WorldCupNews extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
@@ -11,27 +11,7 @@ public final class WorldCupNews extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    private WorldCupNews(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.url == null) {
-                this.url = "";
-                return;
-            } else {
-                this.url = builder.url;
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.url = builder.url;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<WorldCupNews> {
         public String title;
         public String url;
@@ -41,10 +21,11 @@ public final class WorldCupNews extends Message {
 
         public Builder(WorldCupNews worldCupNews) {
             super(worldCupNews);
-            if (worldCupNews != null) {
-                this.title = worldCupNews.title;
-                this.url = worldCupNews.url;
+            if (worldCupNews == null) {
+                return;
             }
+            this.title = worldCupNews.title;
+            this.url = worldCupNews.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class WorldCupNews extends Message {
         public WorldCupNews build(boolean z) {
             return new WorldCupNews(this, z);
         }
+    }
+
+    public WorldCupNews(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.url;
+            if (str2 == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str2;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.url = builder.url;
     }
 }

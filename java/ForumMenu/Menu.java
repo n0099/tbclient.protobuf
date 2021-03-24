@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class Menu extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_NAME = "";
@@ -31,62 +31,6 @@ public final class Menu extends Message {
     public static final Integer DEFAULT_CREATE_TIME = 0;
     public static final List<SubMenu> DEFAULT_SUB_MENU = Collections.emptyList();
 
-    private Menu(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.level == null) {
-                this.level = DEFAULT_LEVEL;
-            } else {
-                this.level = builder.level;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.action_type == null) {
-                this.action_type = DEFAULT_ACTION_TYPE;
-            } else {
-                this.action_type = builder.action_type;
-            }
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.content == null) {
-                this.content = "";
-            } else {
-                this.content = builder.content;
-            }
-            if (builder.sub_menu == null) {
-                this.sub_menu = DEFAULT_SUB_MENU;
-                return;
-            } else {
-                this.sub_menu = immutableCopyOf(builder.sub_menu);
-                return;
-            }
-        }
-        this.id = builder.id;
-        this.forum_id = builder.forum_id;
-        this.level = builder.level;
-        this.name = builder.name;
-        this.action_type = builder.action_type;
-        this.create_time = builder.create_time;
-        this.content = builder.content;
-        this.sub_menu = immutableCopyOf(builder.sub_menu);
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Menu> {
         public Integer action_type;
@@ -103,16 +47,17 @@ public final class Menu extends Message {
 
         public Builder(Menu menu) {
             super(menu);
-            if (menu != null) {
-                this.id = menu.id;
-                this.forum_id = menu.forum_id;
-                this.level = menu.level;
-                this.name = menu.name;
-                this.action_type = menu.action_type;
-                this.create_time = menu.create_time;
-                this.content = menu.content;
-                this.sub_menu = Menu.copyOf(menu.sub_menu);
+            if (menu == null) {
+                return;
             }
+            this.id = menu.id;
+            this.forum_id = menu.forum_id;
+            this.level = menu.level;
+            this.name = menu.name;
+            this.action_type = menu.action_type;
+            this.create_time = menu.create_time;
+            this.content = menu.content;
+            this.sub_menu = Message.copyOf(menu.sub_menu);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -120,5 +65,69 @@ public final class Menu extends Message {
         public Menu build(boolean z) {
             return new Menu(this, z);
         }
+    }
+
+    public Menu(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = num;
+            }
+            Integer num2 = builder.forum_id;
+            if (num2 == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = num2;
+            }
+            Integer num3 = builder.level;
+            if (num3 == null) {
+                this.level = DEFAULT_LEVEL;
+            } else {
+                this.level = num3;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            Integer num4 = builder.action_type;
+            if (num4 == null) {
+                this.action_type = DEFAULT_ACTION_TYPE;
+            } else {
+                this.action_type = num4;
+            }
+            Integer num5 = builder.create_time;
+            if (num5 == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num5;
+            }
+            String str2 = builder.content;
+            if (str2 == null) {
+                this.content = "";
+            } else {
+                this.content = str2;
+            }
+            List<SubMenu> list = builder.sub_menu;
+            if (list == null) {
+                this.sub_menu = DEFAULT_SUB_MENU;
+                return;
+            } else {
+                this.sub_menu = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.forum_id = builder.forum_id;
+        this.level = builder.level;
+        this.name = builder.name;
+        this.action_type = builder.action_type;
+        this.create_time = builder.create_time;
+        this.content = builder.content;
+        this.sub_menu = Message.immutableCopyOf(builder.sub_menu);
     }
 }

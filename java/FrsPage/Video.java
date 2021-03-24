@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Video extends Message {
     public static final Integer DEFAULT_NUM = 0;
     public static final String DEFAULT_PIC = "";
@@ -11,27 +11,7 @@ public final class Video extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic;
 
-    private Video(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pic == null) {
-                this.pic = "";
-            } else {
-                this.pic = builder.pic;
-            }
-            if (builder.num == null) {
-                this.num = DEFAULT_NUM;
-                return;
-            } else {
-                this.num = builder.num;
-                return;
-            }
-        }
-        this.pic = builder.pic;
-        this.num = builder.num;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Video> {
         public Integer num;
         public String pic;
@@ -41,10 +21,11 @@ public final class Video extends Message {
 
         public Builder(Video video) {
             super(video);
-            if (video != null) {
-                this.pic = video.pic;
-                this.num = video.num;
+            if (video == null) {
+                return;
             }
+            this.pic = video.pic;
+            this.num = video.num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class Video extends Message {
         public Video build(boolean z) {
             return new Video(this, z);
         }
+    }
+
+    public Video(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.pic;
+            if (str == null) {
+                this.pic = "";
+            } else {
+                this.pic = str;
+            }
+            Integer num = builder.num;
+            if (num == null) {
+                this.num = DEFAULT_NUM;
+                return;
+            } else {
+                this.num = num;
+                return;
+            }
+        }
+        this.pic = builder.pic;
+        this.num = builder.num;
     }
 }

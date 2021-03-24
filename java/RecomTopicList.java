@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class RecomTopicList extends Message {
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final String DEFAULT_TOPIC_NAME = "";
@@ -26,57 +26,7 @@ public final class RecomTopicList extends Message {
     public static final Long DEFAULT_DISCUSS_NUM = 0L;
     public static final Integer DEFAULT_TAG = 0;
 
-    private RecomTopicList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.topic_id == null) {
-                this.topic_id = DEFAULT_TOPIC_ID;
-            } else {
-                this.topic_id = builder.topic_id;
-            }
-            if (builder.topic_name == null) {
-                this.topic_name = "";
-            } else {
-                this.topic_name = builder.topic_name;
-            }
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.discuss_num == null) {
-                this.discuss_num = DEFAULT_DISCUSS_NUM;
-            } else {
-                this.discuss_num = builder.discuss_num;
-            }
-            if (builder.tag == null) {
-                this.tag = DEFAULT_TAG;
-            } else {
-                this.tag = builder.tag;
-            }
-            if (builder.topic_desc == null) {
-                this.topic_desc = "";
-            } else {
-                this.topic_desc = builder.topic_desc;
-            }
-            if (builder.topic_pic == null) {
-                this.topic_pic = "";
-                return;
-            } else {
-                this.topic_pic = builder.topic_pic;
-                return;
-            }
-        }
-        this.topic_id = builder.topic_id;
-        this.topic_name = builder.topic_name;
-        this.type = builder.type;
-        this.discuss_num = builder.discuss_num;
-        this.tag = builder.tag;
-        this.topic_desc = builder.topic_desc;
-        this.topic_pic = builder.topic_pic;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecomTopicList> {
         public Long discuss_num;
         public Integer tag;
@@ -91,15 +41,16 @@ public final class RecomTopicList extends Message {
 
         public Builder(RecomTopicList recomTopicList) {
             super(recomTopicList);
-            if (recomTopicList != null) {
-                this.topic_id = recomTopicList.topic_id;
-                this.topic_name = recomTopicList.topic_name;
-                this.type = recomTopicList.type;
-                this.discuss_num = recomTopicList.discuss_num;
-                this.tag = recomTopicList.tag;
-                this.topic_desc = recomTopicList.topic_desc;
-                this.topic_pic = recomTopicList.topic_pic;
+            if (recomTopicList == null) {
+                return;
             }
+            this.topic_id = recomTopicList.topic_id;
+            this.topic_name = recomTopicList.topic_name;
+            this.type = recomTopicList.type;
+            this.discuss_num = recomTopicList.discuss_num;
+            this.tag = recomTopicList.tag;
+            this.topic_desc = recomTopicList.topic_desc;
+            this.topic_pic = recomTopicList.topic_pic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +58,62 @@ public final class RecomTopicList extends Message {
         public RecomTopicList build(boolean z) {
             return new RecomTopicList(this, z);
         }
+    }
+
+    public RecomTopicList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.topic_id;
+            if (l == null) {
+                this.topic_id = DEFAULT_TOPIC_ID;
+            } else {
+                this.topic_id = l;
+            }
+            String str = builder.topic_name;
+            if (str == null) {
+                this.topic_name = "";
+            } else {
+                this.topic_name = str;
+            }
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            Long l2 = builder.discuss_num;
+            if (l2 == null) {
+                this.discuss_num = DEFAULT_DISCUSS_NUM;
+            } else {
+                this.discuss_num = l2;
+            }
+            Integer num2 = builder.tag;
+            if (num2 == null) {
+                this.tag = DEFAULT_TAG;
+            } else {
+                this.tag = num2;
+            }
+            String str2 = builder.topic_desc;
+            if (str2 == null) {
+                this.topic_desc = "";
+            } else {
+                this.topic_desc = str2;
+            }
+            String str3 = builder.topic_pic;
+            if (str3 == null) {
+                this.topic_pic = "";
+                return;
+            } else {
+                this.topic_pic = str3;
+                return;
+            }
+        }
+        this.topic_id = builder.topic_id;
+        this.topic_name = builder.topic_name;
+        this.type = builder.type;
+        this.discuss_num = builder.discuss_num;
+        this.tag = builder.tag;
+        this.topic_desc = builder.topic_desc;
+        this.topic_pic = builder.topic_pic;
     }
 }

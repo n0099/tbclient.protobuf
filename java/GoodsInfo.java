@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.tbadk.core.atomData.MissonDetailsActivityConfig;
 import com.baidu.tbadk.core.atomData.WriteActivityConfig;
+import com.baidu.tieba.recapp.activity.AdDebugActivity;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class GoodsInfo extends Message {
     public static final String DEFAULT_AD_SOURCE = "";
     public static final String DEFAULT_BRAND_ICON = "";
@@ -98,180 +99,7 @@ public final class GoodsInfo extends Message {
     public static final Integer DEFAULT_HEIGHT = 0;
     public static final Integer DEFAULT_LABEL_MEASURE = 0;
 
-    private GoodsInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.user_portrait == null) {
-                this.user_portrait = "";
-            } else {
-                this.user_portrait = builder.user_portrait;
-            }
-            if (builder.thread_title == null) {
-                this.thread_title = "";
-            } else {
-                this.thread_title = builder.thread_title;
-            }
-            if (builder.thread_pic == null) {
-                this.thread_pic = "";
-            } else {
-                this.thread_pic = builder.thread_pic;
-            }
-            if (builder.pop_window_text == null) {
-                this.pop_window_text = "";
-            } else {
-                this.pop_window_text = builder.pop_window_text;
-            }
-            if (builder.goods_style == null) {
-                this.goods_style = DEFAULT_GOODS_STYLE;
-            } else {
-                this.goods_style = builder.goods_style;
-            }
-            if (builder.thread_pic_list == null) {
-                this.thread_pic_list = DEFAULT_THREAD_PIC_LIST;
-            } else {
-                this.thread_pic_list = immutableCopyOf(builder.thread_pic_list);
-            }
-            if (builder.label_visible == null) {
-                this.label_visible = DEFAULT_LABEL_VISIBLE;
-            } else {
-                this.label_visible = builder.label_visible;
-            }
-            if (builder.label_text == null) {
-                this.label_text = "";
-            } else {
-                this.label_text = builder.label_text;
-            }
-            if (builder.rank_level == null) {
-                this.rank_level = DEFAULT_RANK_LEVEL;
-            } else {
-                this.rank_level = builder.rank_level;
-            }
-            if (builder.thread_type == null) {
-                this.thread_type = "";
-            } else {
-                this.thread_type = builder.thread_type;
-            }
-            if (builder.button_text == null) {
-                this.button_text = "";
-            } else {
-                this.button_text = builder.button_text;
-            }
-            if (builder.card_desc == null) {
-                this.card_desc = "";
-            } else {
-                this.card_desc = builder.card_desc;
-            }
-            if (builder.card_tag == null) {
-                this.card_tag = "";
-            } else {
-                this.card_tag = builder.card_tag;
-            }
-            if (builder.width == null) {
-                this.width = DEFAULT_WIDTH;
-            } else {
-                this.width = builder.width;
-            }
-            if (builder.height == null) {
-                this.height = DEFAULT_HEIGHT;
-            } else {
-                this.height = builder.height;
-            }
-            if (builder.label_measure == null) {
-                this.label_measure = DEFAULT_LABEL_MEASURE;
-            } else {
-                this.label_measure = builder.label_measure;
-            }
-            if (builder.thread_content == null) {
-                this.thread_content = "";
-            } else {
-                this.thread_content = builder.thread_content;
-            }
-            if (builder.lego_card == null) {
-                this.lego_card = "";
-            } else {
-                this.lego_card = builder.lego_card;
-            }
-            this.video_info = builder.video_info;
-            if (builder.tag_name == null) {
-                this.tag_name = "";
-            } else {
-                this.tag_name = builder.tag_name;
-            }
-            if (builder.button_url == null) {
-                this.button_url = "";
-            } else {
-                this.button_url = builder.button_url;
-            }
-            if (builder.ad_source == null) {
-                this.ad_source = "";
-            } else {
-                this.ad_source = builder.ad_source;
-            }
-            if (builder.tag_name_url == null) {
-                this.tag_name_url = "";
-            } else {
-                this.tag_name_url = builder.tag_name_url;
-            }
-            if (builder.tag_name_wh == null) {
-                this.tag_name_wh = "";
-            } else {
-                this.tag_name_wh = builder.tag_name_wh;
-            }
-            if (builder.brand_icon == null) {
-                this.brand_icon = "";
-            } else {
-                this.brand_icon = builder.brand_icon;
-            }
-            if (builder.brand_icon_wh == null) {
-                this.brand_icon_wh = "";
-            } else {
-                this.brand_icon_wh = builder.brand_icon_wh;
-            }
-            this.close_info = builder.close_info;
-            return;
-        }
-        this.id = builder.id;
-        this.user_name = builder.user_name;
-        this.user_portrait = builder.user_portrait;
-        this.thread_title = builder.thread_title;
-        this.thread_pic = builder.thread_pic;
-        this.pop_window_text = builder.pop_window_text;
-        this.goods_style = builder.goods_style;
-        this.thread_pic_list = immutableCopyOf(builder.thread_pic_list);
-        this.label_visible = builder.label_visible;
-        this.label_text = builder.label_text;
-        this.rank_level = builder.rank_level;
-        this.thread_type = builder.thread_type;
-        this.button_text = builder.button_text;
-        this.card_desc = builder.card_desc;
-        this.card_tag = builder.card_tag;
-        this.width = builder.width;
-        this.height = builder.height;
-        this.label_measure = builder.label_measure;
-        this.thread_content = builder.thread_content;
-        this.lego_card = builder.lego_card;
-        this.video_info = builder.video_info;
-        this.tag_name = builder.tag_name;
-        this.button_url = builder.button_url;
-        this.ad_source = builder.ad_source;
-        this.tag_name_url = builder.tag_name_url;
-        this.tag_name_wh = builder.tag_name_wh;
-        this.brand_icon = builder.brand_icon;
-        this.brand_icon_wh = builder.brand_icon_wh;
-        this.close_info = builder.close_info;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GoodsInfo> {
         public String ad_source;
         public String brand_icon;
@@ -308,37 +136,38 @@ public final class GoodsInfo extends Message {
 
         public Builder(GoodsInfo goodsInfo) {
             super(goodsInfo);
-            if (goodsInfo != null) {
-                this.id = goodsInfo.id;
-                this.user_name = goodsInfo.user_name;
-                this.user_portrait = goodsInfo.user_portrait;
-                this.thread_title = goodsInfo.thread_title;
-                this.thread_pic = goodsInfo.thread_pic;
-                this.pop_window_text = goodsInfo.pop_window_text;
-                this.goods_style = goodsInfo.goods_style;
-                this.thread_pic_list = GoodsInfo.copyOf(goodsInfo.thread_pic_list);
-                this.label_visible = goodsInfo.label_visible;
-                this.label_text = goodsInfo.label_text;
-                this.rank_level = goodsInfo.rank_level;
-                this.thread_type = goodsInfo.thread_type;
-                this.button_text = goodsInfo.button_text;
-                this.card_desc = goodsInfo.card_desc;
-                this.card_tag = goodsInfo.card_tag;
-                this.width = goodsInfo.width;
-                this.height = goodsInfo.height;
-                this.label_measure = goodsInfo.label_measure;
-                this.thread_content = goodsInfo.thread_content;
-                this.lego_card = goodsInfo.lego_card;
-                this.video_info = goodsInfo.video_info;
-                this.tag_name = goodsInfo.tag_name;
-                this.button_url = goodsInfo.button_url;
-                this.ad_source = goodsInfo.ad_source;
-                this.tag_name_url = goodsInfo.tag_name_url;
-                this.tag_name_wh = goodsInfo.tag_name_wh;
-                this.brand_icon = goodsInfo.brand_icon;
-                this.brand_icon_wh = goodsInfo.brand_icon_wh;
-                this.close_info = goodsInfo.close_info;
+            if (goodsInfo == null) {
+                return;
             }
+            this.id = goodsInfo.id;
+            this.user_name = goodsInfo.user_name;
+            this.user_portrait = goodsInfo.user_portrait;
+            this.thread_title = goodsInfo.thread_title;
+            this.thread_pic = goodsInfo.thread_pic;
+            this.pop_window_text = goodsInfo.pop_window_text;
+            this.goods_style = goodsInfo.goods_style;
+            this.thread_pic_list = Message.copyOf(goodsInfo.thread_pic_list);
+            this.label_visible = goodsInfo.label_visible;
+            this.label_text = goodsInfo.label_text;
+            this.rank_level = goodsInfo.rank_level;
+            this.thread_type = goodsInfo.thread_type;
+            this.button_text = goodsInfo.button_text;
+            this.card_desc = goodsInfo.card_desc;
+            this.card_tag = goodsInfo.card_tag;
+            this.width = goodsInfo.width;
+            this.height = goodsInfo.height;
+            this.label_measure = goodsInfo.label_measure;
+            this.thread_content = goodsInfo.thread_content;
+            this.lego_card = goodsInfo.lego_card;
+            this.video_info = goodsInfo.video_info;
+            this.tag_name = goodsInfo.tag_name;
+            this.button_url = goodsInfo.button_url;
+            this.ad_source = goodsInfo.ad_source;
+            this.tag_name_url = goodsInfo.tag_name_url;
+            this.tag_name_wh = goodsInfo.tag_name_wh;
+            this.brand_icon = goodsInfo.brand_icon;
+            this.brand_icon_wh = goodsInfo.brand_icon_wh;
+            this.close_info = goodsInfo.close_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -378,7 +207,7 @@ public final class GoodsInfo extends Message {
         builder.height = Integer.valueOf(jSONObject.optInt("height"));
         builder.label_measure = Integer.valueOf(jSONObject.optInt("label_measure"));
         builder.thread_content = jSONObject.optString("thread_content");
-        builder.lego_card = jSONObject.optString("lego_card");
+        builder.lego_card = jSONObject.optString(AdDebugActivity.KEY_LEGO);
         builder.video_info = VideoInfo.parseFromJson(jSONObject.optJSONObject(WriteActivityConfig.VIDEO_INFO));
         builder.tag_name = jSONObject.optString("tag_name");
         builder.button_url = jSONObject.optString("button_url");
@@ -420,7 +249,7 @@ public final class GoodsInfo extends Message {
             jSONObject.put("height", goodsInfo.height);
             jSONObject.put("label_measure", goodsInfo.label_measure);
             jSONObject.put("thread_content", goodsInfo.thread_content);
-            jSONObject.put("lego_card", goodsInfo.lego_card);
+            jSONObject.put(AdDebugActivity.KEY_LEGO, goodsInfo.lego_card);
             jSONObject.put(WriteActivityConfig.VIDEO_INFO, VideoInfo.toJson(goodsInfo.video_info));
             jSONObject.put("tag_name", goodsInfo.tag_name);
             jSONObject.put("button_url", goodsInfo.button_url);
@@ -430,9 +259,209 @@ public final class GoodsInfo extends Message {
             jSONObject.put("brand_icon", goodsInfo.brand_icon);
             jSONObject.put("brand_icon_wh", goodsInfo.brand_icon_wh);
             jSONObject.put("close_info", AdCloseInfo.toJson(goodsInfo.close_info));
-        } catch (JSONException e) {
-            e.printStackTrace();
+        } catch (JSONException e2) {
+            e2.printStackTrace();
         }
         return jSONObject;
+    }
+
+    public GoodsInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = num;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.user_portrait;
+            if (str2 == null) {
+                this.user_portrait = "";
+            } else {
+                this.user_portrait = str2;
+            }
+            String str3 = builder.thread_title;
+            if (str3 == null) {
+                this.thread_title = "";
+            } else {
+                this.thread_title = str3;
+            }
+            String str4 = builder.thread_pic;
+            if (str4 == null) {
+                this.thread_pic = "";
+            } else {
+                this.thread_pic = str4;
+            }
+            String str5 = builder.pop_window_text;
+            if (str5 == null) {
+                this.pop_window_text = "";
+            } else {
+                this.pop_window_text = str5;
+            }
+            Integer num2 = builder.goods_style;
+            if (num2 == null) {
+                this.goods_style = DEFAULT_GOODS_STYLE;
+            } else {
+                this.goods_style = num2;
+            }
+            List<ThreadPicList> list = builder.thread_pic_list;
+            if (list == null) {
+                this.thread_pic_list = DEFAULT_THREAD_PIC_LIST;
+            } else {
+                this.thread_pic_list = Message.immutableCopyOf(list);
+            }
+            Integer num3 = builder.label_visible;
+            if (num3 == null) {
+                this.label_visible = DEFAULT_LABEL_VISIBLE;
+            } else {
+                this.label_visible = num3;
+            }
+            String str6 = builder.label_text;
+            if (str6 == null) {
+                this.label_text = "";
+            } else {
+                this.label_text = str6;
+            }
+            Integer num4 = builder.rank_level;
+            if (num4 == null) {
+                this.rank_level = DEFAULT_RANK_LEVEL;
+            } else {
+                this.rank_level = num4;
+            }
+            String str7 = builder.thread_type;
+            if (str7 == null) {
+                this.thread_type = "";
+            } else {
+                this.thread_type = str7;
+            }
+            String str8 = builder.button_text;
+            if (str8 == null) {
+                this.button_text = "";
+            } else {
+                this.button_text = str8;
+            }
+            String str9 = builder.card_desc;
+            if (str9 == null) {
+                this.card_desc = "";
+            } else {
+                this.card_desc = str9;
+            }
+            String str10 = builder.card_tag;
+            if (str10 == null) {
+                this.card_tag = "";
+            } else {
+                this.card_tag = str10;
+            }
+            Integer num5 = builder.width;
+            if (num5 == null) {
+                this.width = DEFAULT_WIDTH;
+            } else {
+                this.width = num5;
+            }
+            Integer num6 = builder.height;
+            if (num6 == null) {
+                this.height = DEFAULT_HEIGHT;
+            } else {
+                this.height = num6;
+            }
+            Integer num7 = builder.label_measure;
+            if (num7 == null) {
+                this.label_measure = DEFAULT_LABEL_MEASURE;
+            } else {
+                this.label_measure = num7;
+            }
+            String str11 = builder.thread_content;
+            if (str11 == null) {
+                this.thread_content = "";
+            } else {
+                this.thread_content = str11;
+            }
+            String str12 = builder.lego_card;
+            if (str12 == null) {
+                this.lego_card = "";
+            } else {
+                this.lego_card = str12;
+            }
+            this.video_info = builder.video_info;
+            String str13 = builder.tag_name;
+            if (str13 == null) {
+                this.tag_name = "";
+            } else {
+                this.tag_name = str13;
+            }
+            String str14 = builder.button_url;
+            if (str14 == null) {
+                this.button_url = "";
+            } else {
+                this.button_url = str14;
+            }
+            String str15 = builder.ad_source;
+            if (str15 == null) {
+                this.ad_source = "";
+            } else {
+                this.ad_source = str15;
+            }
+            String str16 = builder.tag_name_url;
+            if (str16 == null) {
+                this.tag_name_url = "";
+            } else {
+                this.tag_name_url = str16;
+            }
+            String str17 = builder.tag_name_wh;
+            if (str17 == null) {
+                this.tag_name_wh = "";
+            } else {
+                this.tag_name_wh = str17;
+            }
+            String str18 = builder.brand_icon;
+            if (str18 == null) {
+                this.brand_icon = "";
+            } else {
+                this.brand_icon = str18;
+            }
+            String str19 = builder.brand_icon_wh;
+            if (str19 == null) {
+                this.brand_icon_wh = "";
+            } else {
+                this.brand_icon_wh = str19;
+            }
+            this.close_info = builder.close_info;
+            return;
+        }
+        this.id = builder.id;
+        this.user_name = builder.user_name;
+        this.user_portrait = builder.user_portrait;
+        this.thread_title = builder.thread_title;
+        this.thread_pic = builder.thread_pic;
+        this.pop_window_text = builder.pop_window_text;
+        this.goods_style = builder.goods_style;
+        this.thread_pic_list = Message.immutableCopyOf(builder.thread_pic_list);
+        this.label_visible = builder.label_visible;
+        this.label_text = builder.label_text;
+        this.rank_level = builder.rank_level;
+        this.thread_type = builder.thread_type;
+        this.button_text = builder.button_text;
+        this.card_desc = builder.card_desc;
+        this.card_tag = builder.card_tag;
+        this.width = builder.width;
+        this.height = builder.height;
+        this.label_measure = builder.label_measure;
+        this.thread_content = builder.thread_content;
+        this.lego_card = builder.lego_card;
+        this.video_info = builder.video_info;
+        this.tag_name = builder.tag_name;
+        this.button_url = builder.button_url;
+        this.ad_source = builder.ad_source;
+        this.tag_name_url = builder.tag_name_url;
+        this.tag_name_wh = builder.tag_name_wh;
+        this.brand_icon = builder.brand_icon;
+        this.brand_icon_wh = builder.brand_icon_wh;
+        this.close_info = builder.close_info;
     }
 }

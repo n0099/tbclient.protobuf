@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class VipUpgrade extends Message {
     public static final String DEFAULT_BUTTON = "";
     public static final String DEFAULT_CARD_ID = "";
@@ -29,63 +29,7 @@ public final class VipUpgrade extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String text;
 
-    private VipUpgrade(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.normal == null) {
-                this.normal = DEFAULT_NORMAL;
-            } else {
-                this.normal = builder.normal;
-            }
-            if (builder.pay == null) {
-                this.pay = DEFAULT_PAY;
-            } else {
-                this.pay = builder.pay;
-            }
-            if (builder.text == null) {
-                this.text = "";
-            } else {
-                this.text = builder.text;
-            }
-            if (builder.button == null) {
-                this.button = "";
-            } else {
-                this.button = builder.button;
-            }
-            if (builder.link == null) {
-                this.link = "";
-            } else {
-                this.link = builder.link;
-            }
-            if (builder.svip == null) {
-                this.svip = "";
-            } else {
-                this.svip = builder.svip;
-            }
-            if (builder.expire == null) {
-                this.expire = "";
-            } else {
-                this.expire = builder.expire;
-            }
-            if (builder.card_id == null) {
-                this.card_id = "";
-                return;
-            } else {
-                this.card_id = builder.card_id;
-                return;
-            }
-        }
-        this.normal = builder.normal;
-        this.pay = builder.pay;
-        this.text = builder.text;
-        this.button = builder.button;
-        this.link = builder.link;
-        this.svip = builder.svip;
-        this.expire = builder.expire;
-        this.card_id = builder.card_id;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VipUpgrade> {
         public String button;
         public String card_id;
@@ -101,16 +45,17 @@ public final class VipUpgrade extends Message {
 
         public Builder(VipUpgrade vipUpgrade) {
             super(vipUpgrade);
-            if (vipUpgrade != null) {
-                this.normal = vipUpgrade.normal;
-                this.pay = vipUpgrade.pay;
-                this.text = vipUpgrade.text;
-                this.button = vipUpgrade.button;
-                this.link = vipUpgrade.link;
-                this.svip = vipUpgrade.svip;
-                this.expire = vipUpgrade.expire;
-                this.card_id = vipUpgrade.card_id;
+            if (vipUpgrade == null) {
+                return;
             }
+            this.normal = vipUpgrade.normal;
+            this.pay = vipUpgrade.pay;
+            this.text = vipUpgrade.text;
+            this.button = vipUpgrade.button;
+            this.link = vipUpgrade.link;
+            this.svip = vipUpgrade.svip;
+            this.expire = vipUpgrade.expire;
+            this.card_id = vipUpgrade.card_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +63,69 @@ public final class VipUpgrade extends Message {
         public VipUpgrade build(boolean z) {
             return new VipUpgrade(this, z);
         }
+    }
+
+    public VipUpgrade(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.normal;
+            if (num == null) {
+                this.normal = DEFAULT_NORMAL;
+            } else {
+                this.normal = num;
+            }
+            Integer num2 = builder.pay;
+            if (num2 == null) {
+                this.pay = DEFAULT_PAY;
+            } else {
+                this.pay = num2;
+            }
+            String str = builder.text;
+            if (str == null) {
+                this.text = "";
+            } else {
+                this.text = str;
+            }
+            String str2 = builder.button;
+            if (str2 == null) {
+                this.button = "";
+            } else {
+                this.button = str2;
+            }
+            String str3 = builder.link;
+            if (str3 == null) {
+                this.link = "";
+            } else {
+                this.link = str3;
+            }
+            String str4 = builder.svip;
+            if (str4 == null) {
+                this.svip = "";
+            } else {
+                this.svip = str4;
+            }
+            String str5 = builder.expire;
+            if (str5 == null) {
+                this.expire = "";
+            } else {
+                this.expire = str5;
+            }
+            String str6 = builder.card_id;
+            if (str6 == null) {
+                this.card_id = "";
+                return;
+            } else {
+                this.card_id = str6;
+                return;
+            }
+        }
+        this.normal = builder.normal;
+        this.pay = builder.pay;
+        this.text = builder.text;
+        this.button = builder.button;
+        this.link = builder.link;
+        this.svip = builder.svip;
+        this.expire = builder.expire;
+        this.card_id = builder.card_id;
     }
 }

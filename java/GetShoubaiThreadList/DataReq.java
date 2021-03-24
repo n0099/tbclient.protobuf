@@ -3,12 +3,12 @@ package tbclient.GetShoubaiThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8803common;
+    public final CommonReq f68475common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long cursor;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -19,39 +19,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_CURSOR = 0L;
     public static final Integer DEFAULT_PAGE_SIZE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8803common = builder.f8804common;
-            if (builder.uid == null) {
-                this.uid = DEFAULT_UID;
-            } else {
-                this.uid = builder.uid;
-            }
-            if (builder.cursor == null) {
-                this.cursor = DEFAULT_CURSOR;
-            } else {
-                this.cursor = builder.cursor;
-            }
-            if (builder.page_size == null) {
-                this.page_size = DEFAULT_PAGE_SIZE;
-                return;
-            } else {
-                this.page_size = builder.page_size;
-                return;
-            }
-        }
-        this.f8803common = builder.f8804common;
-        this.uid = builder.uid;
-        this.cursor = builder.cursor;
-        this.page_size = builder.page_size;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8804common;
+        public CommonReq f68476common;
         public Long cursor;
         public Integer page_size;
         public Long uid;
@@ -61,12 +33,13 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8804common = dataReq.f8803common;
-                this.uid = dataReq.uid;
-                this.cursor = dataReq.cursor;
-                this.page_size = dataReq.page_size;
+            if (dataReq == null) {
+                return;
             }
+            this.f68476common = dataReq.f68475common;
+            this.uid = dataReq.uid;
+            this.cursor = dataReq.cursor;
+            this.page_size = dataReq.page_size;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +47,36 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68475common = builder.f68476common;
+            Long l = builder.uid;
+            if (l == null) {
+                this.uid = DEFAULT_UID;
+            } else {
+                this.uid = l;
+            }
+            Long l2 = builder.cursor;
+            if (l2 == null) {
+                this.cursor = DEFAULT_CURSOR;
+            } else {
+                this.cursor = l2;
+            }
+            Integer num = builder.page_size;
+            if (num == null) {
+                this.page_size = DEFAULT_PAGE_SIZE;
+                return;
+            } else {
+                this.page_size = num;
+                return;
+            }
+        }
+        this.f68475common = builder.f68476common;
+        this.uid = builder.uid;
+        this.cursor = builder.cursor;
+        this.page_size = builder.page_size;
     }
 }

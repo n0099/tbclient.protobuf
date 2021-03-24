@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ActBtn extends Message {
     public static final String DEFAULT_TEXT = "";
     public static final Integer DEFAULT_TYPE = 0;
@@ -14,33 +14,7 @@ public final class ActBtn extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    private ActBtn(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.text == null) {
-                this.text = "";
-                return;
-            } else {
-                this.text = builder.text;
-                return;
-            }
-        }
-        this.type = builder.type;
-        this.url = builder.url;
-        this.text = builder.text;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ActBtn> {
         public String text;
         public Integer type;
@@ -51,11 +25,12 @@ public final class ActBtn extends Message {
 
         public Builder(ActBtn actBtn) {
             super(actBtn);
-            if (actBtn != null) {
-                this.type = actBtn.type;
-                this.url = actBtn.url;
-                this.text = actBtn.text;
+            if (actBtn == null) {
+                return;
             }
+            this.type = actBtn.type;
+            this.url = actBtn.url;
+            this.text = actBtn.text;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class ActBtn extends Message {
         public ActBtn build(boolean z) {
             return new ActBtn(this, z);
         }
+    }
+
+    public ActBtn(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+            } else {
+                this.url = str;
+            }
+            String str2 = builder.text;
+            if (str2 == null) {
+                this.text = "";
+                return;
+            } else {
+                this.text = str2;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.url = builder.url;
+        this.text = builder.text;
     }
 }

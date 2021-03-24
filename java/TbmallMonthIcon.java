@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TbmallMonthIcon extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_MON = "";
@@ -11,27 +11,7 @@ public final class TbmallMonthIcon extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String mon;
 
-    private TbmallMonthIcon(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.mon == null) {
-                this.mon = "";
-            } else {
-                this.mon = builder.mon;
-            }
-            if (builder.icon == null) {
-                this.icon = "";
-                return;
-            } else {
-                this.icon = builder.icon;
-                return;
-            }
-        }
-        this.mon = builder.mon;
-        this.icon = builder.icon;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TbmallMonthIcon> {
         public String icon;
         public String mon;
@@ -41,10 +21,11 @@ public final class TbmallMonthIcon extends Message {
 
         public Builder(TbmallMonthIcon tbmallMonthIcon) {
             super(tbmallMonthIcon);
-            if (tbmallMonthIcon != null) {
-                this.mon = tbmallMonthIcon.mon;
-                this.icon = tbmallMonthIcon.icon;
+            if (tbmallMonthIcon == null) {
+                return;
             }
+            this.mon = tbmallMonthIcon.mon;
+            this.icon = tbmallMonthIcon.icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class TbmallMonthIcon extends Message {
         public TbmallMonthIcon build(boolean z) {
             return new TbmallMonthIcon(this, z);
         }
+    }
+
+    public TbmallMonthIcon(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.mon;
+            if (str == null) {
+                this.mon = "";
+            } else {
+                this.mon = str;
+            }
+            String str2 = builder.icon;
+            if (str2 == null) {
+                this.icon = "";
+                return;
+            } else {
+                this.icon = str2;
+                return;
+            }
+        }
+        this.mon = builder.mon;
+        this.icon = builder.icon;
     }
 }

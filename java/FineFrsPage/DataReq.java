@@ -3,13 +3,13 @@ package tbclient.FineFrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TAG = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8689common;
+    public final CommonReq f68355common;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer forder;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -31,63 +31,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PUBLISH_TIME = 0;
     public static final Integer DEFAULT_FORDER = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8689common = builder.f8690common;
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-            } else {
-                this.q_type = builder.q_type;
-            }
-            if (builder.publish_time == null) {
-                this.publish_time = DEFAULT_PUBLISH_TIME;
-            } else {
-                this.publish_time = builder.publish_time;
-            }
-            if (builder.tag == null) {
-                this.tag = "";
-            } else {
-                this.tag = builder.tag;
-            }
-            if (builder.forder == null) {
-                this.forder = DEFAULT_FORDER;
-                return;
-            } else {
-                this.forder = builder.forder;
-                return;
-            }
-        }
-        this.f8689common = builder.f8690common;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.q_type = builder.q_type;
-        this.publish_time = builder.publish_time;
-        this.tag = builder.tag;
-        this.forder = builder.forder;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8690common;
+        public CommonReq f68356common;
         public Integer forder;
         public Integer publish_time;
         public Integer q_type;
@@ -101,16 +49,17 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8690common = dataReq.f8689common;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.q_type = dataReq.q_type;
-                this.publish_time = dataReq.publish_time;
-                this.tag = dataReq.tag;
-                this.forder = dataReq.forder;
+            if (dataReq == null) {
+                return;
             }
+            this.f68356common = dataReq.f68355common;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.q_type = dataReq.q_type;
+            this.publish_time = dataReq.publish_time;
+            this.tag = dataReq.tag;
+            this.forder = dataReq.forder;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +67,64 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68355common = builder.f68356common;
+            Integer num = builder.scr_w;
+            if (num == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num;
+            }
+            Integer num2 = builder.scr_h;
+            if (num2 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num2;
+            }
+            Double d2 = builder.scr_dip;
+            if (d2 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = d2;
+            }
+            Integer num3 = builder.q_type;
+            if (num3 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = num3;
+            }
+            Integer num4 = builder.publish_time;
+            if (num4 == null) {
+                this.publish_time = DEFAULT_PUBLISH_TIME;
+            } else {
+                this.publish_time = num4;
+            }
+            String str = builder.tag;
+            if (str == null) {
+                this.tag = "";
+            } else {
+                this.tag = str;
+            }
+            Integer num5 = builder.forder;
+            if (num5 == null) {
+                this.forder = DEFAULT_FORDER;
+                return;
+            } else {
+                this.forder = num5;
+                return;
+            }
+        }
+        this.f68355common = builder.f68356common;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
+        this.publish_time = builder.publish_time;
+        this.tag = builder.tag;
+        this.forder = builder.forder;
     }
 }

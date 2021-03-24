@@ -2,7 +2,7 @@ package tbclient.RecommendFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class UserInfo extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_MESSAGE = "";
@@ -36,72 +36,6 @@ public final class UserInfo extends Message {
     public static final Integer DEFAULT_SEX = 0;
     public static final Integer DEFAULT_DISTANCE = 0;
 
-    private UserInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.id == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = builder.id;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.sex == null) {
-                this.sex = DEFAULT_SEX;
-            } else {
-                this.sex = builder.sex;
-            }
-            if (builder.distance == null) {
-                this.distance = DEFAULT_DISTANCE;
-            } else {
-                this.distance = builder.distance;
-            }
-            if (builder.intro == null) {
-                this.intro = "";
-            } else {
-                this.intro = builder.intro;
-            }
-            this.tshow_icon = builder.tshow_icon;
-            this.location = builder.location;
-            if (builder.tag_name == null) {
-                this.tag_name = "";
-            } else {
-                this.tag_name = builder.tag_name;
-            }
-            if (builder.st_type == null) {
-                this.st_type = "";
-            } else {
-                this.st_type = builder.st_type;
-            }
-            if (builder.message == null) {
-                this.message = "";
-                return;
-            } else {
-                this.message = builder.message;
-                return;
-            }
-        }
-        this.id = builder.id;
-        this.portrait = builder.portrait;
-        this.name = builder.name;
-        this.sex = builder.sex;
-        this.distance = builder.distance;
-        this.intro = builder.intro;
-        this.tshow_icon = builder.tshow_icon;
-        this.location = builder.location;
-        this.tag_name = builder.tag_name;
-        this.st_type = builder.st_type;
-        this.message = builder.message;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserInfo> {
         public Integer distance;
@@ -121,19 +55,20 @@ public final class UserInfo extends Message {
 
         public Builder(UserInfo userInfo) {
             super(userInfo);
-            if (userInfo != null) {
-                this.id = userInfo.id;
-                this.portrait = userInfo.portrait;
-                this.name = userInfo.name;
-                this.sex = userInfo.sex;
-                this.distance = userInfo.distance;
-                this.intro = userInfo.intro;
-                this.tshow_icon = userInfo.tshow_icon;
-                this.location = userInfo.location;
-                this.tag_name = userInfo.tag_name;
-                this.st_type = userInfo.st_type;
-                this.message = userInfo.message;
+            if (userInfo == null) {
+                return;
             }
+            this.id = userInfo.id;
+            this.portrait = userInfo.portrait;
+            this.name = userInfo.name;
+            this.sex = userInfo.sex;
+            this.distance = userInfo.distance;
+            this.intro = userInfo.intro;
+            this.tshow_icon = userInfo.tshow_icon;
+            this.location = userInfo.location;
+            this.tag_name = userInfo.tag_name;
+            this.st_type = userInfo.st_type;
+            this.message = userInfo.message;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -141,5 +76,80 @@ public final class UserInfo extends Message {
         public UserInfo build(boolean z) {
             return new UserInfo(this, z);
         }
+    }
+
+    public UserInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.id;
+            if (l == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = l;
+            }
+            String str = builder.portrait;
+            if (str == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str;
+            }
+            String str2 = builder.name;
+            if (str2 == null) {
+                this.name = "";
+            } else {
+                this.name = str2;
+            }
+            Integer num = builder.sex;
+            if (num == null) {
+                this.sex = DEFAULT_SEX;
+            } else {
+                this.sex = num;
+            }
+            Integer num2 = builder.distance;
+            if (num2 == null) {
+                this.distance = DEFAULT_DISTANCE;
+            } else {
+                this.distance = num2;
+            }
+            String str3 = builder.intro;
+            if (str3 == null) {
+                this.intro = "";
+            } else {
+                this.intro = str3;
+            }
+            this.tshow_icon = builder.tshow_icon;
+            this.location = builder.location;
+            String str4 = builder.tag_name;
+            if (str4 == null) {
+                this.tag_name = "";
+            } else {
+                this.tag_name = str4;
+            }
+            String str5 = builder.st_type;
+            if (str5 == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str5;
+            }
+            String str6 = builder.message;
+            if (str6 == null) {
+                this.message = "";
+                return;
+            } else {
+                this.message = str6;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.portrait = builder.portrait;
+        this.name = builder.name;
+        this.sex = builder.sex;
+        this.distance = builder.distance;
+        this.intro = builder.intro;
+        this.tshow_icon = builder.tshow_icon;
+        this.location = builder.location;
+        this.tag_name = builder.tag_name;
+        this.st_type = builder.st_type;
+        this.message = builder.message;
     }
 }

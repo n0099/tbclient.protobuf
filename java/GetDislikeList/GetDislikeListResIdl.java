@@ -3,23 +3,12 @@ package tbclient.GetDislikeList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class GetDislikeListResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
-
-    private GetDislikeListResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GetDislikeListResIdl> {
@@ -31,10 +20,11 @@ public final class GetDislikeListResIdl extends Message {
 
         public Builder(GetDislikeListResIdl getDislikeListResIdl) {
             super(getDislikeListResIdl);
-            if (getDislikeListResIdl != null) {
-                this.error = getDislikeListResIdl.error;
-                this.data = getDislikeListResIdl.data;
+            if (getDislikeListResIdl == null) {
+                return;
             }
+            this.error = getDislikeListResIdl.error;
+            this.data = getDislikeListResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class GetDislikeListResIdl extends Message {
         public GetDislikeListResIdl build(boolean z) {
             return new GetDislikeListResIdl(this, z);
         }
+    }
+
+    public GetDislikeListResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

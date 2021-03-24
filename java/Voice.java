@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Voice extends Message {
     public static final String DEFAULT_VOICE_MD5 = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -14,33 +14,7 @@ public final class Voice extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_DURING_TIME = 0;
 
-    private Voice(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.during_time == null) {
-                this.during_time = DEFAULT_DURING_TIME;
-            } else {
-                this.during_time = builder.during_time;
-            }
-            if (builder.voice_md5 == null) {
-                this.voice_md5 = "";
-                return;
-            } else {
-                this.voice_md5 = builder.voice_md5;
-                return;
-            }
-        }
-        this.type = builder.type;
-        this.during_time = builder.during_time;
-        this.voice_md5 = builder.voice_md5;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Voice> {
         public Integer during_time;
         public Integer type;
@@ -51,11 +25,12 @@ public final class Voice extends Message {
 
         public Builder(Voice voice) {
             super(voice);
-            if (voice != null) {
-                this.type = voice.type;
-                this.during_time = voice.during_time;
-                this.voice_md5 = voice.voice_md5;
+            if (voice == null) {
+                return;
             }
+            this.type = voice.type;
+            this.during_time = voice.during_time;
+            this.voice_md5 = voice.voice_md5;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class Voice extends Message {
         public Voice build(boolean z) {
             return new Voice(this, z);
         }
+    }
+
+    public Voice(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            Integer num2 = builder.during_time;
+            if (num2 == null) {
+                this.during_time = DEFAULT_DURING_TIME;
+            } else {
+                this.during_time = num2;
+            }
+            String str = builder.voice_md5;
+            if (str == null) {
+                this.voice_md5 = "";
+                return;
+            } else {
+                this.voice_md5 = str;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.during_time = builder.during_time;
+        this.voice_md5 = builder.voice_md5;
     }
 }

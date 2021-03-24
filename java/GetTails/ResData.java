@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class ResData extends Message {
     public static final String DEFAULT_DEFAULT_COLOR = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -16,33 +16,7 @@ public final class ResData extends Message {
     public static final List<TailInfo> DEFAULT_TAILLIST = Collections.emptyList();
     public static final List<ColorInfo> DEFAULT_COLORLIST = Collections.emptyList();
 
-    private ResData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tailList == null) {
-                this.tailList = DEFAULT_TAILLIST;
-            } else {
-                this.tailList = immutableCopyOf(builder.tailList);
-            }
-            if (builder.colorList == null) {
-                this.colorList = DEFAULT_COLORLIST;
-            } else {
-                this.colorList = immutableCopyOf(builder.colorList);
-            }
-            if (builder.default_color == null) {
-                this.default_color = "";
-                return;
-            } else {
-                this.default_color = builder.default_color;
-                return;
-            }
-        }
-        this.tailList = immutableCopyOf(builder.tailList);
-        this.colorList = immutableCopyOf(builder.colorList);
-        this.default_color = builder.default_color;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ResData> {
         public List<ColorInfo> colorList;
         public String default_color;
@@ -53,11 +27,12 @@ public final class ResData extends Message {
 
         public Builder(ResData resData) {
             super(resData);
-            if (resData != null) {
-                this.tailList = ResData.copyOf(resData.tailList);
-                this.colorList = ResData.copyOf(resData.colorList);
-                this.default_color = resData.default_color;
+            if (resData == null) {
+                return;
             }
+            this.tailList = Message.copyOf(resData.tailList);
+            this.colorList = Message.copyOf(resData.colorList);
+            this.default_color = resData.default_color;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -65,5 +40,34 @@ public final class ResData extends Message {
         public ResData build(boolean z) {
             return new ResData(this, z);
         }
+    }
+
+    public ResData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<TailInfo> list = builder.tailList;
+            if (list == null) {
+                this.tailList = DEFAULT_TAILLIST;
+            } else {
+                this.tailList = Message.immutableCopyOf(list);
+            }
+            List<ColorInfo> list2 = builder.colorList;
+            if (list2 == null) {
+                this.colorList = DEFAULT_COLORLIST;
+            } else {
+                this.colorList = Message.immutableCopyOf(list2);
+            }
+            String str = builder.default_color;
+            if (str == null) {
+                this.default_color = "";
+                return;
+            } else {
+                this.default_color = str;
+                return;
+            }
+        }
+        this.tailList = Message.immutableCopyOf(builder.tailList);
+        this.colorList = Message.immutableCopyOf(builder.colorList);
+        this.default_color = builder.default_color;
     }
 }

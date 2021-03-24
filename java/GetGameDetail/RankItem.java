@@ -2,7 +2,7 @@ package tbclient.GetGameDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class RankItem extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -17,38 +17,6 @@ public final class RankItem extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_GRADE = 0L;
 
-    private RankItem(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.grade == null) {
-                this.grade = DEFAULT_GRADE;
-                return;
-            } else {
-                this.grade = builder.grade;
-                return;
-            }
-        }
-        this.user_id = builder.user_id;
-        this.user_name = builder.user_name;
-        this.portrait = builder.portrait;
-        this.grade = builder.grade;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RankItem> {
         public Long grade;
@@ -61,12 +29,13 @@ public final class RankItem extends Message {
 
         public Builder(RankItem rankItem) {
             super(rankItem);
-            if (rankItem != null) {
-                this.user_id = rankItem.user_id;
-                this.user_name = rankItem.user_name;
-                this.portrait = rankItem.portrait;
-                this.grade = rankItem.grade;
+            if (rankItem == null) {
+                return;
             }
+            this.user_id = rankItem.user_id;
+            this.user_name = rankItem.user_name;
+            this.portrait = rankItem.portrait;
+            this.grade = rankItem.grade;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class RankItem extends Message {
         public RankItem build(boolean z) {
             return new RankItem(this, z);
         }
+    }
+
+    public RankItem(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.portrait;
+            if (str2 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str2;
+            }
+            Long l2 = builder.grade;
+            if (l2 == null) {
+                this.grade = DEFAULT_GRADE;
+                return;
+            } else {
+                this.grade = l2;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.user_name = builder.user_name;
+        this.portrait = builder.portrait;
+        this.grade = builder.grade;
     }
 }

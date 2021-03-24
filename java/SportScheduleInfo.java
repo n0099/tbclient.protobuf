@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class SportScheduleInfo extends Message {
     public static final String DEFAULT_GUEST_TEAM_ICON = "";
     public static final String DEFAULT_GUEST_TEAM_NAME = "";
@@ -35,75 +35,7 @@ public final class SportScheduleInfo extends Message {
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
     public final Long update_time;
 
-    private SportScheduleInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.sport_type == null) {
-                this.sport_type = DEFAULT_SPORT_TYPE;
-            } else {
-                this.sport_type = builder.sport_type;
-            }
-            if (builder.home_team_name == null) {
-                this.home_team_name = "";
-            } else {
-                this.home_team_name = builder.home_team_name;
-            }
-            if (builder.guest_team_name == null) {
-                this.guest_team_name = "";
-            } else {
-                this.guest_team_name = builder.guest_team_name;
-            }
-            if (builder.home_team_icon == null) {
-                this.home_team_icon = "";
-            } else {
-                this.home_team_icon = builder.home_team_icon;
-            }
-            if (builder.guest_team_icon == null) {
-                this.guest_team_icon = "";
-            } else {
-                this.guest_team_icon = builder.guest_team_icon;
-            }
-            if (builder.match_top_info == null) {
-                this.match_top_info = "";
-            } else {
-                this.match_top_info = builder.match_top_info;
-            }
-            if (builder.match_middle_info == null) {
-                this.match_middle_info = "";
-            } else {
-                this.match_middle_info = builder.match_middle_info;
-            }
-            if (builder.match_bottom_info == null) {
-                this.match_bottom_info = "";
-            } else {
-                this.match_bottom_info = builder.match_bottom_info;
-            }
-            if (builder.msg_url == null) {
-                this.msg_url = "";
-            } else {
-                this.msg_url = builder.msg_url;
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-                return;
-            } else {
-                this.update_time = builder.update_time;
-                return;
-            }
-        }
-        this.sport_type = builder.sport_type;
-        this.home_team_name = builder.home_team_name;
-        this.guest_team_name = builder.guest_team_name;
-        this.home_team_icon = builder.home_team_icon;
-        this.guest_team_icon = builder.guest_team_icon;
-        this.match_top_info = builder.match_top_info;
-        this.match_middle_info = builder.match_middle_info;
-        this.match_bottom_info = builder.match_bottom_info;
-        this.msg_url = builder.msg_url;
-        this.update_time = builder.update_time;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<SportScheduleInfo> {
         public String guest_team_icon;
         public String guest_team_name;
@@ -121,18 +53,19 @@ public final class SportScheduleInfo extends Message {
 
         public Builder(SportScheduleInfo sportScheduleInfo) {
             super(sportScheduleInfo);
-            if (sportScheduleInfo != null) {
-                this.sport_type = sportScheduleInfo.sport_type;
-                this.home_team_name = sportScheduleInfo.home_team_name;
-                this.guest_team_name = sportScheduleInfo.guest_team_name;
-                this.home_team_icon = sportScheduleInfo.home_team_icon;
-                this.guest_team_icon = sportScheduleInfo.guest_team_icon;
-                this.match_top_info = sportScheduleInfo.match_top_info;
-                this.match_middle_info = sportScheduleInfo.match_middle_info;
-                this.match_bottom_info = sportScheduleInfo.match_bottom_info;
-                this.msg_url = sportScheduleInfo.msg_url;
-                this.update_time = sportScheduleInfo.update_time;
+            if (sportScheduleInfo == null) {
+                return;
             }
+            this.sport_type = sportScheduleInfo.sport_type;
+            this.home_team_name = sportScheduleInfo.home_team_name;
+            this.guest_team_name = sportScheduleInfo.guest_team_name;
+            this.home_team_icon = sportScheduleInfo.home_team_icon;
+            this.guest_team_icon = sportScheduleInfo.guest_team_icon;
+            this.match_top_info = sportScheduleInfo.match_top_info;
+            this.match_middle_info = sportScheduleInfo.match_middle_info;
+            this.match_bottom_info = sportScheduleInfo.match_bottom_info;
+            this.msg_url = sportScheduleInfo.msg_url;
+            this.update_time = sportScheduleInfo.update_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -140,5 +73,83 @@ public final class SportScheduleInfo extends Message {
         public SportScheduleInfo build(boolean z) {
             return new SportScheduleInfo(this, z);
         }
+    }
+
+    public SportScheduleInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.sport_type;
+            if (num == null) {
+                this.sport_type = DEFAULT_SPORT_TYPE;
+            } else {
+                this.sport_type = num;
+            }
+            String str = builder.home_team_name;
+            if (str == null) {
+                this.home_team_name = "";
+            } else {
+                this.home_team_name = str;
+            }
+            String str2 = builder.guest_team_name;
+            if (str2 == null) {
+                this.guest_team_name = "";
+            } else {
+                this.guest_team_name = str2;
+            }
+            String str3 = builder.home_team_icon;
+            if (str3 == null) {
+                this.home_team_icon = "";
+            } else {
+                this.home_team_icon = str3;
+            }
+            String str4 = builder.guest_team_icon;
+            if (str4 == null) {
+                this.guest_team_icon = "";
+            } else {
+                this.guest_team_icon = str4;
+            }
+            String str5 = builder.match_top_info;
+            if (str5 == null) {
+                this.match_top_info = "";
+            } else {
+                this.match_top_info = str5;
+            }
+            String str6 = builder.match_middle_info;
+            if (str6 == null) {
+                this.match_middle_info = "";
+            } else {
+                this.match_middle_info = str6;
+            }
+            String str7 = builder.match_bottom_info;
+            if (str7 == null) {
+                this.match_bottom_info = "";
+            } else {
+                this.match_bottom_info = str7;
+            }
+            String str8 = builder.msg_url;
+            if (str8 == null) {
+                this.msg_url = "";
+            } else {
+                this.msg_url = str8;
+            }
+            Long l = builder.update_time;
+            if (l == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+                return;
+            } else {
+                this.update_time = l;
+                return;
+            }
+        }
+        this.sport_type = builder.sport_type;
+        this.home_team_name = builder.home_team_name;
+        this.guest_team_name = builder.guest_team_name;
+        this.home_team_icon = builder.home_team_icon;
+        this.guest_team_icon = builder.guest_team_icon;
+        this.match_top_info = builder.match_top_info;
+        this.match_middle_info = builder.match_middle_info;
+        this.match_bottom_info = builder.match_bottom_info;
+        this.msg_url = builder.msg_url;
+        this.update_time = builder.update_time;
     }
 }

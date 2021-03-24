@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class VipShowInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_LINK = "";
@@ -17,39 +17,7 @@ public final class VipShowInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String vip_icon;
 
-    private VipShowInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.vip_icon == null) {
-                this.vip_icon = "";
-            } else {
-                this.vip_icon = builder.vip_icon;
-            }
-            if (builder.content == null) {
-                this.content = "";
-            } else {
-                this.content = builder.content;
-            }
-            if (builder.link == null) {
-                this.link = "";
-            } else {
-                this.link = builder.link;
-            }
-            if (builder.title == null) {
-                this.title = "";
-                return;
-            } else {
-                this.title = builder.title;
-                return;
-            }
-        }
-        this.vip_icon = builder.vip_icon;
-        this.content = builder.content;
-        this.link = builder.link;
-        this.title = builder.title;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VipShowInfo> {
         public String content;
         public String link;
@@ -61,12 +29,13 @@ public final class VipShowInfo extends Message {
 
         public Builder(VipShowInfo vipShowInfo) {
             super(vipShowInfo);
-            if (vipShowInfo != null) {
-                this.vip_icon = vipShowInfo.vip_icon;
-                this.content = vipShowInfo.content;
-                this.link = vipShowInfo.link;
-                this.title = vipShowInfo.title;
+            if (vipShowInfo == null) {
+                return;
             }
+            this.vip_icon = vipShowInfo.vip_icon;
+            this.content = vipShowInfo.content;
+            this.link = vipShowInfo.link;
+            this.title = vipShowInfo.title;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class VipShowInfo extends Message {
         public VipShowInfo build(boolean z) {
             return new VipShowInfo(this, z);
         }
+    }
+
+    public VipShowInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.vip_icon;
+            if (str == null) {
+                this.vip_icon = "";
+            } else {
+                this.vip_icon = str;
+            }
+            String str2 = builder.content;
+            if (str2 == null) {
+                this.content = "";
+            } else {
+                this.content = str2;
+            }
+            String str3 = builder.link;
+            if (str3 == null) {
+                this.link = "";
+            } else {
+                this.link = str3;
+            }
+            String str4 = builder.title;
+            if (str4 == null) {
+                this.title = "";
+                return;
+            } else {
+                this.title = str4;
+                return;
+            }
+        }
+        this.vip_icon = builder.vip_icon;
+        this.content = builder.content;
+        this.link = builder.link;
+        this.title = builder.title;
     }
 }

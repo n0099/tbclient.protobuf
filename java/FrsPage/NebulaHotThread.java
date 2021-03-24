@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class NebulaHotThread extends Message {
     public static final String DEFAULT_GROUP_NAME = "";
     public static final String DEFAULT_THREAD_ID = "";
@@ -32,63 +32,7 @@ public final class NebulaHotThread extends Message {
     public static final Integer DEFAULT_THREAD_THUMBNAIL_TYPE = 0;
     public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
 
-    private NebulaHotThread(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.thread_id == null) {
-                this.thread_id = "";
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.group_name == null) {
-                this.group_name = "";
-            } else {
-                this.group_name = builder.group_name;
-            }
-            if (builder.comment_number == null) {
-                this.comment_number = DEFAULT_COMMENT_NUMBER;
-            } else {
-                this.comment_number = builder.comment_number;
-            }
-            if (builder.rank == null) {
-                this.rank = DEFAULT_RANK;
-            } else {
-                this.rank = builder.rank;
-            }
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.thread_thumbnail_type == null) {
-                this.thread_thumbnail_type = DEFAULT_THREAD_THUMBNAIL_TYPE;
-            } else {
-                this.thread_thumbnail_type = builder.thread_thumbnail_type;
-            }
-            if (builder.thread_thumbnail == null) {
-                this.thread_thumbnail = "";
-            } else {
-                this.thread_thumbnail = builder.thread_thumbnail;
-            }
-            if (builder.content == null) {
-                this.content = DEFAULT_CONTENT;
-                return;
-            } else {
-                this.content = immutableCopyOf(builder.content);
-                return;
-            }
-        }
-        this.thread_id = builder.thread_id;
-        this.group_name = builder.group_name;
-        this.comment_number = builder.comment_number;
-        this.rank = builder.rank;
-        this.url = builder.url;
-        this.thread_thumbnail_type = builder.thread_thumbnail_type;
-        this.thread_thumbnail = builder.thread_thumbnail;
-        this.content = immutableCopyOf(builder.content);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<NebulaHotThread> {
         public Integer comment_number;
         public List<PbContent> content;
@@ -104,16 +48,17 @@ public final class NebulaHotThread extends Message {
 
         public Builder(NebulaHotThread nebulaHotThread) {
             super(nebulaHotThread);
-            if (nebulaHotThread != null) {
-                this.thread_id = nebulaHotThread.thread_id;
-                this.group_name = nebulaHotThread.group_name;
-                this.comment_number = nebulaHotThread.comment_number;
-                this.rank = nebulaHotThread.rank;
-                this.url = nebulaHotThread.url;
-                this.thread_thumbnail_type = nebulaHotThread.thread_thumbnail_type;
-                this.thread_thumbnail = nebulaHotThread.thread_thumbnail;
-                this.content = NebulaHotThread.copyOf(nebulaHotThread.content);
+            if (nebulaHotThread == null) {
+                return;
             }
+            this.thread_id = nebulaHotThread.thread_id;
+            this.group_name = nebulaHotThread.group_name;
+            this.comment_number = nebulaHotThread.comment_number;
+            this.rank = nebulaHotThread.rank;
+            this.url = nebulaHotThread.url;
+            this.thread_thumbnail_type = nebulaHotThread.thread_thumbnail_type;
+            this.thread_thumbnail = nebulaHotThread.thread_thumbnail;
+            this.content = Message.copyOf(nebulaHotThread.content);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -121,5 +66,69 @@ public final class NebulaHotThread extends Message {
         public NebulaHotThread build(boolean z) {
             return new NebulaHotThread(this, z);
         }
+    }
+
+    public NebulaHotThread(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.thread_id;
+            if (str == null) {
+                this.thread_id = "";
+            } else {
+                this.thread_id = str;
+            }
+            String str2 = builder.group_name;
+            if (str2 == null) {
+                this.group_name = "";
+            } else {
+                this.group_name = str2;
+            }
+            Integer num = builder.comment_number;
+            if (num == null) {
+                this.comment_number = DEFAULT_COMMENT_NUMBER;
+            } else {
+                this.comment_number = num;
+            }
+            Integer num2 = builder.rank;
+            if (num2 == null) {
+                this.rank = DEFAULT_RANK;
+            } else {
+                this.rank = num2;
+            }
+            String str3 = builder.url;
+            if (str3 == null) {
+                this.url = "";
+            } else {
+                this.url = str3;
+            }
+            Integer num3 = builder.thread_thumbnail_type;
+            if (num3 == null) {
+                this.thread_thumbnail_type = DEFAULT_THREAD_THUMBNAIL_TYPE;
+            } else {
+                this.thread_thumbnail_type = num3;
+            }
+            String str4 = builder.thread_thumbnail;
+            if (str4 == null) {
+                this.thread_thumbnail = "";
+            } else {
+                this.thread_thumbnail = str4;
+            }
+            List<PbContent> list = builder.content;
+            if (list == null) {
+                this.content = DEFAULT_CONTENT;
+                return;
+            } else {
+                this.content = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.thread_id = builder.thread_id;
+        this.group_name = builder.group_name;
+        this.comment_number = builder.comment_number;
+        this.rank = builder.rank;
+        this.url = builder.url;
+        this.thread_thumbnail_type = builder.thread_thumbnail_type;
+        this.thread_thumbnail = builder.thread_thumbnail;
+        this.content = Message.immutableCopyOf(builder.content);
     }
 }

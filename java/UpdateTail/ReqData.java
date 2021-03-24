@@ -3,7 +3,7 @@ package tbclient.UpdateTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -12,7 +12,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8965common;
+    public final CommonReq f68643common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String fontColor;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -22,44 +22,11 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer tailId;
 
-    private ReqData(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tailContent == null) {
-                this.tailContent = "";
-            } else {
-                this.tailContent = builder.tailContent;
-            }
-            if (builder.tailId == null) {
-                this.tailId = DEFAULT_TAILID;
-            } else {
-                this.tailId = builder.tailId;
-            }
-            if (builder.fontColor == null) {
-                this.fontColor = "";
-            } else {
-                this.fontColor = builder.fontColor;
-            }
-            if (builder.fontKeyName == null) {
-                this.fontKeyName = "";
-            } else {
-                this.fontKeyName = builder.fontKeyName;
-            }
-            this.f8965common = builder.f8966common;
-            return;
-        }
-        this.tailContent = builder.tailContent;
-        this.tailId = builder.tailId;
-        this.fontColor = builder.fontColor;
-        this.fontKeyName = builder.fontKeyName;
-        this.f8965common = builder.f8966common;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8966common;
+        public CommonReq f68644common;
         public String fontColor;
         public String fontKeyName;
         public String tailContent;
@@ -70,13 +37,14 @@ public final class ReqData extends Message {
 
         public Builder(ReqData reqData) {
             super(reqData);
-            if (reqData != null) {
-                this.tailContent = reqData.tailContent;
-                this.tailId = reqData.tailId;
-                this.fontColor = reqData.fontColor;
-                this.fontKeyName = reqData.fontKeyName;
-                this.f8966common = reqData.f8965common;
+            if (reqData == null) {
+                return;
             }
+            this.tailContent = reqData.tailContent;
+            this.tailId = reqData.tailId;
+            this.fontColor = reqData.fontColor;
+            this.fontKeyName = reqData.fontKeyName;
+            this.f68644common = reqData.f68643common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -84,5 +52,42 @@ public final class ReqData extends Message {
         public ReqData build(boolean z) {
             return new ReqData(this, z);
         }
+    }
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.tailContent;
+            if (str == null) {
+                this.tailContent = "";
+            } else {
+                this.tailContent = str;
+            }
+            Integer num = builder.tailId;
+            if (num == null) {
+                this.tailId = DEFAULT_TAILID;
+            } else {
+                this.tailId = num;
+            }
+            String str2 = builder.fontColor;
+            if (str2 == null) {
+                this.fontColor = "";
+            } else {
+                this.fontColor = str2;
+            }
+            String str3 = builder.fontKeyName;
+            if (str3 == null) {
+                this.fontKeyName = "";
+            } else {
+                this.fontKeyName = str3;
+            }
+            this.f68643common = builder.f68644common;
+            return;
+        }
+        this.tailContent = builder.tailContent;
+        this.tailId = builder.tailId;
+        this.fontColor = builder.fontColor;
+        this.fontKeyName = builder.fontKeyName;
+        this.f68643common = builder.f68644common;
     }
 }

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class HeadSdk extends Message {
     public static final String DEFAULT_HEAD_PIC = "";
     public static final String DEFAULT_HEAD_TEXT = "";
@@ -20,45 +20,7 @@ public final class HeadSdk extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String sdk_params;
 
-    private HeadSdk(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.head_pic == null) {
-                this.head_pic = "";
-            } else {
-                this.head_pic = builder.head_pic;
-            }
-            if (builder.head_text == null) {
-                this.head_text = "";
-            } else {
-                this.head_text = builder.head_text;
-            }
-            if (builder.sdk_name == null) {
-                this.sdk_name = "";
-            } else {
-                this.sdk_name = builder.sdk_name;
-            }
-            if (builder.sdk_params == null) {
-                this.sdk_params = "";
-            } else {
-                this.sdk_params = builder.sdk_params;
-            }
-            if (builder.head_type == null) {
-                this.head_type = DEFAULT_HEAD_TYPE;
-                return;
-            } else {
-                this.head_type = builder.head_type;
-                return;
-            }
-        }
-        this.head_pic = builder.head_pic;
-        this.head_text = builder.head_text;
-        this.sdk_name = builder.sdk_name;
-        this.sdk_params = builder.sdk_params;
-        this.head_type = builder.head_type;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<HeadSdk> {
         public String head_pic;
         public String head_text;
@@ -71,13 +33,14 @@ public final class HeadSdk extends Message {
 
         public Builder(HeadSdk headSdk) {
             super(headSdk);
-            if (headSdk != null) {
-                this.head_pic = headSdk.head_pic;
-                this.head_text = headSdk.head_text;
-                this.sdk_name = headSdk.sdk_name;
-                this.sdk_params = headSdk.sdk_params;
-                this.head_type = headSdk.head_type;
+            if (headSdk == null) {
+                return;
             }
+            this.head_pic = headSdk.head_pic;
+            this.head_text = headSdk.head_text;
+            this.sdk_name = headSdk.sdk_name;
+            this.sdk_params = headSdk.sdk_params;
+            this.head_type = headSdk.head_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class HeadSdk extends Message {
         public HeadSdk build(boolean z) {
             return new HeadSdk(this, z);
         }
+    }
+
+    public HeadSdk(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.head_pic;
+            if (str == null) {
+                this.head_pic = "";
+            } else {
+                this.head_pic = str;
+            }
+            String str2 = builder.head_text;
+            if (str2 == null) {
+                this.head_text = "";
+            } else {
+                this.head_text = str2;
+            }
+            String str3 = builder.sdk_name;
+            if (str3 == null) {
+                this.sdk_name = "";
+            } else {
+                this.sdk_name = str3;
+            }
+            String str4 = builder.sdk_params;
+            if (str4 == null) {
+                this.sdk_params = "";
+            } else {
+                this.sdk_params = str4;
+            }
+            Integer num = builder.head_type;
+            if (num == null) {
+                this.head_type = DEFAULT_HEAD_TYPE;
+                return;
+            } else {
+                this.head_type = num;
+                return;
+            }
+        }
+        this.head_pic = builder.head_pic;
+        this.head_text = builder.head_text;
+        this.sdk_name = builder.sdk_name;
+        this.sdk_params = builder.sdk_params;
+        this.head_type = builder.head_type;
     }
 }

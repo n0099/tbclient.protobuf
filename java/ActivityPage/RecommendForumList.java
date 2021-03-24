@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class RecommendForumList extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final Integer DEFAULT_FLOOR_POSITION = 0;
@@ -17,33 +17,7 @@ public final class RecommendForumList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<RecommendForumInfo> forum_list;
 
-    private RecommendForumList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.floor_position == null) {
-                this.floor_position = DEFAULT_FLOOR_POSITION;
-            } else {
-                this.floor_position = builder.floor_position;
-            }
-            if (builder.class_name == null) {
-                this.class_name = "";
-            } else {
-                this.class_name = builder.class_name;
-            }
-            if (builder.forum_list == null) {
-                this.forum_list = DEFAULT_FORUM_LIST;
-                return;
-            } else {
-                this.forum_list = immutableCopyOf(builder.forum_list);
-                return;
-            }
-        }
-        this.floor_position = builder.floor_position;
-        this.class_name = builder.class_name;
-        this.forum_list = immutableCopyOf(builder.forum_list);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<RecommendForumList> {
         public String class_name;
         public Integer floor_position;
@@ -54,11 +28,12 @@ public final class RecommendForumList extends Message {
 
         public Builder(RecommendForumList recommendForumList) {
             super(recommendForumList);
-            if (recommendForumList != null) {
-                this.floor_position = recommendForumList.floor_position;
-                this.class_name = recommendForumList.class_name;
-                this.forum_list = RecommendForumList.copyOf(recommendForumList.forum_list);
+            if (recommendForumList == null) {
+                return;
             }
+            this.floor_position = recommendForumList.floor_position;
+            this.class_name = recommendForumList.class_name;
+            this.forum_list = Message.copyOf(recommendForumList.forum_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -66,5 +41,34 @@ public final class RecommendForumList extends Message {
         public RecommendForumList build(boolean z) {
             return new RecommendForumList(this, z);
         }
+    }
+
+    public RecommendForumList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.floor_position;
+            if (num == null) {
+                this.floor_position = DEFAULT_FLOOR_POSITION;
+            } else {
+                this.floor_position = num;
+            }
+            String str = builder.class_name;
+            if (str == null) {
+                this.class_name = "";
+            } else {
+                this.class_name = str;
+            }
+            List<RecommendForumInfo> list = builder.forum_list;
+            if (list == null) {
+                this.forum_list = DEFAULT_FORUM_LIST;
+                return;
+            } else {
+                this.forum_list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.floor_position = builder.floor_position;
+        this.class_name = builder.class_name;
+        this.forum_list = Message.immutableCopyOf(builder.forum_list);
     }
 }

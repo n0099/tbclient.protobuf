@@ -3,37 +3,21 @@ package tbclient.CloseAd;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_VIP_CLOSE = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8665common;
+    public final CommonReq f68329common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer vip_close;
-
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8665common = builder.f8666common;
-            if (builder.vip_close == null) {
-                this.vip_close = DEFAULT_VIP_CLOSE;
-                return;
-            } else {
-                this.vip_close = builder.vip_close;
-                return;
-            }
-        }
-        this.f8665common = builder.f8666common;
-        this.vip_close = builder.vip_close;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8666common;
+        public CommonReq f68330common;
         public Integer vip_close;
 
         public Builder() {
@@ -41,10 +25,11 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8666common = dataReq.f8665common;
-                this.vip_close = dataReq.vip_close;
+            if (dataReq == null) {
+                return;
             }
+            this.f68330common = dataReq.f68329common;
+            this.vip_close = dataReq.vip_close;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +37,22 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68329common = builder.f68330common;
+            Integer num = builder.vip_close;
+            if (num == null) {
+                this.vip_close = DEFAULT_VIP_CLOSE;
+                return;
+            } else {
+                this.vip_close = num;
+                return;
+            }
+        }
+        this.f68329common = builder.f68330common;
+        this.vip_close = builder.vip_close;
     }
 }

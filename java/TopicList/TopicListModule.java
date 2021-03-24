@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class TopicListModule extends Message {
     public static final String DEFAULT_MODULE_TITLE = "";
     public static final String DEFAULT_RULE_JUMP_URL = "";
@@ -19,38 +19,6 @@ public final class TopicListModule extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<TopicList> topic_list;
 
-    private TopicListModule(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.module_title == null) {
-                this.module_title = "";
-            } else {
-                this.module_title = builder.module_title;
-            }
-            if (builder.topic_list == null) {
-                this.topic_list = DEFAULT_TOPIC_LIST;
-            } else {
-                this.topic_list = immutableCopyOf(builder.topic_list);
-            }
-            if (builder.tips == null) {
-                this.tips = "";
-            } else {
-                this.tips = builder.tips;
-            }
-            if (builder.rule_jump_url == null) {
-                this.rule_jump_url = "";
-                return;
-            } else {
-                this.rule_jump_url = builder.rule_jump_url;
-                return;
-            }
-        }
-        this.module_title = builder.module_title;
-        this.topic_list = immutableCopyOf(builder.topic_list);
-        this.tips = builder.tips;
-        this.rule_jump_url = builder.rule_jump_url;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TopicListModule> {
         public String module_title;
@@ -63,12 +31,13 @@ public final class TopicListModule extends Message {
 
         public Builder(TopicListModule topicListModule) {
             super(topicListModule);
-            if (topicListModule != null) {
-                this.module_title = topicListModule.module_title;
-                this.topic_list = TopicListModule.copyOf(topicListModule.topic_list);
-                this.tips = topicListModule.tips;
-                this.rule_jump_url = topicListModule.rule_jump_url;
+            if (topicListModule == null) {
+                return;
             }
+            this.module_title = topicListModule.module_title;
+            this.topic_list = Message.copyOf(topicListModule.topic_list);
+            this.tips = topicListModule.tips;
+            this.rule_jump_url = topicListModule.rule_jump_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -76,5 +45,41 @@ public final class TopicListModule extends Message {
         public TopicListModule build(boolean z) {
             return new TopicListModule(this, z);
         }
+    }
+
+    public TopicListModule(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.module_title;
+            if (str == null) {
+                this.module_title = "";
+            } else {
+                this.module_title = str;
+            }
+            List<TopicList> list = builder.topic_list;
+            if (list == null) {
+                this.topic_list = DEFAULT_TOPIC_LIST;
+            } else {
+                this.topic_list = Message.immutableCopyOf(list);
+            }
+            String str2 = builder.tips;
+            if (str2 == null) {
+                this.tips = "";
+            } else {
+                this.tips = str2;
+            }
+            String str3 = builder.rule_jump_url;
+            if (str3 == null) {
+                this.rule_jump_url = "";
+                return;
+            } else {
+                this.rule_jump_url = str3;
+                return;
+            }
+        }
+        this.module_title = builder.module_title;
+        this.topic_list = Message.immutableCopyOf(builder.topic_list);
+        this.tips = builder.tips;
+        this.rule_jump_url = builder.rule_jump_url;
     }
 }

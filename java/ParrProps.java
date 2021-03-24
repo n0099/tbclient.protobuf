@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ParrProps extends Message {
     public static final Integer DEFAULT_PORTRAIT_TIME = 0;
     public static final List<Props> DEFAULT_PROPS = Collections.emptyList();
@@ -15,29 +15,7 @@ public final class ParrProps extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Props> props;
 
-    private ParrProps(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.portrait_time == null) {
-                this.portrait_time = DEFAULT_PORTRAIT_TIME;
-            } else {
-                this.portrait_time = builder.portrait_time;
-            }
-            this.level = builder.level;
-            if (builder.props == null) {
-                this.props = DEFAULT_PROPS;
-                return;
-            } else {
-                this.props = immutableCopyOf(builder.props);
-                return;
-            }
-        }
-        this.portrait_time = builder.portrait_time;
-        this.level = builder.level;
-        this.props = immutableCopyOf(builder.props);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ParrProps> {
         public Level level;
         public Integer portrait_time;
@@ -48,11 +26,12 @@ public final class ParrProps extends Message {
 
         public Builder(ParrProps parrProps) {
             super(parrProps);
-            if (parrProps != null) {
-                this.portrait_time = parrProps.portrait_time;
-                this.level = parrProps.level;
-                this.props = ParrProps.copyOf(parrProps.props);
+            if (parrProps == null) {
+                return;
             }
+            this.portrait_time = parrProps.portrait_time;
+            this.level = parrProps.level;
+            this.props = Message.copyOf(parrProps.props);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -60,5 +39,29 @@ public final class ParrProps extends Message {
         public ParrProps build(boolean z) {
             return new ParrProps(this, z);
         }
+    }
+
+    public ParrProps(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.portrait_time;
+            if (num == null) {
+                this.portrait_time = DEFAULT_PORTRAIT_TIME;
+            } else {
+                this.portrait_time = num;
+            }
+            this.level = builder.level;
+            List<Props> list = builder.props;
+            if (list == null) {
+                this.props = DEFAULT_PROPS;
+                return;
+            } else {
+                this.props = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.portrait_time = builder.portrait_time;
+        this.level = builder.level;
+        this.props = Message.immutableCopyOf(builder.props);
     }
 }

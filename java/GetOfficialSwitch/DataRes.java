@@ -4,25 +4,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final List<OfficialList> DEFAULT_OFFICIAL_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<OfficialList> official_list;
-
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.official_list == null) {
-                this.official_list = DEFAULT_OFFICIAL_LIST;
-                return;
-            } else {
-                this.official_list = immutableCopyOf(builder.official_list);
-                return;
-            }
-        }
-        this.official_list = immutableCopyOf(builder.official_list);
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -33,9 +19,10 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.official_list = DataRes.copyOf(dataRes.official_list);
+            if (dataRes == null) {
+                return;
             }
+            this.official_list = Message.copyOf(dataRes.official_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -43,5 +30,20 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<OfficialList> list = builder.official_list;
+            if (list == null) {
+                this.official_list = DEFAULT_OFFICIAL_LIST;
+                return;
+            } else {
+                this.official_list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.official_list = Message.immutableCopyOf(builder.official_list);
     }
 }

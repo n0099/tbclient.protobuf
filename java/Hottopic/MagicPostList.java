@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Quote;
 import tbclient.Zan;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class MagicPostList extends Message {
     public static final String DEFAULT_CONTENT_TEXT = "";
     public static final String DEFAULT_TITLE = "";
@@ -34,61 +34,6 @@ public final class MagicPostList extends Message {
     public static final Integer DEFAULT_POST_NO = 0;
     public static final Integer DEFAULT_IS_COMMENT = 0;
 
-    private MagicPostList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = builder.post_id;
-            }
-            this.user_info = builder.user_info;
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.content_text == null) {
-                this.content_text = "";
-            } else {
-                this.content_text = builder.content_text;
-            }
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.post_no == null) {
-                this.post_no = DEFAULT_POST_NO;
-            } else {
-                this.post_no = builder.post_no;
-            }
-            if (builder.is_comment == null) {
-                this.is_comment = DEFAULT_IS_COMMENT;
-            } else {
-                this.is_comment = builder.is_comment;
-            }
-            this.zan = builder.zan;
-            this.quote = builder.quote;
-            return;
-        }
-        this.thread_id = builder.thread_id;
-        this.post_id = builder.post_id;
-        this.user_info = builder.user_info;
-        this.title = builder.title;
-        this.content_text = builder.content_text;
-        this.create_time = builder.create_time;
-        this.post_no = builder.post_no;
-        this.is_comment = builder.is_comment;
-        this.zan = builder.zan;
-        this.quote = builder.quote;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<MagicPostList> {
         public String content_text;
@@ -107,18 +52,19 @@ public final class MagicPostList extends Message {
 
         public Builder(MagicPostList magicPostList) {
             super(magicPostList);
-            if (magicPostList != null) {
-                this.thread_id = magicPostList.thread_id;
-                this.post_id = magicPostList.post_id;
-                this.user_info = magicPostList.user_info;
-                this.title = magicPostList.title;
-                this.content_text = magicPostList.content_text;
-                this.create_time = magicPostList.create_time;
-                this.post_no = magicPostList.post_no;
-                this.is_comment = magicPostList.is_comment;
-                this.zan = magicPostList.zan;
-                this.quote = magicPostList.quote;
+            if (magicPostList == null) {
+                return;
             }
+            this.thread_id = magicPostList.thread_id;
+            this.post_id = magicPostList.post_id;
+            this.user_info = magicPostList.user_info;
+            this.title = magicPostList.title;
+            this.content_text = magicPostList.content_text;
+            this.create_time = magicPostList.create_time;
+            this.post_no = magicPostList.post_no;
+            this.is_comment = magicPostList.is_comment;
+            this.zan = magicPostList.zan;
+            this.quote = magicPostList.quote;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -126,5 +72,67 @@ public final class MagicPostList extends Message {
         public MagicPostList build(boolean z) {
             return new MagicPostList(this, z);
         }
+    }
+
+    public MagicPostList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.thread_id;
+            if (l == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l;
+            }
+            Long l2 = builder.post_id;
+            if (l2 == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = l2;
+            }
+            this.user_info = builder.user_info;
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.content_text;
+            if (str2 == null) {
+                this.content_text = "";
+            } else {
+                this.content_text = str2;
+            }
+            Integer num = builder.create_time;
+            if (num == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num;
+            }
+            Integer num2 = builder.post_no;
+            if (num2 == null) {
+                this.post_no = DEFAULT_POST_NO;
+            } else {
+                this.post_no = num2;
+            }
+            Integer num3 = builder.is_comment;
+            if (num3 == null) {
+                this.is_comment = DEFAULT_IS_COMMENT;
+            } else {
+                this.is_comment = num3;
+            }
+            this.zan = builder.zan;
+            this.quote = builder.quote;
+            return;
+        }
+        this.thread_id = builder.thread_id;
+        this.post_id = builder.post_id;
+        this.user_info = builder.user_info;
+        this.title = builder.title;
+        this.content_text = builder.content_text;
+        this.create_time = builder.create_time;
+        this.post_no = builder.post_no;
+        this.is_comment = builder.is_comment;
+        this.zan = builder.zan;
+        this.quote = builder.quote;
     }
 }

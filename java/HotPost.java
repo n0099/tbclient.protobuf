@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class HotPost extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -36,71 +36,7 @@ public final class HotPost extends Message {
     public static final Integer DEFAULT_CREATE_TIME = 0;
     public static final Integer DEFAULT_FLOOR = 0;
 
-    private HotPost(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = builder.post_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            this.post_zan = builder.post_zan;
-            if (builder.post_num == null) {
-                this.post_num = DEFAULT_POST_NUM;
-            } else {
-                this.post_num = builder.post_num;
-            }
-            if (builder.content == null) {
-                this.content = DEFAULT_CONTENT;
-            } else {
-                this.content = immutableCopyOf(builder.content);
-            }
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.floor == null) {
-                this.floor = DEFAULT_FLOOR;
-            } else {
-                this.floor = builder.floor;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-                return;
-            } else {
-                this.portrait = builder.portrait;
-                return;
-            }
-        }
-        this.thread_id = builder.thread_id;
-        this.post_id = builder.post_id;
-        this.user_name = builder.user_name;
-        this.user_id = builder.user_id;
-        this.post_zan = builder.post_zan;
-        this.post_num = builder.post_num;
-        this.content = immutableCopyOf(builder.content);
-        this.create_time = builder.create_time;
-        this.floor = builder.floor;
-        this.portrait = builder.portrait;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<HotPost> {
         public List<PbContent> content;
         public Integer create_time;
@@ -118,18 +54,19 @@ public final class HotPost extends Message {
 
         public Builder(HotPost hotPost) {
             super(hotPost);
-            if (hotPost != null) {
-                this.thread_id = hotPost.thread_id;
-                this.post_id = hotPost.post_id;
-                this.user_name = hotPost.user_name;
-                this.user_id = hotPost.user_id;
-                this.post_zan = hotPost.post_zan;
-                this.post_num = hotPost.post_num;
-                this.content = HotPost.copyOf(hotPost.content);
-                this.create_time = hotPost.create_time;
-                this.floor = hotPost.floor;
-                this.portrait = hotPost.portrait;
+            if (hotPost == null) {
+                return;
             }
+            this.thread_id = hotPost.thread_id;
+            this.post_id = hotPost.post_id;
+            this.user_name = hotPost.user_name;
+            this.user_id = hotPost.user_id;
+            this.post_zan = hotPost.post_zan;
+            this.post_num = hotPost.post_num;
+            this.content = Message.copyOf(hotPost.content);
+            this.create_time = hotPost.create_time;
+            this.floor = hotPost.floor;
+            this.portrait = hotPost.portrait;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -137,5 +74,78 @@ public final class HotPost extends Message {
         public HotPost build(boolean z) {
             return new HotPost(this, z);
         }
+    }
+
+    public HotPost(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.thread_id;
+            if (l == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l;
+            }
+            Long l2 = builder.post_id;
+            if (l2 == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = l2;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            Long l3 = builder.user_id;
+            if (l3 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l3;
+            }
+            this.post_zan = builder.post_zan;
+            Integer num = builder.post_num;
+            if (num == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = num;
+            }
+            List<PbContent> list = builder.content;
+            if (list == null) {
+                this.content = DEFAULT_CONTENT;
+            } else {
+                this.content = Message.immutableCopyOf(list);
+            }
+            Integer num2 = builder.create_time;
+            if (num2 == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num2;
+            }
+            Integer num3 = builder.floor;
+            if (num3 == null) {
+                this.floor = DEFAULT_FLOOR;
+            } else {
+                this.floor = num3;
+            }
+            String str2 = builder.portrait;
+            if (str2 == null) {
+                this.portrait = "";
+                return;
+            } else {
+                this.portrait = str2;
+                return;
+            }
+        }
+        this.thread_id = builder.thread_id;
+        this.post_id = builder.post_id;
+        this.user_name = builder.user_name;
+        this.user_id = builder.user_id;
+        this.post_zan = builder.post_zan;
+        this.post_num = builder.post_num;
+        this.content = Message.immutableCopyOf(builder.content);
+        this.create_time = builder.create_time;
+        this.floor = builder.floor;
+        this.portrait = builder.portrait;
     }
 }

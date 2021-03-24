@@ -2,7 +2,7 @@ package tbclient.NewHottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PkModule extends Message {
     public static final Long DEFAULT_PK_ID = 0L;
     public static final Long DEFAULT_USER_PK_ID = 0L;
@@ -15,30 +15,7 @@ public final class PkModule extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long user_pk_id;
 
-    private PkModule(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pk_id == null) {
-                this.pk_id = DEFAULT_PK_ID;
-            } else {
-                this.pk_id = builder.pk_id;
-            }
-            if (builder.user_pk_id == null) {
-                this.user_pk_id = DEFAULT_USER_PK_ID;
-            } else {
-                this.user_pk_id = builder.user_pk_id;
-            }
-            this.agree = builder.agree;
-            this.disagree = builder.disagree;
-            return;
-        }
-        this.pk_id = builder.pk_id;
-        this.user_pk_id = builder.user_pk_id;
-        this.agree = builder.agree;
-        this.disagree = builder.disagree;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PkModule> {
         public PkItem agree;
         public PkItem disagree;
@@ -50,12 +27,13 @@ public final class PkModule extends Message {
 
         public Builder(PkModule pkModule) {
             super(pkModule);
-            if (pkModule != null) {
-                this.pk_id = pkModule.pk_id;
-                this.user_pk_id = pkModule.user_pk_id;
-                this.agree = pkModule.agree;
-                this.disagree = pkModule.disagree;
+            if (pkModule == null) {
+                return;
             }
+            this.pk_id = pkModule.pk_id;
+            this.user_pk_id = pkModule.user_pk_id;
+            this.agree = pkModule.agree;
+            this.disagree = pkModule.disagree;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +41,30 @@ public final class PkModule extends Message {
         public PkModule build(boolean z) {
             return new PkModule(this, z);
         }
+    }
+
+    public PkModule(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.pk_id;
+            if (l == null) {
+                this.pk_id = DEFAULT_PK_ID;
+            } else {
+                this.pk_id = l;
+            }
+            Long l2 = builder.user_pk_id;
+            if (l2 == null) {
+                this.user_pk_id = DEFAULT_USER_PK_ID;
+            } else {
+                this.user_pk_id = l2;
+            }
+            this.agree = builder.agree;
+            this.disagree = builder.disagree;
+            return;
+        }
+        this.pk_id = builder.pk_id;
+        this.user_pk_id = builder.user_pk_id;
+        this.agree = builder.agree;
+        this.disagree = builder.disagree;
     }
 }

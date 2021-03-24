@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AlaLiveInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class UserFollowLive extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer _switch;
@@ -14,27 +14,7 @@ public final class UserFollowLive extends Message {
     public static final List<AlaLiveInfo> DEFAULT_USER_FOLLOW_LIVE = Collections.emptyList();
     public static final Integer DEFAULT_SWITCH = 0;
 
-    private UserFollowLive(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_follow_live == null) {
-                this.user_follow_live = DEFAULT_USER_FOLLOW_LIVE;
-            } else {
-                this.user_follow_live = immutableCopyOf(builder.user_follow_live);
-            }
-            if (builder._switch == null) {
-                this._switch = DEFAULT_SWITCH;
-                return;
-            } else {
-                this._switch = builder._switch;
-                return;
-            }
-        }
-        this.user_follow_live = immutableCopyOf(builder.user_follow_live);
-        this._switch = builder._switch;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserFollowLive> {
         public Integer _switch;
         public List<AlaLiveInfo> user_follow_live;
@@ -44,10 +24,11 @@ public final class UserFollowLive extends Message {
 
         public Builder(UserFollowLive userFollowLive) {
             super(userFollowLive);
-            if (userFollowLive != null) {
-                this.user_follow_live = UserFollowLive.copyOf(userFollowLive.user_follow_live);
-                this._switch = userFollowLive._switch;
+            if (userFollowLive == null) {
+                return;
             }
+            this.user_follow_live = Message.copyOf(userFollowLive.user_follow_live);
+            this._switch = userFollowLive._switch;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -55,5 +36,27 @@ public final class UserFollowLive extends Message {
         public UserFollowLive build(boolean z) {
             return new UserFollowLive(this, z);
         }
+    }
+
+    public UserFollowLive(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<AlaLiveInfo> list = builder.user_follow_live;
+            if (list == null) {
+                this.user_follow_live = DEFAULT_USER_FOLLOW_LIVE;
+            } else {
+                this.user_follow_live = Message.immutableCopyOf(list);
+            }
+            Integer num = builder._switch;
+            if (num == null) {
+                this._switch = DEFAULT_SWITCH;
+                return;
+            } else {
+                this._switch = num;
+                return;
+            }
+        }
+        this.user_follow_live = Message.immutableCopyOf(builder.user_follow_live);
+        this._switch = builder._switch;
     }
 }

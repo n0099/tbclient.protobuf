@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class GameAttr extends Message {
     public static final String DEFAULT_IS_OPEN = "";
     public static final String DEFAULT_USER_ID = "";
@@ -13,29 +13,7 @@ public final class GameAttr extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String user_id;
 
-    private GameAttr(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_id == null) {
-                this.user_id = "";
-            } else {
-                this.user_id = builder.user_id;
-            }
-            this.signature_info = builder.signature_info;
-            if (builder.is_open == null) {
-                this.is_open = "";
-                return;
-            } else {
-                this.is_open = builder.is_open;
-                return;
-            }
-        }
-        this.user_id = builder.user_id;
-        this.signature_info = builder.signature_info;
-        this.is_open = builder.is_open;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GameAttr> {
         public String is_open;
         public SignatureInfo signature_info;
@@ -46,11 +24,12 @@ public final class GameAttr extends Message {
 
         public Builder(GameAttr gameAttr) {
             super(gameAttr);
-            if (gameAttr != null) {
-                this.user_id = gameAttr.user_id;
-                this.signature_info = gameAttr.signature_info;
-                this.is_open = gameAttr.is_open;
+            if (gameAttr == null) {
+                return;
             }
+            this.user_id = gameAttr.user_id;
+            this.signature_info = gameAttr.signature_info;
+            this.is_open = gameAttr.is_open;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -58,5 +37,29 @@ public final class GameAttr extends Message {
         public GameAttr build(boolean z) {
             return new GameAttr(this, z);
         }
+    }
+
+    public GameAttr(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.user_id;
+            if (str == null) {
+                this.user_id = "";
+            } else {
+                this.user_id = str;
+            }
+            this.signature_info = builder.signature_info;
+            String str2 = builder.is_open;
+            if (str2 == null) {
+                this.is_open = "";
+                return;
+            } else {
+                this.is_open = str2;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.signature_info = builder.signature_info;
+        this.is_open = builder.is_open;
     }
 }

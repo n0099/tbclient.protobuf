@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class VipThemeList extends Message {
     public static final String DEFAULT_CARD_ID = "";
     public static final String DEFAULT_CLASS_NAME = "";
@@ -25,51 +25,7 @@ public final class VipThemeList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<VipThemeItem> item_card;
 
-    private VipThemeList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.class_name == null) {
-                this.class_name = "";
-            } else {
-                this.class_name = builder.class_name;
-            }
-            if (builder.class_url_name == null) {
-                this.class_url_name = "";
-            } else {
-                this.class_url_name = builder.class_url_name;
-            }
-            if (builder.class_url == null) {
-                this.class_url = "";
-            } else {
-                this.class_url = builder.class_url;
-            }
-            if (builder.item == null) {
-                this.item = DEFAULT_ITEM;
-            } else {
-                this.item = immutableCopyOf(builder.item);
-            }
-            if (builder.item_card == null) {
-                this.item_card = DEFAULT_ITEM_CARD;
-            } else {
-                this.item_card = immutableCopyOf(builder.item_card);
-            }
-            if (builder.card_id == null) {
-                this.card_id = "";
-                return;
-            } else {
-                this.card_id = builder.card_id;
-                return;
-            }
-        }
-        this.class_name = builder.class_name;
-        this.class_url_name = builder.class_url_name;
-        this.class_url = builder.class_url;
-        this.item = immutableCopyOf(builder.item);
-        this.item_card = immutableCopyOf(builder.item_card);
-        this.card_id = builder.card_id;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VipThemeList> {
         public String card_id;
         public String class_name;
@@ -83,14 +39,15 @@ public final class VipThemeList extends Message {
 
         public Builder(VipThemeList vipThemeList) {
             super(vipThemeList);
-            if (vipThemeList != null) {
-                this.class_name = vipThemeList.class_name;
-                this.class_url_name = vipThemeList.class_url_name;
-                this.class_url = vipThemeList.class_url;
-                this.item = VipThemeList.copyOf(vipThemeList.item);
-                this.item_card = VipThemeList.copyOf(vipThemeList.item_card);
-                this.card_id = vipThemeList.card_id;
+            if (vipThemeList == null) {
+                return;
             }
+            this.class_name = vipThemeList.class_name;
+            this.class_url_name = vipThemeList.class_url_name;
+            this.class_url = vipThemeList.class_url;
+            this.item = Message.copyOf(vipThemeList.item);
+            this.item_card = Message.copyOf(vipThemeList.item_card);
+            this.card_id = vipThemeList.card_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -98,5 +55,55 @@ public final class VipThemeList extends Message {
         public VipThemeList build(boolean z) {
             return new VipThemeList(this, z);
         }
+    }
+
+    public VipThemeList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.class_name;
+            if (str == null) {
+                this.class_name = "";
+            } else {
+                this.class_name = str;
+            }
+            String str2 = builder.class_url_name;
+            if (str2 == null) {
+                this.class_url_name = "";
+            } else {
+                this.class_url_name = str2;
+            }
+            String str3 = builder.class_url;
+            if (str3 == null) {
+                this.class_url = "";
+            } else {
+                this.class_url = str3;
+            }
+            List<VipThemeItem> list = builder.item;
+            if (list == null) {
+                this.item = DEFAULT_ITEM;
+            } else {
+                this.item = Message.immutableCopyOf(list);
+            }
+            List<VipThemeItem> list2 = builder.item_card;
+            if (list2 == null) {
+                this.item_card = DEFAULT_ITEM_CARD;
+            } else {
+                this.item_card = Message.immutableCopyOf(list2);
+            }
+            String str4 = builder.card_id;
+            if (str4 == null) {
+                this.card_id = "";
+                return;
+            } else {
+                this.card_id = str4;
+                return;
+            }
+        }
+        this.class_name = builder.class_name;
+        this.class_url_name = builder.class_url_name;
+        this.class_url = builder.class_url;
+        this.item = Message.immutableCopyOf(builder.item);
+        this.item_card = Message.immutableCopyOf(builder.item_card);
+        this.card_id = builder.card_id;
     }
 }

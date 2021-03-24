@@ -6,7 +6,7 @@ import tbclient.Baijiahao;
 import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ReplyList extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FNAME = "";
@@ -84,152 +84,7 @@ public final class ReplyList extends Message {
     public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
     public static final Integer DEFAULT_IS_BJH = 0;
 
-    private ReplyList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = builder.post_id;
-            }
-            if (builder.time == null) {
-                this.time = DEFAULT_TIME;
-            } else {
-                this.time = builder.time;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.fname == null) {
-                this.fname = "";
-            } else {
-                this.fname = builder.fname;
-            }
-            if (builder.content == null) {
-                this.content = "";
-            } else {
-                this.content = builder.content;
-            }
-            if (builder.is_floor == null) {
-                this.is_floor = DEFAULT_IS_FLOOR;
-            } else {
-                this.is_floor = builder.is_floor;
-            }
-            if (builder.quote_content == null) {
-                this.quote_content = "";
-            } else {
-                this.quote_content = builder.quote_content;
-            }
-            this.replyer = builder.replyer;
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.unread == null) {
-                this.unread = DEFAULT_UNREAD;
-            } else {
-                this.unread = builder.unread;
-            }
-            if (builder.item_type == null) {
-                this.item_type = "";
-            } else {
-                this.item_type = builder.item_type;
-            }
-            this.zan = builder.zan;
-            if (builder.quote_pid == null) {
-                this.quote_pid = DEFAULT_QUOTE_PID;
-            } else {
-                this.quote_pid = builder.quote_pid;
-            }
-            this.quote_user = builder.quote_user;
-            if (builder.server_time == null) {
-                this.server_time = DEFAULT_SERVER_TIME;
-            } else {
-                this.server_time = builder.server_time;
-            }
-            if (builder.thread_type == null) {
-                this.thread_type = DEFAULT_THREAD_TYPE;
-            } else {
-                this.thread_type = builder.thread_type;
-            }
-            if (builder.v_forum_id == null) {
-                this.v_forum_id = DEFAULT_V_FORUM_ID;
-            } else {
-                this.v_forum_id = builder.v_forum_id;
-            }
-            if (builder.hide_fname == null) {
-                this.hide_fname = DEFAULT_HIDE_FNAME;
-            } else {
-                this.hide_fname = builder.hide_fname;
-            }
-            if (builder.is_story == null) {
-                this.is_story = DEFAULT_IS_STORY;
-            } else {
-                this.is_story = builder.is_story;
-            }
-            this.origin_thread_info = builder.origin_thread_info;
-            if (builder.post_from == null) {
-                this.post_from = "";
-            } else {
-                this.post_from = builder.post_from;
-            }
-            if (builder.is_share_thread == null) {
-                this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
-            } else {
-                this.is_share_thread = builder.is_share_thread;
-            }
-            if (builder.thread_img_url == null) {
-                this.thread_img_url = "";
-            } else {
-                this.thread_img_url = builder.thread_img_url;
-            }
-            this.thread_author_user = builder.thread_author_user;
-            if (builder.is_bjh == null) {
-                this.is_bjh = DEFAULT_IS_BJH;
-            } else {
-                this.is_bjh = builder.is_bjh;
-            }
-            this.baijiahao = builder.baijiahao;
-            return;
-        }
-        this.thread_id = builder.thread_id;
-        this.post_id = builder.post_id;
-        this.time = builder.time;
-        this.title = builder.title;
-        this.fname = builder.fname;
-        this.content = builder.content;
-        this.is_floor = builder.is_floor;
-        this.quote_content = builder.quote_content;
-        this.replyer = builder.replyer;
-        this.type = builder.type;
-        this.unread = builder.unread;
-        this.item_type = builder.item_type;
-        this.zan = builder.zan;
-        this.quote_pid = builder.quote_pid;
-        this.quote_user = builder.quote_user;
-        this.server_time = builder.server_time;
-        this.thread_type = builder.thread_type;
-        this.v_forum_id = builder.v_forum_id;
-        this.hide_fname = builder.hide_fname;
-        this.is_story = builder.is_story;
-        this.origin_thread_info = builder.origin_thread_info;
-        this.post_from = builder.post_from;
-        this.is_share_thread = builder.is_share_thread;
-        this.thread_img_url = builder.thread_img_url;
-        this.thread_author_user = builder.thread_author_user;
-        this.is_bjh = builder.is_bjh;
-        this.baijiahao = builder.baijiahao;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ReplyList> {
         public Baijiahao baijiahao;
         public String content;
@@ -264,35 +119,36 @@ public final class ReplyList extends Message {
 
         public Builder(ReplyList replyList) {
             super(replyList);
-            if (replyList != null) {
-                this.thread_id = replyList.thread_id;
-                this.post_id = replyList.post_id;
-                this.time = replyList.time;
-                this.title = replyList.title;
-                this.fname = replyList.fname;
-                this.content = replyList.content;
-                this.is_floor = replyList.is_floor;
-                this.quote_content = replyList.quote_content;
-                this.replyer = replyList.replyer;
-                this.type = replyList.type;
-                this.unread = replyList.unread;
-                this.item_type = replyList.item_type;
-                this.zan = replyList.zan;
-                this.quote_pid = replyList.quote_pid;
-                this.quote_user = replyList.quote_user;
-                this.server_time = replyList.server_time;
-                this.thread_type = replyList.thread_type;
-                this.v_forum_id = replyList.v_forum_id;
-                this.hide_fname = replyList.hide_fname;
-                this.is_story = replyList.is_story;
-                this.origin_thread_info = replyList.origin_thread_info;
-                this.post_from = replyList.post_from;
-                this.is_share_thread = replyList.is_share_thread;
-                this.thread_img_url = replyList.thread_img_url;
-                this.thread_author_user = replyList.thread_author_user;
-                this.is_bjh = replyList.is_bjh;
-                this.baijiahao = replyList.baijiahao;
+            if (replyList == null) {
+                return;
             }
+            this.thread_id = replyList.thread_id;
+            this.post_id = replyList.post_id;
+            this.time = replyList.time;
+            this.title = replyList.title;
+            this.fname = replyList.fname;
+            this.content = replyList.content;
+            this.is_floor = replyList.is_floor;
+            this.quote_content = replyList.quote_content;
+            this.replyer = replyList.replyer;
+            this.type = replyList.type;
+            this.unread = replyList.unread;
+            this.item_type = replyList.item_type;
+            this.zan = replyList.zan;
+            this.quote_pid = replyList.quote_pid;
+            this.quote_user = replyList.quote_user;
+            this.server_time = replyList.server_time;
+            this.thread_type = replyList.thread_type;
+            this.v_forum_id = replyList.v_forum_id;
+            this.hide_fname = replyList.hide_fname;
+            this.is_story = replyList.is_story;
+            this.origin_thread_info = replyList.origin_thread_info;
+            this.post_from = replyList.post_from;
+            this.is_share_thread = replyList.is_share_thread;
+            this.thread_img_url = replyList.thread_img_url;
+            this.thread_author_user = replyList.thread_author_user;
+            this.is_bjh = replyList.is_bjh;
+            this.baijiahao = replyList.baijiahao;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -300,5 +156,171 @@ public final class ReplyList extends Message {
         public ReplyList build(boolean z) {
             return new ReplyList(this, z);
         }
+    }
+
+    public ReplyList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.thread_id;
+            if (l == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l;
+            }
+            Long l2 = builder.post_id;
+            if (l2 == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = l2;
+            }
+            Integer num = builder.time;
+            if (num == null) {
+                this.time = DEFAULT_TIME;
+            } else {
+                this.time = num;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.fname;
+            if (str2 == null) {
+                this.fname = "";
+            } else {
+                this.fname = str2;
+            }
+            String str3 = builder.content;
+            if (str3 == null) {
+                this.content = "";
+            } else {
+                this.content = str3;
+            }
+            Integer num2 = builder.is_floor;
+            if (num2 == null) {
+                this.is_floor = DEFAULT_IS_FLOOR;
+            } else {
+                this.is_floor = num2;
+            }
+            String str4 = builder.quote_content;
+            if (str4 == null) {
+                this.quote_content = "";
+            } else {
+                this.quote_content = str4;
+            }
+            this.replyer = builder.replyer;
+            Integer num3 = builder.type;
+            if (num3 == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num3;
+            }
+            Integer num4 = builder.unread;
+            if (num4 == null) {
+                this.unread = DEFAULT_UNREAD;
+            } else {
+                this.unread = num4;
+            }
+            String str5 = builder.item_type;
+            if (str5 == null) {
+                this.item_type = "";
+            } else {
+                this.item_type = str5;
+            }
+            this.zan = builder.zan;
+            Long l3 = builder.quote_pid;
+            if (l3 == null) {
+                this.quote_pid = DEFAULT_QUOTE_PID;
+            } else {
+                this.quote_pid = l3;
+            }
+            this.quote_user = builder.quote_user;
+            Integer num5 = builder.server_time;
+            if (num5 == null) {
+                this.server_time = DEFAULT_SERVER_TIME;
+            } else {
+                this.server_time = num5;
+            }
+            Integer num6 = builder.thread_type;
+            if (num6 == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+            } else {
+                this.thread_type = num6;
+            }
+            Long l4 = builder.v_forum_id;
+            if (l4 == null) {
+                this.v_forum_id = DEFAULT_V_FORUM_ID;
+            } else {
+                this.v_forum_id = l4;
+            }
+            Integer num7 = builder.hide_fname;
+            if (num7 == null) {
+                this.hide_fname = DEFAULT_HIDE_FNAME;
+            } else {
+                this.hide_fname = num7;
+            }
+            Integer num8 = builder.is_story;
+            if (num8 == null) {
+                this.is_story = DEFAULT_IS_STORY;
+            } else {
+                this.is_story = num8;
+            }
+            this.origin_thread_info = builder.origin_thread_info;
+            String str6 = builder.post_from;
+            if (str6 == null) {
+                this.post_from = "";
+            } else {
+                this.post_from = str6;
+            }
+            Integer num9 = builder.is_share_thread;
+            if (num9 == null) {
+                this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
+            } else {
+                this.is_share_thread = num9;
+            }
+            String str7 = builder.thread_img_url;
+            if (str7 == null) {
+                this.thread_img_url = "";
+            } else {
+                this.thread_img_url = str7;
+            }
+            this.thread_author_user = builder.thread_author_user;
+            Integer num10 = builder.is_bjh;
+            if (num10 == null) {
+                this.is_bjh = DEFAULT_IS_BJH;
+            } else {
+                this.is_bjh = num10;
+            }
+            this.baijiahao = builder.baijiahao;
+            return;
+        }
+        this.thread_id = builder.thread_id;
+        this.post_id = builder.post_id;
+        this.time = builder.time;
+        this.title = builder.title;
+        this.fname = builder.fname;
+        this.content = builder.content;
+        this.is_floor = builder.is_floor;
+        this.quote_content = builder.quote_content;
+        this.replyer = builder.replyer;
+        this.type = builder.type;
+        this.unread = builder.unread;
+        this.item_type = builder.item_type;
+        this.zan = builder.zan;
+        this.quote_pid = builder.quote_pid;
+        this.quote_user = builder.quote_user;
+        this.server_time = builder.server_time;
+        this.thread_type = builder.thread_type;
+        this.v_forum_id = builder.v_forum_id;
+        this.hide_fname = builder.hide_fname;
+        this.is_story = builder.is_story;
+        this.origin_thread_info = builder.origin_thread_info;
+        this.post_from = builder.post_from;
+        this.is_share_thread = builder.is_share_thread;
+        this.thread_img_url = builder.thread_img_url;
+        this.thread_author_user = builder.thread_author_user;
+        this.is_bjh = builder.is_bjh;
+        this.baijiahao = builder.baijiahao;
     }
 }

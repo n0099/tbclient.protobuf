@@ -3,25 +3,14 @@ package tbclient.GetBigday;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class GetBigdayResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    private GetBigdayResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GetBigdayResIdl> {
         public DataRes data;
         public Error error;
@@ -31,10 +20,11 @@ public final class GetBigdayResIdl extends Message {
 
         public Builder(GetBigdayResIdl getBigdayResIdl) {
             super(getBigdayResIdl);
-            if (getBigdayResIdl != null) {
-                this.error = getBigdayResIdl.error;
-                this.data = getBigdayResIdl.data;
+            if (getBigdayResIdl == null) {
+                return;
             }
+            this.error = getBigdayResIdl.error;
+            this.data = getBigdayResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class GetBigdayResIdl extends Message {
         public GetBigdayResIdl build(boolean z) {
             return new GetBigdayResIdl(this, z);
         }
+    }
+
+    public GetBigdayResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

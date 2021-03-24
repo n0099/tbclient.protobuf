@@ -3,25 +3,14 @@ package tbclient.GetBubbleByCategory;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class GetBubbleByCategoryResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
     @ProtoField(tag = 2)
     public final Error error;
 
-    private GetBubbleByCategoryResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.data = builder.data;
-            this.error = builder.error;
-            return;
-        }
-        this.data = builder.data;
-        this.error = builder.error;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<GetBubbleByCategoryResIdl> {
         public DataRes data;
         public Error error;
@@ -31,10 +20,11 @@ public final class GetBubbleByCategoryResIdl extends Message {
 
         public Builder(GetBubbleByCategoryResIdl getBubbleByCategoryResIdl) {
             super(getBubbleByCategoryResIdl);
-            if (getBubbleByCategoryResIdl != null) {
-                this.data = getBubbleByCategoryResIdl.data;
-                this.error = getBubbleByCategoryResIdl.error;
+            if (getBubbleByCategoryResIdl == null) {
+                return;
             }
+            this.data = getBubbleByCategoryResIdl.data;
+            this.error = getBubbleByCategoryResIdl.error;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class GetBubbleByCategoryResIdl extends Message {
         public GetBubbleByCategoryResIdl build(boolean z) {
             return new GetBubbleByCategoryResIdl(this, z);
         }
+    }
+
+    public GetBubbleByCategoryResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
 }

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class NewUser extends Message {
     public static final String DEFAULT_BG_ID = "";
     public static final String DEFAULT_BILLBOARD = "";
@@ -109,207 +109,7 @@ public final class NewUser extends Message {
     public static final List<Rpgoldicon> DEFAULT_RPGOLDICON = Collections.emptyList();
     public static final List<TbmallMonthIcon> DEFAULT_TBMALL_MONTH_ICON = Collections.emptyList();
 
-    private NewUser(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.user_sex == null) {
-                this.user_sex = DEFAULT_USER_SEX;
-            } else {
-                this.user_sex = builder.user_sex;
-            }
-            if (builder.user_status == null) {
-                this.user_status = DEFAULT_USER_STATUS;
-            } else {
-                this.user_status = builder.user_status;
-            }
-            if (builder.meizhi_level == null) {
-                this.meizhi_level = DEFAULT_MEIZHI_LEVEL;
-            } else {
-                this.meizhi_level = builder.meizhi_level;
-            }
-            if (builder.superboy == null) {
-                this.superboy = DEFAULT_SUPERBOY;
-            } else {
-                this.superboy = builder.superboy;
-            }
-            if (builder.card == null) {
-                this.card = "";
-            } else {
-                this.card = builder.card;
-            }
-            this.parr_props = builder.parr_props;
-            this.m_parr_props = builder.m_parr_props;
-            this.wap_rn = builder.wap_rn;
-            if (builder.is_tenyear == null) {
-                this.is_tenyear = DEFAULT_IS_TENYEAR;
-            } else {
-                this.is_tenyear = builder.is_tenyear;
-            }
-            if (builder.is_group_owner == null) {
-                this.is_group_owner = DEFAULT_IS_GROUP_OWNER;
-            } else {
-                this.is_group_owner = builder.is_group_owner;
-            }
-            this.parr_scores = builder.parr_scores;
-            if (builder.user_type == null) {
-                this.user_type = DEFAULT_USER_TYPE;
-            } else {
-                this.user_type = builder.user_type;
-            }
-            if (builder.use_sig == null) {
-                this.use_sig = DEFAULT_USE_SIG;
-            } else {
-                this.use_sig = builder.use_sig;
-            }
-            if (builder.paper == null) {
-                this.paper = "";
-            } else {
-                this.paper = builder.paper;
-            }
-            if (builder.bg_id == null) {
-                this.bg_id = "";
-            } else {
-                this.bg_id = builder.bg_id;
-            }
-            if (builder.is_shengyou == null) {
-                this.is_shengyou = DEFAULT_IS_SHENGYOU;
-            } else {
-                this.is_shengyou = builder.is_shengyou;
-            }
-            if (builder.is_hardworking == null) {
-                this.is_hardworking = DEFAULT_IS_HARDWORKING;
-            } else {
-                this.is_hardworking = builder.is_hardworking;
-            }
-            if (builder.billboard == null) {
-                this.billboard = "";
-            } else {
-                this.billboard = builder.billboard;
-            }
-            if (builder.portrait_time == null) {
-                this.portrait_time = "";
-            } else {
-                this.portrait_time = builder.portrait_time;
-            }
-            if (builder.appraise == null) {
-                this.appraise = DEFAULT_APPRAISE;
-            } else {
-                this.appraise = immutableCopyOf(builder.appraise);
-            }
-            if (builder.tbscore_repeate_finish_time == null) {
-                this.tbscore_repeate_finish_time = "";
-            } else {
-                this.tbscore_repeate_finish_time = builder.tbscore_repeate_finish_time;
-            }
-            if (builder.is_member == null) {
-                this.is_member = DEFAULT_IS_MEMBER;
-            } else {
-                this.is_member = builder.is_member;
-            }
-            if (builder.is_passer == null) {
-                this.is_passer = DEFAULT_IS_PASSER;
-            } else {
-                this.is_passer = builder.is_passer;
-            }
-            if (builder.is_qun_spring == null) {
-                this.is_qun_spring = DEFAULT_IS_QUN_SPRING;
-            } else {
-                this.is_qun_spring = builder.is_qun_spring;
-            }
-            if (builder.notice_mask == null) {
-                this.notice_mask = DEFAULT_NOTICE_MASK;
-            } else {
-                this.notice_mask = immutableCopyOf(builder.notice_mask);
-            }
-            if (builder.rpgoldicon == null) {
-                this.rpgoldicon = DEFAULT_RPGOLDICON;
-            } else {
-                this.rpgoldicon = immutableCopyOf(builder.rpgoldicon);
-            }
-            if (builder.is_doudizhu == null) {
-                this.is_doudizhu = "";
-            } else {
-                this.is_doudizhu = builder.is_doudizhu;
-            }
-            if (builder.cdn_error == null) {
-                this.cdn_error = "";
-            } else {
-                this.cdn_error = builder.cdn_error;
-            }
-            if (builder.tbmall_month_icon == null) {
-                this.tbmall_month_icon = DEFAULT_TBMALL_MONTH_ICON;
-            } else {
-                this.tbmall_month_icon = immutableCopyOf(builder.tbmall_month_icon);
-            }
-            if (builder.is_coreuser == null) {
-                this.is_coreuser = "";
-            } else {
-                this.is_coreuser = builder.is_coreuser;
-            }
-            this.game_attr = builder.game_attr;
-            if (builder.is_interestman == null) {
-                this.is_interestman = "";
-            } else {
-                this.is_interestman = builder.is_interestman;
-            }
-            this.global = builder.global;
-            if (builder.free_flag == null) {
-                this.free_flag = "";
-                return;
-            } else {
-                this.free_flag = builder.free_flag;
-                return;
-            }
-        }
-        this.user_id = builder.user_id;
-        this.user_name = builder.user_name;
-        this.user_sex = builder.user_sex;
-        this.user_status = builder.user_status;
-        this.meizhi_level = builder.meizhi_level;
-        this.superboy = builder.superboy;
-        this.card = builder.card;
-        this.parr_props = builder.parr_props;
-        this.m_parr_props = builder.m_parr_props;
-        this.wap_rn = builder.wap_rn;
-        this.is_tenyear = builder.is_tenyear;
-        this.is_group_owner = builder.is_group_owner;
-        this.parr_scores = builder.parr_scores;
-        this.user_type = builder.user_type;
-        this.use_sig = builder.use_sig;
-        this.paper = builder.paper;
-        this.bg_id = builder.bg_id;
-        this.is_shengyou = builder.is_shengyou;
-        this.is_hardworking = builder.is_hardworking;
-        this.billboard = builder.billboard;
-        this.portrait_time = builder.portrait_time;
-        this.appraise = immutableCopyOf(builder.appraise);
-        this.tbscore_repeate_finish_time = builder.tbscore_repeate_finish_time;
-        this.is_member = builder.is_member;
-        this.is_passer = builder.is_passer;
-        this.is_qun_spring = builder.is_qun_spring;
-        this.notice_mask = immutableCopyOf(builder.notice_mask);
-        this.rpgoldicon = immutableCopyOf(builder.rpgoldicon);
-        this.is_doudizhu = builder.is_doudizhu;
-        this.cdn_error = builder.cdn_error;
-        this.tbmall_month_icon = immutableCopyOf(builder.tbmall_month_icon);
-        this.is_coreuser = builder.is_coreuser;
-        this.game_attr = builder.game_attr;
-        this.is_interestman = builder.is_interestman;
-        this.global = builder.global;
-        this.free_flag = builder.free_flag;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<NewUser> {
         public List<Props> appraise;
         public String bg_id;
@@ -353,44 +153,45 @@ public final class NewUser extends Message {
 
         public Builder(NewUser newUser) {
             super(newUser);
-            if (newUser != null) {
-                this.user_id = newUser.user_id;
-                this.user_name = newUser.user_name;
-                this.user_sex = newUser.user_sex;
-                this.user_status = newUser.user_status;
-                this.meizhi_level = newUser.meizhi_level;
-                this.superboy = newUser.superboy;
-                this.card = newUser.card;
-                this.parr_props = newUser.parr_props;
-                this.m_parr_props = newUser.m_parr_props;
-                this.wap_rn = newUser.wap_rn;
-                this.is_tenyear = newUser.is_tenyear;
-                this.is_group_owner = newUser.is_group_owner;
-                this.parr_scores = newUser.parr_scores;
-                this.user_type = newUser.user_type;
-                this.use_sig = newUser.use_sig;
-                this.paper = newUser.paper;
-                this.bg_id = newUser.bg_id;
-                this.is_shengyou = newUser.is_shengyou;
-                this.is_hardworking = newUser.is_hardworking;
-                this.billboard = newUser.billboard;
-                this.portrait_time = newUser.portrait_time;
-                this.appraise = NewUser.copyOf(newUser.appraise);
-                this.tbscore_repeate_finish_time = newUser.tbscore_repeate_finish_time;
-                this.is_member = newUser.is_member;
-                this.is_passer = newUser.is_passer;
-                this.is_qun_spring = newUser.is_qun_spring;
-                this.notice_mask = NewUser.copyOf(newUser.notice_mask);
-                this.rpgoldicon = NewUser.copyOf(newUser.rpgoldicon);
-                this.is_doudizhu = newUser.is_doudizhu;
-                this.cdn_error = newUser.cdn_error;
-                this.tbmall_month_icon = NewUser.copyOf(newUser.tbmall_month_icon);
-                this.is_coreuser = newUser.is_coreuser;
-                this.game_attr = newUser.game_attr;
-                this.is_interestman = newUser.is_interestman;
-                this.global = newUser.global;
-                this.free_flag = newUser.free_flag;
+            if (newUser == null) {
+                return;
             }
+            this.user_id = newUser.user_id;
+            this.user_name = newUser.user_name;
+            this.user_sex = newUser.user_sex;
+            this.user_status = newUser.user_status;
+            this.meizhi_level = newUser.meizhi_level;
+            this.superboy = newUser.superboy;
+            this.card = newUser.card;
+            this.parr_props = newUser.parr_props;
+            this.m_parr_props = newUser.m_parr_props;
+            this.wap_rn = newUser.wap_rn;
+            this.is_tenyear = newUser.is_tenyear;
+            this.is_group_owner = newUser.is_group_owner;
+            this.parr_scores = newUser.parr_scores;
+            this.user_type = newUser.user_type;
+            this.use_sig = newUser.use_sig;
+            this.paper = newUser.paper;
+            this.bg_id = newUser.bg_id;
+            this.is_shengyou = newUser.is_shengyou;
+            this.is_hardworking = newUser.is_hardworking;
+            this.billboard = newUser.billboard;
+            this.portrait_time = newUser.portrait_time;
+            this.appraise = Message.copyOf(newUser.appraise);
+            this.tbscore_repeate_finish_time = newUser.tbscore_repeate_finish_time;
+            this.is_member = newUser.is_member;
+            this.is_passer = newUser.is_passer;
+            this.is_qun_spring = newUser.is_qun_spring;
+            this.notice_mask = Message.copyOf(newUser.notice_mask);
+            this.rpgoldicon = Message.copyOf(newUser.rpgoldicon);
+            this.is_doudizhu = newUser.is_doudizhu;
+            this.cdn_error = newUser.cdn_error;
+            this.tbmall_month_icon = Message.copyOf(newUser.tbmall_month_icon);
+            this.is_coreuser = newUser.is_coreuser;
+            this.game_attr = newUser.game_attr;
+            this.is_interestman = newUser.is_interestman;
+            this.global = newUser.global;
+            this.free_flag = newUser.free_flag;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -398,5 +199,235 @@ public final class NewUser extends Message {
         public NewUser build(boolean z) {
             return new NewUser(this, z);
         }
+    }
+
+    public NewUser(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            Integer num = builder.user_sex;
+            if (num == null) {
+                this.user_sex = DEFAULT_USER_SEX;
+            } else {
+                this.user_sex = num;
+            }
+            Integer num2 = builder.user_status;
+            if (num2 == null) {
+                this.user_status = DEFAULT_USER_STATUS;
+            } else {
+                this.user_status = num2;
+            }
+            Integer num3 = builder.meizhi_level;
+            if (num3 == null) {
+                this.meizhi_level = DEFAULT_MEIZHI_LEVEL;
+            } else {
+                this.meizhi_level = num3;
+            }
+            Integer num4 = builder.superboy;
+            if (num4 == null) {
+                this.superboy = DEFAULT_SUPERBOY;
+            } else {
+                this.superboy = num4;
+            }
+            String str2 = builder.card;
+            if (str2 == null) {
+                this.card = "";
+            } else {
+                this.card = str2;
+            }
+            this.parr_props = builder.parr_props;
+            this.m_parr_props = builder.m_parr_props;
+            this.wap_rn = builder.wap_rn;
+            Integer num5 = builder.is_tenyear;
+            if (num5 == null) {
+                this.is_tenyear = DEFAULT_IS_TENYEAR;
+            } else {
+                this.is_tenyear = num5;
+            }
+            Integer num6 = builder.is_group_owner;
+            if (num6 == null) {
+                this.is_group_owner = DEFAULT_IS_GROUP_OWNER;
+            } else {
+                this.is_group_owner = num6;
+            }
+            this.parr_scores = builder.parr_scores;
+            Integer num7 = builder.user_type;
+            if (num7 == null) {
+                this.user_type = DEFAULT_USER_TYPE;
+            } else {
+                this.user_type = num7;
+            }
+            Integer num8 = builder.use_sig;
+            if (num8 == null) {
+                this.use_sig = DEFAULT_USE_SIG;
+            } else {
+                this.use_sig = num8;
+            }
+            String str3 = builder.paper;
+            if (str3 == null) {
+                this.paper = "";
+            } else {
+                this.paper = str3;
+            }
+            String str4 = builder.bg_id;
+            if (str4 == null) {
+                this.bg_id = "";
+            } else {
+                this.bg_id = str4;
+            }
+            Integer num9 = builder.is_shengyou;
+            if (num9 == null) {
+                this.is_shengyou = DEFAULT_IS_SHENGYOU;
+            } else {
+                this.is_shengyou = num9;
+            }
+            Integer num10 = builder.is_hardworking;
+            if (num10 == null) {
+                this.is_hardworking = DEFAULT_IS_HARDWORKING;
+            } else {
+                this.is_hardworking = num10;
+            }
+            String str5 = builder.billboard;
+            if (str5 == null) {
+                this.billboard = "";
+            } else {
+                this.billboard = str5;
+            }
+            String str6 = builder.portrait_time;
+            if (str6 == null) {
+                this.portrait_time = "";
+            } else {
+                this.portrait_time = str6;
+            }
+            List<Props> list = builder.appraise;
+            if (list == null) {
+                this.appraise = DEFAULT_APPRAISE;
+            } else {
+                this.appraise = Message.immutableCopyOf(list);
+            }
+            String str7 = builder.tbscore_repeate_finish_time;
+            if (str7 == null) {
+                this.tbscore_repeate_finish_time = "";
+            } else {
+                this.tbscore_repeate_finish_time = str7;
+            }
+            Integer num11 = builder.is_member;
+            if (num11 == null) {
+                this.is_member = DEFAULT_IS_MEMBER;
+            } else {
+                this.is_member = num11;
+            }
+            Integer num12 = builder.is_passer;
+            if (num12 == null) {
+                this.is_passer = DEFAULT_IS_PASSER;
+            } else {
+                this.is_passer = num12;
+            }
+            Integer num13 = builder.is_qun_spring;
+            if (num13 == null) {
+                this.is_qun_spring = DEFAULT_IS_QUN_SPRING;
+            } else {
+                this.is_qun_spring = num13;
+            }
+            List<NoticeMask> list2 = builder.notice_mask;
+            if (list2 == null) {
+                this.notice_mask = DEFAULT_NOTICE_MASK;
+            } else {
+                this.notice_mask = Message.immutableCopyOf(list2);
+            }
+            List<Rpgoldicon> list3 = builder.rpgoldicon;
+            if (list3 == null) {
+                this.rpgoldicon = DEFAULT_RPGOLDICON;
+            } else {
+                this.rpgoldicon = Message.immutableCopyOf(list3);
+            }
+            String str8 = builder.is_doudizhu;
+            if (str8 == null) {
+                this.is_doudizhu = "";
+            } else {
+                this.is_doudizhu = str8;
+            }
+            String str9 = builder.cdn_error;
+            if (str9 == null) {
+                this.cdn_error = "";
+            } else {
+                this.cdn_error = str9;
+            }
+            List<TbmallMonthIcon> list4 = builder.tbmall_month_icon;
+            if (list4 == null) {
+                this.tbmall_month_icon = DEFAULT_TBMALL_MONTH_ICON;
+            } else {
+                this.tbmall_month_icon = Message.immutableCopyOf(list4);
+            }
+            String str10 = builder.is_coreuser;
+            if (str10 == null) {
+                this.is_coreuser = "";
+            } else {
+                this.is_coreuser = str10;
+            }
+            this.game_attr = builder.game_attr;
+            String str11 = builder.is_interestman;
+            if (str11 == null) {
+                this.is_interestman = "";
+            } else {
+                this.is_interestman = str11;
+            }
+            this.global = builder.global;
+            String str12 = builder.free_flag;
+            if (str12 == null) {
+                this.free_flag = "";
+                return;
+            } else {
+                this.free_flag = str12;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.user_name = builder.user_name;
+        this.user_sex = builder.user_sex;
+        this.user_status = builder.user_status;
+        this.meizhi_level = builder.meizhi_level;
+        this.superboy = builder.superboy;
+        this.card = builder.card;
+        this.parr_props = builder.parr_props;
+        this.m_parr_props = builder.m_parr_props;
+        this.wap_rn = builder.wap_rn;
+        this.is_tenyear = builder.is_tenyear;
+        this.is_group_owner = builder.is_group_owner;
+        this.parr_scores = builder.parr_scores;
+        this.user_type = builder.user_type;
+        this.use_sig = builder.use_sig;
+        this.paper = builder.paper;
+        this.bg_id = builder.bg_id;
+        this.is_shengyou = builder.is_shengyou;
+        this.is_hardworking = builder.is_hardworking;
+        this.billboard = builder.billboard;
+        this.portrait_time = builder.portrait_time;
+        this.appraise = Message.immutableCopyOf(builder.appraise);
+        this.tbscore_repeate_finish_time = builder.tbscore_repeate_finish_time;
+        this.is_member = builder.is_member;
+        this.is_passer = builder.is_passer;
+        this.is_qun_spring = builder.is_qun_spring;
+        this.notice_mask = Message.immutableCopyOf(builder.notice_mask);
+        this.rpgoldicon = Message.immutableCopyOf(builder.rpgoldicon);
+        this.is_doudizhu = builder.is_doudizhu;
+        this.cdn_error = builder.cdn_error;
+        this.tbmall_month_icon = Message.immutableCopyOf(builder.tbmall_month_icon);
+        this.is_coreuser = builder.is_coreuser;
+        this.game_attr = builder.game_attr;
+        this.is_interestman = builder.is_interestman;
+        this.global = builder.global;
+        this.free_flag = builder.free_flag;
     }
 }

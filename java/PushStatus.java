@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PushStatus extends Message {
     public static final Integer DEFAULT_STATUS = 0;
     public static final List<PushType> DEFAULT_TYPES = Collections.emptyList();
@@ -13,27 +13,7 @@ public final class PushStatus extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<PushType> types;
 
-    private PushStatus(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.status == null) {
-                this.status = DEFAULT_STATUS;
-            } else {
-                this.status = builder.status;
-            }
-            if (builder.types == null) {
-                this.types = DEFAULT_TYPES;
-                return;
-            } else {
-                this.types = immutableCopyOf(builder.types);
-                return;
-            }
-        }
-        this.status = builder.status;
-        this.types = immutableCopyOf(builder.types);
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PushStatus> {
         public Integer status;
         public List<PushType> types;
@@ -43,10 +23,11 @@ public final class PushStatus extends Message {
 
         public Builder(PushStatus pushStatus) {
             super(pushStatus);
-            if (pushStatus != null) {
-                this.status = pushStatus.status;
-                this.types = PushStatus.copyOf(pushStatus.types);
+            if (pushStatus == null) {
+                return;
             }
+            this.status = pushStatus.status;
+            this.types = Message.copyOf(pushStatus.types);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -54,5 +35,27 @@ public final class PushStatus extends Message {
         public PushStatus build(boolean z) {
             return new PushStatus(this, z);
         }
+    }
+
+    public PushStatus(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.status;
+            if (num == null) {
+                this.status = DEFAULT_STATUS;
+            } else {
+                this.status = num;
+            }
+            List<PushType> list = builder.types;
+            if (list == null) {
+                this.types = DEFAULT_TYPES;
+                return;
+            } else {
+                this.types = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.status = builder.status;
+        this.types = Message.immutableCopyOf(builder.types);
     }
 }

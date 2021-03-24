@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -53,7 +53,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8883common;
+    public final CommonReq f68559common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -207,405 +207,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FLOOR_SORT_TYPE = 0;
     public static final Integer DEFAULT_SOURCE_TYPE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pb_rn == null) {
-                this.pb_rn = DEFAULT_PB_RN;
-            } else {
-                this.pb_rn = builder.pb_rn;
-            }
-            if (builder.mark == null) {
-                this.mark = DEFAULT_MARK;
-            } else {
-                this.mark = builder.mark;
-            }
-            if (builder.back == null) {
-                this.back = DEFAULT_BACK;
-            } else {
-                this.back = builder.back;
-            }
-            if (builder.kz == null) {
-                this.kz = DEFAULT_KZ;
-            } else {
-                this.kz = builder.kz;
-            }
-            if (builder.lz == null) {
-                this.lz = DEFAULT_LZ;
-            } else {
-                this.lz = builder.lz;
-            }
-            if (builder.r == null) {
-                this.r = DEFAULT_R;
-            } else {
-                this.r = builder.r;
-            }
-            if (builder.pid == null) {
-                this.pid = DEFAULT_PID;
-            } else {
-                this.pid = builder.pid;
-            }
-            if (builder.with_floor == null) {
-                this.with_floor = DEFAULT_WITH_FLOOR;
-            } else {
-                this.with_floor = builder.with_floor;
-            }
-            if (builder.floor_rn == null) {
-                this.floor_rn = DEFAULT_FLOOR_RN;
-            } else {
-                this.floor_rn = builder.floor_rn;
-            }
-            if (builder.weipost == null) {
-                this.weipost = DEFAULT_WEIPOST;
-            } else {
-                this.weipost = builder.weipost;
-            }
-            if (builder.message_id == null) {
-                this.message_id = DEFAULT_MESSAGE_ID;
-            } else {
-                this.message_id = builder.message_id;
-            }
-            if (builder.s_model == null) {
-                this.s_model = DEFAULT_S_MODEL;
-            } else {
-                this.s_model = builder.s_model;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
-            } else {
-                this.rn = builder.rn;
-            }
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-            } else {
-                this.q_type = builder.q_type;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.st_type == null) {
-                this.st_type = "";
-            } else {
-                this.st_type = builder.st_type;
-            }
-            if (builder.thread_type == null) {
-                this.thread_type = DEFAULT_THREAD_TYPE;
-            } else {
-                this.thread_type = builder.thread_type;
-            }
-            if (builder.banner == null) {
-                this.banner = DEFAULT_BANNER;
-            } else {
-                this.banner = builder.banner;
-            }
-            if (builder.arround == null) {
-                this.arround = DEFAULT_ARROUND;
-            } else {
-                this.arround = builder.arround;
-            }
-            if (builder.last == null) {
-                this.last = DEFAULT_LAST;
-            } else {
-                this.last = builder.last;
-            }
-            if (builder.msg_click == null) {
-                this.msg_click = "";
-            } else {
-                this.msg_click = builder.msg_click;
-            }
-            this.f8883common = builder.f8884common;
-            if (builder.lastids == null) {
-                this.lastids = "";
-            } else {
-                this.lastids = builder.lastids;
-            }
-            if (builder.st_from == null) {
-                this.st_from = "";
-            } else {
-                this.st_from = builder.st_from;
-            }
-            if (builder.st_link == null) {
-                this.st_link = "";
-            } else {
-                this.st_link = builder.st_link;
-            }
-            if (builder.st_stat == null) {
-                this.st_stat = DEFAULT_ST_STAT;
-            } else {
-                this.st_stat = builder.st_stat;
-            }
-            if (builder.st_task == null) {
-                this.st_task = DEFAULT_ST_TASK;
-            } else {
-                this.st_task = builder.st_task;
-            }
-            if (builder.issdk == null) {
-                this.issdk = DEFAULT_ISSDK;
-            } else {
-                this.issdk = builder.issdk;
-            }
-            if (builder.query_word == null) {
-                this.query_word = "";
-            } else {
-                this.query_word = builder.query_word;
-            }
-            if (builder.is_comm_reverse == null) {
-                this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
-            } else {
-                this.is_comm_reverse = builder.is_comm_reverse;
-            }
-            if (builder.is_jumpfloor == null) {
-                this.is_jumpfloor = DEFAULT_IS_JUMPFLOOR;
-            } else {
-                this.is_jumpfloor = builder.is_jumpfloor;
-            }
-            if (builder.jumpfloor_num == null) {
-                this.jumpfloor_num = DEFAULT_JUMPFLOOR_NUM;
-            } else {
-                this.jumpfloor_num = builder.jumpfloor_num;
-            }
-            if (builder.da_idfa == null) {
-                this.da_idfa = "";
-            } else {
-                this.da_idfa = builder.da_idfa;
-            }
-            if (builder.platform == null) {
-                this.platform = "";
-            } else {
-                this.platform = builder.platform;
-            }
-            if (builder.jid == null) {
-                this.jid = DEFAULT_JID;
-            } else {
-                this.jid = builder.jid;
-            }
-            if (builder.fid == null) {
-                this.fid = DEFAULT_FID;
-            } else {
-                this.fid = builder.fid;
-            }
-            if (builder.jfrom == null) {
-                this.jfrom = "";
-            } else {
-                this.jfrom = builder.jfrom;
-            }
-            if (builder.yuelaou_locate == null) {
-                this.yuelaou_locate = "";
-            } else {
-                this.yuelaou_locate = builder.yuelaou_locate;
-            }
-            if (builder.yuelaou_params == null) {
-                this.yuelaou_params = "";
-            } else {
-                this.yuelaou_params = builder.yuelaou_params;
-            }
-            if (builder.obj_source == null) {
-                this.obj_source = "";
-            } else {
-                this.obj_source = builder.obj_source;
-            }
-            if (builder.obj_locate == null) {
-                this.obj_locate = "";
-            } else {
-                this.obj_locate = builder.obj_locate;
-            }
-            if (builder.obj_param1 == null) {
-                this.obj_param1 = "";
-            } else {
-                this.obj_param1 = builder.obj_param1;
-            }
-            this.app_pos = builder.app_pos;
-            if (builder.from_smart_frs == null) {
-                this.from_smart_frs = DEFAULT_FROM_SMART_FRS;
-            } else {
-                this.from_smart_frs = builder.from_smart_frs;
-            }
-            if (builder.feed_nid == null) {
-                this.feed_nid = "";
-            } else {
-                this.feed_nid = builder.feed_nid;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.need_repost_recommend_forum == null) {
-                this.need_repost_recommend_forum = DEFAULT_NEED_REPOST_RECOMMEND_FORUM;
-            } else {
-                this.need_repost_recommend_forum = builder.need_repost_recommend_forum;
-            }
-            this.ad_param = builder.ad_param;
-            if (builder.need_log == null) {
-                this.need_log = DEFAULT_NEED_LOG;
-            } else {
-                this.need_log = builder.need_log;
-            }
-            if (builder.call_url == null) {
-                this.call_url = "";
-            } else {
-                this.call_url = builder.call_url;
-            }
-            if (builder.shoubai_cuid == null) {
-                this.shoubai_cuid = "";
-            } else {
-                this.shoubai_cuid = builder.shoubai_cuid;
-            }
-            if (builder.ori_ugc_nid == null) {
-                this.ori_ugc_nid = "";
-            } else {
-                this.ori_ugc_nid = builder.ori_ugc_nid;
-            }
-            if (builder.ori_ugc_tid == null) {
-                this.ori_ugc_tid = "";
-            } else {
-                this.ori_ugc_tid = builder.ori_ugc_tid;
-            }
-            if (builder.ori_ugc_type == null) {
-                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
-            } else {
-                this.ori_ugc_type = builder.ori_ugc_type;
-            }
-            if (builder.ori_ugc_vid == null) {
-                this.ori_ugc_vid = "";
-            } else {
-                this.ori_ugc_vid = builder.ori_ugc_vid;
-            }
-            if (builder.after_ad_thread_count == null) {
-                this.after_ad_thread_count = DEFAULT_AFTER_AD_THREAD_COUNT;
-            } else {
-                this.after_ad_thread_count = builder.after_ad_thread_count;
-            }
-            if (builder.ad_context_list == null) {
-                this.ad_context_list = "";
-            } else {
-                this.ad_context_list = builder.ad_context_list;
-            }
-            if (builder.up_schema == null) {
-                this.up_schema = "";
-            } else {
-                this.up_schema = builder.up_schema;
-            }
-            if (builder.pb_test_info == null) {
-                this.pb_test_info = "";
-            } else {
-                this.pb_test_info = builder.pb_test_info;
-            }
-            if (builder.from_push == null) {
-                this.from_push = DEFAULT_FROM_PUSH;
-            } else {
-                this.from_push = builder.from_push;
-            }
-            if (builder.ad_ext_params == null) {
-                this.ad_ext_params = "";
-            } else {
-                this.ad_ext_params = builder.ad_ext_params;
-            }
-            if (builder.broadcast_id == null) {
-                this.broadcast_id = DEFAULT_BROADCAST_ID;
-            } else {
-                this.broadcast_id = builder.broadcast_id;
-            }
-            if (builder.floor_sort_type == null) {
-                this.floor_sort_type = DEFAULT_FLOOR_SORT_TYPE;
-            } else {
-                this.floor_sort_type = builder.floor_sort_type;
-            }
-            if (builder.source_type == null) {
-                this.source_type = DEFAULT_SOURCE_TYPE;
-                return;
-            } else {
-                this.source_type = builder.source_type;
-                return;
-            }
-        }
-        this.pb_rn = builder.pb_rn;
-        this.mark = builder.mark;
-        this.back = builder.back;
-        this.kz = builder.kz;
-        this.lz = builder.lz;
-        this.r = builder.r;
-        this.pid = builder.pid;
-        this.with_floor = builder.with_floor;
-        this.floor_rn = builder.floor_rn;
-        this.weipost = builder.weipost;
-        this.message_id = builder.message_id;
-        this.s_model = builder.s_model;
-        this.rn = builder.rn;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.q_type = builder.q_type;
-        this.pn = builder.pn;
-        this.st_type = builder.st_type;
-        this.thread_type = builder.thread_type;
-        this.banner = builder.banner;
-        this.arround = builder.arround;
-        this.last = builder.last;
-        this.msg_click = builder.msg_click;
-        this.f8883common = builder.f8884common;
-        this.lastids = builder.lastids;
-        this.st_from = builder.st_from;
-        this.st_link = builder.st_link;
-        this.st_stat = builder.st_stat;
-        this.st_task = builder.st_task;
-        this.issdk = builder.issdk;
-        this.query_word = builder.query_word;
-        this.is_comm_reverse = builder.is_comm_reverse;
-        this.is_jumpfloor = builder.is_jumpfloor;
-        this.jumpfloor_num = builder.jumpfloor_num;
-        this.da_idfa = builder.da_idfa;
-        this.platform = builder.platform;
-        this.jid = builder.jid;
-        this.fid = builder.fid;
-        this.jfrom = builder.jfrom;
-        this.yuelaou_locate = builder.yuelaou_locate;
-        this.yuelaou_params = builder.yuelaou_params;
-        this.obj_source = builder.obj_source;
-        this.obj_locate = builder.obj_locate;
-        this.obj_param1 = builder.obj_param1;
-        this.app_pos = builder.app_pos;
-        this.from_smart_frs = builder.from_smart_frs;
-        this.feed_nid = builder.feed_nid;
-        this.forum_id = builder.forum_id;
-        this.need_repost_recommend_forum = builder.need_repost_recommend_forum;
-        this.ad_param = builder.ad_param;
-        this.need_log = builder.need_log;
-        this.call_url = builder.call_url;
-        this.shoubai_cuid = builder.shoubai_cuid;
-        this.ori_ugc_nid = builder.ori_ugc_nid;
-        this.ori_ugc_tid = builder.ori_ugc_tid;
-        this.ori_ugc_type = builder.ori_ugc_type;
-        this.ori_ugc_vid = builder.ori_ugc_vid;
-        this.after_ad_thread_count = builder.after_ad_thread_count;
-        this.ad_context_list = builder.ad_context_list;
-        this.up_schema = builder.up_schema;
-        this.pb_test_info = builder.pb_test_info;
-        this.from_push = builder.from_push;
-        this.ad_ext_params = builder.ad_ext_params;
-        this.broadcast_id = builder.broadcast_id;
-        this.floor_sort_type = builder.floor_sort_type;
-        this.source_type = builder.source_type;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
         public String ad_ext_params;
@@ -619,7 +221,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8884common;
+        public CommonReq f68560common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -682,75 +284,76 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.pb_rn = dataReq.pb_rn;
-                this.mark = dataReq.mark;
-                this.back = dataReq.back;
-                this.kz = dataReq.kz;
-                this.lz = dataReq.lz;
-                this.r = dataReq.r;
-                this.pid = dataReq.pid;
-                this.with_floor = dataReq.with_floor;
-                this.floor_rn = dataReq.floor_rn;
-                this.weipost = dataReq.weipost;
-                this.message_id = dataReq.message_id;
-                this.s_model = dataReq.s_model;
-                this.rn = dataReq.rn;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.q_type = dataReq.q_type;
-                this.pn = dataReq.pn;
-                this.st_type = dataReq.st_type;
-                this.thread_type = dataReq.thread_type;
-                this.banner = dataReq.banner;
-                this.arround = dataReq.arround;
-                this.last = dataReq.last;
-                this.msg_click = dataReq.msg_click;
-                this.f8884common = dataReq.f8883common;
-                this.lastids = dataReq.lastids;
-                this.st_from = dataReq.st_from;
-                this.st_link = dataReq.st_link;
-                this.st_stat = dataReq.st_stat;
-                this.st_task = dataReq.st_task;
-                this.issdk = dataReq.issdk;
-                this.query_word = dataReq.query_word;
-                this.is_comm_reverse = dataReq.is_comm_reverse;
-                this.is_jumpfloor = dataReq.is_jumpfloor;
-                this.jumpfloor_num = dataReq.jumpfloor_num;
-                this.da_idfa = dataReq.da_idfa;
-                this.platform = dataReq.platform;
-                this.jid = dataReq.jid;
-                this.fid = dataReq.fid;
-                this.jfrom = dataReq.jfrom;
-                this.yuelaou_locate = dataReq.yuelaou_locate;
-                this.yuelaou_params = dataReq.yuelaou_params;
-                this.obj_source = dataReq.obj_source;
-                this.obj_locate = dataReq.obj_locate;
-                this.obj_param1 = dataReq.obj_param1;
-                this.app_pos = dataReq.app_pos;
-                this.from_smart_frs = dataReq.from_smart_frs;
-                this.feed_nid = dataReq.feed_nid;
-                this.forum_id = dataReq.forum_id;
-                this.need_repost_recommend_forum = dataReq.need_repost_recommend_forum;
-                this.ad_param = dataReq.ad_param;
-                this.need_log = dataReq.need_log;
-                this.call_url = dataReq.call_url;
-                this.shoubai_cuid = dataReq.shoubai_cuid;
-                this.ori_ugc_nid = dataReq.ori_ugc_nid;
-                this.ori_ugc_tid = dataReq.ori_ugc_tid;
-                this.ori_ugc_type = dataReq.ori_ugc_type;
-                this.ori_ugc_vid = dataReq.ori_ugc_vid;
-                this.after_ad_thread_count = dataReq.after_ad_thread_count;
-                this.ad_context_list = dataReq.ad_context_list;
-                this.up_schema = dataReq.up_schema;
-                this.pb_test_info = dataReq.pb_test_info;
-                this.from_push = dataReq.from_push;
-                this.ad_ext_params = dataReq.ad_ext_params;
-                this.broadcast_id = dataReq.broadcast_id;
-                this.floor_sort_type = dataReq.floor_sort_type;
-                this.source_type = dataReq.source_type;
+            if (dataReq == null) {
+                return;
             }
+            this.pb_rn = dataReq.pb_rn;
+            this.mark = dataReq.mark;
+            this.back = dataReq.back;
+            this.kz = dataReq.kz;
+            this.lz = dataReq.lz;
+            this.r = dataReq.r;
+            this.pid = dataReq.pid;
+            this.with_floor = dataReq.with_floor;
+            this.floor_rn = dataReq.floor_rn;
+            this.weipost = dataReq.weipost;
+            this.message_id = dataReq.message_id;
+            this.s_model = dataReq.s_model;
+            this.rn = dataReq.rn;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.q_type = dataReq.q_type;
+            this.pn = dataReq.pn;
+            this.st_type = dataReq.st_type;
+            this.thread_type = dataReq.thread_type;
+            this.banner = dataReq.banner;
+            this.arround = dataReq.arround;
+            this.last = dataReq.last;
+            this.msg_click = dataReq.msg_click;
+            this.f68560common = dataReq.f68559common;
+            this.lastids = dataReq.lastids;
+            this.st_from = dataReq.st_from;
+            this.st_link = dataReq.st_link;
+            this.st_stat = dataReq.st_stat;
+            this.st_task = dataReq.st_task;
+            this.issdk = dataReq.issdk;
+            this.query_word = dataReq.query_word;
+            this.is_comm_reverse = dataReq.is_comm_reverse;
+            this.is_jumpfloor = dataReq.is_jumpfloor;
+            this.jumpfloor_num = dataReq.jumpfloor_num;
+            this.da_idfa = dataReq.da_idfa;
+            this.platform = dataReq.platform;
+            this.jid = dataReq.jid;
+            this.fid = dataReq.fid;
+            this.jfrom = dataReq.jfrom;
+            this.yuelaou_locate = dataReq.yuelaou_locate;
+            this.yuelaou_params = dataReq.yuelaou_params;
+            this.obj_source = dataReq.obj_source;
+            this.obj_locate = dataReq.obj_locate;
+            this.obj_param1 = dataReq.obj_param1;
+            this.app_pos = dataReq.app_pos;
+            this.from_smart_frs = dataReq.from_smart_frs;
+            this.feed_nid = dataReq.feed_nid;
+            this.forum_id = dataReq.forum_id;
+            this.need_repost_recommend_forum = dataReq.need_repost_recommend_forum;
+            this.ad_param = dataReq.ad_param;
+            this.need_log = dataReq.need_log;
+            this.call_url = dataReq.call_url;
+            this.shoubai_cuid = dataReq.shoubai_cuid;
+            this.ori_ugc_nid = dataReq.ori_ugc_nid;
+            this.ori_ugc_tid = dataReq.ori_ugc_tid;
+            this.ori_ugc_type = dataReq.ori_ugc_type;
+            this.ori_ugc_vid = dataReq.ori_ugc_vid;
+            this.after_ad_thread_count = dataReq.after_ad_thread_count;
+            this.ad_context_list = dataReq.ad_context_list;
+            this.up_schema = dataReq.up_schema;
+            this.pb_test_info = dataReq.pb_test_info;
+            this.from_push = dataReq.from_push;
+            this.ad_ext_params = dataReq.ad_ext_params;
+            this.broadcast_id = dataReq.broadcast_id;
+            this.floor_sort_type = dataReq.floor_sort_type;
+            this.source_type = dataReq.source_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -758,5 +361,467 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.pb_rn;
+            if (num == null) {
+                this.pb_rn = DEFAULT_PB_RN;
+            } else {
+                this.pb_rn = num;
+            }
+            Integer num2 = builder.mark;
+            if (num2 == null) {
+                this.mark = DEFAULT_MARK;
+            } else {
+                this.mark = num2;
+            }
+            Integer num3 = builder.back;
+            if (num3 == null) {
+                this.back = DEFAULT_BACK;
+            } else {
+                this.back = num3;
+            }
+            Long l = builder.kz;
+            if (l == null) {
+                this.kz = DEFAULT_KZ;
+            } else {
+                this.kz = l;
+            }
+            Integer num4 = builder.lz;
+            if (num4 == null) {
+                this.lz = DEFAULT_LZ;
+            } else {
+                this.lz = num4;
+            }
+            Integer num5 = builder.r;
+            if (num5 == null) {
+                this.r = DEFAULT_R;
+            } else {
+                this.r = num5;
+            }
+            Long l2 = builder.pid;
+            if (l2 == null) {
+                this.pid = DEFAULT_PID;
+            } else {
+                this.pid = l2;
+            }
+            Integer num6 = builder.with_floor;
+            if (num6 == null) {
+                this.with_floor = DEFAULT_WITH_FLOOR;
+            } else {
+                this.with_floor = num6;
+            }
+            Integer num7 = builder.floor_rn;
+            if (num7 == null) {
+                this.floor_rn = DEFAULT_FLOOR_RN;
+            } else {
+                this.floor_rn = num7;
+            }
+            Integer num8 = builder.weipost;
+            if (num8 == null) {
+                this.weipost = DEFAULT_WEIPOST;
+            } else {
+                this.weipost = num8;
+            }
+            Integer num9 = builder.message_id;
+            if (num9 == null) {
+                this.message_id = DEFAULT_MESSAGE_ID;
+            } else {
+                this.message_id = num9;
+            }
+            Integer num10 = builder.s_model;
+            if (num10 == null) {
+                this.s_model = DEFAULT_S_MODEL;
+            } else {
+                this.s_model = num10;
+            }
+            Integer num11 = builder.rn;
+            if (num11 == null) {
+                this.rn = DEFAULT_RN;
+            } else {
+                this.rn = num11;
+            }
+            Integer num12 = builder.scr_w;
+            if (num12 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num12;
+            }
+            Integer num13 = builder.scr_h;
+            if (num13 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num13;
+            }
+            Double d2 = builder.scr_dip;
+            if (d2 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = d2;
+            }
+            Integer num14 = builder.q_type;
+            if (num14 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = num14;
+            }
+            Integer num15 = builder.pn;
+            if (num15 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num15;
+            }
+            String str = builder.st_type;
+            if (str == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str;
+            }
+            Integer num16 = builder.thread_type;
+            if (num16 == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+            } else {
+                this.thread_type = num16;
+            }
+            Integer num17 = builder.banner;
+            if (num17 == null) {
+                this.banner = DEFAULT_BANNER;
+            } else {
+                this.banner = num17;
+            }
+            Integer num18 = builder.arround;
+            if (num18 == null) {
+                this.arround = DEFAULT_ARROUND;
+            } else {
+                this.arround = num18;
+            }
+            Integer num19 = builder.last;
+            if (num19 == null) {
+                this.last = DEFAULT_LAST;
+            } else {
+                this.last = num19;
+            }
+            String str2 = builder.msg_click;
+            if (str2 == null) {
+                this.msg_click = "";
+            } else {
+                this.msg_click = str2;
+            }
+            this.f68559common = builder.f68560common;
+            String str3 = builder.lastids;
+            if (str3 == null) {
+                this.lastids = "";
+            } else {
+                this.lastids = str3;
+            }
+            String str4 = builder.st_from;
+            if (str4 == null) {
+                this.st_from = "";
+            } else {
+                this.st_from = str4;
+            }
+            String str5 = builder.st_link;
+            if (str5 == null) {
+                this.st_link = "";
+            } else {
+                this.st_link = str5;
+            }
+            Integer num20 = builder.st_stat;
+            if (num20 == null) {
+                this.st_stat = DEFAULT_ST_STAT;
+            } else {
+                this.st_stat = num20;
+            }
+            Long l3 = builder.st_task;
+            if (l3 == null) {
+                this.st_task = DEFAULT_ST_TASK;
+            } else {
+                this.st_task = l3;
+            }
+            Integer num21 = builder.issdk;
+            if (num21 == null) {
+                this.issdk = DEFAULT_ISSDK;
+            } else {
+                this.issdk = num21;
+            }
+            String str6 = builder.query_word;
+            if (str6 == null) {
+                this.query_word = "";
+            } else {
+                this.query_word = str6;
+            }
+            Integer num22 = builder.is_comm_reverse;
+            if (num22 == null) {
+                this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
+            } else {
+                this.is_comm_reverse = num22;
+            }
+            Integer num23 = builder.is_jumpfloor;
+            if (num23 == null) {
+                this.is_jumpfloor = DEFAULT_IS_JUMPFLOOR;
+            } else {
+                this.is_jumpfloor = num23;
+            }
+            Integer num24 = builder.jumpfloor_num;
+            if (num24 == null) {
+                this.jumpfloor_num = DEFAULT_JUMPFLOOR_NUM;
+            } else {
+                this.jumpfloor_num = num24;
+            }
+            String str7 = builder.da_idfa;
+            if (str7 == null) {
+                this.da_idfa = "";
+            } else {
+                this.da_idfa = str7;
+            }
+            String str8 = builder.platform;
+            if (str8 == null) {
+                this.platform = "";
+            } else {
+                this.platform = str8;
+            }
+            Long l4 = builder.jid;
+            if (l4 == null) {
+                this.jid = DEFAULT_JID;
+            } else {
+                this.jid = l4;
+            }
+            Long l5 = builder.fid;
+            if (l5 == null) {
+                this.fid = DEFAULT_FID;
+            } else {
+                this.fid = l5;
+            }
+            String str9 = builder.jfrom;
+            if (str9 == null) {
+                this.jfrom = "";
+            } else {
+                this.jfrom = str9;
+            }
+            String str10 = builder.yuelaou_locate;
+            if (str10 == null) {
+                this.yuelaou_locate = "";
+            } else {
+                this.yuelaou_locate = str10;
+            }
+            String str11 = builder.yuelaou_params;
+            if (str11 == null) {
+                this.yuelaou_params = "";
+            } else {
+                this.yuelaou_params = str11;
+            }
+            String str12 = builder.obj_source;
+            if (str12 == null) {
+                this.obj_source = "";
+            } else {
+                this.obj_source = str12;
+            }
+            String str13 = builder.obj_locate;
+            if (str13 == null) {
+                this.obj_locate = "";
+            } else {
+                this.obj_locate = str13;
+            }
+            String str14 = builder.obj_param1;
+            if (str14 == null) {
+                this.obj_param1 = "";
+            } else {
+                this.obj_param1 = str14;
+            }
+            this.app_pos = builder.app_pos;
+            Integer num25 = builder.from_smart_frs;
+            if (num25 == null) {
+                this.from_smart_frs = DEFAULT_FROM_SMART_FRS;
+            } else {
+                this.from_smart_frs = num25;
+            }
+            String str15 = builder.feed_nid;
+            if (str15 == null) {
+                this.feed_nid = "";
+            } else {
+                this.feed_nid = str15;
+            }
+            Long l6 = builder.forum_id;
+            if (l6 == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l6;
+            }
+            Integer num26 = builder.need_repost_recommend_forum;
+            if (num26 == null) {
+                this.need_repost_recommend_forum = DEFAULT_NEED_REPOST_RECOMMEND_FORUM;
+            } else {
+                this.need_repost_recommend_forum = num26;
+            }
+            this.ad_param = builder.ad_param;
+            Integer num27 = builder.need_log;
+            if (num27 == null) {
+                this.need_log = DEFAULT_NEED_LOG;
+            } else {
+                this.need_log = num27;
+            }
+            String str16 = builder.call_url;
+            if (str16 == null) {
+                this.call_url = "";
+            } else {
+                this.call_url = str16;
+            }
+            String str17 = builder.shoubai_cuid;
+            if (str17 == null) {
+                this.shoubai_cuid = "";
+            } else {
+                this.shoubai_cuid = str17;
+            }
+            String str18 = builder.ori_ugc_nid;
+            if (str18 == null) {
+                this.ori_ugc_nid = "";
+            } else {
+                this.ori_ugc_nid = str18;
+            }
+            String str19 = builder.ori_ugc_tid;
+            if (str19 == null) {
+                this.ori_ugc_tid = "";
+            } else {
+                this.ori_ugc_tid = str19;
+            }
+            Integer num28 = builder.ori_ugc_type;
+            if (num28 == null) {
+                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
+            } else {
+                this.ori_ugc_type = num28;
+            }
+            String str20 = builder.ori_ugc_vid;
+            if (str20 == null) {
+                this.ori_ugc_vid = "";
+            } else {
+                this.ori_ugc_vid = str20;
+            }
+            Integer num29 = builder.after_ad_thread_count;
+            if (num29 == null) {
+                this.after_ad_thread_count = DEFAULT_AFTER_AD_THREAD_COUNT;
+            } else {
+                this.after_ad_thread_count = num29;
+            }
+            String str21 = builder.ad_context_list;
+            if (str21 == null) {
+                this.ad_context_list = "";
+            } else {
+                this.ad_context_list = str21;
+            }
+            String str22 = builder.up_schema;
+            if (str22 == null) {
+                this.up_schema = "";
+            } else {
+                this.up_schema = str22;
+            }
+            String str23 = builder.pb_test_info;
+            if (str23 == null) {
+                this.pb_test_info = "";
+            } else {
+                this.pb_test_info = str23;
+            }
+            Integer num30 = builder.from_push;
+            if (num30 == null) {
+                this.from_push = DEFAULT_FROM_PUSH;
+            } else {
+                this.from_push = num30;
+            }
+            String str24 = builder.ad_ext_params;
+            if (str24 == null) {
+                this.ad_ext_params = "";
+            } else {
+                this.ad_ext_params = str24;
+            }
+            Long l7 = builder.broadcast_id;
+            if (l7 == null) {
+                this.broadcast_id = DEFAULT_BROADCAST_ID;
+            } else {
+                this.broadcast_id = l7;
+            }
+            Integer num31 = builder.floor_sort_type;
+            if (num31 == null) {
+                this.floor_sort_type = DEFAULT_FLOOR_SORT_TYPE;
+            } else {
+                this.floor_sort_type = num31;
+            }
+            Integer num32 = builder.source_type;
+            if (num32 == null) {
+                this.source_type = DEFAULT_SOURCE_TYPE;
+                return;
+            } else {
+                this.source_type = num32;
+                return;
+            }
+        }
+        this.pb_rn = builder.pb_rn;
+        this.mark = builder.mark;
+        this.back = builder.back;
+        this.kz = builder.kz;
+        this.lz = builder.lz;
+        this.r = builder.r;
+        this.pid = builder.pid;
+        this.with_floor = builder.with_floor;
+        this.floor_rn = builder.floor_rn;
+        this.weipost = builder.weipost;
+        this.message_id = builder.message_id;
+        this.s_model = builder.s_model;
+        this.rn = builder.rn;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
+        this.pn = builder.pn;
+        this.st_type = builder.st_type;
+        this.thread_type = builder.thread_type;
+        this.banner = builder.banner;
+        this.arround = builder.arround;
+        this.last = builder.last;
+        this.msg_click = builder.msg_click;
+        this.f68559common = builder.f68560common;
+        this.lastids = builder.lastids;
+        this.st_from = builder.st_from;
+        this.st_link = builder.st_link;
+        this.st_stat = builder.st_stat;
+        this.st_task = builder.st_task;
+        this.issdk = builder.issdk;
+        this.query_word = builder.query_word;
+        this.is_comm_reverse = builder.is_comm_reverse;
+        this.is_jumpfloor = builder.is_jumpfloor;
+        this.jumpfloor_num = builder.jumpfloor_num;
+        this.da_idfa = builder.da_idfa;
+        this.platform = builder.platform;
+        this.jid = builder.jid;
+        this.fid = builder.fid;
+        this.jfrom = builder.jfrom;
+        this.yuelaou_locate = builder.yuelaou_locate;
+        this.yuelaou_params = builder.yuelaou_params;
+        this.obj_source = builder.obj_source;
+        this.obj_locate = builder.obj_locate;
+        this.obj_param1 = builder.obj_param1;
+        this.app_pos = builder.app_pos;
+        this.from_smart_frs = builder.from_smart_frs;
+        this.feed_nid = builder.feed_nid;
+        this.forum_id = builder.forum_id;
+        this.need_repost_recommend_forum = builder.need_repost_recommend_forum;
+        this.ad_param = builder.ad_param;
+        this.need_log = builder.need_log;
+        this.call_url = builder.call_url;
+        this.shoubai_cuid = builder.shoubai_cuid;
+        this.ori_ugc_nid = builder.ori_ugc_nid;
+        this.ori_ugc_tid = builder.ori_ugc_tid;
+        this.ori_ugc_type = builder.ori_ugc_type;
+        this.ori_ugc_vid = builder.ori_ugc_vid;
+        this.after_ad_thread_count = builder.after_ad_thread_count;
+        this.ad_context_list = builder.ad_context_list;
+        this.up_schema = builder.up_schema;
+        this.pb_test_info = builder.pb_test_info;
+        this.from_push = builder.from_push;
+        this.ad_ext_params = builder.ad_ext_params;
+        this.broadcast_id = builder.broadcast_id;
+        this.floor_sort_type = builder.floor_sort_type;
+        this.source_type = builder.source_type;
     }
 }

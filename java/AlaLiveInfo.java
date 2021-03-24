@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_DESCRIPTION = "";
@@ -138,269 +138,7 @@ public final class AlaLiveInfo extends Message {
     public static final Long DEFAULT_ROOM_ID = 0L;
     public static final Integer DEFAULT_ROOM_STATUS = 0;
 
-    private AlaLiveInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.live_id == null) {
-                this.live_id = DEFAULT_LIVE_ID;
-            } else {
-                this.live_id = builder.live_id;
-            }
-            if (builder.cover == null) {
-                this.cover = "";
-            } else {
-                this.cover = builder.cover;
-            }
-            if (builder.session_id == null) {
-                this.session_id = "";
-            } else {
-                this.session_id = builder.session_id;
-            }
-            if (builder.rtmp_url == null) {
-                this.rtmp_url = "";
-            } else {
-                this.rtmp_url = builder.rtmp_url;
-            }
-            if (builder.hls_url == null) {
-                this.hls_url = "";
-            } else {
-                this.hls_url = builder.hls_url;
-            }
-            if (builder.group_id == null) {
-                this.group_id = DEFAULT_GROUP_ID;
-            } else {
-                this.group_id = builder.group_id;
-            }
-            if (builder.media_url == null) {
-                this.media_url = "";
-            } else {
-                this.media_url = builder.media_url;
-            }
-            if (builder.media_pic == null) {
-                this.media_pic = "";
-            } else {
-                this.media_pic = builder.media_pic;
-            }
-            if (builder.media_id == null) {
-                this.media_id = "";
-            } else {
-                this.media_id = builder.media_id;
-            }
-            if (builder.media_subtitle == null) {
-                this.media_subtitle = "";
-            } else {
-                this.media_subtitle = builder.media_subtitle;
-            }
-            if (builder.description == null) {
-                this.description = "";
-            } else {
-                this.description = builder.description;
-            }
-            this.user_info = builder.user_info;
-            if (builder.duration == null) {
-                this.duration = DEFAULT_DURATION;
-            } else {
-                this.duration = builder.duration;
-            }
-            if (builder.audience_count == null) {
-                this.audience_count = DEFAULT_AUDIENCE_COUNT;
-            } else {
-                this.audience_count = builder.audience_count;
-            }
-            if (builder.live_type == null) {
-                this.live_type = DEFAULT_LIVE_TYPE;
-            } else {
-                this.live_type = builder.live_type;
-            }
-            if (builder.screen_direction == null) {
-                this.screen_direction = DEFAULT_SCREEN_DIRECTION;
-            } else {
-                this.screen_direction = builder.screen_direction;
-            }
-            if (builder.label_name == null) {
-                this.label_name = "";
-            } else {
-                this.label_name = builder.label_name;
-            }
-            if (builder.live_status == null) {
-                this.live_status = DEFAULT_LIVE_STATUS;
-            } else {
-                this.live_status = builder.live_status;
-            }
-            this.share_info = builder.share_info;
-            if (builder.distance == null) {
-                this.distance = DEFAULT_DISTANCE;
-            } else {
-                this.distance = builder.distance;
-            }
-            if (builder.third_app_id == null) {
-                this.third_app_id = "";
-            } else {
-                this.third_app_id = builder.third_app_id;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.stage_dislike_info == null) {
-                this.stage_dislike_info = DEFAULT_STAGE_DISLIKE_INFO;
-            } else {
-                this.stage_dislike_info = immutableCopyOf(builder.stage_dislike_info);
-            }
-            this.label = builder.label;
-            this.challenge_info = builder.challenge_info;
-            if (builder.frs_toplive_type == null) {
-                this.frs_toplive_type = DEFAULT_FRS_TOPLIVE_TYPE;
-            } else {
-                this.frs_toplive_type = builder.frs_toplive_type;
-            }
-            if (builder.frs_toplive_pic == null) {
-                this.frs_toplive_pic = "";
-            } else {
-                this.frs_toplive_pic = builder.frs_toplive_pic;
-            }
-            if (builder.frs_toplive_force == null) {
-                this.frs_toplive_force = DEFAULT_FRS_TOPLIVE_FORCE;
-            } else {
-                this.frs_toplive_force = builder.frs_toplive_force;
-            }
-            if (builder.live_from == null) {
-                this.live_from = DEFAULT_LIVE_FROM;
-            } else {
-                this.live_from = builder.live_from;
-            }
-            if (builder.third_room_id == null) {
-                this.third_room_id = "";
-            } else {
-                this.third_room_id = builder.third_room_id;
-            }
-            if (builder.router_type == null) {
-                this.router_type = "";
-            } else {
-                this.router_type = builder.router_type;
-            }
-            if (builder.third_live_type == null) {
-                this.third_live_type = "";
-            } else {
-                this.third_live_type = builder.third_live_type;
-            }
-            if (builder.first_headline == null) {
-                this.first_headline = "";
-            } else {
-                this.first_headline = builder.first_headline;
-            }
-            if (builder.second_headline == null) {
-                this.second_headline = "";
-            } else {
-                this.second_headline = builder.second_headline;
-            }
-            if (builder.pb_display_type == null) {
-                this.pb_display_type = DEFAULT_PB_DISPLAY_TYPE;
-            } else {
-                this.pb_display_type = builder.pb_display_type;
-            }
-            if (builder.recom_reason == null) {
-                this.recom_reason = "";
-            } else {
-                this.recom_reason = builder.recom_reason;
-            }
-            if (builder.open_recom_reason == null) {
-                this.open_recom_reason = DEFAULT_OPEN_RECOM_REASON;
-            } else {
-                this.open_recom_reason = builder.open_recom_reason;
-            }
-            if (builder.open_recom_location == null) {
-                this.open_recom_location = DEFAULT_OPEN_RECOM_LOCATION;
-            } else {
-                this.open_recom_location = builder.open_recom_location;
-            }
-            if (builder.open_recom_fans == null) {
-                this.open_recom_fans = DEFAULT_OPEN_RECOM_FANS;
-            } else {
-                this.open_recom_fans = builder.open_recom_fans;
-            }
-            if (builder.open_recom_duration == null) {
-                this.open_recom_duration = DEFAULT_OPEN_RECOM_DURATION;
-            } else {
-                this.open_recom_duration = builder.open_recom_duration;
-            }
-            if (builder.dislike_info == null) {
-                this.dislike_info = DEFAULT_DISLIKE_INFO;
-            } else {
-                this.dislike_info = immutableCopyOf(builder.dislike_info);
-            }
-            if (builder.room_id == null) {
-                this.room_id = DEFAULT_ROOM_ID;
-            } else {
-                this.room_id = builder.room_id;
-            }
-            if (builder.room_status == null) {
-                this.room_status = DEFAULT_ROOM_STATUS;
-            } else {
-                this.room_status = builder.room_status;
-            }
-            if (builder.room_name == null) {
-                this.room_name = "";
-            } else {
-                this.room_name = builder.room_name;
-            }
-            if (builder.forum_user_live_msg == null) {
-                this.forum_user_live_msg = "";
-                return;
-            } else {
-                this.forum_user_live_msg = builder.forum_user_live_msg;
-                return;
-            }
-        }
-        this.live_id = builder.live_id;
-        this.cover = builder.cover;
-        this.session_id = builder.session_id;
-        this.rtmp_url = builder.rtmp_url;
-        this.hls_url = builder.hls_url;
-        this.group_id = builder.group_id;
-        this.media_url = builder.media_url;
-        this.media_pic = builder.media_pic;
-        this.media_id = builder.media_id;
-        this.media_subtitle = builder.media_subtitle;
-        this.description = builder.description;
-        this.user_info = builder.user_info;
-        this.duration = builder.duration;
-        this.audience_count = builder.audience_count;
-        this.live_type = builder.live_type;
-        this.screen_direction = builder.screen_direction;
-        this.label_name = builder.label_name;
-        this.live_status = builder.live_status;
-        this.share_info = builder.share_info;
-        this.distance = builder.distance;
-        this.third_app_id = builder.third_app_id;
-        this.thread_id = builder.thread_id;
-        this.stage_dislike_info = immutableCopyOf(builder.stage_dislike_info);
-        this.label = builder.label;
-        this.challenge_info = builder.challenge_info;
-        this.frs_toplive_type = builder.frs_toplive_type;
-        this.frs_toplive_pic = builder.frs_toplive_pic;
-        this.frs_toplive_force = builder.frs_toplive_force;
-        this.live_from = builder.live_from;
-        this.third_room_id = builder.third_room_id;
-        this.router_type = builder.router_type;
-        this.third_live_type = builder.third_live_type;
-        this.first_headline = builder.first_headline;
-        this.second_headline = builder.second_headline;
-        this.pb_display_type = builder.pb_display_type;
-        this.recom_reason = builder.recom_reason;
-        this.open_recom_reason = builder.open_recom_reason;
-        this.open_recom_location = builder.open_recom_location;
-        this.open_recom_fans = builder.open_recom_fans;
-        this.open_recom_duration = builder.open_recom_duration;
-        this.dislike_info = immutableCopyOf(builder.dislike_info);
-        this.room_id = builder.room_id;
-        this.room_status = builder.room_status;
-        this.room_name = builder.room_name;
-        this.forum_user_live_msg = builder.forum_user_live_msg;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
         public Integer audience_count;
         public AlaChallengeInfo challenge_info;
@@ -453,53 +191,54 @@ public final class AlaLiveInfo extends Message {
 
         public Builder(AlaLiveInfo alaLiveInfo) {
             super(alaLiveInfo);
-            if (alaLiveInfo != null) {
-                this.live_id = alaLiveInfo.live_id;
-                this.cover = alaLiveInfo.cover;
-                this.session_id = alaLiveInfo.session_id;
-                this.rtmp_url = alaLiveInfo.rtmp_url;
-                this.hls_url = alaLiveInfo.hls_url;
-                this.group_id = alaLiveInfo.group_id;
-                this.media_url = alaLiveInfo.media_url;
-                this.media_pic = alaLiveInfo.media_pic;
-                this.media_id = alaLiveInfo.media_id;
-                this.media_subtitle = alaLiveInfo.media_subtitle;
-                this.description = alaLiveInfo.description;
-                this.user_info = alaLiveInfo.user_info;
-                this.duration = alaLiveInfo.duration;
-                this.audience_count = alaLiveInfo.audience_count;
-                this.live_type = alaLiveInfo.live_type;
-                this.screen_direction = alaLiveInfo.screen_direction;
-                this.label_name = alaLiveInfo.label_name;
-                this.live_status = alaLiveInfo.live_status;
-                this.share_info = alaLiveInfo.share_info;
-                this.distance = alaLiveInfo.distance;
-                this.third_app_id = alaLiveInfo.third_app_id;
-                this.thread_id = alaLiveInfo.thread_id;
-                this.stage_dislike_info = AlaLiveInfo.copyOf(alaLiveInfo.stage_dislike_info);
-                this.label = alaLiveInfo.label;
-                this.challenge_info = alaLiveInfo.challenge_info;
-                this.frs_toplive_type = alaLiveInfo.frs_toplive_type;
-                this.frs_toplive_pic = alaLiveInfo.frs_toplive_pic;
-                this.frs_toplive_force = alaLiveInfo.frs_toplive_force;
-                this.live_from = alaLiveInfo.live_from;
-                this.third_room_id = alaLiveInfo.third_room_id;
-                this.router_type = alaLiveInfo.router_type;
-                this.third_live_type = alaLiveInfo.third_live_type;
-                this.first_headline = alaLiveInfo.first_headline;
-                this.second_headline = alaLiveInfo.second_headline;
-                this.pb_display_type = alaLiveInfo.pb_display_type;
-                this.recom_reason = alaLiveInfo.recom_reason;
-                this.open_recom_reason = alaLiveInfo.open_recom_reason;
-                this.open_recom_location = alaLiveInfo.open_recom_location;
-                this.open_recom_fans = alaLiveInfo.open_recom_fans;
-                this.open_recom_duration = alaLiveInfo.open_recom_duration;
-                this.dislike_info = AlaLiveInfo.copyOf(alaLiveInfo.dislike_info);
-                this.room_id = alaLiveInfo.room_id;
-                this.room_status = alaLiveInfo.room_status;
-                this.room_name = alaLiveInfo.room_name;
-                this.forum_user_live_msg = alaLiveInfo.forum_user_live_msg;
+            if (alaLiveInfo == null) {
+                return;
             }
+            this.live_id = alaLiveInfo.live_id;
+            this.cover = alaLiveInfo.cover;
+            this.session_id = alaLiveInfo.session_id;
+            this.rtmp_url = alaLiveInfo.rtmp_url;
+            this.hls_url = alaLiveInfo.hls_url;
+            this.group_id = alaLiveInfo.group_id;
+            this.media_url = alaLiveInfo.media_url;
+            this.media_pic = alaLiveInfo.media_pic;
+            this.media_id = alaLiveInfo.media_id;
+            this.media_subtitle = alaLiveInfo.media_subtitle;
+            this.description = alaLiveInfo.description;
+            this.user_info = alaLiveInfo.user_info;
+            this.duration = alaLiveInfo.duration;
+            this.audience_count = alaLiveInfo.audience_count;
+            this.live_type = alaLiveInfo.live_type;
+            this.screen_direction = alaLiveInfo.screen_direction;
+            this.label_name = alaLiveInfo.label_name;
+            this.live_status = alaLiveInfo.live_status;
+            this.share_info = alaLiveInfo.share_info;
+            this.distance = alaLiveInfo.distance;
+            this.third_app_id = alaLiveInfo.third_app_id;
+            this.thread_id = alaLiveInfo.thread_id;
+            this.stage_dislike_info = Message.copyOf(alaLiveInfo.stage_dislike_info);
+            this.label = alaLiveInfo.label;
+            this.challenge_info = alaLiveInfo.challenge_info;
+            this.frs_toplive_type = alaLiveInfo.frs_toplive_type;
+            this.frs_toplive_pic = alaLiveInfo.frs_toplive_pic;
+            this.frs_toplive_force = alaLiveInfo.frs_toplive_force;
+            this.live_from = alaLiveInfo.live_from;
+            this.third_room_id = alaLiveInfo.third_room_id;
+            this.router_type = alaLiveInfo.router_type;
+            this.third_live_type = alaLiveInfo.third_live_type;
+            this.first_headline = alaLiveInfo.first_headline;
+            this.second_headline = alaLiveInfo.second_headline;
+            this.pb_display_type = alaLiveInfo.pb_display_type;
+            this.recom_reason = alaLiveInfo.recom_reason;
+            this.open_recom_reason = alaLiveInfo.open_recom_reason;
+            this.open_recom_location = alaLiveInfo.open_recom_location;
+            this.open_recom_fans = alaLiveInfo.open_recom_fans;
+            this.open_recom_duration = alaLiveInfo.open_recom_duration;
+            this.dislike_info = Message.copyOf(alaLiveInfo.dislike_info);
+            this.room_id = alaLiveInfo.room_id;
+            this.room_status = alaLiveInfo.room_status;
+            this.room_name = alaLiveInfo.room_name;
+            this.forum_user_live_msg = alaLiveInfo.forum_user_live_msg;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -507,5 +246,308 @@ public final class AlaLiveInfo extends Message {
         public AlaLiveInfo build(boolean z) {
             return new AlaLiveInfo(this, z);
         }
+    }
+
+    public AlaLiveInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.live_id;
+            if (l == null) {
+                this.live_id = DEFAULT_LIVE_ID;
+            } else {
+                this.live_id = l;
+            }
+            String str = builder.cover;
+            if (str == null) {
+                this.cover = "";
+            } else {
+                this.cover = str;
+            }
+            String str2 = builder.session_id;
+            if (str2 == null) {
+                this.session_id = "";
+            } else {
+                this.session_id = str2;
+            }
+            String str3 = builder.rtmp_url;
+            if (str3 == null) {
+                this.rtmp_url = "";
+            } else {
+                this.rtmp_url = str3;
+            }
+            String str4 = builder.hls_url;
+            if (str4 == null) {
+                this.hls_url = "";
+            } else {
+                this.hls_url = str4;
+            }
+            Long l2 = builder.group_id;
+            if (l2 == null) {
+                this.group_id = DEFAULT_GROUP_ID;
+            } else {
+                this.group_id = l2;
+            }
+            String str5 = builder.media_url;
+            if (str5 == null) {
+                this.media_url = "";
+            } else {
+                this.media_url = str5;
+            }
+            String str6 = builder.media_pic;
+            if (str6 == null) {
+                this.media_pic = "";
+            } else {
+                this.media_pic = str6;
+            }
+            String str7 = builder.media_id;
+            if (str7 == null) {
+                this.media_id = "";
+            } else {
+                this.media_id = str7;
+            }
+            String str8 = builder.media_subtitle;
+            if (str8 == null) {
+                this.media_subtitle = "";
+            } else {
+                this.media_subtitle = str8;
+            }
+            String str9 = builder.description;
+            if (str9 == null) {
+                this.description = "";
+            } else {
+                this.description = str9;
+            }
+            this.user_info = builder.user_info;
+            Integer num = builder.duration;
+            if (num == null) {
+                this.duration = DEFAULT_DURATION;
+            } else {
+                this.duration = num;
+            }
+            Integer num2 = builder.audience_count;
+            if (num2 == null) {
+                this.audience_count = DEFAULT_AUDIENCE_COUNT;
+            } else {
+                this.audience_count = num2;
+            }
+            Integer num3 = builder.live_type;
+            if (num3 == null) {
+                this.live_type = DEFAULT_LIVE_TYPE;
+            } else {
+                this.live_type = num3;
+            }
+            Integer num4 = builder.screen_direction;
+            if (num4 == null) {
+                this.screen_direction = DEFAULT_SCREEN_DIRECTION;
+            } else {
+                this.screen_direction = num4;
+            }
+            String str10 = builder.label_name;
+            if (str10 == null) {
+                this.label_name = "";
+            } else {
+                this.label_name = str10;
+            }
+            Integer num5 = builder.live_status;
+            if (num5 == null) {
+                this.live_status = DEFAULT_LIVE_STATUS;
+            } else {
+                this.live_status = num5;
+            }
+            this.share_info = builder.share_info;
+            Long l3 = builder.distance;
+            if (l3 == null) {
+                this.distance = DEFAULT_DISTANCE;
+            } else {
+                this.distance = l3;
+            }
+            String str11 = builder.third_app_id;
+            if (str11 == null) {
+                this.third_app_id = "";
+            } else {
+                this.third_app_id = str11;
+            }
+            Long l4 = builder.thread_id;
+            if (l4 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l4;
+            }
+            List<AlaStageDislikeInfo> list = builder.stage_dislike_info;
+            if (list == null) {
+                this.stage_dislike_info = DEFAULT_STAGE_DISLIKE_INFO;
+            } else {
+                this.stage_dislike_info = Message.immutableCopyOf(list);
+            }
+            this.label = builder.label;
+            this.challenge_info = builder.challenge_info;
+            Integer num6 = builder.frs_toplive_type;
+            if (num6 == null) {
+                this.frs_toplive_type = DEFAULT_FRS_TOPLIVE_TYPE;
+            } else {
+                this.frs_toplive_type = num6;
+            }
+            String str12 = builder.frs_toplive_pic;
+            if (str12 == null) {
+                this.frs_toplive_pic = "";
+            } else {
+                this.frs_toplive_pic = str12;
+            }
+            Integer num7 = builder.frs_toplive_force;
+            if (num7 == null) {
+                this.frs_toplive_force = DEFAULT_FRS_TOPLIVE_FORCE;
+            } else {
+                this.frs_toplive_force = num7;
+            }
+            Integer num8 = builder.live_from;
+            if (num8 == null) {
+                this.live_from = DEFAULT_LIVE_FROM;
+            } else {
+                this.live_from = num8;
+            }
+            String str13 = builder.third_room_id;
+            if (str13 == null) {
+                this.third_room_id = "";
+            } else {
+                this.third_room_id = str13;
+            }
+            String str14 = builder.router_type;
+            if (str14 == null) {
+                this.router_type = "";
+            } else {
+                this.router_type = str14;
+            }
+            String str15 = builder.third_live_type;
+            if (str15 == null) {
+                this.third_live_type = "";
+            } else {
+                this.third_live_type = str15;
+            }
+            String str16 = builder.first_headline;
+            if (str16 == null) {
+                this.first_headline = "";
+            } else {
+                this.first_headline = str16;
+            }
+            String str17 = builder.second_headline;
+            if (str17 == null) {
+                this.second_headline = "";
+            } else {
+                this.second_headline = str17;
+            }
+            Integer num9 = builder.pb_display_type;
+            if (num9 == null) {
+                this.pb_display_type = DEFAULT_PB_DISPLAY_TYPE;
+            } else {
+                this.pb_display_type = num9;
+            }
+            String str18 = builder.recom_reason;
+            if (str18 == null) {
+                this.recom_reason = "";
+            } else {
+                this.recom_reason = str18;
+            }
+            Integer num10 = builder.open_recom_reason;
+            if (num10 == null) {
+                this.open_recom_reason = DEFAULT_OPEN_RECOM_REASON;
+            } else {
+                this.open_recom_reason = num10;
+            }
+            Integer num11 = builder.open_recom_location;
+            if (num11 == null) {
+                this.open_recom_location = DEFAULT_OPEN_RECOM_LOCATION;
+            } else {
+                this.open_recom_location = num11;
+            }
+            Integer num12 = builder.open_recom_fans;
+            if (num12 == null) {
+                this.open_recom_fans = DEFAULT_OPEN_RECOM_FANS;
+            } else {
+                this.open_recom_fans = num12;
+            }
+            Integer num13 = builder.open_recom_duration;
+            if (num13 == null) {
+                this.open_recom_duration = DEFAULT_OPEN_RECOM_DURATION;
+            } else {
+                this.open_recom_duration = num13;
+            }
+            List<DislikeInfo> list2 = builder.dislike_info;
+            if (list2 == null) {
+                this.dislike_info = DEFAULT_DISLIKE_INFO;
+            } else {
+                this.dislike_info = Message.immutableCopyOf(list2);
+            }
+            Long l5 = builder.room_id;
+            if (l5 == null) {
+                this.room_id = DEFAULT_ROOM_ID;
+            } else {
+                this.room_id = l5;
+            }
+            Integer num14 = builder.room_status;
+            if (num14 == null) {
+                this.room_status = DEFAULT_ROOM_STATUS;
+            } else {
+                this.room_status = num14;
+            }
+            String str19 = builder.room_name;
+            if (str19 == null) {
+                this.room_name = "";
+            } else {
+                this.room_name = str19;
+            }
+            String str20 = builder.forum_user_live_msg;
+            if (str20 == null) {
+                this.forum_user_live_msg = "";
+                return;
+            } else {
+                this.forum_user_live_msg = str20;
+                return;
+            }
+        }
+        this.live_id = builder.live_id;
+        this.cover = builder.cover;
+        this.session_id = builder.session_id;
+        this.rtmp_url = builder.rtmp_url;
+        this.hls_url = builder.hls_url;
+        this.group_id = builder.group_id;
+        this.media_url = builder.media_url;
+        this.media_pic = builder.media_pic;
+        this.media_id = builder.media_id;
+        this.media_subtitle = builder.media_subtitle;
+        this.description = builder.description;
+        this.user_info = builder.user_info;
+        this.duration = builder.duration;
+        this.audience_count = builder.audience_count;
+        this.live_type = builder.live_type;
+        this.screen_direction = builder.screen_direction;
+        this.label_name = builder.label_name;
+        this.live_status = builder.live_status;
+        this.share_info = builder.share_info;
+        this.distance = builder.distance;
+        this.third_app_id = builder.third_app_id;
+        this.thread_id = builder.thread_id;
+        this.stage_dislike_info = Message.immutableCopyOf(builder.stage_dislike_info);
+        this.label = builder.label;
+        this.challenge_info = builder.challenge_info;
+        this.frs_toplive_type = builder.frs_toplive_type;
+        this.frs_toplive_pic = builder.frs_toplive_pic;
+        this.frs_toplive_force = builder.frs_toplive_force;
+        this.live_from = builder.live_from;
+        this.third_room_id = builder.third_room_id;
+        this.router_type = builder.router_type;
+        this.third_live_type = builder.third_live_type;
+        this.first_headline = builder.first_headline;
+        this.second_headline = builder.second_headline;
+        this.pb_display_type = builder.pb_display_type;
+        this.recom_reason = builder.recom_reason;
+        this.open_recom_reason = builder.open_recom_reason;
+        this.open_recom_location = builder.open_recom_location;
+        this.open_recom_fans = builder.open_recom_fans;
+        this.open_recom_duration = builder.open_recom_duration;
+        this.dislike_info = Message.immutableCopyOf(builder.dislike_info);
+        this.room_id = builder.room_id;
+        this.room_status = builder.room_status;
+        this.room_name = builder.room_name;
+        this.forum_user_live_msg = builder.forum_user_live_msg;
     }
 }

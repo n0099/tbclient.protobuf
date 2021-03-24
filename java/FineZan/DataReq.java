@@ -3,7 +3,7 @@ package tbclient.FineZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ACTION = "";
     public static final Long DEFAULT_FTID = 0L;
@@ -12,38 +12,16 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8693common;
+    public final CommonReq f68361common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long ftid;
-
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8693common = builder.f8694common;
-            if (builder.action == null) {
-                this.action = "";
-            } else {
-                this.action = builder.action;
-            }
-            if (builder.ftid == null) {
-                this.ftid = DEFAULT_FTID;
-                return;
-            } else {
-                this.ftid = builder.ftid;
-                return;
-            }
-        }
-        this.f8693common = builder.f8694common;
-        this.action = builder.action;
-        this.ftid = builder.ftid;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String action;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8694common;
+        public CommonReq f68362common;
         public Long ftid;
 
         public Builder() {
@@ -51,11 +29,12 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8694common = dataReq.f8693common;
-                this.action = dataReq.action;
-                this.ftid = dataReq.ftid;
+            if (dataReq == null) {
+                return;
             }
+            this.f68362common = dataReq.f68361common;
+            this.action = dataReq.action;
+            this.ftid = dataReq.ftid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +42,29 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68361common = builder.f68362common;
+            String str = builder.action;
+            if (str == null) {
+                this.action = "";
+            } else {
+                this.action = str;
+            }
+            Long l = builder.ftid;
+            if (l == null) {
+                this.ftid = DEFAULT_FTID;
+                return;
+            } else {
+                this.ftid = l;
+                return;
+            }
+        }
+        this.f68361common = builder.f68362common;
+        this.action = builder.action;
+        this.ftid = builder.ftid;
     }
 }

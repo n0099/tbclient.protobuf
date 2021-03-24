@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Quote extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_IP = "";
@@ -20,45 +20,7 @@ public final class Quote extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
 
-    private Quote(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = builder.post_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.ip == null) {
-                this.ip = "";
-            } else {
-                this.ip = builder.ip;
-            }
-            if (builder.content == null) {
-                this.content = "";
-                return;
-            } else {
-                this.content = builder.content;
-                return;
-            }
-        }
-        this.post_id = builder.post_id;
-        this.user_name = builder.user_name;
-        this.user_id = builder.user_id;
-        this.ip = builder.ip;
-        this.content = builder.content;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Quote> {
         public String content;
         public String ip;
@@ -71,13 +33,14 @@ public final class Quote extends Message {
 
         public Builder(Quote quote) {
             super(quote);
-            if (quote != null) {
-                this.post_id = quote.post_id;
-                this.user_name = quote.user_name;
-                this.user_id = quote.user_id;
-                this.ip = quote.ip;
-                this.content = quote.content;
+            if (quote == null) {
+                return;
             }
+            this.post_id = quote.post_id;
+            this.user_name = quote.user_name;
+            this.user_id = quote.user_id;
+            this.ip = quote.ip;
+            this.content = quote.content;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class Quote extends Message {
         public Quote build(boolean z) {
             return new Quote(this, z);
         }
+    }
+
+    public Quote(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.post_id;
+            if (l == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            Long l2 = builder.user_id;
+            if (l2 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l2;
+            }
+            String str2 = builder.ip;
+            if (str2 == null) {
+                this.ip = "";
+            } else {
+                this.ip = str2;
+            }
+            String str3 = builder.content;
+            if (str3 == null) {
+                this.content = "";
+                return;
+            } else {
+                this.content = str3;
+                return;
+            }
+        }
+        this.post_id = builder.post_id;
+        this.user_name = builder.user_name;
+        this.user_id = builder.user_id;
+        this.ip = builder.ip;
+        this.content = builder.content;
     }
 }

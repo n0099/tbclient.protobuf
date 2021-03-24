@@ -3,23 +3,12 @@ package tbclient.TopicList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class TopicListResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
-
-    private TopicListResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
-        }
-        this.error = builder.error;
-        this.data = builder.data;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TopicListResIdl> {
@@ -31,10 +20,11 @@ public final class TopicListResIdl extends Message {
 
         public Builder(TopicListResIdl topicListResIdl) {
             super(topicListResIdl);
-            if (topicListResIdl != null) {
-                this.error = topicListResIdl.error;
-                this.data = topicListResIdl.data;
+            if (topicListResIdl == null) {
+                return;
             }
+            this.error = topicListResIdl.error;
+            this.data = topicListResIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class TopicListResIdl extends Message {
         public TopicListResIdl build(boolean z) {
             return new TopicListResIdl(this, z);
         }
+    }
+
+    public TopicListResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
 }

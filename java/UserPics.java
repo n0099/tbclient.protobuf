@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class UserPics extends Message {
     public static final String DEFAULT_BIG = "";
     public static final String DEFAULT_SMALL = "";
@@ -11,27 +11,7 @@ public final class UserPics extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String small;
 
-    private UserPics(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.big == null) {
-                this.big = "";
-            } else {
-                this.big = builder.big;
-            }
-            if (builder.small == null) {
-                this.small = "";
-                return;
-            } else {
-                this.small = builder.small;
-                return;
-            }
-        }
-        this.big = builder.big;
-        this.small = builder.small;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<UserPics> {
         public String big;
         public String small;
@@ -41,10 +21,11 @@ public final class UserPics extends Message {
 
         public Builder(UserPics userPics) {
             super(userPics);
-            if (userPics != null) {
-                this.big = userPics.big;
-                this.small = userPics.small;
+            if (userPics == null) {
+                return;
             }
+            this.big = userPics.big;
+            this.small = userPics.small;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class UserPics extends Message {
         public UserPics build(boolean z) {
             return new UserPics(this, z);
         }
+    }
+
+    public UserPics(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.big;
+            if (str == null) {
+                this.big = "";
+            } else {
+                this.big = str;
+            }
+            String str2 = builder.small;
+            if (str2 == null) {
+                this.small = "";
+                return;
+            } else {
+                this.small = str2;
+                return;
+            }
+        }
+        this.big = builder.big;
+        this.small = builder.small;
     }
 }

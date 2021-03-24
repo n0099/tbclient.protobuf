@@ -3,25 +3,14 @@ package tbclient.AddPollPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AddPollPostResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
     @ProtoField(tag = 2)
     public final Error error;
 
-    private AddPollPostResIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.data = builder.data;
-            this.error = builder.error;
-            return;
-        }
-        this.data = builder.data;
-        this.error = builder.error;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AddPollPostResIdl> {
         public DataRes data;
         public Error error;
@@ -31,10 +20,11 @@ public final class AddPollPostResIdl extends Message {
 
         public Builder(AddPollPostResIdl addPollPostResIdl) {
             super(addPollPostResIdl);
-            if (addPollPostResIdl != null) {
-                this.data = addPollPostResIdl.data;
-                this.error = addPollPostResIdl.error;
+            if (addPollPostResIdl == null) {
+                return;
             }
+            this.data = addPollPostResIdl.data;
+            this.error = addPollPostResIdl.error;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,5 +32,16 @@ public final class AddPollPostResIdl extends Message {
         public AddPollPostResIdl build(boolean z) {
             return new AddPollPostResIdl(this, z);
         }
+    }
+
+    public AddPollPostResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
 }

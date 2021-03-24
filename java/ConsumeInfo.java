@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ConsumeInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_ICON = "";
@@ -14,33 +14,7 @@ public final class ConsumeInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    private ConsumeInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.icon == null) {
-                this.icon = "";
-            } else {
-                this.icon = builder.icon;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.content == null) {
-                this.content = "";
-                return;
-            } else {
-                this.content = builder.content;
-                return;
-            }
-        }
-        this.icon = builder.icon;
-        this.title = builder.title;
-        this.content = builder.content;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ConsumeInfo> {
         public String content;
         public String icon;
@@ -51,11 +25,12 @@ public final class ConsumeInfo extends Message {
 
         public Builder(ConsumeInfo consumeInfo) {
             super(consumeInfo);
-            if (consumeInfo != null) {
-                this.icon = consumeInfo.icon;
-                this.title = consumeInfo.title;
-                this.content = consumeInfo.content;
+            if (consumeInfo == null) {
+                return;
             }
+            this.icon = consumeInfo.icon;
+            this.title = consumeInfo.title;
+            this.content = consumeInfo.content;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class ConsumeInfo extends Message {
         public ConsumeInfo build(boolean z) {
             return new ConsumeInfo(this, z);
         }
+    }
+
+    public ConsumeInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.icon;
+            if (str == null) {
+                this.icon = "";
+            } else {
+                this.icon = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.content;
+            if (str3 == null) {
+                this.content = "";
+                return;
+            } else {
+                this.content = str3;
+                return;
+            }
+        }
+        this.icon = builder.icon;
+        this.title = builder.title;
+        this.content = builder.content;
     }
 }

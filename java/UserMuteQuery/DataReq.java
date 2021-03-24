@@ -3,12 +3,12 @@ package tbclient.UserMuteQuery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8971common;
+    public final CommonReq f68649common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer mute_type;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -22,45 +22,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            this.f8971common = builder.f8972common;
-            if (builder.mute_type == null) {
-                this.mute_type = DEFAULT_MUTE_TYPE;
-            } else {
-                this.mute_type = builder.mute_type;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
-                return;
-            } else {
-                this.rn = builder.rn;
-                return;
-            }
-        }
-        this.user_id = builder.user_id;
-        this.f8971common = builder.f8972common;
-        this.mute_type = builder.mute_type;
-        this.pn = builder.pn;
-        this.rn = builder.rn;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8972common;
+        public CommonReq f68650common;
         public Integer mute_type;
         public Integer pn;
         public Integer rn;
@@ -71,13 +37,14 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.user_id = dataReq.user_id;
-                this.f8972common = dataReq.f8971common;
-                this.mute_type = dataReq.mute_type;
-                this.pn = dataReq.pn;
-                this.rn = dataReq.rn;
+            if (dataReq == null) {
+                return;
             }
+            this.user_id = dataReq.user_id;
+            this.f68650common = dataReq.f68649common;
+            this.mute_type = dataReq.mute_type;
+            this.pn = dataReq.pn;
+            this.rn = dataReq.rn;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +52,43 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            this.f68649common = builder.f68650common;
+            Integer num = builder.mute_type;
+            if (num == null) {
+                this.mute_type = DEFAULT_MUTE_TYPE;
+            } else {
+                this.mute_type = num;
+            }
+            Integer num2 = builder.pn;
+            if (num2 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num2;
+            }
+            Integer num3 = builder.rn;
+            if (num3 == null) {
+                this.rn = DEFAULT_RN;
+                return;
+            } else {
+                this.rn = num3;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.f68649common = builder.f68650common;
+        this.mute_type = builder.mute_type;
+        this.pn = builder.pn;
+        this.rn = builder.rn;
     }
 }

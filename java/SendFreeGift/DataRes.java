@@ -2,27 +2,13 @@ package tbclient.SendFreeGift;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_FREE_CHANCE = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer free_chance;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.free_chance == null) {
-                this.free_chance = DEFAULT_FREE_CHANCE;
-                return;
-            } else {
-                this.free_chance = builder.free_chance;
-                return;
-            }
-        }
-        this.free_chance = builder.free_chance;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer free_chance;
 
@@ -31,9 +17,10 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.free_chance = dataRes.free_chance;
+            if (dataRes == null) {
+                return;
             }
+            this.free_chance = dataRes.free_chance;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -41,5 +28,20 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.free_chance;
+            if (num == null) {
+                this.free_chance = DEFAULT_FREE_CHANCE;
+                return;
+            } else {
+                this.free_chance = num;
+                return;
+            }
+        }
+        this.free_chance = builder.free_chance;
     }
 }

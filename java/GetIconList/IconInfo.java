@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class IconInfo extends Message {
     public static final String DEFAULT_ICONID = "";
     public static final String DEFAULT_NAME = "";
@@ -37,75 +37,7 @@ public final class IconInfo extends Message {
     public static final Integer DEFAULT_HIDE = 0;
     public static final List<Discount> DEFAULT_DISCOUNT = Collections.emptyList();
 
-    private IconInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.name == null) {
-                this.name = "";
-            } else {
-                this.name = builder.name;
-            }
-            if (builder.iconId == null) {
-                this.iconId = "";
-            } else {
-                this.iconId = builder.iconId;
-            }
-            if (builder.picUrl == null) {
-                this.picUrl = "";
-            } else {
-                this.picUrl = builder.picUrl;
-            }
-            if (builder.non_member_t == null) {
-                this.non_member_t = DEFAULT_NON_MEMBER_T;
-            } else {
-                this.non_member_t = builder.non_member_t;
-            }
-            if (builder.dubi == null) {
-                this.dubi = DEFAULT_DUBI;
-            } else {
-                this.dubi = builder.dubi;
-            }
-            if (builder.duration == null) {
-                this.duration = DEFAULT_DURATION;
-            } else {
-                this.duration = builder.duration;
-            }
-            if (builder.hide == null) {
-                this.hide = DEFAULT_HIDE;
-            } else {
-                this.hide = builder.hide;
-            }
-            if (builder.discount == null) {
-                this.discount = DEFAULT_DISCOUNT;
-            } else {
-                this.discount = immutableCopyOf(builder.discount);
-            }
-            if (builder.sign == null) {
-                this.sign = "";
-            } else {
-                this.sign = builder.sign;
-            }
-            if (builder.tag_name == null) {
-                this.tag_name = "";
-                return;
-            } else {
-                this.tag_name = builder.tag_name;
-                return;
-            }
-        }
-        this.name = builder.name;
-        this.iconId = builder.iconId;
-        this.picUrl = builder.picUrl;
-        this.non_member_t = builder.non_member_t;
-        this.dubi = builder.dubi;
-        this.duration = builder.duration;
-        this.hide = builder.hide;
-        this.discount = immutableCopyOf(builder.discount);
-        this.sign = builder.sign;
-        this.tag_name = builder.tag_name;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<IconInfo> {
         public List<Discount> discount;
         public Integer dubi;
@@ -123,18 +55,19 @@ public final class IconInfo extends Message {
 
         public Builder(IconInfo iconInfo) {
             super(iconInfo);
-            if (iconInfo != null) {
-                this.name = iconInfo.name;
-                this.iconId = iconInfo.iconId;
-                this.picUrl = iconInfo.picUrl;
-                this.non_member_t = iconInfo.non_member_t;
-                this.dubi = iconInfo.dubi;
-                this.duration = iconInfo.duration;
-                this.hide = iconInfo.hide;
-                this.discount = IconInfo.copyOf(iconInfo.discount);
-                this.sign = iconInfo.sign;
-                this.tag_name = iconInfo.tag_name;
+            if (iconInfo == null) {
+                return;
             }
+            this.name = iconInfo.name;
+            this.iconId = iconInfo.iconId;
+            this.picUrl = iconInfo.picUrl;
+            this.non_member_t = iconInfo.non_member_t;
+            this.dubi = iconInfo.dubi;
+            this.duration = iconInfo.duration;
+            this.hide = iconInfo.hide;
+            this.discount = Message.copyOf(iconInfo.discount);
+            this.sign = iconInfo.sign;
+            this.tag_name = iconInfo.tag_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -142,5 +75,83 @@ public final class IconInfo extends Message {
         public IconInfo build(boolean z) {
             return new IconInfo(this, z);
         }
+    }
+
+    public IconInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.iconId;
+            if (str2 == null) {
+                this.iconId = "";
+            } else {
+                this.iconId = str2;
+            }
+            String str3 = builder.picUrl;
+            if (str3 == null) {
+                this.picUrl = "";
+            } else {
+                this.picUrl = str3;
+            }
+            Integer num = builder.non_member_t;
+            if (num == null) {
+                this.non_member_t = DEFAULT_NON_MEMBER_T;
+            } else {
+                this.non_member_t = num;
+            }
+            Integer num2 = builder.dubi;
+            if (num2 == null) {
+                this.dubi = DEFAULT_DUBI;
+            } else {
+                this.dubi = num2;
+            }
+            Integer num3 = builder.duration;
+            if (num3 == null) {
+                this.duration = DEFAULT_DURATION;
+            } else {
+                this.duration = num3;
+            }
+            Integer num4 = builder.hide;
+            if (num4 == null) {
+                this.hide = DEFAULT_HIDE;
+            } else {
+                this.hide = num4;
+            }
+            List<Discount> list = builder.discount;
+            if (list == null) {
+                this.discount = DEFAULT_DISCOUNT;
+            } else {
+                this.discount = Message.immutableCopyOf(list);
+            }
+            String str4 = builder.sign;
+            if (str4 == null) {
+                this.sign = "";
+            } else {
+                this.sign = str4;
+            }
+            String str5 = builder.tag_name;
+            if (str5 == null) {
+                this.tag_name = "";
+                return;
+            } else {
+                this.tag_name = str5;
+                return;
+            }
+        }
+        this.name = builder.name;
+        this.iconId = builder.iconId;
+        this.picUrl = builder.picUrl;
+        this.non_member_t = builder.non_member_t;
+        this.dubi = builder.dubi;
+        this.duration = builder.duration;
+        this.hide = builder.hide;
+        this.discount = Message.immutableCopyOf(builder.discount);
+        this.sign = builder.sign;
+        this.tag_name = builder.tag_name;
     }
 }

@@ -3,7 +3,7 @@ package tbclient.FrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.App;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AdkillerAd extends Message {
     public static final Integer DEFAULT_CAN_CLOSE = 0;
     public static final String DEFAULT_GAME_URL = "";
@@ -17,35 +17,7 @@ public final class AdkillerAd extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tag;
 
-    private AdkillerAd(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.tag == null) {
-                this.tag = "";
-            } else {
-                this.tag = builder.tag;
-            }
-            if (builder.game_url == null) {
-                this.game_url = "";
-            } else {
-                this.game_url = builder.game_url;
-            }
-            this.app = builder.app;
-            if (builder.can_close == null) {
-                this.can_close = DEFAULT_CAN_CLOSE;
-                return;
-            } else {
-                this.can_close = builder.can_close;
-                return;
-            }
-        }
-        this.tag = builder.tag;
-        this.game_url = builder.game_url;
-        this.app = builder.app;
-        this.can_close = builder.can_close;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AdkillerAd> {
         public App app;
         public Integer can_close;
@@ -57,12 +29,13 @@ public final class AdkillerAd extends Message {
 
         public Builder(AdkillerAd adkillerAd) {
             super(adkillerAd);
-            if (adkillerAd != null) {
-                this.tag = adkillerAd.tag;
-                this.game_url = adkillerAd.game_url;
-                this.app = adkillerAd.app;
-                this.can_close = adkillerAd.can_close;
+            if (adkillerAd == null) {
+                return;
             }
+            this.tag = adkillerAd.tag;
+            this.game_url = adkillerAd.game_url;
+            this.app = adkillerAd.app;
+            this.can_close = adkillerAd.can_close;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -70,5 +43,36 @@ public final class AdkillerAd extends Message {
         public AdkillerAd build(boolean z) {
             return new AdkillerAd(this, z);
         }
+    }
+
+    public AdkillerAd(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.tag;
+            if (str == null) {
+                this.tag = "";
+            } else {
+                this.tag = str;
+            }
+            String str2 = builder.game_url;
+            if (str2 == null) {
+                this.game_url = "";
+            } else {
+                this.game_url = str2;
+            }
+            this.app = builder.app;
+            Integer num = builder.can_close;
+            if (num == null) {
+                this.can_close = DEFAULT_CAN_CLOSE;
+                return;
+            } else {
+                this.can_close = num;
+                return;
+            }
+        }
+        this.tag = builder.tag;
+        this.game_url = builder.game_url;
+        this.app = builder.app;
+        this.can_close = builder.can_close;
     }
 }

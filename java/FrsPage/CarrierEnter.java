@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class CarrierEnter extends Message {
     public static final String DEFAULT_HEADLINE_COVER = "";
     public static final String DEFAULT_OBJ_ID = "";
@@ -20,45 +20,7 @@ public final class CarrierEnter extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String url;
 
-    private CarrierEnter(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.text == null) {
-                this.text = "";
-            } else {
-                this.text = builder.text;
-            }
-            if (builder.headline_cover == null) {
-                this.headline_cover = "";
-            } else {
-                this.headline_cover = builder.headline_cover;
-            }
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.obj_id == null) {
-                this.obj_id = "";
-                return;
-            } else {
-                this.obj_id = builder.obj_id;
-                return;
-            }
-        }
-        this.title = builder.title;
-        this.text = builder.text;
-        this.headline_cover = builder.headline_cover;
-        this.url = builder.url;
-        this.obj_id = builder.obj_id;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<CarrierEnter> {
         public String headline_cover;
         public String obj_id;
@@ -71,13 +33,14 @@ public final class CarrierEnter extends Message {
 
         public Builder(CarrierEnter carrierEnter) {
             super(carrierEnter);
-            if (carrierEnter != null) {
-                this.title = carrierEnter.title;
-                this.text = carrierEnter.text;
-                this.headline_cover = carrierEnter.headline_cover;
-                this.url = carrierEnter.url;
-                this.obj_id = carrierEnter.obj_id;
+            if (carrierEnter == null) {
+                return;
             }
+            this.title = carrierEnter.title;
+            this.text = carrierEnter.text;
+            this.headline_cover = carrierEnter.headline_cover;
+            this.url = carrierEnter.url;
+            this.obj_id = carrierEnter.obj_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,5 +48,48 @@ public final class CarrierEnter extends Message {
         public CarrierEnter build(boolean z) {
             return new CarrierEnter(this, z);
         }
+    }
+
+    public CarrierEnter(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.text;
+            if (str2 == null) {
+                this.text = "";
+            } else {
+                this.text = str2;
+            }
+            String str3 = builder.headline_cover;
+            if (str3 == null) {
+                this.headline_cover = "";
+            } else {
+                this.headline_cover = str3;
+            }
+            String str4 = builder.url;
+            if (str4 == null) {
+                this.url = "";
+            } else {
+                this.url = str4;
+            }
+            String str5 = builder.obj_id;
+            if (str5 == null) {
+                this.obj_id = "";
+                return;
+            } else {
+                this.obj_id = str5;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.text = builder.text;
+        this.headline_cover = builder.headline_cover;
+        this.url = builder.url;
+        this.obj_id = builder.obj_id;
     }
 }

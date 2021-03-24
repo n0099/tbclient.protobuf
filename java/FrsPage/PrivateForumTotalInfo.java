@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PrivateForumInfo;
 import tbclient.PrivatePopInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PrivateForumTotalInfo extends Message {
     public static final Integer DEFAULT_PRIVATE_FORUM_TASKPERCENT = 0;
     @ProtoField(tag = 5)
@@ -18,28 +18,7 @@ public final class PrivateForumTotalInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer private_forum_taskpercent;
 
-    private PrivateForumTotalInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.private_forum_shareinfo = builder.private_forum_shareinfo;
-            this.private_forum_popinfo = builder.private_forum_popinfo;
-            this.private_forum_info = builder.private_forum_info;
-            if (builder.private_forum_taskpercent == null) {
-                this.private_forum_taskpercent = DEFAULT_PRIVATE_FORUM_TASKPERCENT;
-            } else {
-                this.private_forum_taskpercent = builder.private_forum_taskpercent;
-            }
-            this.head_imgs = builder.head_imgs;
-            return;
-        }
-        this.private_forum_shareinfo = builder.private_forum_shareinfo;
-        this.private_forum_popinfo = builder.private_forum_popinfo;
-        this.private_forum_info = builder.private_forum_info;
-        this.private_forum_taskpercent = builder.private_forum_taskpercent;
-        this.head_imgs = builder.head_imgs;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PrivateForumTotalInfo> {
         public HeadImgs head_imgs;
         public PrivateForumInfo private_forum_info;
@@ -52,13 +31,14 @@ public final class PrivateForumTotalInfo extends Message {
 
         public Builder(PrivateForumTotalInfo privateForumTotalInfo) {
             super(privateForumTotalInfo);
-            if (privateForumTotalInfo != null) {
-                this.private_forum_shareinfo = privateForumTotalInfo.private_forum_shareinfo;
-                this.private_forum_popinfo = privateForumTotalInfo.private_forum_popinfo;
-                this.private_forum_info = privateForumTotalInfo.private_forum_info;
-                this.private_forum_taskpercent = privateForumTotalInfo.private_forum_taskpercent;
-                this.head_imgs = privateForumTotalInfo.head_imgs;
+            if (privateForumTotalInfo == null) {
+                return;
             }
+            this.private_forum_shareinfo = privateForumTotalInfo.private_forum_shareinfo;
+            this.private_forum_popinfo = privateForumTotalInfo.private_forum_popinfo;
+            this.private_forum_info = privateForumTotalInfo.private_forum_info;
+            this.private_forum_taskpercent = privateForumTotalInfo.private_forum_taskpercent;
+            this.head_imgs = privateForumTotalInfo.head_imgs;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -66,5 +46,27 @@ public final class PrivateForumTotalInfo extends Message {
         public PrivateForumTotalInfo build(boolean z) {
             return new PrivateForumTotalInfo(this, z);
         }
+    }
+
+    public PrivateForumTotalInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.private_forum_shareinfo = builder.private_forum_shareinfo;
+            this.private_forum_popinfo = builder.private_forum_popinfo;
+            this.private_forum_info = builder.private_forum_info;
+            Integer num = builder.private_forum_taskpercent;
+            if (num == null) {
+                this.private_forum_taskpercent = DEFAULT_PRIVATE_FORUM_TASKPERCENT;
+            } else {
+                this.private_forum_taskpercent = num;
+            }
+            this.head_imgs = builder.head_imgs;
+            return;
+        }
+        this.private_forum_shareinfo = builder.private_forum_shareinfo;
+        this.private_forum_popinfo = builder.private_forum_popinfo;
+        this.private_forum_info = builder.private_forum_info;
+        this.private_forum_taskpercent = builder.private_forum_taskpercent;
+        this.head_imgs = builder.head_imgs;
     }
 }

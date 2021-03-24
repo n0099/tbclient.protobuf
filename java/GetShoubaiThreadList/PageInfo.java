@@ -2,7 +2,7 @@ package tbclient.GetShoubaiThreadList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PageInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long cursor;
@@ -14,33 +14,7 @@ public final class PageInfo extends Message {
     public static final Long DEFAULT_CURSOR = 0L;
     public static final Integer DEFAULT_HAS_MORE = 0;
 
-    private PageInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.page_size == null) {
-                this.page_size = DEFAULT_PAGE_SIZE;
-            } else {
-                this.page_size = builder.page_size;
-            }
-            if (builder.cursor == null) {
-                this.cursor = DEFAULT_CURSOR;
-            } else {
-                this.cursor = builder.cursor;
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-                return;
-            } else {
-                this.has_more = builder.has_more;
-                return;
-            }
-        }
-        this.page_size = builder.page_size;
-        this.cursor = builder.cursor;
-        this.has_more = builder.has_more;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PageInfo> {
         public Long cursor;
         public Integer has_more;
@@ -51,11 +25,12 @@ public final class PageInfo extends Message {
 
         public Builder(PageInfo pageInfo) {
             super(pageInfo);
-            if (pageInfo != null) {
-                this.page_size = pageInfo.page_size;
-                this.cursor = pageInfo.cursor;
-                this.has_more = pageInfo.has_more;
+            if (pageInfo == null) {
+                return;
             }
+            this.page_size = pageInfo.page_size;
+            this.cursor = pageInfo.cursor;
+            this.has_more = pageInfo.has_more;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -63,5 +38,34 @@ public final class PageInfo extends Message {
         public PageInfo build(boolean z) {
             return new PageInfo(this, z);
         }
+    }
+
+    public PageInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.page_size;
+            if (num == null) {
+                this.page_size = DEFAULT_PAGE_SIZE;
+            } else {
+                this.page_size = num;
+            }
+            Long l = builder.cursor;
+            if (l == null) {
+                this.cursor = DEFAULT_CURSOR;
+            } else {
+                this.cursor = l;
+            }
+            Integer num2 = builder.has_more;
+            if (num2 == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+                return;
+            } else {
+                this.has_more = num2;
+                return;
+            }
+        }
+        this.page_size = builder.page_size;
+        this.cursor = builder.cursor;
+        this.has_more = builder.has_more;
     }
 }

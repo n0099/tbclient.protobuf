@@ -3,12 +3,12 @@ package tbclient.StarTrends;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8947common;
+    public final CommonReq f68625common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 7, type = Message.Datatype.UINT64)
@@ -31,63 +31,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_LAST_THREAD_ID = 0L;
     public static final Integer DEFAULT_RN = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8947common = builder.f8948common;
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-            } else {
-                this.q_type = builder.q_type;
-            }
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.last_thread_id == null) {
-                this.last_thread_id = DEFAULT_LAST_THREAD_ID;
-            } else {
-                this.last_thread_id = builder.last_thread_id;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
-                return;
-            } else {
-                this.rn = builder.rn;
-                return;
-            }
-        }
-        this.f8947common = builder.f8948common;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.q_type = builder.q_type;
-        this.forum_id = builder.forum_id;
-        this.last_thread_id = builder.last_thread_id;
-        this.rn = builder.rn;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8948common;
+        public CommonReq f68626common;
         public Long forum_id;
         public Long last_thread_id;
         public Integer q_type;
@@ -101,16 +49,17 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8948common = dataReq.f8947common;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.q_type = dataReq.q_type;
-                this.forum_id = dataReq.forum_id;
-                this.last_thread_id = dataReq.last_thread_id;
-                this.rn = dataReq.rn;
+            if (dataReq == null) {
+                return;
             }
+            this.f68626common = dataReq.f68625common;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.q_type = dataReq.q_type;
+            this.forum_id = dataReq.forum_id;
+            this.last_thread_id = dataReq.last_thread_id;
+            this.rn = dataReq.rn;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +67,64 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68625common = builder.f68626common;
+            Integer num = builder.scr_w;
+            if (num == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num;
+            }
+            Integer num2 = builder.scr_h;
+            if (num2 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num2;
+            }
+            Double d2 = builder.scr_dip;
+            if (d2 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = d2;
+            }
+            Integer num3 = builder.q_type;
+            if (num3 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+            } else {
+                this.q_type = num3;
+            }
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            Long l2 = builder.last_thread_id;
+            if (l2 == null) {
+                this.last_thread_id = DEFAULT_LAST_THREAD_ID;
+            } else {
+                this.last_thread_id = l2;
+            }
+            Integer num4 = builder.rn;
+            if (num4 == null) {
+                this.rn = DEFAULT_RN;
+                return;
+            } else {
+                this.rn = num4;
+                return;
+            }
+        }
+        this.f68625common = builder.f68626common;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
+        this.forum_id = builder.forum_id;
+        this.last_thread_id = builder.last_thread_id;
+        this.rn = builder.rn;
     }
 }

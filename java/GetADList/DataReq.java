@@ -3,7 +3,7 @@ package tbclient.GetADList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FID = 0L;
     public static final Long DEFAULT_OFFSET = 0L;
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8709common;
+    public final CommonReq f68379common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
@@ -19,39 +19,11 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer rn;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8709common = builder.f8710common;
-            if (builder.fid == null) {
-                this.fid = DEFAULT_FID;
-            } else {
-                this.fid = builder.fid;
-            }
-            if (builder.offset == null) {
-                this.offset = DEFAULT_OFFSET;
-            } else {
-                this.offset = builder.offset;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
-                return;
-            } else {
-                this.rn = builder.rn;
-                return;
-            }
-        }
-        this.f8709common = builder.f8710common;
-        this.fid = builder.fid;
-        this.offset = builder.offset;
-        this.rn = builder.rn;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8710common;
+        public CommonReq f68380common;
         public Long fid;
         public Long offset;
         public Integer rn;
@@ -61,12 +33,13 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8710common = dataReq.f8709common;
-                this.fid = dataReq.fid;
-                this.offset = dataReq.offset;
-                this.rn = dataReq.rn;
+            if (dataReq == null) {
+                return;
             }
+            this.f68380common = dataReq.f68379common;
+            this.fid = dataReq.fid;
+            this.offset = dataReq.offset;
+            this.rn = dataReq.rn;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +47,36 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68379common = builder.f68380common;
+            Long l = builder.fid;
+            if (l == null) {
+                this.fid = DEFAULT_FID;
+            } else {
+                this.fid = l;
+            }
+            Long l2 = builder.offset;
+            if (l2 == null) {
+                this.offset = DEFAULT_OFFSET;
+            } else {
+                this.offset = l2;
+            }
+            Integer num = builder.rn;
+            if (num == null) {
+                this.rn = DEFAULT_RN;
+                return;
+            } else {
+                this.rn = num;
+                return;
+            }
+        }
+        this.f68379common = builder.f68380common;
+        this.fid = builder.fid;
+        this.offset = builder.offset;
+        this.rn = builder.rn;
     }
 }

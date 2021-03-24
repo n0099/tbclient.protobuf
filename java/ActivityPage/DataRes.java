@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BannerImage;
 import tbclient.Page;
 import tbclient.ThreadInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final List<BannerImage> DEFAULT_BANNER_IMAGE = Collections.emptyList();
     public static final List<BannerImage> DEFAULT_GRID = Collections.emptyList();
@@ -29,42 +29,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ThreadInfo> thread_list;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.banner_image == null) {
-                this.banner_image = DEFAULT_BANNER_IMAGE;
-            } else {
-                this.banner_image = immutableCopyOf(builder.banner_image);
-            }
-            if (builder.grid == null) {
-                this.grid = DEFAULT_GRID;
-            } else {
-                this.grid = immutableCopyOf(builder.grid);
-            }
-            if (builder.thread_list == null) {
-                this.thread_list = DEFAULT_THREAD_LIST;
-            } else {
-                this.thread_list = immutableCopyOf(builder.thread_list);
-            }
-            this.hot_topic = builder.hot_topic;
-            this.special_column = builder.special_column;
-            this.recommend_forum = builder.recommend_forum;
-            this.recommend_user = builder.recommend_user;
-            this.page_info = builder.page_info;
-            return;
-        }
-        this.banner_image = immutableCopyOf(builder.banner_image);
-        this.grid = immutableCopyOf(builder.grid);
-        this.thread_list = immutableCopyOf(builder.thread_list);
-        this.hot_topic = builder.hot_topic;
-        this.special_column = builder.special_column;
-        this.recommend_forum = builder.recommend_forum;
-        this.recommend_user = builder.recommend_user;
-        this.page_info = builder.page_info;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<BannerImage> banner_image;
         public List<BannerImage> grid;
@@ -80,16 +45,17 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.banner_image = DataRes.copyOf(dataRes.banner_image);
-                this.grid = DataRes.copyOf(dataRes.grid);
-                this.thread_list = DataRes.copyOf(dataRes.thread_list);
-                this.hot_topic = dataRes.hot_topic;
-                this.special_column = dataRes.special_column;
-                this.recommend_forum = dataRes.recommend_forum;
-                this.recommend_user = dataRes.recommend_user;
-                this.page_info = dataRes.page_info;
+            if (dataRes == null) {
+                return;
             }
+            this.banner_image = Message.copyOf(dataRes.banner_image);
+            this.grid = Message.copyOf(dataRes.grid);
+            this.thread_list = Message.copyOf(dataRes.thread_list);
+            this.hot_topic = dataRes.hot_topic;
+            this.special_column = dataRes.special_column;
+            this.recommend_forum = dataRes.recommend_forum;
+            this.recommend_user = dataRes.recommend_user;
+            this.page_info = dataRes.page_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -97,5 +63,43 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<BannerImage> list = builder.banner_image;
+            if (list == null) {
+                this.banner_image = DEFAULT_BANNER_IMAGE;
+            } else {
+                this.banner_image = Message.immutableCopyOf(list);
+            }
+            List<BannerImage> list2 = builder.grid;
+            if (list2 == null) {
+                this.grid = DEFAULT_GRID;
+            } else {
+                this.grid = Message.immutableCopyOf(list2);
+            }
+            List<ThreadInfo> list3 = builder.thread_list;
+            if (list3 == null) {
+                this.thread_list = DEFAULT_THREAD_LIST;
+            } else {
+                this.thread_list = Message.immutableCopyOf(list3);
+            }
+            this.hot_topic = builder.hot_topic;
+            this.special_column = builder.special_column;
+            this.recommend_forum = builder.recommend_forum;
+            this.recommend_user = builder.recommend_user;
+            this.page_info = builder.page_info;
+            return;
+        }
+        this.banner_image = Message.immutableCopyOf(builder.banner_image);
+        this.grid = Message.immutableCopyOf(builder.grid);
+        this.thread_list = Message.immutableCopyOf(builder.thread_list);
+        this.hot_topic = builder.hot_topic;
+        this.special_column = builder.special_column;
+        this.recommend_forum = builder.recommend_forum;
+        this.recommend_user = builder.recommend_user;
+        this.page_info = builder.page_info;
     }
 }

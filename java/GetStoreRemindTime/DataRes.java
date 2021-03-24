@@ -4,25 +4,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     public static final List<String> DEFAULT_REMIND_TIME = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
     public final List<String> remind_time;
-
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.remind_time == null) {
-                this.remind_time = DEFAULT_REMIND_TIME;
-                return;
-            } else {
-                this.remind_time = immutableCopyOf(builder.remind_time);
-                return;
-            }
-        }
-        this.remind_time = immutableCopyOf(builder.remind_time);
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -33,9 +19,10 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.remind_time = DataRes.copyOf(dataRes.remind_time);
+            if (dataRes == null) {
+                return;
             }
+            this.remind_time = Message.copyOf(dataRes.remind_time);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -43,5 +30,20 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<String> list = builder.remind_time;
+            if (list == null) {
+                this.remind_time = DEFAULT_REMIND_TIME;
+                return;
+            } else {
+                this.remind_time = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.remind_time = Message.immutableCopyOf(builder.remind_time);
     }
 }

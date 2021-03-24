@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_AUTHORREMARK = "";
@@ -57,112 +57,6 @@ public final class ForumInfo extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final Long DEFAULT_PID = 0L;
 
-    private ForumInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.ftid == null) {
-                this.ftid = DEFAULT_FTID;
-            } else {
-                this.ftid = builder.ftid;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder._abstract == null) {
-                this._abstract = "";
-            } else {
-                this._abstract = builder._abstract;
-            }
-            if (builder.content == null) {
-                this.content = DEFAULT_CONTENT;
-            } else {
-                this.content = immutableCopyOf(builder.content);
-            }
-            this.zan = builder.zan;
-            if (builder.originalurl == null) {
-                this.originalurl = "";
-            } else {
-                this.originalurl = builder.originalurl;
-            }
-            if (builder.tag == null) {
-                this.tag = "";
-            } else {
-                this.tag = builder.tag;
-            }
-            if (builder.fromfname == null) {
-                this.fromfname = "";
-            } else {
-                this.fromfname = builder.fromfname;
-            }
-            if (builder.fromfid == null) {
-                this.fromfid = DEFAULT_FROMFID;
-            } else {
-                this.fromfid = builder.fromfid;
-            }
-            if (builder.threadsnum == null) {
-                this.threadsnum = DEFAULT_THREADSNUM;
-            } else {
-                this.threadsnum = builder.threadsnum;
-            }
-            if (builder.member_num == null) {
-                this.member_num = DEFAULT_MEMBER_NUM;
-            } else {
-                this.member_num = builder.member_num;
-            }
-            if (builder.avatar == null) {
-                this.avatar = "";
-            } else {
-                this.avatar = builder.avatar;
-            }
-            if (builder.is_like == null) {
-                this.is_like = DEFAULT_IS_LIKE;
-            } else {
-                this.is_like = builder.is_like;
-            }
-            if (builder.tagabstract == null) {
-                this.tagabstract = "";
-            } else {
-                this.tagabstract = builder.tagabstract;
-            }
-            if (builder.authorremark == null) {
-                this.authorremark = "";
-            } else {
-                this.authorremark = builder.authorremark;
-            }
-            if (builder.tid == null) {
-                this.tid = DEFAULT_TID;
-            } else {
-                this.tid = builder.tid;
-            }
-            if (builder.pid == null) {
-                this.pid = DEFAULT_PID;
-                return;
-            } else {
-                this.pid = builder.pid;
-                return;
-            }
-        }
-        this.ftid = builder.ftid;
-        this.title = builder.title;
-        this._abstract = builder._abstract;
-        this.content = immutableCopyOf(builder.content);
-        this.zan = builder.zan;
-        this.originalurl = builder.originalurl;
-        this.tag = builder.tag;
-        this.fromfname = builder.fromfname;
-        this.fromfid = builder.fromfid;
-        this.threadsnum = builder.threadsnum;
-        this.member_num = builder.member_num;
-        this.avatar = builder.avatar;
-        this.is_like = builder.is_like;
-        this.tagabstract = builder.tagabstract;
-        this.authorremark = builder.authorremark;
-        this.tid = builder.tid;
-        this.pid = builder.pid;
-    }
-
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String _abstract;
@@ -188,25 +82,26 @@ public final class ForumInfo extends Message {
 
         public Builder(ForumInfo forumInfo) {
             super(forumInfo);
-            if (forumInfo != null) {
-                this.ftid = forumInfo.ftid;
-                this.title = forumInfo.title;
-                this._abstract = forumInfo._abstract;
-                this.content = ForumInfo.copyOf(forumInfo.content);
-                this.zan = forumInfo.zan;
-                this.originalurl = forumInfo.originalurl;
-                this.tag = forumInfo.tag;
-                this.fromfname = forumInfo.fromfname;
-                this.fromfid = forumInfo.fromfid;
-                this.threadsnum = forumInfo.threadsnum;
-                this.member_num = forumInfo.member_num;
-                this.avatar = forumInfo.avatar;
-                this.is_like = forumInfo.is_like;
-                this.tagabstract = forumInfo.tagabstract;
-                this.authorremark = forumInfo.authorremark;
-                this.tid = forumInfo.tid;
-                this.pid = forumInfo.pid;
+            if (forumInfo == null) {
+                return;
             }
+            this.ftid = forumInfo.ftid;
+            this.title = forumInfo.title;
+            this._abstract = forumInfo._abstract;
+            this.content = Message.copyOf(forumInfo.content);
+            this.zan = forumInfo.zan;
+            this.originalurl = forumInfo.originalurl;
+            this.tag = forumInfo.tag;
+            this.fromfname = forumInfo.fromfname;
+            this.fromfid = forumInfo.fromfid;
+            this.threadsnum = forumInfo.threadsnum;
+            this.member_num = forumInfo.member_num;
+            this.avatar = forumInfo.avatar;
+            this.is_like = forumInfo.is_like;
+            this.tagabstract = forumInfo.tagabstract;
+            this.authorremark = forumInfo.authorremark;
+            this.tid = forumInfo.tid;
+            this.pid = forumInfo.pid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -214,5 +109,127 @@ public final class ForumInfo extends Message {
         public ForumInfo build(boolean z) {
             return new ForumInfo(this, z);
         }
+    }
+
+    public ForumInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.ftid;
+            if (l == null) {
+                this.ftid = DEFAULT_FTID;
+            } else {
+                this.ftid = l;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder._abstract;
+            if (str2 == null) {
+                this._abstract = "";
+            } else {
+                this._abstract = str2;
+            }
+            List<Content> list = builder.content;
+            if (list == null) {
+                this.content = DEFAULT_CONTENT;
+            } else {
+                this.content = Message.immutableCopyOf(list);
+            }
+            this.zan = builder.zan;
+            String str3 = builder.originalurl;
+            if (str3 == null) {
+                this.originalurl = "";
+            } else {
+                this.originalurl = str3;
+            }
+            String str4 = builder.tag;
+            if (str4 == null) {
+                this.tag = "";
+            } else {
+                this.tag = str4;
+            }
+            String str5 = builder.fromfname;
+            if (str5 == null) {
+                this.fromfname = "";
+            } else {
+                this.fromfname = str5;
+            }
+            Long l2 = builder.fromfid;
+            if (l2 == null) {
+                this.fromfid = DEFAULT_FROMFID;
+            } else {
+                this.fromfid = l2;
+            }
+            Long l3 = builder.threadsnum;
+            if (l3 == null) {
+                this.threadsnum = DEFAULT_THREADSNUM;
+            } else {
+                this.threadsnum = l3;
+            }
+            Long l4 = builder.member_num;
+            if (l4 == null) {
+                this.member_num = DEFAULT_MEMBER_NUM;
+            } else {
+                this.member_num = l4;
+            }
+            String str6 = builder.avatar;
+            if (str6 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str6;
+            }
+            Integer num = builder.is_like;
+            if (num == null) {
+                this.is_like = DEFAULT_IS_LIKE;
+            } else {
+                this.is_like = num;
+            }
+            String str7 = builder.tagabstract;
+            if (str7 == null) {
+                this.tagabstract = "";
+            } else {
+                this.tagabstract = str7;
+            }
+            String str8 = builder.authorremark;
+            if (str8 == null) {
+                this.authorremark = "";
+            } else {
+                this.authorremark = str8;
+            }
+            Long l5 = builder.tid;
+            if (l5 == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l5;
+            }
+            Long l6 = builder.pid;
+            if (l6 == null) {
+                this.pid = DEFAULT_PID;
+                return;
+            } else {
+                this.pid = l6;
+                return;
+            }
+        }
+        this.ftid = builder.ftid;
+        this.title = builder.title;
+        this._abstract = builder._abstract;
+        this.content = Message.immutableCopyOf(builder.content);
+        this.zan = builder.zan;
+        this.originalurl = builder.originalurl;
+        this.tag = builder.tag;
+        this.fromfname = builder.fromfname;
+        this.fromfid = builder.fromfid;
+        this.threadsnum = builder.threadsnum;
+        this.member_num = builder.member_num;
+        this.avatar = builder.avatar;
+        this.is_like = builder.is_like;
+        this.tagabstract = builder.tagabstract;
+        this.authorremark = builder.authorremark;
+        this.tid = builder.tid;
+        this.pid = builder.pid;
     }
 }

@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes.dex */
 public final class VipParrScores extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer i_money;
@@ -35,75 +35,7 @@ public final class VipParrScores extends Message {
     public static final Integer DEFAULT_LEVEL = 0;
     public static final Integer DEFAULT_LIMIT = 0;
 
-    private VipParrScores(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.scores_total == null) {
-                this.scores_total = DEFAULT_SCORES_TOTAL;
-            } else {
-                this.scores_total = builder.scores_total;
-            }
-            if (builder.scores_fetch == null) {
-                this.scores_fetch = DEFAULT_SCORES_FETCH;
-            } else {
-                this.scores_fetch = builder.scores_fetch;
-            }
-            if (builder.scores_money == null) {
-                this.scores_money = DEFAULT_SCORES_MONEY;
-            } else {
-                this.scores_money = builder.scores_money;
-            }
-            if (builder.scores_other == null) {
-                this.scores_other = DEFAULT_SCORES_OTHER;
-            } else {
-                this.scores_other = builder.scores_other;
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.i_total == null) {
-                this.i_total = DEFAULT_I_TOTAL;
-            } else {
-                this.i_total = builder.i_total;
-            }
-            if (builder.i_money == null) {
-                this.i_money = DEFAULT_I_MONEY;
-            } else {
-                this.i_money = builder.i_money;
-            }
-            if (builder.i_other == null) {
-                this.i_other = DEFAULT_I_OTHER;
-            } else {
-                this.i_other = builder.i_other;
-            }
-            if (builder.level == null) {
-                this.level = DEFAULT_LEVEL;
-            } else {
-                this.level = builder.level;
-            }
-            if (builder.limit == null) {
-                this.limit = DEFAULT_LIMIT;
-                return;
-            } else {
-                this.limit = builder.limit;
-                return;
-            }
-        }
-        this.scores_total = builder.scores_total;
-        this.scores_fetch = builder.scores_fetch;
-        this.scores_money = builder.scores_money;
-        this.scores_other = builder.scores_other;
-        this.update_time = builder.update_time;
-        this.i_total = builder.i_total;
-        this.i_money = builder.i_money;
-        this.i_other = builder.i_other;
-        this.level = builder.level;
-        this.limit = builder.limit;
-    }
-
-    /* loaded from: classes8.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<VipParrScores> {
         public Integer i_money;
         public Integer i_other;
@@ -121,18 +53,19 @@ public final class VipParrScores extends Message {
 
         public Builder(VipParrScores vipParrScores) {
             super(vipParrScores);
-            if (vipParrScores != null) {
-                this.scores_total = vipParrScores.scores_total;
-                this.scores_fetch = vipParrScores.scores_fetch;
-                this.scores_money = vipParrScores.scores_money;
-                this.scores_other = vipParrScores.scores_other;
-                this.update_time = vipParrScores.update_time;
-                this.i_total = vipParrScores.i_total;
-                this.i_money = vipParrScores.i_money;
-                this.i_other = vipParrScores.i_other;
-                this.level = vipParrScores.level;
-                this.limit = vipParrScores.limit;
+            if (vipParrScores == null) {
+                return;
             }
+            this.scores_total = vipParrScores.scores_total;
+            this.scores_fetch = vipParrScores.scores_fetch;
+            this.scores_money = vipParrScores.scores_money;
+            this.scores_other = vipParrScores.scores_other;
+            this.update_time = vipParrScores.update_time;
+            this.i_total = vipParrScores.i_total;
+            this.i_money = vipParrScores.i_money;
+            this.i_other = vipParrScores.i_other;
+            this.level = vipParrScores.level;
+            this.limit = vipParrScores.limit;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -140,5 +73,83 @@ public final class VipParrScores extends Message {
         public VipParrScores build(boolean z) {
             return new VipParrScores(this, z);
         }
+    }
+
+    public VipParrScores(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.scores_total;
+            if (num == null) {
+                this.scores_total = DEFAULT_SCORES_TOTAL;
+            } else {
+                this.scores_total = num;
+            }
+            Integer num2 = builder.scores_fetch;
+            if (num2 == null) {
+                this.scores_fetch = DEFAULT_SCORES_FETCH;
+            } else {
+                this.scores_fetch = num2;
+            }
+            Integer num3 = builder.scores_money;
+            if (num3 == null) {
+                this.scores_money = DEFAULT_SCORES_MONEY;
+            } else {
+                this.scores_money = num3;
+            }
+            Integer num4 = builder.scores_other;
+            if (num4 == null) {
+                this.scores_other = DEFAULT_SCORES_OTHER;
+            } else {
+                this.scores_other = num4;
+            }
+            Integer num5 = builder.update_time;
+            if (num5 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num5;
+            }
+            Integer num6 = builder.i_total;
+            if (num6 == null) {
+                this.i_total = DEFAULT_I_TOTAL;
+            } else {
+                this.i_total = num6;
+            }
+            Integer num7 = builder.i_money;
+            if (num7 == null) {
+                this.i_money = DEFAULT_I_MONEY;
+            } else {
+                this.i_money = num7;
+            }
+            Integer num8 = builder.i_other;
+            if (num8 == null) {
+                this.i_other = DEFAULT_I_OTHER;
+            } else {
+                this.i_other = num8;
+            }
+            Integer num9 = builder.level;
+            if (num9 == null) {
+                this.level = DEFAULT_LEVEL;
+            } else {
+                this.level = num9;
+            }
+            Integer num10 = builder.limit;
+            if (num10 == null) {
+                this.limit = DEFAULT_LIMIT;
+                return;
+            } else {
+                this.limit = num10;
+                return;
+            }
+        }
+        this.scores_total = builder.scores_total;
+        this.scores_fetch = builder.scores_fetch;
+        this.scores_money = builder.scores_money;
+        this.scores_other = builder.scores_other;
+        this.update_time = builder.update_time;
+        this.i_total = builder.i_total;
+        this.i_money = builder.i_money;
+        this.i_other = builder.i_other;
+        this.level = builder.level;
+        this.limit = builder.limit;
     }
 }

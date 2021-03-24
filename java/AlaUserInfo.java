@@ -2,16 +2,25 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AlaUserInfo extends Message {
+    public static final Integer DEFAULT_ANCHOR_FANS;
+    public static final Long DEFAULT_CHARM_COUNT;
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_GREAT_ANCHOR_DESC_GRADE = "";
     public static final String DEFAULT_GREAT_ANCHOR_DESC_ROLE = "";
     public static final String DEFAULT_GREAT_ANCHOR_ICON = "";
+    public static final Integer DEFAULT_IS_OFFICIAL;
+    public static final Double DEFAULT_LAT;
+    public static final Long DEFAULT_LEVEL_EXP;
+    public static final Integer DEFAULT_LEVEL_ID;
     public static final String DEFAULT_LEVEL_NAME = "";
+    public static final Double DEFAULT_LNG;
     public static final String DEFAULT_LOCATION = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_SEX = "";
+    public static final Integer DEFAULT_UPDATE_TIME;
+    public static final Long DEFAULT_USER_ID;
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_VERIFY_STATUS = "";
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -67,169 +76,8 @@ public final class AlaUserInfo extends Message {
     public static final Long DEFAULT_ANCHOR_LIVE = 0L;
     public static final Integer DEFAULT_LIVE_STATUS = 0;
     public static final Long DEFAULT_LIVE_ID = 0L;
-    public static final Double DEFAULT_LNG = Double.valueOf(0.0d);
-    public static final Double DEFAULT_LAT = Double.valueOf(0.0d);
-    public static final Integer DEFAULT_UPDATE_TIME = 0;
-    public static final Long DEFAULT_CHARM_COUNT = 0L;
-    public static final Long DEFAULT_LEVEL_EXP = 0L;
-    public static final Integer DEFAULT_IS_OFFICIAL = 0;
-    public static final Integer DEFAULT_LEVEL_ID = 0;
-    public static final Long DEFAULT_USER_ID = 0L;
-    public static final Integer DEFAULT_ANCHOR_FANS = 0;
 
-    private AlaUserInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.ala_id == null) {
-                this.ala_id = DEFAULT_ALA_ID;
-            } else {
-                this.ala_id = builder.ala_id;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.portrait == null) {
-                this.portrait = "";
-            } else {
-                this.portrait = builder.portrait;
-            }
-            if (builder.description == null) {
-                this.description = "";
-            } else {
-                this.description = builder.description;
-            }
-            if (builder.sex == null) {
-                this.sex = "";
-            } else {
-                this.sex = builder.sex;
-            }
-            if (builder.enter_live == null) {
-                this.enter_live = DEFAULT_ENTER_LIVE;
-            } else {
-                this.enter_live = builder.enter_live;
-            }
-            if (builder.anchor_live == null) {
-                this.anchor_live = DEFAULT_ANCHOR_LIVE;
-            } else {
-                this.anchor_live = builder.anchor_live;
-            }
-            if (builder.live_status == null) {
-                this.live_status = DEFAULT_LIVE_STATUS;
-            } else {
-                this.live_status = builder.live_status;
-            }
-            if (builder.live_id == null) {
-                this.live_id = DEFAULT_LIVE_ID;
-            } else {
-                this.live_id = builder.live_id;
-            }
-            if (builder.location == null) {
-                this.location = "";
-            } else {
-                this.location = builder.location;
-            }
-            if (builder.lng == null) {
-                this.lng = DEFAULT_LNG;
-            } else {
-                this.lng = builder.lng;
-            }
-            if (builder.lat == null) {
-                this.lat = DEFAULT_LAT;
-            } else {
-                this.lat = builder.lat;
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.charm_count == null) {
-                this.charm_count = DEFAULT_CHARM_COUNT;
-            } else {
-                this.charm_count = builder.charm_count;
-            }
-            if (builder.level_exp == null) {
-                this.level_exp = DEFAULT_LEVEL_EXP;
-            } else {
-                this.level_exp = builder.level_exp;
-            }
-            if (builder.is_official == null) {
-                this.is_official = DEFAULT_IS_OFFICIAL;
-            } else {
-                this.is_official = builder.is_official;
-            }
-            if (builder.verify_status == null) {
-                this.verify_status = "";
-            } else {
-                this.verify_status = builder.verify_status;
-            }
-            if (builder.level_id == null) {
-                this.level_id = DEFAULT_LEVEL_ID;
-            } else {
-                this.level_id = builder.level_id;
-            }
-            if (builder.great_anchor_icon == null) {
-                this.great_anchor_icon = "";
-            } else {
-                this.great_anchor_icon = builder.great_anchor_icon;
-            }
-            if (builder.great_anchor_desc_grade == null) {
-                this.great_anchor_desc_grade = "";
-            } else {
-                this.great_anchor_desc_grade = builder.great_anchor_desc_grade;
-            }
-            if (builder.great_anchor_desc_role == null) {
-                this.great_anchor_desc_role = "";
-            } else {
-                this.great_anchor_desc_role = builder.great_anchor_desc_role;
-            }
-            if (builder.level_name == null) {
-                this.level_name = "";
-            } else {
-                this.level_name = builder.level_name;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.anchor_fans == null) {
-                this.anchor_fans = DEFAULT_ANCHOR_FANS;
-                return;
-            } else {
-                this.anchor_fans = builder.anchor_fans;
-                return;
-            }
-        }
-        this.ala_id = builder.ala_id;
-        this.user_name = builder.user_name;
-        this.portrait = builder.portrait;
-        this.description = builder.description;
-        this.sex = builder.sex;
-        this.enter_live = builder.enter_live;
-        this.anchor_live = builder.anchor_live;
-        this.live_status = builder.live_status;
-        this.live_id = builder.live_id;
-        this.location = builder.location;
-        this.lng = builder.lng;
-        this.lat = builder.lat;
-        this.update_time = builder.update_time;
-        this.charm_count = builder.charm_count;
-        this.level_exp = builder.level_exp;
-        this.is_official = builder.is_official;
-        this.verify_status = builder.verify_status;
-        this.level_id = builder.level_id;
-        this.great_anchor_icon = builder.great_anchor_icon;
-        this.great_anchor_desc_grade = builder.great_anchor_desc_grade;
-        this.great_anchor_desc_role = builder.great_anchor_desc_role;
-        this.level_name = builder.level_name;
-        this.user_id = builder.user_id;
-        this.anchor_fans = builder.anchor_fans;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AlaUserInfo> {
         public Long ala_id;
         public Integer anchor_fans;
@@ -261,32 +109,33 @@ public final class AlaUserInfo extends Message {
 
         public Builder(AlaUserInfo alaUserInfo) {
             super(alaUserInfo);
-            if (alaUserInfo != null) {
-                this.ala_id = alaUserInfo.ala_id;
-                this.user_name = alaUserInfo.user_name;
-                this.portrait = alaUserInfo.portrait;
-                this.description = alaUserInfo.description;
-                this.sex = alaUserInfo.sex;
-                this.enter_live = alaUserInfo.enter_live;
-                this.anchor_live = alaUserInfo.anchor_live;
-                this.live_status = alaUserInfo.live_status;
-                this.live_id = alaUserInfo.live_id;
-                this.location = alaUserInfo.location;
-                this.lng = alaUserInfo.lng;
-                this.lat = alaUserInfo.lat;
-                this.update_time = alaUserInfo.update_time;
-                this.charm_count = alaUserInfo.charm_count;
-                this.level_exp = alaUserInfo.level_exp;
-                this.is_official = alaUserInfo.is_official;
-                this.verify_status = alaUserInfo.verify_status;
-                this.level_id = alaUserInfo.level_id;
-                this.great_anchor_icon = alaUserInfo.great_anchor_icon;
-                this.great_anchor_desc_grade = alaUserInfo.great_anchor_desc_grade;
-                this.great_anchor_desc_role = alaUserInfo.great_anchor_desc_role;
-                this.level_name = alaUserInfo.level_name;
-                this.user_id = alaUserInfo.user_id;
-                this.anchor_fans = alaUserInfo.anchor_fans;
+            if (alaUserInfo == null) {
+                return;
             }
+            this.ala_id = alaUserInfo.ala_id;
+            this.user_name = alaUserInfo.user_name;
+            this.portrait = alaUserInfo.portrait;
+            this.description = alaUserInfo.description;
+            this.sex = alaUserInfo.sex;
+            this.enter_live = alaUserInfo.enter_live;
+            this.anchor_live = alaUserInfo.anchor_live;
+            this.live_status = alaUserInfo.live_status;
+            this.live_id = alaUserInfo.live_id;
+            this.location = alaUserInfo.location;
+            this.lng = alaUserInfo.lng;
+            this.lat = alaUserInfo.lat;
+            this.update_time = alaUserInfo.update_time;
+            this.charm_count = alaUserInfo.charm_count;
+            this.level_exp = alaUserInfo.level_exp;
+            this.is_official = alaUserInfo.is_official;
+            this.verify_status = alaUserInfo.verify_status;
+            this.level_id = alaUserInfo.level_id;
+            this.great_anchor_icon = alaUserInfo.great_anchor_icon;
+            this.great_anchor_desc_grade = alaUserInfo.great_anchor_desc_grade;
+            this.great_anchor_desc_role = alaUserInfo.great_anchor_desc_role;
+            this.level_name = alaUserInfo.level_name;
+            this.user_id = alaUserInfo.user_id;
+            this.anchor_fans = alaUserInfo.anchor_fans;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -294,5 +143,194 @@ public final class AlaUserInfo extends Message {
         public AlaUserInfo build(boolean z) {
             return new AlaUserInfo(this, z);
         }
+    }
+
+    static {
+        Double valueOf = Double.valueOf(0.0d);
+        DEFAULT_LNG = valueOf;
+        DEFAULT_LAT = valueOf;
+        DEFAULT_UPDATE_TIME = 0;
+        DEFAULT_CHARM_COUNT = 0L;
+        DEFAULT_LEVEL_EXP = 0L;
+        DEFAULT_IS_OFFICIAL = 0;
+        DEFAULT_LEVEL_ID = 0;
+        DEFAULT_USER_ID = 0L;
+        DEFAULT_ANCHOR_FANS = 0;
+    }
+
+    public AlaUserInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.ala_id;
+            if (l == null) {
+                this.ala_id = DEFAULT_ALA_ID;
+            } else {
+                this.ala_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.portrait;
+            if (str2 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str2;
+            }
+            String str3 = builder.description;
+            if (str3 == null) {
+                this.description = "";
+            } else {
+                this.description = str3;
+            }
+            String str4 = builder.sex;
+            if (str4 == null) {
+                this.sex = "";
+            } else {
+                this.sex = str4;
+            }
+            Long l2 = builder.enter_live;
+            if (l2 == null) {
+                this.enter_live = DEFAULT_ENTER_LIVE;
+            } else {
+                this.enter_live = l2;
+            }
+            Long l3 = builder.anchor_live;
+            if (l3 == null) {
+                this.anchor_live = DEFAULT_ANCHOR_LIVE;
+            } else {
+                this.anchor_live = l3;
+            }
+            Integer num = builder.live_status;
+            if (num == null) {
+                this.live_status = DEFAULT_LIVE_STATUS;
+            } else {
+                this.live_status = num;
+            }
+            Long l4 = builder.live_id;
+            if (l4 == null) {
+                this.live_id = DEFAULT_LIVE_ID;
+            } else {
+                this.live_id = l4;
+            }
+            String str5 = builder.location;
+            if (str5 == null) {
+                this.location = "";
+            } else {
+                this.location = str5;
+            }
+            Double d2 = builder.lng;
+            if (d2 == null) {
+                this.lng = DEFAULT_LNG;
+            } else {
+                this.lng = d2;
+            }
+            Double d3 = builder.lat;
+            if (d3 == null) {
+                this.lat = DEFAULT_LAT;
+            } else {
+                this.lat = d3;
+            }
+            Integer num2 = builder.update_time;
+            if (num2 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num2;
+            }
+            Long l5 = builder.charm_count;
+            if (l5 == null) {
+                this.charm_count = DEFAULT_CHARM_COUNT;
+            } else {
+                this.charm_count = l5;
+            }
+            Long l6 = builder.level_exp;
+            if (l6 == null) {
+                this.level_exp = DEFAULT_LEVEL_EXP;
+            } else {
+                this.level_exp = l6;
+            }
+            Integer num3 = builder.is_official;
+            if (num3 == null) {
+                this.is_official = DEFAULT_IS_OFFICIAL;
+            } else {
+                this.is_official = num3;
+            }
+            String str6 = builder.verify_status;
+            if (str6 == null) {
+                this.verify_status = "";
+            } else {
+                this.verify_status = str6;
+            }
+            Integer num4 = builder.level_id;
+            if (num4 == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num4;
+            }
+            String str7 = builder.great_anchor_icon;
+            if (str7 == null) {
+                this.great_anchor_icon = "";
+            } else {
+                this.great_anchor_icon = str7;
+            }
+            String str8 = builder.great_anchor_desc_grade;
+            if (str8 == null) {
+                this.great_anchor_desc_grade = "";
+            } else {
+                this.great_anchor_desc_grade = str8;
+            }
+            String str9 = builder.great_anchor_desc_role;
+            if (str9 == null) {
+                this.great_anchor_desc_role = "";
+            } else {
+                this.great_anchor_desc_role = str9;
+            }
+            String str10 = builder.level_name;
+            if (str10 == null) {
+                this.level_name = "";
+            } else {
+                this.level_name = str10;
+            }
+            Long l7 = builder.user_id;
+            if (l7 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l7;
+            }
+            Integer num5 = builder.anchor_fans;
+            if (num5 == null) {
+                this.anchor_fans = DEFAULT_ANCHOR_FANS;
+                return;
+            } else {
+                this.anchor_fans = num5;
+                return;
+            }
+        }
+        this.ala_id = builder.ala_id;
+        this.user_name = builder.user_name;
+        this.portrait = builder.portrait;
+        this.description = builder.description;
+        this.sex = builder.sex;
+        this.enter_live = builder.enter_live;
+        this.anchor_live = builder.anchor_live;
+        this.live_status = builder.live_status;
+        this.live_id = builder.live_id;
+        this.location = builder.location;
+        this.lng = builder.lng;
+        this.lat = builder.lat;
+        this.update_time = builder.update_time;
+        this.charm_count = builder.charm_count;
+        this.level_exp = builder.level_exp;
+        this.is_official = builder.is_official;
+        this.verify_status = builder.verify_status;
+        this.level_id = builder.level_id;
+        this.great_anchor_icon = builder.great_anchor_icon;
+        this.great_anchor_desc_grade = builder.great_anchor_desc_grade;
+        this.great_anchor_desc_role = builder.great_anchor_desc_role;
+        this.level_name = builder.level_name;
+        this.user_id = builder.user_id;
+        this.anchor_fans = builder.anchor_fans;
     }
 }

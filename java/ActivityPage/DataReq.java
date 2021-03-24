@@ -3,7 +3,7 @@ package tbclient.ActivityPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ACTIVITY_NAME = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8639common;
+    public final CommonReq f68303common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -31,64 +31,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_DIP = 0;
     public static final Integer DEFAULT_Q_TYPE = 0;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8639common = builder.f8640common;
-            if (builder.activity_name == null) {
-                this.activity_name = "";
-            } else {
-                this.activity_name = builder.activity_name;
-            }
-            if (builder.pn == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = builder.pn;
-            }
-            if (builder.rn == null) {
-                this.rn = DEFAULT_RN;
-            } else {
-                this.rn = builder.rn;
-            }
-            if (builder.scr_w == null) {
-                this.scr_w = DEFAULT_SCR_W;
-            } else {
-                this.scr_w = builder.scr_w;
-            }
-            if (builder.scr_h == null) {
-                this.scr_h = DEFAULT_SCR_H;
-            } else {
-                this.scr_h = builder.scr_h;
-            }
-            if (builder.scr_dip == null) {
-                this.scr_dip = DEFAULT_SCR_DIP;
-            } else {
-                this.scr_dip = builder.scr_dip;
-            }
-            if (builder.q_type == null) {
-                this.q_type = DEFAULT_Q_TYPE;
-                return;
-            } else {
-                this.q_type = builder.q_type;
-                return;
-            }
-        }
-        this.f8639common = builder.f8640common;
-        this.activity_name = builder.activity_name;
-        this.pn = builder.pn;
-        this.rn = builder.rn;
-        this.scr_w = builder.scr_w;
-        this.scr_h = builder.scr_h;
-        this.scr_dip = builder.scr_dip;
-        this.q_type = builder.q_type;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String activity_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8640common;
+        public CommonReq f68304common;
         public Integer pn;
         public Integer q_type;
         public Integer rn;
@@ -101,16 +49,17 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8640common = dataReq.f8639common;
-                this.activity_name = dataReq.activity_name;
-                this.pn = dataReq.pn;
-                this.rn = dataReq.rn;
-                this.scr_w = dataReq.scr_w;
-                this.scr_h = dataReq.scr_h;
-                this.scr_dip = dataReq.scr_dip;
-                this.q_type = dataReq.q_type;
+            if (dataReq == null) {
+                return;
             }
+            this.f68304common = dataReq.f68303common;
+            this.activity_name = dataReq.activity_name;
+            this.pn = dataReq.pn;
+            this.rn = dataReq.rn;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_dip = dataReq.scr_dip;
+            this.q_type = dataReq.q_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +67,64 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68303common = builder.f68304common;
+            String str = builder.activity_name;
+            if (str == null) {
+                this.activity_name = "";
+            } else {
+                this.activity_name = str;
+            }
+            Integer num = builder.pn;
+            if (num == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num;
+            }
+            Integer num2 = builder.rn;
+            if (num2 == null) {
+                this.rn = DEFAULT_RN;
+            } else {
+                this.rn = num2;
+            }
+            Integer num3 = builder.scr_w;
+            if (num3 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num3;
+            }
+            Integer num4 = builder.scr_h;
+            if (num4 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num4;
+            }
+            Integer num5 = builder.scr_dip;
+            if (num5 == null) {
+                this.scr_dip = DEFAULT_SCR_DIP;
+            } else {
+                this.scr_dip = num5;
+            }
+            Integer num6 = builder.q_type;
+            if (num6 == null) {
+                this.q_type = DEFAULT_Q_TYPE;
+                return;
+            } else {
+                this.q_type = num6;
+                return;
+            }
+        }
+        this.f68303common = builder.f68304common;
+        this.activity_name = builder.activity_name;
+        this.pn = builder.pn;
+        this.rn = builder.rn;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_dip = builder.scr_dip;
+        this.q_type = builder.q_type;
     }
 }

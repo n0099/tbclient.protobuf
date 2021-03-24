@@ -3,14 +3,14 @@ package tbclient.GetConsentList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long author_id;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f8733common;
+    public final CommonReq f68403common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long gid;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -31,64 +31,12 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_PAGE_NUM = 0L;
     public static final Long DEFAULT_RES_NUM = 0L;
 
-    private DataReq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.f8733common = builder.f8734common;
-            if (builder.author_id == null) {
-                this.author_id = DEFAULT_AUTHOR_ID;
-            } else {
-                this.author_id = builder.author_id;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.gid == null) {
-                this.gid = DEFAULT_GID;
-            } else {
-                this.gid = builder.gid;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = builder.post_id;
-            }
-            if (builder.page_num == null) {
-                this.page_num = DEFAULT_PAGE_NUM;
-            } else {
-                this.page_num = builder.page_num;
-            }
-            if (builder.res_num == null) {
-                this.res_num = DEFAULT_RES_NUM;
-                return;
-            } else {
-                this.res_num = builder.res_num;
-                return;
-            }
-        }
-        this.f8733common = builder.f8734common;
-        this.author_id = builder.author_id;
-        this.user_id = builder.user_id;
-        this.gid = builder.gid;
-        this.thread_id = builder.thread_id;
-        this.post_id = builder.post_id;
-        this.page_num = builder.page_num;
-        this.res_num = builder.res_num;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long author_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f8734common;
+        public CommonReq f68404common;
         public Long gid;
         public Long page_num;
         public Long post_id;
@@ -101,16 +49,17 @@ public final class DataReq extends Message {
 
         public Builder(DataReq dataReq) {
             super(dataReq);
-            if (dataReq != null) {
-                this.f8734common = dataReq.f8733common;
-                this.author_id = dataReq.author_id;
-                this.user_id = dataReq.user_id;
-                this.gid = dataReq.gid;
-                this.thread_id = dataReq.thread_id;
-                this.post_id = dataReq.post_id;
-                this.page_num = dataReq.page_num;
-                this.res_num = dataReq.res_num;
+            if (dataReq == null) {
+                return;
             }
+            this.f68404common = dataReq.f68403common;
+            this.author_id = dataReq.author_id;
+            this.user_id = dataReq.user_id;
+            this.gid = dataReq.gid;
+            this.thread_id = dataReq.thread_id;
+            this.post_id = dataReq.post_id;
+            this.page_num = dataReq.page_num;
+            this.res_num = dataReq.res_num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,5 +67,64 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             return new DataReq(this, z);
         }
+    }
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f68403common = builder.f68404common;
+            Long l = builder.author_id;
+            if (l == null) {
+                this.author_id = DEFAULT_AUTHOR_ID;
+            } else {
+                this.author_id = l;
+            }
+            Long l2 = builder.user_id;
+            if (l2 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l2;
+            }
+            Long l3 = builder.gid;
+            if (l3 == null) {
+                this.gid = DEFAULT_GID;
+            } else {
+                this.gid = l3;
+            }
+            Long l4 = builder.thread_id;
+            if (l4 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l4;
+            }
+            Long l5 = builder.post_id;
+            if (l5 == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = l5;
+            }
+            Long l6 = builder.page_num;
+            if (l6 == null) {
+                this.page_num = DEFAULT_PAGE_NUM;
+            } else {
+                this.page_num = l6;
+            }
+            Long l7 = builder.res_num;
+            if (l7 == null) {
+                this.res_num = DEFAULT_RES_NUM;
+                return;
+            } else {
+                this.res_num = l7;
+                return;
+            }
+        }
+        this.f68403common = builder.f68404common;
+        this.author_id = builder.author_id;
+        this.user_id = builder.user_id;
+        this.gid = builder.gid;
+        this.thread_id = builder.thread_id;
+        this.post_id = builder.post_id;
+        this.page_num = builder.page_num;
+        this.res_num = builder.res_num;
     }
 }

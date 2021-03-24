@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AddPost extends Message {
     public static final String DEFAULT_LAST_ADDITION_CONTENT = "";
     public static final String DEFAULT_POST_ID = "";
@@ -26,57 +26,7 @@ public final class AddPost extends Message {
     public static final Integer DEFAULT_TOTAL_COUNT = 0;
     public static final Integer DEFAULT_LAST_ADDITION_TIME = 0;
 
-    private AddPost(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.post_id == null) {
-                this.post_id = "";
-            } else {
-                this.post_id = builder.post_id;
-            }
-            if (builder.already_count == null) {
-                this.already_count = DEFAULT_ALREADY_COUNT;
-            } else {
-                this.already_count = builder.already_count;
-            }
-            if (builder.total_count == null) {
-                this.total_count = DEFAULT_TOTAL_COUNT;
-            } else {
-                this.total_count = builder.total_count;
-            }
-            if (builder.last_addition_content == null) {
-                this.last_addition_content = "";
-            } else {
-                this.last_addition_content = builder.last_addition_content;
-            }
-            if (builder.last_addition_time == null) {
-                this.last_addition_time = DEFAULT_LAST_ADDITION_TIME;
-            } else {
-                this.last_addition_time = builder.last_addition_time;
-            }
-            if (builder.warn_msg == null) {
-                this.warn_msg = "";
-                return;
-            } else {
-                this.warn_msg = builder.warn_msg;
-                return;
-            }
-        }
-        this.create_time = builder.create_time;
-        this.post_id = builder.post_id;
-        this.already_count = builder.already_count;
-        this.total_count = builder.total_count;
-        this.last_addition_content = builder.last_addition_content;
-        this.last_addition_time = builder.last_addition_time;
-        this.warn_msg = builder.warn_msg;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<AddPost> {
         public Integer already_count;
         public Integer create_time;
@@ -91,15 +41,16 @@ public final class AddPost extends Message {
 
         public Builder(AddPost addPost) {
             super(addPost);
-            if (addPost != null) {
-                this.create_time = addPost.create_time;
-                this.post_id = addPost.post_id;
-                this.already_count = addPost.already_count;
-                this.total_count = addPost.total_count;
-                this.last_addition_content = addPost.last_addition_content;
-                this.last_addition_time = addPost.last_addition_time;
-                this.warn_msg = addPost.warn_msg;
+            if (addPost == null) {
+                return;
             }
+            this.create_time = addPost.create_time;
+            this.post_id = addPost.post_id;
+            this.already_count = addPost.already_count;
+            this.total_count = addPost.total_count;
+            this.last_addition_content = addPost.last_addition_content;
+            this.last_addition_time = addPost.last_addition_time;
+            this.warn_msg = addPost.warn_msg;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,5 +58,62 @@ public final class AddPost extends Message {
         public AddPost build(boolean z) {
             return new AddPost(this, z);
         }
+    }
+
+    public AddPost(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.create_time;
+            if (num == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num;
+            }
+            String str = builder.post_id;
+            if (str == null) {
+                this.post_id = "";
+            } else {
+                this.post_id = str;
+            }
+            Integer num2 = builder.already_count;
+            if (num2 == null) {
+                this.already_count = DEFAULT_ALREADY_COUNT;
+            } else {
+                this.already_count = num2;
+            }
+            Integer num3 = builder.total_count;
+            if (num3 == null) {
+                this.total_count = DEFAULT_TOTAL_COUNT;
+            } else {
+                this.total_count = num3;
+            }
+            String str2 = builder.last_addition_content;
+            if (str2 == null) {
+                this.last_addition_content = "";
+            } else {
+                this.last_addition_content = str2;
+            }
+            Integer num4 = builder.last_addition_time;
+            if (num4 == null) {
+                this.last_addition_time = DEFAULT_LAST_ADDITION_TIME;
+            } else {
+                this.last_addition_time = num4;
+            }
+            String str3 = builder.warn_msg;
+            if (str3 == null) {
+                this.warn_msg = "";
+                return;
+            } else {
+                this.warn_msg = str3;
+                return;
+            }
+        }
+        this.create_time = builder.create_time;
+        this.post_id = builder.post_id;
+        this.already_count = builder.already_count;
+        this.total_count = builder.total_count;
+        this.last_addition_content = builder.last_addition_content;
+        this.last_addition_time = builder.last_addition_time;
+        this.warn_msg = builder.warn_msg;
     }
 }

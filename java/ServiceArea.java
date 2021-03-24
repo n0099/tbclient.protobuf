@@ -2,9 +2,10 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ServiceArea extends Message {
     public static final String DEFAULT_PICURL = "";
+    public static final String DEFAULT_SCHEMA = "";
     public static final String DEFAULT_SERVICENAME = "";
     public static final String DEFAULT_SERVICEURL = "";
     public static final String DEFAULT_SERVICE_TYPE = "";
@@ -13,6 +14,8 @@ public final class ServiceArea extends Message {
     public final SmartApp area_smart_app;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String picurl;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String schema;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String service_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -22,49 +25,11 @@ public final class ServiceArea extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String version;
 
-    private ServiceArea(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.servicename == null) {
-                this.servicename = "";
-            } else {
-                this.servicename = builder.servicename;
-            }
-            if (builder.picurl == null) {
-                this.picurl = "";
-            } else {
-                this.picurl = builder.picurl;
-            }
-            if (builder.serviceurl == null) {
-                this.serviceurl = "";
-            } else {
-                this.serviceurl = builder.serviceurl;
-            }
-            if (builder.version == null) {
-                this.version = "";
-            } else {
-                this.version = builder.version;
-            }
-            if (builder.service_type == null) {
-                this.service_type = "";
-            } else {
-                this.service_type = builder.service_type;
-            }
-            this.area_smart_app = builder.area_smart_app;
-            return;
-        }
-        this.servicename = builder.servicename;
-        this.picurl = builder.picurl;
-        this.serviceurl = builder.serviceurl;
-        this.version = builder.version;
-        this.service_type = builder.service_type;
-        this.area_smart_app = builder.area_smart_app;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ServiceArea> {
         public SmartApp area_smart_app;
         public String picurl;
+        public String schema;
         public String service_type;
         public String servicename;
         public String serviceurl;
@@ -75,14 +40,16 @@ public final class ServiceArea extends Message {
 
         public Builder(ServiceArea serviceArea) {
             super(serviceArea);
-            if (serviceArea != null) {
-                this.servicename = serviceArea.servicename;
-                this.picurl = serviceArea.picurl;
-                this.serviceurl = serviceArea.serviceurl;
-                this.version = serviceArea.version;
-                this.service_type = serviceArea.service_type;
-                this.area_smart_app = serviceArea.area_smart_app;
+            if (serviceArea == null) {
+                return;
             }
+            this.servicename = serviceArea.servicename;
+            this.picurl = serviceArea.picurl;
+            this.serviceurl = serviceArea.serviceurl;
+            this.version = serviceArea.version;
+            this.service_type = serviceArea.service_type;
+            this.area_smart_app = serviceArea.area_smart_app;
+            this.schema = serviceArea.schema;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -90,5 +57,57 @@ public final class ServiceArea extends Message {
         public ServiceArea build(boolean z) {
             return new ServiceArea(this, z);
         }
+    }
+
+    public ServiceArea(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.servicename;
+            if (str == null) {
+                this.servicename = "";
+            } else {
+                this.servicename = str;
+            }
+            String str2 = builder.picurl;
+            if (str2 == null) {
+                this.picurl = "";
+            } else {
+                this.picurl = str2;
+            }
+            String str3 = builder.serviceurl;
+            if (str3 == null) {
+                this.serviceurl = "";
+            } else {
+                this.serviceurl = str3;
+            }
+            String str4 = builder.version;
+            if (str4 == null) {
+                this.version = "";
+            } else {
+                this.version = str4;
+            }
+            String str5 = builder.service_type;
+            if (str5 == null) {
+                this.service_type = "";
+            } else {
+                this.service_type = str5;
+            }
+            this.area_smart_app = builder.area_smart_app;
+            String str6 = builder.schema;
+            if (str6 == null) {
+                this.schema = "";
+                return;
+            } else {
+                this.schema = str6;
+                return;
+            }
+        }
+        this.servicename = builder.servicename;
+        this.picurl = builder.picurl;
+        this.serviceurl = builder.serviceurl;
+        this.version = builder.version;
+        this.service_type = builder.service_type;
+        this.area_smart_app = builder.area_smart_app;
+        this.schema = builder.schema;
     }
 }

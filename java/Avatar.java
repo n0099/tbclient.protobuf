@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Avatar extends Message {
     public static final String DEFAULT_PIC = "";
     public static final String DEFAULT_POS = "";
@@ -11,27 +11,7 @@ public final class Avatar extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String pos;
 
-    private Avatar(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.pic == null) {
-                this.pic = "";
-            } else {
-                this.pic = builder.pic;
-            }
-            if (builder.pos == null) {
-                this.pos = "";
-                return;
-            } else {
-                this.pos = builder.pos;
-                return;
-            }
-        }
-        this.pic = builder.pic;
-        this.pos = builder.pos;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Avatar> {
         public String pic;
         public String pos;
@@ -41,10 +21,11 @@ public final class Avatar extends Message {
 
         public Builder(Avatar avatar) {
             super(avatar);
-            if (avatar != null) {
-                this.pic = avatar.pic;
-                this.pos = avatar.pos;
+            if (avatar == null) {
+                return;
             }
+            this.pic = avatar.pic;
+            this.pos = avatar.pos;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class Avatar extends Message {
         public Avatar build(boolean z) {
             return new Avatar(this, z);
         }
+    }
+
+    public Avatar(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.pic;
+            if (str == null) {
+                this.pic = "";
+            } else {
+                this.pic = str;
+            }
+            String str2 = builder.pos;
+            if (str2 == null) {
+                this.pos = "";
+                return;
+            } else {
+                this.pos = str2;
+                return;
+            }
+        }
+        this.pic = builder.pic;
+        this.pos = builder.pos;
     }
 }

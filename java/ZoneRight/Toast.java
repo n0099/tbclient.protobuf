@@ -2,7 +2,7 @@ package tbclient.ZoneRight;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Toast extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final Integer DEFAULT_TYPE = 0;
@@ -11,27 +11,7 @@ public final class Toast extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer type;
 
-    private Toast(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.type == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = builder.type;
-            }
-            if (builder.content == null) {
-                this.content = "";
-                return;
-            } else {
-                this.content = builder.content;
-                return;
-            }
-        }
-        this.type = builder.type;
-        this.content = builder.content;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Toast> {
         public String content;
         public Integer type;
@@ -41,10 +21,11 @@ public final class Toast extends Message {
 
         public Builder(Toast toast) {
             super(toast);
-            if (toast != null) {
-                this.type = toast.type;
-                this.content = toast.content;
+            if (toast == null) {
+                return;
             }
+            this.type = toast.type;
+            this.content = toast.content;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -52,5 +33,27 @@ public final class Toast extends Message {
         public Toast build(boolean z) {
             return new Toast(this, z);
         }
+    }
+
+    public Toast(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            String str = builder.content;
+            if (str == null) {
+                this.content = "";
+                return;
+            } else {
+                this.content = str;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.content = builder.content;
     }
 }

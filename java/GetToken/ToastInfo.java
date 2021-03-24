@@ -2,7 +2,7 @@ package tbclient.GetToken;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ToastInfo extends Message {
     public static final String DEFAULT_BTNTEXT = "";
     public static final String DEFAULT_MESSAGE = "";
@@ -17,39 +17,7 @@ public final class ToastInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    private ToastInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.url == null) {
-                this.url = "";
-            } else {
-                this.url = builder.url;
-            }
-            if (builder.message == null) {
-                this.message = "";
-            } else {
-                this.message = builder.message;
-            }
-            if (builder.btntext == null) {
-                this.btntext = "";
-            } else {
-                this.btntext = builder.btntext;
-            }
-            if (builder.sharetoken == null) {
-                this.sharetoken = "";
-                return;
-            } else {
-                this.sharetoken = builder.sharetoken;
-                return;
-            }
-        }
-        this.url = builder.url;
-        this.message = builder.message;
-        this.btntext = builder.btntext;
-        this.sharetoken = builder.sharetoken;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ToastInfo> {
         public String btntext;
         public String message;
@@ -61,12 +29,13 @@ public final class ToastInfo extends Message {
 
         public Builder(ToastInfo toastInfo) {
             super(toastInfo);
-            if (toastInfo != null) {
-                this.url = toastInfo.url;
-                this.message = toastInfo.message;
-                this.btntext = toastInfo.btntext;
-                this.sharetoken = toastInfo.sharetoken;
+            if (toastInfo == null) {
+                return;
             }
+            this.url = toastInfo.url;
+            this.message = toastInfo.message;
+            this.btntext = toastInfo.btntext;
+            this.sharetoken = toastInfo.sharetoken;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class ToastInfo extends Message {
         public ToastInfo build(boolean z) {
             return new ToastInfo(this, z);
         }
+    }
+
+    public ToastInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+            } else {
+                this.url = str;
+            }
+            String str2 = builder.message;
+            if (str2 == null) {
+                this.message = "";
+            } else {
+                this.message = str2;
+            }
+            String str3 = builder.btntext;
+            if (str3 == null) {
+                this.btntext = "";
+            } else {
+                this.btntext = str3;
+            }
+            String str4 = builder.sharetoken;
+            if (str4 == null) {
+                this.sharetoken = "";
+                return;
+            } else {
+                this.sharetoken = str4;
+                return;
+            }
+        }
+        this.url = builder.url;
+        this.message = builder.message;
+        this.btntext = builder.btntext;
+        this.sharetoken = builder.sharetoken;
     }
 }

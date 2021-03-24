@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PostInfoList extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -146,7 +146,7 @@ public final class PostInfoList extends Message {
     public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
     public static final Integer DEFAULT_HIDE_POST = 0;
     public static final Long DEFAULT_THREAD_TYPE = 0L;
-    public static final Boolean DEFAULT_IS_DEAL = false;
+    public static final Boolean DEFAULT_IS_DEAL = Boolean.FALSE;
     public static final List<MultipleForum> DEFAULT_MULTIPLE_FORUM_LIST = Collections.emptyList();
     public static final Integer DEFAULT_FREQ_NUM = 0;
     public static final Long DEFAULT_V_FORUM_ID = 0L;
@@ -166,309 +166,7 @@ public final class PostInfoList extends Message {
     public static final List<PrivSets> DEFAULT_PRIV_SETS = Collections.emptyList();
     public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
 
-    private PostInfoList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.forum_id == null) {
-                this.forum_id = DEFAULT_FORUM_ID;
-            } else {
-                this.forum_id = builder.forum_id;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.post_id == null) {
-                this.post_id = DEFAULT_POST_ID;
-            } else {
-                this.post_id = builder.post_id;
-            }
-            if (builder.is_thread == null) {
-                this.is_thread = DEFAULT_IS_THREAD;
-            } else {
-                this.is_thread = builder.is_thread;
-            }
-            if (builder.create_time == null) {
-                this.create_time = DEFAULT_CREATE_TIME;
-            } else {
-                this.create_time = builder.create_time;
-            }
-            if (builder.forum_name == null) {
-                this.forum_name = "";
-            } else {
-                this.forum_name = builder.forum_name;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.content == null) {
-                this.content = DEFAULT_CONTENT;
-            } else {
-                this.content = immutableCopyOf(builder.content);
-            }
-            if (builder.content_thread == null) {
-                this.content_thread = "";
-            } else {
-                this.content_thread = builder.content_thread;
-            }
-            if (builder.user_name == null) {
-                this.user_name = "";
-            } else {
-                this.user_name = builder.user_name;
-            }
-            if (builder.ip == null) {
-                this.ip = "";
-            } else {
-                this.ip = builder.ip;
-            }
-            if (builder.is_post_deleted == null) {
-                this.is_post_deleted = DEFAULT_IS_POST_DELETED;
-            } else {
-                this.is_post_deleted = builder.is_post_deleted;
-            }
-            if (builder.ptype == null) {
-                this.ptype = "";
-            } else {
-                this.ptype = builder.ptype;
-            }
-            if (builder._abstract == null) {
-                this._abstract = "";
-            } else {
-                this._abstract = builder._abstract;
-            }
-            if (builder.abstract_thread == null) {
-                this.abstract_thread = DEFAULT_ABSTRACT_THREAD;
-            } else {
-                this.abstract_thread = immutableCopyOf(builder.abstract_thread);
-            }
-            if (builder.media == null) {
-                this.media = DEFAULT_MEDIA;
-            } else {
-                this.media = immutableCopyOf(builder.media);
-            }
-            if (builder.reply_num == null) {
-                this.reply_num = DEFAULT_REPLY_NUM;
-            } else {
-                this.reply_num = builder.reply_num;
-            }
-            if (builder.user_id == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = builder.user_id;
-            }
-            if (builder.user_portrait == null) {
-                this.user_portrait = "";
-            } else {
-                this.user_portrait = builder.user_portrait;
-            }
-            if (builder.post_type == null) {
-                this.post_type = "";
-            } else {
-                this.post_type = builder.post_type;
-            }
-            this.lbs_info = builder.lbs_info;
-            this.quote = builder.quote;
-            if (builder.voice_info == null) {
-                this.voice_info = DEFAULT_VOICE_INFO;
-            } else {
-                this.voice_info = immutableCopyOf(builder.voice_info);
-            }
-            this.anchor_info = builder.anchor_info;
-            if (builder.hide_post == null) {
-                this.hide_post = DEFAULT_HIDE_POST;
-            } else {
-                this.hide_post = builder.hide_post;
-            }
-            if (builder.thread_type == null) {
-                this.thread_type = DEFAULT_THREAD_TYPE;
-            } else {
-                this.thread_type = builder.thread_type;
-            }
-            this.twzhibo_info = builder.twzhibo_info;
-            this.poll_info = builder.poll_info;
-            this.video_info = builder.video_info;
-            if (builder.is_deal == null) {
-                this.is_deal = DEFAULT_IS_DEAL;
-            } else {
-                this.is_deal = builder.is_deal;
-            }
-            this.deal_info = builder.deal_info;
-            if (builder.multiple_forum_list == null) {
-                this.multiple_forum_list = DEFAULT_MULTIPLE_FORUM_LIST;
-            } else {
-                this.multiple_forum_list = immutableCopyOf(builder.multiple_forum_list);
-            }
-            if (builder.freq_num == null) {
-                this.freq_num = DEFAULT_FREQ_NUM;
-            } else {
-                this.freq_num = builder.freq_num;
-            }
-            if (builder.v_forum_id == null) {
-                this.v_forum_id = DEFAULT_V_FORUM_ID;
-            } else {
-                this.v_forum_id = builder.v_forum_id;
-            }
-            if (builder.name_show == null) {
-                this.name_show = "";
-            } else {
-                this.name_show = builder.name_show;
-            }
-            this.ala_info = builder.ala_info;
-            if (builder.agree_num == null) {
-                this.agree_num = DEFAULT_AGREE_NUM;
-            } else {
-                this.agree_num = builder.agree_num;
-            }
-            if (builder.view_num == null) {
-                this.view_num = DEFAULT_VIEW_NUM;
-            } else {
-                this.view_num = builder.view_num;
-            }
-            if (builder.share_num == null) {
-                this.share_num = DEFAULT_SHARE_NUM;
-            } else {
-                this.share_num = builder.share_num;
-            }
-            this.agree = builder.agree;
-            if (builder.is_remain == null) {
-                this.is_remain = DEFAULT_IS_REMAIN;
-            } else {
-                this.is_remain = builder.is_remain;
-            }
-            this.origin_thread_info = builder.origin_thread_info;
-            if (builder.is_view_year == null) {
-                this.is_view_year = DEFAULT_IS_VIEW_YEAR;
-            } else {
-                this.is_view_year = builder.is_view_year;
-            }
-            if (builder.is_share_thread == null) {
-                this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
-            } else {
-                this.is_share_thread = builder.is_share_thread;
-            }
-            if (builder.rich_title == null) {
-                this.rich_title = DEFAULT_RICH_TITLE;
-            } else {
-                this.rich_title = immutableCopyOf(builder.rich_title);
-            }
-            if (builder.rich_abstract == null) {
-                this.rich_abstract = DEFAULT_RICH_ABSTRACT;
-            } else {
-                this.rich_abstract = immutableCopyOf(builder.rich_abstract);
-            }
-            if (builder.is_ntitle == null) {
-                this.is_ntitle = DEFAULT_IS_NTITLE;
-            } else {
-                this.is_ntitle = builder.is_ntitle;
-            }
-            if (builder.article_cover == null) {
-                this.article_cover = "";
-            } else {
-                this.article_cover = builder.article_cover;
-            }
-            if (builder.first_post_content == null) {
-                this.first_post_content = DEFAULT_FIRST_POST_CONTENT;
-            } else {
-                this.first_post_content = immutableCopyOf(builder.first_post_content);
-            }
-            this.baijiahao_info = builder.baijiahao_info;
-            if (builder.wonderful_post_info == null) {
-                this.wonderful_post_info = "";
-            } else {
-                this.wonderful_post_info = builder.wonderful_post_info;
-            }
-            this.item = builder.item;
-            if (builder.item_star == null) {
-                this.item_star = DEFAULT_ITEM_STAR;
-            } else {
-                this.item_star = immutableCopyOf(builder.item_star);
-            }
-            if (builder.pb_link_info == null) {
-                this.pb_link_info = DEFAULT_PB_LINK_INFO;
-            } else {
-                this.pb_link_info = immutableCopyOf(builder.pb_link_info);
-            }
-            if (builder.pb_goods_info == null) {
-                this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
-            } else {
-                this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
-            }
-            if (builder.priv_sets == null) {
-                this.priv_sets = DEFAULT_PRIV_SETS;
-            } else {
-                this.priv_sets = immutableCopyOf(builder.priv_sets);
-            }
-            if (builder.is_author_view == null) {
-                this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
-                return;
-            } else {
-                this.is_author_view = builder.is_author_view;
-                return;
-            }
-        }
-        this.forum_id = builder.forum_id;
-        this.thread_id = builder.thread_id;
-        this.post_id = builder.post_id;
-        this.is_thread = builder.is_thread;
-        this.create_time = builder.create_time;
-        this.forum_name = builder.forum_name;
-        this.title = builder.title;
-        this.content = immutableCopyOf(builder.content);
-        this.content_thread = builder.content_thread;
-        this.user_name = builder.user_name;
-        this.ip = builder.ip;
-        this.is_post_deleted = builder.is_post_deleted;
-        this.ptype = builder.ptype;
-        this._abstract = builder._abstract;
-        this.abstract_thread = immutableCopyOf(builder.abstract_thread);
-        this.media = immutableCopyOf(builder.media);
-        this.reply_num = builder.reply_num;
-        this.user_id = builder.user_id;
-        this.user_portrait = builder.user_portrait;
-        this.post_type = builder.post_type;
-        this.lbs_info = builder.lbs_info;
-        this.quote = builder.quote;
-        this.voice_info = immutableCopyOf(builder.voice_info);
-        this.anchor_info = builder.anchor_info;
-        this.hide_post = builder.hide_post;
-        this.thread_type = builder.thread_type;
-        this.twzhibo_info = builder.twzhibo_info;
-        this.poll_info = builder.poll_info;
-        this.video_info = builder.video_info;
-        this.is_deal = builder.is_deal;
-        this.deal_info = builder.deal_info;
-        this.multiple_forum_list = immutableCopyOf(builder.multiple_forum_list);
-        this.freq_num = builder.freq_num;
-        this.v_forum_id = builder.v_forum_id;
-        this.name_show = builder.name_show;
-        this.ala_info = builder.ala_info;
-        this.agree_num = builder.agree_num;
-        this.view_num = builder.view_num;
-        this.share_num = builder.share_num;
-        this.agree = builder.agree;
-        this.is_remain = builder.is_remain;
-        this.origin_thread_info = builder.origin_thread_info;
-        this.is_view_year = builder.is_view_year;
-        this.is_share_thread = builder.is_share_thread;
-        this.rich_title = immutableCopyOf(builder.rich_title);
-        this.rich_abstract = immutableCopyOf(builder.rich_abstract);
-        this.is_ntitle = builder.is_ntitle;
-        this.article_cover = builder.article_cover;
-        this.first_post_content = immutableCopyOf(builder.first_post_content);
-        this.baijiahao_info = builder.baijiahao_info;
-        this.wonderful_post_info = builder.wonderful_post_info;
-        this.item = builder.item;
-        this.item_star = immutableCopyOf(builder.item_star);
-        this.pb_link_info = immutableCopyOf(builder.pb_link_info);
-        this.pb_goods_info = immutableCopyOf(builder.pb_goods_info);
-        this.priv_sets = immutableCopyOf(builder.priv_sets);
-        this.is_author_view = builder.is_author_view;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;
@@ -533,65 +231,66 @@ public final class PostInfoList extends Message {
 
         public Builder(PostInfoList postInfoList) {
             super(postInfoList);
-            if (postInfoList != null) {
-                this.forum_id = postInfoList.forum_id;
-                this.thread_id = postInfoList.thread_id;
-                this.post_id = postInfoList.post_id;
-                this.is_thread = postInfoList.is_thread;
-                this.create_time = postInfoList.create_time;
-                this.forum_name = postInfoList.forum_name;
-                this.title = postInfoList.title;
-                this.content = PostInfoList.copyOf(postInfoList.content);
-                this.content_thread = postInfoList.content_thread;
-                this.user_name = postInfoList.user_name;
-                this.ip = postInfoList.ip;
-                this.is_post_deleted = postInfoList.is_post_deleted;
-                this.ptype = postInfoList.ptype;
-                this._abstract = postInfoList._abstract;
-                this.abstract_thread = PostInfoList.copyOf(postInfoList.abstract_thread);
-                this.media = PostInfoList.copyOf(postInfoList.media);
-                this.reply_num = postInfoList.reply_num;
-                this.user_id = postInfoList.user_id;
-                this.user_portrait = postInfoList.user_portrait;
-                this.post_type = postInfoList.post_type;
-                this.lbs_info = postInfoList.lbs_info;
-                this.quote = postInfoList.quote;
-                this.voice_info = PostInfoList.copyOf(postInfoList.voice_info);
-                this.anchor_info = postInfoList.anchor_info;
-                this.hide_post = postInfoList.hide_post;
-                this.thread_type = postInfoList.thread_type;
-                this.twzhibo_info = postInfoList.twzhibo_info;
-                this.poll_info = postInfoList.poll_info;
-                this.video_info = postInfoList.video_info;
-                this.is_deal = postInfoList.is_deal;
-                this.deal_info = postInfoList.deal_info;
-                this.multiple_forum_list = PostInfoList.copyOf(postInfoList.multiple_forum_list);
-                this.freq_num = postInfoList.freq_num;
-                this.v_forum_id = postInfoList.v_forum_id;
-                this.name_show = postInfoList.name_show;
-                this.ala_info = postInfoList.ala_info;
-                this.agree_num = postInfoList.agree_num;
-                this.view_num = postInfoList.view_num;
-                this.share_num = postInfoList.share_num;
-                this.agree = postInfoList.agree;
-                this.is_remain = postInfoList.is_remain;
-                this.origin_thread_info = postInfoList.origin_thread_info;
-                this.is_view_year = postInfoList.is_view_year;
-                this.is_share_thread = postInfoList.is_share_thread;
-                this.rich_title = PostInfoList.copyOf(postInfoList.rich_title);
-                this.rich_abstract = PostInfoList.copyOf(postInfoList.rich_abstract);
-                this.is_ntitle = postInfoList.is_ntitle;
-                this.article_cover = postInfoList.article_cover;
-                this.first_post_content = PostInfoList.copyOf(postInfoList.first_post_content);
-                this.baijiahao_info = postInfoList.baijiahao_info;
-                this.wonderful_post_info = postInfoList.wonderful_post_info;
-                this.item = postInfoList.item;
-                this.item_star = PostInfoList.copyOf(postInfoList.item_star);
-                this.pb_link_info = PostInfoList.copyOf(postInfoList.pb_link_info);
-                this.pb_goods_info = PostInfoList.copyOf(postInfoList.pb_goods_info);
-                this.priv_sets = PostInfoList.copyOf(postInfoList.priv_sets);
-                this.is_author_view = postInfoList.is_author_view;
+            if (postInfoList == null) {
+                return;
             }
+            this.forum_id = postInfoList.forum_id;
+            this.thread_id = postInfoList.thread_id;
+            this.post_id = postInfoList.post_id;
+            this.is_thread = postInfoList.is_thread;
+            this.create_time = postInfoList.create_time;
+            this.forum_name = postInfoList.forum_name;
+            this.title = postInfoList.title;
+            this.content = Message.copyOf(postInfoList.content);
+            this.content_thread = postInfoList.content_thread;
+            this.user_name = postInfoList.user_name;
+            this.ip = postInfoList.ip;
+            this.is_post_deleted = postInfoList.is_post_deleted;
+            this.ptype = postInfoList.ptype;
+            this._abstract = postInfoList._abstract;
+            this.abstract_thread = Message.copyOf(postInfoList.abstract_thread);
+            this.media = Message.copyOf(postInfoList.media);
+            this.reply_num = postInfoList.reply_num;
+            this.user_id = postInfoList.user_id;
+            this.user_portrait = postInfoList.user_portrait;
+            this.post_type = postInfoList.post_type;
+            this.lbs_info = postInfoList.lbs_info;
+            this.quote = postInfoList.quote;
+            this.voice_info = Message.copyOf(postInfoList.voice_info);
+            this.anchor_info = postInfoList.anchor_info;
+            this.hide_post = postInfoList.hide_post;
+            this.thread_type = postInfoList.thread_type;
+            this.twzhibo_info = postInfoList.twzhibo_info;
+            this.poll_info = postInfoList.poll_info;
+            this.video_info = postInfoList.video_info;
+            this.is_deal = postInfoList.is_deal;
+            this.deal_info = postInfoList.deal_info;
+            this.multiple_forum_list = Message.copyOf(postInfoList.multiple_forum_list);
+            this.freq_num = postInfoList.freq_num;
+            this.v_forum_id = postInfoList.v_forum_id;
+            this.name_show = postInfoList.name_show;
+            this.ala_info = postInfoList.ala_info;
+            this.agree_num = postInfoList.agree_num;
+            this.view_num = postInfoList.view_num;
+            this.share_num = postInfoList.share_num;
+            this.agree = postInfoList.agree;
+            this.is_remain = postInfoList.is_remain;
+            this.origin_thread_info = postInfoList.origin_thread_info;
+            this.is_view_year = postInfoList.is_view_year;
+            this.is_share_thread = postInfoList.is_share_thread;
+            this.rich_title = Message.copyOf(postInfoList.rich_title);
+            this.rich_abstract = Message.copyOf(postInfoList.rich_abstract);
+            this.is_ntitle = postInfoList.is_ntitle;
+            this.article_cover = postInfoList.article_cover;
+            this.first_post_content = Message.copyOf(postInfoList.first_post_content);
+            this.baijiahao_info = postInfoList.baijiahao_info;
+            this.wonderful_post_info = postInfoList.wonderful_post_info;
+            this.item = postInfoList.item;
+            this.item_star = Message.copyOf(postInfoList.item_star);
+            this.pb_link_info = Message.copyOf(postInfoList.pb_link_info);
+            this.pb_goods_info = Message.copyOf(postInfoList.pb_goods_info);
+            this.priv_sets = Message.copyOf(postInfoList.priv_sets);
+            this.is_author_view = postInfoList.is_author_view;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -599,5 +298,352 @@ public final class PostInfoList extends Message {
         public PostInfoList build(boolean z) {
             return new PostInfoList(this, z);
         }
+    }
+
+    public PostInfoList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            Long l2 = builder.thread_id;
+            if (l2 == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l2;
+            }
+            Long l3 = builder.post_id;
+            if (l3 == null) {
+                this.post_id = DEFAULT_POST_ID;
+            } else {
+                this.post_id = l3;
+            }
+            Integer num = builder.is_thread;
+            if (num == null) {
+                this.is_thread = DEFAULT_IS_THREAD;
+            } else {
+                this.is_thread = num;
+            }
+            Integer num2 = builder.create_time;
+            if (num2 == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num2;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            List<PostInfoContent> list = builder.content;
+            if (list == null) {
+                this.content = DEFAULT_CONTENT;
+            } else {
+                this.content = Message.immutableCopyOf(list);
+            }
+            String str3 = builder.content_thread;
+            if (str3 == null) {
+                this.content_thread = "";
+            } else {
+                this.content_thread = str3;
+            }
+            String str4 = builder.user_name;
+            if (str4 == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str4;
+            }
+            String str5 = builder.ip;
+            if (str5 == null) {
+                this.ip = "";
+            } else {
+                this.ip = str5;
+            }
+            Integer num3 = builder.is_post_deleted;
+            if (num3 == null) {
+                this.is_post_deleted = DEFAULT_IS_POST_DELETED;
+            } else {
+                this.is_post_deleted = num3;
+            }
+            String str6 = builder.ptype;
+            if (str6 == null) {
+                this.ptype = "";
+            } else {
+                this.ptype = str6;
+            }
+            String str7 = builder._abstract;
+            if (str7 == null) {
+                this._abstract = "";
+            } else {
+                this._abstract = str7;
+            }
+            List<Abstract> list2 = builder.abstract_thread;
+            if (list2 == null) {
+                this.abstract_thread = DEFAULT_ABSTRACT_THREAD;
+            } else {
+                this.abstract_thread = Message.immutableCopyOf(list2);
+            }
+            List<Media> list3 = builder.media;
+            if (list3 == null) {
+                this.media = DEFAULT_MEDIA;
+            } else {
+                this.media = Message.immutableCopyOf(list3);
+            }
+            Integer num4 = builder.reply_num;
+            if (num4 == null) {
+                this.reply_num = DEFAULT_REPLY_NUM;
+            } else {
+                this.reply_num = num4;
+            }
+            Long l4 = builder.user_id;
+            if (l4 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l4;
+            }
+            String str8 = builder.user_portrait;
+            if (str8 == null) {
+                this.user_portrait = "";
+            } else {
+                this.user_portrait = str8;
+            }
+            String str9 = builder.post_type;
+            if (str9 == null) {
+                this.post_type = "";
+            } else {
+                this.post_type = str9;
+            }
+            this.lbs_info = builder.lbs_info;
+            this.quote = builder.quote;
+            List<Voice> list4 = builder.voice_info;
+            if (list4 == null) {
+                this.voice_info = DEFAULT_VOICE_INFO;
+            } else {
+                this.voice_info = Message.immutableCopyOf(list4);
+            }
+            this.anchor_info = builder.anchor_info;
+            Integer num5 = builder.hide_post;
+            if (num5 == null) {
+                this.hide_post = DEFAULT_HIDE_POST;
+            } else {
+                this.hide_post = num5;
+            }
+            Long l5 = builder.thread_type;
+            if (l5 == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+            } else {
+                this.thread_type = l5;
+            }
+            this.twzhibo_info = builder.twzhibo_info;
+            this.poll_info = builder.poll_info;
+            this.video_info = builder.video_info;
+            Boolean bool = builder.is_deal;
+            if (bool == null) {
+                this.is_deal = DEFAULT_IS_DEAL;
+            } else {
+                this.is_deal = bool;
+            }
+            this.deal_info = builder.deal_info;
+            List<MultipleForum> list5 = builder.multiple_forum_list;
+            if (list5 == null) {
+                this.multiple_forum_list = DEFAULT_MULTIPLE_FORUM_LIST;
+            } else {
+                this.multiple_forum_list = Message.immutableCopyOf(list5);
+            }
+            Integer num6 = builder.freq_num;
+            if (num6 == null) {
+                this.freq_num = DEFAULT_FREQ_NUM;
+            } else {
+                this.freq_num = num6;
+            }
+            Long l6 = builder.v_forum_id;
+            if (l6 == null) {
+                this.v_forum_id = DEFAULT_V_FORUM_ID;
+            } else {
+                this.v_forum_id = l6;
+            }
+            String str10 = builder.name_show;
+            if (str10 == null) {
+                this.name_show = "";
+            } else {
+                this.name_show = str10;
+            }
+            this.ala_info = builder.ala_info;
+            Integer num7 = builder.agree_num;
+            if (num7 == null) {
+                this.agree_num = DEFAULT_AGREE_NUM;
+            } else {
+                this.agree_num = num7;
+            }
+            Integer num8 = builder.view_num;
+            if (num8 == null) {
+                this.view_num = DEFAULT_VIEW_NUM;
+            } else {
+                this.view_num = num8;
+            }
+            Integer num9 = builder.share_num;
+            if (num9 == null) {
+                this.share_num = DEFAULT_SHARE_NUM;
+            } else {
+                this.share_num = num9;
+            }
+            this.agree = builder.agree;
+            Integer num10 = builder.is_remain;
+            if (num10 == null) {
+                this.is_remain = DEFAULT_IS_REMAIN;
+            } else {
+                this.is_remain = num10;
+            }
+            this.origin_thread_info = builder.origin_thread_info;
+            Integer num11 = builder.is_view_year;
+            if (num11 == null) {
+                this.is_view_year = DEFAULT_IS_VIEW_YEAR;
+            } else {
+                this.is_view_year = num11;
+            }
+            Integer num12 = builder.is_share_thread;
+            if (num12 == null) {
+                this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
+            } else {
+                this.is_share_thread = num12;
+            }
+            List<PbContent> list6 = builder.rich_title;
+            if (list6 == null) {
+                this.rich_title = DEFAULT_RICH_TITLE;
+            } else {
+                this.rich_title = Message.immutableCopyOf(list6);
+            }
+            List<PbContent> list7 = builder.rich_abstract;
+            if (list7 == null) {
+                this.rich_abstract = DEFAULT_RICH_ABSTRACT;
+            } else {
+                this.rich_abstract = Message.immutableCopyOf(list7);
+            }
+            Integer num13 = builder.is_ntitle;
+            if (num13 == null) {
+                this.is_ntitle = DEFAULT_IS_NTITLE;
+            } else {
+                this.is_ntitle = num13;
+            }
+            String str11 = builder.article_cover;
+            if (str11 == null) {
+                this.article_cover = "";
+            } else {
+                this.article_cover = str11;
+            }
+            List<PbContent> list8 = builder.first_post_content;
+            if (list8 == null) {
+                this.first_post_content = DEFAULT_FIRST_POST_CONTENT;
+            } else {
+                this.first_post_content = Message.immutableCopyOf(list8);
+            }
+            this.baijiahao_info = builder.baijiahao_info;
+            String str12 = builder.wonderful_post_info;
+            if (str12 == null) {
+                this.wonderful_post_info = "";
+            } else {
+                this.wonderful_post_info = str12;
+            }
+            this.item = builder.item;
+            List<HeadItem> list9 = builder.item_star;
+            if (list9 == null) {
+                this.item_star = DEFAULT_ITEM_STAR;
+            } else {
+                this.item_star = Message.immutableCopyOf(list9);
+            }
+            List<PbLinkInfo> list10 = builder.pb_link_info;
+            if (list10 == null) {
+                this.pb_link_info = DEFAULT_PB_LINK_INFO;
+            } else {
+                this.pb_link_info = Message.immutableCopyOf(list10);
+            }
+            List<PbGoodsInfo> list11 = builder.pb_goods_info;
+            if (list11 == null) {
+                this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
+            } else {
+                this.pb_goods_info = Message.immutableCopyOf(list11);
+            }
+            List<PrivSets> list12 = builder.priv_sets;
+            if (list12 == null) {
+                this.priv_sets = DEFAULT_PRIV_SETS;
+            } else {
+                this.priv_sets = Message.immutableCopyOf(list12);
+            }
+            Integer num14 = builder.is_author_view;
+            if (num14 == null) {
+                this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
+                return;
+            } else {
+                this.is_author_view = num14;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.thread_id = builder.thread_id;
+        this.post_id = builder.post_id;
+        this.is_thread = builder.is_thread;
+        this.create_time = builder.create_time;
+        this.forum_name = builder.forum_name;
+        this.title = builder.title;
+        this.content = Message.immutableCopyOf(builder.content);
+        this.content_thread = builder.content_thread;
+        this.user_name = builder.user_name;
+        this.ip = builder.ip;
+        this.is_post_deleted = builder.is_post_deleted;
+        this.ptype = builder.ptype;
+        this._abstract = builder._abstract;
+        this.abstract_thread = Message.immutableCopyOf(builder.abstract_thread);
+        this.media = Message.immutableCopyOf(builder.media);
+        this.reply_num = builder.reply_num;
+        this.user_id = builder.user_id;
+        this.user_portrait = builder.user_portrait;
+        this.post_type = builder.post_type;
+        this.lbs_info = builder.lbs_info;
+        this.quote = builder.quote;
+        this.voice_info = Message.immutableCopyOf(builder.voice_info);
+        this.anchor_info = builder.anchor_info;
+        this.hide_post = builder.hide_post;
+        this.thread_type = builder.thread_type;
+        this.twzhibo_info = builder.twzhibo_info;
+        this.poll_info = builder.poll_info;
+        this.video_info = builder.video_info;
+        this.is_deal = builder.is_deal;
+        this.deal_info = builder.deal_info;
+        this.multiple_forum_list = Message.immutableCopyOf(builder.multiple_forum_list);
+        this.freq_num = builder.freq_num;
+        this.v_forum_id = builder.v_forum_id;
+        this.name_show = builder.name_show;
+        this.ala_info = builder.ala_info;
+        this.agree_num = builder.agree_num;
+        this.view_num = builder.view_num;
+        this.share_num = builder.share_num;
+        this.agree = builder.agree;
+        this.is_remain = builder.is_remain;
+        this.origin_thread_info = builder.origin_thread_info;
+        this.is_view_year = builder.is_view_year;
+        this.is_share_thread = builder.is_share_thread;
+        this.rich_title = Message.immutableCopyOf(builder.rich_title);
+        this.rich_abstract = Message.immutableCopyOf(builder.rich_abstract);
+        this.is_ntitle = builder.is_ntitle;
+        this.article_cover = builder.article_cover;
+        this.first_post_content = Message.immutableCopyOf(builder.first_post_content);
+        this.baijiahao_info = builder.baijiahao_info;
+        this.wonderful_post_info = builder.wonderful_post_info;
+        this.item = builder.item;
+        this.item_star = Message.immutableCopyOf(builder.item_star);
+        this.pb_link_info = Message.immutableCopyOf(builder.pb_link_info);
+        this.pb_goods_info = Message.immutableCopyOf(builder.pb_goods_info);
+        this.priv_sets = Message.immutableCopyOf(builder.priv_sets);
+        this.is_author_view = builder.is_author_view;
     }
 }

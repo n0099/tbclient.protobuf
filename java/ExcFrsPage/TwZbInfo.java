@@ -2,7 +2,7 @@ package tbclient.ExcFrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TwZbInfo extends Message {
     public static final String DEFAULT_LAST_MODIFIED_TIME = "";
     public static final String DEFAULT_LIVECOVER_SRC = "";
@@ -17,39 +17,7 @@ public final class TwZbInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    private TwZbInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.livecover_src == null) {
-                this.livecover_src = "";
-            } else {
-                this.livecover_src = builder.livecover_src;
-            }
-            if (builder.title == null) {
-                this.title = "";
-            } else {
-                this.title = builder.title;
-            }
-            if (builder.thread_id == null) {
-                this.thread_id = DEFAULT_THREAD_ID;
-            } else {
-                this.thread_id = builder.thread_id;
-            }
-            if (builder.last_modified_time == null) {
-                this.last_modified_time = "";
-                return;
-            } else {
-                this.last_modified_time = builder.last_modified_time;
-                return;
-            }
-        }
-        this.livecover_src = builder.livecover_src;
-        this.title = builder.title;
-        this.thread_id = builder.thread_id;
-        this.last_modified_time = builder.last_modified_time;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<TwZbInfo> {
         public String last_modified_time;
         public String livecover_src;
@@ -61,12 +29,13 @@ public final class TwZbInfo extends Message {
 
         public Builder(TwZbInfo twZbInfo) {
             super(twZbInfo);
-            if (twZbInfo != null) {
-                this.livecover_src = twZbInfo.livecover_src;
-                this.title = twZbInfo.title;
-                this.thread_id = twZbInfo.thread_id;
-                this.last_modified_time = twZbInfo.last_modified_time;
+            if (twZbInfo == null) {
+                return;
             }
+            this.livecover_src = twZbInfo.livecover_src;
+            this.title = twZbInfo.title;
+            this.thread_id = twZbInfo.thread_id;
+            this.last_modified_time = twZbInfo.last_modified_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -74,5 +43,41 @@ public final class TwZbInfo extends Message {
         public TwZbInfo build(boolean z) {
             return new TwZbInfo(this, z);
         }
+    }
+
+    public TwZbInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.livecover_src;
+            if (str == null) {
+                this.livecover_src = "";
+            } else {
+                this.livecover_src = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            Long l = builder.thread_id;
+            if (l == null) {
+                this.thread_id = DEFAULT_THREAD_ID;
+            } else {
+                this.thread_id = l;
+            }
+            String str3 = builder.last_modified_time;
+            if (str3 == null) {
+                this.last_modified_time = "";
+                return;
+            } else {
+                this.last_modified_time = str3;
+                return;
+            }
+        }
+        this.livecover_src = builder.livecover_src;
+        this.title = builder.title;
+        this.thread_id = builder.thread_id;
+        this.last_modified_time = builder.last_modified_time;
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.Banner;
 import tbclient.Entry;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<Banner> banner;
@@ -36,65 +36,7 @@ public final class DataRes extends Message {
     public static final List<FunctionListInfo> DEFAULT_FUNCTION_LIST_INFO = Collections.emptyList();
     public static final Integer DEFAULT_IS_SMALL_FOLLOW = 0;
 
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.banner == null) {
-                this.banner = DEFAULT_BANNER;
-            } else {
-                this.banner = immutableCopyOf(builder.banner);
-            }
-            if (builder.live == null) {
-                this.live = DEFAULT_LIVE;
-            } else {
-                this.live = immutableCopyOf(builder.live);
-            }
-            if (builder.entry == null) {
-                this.entry = DEFAULT_ENTRY;
-            } else {
-                this.entry = immutableCopyOf(builder.entry);
-            }
-            if (builder.has_more == null) {
-                this.has_more = DEFAULT_HAS_MORE;
-            } else {
-                this.has_more = builder.has_more;
-            }
-            if (builder.interval == null) {
-                this.interval = DEFAULT_INTERVAL;
-            } else {
-                this.interval = builder.interval;
-            }
-            if (builder.live_with_category == null) {
-                this.live_with_category = DEFAULT_LIVE_WITH_CATEGORY;
-            } else {
-                this.live_with_category = immutableCopyOf(builder.live_with_category);
-            }
-            this.head_live_info = builder.head_live_info;
-            if (builder.function_list_info == null) {
-                this.function_list_info = DEFAULT_FUNCTION_LIST_INFO;
-            } else {
-                this.function_list_info = immutableCopyOf(builder.function_list_info);
-            }
-            if (builder.is_small_follow == null) {
-                this.is_small_follow = DEFAULT_IS_SMALL_FOLLOW;
-                return;
-            } else {
-                this.is_small_follow = builder.is_small_follow;
-                return;
-            }
-        }
-        this.banner = immutableCopyOf(builder.banner);
-        this.live = immutableCopyOf(builder.live);
-        this.entry = immutableCopyOf(builder.entry);
-        this.has_more = builder.has_more;
-        this.interval = builder.interval;
-        this.live_with_category = immutableCopyOf(builder.live_with_category);
-        this.head_live_info = builder.head_live_info;
-        this.function_list_info = immutableCopyOf(builder.function_list_info);
-        this.is_small_follow = builder.is_small_follow;
-    }
-
-    /* loaded from: classes9.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public List<Entry> entry;
@@ -111,17 +53,18 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.banner = DataRes.copyOf(dataRes.banner);
-                this.live = DataRes.copyOf(dataRes.live);
-                this.entry = DataRes.copyOf(dataRes.entry);
-                this.has_more = dataRes.has_more;
-                this.interval = dataRes.interval;
-                this.live_with_category = DataRes.copyOf(dataRes.live_with_category);
-                this.head_live_info = dataRes.head_live_info;
-                this.function_list_info = DataRes.copyOf(dataRes.function_list_info);
-                this.is_small_follow = dataRes.is_small_follow;
+            if (dataRes == null) {
+                return;
             }
+            this.banner = Message.copyOf(dataRes.banner);
+            this.live = Message.copyOf(dataRes.live);
+            this.entry = Message.copyOf(dataRes.entry);
+            this.has_more = dataRes.has_more;
+            this.interval = dataRes.interval;
+            this.live_with_category = Message.copyOf(dataRes.live_with_category);
+            this.head_live_info = dataRes.head_live_info;
+            this.function_list_info = Message.copyOf(dataRes.function_list_info);
+            this.is_small_follow = dataRes.is_small_follow;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -129,5 +72,71 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<Banner> list = builder.banner;
+            if (list == null) {
+                this.banner = DEFAULT_BANNER;
+            } else {
+                this.banner = Message.immutableCopyOf(list);
+            }
+            List<ThreadInfo> list2 = builder.live;
+            if (list2 == null) {
+                this.live = DEFAULT_LIVE;
+            } else {
+                this.live = Message.immutableCopyOf(list2);
+            }
+            List<Entry> list3 = builder.entry;
+            if (list3 == null) {
+                this.entry = DEFAULT_ENTRY;
+            } else {
+                this.entry = Message.immutableCopyOf(list3);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            Integer num2 = builder.interval;
+            if (num2 == null) {
+                this.interval = DEFAULT_INTERVAL;
+            } else {
+                this.interval = num2;
+            }
+            List<HotLiveWithCategory> list4 = builder.live_with_category;
+            if (list4 == null) {
+                this.live_with_category = DEFAULT_LIVE_WITH_CATEGORY;
+            } else {
+                this.live_with_category = Message.immutableCopyOf(list4);
+            }
+            this.head_live_info = builder.head_live_info;
+            List<FunctionListInfo> list5 = builder.function_list_info;
+            if (list5 == null) {
+                this.function_list_info = DEFAULT_FUNCTION_LIST_INFO;
+            } else {
+                this.function_list_info = Message.immutableCopyOf(list5);
+            }
+            Integer num3 = builder.is_small_follow;
+            if (num3 == null) {
+                this.is_small_follow = DEFAULT_IS_SMALL_FOLLOW;
+                return;
+            } else {
+                this.is_small_follow = num3;
+                return;
+            }
+        }
+        this.banner = Message.immutableCopyOf(builder.banner);
+        this.live = Message.immutableCopyOf(builder.live);
+        this.entry = Message.immutableCopyOf(builder.entry);
+        this.has_more = builder.has_more;
+        this.interval = builder.interval;
+        this.live_with_category = Message.immutableCopyOf(builder.live_with_category);
+        this.head_live_info = builder.head_live_info;
+        this.function_list_info = Message.immutableCopyOf(builder.function_list_info);
+        this.is_small_follow = builder.is_small_follow;
     }
 }

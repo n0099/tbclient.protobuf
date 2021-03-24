@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer has_menu;
@@ -15,32 +15,6 @@ public final class DataRes extends Message {
     public static final List<Menu> DEFAULT_PARENT_MENU = Collections.emptyList();
     public static final Integer DEFAULT_UPDATE_TIME = 0;
     public static final Integer DEFAULT_HAS_MENU = 0;
-
-    private DataRes(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.parent_menu == null) {
-                this.parent_menu = DEFAULT_PARENT_MENU;
-            } else {
-                this.parent_menu = immutableCopyOf(builder.parent_menu);
-            }
-            if (builder.update_time == null) {
-                this.update_time = DEFAULT_UPDATE_TIME;
-            } else {
-                this.update_time = builder.update_time;
-            }
-            if (builder.has_menu == null) {
-                this.has_menu = DEFAULT_HAS_MENU;
-                return;
-            } else {
-                this.has_menu = builder.has_menu;
-                return;
-            }
-        }
-        this.parent_menu = immutableCopyOf(builder.parent_menu);
-        this.update_time = builder.update_time;
-        this.has_menu = builder.has_menu;
-    }
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -53,11 +27,12 @@ public final class DataRes extends Message {
 
         public Builder(DataRes dataRes) {
             super(dataRes);
-            if (dataRes != null) {
-                this.parent_menu = DataRes.copyOf(dataRes.parent_menu);
-                this.update_time = dataRes.update_time;
-                this.has_menu = dataRes.has_menu;
+            if (dataRes == null) {
+                return;
             }
+            this.parent_menu = Message.copyOf(dataRes.parent_menu);
+            this.update_time = dataRes.update_time;
+            this.has_menu = dataRes.has_menu;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -65,5 +40,34 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             return new DataRes(this, z);
         }
+    }
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<Menu> list = builder.parent_menu;
+            if (list == null) {
+                this.parent_menu = DEFAULT_PARENT_MENU;
+            } else {
+                this.parent_menu = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.update_time;
+            if (num == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num;
+            }
+            Integer num2 = builder.has_menu;
+            if (num2 == null) {
+                this.has_menu = DEFAULT_HAS_MENU;
+                return;
+            } else {
+                this.has_menu = num2;
+                return;
+            }
+        }
+        this.parent_menu = Message.immutableCopyOf(builder.parent_menu);
+        this.update_time = builder.update_time;
+        this.has_menu = builder.has_menu;
     }
 }

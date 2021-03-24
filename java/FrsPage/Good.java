@@ -2,27 +2,13 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Good extends Message {
     public static final Integer DEFAULT_NUM = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer num;
 
-    private Good(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            if (builder.num == null) {
-                this.num = DEFAULT_NUM;
-                return;
-            } else {
-                this.num = builder.num;
-                return;
-            }
-        }
-        this.num = builder.num;
-    }
-
-    /* loaded from: classes2.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<Good> {
         public Integer num;
 
@@ -31,9 +17,10 @@ public final class Good extends Message {
 
         public Builder(Good good) {
             super(good);
-            if (good != null) {
-                this.num = good.num;
+            if (good == null) {
+                return;
             }
+            this.num = good.num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -41,5 +28,20 @@ public final class Good extends Message {
         public Good build(boolean z) {
             return new Good(this, z);
         }
+    }
+
+    public Good(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.num;
+            if (num == null) {
+                this.num = DEFAULT_NUM;
+                return;
+            } else {
+                this.num = num;
+                return;
+            }
+        }
+        this.num = builder.num;
     }
 }
