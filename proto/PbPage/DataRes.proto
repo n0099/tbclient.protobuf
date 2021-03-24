@@ -98,4 +98,6 @@ message DataRes {
     BusinessAccountInfo business_account_info = 58;
     repeated ThreadInfo recom_thread_info = 59;
     ForumRuleStatus forum_rule = 60;
+    int32 show_adsense = 61;
+    int32 is_black_white = 62;
 }

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    int64 black_uid = 2;
+}

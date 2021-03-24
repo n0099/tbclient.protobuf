@@ -12,4 +12,5 @@ message SimpleUser {
     int32 agree_type = 9;
     string ahead_url = 10;
     string block_msg = 11;
+    int32 show_onlyme = 12;
 }

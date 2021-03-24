@@ -9,4 +9,5 @@ message ServiceArea {
     string version = 4;
     string service_type = 5;
     SmartApp area_smart_app = 6;
+    string schema = 7;
 }

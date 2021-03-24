@@ -10,7 +10,6 @@ message Content {
     string big_size = 7;
     string cdn_src = 8;
     string big_cdn_src = 9;
-    string c = 10;
     int32 align = 11;
     string color = 12;
     int32 size = 13;

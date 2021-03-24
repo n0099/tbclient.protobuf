@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+import "PermissionList.proto";
+
+message DataReq {
+    int64 black_uid = 2;
+    PermissionList perm_list = 3;
+}

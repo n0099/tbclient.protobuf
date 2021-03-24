@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message NotifyPopup {
+    int32 popup_id = 1;
+    uint32 popup_times = 2;
+    uint32 popup_type = 3;
+    string hint = 4;
+    string app_version = 5;
+    uint32 app_size = 6;
+    string changelogs = 7;
+    string appendix_text = 8;
+    string appendix_link = 9;
+    uint32 appendix_optional = 10;
+    string y_btn_text = 11;
+    string y_btn_link = 12;
+    string n_btn_text = 13;
+    string n_btn_link = 14;
+}

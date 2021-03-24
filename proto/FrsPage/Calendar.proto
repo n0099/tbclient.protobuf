@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 message Calendar {
-    int32 d = 1;
     string t = 2;
     int32 rank = 3;
     int32 sign_type = 4;
