@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class BirthdayInfo extends Message {
     public static final String DEFAULT_CONSTELLATION = "";
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)

@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class VipParrScores extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer i_money;

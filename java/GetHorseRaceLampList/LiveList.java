@@ -2,7 +2,7 @@ package tbclient.GetHorseRaceLampList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class LiveList extends Message {
     public static final String DEFAULT_LIVE_TITLE = "";
     public static final String DEFAULT_USER_NICKNAME = "";

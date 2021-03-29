@@ -11,7 +11,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class GoodsInfo extends Message {
     public static final String DEFAULT_AD_SOURCE = "";
     public static final String DEFAULT_BRAND_ICON = "";

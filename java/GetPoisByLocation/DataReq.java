@@ -3,14 +3,14 @@ package tbclient.GetPoisByLocation;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_LAT = "";
     public static final String DEFAULT_LNG = "";
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68463common;
+    public final CommonReq f68468common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String lat;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68464common;
+        public CommonReq f68469common;
         public String lat;
         public String lng;
 
@@ -34,7 +34,7 @@ public final class DataReq extends Message {
             }
             this.lat = dataReq.lat;
             this.lng = dataReq.lng;
-            this.f68464common = dataReq.f68463common;
+            this.f68469common = dataReq.f68468common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -59,11 +59,11 @@ public final class DataReq extends Message {
             } else {
                 this.lng = str2;
             }
-            this.f68463common = builder.f68464common;
+            this.f68468common = builder.f68469common;
             return;
         }
         this.lat = builder.lat;
         this.lng = builder.lng;
-        this.f68463common = builder.f68464common;
+        this.f68468common = builder.f68469common;
     }
 }

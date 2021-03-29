@@ -3,13 +3,13 @@ package tbclient.GetVipInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_JAIL_BROKEN = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68511common;
+    public final CommonReq f68516common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer is_jail_broken;
 
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68512common;
+        public CommonReq f68517common;
         public Integer is_jail_broken;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68512common = dataReq.f68511common;
+            this.f68517common = dataReq.f68516common;
             this.is_jail_broken = dataReq.is_jail_broken;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68511common = builder.f68512common;
+            this.f68516common = builder.f68517common;
             Integer num = builder.is_jail_broken;
             if (num == null) {
                 this.is_jail_broken = DEFAULT_IS_JAIL_BROKEN;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68511common = builder.f68512common;
+        this.f68516common = builder.f68517common;
         this.is_jail_broken = builder.is_jail_broken;
     }
 }

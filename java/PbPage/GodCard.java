@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class GodCard extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_BUTTON_URL = "";

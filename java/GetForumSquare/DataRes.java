@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Page;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)

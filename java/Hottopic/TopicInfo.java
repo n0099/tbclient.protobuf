@@ -3,7 +3,7 @@ package tbclient.Hottopic;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.VideoInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class TopicInfo extends Message {
     public static final String DEFAULT_BANG_JUMP_DESC = "";
     public static final String DEFAULT_BANG_TITLE = "";

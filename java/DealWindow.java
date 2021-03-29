@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DealWindow extends Message {
     public static final List<DisplayWindowInfo> DEFAULT_LIST = Collections.emptyList();
     public static final Long DEFAULT_TOTAL = 0L;

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeCardPropMain;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ThemeCardInMain extends Message {
     public static final String DEFAULT_CARD_CATEGORY = "";
     public static final List<ThemeCardPropMain> DEFAULT_PROPS = Collections.emptyList();

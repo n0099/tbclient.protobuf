@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.BroadcastInfo;
 import tbclient.Page;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<BroadcastInfo> DEFAULT_BCAST_INFOS = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)

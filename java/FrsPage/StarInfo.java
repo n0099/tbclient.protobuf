@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class StarInfo extends Message {
     public static final String DEFAULT_HEAD = "";
     public static final String DEFAULT_STAR_FORUM_HEADIMG = "";

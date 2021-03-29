@@ -3,12 +3,12 @@ package tbclient.TestClose;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68631common;
+    public final CommonReq f68636common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long from_page;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68632common;
+        public CommonReq f68637common;
         public Long from_page;
         public Long test_id;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68632common = dataReq.f68631common;
+            this.f68637common = dataReq.f68636common;
             this.test_id = dataReq.test_id;
             this.from_page = dataReq.from_page;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68631common = builder.f68632common;
+            this.f68636common = builder.f68637common;
             Long l = builder.test_id;
             if (l == null) {
                 this.test_id = DEFAULT_TEST_ID;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68631common = builder.f68632common;
+        this.f68636common = builder.f68637common;
         this.test_id = builder.test_id;
         this.from_page = builder.from_page;
     }

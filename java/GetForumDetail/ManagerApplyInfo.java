@@ -2,7 +2,7 @@ package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ManagerApplyInfo extends Message {
     public static final String DEFAULT_MANAGER_APPLY_URL = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)

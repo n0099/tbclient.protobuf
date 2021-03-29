@@ -2,7 +2,7 @@ package tbclient.DoDailyTask;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class RetDataList extends Message {
     public static final Integer DEFAULT_NEED_DIALOG = 0;
     @ProtoField(tag = 1)

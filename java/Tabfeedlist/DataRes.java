@@ -8,7 +8,7 @@ import tbclient.GeneralResource;
 import tbclient.HotUserRankEntry;
 import tbclient.RecommendForumInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 3)
     public final HotUserRankEntry hot_userrank_entry;

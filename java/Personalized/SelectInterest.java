@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class SelectInterest extends Message {
     public static final String DEFAULT_SELECT_INTEREST_NAME = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)

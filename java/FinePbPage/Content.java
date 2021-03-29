@@ -2,7 +2,7 @@ package tbclient.FinePbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Content extends Message {
     public static final String DEFAULT_BIG_CDN_SRC = "";
     public static final String DEFAULT_BIG_SIZE = "";
@@ -27,7 +27,7 @@ public final class Content extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f68357c;
+    public final String f68362c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -55,7 +55,7 @@ public final class Content extends Message {
         public String bsize;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f68358c;
+        public String f68363c;
         public String cdn_src;
         public String color;
         public String link;
@@ -81,7 +81,7 @@ public final class Content extends Message {
             this.big_size = content.big_size;
             this.cdn_src = content.cdn_src;
             this.big_cdn_src = content.big_cdn_src;
-            this.f68358c = content.f68357c;
+            this.f68363c = content.f68362c;
             this.align = content.align;
             this.color = content.color;
             this.size = content.size;
@@ -151,11 +151,11 @@ public final class Content extends Message {
             } else {
                 this.big_cdn_src = str8;
             }
-            String str9 = builder.f68358c;
+            String str9 = builder.f68363c;
             if (str9 == null) {
-                this.f68357c = "";
+                this.f68362c = "";
             } else {
-                this.f68357c = str9;
+                this.f68362c = str9;
             }
             Integer num = builder.align;
             if (num == null) {
@@ -187,7 +187,7 @@ public final class Content extends Message {
         this.big_size = builder.big_size;
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
-        this.f68357c = builder.f68358c;
+        this.f68362c = builder.f68363c;
         this.align = builder.align;
         this.color = builder.color;
         this.size = builder.size;

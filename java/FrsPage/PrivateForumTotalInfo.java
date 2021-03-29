@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PrivateForumInfo;
 import tbclient.PrivatePopInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PrivateForumTotalInfo extends Message {
     public static final Integer DEFAULT_PRIVATE_FORUM_TASKPERCENT = 0;
     @ProtoField(tag = 5)

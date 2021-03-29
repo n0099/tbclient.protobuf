@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.RankRuler;
 import tbclient.TiebaFieldsInfo;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final User current_user;

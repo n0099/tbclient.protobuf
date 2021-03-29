@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ForumRule extends Message {
     public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
     public static final Integer DEFAULT_STATUS = 0;

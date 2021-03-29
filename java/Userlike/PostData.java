@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PostData extends Message {
     public static final String DEFAULT_POST_TITLE = "";
     @ProtoField(tag = 4)

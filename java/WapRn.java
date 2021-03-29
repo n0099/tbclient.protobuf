@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class WapRn extends Message {
     public static final Integer DEFAULT_FRSRN = 0;
     public static final Integer DEFAULT_PBRN = 0;

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.FrsTabInfo;
 import tbclient.HistoryForumInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<HistoryForumInfo> DEFAULT_HISTORY_FORUM = Collections.emptyList();
     public static final List<FrsTabInfo> DEFAULT_NAV_TAB_INFO = Collections.emptyList();

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Abstract extends Message {
     public static final String DEFAULT_DURING_TIME = "";
     public static final String DEFAULT_LINK = "";

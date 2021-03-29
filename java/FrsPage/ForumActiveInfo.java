@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ForumActiveInfo extends Message {
     public static final String DEFAULT_FORUM_BRIEF = "";
     public static final String DEFAULT_FORUM_SHARE_URL = "";

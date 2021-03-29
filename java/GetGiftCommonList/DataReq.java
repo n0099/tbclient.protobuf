@@ -3,13 +3,13 @@ package tbclient.GetGiftCommonList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_TIMESTAMP = 0;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68421common;
+    public final CommonReq f68426common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer timestamp;
 
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68422common;
+        public CommonReq f68427common;
         public Integer timestamp;
 
         public Builder() {
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.timestamp = dataReq.timestamp;
-            this.f68422common = dataReq.f68421common;
+            this.f68427common = dataReq.f68426common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -48,10 +48,10 @@ public final class DataReq extends Message {
             } else {
                 this.timestamp = num;
             }
-            this.f68421common = builder.f68422common;
+            this.f68426common = builder.f68427common;
             return;
         }
         this.timestamp = builder.timestamp;
-        this.f68421common = builder.f68422common;
+        this.f68426common = builder.f68427common;
     }
 }

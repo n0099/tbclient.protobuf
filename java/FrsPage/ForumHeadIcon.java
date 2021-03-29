@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ForumHeadIcon extends Message {
     public static final Integer DEFAULT_GRADE = 0;
     public static final String DEFAULT_URL = "";

@@ -2,7 +2,7 @@ package tbclient.GetMemberTaskList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class UserPointInfo extends Message {
     public static final Long DEFAULT_POINTS_TOTAL = 0L;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)

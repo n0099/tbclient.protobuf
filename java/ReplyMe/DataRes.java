@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Page;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<ReplyList> DEFAULT_REPLY_LIST = Collections.emptyList();
     @ProtoField(tag = 1)

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DialogItem extends Message {
     public static final List<ButtonItem> DEFAULT_BUTTON = Collections.emptyList();
     public static final String DEFAULT_CONTENT = "";

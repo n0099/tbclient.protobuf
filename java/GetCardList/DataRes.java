@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeCardPropMain;
 import tbclient.ThemeRecommand;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<ThemeCardPropMain> DEFAULT_CARDS = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class RecommendInfo extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final List<SchoolRecomUserInfo> DEFAULT_USER_LIST = Collections.emptyList();

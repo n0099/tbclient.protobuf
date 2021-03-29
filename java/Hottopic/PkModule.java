@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PkModule extends Message {
     public static final String DEFAULT_MODULE_NAME = "";
     public static final String DEFAULT_QUES_DESC = "";

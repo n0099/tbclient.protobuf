@@ -3,12 +3,12 @@ package tbclient.GetGiftMyList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class GetGiftMyListReqIdl extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68429common;
+    public final CommonReq f68434common;
     @ProtoField(tag = 1)
     public final DataReq data;
 
@@ -16,7 +16,7 @@ public final class GetGiftMyListReqIdl extends Message {
     public static final class Builder extends Message.Builder<GetGiftMyListReqIdl> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68430common;
+        public CommonReq f68435common;
         public DataReq data;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class GetGiftMyListReqIdl extends Message {
                 return;
             }
             this.data = getGiftMyListReqIdl.data;
-            this.f68430common = getGiftMyListReqIdl.f68429common;
+            this.f68435common = getGiftMyListReqIdl.f68434common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -42,10 +42,10 @@ public final class GetGiftMyListReqIdl extends Message {
         super(builder);
         if (z) {
             this.data = builder.data;
-            this.f68429common = builder.f68430common;
+            this.f68434common = builder.f68435common;
             return;
         }
         this.data = builder.data;
-        this.f68429common = builder.f68430common;
+        this.f68434common = builder.f68435common;
     }
 }

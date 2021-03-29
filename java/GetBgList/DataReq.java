@@ -3,14 +3,14 @@ package tbclient.GetBgList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68389common;
+    public final CommonReq f68394common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68390common;
+        public CommonReq f68395common;
         public Integer pn;
         public Integer rn;
 
@@ -34,7 +34,7 @@ public final class DataReq extends Message {
             }
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
-            this.f68390common = dataReq.f68389common;
+            this.f68395common = dataReq.f68394common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -59,11 +59,11 @@ public final class DataReq extends Message {
             } else {
                 this.rn = num2;
             }
-            this.f68389common = builder.f68390common;
+            this.f68394common = builder.f68395common;
             return;
         }
         this.pn = builder.pn;
         this.rn = builder.rn;
-        this.f68389common = builder.f68390common;
+        this.f68394common = builder.f68395common;
     }
 }

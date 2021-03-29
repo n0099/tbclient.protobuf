@@ -3,7 +3,7 @@ package tbclient.UpdateTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -12,7 +12,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68643common;
+    public final CommonReq f68648common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String fontColor;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -26,7 +26,7 @@ public final class ReqData extends Message {
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68644common;
+        public CommonReq f68649common;
         public String fontColor;
         public String fontKeyName;
         public String tailContent;
@@ -44,7 +44,7 @@ public final class ReqData extends Message {
             this.tailId = reqData.tailId;
             this.fontColor = reqData.fontColor;
             this.fontKeyName = reqData.fontKeyName;
-            this.f68644common = reqData.f68643common;
+            this.f68649common = reqData.f68648common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -81,13 +81,13 @@ public final class ReqData extends Message {
             } else {
                 this.fontKeyName = str3;
             }
-            this.f68643common = builder.f68644common;
+            this.f68648common = builder.f68649common;
             return;
         }
         this.tailContent = builder.tailContent;
         this.tailId = builder.tailId;
         this.fontColor = builder.fontColor;
         this.fontKeyName = builder.fontKeyName;
-        this.f68643common = builder.f68644common;
+        this.f68648common = builder.f68649common;
     }
 }

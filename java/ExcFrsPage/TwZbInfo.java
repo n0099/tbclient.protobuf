@@ -2,7 +2,7 @@ package tbclient.ExcFrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class TwZbInfo extends Message {
     public static final String DEFAULT_LAST_MODIFIED_TIME = "";
     public static final String DEFAULT_LIVECOVER_SRC = "";

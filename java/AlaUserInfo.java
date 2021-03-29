@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class AlaUserInfo extends Message {
     public static final Integer DEFAULT_ANCHOR_FANS;
     public static final Long DEFAULT_CHARM_COUNT;

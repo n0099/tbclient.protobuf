@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ConcernAlbum extends Message {
     public static final List<ConcernUser> DEFAULT_CONCERN_USER = Collections.emptyList();
     public static final Integer DEFAULT_NUM_USER = 0;

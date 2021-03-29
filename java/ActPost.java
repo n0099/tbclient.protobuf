@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ActPost extends Message {
     public static final List<ActHot> DEFAULT_ACT_HOT = Collections.emptyList();
     public static final List<LinkInfo> DEFAULT_LINK_INFO = Collections.emptyList();

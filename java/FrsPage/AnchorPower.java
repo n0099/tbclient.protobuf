@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class AnchorPower extends Message {
     public static final String DEFAULT_ANCHOR_MESSAGE = "";
     public static final String DEFAULT_CAN_ADD_LIVE_POST_MSG = "";

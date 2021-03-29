@@ -2,7 +2,7 @@ package tbclient.GetOfficialSwitch;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class OfficialList extends Message {
     public static final String DEFAULT_NAME = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)

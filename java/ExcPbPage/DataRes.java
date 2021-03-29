@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Post;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();

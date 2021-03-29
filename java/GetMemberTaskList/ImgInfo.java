@@ -2,7 +2,7 @@ package tbclient.GetMemberTaskList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ImgInfo extends Message {
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_JUMP_URL = "";

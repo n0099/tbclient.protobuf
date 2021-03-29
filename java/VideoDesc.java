@@ -5,7 +5,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class VideoDesc extends Message {
     public static final String DEFAULT_VIDEO_HEIGHT = "";
     public static final Integer DEFAULT_VIDEO_ID = 0;

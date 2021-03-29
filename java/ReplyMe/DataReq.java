@@ -3,13 +3,13 @@ package tbclient.ReplyMe;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_IDS = "";
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68591common;
+    public final CommonReq f68596common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String ids;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68592common;
+        public CommonReq f68597common;
         public String ids;
         public Integer pn;
         public Integer q_type;
@@ -50,7 +50,7 @@ public final class DataReq extends Message {
             }
             this.pn = dataReq.pn;
             this.ids = dataReq.ids;
-            this.f68592common = dataReq.f68591common;
+            this.f68597common = dataReq.f68596common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.scr_dip = dataReq.scr_dip;
@@ -79,7 +79,7 @@ public final class DataReq extends Message {
             } else {
                 this.ids = str;
             }
-            this.f68591common = builder.f68592common;
+            this.f68596common = builder.f68597common;
             Integer num2 = builder.scr_w;
             if (num2 == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -109,7 +109,7 @@ public final class DataReq extends Message {
         }
         this.pn = builder.pn;
         this.ids = builder.ids;
-        this.f68591common = builder.f68592common;
+        this.f68596common = builder.f68597common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;

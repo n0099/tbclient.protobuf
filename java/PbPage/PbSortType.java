@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PbSortType extends Message {
     public static final String DEFAULT_SORT_NAME = "";
     public static final Integer DEFAULT_SORT_TYPE = 0;

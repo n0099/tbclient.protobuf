@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ForumSubLabel;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class GameForumSubTab extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final List<ForumSubLabel> DEFAULT_SUB_LABEL_LIST = Collections.emptyList();

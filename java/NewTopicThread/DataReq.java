@@ -3,7 +3,7 @@ package tbclient.NewTopicThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68551common;
+    public final CommonReq f68556common;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long last_feed_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68552common;
+        public CommonReq f68557common;
         public Long last_feed_id;
         public Long page_no;
         public Long topic_id;
@@ -40,7 +40,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68552common = dataReq.f68551common;
+            this.f68557common = dataReq.f68556common;
             this.topic_id = dataReq.topic_id;
             this.page_no = dataReq.page_no;
             this.call_from = dataReq.call_from;
@@ -57,7 +57,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68551common = builder.f68552common;
+            this.f68556common = builder.f68557common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68551common = builder.f68552common;
+        this.f68556common = builder.f68557common;
         this.topic_id = builder.topic_id;
         this.page_no = builder.page_no;
         this.call_from = builder.call_from;

@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class VipPayMemberInfo extends Message {
     public static final String DEFAULT_PIC_URL = "";
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)

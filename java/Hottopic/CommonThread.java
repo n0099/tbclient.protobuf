@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class CommonThread extends Message {
     public static final String DEFAULT_MODULE_NAME = "";
     public static final List<GoodThread> DEFAULT_THREAD_LIST = Collections.emptyList();

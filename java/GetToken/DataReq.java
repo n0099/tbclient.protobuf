@@ -3,14 +3,14 @@ package tbclient.GetToken;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_SHOUBAICUID = "";
     public static final String DEFAULT_TOKEN = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68493common;
+    public final CommonReq f68498common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String shoubaicuid;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68494common;
+        public CommonReq f68499common;
         public String shoubaicuid;
         public String token;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68494common = dataReq.f68493common;
+            this.f68499common = dataReq.f68498common;
             this.token = dataReq.token;
             this.shoubaicuid = dataReq.shoubaicuid;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68493common = builder.f68494common;
+            this.f68498common = builder.f68499common;
             String str = builder.token;
             if (str == null) {
                 this.token = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68493common = builder.f68494common;
+        this.f68498common = builder.f68499common;
         this.token = builder.token;
         this.shoubaicuid = builder.shoubaicuid;
     }

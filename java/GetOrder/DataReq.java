@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.Wares;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLICK_ZONE = "";
     public static final String DEFAULT_MOBILE = "";
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68459common;
+    public final CommonReq f68464common;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
         public String click_zone;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68460common;
+        public CommonReq f68465common;
         public Integer is_autopay;
         public Integer is_left;
         public Long live_id;
@@ -68,7 +68,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68460common = dataReq.f68459common;
+            this.f68465common = dataReq.f68464common;
             this.pay_type = dataReq.pay_type;
             this.is_left = dataReq.is_left;
             this.order_url = dataReq.order_url;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68459common = builder.f68460common;
+            this.f68464common = builder.f68465common;
             Integer num = builder.pay_type;
             if (num == null) {
                 this.pay_type = DEFAULT_PAY_TYPE;
@@ -157,7 +157,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68459common = builder.f68460common;
+        this.f68464common = builder.f68465common;
         this.pay_type = builder.pay_type;
         this.is_left = builder.is_left;
         this.order_url = builder.order_url;

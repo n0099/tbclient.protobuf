@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Bottle extends Message {
     public static final Integer DEFAULT_HAS_ENTER_DISPLAY = 0;
     public static final Long DEFAULT_TID = 0L;

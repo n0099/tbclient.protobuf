@@ -3,13 +3,13 @@ package tbclient.GetGiftMyList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68427common;
+    public final CommonReq f68432common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68428common;
+        public CommonReq f68433common;
         public Integer pn;
         public String st_type;
         public Long uid;
@@ -39,7 +39,7 @@ public final class DataReq extends Message {
             this.pn = dataReq.pn;
             this.uid = dataReq.uid;
             this.st_type = dataReq.st_type;
-            this.f68428common = dataReq.f68427common;
+            this.f68433common = dataReq.f68432common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -70,12 +70,12 @@ public final class DataReq extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f68427common = builder.f68428common;
+            this.f68432common = builder.f68433common;
             return;
         }
         this.pn = builder.pn;
         this.uid = builder.uid;
         this.st_type = builder.st_type;
-        this.f68427common = builder.f68428common;
+        this.f68432common = builder.f68433common;
     }
 }

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AlaLiveInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class UserFollowLive extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer _switch;

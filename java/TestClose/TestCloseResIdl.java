@@ -3,7 +3,7 @@ package tbclient.TestClose;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class TestCloseResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;

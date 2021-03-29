@@ -2,7 +2,7 @@ package tbclient.RecomVertical;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class SubClassItem extends Message {
     public static final String DEFAULT_SUB_CLASS_ICON = "";
     public static final String DEFAULT_SUB_CLASS_NAME = "";

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.OriForumInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class BrandForumInfo extends Message {
     public static final String DEFAULT_BRAND_DESC = "";
     public static final String DEFAULT_JUMP_DESC = "";

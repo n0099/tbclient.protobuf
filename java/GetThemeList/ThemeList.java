@@ -2,7 +2,7 @@ package tbclient.GetThemeList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ThemeList extends Message {
     public static final String DEFAULT_ICON = "";
     public static final Long DEFAULT_LAST_UPDATE_TIME = 0L;

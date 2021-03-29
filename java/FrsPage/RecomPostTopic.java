@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class RecomPostTopic extends Message {
     public static final String DEFAULT_RECOM_TITLE = "";
     public static final String DEFAULT_RECOM_TOPIC = "";

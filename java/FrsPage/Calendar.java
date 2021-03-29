@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Calendar extends Message {
     public static final Integer DEFAULT_D = 0;
     public static final Integer DEFAULT_RANK = 0;
@@ -11,7 +11,7 @@ public final class Calendar extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
 
     /* renamed from: d  reason: collision with root package name */
-    public final Integer f68371d;
+    public final Integer f68376d;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer rank;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -23,7 +23,7 @@ public final class Calendar extends Message {
     public static final class Builder extends Message.Builder<Calendar> {
 
         /* renamed from: d  reason: collision with root package name */
-        public Integer f68372d;
+        public Integer f68377d;
         public Integer rank;
         public Integer sign_type;
         public String t;
@@ -36,7 +36,7 @@ public final class Calendar extends Message {
             if (calendar == null) {
                 return;
             }
-            this.f68372d = calendar.f68371d;
+            this.f68377d = calendar.f68376d;
             this.t = calendar.t;
             this.rank = calendar.rank;
             this.sign_type = calendar.sign_type;
@@ -52,11 +52,11 @@ public final class Calendar extends Message {
     public Calendar(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            Integer num = builder.f68372d;
+            Integer num = builder.f68377d;
             if (num == null) {
-                this.f68371d = DEFAULT_D;
+                this.f68376d = DEFAULT_D;
             } else {
-                this.f68371d = num;
+                this.f68376d = num;
             }
             String str = builder.t;
             if (str == null) {
@@ -79,7 +79,7 @@ public final class Calendar extends Message {
                 return;
             }
         }
-        this.f68371d = builder.f68372d;
+        this.f68376d = builder.f68377d;
         this.t = builder.t;
         this.rank = builder.rank;
         this.sign_type = builder.sign_type;

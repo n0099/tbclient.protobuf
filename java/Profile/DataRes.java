@@ -23,7 +23,7 @@ import tbclient.UcCard;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_UK = "";
     @ProtoField(tag = 16)

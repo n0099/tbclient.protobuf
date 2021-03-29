@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PbHotPost extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<HotPost> hot_post_list;

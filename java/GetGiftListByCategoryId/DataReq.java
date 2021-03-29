@@ -3,7 +3,7 @@ package tbclient.GetGiftListByCategoryId;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -11,14 +11,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68425common;
+    public final CommonReq f68430common;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer category_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68426common;
+        public CommonReq f68431common;
 
         public Builder() {
         }
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.category_id = dataReq.category_id;
-            this.f68426common = dataReq.f68425common;
+            this.f68431common = dataReq.f68430common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -48,10 +48,10 @@ public final class DataReq extends Message {
             } else {
                 this.category_id = num;
             }
-            this.f68425common = builder.f68426common;
+            this.f68430common = builder.f68431common;
             return;
         }
         this.category_id = builder.category_id;
-        this.f68425common = builder.f68426common;
+        this.f68430common = builder.f68431common;
     }
 }

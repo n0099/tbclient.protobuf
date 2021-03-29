@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.DefaultInfo;
 import tbclient.OrderList;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 6)
     public final DefaultInfo default_info;

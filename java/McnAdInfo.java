@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class McnAdInfo extends Message {
     public static final String DEFAULT_BUTTON_TITLE = "";
     public static final String DEFAULT_CARD_TITLE = "";

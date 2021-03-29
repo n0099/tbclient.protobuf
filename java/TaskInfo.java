@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class TaskInfo extends Message {
     public static final String DEFAULT_BGIMG = "";
     public static final String DEFAULT_FORUM_NAME = "";

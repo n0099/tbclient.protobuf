@@ -2,7 +2,7 @@ package tbclient.GetIconList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Setting extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer amount_pay_limit;

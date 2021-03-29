@@ -3,7 +3,7 @@ package tbclient.GetLockWindowMsg;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_PUBLISH_PIC = "";
     public static final String DEFAULT_PUBLISH_USER = "";

@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BawuRoleInfoPub;
 import tbclient.ForumInfo;
 import tbclient.ForumRule;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_AUDIT_OPINION = "";
     public static final String DEFAULT_CUR_TIME = "";

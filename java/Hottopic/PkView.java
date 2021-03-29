@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PkView extends Message {
     public static final String DEFAULT_PK_DESC = "";
     public static final String DEFAULT_PK_ICON = "";

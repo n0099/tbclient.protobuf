@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ResourceInfo extends Message {
     public static final String DEFAULT_HOT_TOPIC = "";
     public static final String DEFAULT_RECOMMEND_FORUM = "";

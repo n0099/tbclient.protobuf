@@ -3,14 +3,14 @@ package tbclient.LiveTabliveSubTab;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ENTRY_NAME = "";
     public static final String DEFAULT_LABEL_NAME = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68535common;
+    public final CommonReq f68540common;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer entry_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68536common;
+        public CommonReq f68541common;
         public Integer entry_id;
         public String entry_name;
         public String label_name;
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68536common = dataReq.f68535common;
+            this.f68541common = dataReq.f68540common;
             this.entry_name = dataReq.entry_name;
             this.pn = dataReq.pn;
             this.ps = dataReq.ps;
@@ -87,7 +87,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68535common = builder.f68536common;
+            this.f68540common = builder.f68541common;
             String str = builder.entry_name;
             if (str == null) {
                 this.entry_name = "";
@@ -151,7 +151,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68535common = builder.f68536common;
+        this.f68540common = builder.f68541common;
         this.entry_name = builder.entry_name;
         this.pn = builder.pn;
         this.ps = builder.ps;

@@ -3,18 +3,18 @@ package tbclient.GetOfficialSwitch;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68457common;
+    public final CommonReq f68462common;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68458common;
+        public CommonReq f68463common;
 
         public Builder() {
         }
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68458common = dataReq.f68457common;
+            this.f68463common = dataReq.f68462common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -37,9 +37,9 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68457common = builder.f68458common;
+            this.f68462common = builder.f68463common;
         } else {
-            this.f68457common = builder.f68458common;
+            this.f68462common = builder.f68463common;
         }
     }
 }

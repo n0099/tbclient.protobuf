@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.SmartApp;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<SmartApp> DEFAULT_SWAN_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)

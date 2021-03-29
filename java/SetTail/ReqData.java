@@ -3,12 +3,12 @@ package tbclient.SetTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ReqData extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68613common;
+    public final CommonReq f68618common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer tailId;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -20,7 +20,7 @@ public final class ReqData extends Message {
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68614common;
+        public CommonReq f68619common;
         public Integer tailId;
         public Integer type;
 
@@ -34,7 +34,7 @@ public final class ReqData extends Message {
             }
             this.type = reqData.type;
             this.tailId = reqData.tailId;
-            this.f68614common = reqData.f68613common;
+            this.f68619common = reqData.f68618common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -59,11 +59,11 @@ public final class ReqData extends Message {
             } else {
                 this.tailId = num2;
             }
-            this.f68613common = builder.f68614common;
+            this.f68618common = builder.f68619common;
             return;
         }
         this.type = builder.type;
         this.tailId = builder.tailId;
-        this.f68613common = builder.f68614common;
+        this.f68618common = builder.f68619common;
     }
 }

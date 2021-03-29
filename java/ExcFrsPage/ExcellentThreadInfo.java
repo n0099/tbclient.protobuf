@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ExcellentThreadInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ABTEST = "";

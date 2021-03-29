@@ -3,14 +3,14 @@ package tbclient.SearchSug;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ISFORUM = "";
     public static final String DEFAULT_WORD = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68597common;
+    public final CommonReq f68602common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String isforum;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68598common;
+        public CommonReq f68603common;
         public String isforum;
         public String word;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68598common = dataReq.f68597common;
+            this.f68603common = dataReq.f68602common;
             this.word = dataReq.word;
             this.isforum = dataReq.isforum;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68597common = builder.f68598common;
+            this.f68602common = builder.f68603common;
             String str = builder.word;
             if (str == null) {
                 this.word = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68597common = builder.f68598common;
+        this.f68602common = builder.f68603common;
         this.word = builder.word;
         this.isforum = builder.isforum;
     }

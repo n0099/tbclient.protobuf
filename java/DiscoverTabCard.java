@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DiscoverTabCard extends Message {
     public static final List<RecommendForumInfo> DEFAULT_FORUM_LIST = Collections.emptyList();
     public static final Boolean DEFAULT_IS_SHOW_ORDER_NUMBER = Boolean.FALSE;

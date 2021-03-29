@@ -3,7 +3,7 @@ package tbclient.GetMemberInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class GetMemberInfoResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;

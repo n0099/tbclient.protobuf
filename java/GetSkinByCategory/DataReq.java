@@ -3,18 +3,18 @@ package tbclient.GetSkinByCategory;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68479common;
+    public final CommonReq f68484common;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68480common;
+        public CommonReq f68485common;
 
         public Builder() {
         }
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68480common = dataReq.f68479common;
+            this.f68485common = dataReq.f68484common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -37,9 +37,9 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68479common = builder.f68480common;
+            this.f68484common = builder.f68485common;
         } else {
-            this.f68479common = builder.f68480common;
+            this.f68484common = builder.f68485common;
         }
     }
 }

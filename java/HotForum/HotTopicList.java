@@ -2,7 +2,7 @@ package tbclient.HotForum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class HotTopicList extends Message {
     public static final String DEFAULT_TOPIC_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)

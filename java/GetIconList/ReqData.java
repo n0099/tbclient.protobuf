@@ -3,13 +3,13 @@ package tbclient.GetIconList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68437common;
+    public final CommonReq f68442common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String st_type;
 
@@ -17,7 +17,7 @@ public final class ReqData extends Message {
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68438common;
+        public CommonReq f68443common;
         public String st_type;
 
         public Builder() {
@@ -29,7 +29,7 @@ public final class ReqData extends Message {
                 return;
             }
             this.st_type = reqData.st_type;
-            this.f68438common = reqData.f68437common;
+            this.f68443common = reqData.f68442common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -48,10 +48,10 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f68437common = builder.f68438common;
+            this.f68442common = builder.f68443common;
             return;
         }
         this.st_type = builder.st_type;
-        this.f68437common = builder.f68438common;
+        this.f68442common = builder.f68443common;
     }
 }

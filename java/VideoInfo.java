@@ -11,7 +11,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class VideoInfo extends Message {
     public static final Double DEFAULT_HTH_MID_LOC;
     public static final String DEFAULT_MCN_LEAD_PAGE = "";

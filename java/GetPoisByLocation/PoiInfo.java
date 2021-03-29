@@ -2,7 +2,7 @@ package tbclient.GetPoisByLocation;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PoiInfo extends Message {
     public static final String DEFAULT_ADDR = "";
     public static final String DEFAULT_NAME = "";

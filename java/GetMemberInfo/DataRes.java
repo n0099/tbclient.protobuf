@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.ForumMember;
 import tbclient.MemberGroupInfo;
 import tbclient.PriManagerApplyInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final ForumMember forum_member_info;

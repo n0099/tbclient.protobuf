@@ -2,7 +2,7 @@ package tbclient.GetAddressList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class LbsInfo extends Message {
     public static final String DEFAULT_DISTANCE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)

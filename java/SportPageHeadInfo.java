@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class SportPageHeadInfo extends Message {
     public static final String DEFAULT_HEAD_URL = "";
     public static final Integer DEFAULT_IS_AD = 0;

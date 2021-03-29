@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.ActiveCenter;
 import tbclient.FloatStrategy;
 import tbclient.MissionInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ACTIVE_URL = "";
     public static final String DEFAULT_NEWUSER_POP_CLICKURL = "";

@@ -6,7 +6,7 @@ import tbclient.BaijiahaoInfo;
 import tbclient.BusinessAccountInfo;
 import tbclient.GodInfo;
 import tbclient.NewGodInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class User_Info extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_FANS_NICKNAME = "";

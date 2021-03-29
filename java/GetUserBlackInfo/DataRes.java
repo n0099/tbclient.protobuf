@@ -3,7 +3,7 @@ package tbclient.GetUserBlackInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PermissionList;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_BLACK_WHITE = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)

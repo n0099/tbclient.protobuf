@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.Banner;
 import tbclient.Entry;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<Banner> banner;

@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class TopicInfo extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_TOPIC_NAME = "";

@@ -2,7 +2,7 @@ package tbclient.RecommendFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PostInfo extends Message {
     public static final String DEFAULT_COMMON_POST_PIC = "";
     public static final String DEFAULT_LARGE_POST_PIC = "";

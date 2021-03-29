@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class FloatInfo extends Message {
     public static final String DEFAULT_FLOAT_URL = "";
     public static final String DEFAULT_JUMP_URL = "";

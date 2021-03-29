@@ -2,7 +2,7 @@ package tbclient.GetLockWindowMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class LockWindowContent extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_LINK = "";

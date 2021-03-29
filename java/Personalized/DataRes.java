@@ -11,7 +11,7 @@ import tbclient.DiscoverHotForum;
 import tbclient.RecomPostTopic;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_STAT_KEY = "";
     @ProtoField(tag = 22)

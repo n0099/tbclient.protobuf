@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Zan extends Message {
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer consent_type;

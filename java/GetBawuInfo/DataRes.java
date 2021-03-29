@@ -3,7 +3,7 @@ package tbclient.GetBawuInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.BawuTeam;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
     @ProtoField(tag = 1)

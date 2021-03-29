@@ -2,7 +2,7 @@ package tbclient.AddFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class AddFriendReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;

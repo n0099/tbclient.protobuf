@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ActionControl extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_TEXT_COLOR = "";

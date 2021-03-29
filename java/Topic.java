@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Topic extends Message {
     public static final String DEFAULT_LINK = "";
     @ProtoField(tag = 1, type = Message.Datatype.INT32)

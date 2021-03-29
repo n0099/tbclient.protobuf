@@ -3,7 +3,7 @@ package tbclient.FineZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ACTION = "";
     public static final Long DEFAULT_FTID = 0L;
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68361common;
+    public final CommonReq f68366common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long ftid;
 
@@ -21,7 +21,7 @@ public final class DataReq extends Message {
         public String action;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68362common;
+        public CommonReq f68367common;
         public Long ftid;
 
         public Builder() {
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68362common = dataReq.f68361common;
+            this.f68367common = dataReq.f68366common;
             this.action = dataReq.action;
             this.ftid = dataReq.ftid;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68361common = builder.f68362common;
+            this.f68366common = builder.f68367common;
             String str = builder.action;
             if (str == null) {
                 this.action = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68361common = builder.f68362common;
+        this.f68366common = builder.f68367common;
         this.action = builder.action;
         this.ftid = builder.ftid;
     }

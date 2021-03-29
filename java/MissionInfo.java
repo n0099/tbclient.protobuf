@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class MissionInfo extends Message {
     public static final String DEFAULT_BROWSETIMEPAGE = "";
     @ProtoField(tag = 9, type = Message.Datatype.INT32)

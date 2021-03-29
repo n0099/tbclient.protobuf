@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Promotion extends Message {
     public static final Long DEFAULT_APPEAR_TIME = 0L;
     public static final String DEFAULT_IMAGE = "";

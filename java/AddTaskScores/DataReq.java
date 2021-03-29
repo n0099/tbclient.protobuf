@@ -3,12 +3,12 @@ package tbclient.AddTaskScores;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68315common;
+    public final CommonReq f68320common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer task_id;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68316common;
+        public CommonReq f68321common;
         public Integer task_id;
         public Long user_id;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68316common = dataReq.f68315common;
+            this.f68321common = dataReq.f68320common;
             this.user_id = dataReq.user_id;
             this.task_id = dataReq.task_id;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68315common = builder.f68316common;
+            this.f68320common = builder.f68321common;
             Long l = builder.user_id;
             if (l == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68315common = builder.f68316common;
+        this.f68320common = builder.f68321common;
         this.user_id = builder.user_id;
         this.task_id = builder.task_id;
     }

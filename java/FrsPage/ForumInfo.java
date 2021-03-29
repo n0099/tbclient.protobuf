@@ -8,7 +8,7 @@ import tbclient.BannerList;
 import tbclient.DeletedReasonInfo;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ACCELERATE_COTENT = "";
     public static final String DEFAULT_AVATAR = "";

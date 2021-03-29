@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Wares extends Message {
     public static final String DEFAULT_NEW_PROPS_ID = "";
     public static final String DEFAULT_WARS_ITEM = "";

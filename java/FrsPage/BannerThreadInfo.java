@@ -3,7 +3,7 @@ package tbclient.FrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class BannerThreadInfo extends Message {
     public static final Integer DEFAULT_FROM = 0;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)

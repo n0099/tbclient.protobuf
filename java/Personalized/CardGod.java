@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class CardGod extends Message {
     public static final String DEFAULT_CARD_TITLE = "";
     public static final List<User> DEFAULT_GODS = Collections.emptyList();

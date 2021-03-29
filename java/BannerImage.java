@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class BannerImage extends Message {
     public static final String DEFAULT_AHEAD_URL = "";
     public static final String DEFAULT_IMG_URL = "";

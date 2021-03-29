@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class SubPost extends Message {
     public static final Long DEFAULT_PID = 0L;
     public static final List<SubPostList> DEFAULT_SUB_POST_LIST = Collections.emptyList();

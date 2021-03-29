@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PresentCategoryList extends Message {
     public static final String DEFAULT_CATEGORY_NAME = "";
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)

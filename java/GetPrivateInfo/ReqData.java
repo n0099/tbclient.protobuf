@@ -3,13 +3,13 @@ package tbclient.GetPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ReqData extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68467common;
+    public final CommonReq f68472common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long user_id;
 
@@ -17,7 +17,7 @@ public final class ReqData extends Message {
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68468common;
+        public CommonReq f68473common;
         public Long user_id;
 
         public Builder() {
@@ -29,7 +29,7 @@ public final class ReqData extends Message {
                 return;
             }
             this.user_id = reqData.user_id;
-            this.f68468common = reqData.f68467common;
+            this.f68473common = reqData.f68472common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -48,10 +48,10 @@ public final class ReqData extends Message {
             } else {
                 this.user_id = l;
             }
-            this.f68467common = builder.f68468common;
+            this.f68472common = builder.f68473common;
             return;
         }
         this.user_id = builder.user_id;
-        this.f68467common = builder.f68468common;
+        this.f68472common = builder.f68473common;
     }
 }

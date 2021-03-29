@@ -2,7 +2,7 @@ package tbclient.ForumRecommend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class SearchValue extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_NAME = "";

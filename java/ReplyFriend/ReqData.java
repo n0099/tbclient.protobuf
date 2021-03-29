@@ -3,14 +3,14 @@ package tbclient.ReplyFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ReqData extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final String DEFAULT_MESSAGE = "";
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68589common;
+    public final CommonReq f68594common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class ReqData extends Message {
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68590common;
+        public CommonReq f68595common;
         public Long friend_id;
         public String message;
 
@@ -34,7 +34,7 @@ public final class ReqData extends Message {
             }
             this.friend_id = reqData.friend_id;
             this.message = reqData.message;
-            this.f68590common = reqData.f68589common;
+            this.f68595common = reqData.f68594common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -59,11 +59,11 @@ public final class ReqData extends Message {
             } else {
                 this.message = str;
             }
-            this.f68589common = builder.f68590common;
+            this.f68594common = builder.f68595common;
             return;
         }
         this.friend_id = builder.friend_id;
         this.message = builder.message;
-        this.f68589common = builder.f68590common;
+        this.f68594common = builder.f68595common;
     }
 }

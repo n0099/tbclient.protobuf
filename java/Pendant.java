@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Pendant extends Message {
     public static final String DEFAULT_IMG_URL = "";
     public static final Long DEFAULT_PROPS_ID = 0L;

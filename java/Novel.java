@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Novel extends Message {
     public static final String DEFAULT_ANDROID_DETAIL_PARAMS = "";
     public static final String DEFAULT_ANDROID_LAST_CHARPTER_PARAMS = "";

@@ -3,7 +3,7 @@ package tbclient;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DislikeInfo extends Message {
     public static final Integer DEFAULT_DISLIKE_ID = 0;
     public static final String DEFAULT_DISLIKE_REASON = "";

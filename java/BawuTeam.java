@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class BawuTeam extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<BawuRoleDes> bawu_team_list;

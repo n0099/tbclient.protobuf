@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.User;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class FrsPageUserExtend extends Message {
     public static final String DEFAULT_TIPS = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 4)

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class RankInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
     public final Double dir_rate;

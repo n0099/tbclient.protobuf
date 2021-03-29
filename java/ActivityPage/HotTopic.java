@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.RecomTopicList;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class HotTopic extends Message {
     public static final Integer DEFAULT_FLOOR_POSITION = 0;
     public static final List<RecomTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();

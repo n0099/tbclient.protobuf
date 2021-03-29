@@ -3,13 +3,13 @@ package tbclient.DecryptCode;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TIEBA_CODE = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68337common;
+    public final CommonReq f68342common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tieba_code;
 
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68338common;
+        public CommonReq f68343common;
         public String tieba_code;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68338common = dataReq.f68337common;
+            this.f68343common = dataReq.f68342common;
             this.tieba_code = dataReq.tieba_code;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68337common = builder.f68338common;
+            this.f68342common = builder.f68343common;
             String str = builder.tieba_code;
             if (str == null) {
                 this.tieba_code = "";
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68337common = builder.f68338common;
+        this.f68342common = builder.f68343common;
         this.tieba_code = builder.tieba_code;
     }
 }

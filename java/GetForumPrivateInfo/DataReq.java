@@ -3,13 +3,13 @@ package tbclient.GetForumPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68413common;
+    public final CommonReq f68418common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer pn;
 
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68414common;
+        public CommonReq f68419common;
         public Integer pn;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68414common = dataReq.f68413common;
+            this.f68419common = dataReq.f68418common;
             this.pn = dataReq.pn;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68413common = builder.f68414common;
+            this.f68418common = builder.f68419common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68413common = builder.f68414common;
+        this.f68418common = builder.f68419common;
         this.pn = builder.pn;
     }
 }

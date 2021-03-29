@@ -3,7 +3,7 @@ package tbclient.CheckPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_FORUMNAME = "";
     public static final String DEFAULT_ORI_UGC_NID = "";
@@ -12,7 +12,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68325common;
+    public final CommonReq f68330common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String forumName;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -38,7 +38,7 @@ public final class ReqData extends Message {
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68326common;
+        public CommonReq f68331common;
         public String forumName;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -59,7 +59,7 @@ public final class ReqData extends Message {
             this.pid = reqData.pid;
             this.postType = reqData.postType;
             this.forumName = reqData.forumName;
-            this.f68326common = reqData.f68325common;
+            this.f68331common = reqData.f68330common;
             this.tid = reqData.tid;
             this.ori_ugc_type = reqData.ori_ugc_type;
             this.ori_ugc_nid = reqData.ori_ugc_nid;
@@ -95,7 +95,7 @@ public final class ReqData extends Message {
             } else {
                 this.forumName = str;
             }
-            this.f68325common = builder.f68326common;
+            this.f68330common = builder.f68331common;
             Long l2 = builder.tid;
             if (l2 == null) {
                 this.tid = DEFAULT_TID;
@@ -132,7 +132,7 @@ public final class ReqData extends Message {
         this.pid = builder.pid;
         this.postType = builder.postType;
         this.forumName = builder.forumName;
-        this.f68325common = builder.f68326common;
+        this.f68330common = builder.f68331common;
         this.tid = builder.tid;
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_nid = builder.ori_ugc_nid;

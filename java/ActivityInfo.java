@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class ActivityInfo extends Message {
     public static final String DEFAULT_BACK_PIC = "";
     public static final String DEFAULT_MAIN_TITLE = "";

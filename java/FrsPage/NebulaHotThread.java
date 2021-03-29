@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class NebulaHotThread extends Message {
     public static final String DEFAULT_GROUP_NAME = "";
     public static final String DEFAULT_THREAD_ID = "";

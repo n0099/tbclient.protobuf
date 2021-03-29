@@ -3,18 +3,18 @@ package tbclient.GetThemeList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68491common;
+    public final CommonReq f68496common;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68492common;
+        public CommonReq f68497common;
 
         public Builder() {
         }
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68492common = dataReq.f68491common;
+            this.f68497common = dataReq.f68496common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -37,9 +37,9 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68491common = builder.f68492common;
+            this.f68496common = builder.f68497common;
         } else {
-            this.f68491common = builder.f68492common;
+            this.f68496common = builder.f68497common;
         }
     }
 }

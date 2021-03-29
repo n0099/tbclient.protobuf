@@ -2,7 +2,7 @@ package tbclient.ElectionInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Basic extends Message {
     public static final String DEFAULT_BEGIN_APPLY_TIME = "";
     public static final String DEFAULT_BEGIN_PUBLIC_TIME = "";

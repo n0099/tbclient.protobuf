@@ -3,14 +3,14 @@ package tbclient.HotThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TAB_CODE = "";
     public static final String DEFAULT_TAB_ID = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68525common;
+    public final CommonReq f68530common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String tab_code;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68526common;
+        public CommonReq f68531common;
         public String tab_code;
         public String tab_id;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68526common = dataReq.f68525common;
+            this.f68531common = dataReq.f68530common;
             this.tab_id = dataReq.tab_id;
             this.tab_code = dataReq.tab_code;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68525common = builder.f68526common;
+            this.f68530common = builder.f68531common;
             String str = builder.tab_id;
             if (str == null) {
                 this.tab_id = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68525common = builder.f68526common;
+        this.f68530common = builder.f68531common;
         this.tab_id = builder.tab_id;
         this.tab_code = builder.tab_code;
     }

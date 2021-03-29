@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class AdParam extends Message {
     public static final String DEFAULT_YOGA_LIB_VERSION = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT32)

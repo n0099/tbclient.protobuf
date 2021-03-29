@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.ElectionList;
 import tbclient.ManagerElection;
 import tbclient.Myrecord;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<ElectionList> DEFAULT_ELECTION_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;

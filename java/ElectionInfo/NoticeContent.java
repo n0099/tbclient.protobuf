@@ -2,7 +2,7 @@ package tbclient.ElectionInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class NoticeContent extends Message {
     public static final String DEFAULT_PUBLIC_NOTICE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)

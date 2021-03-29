@@ -2,7 +2,7 @@ package tbclient.GetShoubaiThreadList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class PageInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long cursor;

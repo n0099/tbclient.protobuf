@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.DailyInfo;
 import tbclient.DailyTopic;
 import tbclient.GodBanner;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     public static final List<GodBanner> DEFAULT_BANNER = Collections.emptyList();
     public static final List<DailyTopic> DEFAULT_TOPIC = Collections.emptyList();

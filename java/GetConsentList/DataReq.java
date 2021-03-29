@@ -3,14 +3,14 @@ package tbclient.GetConsentList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long author_id;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68403common;
+    public final CommonReq f68408common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long gid;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
         public Long author_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68404common;
+        public CommonReq f68409common;
         public Long gid;
         public Long page_num;
         public Long post_id;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68404common = dataReq.f68403common;
+            this.f68409common = dataReq.f68408common;
             this.author_id = dataReq.author_id;
             this.user_id = dataReq.user_id;
             this.gid = dataReq.gid;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68403common = builder.f68404common;
+            this.f68408common = builder.f68409common;
             Long l = builder.author_id;
             if (l == null) {
                 this.author_id = DEFAULT_AUTHOR_ID;
@@ -118,7 +118,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68403common = builder.f68404common;
+        this.f68408common = builder.f68409common;
         this.author_id = builder.author_id;
         this.user_id = builder.user_id;
         this.gid = builder.gid;

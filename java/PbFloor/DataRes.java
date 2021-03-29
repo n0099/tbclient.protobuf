@@ -10,7 +10,7 @@ import tbclient.Post;
 import tbclient.SimpleForum;
 import tbclient.SubPostList;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final Anti anti;

@@ -2,7 +2,7 @@ package tbclient.GetGiftMyList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class GiftList extends Message {
     @ProtoField(tag = 2)
     public final Gift gift;

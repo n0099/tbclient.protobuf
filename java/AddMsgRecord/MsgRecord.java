@@ -2,7 +2,7 @@ package tbclient.AddMsgRecord;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class MsgRecord extends Message {
     public static final String DEFAULT_TASK_IDS = "";
     public static final Integer DEFAULT_TYPE = 0;

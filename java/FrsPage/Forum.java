@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Forum extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final String DEFAULT_LEVEL1_DIR_NAME = "";

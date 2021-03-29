@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class FloatStrategy extends Message {
     public static final String DEFAULT_BROWSETIMEPAGE = "";
     public static final String DEFAULT_TOAST = "";

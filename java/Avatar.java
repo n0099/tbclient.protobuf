@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Avatar extends Message {
     public static final String DEFAULT_PIC = "";
     public static final String DEFAULT_POS = "";

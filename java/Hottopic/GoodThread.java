@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class GoodThread extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_FNAME = "";

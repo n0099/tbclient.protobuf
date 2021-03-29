@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class UserDynamic extends Message {
     public static final List<User> DEFAULT_CONCERNED_USER_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)

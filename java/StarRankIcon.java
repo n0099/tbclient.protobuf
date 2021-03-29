@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class StarRankIcon extends Message {
     public static final String DEFAULT_ICON_LINK = "";
     public static final String DEFAULT_ICON_PIC_URL = "";

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class SkinInfo extends Message {
     public static final String DEFAULT_MONITOR_ID = "";
     public static final String DEFAULT_OBJ_ID = "";

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Page;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class HotThread extends Message {
     public static final String DEFAULT_HOT_TITLE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)

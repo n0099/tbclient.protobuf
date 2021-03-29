@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 import tbclient.PrivateForumInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class LikeForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_CONTENT = "";

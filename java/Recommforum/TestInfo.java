@@ -2,7 +2,7 @@ package tbclient.Recommforum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class TestInfo extends Message {
     public static final String DEFAULT_IMAGE_URL = "";
     public static final String DEFAULT_RESULT_IMG = "";

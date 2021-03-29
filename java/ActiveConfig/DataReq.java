@@ -3,12 +3,12 @@ package tbclient.ActiveConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68301common;
+    public final CommonReq f68306common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer is_first_up;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68302common;
+        public CommonReq f68307common;
         public Integer is_first_up;
         public Integer is_schema_up;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68302common = dataReq.f68301common;
+            this.f68307common = dataReq.f68306common;
             this.is_schema_up = dataReq.is_schema_up;
             this.is_first_up = dataReq.is_first_up;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68301common = builder.f68302common;
+            this.f68306common = builder.f68307common;
             Integer num = builder.is_schema_up;
             if (num == null) {
                 this.is_schema_up = DEFAULT_IS_SCHEMA_UP;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68301common = builder.f68302common;
+        this.f68306common = builder.f68307common;
         this.is_schema_up = builder.is_schema_up;
         this.is_first_up = builder.is_first_up;
     }

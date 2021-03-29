@@ -3,7 +3,7 @@ package tbclient.NewHottopic;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class TopicThread extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long feed_id;

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes.dex */
+/* loaded from: classes7.dex */
 public final class Classify extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final String DEFAULT_NAME = "";
