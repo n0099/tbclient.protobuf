@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message Advertisement {
+    int64 time = 1;
+    string pic = 2;
+    string pic_click = 3;
+    string jump_link = 4;
+    string advertisement_id = 5;
+}

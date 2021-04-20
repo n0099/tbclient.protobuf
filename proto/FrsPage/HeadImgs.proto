@@ -9,4 +9,6 @@ message HeadImgs {
     string tag_name_url = 6;
     string tag_name_wh = 7;
     string schema = 8;
+    repeated string third_statistics_url = 9;
+    uint32 has_second_page = 10;
 }

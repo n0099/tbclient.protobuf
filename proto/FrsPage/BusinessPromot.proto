@@ -14,4 +14,10 @@ message BusinessPromot {
     int64 id = 9;
     int32 thread_type = 10;
     string schema = 11;
+    repeated string third_statistics_url = 12;
+    string button_text = 13;
+    string button_text2 = 14;
+    string thread_id2 = 15;
+    string url2 = 16;
+    string schema2 = 17;
 }

@@ -51,4 +51,5 @@ message CommonReq {
     int64 first_install_time = 50;
     int64 last_update_time = 51;
     string event_day = 53;
+    string android_id = 54;
 }

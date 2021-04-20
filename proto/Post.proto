@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "ActPost.proto";
 import "AddPostList.proto";
+import "Advertisement.proto";
 import "Agree.proto";
 import "DealInfo.proto";
 import "HeadItem.proto";
@@ -76,4 +77,5 @@ message Post {
     repeated HeadItem item_star = 52;
     Item item = 53;
     Item outer_item = 54;
+    Advertisement advertisement = 55;
 }
