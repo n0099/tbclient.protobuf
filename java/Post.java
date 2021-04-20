@@ -20,6 +20,8 @@ public final class Post extends Message {
     public final AddPostList add_post_list;
     @ProtoField(tag = 20, type = Message.Datatype.UINT32)
     public final Integer add_post_number;
+    @ProtoField(tag = 55)
+    public final Advertisement advertisement;
     @ProtoField(tag = 37)
     public final Agree agree;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
@@ -151,6 +153,7 @@ public final class Post extends Message {
         public ActPost act_post;
         public AddPostList add_post_list;
         public Integer add_post_number;
+        public Advertisement advertisement;
         public Agree agree;
         public List<String> arr_video;
         public User author;
@@ -263,6 +266,7 @@ public final class Post extends Message {
             this.item_star = Message.copyOf(post.item_star);
             this.item = post.item;
             this.outer_item = post.outer_item;
+            this.advertisement = post.advertisement;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -493,6 +497,7 @@ public final class Post extends Message {
             }
             this.item = builder.item;
             this.outer_item = builder.outer_item;
+            this.advertisement = builder.advertisement;
             return;
         }
         this.id = builder.id;
@@ -548,5 +553,6 @@ public final class Post extends Message {
         this.item_star = Message.immutableCopyOf(builder.item_star);
         this.item = builder.item;
         this.outer_item = builder.outer_item;
+        this.advertisement = builder.advertisement;
     }
 }

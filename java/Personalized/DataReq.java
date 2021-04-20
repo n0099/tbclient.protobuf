@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68568common;
+    public final CommonReq f69574common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -119,7 +119,7 @@ public final class DataReq extends Message {
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68569common;
+        public CommonReq f69575common;
         public String da_idfa;
         public String first_dir;
         public Long from_tid;
@@ -158,7 +158,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68569common = dataReq.f68568common;
+            this.f69575common = dataReq.f69574common;
             this.tag_code = dataReq.tag_code;
             this.need_tags = dataReq.need_tags;
             this.load_type = dataReq.load_type;
@@ -204,7 +204,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68568common = builder.f68569common;
+            this.f69574common = builder.f69575common;
             Integer num = builder.tag_code;
             if (num == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
@@ -401,7 +401,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68568common = builder.f68569common;
+        this.f69574common = builder.f69575common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;

@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68316common;
+    public final CommonReq f69322common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68317common;
+        public CommonReq f69323common;
         public Long forum_id;
         public String options;
         public Long thread_id;
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
             }
             this.thread_id = dataReq.thread_id;
             this.options = dataReq.options;
-            this.f68317common = dataReq.f68316common;
+            this.f69323common = dataReq.f69322common;
             this.forum_id = dataReq.forum_id;
         }
 
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             } else {
                 this.options = str;
             }
-            this.f68316common = builder.f68317common;
+            this.f69322common = builder.f69323common;
             Long l2 = builder.forum_id;
             if (l2 == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
@@ -76,7 +76,7 @@ public final class DataReq extends Message {
         }
         this.thread_id = builder.thread_id;
         this.options = builder.options;
-        this.f68316common = builder.f68317common;
+        this.f69322common = builder.f69323common;
         this.forum_id = builder.forum_id;
     }
 }

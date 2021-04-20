@@ -2,6 +2,8 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes7.dex */
 public final class HeadImgs extends Message {
     public static final String DEFAULT_BTN_TEXT = "";
@@ -14,6 +16,8 @@ public final class HeadImgs extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String btn_text;
+    @ProtoField(tag = 10, type = Message.Datatype.UINT32)
+    public final Integer has_second_page;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String img_url;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -26,18 +30,24 @@ public final class HeadImgs extends Message {
     public final String tag_name_url;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String tag_name_wh;
+    @ProtoField(label = Message.Label.REPEATED, tag = 9, type = Message.Datatype.STRING)
+    public final List<String> third_statistics_url;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
+    public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
+    public static final Integer DEFAULT_HAS_SECOND_PAGE = 0;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<HeadImgs> {
         public String btn_text;
+        public Integer has_second_page;
         public String img_url;
         public String pc_url;
         public String schema;
         public String subtitle;
         public String tag_name_url;
         public String tag_name_wh;
+        public List<String> third_statistics_url;
         public String title;
 
         public Builder() {
@@ -56,6 +66,8 @@ public final class HeadImgs extends Message {
             this.tag_name_url = headImgs.tag_name_url;
             this.tag_name_wh = headImgs.tag_name_wh;
             this.schema = headImgs.schema;
+            this.third_statistics_url = Message.copyOf(headImgs.third_statistics_url);
+            this.has_second_page = headImgs.has_second_page;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -113,9 +125,21 @@ public final class HeadImgs extends Message {
             String str8 = builder.schema;
             if (str8 == null) {
                 this.schema = "";
-                return;
             } else {
                 this.schema = str8;
+            }
+            List<String> list = builder.third_statistics_url;
+            if (list == null) {
+                this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
+            } else {
+                this.third_statistics_url = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.has_second_page;
+            if (num == null) {
+                this.has_second_page = DEFAULT_HAS_SECOND_PAGE;
+                return;
+            } else {
+                this.has_second_page = num;
                 return;
             }
         }
@@ -127,5 +151,7 @@ public final class HeadImgs extends Message {
         this.tag_name_url = builder.tag_name_url;
         this.tag_name_wh = builder.tag_name_wh;
         this.schema = builder.schema;
+        this.third_statistics_url = Message.immutableCopyOf(builder.third_statistics_url);
+        this.has_second_page = builder.has_second_page;
     }
 }

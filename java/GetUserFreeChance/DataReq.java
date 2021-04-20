@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68508common;
+    public final CommonReq f69514common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String scene_from;
 
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68509common;
+        public CommonReq f69515common;
         public String scene_from;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68509common = dataReq.f68508common;
+            this.f69515common = dataReq.f69514common;
             this.scene_from = dataReq.scene_from;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68508common = builder.f68509common;
+            this.f69514common = builder.f69515common;
             String str = builder.scene_from;
             if (str == null) {
                 this.scene_from = "";
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68508common = builder.f68509common;
+        this.f69514common = builder.f69515common;
         this.scene_from = builder.scene_from;
     }
 }

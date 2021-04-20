@@ -13,14 +13,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68542common;
+    public final CommonReq f69548common;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<AdReq> Ad;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68543common;
+        public CommonReq f69549common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.Ad = Message.copyOf(dataReq.Ad);
-            this.f68543common = dataReq.f68542common;
+            this.f69549common = dataReq.f69548common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -50,10 +50,10 @@ public final class DataReq extends Message {
             } else {
                 this.Ad = Message.immutableCopyOf(list);
             }
-            this.f68542common = builder.f68543common;
+            this.f69548common = builder.f69549common;
             return;
         }
         this.Ad = Message.immutableCopyOf(builder.Ad);
-        this.f68542common = builder.f68543common;
+        this.f69548common = builder.f69549common;
     }
 }

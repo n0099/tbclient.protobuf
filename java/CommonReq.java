@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes7.dex */
 public final class CommonReq extends Message {
+    public static final String DEFAULT_ANDROID_ID = "";
     public static final String DEFAULT_APID = "";
     public static final String DEFAULT_APPLIST = "";
     public static final String DEFAULT_BDUSS = "";
@@ -61,6 +62,8 @@ public final class CommonReq extends Message {
     public final Long _timestamp;
     @ProtoField(tag = 49, type = Message.Datatype.INT64)
     public final Long active_timestamp;
+    @ProtoField(tag = 54, type = Message.Datatype.STRING)
+    public final String android_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String apid;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
@@ -166,6 +169,7 @@ public final class CommonReq extends Message {
         public String _phone_newimei;
         public Long _timestamp;
         public Long active_timestamp;
+        public String android_id;
         public String apid;
         public String applist;
         public String brand;
@@ -266,6 +270,7 @@ public final class CommonReq extends Message {
             this.first_install_time = commonReq.first_install_time;
             this.last_update_time = commonReq.last_update_time;
             this.event_day = commonReq.event_day;
+            this.android_id = commonReq.android_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -575,9 +580,15 @@ public final class CommonReq extends Message {
             String str39 = builder.event_day;
             if (str39 == null) {
                 this.event_day = "";
-                return;
             } else {
                 this.event_day = str39;
+            }
+            String str40 = builder.android_id;
+            if (str40 == null) {
+                this.android_id = "";
+                return;
+            } else {
+                this.android_id = str40;
                 return;
             }
         }
@@ -631,5 +642,6 @@ public final class CommonReq extends Message {
         this.first_install_time = builder.first_install_time;
         this.last_update_time = builder.last_update_time;
         this.event_day = builder.event_day;
+        this.android_id = builder.android_id;
     }
 }
