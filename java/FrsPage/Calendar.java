@@ -11,7 +11,7 @@ public final class Calendar extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
 
     /* renamed from: d  reason: collision with root package name */
-    public final Integer f69382d;
+    public final Integer f69529d;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer rank;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -23,7 +23,7 @@ public final class Calendar extends Message {
     public static final class Builder extends Message.Builder<Calendar> {
 
         /* renamed from: d  reason: collision with root package name */
-        public Integer f69383d;
+        public Integer f69530d;
         public Integer rank;
         public Integer sign_type;
         public String t;
@@ -36,7 +36,7 @@ public final class Calendar extends Message {
             if (calendar == null) {
                 return;
             }
-            this.f69383d = calendar.f69382d;
+            this.f69530d = calendar.f69529d;
             this.t = calendar.t;
             this.rank = calendar.rank;
             this.sign_type = calendar.sign_type;
@@ -52,11 +52,11 @@ public final class Calendar extends Message {
     public Calendar(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            Integer num = builder.f69383d;
+            Integer num = builder.f69530d;
             if (num == null) {
-                this.f69382d = DEFAULT_D;
+                this.f69529d = DEFAULT_D;
             } else {
-                this.f69382d = num;
+                this.f69529d = num;
             }
             String str = builder.t;
             if (str == null) {
@@ -79,7 +79,7 @@ public final class Calendar extends Message {
                 return;
             }
         }
-        this.f69382d = builder.f69383d;
+        this.f69529d = builder.f69530d;
         this.t = builder.t;
         this.rank = builder.rank;
         this.sign_type = builder.sign_type;
