@@ -17,4 +17,5 @@ message PresentGiftList1 {
     uint32 gift_count = 14;
     uint32 pitch_on = 15;
     uint32 currency_unit = 16;
+    int32 currency = 20;
 }

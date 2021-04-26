@@ -6,6 +6,7 @@ import "AlaShareInfo.proto";
 import "AlaStageDislikeInfo.proto";
 import "AlaUserInfo.proto";
 import "DislikeInfo.proto";
+import "YyExt.proto";
 
 message AlaLiveInfo {
     uint64 live_id = 1;
@@ -53,4 +54,6 @@ message AlaLiveInfo {
     int32 room_status = 45;
     string room_name = 46;
     string forum_user_live_msg = 47;
+    string cover_wide = 48;
+    YyExt yy_ext = 49;
 }
