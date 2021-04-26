@@ -8,6 +8,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_GOODS_PIC = "";
     public static final String DEFAULT_GOODS_UNIT = "";
     public static final String DEFAULT_ORDER_ID = "";
+    @ProtoField(tag = 18, type = Message.Datatype.UINT32)
+    public final Integer currency;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer gift_count;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
@@ -55,9 +57,11 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_TERMINAL = 0;
     public static final Long DEFAULT_OPEN_ID = 0L;
     public static final Integer DEFAULT_GIFT_COUNT = 0;
+    public static final Integer DEFAULT_CURRENCY = 0;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public Integer currency;
         public Integer gift_count;
         public Integer goods_duration;
         public String goods_name;
@@ -101,6 +105,7 @@ public final class DataRes extends Message {
             this.terminal = dataRes.terminal;
             this.open_id = dataRes.open_id;
             this.gift_count = dataRes.gift_count;
+            this.currency = dataRes.currency;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -212,9 +217,15 @@ public final class DataRes extends Message {
             Integer num11 = builder.gift_count;
             if (num11 == null) {
                 this.gift_count = DEFAULT_GIFT_COUNT;
-                return;
             } else {
                 this.gift_count = num11;
+            }
+            Integer num12 = builder.currency;
+            if (num12 == null) {
+                this.currency = DEFAULT_CURRENCY;
+                return;
+            } else {
+                this.currency = num12;
                 return;
             }
         }
@@ -235,5 +246,6 @@ public final class DataRes extends Message {
         this.terminal = builder.terminal;
         this.open_id = builder.open_id;
         this.gift_count = builder.gift_count;
+        this.currency = builder.currency;
     }
 }

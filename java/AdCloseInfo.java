@@ -65,9 +65,9 @@ public final class AdCloseInfo extends Message {
         ArrayList arrayList = new ArrayList();
         JSONArray optJSONArray = jSONObject.optJSONArray("reasons");
         int length = optJSONArray.length();
-        for (int i = 0; i < length; i++) {
+        for (int i2 = 0; i2 < length; i2++) {
             try {
-                arrayList.add(optJSONArray.getString(i));
+                arrayList.add(optJSONArray.getString(i2));
             } catch (Exception unused) {
             }
         }

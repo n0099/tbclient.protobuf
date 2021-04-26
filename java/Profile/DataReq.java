@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69725common;
+    public final CommonReq f68772common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -59,7 +59,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69726common;
+        public CommonReq f68773common;
         public Long friend_uid;
         public String friend_uid_portrait;
         public Integer has_plist;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
             this.has_plist = dataReq.has_plist;
-            this.f69726common = dataReq.f69725common;
+            this.f68773common = dataReq.f68772common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
@@ -160,7 +160,7 @@ public final class DataReq extends Message {
             } else {
                 this.has_plist = num5;
             }
-            this.f69725common = builder.f69726common;
+            this.f68772common = builder.f68773common;
             Integer num6 = builder.scr_w;
             if (num6 == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -214,7 +214,7 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
-        this.f69725common = builder.f69726common;
+        this.f68772common = builder.f68773common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;

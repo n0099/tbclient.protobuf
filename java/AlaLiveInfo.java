@@ -7,6 +7,7 @@ import java.util.List;
 /* loaded from: classes7.dex */
 public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER = "";
+    public static final String DEFAULT_COVER_WIDE = "";
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_FIRST_HEADLINE = "";
     public static final String DEFAULT_FORUM_USER_LIVE_MSG = "";
@@ -32,6 +33,8 @@ public final class AlaLiveInfo extends Message {
     public final AlaChallengeInfo challenge_info;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String cover;
+    @ProtoField(tag = 48, type = Message.Datatype.STRING)
+    public final String cover_wide;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String description;
     @ProtoField(label = Message.Label.REPEATED, tag = 43)
@@ -116,6 +119,8 @@ public final class AlaLiveInfo extends Message {
     public final Long thread_id;
     @ProtoField(tag = 12)
     public final AlaUserInfo user_info;
+    @ProtoField(tag = 49)
+    public final YyExt yy_ext;
     public static final Long DEFAULT_LIVE_ID = 0L;
     public static final Long DEFAULT_GROUP_ID = 0L;
     public static final Integer DEFAULT_DURATION = 0;
@@ -143,6 +148,7 @@ public final class AlaLiveInfo extends Message {
         public Integer audience_count;
         public AlaChallengeInfo challenge_info;
         public String cover;
+        public String cover_wide;
         public String description;
         public List<DislikeInfo> dislike_info;
         public Long distance;
@@ -185,6 +191,7 @@ public final class AlaLiveInfo extends Message {
         public String third_room_id;
         public Long thread_id;
         public AlaUserInfo user_info;
+        public YyExt yy_ext;
 
         public Builder() {
         }
@@ -239,6 +246,8 @@ public final class AlaLiveInfo extends Message {
             this.room_status = alaLiveInfo.room_status;
             this.room_name = alaLiveInfo.room_name;
             this.forum_user_live_msg = alaLiveInfo.forum_user_live_msg;
+            this.cover_wide = alaLiveInfo.cover_wide;
+            this.yy_ext = alaLiveInfo.yy_ext;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -498,11 +507,17 @@ public final class AlaLiveInfo extends Message {
             String str20 = builder.forum_user_live_msg;
             if (str20 == null) {
                 this.forum_user_live_msg = "";
-                return;
             } else {
                 this.forum_user_live_msg = str20;
-                return;
             }
+            String str21 = builder.cover_wide;
+            if (str21 == null) {
+                this.cover_wide = "";
+            } else {
+                this.cover_wide = str21;
+            }
+            this.yy_ext = builder.yy_ext;
+            return;
         }
         this.live_id = builder.live_id;
         this.cover = builder.cover;
@@ -549,5 +564,7 @@ public final class AlaLiveInfo extends Message {
         this.room_status = builder.room_status;
         this.room_name = builder.room_name;
         this.forum_user_live_msg = builder.forum_user_live_msg;
+        this.cover_wide = builder.cover_wide;
+        this.yy_ext = builder.yy_ext;
     }
 }

@@ -12,6 +12,8 @@ public final class PresentGiftListByCategoryId1 extends Message {
     public final Integer activity_type;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer begin_time;
+    @ProtoField(tag = 18, type = Message.Datatype.UINT32)
+    public final Integer currency;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer currency_unit;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
@@ -52,11 +54,13 @@ public final class PresentGiftListByCategoryId1 extends Message {
     public static final Integer DEFAULT_PITCH_ON = 0;
     public static final Integer DEFAULT_GIFT_COUNT = 0;
     public static final Integer DEFAULT_CURRENCY_UNIT = 0;
+    public static final Integer DEFAULT_CURRENCY = 0;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<PresentGiftListByCategoryId1> {
         public Integer activity_type;
         public Integer begin_time;
+        public Integer currency;
         public Integer currency_unit;
         public Integer discount;
         public Integer end_time;
@@ -96,6 +100,7 @@ public final class PresentGiftListByCategoryId1 extends Message {
             this.pitch_on = presentGiftListByCategoryId1.pitch_on;
             this.gift_count = presentGiftListByCategoryId1.gift_count;
             this.currency_unit = presentGiftListByCategoryId1.currency_unit;
+            this.currency = presentGiftListByCategoryId1.currency;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -201,9 +206,15 @@ public final class PresentGiftListByCategoryId1 extends Message {
             Integer num12 = builder.currency_unit;
             if (num12 == null) {
                 this.currency_unit = DEFAULT_CURRENCY_UNIT;
-                return;
             } else {
                 this.currency_unit = num12;
+            }
+            Integer num13 = builder.currency;
+            if (num13 == null) {
+                this.currency = DEFAULT_CURRENCY;
+                return;
+            } else {
+                this.currency = num13;
                 return;
             }
         }
@@ -223,5 +234,6 @@ public final class PresentGiftListByCategoryId1 extends Message {
         this.pitch_on = builder.pitch_on;
         this.gift_count = builder.gift_count;
         this.currency_unit = builder.currency_unit;
+        this.currency = builder.currency;
     }
 }

@@ -233,8 +233,8 @@ public final class App extends Message {
         ArrayList arrayList = new ArrayList();
         JSONArray optJSONArray = jSONObject.optJSONArray("goods_info");
         int length = optJSONArray.length();
-        for (int i = 0; i < length; i++) {
-            arrayList.add(GoodsInfo.parseFromJson(optJSONArray.optJSONObject(i)));
+        for (int i2 = 0; i2 < length; i2++) {
+            arrayList.add(GoodsInfo.parseFromJson(optJSONArray.optJSONObject(i2)));
         }
         builder.goods_info = arrayList;
         builder.loc_code = jSONObject.optString("loc_code");

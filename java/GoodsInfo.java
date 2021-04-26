@@ -192,8 +192,8 @@ public final class GoodsInfo extends Message {
         ArrayList arrayList = new ArrayList();
         JSONArray optJSONArray = jSONObject.optJSONArray("thread_pic_list");
         int length = optJSONArray.length();
-        for (int i = 0; i < length; i++) {
-            arrayList.add(ThreadPicList.parseFromJson(optJSONArray.optJSONObject(i)));
+        for (int i2 = 0; i2 < length; i2++) {
+            arrayList.add(ThreadPicList.parseFromJson(optJSONArray.optJSONObject(i2)));
         }
         builder.thread_pic_list = arrayList;
         builder.label_visible = Integer.valueOf(jSONObject.optInt("label_visible"));

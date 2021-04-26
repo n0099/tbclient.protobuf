@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69585common;
+    public final CommonReq f68632common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69586common;
+        public CommonReq f68633common;
         public Integer pn;
         public String st_type;
         public Long uid;
@@ -39,7 +39,7 @@ public final class DataReq extends Message {
             this.pn = dataReq.pn;
             this.uid = dataReq.uid;
             this.st_type = dataReq.st_type;
-            this.f69586common = dataReq.f69585common;
+            this.f68633common = dataReq.f68632common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -70,12 +70,12 @@ public final class DataReq extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f69585common = builder.f69586common;
+            this.f68632common = builder.f68633common;
             return;
         }
         this.pn = builder.pn;
         this.uid = builder.uid;
         this.st_type = builder.st_type;
-        this.f69585common = builder.f69586common;
+        this.f68632common = builder.f68633common;
     }
 }

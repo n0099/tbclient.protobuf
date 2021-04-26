@@ -61,7 +61,7 @@ public final class ThreadInfo extends Message {
     public final ActivityInfo activity_info;
     @ProtoField(tag = 126)
     public final Agree agree;
-    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY_MEMBER, type = Message.Datatype.INT32)
+    @ProtoField(tag = 124, type = Message.Datatype.INT32)
     public final Integer agree_num;
     @ProtoField(tag = 113)
     public final AlaLiveInfo ala_info;
@@ -109,7 +109,7 @@ public final class ThreadInfo extends Message {
     public final String daily_paper_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = Constants.METHOD_IM_FRIEND_GROUP_DROP)
+    @ProtoField(label = Message.Label.REPEATED, tag = 121)
     public final List<DeclareInfo> declare_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
@@ -197,7 +197,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_meizhi;
     @ProtoField(tag = 54, type = Message.Datatype.INT32)
     public final Integer is_membertop;
-    @ProtoField(tag = Constants.METHOD_IM_FRIEND_GROUP_QUERY, type = Message.Datatype.INT32)
+    @ProtoField(tag = 123, type = Message.Datatype.INT32)
     public final Integer is_multiforum_thread;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer is_notice;

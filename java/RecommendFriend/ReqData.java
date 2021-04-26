@@ -8,7 +8,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69741common;
+    public final CommonReq f68788common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer q_type;
     @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
@@ -26,7 +26,7 @@ public final class ReqData extends Message {
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69742common;
+        public CommonReq f68789common;
         public Integer q_type;
         public Double scr_dip;
         public Integer scr_h;
@@ -44,7 +44,7 @@ public final class ReqData extends Message {
             this.scr_h = reqData.scr_h;
             this.q_type = reqData.q_type;
             this.scr_dip = reqData.scr_dip;
-            this.f69742common = reqData.f69741common;
+            this.f68789common = reqData.f68788common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -81,13 +81,13 @@ public final class ReqData extends Message {
             } else {
                 this.scr_dip = d2;
             }
-            this.f69741common = builder.f69742common;
+            this.f68788common = builder.f68789common;
             return;
         }
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
         this.scr_dip = builder.scr_dip;
-        this.f69741common = builder.f69742common;
+        this.f68788common = builder.f68789common;
     }
 }

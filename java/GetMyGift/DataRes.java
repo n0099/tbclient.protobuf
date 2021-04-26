@@ -10,6 +10,8 @@ public final class DataRes extends Message {
     public final Integer blue_diamond;
     @ProtoField(tag = 8)
     public final presentMoneyTxt blue_diamond_txt;
+    @ProtoField(tag = 11, type = Message.Datatype.UINT32)
+    public final Integer currency;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<PresentMyList> gift_list;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -18,6 +20,8 @@ public final class DataRes extends Message {
     public final presentMoneyTxt money_txt;
     @ProtoField(tag = 5)
     public final PresetMyGiftPage page;
+    @ProtoField(label = Message.Label.REPEATED, tag = 9)
+    public final List<FansRankUserInfo> rank_list;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer scene_id;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -27,15 +31,19 @@ public final class DataRes extends Message {
     public static final List<PresentMyList> DEFAULT_GIFT_LIST = Collections.emptyList();
     public static final Integer DEFAULT_SCENE_ID = 0;
     public static final Integer DEFAULT_BLUE_DIAMOND = 0;
+    public static final List<FansRankUserInfo> DEFAULT_RANK_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_CURRENCY = 0;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer blue_diamond;
         public presentMoneyTxt blue_diamond_txt;
+        public Integer currency;
         public List<PresentMyList> gift_list;
         public Integer money;
         public presentMoneyTxt money_txt;
         public PresetMyGiftPage page;
+        public List<FansRankUserInfo> rank_list;
         public Integer scene_id;
         public Integer total_num;
 
@@ -55,6 +63,8 @@ public final class DataRes extends Message {
             this.scene_id = dataRes.scene_id;
             this.blue_diamond = dataRes.blue_diamond;
             this.blue_diamond_txt = dataRes.blue_diamond_txt;
+            this.rank_list = Message.copyOf(dataRes.rank_list);
+            this.currency = dataRes.currency;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -100,7 +110,20 @@ public final class DataRes extends Message {
                 this.blue_diamond = num4;
             }
             this.blue_diamond_txt = builder.blue_diamond_txt;
-            return;
+            List<FansRankUserInfo> list2 = builder.rank_list;
+            if (list2 == null) {
+                this.rank_list = DEFAULT_RANK_LIST;
+            } else {
+                this.rank_list = Message.immutableCopyOf(list2);
+            }
+            Integer num5 = builder.currency;
+            if (num5 == null) {
+                this.currency = DEFAULT_CURRENCY;
+                return;
+            } else {
+                this.currency = num5;
+                return;
+            }
         }
         this.total_num = builder.total_num;
         this.money = builder.money;
@@ -110,5 +133,7 @@ public final class DataRes extends Message {
         this.scene_id = builder.scene_id;
         this.blue_diamond = builder.blue_diamond;
         this.blue_diamond_txt = builder.blue_diamond_txt;
+        this.rank_list = Message.immutableCopyOf(builder.rank_list);
+        this.currency = builder.currency;
     }
 }

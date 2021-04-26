@@ -18,7 +18,9 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69723common;
+    public final CommonReq f68770common;
+    @ProtoField(tag = 13, type = Message.Datatype.UINT32)
+    public final Integer currency;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer gift_id;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -36,6 +38,7 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_POST_ID = 0L;
     public static final Long DEFAULT_ACCOUNT_ID = 0L;
     public static final Integer DEFAULT_ACCOUNT_TYPE = 0;
+    public static final Integer DEFAULT_CURRENCY = 0;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -45,7 +48,8 @@ public final class DataReq extends Message {
         public String benefit_username;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69724common;
+        public CommonReq f68771common;
+        public Integer currency;
         public Integer gift_id;
         public Integer num;
         public Long post_id;
@@ -60,7 +64,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69724common = dataReq.f69723common;
+            this.f68771common = dataReq.f68770common;
             this.scene_from = dataReq.scene_from;
             this.gift_id = dataReq.gift_id;
             this.benefit_userid = dataReq.benefit_userid;
@@ -70,6 +74,7 @@ public final class DataReq extends Message {
             this.post_id = dataReq.post_id;
             this.account_id = dataReq.account_id;
             this.account_type = dataReq.account_type;
+            this.currency = dataReq.currency;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -82,7 +87,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69723common = builder.f69724common;
+            this.f68770common = builder.f68771common;
             String str = builder.scene_from;
             if (str == null) {
                 this.scene_from = "";
@@ -134,13 +139,19 @@ public final class DataReq extends Message {
             Integer num3 = builder.account_type;
             if (num3 == null) {
                 this.account_type = DEFAULT_ACCOUNT_TYPE;
-                return;
             } else {
                 this.account_type = num3;
+            }
+            Integer num4 = builder.currency;
+            if (num4 == null) {
+                this.currency = DEFAULT_CURRENCY;
+                return;
+            } else {
+                this.currency = num4;
                 return;
             }
         }
-        this.f69723common = builder.f69724common;
+        this.f68770common = builder.f68771common;
         this.scene_from = builder.scene_from;
         this.gift_id = builder.gift_id;
         this.benefit_userid = builder.benefit_userid;
@@ -150,5 +161,6 @@ public final class DataReq extends Message {
         this.post_id = builder.post_id;
         this.account_id = builder.account_id;
         this.account_type = builder.account_type;
+        this.currency = builder.currency;
     }
 }
