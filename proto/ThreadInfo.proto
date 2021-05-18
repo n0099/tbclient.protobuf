@@ -43,6 +43,7 @@ import "StarRankIcon.proto";
 import "TailInfo.proto";
 import "TaskInfo.proto";
 import "TbreadDispatch.proto";
+import "ThreadRecommendInfo.proto";
 import "TogetherHi.proto";
 import "Topic.proto";
 import "TopicModule.proto";
@@ -221,4 +222,5 @@ message ThreadInfo {
     int32 is_author_view = 186;
     WorksInfo works_info = 189;
     uint32 collect_num = 190;
+    repeated ThreadRecommendInfo thread_recommend_infos = 191;
 }

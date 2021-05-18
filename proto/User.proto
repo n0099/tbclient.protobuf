@@ -154,8 +154,11 @@ message User {
     BusinessAccountInfo business_account_info = 111;
     string appeal_thread_popover = 112;
     repeated ForumToolPerm forum_tool_auth = 113;
-    string hide_like_forum = 114;
-    string hide_thread_num = 115;
-    string work_num = 116;
+    uint32 work_num = 116;
     int32 show_pb_private_flag = 117;
+    uint32 total_agree_num = 118;
+    CreationData workcreation_data = 119;
+    string tieba_uid = 120;
+    string follow_from = 121;
+    repeated BazhuSign manager_forum = 122;
 }
