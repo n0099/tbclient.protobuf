@@ -3,24 +3,24 @@ package tbclient.SearchSug;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ISFORUM = "";
     public static final String DEFAULT_WORD = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68804common;
+    public final CommonReq f69486common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String isforum;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String word;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68805common;
+        public CommonReq f69487common;
         public String isforum;
         public String word;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68805common = dataReq.f68804common;
+            this.f69487common = dataReq.f69486common;
             this.word = dataReq.word;
             this.isforum = dataReq.isforum;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68804common = builder.f68805common;
+            this.f69486common = builder.f69487common;
             String str = builder.word;
             if (str == null) {
                 this.word = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68804common = builder.f68805common;
+        this.f69486common = builder.f69487common;
         this.word = builder.word;
         this.isforum = builder.isforum;
     }

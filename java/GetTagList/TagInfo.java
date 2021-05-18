@@ -2,7 +2,7 @@ package tbclient.GetTagList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class TagInfo extends Message {
     public static final String DEFAULT_TAG_NAME = "";
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -14,7 +14,7 @@ public final class TagInfo extends Message {
     public static final Integer DEFAULT_TAG_ID = 0;
     public static final Integer DEFAULT_IS_FOLLOWED = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TagInfo> {
         public Integer is_followed;
         public Integer tag_id;

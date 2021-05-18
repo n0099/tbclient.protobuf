@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_RELATE_FORUM_TITLE = "";
     @ProtoField(tag = 7)
@@ -43,7 +43,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_GLOBAL_BLOCK = 0;
     public static final List<SpecialTopic> DEFAULT_SPECIAL_TOPIC = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public CommonInteraction bless_module;
         public CommonInteraction candle_module;

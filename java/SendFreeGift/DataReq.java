@@ -3,7 +3,7 @@ package tbclient.SendFreeGift;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_BENEFIT_USERNAME = "";
     public static final String DEFAULT_SCENE_FROM = "";
@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68806common;
+    public final CommonReq f69488common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer gift_id;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -31,13 +31,13 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Long DEFAULT_POST_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long benefit_userid;
         public String benefit_username;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68807common;
+        public CommonReq f69489common;
         public Integer gift_id;
         public Integer num;
         public Long post_id;
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
             this.benefit_userid = dataReq.benefit_userid;
             this.benefit_username = dataReq.benefit_username;
             this.num = dataReq.num;
-            this.f68807common = dataReq.f68806common;
+            this.f69489common = dataReq.f69488common;
             this.scene_from = dataReq.scene_from;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
@@ -96,7 +96,7 @@ public final class DataReq extends Message {
             } else {
                 this.num = num2;
             }
-            this.f68806common = builder.f68807common;
+            this.f69488common = builder.f69489common;
             String str2 = builder.scene_from;
             if (str2 == null) {
                 this.scene_from = "";
@@ -122,7 +122,7 @@ public final class DataReq extends Message {
         this.benefit_userid = builder.benefit_userid;
         this.benefit_username = builder.benefit_username;
         this.num = builder.num;
-        this.f68806common = builder.f68807common;
+        this.f69488common = builder.f69489common;
         this.scene_from = builder.scene_from;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;

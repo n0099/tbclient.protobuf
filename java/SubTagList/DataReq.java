@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final List<Integer> DEFAULT_ARR_TAG_ID = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.INT32)
@@ -13,14 +13,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68834common;
+    public final CommonReq f69516common;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<Integer> arr_tag_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68835common;
+        public CommonReq f69517common;
 
         public Builder() {
         }
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68835common = dataReq.f68834common;
+            this.f69517common = dataReq.f69516common;
             this.arr_tag_id = Message.copyOf(dataReq.arr_tag_id);
         }
 
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68834common = builder.f68835common;
+            this.f69516common = builder.f69517common;
             List<Integer> list = builder.arr_tag_id;
             if (list == null) {
                 this.arr_tag_id = DEFAULT_ARR_TAG_ID;
@@ -54,7 +54,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68834common = builder.f68835common;
+        this.f69516common = builder.f69517common;
         this.arr_tag_id = Message.immutableCopyOf(builder.arr_tag_id);
     }
 }

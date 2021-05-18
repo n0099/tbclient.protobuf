@@ -3,12 +3,12 @@ package tbclient.Share;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68824common;
+    public final CommonReq f69506common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FROM = 0;
     public static final Long DEFAULT_FID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68825common;
+        public CommonReq f69507common;
         public Long fid;
         public Integer from;
         public Long tid;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68825common = dataReq.f68824common;
+            this.f69507common = dataReq.f69506common;
             this.tid = dataReq.tid;
             this.from = dataReq.from;
             this.fid = dataReq.fid;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68824common = builder.f68825common;
+            this.f69506common = builder.f69507common;
             Long l = builder.tid;
             if (l == null) {
                 this.tid = DEFAULT_TID;
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68824common = builder.f68825common;
+        this.f69506common = builder.f69507common;
         this.tid = builder.tid;
         this.from = builder.from;
         this.fid = builder.fid;

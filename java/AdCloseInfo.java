@@ -64,12 +64,15 @@ public final class AdCloseInfo extends Message {
         builder.title = jSONObject.optString("title");
         ArrayList arrayList = new ArrayList();
         JSONArray optJSONArray = jSONObject.optJSONArray("reasons");
-        int length = optJSONArray.length();
-        for (int i2 = 0; i2 < length; i2++) {
-            try {
-                arrayList.add(optJSONArray.getString(i2));
-            } catch (Exception unused) {
+        if (optJSONArray != null) {
+            int length = optJSONArray.length();
+            for (int i2 = 0; i2 < length; i2++) {
+                try {
+                    arrayList.add(optJSONArray.getString(i2));
+                } catch (Exception unused) {
+                }
             }
+            builder.reasons = arrayList;
         }
         builder.reasons = arrayList;
         builder.confirm_title = jSONObject.optString("confirm_title");

@@ -3,14 +3,14 @@ package tbclient.UserPk;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer click_type;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68858common;
+    public final CommonReq f69540common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long pk_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -28,12 +28,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PK_TYPE = 0;
     public static final Long DEFAULT_USER_PK_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer click_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68859common;
+        public CommonReq f69541common;
         public Long pk_id;
         public Integer pk_index;
         public Integer pk_type;
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68859common = dataReq.f68858common;
+            this.f69541common = dataReq.f69540common;
             this.pk_id = dataReq.pk_id;
             this.topic_id = dataReq.topic_id;
             this.pk_index = dataReq.pk_index;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68858common = builder.f68859common;
+            this.f69540common = builder.f69541common;
             Long l = builder.pk_id;
             if (l == null) {
                 this.pk_id = DEFAULT_PK_ID;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68858common = builder.f68859common;
+        this.f69540common = builder.f69541common;
         this.pk_id = builder.pk_id;
         this.topic_id = builder.topic_id;
         this.pk_index = builder.pk_index;

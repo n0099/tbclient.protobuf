@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.DefaultInfo;
 import tbclient.OrderList;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 6)
     public final DefaultInfo default_info;
@@ -17,7 +17,7 @@ public final class DataRes extends Message {
     public static final List<OrderList> DEFAULT_ORDER_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HASMORE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public DefaultInfo default_info;
         public Integer hasmore;

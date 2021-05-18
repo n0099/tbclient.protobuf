@@ -156,11 +156,13 @@ public final class VideoInfo extends Message {
         builder.media_subtitle = jSONObject.optString("media_subtitle");
         ArrayList arrayList = new ArrayList();
         JSONArray optJSONArray = jSONObject.optJSONArray("video_desc");
-        int length = optJSONArray.length();
-        for (int i2 = 0; i2 < length; i2++) {
-            arrayList.add(VideoDesc.parseFromJson(optJSONArray.optJSONObject(i2)));
+        if (optJSONArray != null) {
+            int length = optJSONArray.length();
+            for (int i2 = 0; i2 < length; i2++) {
+                arrayList.add(VideoDesc.parseFromJson(optJSONArray.optJSONObject(i2)));
+            }
+            builder.video_desc = arrayList;
         }
-        builder.video_desc = arrayList;
         builder.video_select_flag = Integer.valueOf(jSONObject.optInt("video_select_flag"));
         builder.video_type = Integer.valueOf(jSONObject.optInt("video_type"));
         builder.is_vertical = Integer.valueOf(jSONObject.optInt(TiebaStatic.Params.IS_VERTICAL));

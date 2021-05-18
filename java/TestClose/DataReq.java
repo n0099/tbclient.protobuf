@@ -3,12 +3,12 @@ package tbclient.TestClose;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68838common;
+    public final CommonReq f69520common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long from_page;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -16,11 +16,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_TEST_ID = 0L;
     public static final Long DEFAULT_FROM_PAGE = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68839common;
+        public CommonReq f69521common;
         public Long from_page;
         public Long test_id;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68839common = dataReq.f68838common;
+            this.f69521common = dataReq.f69520common;
             this.test_id = dataReq.test_id;
             this.from_page = dataReq.from_page;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68838common = builder.f68839common;
+            this.f69520common = builder.f69521common;
             Long l = builder.test_id;
             if (l == null) {
                 this.test_id = DEFAULT_TEST_ID;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68838common = builder.f68839common;
+        this.f69520common = builder.f69521common;
         this.test_id = builder.test_id;
         this.from_page = builder.from_page;
     }

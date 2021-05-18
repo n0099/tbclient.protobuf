@@ -3,14 +3,14 @@ package tbclient.VideoTopicList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_Q_TYPE = "";
     public static final String DEFAULT_SCR_DIP = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68862common;
+    public final CommonReq f69544common;
     @ProtoField(tag = 8, type = Message.Datatype.INT64)
     public final Long pn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -31,11 +31,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_TOPIC_ID = 0;
     public static final Long DEFAULT_PN = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68863common;
+        public CommonReq f69545common;
         public Long pn;
         public String q_type;
         public Integer rn;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68863common = dataReq.f68862common;
+            this.f69545common = dataReq.f69544common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68862common = builder.f68863common;
+            this.f69544common = builder.f69545common;
             Integer num = builder.scr_w;
             if (num == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -118,7 +118,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68862common = builder.f68863common;
+        this.f69544common = builder.f69545common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;

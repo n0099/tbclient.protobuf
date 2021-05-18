@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class VipUpgrade extends Message {
     public static final String DEFAULT_BUTTON = "";
     public static final String DEFAULT_CARD_ID = "";
@@ -29,7 +29,7 @@ public final class VipUpgrade extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String text;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<VipUpgrade> {
         public String button;
         public String card_id;

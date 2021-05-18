@@ -2,7 +2,7 @@ package tbclient.GetToken;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_BTN_CANCEL = "";
     public static final String DEFAULT_BTN_SURE = "";
@@ -25,7 +25,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ToastInfo activity_done;
         public String btn_cancel;

@@ -353,6 +353,8 @@ public final class ThreadInfo extends Message {
     public final TaskInfo task_info;
     @ProtoField(tag = 116)
     public final TbreadDispatch tbread_dispatch_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 191)
+    public final List<ThreadRecommendInfo> thread_recommend_infos;
     @ProtoField(tag = 172, type = Message.Datatype.STRING)
     public final String thread_share_link;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
@@ -516,6 +518,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_PB_ENTRY = 0;
     public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
     public static final Integer DEFAULT_COLLECT_NUM = 0;
+    public static final List<ThreadRecommendInfo> DEFAULT_THREAD_RECOMMEND_INFOS = Collections.emptyList();
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
@@ -670,6 +673,7 @@ public final class ThreadInfo extends Message {
         public String tab_name;
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
+        public List<ThreadRecommendInfo> thread_recommend_infos;
         public String thread_share_link;
         public Integer thread_type;
         public Integer thread_types;
@@ -894,6 +898,7 @@ public final class ThreadInfo extends Message {
             this.forum_friend_watching_info = threadInfo.forum_friend_watching_info;
             this.works_info = threadInfo.works_info;
             this.collect_num = threadInfo.collect_num;
+            this.thread_recommend_infos = Message.copyOf(threadInfo.thread_recommend_infos);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1776,9 +1781,15 @@ public final class ThreadInfo extends Message {
             Integer num71 = builder.collect_num;
             if (num71 == null) {
                 this.collect_num = DEFAULT_COLLECT_NUM;
-                return;
             } else {
                 this.collect_num = num71;
+            }
+            List<ThreadRecommendInfo> list18 = builder.thread_recommend_infos;
+            if (list18 == null) {
+                this.thread_recommend_infos = DEFAULT_THREAD_RECOMMEND_INFOS;
+                return;
+            } else {
+                this.thread_recommend_infos = Message.immutableCopyOf(list18);
                 return;
             }
         }
@@ -1965,5 +1976,6 @@ public final class ThreadInfo extends Message {
         this.forum_friend_watching_info = builder.forum_friend_watching_info;
         this.works_info = builder.works_info;
         this.collect_num = builder.collect_num;
+        this.thread_recommend_infos = Message.immutableCopyOf(builder.thread_recommend_infos);
     }
 }

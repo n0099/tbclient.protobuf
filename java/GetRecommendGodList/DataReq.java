@@ -3,24 +3,24 @@ package tbclient.GetRecommendGodList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final String DEFAULT_PORTRAIT = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68676common;
+    public final CommonReq f69356common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String portrait;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68677common;
+        public CommonReq f69357common;
         public Integer pn;
         public String portrait;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68677common = dataReq.f68676common;
+            this.f69357common = dataReq.f69356common;
             this.portrait = dataReq.portrait;
             this.pn = dataReq.pn;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68676common = builder.f68677common;
+            this.f69356common = builder.f69357common;
             String str = builder.portrait;
             if (str == null) {
                 this.portrait = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68676common = builder.f68677common;
+        this.f69356common = builder.f69357common;
         this.portrait = builder.portrait;
         this.pn = builder.pn;
     }

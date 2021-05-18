@@ -3,24 +3,24 @@ package tbclient.Unlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Integer DEFAULT_TYPE = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68846common;
+    public final CommonReq f69528common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer type;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68847common;
+        public CommonReq f69529common;
         public Long thread_id;
         public Integer type;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68847common = dataReq.f68846common;
+            this.f69529common = dataReq.f69528common;
             this.thread_id = dataReq.thread_id;
             this.type = dataReq.type;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68846common = builder.f68847common;
+            this.f69528common = builder.f69529common;
             Long l = builder.thread_id;
             if (l == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68846common = builder.f68847common;
+        this.f69528common = builder.f69529common;
         this.thread_id = builder.thread_id;
         this.type = builder.type;
     }

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class CardTopic extends Message {
     public static final String DEFAULT_CARD_TITLE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -16,7 +16,7 @@ public final class CardTopic extends Message {
     public static final List<TopicInfo> DEFAULT_TOPIC_LIST = Collections.emptyList();
     public static final Integer DEFAULT_POSITION = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<CardTopic> {
         public String card_title;
         public Integer position;

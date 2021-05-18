@@ -3,14 +3,14 @@ package tbclient.RecommendForumListForBottle;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class RecommendForumListForBottleResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<RecommendForumListForBottleResIdl> {
         public DataRes data;
         public Error error;

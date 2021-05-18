@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Resource extends Message {
     public static final String DEFAULT_ICON_TEXT = "";
     public static final String DEFAULT_RES_IMAGE = "";
@@ -32,7 +32,7 @@ public final class Resource extends Message {
     public static final Long DEFAULT_RES_ID = 0L;
     public static final Long DEFAULT_POSITION = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Resource> {
         public String icon_text;
         public Long position;

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer has_more;
@@ -18,7 +18,7 @@ public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer has_more;
         public List<ThreadInfo> thread_list;

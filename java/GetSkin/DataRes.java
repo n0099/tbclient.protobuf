@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_DESCRIPTION = "";
@@ -46,7 +46,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_FINISHED = 0;
     public static final Integer DEFAULT_DAILY_PREVILEGE_STATUS = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String activity_url;
         public Integer daily_previlege_status;

@@ -2,13 +2,13 @@ package tbclient.SetPrivilege;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_FIELD_TEXT = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String field_text;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String field_text;
 

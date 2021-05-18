@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.Banner;
 import tbclient.Entry;
 import tbclient.ThreadInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<Banner> banner;
@@ -36,7 +36,7 @@ public final class DataRes extends Message {
     public static final List<FunctionListInfo> DEFAULT_FUNCTION_LIST_INFO = Collections.emptyList();
     public static final Integer DEFAULT_IS_SMALL_FOLLOW = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public List<Entry> entry;

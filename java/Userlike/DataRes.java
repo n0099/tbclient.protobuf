@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.App;
 import tbclient.BannerUserStory;
 import tbclient.DiscoverHotForum;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_LAST_TIPS = "";
@@ -51,7 +51,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_USER_TIPS_TYPE = 0;
     public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String abtest_tag;
         public List<App> app_list;

@@ -3,14 +3,14 @@ package tbclient.GetUpdateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class GetUpdateInfoResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GetUpdateInfoResIdl> {
         public DataRes data;
         public Error error;

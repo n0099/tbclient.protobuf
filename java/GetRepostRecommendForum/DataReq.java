@@ -3,7 +3,7 @@ package tbclient.GetRepostRecommendForum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final Long DEFAULT_FORUM_ID = 0L;
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68678common;
+    public final CommonReq f69358common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68679common;
+        public CommonReq f69359common;
         public String content;
         public Long forum_id;
         public String title;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68679common = dataReq.f68678common;
+            this.f69359common = dataReq.f69358common;
             this.title = dataReq.title;
             this.content = dataReq.content;
             this.forum_id = dataReq.forum_id;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68678common = builder.f68679common;
+            this.f69358common = builder.f69359common;
             String str = builder.title;
             if (str == null) {
                 this.title = "";
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68678common = builder.f68679common;
+        this.f69358common = builder.f69359common;
         this.title = builder.title;
         this.content = builder.content;
         this.forum_id = builder.forum_id;

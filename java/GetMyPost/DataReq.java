@@ -3,7 +3,7 @@ package tbclient.GetMyPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_BFROM = "";
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68660common;
+    public final CommonReq f69340common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -37,13 +37,13 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_Q_TYPE = 0;
     public static final Integer DEFAULT_CALL_FROM = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String bfrom;
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68661common;
+        public CommonReq f69341common;
         public Long forum_id;
         public Long post_id;
         public Integer q_type;
@@ -60,7 +60,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68661common = dataReq.f68660common;
+            this.f69341common = dataReq.f69340common;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
             this.forum_id = dataReq.forum_id;
@@ -82,7 +82,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68660common = builder.f68661common;
+            this.f69340common = builder.f69341common;
             Long l = builder.thread_id;
             if (l == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
@@ -140,7 +140,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68660common = builder.f68661common;
+        this.f69340common = builder.f69341common;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;
         this.forum_id = builder.forum_id;

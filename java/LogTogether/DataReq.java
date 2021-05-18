@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final List<AdReq> DEFAULT_AD = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -13,14 +13,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68742common;
+    public final CommonReq f69424common;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<AdReq> Ad;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68743common;
+        public CommonReq f69425common;
 
         public Builder() {
         }
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.Ad = Message.copyOf(dataReq.Ad);
-            this.f68743common = dataReq.f68742common;
+            this.f69425common = dataReq.f69424common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -50,10 +50,10 @@ public final class DataReq extends Message {
             } else {
                 this.Ad = Message.immutableCopyOf(list);
             }
-            this.f68742common = builder.f68743common;
+            this.f69424common = builder.f69425common;
             return;
         }
         this.Ad = Message.immutableCopyOf(builder.Ad);
-        this.f68742common = builder.f68743common;
+        this.f69424common = builder.f69425common;
     }
 }

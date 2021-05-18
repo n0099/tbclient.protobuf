@@ -1,6 +1,5 @@
 package tbclient;
 
-import com.baidu.cyberplayer.sdk.statistics.DpStatConstants;
 import com.baidu.mobads.container.adrequest.IAdRequestParam;
 import com.baidu.sapi2.views.SmsLoginView;
 import com.baidu.tbadk.core.atomData.BigdayActivityConfig;
@@ -205,7 +204,7 @@ public final class App extends Message {
         builder.pos = Integer.valueOf(jSONObject.optInt(IAdRequestParam.POS));
         builder.icon_url = jSONObject.optString("icon_url");
         builder.icon_link = jSONObject.optString("icon_link");
-        builder.app_name = jSONObject.optString(DpStatConstants.KEY_APP_NAME);
+        builder.app_name = jSONObject.optString("app_name");
         builder.app_desc = jSONObject.optString("app_desc");
         builder.p_name = jSONObject.optString("p_name");
         builder.p_url = jSONObject.optString("p_url");
@@ -252,7 +251,7 @@ public final class App extends Message {
             jSONObject.put(IAdRequestParam.POS, app.pos);
             jSONObject.put("icon_url", app.icon_url);
             jSONObject.put("icon_link", app.icon_link);
-            jSONObject.put(DpStatConstants.KEY_APP_NAME, app.app_name);
+            jSONObject.put("app_name", app.app_name);
             jSONObject.put("app_desc", app.app_desc);
             jSONObject.put("p_name", app.p_name);
             jSONObject.put("p_url", app.p_url);

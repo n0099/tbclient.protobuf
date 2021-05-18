@@ -3,21 +3,21 @@ package tbclient.SearchPostForum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_WORD = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68802common;
+    public final CommonReq f69484common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String word;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68803common;
+        public CommonReq f69485common;
         public String word;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68803common = dataReq.f68802common;
+            this.f69485common = dataReq.f69484common;
             this.word = dataReq.word;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68802common = builder.f68803common;
+            this.f69484common = builder.f69485common;
             String str = builder.word;
             if (str == null) {
                 this.word = "";
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68802common = builder.f68803common;
+        this.f69484common = builder.f69485common;
         this.word = builder.word;
     }
 }

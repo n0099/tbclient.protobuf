@@ -3,24 +3,24 @@ package tbclient.SetCommonForumState;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_OPERATION = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68814common;
+    public final CommonReq f69496common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer operation;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68815common;
+        public CommonReq f69497common;
         public Long forum_id;
         public Integer operation;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68815common = dataReq.f68814common;
+            this.f69497common = dataReq.f69496common;
             this.forum_id = dataReq.forum_id;
             this.operation = dataReq.operation;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68814common = builder.f68815common;
+            this.f69496common = builder.f69497common;
             Long l = builder.forum_id;
             if (l == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68814common = builder.f68815common;
+        this.f69496common = builder.f69497common;
         this.forum_id = builder.forum_id;
         this.operation = builder.operation;
     }

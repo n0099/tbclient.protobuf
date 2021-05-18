@@ -3,7 +3,7 @@ package tbclient.ShowLiveSecondPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Double DEFAULT_LAT;
     public static final Double DEFAULT_LNG;
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68826common;
+    public final CommonReq f69508common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer entry_type;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
@@ -40,11 +40,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_H = 0;
     public static final Integer DEFAULT_Q_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68827common;
+        public CommonReq f69509common;
         public Integer entry_type;
         public Double lat;
         public Double lng;
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68827common = dataReq.f68826common;
+            this.f69509common = dataReq.f69508common;
             this.entry_type = dataReq.entry_type;
             this.pn = dataReq.pn;
             this.ps = dataReq.ps;
@@ -94,7 +94,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68826common = builder.f68827common;
+            this.f69508common = builder.f69509common;
             Integer num = builder.entry_type;
             if (num == null) {
                 this.entry_type = DEFAULT_ENTRY_TYPE;
@@ -158,7 +158,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68826common = builder.f68827common;
+        this.f69508common = builder.f69509common;
         this.entry_type = builder.entry_type;
         this.pn = builder.pn;
         this.ps = builder.ps;

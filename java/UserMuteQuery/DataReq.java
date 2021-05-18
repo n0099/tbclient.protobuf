@@ -3,12 +3,12 @@ package tbclient.UserMuteQuery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68856common;
+    public final CommonReq f69538common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer mute_type;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -22,11 +22,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68857common;
+        public CommonReq f69539common;
         public Integer mute_type;
         public Integer pn;
         public Integer rn;
@@ -41,7 +41,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.user_id = dataReq.user_id;
-            this.f68857common = dataReq.f68856common;
+            this.f69539common = dataReq.f69538common;
             this.mute_type = dataReq.mute_type;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
             } else {
                 this.user_id = l;
             }
-            this.f68856common = builder.f68857common;
+            this.f69538common = builder.f69539common;
             Integer num = builder.mute_type;
             if (num == null) {
                 this.mute_type = DEFAULT_MUTE_TYPE;
@@ -86,7 +86,7 @@ public final class DataReq extends Message {
             }
         }
         this.user_id = builder.user_id;
-        this.f68856common = builder.f68857common;
+        this.f69538common = builder.f69539common;
         this.mute_type = builder.mute_type;
         this.pn = builder.pn;
         this.rn = builder.rn;

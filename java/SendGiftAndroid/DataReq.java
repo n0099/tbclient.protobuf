@@ -3,13 +3,13 @@ package tbclient.SendGiftAndroid;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_PASSWORD = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68808common;
+    public final CommonReq f69490common;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long gift_from;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -28,11 +28,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_NUM = 0;
     public static final Long DEFAULT_GIFT_FROM = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68809common;
+        public CommonReq f69491common;
         public Long gift_from;
         public Integer gift_id;
         public Integer num;
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68809common = dataReq.f68808common;
+            this.f69491common = dataReq.f69490common;
             this.receiver_id = dataReq.receiver_id;
             this.gift_id = dataReq.gift_id;
             this.price = dataReq.price;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68808common = builder.f68809common;
+            this.f69490common = builder.f69491common;
             Long l = builder.receiver_id;
             if (l == null) {
                 this.receiver_id = DEFAULT_RECEIVER_ID;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68808common = builder.f68809common;
+        this.f69490common = builder.f69491common;
         this.receiver_id = builder.receiver_id;
         this.gift_id = builder.gift_id;
         this.price = builder.price;

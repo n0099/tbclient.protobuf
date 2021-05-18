@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 8)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68840common;
+    public final CommonReq f69522common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -66,7 +66,7 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_LAST_CLICK_TID = 0L;
     public static final Integer DEFAULT_SORT_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_context_list;
         public String ad_ext_params;
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68841common;
+        public CommonReq f69523common;
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
@@ -106,7 +106,7 @@ public final class DataReq extends Message {
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
-            this.f68841common = dataReq.f68840common;
+            this.f69523common = dataReq.f69522common;
             this.user_id = dataReq.user_id;
             this.da_idfa = dataReq.da_idfa;
             this.platform = dataReq.platform;
@@ -173,7 +173,7 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = num5;
             }
-            this.f68840common = builder.f68841common;
+            this.f69522common = builder.f69523common;
             Long l2 = builder.user_id;
             if (l2 == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -245,7 +245,7 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
-        this.f68840common = builder.f68841common;
+        this.f69522common = builder.f69523common;
         this.user_id = builder.user_id;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;

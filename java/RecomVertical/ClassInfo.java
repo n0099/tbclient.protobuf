@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ClassInfo extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -16,7 +16,7 @@ public final class ClassInfo extends Message {
     public static final Integer DEFAULT_CLASS_ID = 0;
     public static final List<SubClassItem> DEFAULT_SUB_CLASS_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ClassInfo> {
         public Integer class_id;
         public String class_name;

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final List<Long> DEFAULT_ARR_FORUM_ID = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.UINT64)
@@ -13,14 +13,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68750common;
+    public final CommonReq f69432common;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<Long> arr_forum_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68751common;
+        public CommonReq f69433common;
 
         public Builder() {
         }
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68751common = dataReq.f68750common;
+            this.f69433common = dataReq.f69432common;
             this.arr_forum_id = Message.copyOf(dataReq.arr_forum_id);
         }
 
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68750common = builder.f68751common;
+            this.f69432common = builder.f69433common;
             List<Long> list = builder.arr_forum_id;
             if (list == null) {
                 this.arr_forum_id = DEFAULT_ARR_FORUM_ID;
@@ -54,7 +54,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68750common = builder.f68751common;
+        this.f69432common = builder.f69433common;
         this.arr_forum_id = Message.immutableCopyOf(builder.arr_forum_id);
     }
 }

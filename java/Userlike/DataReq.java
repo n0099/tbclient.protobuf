@@ -3,7 +3,7 @@ package tbclient.Userlike;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_PAGE_TAG = "";
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68860common;
+    public final CommonReq f69542common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer follow_type;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -25,12 +25,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FOLLOW_TYPE = 0;
     public static final Integer DEFAULT_LOAD_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68861common;
+        public CommonReq f69543common;
         public Integer follow_type;
         public Long last_req_unix;
         public Integer load_type;
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68861common = dataReq.f68860common;
+            this.f69543common = dataReq.f69542common;
             this.page_tag = dataReq.page_tag;
             this.last_req_unix = dataReq.last_req_unix;
             this.follow_type = dataReq.follow_type;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68860common = builder.f68861common;
+            this.f69542common = builder.f69543common;
             String str = builder.page_tag;
             if (str == null) {
                 this.page_tag = "";
@@ -96,7 +96,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68860common = builder.f68861common;
+        this.f69542common = builder.f69543common;
         this.page_tag = builder.page_tag;
         this.last_req_unix = builder.last_req_unix;
         this.follow_type = builder.follow_type;

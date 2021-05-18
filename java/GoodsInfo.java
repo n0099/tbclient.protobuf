@@ -1,8 +1,8 @@
 package tbclient;
 
+import com.baidu.swan.game.guide.GameGuideConfigInfo;
 import com.baidu.tbadk.core.atomData.MissonDetailsActivityConfig;
 import com.baidu.tbadk.core.atomData.WriteActivityConfig;
-import com.baidu.tieba.recapp.activity.AdDebugActivity;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.ArrayList;
@@ -200,14 +200,14 @@ public final class GoodsInfo extends Message {
         builder.label_text = jSONObject.optString("label_text");
         builder.rank_level = Integer.valueOf(jSONObject.optInt("rank_level"));
         builder.thread_type = jSONObject.optString("thread_type");
-        builder.button_text = jSONObject.optString("button_text");
+        builder.button_text = jSONObject.optString(GameGuideConfigInfo.KEY_BUTTON_TEXT);
         builder.card_desc = jSONObject.optString("card_desc");
         builder.card_tag = jSONObject.optString("card_tag");
         builder.width = Integer.valueOf(jSONObject.optInt("width"));
         builder.height = Integer.valueOf(jSONObject.optInt("height"));
         builder.label_measure = Integer.valueOf(jSONObject.optInt("label_measure"));
         builder.thread_content = jSONObject.optString("thread_content");
-        builder.lego_card = jSONObject.optString(AdDebugActivity.KEY_LEGO);
+        builder.lego_card = jSONObject.optString("lego_card");
         builder.video_info = VideoInfo.parseFromJson(jSONObject.optJSONObject(WriteActivityConfig.VIDEO_INFO));
         builder.tag_name = jSONObject.optString("tag_name");
         builder.button_url = jSONObject.optString("button_url");
@@ -216,7 +216,7 @@ public final class GoodsInfo extends Message {
         builder.tag_name_wh = jSONObject.optString("tag_name_wh");
         builder.brand_icon = jSONObject.optString("brand_icon");
         builder.brand_icon_wh = jSONObject.optString("brand_icon_wh");
-        builder.close_info = AdCloseInfo.parseFromJson(jSONObject.optJSONObject("close_info"));
+        builder.close_info = AdCloseInfo.parseFromJson(jSONObject.optJSONObject(GameGuideConfigInfo.KEY_CLOSE_INFO));
         return builder.build(false);
     }
 
@@ -242,14 +242,14 @@ public final class GoodsInfo extends Message {
             jSONObject.put("label_text", goodsInfo.label_text);
             jSONObject.put("rank_level", goodsInfo.rank_level);
             jSONObject.put("thread_type", goodsInfo.thread_type);
-            jSONObject.put("button_text", goodsInfo.button_text);
+            jSONObject.put(GameGuideConfigInfo.KEY_BUTTON_TEXT, goodsInfo.button_text);
             jSONObject.put("card_desc", goodsInfo.card_desc);
             jSONObject.put("card_tag", goodsInfo.card_tag);
             jSONObject.put("width", goodsInfo.width);
             jSONObject.put("height", goodsInfo.height);
             jSONObject.put("label_measure", goodsInfo.label_measure);
             jSONObject.put("thread_content", goodsInfo.thread_content);
-            jSONObject.put(AdDebugActivity.KEY_LEGO, goodsInfo.lego_card);
+            jSONObject.put("lego_card", goodsInfo.lego_card);
             jSONObject.put(WriteActivityConfig.VIDEO_INFO, VideoInfo.toJson(goodsInfo.video_info));
             jSONObject.put("tag_name", goodsInfo.tag_name);
             jSONObject.put("button_url", goodsInfo.button_url);
@@ -258,7 +258,7 @@ public final class GoodsInfo extends Message {
             jSONObject.put("tag_name_wh", goodsInfo.tag_name_wh);
             jSONObject.put("brand_icon", goodsInfo.brand_icon);
             jSONObject.put("brand_icon_wh", goodsInfo.brand_icon_wh);
-            jSONObject.put("close_info", AdCloseInfo.toJson(goodsInfo.close_info));
+            jSONObject.put(GameGuideConfigInfo.KEY_CLOSE_INFO, AdCloseInfo.toJson(goodsInfo.close_info));
         } catch (JSONException e2) {
             e2.printStackTrace();
         }

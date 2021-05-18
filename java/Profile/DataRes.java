@@ -23,7 +23,7 @@ import tbclient.UcCard;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_UK = "";
     @ProtoField(tag = 16)
@@ -90,7 +90,7 @@ public final class DataRes extends Message {
     public static final List<SmartApp> DEFAULT_RECOM_SWAN_LIST = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AlaLiveInfo ala_live_info;
         public List<AlaLiveInfo> ala_live_record;

@@ -3,13 +3,13 @@ package tbclient.GetTopicRelateThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TOPIC_NAME = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68700common;
+    public final CommonReq f69380common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long last_id;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -46,11 +46,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PMY_SOURCE = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68701common;
+        public CommonReq f69381common;
         public Long last_id;
         public Integer page_no;
         public Integer pmy_source;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68701common = dataReq.f68700common;
+            this.f69381common = dataReq.f69380common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.rn = dataReq.rn;
@@ -97,7 +97,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68700common = builder.f68701common;
+            this.f69380common = builder.f69381common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -173,7 +173,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68700common = builder.f68701common;
+        this.f69380common = builder.f69381common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.rn = builder.rn;

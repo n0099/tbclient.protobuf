@@ -1,10 +1,10 @@
 package tbclient.SetBackground;
 
 import com.squareup.wire.Message;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Builder() {
         }

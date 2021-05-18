@@ -3,12 +3,12 @@ package tbclient.IncrForumAccessCount;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.FrequentlyForumInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final FrequentlyForumInfo frequently_forum_info;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public FrequentlyForumInfo frequently_forum_info;
 

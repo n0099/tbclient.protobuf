@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_LF_USER = "";
     public static final String DEFAULT_LF_USER_TASKID = "";
@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68748common;
+    public final CommonReq f69430common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String lf_user;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -22,12 +22,12 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tab_code;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68749common;
+        public CommonReq f69431common;
         public String lf_user;
         public String lf_user_taskid;
         public String tab_code;
@@ -40,7 +40,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68749common = dataReq.f68748common;
+            this.f69431common = dataReq.f69430common;
             this.tab_code = dataReq.tab_code;
             this.lf_user = dataReq.lf_user;
             this.lf_user_taskid = dataReq.lf_user_taskid;
@@ -57,7 +57,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68748common = builder.f68749common;
+            this.f69430common = builder.f69431common;
             String str = builder.tab_code;
             if (str == null) {
                 this.tab_code = "";
@@ -79,7 +79,7 @@ public final class DataReq extends Message {
             this.app_pos = builder.app_pos;
             return;
         }
-        this.f68748common = builder.f68749common;
+        this.f69430common = builder.f69431common;
         this.tab_code = builder.tab_code;
         this.lf_user = builder.lf_user;
         this.lf_user_taskid = builder.lf_user_taskid;

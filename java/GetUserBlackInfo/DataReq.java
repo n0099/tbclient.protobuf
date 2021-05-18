@@ -3,7 +3,7 @@ package tbclient.GetUserBlackInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_BLACK_UID = 0L;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -11,14 +11,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68706common;
+    public final CommonReq f69386common;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long black_uid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68707common;
+        public CommonReq f69387common;
 
         public Builder() {
         }
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68707common = dataReq.f68706common;
+            this.f69387common = dataReq.f69386common;
             this.black_uid = dataReq.black_uid;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68706common = builder.f68707common;
+            this.f69386common = builder.f69387common;
             Long l = builder.black_uid;
             if (l == null) {
                 this.black_uid = DEFAULT_BLACK_UID;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68706common = builder.f68707common;
+        this.f69386common = builder.f69387common;
         this.black_uid = builder.black_uid;
     }
 }

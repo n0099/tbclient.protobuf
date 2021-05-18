@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MD5 = "";
     public static final String DEFAULT_SRC = "";
@@ -27,7 +27,7 @@ public final class DataRes extends Message {
     public static final List<PackageInfo> DEFAULT_PATCH = Collections.emptyList();
     public static final List<Offpack> DEFAULT_OFFPACK_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public PackageInfo latest;
         public String md5;

@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ReplyList extends Message {
     public static final String DEFAULT_MESSAGE = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -17,7 +17,7 @@ public final class ReplyList extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final Integer DEFAULT_TIME = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ReplyList> {
         public Long friend_id;
         public String message;

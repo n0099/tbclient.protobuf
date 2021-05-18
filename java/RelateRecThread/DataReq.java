@@ -3,12 +3,12 @@ package tbclient.RelateRecThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68794common;
+    public final CommonReq f69476common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -22,11 +22,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SOURCE_TYPE = 0;
     public static final Integer DEFAULT_SOURCE_FROM = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68795common;
+        public CommonReq f69477common;
         public Long forum_id;
         public Integer source_from;
         public Integer source_type;
@@ -40,7 +40,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68795common = dataReq.f68794common;
+            this.f69477common = dataReq.f69476common;
             this.forum_id = dataReq.forum_id;
             this.thread_id = dataReq.thread_id;
             this.source_type = dataReq.source_type;
@@ -57,7 +57,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68794common = builder.f68795common;
+            this.f69476common = builder.f69477common;
             Long l = builder.forum_id;
             if (l == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68794common = builder.f68795common;
+        this.f69476common = builder.f69477common;
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
         this.source_type = builder.source_type;

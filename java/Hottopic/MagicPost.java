@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class MagicPost extends Message {
     public static final String DEFAULT_MAGIC_TITLE = "";
     public static final List<MagicPostList> DEFAULT_MC_POST_LIST = Collections.emptyList();
@@ -13,7 +13,7 @@ public final class MagicPost extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<MagicPostList> mc_post_list;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<MagicPost> {
         public String magic_title;
         public List<MagicPostList> mc_post_list;

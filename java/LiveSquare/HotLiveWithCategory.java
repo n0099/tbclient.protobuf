@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class HotLiveWithCategory extends Message {
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
     public static final String DEFAULT_ENTRY_NAME = "";
@@ -32,7 +32,7 @@ public final class HotLiveWithCategory extends Message {
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final List<String> DEFAULT_SUB_TYPE_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<HotLiveWithCategory> {
         public String bitmap_wh_ratio;
         public Integer entry_id;

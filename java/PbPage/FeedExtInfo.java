@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class FeedExtInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
     public final List<String> feed_bar;
@@ -13,7 +13,7 @@ public final class FeedExtInfo extends Message {
     public static final List<String> DEFAULT_FEED_TAB = Collections.emptyList();
     public static final List<String> DEFAULT_FEED_BAR = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<FeedExtInfo> {
         public List<String> feed_bar;
         public List<String> feed_tab;

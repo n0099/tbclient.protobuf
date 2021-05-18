@@ -2,7 +2,7 @@ package tbclient.ZoneRight;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Toast extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final Integer DEFAULT_TYPE = 0;
@@ -11,7 +11,7 @@ public final class Toast extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer type;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Toast> {
         public String content;
         public Integer type;

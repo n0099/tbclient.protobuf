@@ -2,7 +2,7 @@ package tbclient.GetWebviewCacheInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class PackageInfo extends Message {
     public static final String DEFAULT_DOWNLOAD_URL = "";
     public static final String DEFAULT_MD5 = "";
@@ -14,7 +14,7 @@ public final class PackageInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String version;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<PackageInfo> {
         public String download_url;
         public String md5;

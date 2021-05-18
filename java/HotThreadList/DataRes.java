@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 import tbclient.RecomTopicList;
 import tbclient.ThreadInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<FrsTabInfo> hot_thread_tab_info;
@@ -19,7 +19,7 @@ public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_THREAD_INFO = Collections.emptyList();
     public static final List<FrsTabInfo> DEFAULT_HOT_THREAD_TAB_INFO = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<FrsTabInfo> hot_thread_tab_info;
         public List<ThreadInfo> thread_info;

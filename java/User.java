@@ -12,8 +12,7 @@ public final class User extends Message {
     public static final String DEFAULT_BG_PIC = "";
     public static final String DEFAULT_BIMG_URL = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
-    public static final String DEFAULT_HIDE_LIKE_FORUM = "";
-    public static final String DEFAULT_HIDE_THREAD_NUM = "";
+    public static final String DEFAULT_FOLLOW_FROM = "";
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_IP = "";
@@ -27,8 +26,8 @@ public final class User extends Message {
     public static final String DEFAULT_RANK = "";
     public static final String DEFAULT_SEAL_PREFIX = "";
     public static final String DEFAULT_TB_AGE = "";
+    public static final String DEFAULT_TIEBA_UID = "";
     public static final String DEFAULT_UK = "";
-    public static final String DEFAULT_WORK_NUM = "";
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String BDUSS;
     @ProtoField(tag = 71)
@@ -87,6 +86,8 @@ public final class User extends Message {
     public final Integer fans_num;
     @ProtoField(tag = 109, type = Message.Datatype.INT32)
     public final Integer favorite_num;
+    @ProtoField(tag = 121, type = Message.Datatype.STRING)
+    public final String follow_from;
     @ProtoField(label = Message.Label.REPEATED, tag = 113)
     public final List<ForumToolPerm> forum_tool_auth;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
@@ -107,10 +108,6 @@ public final class User extends Message {
     public final Integer has_concerned;
     @ProtoField(tag = 63, type = Message.Datatype.INT32)
     public final Integer heavy_user;
-    @ProtoField(tag = 114, type = Message.Datatype.STRING)
-    public final String hide_like_forum;
-    @ProtoField(tag = 115, type = Message.Datatype.STRING)
-    public final String hide_thread_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<Icon> iconinfo;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -169,6 +166,8 @@ public final class User extends Message {
     public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = 110)
     public final LiveRoomInfo live_room_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 122)
+    public final List<BazhuSign> manager_forum;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer meizhi_level;
     @ProtoField(tag = 98, type = Message.Datatype.STRING)
@@ -233,6 +232,10 @@ public final class User extends Message {
     public final ThemeCardInUser theme_card;
     @ProtoField(tag = 87, type = Message.Datatype.INT32)
     public final Integer thread_num;
+    @ProtoField(tag = 120, type = Message.Datatype.STRING)
+    public final String tieba_uid;
+    @ProtoField(tag = 118, type = Message.Datatype.UINT32)
+    public final Integer total_agree_num;
     @ProtoField(tag = 76, type = Message.Datatype.INT32)
     public final Integer total_visitor_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
@@ -259,8 +262,10 @@ public final class User extends Message {
     public final VipShowInfo vip_show_info;
     @ProtoField(tag = 75, type = Message.Datatype.INT32)
     public final Integer visitor_num;
-    @ProtoField(tag = 116, type = Message.Datatype.STRING)
-    public final String work_num;
+    @ProtoField(tag = 116, type = Message.Datatype.UINT32)
+    public final Integer work_num;
+    @ProtoField(tag = 119)
+    public final CreationData workcreation_data;
     public static final Integer DEFAULT_IS_LOGIN = 0;
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_NO_UN = 0;
@@ -322,7 +327,10 @@ public final class User extends Message {
     public static final Integer DEFAULT_IS_DEFAULT_AVATAR = 0;
     public static final Integer DEFAULT_FAVORITE_NUM = 0;
     public static final List<ForumToolPerm> DEFAULT_FORUM_TOOL_AUTH = Collections.emptyList();
+    public static final Integer DEFAULT_WORK_NUM = 0;
     public static final Integer DEFAULT_SHOW_PB_PRIVATE_FLAG = 0;
+    public static final Integer DEFAULT_TOTAL_AGREE_NUM = 0;
+    public static final List<BazhuSign> DEFAULT_MANAGER_FORUM = Collections.emptyList();
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<User> {
@@ -355,6 +363,7 @@ public final class User extends Message {
         public String fans_nickname;
         public Integer fans_num;
         public Integer favorite_num;
+        public String follow_from;
         public List<ForumToolPerm> forum_tool_auth;
         public Long friend_num;
         public Integer gender;
@@ -365,8 +374,6 @@ public final class User extends Message {
         public Integer has_bottle_enter;
         public Integer has_concerned;
         public Integer heavy_user;
-        public String hide_like_forum;
-        public String hide_thread_num;
         public List<Icon> iconinfo;
         public Long id;
         public Integer influence;
@@ -396,6 +403,7 @@ public final class User extends Message {
         public String level_influence;
         public List<LikeForumInfo> likeForum;
         public LiveRoomInfo live_room_info;
+        public List<BazhuSign> manager_forum;
         public Integer meizhi_level;
         public String modify_avatar_desc;
         public List<SimpleUser> mute_user;
@@ -428,6 +436,8 @@ public final class User extends Message {
         public TbVipInfo tb_vip;
         public ThemeCardInUser theme_card;
         public Integer thread_num;
+        public String tieba_uid;
+        public Integer total_agree_num;
         public Integer total_visitor_num;
         public List<TshowInfo> tshow_icon;
         public TwZhiBoUser tw_anchor_info;
@@ -441,7 +451,8 @@ public final class User extends Message {
         public VipCloseAd vip_close_ad;
         public VipShowInfo vip_show_info;
         public Integer visitor_num;
-        public String work_num;
+        public Integer work_num;
+        public CreationData workcreation_data;
 
         public Builder() {
         }
@@ -563,10 +574,13 @@ public final class User extends Message {
             this.business_account_info = user.business_account_info;
             this.appeal_thread_popover = user.appeal_thread_popover;
             this.forum_tool_auth = Message.copyOf(user.forum_tool_auth);
-            this.hide_like_forum = user.hide_like_forum;
-            this.hide_thread_num = user.hide_thread_num;
             this.work_num = user.work_num;
             this.show_pb_private_flag = user.show_pb_private_flag;
+            this.total_agree_num = user.total_agree_num;
+            this.workcreation_data = user.workcreation_data;
+            this.tieba_uid = user.tieba_uid;
+            this.follow_from = user.follow_from;
+            this.manager_forum = Message.copyOf(user.manager_forum);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1096,30 +1110,43 @@ public final class User extends Message {
             } else {
                 this.forum_tool_auth = Message.immutableCopyOf(list10);
             }
-            String str21 = builder.hide_like_forum;
-            if (str21 == null) {
-                this.hide_like_forum = "";
-            } else {
-                this.hide_like_forum = str21;
-            }
-            String str22 = builder.hide_thread_num;
-            if (str22 == null) {
-                this.hide_thread_num = "";
-            } else {
-                this.hide_thread_num = str22;
-            }
-            String str23 = builder.work_num;
-            if (str23 == null) {
-                this.work_num = "";
-            } else {
-                this.work_num = str23;
-            }
-            Integer num50 = builder.show_pb_private_flag;
+            Integer num50 = builder.work_num;
             if (num50 == null) {
+                this.work_num = DEFAULT_WORK_NUM;
+            } else {
+                this.work_num = num50;
+            }
+            Integer num51 = builder.show_pb_private_flag;
+            if (num51 == null) {
                 this.show_pb_private_flag = DEFAULT_SHOW_PB_PRIVATE_FLAG;
+            } else {
+                this.show_pb_private_flag = num51;
+            }
+            Integer num52 = builder.total_agree_num;
+            if (num52 == null) {
+                this.total_agree_num = DEFAULT_TOTAL_AGREE_NUM;
+            } else {
+                this.total_agree_num = num52;
+            }
+            this.workcreation_data = builder.workcreation_data;
+            String str21 = builder.tieba_uid;
+            if (str21 == null) {
+                this.tieba_uid = "";
+            } else {
+                this.tieba_uid = str21;
+            }
+            String str22 = builder.follow_from;
+            if (str22 == null) {
+                this.follow_from = "";
+            } else {
+                this.follow_from = str22;
+            }
+            List<BazhuSign> list11 = builder.manager_forum;
+            if (list11 == null) {
+                this.manager_forum = DEFAULT_MANAGER_FORUM;
                 return;
             } else {
-                this.show_pb_private_flag = num50;
+                this.manager_forum = Message.immutableCopyOf(list11);
                 return;
             }
         }
@@ -1235,9 +1262,12 @@ public final class User extends Message {
         this.business_account_info = builder.business_account_info;
         this.appeal_thread_popover = builder.appeal_thread_popover;
         this.forum_tool_auth = Message.immutableCopyOf(builder.forum_tool_auth);
-        this.hide_like_forum = builder.hide_like_forum;
-        this.hide_thread_num = builder.hide_thread_num;
         this.work_num = builder.work_num;
         this.show_pb_private_flag = builder.show_pb_private_flag;
+        this.total_agree_num = builder.total_agree_num;
+        this.workcreation_data = builder.workcreation_data;
+        this.tieba_uid = builder.tieba_uid;
+        this.follow_from = builder.follow_from;
+        this.manager_forum = Message.immutableCopyOf(builder.manager_forum);
     }
 }

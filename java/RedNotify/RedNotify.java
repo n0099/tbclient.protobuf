@@ -2,13 +2,13 @@ package tbclient.RedNotify;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class RedNotify extends Message {
     public static final Integer DEFAULT_NOTIFY_STATUS = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer notify_status;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<RedNotify> {
         public Integer notify_status;
 

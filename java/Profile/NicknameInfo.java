@@ -2,13 +2,13 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class NicknameInfo extends Message {
     public static final Integer DEFAULT_LEFT_DAYS = 0;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer left_days;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<NicknameInfo> {
         public Integer left_days;
 

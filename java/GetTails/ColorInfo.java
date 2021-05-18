@@ -2,13 +2,13 @@ package tbclient.GetTails;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ColorInfo extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String fontColor;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ColorInfo> {
         public String fontColor;
 

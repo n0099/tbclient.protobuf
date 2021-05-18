@@ -2,7 +2,7 @@ package tbclient.SendGiftAndroid;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_MONEY = 0;
     public static final String DEFAULT_PUBLIC_KEY = "";
@@ -11,7 +11,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String public_key;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer money;
         public String public_key;

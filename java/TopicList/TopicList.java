@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Media;
 import tbclient.VideoInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class TopicList extends Message {
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final String DEFAULT_TOPIC_H5_URL = "";
@@ -47,7 +47,7 @@ public final class TopicList extends Message {
     public static final Long DEFAULT_TOPIC_TID = 0L;
     public static final Integer DEFAULT_TOPIC_THREAD_TYPES = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TopicList> {
         public Long discuss_num;
         public List<Media> media;

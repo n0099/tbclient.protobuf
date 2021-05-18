@@ -3,7 +3,7 @@ package tbclient.UrlParser;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_LINK_NUM = 0;
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68852common;
+    public final CommonReq f69534common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68853common;
+        public CommonReq f69535common;
         public Long forum_id;
         public Integer link_num;
         public String url;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68853common = dataReq.f68852common;
+            this.f69535common = dataReq.f69534common;
             this.forum_id = dataReq.forum_id;
             this.link_num = dataReq.link_num;
             this.url = dataReq.url;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68852common = builder.f68853common;
+            this.f69534common = builder.f69535common;
             Long l = builder.forum_id;
             if (l == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68852common = builder.f68853common;
+        this.f69534common = builder.f69535common;
         this.forum_id = builder.forum_id;
         this.link_num = builder.link_num;
         this.url = builder.url;

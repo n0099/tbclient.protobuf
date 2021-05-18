@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ThreadData extends Message {
     public static final String DEFAULT_POST_DATA = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -17,7 +17,7 @@ public final class ThreadData extends Message {
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_POST_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThreadData> {
         public String post_data;
         public Integer post_type;

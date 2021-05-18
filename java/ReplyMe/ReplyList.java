@@ -6,7 +6,7 @@ import tbclient.Baijiahao;
 import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ReplyList extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FNAME = "";
@@ -84,7 +84,7 @@ public final class ReplyList extends Message {
     public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
     public static final Integer DEFAULT_IS_BJH = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ReplyList> {
         public Baijiahao baijiahao;
         public String content;

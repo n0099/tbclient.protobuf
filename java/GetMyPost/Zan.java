@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Zan extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long author_id;
@@ -22,7 +22,7 @@ public final class Zan extends Message {
     public static final List<Long> DEFAULT_LIKER_ID = Collections.emptyList();
     public static final Long DEFAULT_AUTHOR_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Zan> {
         public Long author_id;
         public Integer is_liked;

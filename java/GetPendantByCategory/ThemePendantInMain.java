@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeBgProp;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ThemePendantInMain extends Message {
     public static final String DEFAULT_PENDANT_CATEGORY = "";
     public static final List<ThemeBgProp> DEFAULT_PROPS = Collections.emptyList();
@@ -14,7 +14,7 @@ public final class ThemePendantInMain extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThemeBgProp> props;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThemePendantInMain> {
         public String pendant_category;
         public List<ThemeBgProp> props;

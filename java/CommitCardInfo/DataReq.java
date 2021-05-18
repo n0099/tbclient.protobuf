@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68536common;
+    public final CommonReq f69216common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String image_info;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
         public Integer card_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68537common;
+        public CommonReq f69217common;
         public String image_info;
         public String resource_id;
 
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68537common = dataReq.f68536common;
+            this.f69217common = dataReq.f69216common;
             this.resource_id = dataReq.resource_id;
             this.card_type = dataReq.card_type;
             this.image_info = dataReq.image_info;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68536common = builder.f68537common;
+            this.f69216common = builder.f69217common;
             String str = builder.resource_id;
             if (str == null) {
                 this.resource_id = "";
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68536common = builder.f68537common;
+        this.f69216common = builder.f69217common;
         this.resource_id = builder.resource_id;
         this.card_type = builder.card_type;
         this.image_info = builder.image_info;

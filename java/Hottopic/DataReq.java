@@ -3,7 +3,7 @@ package tbclient.Hottopic;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_FIRST_DIR = "";
     public static final String DEFAULT_SECOND_DIR = "";
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68732common;
+    public final CommonReq f69414common;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -46,12 +46,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_CALL_FROM = 0;
     public static final Long DEFAULT_TOPIC_TID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68733common;
+        public CommonReq f69415common;
         public Long fid;
         public String first_dir;
         public Integer q_type;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68733common = dataReq.f68732common;
+            this.f69415common = dataReq.f69414common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.scr_w = dataReq.scr_w;
@@ -97,7 +97,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68732common = builder.f68733common;
+            this.f69414common = builder.f69415common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -173,7 +173,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68732common = builder.f68733common;
+        this.f69414common = builder.f69415common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.scr_w = builder.scr_w;

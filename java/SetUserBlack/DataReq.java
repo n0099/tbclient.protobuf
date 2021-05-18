@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.PermissionList;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_BLACK_UID = 0L;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -12,16 +12,16 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68822common;
+    public final CommonReq f69504common;
     @ProtoField(tag = 3)
     public final PermissionList perm_list;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long black_uid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68823common;
+        public CommonReq f69505common;
         public PermissionList perm_list;
 
         public Builder() {
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68823common = dataReq.f68822common;
+            this.f69505common = dataReq.f69504common;
             this.black_uid = dataReq.black_uid;
             this.perm_list = dataReq.perm_list;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68822common = builder.f68823common;
+            this.f69504common = builder.f69505common;
             Long l = builder.black_uid;
             if (l == null) {
                 this.black_uid = DEFAULT_BLACK_UID;
@@ -57,7 +57,7 @@ public final class DataReq extends Message {
             this.perm_list = builder.perm_list;
             return;
         }
-        this.f68822common = builder.f68823common;
+        this.f69504common = builder.f69505common;
         this.black_uid = builder.black_uid;
         this.perm_list = builder.perm_list;
     }

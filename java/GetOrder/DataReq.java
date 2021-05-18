@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.Wares;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLICK_ZONE = "";
     public static final String DEFAULT_MOBILE = "";
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68664common;
+    public final CommonReq f69344common;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -43,12 +43,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_AUTOPAY = 0;
     public static final Long DEFAULT_LIVE_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String click_zone;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68665common;
+        public CommonReq f69345common;
         public Integer is_autopay;
         public Integer is_left;
         public Long live_id;
@@ -68,7 +68,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68665common = dataReq.f68664common;
+            this.f69345common = dataReq.f69344common;
             this.pay_type = dataReq.pay_type;
             this.is_left = dataReq.is_left;
             this.order_url = dataReq.order_url;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68664common = builder.f68665common;
+            this.f69344common = builder.f69345common;
             Integer num = builder.pay_type;
             if (num == null) {
                 this.pay_type = DEFAULT_PAY_TYPE;
@@ -157,7 +157,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68664common = builder.f68665common;
+        this.f69344common = builder.f69345common;
         this.pay_type = builder.pay_type;
         this.is_left = builder.is_left;
         this.order_url = builder.order_url;

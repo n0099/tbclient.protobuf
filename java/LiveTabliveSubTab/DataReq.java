@@ -3,14 +3,14 @@ package tbclient.LiveTabliveSubTab;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ENTRY_NAME = "";
     public static final String DEFAULT_LABEL_NAME = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f68740common;
+    public final CommonReq f69422common;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer entry_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -40,11 +40,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_ENTRY_ID = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f68741common;
+        public CommonReq f69423common;
         public Integer entry_id;
         public String entry_name;
         public String label_name;
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f68741common = dataReq.f68740common;
+            this.f69423common = dataReq.f69422common;
             this.entry_name = dataReq.entry_name;
             this.pn = dataReq.pn;
             this.ps = dataReq.ps;
@@ -87,7 +87,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f68740common = builder.f68741common;
+            this.f69422common = builder.f69423common;
             String str = builder.entry_name;
             if (str == null) {
                 this.entry_name = "";
@@ -151,7 +151,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f68740common = builder.f68741common;
+        this.f69422common = builder.f69423common;
         this.entry_name = builder.entry_name;
         this.pn = builder.pn;
         this.ps = builder.ps;
