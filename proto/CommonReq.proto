@@ -52,4 +52,5 @@ message CommonReq {
     int64 last_update_time = 51;
     string event_day = 53;
     string android_id = 54;
+    int32 cmode = 55;
 }
