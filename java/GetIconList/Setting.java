@@ -2,7 +2,7 @@ package tbclient.GetIconList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Setting extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer amount_pay_limit;
@@ -14,7 +14,7 @@ public final class Setting extends Message {
     public static final Integer DEFAULT_VIP_EXTRA_PERCENT = 0;
     public static final Integer DEFAULT_AMOUNT_PAY_LIMIT = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Setting> {
         public Integer amount_pay_limit;
         public Integer vip_extra_percent;

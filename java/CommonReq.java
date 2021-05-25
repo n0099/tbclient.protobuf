@@ -76,6 +76,8 @@ public final class CommonReq extends Message {
     public final String c3_aid;
     @ProtoField(tag = 46, type = Message.Datatype.STRING)
     public final String caid;
+    @ProtoField(tag = 55, type = Message.Datatype.INT32)
+    public final Integer cmode;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String cuid;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
@@ -157,6 +159,7 @@ public final class CommonReq extends Message {
     public static final Long DEFAULT_ACTIVE_TIMESTAMP = 0L;
     public static final Long DEFAULT_FIRST_INSTALL_TIME = 0L;
     public static final Long DEFAULT_LAST_UPDATE_TIME = 0L;
+    public static final Integer DEFAULT_CMODE = 0;
 
     /* loaded from: classes7.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
@@ -176,6 +179,7 @@ public final class CommonReq extends Message {
         public String brand_type;
         public String c3_aid;
         public String caid;
+        public Integer cmode;
         public String cuid;
         public String cuid_galaxy2;
         public String cuid_gid;
@@ -271,6 +275,7 @@ public final class CommonReq extends Message {
             this.last_update_time = commonReq.last_update_time;
             this.event_day = commonReq.event_day;
             this.android_id = commonReq.android_id;
+            this.cmode = commonReq.cmode;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -586,9 +591,15 @@ public final class CommonReq extends Message {
             String str40 = builder.android_id;
             if (str40 == null) {
                 this.android_id = "";
-                return;
             } else {
                 this.android_id = str40;
+            }
+            Integer num7 = builder.cmode;
+            if (num7 == null) {
+                this.cmode = DEFAULT_CMODE;
+                return;
+            } else {
+                this.cmode = num7;
                 return;
             }
         }
@@ -643,5 +654,6 @@ public final class CommonReq extends Message {
         this.last_update_time = builder.last_update_time;
         this.event_day = builder.event_day;
         this.android_id = builder.android_id;
+        this.cmode = builder.cmode;
     }
 }

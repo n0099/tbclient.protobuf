@@ -3,14 +3,14 @@ package tbclient.GetGameDetail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.GameInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final GameInfo game_info;
     @ProtoField(tag = 2)
     public final RankInfo rank_info;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public GameInfo game_info;
         public RankInfo rank_info;

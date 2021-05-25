@@ -2,7 +2,7 @@ package tbclient.GetGiftMyList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Sender extends Message {
     public static final Long DEFAULT_ID = 0L;
     public static final String DEFAULT_NAME_SHOW = "";
@@ -14,7 +14,7 @@ public final class Sender extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String portrait;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Sender> {
         public Long id;
         public String name_show;

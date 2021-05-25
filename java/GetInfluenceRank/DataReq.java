@@ -3,13 +3,13 @@ package tbclient.GetInfluenceRank;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TIEBA_NAME = "";
     @ProtoField(tag = 6)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69324common;
+    public final CommonReq f69367common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -22,11 +22,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_RN = 0;
     public static final Integer DEFAULT_PN = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69325common;
+        public CommonReq f69368common;
         public Long forum_id;
         public Integer pn;
         public Integer rn;
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
             this.forum_id = dataReq.forum_id;
             this.rn = dataReq.rn;
             this.pn = dataReq.pn;
-            this.f69325common = dataReq.f69324common;
+            this.f69368common = dataReq.f69367common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -81,13 +81,13 @@ public final class DataReq extends Message {
             } else {
                 this.pn = num2;
             }
-            this.f69324common = builder.f69325common;
+            this.f69367common = builder.f69368common;
             return;
         }
         this.tieba_name = builder.tieba_name;
         this.forum_id = builder.forum_id;
         this.rn = builder.rn;
         this.pn = builder.pn;
-        this.f69324common = builder.f69325common;
+        this.f69367common = builder.f69368common;
     }
 }

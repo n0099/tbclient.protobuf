@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Custom extends Message {
     public static final String DEFAULT_CREATE_TIME = "";
     public static final String DEFAULT_ICON_ID = "";
@@ -73,7 +73,7 @@ public final class Custom extends Message {
     public static final Integer DEFAULT_VALIDITY = 0;
     public static final Integer DEFAULT_IS_CUSTOM_PRICE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Custom> {
         public String create_time;
         public List<Discount> discount;

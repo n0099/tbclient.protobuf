@@ -53,7 +53,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69446common;
+    public final CommonReq f69489common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -221,7 +221,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69447common;
+        public CommonReq f69490common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -311,7 +311,7 @@ public final class DataReq extends Message {
             this.arround = dataReq.arround;
             this.last = dataReq.last;
             this.msg_click = dataReq.msg_click;
-            this.f69447common = dataReq.f69446common;
+            this.f69490common = dataReq.f69489common;
             this.lastids = dataReq.lastids;
             this.st_from = dataReq.st_from;
             this.st_link = dataReq.st_link;
@@ -510,7 +510,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = str2;
             }
-            this.f69446common = builder.f69447common;
+            this.f69489common = builder.f69490common;
             String str3 = builder.lastids;
             if (str3 == null) {
                 this.lastids = "";
@@ -780,7 +780,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f69446common = builder.f69447common;
+        this.f69489common = builder.f69490common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;

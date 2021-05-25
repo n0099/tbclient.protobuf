@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Page;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<GiftList> gift_list;
@@ -21,7 +21,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_TOTAL_NUM = 0;
     public static final Integer DEFAULT_MONEY = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<GiftList> gift_list;
         public Integer money;

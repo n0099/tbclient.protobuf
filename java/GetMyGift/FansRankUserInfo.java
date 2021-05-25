@@ -2,7 +2,7 @@ package tbclient.GetMyGift;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class FansRankUserInfo extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_PRESENT_SCORES = "";
@@ -20,7 +20,7 @@ public final class FansRankUserInfo extends Message {
     public static final Integer DEFAULT_USER_ID = 0;
     public static final Integer DEFAULT_PRESENT_NUM = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<FansRankUserInfo> {
         public String portrait;
         public Integer present_num;

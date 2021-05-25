@@ -3,21 +3,21 @@ package tbclient.GetGiftCommonList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_TIMESTAMP = 0;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69306common;
+    public final CommonReq f69349common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer timestamp;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69307common;
+        public CommonReq f69350common;
         public Integer timestamp;
 
         public Builder() {
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.timestamp = dataReq.timestamp;
-            this.f69307common = dataReq.f69306common;
+            this.f69350common = dataReq.f69349common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -48,10 +48,10 @@ public final class DataReq extends Message {
             } else {
                 this.timestamp = num;
             }
-            this.f69306common = builder.f69307common;
+            this.f69349common = builder.f69350common;
             return;
         }
         this.timestamp = builder.timestamp;
-        this.f69306common = builder.f69307common;
+        this.f69349common = builder.f69350common;
     }
 }

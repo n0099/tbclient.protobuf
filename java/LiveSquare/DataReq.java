@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69420common;
+    public final CommonReq f69463common;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_refresh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69421common;
+        public CommonReq f69464common;
         public Integer is_refresh;
         public String network_type;
         public Integer pn;
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69421common = dataReq.f69420common;
+            this.f69464common = dataReq.f69463common;
             this.pn = dataReq.pn;
             this.ps = dataReq.ps;
             this.network_type = dataReq.network_type;
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69420common = builder.f69421common;
+            this.f69463common = builder.f69464common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -129,7 +129,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69420common = builder.f69421common;
+        this.f69463common = builder.f69464common;
         this.pn = builder.pn;
         this.ps = builder.ps;
         this.network_type = builder.network_type;

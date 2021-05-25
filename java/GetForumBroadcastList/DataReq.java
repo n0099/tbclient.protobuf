@@ -5,14 +5,14 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.INT64)
     public final List<Long> bcast_ids;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69294common;
+    public final CommonReq f69337common;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -30,12 +30,12 @@ public final class DataReq extends Message {
     public static final List<Long> DEFAULT_BCAST_IDS = Collections.emptyList();
     public static final Long DEFAULT_STAFF_ID64 = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<Long> bcast_ids;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69295common;
+        public CommonReq f69338common;
         public Long forum_id;
         public Integer need_cnt;
         public Integer query_type;
@@ -50,7 +50,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69295common = dataReq.f69294common;
+            this.f69338common = dataReq.f69337common;
             this.query_type = dataReq.query_type;
             this.staff_id = dataReq.staff_id;
             this.need_cnt = dataReq.need_cnt;
@@ -69,7 +69,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69294common = builder.f69295common;
+            this.f69337common = builder.f69338common;
             Integer num = builder.query_type;
             if (num == null) {
                 this.query_type = DEFAULT_QUERY_TYPE;
@@ -109,7 +109,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69294common = builder.f69295common;
+        this.f69337common = builder.f69338common;
         this.query_type = builder.query_type;
         this.staff_id = builder.staff_id;
         this.need_cnt = builder.need_cnt;

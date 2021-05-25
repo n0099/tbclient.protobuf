@@ -2,7 +2,7 @@ package tbclient.GetGiftCommonList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Item extends Message {
     public static final String DEFAULT_IOS_PRODUCT_ID = "";
     public static final String DEFAULT_NAME = "";
@@ -29,7 +29,7 @@ public final class Item extends Message {
     public static final Integer DEFAULT_IOS_PRICE = 0;
     public static final Integer DEFAULT_IOS_COUNT = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Item> {
         public Integer gift_id;
         public Integer ios_count;

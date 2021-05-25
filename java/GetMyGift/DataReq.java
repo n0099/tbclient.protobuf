@@ -3,7 +3,7 @@ package tbclient.GetMyGift;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ST_TYPE = "";
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69338common;
+    public final CommonReq f69381common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -22,12 +22,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_ACCOUNT_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer account_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69339common;
+        public CommonReq f69382common;
         public Integer pn;
         public String st_type;
         public Long uid;
@@ -41,7 +41,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.uid = dataReq.uid;
-            this.f69339common = dataReq.f69338common;
+            this.f69382common = dataReq.f69381common;
             this.pn = dataReq.pn;
             this.st_type = dataReq.st_type;
             this.account_type = dataReq.account_type;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
             } else {
                 this.uid = l;
             }
-            this.f69338common = builder.f69339common;
+            this.f69381common = builder.f69382common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -86,7 +86,7 @@ public final class DataReq extends Message {
             }
         }
         this.uid = builder.uid;
-        this.f69338common = builder.f69339common;
+        this.f69381common = builder.f69382common;
         this.pn = builder.pn;
         this.st_type = builder.st_type;
         this.account_type = builder.account_type;

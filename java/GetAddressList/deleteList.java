@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes4.dex */
 public final class deleteList extends Message {
     public static final List<friendList> DEFAULT_FRIEND_LIST = Collections.emptyList();
     public static final String DEFAULT_KEY = "";
@@ -13,7 +13,7 @@ public final class deleteList extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String key;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<deleteList> {
         public List<friendList> friend_list;
         public String key;

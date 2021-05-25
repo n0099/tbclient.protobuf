@@ -2,7 +2,7 @@ package tbclient.GetGiftList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class PresentGiftList1 extends Message {
     public static final String DEFAULT_GIFT_DESC = "";
     public static final String DEFAULT_GIFT_NAME = "";
@@ -56,7 +56,7 @@ public final class PresentGiftList1 extends Message {
     public static final Integer DEFAULT_CURRENCY_UNIT = 0;
     public static final Integer DEFAULT_CURRENCY = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<PresentGiftList1> {
         public Integer activity_type;
         public Integer begin_time;

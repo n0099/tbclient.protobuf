@@ -3,21 +3,21 @@ package tbclient.GetBackground;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69268common;
+    public final CommonReq f69311common;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer props_id;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69269common;
+        public CommonReq f69312common;
         public Integer props_id;
 
         public Builder() {
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.props_id = dataReq.props_id;
-            this.f69269common = dataReq.f69268common;
+            this.f69312common = dataReq.f69311common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -48,10 +48,10 @@ public final class DataReq extends Message {
             } else {
                 this.props_id = num;
             }
-            this.f69268common = builder.f69269common;
+            this.f69311common = builder.f69312common;
             return;
         }
         this.props_id = builder.props_id;
-        this.f69268common = builder.f69269common;
+        this.f69311common = builder.f69312common;
     }
 }

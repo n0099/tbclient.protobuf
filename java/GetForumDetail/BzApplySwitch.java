@@ -2,7 +2,7 @@ package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class BzApplySwitch extends Message {
     public static final Integer DEFAULT_APPLY_SWITCH = 0;
     public static final String DEFAULT_ASSIST_LINK = "";
@@ -14,7 +14,7 @@ public final class BzApplySwitch extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String manager_link;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<BzApplySwitch> {
         public Integer apply_switch;
         public String assist_link;

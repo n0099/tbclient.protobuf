@@ -3,12 +3,12 @@ package tbclient.GetBigday;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69276common;
+    public final CommonReq f69319common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer scr_h;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -16,11 +16,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_W = 0;
     public static final Integer DEFAULT_SCR_H = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69277common;
+        public CommonReq f69320common;
         public Integer scr_h;
         public Integer scr_w;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69277common = dataReq.f69276common;
+            this.f69320common = dataReq.f69319common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69276common = builder.f69277common;
+            this.f69319common = builder.f69320common;
             Integer num = builder.scr_w;
             if (num == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69276common = builder.f69277common;
+        this.f69319common = builder.f69320common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
     }

@@ -1,10 +1,10 @@
 package tbclient.GetMyGift;
 
 import com.squareup.wire.Message;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class NobilityTdou extends Message {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<NobilityTdou> {
         public Builder() {
         }

@@ -3,12 +3,12 @@ package tbclient.GetLockWindowMsg;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69328common;
+    public final CommonReq f69371common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long task_id;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -16,11 +16,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final Long DEFAULT_TASK_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69329common;
+        public CommonReq f69372common;
         public Long task_id;
         public Long tid;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69329common = dataReq.f69328common;
+            this.f69372common = dataReq.f69371common;
             this.tid = dataReq.tid;
             this.task_id = dataReq.task_id;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69328common = builder.f69329common;
+            this.f69371common = builder.f69372common;
             Long l = builder.tid;
             if (l == null) {
                 this.tid = DEFAULT_TID;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69328common = builder.f69329common;
+        this.f69371common = builder.f69372common;
         this.tid = builder.tid;
         this.task_id = builder.task_id;
     }

@@ -2,7 +2,7 @@ package tbclient.GetClientConfig;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes3.dex */
 public final class CLocalDialog extends Message {
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PICTURE = "";
@@ -26,7 +26,7 @@ public final class CLocalDialog extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String url_ios;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<CLocalDialog> {
         public String name;
         public String picture;

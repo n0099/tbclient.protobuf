@@ -2,7 +2,7 @@ package tbclient.GetIconList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class UserInfo extends Message {
     public static final String DEFAULT_USER_NAME = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -17,7 +17,7 @@ public final class UserInfo extends Message {
     public static final Integer DEFAULT_IS_MEM = 0;
     public static final Integer DEFAULT_SCORES_TOTAL = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<UserInfo> {
         public Integer is_mem;
         public Integer scores_total;

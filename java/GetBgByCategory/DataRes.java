@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeRecommand;
-/* loaded from: classes7.dex */
+/* loaded from: classes6.dex */
 public final class DataRes extends Message {
     public static final List<ThemeBgInMain> DEFAULT_BGS = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -13,7 +13,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final ThemeRecommand recommend;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ThemeBgInMain> bgs;
         public ThemeRecommand recommend;

@@ -3,7 +3,7 @@ package tbclient.GetGiftList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_BENEFIT_USERID = 0L;
     public static final String DEFAULT_SCENE_FROM = "";
@@ -12,16 +12,16 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69308common;
+    public final CommonReq f69351common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String scene_from;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long benefit_userid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69309common;
+        public CommonReq f69352common;
         public String scene_from;
 
         public Builder() {
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.scene_from = dataReq.scene_from;
-            this.f69309common = dataReq.f69308common;
+            this.f69352common = dataReq.f69351common;
             this.benefit_userid = dataReq.benefit_userid;
         }
 
@@ -53,7 +53,7 @@ public final class DataReq extends Message {
             } else {
                 this.scene_from = str;
             }
-            this.f69308common = builder.f69309common;
+            this.f69351common = builder.f69352common;
             Long l = builder.benefit_userid;
             if (l == null) {
                 this.benefit_userid = DEFAULT_BENEFIT_USERID;
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             }
         }
         this.scene_from = builder.scene_from;
-        this.f69308common = builder.f69309common;
+        this.f69351common = builder.f69352common;
         this.benefit_userid = builder.benefit_userid;
     }
 }

@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69194common;
+    public final CommonReq f69237common;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<MsgRecord> records;
 
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69195common;
+        public CommonReq f69238common;
         public List<MsgRecord> records;
 
         public Builder() {
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69195common = dataReq.f69194common;
+            this.f69238common = dataReq.f69237common;
             this.records = Message.copyOf(dataReq.records);
         }
 
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69194common = builder.f69195common;
+            this.f69237common = builder.f69238common;
             List<MsgRecord> list = builder.records;
             if (list == null) {
                 this.records = DEFAULT_RECORDS;
@@ -54,7 +54,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69194common = builder.f69195common;
+        this.f69237common = builder.f69238common;
         this.records = Message.immutableCopyOf(builder.records);
     }
 }

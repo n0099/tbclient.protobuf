@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class GiftInfo extends Message {
     public static final List<GiftList> DEFAULT_LIST = Collections.emptyList();
     public static final List<NumInfo> DEFAULT_NUM_INFO = Collections.emptyList();
@@ -16,7 +16,7 @@ public final class GiftInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer version;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GiftInfo> {
         public List<GiftList> list;
         public List<NumInfo> num_info;
