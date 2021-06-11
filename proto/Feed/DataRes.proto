@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Feed/ThreadPersonalized.proto";
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated ThreadInfo thread_list = 1;
+    repeated ThreadPersonalized thread_thread_personalized = 2;
+}
