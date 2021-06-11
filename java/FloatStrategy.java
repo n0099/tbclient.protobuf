@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class FloatStrategy extends Message {
     public static final String DEFAULT_BROWSETIMEPAGE = "";
     public static final String DEFAULT_TOAST = "";
@@ -26,7 +26,7 @@ public final class FloatStrategy extends Message {
     public static final Long DEFAULT_SHOW_TIME_END = 0L;
     public static final Integer DEFAULT_SHOW_NUM = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<FloatStrategy> {
         public String browsetimepage;
         public Integer duration;

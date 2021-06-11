@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Album extends Message {
     public static final String DEFAULT_ALBUM_NAME = "";
     public static final String DEFAULT_LOCATION = "";
@@ -52,7 +52,7 @@ public final class Album extends Message {
     public static final List<ConcernUser> DEFAULT_CONCERN_USER = Collections.emptyList();
     public static final Integer DEFAULT_NUM_USER = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Album> {
         public Long album_id;
         public String album_name;

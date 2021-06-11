@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class YyExt extends Message {
     public static final Integer DEFAULT_IS_YY_GAME = 0;
     public static final String DEFAULT_SID = "";
@@ -20,7 +20,7 @@ public final class YyExt extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String yy_uid;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<YyExt> {
         public Integer is_yy_game;
         public String sid;

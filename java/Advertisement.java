@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Advertisement extends Message {
     public static final String DEFAULT_ADVERTISEMENT_ID = "";
     public static final String DEFAULT_JUMP_LINK = "";
@@ -20,7 +20,7 @@ public final class Advertisement extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long time;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Advertisement> {
         public String advertisement_id;
         public String jump_link;

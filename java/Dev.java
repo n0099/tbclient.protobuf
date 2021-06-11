@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Dev extends Message {
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_OS = "";
@@ -14,7 +14,7 @@ public final class Dev extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String version;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Dev> {
         public String cuid;
         public String os;

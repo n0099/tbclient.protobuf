@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ThemeRecommand extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_BUTTON_URL = "";
@@ -17,7 +17,7 @@ public final class ThemeRecommand extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tip_text;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThemeRecommand> {
         public String button_text;
         public String button_url;

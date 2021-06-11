@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class MyGroupInfo extends Message {
     public static final String DEFAULT_GROUP_NAME = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -20,7 +20,7 @@ public final class MyGroupInfo extends Message {
     public static final Integer DEFAULT_MEMBER_NUM = 0;
     public static final Integer DEFAULT_MAX_MEMBER_NUM = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<MyGroupInfo> {
         public Long group_id;
         public String group_name;

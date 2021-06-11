@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Lbs extends Message {
     public static final String DEFAULT_DISTANCE = "";
     public static final String DEFAULT_LAT = "";
@@ -20,7 +20,7 @@ public final class Lbs extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String sn;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Lbs> {
         public String distance;
         public String lat;

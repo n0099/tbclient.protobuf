@@ -2,7 +2,7 @@ package tbclient.DoDailyTask;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class TaskInfoItem extends Message {
     public static final Integer DEFAULT_IS_FINISH = 0;
     public static final Integer DEFAULT_SCORES = 0;
@@ -11,7 +11,7 @@ public final class TaskInfoItem extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer scores;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TaskInfoItem> {
         public Integer is_finish;
         public Integer scores;

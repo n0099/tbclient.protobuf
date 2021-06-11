@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class BannerFollowLive extends Message {
     public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_LIST = Collections.emptyList();
     public static final Integer DEFAULT_SWITCH = 0;
@@ -13,7 +13,7 @@ public final class BannerFollowLive extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<AlaLiveInfo> ala_live_list;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<BannerFollowLive> {
         public Integer _switch;
         public List<AlaLiveInfo> ala_live_list;

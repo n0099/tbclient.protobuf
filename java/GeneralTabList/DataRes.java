@@ -10,7 +10,7 @@ import tbclient.SportPageHeadInfo;
 import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 10)
     public final List<App> app_list;
@@ -37,7 +37,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<App> app_list;
         public List<ThreadInfo> general_list;

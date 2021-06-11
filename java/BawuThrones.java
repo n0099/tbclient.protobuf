@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class BawuThrones extends Message {
     public static final String DEFAULT_BAZHU_LEVEL = "";
     public static final Integer DEFAULT_TOTAL_RECOMMEND_NUM = 0;
@@ -14,7 +14,7 @@ public final class BawuThrones extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer used_recommend_num;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<BawuThrones> {
         public String bazhu_level;
         public Integer total_recommend_num;

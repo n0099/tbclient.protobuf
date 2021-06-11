@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class GameAttr extends Message {
     public static final String DEFAULT_IS_OPEN = "";
     public static final String DEFAULT_USER_ID = "";
@@ -13,7 +13,7 @@ public final class GameAttr extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String user_id;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GameAttr> {
         public String is_open;
         public SignatureInfo signature_info;

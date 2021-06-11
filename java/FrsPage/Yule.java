@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Yule extends Message {
     public static final Integer DEFAULT_ACTIVITY_SHOW = 0;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -10,7 +10,7 @@ public final class Yule extends Message {
     @ProtoField(tag = 1)
     public final YuleActivity yule_activity;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Yule> {
         public Integer activity_show;
         public YuleActivity yule_activity;

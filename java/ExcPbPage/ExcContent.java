@@ -2,7 +2,7 @@ package tbclient.ExcPbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ExcContent extends Message {
     public static final String DEFAULT_BIG_CDN_SRC = "";
     public static final String DEFAULT_BIG_SIZE = "";
@@ -27,7 +27,7 @@ public final class ExcContent extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f69279c;
+    public final String f72588c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -46,7 +46,7 @@ public final class ExcContent extends Message {
     public static final Integer DEFAULT_ALIGN = 0;
     public static final Integer DEFAULT_SIZE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ExcContent> {
         public Integer align;
         public String big_cdn_src;
@@ -55,7 +55,7 @@ public final class ExcContent extends Message {
         public String bsize;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f69280c;
+        public String f72589c;
         public String cdn_src;
         public String color;
         public String link;
@@ -81,7 +81,7 @@ public final class ExcContent extends Message {
             this.big_size = excContent.big_size;
             this.cdn_src = excContent.cdn_src;
             this.big_cdn_src = excContent.big_cdn_src;
-            this.f69280c = excContent.f69279c;
+            this.f72589c = excContent.f72588c;
             this.align = excContent.align;
             this.color = excContent.color;
             this.size = excContent.size;
@@ -151,11 +151,11 @@ public final class ExcContent extends Message {
             } else {
                 this.big_cdn_src = str8;
             }
-            String str9 = builder.f69280c;
+            String str9 = builder.f72589c;
             if (str9 == null) {
-                this.f69279c = "";
+                this.f72588c = "";
             } else {
-                this.f69279c = str9;
+                this.f72588c = str9;
             }
             Integer num = builder.align;
             if (num == null) {
@@ -187,7 +187,7 @@ public final class ExcContent extends Message {
         this.big_size = builder.big_size;
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
-        this.f69279c = builder.f69280c;
+        this.f72588c = builder.f72589c;
         this.align = builder.align;
         this.color = builder.color;
         this.size = builder.size;

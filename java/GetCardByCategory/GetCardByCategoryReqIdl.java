@@ -2,12 +2,12 @@ package tbclient.GetCardByCategory;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes8.dex */
 public final class GetCardByCategoryReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GetCardByCategoryReqIdl> {
         public DataReq data;
 

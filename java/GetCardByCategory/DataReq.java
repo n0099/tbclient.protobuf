@@ -3,24 +3,24 @@ package tbclient.GetCardByCategory;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69327common;
+    public final CommonReq f72638common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer rn;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69328common;
+        public CommonReq f72639common;
         public Integer pn;
         public Integer rn;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69328common = dataReq.f69327common;
+            this.f72639common = dataReq.f72638common;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69327common = builder.f69328common;
+            this.f72638common = builder.f72639common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69327common = builder.f69328common;
+        this.f72638common = builder.f72639common;
         this.pn = builder.pn;
         this.rn = builder.rn;
     }

@@ -3,14 +3,14 @@ package tbclient.GetConsentList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long author_id;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69331common;
+    public final CommonReq f72642common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long gid;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -31,12 +31,12 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_PAGE_NUM = 0L;
     public static final Long DEFAULT_RES_NUM = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long author_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69332common;
+        public CommonReq f72643common;
         public Long gid;
         public Long page_num;
         public Long post_id;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69332common = dataReq.f69331common;
+            this.f72643common = dataReq.f72642common;
             this.author_id = dataReq.author_id;
             this.user_id = dataReq.user_id;
             this.gid = dataReq.gid;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69331common = builder.f69332common;
+            this.f72642common = builder.f72643common;
             Long l = builder.author_id;
             if (l == null) {
                 this.author_id = DEFAULT_AUTHOR_ID;
@@ -118,7 +118,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69331common = builder.f69332common;
+        this.f72642common = builder.f72643common;
         this.author_id = builder.author_id;
         this.user_id = builder.user_id;
         this.gid = builder.gid;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class NewUser extends Message {
     public static final String DEFAULT_BG_ID = "";
     public static final String DEFAULT_BILLBOARD = "";
@@ -109,7 +109,7 @@ public final class NewUser extends Message {
     public static final List<Rpgoldicon> DEFAULT_RPGOLDICON = Collections.emptyList();
     public static final List<TbmallMonthIcon> DEFAULT_TBMALL_MONTH_ICON = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<NewUser> {
         public List<Props> appraise;
         public String bg_id;

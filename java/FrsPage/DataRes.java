@@ -34,7 +34,7 @@ import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
@@ -282,7 +282,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP = 0;
     public static final Integer DEFAULT_SHOW_ADSENSE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityConfig activity_config;
         public ActivityHead activityhead;

@@ -2,12 +2,12 @@ package tbclient.GetBubbleList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes6.dex */
+/* loaded from: classes8.dex */
 public final class GetBubbleListReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GetBubbleListReqIdl> {
         public DataReq data;
 

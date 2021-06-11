@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ScoreInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer endtime;
@@ -11,7 +11,7 @@ public final class ScoreInfo extends Message {
     public static final Integer DEFAULT_SCORE = 0;
     public static final Integer DEFAULT_ENDTIME = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ScoreInfo> {
         public Integer endtime;
         public Integer score;

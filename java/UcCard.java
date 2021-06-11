@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class UcCard extends Message {
     public static final String DEFAULT_DOC = "";
     public static final String DEFAULT_ICON = "";
@@ -22,7 +22,7 @@ public final class UcCard extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<UcCardInfo> uc_cards;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<UcCard> {
         public String doc;
         public String icon;

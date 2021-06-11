@@ -11,7 +11,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class VideoInfo extends Message {
     public static final Double DEFAULT_HTH_MID_LOC;
     public static final String DEFAULT_MCN_LEAD_PAGE = "";
@@ -72,7 +72,7 @@ public final class VideoInfo extends Message {
     public static final Integer DEFAULT_VIDEO_TYPE = 0;
     public static final Integer DEFAULT_IS_VERTICAL = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public Double hth_mid_loc;
         public Integer is_vertical;

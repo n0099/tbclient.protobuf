@@ -3,21 +3,21 @@ package tbclient.CheckRealName;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_OBJ_SOURCE = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69255common;
+    public final CommonReq f72564common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String obj_source;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69256common;
+        public CommonReq f72565common;
         public String obj_source;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69256common = dataReq.f69255common;
+            this.f72565common = dataReq.f72564common;
             this.obj_source = dataReq.obj_source;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69255common = builder.f69256common;
+            this.f72564common = builder.f72565common;
             String str = builder.obj_source;
             if (str == null) {
                 this.obj_source = "";
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69255common = builder.f69256common;
+        this.f72564common = builder.f72565common;
         this.obj_source = builder.obj_source;
     }
 }

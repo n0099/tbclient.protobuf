@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.ActiveCenter;
 import tbclient.FloatStrategy;
 import tbclient.MissionInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ACTIVE_URL = "";
     public static final String DEFAULT_NEWUSER_POP_CLICKURL = "";
@@ -33,7 +33,7 @@ public final class DataRes extends Message {
     public static final List<MissionInfo> DEFAULT_MISSION_LIST = Collections.emptyList();
     public static final List<FloatStrategy> DEFAULT_FLOAT_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActiveCenter active_center;
         public String active_url;

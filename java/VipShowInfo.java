@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class VipShowInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_LINK = "";
@@ -17,7 +17,7 @@ public final class VipShowInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String vip_icon;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<VipShowInfo> {
         public String content;
         public String link;

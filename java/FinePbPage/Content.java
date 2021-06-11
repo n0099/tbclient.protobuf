@@ -2,7 +2,7 @@ package tbclient.FinePbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Content extends Message {
     public static final String DEFAULT_BIG_CDN_SRC = "";
     public static final String DEFAULT_BIG_SIZE = "";
@@ -27,7 +27,7 @@ public final class Content extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f69285c;
+    public final String f72596c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -46,7 +46,7 @@ public final class Content extends Message {
     public static final Integer DEFAULT_ALIGN = 0;
     public static final Integer DEFAULT_SIZE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Content> {
         public Integer align;
         public String big_cdn_src;
@@ -55,7 +55,7 @@ public final class Content extends Message {
         public String bsize;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f69286c;
+        public String f72597c;
         public String cdn_src;
         public String color;
         public String link;
@@ -81,7 +81,7 @@ public final class Content extends Message {
             this.big_size = content.big_size;
             this.cdn_src = content.cdn_src;
             this.big_cdn_src = content.big_cdn_src;
-            this.f69286c = content.f69285c;
+            this.f72597c = content.f72596c;
             this.align = content.align;
             this.color = content.color;
             this.size = content.size;
@@ -151,11 +151,11 @@ public final class Content extends Message {
             } else {
                 this.big_cdn_src = str8;
             }
-            String str9 = builder.f69286c;
+            String str9 = builder.f72597c;
             if (str9 == null) {
-                this.f69285c = "";
+                this.f72596c = "";
             } else {
-                this.f69285c = str9;
+                this.f72596c = str9;
             }
             Integer num = builder.align;
             if (num == null) {
@@ -187,7 +187,7 @@ public final class Content extends Message {
         this.big_size = builder.big_size;
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
-        this.f69285c = builder.f69286c;
+        this.f72596c = builder.f72597c;
         this.align = builder.align;
         this.color = builder.color;
         this.size = builder.size;

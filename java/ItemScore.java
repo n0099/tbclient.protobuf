@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ItemScore extends Message {
     public static final String DEFAULT_KEY = "";
     public static final Integer DEFAULT_SCORE = 0;
@@ -11,7 +11,7 @@ public final class ItemScore extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer score;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ItemScore> {
         public String key;
         public Integer score;

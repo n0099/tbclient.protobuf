@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class AlaCoverLabel extends Message {
     public static final Integer DEFAULT_LABEL_ID = 0;
     public static final String DEFAULT_LABEL_NAME = "";
@@ -14,7 +14,7 @@ public final class AlaCoverLabel extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String label_rgb;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<AlaCoverLabel> {
         public Integer label_id;
         public String label_name;

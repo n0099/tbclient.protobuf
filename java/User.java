@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class User extends Message {
     public static final String DEFAULT_APPEAL_THREAD_POPOVER = "";
     public static final String DEFAULT_BAWU_TYPE = "";
@@ -332,7 +332,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_TOTAL_AGREE_NUM = 0;
     public static final List<BazhuSign> DEFAULT_MANAGER_FORUM = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;

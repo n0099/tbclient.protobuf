@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class BusinessPromot extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_BUTTON_TEXT2 = "";
@@ -58,7 +58,7 @@ public final class BusinessPromot extends Message {
     public static final Integer DEFAULT_THREAD_TYPE = 0;
     public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<BusinessPromot> {
         public String button_text;
         public String button_text2;

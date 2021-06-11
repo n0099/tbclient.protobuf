@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DetailInfo extends Message {
     public static final String DEFAULT_TEXT = "";
     public static final String DEFAULT_URL = "";
@@ -11,7 +11,7 @@ public final class DetailInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DetailInfo> {
         public String text;
         public String url;

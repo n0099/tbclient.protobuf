@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class EsportUser extends Message {
     public static final String DEFAULT_STEAM_NAME = "";
     public static final String DEFAULT_STEAM_PORTRAIT = "";
@@ -11,7 +11,7 @@ public final class EsportUser extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String steam_portrait;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<EsportUser> {
         public String steam_name;
         public String steam_portrait;

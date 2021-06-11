@@ -2,7 +2,7 @@ package tbclient.CompleteTask;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_BTN_CANCEL = "";
     public static final String DEFAULT_BTN_COLOR = "";
@@ -62,7 +62,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_INTERFACE_TYPE = 0;
     public static final Integer DEFAULT_IS_NOT_COMPLETE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer activity_id;
         public Integer ahead_type;

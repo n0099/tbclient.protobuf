@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Calendar extends Message {
     public static final Integer DEFAULT_D = 0;
     public static final Integer DEFAULT_RANK = 0;
@@ -11,7 +11,7 @@ public final class Calendar extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
 
     /* renamed from: d  reason: collision with root package name */
-    public final Integer f69299d;
+    public final Integer f72610d;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer rank;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -19,11 +19,11 @@ public final class Calendar extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String t;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Calendar> {
 
         /* renamed from: d  reason: collision with root package name */
-        public Integer f69300d;
+        public Integer f72611d;
         public Integer rank;
         public Integer sign_type;
         public String t;
@@ -36,7 +36,7 @@ public final class Calendar extends Message {
             if (calendar == null) {
                 return;
             }
-            this.f69300d = calendar.f69299d;
+            this.f72611d = calendar.f72610d;
             this.t = calendar.t;
             this.rank = calendar.rank;
             this.sign_type = calendar.sign_type;
@@ -52,11 +52,11 @@ public final class Calendar extends Message {
     public Calendar(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            Integer num = builder.f69300d;
+            Integer num = builder.f72611d;
             if (num == null) {
-                this.f69299d = DEFAULT_D;
+                this.f72610d = DEFAULT_D;
             } else {
-                this.f69299d = num;
+                this.f72610d = num;
             }
             String str = builder.t;
             if (str == null) {
@@ -79,7 +79,7 @@ public final class Calendar extends Message {
                 return;
             }
         }
-        this.f69299d = builder.f69300d;
+        this.f72610d = builder.f72611d;
         this.t = builder.t;
         this.rank = builder.rank;
         this.sign_type = builder.sign_type;

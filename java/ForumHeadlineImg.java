@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ForumHeadlineImg extends Message {
     public static final String DEFAULT_IMG_URL = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -17,7 +17,7 @@ public final class ForumHeadlineImg extends Message {
     public static final Long DEFAULT_THREAD_USER_ID = 0L;
     public static final Long DEFAULT_IMG_USER_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ForumHeadlineImg> {
         public String img_url;
         public Long img_user_id;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Pendant extends Message {
     public static final String DEFAULT_IMG_URL = "";
     public static final Long DEFAULT_PROPS_ID = 0L;
@@ -11,7 +11,7 @@ public final class Pendant extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long props_id;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Pendant> {
         public String img_url;
         public Long props_id;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class BawuTeam extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<BawuRoleDes> bawu_team_list;
@@ -13,7 +13,7 @@ public final class BawuTeam extends Message {
     public static final Integer DEFAULT_TOTAL_NUM = 0;
     public static final List<BawuRoleDes> DEFAULT_BAWU_TEAM_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<BawuTeam> {
         public List<BawuRoleDes> bawu_team_list;
         public Integer total_num;

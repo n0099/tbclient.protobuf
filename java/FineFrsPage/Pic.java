@@ -2,7 +2,7 @@ package tbclient.FineFrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Pic extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_SMALL_PIC = "";
@@ -14,7 +14,7 @@ public final class Pic extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String water_pic;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Pic> {
         public String big_pic;
         public String small_pic;

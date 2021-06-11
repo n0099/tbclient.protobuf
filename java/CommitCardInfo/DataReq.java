@@ -3,7 +3,7 @@ package tbclient.CommitCardInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_CARD_TYPE = 0;
     public static final String DEFAULT_IMAGE_INFO = "";
@@ -13,18 +13,18 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69259common;
+    public final CommonReq f72568common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String image_info;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String resource_id;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer card_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69260common;
+        public CommonReq f72569common;
         public String image_info;
         public String resource_id;
 
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69260common = dataReq.f69259common;
+            this.f72569common = dataReq.f72568common;
             this.resource_id = dataReq.resource_id;
             this.card_type = dataReq.card_type;
             this.image_info = dataReq.image_info;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69259common = builder.f69260common;
+            this.f72568common = builder.f72569common;
             String str = builder.resource_id;
             if (str == null) {
                 this.resource_id = "";
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69259common = builder.f69260common;
+        this.f72568common = builder.f72569common;
         this.resource_id = builder.resource_id;
         this.card_type = builder.card_type;
         this.image_info = builder.image_info;

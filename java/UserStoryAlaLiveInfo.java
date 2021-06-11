@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class UserStoryAlaLiveInfo extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_TITLE = "";
@@ -85,7 +85,7 @@ public final class UserStoryAlaLiveInfo extends Message {
     public static final Integer DEFAULT_TSTORE_TYPE = 0;
     public static final Long DEFAULT_AGREE_NUM = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<UserStoryAlaLiveInfo> {
         public Long agree_num;
         public AlaLiveInfo ala_info;

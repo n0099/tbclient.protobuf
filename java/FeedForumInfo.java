@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class FeedForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -29,7 +29,7 @@ public final class FeedForumInfo extends Message {
     public static final Integer DEFAULT_POS = 0;
     public static final Integer DEFAULT_IS_LIKE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<FeedForumInfo> {
         public String avatar;
         public Long forum_id;

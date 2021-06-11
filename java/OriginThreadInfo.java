@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class OriginThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_TID = "";
@@ -66,7 +66,7 @@ public final class OriginThreadInfo extends Message {
     public static final Integer DEFAULT_SHARED_NUM = 0;
     public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<OriginThreadInfo> {
         public List<Abstract> _abstract;
         public Agree agree;

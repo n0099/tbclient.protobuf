@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class StarContriRecord extends Message {
     public static final String DEFAULT_RECORD_NOTICE = "";
     public static final Long DEFAULT_USER_ID = 0L;
@@ -14,7 +14,7 @@ public final class StarContriRecord extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<StarContriRecord> {
         public String record_notice;
         public Long user_id;

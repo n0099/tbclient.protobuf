@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Adkiller extends Message {
     public static final String DEFAULT_HINT_URL = "";
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -22,7 +22,7 @@ public final class Adkiller extends Message {
     public static final Integer DEFAULT_AD_LEFT_NUM = 0;
     public static final List<AdkillerAd> DEFAULT_AD_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Adkiller> {
         public Integer ad_left_num;
         public List<AdkillerAd> ad_list;

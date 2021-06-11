@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DiscoverTabCard extends Message {
     public static final List<RecommendForumInfo> DEFAULT_FORUM_LIST = Collections.emptyList();
     public static final Boolean DEFAULT_IS_SHOW_ORDER_NUMBER = Boolean.FALSE;
@@ -19,7 +19,7 @@ public final class DiscoverTabCard extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DiscoverTabCard> {
         public List<RecommendForumInfo> forum_list;
         public Boolean is_show_order_number;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Item extends Message {
     public static final Double DEFAULT_ICON_SIZE;
     public static final String DEFAULT_ICON_URL = "";
@@ -28,7 +28,7 @@ public final class Item extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 5, type = Message.Datatype.STRING)
     public final List<String> tags;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Item> {
         public Double icon_size;
         public String icon_url;

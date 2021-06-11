@@ -3,12 +3,12 @@ package tbclient.FollowDync;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69293common;
+    public final CommonReq f72604common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -28,11 +28,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_Q_TYPE = 0;
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69294common;
+        public CommonReq f72605common;
         public Integer pn;
         public Integer ps;
         public Integer q_type;
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69294common = dataReq.f69293common;
+            this.f72605common = dataReq.f72604common;
             this.pn = dataReq.pn;
             this.ps = dataReq.ps;
             this.scr_w = dataReq.scr_w;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69293common = builder.f69294common;
+            this.f72604common = builder.f72605common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69293common = builder.f69294common;
+        this.f72604common = builder.f72605common;
         this.pn = builder.pn;
         this.ps = builder.ps;
         this.scr_w = builder.scr_w;

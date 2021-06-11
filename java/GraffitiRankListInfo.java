@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class GraffitiRankListInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<User> consent_list;
@@ -31,7 +31,7 @@ public final class GraffitiRankListInfo extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final List<User> DEFAULT_CONSENT_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<GraffitiRankListInfo> {
         public List<User> consent_list;
         public Integer has_more;

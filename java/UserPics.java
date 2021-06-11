@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class UserPics extends Message {
     public static final String DEFAULT_BIG = "";
     public static final String DEFAULT_SMALL = "";
@@ -11,7 +11,7 @@ public final class UserPics extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String small;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<UserPics> {
         public String big;
         public String small;

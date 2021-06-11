@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ForumBookInfo extends Message {
     public static final String DEFAULT_AUTHOR = "";
     public static final String DEFAULT_BOOK_COVER = "";
@@ -50,7 +50,7 @@ public final class ForumBookInfo extends Message {
     public static final Long DEFAULT_SHOW_PAGE_ID = 0L;
     public static final Long DEFAULT_SHOW_PARAGRAPH_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ForumBookInfo> {
         public String author;
         public String book_cover;

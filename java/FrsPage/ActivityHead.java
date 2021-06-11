@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ActivityHead extends Message {
     public static final String DEFAULT_ACTIVITY_TITLE = "";
     public static final Integer DEFAULT_ACTIVITY_TYPE = 0;
@@ -21,7 +21,7 @@ public final class ActivityHead extends Message {
     @ProtoField(tag = 4)
     public final Size top_size;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ActivityHead> {
         public String activity_title;
         public Integer activity_type;

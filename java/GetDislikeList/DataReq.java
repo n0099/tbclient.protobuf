@@ -3,12 +3,12 @@ package tbclient.GetDislikeList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69333common;
+    public final CommonReq f72644common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69334common;
+        public CommonReq f72645common;
         public Integer pn;
         public Integer rn;
         public Long user_id;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69334common = dataReq.f69333common;
+            this.f72645common = dataReq.f72644common;
             this.user_id = dataReq.user_id;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69333common = builder.f69334common;
+            this.f72644common = builder.f72645common;
             Long l = builder.user_id;
             if (l == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69333common = builder.f69334common;
+        this.f72644common = builder.f72645common;
         this.user_id = builder.user_id;
         this.pn = builder.pn;
         this.rn = builder.rn;

@@ -2,13 +2,13 @@ package tbclient.AddLotteryCount;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_ENABLE_GET_CHANCE = 0;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer enable_get_chance;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer enable_get_chance;
 

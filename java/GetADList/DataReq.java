@@ -3,7 +3,7 @@ package tbclient.GetADList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FID = 0L;
     public static final Long DEFAULT_OFFSET = 0L;
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69307common;
+    public final CommonReq f72618common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer rn;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69308common;
+        public CommonReq f72619common;
         public Long fid;
         public Long offset;
         public Integer rn;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69308common = dataReq.f69307common;
+            this.f72619common = dataReq.f72618common;
             this.fid = dataReq.fid;
             this.offset = dataReq.offset;
             this.rn = dataReq.rn;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69307common = builder.f69308common;
+            this.f72618common = builder.f72619common;
             Long l = builder.fid;
             if (l == null) {
                 this.fid = DEFAULT_FID;
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69307common = builder.f69308common;
+        this.f72618common = builder.f72619common;
         this.fid = builder.fid;
         this.offset = builder.offset;
         this.rn = builder.rn;

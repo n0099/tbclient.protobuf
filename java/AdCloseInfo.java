@@ -8,7 +8,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class AdCloseInfo extends Message {
     public static final String DEFAULT_CONFIRM_TITLE = "";
     public static final String DEFAULT_TITLE = "";
@@ -25,7 +25,7 @@ public final class AdCloseInfo extends Message {
     public static final Integer DEFAULT_SUPPORT_CLOSE = 0;
     public static final List<String> DEFAULT_REASONS = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<AdCloseInfo> {
         public ActionControl action_control;
         public String confirm_title;

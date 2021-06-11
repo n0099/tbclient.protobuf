@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class TopicModule extends Message {
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final String DEFAULT_TOPIC_IMAGE = "";
@@ -22,7 +22,7 @@ public final class TopicModule extends Message {
     public static final Long DEFAULT_TOPIC_ID = 0L;
     public static final Long DEFAULT_DISCUSS_NUM = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TopicModule> {
         public Long discuss_num;
         public PkModule pk_module;

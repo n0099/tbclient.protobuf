@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class AddBawuPopInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -17,7 +17,7 @@ public final class AddBawuPopInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<AddBawuPopInfo> {
         public String content;
         public String img_url;

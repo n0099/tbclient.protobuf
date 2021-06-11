@@ -3,7 +3,7 @@ package tbclient.GeneralTabList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_TAB_NAME = "";
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69305common;
+    public final CommonReq f72616common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -52,12 +52,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final Integer DEFAULT_TAB_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69306common;
+        public CommonReq f72617common;
         public Long forum_id;
         public Integer is_default_navtab;
         public Integer is_general_tab;
@@ -80,7 +80,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69306common = dataReq.f69305common;
+            this.f72617common = dataReq.f72616common;
             this.tab_id = dataReq.tab_id;
             this.forum_id = dataReq.forum_id;
             this.pn = dataReq.pn;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69305common = builder.f69306common;
+            this.f72616common = builder.f72617common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -195,7 +195,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69305common = builder.f69306common;
+        this.f72616common = builder.f72617common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;

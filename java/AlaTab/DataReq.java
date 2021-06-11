@@ -3,24 +3,24 @@ package tbclient.AlaTab;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_LAST_VIEWED_FEEDS = "";
     public static final Integer DEFAULT_PN = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69247common;
+    public final CommonReq f72556common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String last_viewed_feeds;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer pn;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69248common;
+        public CommonReq f72557common;
         public String last_viewed_feeds;
         public Integer pn;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69248common = dataReq.f69247common;
+            this.f72557common = dataReq.f72556common;
             this.pn = dataReq.pn;
             this.last_viewed_feeds = dataReq.last_viewed_feeds;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69247common = builder.f69248common;
+            this.f72556common = builder.f72557common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69247common = builder.f69248common;
+        this.f72556common = builder.f72557common;
         this.pn = builder.pn;
         this.last_viewed_feeds = builder.last_viewed_feeds;
     }

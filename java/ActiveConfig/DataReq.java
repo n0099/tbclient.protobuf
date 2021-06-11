@@ -3,12 +3,12 @@ package tbclient.ActiveConfig;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69229common;
+    public final CommonReq f72538common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer is_first_up;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -16,11 +16,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_SCHEMA_UP = 0;
     public static final Integer DEFAULT_IS_FIRST_UP = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69230common;
+        public CommonReq f72539common;
         public Integer is_first_up;
         public Integer is_schema_up;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69230common = dataReq.f69229common;
+            this.f72539common = dataReq.f72538common;
             this.is_schema_up = dataReq.is_schema_up;
             this.is_first_up = dataReq.is_first_up;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69229common = builder.f69230common;
+            this.f72538common = builder.f72539common;
             Integer num = builder.is_schema_up;
             if (num == null) {
                 this.is_schema_up = DEFAULT_IS_SCHEMA_UP;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69229common = builder.f69230common;
+        this.f72538common = builder.f72539common;
         this.is_schema_up = builder.is_schema_up;
         this.is_first_up = builder.is_first_up;
     }

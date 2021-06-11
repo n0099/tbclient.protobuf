@@ -12,7 +12,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class App extends Message {
     public static final String DEFAULT_ABTEST = "";
     public static final String DEFAULT_AD_ID = "";
@@ -111,7 +111,7 @@ public final class App extends Message {
     public static final Integer DEFAULT_PLAN_ID = 0;
     public static final List<GoodsInfo> DEFAULT_GOODS_INFO = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<App> {
         public String abtest;
         public String ad_id;

@@ -2,7 +2,7 @@ package tbclient.ForumRecommend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class SearchValue extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_NAME = "";
@@ -17,7 +17,7 @@ public final class SearchValue extends Message {
     public static final Long DEFAULT_TYPE = 0L;
     public static final Long DEFAULT_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<SearchValue> {
         public String desc;
         public Long id;

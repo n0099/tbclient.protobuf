@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Entry extends Message {
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
     public static final String DEFAULT_ICON = "";
@@ -20,7 +20,7 @@ public final class Entry extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_ICON_TYPE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Entry> {
         public String bitmap_wh_ratio;
         public String icon;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ForumRuleStatus extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -17,7 +17,7 @@ public final class ForumRuleStatus extends Message {
     public static final Integer DEFAULT_AUDIT_STATUS = 0;
     public static final Integer DEFAULT_HAS_FORUM_RULE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ForumRuleStatus> {
         public Integer audit_status;
         public Long forum_rule_id;

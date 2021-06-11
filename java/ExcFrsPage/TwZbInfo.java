@@ -2,7 +2,7 @@ package tbclient.ExcFrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class TwZbInfo extends Message {
     public static final String DEFAULT_LAST_MODIFIED_TIME = "";
     public static final String DEFAULT_LIVECOVER_SRC = "";
@@ -17,7 +17,7 @@ public final class TwZbInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TwZbInfo> {
         public String last_modified_time;
         public String livecover_src;

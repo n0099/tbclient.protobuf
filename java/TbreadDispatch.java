@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class TbreadDispatch extends Message {
     public static final String DEFAULT_FLOOR_NUM = "";
     public static final String DEFAULT_PRODUCT_ID = "";
@@ -14,7 +14,7 @@ public final class TbreadDispatch extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String product_type;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TbreadDispatch> {
         public String floor_num;
         public String product_id;

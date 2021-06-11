@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class BazhuForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -26,7 +26,7 @@ public final class BazhuForum extends Message {
     public static final Integer DEFAULT_ROLE_ID = 0;
     public static final Integer DEFAULT_IS_SIGN = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<BazhuForum> {
         public String avatar;
         public Long forum_id;

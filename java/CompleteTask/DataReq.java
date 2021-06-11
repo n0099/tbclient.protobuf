@@ -3,7 +3,7 @@ package tbclient.CompleteTask;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COMPELETE_ID = "";
     public static final String DEFAULT_SHOUBAICUID = "";
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69261common;
+    public final CommonReq f72570common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String compelete_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String token;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69262common;
+        public CommonReq f72571common;
         public String compelete_id;
         public String shoubaicuid;
         public String token;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69262common = dataReq.f69261common;
+            this.f72571common = dataReq.f72570common;
             this.shoubaicuid = dataReq.shoubaicuid;
             this.compelete_id = dataReq.compelete_id;
             this.token = dataReq.token;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69261common = builder.f69262common;
+            this.f72570common = builder.f72571common;
             String str = builder.shoubaicuid;
             if (str == null) {
                 this.shoubaicuid = "";
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69261common = builder.f69262common;
+        this.f72570common = builder.f72571common;
         this.shoubaicuid = builder.shoubaicuid;
         this.compelete_id = builder.compelete_id;
         this.token = builder.token;

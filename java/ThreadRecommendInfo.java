@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ThreadRecommendInfo extends Message {
     public static final String DEFAULT_FORUM_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -20,7 +20,7 @@ public final class ThreadRecommendInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String show_type;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThreadRecommendInfo> {
         public String forum_avatar;
         public String forum_name;

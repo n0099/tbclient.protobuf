@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Badges extends Message {
     public static final Integer DEFAULT_BADGE_ID = 0;
     public static final String DEFAULT_BADGE_URL = "";
@@ -14,7 +14,7 @@ public final class Badges extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String webview;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Badges> {
         public Integer badge_id;
         public String badge_url;

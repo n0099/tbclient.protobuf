@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class CartoonBookInfo extends Message {
     public static final String DEFAULT_CARTOON_NAME = "";
     public static final String DEFAULT_COVER_IMG = "";
@@ -17,7 +17,7 @@ public final class CartoonBookInfo extends Message {
     public static final Long DEFAULT_CARTOON_ID = 0L;
     public static final Integer DEFAULT_CARTOON_VIP = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<CartoonBookInfo> {
         public Long cartoon_id;
         public String cartoon_name;

@@ -5,7 +5,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class VideoDesc extends Message {
     public static final String DEFAULT_VIDEO_HEIGHT = "";
     public static final Integer DEFAULT_VIDEO_ID = 0;
@@ -23,7 +23,7 @@ public final class VideoDesc extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String video_width;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<VideoDesc> {
         public String video_height;
         public Integer video_id;

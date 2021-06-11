@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class SimpleUser extends Message {
     public static final String DEFAULT_AHEAD_URL = "";
     public static final String DEFAULT_BLOCK_MSG = "";
@@ -41,7 +41,7 @@ public final class SimpleUser extends Message {
     public static final Integer DEFAULT_AGREE_TYPE = 0;
     public static final Integer DEFAULT_SHOW_ONLYME = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<SimpleUser> {
         public Integer agree_type;
         public String ahead_url;

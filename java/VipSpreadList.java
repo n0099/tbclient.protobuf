@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class VipSpreadList extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final String DEFAULT_CLASS_URL = "";
@@ -17,7 +17,7 @@ public final class VipSpreadList extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String item;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<VipSpreadList> {
         public String class_name;
         public String class_url;

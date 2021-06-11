@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class PostInfoList extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -166,7 +166,7 @@ public final class PostInfoList extends Message {
     public static final List<PrivSets> DEFAULT_PRIV_SETS = Collections.emptyList();
     public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;

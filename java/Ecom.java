@@ -2,13 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Ecom extends Message {
     public static final Integer DEFAULT_IS_SELLER = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer is_seller;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Ecom> {
         public Integer is_seller;
 

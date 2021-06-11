@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ThemeCardPropMain extends Message {
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_DESCRIPTION = "";
@@ -35,7 +35,7 @@ public final class ThemeCardPropMain extends Message {
     public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
     public static final Integer DEFAULT_IS_FINISHED = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThemeCardPropMain> {
         public String activity_url;
         public String description;

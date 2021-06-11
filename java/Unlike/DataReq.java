@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69571common;
+    public final CommonReq f72882common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69572common;
+        public CommonReq f72883common;
         public Long thread_id;
         public Integer type;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69572common = dataReq.f69571common;
+            this.f72883common = dataReq.f72882common;
             this.thread_id = dataReq.thread_id;
             this.type = dataReq.type;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69571common = builder.f69572common;
+            this.f72882common = builder.f72883common;
             Long l = builder.thread_id;
             if (l == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69571common = builder.f69572common;
+        this.f72882common = builder.f72883common;
         this.thread_id = builder.thread_id;
         this.type = builder.type;
     }

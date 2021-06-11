@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BannerImage;
 import tbclient.Page;
 import tbclient.ThreadInfo;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final List<BannerImage> DEFAULT_BANNER_IMAGE = Collections.emptyList();
     public static final List<BannerImage> DEFAULT_GRID = Collections.emptyList();
@@ -29,7 +29,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ThreadInfo> thread_list;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<BannerImage> banner_image;
         public List<BannerImage> grid;

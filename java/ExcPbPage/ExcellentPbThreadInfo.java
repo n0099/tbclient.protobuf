@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ExcellentPbThreadInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ABTEST = "";
@@ -47,7 +47,7 @@ public final class ExcellentPbThreadInfo extends Message {
     public static final Long DEFAULT_POST_ID = 0L;
     public static final Long DEFAULT_POST_NUM = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ExcellentPbThreadInfo> {
         public String _abstract;
         public String abtest;

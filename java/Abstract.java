@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Abstract extends Message {
     public static final String DEFAULT_DURING_TIME = "";
     public static final String DEFAULT_LINK = "";
@@ -26,7 +26,7 @@ public final class Abstract extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String voice_md5;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Abstract> {
         public String during_time;
         public String link;

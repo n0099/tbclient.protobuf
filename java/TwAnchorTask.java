@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class TwAnchorTask extends Message {
     public static final String DEFAULT_DESCRIBE = "";
     public static final List<TwAnchorTaskItem> DEFAULT_TASK_LIST = Collections.emptyList();
@@ -16,7 +16,7 @@ public final class TwAnchorTask extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String task_name;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TwAnchorTask> {
         public String describe;
         public List<TwAnchorTaskItem> task_list;

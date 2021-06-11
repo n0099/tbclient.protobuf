@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class HotTopicList extends Message {
     public static final String DEFAULT_TOPIC_NAME = "";
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
@@ -20,7 +20,7 @@ public final class HotTopicList extends Message {
     public static final Long DEFAULT_DISCUSS_NUM = 0L;
     public static final Integer DEFAULT_TAG = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<HotTopicList> {
         public Long discuss_num;
         public Integer tag;

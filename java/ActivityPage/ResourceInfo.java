@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ResourceInfo extends Message {
     public static final String DEFAULT_HOT_TOPIC = "";
     public static final String DEFAULT_RECOMMEND_FORUM = "";
@@ -26,7 +26,7 @@ public final class ResourceInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String type;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ResourceInfo> {
         public String hot_topic;
         public String recommend_forum;

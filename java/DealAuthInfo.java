@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DealAuthInfo extends Message {
     public static final String DEFAULT_ITEM_CONTENT = "";
     public static final String DEFAULT_ITEM_NAME = "";
@@ -14,7 +14,7 @@ public final class DealAuthInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String item_url;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DealAuthInfo> {
         public String item_content;
         public String item_name;

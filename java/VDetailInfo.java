@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class VDetailInfo extends Message {
     public static final String DEFAULT_DETAIL_INFO = "";
     public static final String DEFAULT_INTRO = "";
@@ -17,7 +17,7 @@ public final class VDetailInfo extends Message {
     public static final Long DEFAULT_V_ID = 0L;
     public static final Long DEFAULT_USER_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<VDetailInfo> {
         public String detail_info;
         public String intro;

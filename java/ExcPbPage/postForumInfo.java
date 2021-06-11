@@ -2,7 +2,7 @@ package tbclient.ExcPbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class postForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -20,7 +20,7 @@ public final class postForumInfo extends Message {
     public static final Integer DEFAULT_IS_LIKE = 0;
     public static final Integer DEFAULT_MEMBER_COUNT = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<postForumInfo> {
         public String avatar;
         public Long forum_id;

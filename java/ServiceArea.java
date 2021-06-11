@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ServiceArea extends Message {
     public static final String DEFAULT_PICURL = "";
     public static final String DEFAULT_SCHEMA = "";
@@ -30,7 +30,7 @@ public final class ServiceArea extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String version;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ServiceArea> {
         public SmartApp area_smart_app;
         public String picurl;

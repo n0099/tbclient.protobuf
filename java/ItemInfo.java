@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ItemInfo extends Message {
     public static final String DEFAULT_BRIEF = "";
     public static final String DEFAULT_ICON_URL = "";
@@ -33,7 +33,7 @@ public final class ItemInfo extends Message {
     public static final List<ItemOptions> DEFAULT_ITEM_OPTIONS = Collections.emptyList();
     public static final Integer DEFAULT_IS_SCHOOL = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ItemInfo> {
         public String brief;
         public Double icon_size;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class RecomTopicInfo extends Message {
     public static final String DEFAULT_RECOM_TITLE = "";
     public static final List<RecomTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
@@ -13,7 +13,7 @@ public final class RecomTopicInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<RecomTopicList> topic_list;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<RecomTopicInfo> {
         public String recom_title;
         public List<RecomTopicList> topic_list;

@@ -3,12 +3,12 @@ package tbclient.ElectionInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69273common;
+    public final CommonReq f72582common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long fid;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_RN = 0;
     public static final Integer DEFAULT_PN = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69274common;
+        public CommonReq f72583common;
         public Long fid;
         public Integer pn;
         public Integer rn;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69274common = dataReq.f69273common;
+            this.f72583common = dataReq.f72582common;
             this.fid = dataReq.fid;
             this.rn = dataReq.rn;
             this.pn = dataReq.pn;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69273common = builder.f69274common;
+            this.f72582common = builder.f72583common;
             Long l = builder.fid;
             if (l == null) {
                 this.fid = DEFAULT_FID;
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69273common = builder.f69274common;
+        this.f72582common = builder.f72583common;
         this.fid = builder.fid;
         this.rn = builder.rn;
         this.pn = builder.pn;

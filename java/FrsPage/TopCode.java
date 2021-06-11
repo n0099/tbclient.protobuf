@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class TopCode extends Message {
     public static final String DEFAULT_CODE_LINK = "";
     public static final String DEFAULT_GAME_LINK = "";
@@ -32,7 +32,7 @@ public final class TopCode extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String type_text;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TopCode> {
         public String code_link;
         public String game_link;

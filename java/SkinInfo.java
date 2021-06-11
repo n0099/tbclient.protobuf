@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class SkinInfo extends Message {
     public static final String DEFAULT_MONITOR_ID = "";
     public static final String DEFAULT_OBJ_ID = "";
@@ -20,7 +20,7 @@ public final class SkinInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<SkinInfo> {
         public String monitor_id;
         public String obj_id;

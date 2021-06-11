@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class AwardInfo extends Message {
     public static final String DEFAULT_AWARD_IMGSRC = "";
     public static final String DEFAULT_AWARD_NAME = "";
@@ -17,7 +17,7 @@ public final class AwardInfo extends Message {
     public static final Long DEFAULT_AWARD_ID = 0L;
     public static final Long DEFAULT_AWARD_ACT_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<AwardInfo> {
         public Long award_act_id;
         public Long award_id;

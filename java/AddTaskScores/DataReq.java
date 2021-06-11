@@ -3,12 +3,12 @@ package tbclient.AddTaskScores;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69243common;
+    public final CommonReq f72552common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer task_id;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -16,11 +16,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_TASK_ID = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69244common;
+        public CommonReq f72553common;
         public Integer task_id;
         public Long user_id;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69244common = dataReq.f69243common;
+            this.f72553common = dataReq.f72552common;
             this.user_id = dataReq.user_id;
             this.task_id = dataReq.task_id;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69243common = builder.f69244common;
+            this.f72552common = builder.f72553common;
             Long l = builder.user_id;
             if (l == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69243common = builder.f69244common;
+        this.f72552common = builder.f72553common;
         this.user_id = builder.user_id;
         this.task_id = builder.task_id;
     }

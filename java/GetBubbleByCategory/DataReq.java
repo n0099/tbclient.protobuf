@@ -3,18 +3,18 @@ package tbclient.GetBubbleByCategory;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes6.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69321common;
+    public final CommonReq f72632common;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69322common;
+        public CommonReq f72633common;
 
         public Builder() {
         }
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69322common = dataReq.f69321common;
+            this.f72633common = dataReq.f72632common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -37,9 +37,9 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69321common = builder.f69322common;
+            this.f72632common = builder.f72633common;
         } else {
-            this.f69321common = builder.f69322common;
+            this.f72632common = builder.f72633common;
         }
     }
 }

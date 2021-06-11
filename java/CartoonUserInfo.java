@@ -2,13 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class CartoonUserInfo extends Message {
     public static final Integer DEFAULT_IS_VIP = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer is_vip;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<CartoonUserInfo> {
         public Integer is_vip;
 

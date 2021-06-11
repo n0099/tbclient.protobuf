@@ -4,13 +4,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ThreadPicList extends Message {
     public static final String DEFAULT_PIC = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThreadPicList> {
         public String pic;
 

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class MultipleForum extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final String DEFAULT_FORUM_NAME = "";
@@ -11,7 +11,7 @@ public final class MultipleForum extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String forum_name;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<MultipleForum> {
         public Long forum_id;
         public String forum_name;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class SubPostList extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 9)
@@ -40,7 +40,7 @@ public final class SubPostList extends Message {
     public static final Integer DEFAULT_IS_FAKE_TOP = 0;
     public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<SubPostList> {
         public Agree agree;
         public User author;

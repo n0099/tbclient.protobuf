@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class Music extends Message {
     public static final String DEFAULT_PIC = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -17,7 +17,7 @@ public final class Music extends Message {
     public static final Integer DEFAULT_SID = 0;
     public static final Integer DEFAULT_ISOPEN = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Music> {
         public Integer isopen;
         public Integer num;

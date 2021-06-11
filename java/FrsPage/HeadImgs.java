@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class HeadImgs extends Message {
     public static final String DEFAULT_BTN_TEXT = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -37,7 +37,7 @@ public final class HeadImgs extends Message {
     public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
     public static final Integer DEFAULT_HAS_SECOND_PAGE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<HeadImgs> {
         public String btn_text;
         public Integer has_second_page;

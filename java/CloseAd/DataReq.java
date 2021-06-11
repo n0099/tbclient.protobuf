@@ -3,21 +3,21 @@ package tbclient.CloseAd;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_VIP_CLOSE = 0;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69257common;
+    public final CommonReq f72566common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer vip_close;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69258common;
+        public CommonReq f72567common;
         public Integer vip_close;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69258common = dataReq.f69257common;
+            this.f72567common = dataReq.f72566common;
             this.vip_close = dataReq.vip_close;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69257common = builder.f69258common;
+            this.f72566common = builder.f72567common;
             Integer num = builder.vip_close;
             if (num == null) {
                 this.vip_close = DEFAULT_VIP_CLOSE;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69257common = builder.f69258common;
+        this.f72566common = builder.f72567common;
         this.vip_close = builder.vip_close;
     }
 }

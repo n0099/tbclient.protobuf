@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.BawuRoleInfoPub;
 import tbclient.ForumInfo;
 import tbclient.ForumRule;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_AUDIT_OPINION = "";
     public static final String DEFAULT_CUR_TIME = "";
@@ -41,7 +41,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_MANAGER = 0;
     public static final Long DEFAULT_FORUM_RULE_ID = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String audit_opinion;
         public Integer audit_status;

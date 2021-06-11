@@ -2,7 +2,7 @@ package tbclient.DoDailyTask;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ButtonItem extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
@@ -11,7 +11,7 @@ public final class ButtonItem extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ButtonItem> {
         public String title;
         public String url;

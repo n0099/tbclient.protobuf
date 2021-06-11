@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class CallFansInfo extends Message {
     public static final Integer DEFAULT_CAN_CALL = 0;
     public static final Long DEFAULT_THREAD_ID = 0L;
@@ -11,7 +11,7 @@ public final class CallFansInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long thread_id;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<CallFansInfo> {
         public Integer can_call;
         public Long thread_id;

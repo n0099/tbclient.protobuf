@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class LiveLabelInfo extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
@@ -11,7 +11,7 @@ public final class LiveLabelInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<LiveLabelInfo> {
         public String icon;
         public String name;

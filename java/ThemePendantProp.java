@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ThemePendantProp extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     public static final String DEFAULT_TITLE = "";
@@ -11,7 +11,7 @@ public final class ThemePendantProp extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThemePendantProp> {
         public Integer props_id;
         public String title;

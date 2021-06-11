@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class ForcusRecommand extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final List<ForcusUsers> DEFAULT_USERS = Collections.emptyList();
@@ -13,7 +13,7 @@ public final class ForcusRecommand extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ForcusUsers> users;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ForcusRecommand> {
         public Integer type;
         public List<ForcusUsers> users;

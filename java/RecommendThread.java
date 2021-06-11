@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class RecommendThread extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -19,7 +19,7 @@ public final class RecommendThread extends Message {
     public static final Long DEFAULT_POST_NUM = 0L;
     public static final List<String> DEFAULT_TERM_LIST = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<RecommendThread> {
         public Long post_num;
         public List<String> term_list;

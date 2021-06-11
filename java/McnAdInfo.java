@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class McnAdInfo extends Message {
     public static final String DEFAULT_BUTTON_TITLE = "";
     public static final String DEFAULT_CARD_TITLE = "";
@@ -31,7 +31,7 @@ public final class McnAdInfo extends Message {
     public static final Long DEFAULT_EFFECT_TIME = 0L;
     public static final Long DEFAULT_EXPIRE_TIME = 0L;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<McnAdInfo> {
         public Long ad_end_time;
         public Long ad_start_time;

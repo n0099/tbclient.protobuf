@@ -1,10 +1,10 @@
 package tbclient;
 
 import com.squareup.wire.Message;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class AssistApplyInfo extends Message {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<AssistApplyInfo> {
         public Builder() {
         }

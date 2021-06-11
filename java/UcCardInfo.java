@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class UcCardInfo extends Message {
     public static final String DEFAULT_JMP = "";
     public static final String DEFAULT_PIC = "";
@@ -20,7 +20,7 @@ public final class UcCardInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<UcCardInfo> {
         public String jmp;
         public String pic;

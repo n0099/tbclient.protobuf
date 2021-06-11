@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class UserVipInfo extends Message {
     public static final String DEFAULT_ICON_URL = "";
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -29,7 +29,7 @@ public final class UserVipInfo extends Message {
     public static final Integer DEFAULT_A_SCORE = 0;
     public static final Integer DEFAULT_N_SCORE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<UserVipInfo> {
         public Integer a_score;
         public Integer e_time;

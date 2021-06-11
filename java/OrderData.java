@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class OrderData extends Message {
     @ProtoField(tag = 3)
     public final DefaultInfo default_info;
@@ -15,7 +15,7 @@ public final class OrderData extends Message {
     public static final List<OrderList> DEFAULT_ORDER_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HASMORE = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<OrderData> {
         public DefaultInfo default_info;
         public Integer hasmore;

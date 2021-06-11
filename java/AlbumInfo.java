@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class AlbumInfo extends Message {
     public static final String DEFAULT_ALBUM_NAME = "";
     public static final Boolean DEFAULT_HAS_COLLECT;
@@ -50,7 +50,7 @@ public final class AlbumInfo extends Message {
     public static final Integer DEFAULT_NUM_JOIN = 0;
     public static final Integer DEFAULT_NUM_HIGH = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<AlbumInfo> {
         public Long album_id;
         public String album_name;

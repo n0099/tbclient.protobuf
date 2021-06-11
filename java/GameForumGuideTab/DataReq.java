@@ -3,12 +3,12 @@ package tbclient.GameForumGuideTab;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f69303common;
+    public final CommonReq f72614common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -28,11 +28,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SUB_LABEL_ID = 0;
     public static final Integer DEFAULT_NEED_TAB_STUCT = 0;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f69304common;
+        public CommonReq f72615common;
         public Long forum_id;
         public Integer need_tab_stuct;
         public Integer pn;
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f69304common = dataReq.f69303common;
+            this.f72615common = dataReq.f72614common;
             this.pn = dataReq.pn;
             this.ps = dataReq.ps;
             this.forum_id = dataReq.forum_id;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f69303common = builder.f69304common;
+            this.f72614common = builder.f72615common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f69303common = builder.f69304common;
+        this.f72614common = builder.f72615common;
         this.pn = builder.pn;
         this.ps = builder.ps;
         this.forum_id = builder.forum_id;

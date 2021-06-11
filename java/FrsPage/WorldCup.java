@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class WorldCup extends Message {
     @ProtoField(tag = 4)
     public final WorldCupGame game;
@@ -13,7 +13,7 @@ public final class WorldCup extends Message {
     @ProtoField(tag = 2)
     public final WorldCupPk pk;
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<WorldCup> {
         public WorldCupGame game;
         public WorldCupLottery lottery;

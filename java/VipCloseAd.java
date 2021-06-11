@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes8.dex */
 public final class VipCloseAd extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.INT32)
     public final List<Integer> forum_close;
@@ -16,7 +16,7 @@ public final class VipCloseAd extends Message {
     public static final Integer DEFAULT_VIP_CLOSE = 0;
     public static final List<Integer> DEFAULT_FORUM_CLOSE = Collections.emptyList();
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<VipCloseAd> {
         public List<Integer> forum_close;
         public Integer is_open;
