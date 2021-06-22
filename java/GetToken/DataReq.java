@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72732common;
+    public final CommonReq f72836common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String shoubaicuid;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72733common;
+        public CommonReq f72837common;
         public String shoubaicuid;
         public String token;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f72733common = dataReq.f72732common;
+            this.f72837common = dataReq.f72836common;
             this.token = dataReq.token;
             this.shoubaicuid = dataReq.shoubaicuid;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f72732common = builder.f72733common;
+            this.f72836common = builder.f72837common;
             String str = builder.token;
             if (str == null) {
                 this.token = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f72732common = builder.f72733common;
+        this.f72836common = builder.f72837common;
         this.token = builder.token;
         this.shoubaicuid = builder.shoubaicuid;
     }

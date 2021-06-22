@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72840common;
+    public final CommonReq f72944common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String isforum;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72841common;
+        public CommonReq f72945common;
         public String isforum;
         public String word;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f72841common = dataReq.f72840common;
+            this.f72945common = dataReq.f72944common;
             this.word = dataReq.word;
             this.isforum = dataReq.isforum;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f72840common = builder.f72841common;
+            this.f72944common = builder.f72945common;
             String str = builder.word;
             if (str == null) {
                 this.word = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f72840common = builder.f72841common;
+        this.f72944common = builder.f72945common;
         this.word = builder.word;
         this.isforum = builder.isforum;
     }

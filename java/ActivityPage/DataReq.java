@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72540common;
+    public final CommonReq f72644common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
         public String activity_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72541common;
+        public CommonReq f72645common;
         public Integer pn;
         public Integer q_type;
         public Integer rn;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f72541common = dataReq.f72540common;
+            this.f72645common = dataReq.f72644common;
             this.activity_name = dataReq.activity_name;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f72540common = builder.f72541common;
+            this.f72644common = builder.f72645common;
             String str = builder.activity_name;
             if (str == null) {
                 this.activity_name = "";
@@ -118,7 +118,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f72540common = builder.f72541common;
+        this.f72644common = builder.f72645common;
         this.activity_name = builder.activity_name;
         this.pn = builder.pn;
         this.rn = builder.rn;

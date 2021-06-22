@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72602common;
+    public final CommonReq f72706common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long task_id;
 
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72603common;
+        public CommonReq f72707common;
         public Long task_id;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f72603common = dataReq.f72602common;
+            this.f72707common = dataReq.f72706common;
             this.task_id = dataReq.task_id;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f72602common = builder.f72603common;
+            this.f72706common = builder.f72707common;
             Long l = builder.task_id;
             if (l == null) {
                 this.task_id = DEFAULT_TASK_ID;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f72602common = builder.f72603common;
+        this.f72706common = builder.f72707common;
         this.task_id = builder.task_id;
     }
 }

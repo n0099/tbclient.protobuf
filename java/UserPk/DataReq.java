@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72894common;
+    public final CommonReq f72998common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long pk_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public Integer click_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72895common;
+        public CommonReq f72999common;
         public Long pk_id;
         public Integer pk_index;
         public Integer pk_type;
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f72895common = dataReq.f72894common;
+            this.f72999common = dataReq.f72998common;
             this.pk_id = dataReq.pk_id;
             this.topic_id = dataReq.topic_id;
             this.pk_index = dataReq.pk_index;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f72894common = builder.f72895common;
+            this.f72998common = builder.f72999common;
             Long l = builder.pk_id;
             if (l == null) {
                 this.pk_id = DEFAULT_PK_ID;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f72894common = builder.f72895common;
+        this.f72998common = builder.f72999common;
         this.pk_id = builder.pk_id;
         this.topic_id = builder.topic_id;
         this.pk_index = builder.pk_index;
