@@ -1,14 +1,36 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class OriginThreadInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final List<Abstract> DEFAULT_ABSTRACT;
+    public static final List<PbContent> DEFAULT_CONTENT;
+    public static final Long DEFAULT_FID;
     public static final String DEFAULT_FNAME = "";
+    public static final Integer DEFAULT_IS_DELETED;
+    public static final Integer DEFAULT_IS_NEW_STYLE;
+    public static final Integer DEFAULT_IS_UGC;
+    public static final List<HeadItem> DEFAULT_ITEM_STAR;
+    public static final List<Media> DEFAULT_MEDIA;
+    public static final Integer DEFAULT_REPLY_NUM;
+    public static final Integer DEFAULT_SHARED_NUM;
+    public static final Integer DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_TID = "";
     public static final String DEFAULT_TITLE = "";
+    public static final List<Voice> DEFAULT_VOICE_INFO;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Abstract> _abstract;
     @ProtoField(tag = 19)
@@ -53,21 +75,11 @@ public final class OriginThreadInfo extends Message {
     public final VideoInfo video_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
     public final List<Voice> voice_info;
-    public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
-    public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
-    public static final Long DEFAULT_FID = 0L;
-    public static final Integer DEFAULT_THREAD_TYPE = 0;
-    public static final Integer DEFAULT_IS_DELETED = 0;
-    public static final Integer DEFAULT_IS_UGC = 0;
-    public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
-    public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
-    public static final Integer DEFAULT_IS_NEW_STYLE = 0;
-    public static final Integer DEFAULT_REPLY_NUM = 0;
-    public static final Integer DEFAULT_SHARED_NUM = 0;
-    public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<OriginThreadInfo> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public List<Abstract> _abstract;
         public Agree agree;
         public AlaLiveInfo ala_info;
@@ -92,10 +104,37 @@ public final class OriginThreadInfo extends Message {
         public List<Voice> voice_info;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(OriginThreadInfo originThreadInfo) {
             super(originThreadInfo);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {originThreadInfo};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (originThreadInfo == null) {
                 return;
             }
@@ -126,12 +165,67 @@ public final class OriginThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public OriginThreadInfo build(boolean z) {
-            return new OriginThreadInfo(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new OriginThreadInfo(this, z, null) : (OriginThreadInfo) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(893396659, "Ltbclient/OriginThreadInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(893396659, "Ltbclient/OriginThreadInfo;");
+                return;
+            }
+        }
+        DEFAULT_MEDIA = Collections.emptyList();
+        DEFAULT_ABSTRACT = Collections.emptyList();
+        DEFAULT_FID = 0L;
+        DEFAULT_THREAD_TYPE = 0;
+        DEFAULT_IS_DELETED = 0;
+        DEFAULT_IS_UGC = 0;
+        DEFAULT_VOICE_INFO = Collections.emptyList();
+        DEFAULT_CONTENT = Collections.emptyList();
+        DEFAULT_IS_NEW_STYLE = 0;
+        DEFAULT_REPLY_NUM = 0;
+        DEFAULT_SHARED_NUM = 0;
+        DEFAULT_ITEM_STAR = Collections.emptyList();
+    }
+
+    public /* synthetic */ OriginThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public OriginThreadInfo(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.title;
             if (str == null) {

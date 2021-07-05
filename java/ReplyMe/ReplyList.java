@@ -1,20 +1,44 @@
 package tbclient.ReplyMe;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Baijiahao;
 import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class ReplyList extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FNAME = "";
+    public static final Integer DEFAULT_HIDE_FNAME;
+    public static final Integer DEFAULT_IS_BJH;
+    public static final Integer DEFAULT_IS_FLOOR;
+    public static final Integer DEFAULT_IS_SHARE_THREAD;
+    public static final Integer DEFAULT_IS_STORY;
     public static final String DEFAULT_ITEM_TYPE = "";
     public static final String DEFAULT_POST_FROM = "";
+    public static final Long DEFAULT_POST_ID;
     public static final String DEFAULT_QUOTE_CONTENT = "";
+    public static final Long DEFAULT_QUOTE_PID;
+    public static final Integer DEFAULT_SERVER_TIME;
+    public static final Long DEFAULT_THREAD_ID;
     public static final String DEFAULT_THREAD_IMG_URL = "";
+    public static final Integer DEFAULT_THREAD_TYPE;
+    public static final Integer DEFAULT_TIME;
     public static final String DEFAULT_TITLE = "";
+    public static final Integer DEFAULT_TYPE;
+    public static final Integer DEFAULT_UNREAD;
+    public static final Long DEFAULT_V_FORUM_ID;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 27)
     public final Baijiahao baijiahao;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -69,23 +93,11 @@ public final class ReplyList extends Message {
     public final Long v_forum_id;
     @ProtoField(tag = 13)
     public final Zan zan;
-    public static final Long DEFAULT_THREAD_ID = 0L;
-    public static final Long DEFAULT_POST_ID = 0L;
-    public static final Integer DEFAULT_TIME = 0;
-    public static final Integer DEFAULT_IS_FLOOR = 0;
-    public static final Integer DEFAULT_TYPE = 0;
-    public static final Integer DEFAULT_UNREAD = 0;
-    public static final Long DEFAULT_QUOTE_PID = 0L;
-    public static final Integer DEFAULT_SERVER_TIME = 0;
-    public static final Integer DEFAULT_THREAD_TYPE = 0;
-    public static final Long DEFAULT_V_FORUM_ID = 0L;
-    public static final Integer DEFAULT_HIDE_FNAME = 0;
-    public static final Integer DEFAULT_IS_STORY = 0;
-    public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
-    public static final Integer DEFAULT_IS_BJH = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ReplyList> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public Baijiahao baijiahao;
         public String content;
         public String fname;
@@ -115,10 +127,37 @@ public final class ReplyList extends Message {
         public Zan zan;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ReplyList replyList) {
             super(replyList);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {replyList};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (replyList == null) {
                 return;
             }
@@ -154,12 +193,69 @@ public final class ReplyList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ReplyList build(boolean z) {
-            return new ReplyList(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ReplyList(this, z, null) : (ReplyList) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-751210710, "Ltbclient/ReplyMe/ReplyList;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-751210710, "Ltbclient/ReplyMe/ReplyList;");
+                return;
+            }
+        }
+        DEFAULT_THREAD_ID = 0L;
+        DEFAULT_POST_ID = 0L;
+        DEFAULT_TIME = 0;
+        DEFAULT_IS_FLOOR = 0;
+        DEFAULT_TYPE = 0;
+        DEFAULT_UNREAD = 0;
+        DEFAULT_QUOTE_PID = 0L;
+        DEFAULT_SERVER_TIME = 0;
+        DEFAULT_THREAD_TYPE = 0;
+        DEFAULT_V_FORUM_ID = 0L;
+        DEFAULT_HIDE_FNAME = 0;
+        DEFAULT_IS_STORY = 0;
+        DEFAULT_IS_SHARE_THREAD = 0;
+        DEFAULT_IS_BJH = 0;
+    }
+
+    public /* synthetic */ ReplyList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ReplyList(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.thread_id;
             if (l == null) {

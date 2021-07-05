@@ -1,16 +1,32 @@
 package tbclient.GetMyGift;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class PresentMyList extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_CREATE_TIME;
     public static final String DEFAULT_CURRENCY_TYPE = "";
+    public static final Integer DEFAULT_CURRENCY_UNIT;
+    public static final Integer DEFAULT_GIFT_ID;
     public static final String DEFAULT_GIFT_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
+    public static final Integer DEFAULT_NUM;
+    public static final Long DEFAULT_PAY_USERID;
     public static final String DEFAULT_PAY_USERNAME = "";
     public static final String DEFAULT_PLAY_URL = "";
     public static final String DEFAULT_PORTRAIT = "";
+    public static final Long DEFAULT_PRESENT_SCORES;
     public static final String DEFAULT_THUMBNAIL_URL = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer create_time;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -37,15 +53,11 @@ public final class PresentMyList extends Message {
     public final Long present_scores;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String thumbnail_url;
-    public static final Long DEFAULT_PAY_USERID = 0L;
-    public static final Integer DEFAULT_GIFT_ID = 0;
-    public static final Integer DEFAULT_CREATE_TIME = 0;
-    public static final Integer DEFAULT_NUM = 0;
-    public static final Integer DEFAULT_CURRENCY_UNIT = 0;
-    public static final Long DEFAULT_PRESENT_SCORES = 0L;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PresentMyList> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public Integer create_time;
         public String currency_type;
         public Integer currency_unit;
@@ -61,10 +73,37 @@ public final class PresentMyList extends Message {
         public String thumbnail_url;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(PresentMyList presentMyList) {
             super(presentMyList);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {presentMyList};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (presentMyList == null) {
                 return;
             }
@@ -86,12 +125,61 @@ public final class PresentMyList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PresentMyList build(boolean z) {
-            return new PresentMyList(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PresentMyList(this, z, null) : (PresentMyList) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-533903715, "Ltbclient/GetMyGift/PresentMyList;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-533903715, "Ltbclient/GetMyGift/PresentMyList;");
+                return;
+            }
+        }
+        DEFAULT_PAY_USERID = 0L;
+        DEFAULT_GIFT_ID = 0;
+        DEFAULT_CREATE_TIME = 0;
+        DEFAULT_NUM = 0;
+        DEFAULT_CURRENCY_UNIT = 0;
+        DEFAULT_PRESENT_SCORES = 0L;
+    }
+
+    public /* synthetic */ PresentMyList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PresentMyList(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.pay_userid;
             if (l == null) {

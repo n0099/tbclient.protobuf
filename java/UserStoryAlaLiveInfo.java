@@ -1,12 +1,45 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class UserStoryAlaLiveInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final Long DEFAULT_AGREE_NUM;
+    public static final Long DEFAULT_FIRST_POST_ID;
+    public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final Integer DEFAULT_FREQ_NUM;
+    public static final Long DEFAULT_FROM_THREAD_ID;
+    public static final Integer DEFAULT_GOOD_TYPES;
+    public static final Integer DEFAULT_IS_DELETED;
+    public static final Integer DEFAULT_LAST_MODIFIED_TIME;
+    public static final Integer DEFAULT_LAST_POST_DELETED;
+    public static final Long DEFAULT_LAST_POST_ID;
+    public static final Long DEFAULT_LAST_USER_ID;
+    public static final Integer DEFAULT_LAST_USER_IP;
+    public static final Long DEFAULT_LIVE_ID;
+    public static final Integer DEFAULT_PHONE_TYPE;
+    public static final Long DEFAULT_POST_NUM;
+    public static final Integer DEFAULT_THREAD_CLASSES;
+    public static final Long DEFAULT_THREAD_ID;
+    public static final Integer DEFAULT_THREAD_TYPES;
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_TITLE_PREFIX = "";
+    public static final Integer DEFAULT_TOP_TYPES;
+    public static final Integer DEFAULT_TSTORE_TYPE;
+    public static final Long DEFAULT_USER_ID;
+    public static final Integer DEFAULT_USER_IP;
+    public static final Long DEFAULT_VOTE_ID;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 26, type = Message.Datatype.INT64)
     public final Long agree_num;
     @ProtoField(tag = 27)
@@ -61,32 +94,11 @@ public final class UserStoryAlaLiveInfo extends Message {
     public final Integer user_ip;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long vote_id;
-    public static final Long DEFAULT_FORUM_ID = 0L;
-    public static final Long DEFAULT_THREAD_ID = 0L;
-    public static final Long DEFAULT_USER_ID = 0L;
-    public static final Integer DEFAULT_USER_IP = 0;
-    public static final Long DEFAULT_VOTE_ID = 0L;
-    public static final Long DEFAULT_FROM_THREAD_ID = 0L;
-    public static final Long DEFAULT_POST_NUM = 0L;
-    public static final Integer DEFAULT_LAST_MODIFIED_TIME = 0;
-    public static final Long DEFAULT_LAST_USER_ID = 0L;
-    public static final Integer DEFAULT_LAST_USER_IP = 0;
-    public static final Integer DEFAULT_GOOD_TYPES = 0;
-    public static final Integer DEFAULT_TOP_TYPES = 0;
-    public static final Integer DEFAULT_THREAD_TYPES = 0;
-    public static final Integer DEFAULT_THREAD_CLASSES = 0;
-    public static final Long DEFAULT_LAST_POST_ID = 0L;
-    public static final Integer DEFAULT_PHONE_TYPE = 0;
-    public static final Integer DEFAULT_IS_DELETED = 0;
-    public static final Long DEFAULT_FIRST_POST_ID = 0L;
-    public static final Integer DEFAULT_LAST_POST_DELETED = 0;
-    public static final Integer DEFAULT_FREQ_NUM = 0;
-    public static final Long DEFAULT_LIVE_ID = 0L;
-    public static final Integer DEFAULT_TSTORE_TYPE = 0;
-    public static final Long DEFAULT_AGREE_NUM = 0L;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<UserStoryAlaLiveInfo> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public Long agree_num;
         public AlaLiveInfo ala_info;
         public Long first_post_id;
@@ -116,10 +128,37 @@ public final class UserStoryAlaLiveInfo extends Message {
         public Long vote_id;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(UserStoryAlaLiveInfo userStoryAlaLiveInfo) {
             super(userStoryAlaLiveInfo);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {userStoryAlaLiveInfo};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (userStoryAlaLiveInfo == null) {
                 return;
             }
@@ -155,12 +194,78 @@ public final class UserStoryAlaLiveInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public UserStoryAlaLiveInfo build(boolean z) {
-            return new UserStoryAlaLiveInfo(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserStoryAlaLiveInfo(this, z, null) : (UserStoryAlaLiveInfo) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1169204949, "Ltbclient/UserStoryAlaLiveInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-1169204949, "Ltbclient/UserStoryAlaLiveInfo;");
+                return;
+            }
+        }
+        DEFAULT_FORUM_ID = 0L;
+        DEFAULT_THREAD_ID = 0L;
+        DEFAULT_USER_ID = 0L;
+        DEFAULT_USER_IP = 0;
+        DEFAULT_VOTE_ID = 0L;
+        DEFAULT_FROM_THREAD_ID = 0L;
+        DEFAULT_POST_NUM = 0L;
+        DEFAULT_LAST_MODIFIED_TIME = 0;
+        DEFAULT_LAST_USER_ID = 0L;
+        DEFAULT_LAST_USER_IP = 0;
+        DEFAULT_GOOD_TYPES = 0;
+        DEFAULT_TOP_TYPES = 0;
+        DEFAULT_THREAD_TYPES = 0;
+        DEFAULT_THREAD_CLASSES = 0;
+        DEFAULT_LAST_POST_ID = 0L;
+        DEFAULT_PHONE_TYPE = 0;
+        DEFAULT_IS_DELETED = 0;
+        DEFAULT_FIRST_POST_ID = 0L;
+        DEFAULT_LAST_POST_DELETED = 0;
+        DEFAULT_FREQ_NUM = 0;
+        DEFAULT_LIVE_ID = 0L;
+        DEFAULT_TSTORE_TYPE = 0;
+        DEFAULT_AGREE_NUM = 0L;
+    }
+
+    public /* synthetic */ UserStoryAlaLiveInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public UserStoryAlaLiveInfo(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.forum_id;
             if (l == null) {

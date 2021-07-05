@@ -1,19 +1,31 @@
 package tbclient.FrsPage;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class HeadImgs extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BTN_TEXT = "";
+    public static final Integer DEFAULT_HAS_SECOND_PAGE;
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_PC_URL = "";
     public static final String DEFAULT_SCHEMA = "";
     public static final String DEFAULT_SUBTITLE = "";
     public static final String DEFAULT_TAG_NAME_URL = "";
     public static final String DEFAULT_TAG_NAME_WH = "";
+    public static final List<String> DEFAULT_THIRD_STATISTICS_URL;
     public static final String DEFAULT_TITLE = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String btn_text;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
@@ -34,11 +46,11 @@ public final class HeadImgs extends Message {
     public final List<String> third_statistics_url;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
-    public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
-    public static final Integer DEFAULT_HAS_SECOND_PAGE = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<HeadImgs> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String btn_text;
         public Integer has_second_page;
         public String img_url;
@@ -51,10 +63,37 @@ public final class HeadImgs extends Message {
         public String title;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(HeadImgs headImgs) {
             super(headImgs);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {headImgs};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (headImgs == null) {
                 return;
             }
@@ -73,12 +112,57 @@ public final class HeadImgs extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HeadImgs build(boolean z) {
-            return new HeadImgs(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HeadImgs(this, z, null) : (HeadImgs) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(412332264, "Ltbclient/FrsPage/HeadImgs;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(412332264, "Ltbclient/FrsPage/HeadImgs;");
+                return;
+            }
+        }
+        DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
+        DEFAULT_HAS_SECOND_PAGE = 0;
+    }
+
+    public /* synthetic */ HeadImgs(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HeadImgs(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.img_url;
             if (str == null) {

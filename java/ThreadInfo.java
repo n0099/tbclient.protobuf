@@ -5,52 +5,162 @@ import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.android.imsdk.upload.action.pb.IMPushPb;
 import com.baidu.android.lbspay.channelpay.IChannelPay;
 import com.baidu.tieba.pb.pb.main.PbFullScreenEditorActivity;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.baidu.wallet.utils.ContactPermissionUtil;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class ThreadInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final List<Abstract> DEFAULT_ABSTRACT;
     public static final String DEFAULT_AB_TAG = "";
+    public static final List<ActInfo> DEFAULT_ACT_INFO;
+    public static final Integer DEFAULT_AGREE_NUM;
     public static final String DEFAULT_ARTICLE_COVER = "";
+    public static final Long DEFAULT_AUDIT_TIME;
+    public static final Long DEFAULT_AUTHOR_ID;
+    public static final Integer DEFAULT_BJH_CONTENT_TAG;
     public static final String DEFAULT_CATEGORY_NAME = "";
+    public static final Integer DEFAULT_CHEAK_REPEAT;
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
+    public static final Integer DEFAULT_COLLECT_NUM;
+    public static final Integer DEFAULT_COLLECT_STATUS;
+    public static final Integer DEFAULT_COMMENT_NUM;
+    public static final Integer DEFAULT_CREATE_TIME;
     public static final String DEFAULT_DAILY_PAPER_TIME = "";
+    public static final List<DeclareInfo> DEFAULT_DECLARE_LIST;
+    public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO;
     public static final String DEFAULT_ECOM = "";
+    public static final List<TailInfo> DEFAULT_EXT_TAILS;
+    public static final Long DEFAULT_FID;
+    public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT;
+    public static final Long DEFAULT_FIRST_POST_ID;
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FORUM_USER_LIVE_MSG = "";
+    public static final Long DEFAULT_FREQ_NUM;
     public static final String DEFAULT_FROM = "";
+    public static final Integer DEFAULT_HAS_COMMENTED;
+    public static final Integer DEFAULT_HOT_NUM;
+    public static final Integer DEFAULT_HOT_WEIGHT;
+    public static final Long DEFAULT_ID;
+    public static final Integer DEFAULT_IF_COMMENT;
     public static final String DEFAULT_IF_COMMENT_INFO = "";
+    public static final Integer DEFAULT_ISLZDELETEALL;
+    public static final Integer DEFAULT_IS_ACTIVITY;
+    public static final Integer DEFAULT_IS_AD;
+    public static final Integer DEFAULT_IS_AUTHOR_VIEW;
+    public static final Integer DEFAULT_IS_BAKAN;
+    public static final Integer DEFAULT_IS_BJH;
+    public static final Integer DEFAULT_IS_BOOK_CHAPTER;
+    public static final Integer DEFAULT_IS_BUB;
+    public static final Integer DEFAULT_IS_CALLED;
+    public static final Integer DEFAULT_IS_COPYTHREAD;
+    public static final Integer DEFAULT_IS_DEAL;
+    public static final Integer DEFAULT_IS_DELETED;
+    public static final Integer DEFAULT_IS_GLOBAL_TOP;
+    public static final Integer DEFAULT_IS_GOD;
+    public static final Integer DEFAULT_IS_GODTHREAD_RECOMMEND;
+    public static final Integer DEFAULT_IS_GOOD;
+    public static final Integer DEFAULT_IS_HEADLINEPOST;
+    public static final Integer DEFAULT_IS_LINK_THREAD;
+    public static final Integer DEFAULT_IS_LIVEPOST;
+    public static final Integer DEFAULT_IS_LOCAL;
+    public static final Integer DEFAULT_IS_MEIZHI;
+    public static final Integer DEFAULT_IS_MEMBERTOP;
+    public static final Integer DEFAULT_IS_MULTIFORUM_THREAD;
+    public static final Integer DEFAULT_IS_NOTICE;
+    public static final Integer DEFAULT_IS_NOVEL;
+    public static final Integer DEFAULT_IS_NOVEL_REWARD;
+    public static final Integer DEFAULT_IS_NOVEL_THANK;
+    public static final Integer DEFAULT_IS_NTITLE;
+    public static final Integer DEFAULT_IS_OPERATE_THREAD;
+    public static final Integer DEFAULT_IS_PARTIAL_VISIBLE;
+    public static final Integer DEFAULT_IS_PIC;
+    public static final Integer DEFAULT_IS_PROTAL;
+    public static final Integer DEFAULT_IS_SHARE_THREAD;
+    public static final Integer DEFAULT_IS_STORY_AUDIT;
+    public static final Integer DEFAULT_IS_S_CARD;
+    public static final Integer DEFAULT_IS_TBREAD_DISPATCH;
+    public static final Integer DEFAULT_IS_TOP;
+    public static final Integer DEFAULT_IS_TOPIC;
     public static final String DEFAULT_IS_TOP_IMG = "";
+    public static final Integer DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD;
+    public static final Integer DEFAULT_IS_VOICE_THREAD;
+    public static final Integer DEFAULT_IS_VOTE;
+    public static final List<HeadItem> DEFAULT_ITEM_STAR;
+    public static final Long DEFAULT_LAST_READ_PID;
     public static final String DEFAULT_LAST_TIME = "";
+    public static final Integer DEFAULT_LAST_TIME_INT;
     public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_LIVECOVER_SRC = "";
     public static final String DEFAULT_LIVE_POST_TYPE = "";
+    public static final List<Media> DEFAULT_MEDIA;
+    public static final List<MediaNum> DEFAULT_MEDIA_NUM;
     public static final String DEFAULT_MEIZHI_PIC = "";
+    public static final Integer DEFAULT_MIDDLE_PAGE_NUM;
+    public static final Integer DEFAULT_MIDDLE_PAGE_PASS_FLAG;
+    public static final List<MultipleForum> DEFAULT_MULTIPLE_FORUM_LIST;
     public static final String DEFAULT_MULTI_FORUM_TEXT = "";
     public static final String DEFAULT_NID = "";
+    public static final Integer DEFAULT_OPERATOR_FLAG;
+    public static final Integer DEFAULT_PB_ENTRY;
+    public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO;
+    public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO;
+    public static final Integer DEFAULT_PIC_NUM;
     public static final String DEFAULT_PIDS = "";
+    public static final Long DEFAULT_POST_ID;
+    public static final List<PostList> DEFAULT_POST_LIST;
+    public static final Integer DEFAULT_POST_NUM;
     public static final String DEFAULT_PRESENTATION_STYLE = "";
+    public static final Integer DEFAULT_PUSH_END_TIME;
     public static final String DEFAULT_RECOM_EXTRA = "";
     public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_RECOM_SOURCE = "";
+    public static final String DEFAULT_RECOM_TAG_ICON = "";
     public static final String DEFAULT_RECOM_WEIGHT = "";
+    public static final Integer DEFAULT_REPLY_NUM;
+    public static final List<ReportInfo> DEFAULT_REPORT_INFO;
+    public static final Integer DEFAULT_REPOST_NUM;
+    public static final List<PbContent> DEFAULT_RICH_ABSTRACT;
+    public static final List<PbContent> DEFAULT_RICH_TITLE;
     public static final String DEFAULT_SCARD_PACKET_ID = "";
+    public static final Long DEFAULT_SHARE_NUM;
+    public static final Integer DEFAULT_SHOW_COMMENTED;
+    public static final Integer DEFAULT_STORECOUNT;
+    public static final Integer DEFAULT_TAB_ID;
     public static final String DEFAULT_TAB_NAME = "";
+    public static final List<ThreadRecommendInfo> DEFAULT_THREAD_RECOMMEND_INFOS;
     public static final String DEFAULT_THREAD_SHARE_LINK = "";
+    public static final Integer DEFAULT_THREAD_TYPE;
+    public static final Integer DEFAULT_THREAD_TYPES;
+    public static final Long DEFAULT_TID;
     public static final String DEFAULT_TIEBA_GAME_INFORMATION_SOURCE = "";
+    public static final Integer DEFAULT_TIME;
+    public static final Integer DEFAULT_TIMELINE;
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_TOPIC_H5_URL = "";
     public static final String DEFAULT_TOPIC_USER_NAME = "";
+    public static final Long DEFAULT_TRANS_NUM;
     public static final String DEFAULT_T_SHARE_IMG = "";
+    public static final Integer DEFAULT_VALID_POST_NUM;
     public static final String DEFAULT_VIDEO = "";
     public static final String DEFAULT_VIDEO_COVER = "";
     public static final String DEFAULT_VIDEO_ID = "";
     public static final String DEFAULT_VIDEO_MOBILE_URL = "";
     public static final String DEFAULT_VIDEO_SWF = "";
+    public static final Integer DEFAULT_VIEW_NUM;
+    public static final List<Voice> DEFAULT_VOICE_INFO;
     public static final String DEFAULT_WONDERFUL_POST_INFO = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
     public final List<Abstract> _abstract;
     @ProtoField(tag = 108, type = Message.Datatype.STRING)
@@ -317,6 +427,8 @@ public final class ThreadInfo extends Message {
     public final String recom_reason;
     @ProtoField(tag = 104, type = Message.Datatype.STRING)
     public final String recom_source;
+    @ProtoField(tag = 192, type = Message.Datatype.STRING)
+    public final String recom_tag_icon;
     @ProtoField(tag = 105, type = Message.Datatype.STRING)
     public final String recom_weight;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -419,109 +531,11 @@ public final class ThreadInfo extends Message {
     public final YulePostActivity yule_post_activity;
     @ProtoField(tag = 41)
     public final Zan zan;
-    public static final Long DEFAULT_ID = 0L;
-    public static final Long DEFAULT_TID = 0L;
-    public static final Integer DEFAULT_REPLY_NUM = 0;
-    public static final Integer DEFAULT_VIEW_NUM = 0;
-    public static final Integer DEFAULT_LAST_TIME_INT = 0;
-    public static final Integer DEFAULT_THREAD_TYPES = 0;
-    public static final Integer DEFAULT_IS_TOP = 0;
-    public static final Integer DEFAULT_IS_GOOD = 0;
-    public static final Integer DEFAULT_IS_VOTE = 0;
-    public static final Integer DEFAULT_IS_BAKAN = 0;
-    public static final Integer DEFAULT_IS_PROTAL = 0;
-    public static final Integer DEFAULT_IS_MEIZHI = 0;
-    public static final Integer DEFAULT_IS_VOICE_THREAD = 0;
-    public static final Integer DEFAULT_IS_ACTIVITY = 0;
-    public static final Integer DEFAULT_IS_NOTICE = 0;
-    public static final Integer DEFAULT_COMMENT_NUM = 0;
-    public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
-    public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
-    public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
-    public static final List<MediaNum> DEFAULT_MEDIA_NUM = Collections.emptyList();
-    public static final Integer DEFAULT_THREAD_TYPE = 0;
-    public static final Long DEFAULT_FID = 0L;
-    public static final Integer DEFAULT_IS_LIVEPOST = 0;
-    public static final Integer DEFAULT_SHOW_COMMENTED = 0;
-    public static final Integer DEFAULT_IS_NTITLE = 0;
-    public static final Integer DEFAULT_IS_BUB = 0;
-    public static final Long DEFAULT_FIRST_POST_ID = 0L;
-    public static final Integer DEFAULT_IS_GLOBAL_TOP = 0;
-    public static final Integer DEFAULT_IS_PIC = 0;
-    public static final List<PostList> DEFAULT_POST_LIST = Collections.emptyList();
-    public static final Integer DEFAULT_CREATE_TIME = 0;
-    public static final Integer DEFAULT_REPOST_NUM = 0;
-    public static final Integer DEFAULT_HAS_COMMENTED = 0;
-    public static final Integer DEFAULT_COLLECT_STATUS = 0;
-    public static final Long DEFAULT_POST_ID = 0L;
-    public static final Integer DEFAULT_TIME = 0;
-    public static final Integer DEFAULT_IS_MEMBERTOP = 0;
-    public static final Long DEFAULT_AUTHOR_ID = 0L;
-    public static final Integer DEFAULT_VALID_POST_NUM = 0;
-    public static final Integer DEFAULT_ISLZDELETEALL = 0;
-    public static final Integer DEFAULT_IS_AD = 0;
-    public static final Integer DEFAULT_TIMELINE = 0;
-    public static final List<ActInfo> DEFAULT_ACT_INFO = Collections.emptyList();
-    public static final Integer DEFAULT_HOT_WEIGHT = 0;
-    public static final Integer DEFAULT_STORECOUNT = 0;
-    public static final Integer DEFAULT_POST_NUM = 0;
-    public static final Integer DEFAULT_IS_NOVEL = 0;
-    public static final Integer DEFAULT_IS_NOVEL_THANK = 0;
-    public static final Integer DEFAULT_IS_NOVEL_REWARD = 0;
-    public static final Integer DEFAULT_PUSH_END_TIME = 0;
-    public static final Integer DEFAULT_IS_COPYTHREAD = 0;
-    public static final Integer DEFAULT_OPERATOR_FLAG = 0;
-    public static final Integer DEFAULT_PIC_NUM = 0;
-    public static final Integer DEFAULT_IS_GODTHREAD_RECOMMEND = 0;
-    public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
-    public static final Integer DEFAULT_IS_DEAL = 0;
-    public static final Integer DEFAULT_IS_BOOK_CHAPTER = 0;
-    public static final Long DEFAULT_LAST_READ_PID = 0L;
-    public static final Integer DEFAULT_CHEAK_REPEAT = 0;
-    public static final List<PbContent> DEFAULT_RICH_TITLE = Collections.emptyList();
-    public static final List<PbContent> DEFAULT_RICH_ABSTRACT = Collections.emptyList();
-    public static final Integer DEFAULT_IS_OPERATE_THREAD = 0;
-    public static final Integer DEFAULT_IS_TBREAD_DISPATCH = 0;
-    public static final List<ReportInfo> DEFAULT_REPORT_INFO = Collections.emptyList();
-    public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO = Collections.emptyList();
-    public static final List<DeclareInfo> DEFAULT_DECLARE_LIST = Collections.emptyList();
-    public static final List<MultipleForum> DEFAULT_MULTIPLE_FORUM_LIST = Collections.emptyList();
-    public static final Integer DEFAULT_IS_MULTIFORUM_THREAD = 0;
-    public static final Integer DEFAULT_AGREE_NUM = 0;
-    public static final Integer DEFAULT_IS_PARTIAL_VISIBLE = 0;
-    public static final Integer DEFAULT_IS_LINK_THREAD = 0;
-    public static final Long DEFAULT_FREQ_NUM = 0L;
-    public static final Integer DEFAULT_IS_GOD = 0;
-    public static final Integer DEFAULT_IS_STORY_AUDIT = 0;
-    public static final Long DEFAULT_SHARE_NUM = 0L;
-    public static final Integer DEFAULT_IS_CALLED = 0;
-    public static final Long DEFAULT_AUDIT_TIME = 0L;
-    public static final Integer DEFAULT_MIDDLE_PAGE_NUM = 0;
-    public static final Integer DEFAULT_MIDDLE_PAGE_PASS_FLAG = 0;
-    public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
-    public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
-    public static final Long DEFAULT_TRANS_NUM = 0L;
-    public static final Integer DEFAULT_IS_TOPIC = 0;
-    public static final Integer DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD = 0;
-    public static final Integer DEFAULT_IS_BJH = 0;
-    public static final Integer DEFAULT_BJH_CONTENT_TAG = 0;
-    public static final Integer DEFAULT_IS_HEADLINEPOST = 0;
-    public static final Integer DEFAULT_IS_S_CARD = 0;
-    public static final Integer DEFAULT_IF_COMMENT = 0;
-    public static final Integer DEFAULT_TAB_ID = 0;
-    public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
-    public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
-    public static final Integer DEFAULT_IS_DELETED = 0;
-    public static final Integer DEFAULT_HOT_NUM = 0;
-    public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO = Collections.emptyList();
-    public static final Integer DEFAULT_IS_LOCAL = 0;
-    public static final Integer DEFAULT_PB_ENTRY = 0;
-    public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
-    public static final Integer DEFAULT_COLLECT_NUM = 0;
-    public static final List<ThreadRecommendInfo> DEFAULT_THREAD_RECOMMEND_INFOS = Collections.emptyList();
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public List<Abstract> _abstract;
         public String ab_tag;
         public List<ActInfo> act_info;
@@ -655,6 +669,7 @@ public final class ThreadInfo extends Message {
         public String recom_extra;
         public String recom_reason;
         public String recom_source;
+        public String recom_tag_icon;
         public String recom_weight;
         public Integer reply_num;
         public List<ReportInfo> report_info;
@@ -708,10 +723,37 @@ public final class ThreadInfo extends Message {
         public Zan zan;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ThreadInfo threadInfo) {
             super(threadInfo);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {threadInfo};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (threadInfo == null) {
                 return;
             }
@@ -899,17 +941,161 @@ public final class ThreadInfo extends Message {
             this.works_info = threadInfo.works_info;
             this.collect_num = threadInfo.collect_num;
             this.thread_recommend_infos = Message.copyOf(threadInfo.thread_recommend_infos);
+            this.recom_tag_icon = threadInfo.recom_tag_icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThreadInfo build(boolean z) {
-            return new ThreadInfo(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThreadInfo(this, z, null) : (ThreadInfo) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-771524039, "Ltbclient/ThreadInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-771524039, "Ltbclient/ThreadInfo;");
+                return;
+            }
+        }
+        DEFAULT_ID = 0L;
+        DEFAULT_TID = 0L;
+        DEFAULT_REPLY_NUM = 0;
+        DEFAULT_VIEW_NUM = 0;
+        DEFAULT_LAST_TIME_INT = 0;
+        DEFAULT_THREAD_TYPES = 0;
+        DEFAULT_IS_TOP = 0;
+        DEFAULT_IS_GOOD = 0;
+        DEFAULT_IS_VOTE = 0;
+        DEFAULT_IS_BAKAN = 0;
+        DEFAULT_IS_PROTAL = 0;
+        DEFAULT_IS_MEIZHI = 0;
+        DEFAULT_IS_VOICE_THREAD = 0;
+        DEFAULT_IS_ACTIVITY = 0;
+        DEFAULT_IS_NOTICE = 0;
+        DEFAULT_COMMENT_NUM = 0;
+        DEFAULT_ABSTRACT = Collections.emptyList();
+        DEFAULT_MEDIA = Collections.emptyList();
+        DEFAULT_VOICE_INFO = Collections.emptyList();
+        DEFAULT_MEDIA_NUM = Collections.emptyList();
+        DEFAULT_THREAD_TYPE = 0;
+        DEFAULT_FID = 0L;
+        DEFAULT_IS_LIVEPOST = 0;
+        DEFAULT_SHOW_COMMENTED = 0;
+        DEFAULT_IS_NTITLE = 0;
+        DEFAULT_IS_BUB = 0;
+        DEFAULT_FIRST_POST_ID = 0L;
+        DEFAULT_IS_GLOBAL_TOP = 0;
+        DEFAULT_IS_PIC = 0;
+        DEFAULT_POST_LIST = Collections.emptyList();
+        DEFAULT_CREATE_TIME = 0;
+        DEFAULT_REPOST_NUM = 0;
+        DEFAULT_HAS_COMMENTED = 0;
+        DEFAULT_COLLECT_STATUS = 0;
+        DEFAULT_POST_ID = 0L;
+        DEFAULT_TIME = 0;
+        DEFAULT_IS_MEMBERTOP = 0;
+        DEFAULT_AUTHOR_ID = 0L;
+        DEFAULT_VALID_POST_NUM = 0;
+        DEFAULT_ISLZDELETEALL = 0;
+        DEFAULT_IS_AD = 0;
+        DEFAULT_TIMELINE = 0;
+        DEFAULT_ACT_INFO = Collections.emptyList();
+        DEFAULT_HOT_WEIGHT = 0;
+        DEFAULT_STORECOUNT = 0;
+        DEFAULT_POST_NUM = 0;
+        DEFAULT_IS_NOVEL = 0;
+        DEFAULT_IS_NOVEL_THANK = 0;
+        DEFAULT_IS_NOVEL_REWARD = 0;
+        DEFAULT_PUSH_END_TIME = 0;
+        DEFAULT_IS_COPYTHREAD = 0;
+        DEFAULT_OPERATOR_FLAG = 0;
+        DEFAULT_PIC_NUM = 0;
+        DEFAULT_IS_GODTHREAD_RECOMMEND = 0;
+        DEFAULT_EXT_TAILS = Collections.emptyList();
+        DEFAULT_IS_DEAL = 0;
+        DEFAULT_IS_BOOK_CHAPTER = 0;
+        DEFAULT_LAST_READ_PID = 0L;
+        DEFAULT_CHEAK_REPEAT = 0;
+        DEFAULT_RICH_TITLE = Collections.emptyList();
+        DEFAULT_RICH_ABSTRACT = Collections.emptyList();
+        DEFAULT_IS_OPERATE_THREAD = 0;
+        DEFAULT_IS_TBREAD_DISPATCH = 0;
+        DEFAULT_REPORT_INFO = Collections.emptyList();
+        DEFAULT_DISLIKE_INFO = Collections.emptyList();
+        DEFAULT_DECLARE_LIST = Collections.emptyList();
+        DEFAULT_MULTIPLE_FORUM_LIST = Collections.emptyList();
+        DEFAULT_IS_MULTIFORUM_THREAD = 0;
+        DEFAULT_AGREE_NUM = 0;
+        DEFAULT_IS_PARTIAL_VISIBLE = 0;
+        DEFAULT_IS_LINK_THREAD = 0;
+        DEFAULT_FREQ_NUM = 0L;
+        DEFAULT_IS_GOD = 0;
+        DEFAULT_IS_STORY_AUDIT = 0;
+        DEFAULT_SHARE_NUM = 0L;
+        DEFAULT_IS_CALLED = 0;
+        DEFAULT_AUDIT_TIME = 0L;
+        DEFAULT_MIDDLE_PAGE_NUM = 0;
+        DEFAULT_MIDDLE_PAGE_PASS_FLAG = 0;
+        DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
+        DEFAULT_IS_SHARE_THREAD = 0;
+        DEFAULT_TRANS_NUM = 0L;
+        DEFAULT_IS_TOPIC = 0;
+        DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD = 0;
+        DEFAULT_IS_BJH = 0;
+        DEFAULT_BJH_CONTENT_TAG = 0;
+        DEFAULT_IS_HEADLINEPOST = 0;
+        DEFAULT_IS_S_CARD = 0;
+        DEFAULT_IF_COMMENT = 0;
+        DEFAULT_TAB_ID = 0;
+        DEFAULT_PB_LINK_INFO = Collections.emptyList();
+        DEFAULT_ITEM_STAR = Collections.emptyList();
+        DEFAULT_IS_DELETED = 0;
+        DEFAULT_HOT_NUM = 0;
+        DEFAULT_PB_GOODS_INFO = Collections.emptyList();
+        DEFAULT_IS_LOCAL = 0;
+        DEFAULT_PB_ENTRY = 0;
+        DEFAULT_IS_AUTHOR_VIEW = 0;
+        DEFAULT_COLLECT_NUM = 0;
+        DEFAULT_THREAD_RECOMMEND_INFOS = Collections.emptyList();
+    }
+
+    public /* synthetic */ ThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ThreadInfo(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.id;
             if (l == null) {
@@ -1787,9 +1973,15 @@ public final class ThreadInfo extends Message {
             List<ThreadRecommendInfo> list18 = builder.thread_recommend_infos;
             if (list18 == null) {
                 this.thread_recommend_infos = DEFAULT_THREAD_RECOMMEND_INFOS;
-                return;
             } else {
                 this.thread_recommend_infos = Message.immutableCopyOf(list18);
+            }
+            String str40 = builder.recom_tag_icon;
+            if (str40 == null) {
+                this.recom_tag_icon = "";
+                return;
+            } else {
+                this.recom_tag_icon = str40;
                 return;
             }
         }
@@ -1977,5 +2169,6 @@ public final class ThreadInfo extends Message {
         this.works_info = builder.works_info;
         this.collect_num = builder.collect_num;
         this.thread_recommend_infos = Message.immutableCopyOf(builder.thread_recommend_infos);
+        this.recom_tag_icon = builder.recom_tag_icon;
     }
 }

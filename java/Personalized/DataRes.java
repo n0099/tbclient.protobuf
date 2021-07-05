@@ -1,5 +1,13 @@
 package tbclient.Personalized;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -11,9 +19,24 @@ import tbclient.DiscoverHotForum;
 import tbclient.RecomPostTopic;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final List<CardForum> DEFAULT_CARD_FORUM;
+    public static final List<CardGod> DEFAULT_CARD_GOD;
+    public static final List<CardTopic> DEFAULT_CARD_TOPIC;
+    public static final Integer DEFAULT_FRESH_CTRL_NUM;
+    public static final List<TagStruct> DEFAULT_INTERESTION;
+    public static final Integer DEFAULT_IS_NEW_URL;
+    public static final List<SimpleForum> DEFAULT_LIKE_FORUMS;
+    public static final List<Resource> DEFAULT_RESOURCE_LIST;
     public static final String DEFAULT_STAT_KEY = "";
+    public static final Integer DEFAULT_STYLE_AB_TAG;
+    public static final Integer DEFAULT_SUG_SECONDS;
+    public static final List<TagInfo> DEFAULT_TAG_LIST;
+    public static final List<ThreadInfo> DEFAULT_THREAD_LIST;
+    public static final List<ThreadPersonalized> DEFAULT_THREAD_PERSONALIZED;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 22)
     public final ActiveCenter active_center;
     @ProtoField(tag = 10)
@@ -60,22 +83,11 @@ public final class DataRes extends Message {
     public final List<ThreadPersonalized> thread_personalized;
     @ProtoField(tag = 20)
     public final UserFollowLive user_follow_live;
-    public static final List<TagInfo> DEFAULT_TAG_LIST = Collections.emptyList();
-    public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
-    public static final List<Resource> DEFAULT_RESOURCE_LIST = Collections.emptyList();
-    public static final List<CardForum> DEFAULT_CARD_FORUM = Collections.emptyList();
-    public static final List<CardTopic> DEFAULT_CARD_TOPIC = Collections.emptyList();
-    public static final Integer DEFAULT_SUG_SECONDS = 0;
-    public static final List<ThreadPersonalized> DEFAULT_THREAD_PERSONALIZED = Collections.emptyList();
-    public static final Integer DEFAULT_IS_NEW_URL = 0;
-    public static final List<TagStruct> DEFAULT_INTERESTION = Collections.emptyList();
-    public static final List<CardGod> DEFAULT_CARD_GOD = Collections.emptyList();
-    public static final List<SimpleForum> DEFAULT_LIKE_FORUMS = Collections.emptyList();
-    public static final Integer DEFAULT_STYLE_AB_TAG = 0;
-    public static final Integer DEFAULT_FRESH_CTRL_NUM = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public ActiveCenter active_center;
         public AgeSexModule age_sex;
         public Anti anti;
@@ -101,10 +113,37 @@ public final class DataRes extends Message {
         public UserFollowLive user_follow_live;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {dataRes};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (dataRes == null) {
                 return;
             }
@@ -136,12 +175,68 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            return new DataRes(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-397390022, "Ltbclient/Personalized/DataRes;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-397390022, "Ltbclient/Personalized/DataRes;");
+                return;
+            }
+        }
+        DEFAULT_TAG_LIST = Collections.emptyList();
+        DEFAULT_THREAD_LIST = Collections.emptyList();
+        DEFAULT_RESOURCE_LIST = Collections.emptyList();
+        DEFAULT_CARD_FORUM = Collections.emptyList();
+        DEFAULT_CARD_TOPIC = Collections.emptyList();
+        DEFAULT_SUG_SECONDS = 0;
+        DEFAULT_THREAD_PERSONALIZED = Collections.emptyList();
+        DEFAULT_IS_NEW_URL = 0;
+        DEFAULT_INTERESTION = Collections.emptyList();
+        DEFAULT_CARD_GOD = Collections.emptyList();
+        DEFAULT_LIKE_FORUMS = Collections.emptyList();
+        DEFAULT_STYLE_AB_TAG = 0;
+        DEFAULT_FRESH_CTRL_NUM = 0;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             List<TagInfo> list = builder.tag_list;
             if (list == null) {

@@ -1,15 +1,23 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class ActionControl extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_TEXT_COLOR = "";
     public static final String DEFAULT_TEXT_COLOR_PRESSED = "";
     public static final String DEFAULT_URL = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -19,18 +27,47 @@ public final class ActionControl extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ActionControl> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String name;
         public String text_color;
         public String text_color_pressed;
         public String url;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ActionControl actionControl) {
             super(actionControl);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {actionControl};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (actionControl == null) {
                 return;
             }
@@ -43,40 +80,78 @@ public final class ActionControl extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActionControl build(boolean z) {
-            return new ActionControl(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActionControl(this, z, null) : (ActionControl) invokeZ.objValue;
         }
+    }
+
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    public /* synthetic */ ActionControl(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 
     public static ActionControl parseFromJson(JSONObject jSONObject) {
-        if (jSONObject == null) {
-            return null;
+        InterceptResult invokeL;
+        Interceptable interceptable = $ic;
+        if (interceptable == null || (invokeL = interceptable.invokeL(65538, null, jSONObject)) == null) {
+            if (jSONObject == null) {
+                return null;
+            }
+            Builder builder = new Builder();
+            builder.url = jSONObject.optString("url");
+            builder.name = jSONObject.optString("name");
+            builder.text_color = jSONObject.optString("text_color");
+            builder.text_color_pressed = jSONObject.optString("text_color_pressed");
+            return builder.build(false);
         }
-        Builder builder = new Builder();
-        builder.url = jSONObject.optString("url");
-        builder.name = jSONObject.optString("name");
-        builder.text_color = jSONObject.optString("text_color");
-        builder.text_color_pressed = jSONObject.optString("text_color_pressed");
-        return builder.build(false);
+        return (ActionControl) invokeL.objValue;
     }
 
     public static JSONObject toJson(ActionControl actionControl) {
-        if (actionControl == null) {
-            return null;
+        InterceptResult invokeL;
+        Interceptable interceptable = $ic;
+        if (interceptable == null || (invokeL = interceptable.invokeL(65539, null, actionControl)) == null) {
+            if (actionControl == null) {
+                return null;
+            }
+            JSONObject jSONObject = new JSONObject();
+            try {
+                jSONObject.put("url", actionControl.url);
+                jSONObject.put("name", actionControl.name);
+                jSONObject.put("text_color", actionControl.text_color);
+                jSONObject.put("text_color_pressed", actionControl.text_color_pressed);
+            } catch (JSONException e2) {
+                e2.printStackTrace();
+            }
+            return jSONObject;
         }
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("url", actionControl.url);
-            jSONObject.put("name", actionControl.name);
-            jSONObject.put("text_color", actionControl.text_color);
-            jSONObject.put("text_color_pressed", actionControl.text_color_pressed);
-        } catch (JSONException e2) {
-            e2.printStackTrace();
-        }
-        return jSONObject;
+        return (JSONObject) invokeL.objValue;
     }
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ActionControl(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65536, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65536, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.url;
             if (str == null) {

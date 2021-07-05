@@ -1,18 +1,34 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class SignActivityInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_ACTIVITY_DURATION;
     public static final String DEFAULT_ACTIVITY_FAIL_MSG = "";
+    public static final Long DEFAULT_ACTIVITY_ID;
     public static final String DEFAULT_ACTIVITY_MSG = "";
     public static final String DEFAULT_ACTIVITY_NAME = "";
     public static final String DEFAULT_ACTIVITY_SUC_MSG = "";
+    public static final Integer DEFAULT_ACTIVITY_TIME;
     public static final String DEFAULT_COUNTDOWN_MSG = "";
+    public static final Integer DEFAULT_COUNTDOWN_TIME;
     public static final String DEFAULT_GIFT_NAME = "";
+    public static final Integer DEFAULT_GIFT_TYPE;
     public static final String DEFAULT_GIFT_URL = "";
+    public static final Integer DEFAULT_ICON_LIFECYCLE;
     public static final String DEFAULT_ICON_NAME = "";
     public static final String DEFAULT_IMAGE_URL = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer activity_duration;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -43,15 +59,11 @@ public final class SignActivityInfo extends Message {
     public final String icon_name;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String image_url;
-    public static final Long DEFAULT_ACTIVITY_ID = 0L;
-    public static final Integer DEFAULT_ACTIVITY_TIME = 0;
-    public static final Integer DEFAULT_COUNTDOWN_TIME = 0;
-    public static final Integer DEFAULT_ACTIVITY_DURATION = 0;
-    public static final Integer DEFAULT_GIFT_TYPE = 0;
-    public static final Integer DEFAULT_ICON_LIFECYCLE = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<SignActivityInfo> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public Integer activity_duration;
         public String activity_fail_msg;
         public Long activity_id;
@@ -69,10 +81,37 @@ public final class SignActivityInfo extends Message {
         public String image_url;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(SignActivityInfo signActivityInfo) {
             super(signActivityInfo);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {signActivityInfo};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (signActivityInfo == null) {
                 return;
             }
@@ -96,12 +135,61 @@ public final class SignActivityInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SignActivityInfo build(boolean z) {
-            return new SignActivityInfo(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SignActivityInfo(this, z, null) : (SignActivityInfo) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-60308201, "Ltbclient/SignActivityInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-60308201, "Ltbclient/SignActivityInfo;");
+                return;
+            }
+        }
+        DEFAULT_ACTIVITY_ID = 0L;
+        DEFAULT_ACTIVITY_TIME = 0;
+        DEFAULT_COUNTDOWN_TIME = 0;
+        DEFAULT_ACTIVITY_DURATION = 0;
+        DEFAULT_GIFT_TYPE = 0;
+        DEFAULT_ICON_LIFECYCLE = 0;
+    }
+
+    public /* synthetic */ SignActivityInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SignActivityInfo(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.activity_id;
             if (l == null) {

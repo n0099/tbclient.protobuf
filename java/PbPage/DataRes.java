@@ -1,5 +1,13 @@
 package tbclient.PbPage;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -28,13 +36,43 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
+    public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND;
+    public static final Integer DEFAULT_EXP_GUIDE_TODAY;
+    public static final Integer DEFAULT_EXP_NEWS_TODAY;
+    public static final List<ThreadInfo> DEFAULT_FEED_THREAD_LIST;
+    public static final List<FineBannerPb> DEFAULT_FINE_BANNER;
     public static final String DEFAULT_FOLD_TIP = "";
+    public static final List<SimpleForum> DEFAULT_FROM_FORUM_LIST;
+    public static final Integer DEFAULT_HAS_FLOOR;
+    public static final Integer DEFAULT_IS_BLACK_WHITE;
+    public static final Integer DEFAULT_IS_FOLLOW_CURRENT_CHANNEL;
+    public static final Integer DEFAULT_IS_NEW_URL;
+    public static final Integer DEFAULT_IS_OFFICIAL_FORUM;
+    public static final Integer DEFAULT_IS_PURCHASE;
+    public static final Integer DEFAULT_JUMPTOTAB1;
     public static final String DEFAULT_JUMPTOTAB2 = "";
     public static final String DEFAULT_MULTI_FORUM_TEXT = "";
+    public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER;
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
+    public static final List<PbSortType> DEFAULT_PB_SORT_INFO;
+    public static final List<PsRankListItem> DEFAULT_PLAY_RANK_LIST;
+    public static final List<PostBanner> DEFAULT_POST_BANNER;
+    public static final List<Post> DEFAULT_POST_LIST;
+    public static final List<RecommendThread> DEFAULT_RECOMMEND_THREADS;
+    public static final List<ThreadInfo> DEFAULT_RECOM_THREAD_INFO;
+    public static final List<SimpleForum> DEFAULT_REPOST_RECOMMEND_FORUM_LIST;
+    public static final Integer DEFAULT_SERVER_TIME;
+    public static final Integer DEFAULT_SHOW_ADSENSE;
+    public static final Integer DEFAULT_SORT_TYPE;
+    public static final Integer DEFAULT_SWITCH_READ_OPEN;
+    public static final Long DEFAULT_THREAD_FREQ_NUM;
+    public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC;
+    public static final List<User> DEFAULT_USER_LIST;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 5)
     public final AddPost add_post;
     @ProtoField(tag = 26)
@@ -67,6 +105,8 @@ public final class DataRes extends Message {
     public final List<FineBannerPb> fine_banner;
     @ProtoField(tag = 38)
     public final Post first_floor_post;
+    @ProtoField(tag = 64)
+    public final FloatingIcon floating_icon;
     @ProtoField(tag = 44, type = Message.Datatype.STRING)
     public final String fold_tip;
     @ProtoField(tag = 43)
@@ -95,6 +135,10 @@ public final class DataRes extends Message {
     public final Integer is_follow_current_channel;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_new_url;
+    @ProtoField(tag = 63, type = Message.Datatype.INT32)
+    public final Integer is_official_forum;
+    @ProtoField(tag = 65, type = Message.Datatype.INT32)
+    public final Integer is_purchase;
     @ProtoField(tag = 56, type = Message.Datatype.INT32)
     public final Integer jumptotab1;
     @ProtoField(tag = 57, type = Message.Datatype.STRING)
@@ -159,35 +203,11 @@ public final class DataRes extends Message {
     public final User user;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<User> user_list;
-    public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
-    public static final Integer DEFAULT_HAS_FLOOR = 0;
-    public static final Integer DEFAULT_IS_NEW_URL = 0;
-    public static final List<PostBanner> DEFAULT_POST_BANNER = Collections.emptyList();
-    public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
-    public static final Integer DEFAULT_SERVER_TIME = 0;
-    public static final List<RecommendThread> DEFAULT_RECOMMEND_THREADS = Collections.emptyList();
-    public static final List<FineBannerPb> DEFAULT_FINE_BANNER = Collections.emptyList();
-    public static final List<PsRankListItem> DEFAULT_PLAY_RANK_LIST = Collections.emptyList();
-    public static final List<ThreadInfo> DEFAULT_FEED_THREAD_LIST = Collections.emptyList();
-    public static final Integer DEFAULT_IS_FOLLOW_CURRENT_CHANNEL = 0;
-    public static final Integer DEFAULT_SWITCH_READ_OPEN = 0;
-    public static final List<SimpleForum> DEFAULT_REPOST_RECOMMEND_FORUM_LIST = Collections.emptyList();
-    public static final List<SimpleForum> DEFAULT_FROM_FORUM_LIST = Collections.emptyList();
-    public static final Long DEFAULT_THREAD_FREQ_NUM = 0L;
-    public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER = Collections.emptyList();
-    public static final Integer DEFAULT_EXP_NEWS_TODAY = 0;
-    public static final Integer DEFAULT_EXP_GUIDE_TODAY = 0;
-    public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC = Collections.emptyList();
-    public static final List<PbSortType> DEFAULT_PB_SORT_INFO = Collections.emptyList();
-    public static final Integer DEFAULT_SORT_TYPE = 0;
-    public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND = Collections.emptyList();
-    public static final Integer DEFAULT_JUMPTOTAB1 = 0;
-    public static final List<ThreadInfo> DEFAULT_RECOM_THREAD_INFO = Collections.emptyList();
-    public static final Integer DEFAULT_SHOW_ADSENSE = 0;
-    public static final Integer DEFAULT_IS_BLACK_WHITE = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public AddPost add_post;
         public AlaLiveInfo ala_info;
         public Anti anti;
@@ -204,6 +224,7 @@ public final class DataRes extends Message {
         public List<ThreadInfo> feed_thread_list;
         public List<FineBannerPb> fine_banner;
         public Post first_floor_post;
+        public FloatingIcon floating_icon;
         public String fold_tip;
         public PbFollowTip follow_tip;
         public SimpleForum forum;
@@ -218,6 +239,8 @@ public final class DataRes extends Message {
         public Integer is_black_white;
         public Integer is_follow_current_channel;
         public Integer is_new_url;
+        public Integer is_official_forum;
+        public Integer is_purchase;
         public Integer jumptotab1;
         public String jumptotab2;
         public Lbs location;
@@ -252,10 +275,37 @@ public final class DataRes extends Message {
         public List<User> user_list;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {dataRes};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (dataRes == null) {
                 return;
             }
@@ -321,17 +371,91 @@ public final class DataRes extends Message {
             this.forum_rule = dataRes.forum_rule;
             this.show_adsense = dataRes.show_adsense;
             this.is_black_white = dataRes.is_black_white;
+            this.is_official_forum = dataRes.is_official_forum;
+            this.floating_icon = dataRes.floating_icon;
+            this.is_purchase = dataRes.is_purchase;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            return new DataRes(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1374404855, "Ltbclient/PbPage/DataRes;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-1374404855, "Ltbclient/PbPage/DataRes;");
+                return;
+            }
+        }
+        DEFAULT_POST_LIST = Collections.emptyList();
+        DEFAULT_HAS_FLOOR = 0;
+        DEFAULT_IS_NEW_URL = 0;
+        DEFAULT_POST_BANNER = Collections.emptyList();
+        DEFAULT_USER_LIST = Collections.emptyList();
+        DEFAULT_SERVER_TIME = 0;
+        DEFAULT_RECOMMEND_THREADS = Collections.emptyList();
+        DEFAULT_FINE_BANNER = Collections.emptyList();
+        DEFAULT_PLAY_RANK_LIST = Collections.emptyList();
+        DEFAULT_FEED_THREAD_LIST = Collections.emptyList();
+        DEFAULT_IS_FOLLOW_CURRENT_CHANNEL = 0;
+        DEFAULT_SWITCH_READ_OPEN = 0;
+        DEFAULT_REPOST_RECOMMEND_FORUM_LIST = Collections.emptyList();
+        DEFAULT_FROM_FORUM_LIST = Collections.emptyList();
+        DEFAULT_THREAD_FREQ_NUM = 0L;
+        DEFAULT_NEW_AGREE_USER = Collections.emptyList();
+        DEFAULT_EXP_NEWS_TODAY = 0;
+        DEFAULT_EXP_GUIDE_TODAY = 0;
+        DEFAULT_THREAD_TOPIC = Collections.emptyList();
+        DEFAULT_PB_SORT_INFO = Collections.emptyList();
+        DEFAULT_SORT_TYPE = 0;
+        DEFAULT_BJH_RECOMMEND = Collections.emptyList();
+        DEFAULT_JUMPTOTAB1 = 0;
+        DEFAULT_RECOM_THREAD_INFO = Collections.emptyList();
+        DEFAULT_SHOW_ADSENSE = 0;
+        DEFAULT_IS_BLACK_WHITE = 0;
+        DEFAULT_IS_OFFICIAL_FORUM = 0;
+        DEFAULT_IS_PURCHASE = 0;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             this.user = builder.user;
             this.forum = builder.forum;
@@ -547,9 +671,22 @@ public final class DataRes extends Message {
             Integer num11 = builder.is_black_white;
             if (num11 == null) {
                 this.is_black_white = DEFAULT_IS_BLACK_WHITE;
-                return;
             } else {
                 this.is_black_white = num11;
+            }
+            Integer num12 = builder.is_official_forum;
+            if (num12 == null) {
+                this.is_official_forum = DEFAULT_IS_OFFICIAL_FORUM;
+            } else {
+                this.is_official_forum = num12;
+            }
+            this.floating_icon = builder.floating_icon;
+            Integer num13 = builder.is_purchase;
+            if (num13 == null) {
+                this.is_purchase = DEFAULT_IS_PURCHASE;
+                return;
+            } else {
+                this.is_purchase = num13;
                 return;
             }
         }
@@ -615,5 +752,8 @@ public final class DataRes extends Message {
         this.forum_rule = builder.forum_rule;
         this.show_adsense = builder.show_adsense;
         this.is_black_white = builder.is_black_white;
+        this.is_official_forum = builder.is_official_forum;
+        this.floating_icon = builder.floating_icon;
+        this.is_purchase = builder.is_purchase;
     }
 }

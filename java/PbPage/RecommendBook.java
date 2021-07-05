@@ -1,19 +1,31 @@
 package tbclient.PbPage;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class RecommendBook extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BOOK_COVER = "";
     public static final String DEFAULT_BOOK_ID = "";
+    public static final List<String> DEFAULT_BOOK_TIPS;
     public static final String DEFAULT_BOOK_TITLE = "";
+    public static final Integer DEFAULT_BOOK_TYPE;
     public static final String DEFAULT_BOTTON_TEXT = "";
     public static final String DEFAULT_RECOMMEND_TEXT = "";
     public static final String DEFAULT_SUBSCRIPT_ICON = "";
     public static final String DEFAULT_SUGGEST_TEXT = "";
     public static final String DEFAULT_SUGGEST_URL = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String book_cover;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -34,11 +46,11 @@ public final class RecommendBook extends Message {
     public final String suggest_text;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String suggest_url;
-    public static final Integer DEFAULT_BOOK_TYPE = 0;
-    public static final List<String> DEFAULT_BOOK_TIPS = Collections.emptyList();
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<RecommendBook> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String book_cover;
         public String book_id;
         public List<String> book_tips;
@@ -51,10 +63,37 @@ public final class RecommendBook extends Message {
         public String suggest_url;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(RecommendBook recommendBook) {
             super(recommendBook);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {recommendBook};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (recommendBook == null) {
                 return;
             }
@@ -73,12 +112,57 @@ public final class RecommendBook extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecommendBook build(boolean z) {
-            return new RecommendBook(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommendBook(this, z, null) : (RecommendBook) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-108097350, "Ltbclient/PbPage/RecommendBook;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-108097350, "Ltbclient/PbPage/RecommendBook;");
+                return;
+            }
+        }
+        DEFAULT_BOOK_TYPE = 0;
+        DEFAULT_BOOK_TIPS = Collections.emptyList();
+    }
+
+    public /* synthetic */ RecommendBook(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public RecommendBook(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.recommend_text;
             if (str == null) {

@@ -1,15 +1,30 @@
 package tbclient.LiveSquare;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class HotLiveWithCategory extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
+    public static final Integer DEFAULT_ENTRY_ID;
     public static final String DEFAULT_ENTRY_NAME = "";
     public static final String DEFAULT_LABEL_NAME = "";
+    public static final List<ThreadInfo> DEFAULT_LIVE;
+    public static final Integer DEFAULT_LIVE_TAB_TYPE;
+    public static final List<String> DEFAULT_SUB_TYPE_LIST;
+    public static final Integer DEFAULT_TAB_ID;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String bitmap_wh_ratio;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -26,14 +41,11 @@ public final class HotLiveWithCategory extends Message {
     public final List<String> sub_type_list;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer tab_id;
-    public static final Integer DEFAULT_ENTRY_ID = 0;
-    public static final List<ThreadInfo> DEFAULT_LIVE = Collections.emptyList();
-    public static final Integer DEFAULT_LIVE_TAB_TYPE = 0;
-    public static final Integer DEFAULT_TAB_ID = 0;
-    public static final List<String> DEFAULT_SUB_TYPE_LIST = Collections.emptyList();
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<HotLiveWithCategory> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String bitmap_wh_ratio;
         public Integer entry_id;
         public String entry_name;
@@ -44,10 +56,37 @@ public final class HotLiveWithCategory extends Message {
         public Integer tab_id;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(HotLiveWithCategory hotLiveWithCategory) {
             super(hotLiveWithCategory);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {hotLiveWithCategory};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (hotLiveWithCategory == null) {
                 return;
             }
@@ -64,12 +103,60 @@ public final class HotLiveWithCategory extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HotLiveWithCategory build(boolean z) {
-            return new HotLiveWithCategory(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotLiveWithCategory(this, z, null) : (HotLiveWithCategory) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(201285018, "Ltbclient/LiveSquare/HotLiveWithCategory;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(201285018, "Ltbclient/LiveSquare/HotLiveWithCategory;");
+                return;
+            }
+        }
+        DEFAULT_ENTRY_ID = 0;
+        DEFAULT_LIVE = Collections.emptyList();
+        DEFAULT_LIVE_TAB_TYPE = 0;
+        DEFAULT_TAB_ID = 0;
+        DEFAULT_SUB_TYPE_LIST = Collections.emptyList();
+    }
+
+    public /* synthetic */ HotLiveWithCategory(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HotLiveWithCategory(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.entry_name;
             if (str == null) {

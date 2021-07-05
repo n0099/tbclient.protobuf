@@ -1,12 +1,32 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class ActInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_ACTIVITY_ID;
+    public static final Integer DEFAULT_ACTIVITY_TYPE;
+    public static final Integer DEFAULT_AWARD_ACT_ID;
     public static final String DEFAULT_BANNER_IMG = "";
     public static final String DEFAULT_BANNER_IMG_SIZE = "";
+    public static final Integer DEFAULT_BEGIN_TIME;
+    public static final Integer DEFAULT_COMPONENT_ID;
+    public static final Integer DEFAULT_END_TIME;
+    public static final Boolean DEFAULT_IS_SENIOR;
+    public static final Integer DEFAULT_SHOW_TOTAL_NUM;
+    public static final Integer DEFAULT_STATUS;
+    public static final Integer DEFAULT_TOTAL_NUM;
     public static final String DEFAULT_URL = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer activity_id;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -35,19 +55,11 @@ public final class ActInfo extends Message {
     public final Integer total_num;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String url;
-    public static final Integer DEFAULT_ACTIVITY_TYPE = 0;
-    public static final Integer DEFAULT_STATUS = 0;
-    public static final Integer DEFAULT_BEGIN_TIME = 0;
-    public static final Integer DEFAULT_END_TIME = 0;
-    public static final Integer DEFAULT_TOTAL_NUM = 0;
-    public static final Integer DEFAULT_ACTIVITY_ID = 0;
-    public static final Integer DEFAULT_AWARD_ACT_ID = 0;
-    public static final Integer DEFAULT_COMPONENT_ID = 0;
-    public static final Boolean DEFAULT_IS_SENIOR = Boolean.FALSE;
-    public static final Integer DEFAULT_SHOW_TOTAL_NUM = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ActInfo> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public Integer activity_id;
         public Integer activity_type;
         public Integer award_act_id;
@@ -64,10 +76,37 @@ public final class ActInfo extends Message {
         public String url;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ActInfo actInfo) {
             super(actInfo);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {actInfo};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (actInfo == null) {
                 return;
             }
@@ -90,12 +129,65 @@ public final class ActInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ActInfo build(boolean z) {
-            return new ActInfo(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActInfo(this, z, null) : (ActInfo) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1411783995, "Ltbclient/ActInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-1411783995, "Ltbclient/ActInfo;");
+                return;
+            }
+        }
+        DEFAULT_ACTIVITY_TYPE = 0;
+        DEFAULT_STATUS = 0;
+        DEFAULT_BEGIN_TIME = 0;
+        DEFAULT_END_TIME = 0;
+        DEFAULT_TOTAL_NUM = 0;
+        DEFAULT_ACTIVITY_ID = 0;
+        DEFAULT_AWARD_ACT_ID = 0;
+        DEFAULT_COMPONENT_ID = 0;
+        DEFAULT_IS_SENIOR = Boolean.FALSE;
+        DEFAULT_SHOW_TOTAL_NUM = 0;
+    }
+
+    public /* synthetic */ ActInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ActInfo(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Integer num = builder.activity_type;
             if (num == null) {

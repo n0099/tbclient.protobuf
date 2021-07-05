@@ -1,22 +1,43 @@
 package tbclient.GetIconList;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class Custom extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CREATE_TIME = "";
+    public static final List<Discount> DEFAULT_DISCOUNT;
+    public static final Integer DEFAULT_DUBI;
+    public static final Integer DEFAULT_DUBI_IOS;
+    public static final Integer DEFAULT_DURATION;
+    public static final Integer DEFAULT_HIDE;
     public static final String DEFAULT_ICON_ID = "";
     public static final String DEFAULT_ICON_NAME = "";
     public static final String DEFAULT_ICON_PIC = "";
+    public static final Integer DEFAULT_IOS_DISPLAY;
     public static final String DEFAULT_IOS_ICON_ID = "";
+    public static final Integer DEFAULT_IS_CUSTOM_PRICE;
     public static final String DEFAULT_NAME = "";
+    public static final Integer DEFAULT_NON_MEMBER_I;
+    public static final Integer DEFAULT_NON_MEMBER_T;
     public static final String DEFAULT_PACKAGE_PIC = "";
     public static final String DEFAULT_PIC_URL = "";
     public static final String DEFAULT_PRODUCT_ID = "";
+    public static final Integer DEFAULT_PROPS_ID;
     public static final String DEFAULT_TAG_NAME = "";
     public static final String DEFAULT_UPDATE_TIME = "";
+    public static final Integer DEFAULT_VALIDITY;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String create_time;
     @ProtoField(label = Message.Label.REPEATED, tag = 9)
@@ -61,20 +82,11 @@ public final class Custom extends Message {
     public final String update_time;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer validity;
-    public static final Integer DEFAULT_NON_MEMBER_T = 0;
-    public static final Integer DEFAULT_NON_MEMBER_I = 0;
-    public static final Integer DEFAULT_DUBI = 0;
-    public static final Integer DEFAULT_DUBI_IOS = 0;
-    public static final Integer DEFAULT_IOS_DISPLAY = 0;
-    public static final Integer DEFAULT_DURATION = 0;
-    public static final Integer DEFAULT_HIDE = 0;
-    public static final List<Discount> DEFAULT_DISCOUNT = Collections.emptyList();
-    public static final Integer DEFAULT_PROPS_ID = 0;
-    public static final Integer DEFAULT_VALIDITY = 0;
-    public static final Integer DEFAULT_IS_CUSTOM_PRICE = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Custom> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String create_time;
         public List<Discount> discount;
         public Integer dubi;
@@ -99,10 +111,37 @@ public final class Custom extends Message {
         public Integer validity;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Custom custom) {
             super(custom);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {custom};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (custom == null) {
                 return;
             }
@@ -133,12 +172,66 @@ public final class Custom extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Custom build(boolean z) {
-            return new Custom(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Custom(this, z, null) : (Custom) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(479907774, "Ltbclient/GetIconList/Custom;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(479907774, "Ltbclient/GetIconList/Custom;");
+                return;
+            }
+        }
+        DEFAULT_NON_MEMBER_T = 0;
+        DEFAULT_NON_MEMBER_I = 0;
+        DEFAULT_DUBI = 0;
+        DEFAULT_DUBI_IOS = 0;
+        DEFAULT_IOS_DISPLAY = 0;
+        DEFAULT_DURATION = 0;
+        DEFAULT_HIDE = 0;
+        DEFAULT_DISCOUNT = Collections.emptyList();
+        DEFAULT_PROPS_ID = 0;
+        DEFAULT_VALIDITY = 0;
+        DEFAULT_IS_CUSTOM_PRICE = 0;
+    }
+
+    public /* synthetic */ Custom(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Custom(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.name;
             if (str == null) {

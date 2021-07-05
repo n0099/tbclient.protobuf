@@ -1,32 +1,63 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class AlaLiveInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_AUDIENCE_COUNT;
     public static final String DEFAULT_COVER = "";
     public static final String DEFAULT_COVER_WIDE = "";
     public static final String DEFAULT_DESCRIPTION = "";
+    public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO;
+    public static final Long DEFAULT_DISTANCE;
+    public static final Integer DEFAULT_DURATION;
     public static final String DEFAULT_FIRST_HEADLINE = "";
     public static final String DEFAULT_FORUM_USER_LIVE_MSG = "";
+    public static final Integer DEFAULT_FRS_TOPLIVE_FORCE;
     public static final String DEFAULT_FRS_TOPLIVE_PIC = "";
+    public static final Integer DEFAULT_FRS_TOPLIVE_TYPE;
+    public static final Long DEFAULT_GROUP_ID;
     public static final String DEFAULT_HLS_URL = "";
     public static final String DEFAULT_LABEL_NAME = "";
+    public static final Integer DEFAULT_LIVE_FROM;
+    public static final Long DEFAULT_LIVE_ID;
+    public static final Integer DEFAULT_LIVE_STATUS;
+    public static final Integer DEFAULT_LIVE_TYPE;
     public static final String DEFAULT_MEDIA_ID = "";
     public static final String DEFAULT_MEDIA_PIC = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final String DEFAULT_MEDIA_URL = "";
+    public static final Integer DEFAULT_OPEN_RECOM_DURATION;
+    public static final Integer DEFAULT_OPEN_RECOM_FANS;
+    public static final Integer DEFAULT_OPEN_RECOM_LOCATION;
+    public static final Integer DEFAULT_OPEN_RECOM_REASON;
+    public static final Integer DEFAULT_PB_DISPLAY_TYPE;
     public static final String DEFAULT_RECOM_REASON = "";
+    public static final Long DEFAULT_ROOM_ID;
     public static final String DEFAULT_ROOM_NAME = "";
+    public static final Integer DEFAULT_ROOM_STATUS;
     public static final String DEFAULT_ROUTER_TYPE = "";
     public static final String DEFAULT_RTMP_URL = "";
+    public static final Integer DEFAULT_SCREEN_DIRECTION;
     public static final String DEFAULT_SECOND_HEADLINE = "";
     public static final String DEFAULT_SESSION_ID = "";
+    public static final List<AlaStageDislikeInfo> DEFAULT_STAGE_DISLIKE_INFO;
     public static final String DEFAULT_THIRD_APP_ID = "";
     public static final String DEFAULT_THIRD_LIVE_TYPE = "";
     public static final String DEFAULT_THIRD_ROOM_ID = "";
+    public static final Long DEFAULT_THREAD_ID;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer audience_count;
     @ProtoField(tag = 25)
@@ -121,30 +152,11 @@ public final class AlaLiveInfo extends Message {
     public final AlaUserInfo user_info;
     @ProtoField(tag = 49)
     public final YyExt yy_ext;
-    public static final Long DEFAULT_LIVE_ID = 0L;
-    public static final Long DEFAULT_GROUP_ID = 0L;
-    public static final Integer DEFAULT_DURATION = 0;
-    public static final Integer DEFAULT_AUDIENCE_COUNT = 0;
-    public static final Integer DEFAULT_LIVE_TYPE = 0;
-    public static final Integer DEFAULT_SCREEN_DIRECTION = 0;
-    public static final Integer DEFAULT_LIVE_STATUS = 0;
-    public static final Long DEFAULT_DISTANCE = 0L;
-    public static final Long DEFAULT_THREAD_ID = 0L;
-    public static final List<AlaStageDislikeInfo> DEFAULT_STAGE_DISLIKE_INFO = Collections.emptyList();
-    public static final Integer DEFAULT_FRS_TOPLIVE_TYPE = 0;
-    public static final Integer DEFAULT_FRS_TOPLIVE_FORCE = 0;
-    public static final Integer DEFAULT_LIVE_FROM = 0;
-    public static final Integer DEFAULT_PB_DISPLAY_TYPE = 0;
-    public static final Integer DEFAULT_OPEN_RECOM_REASON = 0;
-    public static final Integer DEFAULT_OPEN_RECOM_LOCATION = 0;
-    public static final Integer DEFAULT_OPEN_RECOM_FANS = 0;
-    public static final Integer DEFAULT_OPEN_RECOM_DURATION = 0;
-    public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO = Collections.emptyList();
-    public static final Long DEFAULT_ROOM_ID = 0L;
-    public static final Integer DEFAULT_ROOM_STATUS = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public Integer audience_count;
         public AlaChallengeInfo challenge_info;
         public String cover;
@@ -194,10 +206,37 @@ public final class AlaLiveInfo extends Message {
         public YyExt yy_ext;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(AlaLiveInfo alaLiveInfo) {
             super(alaLiveInfo);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {alaLiveInfo};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (alaLiveInfo == null) {
                 return;
             }
@@ -253,12 +292,76 @@ public final class AlaLiveInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AlaLiveInfo build(boolean z) {
-            return new AlaLiveInfo(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlaLiveInfo(this, z, null) : (AlaLiveInfo) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1589945163, "Ltbclient/AlaLiveInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-1589945163, "Ltbclient/AlaLiveInfo;");
+                return;
+            }
+        }
+        DEFAULT_LIVE_ID = 0L;
+        DEFAULT_GROUP_ID = 0L;
+        DEFAULT_DURATION = 0;
+        DEFAULT_AUDIENCE_COUNT = 0;
+        DEFAULT_LIVE_TYPE = 0;
+        DEFAULT_SCREEN_DIRECTION = 0;
+        DEFAULT_LIVE_STATUS = 0;
+        DEFAULT_DISTANCE = 0L;
+        DEFAULT_THREAD_ID = 0L;
+        DEFAULT_STAGE_DISLIKE_INFO = Collections.emptyList();
+        DEFAULT_FRS_TOPLIVE_TYPE = 0;
+        DEFAULT_FRS_TOPLIVE_FORCE = 0;
+        DEFAULT_LIVE_FROM = 0;
+        DEFAULT_PB_DISPLAY_TYPE = 0;
+        DEFAULT_OPEN_RECOM_REASON = 0;
+        DEFAULT_OPEN_RECOM_LOCATION = 0;
+        DEFAULT_OPEN_RECOM_FANS = 0;
+        DEFAULT_OPEN_RECOM_DURATION = 0;
+        DEFAULT_DISLIKE_INFO = Collections.emptyList();
+        DEFAULT_ROOM_ID = 0L;
+        DEFAULT_ROOM_STATUS = 0;
+    }
+
+    public /* synthetic */ AlaLiveInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public AlaLiveInfo(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.live_id;
             if (l == null) {

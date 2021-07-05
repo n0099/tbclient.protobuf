@@ -1,14 +1,36 @@
 package tbclient.FineFrsPage;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class Hot_Thread extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABSTRACT = "";
+    public static final Long DEFAULT_CREATE_TIME;
+    public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final Integer DEFAULT_IS_ACTIVITY;
+    public static final Integer DEFAULT_IS_GOOD;
+    public static final Integer DEFAULT_IS_LIVEPOST;
+    public static final Integer DEFAULT_IS_MEMBERTOP;
+    public static final Integer DEFAULT_IS_TOP;
+    public static final List<Pic> DEFAULT_PICS;
+    public static final Integer DEFAULT_REPLY_NUM;
+    public static final Long DEFAULT_THREAD_ID;
     public static final String DEFAULT_TITLE = "";
+    public static final Integer DEFAULT_TYPE;
+    public static final Integer DEFAULT_ZAN_NUM;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
@@ -39,21 +61,11 @@ public final class Hot_Thread extends Message {
     public final Integer type;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer zan_num;
-    public static final Long DEFAULT_THREAD_ID = 0L;
-    public static final Long DEFAULT_FORUM_ID = 0L;
-    public static final Integer DEFAULT_REPLY_NUM = 0;
-    public static final Long DEFAULT_CREATE_TIME = 0L;
-    public static final Integer DEFAULT_ZAN_NUM = 0;
-    public static final Integer DEFAULT_TYPE = 0;
-    public static final List<Pic> DEFAULT_PICS = Collections.emptyList();
-    public static final Integer DEFAULT_IS_GOOD = 0;
-    public static final Integer DEFAULT_IS_TOP = 0;
-    public static final Integer DEFAULT_IS_MEMBERTOP = 0;
-    public static final Integer DEFAULT_IS_ACTIVITY = 0;
-    public static final Integer DEFAULT_IS_LIVEPOST = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Hot_Thread> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public Long create_time;
         public Long forum_id;
@@ -71,10 +83,37 @@ public final class Hot_Thread extends Message {
         public Integer zan_num;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Hot_Thread hot_Thread) {
             super(hot_Thread);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {hot_Thread};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (hot_Thread == null) {
                 return;
             }
@@ -98,12 +137,67 @@ public final class Hot_Thread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Hot_Thread build(boolean z) {
-            return new Hot_Thread(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Hot_Thread(this, z, null) : (Hot_Thread) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-384333630, "Ltbclient/FineFrsPage/Hot_Thread;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-384333630, "Ltbclient/FineFrsPage/Hot_Thread;");
+                return;
+            }
+        }
+        DEFAULT_THREAD_ID = 0L;
+        DEFAULT_FORUM_ID = 0L;
+        DEFAULT_REPLY_NUM = 0;
+        DEFAULT_CREATE_TIME = 0L;
+        DEFAULT_ZAN_NUM = 0;
+        DEFAULT_TYPE = 0;
+        DEFAULT_PICS = Collections.emptyList();
+        DEFAULT_IS_GOOD = 0;
+        DEFAULT_IS_TOP = 0;
+        DEFAULT_IS_MEMBERTOP = 0;
+        DEFAULT_IS_ACTIVITY = 0;
+        DEFAULT_IS_LIVEPOST = 0;
+    }
+
+    public /* synthetic */ Hot_Thread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Hot_Thread(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.thread_id;
             if (l == null) {

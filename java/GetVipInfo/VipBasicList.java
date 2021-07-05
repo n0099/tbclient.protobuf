@@ -1,15 +1,27 @@
 package tbclient.GetVipInfo;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class VipBasicList extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CARD_ID = "";
+    public static final Integer DEFAULT_CARD_TYPE;
     public static final String DEFAULT_CLASS_NAME = "";
     public static final String DEFAULT_CLASS_URL = "";
     public static final String DEFAULT_CLASS_URL_NAME = "";
+    public static final List<VipSpecialItem> DEFAULT_ITEM;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String card_id;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
@@ -22,11 +34,11 @@ public final class VipBasicList extends Message {
     public final String class_url_name;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<VipSpecialItem> item;
-    public static final List<VipSpecialItem> DEFAULT_ITEM = Collections.emptyList();
-    public static final Integer DEFAULT_CARD_TYPE = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<VipBasicList> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String card_id;
         public Integer card_type;
         public String class_name;
@@ -35,10 +47,37 @@ public final class VipBasicList extends Message {
         public List<VipSpecialItem> item;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(VipBasicList vipBasicList) {
             super(vipBasicList);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {vipBasicList};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (vipBasicList == null) {
                 return;
             }
@@ -53,12 +92,57 @@ public final class VipBasicList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VipBasicList build(boolean z) {
-            return new VipBasicList(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipBasicList(this, z, null) : (VipBasicList) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1444455484, "Ltbclient/GetVipInfo/VipBasicList;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(1444455484, "Ltbclient/GetVipInfo/VipBasicList;");
+                return;
+            }
+        }
+        DEFAULT_ITEM = Collections.emptyList();
+        DEFAULT_CARD_TYPE = 0;
+    }
+
+    public /* synthetic */ VipBasicList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public VipBasicList(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             List<VipSpecialItem> list = builder.item;
             if (list == null) {

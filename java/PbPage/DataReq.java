@@ -1,35 +1,85 @@
 package tbclient.PbPage;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
+    public static final Integer DEFAULT_AFTER_AD_THREAD_COUNT;
+    public static final Integer DEFAULT_ARROUND;
+    public static final Integer DEFAULT_BACK;
+    public static final Integer DEFAULT_BANNER;
+    public static final Long DEFAULT_BROADCAST_ID;
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FEED_NID = "";
+    public static final Long DEFAULT_FID;
+    public static final Integer DEFAULT_FLOOR_RN;
+    public static final Integer DEFAULT_FLOOR_SORT_TYPE;
+    public static final Long DEFAULT_FORUM_ID;
+    public static final Integer DEFAULT_FROM_PUSH;
+    public static final Integer DEFAULT_FROM_SMART_FRS;
+    public static final Integer DEFAULT_ISSDK;
+    public static final Integer DEFAULT_IS_COMM_REVERSE;
+    public static final Integer DEFAULT_IS_JUMPFLOOR;
     public static final String DEFAULT_JFROM = "";
+    public static final Long DEFAULT_JID;
+    public static final Integer DEFAULT_JUMPFLOOR_NUM;
+    public static final Long DEFAULT_KZ;
+    public static final Integer DEFAULT_LAST;
     public static final String DEFAULT_LASTIDS = "";
+    public static final Integer DEFAULT_LZ;
+    public static final Integer DEFAULT_MARK;
+    public static final Integer DEFAULT_MESSAGE_ID;
     public static final String DEFAULT_MSG_CLICK = "";
+    public static final Integer DEFAULT_NEED_LOG;
+    public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM;
     public static final String DEFAULT_OBJ_LOCATE = "";
     public static final String DEFAULT_OBJ_PARAM1 = "";
     public static final String DEFAULT_OBJ_SOURCE = "";
     public static final String DEFAULT_ORI_UGC_NID = "";
     public static final String DEFAULT_ORI_UGC_TID = "";
+    public static final Integer DEFAULT_ORI_UGC_TYPE;
     public static final String DEFAULT_ORI_UGC_VID = "";
+    public static final Integer DEFAULT_PB_RN;
     public static final String DEFAULT_PB_TEST_INFO = "";
+    public static final Long DEFAULT_PID;
     public static final String DEFAULT_PLATFORM = "";
+    public static final Integer DEFAULT_PN;
     public static final String DEFAULT_QUERY_WORD = "";
+    public static final Integer DEFAULT_Q_TYPE;
+    public static final Integer DEFAULT_R;
+    public static final Integer DEFAULT_RN;
+    public static final Double DEFAULT_SCR_DIP;
+    public static final Integer DEFAULT_SCR_H;
+    public static final Integer DEFAULT_SCR_W;
     public static final String DEFAULT_SHOUBAI_CUID = "";
+    public static final Integer DEFAULT_SOURCE_TYPE;
     public static final String DEFAULT_ST_FROM = "";
     public static final String DEFAULT_ST_LINK = "";
+    public static final Integer DEFAULT_ST_STAT;
+    public static final Long DEFAULT_ST_TASK;
     public static final String DEFAULT_ST_TYPE = "";
+    public static final Integer DEFAULT_S_MODEL;
+    public static final Integer DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_UP_SCHEMA = "";
+    public static final Integer DEFAULT_WEIPOST;
+    public static final Integer DEFAULT_WITH_FLOOR;
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 68, type = Message.Datatype.STRING)
     public final String ad_context_list;
     @ProtoField(tag = 72, type = Message.Datatype.STRING)
@@ -53,7 +103,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72904common;
+    public final CommonReq f76578common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -166,49 +216,11 @@ public final class DataReq extends Message {
     public final String yuelaou_locate;
     @ProtoField(tag = 48, type = Message.Datatype.STRING)
     public final String yuelaou_params;
-    public static final Integer DEFAULT_PB_RN = 0;
-    public static final Integer DEFAULT_MARK = 0;
-    public static final Integer DEFAULT_BACK = 0;
-    public static final Long DEFAULT_KZ = 0L;
-    public static final Integer DEFAULT_LZ = 0;
-    public static final Integer DEFAULT_R = 0;
-    public static final Long DEFAULT_PID = 0L;
-    public static final Integer DEFAULT_WITH_FLOOR = 0;
-    public static final Integer DEFAULT_FLOOR_RN = 0;
-    public static final Integer DEFAULT_WEIPOST = 0;
-    public static final Integer DEFAULT_MESSAGE_ID = 0;
-    public static final Integer DEFAULT_S_MODEL = 0;
-    public static final Integer DEFAULT_RN = 0;
-    public static final Integer DEFAULT_SCR_W = 0;
-    public static final Integer DEFAULT_SCR_H = 0;
-    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
-    public static final Integer DEFAULT_Q_TYPE = 0;
-    public static final Integer DEFAULT_PN = 0;
-    public static final Integer DEFAULT_THREAD_TYPE = 0;
-    public static final Integer DEFAULT_BANNER = 0;
-    public static final Integer DEFAULT_ARROUND = 0;
-    public static final Integer DEFAULT_LAST = 0;
-    public static final Integer DEFAULT_ST_STAT = 0;
-    public static final Long DEFAULT_ST_TASK = 0L;
-    public static final Integer DEFAULT_ISSDK = 0;
-    public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
-    public static final Integer DEFAULT_IS_JUMPFLOOR = 0;
-    public static final Integer DEFAULT_JUMPFLOOR_NUM = 0;
-    public static final Long DEFAULT_JID = 0L;
-    public static final Long DEFAULT_FID = 0L;
-    public static final Integer DEFAULT_FROM_SMART_FRS = 0;
-    public static final Long DEFAULT_FORUM_ID = 0L;
-    public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
-    public static final Integer DEFAULT_NEED_LOG = 0;
-    public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
-    public static final Integer DEFAULT_AFTER_AD_THREAD_COUNT = 0;
-    public static final Integer DEFAULT_FROM_PUSH = 0;
-    public static final Long DEFAULT_BROADCAST_ID = 0L;
-    public static final Integer DEFAULT_FLOOR_SORT_TYPE = 0;
-    public static final Integer DEFAULT_SOURCE_TYPE = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String ad_context_list;
         public String ad_ext_params;
         public AdParam ad_param;
@@ -221,7 +233,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72905common;
+        public CommonReq f76579common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -280,10 +292,37 @@ public final class DataReq extends Message {
         public String yuelaou_params;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataReq dataReq) {
             super(dataReq);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {dataReq};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (dataReq == null) {
                 return;
             }
@@ -311,7 +350,7 @@ public final class DataReq extends Message {
             this.arround = dataReq.arround;
             this.last = dataReq.last;
             this.msg_click = dataReq.msg_click;
-            this.f72905common = dataReq.f72904common;
+            this.f76579common = dataReq.f76578common;
             this.lastids = dataReq.lastids;
             this.st_from = dataReq.st_from;
             this.st_link = dataReq.st_link;
@@ -359,12 +398,95 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            return new DataReq(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1374404917, "Ltbclient/PbPage/DataReq;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-1374404917, "Ltbclient/PbPage/DataReq;");
+                return;
+            }
+        }
+        DEFAULT_PB_RN = 0;
+        DEFAULT_MARK = 0;
+        DEFAULT_BACK = 0;
+        DEFAULT_KZ = 0L;
+        DEFAULT_LZ = 0;
+        DEFAULT_R = 0;
+        DEFAULT_PID = 0L;
+        DEFAULT_WITH_FLOOR = 0;
+        DEFAULT_FLOOR_RN = 0;
+        DEFAULT_WEIPOST = 0;
+        DEFAULT_MESSAGE_ID = 0;
+        DEFAULT_S_MODEL = 0;
+        DEFAULT_RN = 0;
+        DEFAULT_SCR_W = 0;
+        DEFAULT_SCR_H = 0;
+        DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+        DEFAULT_Q_TYPE = 0;
+        DEFAULT_PN = 0;
+        DEFAULT_THREAD_TYPE = 0;
+        DEFAULT_BANNER = 0;
+        DEFAULT_ARROUND = 0;
+        DEFAULT_LAST = 0;
+        DEFAULT_ST_STAT = 0;
+        DEFAULT_ST_TASK = 0L;
+        DEFAULT_ISSDK = 0;
+        DEFAULT_IS_COMM_REVERSE = 0;
+        DEFAULT_IS_JUMPFLOOR = 0;
+        DEFAULT_JUMPFLOOR_NUM = 0;
+        DEFAULT_JID = 0L;
+        DEFAULT_FID = 0L;
+        DEFAULT_FROM_SMART_FRS = 0;
+        DEFAULT_FORUM_ID = 0L;
+        DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
+        DEFAULT_NEED_LOG = 0;
+        DEFAULT_ORI_UGC_TYPE = 0;
+        DEFAULT_AFTER_AD_THREAD_COUNT = 0;
+        DEFAULT_FROM_PUSH = 0;
+        DEFAULT_BROADCAST_ID = 0L;
+        DEFAULT_FLOOR_SORT_TYPE = 0;
+        DEFAULT_SOURCE_TYPE = 0;
+    }
+
+    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataReq(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Integer num = builder.pb_rn;
             if (num == null) {
@@ -510,7 +632,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = str2;
             }
-            this.f72904common = builder.f72905common;
+            this.f76578common = builder.f76579common;
             String str3 = builder.lastids;
             if (str3 == null) {
                 this.lastids = "";
@@ -780,7 +902,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f72904common = builder.f72905common;
+        this.f76578common = builder.f76579common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;

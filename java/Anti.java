@@ -1,22 +1,49 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class Anti extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_BLOCK_STAT;
+    public static final Integer DEFAULT_CAN_GOODS;
+    public static final Integer DEFAULT_DAYS_TOFREE;
+    public static final List<DelThreadText> DEFAULT_DEL_THREAD_TEXT;
+    public static final Integer DEFAULT_FORBID_FLAG;
     public static final String DEFAULT_FORBID_INFO = "";
+    public static final Integer DEFAULT_HAS_CHANCE;
+    public static final Integer DEFAULT_HIDE_STAT;
+    public static final Integer DEFAULT_IFADDITION;
+    public static final Integer DEFAULT_IFPOST;
+    public static final Integer DEFAULT_IFPOSTA;
+    public static final Integer DEFAULT_IFVOICE;
     public static final String DEFAULT_IFXIAOYING = "";
+    public static final Boolean DEFAULT_IS_SEXYFORUM;
+    public static final Integer DEFAULT_MULTI_DELTHREAD;
+    public static final Integer DEFAULT_NEED_VCODE;
+    public static final Integer DEFAULT_POLL_LEVEL;
     public static final String DEFAULT_POLL_MESSAGE = "";
+    public static final Integer DEFAULT_REPLY_PRIVATE_FLAG;
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT_TEENMODE_INTERVAL = "";
     public static final String DEFAULT_USER_MUTE = "";
     public static final String DEFAULT_VCODE_MD5 = "";
     public static final String DEFAULT_VCODE_PIC_URL = "";
+    public static final Integer DEFAULT_VCODE_STAT;
     public static final String DEFAULT_VIDEO_LOCAL_MESSAGE = "";
     public static final String DEFAULT_VIDEO_MESSAGE = "";
     public static final String DEFAULT_VOICE_MESSAGE = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 22)
     public final BlockPopInfo block_pop_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -75,26 +102,11 @@ public final class Anti extends Message {
     public final String video_message;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String voice_message;
-    public static final Integer DEFAULT_IFPOST = 0;
-    public static final Integer DEFAULT_IFPOSTA = 0;
-    public static final Integer DEFAULT_FORBID_FLAG = 0;
-    public static final Integer DEFAULT_BLOCK_STAT = 0;
-    public static final Integer DEFAULT_HIDE_STAT = 0;
-    public static final Integer DEFAULT_VCODE_STAT = 0;
-    public static final Integer DEFAULT_DAYS_TOFREE = 0;
-    public static final Integer DEFAULT_HAS_CHANCE = 0;
-    public static final Integer DEFAULT_IFVOICE = 0;
-    public static final Integer DEFAULT_IFADDITION = 0;
-    public static final Integer DEFAULT_NEED_VCODE = 0;
-    public static final Integer DEFAULT_REPLY_PRIVATE_FLAG = 0;
-    public static final List<DelThreadText> DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
-    public static final Integer DEFAULT_MULTI_DELTHREAD = 0;
-    public static final Integer DEFAULT_POLL_LEVEL = 0;
-    public static final Boolean DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
-    public static final Integer DEFAULT_CAN_GOODS = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Anti> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public BlockPopInfo block_pop_info;
         public Integer block_stat;
         public Integer can_goods;
@@ -126,10 +138,37 @@ public final class Anti extends Message {
         public String voice_message;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Anti anti) {
             super(anti);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {anti};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (anti == null) {
                 return;
             }
@@ -167,12 +206,72 @@ public final class Anti extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Anti build(boolean z) {
-            return new Anti(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Anti(this, z, null) : (Anti) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1104637329, "Ltbclient/Anti;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-1104637329, "Ltbclient/Anti;");
+                return;
+            }
+        }
+        DEFAULT_IFPOST = 0;
+        DEFAULT_IFPOSTA = 0;
+        DEFAULT_FORBID_FLAG = 0;
+        DEFAULT_BLOCK_STAT = 0;
+        DEFAULT_HIDE_STAT = 0;
+        DEFAULT_VCODE_STAT = 0;
+        DEFAULT_DAYS_TOFREE = 0;
+        DEFAULT_HAS_CHANCE = 0;
+        DEFAULT_IFVOICE = 0;
+        DEFAULT_IFADDITION = 0;
+        DEFAULT_NEED_VCODE = 0;
+        DEFAULT_REPLY_PRIVATE_FLAG = 0;
+        DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
+        DEFAULT_MULTI_DELTHREAD = 0;
+        DEFAULT_POLL_LEVEL = 0;
+        DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
+        DEFAULT_CAN_GOODS = 0;
+    }
+
+    public /* synthetic */ Anti(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Anti(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.tbs;
             if (str == null) {

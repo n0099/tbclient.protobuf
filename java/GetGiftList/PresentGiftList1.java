@@ -1,13 +1,36 @@
 package tbclient.GetGiftList;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class PresentGiftList1 extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_ACTIVITY_TYPE;
+    public static final Integer DEFAULT_BEGIN_TIME;
+    public static final Integer DEFAULT_CURRENCY;
+    public static final Integer DEFAULT_CURRENCY_UNIT;
+    public static final Integer DEFAULT_DISCOUNT;
+    public static final Integer DEFAULT_END_TIME;
+    public static final Integer DEFAULT_GIFT_COUNT;
     public static final String DEFAULT_GIFT_DESC = "";
+    public static final Integer DEFAULT_GIFT_ID;
     public static final String DEFAULT_GIFT_NAME = "";
+    public static final Integer DEFAULT_IOS_DISCOUNT;
+    public static final Integer DEFAULT_IOS_PRICE;
     public static final String DEFAULT_MARK_URL = "";
+    public static final Integer DEFAULT_PITCH_ON;
+    public static final Integer DEFAULT_PRICE;
+    public static final Integer DEFAULT_PROPORTION;
     public static final String DEFAULT_THUMBNAIL_URL = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer activity_type;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
@@ -42,22 +65,11 @@ public final class PresentGiftList1 extends Message {
     public final Integer proportion;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String thumbnail_url;
-    public static final Integer DEFAULT_GIFT_ID = 0;
-    public static final Integer DEFAULT_PRICE = 0;
-    public static final Integer DEFAULT_IOS_PRICE = 0;
-    public static final Integer DEFAULT_ACTIVITY_TYPE = 0;
-    public static final Integer DEFAULT_BEGIN_TIME = 0;
-    public static final Integer DEFAULT_END_TIME = 0;
-    public static final Integer DEFAULT_DISCOUNT = 0;
-    public static final Integer DEFAULT_IOS_DISCOUNT = 0;
-    public static final Integer DEFAULT_PROPORTION = 0;
-    public static final Integer DEFAULT_GIFT_COUNT = 0;
-    public static final Integer DEFAULT_PITCH_ON = 0;
-    public static final Integer DEFAULT_CURRENCY_UNIT = 0;
-    public static final Integer DEFAULT_CURRENCY = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PresentGiftList1> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public Integer activity_type;
         public Integer begin_time;
         public Integer currency;
@@ -77,10 +89,37 @@ public final class PresentGiftList1 extends Message {
         public String thumbnail_url;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(PresentGiftList1 presentGiftList1) {
             super(presentGiftList1);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {presentGiftList1};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (presentGiftList1 == null) {
                 return;
             }
@@ -106,12 +145,68 @@ public final class PresentGiftList1 extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PresentGiftList1 build(boolean z) {
-            return new PresentGiftList1(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PresentGiftList1(this, z, null) : (PresentGiftList1) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(44059902, "Ltbclient/GetGiftList/PresentGiftList1;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(44059902, "Ltbclient/GetGiftList/PresentGiftList1;");
+                return;
+            }
+        }
+        DEFAULT_GIFT_ID = 0;
+        DEFAULT_PRICE = 0;
+        DEFAULT_IOS_PRICE = 0;
+        DEFAULT_ACTIVITY_TYPE = 0;
+        DEFAULT_BEGIN_TIME = 0;
+        DEFAULT_END_TIME = 0;
+        DEFAULT_DISCOUNT = 0;
+        DEFAULT_IOS_DISCOUNT = 0;
+        DEFAULT_PROPORTION = 0;
+        DEFAULT_GIFT_COUNT = 0;
+        DEFAULT_PITCH_ON = 0;
+        DEFAULT_CURRENCY_UNIT = 0;
+        DEFAULT_CURRENCY = 0;
+    }
+
+    public /* synthetic */ PresentGiftList1(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PresentGiftList1(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Integer num = builder.gift_id;
             if (num == null) {

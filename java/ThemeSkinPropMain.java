@@ -1,17 +1,33 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class ThemeSkinPropMain extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVITY_URL = "";
+    public static final Integer DEFAULT_DAILY_PRIVILEGE_STATUS;
+    public static final Long DEFAULT_END_TIME;
     public static final String DEFAULT_EXAMPLE_URL = "";
+    public static final Integer DEFAULT_FREE_USER_LEVEL;
+    public static final Integer DEFAULT_IS_FINISHED;
     public static final String DEFAULT_PACKAGE_KEY = "";
     public static final String DEFAULT_PACKAGE_SIZE = "";
     public static final String DEFAULT_PACKAGE_URL = "";
     public static final String DEFAULT_PERMISSION = "";
+    public static final Integer DEFAULT_PROPS_ID;
     public static final String DEFAULT_PROPS_STATE_IMG = "";
+    public static final Integer DEFAULT_PROPS_VERSION;
     public static final String DEFAULT_TITLE = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String activity_url;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
@@ -40,15 +56,11 @@ public final class ThemeSkinPropMain extends Message {
     public final Integer props_version;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
-    public static final Integer DEFAULT_PROPS_ID = 0;
-    public static final Integer DEFAULT_PROPS_VERSION = 0;
-    public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
-    public static final Integer DEFAULT_IS_FINISHED = 0;
-    public static final Integer DEFAULT_DAILY_PRIVILEGE_STATUS = 0;
-    public static final Long DEFAULT_END_TIME = 0L;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ThemeSkinPropMain> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String activity_url;
         public Integer daily_privilege_status;
         public Long end_time;
@@ -65,10 +77,37 @@ public final class ThemeSkinPropMain extends Message {
         public String title;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ThemeSkinPropMain themeSkinPropMain) {
             super(themeSkinPropMain);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {themeSkinPropMain};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (themeSkinPropMain == null) {
                 return;
             }
@@ -91,12 +130,61 @@ public final class ThemeSkinPropMain extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThemeSkinPropMain build(boolean z) {
-            return new ThemeSkinPropMain(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThemeSkinPropMain(this, z, null) : (ThemeSkinPropMain) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1069976029, "Ltbclient/ThemeSkinPropMain;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-1069976029, "Ltbclient/ThemeSkinPropMain;");
+                return;
+            }
+        }
+        DEFAULT_PROPS_ID = 0;
+        DEFAULT_PROPS_VERSION = 0;
+        DEFAULT_FREE_USER_LEVEL = 0;
+        DEFAULT_IS_FINISHED = 0;
+        DEFAULT_DAILY_PRIVILEGE_STATUS = 0;
+        DEFAULT_END_TIME = 0L;
+    }
+
+    public /* synthetic */ ThemeSkinPropMain(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ThemeSkinPropMain(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Integer num = builder.props_id;
             if (num == null) {

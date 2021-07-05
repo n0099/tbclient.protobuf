@@ -1,9 +1,18 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.mobads.container.adrequest.IAdRequestParam;
+import com.baidu.mobads.container.util.AdIconUtil;
 import com.baidu.sapi2.views.SmsLoginView;
 import com.baidu.tbadk.core.atomData.BigdayActivityConfig;
 import com.baidu.tbadk.core.atomData.LegoListActivityConfig;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.ArrayList;
@@ -12,17 +21,21 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class App extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABTEST = "";
     public static final String DEFAULT_AD_ID = "";
     public static final String DEFAULT_APK_NAME = "";
     public static final String DEFAULT_APK_URL = "";
     public static final String DEFAULT_APP_DESC = "";
     public static final String DEFAULT_APP_NAME = "";
+    public static final Integer DEFAULT_APP_TIME;
+    public static final Integer DEFAULT_CPID;
     public static final String DEFAULT_DEEP_URL = "";
     public static final String DEFAULT_EXT_INFO = "";
     public static final String DEFAULT_FIRST_NAME = "";
+    public static final List<GoodsInfo> DEFAULT_GOODS_INFO;
     public static final String DEFAULT_ICON_LINK = "";
     public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_ID = "";
@@ -30,15 +43,20 @@ public final class App extends Message {
     public static final String DEFAULT_IOS_URL = "";
     public static final String DEFAULT_LOC_CODE = "";
     public static final String DEFAULT_NAME = "";
+    public static final Integer DEFAULT_PLAN_ID;
+    public static final Integer DEFAULT_POS;
     public static final String DEFAULT_POS_NAME = "";
     public static final String DEFAULT_PRICE = "";
     public static final String DEFAULT_P_NAME = "";
     public static final String DEFAULT_P_URL = "";
     public static final String DEFAULT_SECOND_NAME = "";
+    public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_URL = "";
+    public static final Integer DEFAULT_URL_TYPE;
     public static final String DEFAULT_USER_ID = "";
     public static final String DEFAULT_VERIFY = "";
     public static final String DEFAULT_WEB_URL = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String abtest;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -103,16 +121,11 @@ public final class App extends Message {
     public final String verify;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String web_url;
-    public static final Integer DEFAULT_TYPE = 0;
-    public static final Integer DEFAULT_POS = 0;
-    public static final Integer DEFAULT_APP_TIME = 0;
-    public static final Integer DEFAULT_URL_TYPE = 0;
-    public static final Integer DEFAULT_CPID = 0;
-    public static final Integer DEFAULT_PLAN_ID = 0;
-    public static final List<GoodsInfo> DEFAULT_GOODS_INFO = Collections.emptyList();
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<App> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String abtest;
         public String ad_id;
         public String apk_name;
@@ -147,10 +160,37 @@ public final class App extends Message {
         public String web_url;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(App app) {
             super(app);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {app};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (app == null) {
                 return;
             }
@@ -191,106 +231,166 @@ public final class App extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public App build(boolean z) {
-            return new App(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new App(this, z, null) : (App) invokeZ.objValue;
         }
+    }
+
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(102915620, "Ltbclient/App;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(102915620, "Ltbclient/App;");
+                return;
+            }
+        }
+        DEFAULT_TYPE = 0;
+        DEFAULT_POS = 0;
+        DEFAULT_APP_TIME = 0;
+        DEFAULT_URL_TYPE = 0;
+        DEFAULT_CPID = 0;
+        DEFAULT_PLAN_ID = 0;
+        DEFAULT_GOODS_INFO = Collections.emptyList();
+    }
+
+    public /* synthetic */ App(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 
     public static App parseFromJson(JSONObject jSONObject) {
-        if (jSONObject == null) {
-            return null;
+        InterceptResult invokeL;
+        Interceptable interceptable = $ic;
+        if (interceptable == null || (invokeL = interceptable.invokeL(65540, null, jSONObject)) == null) {
+            if (jSONObject == null) {
+                return null;
+            }
+            Builder builder = new Builder();
+            builder.type = Integer.valueOf(jSONObject.optInt("type"));
+            builder.pos = Integer.valueOf(jSONObject.optInt(IAdRequestParam.POS));
+            builder.icon_url = jSONObject.optString("icon_url");
+            builder.icon_link = jSONObject.optString("icon_link");
+            builder.app_name = jSONObject.optString("app_name");
+            builder.app_desc = jSONObject.optString("app_desc");
+            builder.p_name = jSONObject.optString("p_name");
+            builder.p_url = jSONObject.optString("p_url");
+            builder.img_url = jSONObject.optString(BigdayActivityConfig.IMG_URL);
+            builder.app_time = Integer.valueOf(jSONObject.optInt("app_time"));
+            builder.web_url = jSONObject.optString("web_url");
+            builder.ad_id = jSONObject.optString(LegoListActivityConfig.AD_ID);
+            builder.id = jSONObject.optString("id");
+            builder.name = jSONObject.optString("name");
+            builder.url_type = Integer.valueOf(jSONObject.optInt("url_type"));
+            builder.url = jSONObject.optString("url");
+            builder.ios_url = jSONObject.optString("ios_url");
+            builder.apk_url = jSONObject.optString("apk_url");
+            builder.apk_name = jSONObject.optString("apk_name");
+            builder.pos_name = jSONObject.optString("pos_name");
+            builder.first_name = jSONObject.optString("first_name");
+            builder.second_name = jSONObject.optString("second_name");
+            builder.cpid = Integer.valueOf(jSONObject.optInt("cpid"));
+            builder.abtest = jSONObject.optString("abtest");
+            builder.plan_id = Integer.valueOf(jSONObject.optInt("plan_id"));
+            builder.user_id = jSONObject.optString("user_id");
+            builder.price = jSONObject.optString("price");
+            builder.verify = jSONObject.optString(SmsLoginView.f.j);
+            builder.ext_info = jSONObject.optString("ext_info");
+            ArrayList arrayList = new ArrayList();
+            JSONArray optJSONArray = jSONObject.optJSONArray("goods_info");
+            int length = optJSONArray.length();
+            for (int i2 = 0; i2 < length; i2++) {
+                arrayList.add(GoodsInfo.parseFromJson(optJSONArray.optJSONObject(i2)));
+            }
+            builder.goods_info = arrayList;
+            builder.loc_code = jSONObject.optString("loc_code");
+            builder.deep_url = jSONObject.optString("deep_url");
+            return builder.build(false);
         }
-        Builder builder = new Builder();
-        builder.type = Integer.valueOf(jSONObject.optInt("type"));
-        builder.pos = Integer.valueOf(jSONObject.optInt(IAdRequestParam.POS));
-        builder.icon_url = jSONObject.optString("icon_url");
-        builder.icon_link = jSONObject.optString("icon_link");
-        builder.app_name = jSONObject.optString("app_name");
-        builder.app_desc = jSONObject.optString("app_desc");
-        builder.p_name = jSONObject.optString("p_name");
-        builder.p_url = jSONObject.optString("p_url");
-        builder.img_url = jSONObject.optString(BigdayActivityConfig.IMG_URL);
-        builder.app_time = Integer.valueOf(jSONObject.optInt("app_time"));
-        builder.web_url = jSONObject.optString("web_url");
-        builder.ad_id = jSONObject.optString(LegoListActivityConfig.AD_ID);
-        builder.id = jSONObject.optString("id");
-        builder.name = jSONObject.optString("name");
-        builder.url_type = Integer.valueOf(jSONObject.optInt("url_type"));
-        builder.url = jSONObject.optString("url");
-        builder.ios_url = jSONObject.optString("ios_url");
-        builder.apk_url = jSONObject.optString("apk_url");
-        builder.apk_name = jSONObject.optString("apk_name");
-        builder.pos_name = jSONObject.optString("pos_name");
-        builder.first_name = jSONObject.optString("first_name");
-        builder.second_name = jSONObject.optString("second_name");
-        builder.cpid = Integer.valueOf(jSONObject.optInt("cpid"));
-        builder.abtest = jSONObject.optString("abtest");
-        builder.plan_id = Integer.valueOf(jSONObject.optInt("plan_id"));
-        builder.user_id = jSONObject.optString("user_id");
-        builder.price = jSONObject.optString("price");
-        builder.verify = jSONObject.optString(SmsLoginView.f.j);
-        builder.ext_info = jSONObject.optString("ext_info");
-        ArrayList arrayList = new ArrayList();
-        JSONArray optJSONArray = jSONObject.optJSONArray("goods_info");
-        int length = optJSONArray.length();
-        for (int i2 = 0; i2 < length; i2++) {
-            arrayList.add(GoodsInfo.parseFromJson(optJSONArray.optJSONObject(i2)));
-        }
-        builder.goods_info = arrayList;
-        builder.loc_code = jSONObject.optString("loc_code");
-        builder.deep_url = jSONObject.optString("deep_url");
-        return builder.build(false);
+        return (App) invokeL.objValue;
     }
 
     public static JSONObject toJson(App app) {
-        if (app == null) {
-            return null;
-        }
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("type", app.type);
-            jSONObject.put(IAdRequestParam.POS, app.pos);
-            jSONObject.put("icon_url", app.icon_url);
-            jSONObject.put("icon_link", app.icon_link);
-            jSONObject.put("app_name", app.app_name);
-            jSONObject.put("app_desc", app.app_desc);
-            jSONObject.put("p_name", app.p_name);
-            jSONObject.put("p_url", app.p_url);
-            jSONObject.put(BigdayActivityConfig.IMG_URL, app.img_url);
-            jSONObject.put("app_time", app.app_time);
-            jSONObject.put("web_url", app.web_url);
-            jSONObject.put(LegoListActivityConfig.AD_ID, app.ad_id);
-            jSONObject.put("id", app.id);
-            jSONObject.put("name", app.name);
-            jSONObject.put("url_type", app.url_type);
-            jSONObject.put("url", app.url);
-            jSONObject.put("ios_url", app.ios_url);
-            jSONObject.put("apk_url", app.apk_url);
-            jSONObject.put("apk_name", app.apk_name);
-            jSONObject.put("pos_name", app.pos_name);
-            jSONObject.put("first_name", app.first_name);
-            jSONObject.put("second_name", app.second_name);
-            jSONObject.put("cpid", app.cpid);
-            jSONObject.put("abtest", app.abtest);
-            jSONObject.put("plan_id", app.plan_id);
-            jSONObject.put("user_id", app.user_id);
-            jSONObject.put("price", app.price);
-            jSONObject.put(SmsLoginView.f.j, app.verify);
-            jSONObject.put("ext_info", app.ext_info);
-            JSONArray jSONArray = new JSONArray();
-            for (GoodsInfo goodsInfo : app.goods_info) {
-                jSONArray.put(GoodsInfo.toJson(goodsInfo));
+        InterceptResult invokeL;
+        Interceptable interceptable = $ic;
+        if (interceptable == null || (invokeL = interceptable.invokeL(AdIconUtil.AD_TEXT_ID, null, app)) == null) {
+            if (app == null) {
+                return null;
             }
-            jSONObject.put("goods_info", jSONArray);
-            jSONObject.put("loc_code", app.loc_code);
-            jSONObject.put("deep_url", app.deep_url);
-        } catch (JSONException e2) {
-            e2.printStackTrace();
+            JSONObject jSONObject = new JSONObject();
+            try {
+                jSONObject.put("type", app.type);
+                jSONObject.put(IAdRequestParam.POS, app.pos);
+                jSONObject.put("icon_url", app.icon_url);
+                jSONObject.put("icon_link", app.icon_link);
+                jSONObject.put("app_name", app.app_name);
+                jSONObject.put("app_desc", app.app_desc);
+                jSONObject.put("p_name", app.p_name);
+                jSONObject.put("p_url", app.p_url);
+                jSONObject.put(BigdayActivityConfig.IMG_URL, app.img_url);
+                jSONObject.put("app_time", app.app_time);
+                jSONObject.put("web_url", app.web_url);
+                jSONObject.put(LegoListActivityConfig.AD_ID, app.ad_id);
+                jSONObject.put("id", app.id);
+                jSONObject.put("name", app.name);
+                jSONObject.put("url_type", app.url_type);
+                jSONObject.put("url", app.url);
+                jSONObject.put("ios_url", app.ios_url);
+                jSONObject.put("apk_url", app.apk_url);
+                jSONObject.put("apk_name", app.apk_name);
+                jSONObject.put("pos_name", app.pos_name);
+                jSONObject.put("first_name", app.first_name);
+                jSONObject.put("second_name", app.second_name);
+                jSONObject.put("cpid", app.cpid);
+                jSONObject.put("abtest", app.abtest);
+                jSONObject.put("plan_id", app.plan_id);
+                jSONObject.put("user_id", app.user_id);
+                jSONObject.put("price", app.price);
+                jSONObject.put(SmsLoginView.f.j, app.verify);
+                jSONObject.put("ext_info", app.ext_info);
+                JSONArray jSONArray = new JSONArray();
+                for (GoodsInfo goodsInfo : app.goods_info) {
+                    jSONArray.put(GoodsInfo.toJson(goodsInfo));
+                }
+                jSONObject.put("goods_info", jSONArray);
+                jSONObject.put("loc_code", app.loc_code);
+                jSONObject.put("deep_url", app.deep_url);
+            } catch (JSONException e2) {
+                e2.printStackTrace();
+            }
+            return jSONObject;
         }
-        return jSONObject;
+        return (JSONObject) invokeL.objValue;
     }
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public App(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Integer num = builder.type;
             if (num == null) {

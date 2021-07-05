@@ -1,22 +1,38 @@
 package tbclient.FrsPage;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class BusinessPromot extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_BUTTON_TEXT2 = "";
+    public static final List<BusinessPromotCommentList> DEFAULT_COMMENT_LIST;
+    public static final Long DEFAULT_ID;
     public static final String DEFAULT_IMG = "";
     public static final String DEFAULT_IMG_POPUP = "";
+    public static final Integer DEFAULT_JOIN_NUM;
     public static final String DEFAULT_SCHEMA = "";
     public static final String DEFAULT_SCHEMA2 = "";
+    public static final List<String> DEFAULT_THIRD_STATISTICS_URL;
     public static final String DEFAULT_THREAD_ID = "";
     public static final String DEFAULT_THREAD_ID2 = "";
+    public static final Integer DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_TITLE = "";
+    public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_URL = "";
     public static final String DEFAULT_URL2 = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String button_text;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
@@ -51,15 +67,11 @@ public final class BusinessPromot extends Message {
     public final String url;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String url2;
-    public static final Integer DEFAULT_TYPE = 0;
-    public static final Integer DEFAULT_JOIN_NUM = 0;
-    public static final List<BusinessPromotCommentList> DEFAULT_COMMENT_LIST = Collections.emptyList();
-    public static final Long DEFAULT_ID = 0L;
-    public static final Integer DEFAULT_THREAD_TYPE = 0;
-    public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BusinessPromot> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String button_text;
         public String button_text2;
         public List<BusinessPromotCommentList> comment_list;
@@ -79,10 +91,37 @@ public final class BusinessPromot extends Message {
         public String url2;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(BusinessPromot businessPromot) {
             super(businessPromot);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {businessPromot};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (businessPromot == null) {
                 return;
             }
@@ -108,12 +147,61 @@ public final class BusinessPromot extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BusinessPromot build(boolean z) {
-            return new BusinessPromot(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BusinessPromot(this, z, null) : (BusinessPromot) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1003384755, "Ltbclient/FrsPage/BusinessPromot;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(1003384755, "Ltbclient/FrsPage/BusinessPromot;");
+                return;
+            }
+        }
+        DEFAULT_TYPE = 0;
+        DEFAULT_JOIN_NUM = 0;
+        DEFAULT_COMMENT_LIST = Collections.emptyList();
+        DEFAULT_ID = 0L;
+        DEFAULT_THREAD_TYPE = 0;
+        DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
+    }
+
+    public /* synthetic */ BusinessPromot(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BusinessPromot(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.title;
             if (str == null) {

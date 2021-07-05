@@ -1,5 +1,13 @@
 package tbclient.ForumRecommend;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -7,11 +15,25 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 import tbclient.PrivateForumInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class LikeForum extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_CONTENT = "";
+    public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final Long DEFAULT_HOT_THREAD_ID;
+    public static final Integer DEFAULT_IS_BRAND_FORUM;
+    public static final Integer DEFAULT_IS_LIVEFORUM;
+    public static final Integer DEFAULT_IS_MANAGER;
+    public static final Integer DEFAULT_IS_PRIVATE_FORUM;
+    public static final Integer DEFAULT_IS_SIGN;
+    public static final Integer DEFAULT_IS_TOP;
+    public static final Integer DEFAULT_LEVEL_ID;
+    public static final Boolean DEFAULT_NEED_TRANS;
+    public static final Integer DEFAULT_SORT_TYPE;
+    public static final List<FrsTabInfo> DEFAULT_TAB_INFO;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String avatar;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -46,21 +68,11 @@ public final class LikeForum extends Message {
     public final List<FrsTabInfo> tab_info;
     @ProtoField(tag = 12)
     public final ThemeColorInfo theme_color;
-    public static final Long DEFAULT_FORUM_ID = 0L;
-    public static final Integer DEFAULT_IS_SIGN = 0;
-    public static final Integer DEFAULT_LEVEL_ID = 0;
-    public static final Integer DEFAULT_IS_LIVEFORUM = 0;
-    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
-    public static final Integer DEFAULT_IS_TOP = 0;
-    public static final Integer DEFAULT_SORT_TYPE = 0;
-    public static final Boolean DEFAULT_NEED_TRANS = Boolean.FALSE;
-    public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
-    public static final Integer DEFAULT_IS_MANAGER = 0;
-    public static final Long DEFAULT_HOT_THREAD_ID = 0L;
-    public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LikeForum> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
         public String content;
         public Long forum_id;
@@ -80,10 +92,37 @@ public final class LikeForum extends Message {
         public ThemeColorInfo theme_color;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(LikeForum likeForum) {
             super(likeForum);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {likeForum};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (likeForum == null) {
                 return;
             }
@@ -109,12 +148,67 @@ public final class LikeForum extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LikeForum build(boolean z) {
-            return new LikeForum(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LikeForum(this, z, null) : (LikeForum) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1017200155, "Ltbclient/ForumRecommend/LikeForum;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(1017200155, "Ltbclient/ForumRecommend/LikeForum;");
+                return;
+            }
+        }
+        DEFAULT_FORUM_ID = 0L;
+        DEFAULT_IS_SIGN = 0;
+        DEFAULT_LEVEL_ID = 0;
+        DEFAULT_IS_LIVEFORUM = 0;
+        DEFAULT_IS_BRAND_FORUM = 0;
+        DEFAULT_IS_TOP = 0;
+        DEFAULT_SORT_TYPE = 0;
+        DEFAULT_NEED_TRANS = Boolean.FALSE;
+        DEFAULT_IS_PRIVATE_FORUM = 0;
+        DEFAULT_IS_MANAGER = 0;
+        DEFAULT_HOT_THREAD_ID = 0L;
+        DEFAULT_TAB_INFO = Collections.emptyList();
+    }
+
+    public /* synthetic */ LikeForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LikeForum(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.forum_id;
             if (l == null) {

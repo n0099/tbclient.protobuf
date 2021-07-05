@@ -1,12 +1,27 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class SimpleThreadInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final List<Abstract> DEFAULT_ABSTRACT;
+    public static final Integer DEFAULT_LAST_TIME_INT;
+    public static final Integer DEFAULT_REPLY_NUM;
+    public static final Long DEFAULT_THREAD_TYPE;
+    public static final Long DEFAULT_TID;
     public static final String DEFAULT_TITLE = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<Abstract> _abstract;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -21,14 +36,11 @@ public final class SimpleThreadInfo extends Message {
     public final String title;
     @ProtoField(tag = 6)
     public final Zan zan;
-    public static final Long DEFAULT_TID = 0L;
-    public static final Integer DEFAULT_REPLY_NUM = 0;
-    public static final Integer DEFAULT_LAST_TIME_INT = 0;
-    public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
-    public static final Long DEFAULT_THREAD_TYPE = 0L;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<SimpleThreadInfo> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public List<Abstract> _abstract;
         public Integer last_time_int;
         public Integer reply_num;
@@ -38,10 +50,37 @@ public final class SimpleThreadInfo extends Message {
         public Zan zan;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(SimpleThreadInfo simpleThreadInfo) {
             super(simpleThreadInfo);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {simpleThreadInfo};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (simpleThreadInfo == null) {
                 return;
             }
@@ -57,12 +96,60 @@ public final class SimpleThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SimpleThreadInfo build(boolean z) {
-            return new SimpleThreadInfo(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SimpleThreadInfo(this, z, null) : (SimpleThreadInfo) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1749734567, "Ltbclient/SimpleThreadInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(1749734567, "Ltbclient/SimpleThreadInfo;");
+                return;
+            }
+        }
+        DEFAULT_TID = 0L;
+        DEFAULT_REPLY_NUM = 0;
+        DEFAULT_LAST_TIME_INT = 0;
+        DEFAULT_ABSTRACT = Collections.emptyList();
+        DEFAULT_THREAD_TYPE = 0L;
+    }
+
+    public /* synthetic */ SimpleThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SimpleThreadInfo(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Long l = builder.tid;
             if (l == null) {

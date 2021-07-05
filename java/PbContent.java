@@ -1,28 +1,54 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class PbContent extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BIG_CDN_SRC = "";
     public static final String DEFAULT_BIG_SIZE = "";
     public static final String DEFAULT_BIG_SRC = "";
     public static final String DEFAULT_BSIZE = "";
+    public static final Integer DEFAULT_BTN_TYPE;
     public static final String DEFAULT_C = "";
     public static final String DEFAULT_CDN_SRC = "";
     public static final String DEFAULT_CDN_SRC_ACTIVE = "";
+    public static final Integer DEFAULT_COUNT;
+    public static final Integer DEFAULT_DURING_TIME;
     public static final String DEFAULT_DYNAMIC = "";
+    public static final Integer DEFAULT_E_TYPE;
+    public static final Integer DEFAULT_HEIGHT;
     public static final String DEFAULT_IMGTYPE = "";
+    public static final Integer DEFAULT_IS_LONG_PIC;
+    public static final Integer DEFAULT_IS_NATIVE_APP;
+    public static final Integer DEFAULT_IS_SUB;
+    public static final String DEFAULT_ITEM_FORUM_NAME = "";
+    public static final Long DEFAULT_ITEM_ID;
     public static final String DEFAULT_LINK = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
+    public static final Integer DEFAULT_ORIGIN_SIZE;
     public static final String DEFAULT_ORIGIN_SRC = "";
     public static final String DEFAULT_PACKET_NAME = "";
     public static final String DEFAULT_PHONETYPE = "";
+    public static final Integer DEFAULT_SHOW_ORIGINAL_BTN;
     public static final String DEFAULT_SRC = "";
     public static final String DEFAULT_STATIC = "";
     public static final String DEFAULT_TEXT = "";
     public static final String DEFAULT_TOPIC_SPECIAL_ICON = "";
+    public static final Integer DEFAULT_TYPE;
+    public static final Long DEFAULT_UID;
+    public static final Integer DEFAULT_URL_TYPE;
     public static final String DEFAULT_VOICE_MD5 = "";
+    public static final Integer DEFAULT_WIDTH;
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String _static;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -38,7 +64,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f72900c;
+    public final String f76574c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -65,6 +91,8 @@ public final class PbContent extends Message {
     public final Integer is_native_app;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer is_sub;
+    @ProtoField(tag = 39, type = Message.Datatype.STRING)
+    public final String item_forum_name;
     @ProtoField(tag = 38, type = Message.Datatype.UINT64)
     public final Long item_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -101,24 +129,11 @@ public final class PbContent extends Message {
     public final String voice_md5;
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer width;
-    public static final Integer DEFAULT_TYPE = 0;
-    public static final Integer DEFAULT_DURING_TIME = 0;
-    public static final Integer DEFAULT_IS_SUB = 0;
-    public static final Long DEFAULT_UID = 0L;
-    public static final Integer DEFAULT_WIDTH = 0;
-    public static final Integer DEFAULT_HEIGHT = 0;
-    public static final Integer DEFAULT_IS_NATIVE_APP = 0;
-    public static final Integer DEFAULT_E_TYPE = 0;
-    public static final Integer DEFAULT_BTN_TYPE = 0;
-    public static final Integer DEFAULT_ORIGIN_SIZE = 0;
-    public static final Integer DEFAULT_COUNT = 0;
-    public static final Integer DEFAULT_URL_TYPE = 0;
-    public static final Integer DEFAULT_IS_LONG_PIC = 0;
-    public static final Integer DEFAULT_SHOW_ORIGINAL_BTN = 0;
-    public static final Long DEFAULT_ITEM_ID = 0L;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PbContent> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String _static;
         public String big_cdn_src;
         public String big_size;
@@ -127,7 +142,7 @@ public final class PbContent extends Message {
         public Integer btn_type;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f72901c;
+        public String f76575c;
         public String cdn_src;
         public String cdn_src_active;
         public Integer count;
@@ -141,6 +156,7 @@ public final class PbContent extends Message {
         public Integer is_long_pic;
         public Integer is_native_app;
         public Integer is_sub;
+        public String item_forum_name;
         public Long item_id;
         public String link;
         public String media_subtitle;
@@ -161,10 +177,37 @@ public final class PbContent extends Message {
         public Integer width;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(PbContent pbContent) {
             super(pbContent);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {pbContent};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (pbContent == null) {
                 return;
             }
@@ -178,7 +221,7 @@ public final class PbContent extends Message {
             this.cdn_src = pbContent.cdn_src;
             this.big_cdn_src = pbContent.big_cdn_src;
             this.imgtype = pbContent.imgtype;
-            this.f72901c = pbContent.f72900c;
+            this.f76575c = pbContent.f76574c;
             this.voice_md5 = pbContent.voice_md5;
             this.during_time = pbContent.during_time;
             this.is_sub = pbContent.is_sub;
@@ -206,17 +249,76 @@ public final class PbContent extends Message {
             this.cdn_src_active = pbContent.cdn_src_active;
             this.topic_special_icon = pbContent.topic_special_icon;
             this.item_id = pbContent.item_id;
+            this.item_forum_name = pbContent.item_forum_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbContent build(boolean z) {
-            return new PbContent(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PbContent(this, z, null) : (PbContent) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-775276706, "Ltbclient/PbContent;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-775276706, "Ltbclient/PbContent;");
+                return;
+            }
+        }
+        DEFAULT_TYPE = 0;
+        DEFAULT_DURING_TIME = 0;
+        DEFAULT_IS_SUB = 0;
+        DEFAULT_UID = 0L;
+        DEFAULT_WIDTH = 0;
+        DEFAULT_HEIGHT = 0;
+        DEFAULT_IS_NATIVE_APP = 0;
+        DEFAULT_E_TYPE = 0;
+        DEFAULT_BTN_TYPE = 0;
+        DEFAULT_ORIGIN_SIZE = 0;
+        DEFAULT_COUNT = 0;
+        DEFAULT_URL_TYPE = 0;
+        DEFAULT_IS_LONG_PIC = 0;
+        DEFAULT_SHOW_ORIGINAL_BTN = 0;
+        DEFAULT_ITEM_ID = 0L;
+    }
+
+    public /* synthetic */ PbContent(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PbContent(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             Integer num = builder.type;
             if (num == null) {
@@ -278,11 +380,11 @@ public final class PbContent extends Message {
             } else {
                 this.imgtype = str9;
             }
-            String str10 = builder.f72901c;
+            String str10 = builder.f76575c;
             if (str10 == null) {
-                this.f72900c = "";
+                this.f76574c = "";
             } else {
-                this.f72900c = str10;
+                this.f76574c = str10;
             }
             String str11 = builder.voice_md5;
             if (str11 == null) {
@@ -423,9 +525,15 @@ public final class PbContent extends Message {
             Long l2 = builder.item_id;
             if (l2 == null) {
                 this.item_id = DEFAULT_ITEM_ID;
-                return;
             } else {
                 this.item_id = l2;
+            }
+            String str20 = builder.item_forum_name;
+            if (str20 == null) {
+                this.item_forum_name = "";
+                return;
+            } else {
+                this.item_forum_name = str20;
                 return;
             }
         }
@@ -439,7 +547,7 @@ public final class PbContent extends Message {
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
         this.imgtype = builder.imgtype;
-        this.f72900c = builder.f72901c;
+        this.f76574c = builder.f76575c;
         this.voice_md5 = builder.voice_md5;
         this.during_time = builder.during_time;
         this.is_sub = builder.is_sub;
@@ -467,5 +575,6 @@ public final class PbContent extends Message {
         this.cdn_src_active = builder.cdn_src_active;
         this.topic_special_icon = builder.topic_special_icon;
         this.item_id = builder.item_id;
+        this.item_forum_name = builder.item_forum_name;
     }
 }

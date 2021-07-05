@@ -1,23 +1,38 @@
 package tbclient;
 
+import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InitContext;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes10.dex */
 public final class GameInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ANDR_PK_NAME = "";
     public static final String DEFAULT_APPLE_ID = "";
+    public static final Integer DEFAULT_APP_ID;
     public static final String DEFAULT_BUNDLE_ID = "";
+    public static final Integer DEFAULT_CATEGORY_ID;
     public static final String DEFAULT_CATEGORY_NAME = "";
     public static final String DEFAULT_CATEGORY_NAME_SIM = "";
+    public static final Integer DEFAULT_DAY_DOWNLOADS;
+    public static final Long DEFAULT_DEADLINE;
     public static final String DEFAULT_EDITOR_REC = "";
     public static final String DEFAULT_GAME_DESC = "";
     public static final String DEFAULT_GAME_DETAILS_URL = "";
     public static final String DEFAULT_GAME_ID = "";
     public static final String DEFAULT_GAME_LINK = "";
     public static final String DEFAULT_GAME_NAME = "";
+    public static final List<String> DEFAULT_GAME_PIC;
+    public static final Integer DEFAULT_GAME_TYPE;
     public static final String DEFAULT_ICON_PIC1 = "";
     public static final String DEFAULT_ICON_PIC2 = "";
     public static final String DEFAULT_ICON_PIC3 = "";
@@ -25,13 +40,18 @@ public final class GameInfo extends Message {
     public static final String DEFAULT_INTRODUCE = "";
     public static final String DEFAULT_LAUNCHCOMPONENT = "";
     public static final String DEFAULT_LAUNCH_COMPONENT = "";
+    public static final Integer DEFAULT_MARK;
     public static final String DEFAULT_PACKAGE_LINK = "";
     public static final String DEFAULT_PACKAGE_SIZE = "";
+    public static final Integer DEFAULT_PLAYER_NUM;
     public static final String DEFAULT_SCHEMA_URL = "";
+    public static final Integer DEFAULT_SCORE;
     public static final String DEFAULT_SECRET_KEY = "";
+    public static final Integer DEFAULT_STAR;
     public static final String DEFAULT_SUBSCRIPT_COLOR = "";
     public static final String DEFAULT_SUPERSCRIPT_COLOR = "";
     public static final String DEFAULT_VERSION = "";
+    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -104,19 +124,11 @@ public final class GameInfo extends Message {
     public final String superscript_color;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String version;
-    public static final Integer DEFAULT_GAME_TYPE = 0;
-    public static final Integer DEFAULT_PLAYER_NUM = 0;
-    public static final Integer DEFAULT_MARK = 0;
-    public static final List<String> DEFAULT_GAME_PIC = Collections.emptyList();
-    public static final Integer DEFAULT_DAY_DOWNLOADS = 0;
-    public static final Integer DEFAULT_STAR = 0;
-    public static final Integer DEFAULT_CATEGORY_ID = 0;
-    public static final Long DEFAULT_DEADLINE = 0L;
-    public static final Integer DEFAULT_APP_ID = 0;
-    public static final Integer DEFAULT_SCORE = 0;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GameInfo> {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public String andr_pk_name;
         public Integer app_id;
@@ -155,10 +167,37 @@ public final class GameInfo extends Message {
         public String version;
 
         public Builder() {
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                interceptable.invokeUnInit(65536, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65536, newInitContext);
+                }
+            }
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(GameInfo gameInfo) {
             super(gameInfo);
+            Interceptable interceptable = $ic;
+            if (interceptable != null) {
+                InitContext newInitContext = TitanRuntime.newInitContext();
+                newInitContext.initArgs = r2;
+                Object[] objArr = {gameInfo};
+                interceptable.invokeUnInit(65537, newInitContext);
+                int i2 = newInitContext.flag;
+                if ((i2 & 1) != 0) {
+                    int i3 = i2 & 2;
+                    super((Message) newInitContext.callArgs[0]);
+                    newInitContext.thisArg = this;
+                    interceptable.invokeInitBody(65537, newInitContext);
+                    return;
+                }
+            }
             if (gameInfo == null) {
                 return;
             }
@@ -203,12 +242,65 @@ public final class GameInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GameInfo build(boolean z) {
-            return new GameInfo(this, z);
+            InterceptResult invokeZ;
+            Interceptable interceptable = $ic;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GameInfo(this, z, null) : (GameInfo) invokeZ.objValue;
         }
     }
 
+    /* loaded from: classes10.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(884009681, "Ltbclient/GameInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(884009681, "Ltbclient/GameInfo;");
+                return;
+            }
+        }
+        DEFAULT_GAME_TYPE = 0;
+        DEFAULT_PLAYER_NUM = 0;
+        DEFAULT_MARK = 0;
+        DEFAULT_GAME_PIC = Collections.emptyList();
+        DEFAULT_DAY_DOWNLOADS = 0;
+        DEFAULT_STAR = 0;
+        DEFAULT_CATEGORY_ID = 0;
+        DEFAULT_DEADLINE = 0L;
+        DEFAULT_APP_ID = 0;
+        DEFAULT_SCORE = 0;
+    }
+
+    public /* synthetic */ GameInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GameInfo(Builder builder, boolean z) {
         super(builder);
+        Interceptable interceptable = $ic;
+        if (interceptable != null) {
+            InitContext newInitContext = TitanRuntime.newInitContext();
+            newInitContext.initArgs = r2;
+            Object[] objArr = {builder, Boolean.valueOf(z)};
+            interceptable.invokeUnInit(65537, newInitContext);
+            int i2 = newInitContext.flag;
+            if ((i2 & 1) != 0) {
+                int i3 = i2 & 2;
+                super((Message.Builder) newInitContext.callArgs[0]);
+                newInitContext.thisArg = this;
+                interceptable.invokeInitBody(65537, newInitContext);
+                return;
+            }
+        }
         if (z) {
             String str = builder.game_id;
             if (str == null) {
