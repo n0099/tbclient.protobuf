@@ -17,7 +17,6 @@ import "FrsPage/RealTime.proto";
 import "FrsPage/RecomUserInfo.proto";
 import "FrsPage/RecommendForum.proto";
 import "FrsPage/SignInfo.proto";
-import "FrsPage/TagInfo.proto";
 import "FrsPage/TipInfo.proto";
 import "FrsPage/TopCode.proto";
 import "FrsPage/TopNews.proto";
@@ -27,6 +26,7 @@ import "FrsPage/Yule.proto";
 import "FrsPage/Zhibo.proto";
 import "GameInfo.proto";
 import "PostPrefix.proto";
+import "TagInfo.proto";
 import "ThemeColorInfo.proto";
 
 message ForumInfo {

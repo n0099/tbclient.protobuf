@@ -16,6 +16,7 @@ import "PbPage/AddPost.proto";
 import "PbPage/AppealInfo.proto";
 import "PbPage/BusinessPromotInfo.proto";
 import "PbPage/FeedExtInfo.proto";
+import "PbPage/FloatingIcon.proto";
 import "PbPage/ForumHeadlineImgInfo.proto";
 import "PbPage/GodCard.proto";
 import "PbPage/GuessLikeStruct.proto";
@@ -100,4 +101,7 @@ message DataRes {
     ForumRuleStatus forum_rule = 60;
     int32 show_adsense = 61;
     int32 is_black_white = 62;
+    int32 is_official_forum = 63;
+    FloatingIcon floating_icon = 64;
+    int32 is_purchase = 65;
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    int32 load_type = 2;
+    int32 limit = 3;
+    int64 feed_id = 4;
+}

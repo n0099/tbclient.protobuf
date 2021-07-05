@@ -8,4 +8,11 @@ message Item {
     repeated string tags = 5;
     double score = 6;
     int32 star = 7;
+    string button_name = 8;
+    string button_link = 9;
+    string item_appid = 10;
+    int32 category_id = 11;
+    int32 button_link_type = 12;
+    string apk_name = 13;
+    string forum_name = 14;
 }

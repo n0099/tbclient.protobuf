@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "VideoRedIcon/RedIcon.proto";
+
+message DataRes {
+    repeated RedIcon red_icon_list = 1;
+}

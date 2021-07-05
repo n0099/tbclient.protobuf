@@ -223,4 +223,5 @@ message ThreadInfo {
     WorksInfo works_info = 189;
     uint32 collect_num = 190;
     repeated ThreadRecommendInfo thread_recommend_infos = 191;
+    string recom_tag_icon = 192;
 }

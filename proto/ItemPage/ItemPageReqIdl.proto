@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ItemPage/DataReq.proto";
+
+message ItemPageReqIdl {
+    DataReq data = 1;
+}

@@ -11,12 +11,12 @@ import "Personalized/CardTopic.proto";
 import "Personalized/FloatInfo.proto";
 import "Personalized/LiveAnswer.proto";
 import "Personalized/Resource.proto";
-import "Personalized/TagInfo.proto";
 import "Personalized/TagStruct.proto";
 import "Personalized/ThreadPersonalized.proto";
 import "Personalized/UserFollowLive.proto";
 import "RecomPostTopic.proto";
 import "SimpleForum.proto";
+import "TagInfo.proto";
 import "ThreadInfo.proto";
 
 message DataRes {

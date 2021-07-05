@@ -43,4 +43,5 @@ message PbContent {
     string cdn_src_active = 36;
     string topic_special_icon = 37;
     uint64 item_id = 38;
+    string item_forum_name = 39;
 }

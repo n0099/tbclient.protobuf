@@ -9,4 +9,8 @@ message ActivityHead {
     repeated HeadImgs head_imgs = 3;
     Size top_size = 4;
     string obj_id = 5;
+    string pull_down_url = 7;
+    int32 pull_down_interval = 8;
+    string pull_down_pic_ios = 9;
+    string pull_down_pic_android = 10;
 }

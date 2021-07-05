@@ -4,4 +4,5 @@ import "ThreadInfo.proto";
 
 message DataRes {
     repeated ThreadInfo recom_thread_info = 1;
+    int32 rec_type = 2;
 }
