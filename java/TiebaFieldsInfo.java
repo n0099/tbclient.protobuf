@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class TiebaFieldsInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<String> DEFAULT_TIEBA_FIELDS;
@@ -26,7 +26,7 @@ public final class TiebaFieldsInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<User> user_rank;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<TiebaFieldsInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -83,7 +83,7 @@ public final class TiebaFieldsInfo extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

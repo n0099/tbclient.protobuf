@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CLASS_NAME = "";
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f76430common;
+    public final CommonReq f73464common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -32,14 +32,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long user_id;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String class_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f76431common;
+        public CommonReq f73465common;
         public Integer pn;
         public Integer rn;
         public Long user_id;
@@ -79,7 +79,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f76431common = dataReq.f76430common;
+            this.f73465common = dataReq.f73464common;
             this.class_name = dataReq.class_name;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -142,7 +142,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f76430common = builder.f76431common;
+            this.f73464common = builder.f73465common;
             String str = builder.class_name;
             if (str == null) {
                 this.class_name = "";
@@ -170,7 +170,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f76430common = builder.f76431common;
+        this.f73464common = builder.f73465common;
         this.class_name = builder.class_name;
         this.pn = builder.pn;
         this.rn = builder.rn;

@@ -16,7 +16,7 @@ import tbclient.BannerList;
 import tbclient.DeletedReasonInfo;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class ForumInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACCELERATE_COTENT = "";
@@ -248,7 +248,7 @@ public final class ForumInfo extends Message {
     @ProtoField(tag = 16)
     public final Zhibo zhibo;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -465,7 +465,7 @@ public final class ForumInfo extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

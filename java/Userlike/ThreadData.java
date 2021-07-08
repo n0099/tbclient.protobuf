@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class ThreadData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_POST_DATA = "";
@@ -27,7 +27,7 @@ public final class ThreadData extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<ThreadInfo> thread_list;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ThreadData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -84,7 +84,7 @@ public final class ThreadData extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

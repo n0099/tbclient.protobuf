@@ -1,5 +1,6 @@
 package tbclient;
 
+import androidx.core.view.InputDeviceCompat;
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.tieba.tbadkCore.videoupload.VideoFinishResult;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -13,7 +14,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class VideoDesc extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_VIDEO_HEIGHT = "";
@@ -33,7 +34,7 @@ public final class VideoDesc extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String video_width;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VideoDesc> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -94,7 +95,7 @@ public final class VideoDesc extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -141,7 +142,7 @@ public final class VideoDesc extends Message {
     public static JSONObject toJson(VideoDesc videoDesc) {
         InterceptResult invokeL;
         Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(65540, null, videoDesc)) == null) {
+        if (interceptable == null || (invokeL = interceptable.invokeL(InputDeviceCompat.SOURCE_TRACKBALL, null, videoDesc)) == null) {
             if (videoDesc == null) {
                 return null;
             }

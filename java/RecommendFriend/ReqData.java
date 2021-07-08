@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class ReqData extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_Q_TYPE;
@@ -22,7 +22,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f76602common;
+    public final CommonReq f73636common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer q_type;
     @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
@@ -32,13 +32,13 @@ public final class ReqData extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer scr_w;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f76603common;
+        public CommonReq f73637common;
         public Integer q_type;
         public Double scr_dip;
         public Integer scr_h;
@@ -83,7 +83,7 @@ public final class ReqData extends Message {
             this.scr_h = reqData.scr_h;
             this.q_type = reqData.q_type;
             this.scr_dip = reqData.scr_dip;
-            this.f76603common = reqData.f76602common;
+            this.f73637common = reqData.f73636common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -95,7 +95,7 @@ public final class ReqData extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -167,13 +167,13 @@ public final class ReqData extends Message {
             } else {
                 this.scr_dip = d2;
             }
-            this.f76602common = builder.f76603common;
+            this.f73636common = builder.f73637common;
             return;
         }
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
         this.scr_dip = builder.scr_dip;
-        this.f76602common = builder.f76603common;
+        this.f73636common = builder.f73637common;
     }
 }

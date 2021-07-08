@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class ReqData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_FORUMNAME = "";
@@ -26,7 +26,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f76336common;
+    public final CommonReq f73370common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String forumName;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -44,13 +44,13 @@ public final class ReqData extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT64)
     public final Long tid;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f76337common;
+        public CommonReq f73371common;
         public String forumName;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -98,7 +98,7 @@ public final class ReqData extends Message {
             this.pid = reqData.pid;
             this.postType = reqData.postType;
             this.forumName = reqData.forumName;
-            this.f76337common = reqData.f76336common;
+            this.f73371common = reqData.f73370common;
             this.tid = reqData.tid;
             this.ori_ugc_type = reqData.ori_ugc_type;
             this.ori_ugc_nid = reqData.ori_ugc_nid;
@@ -115,7 +115,7 @@ public final class ReqData extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -181,7 +181,7 @@ public final class ReqData extends Message {
             } else {
                 this.forumName = str;
             }
-            this.f76336common = builder.f76337common;
+            this.f73370common = builder.f73371common;
             Long l2 = builder.tid;
             if (l2 == null) {
                 this.tid = DEFAULT_TID;
@@ -218,7 +218,7 @@ public final class ReqData extends Message {
         this.pid = builder.pid;
         this.postType = builder.postType;
         this.forumName = builder.forumName;
-        this.f76336common = builder.f76337common;
+        this.f73370common = builder.f73371common;
         this.tid = builder.tid;
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_nid = builder.ori_ugc_nid;

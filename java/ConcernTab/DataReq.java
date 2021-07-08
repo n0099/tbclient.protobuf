@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Long DEFAULT_FEED_ID;
@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f76346common;
+    public final CommonReq f73380common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long feed_id;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -29,13 +29,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer load_type;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f76347common;
+        public CommonReq f73381common;
         public Long feed_id;
         public Integer limit;
         public Integer load_type;
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f76347common = dataReq.f76346common;
+            this.f73381common = dataReq.f73380common;
             this.load_type = dataReq.load_type;
             this.limit = dataReq.limit;
             this.feed_id = dataReq.feed_id;
@@ -90,7 +90,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -137,7 +137,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f76346common = builder.f76347common;
+            this.f73380common = builder.f73381common;
             Integer num = builder.load_type;
             if (num == null) {
                 this.load_type = DEFAULT_LOAD_TYPE;
@@ -159,7 +159,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f76346common = builder.f76347common;
+        this.f73380common = builder.f73381common;
         this.load_type = builder.load_type;
         this.limit = builder.limit;
         this.feed_id = builder.feed_id;

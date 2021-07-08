@@ -14,7 +14,7 @@ import tbclient.BaijiahaoInfo;
 import tbclient.BusinessAccountInfo;
 import tbclient.GodInfo;
 import tbclient.NewGodInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class User_Info extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BAWU_TYPE = "";
@@ -74,7 +74,7 @@ public final class User_Info extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer userhide;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<User_Info> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -165,7 +165,7 @@ public final class User_Info extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

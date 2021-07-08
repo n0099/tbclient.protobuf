@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes9.dex */
 public final class GraffitiRankListInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<User> DEFAULT_CONSENT_LIST;
@@ -41,7 +41,7 @@ public final class GraffitiRankListInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer total;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GraffitiRankListInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -108,7 +108,7 @@ public final class GraffitiRankListInfo extends Message {
         }
     }
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
