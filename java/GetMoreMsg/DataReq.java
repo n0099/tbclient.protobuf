@@ -16,7 +16,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73500common;
+    public final CommonReq f73956common;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73501common;
+        public CommonReq f73957common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -61,7 +61,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73501common = dataReq.f73500common;
+            this.f73957common = dataReq.f73956common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -102,9 +102,9 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73500common = builder.f73501common;
+            this.f73956common = builder.f73957common;
         } else {
-            this.f73500common = builder.f73501common;
+            this.f73956common = builder.f73957common;
         }
     }
 }

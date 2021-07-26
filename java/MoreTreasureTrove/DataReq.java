@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73596common;
+    public final CommonReq f74052common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String lf_user;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -37,7 +37,7 @@ public final class DataReq extends Message {
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73597common;
+        public CommonReq f74053common;
         public String lf_user;
         public String lf_user_taskid;
         public String tab_code;
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73597common = dataReq.f73596common;
+            this.f74053common = dataReq.f74052common;
             this.tab_code = dataReq.tab_code;
             this.lf_user = dataReq.lf_user;
             this.lf_user_taskid = dataReq.lf_user_taskid;
@@ -122,7 +122,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73596common = builder.f73597common;
+            this.f74052common = builder.f74053common;
             String str = builder.tab_code;
             if (str == null) {
                 this.tab_code = "";
@@ -144,7 +144,7 @@ public final class DataReq extends Message {
             this.app_pos = builder.app_pos;
             return;
         }
-        this.f73596common = builder.f73597common;
+        this.f74052common = builder.f74053common;
         this.tab_code = builder.tab_code;
         this.lf_user = builder.lf_user;
         this.lf_user_taskid = builder.lf_user_taskid;

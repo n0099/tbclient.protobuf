@@ -34,6 +34,8 @@ public final class ItemInfo extends Message {
     public static final List<TagInfo> DEFAULT_TAG_INFO;
     public static final String DEFAULT_TEMPLATE_NAME = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 24)
+    public final ApkDetail apk_detail;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String apk_name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -85,6 +87,7 @@ public final class ItemInfo extends Message {
     public static final class Builder extends Message.Builder<ItemInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public ApkDetail apk_detail;
         public String apk_name;
         public String brief;
         public String button_link;
@@ -167,6 +170,7 @@ public final class ItemInfo extends Message {
             this.item_appid = itemInfo.item_appid;
             this.button_link_type = itemInfo.button_link_type;
             this.apk_name = itemInfo.apk_name;
+            this.apk_detail = itemInfo.apk_detail;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -339,11 +343,11 @@ public final class ItemInfo extends Message {
             String str11 = builder.apk_name;
             if (str11 == null) {
                 this.apk_name = "";
-                return;
             } else {
                 this.apk_name = str11;
-                return;
             }
+            this.apk_detail = builder.apk_detail;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -368,5 +372,6 @@ public final class ItemInfo extends Message {
         this.item_appid = builder.item_appid;
         this.button_link_type = builder.button_link_type;
         this.apk_name = builder.apk_name;
+        this.apk_detail = builder.apk_detail;
     }
 }

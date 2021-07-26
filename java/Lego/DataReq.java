@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73584common;
+    public final CommonReq f74040common;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String flip_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73585common;
+        public CommonReq f74041common;
         public String flip_id;
         public String item_id;
         public Long page_id;
@@ -103,7 +103,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73585common = dataReq.f73584common;
+            this.f74041common = dataReq.f74040common;
             this.page_id = dataReq.page_id;
             this.page_type = dataReq.page_type;
             this.pn = dataReq.pn;
@@ -176,7 +176,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73584common = builder.f73585common;
+            this.f74040common = builder.f74041common;
             Long l = builder.page_id;
             if (l == null) {
                 this.page_id = DEFAULT_PAGE_ID;
@@ -240,7 +240,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f73584common = builder.f73585common;
+        this.f74040common = builder.f74041common;
         this.page_id = builder.page_id;
         this.page_type = builder.page_type;
         this.pn = builder.pn;

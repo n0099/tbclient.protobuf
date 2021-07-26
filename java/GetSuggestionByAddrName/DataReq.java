@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73534common;
+    public final CommonReq f73990common;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
         public String addr_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73535common;
+        public CommonReq f73991common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -66,7 +66,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.addr_name = dataReq.addr_name;
-            this.f73535common = dataReq.f73534common;
+            this.f73991common = dataReq.f73990common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -113,10 +113,10 @@ public final class DataReq extends Message {
             } else {
                 this.addr_name = str;
             }
-            this.f73534common = builder.f73535common;
+            this.f73990common = builder.f73991common;
             return;
         }
         this.addr_name = builder.addr_name;
-        this.f73534common = builder.f73535common;
+        this.f73990common = builder.f73991common;
     }
 }

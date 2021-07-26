@@ -31,6 +31,7 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID;
     public static final Integer DEFAULT_FROM_PUSH;
     public static final Integer DEFAULT_FROM_SMART_FRS;
+    public static final Integer DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
     public static final Integer DEFAULT_ISSDK;
     public static final Integer DEFAULT_IS_COMM_REVERSE;
     public static final Integer DEFAULT_IS_JUMPFLOOR;
@@ -103,7 +104,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73612common;
+    public final CommonReq f74068common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -120,6 +121,8 @@ public final class DataReq extends Message {
     public final Integer from_push;
     @ProtoField(tag = 54, type = Message.Datatype.UINT32)
     public final Integer from_smart_frs;
+    @ProtoField(tag = 76, type = Message.Datatype.INT32)
+    public final Integer immersion_video_comment_source;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
     @ProtoField(tag = 34, type = Message.Datatype.INT32)
@@ -233,7 +236,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73613common;
+        public CommonReq f74069common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -242,6 +245,7 @@ public final class DataReq extends Message {
         public Long forum_id;
         public Integer from_push;
         public Integer from_smart_frs;
+        public Integer immersion_video_comment_source;
         public Integer is_comm_reverse;
         public Integer is_jumpfloor;
         public Integer issdk;
@@ -350,7 +354,7 @@ public final class DataReq extends Message {
             this.arround = dataReq.arround;
             this.last = dataReq.last;
             this.msg_click = dataReq.msg_click;
-            this.f73613common = dataReq.f73612common;
+            this.f74069common = dataReq.f74068common;
             this.lastids = dataReq.lastids;
             this.st_from = dataReq.st_from;
             this.st_link = dataReq.st_link;
@@ -393,6 +397,7 @@ public final class DataReq extends Message {
             this.broadcast_id = dataReq.broadcast_id;
             this.floor_sort_type = dataReq.floor_sort_type;
             this.source_type = dataReq.source_type;
+            this.immersion_video_comment_source = dataReq.immersion_video_comment_source;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -463,6 +468,7 @@ public final class DataReq extends Message {
         DEFAULT_BROADCAST_ID = 0L;
         DEFAULT_FLOOR_SORT_TYPE = 0;
         DEFAULT_SOURCE_TYPE = 0;
+        DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -632,7 +638,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = str2;
             }
-            this.f73612common = builder.f73613common;
+            this.f74068common = builder.f74069common;
             String str3 = builder.lastids;
             if (str3 == null) {
                 this.lastids = "";
@@ -872,9 +878,15 @@ public final class DataReq extends Message {
             Integer num32 = builder.source_type;
             if (num32 == null) {
                 this.source_type = DEFAULT_SOURCE_TYPE;
-                return;
             } else {
                 this.source_type = num32;
+            }
+            Integer num33 = builder.immersion_video_comment_source;
+            if (num33 == null) {
+                this.immersion_video_comment_source = DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
+                return;
+            } else {
+                this.immersion_video_comment_source = num33;
                 return;
             }
         }
@@ -902,7 +914,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f73612common = builder.f73613common;
+        this.f74068common = builder.f74069common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -945,5 +957,6 @@ public final class DataReq extends Message {
         this.broadcast_id = builder.broadcast_id;
         this.floor_sort_type = builder.floor_sort_type;
         this.source_type = builder.source_type;
+        this.immersion_video_comment_source = builder.immersion_video_comment_source;
     }
 }

@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73598common;
+    public final CommonReq f74054common;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
         public List<Long> arr_forum_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73599common;
+        public CommonReq f74055common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -69,7 +69,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73599common = dataReq.f73598common;
+            this.f74055common = dataReq.f74054common;
             this.arr_forum_id = Message.copyOf(dataReq.arr_forum_id);
         }
 
@@ -127,7 +127,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73598common = builder.f73599common;
+            this.f74054common = builder.f74055common;
             List<Long> list = builder.arr_forum_id;
             if (list == null) {
                 this.arr_forum_id = DEFAULT_ARR_FORUM_ID;
@@ -137,7 +137,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f73598common = builder.f73599common;
+        this.f74054common = builder.f74055common;
         this.arr_forum_id = Message.immutableCopyOf(builder.arr_forum_id);
     }
 }

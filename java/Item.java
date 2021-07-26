@@ -30,6 +30,8 @@ public final class Item extends Message {
     public static final Integer DEFAULT_STAR;
     public static final List<String> DEFAULT_TAGS;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 15)
+    public final ApkDetail apk_detail;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String apk_name;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -63,6 +65,7 @@ public final class Item extends Message {
     public static final class Builder extends Message.Builder<Item> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public ApkDetail apk_detail;
         public String apk_name;
         public String button_link;
         public Integer button_link_type;
@@ -127,6 +130,7 @@ public final class Item extends Message {
             this.button_link_type = item.button_link_type;
             this.apk_name = item.apk_name;
             this.forum_name = item.forum_name;
+            this.apk_detail = item.apk_detail;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -271,11 +275,11 @@ public final class Item extends Message {
             String str7 = builder.forum_name;
             if (str7 == null) {
                 this.forum_name = "";
-                return;
             } else {
                 this.forum_name = str7;
-                return;
             }
+            this.apk_detail = builder.apk_detail;
+            return;
         }
         this.item_id = builder.item_id;
         this.item_name = builder.item_name;
@@ -291,5 +295,6 @@ public final class Item extends Message {
         this.button_link_type = builder.button_link_type;
         this.apk_name = builder.apk_name;
         this.forum_name = builder.forum_name;
+        this.apk_detail = builder.apk_detail;
     }
 }

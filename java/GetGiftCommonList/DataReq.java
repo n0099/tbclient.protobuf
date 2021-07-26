@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73470common;
+    public final CommonReq f73926common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer timestamp;
 
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73471common;
+        public CommonReq f73927common;
         public Integer timestamp;
 
         public Builder() {
@@ -68,7 +68,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.timestamp = dataReq.timestamp;
-            this.f73471common = dataReq.f73470common;
+            this.f73927common = dataReq.f73926common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -131,10 +131,10 @@ public final class DataReq extends Message {
             } else {
                 this.timestamp = num;
             }
-            this.f73470common = builder.f73471common;
+            this.f73926common = builder.f73927common;
             return;
         }
         this.timestamp = builder.timestamp;
-        this.f73470common = builder.f73471common;
+        this.f73926common = builder.f73927common;
     }
 }

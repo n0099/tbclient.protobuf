@@ -4,6 +4,7 @@ import com.alibaba.fastjson.asm.Opcodes;
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.android.imsdk.upload.action.pb.IMPushPb;
 import com.baidu.android.lbspay.channelpay.IChannelPay;
+import com.baidu.down.manage.DownloadConstants;
 import com.baidu.tieba.pb.pb.main.PbFullScreenEditorActivity;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -90,6 +91,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_STORY_AUDIT;
     public static final Integer DEFAULT_IS_S_CARD;
     public static final Integer DEFAULT_IS_TBREAD_DISPATCH;
+    public static final String DEFAULT_IS_TIEBAPLUS_AD = "";
     public static final Integer DEFAULT_IS_TOP;
     public static final Integer DEFAULT_IS_TOPIC;
     public static final String DEFAULT_IS_TOP_IMG = "";
@@ -143,6 +145,10 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_THREAD_TYPE;
     public static final Integer DEFAULT_THREAD_TYPES;
     public static final Long DEFAULT_TID;
+    public static final Integer DEFAULT_TIEBAPLUS_CANT_DELETE;
+    public static final String DEFAULT_TIEBAPLUS_EXTRA_PARAM = "";
+    public static final String DEFAULT_TIEBAPLUS_ORDER_ID = "";
+    public static final String DEFAULT_TIEBAPLUS_TOKEN = "";
     public static final String DEFAULT_TIEBA_GAME_INFORMATION_SOURCE = "";
     public static final Integer DEFAULT_TIME;
     public static final Integer DEFAULT_TIMELINE;
@@ -335,6 +341,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_story_audit;
     @ProtoField(tag = 115, type = Message.Datatype.INT32)
     public final Integer is_tbread_dispatch;
+    @ProtoField(tag = 193, type = Message.Datatype.STRING)
+    public final String is_tiebaplus_ad;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_top;
     @ProtoField(tag = 158, type = Message.Datatype.STRING)
@@ -477,6 +485,14 @@ public final class ThreadInfo extends Message {
     public final Long tid;
     @ProtoField(tag = ContactPermissionUtil.DIALOG_NO_PERMISSION_CONTACTS, type = Message.Datatype.STRING)
     public final String tieba_game_information_source;
+    @ProtoField(tag = Constants.METHOD_IM_DELIVER_CONFIG_MSG, type = Message.Datatype.INT32)
+    public final Integer tiebaplus_cant_delete;
+    @ProtoField(tag = 196, type = Message.Datatype.STRING)
+    public final String tiebaplus_extra_param;
+    @ProtoField(tag = 194, type = Message.Datatype.STRING)
+    public final String tiebaplus_order_id;
+    @ProtoField(tag = DownloadConstants.STATUS_WAITING_FOR_NETWORK, type = Message.Datatype.STRING)
+    public final String tiebaplus_token;
     @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer time;
     @ProtoField(tag = 64, type = Message.Datatype.UINT32)
@@ -623,6 +639,7 @@ public final class ThreadInfo extends Message {
         public Integer is_share_thread;
         public Integer is_story_audit;
         public Integer is_tbread_dispatch;
+        public String is_tiebaplus_ad;
         public Integer is_top;
         public String is_top_img;
         public Integer is_topic;
@@ -694,6 +711,10 @@ public final class ThreadInfo extends Message {
         public Integer thread_types;
         public Long tid;
         public String tieba_game_information_source;
+        public Integer tiebaplus_cant_delete;
+        public String tiebaplus_extra_param;
+        public String tiebaplus_order_id;
+        public String tiebaplus_token;
         public Integer time;
         public Integer timeline;
         public String title;
@@ -942,6 +963,11 @@ public final class ThreadInfo extends Message {
             this.collect_num = threadInfo.collect_num;
             this.thread_recommend_infos = Message.copyOf(threadInfo.thread_recommend_infos);
             this.recom_tag_icon = threadInfo.recom_tag_icon;
+            this.is_tiebaplus_ad = threadInfo.is_tiebaplus_ad;
+            this.tiebaplus_order_id = threadInfo.tiebaplus_order_id;
+            this.tiebaplus_token = threadInfo.tiebaplus_token;
+            this.tiebaplus_extra_param = threadInfo.tiebaplus_extra_param;
+            this.tiebaplus_cant_delete = threadInfo.tiebaplus_cant_delete;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1072,6 +1098,7 @@ public final class ThreadInfo extends Message {
         DEFAULT_IS_AUTHOR_VIEW = 0;
         DEFAULT_COLLECT_NUM = 0;
         DEFAULT_THREAD_RECOMMEND_INFOS = Collections.emptyList();
+        DEFAULT_TIEBAPLUS_CANT_DELETE = 0;
     }
 
     public /* synthetic */ ThreadInfo(Builder builder, boolean z, a aVar) {
@@ -1979,9 +2006,39 @@ public final class ThreadInfo extends Message {
             String str40 = builder.recom_tag_icon;
             if (str40 == null) {
                 this.recom_tag_icon = "";
-                return;
             } else {
                 this.recom_tag_icon = str40;
+            }
+            String str41 = builder.is_tiebaplus_ad;
+            if (str41 == null) {
+                this.is_tiebaplus_ad = "";
+            } else {
+                this.is_tiebaplus_ad = str41;
+            }
+            String str42 = builder.tiebaplus_order_id;
+            if (str42 == null) {
+                this.tiebaplus_order_id = "";
+            } else {
+                this.tiebaplus_order_id = str42;
+            }
+            String str43 = builder.tiebaplus_token;
+            if (str43 == null) {
+                this.tiebaplus_token = "";
+            } else {
+                this.tiebaplus_token = str43;
+            }
+            String str44 = builder.tiebaplus_extra_param;
+            if (str44 == null) {
+                this.tiebaplus_extra_param = "";
+            } else {
+                this.tiebaplus_extra_param = str44;
+            }
+            Integer num72 = builder.tiebaplus_cant_delete;
+            if (num72 == null) {
+                this.tiebaplus_cant_delete = DEFAULT_TIEBAPLUS_CANT_DELETE;
+                return;
+            } else {
+                this.tiebaplus_cant_delete = num72;
                 return;
             }
         }
@@ -2170,5 +2227,10 @@ public final class ThreadInfo extends Message {
         this.collect_num = builder.collect_num;
         this.thread_recommend_infos = Message.immutableCopyOf(builder.thread_recommend_infos);
         this.recom_tag_icon = builder.recom_tag_icon;
+        this.is_tiebaplus_ad = builder.is_tiebaplus_ad;
+        this.tiebaplus_order_id = builder.tiebaplus_order_id;
+        this.tiebaplus_token = builder.tiebaplus_token;
+        this.tiebaplus_extra_param = builder.tiebaplus_extra_param;
+        this.tiebaplus_cant_delete = builder.tiebaplus_cant_delete;
     }
 }

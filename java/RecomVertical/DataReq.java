@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73630common;
+    public final CommonReq f74086common;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -51,7 +51,7 @@ public final class DataReq extends Message {
         public String class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73631common;
+        public CommonReq f74087common;
         public Integer load_type;
         public Integer new_net_type;
         public Integer page_thread_count;
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73631common = dataReq.f73630common;
+            this.f74087common = dataReq.f74086common;
             this.class_id = dataReq.class_id;
             this.sub_class_id = dataReq.sub_class_id;
             this.scr_w = dataReq.scr_w;
@@ -166,7 +166,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73630common = builder.f73631common;
+            this.f74086common = builder.f74087common;
             String str = builder.class_id;
             if (str == null) {
                 this.class_id = "";
@@ -218,7 +218,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f73630common = builder.f73631common;
+        this.f74086common = builder.f74087common;
         this.class_id = builder.class_id;
         this.sub_class_id = builder.sub_class_id;
         this.scr_w = builder.scr_w;
