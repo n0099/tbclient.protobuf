@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "ApkDetail.proto";
+
 message Item {
     int64 item_id = 1;
     string item_name = 2;
@@ -15,4 +17,5 @@ message Item {
     int32 button_link_type = 12;
     string apk_name = 13;
     string forum_name = 14;
+    ApkDetail apk_detail = 15;
 }

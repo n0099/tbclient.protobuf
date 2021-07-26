@@ -224,4 +224,7 @@ message ThreadInfo {
     uint32 collect_num = 190;
     repeated ThreadRecommendInfo thread_recommend_infos = 191;
     string recom_tag_icon = 192;
+    string is_tiebaplus_ad = 193;
+    string tiebaplus_order_id = 194;
+    string tiebaplus_extra_param = 196;
 }

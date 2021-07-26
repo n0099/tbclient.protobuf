@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "ApkDetail.proto";
 import "ItemDetail.proto";
 import "ItemOptions.proto";
 import "ItemService.proto";
@@ -32,4 +33,5 @@ message ItemInfo {
     string item_appid = 21;
     int32 button_link_type = 22;
     string apk_name = 23;
+    ApkDetail apk_detail = 24;
 }
