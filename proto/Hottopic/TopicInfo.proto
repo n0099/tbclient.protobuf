@@ -22,4 +22,5 @@ message TopicInfo {
     JoinUser join_info = 16;
     string head_photo_jump_url = 17;
     int32 topic_tag = 18;
+    int64 is_deleted = 19;
 }

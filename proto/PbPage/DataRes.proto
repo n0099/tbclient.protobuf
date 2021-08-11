@@ -104,4 +104,6 @@ message DataRes {
     int32 is_official_forum = 63;
     FloatingIcon floating_icon = 64;
     int32 is_purchase = 65;
+    int32 pb_notice_type = 66;
+    string pb_notice = 67;
 }

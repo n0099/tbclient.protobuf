@@ -166,4 +166,5 @@ message DataRes {
     SignActivityInfo sign_activity_info = 106;
     AddBawuPopInfo add_bawu_pop = 107;
     int32 show_adsense = 108;
+    PopInfo frsmask_pop_info = 109;
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetWorksTags/Category.proto";
+import "GetWorksTags/Tag.proto";
+
+message DataRes {
+    repeated Category category = 1;
+    repeated Tag tags = 2;
+}
