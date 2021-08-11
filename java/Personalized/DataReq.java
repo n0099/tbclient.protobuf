@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
@@ -61,7 +61,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f74072common;
+    public final CommonReq f79381common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -121,7 +121,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer tag_code;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
         public AppPosInfo app_pos;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f74073common;
+        public CommonReq f79382common;
         public String da_idfa;
         public String first_dir;
         public Long from_tid;
@@ -197,7 +197,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f74073common = dataReq.f74072common;
+            this.f79382common = dataReq.f79381common;
             this.tag_code = dataReq.tag_code;
             this.need_tags = dataReq.need_tags;
             this.load_type = dataReq.load_type;
@@ -242,7 +242,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -306,7 +306,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f74072common = builder.f74073common;
+            this.f79381common = builder.f79382common;
             Integer num = builder.tag_code;
             if (num == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
@@ -503,7 +503,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f74072common = builder.f74073common;
+        this.f79381common = builder.f79382common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;

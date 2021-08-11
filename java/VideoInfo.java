@@ -21,7 +21,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VideoInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Double DEFAULT_HTH_MID_LOC;
@@ -84,7 +84,7 @@ public final class VideoInfo extends Message {
     @ProtoField(tag = 19, type = Message.Datatype.DOUBLE)
     public final Double wth_mid_loc;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -175,7 +175,7 @@ public final class VideoInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

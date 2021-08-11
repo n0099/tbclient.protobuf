@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ExcContent extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_ALIGN;
@@ -40,7 +40,7 @@ public final class ExcContent extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f73854c;
+    public final String f79159c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -56,7 +56,7 @@ public final class ExcContent extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ExcContent> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -67,7 +67,7 @@ public final class ExcContent extends Message {
         public String bsize;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f73855c;
+        public String f79160c;
         public String cdn_src;
         public String color;
         public String link;
@@ -120,7 +120,7 @@ public final class ExcContent extends Message {
             this.big_size = excContent.big_size;
             this.cdn_src = excContent.cdn_src;
             this.big_cdn_src = excContent.big_cdn_src;
-            this.f73855c = excContent.f73854c;
+            this.f79160c = excContent.f79159c;
             this.align = excContent.align;
             this.color = excContent.color;
             this.size = excContent.size;
@@ -135,7 +135,7 @@ public final class ExcContent extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -236,11 +236,11 @@ public final class ExcContent extends Message {
             } else {
                 this.big_cdn_src = str8;
             }
-            String str9 = builder.f73855c;
+            String str9 = builder.f79160c;
             if (str9 == null) {
-                this.f73854c = "";
+                this.f79159c = "";
             } else {
-                this.f73854c = str9;
+                this.f79159c = str9;
             }
             Integer num = builder.align;
             if (num == null) {
@@ -272,7 +272,7 @@ public final class ExcContent extends Message {
         this.big_size = builder.big_size;
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
-        this.f73854c = builder.f73855c;
+        this.f79159c = builder.f79160c;
         this.align = builder.align;
         this.color = builder.color;
         this.size = builder.size;

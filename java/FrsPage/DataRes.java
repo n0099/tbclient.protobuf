@@ -42,7 +42,7 @@ import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_ALA_INSERT_FLOOR;
@@ -177,6 +177,8 @@ public final class DataRes extends Message {
     public final Integer frs_tab_default;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<FrsTabInfo> frs_tab_info;
+    @ProtoField(tag = 109)
+    public final PopInfo frsmask_pop_info;
     @ProtoField(tag = 74, type = Message.Datatype.INT32)
     public final Integer game_default_tab_id;
     @ProtoField(tag = 18)
@@ -292,7 +294,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 89)
     public final WorldcupSkin worldcup_skin;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -339,6 +341,7 @@ public final class DataRes extends Message {
         public StarInfo frs_star;
         public Integer frs_tab_default;
         public List<FrsTabInfo> frs_tab_info;
+        public PopInfo frsmask_pop_info;
         public Integer game_default_tab_id;
         public GconAccount gcon_account;
         public Group group;
@@ -532,6 +535,7 @@ public final class DataRes extends Message {
             this.sign_activity_info = dataRes.sign_activity_info;
             this.add_bawu_pop = dataRes.add_bawu_pop;
             this.show_adsense = dataRes.show_adsense;
+            this.frsmask_pop_info = dataRes.frsmask_pop_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -543,7 +547,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -950,11 +954,11 @@ public final class DataRes extends Message {
             Integer num19 = builder.show_adsense;
             if (num19 == null) {
                 this.show_adsense = DEFAULT_SHOW_ADSENSE;
-                return;
             } else {
                 this.show_adsense = num19;
-                return;
             }
+            this.frsmask_pop_info = builder.frsmask_pop_info;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1056,5 +1060,6 @@ public final class DataRes extends Message {
         this.sign_activity_info = builder.sign_activity_info;
         this.add_bawu_pop = builder.add_bawu_pop;
         this.show_adsense = builder.show_adsense;
+        this.frsmask_pop_info = builder.frsmask_pop_info;
     }
 }

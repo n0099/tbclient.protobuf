@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ForumPresentInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CONTENT = "";
@@ -23,7 +23,7 @@ public final class ForumPresentInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<UserRankPresentInfo> user_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumPresentInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -78,7 +78,7 @@ public final class ForumPresentInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

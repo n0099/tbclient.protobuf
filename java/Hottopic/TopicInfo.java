@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.VideoInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class TopicInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BANG_JUMP_DESC = "";
@@ -21,6 +21,7 @@ public final class TopicInfo extends Message {
     public static final String DEFAULT_HEAD_PHOTO_JUMP_URL = "";
     public static final String DEFAULT_HEAD_PHOTO_URL = "";
     public static final Long DEFAULT_IDX_NUM;
+    public static final Long DEFAULT_IS_DELETED;
     public static final Integer DEFAULT_PMY_SOURCE;
     public static final Long DEFAULT_PMY_TOPIC_ID;
     public static final String DEFAULT_SHARE_PIC = "";
@@ -45,6 +46,8 @@ public final class TopicInfo extends Message {
     public final String head_photo_url;
     @ProtoField(tag = 8, type = Message.Datatype.UINT64)
     public final Long idx_num;
+    @ProtoField(tag = 19, type = Message.Datatype.INT64)
+    public final Long is_deleted;
     @ProtoField(tag = 16)
     public final JoinUser join_info;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
@@ -68,7 +71,7 @@ public final class TopicInfo extends Message {
     @ProtoField(tag = 12)
     public final VideoInfo video_info;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TopicInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,6 +82,7 @@ public final class TopicInfo extends Message {
         public String head_photo_jump_url;
         public String head_photo_url;
         public Long idx_num;
+        public Long is_deleted;
         public JoinUser join_info;
         public Integer pmy_source;
         public Long pmy_topic_id;
@@ -144,6 +148,7 @@ public final class TopicInfo extends Message {
             this.join_info = topicInfo.join_info;
             this.head_photo_jump_url = topicInfo.head_photo_jump_url;
             this.topic_tag = topicInfo.topic_tag;
+            this.is_deleted = topicInfo.is_deleted;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -155,7 +160,7 @@ public final class TopicInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -180,6 +185,7 @@ public final class TopicInfo extends Message {
         DEFAULT_PMY_TOPIC_ID = 0L;
         DEFAULT_PMY_SOURCE = 0;
         DEFAULT_TOPIC_TAG = 0;
+        DEFAULT_IS_DELETED = 0L;
     }
 
     public /* synthetic */ TopicInfo(Builder builder, boolean z, a aVar) {
@@ -300,9 +306,15 @@ public final class TopicInfo extends Message {
             Integer num2 = builder.topic_tag;
             if (num2 == null) {
                 this.topic_tag = DEFAULT_TOPIC_TAG;
-                return;
             } else {
                 this.topic_tag = num2;
+            }
+            Long l5 = builder.is_deleted;
+            if (l5 == null) {
+                this.is_deleted = DEFAULT_IS_DELETED;
+                return;
+            } else {
+                this.is_deleted = l5;
                 return;
             }
         }
@@ -324,5 +336,6 @@ public final class TopicInfo extends Message {
         this.join_info = builder.join_info;
         this.head_photo_jump_url = builder.head_photo_jump_url;
         this.topic_tag = builder.topic_tag;
+        this.is_deleted = builder.is_deleted;
     }
 }

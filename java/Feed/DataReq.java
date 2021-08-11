@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_LOAD_TYPE;
@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73858common;
+    public final CommonReq f79163common;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer load_type;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -35,13 +35,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer scr_w;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73859common;
+        public CommonReq f79164common;
         public Integer load_type;
         public Integer new_net_type;
         public Double scr_dip;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73859common = dataReq.f73858common;
+            this.f79164common = dataReq.f79163common;
             this.scr_h = dataReq.scr_h;
             this.scr_w = dataReq.scr_w;
             this.scr_dip = dataReq.scr_dip;
@@ -100,7 +100,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -149,7 +149,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73858common = builder.f73859common;
+            this.f79163common = builder.f79164common;
             Integer num = builder.scr_h;
             if (num == null) {
                 this.scr_h = DEFAULT_SCR_H;
@@ -183,7 +183,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f73858common = builder.f73859common;
+        this.f79163common = builder.f79164common;
         this.scr_h = builder.scr_h;
         this.scr_w = builder.scr_w;
         this.scr_dip = builder.scr_dip;

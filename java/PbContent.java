@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class PbContent extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BIG_CDN_SRC = "";
@@ -64,7 +64,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f74064c;
+    public final String f79373c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -117,6 +117,8 @@ public final class PbContent extends Message {
     public final String src;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String text;
+    @ProtoField(tag = 40)
+    public final TiebaPlusInfo tiebaplus_info;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String topic_special_icon;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -130,7 +132,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer width;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PbContent> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -142,7 +144,7 @@ public final class PbContent extends Message {
         public Integer btn_type;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f74065c;
+        public String f79374c;
         public String cdn_src;
         public String cdn_src_active;
         public Integer count;
@@ -169,6 +171,7 @@ public final class PbContent extends Message {
         public Integer show_original_btn;
         public String src;
         public String text;
+        public TiebaPlusInfo tiebaplus_info;
         public String topic_special_icon;
         public Integer type;
         public Long uid;
@@ -221,7 +224,7 @@ public final class PbContent extends Message {
             this.cdn_src = pbContent.cdn_src;
             this.big_cdn_src = pbContent.big_cdn_src;
             this.imgtype = pbContent.imgtype;
-            this.f74065c = pbContent.f74064c;
+            this.f79374c = pbContent.f79373c;
             this.voice_md5 = pbContent.voice_md5;
             this.during_time = pbContent.during_time;
             this.is_sub = pbContent.is_sub;
@@ -250,6 +253,7 @@ public final class PbContent extends Message {
             this.topic_special_icon = pbContent.topic_special_icon;
             this.item_id = pbContent.item_id;
             this.item_forum_name = pbContent.item_forum_name;
+            this.tiebaplus_info = pbContent.tiebaplus_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -261,7 +265,7 @@ public final class PbContent extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -380,11 +384,11 @@ public final class PbContent extends Message {
             } else {
                 this.imgtype = str9;
             }
-            String str10 = builder.f74065c;
+            String str10 = builder.f79374c;
             if (str10 == null) {
-                this.f74064c = "";
+                this.f79373c = "";
             } else {
-                this.f74064c = str10;
+                this.f79373c = str10;
             }
             String str11 = builder.voice_md5;
             if (str11 == null) {
@@ -531,11 +535,11 @@ public final class PbContent extends Message {
             String str20 = builder.item_forum_name;
             if (str20 == null) {
                 this.item_forum_name = "";
-                return;
             } else {
                 this.item_forum_name = str20;
-                return;
             }
+            this.tiebaplus_info = builder.tiebaplus_info;
+            return;
         }
         this.type = builder.type;
         this.text = builder.text;
@@ -547,7 +551,7 @@ public final class PbContent extends Message {
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
         this.imgtype = builder.imgtype;
-        this.f74064c = builder.f74065c;
+        this.f79373c = builder.f79374c;
         this.voice_md5 = builder.voice_md5;
         this.during_time = builder.during_time;
         this.is_sub = builder.is_sub;
@@ -576,5 +580,6 @@ public final class PbContent extends Message {
         this.topic_special_icon = builder.topic_special_icon;
         this.item_id = builder.item_id;
         this.item_forum_name = builder.item_forum_name;
+        this.tiebaplus_info = builder.tiebaplus_info;
     }
 }

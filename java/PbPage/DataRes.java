@@ -36,7 +36,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
@@ -58,6 +58,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_MULTI_FORUM_TEXT = "";
     public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER;
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
+    public static final String DEFAULT_PB_NOTICE = "";
+    public static final Integer DEFAULT_PB_NOTICE_TYPE;
     public static final List<PbSortType> DEFAULT_PB_SORT_INFO;
     public static final List<PsRankListItem> DEFAULT_PLAY_RANK_LIST;
     public static final List<PostBanner> DEFAULT_POST_BANNER;
@@ -159,6 +161,10 @@ public final class DataRes extends Message {
     public final Page page;
     @ProtoField(tag = 41, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
+    @ProtoField(tag = 67, type = Message.Datatype.STRING)
+    public final String pb_notice;
+    @ProtoField(tag = 66, type = Message.Datatype.INT32)
+    public final Integer pb_notice_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 49)
     public final List<PbSortType> pb_sort_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
@@ -204,7 +210,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<User> user_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -251,6 +257,8 @@ public final class DataRes extends Message {
         public NewsInfo news_info;
         public Page page;
         public String partial_visible_toast;
+        public String pb_notice;
+        public Integer pb_notice_type;
         public List<PbSortType> pb_sort_info;
         public List<PsRankListItem> play_rank_list;
         public List<PostBanner> post_banner;
@@ -374,6 +382,8 @@ public final class DataRes extends Message {
             this.is_official_forum = dataRes.is_official_forum;
             this.floating_icon = dataRes.floating_icon;
             this.is_purchase = dataRes.is_purchase;
+            this.pb_notice_type = dataRes.pb_notice_type;
+            this.pb_notice = dataRes.pb_notice;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -385,7 +395,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -432,6 +442,7 @@ public final class DataRes extends Message {
         DEFAULT_IS_BLACK_WHITE = 0;
         DEFAULT_IS_OFFICIAL_FORUM = 0;
         DEFAULT_IS_PURCHASE = 0;
+        DEFAULT_PB_NOTICE_TYPE = 0;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -684,9 +695,21 @@ public final class DataRes extends Message {
             Integer num13 = builder.is_purchase;
             if (num13 == null) {
                 this.is_purchase = DEFAULT_IS_PURCHASE;
-                return;
             } else {
                 this.is_purchase = num13;
+            }
+            Integer num14 = builder.pb_notice_type;
+            if (num14 == null) {
+                this.pb_notice_type = DEFAULT_PB_NOTICE_TYPE;
+            } else {
+                this.pb_notice_type = num14;
+            }
+            String str6 = builder.pb_notice;
+            if (str6 == null) {
+                this.pb_notice = "";
+                return;
+            } else {
+                this.pb_notice = str6;
                 return;
             }
         }
@@ -755,5 +778,7 @@ public final class DataRes extends Message {
         this.is_official_forum = builder.is_official_forum;
         this.floating_icon = builder.floating_icon;
         this.is_purchase = builder.is_purchase;
+        this.pb_notice_type = builder.pb_notice_type;
+        this.pb_notice = builder.pb_notice;
     }
 }

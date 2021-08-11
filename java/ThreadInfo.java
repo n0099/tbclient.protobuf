@@ -18,7 +18,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThreadInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<Abstract> DEFAULT_ABSTRACT;
@@ -67,6 +67,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_COPYTHREAD;
     public static final Integer DEFAULT_IS_DEAL;
     public static final Integer DEFAULT_IS_DELETED;
+    public static final Integer DEFAULT_IS_FRS_MASK;
     public static final Integer DEFAULT_IS_GLOBAL_TOP;
     public static final Integer DEFAULT_IS_GOD;
     public static final Integer DEFAULT_IS_GODTHREAD_RECOMMEND;
@@ -293,6 +294,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_deal;
     @ProtoField(tag = Opcodes.PUTFIELD, type = Message.Datatype.INT32)
     public final Integer is_deleted;
+    @ProtoField(tag = Opcodes.IFNULL, type = Message.Datatype.INT32)
+    public final Integer is_frs_mask;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
     @ProtoField(tag = IMPushPb.PushImClient.SDK_VERSION_FIELD_NUMBER, type = Message.Datatype.INT32)
@@ -397,7 +400,7 @@ public final class ThreadInfo extends Message {
     public final String nid;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
-    @ProtoField(tag = 152)
+    @ProtoField(tag = com.baidu.apollon.a.f37526e)
     public final OriForumInfo ori_forum_info;
     @ProtoField(tag = 141)
     public final OriginThreadInfo origin_thread_info;
@@ -548,7 +551,7 @@ public final class ThreadInfo extends Message {
     @ProtoField(tag = 41)
     public final Zan zan;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -615,6 +618,7 @@ public final class ThreadInfo extends Message {
         public Integer is_copythread;
         public Integer is_deal;
         public Integer is_deleted;
+        public Integer is_frs_mask;
         public Integer is_global_top;
         public Integer is_god;
         public Integer is_godthread_recommend;
@@ -968,6 +972,7 @@ public final class ThreadInfo extends Message {
             this.tiebaplus_token = threadInfo.tiebaplus_token;
             this.tiebaplus_extra_param = threadInfo.tiebaplus_extra_param;
             this.tiebaplus_cant_delete = threadInfo.tiebaplus_cant_delete;
+            this.is_frs_mask = threadInfo.is_frs_mask;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -979,7 +984,7 @@ public final class ThreadInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -1099,6 +1104,7 @@ public final class ThreadInfo extends Message {
         DEFAULT_COLLECT_NUM = 0;
         DEFAULT_THREAD_RECOMMEND_INFOS = Collections.emptyList();
         DEFAULT_TIEBAPLUS_CANT_DELETE = 0;
+        DEFAULT_IS_FRS_MASK = 0;
     }
 
     public /* synthetic */ ThreadInfo(Builder builder, boolean z, a aVar) {
@@ -2036,9 +2042,15 @@ public final class ThreadInfo extends Message {
             Integer num72 = builder.tiebaplus_cant_delete;
             if (num72 == null) {
                 this.tiebaplus_cant_delete = DEFAULT_TIEBAPLUS_CANT_DELETE;
-                return;
             } else {
                 this.tiebaplus_cant_delete = num72;
+            }
+            Integer num73 = builder.is_frs_mask;
+            if (num73 == null) {
+                this.is_frs_mask = DEFAULT_IS_FRS_MASK;
+                return;
+            } else {
+                this.is_frs_mask = num73;
                 return;
             }
         }
@@ -2232,5 +2244,6 @@ public final class ThreadInfo extends Message {
         this.tiebaplus_token = builder.tiebaplus_token;
         this.tiebaplus_extra_param = builder.tiebaplus_extra_param;
         this.tiebaplus_cant_delete = builder.tiebaplus_cant_delete;
+        this.is_frs_mask = builder.is_frs_mask;
     }
 }

@@ -22,7 +22,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class App extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABTEST = "";
@@ -123,7 +123,7 @@ public final class App extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String web_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<App> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -238,7 +238,7 @@ public final class App extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -305,7 +305,7 @@ public final class App extends Message {
             builder.plan_id = Integer.valueOf(jSONObject.optInt("plan_id"));
             builder.user_id = jSONObject.optString("user_id");
             builder.price = jSONObject.optString("price");
-            builder.verify = jSONObject.optString(SmsLoginView.f.j);
+            builder.verify = jSONObject.optString(SmsLoginView.f.f44761j);
             builder.ext_info = jSONObject.optString("ext_info");
             ArrayList arrayList = new ArrayList();
             JSONArray optJSONArray = jSONObject.optJSONArray("goods_info");
@@ -357,7 +357,7 @@ public final class App extends Message {
                 jSONObject.put("plan_id", app.plan_id);
                 jSONObject.put("user_id", app.user_id);
                 jSONObject.put("price", app.price);
-                jSONObject.put(SmsLoginView.f.j, app.verify);
+                jSONObject.put(SmsLoginView.f.f44761j, app.verify);
                 jSONObject.put("ext_info", app.ext_info);
                 JSONArray jSONArray = new JSONArray();
                 for (GoodsInfo goodsInfo : app.goods_info) {

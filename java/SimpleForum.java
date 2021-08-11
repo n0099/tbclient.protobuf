@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SimpleForum extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AVATAR = "";
@@ -22,6 +22,7 @@ public final class SimpleForum extends Message {
     public static final Long DEFAULT_ID;
     public static final Integer DEFAULT_IS_BRAND_FORUM;
     public static final Integer DEFAULT_IS_EXISTS;
+    public static final Integer DEFAULT_IS_FRS_MASK;
     public static final Integer DEFAULT_IS_LIKED;
     public static final Integer DEFAULT_IS_SIGNED;
     public static final Integer DEFAULT_LEVEL_ID;
@@ -47,6 +48,8 @@ public final class SimpleForum extends Message {
     public final Integer is_brand_forum;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer is_exists;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer is_frs_mask;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer is_liked;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -66,7 +69,7 @@ public final class SimpleForum extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<FrsTabInfo> tab_info;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SimpleForum> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -78,6 +81,7 @@ public final class SimpleForum extends Message {
         public Long id;
         public Integer is_brand_forum;
         public Integer is_exists;
+        public Integer is_frs_mask;
         public Integer is_liked;
         public Integer is_signed;
         public Integer level_id;
@@ -140,6 +144,7 @@ public final class SimpleForum extends Message {
             this.tab_info = Message.copyOf(simpleForum.tab_info);
             this.forum_toutu = simpleForum.forum_toutu;
             this.deleted_reason_info = simpleForum.deleted_reason_info;
+            this.is_frs_mask = simpleForum.is_frs_mask;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -151,7 +156,7 @@ public final class SimpleForum extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -179,6 +184,7 @@ public final class SimpleForum extends Message {
         DEFAULT_POST_NUM = 0;
         DEFAULT_IS_BRAND_FORUM = 0;
         DEFAULT_TAB_INFO = Collections.emptyList();
+        DEFAULT_IS_FRS_MASK = 0;
     }
 
     public /* synthetic */ SimpleForum(Builder builder, boolean z, a aVar) {
@@ -296,7 +302,14 @@ public final class SimpleForum extends Message {
                 this.forum_toutu = str6;
             }
             this.deleted_reason_info = builder.deleted_reason_info;
-            return;
+            Integer num8 = builder.is_frs_mask;
+            if (num8 == null) {
+                this.is_frs_mask = DEFAULT_IS_FRS_MASK;
+                return;
+            } else {
+                this.is_frs_mask = num8;
+                return;
+            }
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -315,5 +328,6 @@ public final class SimpleForum extends Message {
         this.tab_info = Message.immutableCopyOf(builder.tab_info);
         this.forum_toutu = builder.forum_toutu;
         this.deleted_reason_info = builder.deleted_reason_info;
+        this.is_frs_mask = builder.is_frs_mask;
     }
 }

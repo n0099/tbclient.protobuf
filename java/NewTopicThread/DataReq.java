@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CALL_FROM = "";
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f74060common;
+    public final CommonReq f79369common;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long last_feed_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -32,14 +32,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long topic_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f74061common;
+        public CommonReq f79370common;
         public Long last_feed_id;
         public Long page_no;
         public Long topic_id;
@@ -79,7 +79,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f74061common = dataReq.f74060common;
+            this.f79370common = dataReq.f79369common;
             this.topic_id = dataReq.topic_id;
             this.page_no = dataReq.page_no;
             this.call_from = dataReq.call_from;
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -142,7 +142,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f74060common = builder.f74061common;
+            this.f79369common = builder.f79370common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -170,7 +170,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f74060common = builder.f74061common;
+        this.f79369common = builder.f79370common;
         this.topic_id = builder.topic_id;
         this.page_no = builder.page_no;
         this.call_from = builder.call_from;

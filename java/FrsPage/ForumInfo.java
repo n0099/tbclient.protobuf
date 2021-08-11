@@ -16,7 +16,7 @@ import tbclient.BannerList;
 import tbclient.DeletedReasonInfo;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ForumInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACCELERATE_COTENT = "";
@@ -43,6 +43,7 @@ public final class ForumInfo extends Message {
     public static final Integer DEFAULT_IS_BRAND_FORUM;
     public static final Integer DEFAULT_IS_EXISTS;
     public static final Integer DEFAULT_IS_FORBIDDEN;
+    public static final Integer DEFAULT_IS_FRS_MASK;
     public static final Integer DEFAULT_IS_LIKE;
     public static final Integer DEFAULT_IS_LIVE_GAME;
     public static final Integer DEFAULT_IS_LIVE_GAME_FORUM;
@@ -147,6 +148,8 @@ public final class ForumInfo extends Message {
     public final Integer is_exists;
     @ProtoField(tag = 36, type = Message.Datatype.INT32)
     public final Integer is_forbidden;
+    @ProtoField(tag = 86, type = Message.Datatype.INT32)
+    public final Integer is_frs_mask;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer is_like;
     @ProtoField(tag = 64, type = Message.Datatype.INT32)
@@ -248,7 +251,7 @@ public final class ForumInfo extends Message {
     @ProtoField(tag = 16)
     public final Zhibo zhibo;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -285,6 +288,7 @@ public final class ForumInfo extends Message {
         public Integer is_brand_forum;
         public Integer is_exists;
         public Integer is_forbidden;
+        public Integer is_frs_mask;
         public Integer is_like;
         public Integer is_live_game;
         public Integer is_live_game_forum;
@@ -454,6 +458,7 @@ public final class ForumInfo extends Message {
             this.tip_list = Message.copyOf(forumInfo.tip_list);
             this.is_show_forumrule = forumInfo.is_show_forumrule;
             this.deleted_reason_info = forumInfo.deleted_reason_info;
+            this.is_frs_mask = forumInfo.is_frs_mask;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -465,7 +470,7 @@ public final class ForumInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -522,6 +527,7 @@ public final class ForumInfo extends Message {
         DEFAULT_IS_SHOW_BAWUTASK = 0;
         DEFAULT_TIP_LIST = Collections.emptyList();
         DEFAULT_IS_SHOW_FORUMRULE = 0;
+        DEFAULT_IS_FRS_MASK = 0;
     }
 
     public /* synthetic */ ForumInfo(Builder builder, boolean z, a aVar) {
@@ -935,7 +941,14 @@ public final class ForumInfo extends Message {
                 this.is_show_forumrule = num30;
             }
             this.deleted_reason_info = builder.deleted_reason_info;
-            return;
+            Integer num31 = builder.is_frs_mask;
+            if (num31 == null) {
+                this.is_frs_mask = DEFAULT_IS_FRS_MASK;
+                return;
+            } else {
+                this.is_frs_mask = num31;
+                return;
+            }
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -1020,5 +1033,6 @@ public final class ForumInfo extends Message {
         this.tip_list = Message.immutableCopyOf(builder.tip_list);
         this.is_show_forumrule = builder.is_show_forumrule;
         this.deleted_reason_info = builder.deleted_reason_info;
+        this.is_frs_mask = builder.is_frs_mask;
     }
 }

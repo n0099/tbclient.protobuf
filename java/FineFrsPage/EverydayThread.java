@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class EverydayThread extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<FineThreadInfo> DEFAULT_FINE_THREAD_LIST;
@@ -23,7 +23,7 @@ public final class EverydayThread extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer show_time;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<EverydayThread> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -78,7 +78,7 @@ public final class EverydayThread extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

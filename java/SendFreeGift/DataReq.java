@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_BENEFIT_USERID;
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f74110common;
+    public final CommonReq f79419common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer gift_id;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -41,7 +41,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.UINT64)
     public final Long thread_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -49,7 +49,7 @@ public final class DataReq extends Message {
         public String benefit_username;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f74111common;
+        public CommonReq f79420common;
         public Integer gift_id;
         public Integer num;
         public Long post_id;
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
             this.benefit_userid = dataReq.benefit_userid;
             this.benefit_username = dataReq.benefit_username;
             this.num = dataReq.num;
-            this.f74111common = dataReq.f74110common;
+            this.f79420common = dataReq.f79419common;
             this.scene_from = dataReq.scene_from;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
@@ -110,7 +110,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -183,7 +183,7 @@ public final class DataReq extends Message {
             } else {
                 this.num = num2;
             }
-            this.f74110common = builder.f74111common;
+            this.f79419common = builder.f79420common;
             String str2 = builder.scene_from;
             if (str2 == null) {
                 this.scene_from = "";
@@ -209,7 +209,7 @@ public final class DataReq extends Message {
         this.benefit_userid = builder.benefit_userid;
         this.benefit_username = builder.benefit_username;
         this.num = builder.num;
-        this.f74110common = builder.f74111common;
+        this.f79419common = builder.f79420common;
         this.scene_from = builder.scene_from;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;

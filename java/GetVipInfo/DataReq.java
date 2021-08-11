@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_IS_JAIL_BROKEN;
@@ -19,17 +19,17 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f74018common;
+    public final CommonReq f79325common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer is_jail_broken;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f74019common;
+        public CommonReq f79326common;
         public Integer is_jail_broken;
 
         public Builder() {
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f74019common = dataReq.f74018common;
+            this.f79326common = dataReq.f79325common;
             this.is_jail_broken = dataReq.is_jail_broken;
         }
 
@@ -80,7 +80,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -125,7 +125,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f74018common = builder.f74019common;
+            this.f79325common = builder.f79326common;
             Integer num = builder.is_jail_broken;
             if (num == null) {
                 this.is_jail_broken = DEFAULT_IS_JAIL_BROKEN;
@@ -135,7 +135,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f74018common = builder.f74019common;
+        this.f79325common = builder.f79326common;
         this.is_jail_broken = builder.is_jail_broken;
     }
 }

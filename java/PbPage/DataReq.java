@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
@@ -104,7 +104,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f74068common;
+    public final CommonReq f79377common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -220,7 +220,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 48, type = Message.Datatype.STRING)
     public final String yuelaou_params;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -236,7 +236,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f74069common;
+        public CommonReq f79378common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -354,7 +354,7 @@ public final class DataReq extends Message {
             this.arround = dataReq.arround;
             this.last = dataReq.last;
             this.msg_click = dataReq.msg_click;
-            this.f74069common = dataReq.f74068common;
+            this.f79378common = dataReq.f79377common;
             this.lastids = dataReq.lastids;
             this.st_from = dataReq.st_from;
             this.st_link = dataReq.st_link;
@@ -409,7 +409,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -638,7 +638,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = str2;
             }
-            this.f74068common = builder.f74069common;
+            this.f79377common = builder.f79378common;
             String str3 = builder.lastids;
             if (str3 == null) {
                 this.lastids = "";
@@ -914,7 +914,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f74068common = builder.f74069common;
+        this.f79377common = builder.f79378common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;

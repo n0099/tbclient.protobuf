@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.Wares;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CLICK_ZONE = "";
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73964common;
+    public final CommonReq f79271common;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -53,14 +53,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 6)
     public final Wares wares;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String click_zone;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73965common;
+        public CommonReq f79272common;
         public Integer is_autopay;
         public Integer is_left;
         public Long live_id;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73965common = dataReq.f73964common;
+            this.f79272common = dataReq.f79271common;
             this.pay_type = dataReq.pay_type;
             this.is_left = dataReq.is_left;
             this.order_url = dataReq.order_url;
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -178,7 +178,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73964common = builder.f73965common;
+            this.f79271common = builder.f79272common;
             Integer num = builder.pay_type;
             if (num == null) {
                 this.pay_type = DEFAULT_PAY_TYPE;
@@ -243,7 +243,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f73964common = builder.f73965common;
+        this.f79271common = builder.f79272common;
         this.pay_type = builder.pay_type;
         this.is_left = builder.is_left;
         this.order_url = builder.order_url;

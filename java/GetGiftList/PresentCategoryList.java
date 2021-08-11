@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class PresentCategoryList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_CATEGORY_ID;
@@ -26,7 +26,7 @@ public final class PresentCategoryList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.UINT32)
     public final List<Integer> gift_ids;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PresentCategoryList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -83,7 +83,7 @@ public final class PresentCategoryList extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

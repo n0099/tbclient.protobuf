@@ -15,7 +15,7 @@ import java.util.List;
 import tbclient.ActiveCenter;
 import tbclient.FloatStrategy;
 import tbclient.MissionInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVE_URL = "";
@@ -43,7 +43,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String newuser_pop_top;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -110,7 +110,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

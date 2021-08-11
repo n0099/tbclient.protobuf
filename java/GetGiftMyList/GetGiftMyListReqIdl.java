@@ -9,24 +9,24 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class GetGiftMyListReqIdl extends Message {
     public static /* synthetic */ Interceptable $ic;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73934common;
+    public final CommonReq f79239common;
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<GetGiftMyListReqIdl> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73935common;
+        public CommonReq f79240common;
         public DataReq data;
 
         public Builder() {
@@ -65,7 +65,7 @@ public final class GetGiftMyListReqIdl extends Message {
                 return;
             }
             this.data = getGiftMyListReqIdl.data;
-            this.f73935common = getGiftMyListReqIdl.f73934common;
+            this.f79240common = getGiftMyListReqIdl.f79239common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -77,7 +77,7 @@ public final class GetGiftMyListReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -107,10 +107,10 @@ public final class GetGiftMyListReqIdl extends Message {
         }
         if (z) {
             this.data = builder.data;
-            this.f73934common = builder.f73935common;
+            this.f79239common = builder.f79240common;
             return;
         }
         this.data = builder.data;
-        this.f73934common = builder.f73935common;
+        this.f79239common = builder.f79240common;
     }
 }

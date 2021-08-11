@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Post;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class NewTopicList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_DISCUSS_NUM;
@@ -35,7 +35,7 @@ public final class NewTopicList extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String topic_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<NewTopicList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -100,7 +100,7 @@ public final class NewTopicList extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

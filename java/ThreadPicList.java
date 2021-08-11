@@ -10,7 +10,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThreadPicList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_PIC = "";
@@ -18,7 +18,7 @@ public final class ThreadPicList extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThreadPicList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -71,7 +71,7 @@ public final class ThreadPicList extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

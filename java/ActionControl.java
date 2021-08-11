@@ -6,11 +6,12 @@ import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
+import com.baidu.ugc.editvideo.data.MultiMediaDataConstant;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ActionControl extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_NAME = "";
@@ -27,7 +28,7 @@ public final class ActionControl extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ActionControl> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -86,7 +87,7 @@ public final class ActionControl extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -106,7 +107,7 @@ public final class ActionControl extends Message {
             Builder builder = new Builder();
             builder.url = jSONObject.optString("url");
             builder.name = jSONObject.optString("name");
-            builder.text_color = jSONObject.optString("text_color");
+            builder.text_color = jSONObject.optString(MultiMediaDataConstant.KEY_EXT_TEXT_WORDS_COLOR);
             builder.text_color_pressed = jSONObject.optString("text_color_pressed");
             return builder.build(false);
         }
@@ -124,7 +125,7 @@ public final class ActionControl extends Message {
             try {
                 jSONObject.put("url", actionControl.url);
                 jSONObject.put("name", actionControl.name);
-                jSONObject.put("text_color", actionControl.text_color);
+                jSONObject.put(MultiMediaDataConstant.KEY_EXT_TEXT_WORDS_COLOR, actionControl.text_color);
                 jSONObject.put("text_color_pressed", actionControl.text_color_pressed);
             } catch (JSONException e2) {
                 e2.printStackTrace();

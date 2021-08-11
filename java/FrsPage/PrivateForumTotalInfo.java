@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PrivateForumInfo;
 import tbclient.PrivatePopInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class PrivateForumTotalInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_PRIVATE_FORUM_TASKPERCENT;
@@ -28,7 +28,7 @@ public final class PrivateForumTotalInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer private_forum_taskpercent;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PrivateForumTotalInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -89,7 +89,7 @@ public final class PrivateForumTotalInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

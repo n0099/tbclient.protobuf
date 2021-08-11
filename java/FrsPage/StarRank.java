@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class StarRank extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<StarContriRecord> DEFAULT_CONTRI_RECORD_LIST;
@@ -41,7 +41,7 @@ public final class StarRank extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String user_task_notice;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<StarRank> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -108,7 +108,7 @@ public final class StarRank extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
