@@ -6,4 +6,5 @@ message ClassForumInfo {
     repeated RecommendForumInfo forum_info = 1;
     int32 class_id = 2;
     string class_name = 3;
+    string class_icon = 4;
 }

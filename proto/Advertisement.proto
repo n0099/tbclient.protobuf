@@ -6,4 +6,6 @@ message Advertisement {
     string pic_click = 3;
     string jump_link = 4;
     string advertisement_id = 5;
+    string view_statistics_url = 6;
+    string click_statistics_url = 7;
 }

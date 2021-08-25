@@ -3,4 +3,6 @@ syntax = "proto3";
 message FloatingIconItem {
     string url = 1;
     string icon_url = 2;
+    string view_statistics_url = 3;
+    string click_statistics_url = 4;
 }
