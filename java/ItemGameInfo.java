@@ -1,4 +1,4 @@
-package tbclient.UserMuteCheck;
+package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -10,35 +10,24 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.CommonReq;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes2.dex */
-public final class DataReq extends Message {
+public final class ItemGameInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
-    public static final Integer DEFAULT_MUTE_TYPE;
-    public static final Long DEFAULT_USER_ID_F;
-    public static final Long DEFAULT_USER_ID_T;
+    public static final List<ThreadInfo> DEFAULT_HOT_VIDEOS;
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 1)
-
-    /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79668common;
-    @ProtoField(tag = 4, type = Message.Datatype.INT32)
-    public final Integer mute_type;
-    @ProtoField(tag = 2, type = Message.Datatype.INT64)
-    public final Long user_id_f;
-    @ProtoField(tag = 3, type = Message.Datatype.INT64)
-    public final Long user_id_t;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<ThreadInfo> hot_videos;
+    @ProtoField(tag = 2)
+    public final RecentUpdate recent_update;
 
     /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<ItemGameInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-
-        /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79669common;
-        public Integer mute_type;
-        public Long user_id_f;
-        public Long user_id_t;
+        public List<ThreadInfo> hot_videos;
+        public RecentUpdate recent_update;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -55,13 +44,13 @@ public final class DataReq extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(DataReq dataReq) {
-            super(dataReq);
+        public Builder(ItemGameInfo itemGameInfo) {
+            super(itemGameInfo);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
+                Object[] objArr = {itemGameInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i2 = newInitContext.flag;
                 if ((i2 & 1) != 0) {
@@ -72,21 +61,19 @@ public final class DataReq extends Message {
                     return;
                 }
             }
-            if (dataReq == null) {
+            if (itemGameInfo == null) {
                 return;
             }
-            this.f79669common = dataReq.f79668common;
-            this.user_id_f = dataReq.user_id_f;
-            this.user_id_t = dataReq.user_id_t;
-            this.mute_type = dataReq.mute_type;
+            this.hot_videos = Message.copyOf(itemGameInfo.hot_videos);
+            this.recent_update = itemGameInfo.recent_update;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DataReq build(boolean z) {
+        public ItemGameInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ItemGameInfo(this, z, null) : (ItemGameInfo) invokeZ.objValue;
         }
     }
 
@@ -99,27 +86,25 @@ public final class DataReq extends Message {
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-367363460, "Ltbclient/UserMuteCheck/DataReq;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1488700930, "Ltbclient/ItemGameInfo;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-367363460, "Ltbclient/UserMuteCheck/DataReq;");
+                classClinitInterceptable.invokePostClinit(-1488700930, "Ltbclient/ItemGameInfo;");
                 return;
             }
         }
-        DEFAULT_USER_ID_F = 0L;
-        DEFAULT_USER_ID_T = 0L;
-        DEFAULT_MUTE_TYPE = 0;
+        DEFAULT_HOT_VIDEOS = Collections.emptyList();
     }
 
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ ItemGameInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DataReq(Builder builder, boolean z) {
+    public ItemGameInfo(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -137,31 +122,16 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f79668common = builder.f79669common;
-            Long l = builder.user_id_f;
-            if (l == null) {
-                this.user_id_f = DEFAULT_USER_ID_F;
+            List<ThreadInfo> list = builder.hot_videos;
+            if (list == null) {
+                this.hot_videos = DEFAULT_HOT_VIDEOS;
             } else {
-                this.user_id_f = l;
+                this.hot_videos = Message.immutableCopyOf(list);
             }
-            Long l2 = builder.user_id_t;
-            if (l2 == null) {
-                this.user_id_t = DEFAULT_USER_ID_T;
-            } else {
-                this.user_id_t = l2;
-            }
-            Integer num = builder.mute_type;
-            if (num == null) {
-                this.mute_type = DEFAULT_MUTE_TYPE;
-                return;
-            } else {
-                this.mute_type = num;
-                return;
-            }
+            this.recent_update = builder.recent_update;
+            return;
         }
-        this.f79668common = builder.f79669common;
-        this.user_id_f = builder.user_id_f;
-        this.user_id_t = builder.user_id_t;
-        this.mute_type = builder.mute_type;
+        this.hot_videos = Message.immutableCopyOf(builder.hot_videos);
+        this.recent_update = builder.recent_update;
     }
 }

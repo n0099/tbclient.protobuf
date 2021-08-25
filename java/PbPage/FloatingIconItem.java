@@ -11,20 +11,28 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class FloatingIconItem extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_CLICK_STATISTICS_URL = "";
     public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_URL = "";
+    public static final String DEFAULT_VIEW_STATISTICS_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String click_statistics_url;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String view_statistics_url;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FloatingIconItem> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String click_statistics_url;
         public String icon_url;
         public String url;
+        public String view_statistics_url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -63,6 +71,8 @@ public final class FloatingIconItem extends Message {
             }
             this.url = floatingIconItem.url;
             this.icon_url = floatingIconItem.icon_url;
+            this.view_statistics_url = floatingIconItem.view_statistics_url;
+            this.click_statistics_url = floatingIconItem.click_statistics_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -112,13 +122,27 @@ public final class FloatingIconItem extends Message {
             String str2 = builder.icon_url;
             if (str2 == null) {
                 this.icon_url = "";
-                return;
             } else {
                 this.icon_url = str2;
+            }
+            String str3 = builder.view_statistics_url;
+            if (str3 == null) {
+                this.view_statistics_url = "";
+            } else {
+                this.view_statistics_url = str3;
+            }
+            String str4 = builder.click_statistics_url;
+            if (str4 == null) {
+                this.click_statistics_url = "";
+                return;
+            } else {
+                this.click_statistics_url = str4;
                 return;
             }
         }
         this.url = builder.url;
         this.icon_url = builder.icon_url;
+        this.view_statistics_url = builder.view_statistics_url;
+        this.click_statistics_url = builder.click_statistics_url;
     }
 }

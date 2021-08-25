@@ -14,13 +14,17 @@ import com.squareup.wire.ProtoField;
 public final class Advertisement extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ADVERTISEMENT_ID = "";
+    public static final String DEFAULT_CLICK_STATISTICS_URL = "";
     public static final String DEFAULT_JUMP_LINK = "";
     public static final String DEFAULT_PIC = "";
     public static final String DEFAULT_PIC_CLICK = "";
     public static final Long DEFAULT_TIME;
+    public static final String DEFAULT_VIEW_STATISTICS_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String advertisement_id;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String click_statistics_url;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String jump_link;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -29,16 +33,20 @@ public final class Advertisement extends Message {
     public final String pic_click;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long time;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String view_statistics_url;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Advertisement> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String advertisement_id;
+        public String click_statistics_url;
         public String jump_link;
         public String pic;
         public String pic_click;
         public Long time;
+        public String view_statistics_url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -80,6 +88,8 @@ public final class Advertisement extends Message {
             this.pic_click = advertisement.pic_click;
             this.jump_link = advertisement.jump_link;
             this.advertisement_id = advertisement.advertisement_id;
+            this.view_statistics_url = advertisement.view_statistics_url;
+            this.click_statistics_url = advertisement.click_statistics_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -163,9 +173,21 @@ public final class Advertisement extends Message {
             String str4 = builder.advertisement_id;
             if (str4 == null) {
                 this.advertisement_id = "";
-                return;
             } else {
                 this.advertisement_id = str4;
+            }
+            String str5 = builder.view_statistics_url;
+            if (str5 == null) {
+                this.view_statistics_url = "";
+            } else {
+                this.view_statistics_url = str5;
+            }
+            String str6 = builder.click_statistics_url;
+            if (str6 == null) {
+                this.click_statistics_url = "";
+                return;
+            } else {
+                this.click_statistics_url = str6;
                 return;
             }
         }
@@ -174,5 +196,7 @@ public final class Advertisement extends Message {
         this.pic_click = builder.pic_click;
         this.jump_link = builder.jump_link;
         this.advertisement_id = builder.advertisement_id;
+        this.view_statistics_url = builder.view_statistics_url;
+        this.click_statistics_url = builder.click_statistics_url;
     }
 }

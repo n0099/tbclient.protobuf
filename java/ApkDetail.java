@@ -17,6 +17,7 @@ public final class ApkDetail extends Message {
     public static final String DEFAULT_DEVELOPER = "";
     public static final Integer DEFAULT_NEED_INNER_BUY;
     public static final Integer DEFAULT_NEED_NETWORK;
+    public static final Integer DEFAULT_PKG_SOURCE;
     public static final String DEFAULT_PRIVACY_URL = "";
     public static final String DEFAULT_PUBLISHER = "";
     public static final String DEFAULT_SIZE = "";
@@ -32,6 +33,8 @@ public final class ApkDetail extends Message {
     public final Integer need_inner_buy;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer need_network;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer pkg_source;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String privacy_url;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -53,6 +56,7 @@ public final class ApkDetail extends Message {
         public String developer;
         public Integer need_inner_buy;
         public Integer need_network;
+        public Integer pkg_source;
         public String privacy_url;
         public String publisher;
         public String size;
@@ -105,6 +109,7 @@ public final class ApkDetail extends Message {
             this.need_inner_buy = apkDetail.need_inner_buy;
             this.authority_url = apkDetail.authority_url;
             this.privacy_url = apkDetail.privacy_url;
+            this.pkg_source = apkDetail.pkg_source;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -138,6 +143,7 @@ public final class ApkDetail extends Message {
         DEFAULT_VERSION_CODE = 0;
         DEFAULT_NEED_NETWORK = 0;
         DEFAULT_NEED_INNER_BUY = 0;
+        DEFAULT_PKG_SOURCE = 0;
     }
 
     public /* synthetic */ ApkDetail(Builder builder, boolean z, a aVar) {
@@ -220,9 +226,15 @@ public final class ApkDetail extends Message {
             String str7 = builder.privacy_url;
             if (str7 == null) {
                 this.privacy_url = "";
-                return;
             } else {
                 this.privacy_url = str7;
+            }
+            Integer num4 = builder.pkg_source;
+            if (num4 == null) {
+                this.pkg_source = DEFAULT_PKG_SOURCE;
+                return;
+            } else {
+                this.pkg_source = num4;
                 return;
             }
         }
@@ -236,5 +248,6 @@ public final class ApkDetail extends Message {
         this.need_inner_buy = builder.need_inner_buy;
         this.authority_url = builder.authority_url;
         this.privacy_url = builder.privacy_url;
+        this.pkg_source = builder.pkg_source;
     }
 }

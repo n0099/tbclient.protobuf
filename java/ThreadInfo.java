@@ -5,7 +5,6 @@ import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.android.imsdk.upload.action.pb.IMPushPb;
 import com.baidu.android.lbspay.channelpay.IChannelPay;
 import com.baidu.down.manage.DownloadConstants;
-import com.baidu.tieba.pb.pb.main.PbFullScreenEditorActivity;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -390,7 +389,7 @@ public final class ThreadInfo extends Message {
     public final String meizhi_pic;
     @ProtoField(tag = 139, type = Message.Datatype.INT32)
     public final Integer middle_page_num;
-    @ProtoField(tag = PbFullScreenEditorActivity.REPLY_MAX_SIZE, type = Message.Datatype.INT32)
+    @ProtoField(tag = 140, type = Message.Datatype.INT32)
     public final Integer middle_page_pass_flag;
     @ProtoField(tag = 146, type = Message.Datatype.STRING)
     public final String multi_forum_text;
@@ -400,7 +399,7 @@ public final class ThreadInfo extends Message {
     public final String nid;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
-    @ProtoField(tag = com.baidu.apollon.a.f37526e)
+    @ProtoField(tag = com.baidu.apollon.a.f37632e)
     public final OriForumInfo ori_forum_info;
     @ProtoField(tag = 141)
     public final OriginThreadInfo origin_thread_info;

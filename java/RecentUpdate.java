@@ -1,8 +1,6 @@
-package tbclient.MFollow;
+package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
 import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
@@ -10,29 +8,27 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.Collections;
-import java.util.List;
-import tbclient.CommonReq;
 /* loaded from: classes2.dex */
-public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic;
-    public static final List<String> DEFAULT_PORTRAIT;
+public final class RecentUpdate extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_LOG = "";
+    public static final String DEFAULT_UPDATE_TIME = "";
+    public static final String DEFAULT_VERSION = "";
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 1)
-
-    /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79560common;
-    @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
-    public final List<String> portrait;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String log;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String update_time;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String version;
 
     /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<RecentUpdate> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-
-        /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79561common;
-        public List<String> portrait;
+        public String log;
+        public String update_time;
+        public String version;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -49,13 +45,13 @@ public final class DataReq extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(DataReq dataReq) {
-            super(dataReq);
+        public Builder(RecentUpdate recentUpdate) {
+            super(recentUpdate);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
+                Object[] objArr = {recentUpdate};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i2 = newInitContext.flag;
                 if ((i2 & 1) != 0) {
@@ -66,19 +62,20 @@ public final class DataReq extends Message {
                     return;
                 }
             }
-            if (dataReq == null) {
+            if (recentUpdate == null) {
                 return;
             }
-            this.f79561common = dataReq.f79560common;
-            this.portrait = Message.copyOf(dataReq.portrait);
+            this.version = recentUpdate.version;
+            this.log = recentUpdate.log;
+            this.update_time = recentUpdate.update_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DataReq build(boolean z) {
+        public RecentUpdate build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecentUpdate(this, z, null) : (RecentUpdate) invokeZ.objValue;
         }
     }
 
@@ -88,56 +85,52 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(659238818, "Ltbclient/MFollow/DataReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(659238818, "Ltbclient/MFollow/DataReq;");
-                return;
-            }
-        }
-        DEFAULT_PORTRAIT = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ RecentUpdate(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DataReq(Builder builder, boolean z) {
+    public RecentUpdate(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
             InitContext newInitContext = TitanRuntime.newInitContext();
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
+            interceptable.invokeUnInit(65536, newInitContext);
             int i2 = newInitContext.flag;
             if ((i2 & 1) != 0) {
                 int i3 = i2 & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
+                interceptable.invokeInitBody(65536, newInitContext);
                 return;
             }
         }
         if (z) {
-            this.f79560common = builder.f79561common;
-            List<String> list = builder.portrait;
-            if (list == null) {
-                this.portrait = DEFAULT_PORTRAIT;
+            String str = builder.version;
+            if (str == null) {
+                this.version = "";
+            } else {
+                this.version = str;
+            }
+            String str2 = builder.log;
+            if (str2 == null) {
+                this.log = "";
+            } else {
+                this.log = str2;
+            }
+            String str3 = builder.update_time;
+            if (str3 == null) {
+                this.update_time = "";
                 return;
             } else {
-                this.portrait = Message.immutableCopyOf(list);
+                this.update_time = str3;
                 return;
             }
         }
-        this.f79560common = builder.f79561common;
-        this.portrait = Message.immutableCopyOf(builder.portrait);
+        this.version = builder.version;
+        this.log = builder.log;
+        this.update_time = builder.update_time;
     }
 }

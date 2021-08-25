@@ -13,6 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AlbumElement;
+import tbclient.ItemGameInfo;
 import tbclient.ItemInfo;
 import tbclient.RecommendForumInfo;
 import tbclient.ThreadInfo;
@@ -33,6 +34,8 @@ public final class DataRes extends Message {
     public final Integer discussion_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
     public final List<ThreadInfo> discussion_list;
+    @ProtoField(tag = 9)
+    public final ItemGameInfo item_game_info;
     @ProtoField(tag = 1)
     public final ItemInfo item_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -51,6 +54,7 @@ public final class DataRes extends Message {
         public List<AlbumElement> album_list;
         public Integer discussion_id;
         public List<ThreadInfo> discussion_list;
+        public ItemGameInfo item_game_info;
         public ItemInfo item_info;
         public String link;
         public List<RecommendForumInfo> recommend_forum;
@@ -100,6 +104,7 @@ public final class DataRes extends Message {
             this.album_list = Message.copyOf(dataRes.album_list);
             this.discussion_list = Message.copyOf(dataRes.discussion_list);
             this.discussion_id = dataRes.discussion_id;
+            this.item_game_info = dataRes.item_game_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -201,11 +206,11 @@ public final class DataRes extends Message {
             Integer num = builder.discussion_id;
             if (num == null) {
                 this.discussion_id = DEFAULT_DISCUSSION_ID;
-                return;
             } else {
                 this.discussion_id = num;
-                return;
             }
+            this.item_game_info = builder.item_game_info;
+            return;
         }
         this.item_info = builder.item_info;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
@@ -215,5 +220,6 @@ public final class DataRes extends Message {
         this.album_list = Message.immutableCopyOf(builder.album_list);
         this.discussion_list = Message.immutableCopyOf(builder.discussion_list);
         this.discussion_id = builder.discussion_id;
+        this.item_game_info = builder.item_game_info;
     }
 }

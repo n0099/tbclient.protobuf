@@ -15,10 +15,13 @@ import java.util.List;
 /* loaded from: classes2.dex */
 public final class ClassForumInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_CLASS_ICON = "";
     public static final Integer DEFAULT_CLASS_ID;
     public static final String DEFAULT_CLASS_NAME = "";
     public static final List<RecommendForumInfo> DEFAULT_FORUM_INFO;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String class_icon;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer class_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -30,6 +33,7 @@ public final class ClassForumInfo extends Message {
     public static final class Builder extends Message.Builder<ClassForumInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String class_icon;
         public Integer class_id;
         public String class_name;
         public List<RecommendForumInfo> forum_info;
@@ -72,6 +76,7 @@ public final class ClassForumInfo extends Message {
             this.forum_info = Message.copyOf(classForumInfo.forum_info);
             this.class_id = classForumInfo.class_id;
             this.class_name = classForumInfo.class_name;
+            this.class_icon = classForumInfo.class_icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -144,14 +149,21 @@ public final class ClassForumInfo extends Message {
             String str = builder.class_name;
             if (str == null) {
                 this.class_name = "";
-                return;
             } else {
                 this.class_name = str;
+            }
+            String str2 = builder.class_icon;
+            if (str2 == null) {
+                this.class_icon = "";
+                return;
+            } else {
+                this.class_icon = str2;
                 return;
             }
         }
         this.forum_info = Message.immutableCopyOf(builder.forum_info);
         this.class_id = builder.class_id;
         this.class_name = builder.class_name;
+        this.class_icon = builder.class_icon;
     }
 }

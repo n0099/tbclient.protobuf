@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79145common;
+    public final CommonReq f79346common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tieba_code;
 
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79146common;
+        public CommonReq f79347common;
         public String tieba_code;
 
         public Builder() {
@@ -65,7 +65,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f79146common = dataReq.f79145common;
+            this.f79347common = dataReq.f79346common;
             this.tieba_code = dataReq.tieba_code;
         }
 
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f79145common = builder.f79146common;
+            this.f79346common = builder.f79347common;
             String str = builder.tieba_code;
             if (str == null) {
                 this.tieba_code = "";
@@ -117,7 +117,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f79145common = builder.f79146common;
+        this.f79346common = builder.f79347common;
         this.tieba_code = builder.tieba_code;
     }
 }
