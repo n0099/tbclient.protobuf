@@ -15,28 +15,20 @@ import java.util.List;
 /* loaded from: classes2.dex */
 public final class BusinessPromot extends Message {
     public static /* synthetic */ Interceptable $ic = null;
-    public static final String DEFAULT_BUTTON_TEXT = "";
-    public static final String DEFAULT_BUTTON_TEXT2 = "";
     public static final List<BusinessPromotCommentList> DEFAULT_COMMENT_LIST;
     public static final Long DEFAULT_ID;
     public static final String DEFAULT_IMG = "";
     public static final String DEFAULT_IMG_POPUP = "";
+    public static final Boolean DEFAULT_IS_ALLOW_SHAKE;
     public static final Integer DEFAULT_JOIN_NUM;
     public static final String DEFAULT_SCHEMA = "";
-    public static final String DEFAULT_SCHEMA2 = "";
     public static final List<String> DEFAULT_THIRD_STATISTICS_URL;
     public static final String DEFAULT_THREAD_ID = "";
-    public static final String DEFAULT_THREAD_ID2 = "";
     public static final Integer DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_TITLE = "";
     public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_URL = "";
-    public static final String DEFAULT_URL2 = "";
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 13, type = Message.Datatype.STRING)
-    public final String button_text;
-    @ProtoField(tag = 14, type = Message.Datatype.STRING)
-    public final String button_text2;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<BusinessPromotCommentList> comment_list;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
@@ -45,18 +37,16 @@ public final class BusinessPromot extends Message {
     public final String img;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String img_popup;
+    @ProtoField(tag = 13, type = Message.Datatype.BOOL)
+    public final Boolean is_allow_shake;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer join_num;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String schema;
-    @ProtoField(tag = 17, type = Message.Datatype.STRING)
-    public final String schema2;
     @ProtoField(label = Message.Label.REPEATED, tag = 12, type = Message.Datatype.STRING)
     public final List<String> third_statistics_url;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String thread_id;
-    @ProtoField(tag = 15, type = Message.Datatype.STRING)
-    public final String thread_id2;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer thread_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -65,30 +55,24 @@ public final class BusinessPromot extends Message {
     public final Integer type;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String url;
-    @ProtoField(tag = 16, type = Message.Datatype.STRING)
-    public final String url2;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<BusinessPromot> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public String button_text;
-        public String button_text2;
         public List<BusinessPromotCommentList> comment_list;
         public Long id;
         public String img;
         public String img_popup;
+        public Boolean is_allow_shake;
         public Integer join_num;
         public String schema;
-        public String schema2;
         public List<String> third_statistics_url;
         public String thread_id;
-        public String thread_id2;
         public Integer thread_type;
         public String title;
         public Integer type;
         public String url;
-        public String url2;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -137,11 +121,7 @@ public final class BusinessPromot extends Message {
             this.thread_type = businessPromot.thread_type;
             this.schema = businessPromot.schema;
             this.third_statistics_url = Message.copyOf(businessPromot.third_statistics_url);
-            this.button_text = businessPromot.button_text;
-            this.button_text2 = businessPromot.button_text2;
-            this.thread_id2 = businessPromot.thread_id2;
-            this.url2 = businessPromot.url2;
-            this.schema2 = businessPromot.schema2;
+            this.is_allow_shake = businessPromot.is_allow_shake;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -178,6 +158,7 @@ public final class BusinessPromot extends Message {
         DEFAULT_ID = 0L;
         DEFAULT_THREAD_TYPE = 0;
         DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
+        DEFAULT_IS_ALLOW_SHAKE = Boolean.FALSE;
     }
 
     public /* synthetic */ BusinessPromot(Builder builder, boolean z, a aVar) {
@@ -275,36 +256,12 @@ public final class BusinessPromot extends Message {
             } else {
                 this.third_statistics_url = Message.immutableCopyOf(list2);
             }
-            String str7 = builder.button_text;
-            if (str7 == null) {
-                this.button_text = "";
-            } else {
-                this.button_text = str7;
-            }
-            String str8 = builder.button_text2;
-            if (str8 == null) {
-                this.button_text2 = "";
-            } else {
-                this.button_text2 = str8;
-            }
-            String str9 = builder.thread_id2;
-            if (str9 == null) {
-                this.thread_id2 = "";
-            } else {
-                this.thread_id2 = str9;
-            }
-            String str10 = builder.url2;
-            if (str10 == null) {
-                this.url2 = "";
-            } else {
-                this.url2 = str10;
-            }
-            String str11 = builder.schema2;
-            if (str11 == null) {
-                this.schema2 = "";
+            Boolean bool = builder.is_allow_shake;
+            if (bool == null) {
+                this.is_allow_shake = DEFAULT_IS_ALLOW_SHAKE;
                 return;
             } else {
-                this.schema2 = str11;
+                this.is_allow_shake = bool;
                 return;
             }
         }
@@ -320,10 +277,6 @@ public final class BusinessPromot extends Message {
         this.thread_type = builder.thread_type;
         this.schema = builder.schema;
         this.third_statistics_url = Message.immutableCopyOf(builder.third_statistics_url);
-        this.button_text = builder.button_text;
-        this.button_text2 = builder.button_text2;
-        this.thread_id2 = builder.thread_id2;
-        this.url2 = builder.url2;
-        this.schema2 = builder.schema2;
+        this.is_allow_shake = builder.is_allow_shake;
     }
 }

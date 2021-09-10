@@ -399,7 +399,7 @@ public final class ThreadInfo extends Message {
     public final String nid;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
-    @ProtoField(tag = com.baidu.apollon.a.f37632e)
+    @ProtoField(tag = com.baidu.apollon.a.f37751e)
     public final OriForumInfo ori_forum_info;
     @ProtoField(tag = 141)
     public final OriginThreadInfo origin_thread_info;

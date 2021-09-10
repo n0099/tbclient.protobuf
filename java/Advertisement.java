@@ -15,6 +15,7 @@ public final class Advertisement extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ADVERTISEMENT_ID = "";
     public static final String DEFAULT_CLICK_STATISTICS_URL = "";
+    public static final String DEFAULT_FLOATING_TEXT = "";
     public static final String DEFAULT_JUMP_LINK = "";
     public static final String DEFAULT_PIC = "";
     public static final String DEFAULT_PIC_CLICK = "";
@@ -25,6 +26,8 @@ public final class Advertisement extends Message {
     public final String advertisement_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String click_statistics_url;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String floating_text;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String jump_link;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -42,6 +45,7 @@ public final class Advertisement extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public String advertisement_id;
         public String click_statistics_url;
+        public String floating_text;
         public String jump_link;
         public String pic;
         public String pic_click;
@@ -90,6 +94,7 @@ public final class Advertisement extends Message {
             this.advertisement_id = advertisement.advertisement_id;
             this.view_statistics_url = advertisement.view_statistics_url;
             this.click_statistics_url = advertisement.click_statistics_url;
+            this.floating_text = advertisement.floating_text;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -185,9 +190,15 @@ public final class Advertisement extends Message {
             String str6 = builder.click_statistics_url;
             if (str6 == null) {
                 this.click_statistics_url = "";
-                return;
             } else {
                 this.click_statistics_url = str6;
+            }
+            String str7 = builder.floating_text;
+            if (str7 == null) {
+                this.floating_text = "";
+                return;
+            } else {
+                this.floating_text = str7;
                 return;
             }
         }
@@ -198,5 +209,6 @@ public final class Advertisement extends Message {
         this.advertisement_id = builder.advertisement_id;
         this.view_statistics_url = builder.view_statistics_url;
         this.click_statistics_url = builder.click_statistics_url;
+        this.floating_text = builder.floating_text;
     }
 }

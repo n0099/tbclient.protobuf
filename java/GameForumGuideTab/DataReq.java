@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79386common;
+    public final CommonReq f79624common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79387common;
+        public CommonReq f79625common;
         public Long forum_id;
         public Integer need_tab_stuct;
         public Integer pn;
@@ -87,7 +87,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f79387common = dataReq.f79386common;
+            this.f79625common = dataReq.f79624common;
             this.pn = dataReq.pn;
             this.ps = dataReq.ps;
             this.forum_id = dataReq.forum_id;
@@ -155,7 +155,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f79386common = builder.f79387common;
+            this.f79624common = builder.f79625common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -195,7 +195,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f79386common = builder.f79387common;
+        this.f79624common = builder.f79625common;
         this.pn = builder.pn;
         this.ps = builder.ps;
         this.forum_id = builder.forum_id;

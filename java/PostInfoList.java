@@ -26,11 +26,14 @@ public final class PostInfoList extends Message {
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
     public static final Integer DEFAULT_FREQ_NUM;
+    public static final Integer DEFAULT_GOOD_TYPES;
     public static final Integer DEFAULT_HIDE_POST;
     public static final String DEFAULT_IP = "";
     public static final Integer DEFAULT_IS_AUTHOR_VIEW;
     public static final Boolean DEFAULT_IS_DEAL;
+    public static final Integer DEFAULT_IS_MANAGER;
     public static final Integer DEFAULT_IS_NTITLE;
+    public static final Integer DEFAULT_IS_ORIGIN_MANAGER;
     public static final Integer DEFAULT_IS_POST_DELETED;
     public static final Integer DEFAULT_IS_REMAIN;
     public static final Integer DEFAULT_IS_SHARE_THREAD;
@@ -53,6 +56,7 @@ public final class PostInfoList extends Message {
     public static final Long DEFAULT_THREAD_ID;
     public static final Long DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_TITLE = "";
+    public static final Integer DEFAULT_TOP_TYPES;
     public static final Long DEFAULT_USER_ID;
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_USER_PORTRAIT = "";
@@ -93,6 +97,8 @@ public final class PostInfoList extends Message {
     public final String forum_name;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer freq_num;
+    @ProtoField(tag = 61, type = Message.Datatype.INT32)
+    public final Integer good_types;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer hide_post;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -101,8 +107,12 @@ public final class PostInfoList extends Message {
     public final Integer is_author_view;
     @ProtoField(tag = 30, type = Message.Datatype.BOOL)
     public final Boolean is_deal;
+    @ProtoField(tag = 59, type = Message.Datatype.INT32)
+    public final Integer is_manager;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer is_ntitle;
+    @ProtoField(tag = 60, type = Message.Datatype.INT32)
+    public final Integer is_origin_manager;
     @ProtoField(tag = 12, type = Message.Datatype.UINT32)
     public final Integer is_post_deleted;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
@@ -157,6 +167,8 @@ public final class PostInfoList extends Message {
     public final Long thread_type;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 62, type = Message.Datatype.INT32)
+    public final Integer top_types;
     @ProtoField(tag = 27)
     public final ZhiBoInfoTW twzhibo_info;
     @ProtoField(tag = 18, type = Message.Datatype.INT64)
@@ -165,6 +177,8 @@ public final class PostInfoList extends Message {
     public final String user_name;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String user_portrait;
+    @ProtoField(tag = 63)
+    public final UserPostPerm user_post_perm;
     @ProtoField(tag = 34, type = Message.Datatype.UINT64)
     public final Long v_forum_id;
     @ProtoField(tag = 29)
@@ -175,6 +189,8 @@ public final class PostInfoList extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 51, type = Message.Datatype.STRING)
     public final String wonderful_post_info;
+    @ProtoField(tag = 58)
+    public final WorksInfo works_info;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
@@ -196,11 +212,14 @@ public final class PostInfoList extends Message {
         public Long forum_id;
         public String forum_name;
         public Integer freq_num;
+        public Integer good_types;
         public Integer hide_post;
         public String ip;
         public Integer is_author_view;
         public Boolean is_deal;
+        public Integer is_manager;
         public Integer is_ntitle;
+        public Integer is_origin_manager;
         public Integer is_post_deleted;
         public Integer is_remain;
         public Integer is_share_thread;
@@ -228,15 +247,18 @@ public final class PostInfoList extends Message {
         public Long thread_id;
         public Long thread_type;
         public String title;
+        public Integer top_types;
         public ZhiBoInfoTW twzhibo_info;
         public Long user_id;
         public String user_name;
         public String user_portrait;
+        public UserPostPerm user_post_perm;
         public Long v_forum_id;
         public VideoInfo video_info;
         public Integer view_num;
         public List<Voice> voice_info;
         public String wonderful_post_info;
+        public WorksInfo works_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -330,6 +352,12 @@ public final class PostInfoList extends Message {
             this.pb_goods_info = Message.copyOf(postInfoList.pb_goods_info);
             this.priv_sets = Message.copyOf(postInfoList.priv_sets);
             this.is_author_view = postInfoList.is_author_view;
+            this.works_info = postInfoList.works_info;
+            this.is_manager = postInfoList.is_manager;
+            this.is_origin_manager = postInfoList.is_origin_manager;
+            this.good_types = postInfoList.good_types;
+            this.top_types = postInfoList.top_types;
+            this.user_post_perm = postInfoList.user_post_perm;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -393,6 +421,10 @@ public final class PostInfoList extends Message {
         DEFAULT_PB_GOODS_INFO = Collections.emptyList();
         DEFAULT_PRIV_SETS = Collections.emptyList();
         DEFAULT_IS_AUTHOR_VIEW = 0;
+        DEFAULT_IS_MANAGER = 0;
+        DEFAULT_IS_ORIGIN_MANAGER = 0;
+        DEFAULT_GOOD_TYPES = 0;
+        DEFAULT_TOP_TYPES = 0;
     }
 
     public /* synthetic */ PostInfoList(Builder builder, boolean z, a aVar) {
@@ -697,11 +729,36 @@ public final class PostInfoList extends Message {
             Integer num14 = builder.is_author_view;
             if (num14 == null) {
                 this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
-                return;
             } else {
                 this.is_author_view = num14;
-                return;
             }
+            this.works_info = builder.works_info;
+            Integer num15 = builder.is_manager;
+            if (num15 == null) {
+                this.is_manager = DEFAULT_IS_MANAGER;
+            } else {
+                this.is_manager = num15;
+            }
+            Integer num16 = builder.is_origin_manager;
+            if (num16 == null) {
+                this.is_origin_manager = DEFAULT_IS_ORIGIN_MANAGER;
+            } else {
+                this.is_origin_manager = num16;
+            }
+            Integer num17 = builder.good_types;
+            if (num17 == null) {
+                this.good_types = DEFAULT_GOOD_TYPES;
+            } else {
+                this.good_types = num17;
+            }
+            Integer num18 = builder.top_types;
+            if (num18 == null) {
+                this.top_types = DEFAULT_TOP_TYPES;
+            } else {
+                this.top_types = num18;
+            }
+            this.user_post_perm = builder.user_post_perm;
+            return;
         }
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
@@ -760,5 +817,11 @@ public final class PostInfoList extends Message {
         this.pb_goods_info = Message.immutableCopyOf(builder.pb_goods_info);
         this.priv_sets = Message.immutableCopyOf(builder.priv_sets);
         this.is_author_view = builder.is_author_view;
+        this.works_info = builder.works_info;
+        this.is_manager = builder.is_manager;
+        this.is_origin_manager = builder.is_origin_manager;
+        this.good_types = builder.good_types;
+        this.top_types = builder.top_types;
+        this.user_post_perm = builder.user_post_perm;
     }
 }

@@ -19,16 +19,20 @@ public final class OriginThreadInfo extends Message {
     public static final List<PbContent> DEFAULT_CONTENT;
     public static final Long DEFAULT_FID;
     public static final String DEFAULT_FNAME = "";
+    public static final Integer DEFAULT_GOOD_TYPES;
     public static final Integer DEFAULT_IS_DELETED;
     public static final Integer DEFAULT_IS_NEW_STYLE;
     public static final Integer DEFAULT_IS_UGC;
     public static final List<HeadItem> DEFAULT_ITEM_STAR;
     public static final List<Media> DEFAULT_MEDIA;
+    public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO;
+    public static final Long DEFAULT_PID;
     public static final Integer DEFAULT_REPLY_NUM;
     public static final Integer DEFAULT_SHARED_NUM;
     public static final Integer DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_TID = "";
     public static final String DEFAULT_TITLE = "";
+    public static final Integer DEFAULT_TOP_TYPES;
     public static final List<Voice> DEFAULT_VOICE_INFO;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
@@ -45,6 +49,8 @@ public final class OriginThreadInfo extends Message {
     public final Long fid;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String fname;
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    public final Integer good_types;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_deleted;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
@@ -59,6 +65,10 @@ public final class OriginThreadInfo extends Message {
     public final List<Media> media;
     @ProtoField(tag = 11)
     public final Baijiahao ori_ugc_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 24)
+    public final List<PbLinkInfo> pb_link_info;
+    @ProtoField(tag = 25, type = Message.Datatype.INT64)
+    public final Long pid;
     @ProtoField(tag = 21)
     public final PollInfo poll_info;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
@@ -71,6 +81,8 @@ public final class OriginThreadInfo extends Message {
     public final String tid;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 27, type = Message.Datatype.INT32)
+    public final Integer top_types;
     @ProtoField(tag = 13)
     public final VideoInfo video_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
@@ -87,6 +99,7 @@ public final class OriginThreadInfo extends Message {
         public List<PbContent> content;
         public Long fid;
         public String fname;
+        public Integer good_types;
         public Integer is_deleted;
         public Integer is_new_style;
         public Integer is_ugc;
@@ -94,12 +107,15 @@ public final class OriginThreadInfo extends Message {
         public List<HeadItem> item_star;
         public List<Media> media;
         public Baijiahao ori_ugc_info;
+        public List<PbLinkInfo> pb_link_info;
+        public Long pid;
         public PollInfo poll_info;
         public Integer reply_num;
         public Integer shared_num;
         public Integer thread_type;
         public String tid;
         public String title;
+        public Integer top_types;
         public VideoInfo video_info;
         public List<Voice> voice_info;
 
@@ -160,6 +176,10 @@ public final class OriginThreadInfo extends Message {
             this.poll_info = originThreadInfo.poll_info;
             this.item = originThreadInfo.item;
             this.item_star = Message.copyOf(originThreadInfo.item_star);
+            this.pb_link_info = Message.copyOf(originThreadInfo.pb_link_info);
+            this.pid = originThreadInfo.pid;
+            this.good_types = originThreadInfo.good_types;
+            this.top_types = originThreadInfo.top_types;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -202,6 +222,10 @@ public final class OriginThreadInfo extends Message {
         DEFAULT_REPLY_NUM = 0;
         DEFAULT_SHARED_NUM = 0;
         DEFAULT_ITEM_STAR = Collections.emptyList();
+        DEFAULT_PB_LINK_INFO = Collections.emptyList();
+        DEFAULT_PID = 0L;
+        DEFAULT_GOOD_TYPES = 0;
+        DEFAULT_TOP_TYPES = 0;
     }
 
     public /* synthetic */ OriginThreadInfo(Builder builder, boolean z, a aVar) {
@@ -321,9 +345,33 @@ public final class OriginThreadInfo extends Message {
             List<HeadItem> list5 = builder.item_star;
             if (list5 == null) {
                 this.item_star = DEFAULT_ITEM_STAR;
-                return;
             } else {
                 this.item_star = Message.immutableCopyOf(list5);
+            }
+            List<PbLinkInfo> list6 = builder.pb_link_info;
+            if (list6 == null) {
+                this.pb_link_info = DEFAULT_PB_LINK_INFO;
+            } else {
+                this.pb_link_info = Message.immutableCopyOf(list6);
+            }
+            Long l2 = builder.pid;
+            if (l2 == null) {
+                this.pid = DEFAULT_PID;
+            } else {
+                this.pid = l2;
+            }
+            Integer num7 = builder.good_types;
+            if (num7 == null) {
+                this.good_types = DEFAULT_GOOD_TYPES;
+            } else {
+                this.good_types = num7;
+            }
+            Integer num8 = builder.top_types;
+            if (num8 == null) {
+                this.top_types = DEFAULT_TOP_TYPES;
+                return;
+            } else {
+                this.top_types = num8;
                 return;
             }
         }
@@ -349,5 +397,9 @@ public final class OriginThreadInfo extends Message {
         this.poll_info = builder.poll_info;
         this.item = builder.item;
         this.item_star = Message.immutableCopyOf(builder.item_star);
+        this.pb_link_info = Message.immutableCopyOf(builder.pb_link_info);
+        this.pid = builder.pid;
+        this.good_types = builder.good_types;
+        this.top_types = builder.top_types;
     }
 }
