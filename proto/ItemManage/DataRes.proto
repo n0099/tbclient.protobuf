@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ManageInfo.proto";
+
+message DataRes {
+    repeated ManageInfo manage_list = 1;
+    repeated ManageInfo manage_recomm_list = 2;
+    int32 has_more = 3;
+}

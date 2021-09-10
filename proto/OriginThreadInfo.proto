@@ -8,6 +8,7 @@ import "HeadItem.proto";
 import "Item.proto";
 import "Media.proto";
 import "PbContent.proto";
+import "PbLinkInfo.proto";
 import "PollInfo.proto";
 import "User.proto";
 import "VideoInfo.proto";
@@ -36,4 +37,8 @@ message OriginThreadInfo {
     PollInfo poll_info = 21;
     Item item = 22;
     repeated HeadItem item_star = 23;
+    repeated PbLinkInfo pb_link_info = 24;
+    int64 pid = 25;
+    int32 good_types = 26;
+    int32 top_types = 27;
 }

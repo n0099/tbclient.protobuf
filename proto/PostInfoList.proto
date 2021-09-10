@@ -19,8 +19,10 @@ import "PollInfo.proto";
 import "PostInfoContent.proto";
 import "PrivSets.proto";
 import "Quote.proto";
+import "UserPostPerm.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
+import "WorksInfo.proto";
 import "ZhiBoInfoTW.proto";
 
 message PostInfoList {
@@ -81,4 +83,10 @@ message PostInfoList {
     repeated PbGoodsInfo pb_goods_info = 55;
     repeated PrivSets priv_sets = 56;
     int32 is_author_view = 57;
+    WorksInfo works_info = 58;
+    int32 is_manager = 59;
+    int32 is_origin_manager = 60;
+    int32 good_types = 61;
+    int32 top_types = 62;
+    UserPostPerm user_post_perm = 63;
 }
