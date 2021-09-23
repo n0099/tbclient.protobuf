@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "AppPosInfo.proto";
+import "AppTransmitData.proto";
 import "CommonReq.proto";
 
 message DataReq {
@@ -37,4 +38,5 @@ message DataReq {
     string second_dir = 35;
     AppPosInfo app_pos = 36;
     string ad_ext_params = 37;
+    AppTransmitData app_transmit_data = 38;
 }

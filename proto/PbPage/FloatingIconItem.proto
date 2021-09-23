@@ -5,4 +5,7 @@ message FloatingIconItem {
     string icon_url = 2;
     string view_statistics_url = 3;
     string click_statistics_url = 4;
+    string deeplink = 5;
+    string scheme = 6;
+    string package_name = 7;
 }

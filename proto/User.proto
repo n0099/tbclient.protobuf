@@ -40,6 +40,7 @@ import "UserVideoChannelInfo.proto";
 import "UserVipInfo.proto";
 import "VipCloseAd.proto";
 import "VipShowInfo.proto";
+import "WorkCreatorInfo.proto";
 
 message User {
     int32 is_login = 1;
@@ -161,4 +162,6 @@ message User {
     string tieba_uid = 120;
     string follow_from = 121;
     repeated BazhuSign manager_forum = 122;
+    int32 display_auth_type = 123;
+    WorkCreatorInfo work_creator_info = 124;
 }

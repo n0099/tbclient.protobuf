@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "AppPosInfo.proto";
+import "AppTransmitData.proto";
 import "CommonReq.proto";
 import "PbPage/AdParam.proto";
 
@@ -72,4 +73,5 @@ message DataReq {
     int32 floor_sort_type = 74;
     int32 source_type = 75;
     int32 immersion_video_comment_source = 76;
+    AppTransmitData app_transmit_data = 77;
 }

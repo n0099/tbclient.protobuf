@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Feed/DataReq.proto";
-
-message FeedReqIdl {
-    DataReq data = 1;
-}

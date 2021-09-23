@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "AppPosInfo.proto";
+import "AppTransmitData.proto";
 import "CommonReq.proto";
 import "ThreadList/AdParam.proto";
 
@@ -24,4 +25,5 @@ message DataReq {
     AdParam ad_param = 18;
     string ad_context_list = 19;
     string ad_ext_params = 20;
+    AppTransmitData app_transmit_data = 21;
 }

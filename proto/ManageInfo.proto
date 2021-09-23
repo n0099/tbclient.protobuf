@@ -6,4 +6,5 @@ import "TiebaPlusInfo.proto";
 message ManageInfo {
     Item item = 1;
     TiebaPlusInfo tiebaplus_info = 2;
+    int32 item_source = 3;
 }

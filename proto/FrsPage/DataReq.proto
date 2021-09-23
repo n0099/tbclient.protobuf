@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "AppPosInfo.proto";
+import "AppTransmitData.proto";
 import "CommonReq.proto";
 import "FrsPage/AdParam.proto";
 
@@ -67,4 +68,5 @@ message DataReq {
     string up_schema = 61;
     string ad_ext_params = 62;
     int32 default_sort_type = 63;
+    AppTransmitData app_transmit_data = 64;
 }
