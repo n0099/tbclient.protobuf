@@ -26,6 +26,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_BOOKMARK_NEW_COUNT;
     public static final Integer DEFAULT_CAN_MODIFY_AVATAR;
     public static final Integer DEFAULT_CONCERN_NUM;
+    public static final Integer DEFAULT_DISPLAY_AUTH_TYPE;
     public static final Integer DEFAULT_EACH_OTHER_FRIEND;
     public static final String DEFAULT_FANS_NICKNAME = "";
     public static final Integer DEFAULT_FANS_NUM;
@@ -149,6 +150,8 @@ public final class User extends Message {
     public final ConsumeInfo consume_info;
     @ProtoField(tag = 108)
     public final CreationData creation_data;
+    @ProtoField(tag = 123, type = Message.Datatype.INT32)
+    public final Integer display_auth_type;
     @ProtoField(tag = 83, type = Message.Datatype.INT32)
     public final Integer each_other_friend;
     @ProtoField(tag = 74)
@@ -337,6 +340,8 @@ public final class User extends Message {
     public final VipShowInfo vip_show_info;
     @ProtoField(tag = 75, type = Message.Datatype.INT32)
     public final Integer visitor_num;
+    @ProtoField(tag = 124)
+    public final WorkCreatorInfo work_creator_info;
     @ProtoField(tag = 116, type = Message.Datatype.UINT32)
     public final Integer work_num;
     @ProtoField(tag = 119)
@@ -369,6 +374,7 @@ public final class User extends Message {
         public Integer concern_num;
         public ConsumeInfo consume_info;
         public CreationData creation_data;
+        public Integer display_auth_type;
         public Integer each_other_friend;
         public Ecom ecom;
         public EsportInfo esport_data;
@@ -463,6 +469,7 @@ public final class User extends Message {
         public VipCloseAd vip_close_ad;
         public VipShowInfo vip_show_info;
         public Integer visitor_num;
+        public WorkCreatorInfo work_creator_info;
         public Integer work_num;
         public CreationData workcreation_data;
 
@@ -620,6 +627,8 @@ public final class User extends Message {
             this.tieba_uid = user.tieba_uid;
             this.follow_from = user.follow_from;
             this.manager_forum = Message.copyOf(user.manager_forum);
+            this.display_auth_type = user.display_auth_type;
+            this.work_creator_info = user.work_creator_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -715,6 +724,7 @@ public final class User extends Message {
         DEFAULT_SHOW_PB_PRIVATE_FLAG = 0;
         DEFAULT_TOTAL_AGREE_NUM = 0;
         DEFAULT_MANAGER_FORUM = Collections.emptyList();
+        DEFAULT_DISPLAY_AUTH_TYPE = 0;
     }
 
     public /* synthetic */ User(Builder builder, boolean z, a aVar) {
@@ -1291,11 +1301,17 @@ public final class User extends Message {
             List<BazhuSign> list11 = builder.manager_forum;
             if (list11 == null) {
                 this.manager_forum = DEFAULT_MANAGER_FORUM;
-                return;
             } else {
                 this.manager_forum = Message.immutableCopyOf(list11);
-                return;
             }
+            Integer num53 = builder.display_auth_type;
+            if (num53 == null) {
+                this.display_auth_type = DEFAULT_DISPLAY_AUTH_TYPE;
+            } else {
+                this.display_auth_type = num53;
+            }
+            this.work_creator_info = builder.work_creator_info;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -1416,5 +1432,7 @@ public final class User extends Message {
         this.tieba_uid = builder.tieba_uid;
         this.follow_from = builder.follow_from;
         this.manager_forum = Message.immutableCopyOf(builder.manager_forum);
+        this.display_auth_type = builder.display_auth_type;
+        this.work_creator_info = builder.work_creator_info;
     }
 }

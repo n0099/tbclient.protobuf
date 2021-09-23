@@ -15,10 +15,13 @@ public final class Advertisement extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ADVERTISEMENT_ID = "";
     public static final String DEFAULT_CLICK_STATISTICS_URL = "";
+    public static final String DEFAULT_DEEPLINK = "";
     public static final String DEFAULT_FLOATING_TEXT = "";
     public static final String DEFAULT_JUMP_LINK = "";
+    public static final String DEFAULT_PACKAGE_NAME = "";
     public static final String DEFAULT_PIC = "";
     public static final String DEFAULT_PIC_CLICK = "";
+    public static final String DEFAULT_SCHEME = "";
     public static final Long DEFAULT_TIME;
     public static final String DEFAULT_VIEW_STATISTICS_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
@@ -26,14 +29,20 @@ public final class Advertisement extends Message {
     public final String advertisement_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String click_statistics_url;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String deeplink;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String floating_text;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String jump_link;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String package_name;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String pic;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String pic_click;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String scheme;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long time;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -45,10 +54,13 @@ public final class Advertisement extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public String advertisement_id;
         public String click_statistics_url;
+        public String deeplink;
         public String floating_text;
         public String jump_link;
+        public String package_name;
         public String pic;
         public String pic_click;
+        public String scheme;
         public Long time;
         public String view_statistics_url;
 
@@ -95,6 +107,9 @@ public final class Advertisement extends Message {
             this.view_statistics_url = advertisement.view_statistics_url;
             this.click_statistics_url = advertisement.click_statistics_url;
             this.floating_text = advertisement.floating_text;
+            this.deeplink = advertisement.deeplink;
+            this.scheme = advertisement.scheme;
+            this.package_name = advertisement.package_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -196,9 +211,27 @@ public final class Advertisement extends Message {
             String str7 = builder.floating_text;
             if (str7 == null) {
                 this.floating_text = "";
-                return;
             } else {
                 this.floating_text = str7;
+            }
+            String str8 = builder.deeplink;
+            if (str8 == null) {
+                this.deeplink = "";
+            } else {
+                this.deeplink = str8;
+            }
+            String str9 = builder.scheme;
+            if (str9 == null) {
+                this.scheme = "";
+            } else {
+                this.scheme = str9;
+            }
+            String str10 = builder.package_name;
+            if (str10 == null) {
+                this.package_name = "";
+                return;
+            } else {
+                this.package_name = str10;
                 return;
             }
         }
@@ -210,5 +243,8 @@ public final class Advertisement extends Message {
         this.view_statistics_url = builder.view_statistics_url;
         this.click_statistics_url = builder.click_statistics_url;
         this.floating_text = builder.floating_text;
+        this.deeplink = builder.deeplink;
+        this.scheme = builder.scheme;
+        this.package_name = builder.package_name;
     }
 }

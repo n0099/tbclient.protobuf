@@ -11,6 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
+import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
@@ -84,6 +85,8 @@ public final class DataReq extends Message {
     public final AdParam ad_param;
     @ProtoField(tag = 50)
     public final AppPosInfo app_pos;
+    @ProtoField(tag = 64)
+    public final AppTransmitData app_transmit_data;
     @ProtoField(tag = 56, type = Message.Datatype.INT32)
     public final Integer call_from;
     @ProtoField(tag = 54, type = Message.Datatype.STRING)
@@ -99,7 +102,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 39)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79622common;
+    public final CommonReq f79939common;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -213,6 +216,7 @@ public final class DataReq extends Message {
         public String ad_ext_params;
         public AdParam ad_param;
         public AppPosInfo app_pos;
+        public AppTransmitData app_transmit_data;
         public Integer call_from;
         public String call_url;
         public Integer category_id;
@@ -221,7 +225,7 @@ public final class DataReq extends Message {
         public Integer class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79623common;
+        public CommonReq f79940common;
         public String cookie;
         public Integer ctime;
         public String da_idfa;
@@ -348,7 +352,7 @@ public final class DataReq extends Message {
             this.email = dataReq.email;
             this.debug = dataReq.debug;
             this.cookie = dataReq.cookie;
-            this.f79623common = dataReq.f79622common;
+            this.f79940common = dataReq.f79939common;
             this.lastids = dataReq.lastids;
             this.issdk = dataReq.issdk;
             this.da_idfa = dataReq.da_idfa;
@@ -373,6 +377,7 @@ public final class DataReq extends Message {
             this.up_schema = dataReq.up_schema;
             this.ad_ext_params = dataReq.ad_ext_params;
             this.default_sort_type = dataReq.default_sort_type;
+            this.app_transmit_data = dataReq.app_transmit_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -695,7 +700,7 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = str10;
             }
-            this.f79622common = builder.f79623common;
+            this.f79939common = builder.f79940common;
             String str11 = builder.lastids;
             if (str11 == null) {
                 this.lastids = "";
@@ -827,11 +832,11 @@ public final class DataReq extends Message {
             Integer num30 = builder.default_sort_type;
             if (num30 == null) {
                 this.default_sort_type = DEFAULT_DEFAULT_SORT_TYPE;
-                return;
             } else {
                 this.default_sort_type = num30;
-                return;
             }
+            this.app_transmit_data = builder.app_transmit_data;
+            return;
         }
         this.kw = builder.kw;
         this.rn = builder.rn;
@@ -871,7 +876,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.debug = builder.debug;
         this.cookie = builder.cookie;
-        this.f79622common = builder.f79623common;
+        this.f79939common = builder.f79940common;
         this.lastids = builder.lastids;
         this.issdk = builder.issdk;
         this.da_idfa = builder.da_idfa;
@@ -896,5 +901,6 @@ public final class DataReq extends Message {
         this.up_schema = builder.up_schema;
         this.ad_ext_params = builder.ad_ext_params;
         this.default_sort_type = builder.default_sort_type;
+        this.app_transmit_data = builder.app_transmit_data;
     }
 }

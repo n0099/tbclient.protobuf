@@ -1,4 +1,4 @@
-package tbclient.Feed;
+package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -9,17 +9,18 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
-public final class FeedReqIdl extends Message {
-    public static /* synthetic */ Interceptable $ic;
+public final class WorkCreatorInfo extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_AUTH_DESC = "";
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 1)
-    public final DataReq data;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public String auth_desc;
 
     /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FeedReqIdl> {
+    public static final class Builder extends Message.Builder<WorkCreatorInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public DataReq data;
+        public String auth_desc;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -36,13 +37,13 @@ public final class FeedReqIdl extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(FeedReqIdl feedReqIdl) {
-            super(feedReqIdl);
+        public Builder(WorkCreatorInfo workCreatorInfo) {
+            super(workCreatorInfo);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {feedReqIdl};
+                Object[] objArr = {workCreatorInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i2 = newInitContext.flag;
                 if ((i2 & 1) != 0) {
@@ -53,18 +54,18 @@ public final class FeedReqIdl extends Message {
                     return;
                 }
             }
-            if (feedReqIdl == null) {
+            if (workCreatorInfo == null) {
                 return;
             }
-            this.data = feedReqIdl.data;
+            this.auth_desc = workCreatorInfo.auth_desc;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public FeedReqIdl build(boolean z) {
+        public WorkCreatorInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FeedReqIdl(this, z, null) : (FeedReqIdl) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new WorkCreatorInfo(this, z, null) : (WorkCreatorInfo) invokeZ.objValue;
         }
     }
 
@@ -74,12 +75,12 @@ public final class FeedReqIdl extends Message {
         public transient /* synthetic */ FieldHolder $fh;
     }
 
-    public /* synthetic */ FeedReqIdl(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ WorkCreatorInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public FeedReqIdl(Builder builder, boolean z) {
+    public WorkCreatorInfo(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -97,9 +98,15 @@ public final class FeedReqIdl extends Message {
             }
         }
         if (z) {
-            this.data = builder.data;
-        } else {
-            this.data = builder.data;
+            String str = builder.auth_desc;
+            if (str == null) {
+                this.auth_desc = "";
+                return;
+            } else {
+                this.auth_desc = str;
+                return;
+            }
         }
+        this.auth_desc = builder.auth_desc;
     }
 }

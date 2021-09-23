@@ -305,7 +305,7 @@ public final class App extends Message {
             builder.plan_id = Integer.valueOf(jSONObject.optInt("plan_id"));
             builder.user_id = jSONObject.optString("user_id");
             builder.price = jSONObject.optString("price");
-            builder.verify = jSONObject.optString(SmsLoginView.f.f44983j);
+            builder.verify = jSONObject.optString(SmsLoginView.f.f45045j);
             builder.ext_info = jSONObject.optString("ext_info");
             ArrayList arrayList = new ArrayList();
             JSONArray optJSONArray = jSONObject.optJSONArray("goods_info");
@@ -357,7 +357,7 @@ public final class App extends Message {
                 jSONObject.put("plan_id", app.plan_id);
                 jSONObject.put("user_id", app.user_id);
                 jSONObject.put("price", app.price);
-                jSONObject.put(SmsLoginView.f.f44983j, app.verify);
+                jSONObject.put(SmsLoginView.f.f45045j, app.verify);
                 jSONObject.put("ext_info", app.ext_info);
                 JSONArray jSONArray = new JSONArray();
                 for (GoodsInfo goodsInfo : app.goods_info) {

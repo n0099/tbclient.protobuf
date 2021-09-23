@@ -40,7 +40,7 @@ public final class ExcContent extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f79598c;
+    public final String f79917c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -67,7 +67,7 @@ public final class ExcContent extends Message {
         public String bsize;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f79599c;
+        public String f79918c;
         public String cdn_src;
         public String color;
         public String link;
@@ -120,7 +120,7 @@ public final class ExcContent extends Message {
             this.big_size = excContent.big_size;
             this.cdn_src = excContent.cdn_src;
             this.big_cdn_src = excContent.big_cdn_src;
-            this.f79599c = excContent.f79598c;
+            this.f79918c = excContent.f79917c;
             this.align = excContent.align;
             this.color = excContent.color;
             this.size = excContent.size;
@@ -236,11 +236,11 @@ public final class ExcContent extends Message {
             } else {
                 this.big_cdn_src = str8;
             }
-            String str9 = builder.f79599c;
+            String str9 = builder.f79918c;
             if (str9 == null) {
-                this.f79598c = "";
+                this.f79917c = "";
             } else {
-                this.f79598c = str9;
+                this.f79917c = str9;
             }
             Integer num = builder.align;
             if (num == null) {
@@ -272,7 +272,7 @@ public final class ExcContent extends Message {
         this.big_size = builder.big_size;
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
-        this.f79598c = builder.f79599c;
+        this.f79917c = builder.f79918c;
         this.align = builder.align;
         this.color = builder.color;
         this.size = builder.size;

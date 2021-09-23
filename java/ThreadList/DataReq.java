@@ -11,6 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
+import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
@@ -41,10 +42,12 @@ public final class DataReq extends Message {
     public final AdParam ad_param;
     @ProtoField(tag = 17)
     public final AppPosInfo app_pos;
+    @ProtoField(tag = 21)
+    public final AppTransmitData app_transmit_data;
     @ProtoField(tag = 8)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79894common;
+    public final CommonReq f80211common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -84,9 +87,10 @@ public final class DataReq extends Message {
         public String ad_ext_params;
         public AdParam ad_param;
         public AppPosInfo app_pos;
+        public AppTransmitData app_transmit_data;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79895common;
+        public CommonReq f80212common;
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
@@ -145,7 +149,7 @@ public final class DataReq extends Message {
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
-            this.f79895common = dataReq.f79894common;
+            this.f80212common = dataReq.f80211common;
             this.user_id = dataReq.user_id;
             this.da_idfa = dataReq.da_idfa;
             this.platform = dataReq.platform;
@@ -158,6 +162,7 @@ public final class DataReq extends Message {
             this.ad_param = dataReq.ad_param;
             this.ad_context_list = dataReq.ad_context_list;
             this.ad_ext_params = dataReq.ad_ext_params;
+            this.app_transmit_data = dataReq.app_transmit_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -266,7 +271,7 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = num5;
             }
-            this.f79894common = builder.f79895common;
+            this.f80211common = builder.f80212common;
             Long l2 = builder.user_id;
             if (l2 == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -323,13 +328,14 @@ public final class DataReq extends Message {
             } else {
                 this.ad_context_list = str5;
             }
-            if (builder.ad_ext_params == null) {
+            String str6 = builder.ad_ext_params;
+            if (str6 == null) {
                 this.ad_ext_params = "";
-                return;
             } else {
-                this.ad_ext_params = builder.ad_context_list;
-                return;
+                this.ad_ext_params = str6;
             }
+            this.app_transmit_data = builder.app_transmit_data;
+            return;
         }
         this.thread_ids = builder.thread_ids;
         this.forum_id = builder.forum_id;
@@ -338,7 +344,7 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
-        this.f79894common = builder.f79895common;
+        this.f80211common = builder.f80212common;
         this.user_id = builder.user_id;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
@@ -351,5 +357,6 @@ public final class DataReq extends Message {
         this.ad_param = builder.ad_param;
         this.ad_context_list = builder.ad_context_list;
         this.ad_ext_params = builder.ad_ext_params;
+        this.app_transmit_data = builder.app_transmit_data;
     }
 }

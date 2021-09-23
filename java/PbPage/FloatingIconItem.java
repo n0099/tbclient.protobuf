@@ -12,14 +12,23 @@ import com.squareup.wire.ProtoField;
 public final class FloatingIconItem extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CLICK_STATISTICS_URL = "";
+    public static final String DEFAULT_DEEPLINK = "";
     public static final String DEFAULT_ICON_URL = "";
+    public static final String DEFAULT_PACKAGE_NAME = "";
+    public static final String DEFAULT_SCHEME = "";
     public static final String DEFAULT_URL = "";
     public static final String DEFAULT_VIEW_STATISTICS_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String click_statistics_url;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String deeplink;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String icon_url;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String package_name;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String scheme;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -30,7 +39,10 @@ public final class FloatingIconItem extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String click_statistics_url;
+        public String deeplink;
         public String icon_url;
+        public String package_name;
+        public String scheme;
         public String url;
         public String view_statistics_url;
 
@@ -73,6 +85,9 @@ public final class FloatingIconItem extends Message {
             this.icon_url = floatingIconItem.icon_url;
             this.view_statistics_url = floatingIconItem.view_statistics_url;
             this.click_statistics_url = floatingIconItem.click_statistics_url;
+            this.deeplink = floatingIconItem.deeplink;
+            this.scheme = floatingIconItem.scheme;
+            this.package_name = floatingIconItem.package_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -134,9 +149,27 @@ public final class FloatingIconItem extends Message {
             String str4 = builder.click_statistics_url;
             if (str4 == null) {
                 this.click_statistics_url = "";
-                return;
             } else {
                 this.click_statistics_url = str4;
+            }
+            String str5 = builder.deeplink;
+            if (str5 == null) {
+                this.deeplink = "";
+            } else {
+                this.deeplink = str5;
+            }
+            String str6 = builder.scheme;
+            if (str6 == null) {
+                this.scheme = "";
+            } else {
+                this.scheme = str6;
+            }
+            String str7 = builder.package_name;
+            if (str7 == null) {
+                this.package_name = "";
+                return;
+            } else {
+                this.package_name = str7;
                 return;
             }
         }
@@ -144,5 +177,8 @@ public final class FloatingIconItem extends Message {
         this.icon_url = builder.icon_url;
         this.view_statistics_url = builder.view_statistics_url;
         this.click_statistics_url = builder.click_statistics_url;
+        this.deeplink = builder.deeplink;
+        this.scheme = builder.scheme;
+        this.package_name = builder.package_name;
     }
 }

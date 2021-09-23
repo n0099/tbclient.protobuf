@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79880common;
+    public final CommonReq f80197common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer entry_type;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79881common;
+        public CommonReq f80198common;
         public Integer entry_type;
         public Double lat;
         public Double lng;
@@ -103,7 +103,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f79881common = dataReq.f79880common;
+            this.f80198common = dataReq.f80197common;
             this.entry_type = dataReq.entry_type;
             this.pn = dataReq.pn;
             this.ps = dataReq.ps;
@@ -179,7 +179,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f79880common = builder.f79881common;
+            this.f80197common = builder.f80198common;
             Integer num = builder.entry_type;
             if (num == null) {
                 this.entry_type = DEFAULT_ENTRY_TYPE;
@@ -243,7 +243,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f79880common = builder.f79881common;
+        this.f80197common = builder.f80198common;
         this.entry_type = builder.entry_type;
         this.pn = builder.pn;
         this.ps = builder.ps;

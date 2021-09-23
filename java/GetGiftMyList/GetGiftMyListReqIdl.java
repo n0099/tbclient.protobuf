@@ -16,7 +16,7 @@ public final class GetGiftMyListReqIdl extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79678common;
+    public final CommonReq f79995common;
     @ProtoField(tag = 1)
     public final DataReq data;
 
@@ -26,7 +26,7 @@ public final class GetGiftMyListReqIdl extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79679common;
+        public CommonReq f79996common;
         public DataReq data;
 
         public Builder() {
@@ -65,7 +65,7 @@ public final class GetGiftMyListReqIdl extends Message {
                 return;
             }
             this.data = getGiftMyListReqIdl.data;
-            this.f79679common = getGiftMyListReqIdl.f79678common;
+            this.f79996common = getGiftMyListReqIdl.f79995common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,10 +107,10 @@ public final class GetGiftMyListReqIdl extends Message {
         }
         if (z) {
             this.data = builder.data;
-            this.f79678common = builder.f79679common;
+            this.f79995common = builder.f79996common;
             return;
         }
         this.data = builder.data;
-        this.f79678common = builder.f79679common;
+        this.f79995common = builder.f79996common;
     }
 }

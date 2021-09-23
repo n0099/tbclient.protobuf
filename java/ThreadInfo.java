@@ -243,7 +243,7 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = Opcodes.NEWARRAY)
     public final ForumFriendWatchingInfo forum_friend_watching_info;
-    @ProtoField(tag = 155)
+    @ProtoField(tag = com.baidu.apollon.a.f37799e)
     public final SimpleForum forum_info;
     @ProtoField(tag = Opcodes.NEW, type = Message.Datatype.STRING)
     public final String forum_user_live_msg;
@@ -399,7 +399,7 @@ public final class ThreadInfo extends Message {
     public final String nid;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
-    @ProtoField(tag = com.baidu.apollon.a.f37751e)
+    @ProtoField(tag = 152)
     public final OriForumInfo ori_forum_info;
     @ProtoField(tag = 141)
     public final OriginThreadInfo origin_thread_info;

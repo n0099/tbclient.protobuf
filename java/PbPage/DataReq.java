@@ -11,6 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
+import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
@@ -91,6 +92,8 @@ public final class DataReq extends Message {
     public final Integer after_ad_thread_count;
     @ProtoField(tag = 53)
     public final AppPosInfo app_pos;
+    @ProtoField(tag = 77)
+    public final AppTransmitData app_transmit_data;
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer arround;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -104,7 +107,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79818common;
+    public final CommonReq f80135common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -229,6 +232,7 @@ public final class DataReq extends Message {
         public AdParam ad_param;
         public Integer after_ad_thread_count;
         public AppPosInfo app_pos;
+        public AppTransmitData app_transmit_data;
         public Integer arround;
         public Integer back;
         public Integer banner;
@@ -236,7 +240,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79819common;
+        public CommonReq f80136common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -354,7 +358,7 @@ public final class DataReq extends Message {
             this.arround = dataReq.arround;
             this.last = dataReq.last;
             this.msg_click = dataReq.msg_click;
-            this.f79819common = dataReq.f79818common;
+            this.f80136common = dataReq.f80135common;
             this.lastids = dataReq.lastids;
             this.st_from = dataReq.st_from;
             this.st_link = dataReq.st_link;
@@ -398,6 +402,7 @@ public final class DataReq extends Message {
             this.floor_sort_type = dataReq.floor_sort_type;
             this.source_type = dataReq.source_type;
             this.immersion_video_comment_source = dataReq.immersion_video_comment_source;
+            this.app_transmit_data = dataReq.app_transmit_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -638,7 +643,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = str2;
             }
-            this.f79818common = builder.f79819common;
+            this.f80135common = builder.f80136common;
             String str3 = builder.lastids;
             if (str3 == null) {
                 this.lastids = "";
@@ -884,11 +889,11 @@ public final class DataReq extends Message {
             Integer num33 = builder.immersion_video_comment_source;
             if (num33 == null) {
                 this.immersion_video_comment_source = DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
-                return;
             } else {
                 this.immersion_video_comment_source = num33;
-                return;
             }
+            this.app_transmit_data = builder.app_transmit_data;
+            return;
         }
         this.pb_rn = builder.pb_rn;
         this.mark = builder.mark;
@@ -914,7 +919,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f79818common = builder.f79819common;
+        this.f80135common = builder.f80136common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -958,5 +963,6 @@ public final class DataReq extends Message {
         this.floor_sort_type = builder.floor_sort_type;
         this.source_type = builder.source_type;
         this.immersion_video_comment_source = builder.immersion_video_comment_source;
+        this.app_transmit_data = builder.app_transmit_data;
     }
 }

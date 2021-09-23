@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79834common;
+    public final CommonReq f80151common;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer location;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -60,7 +60,7 @@ public final class DataReq extends Message {
         public String abtest_tag;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79835common;
+        public CommonReq f80152common;
         public Integer location;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f79835common = dataReq.f79834common;
+            this.f80152common = dataReq.f80151common;
             this.tid = dataReq.tid;
             this.weight = dataReq.weight;
             this.source = dataReq.source;
@@ -177,7 +177,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f79834common = builder.f79835common;
+            this.f80151common = builder.f80152common;
             Long l = builder.tid;
             if (l == null) {
                 this.tid = DEFAULT_TID;
@@ -247,7 +247,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f79834common = builder.f79835common;
+        this.f80151common = builder.f80152common;
         this.tid = builder.tid;
         this.weight = builder.weight;
         this.source = builder.source;

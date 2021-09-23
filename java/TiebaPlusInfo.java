@@ -22,6 +22,7 @@ public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_APP_VERSION = "";
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_DOWNLOAD_URL = "";
+    public static final String DEFAULT_H5_JUMP_NUMBER = "";
     public static final Integer DEFAULT_H5_JUMP_TYPE;
     public static final String DEFAULT_JUMP_URL = "";
     public static final Integer DEFAULT_TARGET_TYPE;
@@ -45,6 +46,8 @@ public final class TiebaPlusInfo extends Message {
     public final String desc;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String download_url;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String h5_jump_number;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer h5_jump_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -67,6 +70,7 @@ public final class TiebaPlusInfo extends Message {
         public String app_version;
         public String desc;
         public String download_url;
+        public String h5_jump_number;
         public Integer h5_jump_type;
         public String jump_url;
         public Integer target_type;
@@ -120,6 +124,7 @@ public final class TiebaPlusInfo extends Message {
             this.app_company = tiebaPlusInfo.app_company;
             this.target_type = tiebaPlusInfo.target_type;
             this.h5_jump_type = tiebaPlusInfo.h5_jump_type;
+            this.h5_jump_number = tiebaPlusInfo.h5_jump_number;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -252,9 +257,15 @@ public final class TiebaPlusInfo extends Message {
             Integer num2 = builder.h5_jump_type;
             if (num2 == null) {
                 this.h5_jump_type = DEFAULT_H5_JUMP_TYPE;
-                return;
             } else {
                 this.h5_jump_type = num2;
+            }
+            String str12 = builder.h5_jump_number;
+            if (str12 == null) {
+                this.h5_jump_number = "";
+                return;
+            } else {
+                this.h5_jump_number = str12;
                 return;
             }
         }
@@ -271,5 +282,6 @@ public final class TiebaPlusInfo extends Message {
         this.app_company = builder.app_company;
         this.target_type = builder.target_type;
         this.h5_jump_type = builder.h5_jump_type;
+        this.h5_jump_number = builder.h5_jump_number;
     }
 }

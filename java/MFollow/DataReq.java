@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79800common;
+    public final CommonReq f80117common;
     @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
     public final List<String> portrait;
 
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79801common;
+        public CommonReq f80118common;
         public List<String> portrait;
 
         public Builder() {
@@ -69,7 +69,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f79801common = dataReq.f79800common;
+            this.f80118common = dataReq.f80117common;
             this.portrait = Message.copyOf(dataReq.portrait);
         }
 
@@ -127,7 +127,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f79800common = builder.f79801common;
+            this.f80117common = builder.f80118common;
             List<String> list = builder.portrait;
             if (list == null) {
                 this.portrait = DEFAULT_PORTRAIT;
@@ -137,7 +137,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f79800common = builder.f79801common;
+        this.f80117common = builder.f80118common;
         this.portrait = Message.immutableCopyOf(builder.portrait);
     }
 }

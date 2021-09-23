@@ -13,6 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AppPosInfo;
+import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
@@ -58,10 +59,12 @@ public final class DataReq extends Message {
     public final String age_tag;
     @ProtoField(tag = 36)
     public final AppPosInfo app_pos;
+    @ProtoField(tag = 38)
+    public final AppTransmitData app_transmit_data;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79822common;
+    public final CommonReq f80139common;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -129,9 +132,10 @@ public final class DataReq extends Message {
         public String ad_ext_params;
         public String age_tag;
         public AppPosInfo app_pos;
+        public AppTransmitData app_transmit_data;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79823common;
+        public CommonReq f80140common;
         public String da_idfa;
         public String first_dir;
         public Long from_tid;
@@ -197,7 +201,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f79823common = dataReq.f79822common;
+            this.f80140common = dataReq.f80139common;
             this.tag_code = dataReq.tag_code;
             this.need_tags = dataReq.need_tags;
             this.load_type = dataReq.load_type;
@@ -231,6 +235,7 @@ public final class DataReq extends Message {
             this.second_dir = dataReq.second_dir;
             this.app_pos = dataReq.app_pos;
             this.ad_ext_params = dataReq.ad_ext_params;
+            this.app_transmit_data = dataReq.app_transmit_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -306,7 +311,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f79822common = builder.f79823common;
+            this.f80139common = builder.f80140common;
             Integer num = builder.tag_code;
             if (num == null) {
                 this.tag_code = DEFAULT_TAG_CODE;
@@ -497,13 +502,13 @@ public final class DataReq extends Message {
             String str12 = builder.ad_ext_params;
             if (str12 == null) {
                 this.ad_ext_params = "";
-                return;
             } else {
                 this.ad_ext_params = str12;
-                return;
             }
+            this.app_transmit_data = builder.app_transmit_data;
+            return;
         }
-        this.f79822common = builder.f79823common;
+        this.f80139common = builder.f80140common;
         this.tag_code = builder.tag_code;
         this.need_tags = builder.need_tags;
         this.load_type = builder.load_type;
@@ -537,5 +542,6 @@ public final class DataReq extends Message {
         this.second_dir = builder.second_dir;
         this.app_pos = builder.app_pos;
         this.ad_ext_params = builder.ad_ext_params;
+        this.app_transmit_data = builder.app_transmit_data;
     }
 }

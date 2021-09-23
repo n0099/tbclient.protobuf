@@ -18,7 +18,10 @@ public final class ActivityHead extends Message {
     public static final String DEFAULT_ACTIVITY_TITLE = "";
     public static final Integer DEFAULT_ACTIVITY_TYPE;
     public static final List<HeadImgs> DEFAULT_HEAD_IMGS;
+    public static final Boolean DEFAULT_IS_AD;
     public static final String DEFAULT_OBJ_ID = "";
+    public static final String DEFAULT_PULL_DOWN_CLICK_URL = "";
+    public static final String DEFAULT_PULL_DOWN_EXPOSURE_URL = "";
     public static final Integer DEFAULT_PULL_DOWN_INTERVAL;
     public static final String DEFAULT_PULL_DOWN_PIC_ANDROID = "";
     public static final String DEFAULT_PULL_DOWN_PIC_IOS = "";
@@ -30,8 +33,14 @@ public final class ActivityHead extends Message {
     public final Integer activity_type;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<HeadImgs> head_imgs;
+    @ProtoField(tag = 13, type = Message.Datatype.BOOL)
+    public final Boolean is_ad;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String obj_id;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String pull_down_click_url;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String pull_down_exposure_url;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer pull_down_interval;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -50,7 +59,10 @@ public final class ActivityHead extends Message {
         public String activity_title;
         public Integer activity_type;
         public List<HeadImgs> head_imgs;
+        public Boolean is_ad;
         public String obj_id;
+        public String pull_down_click_url;
+        public String pull_down_exposure_url;
         public Integer pull_down_interval;
         public String pull_down_pic_android;
         public String pull_down_pic_ios;
@@ -101,6 +113,9 @@ public final class ActivityHead extends Message {
             this.pull_down_interval = activityHead.pull_down_interval;
             this.pull_down_pic_ios = activityHead.pull_down_pic_ios;
             this.pull_down_pic_android = activityHead.pull_down_pic_android;
+            this.pull_down_exposure_url = activityHead.pull_down_exposure_url;
+            this.pull_down_click_url = activityHead.pull_down_click_url;
+            this.is_ad = activityHead.is_ad;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -134,6 +149,7 @@ public final class ActivityHead extends Message {
         DEFAULT_ACTIVITY_TYPE = 0;
         DEFAULT_HEAD_IMGS = Collections.emptyList();
         DEFAULT_PULL_DOWN_INTERVAL = 0;
+        DEFAULT_IS_AD = Boolean.FALSE;
     }
 
     public /* synthetic */ ActivityHead(Builder builder, boolean z, a aVar) {
@@ -205,9 +221,27 @@ public final class ActivityHead extends Message {
             String str5 = builder.pull_down_pic_android;
             if (str5 == null) {
                 this.pull_down_pic_android = "";
-                return;
             } else {
                 this.pull_down_pic_android = str5;
+            }
+            String str6 = builder.pull_down_exposure_url;
+            if (str6 == null) {
+                this.pull_down_exposure_url = "";
+            } else {
+                this.pull_down_exposure_url = str6;
+            }
+            String str7 = builder.pull_down_click_url;
+            if (str7 == null) {
+                this.pull_down_click_url = "";
+            } else {
+                this.pull_down_click_url = str7;
+            }
+            Boolean bool = builder.is_ad;
+            if (bool == null) {
+                this.is_ad = DEFAULT_IS_AD;
+                return;
+            } else {
+                this.is_ad = bool;
                 return;
             }
         }
@@ -220,5 +254,8 @@ public final class ActivityHead extends Message {
         this.pull_down_interval = builder.pull_down_interval;
         this.pull_down_pic_ios = builder.pull_down_pic_ios;
         this.pull_down_pic_android = builder.pull_down_pic_android;
+        this.pull_down_exposure_url = builder.pull_down_exposure_url;
+        this.pull_down_click_url = builder.pull_down_click_url;
+        this.is_ad = builder.is_ad;
     }
 }

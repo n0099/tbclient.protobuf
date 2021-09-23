@@ -19,6 +19,7 @@ public final class BusinessPromot extends Message {
     public static final Long DEFAULT_ID;
     public static final String DEFAULT_IMG = "";
     public static final String DEFAULT_IMG_POPUP = "";
+    public static final Boolean DEFAULT_IS_AD;
     public static final Boolean DEFAULT_IS_ALLOW_SHAKE;
     public static final Integer DEFAULT_JOIN_NUM;
     public static final String DEFAULT_SCHEMA = "";
@@ -37,6 +38,8 @@ public final class BusinessPromot extends Message {
     public final String img;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String img_popup;
+    @ProtoField(tag = 14, type = Message.Datatype.BOOL)
+    public final Boolean is_ad;
     @ProtoField(tag = 13, type = Message.Datatype.BOOL)
     public final Boolean is_allow_shake;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -64,6 +67,7 @@ public final class BusinessPromot extends Message {
         public Long id;
         public String img;
         public String img_popup;
+        public Boolean is_ad;
         public Boolean is_allow_shake;
         public Integer join_num;
         public String schema;
@@ -122,6 +126,7 @@ public final class BusinessPromot extends Message {
             this.schema = businessPromot.schema;
             this.third_statistics_url = Message.copyOf(businessPromot.third_statistics_url);
             this.is_allow_shake = businessPromot.is_allow_shake;
+            this.is_ad = businessPromot.is_ad;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -158,7 +163,9 @@ public final class BusinessPromot extends Message {
         DEFAULT_ID = 0L;
         DEFAULT_THREAD_TYPE = 0;
         DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
-        DEFAULT_IS_ALLOW_SHAKE = Boolean.FALSE;
+        Boolean bool = Boolean.FALSE;
+        DEFAULT_IS_ALLOW_SHAKE = bool;
+        DEFAULT_IS_AD = bool;
     }
 
     public /* synthetic */ BusinessPromot(Builder builder, boolean z, a aVar) {
@@ -259,9 +266,15 @@ public final class BusinessPromot extends Message {
             Boolean bool = builder.is_allow_shake;
             if (bool == null) {
                 this.is_allow_shake = DEFAULT_IS_ALLOW_SHAKE;
-                return;
             } else {
                 this.is_allow_shake = bool;
+            }
+            Boolean bool2 = builder.is_ad;
+            if (bool2 == null) {
+                this.is_ad = DEFAULT_IS_AD;
+                return;
+            } else {
+                this.is_ad = bool2;
                 return;
             }
         }
@@ -278,5 +291,6 @@ public final class BusinessPromot extends Message {
         this.schema = builder.schema;
         this.third_statistics_url = Message.immutableCopyOf(builder.third_statistics_url);
         this.is_allow_shake = builder.is_allow_shake;
+        this.is_ad = builder.is_ad;
     }
 }
