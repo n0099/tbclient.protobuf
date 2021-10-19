@@ -23,8 +23,10 @@ public final class ActivityHead extends Message {
     public static final String DEFAULT_PULL_DOWN_CLICK_URL = "";
     public static final String DEFAULT_PULL_DOWN_EXPOSURE_URL = "";
     public static final Integer DEFAULT_PULL_DOWN_INTERVAL;
+    public static final String DEFAULT_PULL_DOWN_PACKAGE_NAME = "";
     public static final String DEFAULT_PULL_DOWN_PIC_ANDROID = "";
     public static final String DEFAULT_PULL_DOWN_PIC_IOS = "";
+    public static final String DEFAULT_PULL_DOWN_SCHEMA = "";
     public static final String DEFAULT_PULL_DOWN_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -43,10 +45,14 @@ public final class ActivityHead extends Message {
     public final String pull_down_exposure_url;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer pull_down_interval;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String pull_down_package_name;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String pull_down_pic_android;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String pull_down_pic_ios;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String pull_down_schema;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String pull_down_url;
     @ProtoField(tag = 4)
@@ -64,8 +70,10 @@ public final class ActivityHead extends Message {
         public String pull_down_click_url;
         public String pull_down_exposure_url;
         public Integer pull_down_interval;
+        public String pull_down_package_name;
         public String pull_down_pic_android;
         public String pull_down_pic_ios;
+        public String pull_down_schema;
         public String pull_down_url;
         public Size top_size;
 
@@ -116,6 +124,8 @@ public final class ActivityHead extends Message {
             this.pull_down_exposure_url = activityHead.pull_down_exposure_url;
             this.pull_down_click_url = activityHead.pull_down_click_url;
             this.is_ad = activityHead.is_ad;
+            this.pull_down_schema = activityHead.pull_down_schema;
+            this.pull_down_package_name = activityHead.pull_down_package_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -239,9 +249,21 @@ public final class ActivityHead extends Message {
             Boolean bool = builder.is_ad;
             if (bool == null) {
                 this.is_ad = DEFAULT_IS_AD;
-                return;
             } else {
                 this.is_ad = bool;
+            }
+            String str8 = builder.pull_down_schema;
+            if (str8 == null) {
+                this.pull_down_schema = "";
+            } else {
+                this.pull_down_schema = str8;
+            }
+            String str9 = builder.pull_down_package_name;
+            if (str9 == null) {
+                this.pull_down_package_name = "";
+                return;
+            } else {
+                this.pull_down_package_name = str9;
                 return;
             }
         }
@@ -257,5 +279,7 @@ public final class ActivityHead extends Message {
         this.pull_down_exposure_url = builder.pull_down_exposure_url;
         this.pull_down_click_url = builder.pull_down_click_url;
         this.is_ad = builder.is_ad;
+        this.pull_down_schema = builder.pull_down_schema;
+        this.pull_down_package_name = builder.pull_down_package_name;
     }
 }

@@ -10,19 +10,31 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes2.dex */
 public final class RecomTopicList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_AUTHOR = "";
     public static final Long DEFAULT_DISCUSS_NUM;
+    public static final Integer DEFAULT_IS_VIDEO_TOPIC;
+    public static final List<Media> DEFAULT_MEDIA;
     public static final Integer DEFAULT_TAG;
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final Long DEFAULT_TOPIC_ID;
     public static final String DEFAULT_TOPIC_NAME = "";
     public static final String DEFAULT_TOPIC_PIC = "";
     public static final Integer DEFAULT_TYPE;
+    public static final Long DEFAULT_UPDATE_TIME;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String author;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long discuss_num;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer is_video_topic;
+    @ProtoField(label = Message.Label.REPEATED, tag = 10)
+    public final List<Media> media;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer tag;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -35,18 +47,24 @@ public final class RecomTopicList extends Message {
     public final String topic_pic;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer type;
+    @ProtoField(tag = 8, type = Message.Datatype.INT64)
+    public final Long update_time;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecomTopicList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String author;
         public Long discuss_num;
+        public Integer is_video_topic;
+        public List<Media> media;
         public Integer tag;
         public String topic_desc;
         public Long topic_id;
         public String topic_name;
         public String topic_pic;
         public Integer type;
+        public Long update_time;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -90,6 +108,10 @@ public final class RecomTopicList extends Message {
             this.tag = recomTopicList.tag;
             this.topic_desc = recomTopicList.topic_desc;
             this.topic_pic = recomTopicList.topic_pic;
+            this.update_time = recomTopicList.update_time;
+            this.author = recomTopicList.author;
+            this.media = Message.copyOf(recomTopicList.media);
+            this.is_video_topic = recomTopicList.is_video_topic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -124,6 +146,9 @@ public final class RecomTopicList extends Message {
         DEFAULT_TYPE = 0;
         DEFAULT_DISCUSS_NUM = 0L;
         DEFAULT_TAG = 0;
+        DEFAULT_UPDATE_TIME = 0L;
+        DEFAULT_MEDIA = Collections.emptyList();
+        DEFAULT_IS_VIDEO_TOPIC = 0;
     }
 
     public /* synthetic */ RecomTopicList(Builder builder, boolean z, a aVar) {
@@ -188,9 +213,33 @@ public final class RecomTopicList extends Message {
             String str3 = builder.topic_pic;
             if (str3 == null) {
                 this.topic_pic = "";
-                return;
             } else {
                 this.topic_pic = str3;
+            }
+            Long l3 = builder.update_time;
+            if (l3 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = l3;
+            }
+            String str4 = builder.author;
+            if (str4 == null) {
+                this.author = "";
+            } else {
+                this.author = str4;
+            }
+            List<Media> list = builder.media;
+            if (list == null) {
+                this.media = DEFAULT_MEDIA;
+            } else {
+                this.media = Message.immutableCopyOf(list);
+            }
+            Integer num3 = builder.is_video_topic;
+            if (num3 == null) {
+                this.is_video_topic = DEFAULT_IS_VIDEO_TOPIC;
+                return;
+            } else {
+                this.is_video_topic = num3;
                 return;
             }
         }
@@ -201,5 +250,9 @@ public final class RecomTopicList extends Message {
         this.tag = builder.tag;
         this.topic_desc = builder.topic_desc;
         this.topic_pic = builder.topic_pic;
+        this.update_time = builder.update_time;
+        this.author = builder.author;
+        this.media = Message.immutableCopyOf(builder.media);
+        this.is_video_topic = builder.is_video_topic;
     }
 }

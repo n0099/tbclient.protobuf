@@ -18,6 +18,7 @@ public final class HeadImgs extends Message {
     public static final String DEFAULT_BTN_TEXT = "";
     public static final Integer DEFAULT_HAS_SECOND_PAGE;
     public static final String DEFAULT_IMG_URL = "";
+    public static final String DEFAULT_PACKAGE_NAME = "";
     public static final String DEFAULT_PC_URL = "";
     public static final String DEFAULT_SCHEMA = "";
     public static final String DEFAULT_SUBTITLE = "";
@@ -32,6 +33,8 @@ public final class HeadImgs extends Message {
     public final Integer has_second_page;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String img_url;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String package_name;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String pc_url;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -54,6 +57,7 @@ public final class HeadImgs extends Message {
         public String btn_text;
         public Integer has_second_page;
         public String img_url;
+        public String package_name;
         public String pc_url;
         public String schema;
         public String subtitle;
@@ -107,6 +111,7 @@ public final class HeadImgs extends Message {
             this.schema = headImgs.schema;
             this.third_statistics_url = Message.copyOf(headImgs.third_statistics_url);
             this.has_second_page = headImgs.has_second_page;
+            this.package_name = headImgs.package_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -221,9 +226,15 @@ public final class HeadImgs extends Message {
             Integer num = builder.has_second_page;
             if (num == null) {
                 this.has_second_page = DEFAULT_HAS_SECOND_PAGE;
-                return;
             } else {
                 this.has_second_page = num;
+            }
+            String str9 = builder.package_name;
+            if (str9 == null) {
+                this.package_name = "";
+                return;
+            } else {
+                this.package_name = str9;
                 return;
             }
         }
@@ -237,5 +248,6 @@ public final class HeadImgs extends Message {
         this.schema = builder.schema;
         this.third_statistics_url = Message.immutableCopyOf(builder.third_statistics_url);
         this.has_second_page = builder.has_second_page;
+        this.package_name = builder.package_name;
     }
 }

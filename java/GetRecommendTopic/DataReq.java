@@ -1,8 +1,6 @@
-package tbclient.GetSkinList;
+package tbclient.GetRecommendTopic;
 
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
 import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
@@ -14,17 +12,11 @@ import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
-    public static final Integer DEFAULT_PN;
-    public static final Integer DEFAULT_RN;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f80086common;
-    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public final Integer pn;
-    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-    public final Integer rn;
+    public final CommonReq f80076common;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -32,9 +24,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f80087common;
-        public Integer pn;
-        public Integer rn;
+        public CommonReq f80077common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -71,9 +61,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f80087common = dataReq.f80086common;
-            this.pn = dataReq.pn;
-            this.rn = dataReq.rn;
+            this.f80077common = dataReq.f80076common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -91,23 +79,6 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-716397233, "Ltbclient/GetSkinList/DataReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-716397233, "Ltbclient/GetSkinList/DataReq;");
-                return;
-            }
-        }
-        DEFAULT_PN = 0;
-        DEFAULT_RN = 0;
-    }
-
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
@@ -120,35 +91,20 @@ public final class DataReq extends Message {
             InitContext newInitContext = TitanRuntime.newInitContext();
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
+            interceptable.invokeUnInit(65536, newInitContext);
             int i2 = newInitContext.flag;
             if ((i2 & 1) != 0) {
                 int i3 = i2 & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
+                interceptable.invokeInitBody(65536, newInitContext);
                 return;
             }
         }
         if (z) {
-            this.f80086common = builder.f80087common;
-            Integer num = builder.pn;
-            if (num == null) {
-                this.pn = DEFAULT_PN;
-            } else {
-                this.pn = num;
-            }
-            Integer num2 = builder.rn;
-            if (num2 == null) {
-                this.rn = DEFAULT_RN;
-                return;
-            } else {
-                this.rn = num2;
-                return;
-            }
+            this.f80076common = builder.f80077common;
+        } else {
+            this.f80076common = builder.f80077common;
         }
-        this.f80086common = builder.f80087common;
-        this.pn = builder.pn;
-        this.rn = builder.rn;
     }
 }

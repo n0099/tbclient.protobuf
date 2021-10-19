@@ -14,17 +14,23 @@ import com.squareup.wire.ProtoField;
 public final class YyExt extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_IS_YY_GAME;
+    public static final String DEFAULT_RANK_SHOW = "";
     public static final String DEFAULT_SID = "";
     public static final String DEFAULT_SSID = "";
+    public static final String DEFAULT_STREAM_INFO = "";
     public static final String DEFAULT_TEMPLATE_ID = "";
     public static final String DEFAULT_YY_UID = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer is_yy_game;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String rank_show;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String sid;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String ssid;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String stream_info;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String template_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -35,8 +41,10 @@ public final class YyExt extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_yy_game;
+        public String rank_show;
         public String sid;
         public String ssid;
+        public String stream_info;
         public String template_id;
         public String yy_uid;
 
@@ -80,6 +88,8 @@ public final class YyExt extends Message {
             this.template_id = yyExt.template_id;
             this.yy_uid = yyExt.yy_uid;
             this.is_yy_game = yyExt.is_yy_game;
+            this.stream_info = yyExt.stream_info;
+            this.rank_show = yyExt.rank_show;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -163,9 +173,21 @@ public final class YyExt extends Message {
             Integer num = builder.is_yy_game;
             if (num == null) {
                 this.is_yy_game = DEFAULT_IS_YY_GAME;
-                return;
             } else {
                 this.is_yy_game = num;
+            }
+            String str5 = builder.stream_info;
+            if (str5 == null) {
+                this.stream_info = "";
+            } else {
+                this.stream_info = str5;
+            }
+            String str6 = builder.rank_show;
+            if (str6 == null) {
+                this.rank_show = "";
+                return;
+            } else {
+                this.rank_show = str6;
                 return;
             }
         }
@@ -174,5 +196,7 @@ public final class YyExt extends Message {
         this.template_id = builder.template_id;
         this.yy_uid = builder.yy_uid;
         this.is_yy_game = builder.is_yy_game;
+        this.stream_info = builder.stream_info;
+        this.rank_show = builder.rank_show;
     }
 }

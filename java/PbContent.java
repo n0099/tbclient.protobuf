@@ -64,7 +64,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f80131c;
+    public final String f80168c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -91,6 +91,8 @@ public final class PbContent extends Message {
     public final Integer is_native_app;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer is_sub;
+    @ProtoField(tag = 41)
+    public final Item item;
     @ProtoField(tag = 39, type = Message.Datatype.STRING)
     public final String item_forum_name;
     @ProtoField(tag = 38, type = Message.Datatype.UINT64)
@@ -144,7 +146,7 @@ public final class PbContent extends Message {
         public Integer btn_type;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f80132c;
+        public String f80169c;
         public String cdn_src;
         public String cdn_src_active;
         public Integer count;
@@ -158,6 +160,7 @@ public final class PbContent extends Message {
         public Integer is_long_pic;
         public Integer is_native_app;
         public Integer is_sub;
+        public Item item;
         public String item_forum_name;
         public Long item_id;
         public String link;
@@ -224,7 +227,7 @@ public final class PbContent extends Message {
             this.cdn_src = pbContent.cdn_src;
             this.big_cdn_src = pbContent.big_cdn_src;
             this.imgtype = pbContent.imgtype;
-            this.f80132c = pbContent.f80131c;
+            this.f80169c = pbContent.f80168c;
             this.voice_md5 = pbContent.voice_md5;
             this.during_time = pbContent.during_time;
             this.is_sub = pbContent.is_sub;
@@ -254,6 +257,7 @@ public final class PbContent extends Message {
             this.item_id = pbContent.item_id;
             this.item_forum_name = pbContent.item_forum_name;
             this.tiebaplus_info = pbContent.tiebaplus_info;
+            this.item = pbContent.item;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -384,11 +388,11 @@ public final class PbContent extends Message {
             } else {
                 this.imgtype = str9;
             }
-            String str10 = builder.f80132c;
+            String str10 = builder.f80169c;
             if (str10 == null) {
-                this.f80131c = "";
+                this.f80168c = "";
             } else {
-                this.f80131c = str10;
+                this.f80168c = str10;
             }
             String str11 = builder.voice_md5;
             if (str11 == null) {
@@ -539,6 +543,7 @@ public final class PbContent extends Message {
                 this.item_forum_name = str20;
             }
             this.tiebaplus_info = builder.tiebaplus_info;
+            this.item = builder.item;
             return;
         }
         this.type = builder.type;
@@ -551,7 +556,7 @@ public final class PbContent extends Message {
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
         this.imgtype = builder.imgtype;
-        this.f80131c = builder.f80132c;
+        this.f80168c = builder.f80169c;
         this.voice_md5 = builder.voice_md5;
         this.during_time = builder.during_time;
         this.is_sub = builder.is_sub;
@@ -581,5 +586,6 @@ public final class PbContent extends Message {
         this.item_id = builder.item_id;
         this.item_forum_name = builder.item_forum_name;
         this.tiebaplus_info = builder.tiebaplus_info;
+        this.item = builder.item;
     }
 }

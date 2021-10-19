@@ -14,6 +14,7 @@ import com.squareup.wire.ProtoField;
 public final class NewTopicList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_DISCUSS_NUM;
+    public static final Integer DEFAULT_IS_VIDEO_TOPIC;
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final Long DEFAULT_TOPIC_ID;
     public static final String DEFAULT_TOPIC_IMAGE = "";
@@ -22,6 +23,8 @@ public final class NewTopicList extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long discuss_num;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer is_video_topic;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String topic_desc;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -38,6 +41,7 @@ public final class NewTopicList extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long discuss_num;
+        public Integer is_video_topic;
         public String topic_desc;
         public Long topic_id;
         public String topic_image;
@@ -85,6 +89,7 @@ public final class NewTopicList extends Message {
             this.discuss_num = newTopicList.discuss_num;
             this.topic_image = newTopicList.topic_image;
             this.topic_tag = newTopicList.topic_tag;
+            this.is_video_topic = newTopicList.is_video_topic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,6 +123,7 @@ public final class NewTopicList extends Message {
         DEFAULT_TOPIC_ID = 0L;
         DEFAULT_DISCUSS_NUM = 0L;
         DEFAULT_TOPIC_TAG = 0;
+        DEFAULT_IS_VIDEO_TOPIC = 0;
     }
 
     public /* synthetic */ NewTopicList(Builder builder, boolean z, a aVar) {
@@ -176,9 +182,15 @@ public final class NewTopicList extends Message {
             Integer num = builder.topic_tag;
             if (num == null) {
                 this.topic_tag = DEFAULT_TOPIC_TAG;
-                return;
             } else {
                 this.topic_tag = num;
+            }
+            Integer num2 = builder.is_video_topic;
+            if (num2 == null) {
+                this.is_video_topic = DEFAULT_IS_VIDEO_TOPIC;
+                return;
+            } else {
+                this.is_video_topic = num2;
                 return;
             }
         }
@@ -188,5 +200,6 @@ public final class NewTopicList extends Message {
         this.discuss_num = builder.discuss_num;
         this.topic_image = builder.topic_image;
         this.topic_tag = builder.topic_tag;
+        this.is_video_topic = builder.is_video_topic;
     }
 }

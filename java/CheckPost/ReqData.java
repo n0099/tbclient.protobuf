@@ -26,7 +26,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f79889common;
+    public final CommonReq f79924common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String forumName;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -50,7 +50,7 @@ public final class ReqData extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f79890common;
+        public CommonReq f79925common;
         public String forumName;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -98,7 +98,7 @@ public final class ReqData extends Message {
             this.pid = reqData.pid;
             this.postType = reqData.postType;
             this.forumName = reqData.forumName;
-            this.f79890common = reqData.f79889common;
+            this.f79925common = reqData.f79924common;
             this.tid = reqData.tid;
             this.ori_ugc_type = reqData.ori_ugc_type;
             this.ori_ugc_nid = reqData.ori_ugc_nid;
@@ -181,7 +181,7 @@ public final class ReqData extends Message {
             } else {
                 this.forumName = str;
             }
-            this.f79889common = builder.f79890common;
+            this.f79924common = builder.f79925common;
             Long l2 = builder.tid;
             if (l2 == null) {
                 this.tid = DEFAULT_TID;
@@ -218,7 +218,7 @@ public final class ReqData extends Message {
         this.pid = builder.pid;
         this.postType = builder.postType;
         this.forumName = builder.forumName;
-        this.f79889common = builder.f79890common;
+        this.f79924common = builder.f79925common;
         this.tid = builder.tid;
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_nid = builder.ori_ugc_nid;

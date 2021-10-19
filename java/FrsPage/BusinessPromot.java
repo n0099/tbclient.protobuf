@@ -22,6 +22,7 @@ public final class BusinessPromot extends Message {
     public static final Boolean DEFAULT_IS_AD;
     public static final Boolean DEFAULT_IS_ALLOW_SHAKE;
     public static final Integer DEFAULT_JOIN_NUM;
+    public static final String DEFAULT_PACKAGE_NAME = "";
     public static final String DEFAULT_SCHEMA = "";
     public static final List<String> DEFAULT_THIRD_STATISTICS_URL;
     public static final String DEFAULT_THREAD_ID = "";
@@ -44,6 +45,8 @@ public final class BusinessPromot extends Message {
     public final Boolean is_allow_shake;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer join_num;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String package_name;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String schema;
     @ProtoField(label = Message.Label.REPEATED, tag = 12, type = Message.Datatype.STRING)
@@ -70,6 +73,7 @@ public final class BusinessPromot extends Message {
         public Boolean is_ad;
         public Boolean is_allow_shake;
         public Integer join_num;
+        public String package_name;
         public String schema;
         public List<String> third_statistics_url;
         public String thread_id;
@@ -127,6 +131,7 @@ public final class BusinessPromot extends Message {
             this.third_statistics_url = Message.copyOf(businessPromot.third_statistics_url);
             this.is_allow_shake = businessPromot.is_allow_shake;
             this.is_ad = businessPromot.is_ad;
+            this.package_name = businessPromot.package_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -272,9 +277,15 @@ public final class BusinessPromot extends Message {
             Boolean bool2 = builder.is_ad;
             if (bool2 == null) {
                 this.is_ad = DEFAULT_IS_AD;
-                return;
             } else {
                 this.is_ad = bool2;
+            }
+            String str7 = builder.package_name;
+            if (str7 == null) {
+                this.package_name = "";
+                return;
+            } else {
+                this.package_name = str7;
                 return;
             }
         }
@@ -292,5 +303,6 @@ public final class BusinessPromot extends Message {
         this.third_statistics_url = Message.immutableCopyOf(builder.third_statistics_url);
         this.is_allow_shake = builder.is_allow_shake;
         this.is_ad = builder.is_ad;
+        this.package_name = builder.package_name;
     }
 }

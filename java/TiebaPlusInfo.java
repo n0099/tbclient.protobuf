@@ -23,8 +23,11 @@ public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_DOWNLOAD_URL = "";
     public static final String DEFAULT_H5_JUMP_NUMBER = "";
+    public static final String DEFAULT_H5_JUMP_PARAM = "";
     public static final Integer DEFAULT_H5_JUMP_TYPE;
+    public static final String DEFAULT_ITEM_ID = "";
     public static final String DEFAULT_JUMP_URL = "";
+    public static final Integer DEFAULT_PAGE_JUMP_TYPE;
     public static final Integer DEFAULT_TARGET_TYPE;
     public static final String DEFAULT_TITLE = "";
     public transient /* synthetic */ FieldHolder $fh;
@@ -48,8 +51,14 @@ public final class TiebaPlusInfo extends Message {
     public final String download_url;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String h5_jump_number;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String h5_jump_param;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer h5_jump_type;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String item_id;
+    @ProtoField(tag = 16, type = Message.Datatype.INT32)
+    public final Integer jump_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String jump_url;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
@@ -71,7 +80,10 @@ public final class TiebaPlusInfo extends Message {
         public String desc;
         public String download_url;
         public String h5_jump_number;
+        public String h5_jump_param;
         public Integer h5_jump_type;
+        public String item_id;
+        public Integer jump_type;
         public String jump_url;
         public Integer target_type;
         public String title;
@@ -125,6 +137,9 @@ public final class TiebaPlusInfo extends Message {
             this.target_type = tiebaPlusInfo.target_type;
             this.h5_jump_type = tiebaPlusInfo.h5_jump_type;
             this.h5_jump_number = tiebaPlusInfo.h5_jump_number;
+            this.h5_jump_param = tiebaPlusInfo.h5_jump_param;
+            this.jump_type = tiebaPlusInfo.jump_type;
+            this.item_id = tiebaPlusInfo.item_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -157,6 +172,7 @@ public final class TiebaPlusInfo extends Message {
         }
         DEFAULT_TARGET_TYPE = 0;
         DEFAULT_H5_JUMP_TYPE = 0;
+        DEFAULT_PAGE_JUMP_TYPE = 0;
     }
 
     public /* synthetic */ TiebaPlusInfo(Builder builder, boolean z, a aVar) {
@@ -263,9 +279,27 @@ public final class TiebaPlusInfo extends Message {
             String str12 = builder.h5_jump_number;
             if (str12 == null) {
                 this.h5_jump_number = "";
-                return;
             } else {
                 this.h5_jump_number = str12;
+            }
+            String str13 = builder.h5_jump_param;
+            if (str13 == null) {
+                this.h5_jump_param = "";
+            } else {
+                this.h5_jump_param = str13;
+            }
+            Integer num3 = builder.jump_type;
+            if (num3 == null) {
+                this.jump_type = DEFAULT_PAGE_JUMP_TYPE;
+            } else {
+                this.jump_type = num3;
+            }
+            String str14 = builder.item_id;
+            if (str14 == null) {
+                this.item_id = "";
+                return;
+            } else {
+                this.item_id = str14;
                 return;
             }
         }
@@ -283,5 +317,8 @@ public final class TiebaPlusInfo extends Message {
         this.target_type = builder.target_type;
         this.h5_jump_type = builder.h5_jump_type;
         this.h5_jump_number = builder.h5_jump_number;
+        this.h5_jump_param = builder.h5_jump_param;
+        this.jump_type = builder.jump_type;
+        this.item_id = builder.item_id;
     }
 }
