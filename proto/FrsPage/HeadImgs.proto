@@ -11,4 +11,5 @@ message HeadImgs {
     string schema = 8;
     repeated string third_statistics_url = 9;
     uint32 has_second_page = 10;
+    string package_name = 11;
 }

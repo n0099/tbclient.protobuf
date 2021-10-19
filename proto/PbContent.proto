@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "GraffitiInfo.proto";
+import "Item.proto";
 import "MemeInfo.proto";
 import "NativeApp.proto";
 import "TiebaPlusInfo.proto";
@@ -46,4 +47,5 @@ message PbContent {
     uint64 item_id = 38;
     string item_forum_name = 39;
     TiebaPlusInfo tiebaplus_info = 40;
+    Item item = 41;
 }

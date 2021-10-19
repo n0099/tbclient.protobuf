@@ -16,4 +16,6 @@ message ActivityHead {
     string pull_down_exposure_url = 11;
     string pull_down_click_url = 12;
     bool is_ad = 13;
+    string pull_down_schema = 14;
+    string pull_down_package_name = 15;
 }

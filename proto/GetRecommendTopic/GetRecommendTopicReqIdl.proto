@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetRecommendTopic/DataReq.proto";
+
+message GetRecommendTopicReqIdl {
+    DataReq data = 1;
+}

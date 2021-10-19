@@ -17,4 +17,5 @@ message BusinessPromot {
     repeated string third_statistics_url = 12;
     bool is_allow_shake = 13;
     bool is_ad = 14;
+    string package_name = 15;
 }
