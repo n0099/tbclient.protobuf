@@ -78,4 +78,6 @@ message Post {
     Item item = 53;
     Item outer_item = 54;
     Advertisement advertisement = 55;
+    int32 fold_comment_status = 56;
+    string fold_comment_apply_url = 57;
 }

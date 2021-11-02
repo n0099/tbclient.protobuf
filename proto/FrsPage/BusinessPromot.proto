@@ -18,4 +18,16 @@ message BusinessPromot {
     bool is_allow_shake = 13;
     bool is_ad = 14;
     string package_name = 15;
+    string download_appname = 16;
+    string download_developer = 17;
+    string download_package_size = 18;
+    string download_privacy_policy = 19;
+    string download_url = 20;
+    string download_img = 21;
+    string download_version = 22;
+    string download_user_power = 23;
+    bool is_download = 24;
+    string download_item_id = 25;
+    string download_package_name = 26;
+    string download_appid = 27;
 }

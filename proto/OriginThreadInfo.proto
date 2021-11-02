@@ -41,4 +41,5 @@ message OriginThreadInfo {
     int64 pid = 25;
     int32 good_types = 26;
     int32 top_types = 27;
+    int32 is_frs_mask = 28;
 }

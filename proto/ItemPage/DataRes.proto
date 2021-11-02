@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "AlbumElement.proto";
+import "ItemGameCode.proto";
 import "ItemGameInfo.proto";
 import "ItemInfo.proto";
 import "RecommendForumInfo.proto";
@@ -16,4 +17,5 @@ message DataRes {
     repeated ThreadInfo discussion_list = 7;
     uint32 discussion_id = 8;
     ItemGameInfo item_game_info = 9;
+    ItemGameCode item_game_code = 10;
 }

@@ -106,4 +106,6 @@ message DataRes {
     int32 is_purchase = 65;
     int32 pb_notice_type = 66;
     string pb_notice = 67;
+    int32 has_fold_comment = 68;
+    int64 fold_comment_num = 70;
 }
