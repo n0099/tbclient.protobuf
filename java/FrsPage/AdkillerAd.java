@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.App;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AdkillerAd extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_CAN_CLOSE;
@@ -27,7 +27,7 @@ public final class AdkillerAd extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tag;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<AdkillerAd> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -86,7 +86,7 @@ public final class AdkillerAd extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

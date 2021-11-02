@@ -13,11 +13,12 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AlbumElement;
+import tbclient.ItemGameCode;
 import tbclient.ItemGameInfo;
 import tbclient.ItemInfo;
 import tbclient.RecommendForumInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<AlbumElement> DEFAULT_ALBUM_LIST;
@@ -34,6 +35,8 @@ public final class DataRes extends Message {
     public final Integer discussion_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
     public final List<ThreadInfo> discussion_list;
+    @ProtoField(tag = 10)
+    public final ItemGameCode item_game_code;
     @ProtoField(tag = 9)
     public final ItemGameInfo item_game_info;
     @ProtoField(tag = 1)
@@ -47,13 +50,14 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThreadInfo> thread_list;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public List<AlbumElement> album_list;
         public Integer discussion_id;
         public List<ThreadInfo> discussion_list;
+        public ItemGameCode item_game_code;
         public ItemGameInfo item_game_info;
         public ItemInfo item_info;
         public String link;
@@ -105,6 +109,7 @@ public final class DataRes extends Message {
             this.discussion_list = Message.copyOf(dataRes.discussion_list);
             this.discussion_id = dataRes.discussion_id;
             this.item_game_info = dataRes.item_game_info;
+            this.item_game_code = dataRes.item_game_code;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -116,7 +121,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -210,6 +215,7 @@ public final class DataRes extends Message {
                 this.discussion_id = num;
             }
             this.item_game_info = builder.item_game_info;
+            this.item_game_code = builder.item_game_code;
             return;
         }
         this.item_info = builder.item_info;
@@ -221,5 +227,6 @@ public final class DataRes extends Message {
         this.discussion_list = Message.immutableCopyOf(builder.discussion_list);
         this.discussion_id = builder.discussion_id;
         this.item_game_info = builder.item_game_info;
+        this.item_game_code = builder.item_game_code;
     }
 }

@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
@@ -35,6 +35,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
     public static final Integer DEFAULT_ISSDK;
     public static final Integer DEFAULT_IS_COMM_REVERSE;
+    public static final Integer DEFAULT_IS_FOLD_COMMENT_REQ;
     public static final Integer DEFAULT_IS_JUMPFLOOR;
     public static final String DEFAULT_JFROM = "";
     public static final Long DEFAULT_JID;
@@ -107,7 +108,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f80172common;
+    public final CommonReq f73005common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -128,6 +129,8 @@ public final class DataReq extends Message {
     public final Integer immersion_video_comment_source;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
+    @ProtoField(tag = 78, type = Message.Datatype.INT32)
+    public final Integer is_fold_comment_req;
     @ProtoField(tag = 34, type = Message.Datatype.INT32)
     public final Integer is_jumpfloor;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
@@ -223,7 +226,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 48, type = Message.Datatype.STRING)
     public final String yuelaou_params;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -240,7 +243,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f80173common;
+        public CommonReq f73006common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -251,6 +254,7 @@ public final class DataReq extends Message {
         public Integer from_smart_frs;
         public Integer immersion_video_comment_source;
         public Integer is_comm_reverse;
+        public Integer is_fold_comment_req;
         public Integer is_jumpfloor;
         public Integer issdk;
         public String jfrom;
@@ -358,7 +362,7 @@ public final class DataReq extends Message {
             this.arround = dataReq.arround;
             this.last = dataReq.last;
             this.msg_click = dataReq.msg_click;
-            this.f80173common = dataReq.f80172common;
+            this.f73006common = dataReq.f73005common;
             this.lastids = dataReq.lastids;
             this.st_from = dataReq.st_from;
             this.st_link = dataReq.st_link;
@@ -403,6 +407,7 @@ public final class DataReq extends Message {
             this.source_type = dataReq.source_type;
             this.immersion_video_comment_source = dataReq.immersion_video_comment_source;
             this.app_transmit_data = dataReq.app_transmit_data;
+            this.is_fold_comment_req = dataReq.is_fold_comment_req;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -414,7 +419,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -474,6 +479,7 @@ public final class DataReq extends Message {
         DEFAULT_FLOOR_SORT_TYPE = 0;
         DEFAULT_SOURCE_TYPE = 0;
         DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE = 0;
+        DEFAULT_IS_FOLD_COMMENT_REQ = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -643,7 +649,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = str2;
             }
-            this.f80172common = builder.f80173common;
+            this.f73005common = builder.f73006common;
             String str3 = builder.lastids;
             if (str3 == null) {
                 this.lastids = "";
@@ -893,7 +899,14 @@ public final class DataReq extends Message {
                 this.immersion_video_comment_source = num33;
             }
             this.app_transmit_data = builder.app_transmit_data;
-            return;
+            Integer num34 = builder.is_fold_comment_req;
+            if (num34 == null) {
+                this.is_fold_comment_req = DEFAULT_IS_FOLD_COMMENT_REQ;
+                return;
+            } else {
+                this.is_fold_comment_req = num34;
+                return;
+            }
         }
         this.pb_rn = builder.pb_rn;
         this.mark = builder.mark;
@@ -919,7 +932,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f80172common = builder.f80173common;
+        this.f73005common = builder.f73006common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -964,5 +977,6 @@ public final class DataReq extends Message {
         this.source_type = builder.source_type;
         this.immersion_video_comment_source = builder.immersion_video_comment_source;
         this.app_transmit_data = builder.app_transmit_data;
+        this.is_fold_comment_req = builder.is_fold_comment_req;
     }
 }

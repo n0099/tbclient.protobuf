@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class RecommendInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_TITLE = "";
@@ -23,7 +23,7 @@ public final class RecommendInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<SchoolRecomUserInfo> user_list;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<RecommendInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -78,7 +78,7 @@ public final class RecommendInfo extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

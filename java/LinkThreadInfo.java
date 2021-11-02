@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class LinkThreadInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<LinkThreadContent> DEFAULT_LINK_CONTENT;
@@ -26,7 +26,7 @@ public final class LinkThreadInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String link_url_code;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<LinkThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -83,7 +83,7 @@ public final class LinkThreadInfo extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

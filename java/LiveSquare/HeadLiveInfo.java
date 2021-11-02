@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class HeadLiveInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
@@ -30,7 +30,7 @@ public final class HeadLiveInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_set;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<HeadLiveInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -89,7 +89,7 @@ public final class HeadLiveInfo extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

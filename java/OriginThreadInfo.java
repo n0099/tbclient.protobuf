@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class OriginThreadInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<Abstract> DEFAULT_ABSTRACT;
@@ -21,6 +21,7 @@ public final class OriginThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final Integer DEFAULT_GOOD_TYPES;
     public static final Integer DEFAULT_IS_DELETED;
+    public static final Integer DEFAULT_IS_FRS_MASK;
     public static final Integer DEFAULT_IS_NEW_STYLE;
     public static final Integer DEFAULT_IS_UGC;
     public static final List<HeadItem> DEFAULT_ITEM_STAR;
@@ -53,6 +54,8 @@ public final class OriginThreadInfo extends Message {
     public final Integer good_types;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_deleted;
+    @ProtoField(tag = 28, type = Message.Datatype.INT32)
+    public final Integer is_frs_mask;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer is_new_style;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -88,7 +91,7 @@ public final class OriginThreadInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
     public final List<Voice> voice_info;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<OriginThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -101,6 +104,7 @@ public final class OriginThreadInfo extends Message {
         public String fname;
         public Integer good_types;
         public Integer is_deleted;
+        public Integer is_frs_mask;
         public Integer is_new_style;
         public Integer is_ugc;
         public Item item;
@@ -180,6 +184,7 @@ public final class OriginThreadInfo extends Message {
             this.pid = originThreadInfo.pid;
             this.good_types = originThreadInfo.good_types;
             this.top_types = originThreadInfo.top_types;
+            this.is_frs_mask = originThreadInfo.is_frs_mask;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -191,7 +196,7 @@ public final class OriginThreadInfo extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -226,6 +231,7 @@ public final class OriginThreadInfo extends Message {
         DEFAULT_PID = 0L;
         DEFAULT_GOOD_TYPES = 0;
         DEFAULT_TOP_TYPES = 0;
+        DEFAULT_IS_FRS_MASK = 0;
     }
 
     public /* synthetic */ OriginThreadInfo(Builder builder, boolean z, a aVar) {
@@ -369,9 +375,15 @@ public final class OriginThreadInfo extends Message {
             Integer num8 = builder.top_types;
             if (num8 == null) {
                 this.top_types = DEFAULT_TOP_TYPES;
-                return;
             } else {
                 this.top_types = num8;
+            }
+            Integer num9 = builder.is_frs_mask;
+            if (num9 == null) {
+                this.is_frs_mask = DEFAULT_IS_FRS_MASK;
+                return;
+            } else {
+                this.is_frs_mask = num9;
                 return;
             }
         }
@@ -401,5 +413,6 @@ public final class OriginThreadInfo extends Message {
         this.pid = builder.pid;
         this.good_types = builder.good_types;
         this.top_types = builder.top_types;
+        this.is_frs_mask = builder.is_frs_mask;
     }
 }

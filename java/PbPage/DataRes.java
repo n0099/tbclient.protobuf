@@ -36,7 +36,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
@@ -45,9 +45,11 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_EXP_NEWS_TODAY;
     public static final List<ThreadInfo> DEFAULT_FEED_THREAD_LIST;
     public static final List<FineBannerPb> DEFAULT_FINE_BANNER;
+    public static final Long DEFAULT_FOLD_COMMENT_NUM;
     public static final String DEFAULT_FOLD_TIP = "";
     public static final List<SimpleForum> DEFAULT_FROM_FORUM_LIST;
     public static final Integer DEFAULT_HAS_FLOOR;
+    public static final Integer DEFAULT_HAS_FOLD_COMMENT;
     public static final Integer DEFAULT_IS_BLACK_WHITE;
     public static final Integer DEFAULT_IS_FOLLOW_CURRENT_CHANNEL;
     public static final Integer DEFAULT_IS_NEW_URL;
@@ -109,6 +111,8 @@ public final class DataRes extends Message {
     public final Post first_floor_post;
     @ProtoField(tag = 64)
     public final FloatingIcon floating_icon;
+    @ProtoField(tag = 70, type = Message.Datatype.INT64)
+    public final Long fold_comment_num;
     @ProtoField(tag = 44, type = Message.Datatype.STRING)
     public final String fold_tip;
     @ProtoField(tag = 43)
@@ -129,6 +133,8 @@ public final class DataRes extends Message {
     public final GuessLikeStruct guess_like;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer has_floor;
+    @ProtoField(tag = 68, type = Message.Datatype.INT32)
+    public final Integer has_fold_comment;
     @ProtoField(tag = 20)
     public final PbHotPost hot_post_list;
     @ProtoField(tag = 62, type = Message.Datatype.INT32)
@@ -210,7 +216,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<User> user_list;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -231,6 +237,7 @@ public final class DataRes extends Message {
         public List<FineBannerPb> fine_banner;
         public Post first_floor_post;
         public FloatingIcon floating_icon;
+        public Long fold_comment_num;
         public String fold_tip;
         public PbFollowTip follow_tip;
         public SimpleForum forum;
@@ -241,6 +248,7 @@ public final class DataRes extends Message {
         public GraffitiRankListInfo graffiti_rank_list_info;
         public GuessLikeStruct guess_like;
         public Integer has_floor;
+        public Integer has_fold_comment;
         public PbHotPost hot_post_list;
         public Integer is_black_white;
         public Integer is_follow_current_channel;
@@ -384,6 +392,8 @@ public final class DataRes extends Message {
             this.is_purchase = dataRes.is_purchase;
             this.pb_notice_type = dataRes.pb_notice_type;
             this.pb_notice = dataRes.pb_notice;
+            this.has_fold_comment = dataRes.has_fold_comment;
+            this.fold_comment_num = dataRes.fold_comment_num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -395,7 +405,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -443,6 +453,8 @@ public final class DataRes extends Message {
         DEFAULT_IS_OFFICIAL_FORUM = 0;
         DEFAULT_IS_PURCHASE = 0;
         DEFAULT_PB_NOTICE_TYPE = 0;
+        DEFAULT_HAS_FOLD_COMMENT = 0;
+        DEFAULT_FOLD_COMMENT_NUM = 0L;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -707,9 +719,21 @@ public final class DataRes extends Message {
             String str6 = builder.pb_notice;
             if (str6 == null) {
                 this.pb_notice = "";
-                return;
             } else {
                 this.pb_notice = str6;
+            }
+            Integer num15 = builder.has_fold_comment;
+            if (num15 == null) {
+                this.has_fold_comment = DEFAULT_HAS_FOLD_COMMENT;
+            } else {
+                this.has_fold_comment = num15;
+            }
+            Long l2 = builder.fold_comment_num;
+            if (l2 == null) {
+                this.fold_comment_num = DEFAULT_FOLD_COMMENT_NUM;
+                return;
+            } else {
+                this.fold_comment_num = l2;
                 return;
             }
         }
@@ -780,5 +804,7 @@ public final class DataRes extends Message {
         this.is_purchase = builder.is_purchase;
         this.pb_notice_type = builder.pb_notice_type;
         this.pb_notice = builder.pb_notice;
+        this.has_fold_comment = builder.has_fold_comment;
+        this.fold_comment_num = builder.fold_comment_num;
     }
 }

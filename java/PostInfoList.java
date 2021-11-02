@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PostInfoList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABSTRACT = "";
@@ -192,7 +192,7 @@ public final class PostInfoList extends Message {
     @ProtoField(tag = 58)
     public final WorksInfo works_info;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -369,7 +369,7 @@ public final class PostInfoList extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

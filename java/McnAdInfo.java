@@ -13,7 +13,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class McnAdInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_AD_END_TIME;
@@ -42,7 +42,7 @@ public final class McnAdInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String pic_url;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<McnAdInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -109,7 +109,7 @@ public final class McnAdInfo extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

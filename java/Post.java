@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Post extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_ADD_POST_NUMBER;
@@ -22,6 +22,8 @@ public final class Post extends Message {
     public static final List<PbContent> DEFAULT_CONTENT;
     public static final List<TailInfo> DEFAULT_EXT_TAILS;
     public static final Integer DEFAULT_FLOOR;
+    public static final String DEFAULT_FOLD_COMMENT_APPLY_URL = "";
+    public static final Integer DEFAULT_FOLD_COMMENT_STATUS;
     public static final String DEFAULT_FOLD_TIP = "";
     public static final Long DEFAULT_ID;
     public static final Integer DEFAULT_IMG_NUM_ABTEST;
@@ -73,6 +75,10 @@ public final class Post extends Message {
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
+    @ProtoField(tag = 57, type = Message.Datatype.STRING)
+    public final String fold_comment_apply_url;
+    @ProtoField(tag = 56, type = Message.Datatype.INT32)
+    public final Integer fold_comment_status;
     @ProtoField(tag = 44, type = Message.Datatype.STRING)
     public final String fold_tip;
     @ProtoField(tag = 38)
@@ -158,7 +164,7 @@ public final class Post extends Message {
     @ProtoField(tag = 24)
     public final Zan zan;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<Post> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -174,6 +180,8 @@ public final class Post extends Message {
         public List<PbContent> content;
         public List<TailInfo> ext_tails;
         public Integer floor;
+        public String fold_comment_apply_url;
+        public Integer fold_comment_status;
         public String fold_tip;
         public SimpleForum from_forum;
         public TogetherHi high_together;
@@ -306,6 +314,8 @@ public final class Post extends Message {
             this.item = post.item;
             this.outer_item = post.outer_item;
             this.advertisement = post.advertisement;
+            this.fold_comment_status = post.fold_comment_status;
+            this.fold_comment_apply_url = post.fold_comment_apply_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -317,7 +327,7 @@ public final class Post extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -361,6 +371,7 @@ public final class Post extends Message {
         DEFAULT_IS_BJH = 0;
         DEFAULT_IS_WONDERFUL_POST = 0;
         DEFAULT_ITEM_STAR = Collections.emptyList();
+        DEFAULT_FOLD_COMMENT_STATUS = 0;
     }
 
     public /* synthetic */ Post(Builder builder, boolean z, a aVar) {
@@ -605,7 +616,20 @@ public final class Post extends Message {
             this.item = builder.item;
             this.outer_item = builder.outer_item;
             this.advertisement = builder.advertisement;
-            return;
+            Integer num19 = builder.fold_comment_status;
+            if (num19 == null) {
+                this.fold_comment_status = DEFAULT_FOLD_COMMENT_STATUS;
+            } else {
+                this.fold_comment_status = num19;
+            }
+            String str9 = builder.fold_comment_apply_url;
+            if (str9 == null) {
+                this.fold_comment_apply_url = "";
+                return;
+            } else {
+                this.fold_comment_apply_url = str9;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -661,5 +685,7 @@ public final class Post extends Message {
         this.item = builder.item;
         this.outer_item = builder.outer_item;
         this.advertisement = builder.advertisement;
+        this.fold_comment_status = builder.fold_comment_status;
+        this.fold_comment_apply_url = builder.fold_comment_apply_url;
     }
 }

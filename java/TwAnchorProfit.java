@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TwAnchorProfit extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<TwAnchorProfitItem> DEFAULT_PROFIT_LIST;
@@ -20,7 +20,7 @@ public final class TwAnchorProfit extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<TwAnchorProfitItem> profit_list;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<TwAnchorProfit> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -73,7 +73,7 @@ public final class TwAnchorProfit extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

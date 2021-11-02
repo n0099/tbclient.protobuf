@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Calendar extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_D;
@@ -21,7 +21,7 @@ public final class Calendar extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
 
     /* renamed from: d  reason: collision with root package name */
-    public final Integer f79972d;
+    public final Integer f72805d;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer rank;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -29,13 +29,13 @@ public final class Calendar extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String t;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<Calendar> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: d  reason: collision with root package name */
-        public Integer f79973d;
+        public Integer f72806d;
         public Integer rank;
         public Integer sign_type;
         public String t;
@@ -75,7 +75,7 @@ public final class Calendar extends Message {
             if (calendar == null) {
                 return;
             }
-            this.f79973d = calendar.f79972d;
+            this.f72806d = calendar.f72805d;
             this.t = calendar.t;
             this.rank = calendar.rank;
             this.sign_type = calendar.sign_type;
@@ -90,7 +90,7 @@ public final class Calendar extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -137,11 +137,11 @@ public final class Calendar extends Message {
             }
         }
         if (z) {
-            Integer num = builder.f79973d;
+            Integer num = builder.f72806d;
             if (num == null) {
-                this.f79972d = DEFAULT_D;
+                this.f72805d = DEFAULT_D;
             } else {
-                this.f79972d = num;
+                this.f72805d = num;
             }
             String str = builder.t;
             if (str == null) {
@@ -164,7 +164,7 @@ public final class Calendar extends Message {
                 return;
             }
         }
-        this.f79972d = builder.f79973d;
+        this.f72805d = builder.f72806d;
         this.t = builder.t;
         this.rank = builder.rank;
         this.sign_type = builder.sign_type;

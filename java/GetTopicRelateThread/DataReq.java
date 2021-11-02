@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_LAST_ID;
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f80100common;
+    public final CommonReq f72933common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long last_id;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -56,13 +56,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String topic_name;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f80101common;
+        public CommonReq f72934common;
         public Long last_id;
         public Integer page_no;
         public Integer pmy_source;
@@ -111,7 +111,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f80101common = dataReq.f80100common;
+            this.f72934common = dataReq.f72933common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.rn = dataReq.rn;
@@ -135,7 +135,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -190,7 +190,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f80100common = builder.f80101common;
+            this.f72933common = builder.f72934common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -266,7 +266,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f80100common = builder.f80101common;
+        this.f72933common = builder.f72934common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.rn = builder.rn;

@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class UserDynamic extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<User> DEFAULT_CONCERNED_USER_LIST;
@@ -20,7 +20,7 @@ public final class UserDynamic extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<User> concerned_user_list;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<UserDynamic> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -73,7 +73,7 @@ public final class UserDynamic extends Message {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
