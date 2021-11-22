@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72766common;
+    public final CommonReq f73685common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long feed_id;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -35,7 +35,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72767common;
+        public CommonReq f73686common;
         public Long feed_id;
         public Integer limit;
         public Integer load_type;
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f72767common = dataReq.f72766common;
+            this.f73686common = dataReq.f73685common;
             this.load_type = dataReq.load_type;
             this.limit = dataReq.limit;
             this.feed_id = dataReq.feed_id;
@@ -137,7 +137,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f72766common = builder.f72767common;
+            this.f73685common = builder.f73686common;
             Integer num = builder.load_type;
             if (num == null) {
                 this.load_type = DEFAULT_LOAD_TYPE;
@@ -159,7 +159,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f72766common = builder.f72767common;
+        this.f73685common = builder.f73686common;
         this.load_type = builder.load_type;
         this.limit = builder.limit;
         this.feed_id = builder.feed_id;

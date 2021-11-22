@@ -89,6 +89,8 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_TWZHIBO_POS;
     public static final List<User> DEFAULT_USER_LIST;
     public static final Integer DEFAULT_VIDEO_AUTO_PLAY;
+    public static final Integer DEFAULT_VOICE_ROOM_CONFIG;
+    public static final List<ThreadInfo> DEFAULT_VOICE_ROOM_LIST;
     public static final List<WindowToast> DEFAULT_WINDOW_TOAST;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 87)
@@ -289,6 +291,10 @@ public final class DataRes extends Message {
     public final Integer video_auto_play;
     @ProtoField(tag = 42)
     public final VitalityInfo vitality_info;
+    @ProtoField(tag = 111, type = Message.Datatype.INT32)
+    public final Integer voice_room_config;
+    @ProtoField(label = Message.Label.REPEATED, tag = 110)
+    public final List<ThreadInfo> voice_room_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 85)
     public final List<WindowToast> window_toast;
     @ProtoField(tag = 89)
@@ -397,6 +403,8 @@ public final class DataRes extends Message {
         public FrsVideo video;
         public Integer video_auto_play;
         public VitalityInfo vitality_info;
+        public Integer voice_room_config;
+        public List<ThreadInfo> voice_room_list;
         public List<WindowToast> window_toast;
         public WorldcupSkin worldcup_skin;
 
@@ -536,6 +544,8 @@ public final class DataRes extends Message {
             this.add_bawu_pop = dataRes.add_bawu_pop;
             this.show_adsense = dataRes.show_adsense;
             this.frsmask_pop_info = dataRes.frsmask_pop_info;
+            this.voice_room_list = Message.copyOf(dataRes.voice_room_list);
+            this.voice_room_config = dataRes.voice_room_config;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -607,6 +617,8 @@ public final class DataRes extends Message {
         DEFAULT_SERVICE_AREA = Collections.emptyList();
         DEFAULT_IS_GET_HORSE_RACE_LAMP = 0;
         DEFAULT_SHOW_ADSENSE = 0;
+        DEFAULT_VOICE_ROOM_LIST = Collections.emptyList();
+        DEFAULT_VOICE_ROOM_CONFIG = 0;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -958,7 +970,20 @@ public final class DataRes extends Message {
                 this.show_adsense = num19;
             }
             this.frsmask_pop_info = builder.frsmask_pop_info;
-            return;
+            List<ThreadInfo> list22 = builder.voice_room_list;
+            if (list22 == null) {
+                this.voice_room_list = DEFAULT_VOICE_ROOM_LIST;
+            } else {
+                this.voice_room_list = Message.immutableCopyOf(list22);
+            }
+            Integer num20 = builder.voice_room_config;
+            if (num20 == null) {
+                this.voice_room_config = DEFAULT_VOICE_ROOM_CONFIG;
+                return;
+            } else {
+                this.voice_room_config = num20;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1061,5 +1086,7 @@ public final class DataRes extends Message {
         this.add_bawu_pop = builder.add_bawu_pop;
         this.show_adsense = builder.show_adsense;
         this.frsmask_pop_info = builder.frsmask_pop_info;
+        this.voice_room_list = Message.immutableCopyOf(builder.voice_room_list);
+        this.voice_room_config = builder.voice_room_config;
     }
 }

@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72794common;
+    public final CommonReq f73713common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long ftid;
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public String action;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72795common;
+        public CommonReq f73714common;
         public Long ftid;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f72795common = dataReq.f72794common;
+            this.f73714common = dataReq.f73713common;
             this.action = dataReq.action;
             this.ftid = dataReq.ftid;
         }
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f72794common = builder.f72795common;
+            this.f73713common = builder.f73714common;
             String str = builder.action;
             if (str == null) {
                 this.action = "";
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f72794common = builder.f72795common;
+        this.f73713common = builder.f73714common;
         this.action = builder.action;
         this.ftid = builder.ftid;
     }

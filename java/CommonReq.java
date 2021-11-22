@@ -53,6 +53,8 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_SDK_VER = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
+    public static final String DEFAULT_START_SCHEME = "";
+    public static final Integer DEFAULT_START_TYPE;
     public static final String DEFAULT_STOKEN = "";
     public static final String DEFAULT_SUBAPP_TYPE = "";
     public static final String DEFAULT_SWAN_GAME_VER = "";
@@ -160,6 +162,10 @@ public final class CommonReq extends Message {
     public final String sign;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String smallflow;
+    @ProtoField(tag = 56, type = Message.Datatype.STRING)
+    public final String start_scheme;
+    @ProtoField(tag = 57, type = Message.Datatype.INT32)
+    public final Integer start_type;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String stoken;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -222,6 +228,8 @@ public final class CommonReq extends Message {
         public String sdk_ver;
         public String sign;
         public String smallflow;
+        public String start_scheme;
+        public Integer start_type;
         public String stoken;
         public String subapp_type;
         public String swan_game_ver;
@@ -315,6 +323,8 @@ public final class CommonReq extends Message {
             this.event_day = commonReq.event_day;
             this.android_id = commonReq.android_id;
             this.cmode = commonReq.cmode;
+            this.start_scheme = commonReq.start_scheme;
+            this.start_type = commonReq.start_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -357,6 +367,7 @@ public final class CommonReq extends Message {
         DEFAULT_FIRST_INSTALL_TIME = 0L;
         DEFAULT_LAST_UPDATE_TIME = 0L;
         DEFAULT_CMODE = 0;
+        DEFAULT_START_TYPE = 0;
     }
 
     public /* synthetic */ CommonReq(Builder builder, boolean z, a aVar) {
@@ -691,9 +702,21 @@ public final class CommonReq extends Message {
             Integer num7 = builder.cmode;
             if (num7 == null) {
                 this.cmode = DEFAULT_CMODE;
-                return;
             } else {
                 this.cmode = num7;
+            }
+            String str41 = builder.start_scheme;
+            if (str41 == null) {
+                this.start_scheme = "";
+            } else {
+                this.start_scheme = str41;
+            }
+            Integer num8 = builder.start_type;
+            if (num8 == null) {
+                this.start_type = DEFAULT_START_TYPE;
+                return;
+            } else {
+                this.start_type = num8;
                 return;
             }
         }
@@ -749,5 +772,7 @@ public final class CommonReq extends Message {
         this.event_day = builder.event_day;
         this.android_id = builder.android_id;
         this.cmode = builder.cmode;
+        this.start_scheme = builder.start_scheme;
+        this.start_type = builder.start_type;
     }
 }

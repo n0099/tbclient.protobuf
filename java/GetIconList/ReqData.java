@@ -17,7 +17,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72870common;
+    public final CommonReq f73789common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String st_type;
 
@@ -27,7 +27,7 @@ public final class ReqData extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72871common;
+        public CommonReq f73790common;
         public String st_type;
 
         public Builder() {
@@ -66,7 +66,7 @@ public final class ReqData extends Message {
                 return;
             }
             this.st_type = reqData.st_type;
-            this.f72871common = reqData.f72870common;
+            this.f73790common = reqData.f73789common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -113,10 +113,10 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f72870common = builder.f72871common;
+            this.f73789common = builder.f73790common;
             return;
         }
         this.st_type = builder.st_type;
-        this.f72870common = builder.f72871common;
+        this.f73789common = builder.f73790common;
     }
 }

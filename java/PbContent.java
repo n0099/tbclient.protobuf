@@ -64,7 +64,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f73000c;
+    public final String f73919c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -146,7 +146,7 @@ public final class PbContent extends Message {
         public Integer btn_type;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f73001c;
+        public String f73920c;
         public String cdn_src;
         public String cdn_src_active;
         public Integer count;
@@ -227,7 +227,7 @@ public final class PbContent extends Message {
             this.cdn_src = pbContent.cdn_src;
             this.big_cdn_src = pbContent.big_cdn_src;
             this.imgtype = pbContent.imgtype;
-            this.f73001c = pbContent.f73000c;
+            this.f73920c = pbContent.f73919c;
             this.voice_md5 = pbContent.voice_md5;
             this.during_time = pbContent.during_time;
             this.is_sub = pbContent.is_sub;
@@ -388,11 +388,11 @@ public final class PbContent extends Message {
             } else {
                 this.imgtype = str9;
             }
-            String str10 = builder.f73001c;
+            String str10 = builder.f73920c;
             if (str10 == null) {
-                this.f73000c = "";
+                this.f73919c = "";
             } else {
-                this.f73000c = str10;
+                this.f73919c = str10;
             }
             String str11 = builder.voice_md5;
             if (str11 == null) {
@@ -556,7 +556,7 @@ public final class PbContent extends Message {
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
         this.imgtype = builder.imgtype;
-        this.f73000c = builder.f73001c;
+        this.f73919c = builder.f73920c;
         this.voice_md5 = builder.voice_md5;
         this.during_time = builder.during_time;
         this.is_sub = builder.is_sub;

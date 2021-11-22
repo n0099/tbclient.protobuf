@@ -27,7 +27,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72836common;
+    public final CommonReq f73755common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long gid;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
         public Long author_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72837common;
+        public CommonReq f73756common;
         public Long gid;
         public Long page_num;
         public Long post_id;
@@ -91,7 +91,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f72837common = dataReq.f72836common;
+            this.f73756common = dataReq.f73755common;
             this.author_id = dataReq.author_id;
             this.user_id = dataReq.user_id;
             this.gid = dataReq.gid;
@@ -161,7 +161,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f72836common = builder.f72837common;
+            this.f73755common = builder.f73756common;
             Long l = builder.author_id;
             if (l == null) {
                 this.author_id = DEFAULT_AUTHOR_ID;
@@ -207,7 +207,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f72836common = builder.f72837common;
+        this.f73755common = builder.f73756common;
         this.author_id = builder.author_id;
         this.user_id = builder.user_id;
         this.gid = builder.gid;

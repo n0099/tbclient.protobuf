@@ -14,6 +14,7 @@ import com.squareup.wire.ProtoField;
 public final class TopicModule extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_DISCUSS_NUM;
+    public static final String DEFAULT_TOPIC_AVATAR = "";
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final Long DEFAULT_TOPIC_ID;
     public static final String DEFAULT_TOPIC_IMAGE = "";
@@ -23,6 +24,8 @@ public final class TopicModule extends Message {
     public final Long discuss_num;
     @ProtoField(tag = 6)
     public final PkModule pk_module;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String topic_avatar;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String topic_desc;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -38,6 +41,7 @@ public final class TopicModule extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public Long discuss_num;
         public PkModule pk_module;
+        public String topic_avatar;
         public String topic_desc;
         public Long topic_id;
         public String topic_image;
@@ -84,6 +88,7 @@ public final class TopicModule extends Message {
             this.discuss_num = topicModule.discuss_num;
             this.topic_image = topicModule.topic_image;
             this.pk_module = topicModule.pk_module;
+            this.topic_avatar = topicModule.topic_avatar;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -172,7 +177,14 @@ public final class TopicModule extends Message {
                 this.topic_image = str3;
             }
             this.pk_module = builder.pk_module;
-            return;
+            String str4 = builder.topic_avatar;
+            if (str4 == null) {
+                this.topic_avatar = "";
+                return;
+            } else {
+                this.topic_avatar = str4;
+                return;
+            }
         }
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
@@ -180,5 +192,6 @@ public final class TopicModule extends Message {
         this.discuss_num = builder.discuss_num;
         this.topic_image = builder.topic_image;
         this.pk_module = builder.pk_module;
+        this.topic_avatar = builder.topic_avatar;
     }
 }

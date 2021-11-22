@@ -17,6 +17,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.VoiceRoom.VoiceRoom;
 /* loaded from: classes3.dex */
 public final class ThreadInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
@@ -243,7 +244,7 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = Opcodes.NEWARRAY)
     public final ForumFriendWatchingInfo forum_friend_watching_info;
-    @ProtoField(tag = com.baidu.apollon.a.f35825e)
+    @ProtoField(tag = com.baidu.apollon.a.f36654e)
     public final SimpleForum forum_info;
     @ProtoField(tag = Opcodes.NEW, type = Message.Datatype.STRING)
     public final String forum_user_live_msg;
@@ -541,6 +542,8 @@ public final class ThreadInfo extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
+    @ProtoField(tag = Opcodes.IFNONNULL)
+    public final VoiceRoom voice_room;
     @ProtoField(tag = Opcodes.RETURN, type = Message.Datatype.STRING)
     public final String wonderful_post_info;
     @ProtoField(tag = 189)
@@ -741,6 +744,7 @@ public final class ThreadInfo extends Message {
         public VideoActive videoactive_info;
         public Integer view_num;
         public List<Voice> voice_info;
+        public VoiceRoom voice_room;
         public String wonderful_post_info;
         public WorksInfo works_info;
         public YulePostActivity yule_post_activity;
@@ -972,6 +976,7 @@ public final class ThreadInfo extends Message {
             this.tiebaplus_extra_param = threadInfo.tiebaplus_extra_param;
             this.tiebaplus_cant_delete = threadInfo.tiebaplus_cant_delete;
             this.is_frs_mask = threadInfo.is_frs_mask;
+            this.voice_room = threadInfo.voice_room;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -2047,11 +2052,11 @@ public final class ThreadInfo extends Message {
             Integer num73 = builder.is_frs_mask;
             if (num73 == null) {
                 this.is_frs_mask = DEFAULT_IS_FRS_MASK;
-                return;
             } else {
                 this.is_frs_mask = num73;
-                return;
             }
+            this.voice_room = builder.voice_room;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -2244,5 +2249,6 @@ public final class ThreadInfo extends Message {
         this.tiebaplus_extra_param = builder.tiebaplus_extra_param;
         this.tiebaplus_cant_delete = builder.tiebaplus_cant_delete;
         this.is_frs_mask = builder.is_frs_mask;
+        this.voice_room = builder.voice_room;
     }
 }

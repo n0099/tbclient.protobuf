@@ -19,7 +19,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f72814common;
+    public final CommonReq f73733common;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer timestamp;
 
@@ -29,7 +29,7 @@ public final class ReqData extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f72815common;
+        public CommonReq f73734common;
         public Integer timestamp;
 
         public Builder() {
@@ -68,7 +68,7 @@ public final class ReqData extends Message {
                 return;
             }
             this.timestamp = reqData.timestamp;
-            this.f72815common = reqData.f72814common;
+            this.f73734common = reqData.f73733common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -131,10 +131,10 @@ public final class ReqData extends Message {
             } else {
                 this.timestamp = num;
             }
-            this.f72814common = builder.f72815common;
+            this.f73733common = builder.f73734common;
             return;
         }
         this.timestamp = builder.timestamp;
-        this.f72814common = builder.f72815common;
+        this.f73733common = builder.f73734common;
     }
 }

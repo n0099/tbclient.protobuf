@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73048common;
+    public final CommonReq f73967common;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long gift_from;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73049common;
+        public CommonReq f73968common;
         public Long gift_from;
         public Integer gift_id;
         public Integer num;
@@ -87,7 +87,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73049common = dataReq.f73048common;
+            this.f73968common = dataReq.f73967common;
             this.receiver_id = dataReq.receiver_id;
             this.gift_id = dataReq.gift_id;
             this.price = dataReq.price;
@@ -154,7 +154,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73048common = builder.f73049common;
+            this.f73967common = builder.f73968common;
             Long l = builder.receiver_id;
             if (l == null) {
                 this.receiver_id = DEFAULT_RECEIVER_ID;
@@ -194,7 +194,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f73048common = builder.f73049common;
+        this.f73967common = builder.f73968common;
         this.receiver_id = builder.receiver_id;
         this.gift_id = builder.gift_id;
         this.price = builder.price;

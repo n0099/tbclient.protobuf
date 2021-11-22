@@ -25,9 +25,10 @@ public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_H5_JUMP_NUMBER = "";
     public static final String DEFAULT_H5_JUMP_PARAM = "";
     public static final Integer DEFAULT_H5_JUMP_TYPE;
+    public static final Integer DEFAULT_IS_APPOINT;
     public static final String DEFAULT_ITEM_ID = "";
+    public static final Integer DEFAULT_JUMP_TYPE;
     public static final String DEFAULT_JUMP_URL = "";
-    public static final Integer DEFAULT_PAGE_JUMP_TYPE;
     public static final Integer DEFAULT_TARGET_TYPE;
     public static final String DEFAULT_TITLE = "";
     public transient /* synthetic */ FieldHolder $fh;
@@ -55,6 +56,8 @@ public final class TiebaPlusInfo extends Message {
     public final String h5_jump_param;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer h5_jump_type;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer is_appoint;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String item_id;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
@@ -82,6 +85,7 @@ public final class TiebaPlusInfo extends Message {
         public String h5_jump_number;
         public String h5_jump_param;
         public Integer h5_jump_type;
+        public Integer is_appoint;
         public String item_id;
         public Integer jump_type;
         public String jump_url;
@@ -140,6 +144,7 @@ public final class TiebaPlusInfo extends Message {
             this.h5_jump_param = tiebaPlusInfo.h5_jump_param;
             this.jump_type = tiebaPlusInfo.jump_type;
             this.item_id = tiebaPlusInfo.item_id;
+            this.is_appoint = tiebaPlusInfo.is_appoint;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -172,7 +177,8 @@ public final class TiebaPlusInfo extends Message {
         }
         DEFAULT_TARGET_TYPE = 0;
         DEFAULT_H5_JUMP_TYPE = 0;
-        DEFAULT_PAGE_JUMP_TYPE = 0;
+        DEFAULT_JUMP_TYPE = 0;
+        DEFAULT_IS_APPOINT = 0;
     }
 
     public /* synthetic */ TiebaPlusInfo(Builder builder, boolean z, a aVar) {
@@ -290,16 +296,22 @@ public final class TiebaPlusInfo extends Message {
             }
             Integer num3 = builder.jump_type;
             if (num3 == null) {
-                this.jump_type = DEFAULT_PAGE_JUMP_TYPE;
+                this.jump_type = DEFAULT_JUMP_TYPE;
             } else {
                 this.jump_type = num3;
             }
             String str14 = builder.item_id;
             if (str14 == null) {
                 this.item_id = "";
-                return;
             } else {
                 this.item_id = str14;
+            }
+            Integer num4 = builder.is_appoint;
+            if (num4 == null) {
+                this.is_appoint = DEFAULT_IS_APPOINT;
+                return;
+            } else {
+                this.is_appoint = num4;
                 return;
             }
         }
@@ -320,5 +332,6 @@ public final class TiebaPlusInfo extends Message {
         this.h5_jump_param = builder.h5_jump_param;
         this.jump_type = builder.jump_type;
         this.item_id = builder.item_id;
+        this.is_appoint = builder.is_appoint;
     }
 }
