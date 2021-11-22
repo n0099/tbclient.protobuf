@@ -52,6 +52,7 @@ import "VideoChannelInfo.proto";
 import "VideoDesc.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
+import "VoiceRoom/VoiceRoom.proto";
 import "WorksInfo.proto";
 import "YulePostActivity.proto";
 import "Zan.proto";

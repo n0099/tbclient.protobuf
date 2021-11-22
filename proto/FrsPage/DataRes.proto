@@ -167,4 +167,6 @@ message DataRes {
     AddBawuPopInfo add_bawu_pop = 107;
     int32 show_adsense = 108;
     PopInfo frsmask_pop_info = 109;
+    repeated ThreadInfo voice_room_list = 110;
+    int32 voice_room_config = 111;
 }

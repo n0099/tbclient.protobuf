@@ -53,4 +53,6 @@ message CommonReq {
     string event_day = 53;
     string android_id = 54;
     int32 cmode = 55;
+    string start_scheme = 56;
+    int32 start_type = 57;
 }
