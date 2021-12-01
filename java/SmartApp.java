@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SmartApp extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABSTRACT = "";
@@ -45,7 +45,7 @@ public final class SmartApp extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.UINT64)
     public final Long swan_app_id;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<SmartApp> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -116,7 +116,7 @@ public final class SmartApp extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

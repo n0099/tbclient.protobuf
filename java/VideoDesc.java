@@ -1,8 +1,6 @@
 package tbclient;
 
-import androidx.core.view.InputDeviceCompat;
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.tieba.tbadkCore.videoupload.VideoFinishResult;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -12,9 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import org.json.JSONException;
-import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class VideoDesc extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_VIDEO_HEIGHT = "";
@@ -34,7 +30,7 @@ public final class VideoDesc extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String video_width;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<VideoDesc> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -95,7 +91,7 @@ public final class VideoDesc extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -119,46 +115,6 @@ public final class VideoDesc extends Message {
 
     public /* synthetic */ VideoDesc(Builder builder, boolean z, a aVar) {
         this(builder, z);
-    }
-
-    public static VideoDesc parseFromJson(JSONObject jSONObject) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(65539, null, jSONObject)) == null) {
-            if (jSONObject == null) {
-                return null;
-            }
-            Builder builder = new Builder();
-            builder.video_id = Integer.valueOf(jSONObject.optInt("video_id"));
-            builder.video_md5 = jSONObject.optString(VideoFinishResult.KEY_VIDEO_MD5);
-            builder.video_url = jSONObject.optString("video_url");
-            builder.video_width = jSONObject.optString("video_width");
-            builder.video_height = jSONObject.optString("video_height");
-            return builder.build(false);
-        }
-        return (VideoDesc) invokeL.objValue;
-    }
-
-    public static JSONObject toJson(VideoDesc videoDesc) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(InputDeviceCompat.SOURCE_TRACKBALL, null, videoDesc)) == null) {
-            if (videoDesc == null) {
-                return null;
-            }
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("video_id", videoDesc.video_id);
-                jSONObject.put(VideoFinishResult.KEY_VIDEO_MD5, videoDesc.video_md5);
-                jSONObject.put("video_url", videoDesc.video_url);
-                jSONObject.put("video_width", videoDesc.video_width);
-                jSONObject.put("video_height", videoDesc.video_height);
-            } catch (JSONException e2) {
-                e2.printStackTrace();
-            }
-            return jSONObject;
-        }
-        return (JSONObject) invokeL.objValue;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

@@ -13,20 +13,24 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeRecommand;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
+    public static final Integer DEFAULT_HAS_MORE;
     public static final List<ThemePendantInMain> DEFAULT_PENDANT;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer has_more;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThemePendantInMain> pendant;
     @ProtoField(tag = 1)
     public final ThemeRecommand recommend;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public Integer has_more;
         public List<ThemePendantInMain> pendant;
         public ThemeRecommand recommend;
 
@@ -67,6 +71,7 @@ public final class DataRes extends Message {
             }
             this.recommend = dataRes.recommend;
             this.pendant = Message.copyOf(dataRes.pendant);
+            this.has_more = dataRes.has_more;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -78,7 +83,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -98,6 +103,7 @@ public final class DataRes extends Message {
             }
         }
         DEFAULT_PENDANT = Collections.emptyList();
+        DEFAULT_HAS_MORE = 0;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -127,13 +133,20 @@ public final class DataRes extends Message {
             List<ThemePendantInMain> list = builder.pendant;
             if (list == null) {
                 this.pendant = DEFAULT_PENDANT;
-                return;
             } else {
                 this.pendant = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+                return;
+            } else {
+                this.has_more = num;
                 return;
             }
         }
         this.recommend = builder.recommend;
         this.pendant = Message.immutableCopyOf(builder.pendant);
+        this.has_more = builder.has_more;
     }
 }

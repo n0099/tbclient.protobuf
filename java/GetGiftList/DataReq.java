@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_BENEFIT_USERID;
@@ -22,18 +22,18 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73775common;
+    public final CommonReq f64576common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String scene_from;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long benefit_userid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73776common;
+        public CommonReq f64577common;
         public String scene_from;
 
         public Builder() {
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.scene_from = dataReq.scene_from;
-            this.f73776common = dataReq.f73775common;
+            this.f64577common = dataReq.f64576common;
             this.benefit_userid = dataReq.benefit_userid;
         }
 
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -136,7 +136,7 @@ public final class DataReq extends Message {
             } else {
                 this.scene_from = str;
             }
-            this.f73775common = builder.f73776common;
+            this.f64576common = builder.f64577common;
             Long l = builder.benefit_userid;
             if (l == null) {
                 this.benefit_userid = DEFAULT_BENEFIT_USERID;
@@ -147,7 +147,7 @@ public final class DataReq extends Message {
             }
         }
         this.scene_from = builder.scene_from;
-        this.f73775common = builder.f73776common;
+        this.f64576common = builder.f64577common;
         this.benefit_userid = builder.benefit_userid;
     }
 }

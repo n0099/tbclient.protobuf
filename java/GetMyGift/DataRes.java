@@ -12,7 +12,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+import tbclient.FansRankUserInfo;
+import tbclient.PresentMyList;
+import tbclient.PresetMyGiftPage;
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_BLUE_DIAMOND;
@@ -44,7 +47,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer total_num;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -115,7 +118,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

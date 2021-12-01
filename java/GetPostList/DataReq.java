@@ -13,9 +13,10 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
+    public static final Integer DEFAULT_FLOOR_RN;
     public static final Integer DEFAULT_IS_COMM_REVERSE;
     public static final Long DEFAULT_KZ;
     public static final List<Long> DEFAULT_POST_ID;
@@ -27,7 +28,9 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73819common;
+    public final CommonReq f64616common;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer floor_rn;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -43,13 +46,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer with_floor;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73820common;
+        public CommonReq f64617common;
+        public Integer floor_rn;
         public Integer is_comm_reverse;
         public Long kz;
         public List<Long> post_id;
@@ -93,7 +97,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73820common = dataReq.f73819common;
+            this.f64617common = dataReq.f64616common;
             this.kz = dataReq.kz;
             this.with_floor = dataReq.with_floor;
             this.post_id = Message.copyOf(dataReq.post_id);
@@ -101,6 +105,7 @@ public final class DataReq extends Message {
             this.scr_h = dataReq.scr_h;
             this.st_type = dataReq.st_type;
             this.is_comm_reverse = dataReq.is_comm_reverse;
+            this.floor_rn = dataReq.floor_rn;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -112,7 +117,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -138,6 +143,7 @@ public final class DataReq extends Message {
         DEFAULT_SCR_H = 0;
         DEFAULT_ST_TYPE = 0;
         DEFAULT_IS_COMM_REVERSE = 0;
+        DEFAULT_FLOOR_RN = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -163,7 +169,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73819common = builder.f73820common;
+            this.f64616common = builder.f64617common;
             Long l = builder.kz;
             if (l == null) {
                 this.kz = DEFAULT_KZ;
@@ -203,13 +209,19 @@ public final class DataReq extends Message {
             Integer num5 = builder.is_comm_reverse;
             if (num5 == null) {
                 this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
-                return;
             } else {
                 this.is_comm_reverse = num5;
+            }
+            Integer num6 = builder.floor_rn;
+            if (num6 == null) {
+                this.floor_rn = DEFAULT_FLOOR_RN;
+                return;
+            } else {
+                this.floor_rn = num6;
                 return;
             }
         }
-        this.f73819common = builder.f73820common;
+        this.f64616common = builder.f64617common;
         this.kz = builder.kz;
         this.with_floor = builder.with_floor;
         this.post_id = Message.immutableCopyOf(builder.post_id);
@@ -217,5 +229,6 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.st_type = builder.st_type;
         this.is_comm_reverse = builder.is_comm_reverse;
+        this.floor_rn = builder.floor_rn;
     }
 }

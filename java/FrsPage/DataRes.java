@@ -23,6 +23,7 @@ import tbclient.Esport;
 import tbclient.ForumArIno;
 import tbclient.ForumPresentInfo;
 import tbclient.ForumRuleStatus;
+import tbclient.FrsPageUserExtend;
 import tbclient.FrsTabInfo;
 import tbclient.FrsVideo;
 import tbclient.HotUserRankEntry;
@@ -37,6 +38,7 @@ import tbclient.SdkTopicThread;
 import tbclient.ServiceArea;
 import tbclient.SignActivityInfo;
 import tbclient.SmartApp;
+import tbclient.StarVoice;
 import tbclient.ThreadInfo;
 import tbclient.User;
 import tbclient.VitalityInfo;
@@ -262,7 +264,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 81)
     public final StarRank star_rank_info;
     @ProtoField(tag = 88)
-    public final tbclient.StarVoice star_voice;
+    public final StarVoice star_voice;
     @ProtoField(tag = 30)
     public final ThreadInfo store_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 8, type = Message.Datatype.INT64)
@@ -282,7 +284,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final User user;
     @ProtoField(tag = 71)
-    public final tbclient.FrsPageUserExtend user_extend;
+    public final FrsPageUserExtend user_extend;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<User> user_list;
     @ProtoField(tag = 73)
@@ -388,7 +390,7 @@ public final class DataRes extends Message {
         public Integer sort_type;
         public List<StarEnter> star_enter;
         public StarRank star_rank_info;
-        public tbclient.StarVoice star_voice;
+        public StarVoice star_voice;
         public ThreadInfo store_card;
         public List<Long> thread_id_list;
         public List<ThreadIdListInfo> thread_id_list_info;
@@ -398,7 +400,7 @@ public final class DataRes extends Message {
         public List<ZhiBoInfoTW> twzhibo_info;
         public Integer twzhibo_pos;
         public User user;
-        public tbclient.FrsPageUserExtend user_extend;
+        public FrsPageUserExtend user_extend;
         public List<User> user_list;
         public FrsVideo video;
         public Integer video_auto_play;

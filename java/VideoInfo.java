@@ -1,11 +1,6 @@
 package tbclient;
 
-import androidx.core.view.InputDeviceCompat;
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.mobads.container.util.AdIconUtil;
-import com.baidu.tbadk.core.util.TiebaStatic;
-import com.baidu.tieba.recapp.activity.AdWebVideoActivityConfig;
-import com.baidu.tieba.tbadkCore.videoupload.VideoFinishResult;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -15,13 +10,9 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class VideoInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Double DEFAULT_HTH_MID_LOC;
@@ -29,6 +20,7 @@ public final class VideoInfo extends Message {
     public static final String DEFAULT_MCN_LEAD_PAGE = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final Integer DEFAULT_PLAY_COUNT;
+    public static final String DEFAULT_SMALL_THUMBNAIL_URL = "";
     public static final Integer DEFAULT_THUMBNAIL_HEIGHT;
     public static final String DEFAULT_THUMBNAIL_URL = "";
     public static final Integer DEFAULT_THUMBNAIL_WIDTH;
@@ -55,6 +47,8 @@ public final class VideoInfo extends Message {
     public final String media_subtitle;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer play_count;
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
+    public final String small_thumbnail_url;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer thumbnail_height;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -84,7 +78,7 @@ public final class VideoInfo extends Message {
     @ProtoField(tag = 19, type = Message.Datatype.DOUBLE)
     public final Double wth_mid_loc;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -94,6 +88,7 @@ public final class VideoInfo extends Message {
         public String mcn_lead_page;
         public String media_subtitle;
         public Integer play_count;
+        public String small_thumbnail_url;
         public Integer thumbnail_height;
         public String thumbnail_url;
         public Integer thumbnail_width;
@@ -164,6 +159,7 @@ public final class VideoInfo extends Message {
             this.mcn_ad_card = videoInfo.mcn_ad_card;
             this.wth_mid_loc = videoInfo.wth_mid_loc;
             this.hth_mid_loc = videoInfo.hth_mid_loc;
+            this.small_thumbnail_url = videoInfo.small_thumbnail_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -175,7 +171,7 @@ public final class VideoInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -212,88 +208,6 @@ public final class VideoInfo extends Message {
 
     public /* synthetic */ VideoInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
-    }
-
-    public static VideoInfo parseFromJson(JSONObject jSONObject) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(InputDeviceCompat.SOURCE_TRACKBALL, null, jSONObject)) == null) {
-            if (jSONObject == null) {
-                return null;
-            }
-            Builder builder = new Builder();
-            builder.video_md5 = jSONObject.optString(VideoFinishResult.KEY_VIDEO_MD5);
-            builder.video_url = jSONObject.optString("video_url");
-            builder.video_duration = Integer.valueOf(jSONObject.optInt(AdWebVideoActivityConfig.KEY_VIDEO_DURATION));
-            builder.video_width = Integer.valueOf(jSONObject.optInt("video_width"));
-            builder.video_height = Integer.valueOf(jSONObject.optInt("video_height"));
-            builder.thumbnail_url = jSONObject.optString("thumbnail_url");
-            builder.thumbnail_width = Integer.valueOf(jSONObject.optInt("thumbnail_width"));
-            builder.thumbnail_height = Integer.valueOf(jSONObject.optInt("thumbnail_height"));
-            builder.video_length = Integer.valueOf(jSONObject.optInt("video_length"));
-            builder.play_count = Integer.valueOf(jSONObject.optInt("play_count"));
-            builder.media_subtitle = jSONObject.optString("media_subtitle");
-            ArrayList arrayList = new ArrayList();
-            JSONArray optJSONArray = jSONObject.optJSONArray("video_desc");
-            if (optJSONArray != null) {
-                int length = optJSONArray.length();
-                for (int i2 = 0; i2 < length; i2++) {
-                    arrayList.add(VideoDesc.parseFromJson(optJSONArray.optJSONObject(i2)));
-                }
-                builder.video_desc = arrayList;
-            }
-            builder.video_select_flag = Integer.valueOf(jSONObject.optInt("video_select_flag"));
-            builder.video_type = Integer.valueOf(jSONObject.optInt("video_type"));
-            builder.is_vertical = Integer.valueOf(jSONObject.optInt(TiebaStatic.Params.IS_VERTICAL));
-            builder.video_h265 = VideoDesc.parseFromJson(jSONObject.optJSONObject("video_h265"));
-            builder.mcn_lead_page = jSONObject.optString("mcn_lead_page");
-            builder.mcn_ad_card = McnAdInfo.parseFromJson(jSONObject.optJSONObject("mcn_ad_card"));
-            builder.wth_mid_loc = Double.valueOf(jSONObject.optDouble("wth_mid_loc"));
-            builder.hth_mid_loc = Double.valueOf(jSONObject.optDouble("hth_mid_loc"));
-            return builder.build(false);
-        }
-        return (VideoInfo) invokeL.objValue;
-    }
-
-    public static JSONObject toJson(VideoInfo videoInfo) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(AdIconUtil.AD_TEXT_ID, null, videoInfo)) == null) {
-            if (videoInfo == null) {
-                return null;
-            }
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put(VideoFinishResult.KEY_VIDEO_MD5, videoInfo.video_md5);
-                jSONObject.put("video_url", videoInfo.video_url);
-                jSONObject.put(AdWebVideoActivityConfig.KEY_VIDEO_DURATION, videoInfo.video_duration);
-                jSONObject.put("video_width", videoInfo.video_width);
-                jSONObject.put("video_height", videoInfo.video_height);
-                jSONObject.put("thumbnail_url", videoInfo.thumbnail_url);
-                jSONObject.put("thumbnail_width", videoInfo.thumbnail_width);
-                jSONObject.put("thumbnail_height", videoInfo.thumbnail_height);
-                jSONObject.put("video_length", videoInfo.video_length);
-                jSONObject.put("play_count", videoInfo.play_count);
-                jSONObject.put("media_subtitle", videoInfo.media_subtitle);
-                JSONArray jSONArray = new JSONArray();
-                for (VideoDesc videoDesc : videoInfo.video_desc) {
-                    jSONArray.put(VideoDesc.toJson(videoDesc));
-                }
-                jSONObject.put("video_desc", jSONArray);
-                jSONObject.put("video_select_flag", videoInfo.video_select_flag);
-                jSONObject.put("video_type", videoInfo.video_type);
-                jSONObject.put(TiebaStatic.Params.IS_VERTICAL, videoInfo.is_vertical);
-                jSONObject.put("video_h265", VideoDesc.toJson(videoInfo.video_h265));
-                jSONObject.put("mcn_lead_page", videoInfo.mcn_lead_page);
-                jSONObject.put("mcn_ad_card", McnAdInfo.toJson(videoInfo.mcn_ad_card));
-                jSONObject.put("wth_mid_loc", videoInfo.wth_mid_loc);
-                jSONObject.put("hth_mid_loc", videoInfo.hth_mid_loc);
-            } catch (JSONException e2) {
-                e2.printStackTrace();
-            }
-            return jSONObject;
-        }
-        return (JSONObject) invokeL.objValue;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -422,9 +336,15 @@ public final class VideoInfo extends Message {
             Double d3 = builder.hth_mid_loc;
             if (d3 == null) {
                 this.hth_mid_loc = DEFAULT_HTH_MID_LOC;
-                return;
             } else {
                 this.hth_mid_loc = d3;
+            }
+            String str6 = builder.small_thumbnail_url;
+            if (str6 == null) {
+                this.small_thumbnail_url = "";
+                return;
+            } else {
+                this.small_thumbnail_url = str6;
                 return;
             }
         }
@@ -448,5 +368,6 @@ public final class VideoInfo extends Message {
         this.mcn_ad_card = builder.mcn_ad_card;
         this.wth_mid_loc = builder.wth_mid_loc;
         this.hth_mid_loc = builder.hth_mid_loc;
+        this.small_thumbnail_url = builder.small_thumbnail_url;
     }
 }

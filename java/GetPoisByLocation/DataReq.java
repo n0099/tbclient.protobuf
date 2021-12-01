@@ -9,7 +9,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_LAT = "";
@@ -18,19 +18,19 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73817common;
+    public final CommonReq f64614common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String lat;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String lng;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73818common;
+        public CommonReq f64615common;
         public String lat;
         public String lng;
 
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             }
             this.lat = dataReq.lat;
             this.lng = dataReq.lng;
-            this.f73818common = dataReq.f73817common;
+            this.f64615common = dataReq.f64614common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -124,11 +124,11 @@ public final class DataReq extends Message {
             } else {
                 this.lng = str2;
             }
-            this.f73817common = builder.f73818common;
+            this.f64614common = builder.f64615common;
             return;
         }
         this.lat = builder.lat;
         this.lng = builder.lng;
-        this.f73817common = builder.f73818common;
+        this.f64614common = builder.f64615common;
     }
 }

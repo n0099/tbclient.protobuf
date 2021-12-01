@@ -19,7 +19,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73663common;
+    public final CommonReq f64484common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String fontColor;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -33,7 +33,7 @@ public final class ReqData extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73664common;
+        public CommonReq f64485common;
         public String fontColor;
         public String fontKeyName;
         public String tailContent;
@@ -76,7 +76,7 @@ public final class ReqData extends Message {
             this.tailContent = reqData.tailContent;
             this.fontColor = reqData.fontColor;
             this.fontKeyName = reqData.fontKeyName;
-            this.f73664common = reqData.f73663common;
+            this.f64485common = reqData.f64484common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -135,12 +135,12 @@ public final class ReqData extends Message {
             } else {
                 this.fontKeyName = str3;
             }
-            this.f73663common = builder.f73664common;
+            this.f64484common = builder.f64485common;
             return;
         }
         this.tailContent = builder.tailContent;
         this.fontColor = builder.fontColor;
         this.fontKeyName = builder.fontKeyName;
-        this.f73663common = builder.f73664common;
+        this.f64484common = builder.f64485common;
     }
 }

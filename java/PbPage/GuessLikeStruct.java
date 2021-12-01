@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.GuessLikeThreadInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GuessLikeStruct extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<GuessLikeThreadInfo> DEFAULT_THREAD_LIST;
@@ -24,7 +24,7 @@ public final class GuessLikeStruct extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<GuessLikeStruct> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,7 +79,7 @@ public final class GuessLikeStruct extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

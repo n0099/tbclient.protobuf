@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PbTopAgreePost extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_FORUM_TOP_LIST = "";
@@ -26,7 +26,7 @@ public final class PbTopAgreePost extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<Post> post_list;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PbTopAgreePost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -83,7 +83,7 @@ public final class PbTopAgreePost extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

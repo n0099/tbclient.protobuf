@@ -14,7 +14,7 @@ import com.squareup.wire.ProtoField;
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVITY_URL = "";
-    public static final Integer DEFAULT_DAILY_PREVILEGE_STATUS;
+    public static final Integer DEFAULT_DAILY_PRIVILEGE_STATUS;
     public static final String DEFAULT_DESCRIPTION = "";
     public static final Integer DEFAULT_FREE_USER_LEVEL;
     public static final Integer DEFAULT_IN_USE;
@@ -27,7 +27,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String activity_url;
     @ProtoField(tag = 10, type = Message.Datatype.UINT32)
-    public final Integer daily_previlege_status;
+    public final Integer daily_privilege_status;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String description;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -50,7 +50,7 @@ public final class DataRes extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_url;
-        public Integer daily_previlege_status;
+        public Integer daily_privilege_status;
         public String description;
         public Integer free_user_level;
         public Integer in_use;
@@ -104,7 +104,7 @@ public final class DataRes extends Message {
             this.activity_url = dataRes.activity_url;
             this.is_finished = dataRes.is_finished;
             this.in_use = dataRes.in_use;
-            this.daily_previlege_status = dataRes.daily_previlege_status;
+            this.daily_privilege_status = dataRes.daily_privilege_status;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -138,7 +138,7 @@ public final class DataRes extends Message {
         DEFAULT_FREE_USER_LEVEL = 0;
         DEFAULT_IS_FINISHED = 0;
         DEFAULT_IN_USE = 0;
-        DEFAULT_DAILY_PREVILEGE_STATUS = 0;
+        DEFAULT_DAILY_PRIVILEGE_STATUS = 0;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -218,12 +218,12 @@ public final class DataRes extends Message {
             } else {
                 this.in_use = num3;
             }
-            Integer num4 = builder.daily_previlege_status;
+            Integer num4 = builder.daily_privilege_status;
             if (num4 == null) {
-                this.daily_previlege_status = DEFAULT_DAILY_PREVILEGE_STATUS;
+                this.daily_privilege_status = DEFAULT_DAILY_PRIVILEGE_STATUS;
                 return;
             } else {
-                this.daily_previlege_status = num4;
+                this.daily_privilege_status = num4;
                 return;
             }
         }
@@ -236,6 +236,6 @@ public final class DataRes extends Message {
         this.activity_url = builder.activity_url;
         this.is_finished = builder.is_finished;
         this.in_use = builder.in_use;
-        this.daily_previlege_status = builder.daily_previlege_status;
+        this.daily_privilege_status = builder.daily_privilege_status;
     }
 }

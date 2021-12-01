@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ThreadModule extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_MODULE_ID;
@@ -29,7 +29,7 @@ public final class ThreadModule extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ThreadInfo> thread_info;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ThreadModule> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -88,7 +88,7 @@ public final class ThreadModule extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

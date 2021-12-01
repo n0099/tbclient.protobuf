@@ -11,12 +11,13 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_CALL_FROM;
     public static final Long DEFAULT_FID;
     public static final String DEFAULT_FIRST_DIR = "";
+    public static final Integer DEFAULT_IS_VIDEO_TOPIC;
     public static final Integer DEFAULT_Q_TYPE;
     public static final Double DEFAULT_SCR_DIP;
     public static final Integer DEFAULT_SCR_H;
@@ -32,11 +33,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73887common;
+    public final CommonReq f64672common;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String first_dir;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer is_video_topic;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer q_type;
     @ProtoField(tag = 6, type = Message.Datatype.DOUBLE)
@@ -56,16 +59,17 @@ public final class DataReq extends Message {
     @ProtoField(tag = 13, type = Message.Datatype.UINT64)
     public final Long topic_tid;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73888common;
+        public CommonReq f64673common;
         public Long fid;
         public String first_dir;
+        public Integer is_video_topic;
         public Integer q_type;
         public Double scr_dip;
         public Integer scr_h;
@@ -111,7 +115,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73888common = dataReq.f73887common;
+            this.f64673common = dataReq.f64672common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.scr_w = dataReq.scr_w;
@@ -124,6 +128,7 @@ public final class DataReq extends Message {
             this.second_dir = dataReq.second_dir;
             this.call_from = dataReq.call_from;
             this.topic_tid = dataReq.topic_tid;
+            this.is_video_topic = dataReq.is_video_topic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -135,7 +140,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -163,6 +168,7 @@ public final class DataReq extends Message {
         DEFAULT_FID = 0L;
         DEFAULT_CALL_FROM = 0;
         DEFAULT_TOPIC_TID = 0L;
+        DEFAULT_IS_VIDEO_TOPIC = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -188,7 +194,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73887common = builder.f73888common;
+            this.f64672common = builder.f64673common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -258,13 +264,19 @@ public final class DataReq extends Message {
             Long l3 = builder.topic_tid;
             if (l3 == null) {
                 this.topic_tid = DEFAULT_TOPIC_TID;
-                return;
             } else {
                 this.topic_tid = l3;
+            }
+            Integer num6 = builder.is_video_topic;
+            if (num6 == null) {
+                this.is_video_topic = DEFAULT_IS_VIDEO_TOPIC;
+                return;
+            } else {
+                this.is_video_topic = num6;
                 return;
             }
         }
-        this.f73887common = builder.f73888common;
+        this.f64672common = builder.f64673common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.scr_w = builder.scr_w;
@@ -277,5 +289,6 @@ public final class DataReq extends Message {
         this.second_dir = builder.second_dir;
         this.call_from = builder.call_from;
         this.topic_tid = builder.topic_tid;
+        this.is_video_topic = builder.is_video_topic;
     }
 }

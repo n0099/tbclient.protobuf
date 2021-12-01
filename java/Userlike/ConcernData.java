@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ConcernData extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_RECOM_TYPE;
@@ -32,7 +32,7 @@ public final class ConcernData extends Message {
     @ProtoField(tag = 1)
     public final ThreadInfo thread_list;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ConcernData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -93,7 +93,7 @@ public final class ConcernData extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

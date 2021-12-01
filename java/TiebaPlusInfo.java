@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TiebaPlusInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_APP_COMPANY = "";
@@ -64,12 +64,14 @@ public final class TiebaPlusInfo extends Message {
     public final Integer jump_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String jump_url;
+    @ProtoField(tag = 19)
+    public final PluginUser plugin_user;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer target_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<TiebaPlusInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -89,6 +91,7 @@ public final class TiebaPlusInfo extends Message {
         public String item_id;
         public Integer jump_type;
         public String jump_url;
+        public PluginUser plugin_user;
         public Integer target_type;
         public String title;
 
@@ -145,6 +148,7 @@ public final class TiebaPlusInfo extends Message {
             this.jump_type = tiebaPlusInfo.jump_type;
             this.item_id = tiebaPlusInfo.item_id;
             this.is_appoint = tiebaPlusInfo.is_appoint;
+            this.plugin_user = tiebaPlusInfo.plugin_user;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -156,7 +160,7 @@ public final class TiebaPlusInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -309,11 +313,11 @@ public final class TiebaPlusInfo extends Message {
             Integer num4 = builder.is_appoint;
             if (num4 == null) {
                 this.is_appoint = DEFAULT_IS_APPOINT;
-                return;
             } else {
                 this.is_appoint = num4;
-                return;
             }
+            this.plugin_user = builder.plugin_user;
+            return;
         }
         this.title = builder.title;
         this.desc = builder.desc;
@@ -333,5 +337,6 @@ public final class TiebaPlusInfo extends Message {
         this.jump_type = builder.jump_type;
         this.item_id = builder.item_id;
         this.is_appoint = builder.is_appoint;
+        this.plugin_user = builder.plugin_user;
     }
 }

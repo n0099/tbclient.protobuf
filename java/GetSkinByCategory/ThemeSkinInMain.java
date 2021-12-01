@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeSkinPropMain;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ThemeSkinInMain extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<ThemeSkinPropMain> DEFAULT_PROPS;
@@ -24,7 +24,7 @@ public final class ThemeSkinInMain extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String skin_category;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ThemeSkinInMain> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,7 +79,7 @@ public final class ThemeSkinInMain extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

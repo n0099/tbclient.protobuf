@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Media;
 import tbclient.VideoInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TopicList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_DISCUSS_NUM;
@@ -57,7 +57,7 @@ public final class TopicList extends Message {
     @ProtoField(tag = 12)
     public final VideoInfo video_info;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<TopicList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -134,7 +134,7 @@ public final class TopicList extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

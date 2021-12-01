@@ -1,6 +1,8 @@
 package tbclient.HotForum;
 
 import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
 import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
@@ -8,20 +10,24 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HotSearch extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_JUMP_TYPE;
     public static final String DEFAULT_SEARCH_TITLE = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer jump_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String search_title;
     @ProtoField(tag = 2)
     public final SearchValue search_value;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<HotSearch> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public Integer jump_type;
         public String search_title;
         public SearchValue search_value;
 
@@ -62,6 +68,7 @@ public final class HotSearch extends Message {
             }
             this.search_title = hotSearch.search_title;
             this.search_value = hotSearch.search_value;
+            this.jump_type = hotSearch.jump_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -73,10 +80,26 @@ public final class HotSearch extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-622060137, "Ltbclient/HotForum/HotSearch;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-622060137, "Ltbclient/HotForum/HotSearch;");
+                return;
+            }
+        }
+        DEFAULT_JUMP_TYPE = 0;
     }
 
     public /* synthetic */ HotSearch(Builder builder, boolean z, a aVar) {
@@ -91,13 +114,13 @@ public final class HotSearch extends Message {
             InitContext newInitContext = TitanRuntime.newInitContext();
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65536, newInitContext);
+            interceptable.invokeUnInit(65537, newInitContext);
             int i2 = newInitContext.flag;
             if ((i2 & 1) != 0) {
                 int i3 = i2 & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65536, newInitContext);
+                interceptable.invokeInitBody(65537, newInitContext);
                 return;
             }
         }
@@ -109,9 +132,17 @@ public final class HotSearch extends Message {
                 this.search_title = str;
             }
             this.search_value = builder.search_value;
-            return;
+            Integer num = builder.jump_type;
+            if (num == null) {
+                this.jump_type = DEFAULT_JUMP_TYPE;
+                return;
+            } else {
+                this.jump_type = num;
+                return;
+            }
         }
         this.search_title = builder.search_title;
         this.search_value = builder.search_value;
+        this.jump_type = builder.jump_type;
     }
 }

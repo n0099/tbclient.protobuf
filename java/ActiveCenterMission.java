@@ -14,10 +14,12 @@ import com.squareup.wire.ProtoField;
 public final class ActiveCenterMission extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_ACTIVE_ID;
+    public static final Integer DEFAULT_ACTIVITY_ID;
     public static final Integer DEFAULT_CLEARTIME;
     public static final Integer DEFAULT_CLEARTYPE;
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_FINAL_REWARD_URL = "";
+    public static final String DEFAULT_IS_COMPLETED = "";
     public static final String DEFAULT_MISSION = "";
     public static final Integer DEFAULT_MISSION_ID;
     public static final Integer DEFAULT_TASK_TYPE;
@@ -25,6 +27,8 @@ public final class ActiveCenterMission extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer active_id;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer activity_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer cleartime;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -33,6 +37,8 @@ public final class ActiveCenterMission extends Message {
     public final String desc;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String final_reward_url;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String is_completed;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String mission;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -47,10 +53,12 @@ public final class ActiveCenterMission extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer active_id;
+        public Integer activity_id;
         public Integer cleartime;
         public Integer cleartype;
         public String desc;
         public String final_reward_url;
+        public String is_completed;
         public String mission;
         public Integer mission_id;
         public Integer task_type;
@@ -100,6 +108,8 @@ public final class ActiveCenterMission extends Message {
             this.final_reward_url = activeCenterMission.final_reward_url;
             this.mission = activeCenterMission.mission;
             this.desc = activeCenterMission.desc;
+            this.is_completed = activeCenterMission.is_completed;
+            this.activity_id = activeCenterMission.activity_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -136,6 +146,7 @@ public final class ActiveCenterMission extends Message {
         DEFAULT_CLEARTYPE = 0;
         DEFAULT_CLEARTIME = 0;
         DEFAULT_TOTAL_LIMIT = 0;
+        DEFAULT_ACTIVITY_ID = 0;
     }
 
     public /* synthetic */ ActiveCenterMission(Builder builder, boolean z, a aVar) {
@@ -212,9 +223,21 @@ public final class ActiveCenterMission extends Message {
             String str3 = builder.desc;
             if (str3 == null) {
                 this.desc = "";
-                return;
             } else {
                 this.desc = str3;
+            }
+            String str4 = builder.is_completed;
+            if (str4 == null) {
+                this.is_completed = "";
+            } else {
+                this.is_completed = str4;
+            }
+            Integer num7 = builder.activity_id;
+            if (num7 == null) {
+                this.activity_id = DEFAULT_ACTIVITY_ID;
+                return;
+            } else {
+                this.activity_id = num7;
                 return;
             }
         }
@@ -227,5 +250,7 @@ public final class ActiveCenterMission extends Message {
         this.final_reward_url = builder.final_reward_url;
         this.mission = builder.mission;
         this.desc = builder.desc;
+        this.is_completed = builder.is_completed;
+        this.activity_id = builder.activity_id;
     }
 }

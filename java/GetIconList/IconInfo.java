@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class IconInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<Discount> DEFAULT_DISCOUNT;
@@ -20,6 +20,7 @@ public final class IconInfo extends Message {
     public static final Integer DEFAULT_DURATION;
     public static final Integer DEFAULT_HIDE;
     public static final String DEFAULT_ICONID = "";
+    public static final Integer DEFAULT_IS_DEFAULT;
     public static final String DEFAULT_NAME = "";
     public static final Integer DEFAULT_NON_MEMBER_T;
     public static final String DEFAULT_PICURL = "";
@@ -36,6 +37,8 @@ public final class IconInfo extends Message {
     public final Integer hide;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String iconId;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer is_default;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -47,7 +50,7 @@ public final class IconInfo extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String tag_name;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<IconInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -56,6 +59,7 @@ public final class IconInfo extends Message {
         public Integer duration;
         public Integer hide;
         public String iconId;
+        public Integer is_default;
         public String name;
         public Integer non_member_t;
         public String picUrl;
@@ -107,6 +111,7 @@ public final class IconInfo extends Message {
             this.discount = Message.copyOf(iconInfo.discount);
             this.sign = iconInfo.sign;
             this.tag_name = iconInfo.tag_name;
+            this.is_default = iconInfo.is_default;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -118,7 +123,7 @@ public final class IconInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -142,6 +147,7 @@ public final class IconInfo extends Message {
         DEFAULT_DURATION = 0;
         DEFAULT_HIDE = 0;
         DEFAULT_DISCOUNT = Collections.emptyList();
+        DEFAULT_IS_DEFAULT = 0;
     }
 
     public /* synthetic */ IconInfo(Builder builder, boolean z, a aVar) {
@@ -224,9 +230,15 @@ public final class IconInfo extends Message {
             String str5 = builder.tag_name;
             if (str5 == null) {
                 this.tag_name = "";
-                return;
             } else {
                 this.tag_name = str5;
+            }
+            Integer num5 = builder.is_default;
+            if (num5 == null) {
+                this.is_default = DEFAULT_IS_DEFAULT;
+                return;
+            } else {
+                this.is_default = num5;
                 return;
             }
         }
@@ -240,5 +252,6 @@ public final class IconInfo extends Message {
         this.discount = Message.immutableCopyOf(builder.discount);
         this.sign = builder.sign;
         this.tag_name = builder.tag_name;
+        this.is_default = builder.is_default;
     }
 }

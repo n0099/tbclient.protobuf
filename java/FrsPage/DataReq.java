@@ -102,7 +102,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 39)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73725common;
+    public final CommonReq f64532common;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -225,7 +225,7 @@ public final class DataReq extends Message {
         public Integer class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73726common;
+        public CommonReq f64533common;
         public String cookie;
         public Integer ctime;
         public String da_idfa;
@@ -352,7 +352,7 @@ public final class DataReq extends Message {
             this.email = dataReq.email;
             this.debug = dataReq.debug;
             this.cookie = dataReq.cookie;
-            this.f73726common = dataReq.f73725common;
+            this.f64533common = dataReq.f64532common;
             this.lastids = dataReq.lastids;
             this.issdk = dataReq.issdk;
             this.da_idfa = dataReq.da_idfa;
@@ -700,7 +700,7 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = str10;
             }
-            this.f73725common = builder.f73726common;
+            this.f64532common = builder.f64533common;
             String str11 = builder.lastids;
             if (str11 == null) {
                 this.lastids = "";
@@ -876,7 +876,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.debug = builder.debug;
         this.cookie = builder.cookie;
-        this.f73725common = builder.f73726common;
+        this.f64532common = builder.f64533common;
         this.lastids = builder.lastids;
         this.issdk = builder.issdk;
         this.da_idfa = builder.da_idfa;

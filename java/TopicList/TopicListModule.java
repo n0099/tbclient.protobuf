@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TopicListModule extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_MODULE_TITLE = "";
@@ -29,7 +29,7 @@ public final class TopicListModule extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<TopicList> topic_list;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<TopicListModule> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -88,7 +88,7 @@ public final class TopicListModule extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

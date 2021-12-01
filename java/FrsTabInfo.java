@@ -15,6 +15,7 @@ public final class FrsTabInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_IS_DEFAULT;
     public static final Integer DEFAULT_IS_GENERAL_TAB;
+    public static final Integer DEFAULT_NEED_PAGE;
     public static final String DEFAULT_TAB_CODE = "";
     public static final String DEFAULT_TAB_GID = "";
     public static final Integer DEFAULT_TAB_ID;
@@ -28,6 +29,8 @@ public final class FrsTabInfo extends Message {
     public final Integer is_default;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_general_tab;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer need_page;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String tab_code;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -51,6 +54,7 @@ public final class FrsTabInfo extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_default;
         public Integer is_general_tab;
+        public Integer need_page;
         public String tab_code;
         public String tab_gid;
         public Integer tab_id;
@@ -105,6 +109,7 @@ public final class FrsTabInfo extends Message {
             this.tab_code = frsTabInfo.tab_code;
             this.tab_version = frsTabInfo.tab_version;
             this.is_default = frsTabInfo.is_default;
+            this.need_page = frsTabInfo.need_page;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -140,6 +145,7 @@ public final class FrsTabInfo extends Message {
         DEFAULT_IS_GENERAL_TAB = 0;
         DEFAULT_TAB_VERSION = 0;
         DEFAULT_IS_DEFAULT = 0;
+        DEFAULT_NEED_PAGE = 0;
     }
 
     public /* synthetic */ FrsTabInfo(Builder builder, boolean z, a aVar) {
@@ -222,9 +228,15 @@ public final class FrsTabInfo extends Message {
             Integer num5 = builder.is_default;
             if (num5 == null) {
                 this.is_default = DEFAULT_IS_DEFAULT;
-                return;
             } else {
                 this.is_default = num5;
+            }
+            Integer num6 = builder.need_page;
+            if (num6 == null) {
+                this.need_page = DEFAULT_NEED_PAGE;
+                return;
+            } else {
+                this.need_page = num6;
                 return;
             }
         }
@@ -238,5 +250,6 @@ public final class FrsTabInfo extends Message {
         this.tab_code = builder.tab_code;
         this.tab_version = builder.tab_version;
         this.is_default = builder.is_default;
+        this.need_page = builder.need_page;
     }
 }

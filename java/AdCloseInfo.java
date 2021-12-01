@@ -1,8 +1,6 @@
 package tbclient;
 
-import androidx.core.view.InputDeviceCompat;
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.mobads.container.util.AdIconUtil;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -12,12 +10,8 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 /* loaded from: classes3.dex */
 public final class AdCloseInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
@@ -123,62 +117,6 @@ public final class AdCloseInfo extends Message {
 
     public /* synthetic */ AdCloseInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
-    }
-
-    public static AdCloseInfo parseFromJson(JSONObject jSONObject) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(InputDeviceCompat.SOURCE_TRACKBALL, null, jSONObject)) == null) {
-            if (jSONObject == null) {
-                return null;
-            }
-            Builder builder = new Builder();
-            builder.support_close = Integer.valueOf(jSONObject.optInt("support_close"));
-            builder.title = jSONObject.optString("title");
-            ArrayList arrayList = new ArrayList();
-            JSONArray optJSONArray = jSONObject.optJSONArray("reasons");
-            if (optJSONArray != null) {
-                int length = optJSONArray.length();
-                for (int i2 = 0; i2 < length; i2++) {
-                    try {
-                        arrayList.add(optJSONArray.getString(i2));
-                    } catch (Exception unused) {
-                    }
-                }
-                builder.reasons = arrayList;
-            }
-            builder.reasons = arrayList;
-            builder.confirm_title = jSONObject.optString("confirm_title");
-            builder.action_control = ActionControl.parseFromJson(jSONObject.optJSONObject("action_control"));
-            return builder.build(false);
-        }
-        return (AdCloseInfo) invokeL.objValue;
-    }
-
-    public static JSONObject toJson(AdCloseInfo adCloseInfo) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(AdIconUtil.AD_TEXT_ID, null, adCloseInfo)) == null) {
-            if (adCloseInfo == null) {
-                return null;
-            }
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("support_close", adCloseInfo.support_close);
-                jSONObject.put("title", adCloseInfo.title);
-                JSONArray jSONArray = new JSONArray();
-                for (String str : adCloseInfo.reasons) {
-                    jSONArray.put(str);
-                }
-                jSONObject.put("reasons", jSONArray);
-                jSONObject.put("confirm_title", adCloseInfo.confirm_title);
-                jSONObject.put("action_control", ActionControl.toJson(adCloseInfo.action_control));
-            } catch (JSONException e2) {
-                e2.printStackTrace();
-            }
-            return jSONObject;
-        }
-        return (JSONObject) invokeL.objValue;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

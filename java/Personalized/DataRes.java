@@ -16,10 +16,9 @@ import tbclient.ActiveCenter;
 import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.DiscoverHotForum;
-import tbclient.RecomPostTopic;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<CardForum> DEFAULT_CARD_FORUM;
@@ -84,7 +83,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 20)
     public final UserFollowLive user_follow_live;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -181,7 +180,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

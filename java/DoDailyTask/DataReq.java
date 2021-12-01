@@ -15,16 +15,13 @@ import tbclient.CommonReq;
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Long DEFAULT_TASK_ID;
-    public static final Long DEFAULT_USER_ID;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73695common;
+    public final CommonReq f64510common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long task_id;
-    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-    public final Long user_id;
 
     /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -32,9 +29,8 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73696common;
+        public CommonReq f64511common;
         public Long task_id;
-        public Long user_id;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -71,8 +67,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f73696common = dataReq.f73695common;
-            this.user_id = dataReq.user_id;
+            this.f64511common = dataReq.f64510common;
             this.task_id = dataReq.task_id;
         }
 
@@ -104,7 +99,6 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        DEFAULT_USER_ID = 0L;
         DEFAULT_TASK_ID = 0L;
     }
 
@@ -131,24 +125,17 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f73695common = builder.f73696common;
-            Long l = builder.user_id;
+            this.f64510common = builder.f64511common;
+            Long l = builder.task_id;
             if (l == null) {
-                this.user_id = DEFAULT_USER_ID;
-            } else {
-                this.user_id = l;
-            }
-            Long l2 = builder.task_id;
-            if (l2 == null) {
                 this.task_id = DEFAULT_TASK_ID;
                 return;
             } else {
-                this.task_id = l2;
+                this.task_id = l;
                 return;
             }
         }
-        this.f73695common = builder.f73696common;
-        this.user_id = builder.user_id;
+        this.f64510common = builder.f64511common;
         this.task_id = builder.task_id;
     }
 }

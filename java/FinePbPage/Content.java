@@ -40,7 +40,7 @@ public final class Content extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f73709c;
+    public final String f64520c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -67,7 +67,7 @@ public final class Content extends Message {
         public String bsize;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f73710c;
+        public String f64521c;
         public String cdn_src;
         public String color;
         public String link;
@@ -120,7 +120,7 @@ public final class Content extends Message {
             this.big_size = content.big_size;
             this.cdn_src = content.cdn_src;
             this.big_cdn_src = content.big_cdn_src;
-            this.f73710c = content.f73709c;
+            this.f64521c = content.f64520c;
             this.align = content.align;
             this.color = content.color;
             this.size = content.size;
@@ -236,11 +236,11 @@ public final class Content extends Message {
             } else {
                 this.big_cdn_src = str8;
             }
-            String str9 = builder.f73710c;
+            String str9 = builder.f64521c;
             if (str9 == null) {
-                this.f73709c = "";
+                this.f64520c = "";
             } else {
-                this.f73709c = str9;
+                this.f64520c = str9;
             }
             Integer num = builder.align;
             if (num == null) {
@@ -272,7 +272,7 @@ public final class Content extends Message {
         this.big_size = builder.big_size;
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
-        this.f73709c = builder.f73710c;
+        this.f64520c = builder.f64521c;
         this.align = builder.align;
         this.color = builder.color;
         this.size = builder.size;

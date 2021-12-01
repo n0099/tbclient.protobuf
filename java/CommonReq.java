@@ -31,10 +31,12 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_FRAMEWORK_VER = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_IDFA = "";
+    public static final String DEFAULT_IDFV = "";
     public static final Integer DEFAULT_IS_TEENAGER;
     public static final String DEFAULT_KA = "";
     public static final Long DEFAULT_LAST_UPDATE_TIME;
     public static final String DEFAULT_LEGO_LIB_VERSION = "";
+    public static final String DEFAULT_MAC = "";
     public static final String DEFAULT_MODEL = "";
     public static final String DEFAULT_M_API = "";
     public static final String DEFAULT_M_COST = "";
@@ -51,6 +53,7 @@ public final class CommonReq extends Message {
     public static final Integer DEFAULT_SCR_H;
     public static final Integer DEFAULT_SCR_W;
     public static final String DEFAULT_SDK_VER = "";
+    public static final String DEFAULT_SHOUBAI_CUID = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
     public static final String DEFAULT_START_SCHEME = "";
@@ -118,6 +121,8 @@ public final class CommonReq extends Message {
     public final String from;
     @ProtoField(tag = 45, type = Message.Datatype.STRING)
     public final String idfa;
+    @ProtoField(tag = 60, type = Message.Datatype.STRING)
+    public final String idfv;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_teenager;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -138,6 +143,8 @@ public final class CommonReq extends Message {
     public final String m_size_d;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String m_size_u;
+    @ProtoField(tag = 59, type = Message.Datatype.STRING)
+    public final String mac;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String model;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
@@ -158,6 +165,8 @@ public final class CommonReq extends Message {
     public final Integer scr_w;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String sdk_ver;
+    @ProtoField(tag = 58, type = Message.Datatype.STRING)
+    public final String shoubai_cuid;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String sign;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
@@ -206,6 +215,7 @@ public final class CommonReq extends Message {
         public String framework_ver;
         public String from;
         public String idfa;
+        public String idfv;
         public Integer is_teenager;
         public String ka;
         public Long last_update_time;
@@ -216,6 +226,7 @@ public final class CommonReq extends Message {
         public String m_result;
         public String m_size_d;
         public String m_size_u;
+        public String mac;
         public String model;
         public Integer net_type;
         public String oaid;
@@ -226,6 +237,7 @@ public final class CommonReq extends Message {
         public Integer scr_h;
         public Integer scr_w;
         public String sdk_ver;
+        public String shoubai_cuid;
         public String sign;
         public String smallflow;
         public String start_scheme;
@@ -325,6 +337,9 @@ public final class CommonReq extends Message {
             this.cmode = commonReq.cmode;
             this.start_scheme = commonReq.start_scheme;
             this.start_type = commonReq.start_type;
+            this.shoubai_cuid = commonReq.shoubai_cuid;
+            this.mac = commonReq.mac;
+            this.idfv = commonReq.idfv;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -714,9 +729,27 @@ public final class CommonReq extends Message {
             Integer num8 = builder.start_type;
             if (num8 == null) {
                 this.start_type = DEFAULT_START_TYPE;
-                return;
             } else {
                 this.start_type = num8;
+            }
+            String str42 = builder.shoubai_cuid;
+            if (str42 == null) {
+                this.shoubai_cuid = "";
+            } else {
+                this.shoubai_cuid = str42;
+            }
+            String str43 = builder.mac;
+            if (str43 == null) {
+                this.mac = "";
+            } else {
+                this.mac = str43;
+            }
+            String str44 = builder.idfv;
+            if (str44 == null) {
+                this.idfv = "";
+                return;
+            } else {
+                this.idfv = str44;
                 return;
             }
         }
@@ -774,5 +807,8 @@ public final class CommonReq extends Message {
         this.cmode = builder.cmode;
         this.start_scheme = builder.start_scheme;
         this.start_type = builder.start_type;
+        this.shoubai_cuid = builder.shoubai_cuid;
+        this.mac = builder.mac;
+        this.idfv = builder.idfv;
     }
 }

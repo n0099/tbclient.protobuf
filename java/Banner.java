@@ -14,19 +14,25 @@ import com.squareup.wire.ProtoField;
 public final class Banner extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_DESC = "";
+    public static final Long DEFAULT_END_TIME;
     public static final Integer DEFAULT_ID;
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PIC = "";
+    public static final Long DEFAULT_START_TIME;
     public static final String DEFAULT_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String desc;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT64)
+    public final Long end_time;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer id;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String pic;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT64)
+    public final Long start_time;
     @ProtoField(tag = 4)
     public final ThreadInfo thread_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -37,9 +43,11 @@ public final class Banner extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String desc;
+        public Long end_time;
         public Integer id;
         public String name;
         public String pic;
+        public Long start_time;
         public ThreadInfo thread_info;
         public String url;
 
@@ -84,6 +92,8 @@ public final class Banner extends Message {
             this.thread_info = banner.thread_info;
             this.url = banner.url;
             this.id = banner.id;
+            this.start_time = banner.start_time;
+            this.end_time = banner.end_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -115,6 +125,8 @@ public final class Banner extends Message {
             }
         }
         DEFAULT_ID = 0;
+        DEFAULT_START_TIME = 0L;
+        DEFAULT_END_TIME = 0L;
     }
 
     public /* synthetic */ Banner(Builder builder, boolean z, a aVar) {
@@ -168,9 +180,21 @@ public final class Banner extends Message {
             Integer num = builder.id;
             if (num == null) {
                 this.id = DEFAULT_ID;
-                return;
             } else {
                 this.id = num;
+            }
+            Long l = builder.start_time;
+            if (l == null) {
+                this.start_time = DEFAULT_START_TIME;
+            } else {
+                this.start_time = l;
+            }
+            Long l2 = builder.end_time;
+            if (l2 == null) {
+                this.end_time = DEFAULT_END_TIME;
+                return;
+            } else {
+                this.end_time = l2;
                 return;
             }
         }
@@ -180,5 +204,7 @@ public final class Banner extends Message {
         this.thread_info = builder.thread_info;
         this.url = builder.url;
         this.id = builder.id;
+        this.start_time = builder.start_time;
+        this.end_time = builder.end_time;
     }
 }

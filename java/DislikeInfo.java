@@ -10,7 +10,6 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import org.json.JSONObject;
 /* loaded from: classes3.dex */
 public final class DislikeInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
@@ -19,9 +18,9 @@ public final class DislikeInfo extends Message {
     public static final String DEFAULT_EXTRA = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public Integer dislike_id;
+    public final Integer dislike_id;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public String dislike_reason;
+    public final String dislike_reason;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String extra;
 
@@ -78,8 +77,14 @@ public final class DislikeInfo extends Message {
         public DislikeInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DislikeInfo(this, z) : (DislikeInfo) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DislikeInfo(this, z, null) : (DislikeInfo) invokeZ.objValue;
         }
+    }
+
+    /* loaded from: classes3.dex */
+    public static /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,6 +101,10 @@ public final class DislikeInfo extends Message {
             }
         }
         DEFAULT_DISLIKE_ID = 0;
+    }
+
+    public /* synthetic */ DislikeInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,14 +150,5 @@ public final class DislikeInfo extends Message {
         this.dislike_reason = builder.dislike_reason;
         this.dislike_id = builder.dislike_id;
         this.extra = builder.extra;
-    }
-
-    public void parseJson(JSONObject jSONObject) {
-        Interceptable interceptable = $ic;
-        if (!(interceptable == null || interceptable.invokeL(1048576, this, jSONObject) == null) || jSONObject == null) {
-            return;
-        }
-        this.dislike_reason = jSONObject.optString("dislike_reason");
-        this.dislike_id = Integer.valueOf(jSONObject.optInt("dislike_id"));
     }
 }

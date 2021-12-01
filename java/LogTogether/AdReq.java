@@ -10,13 +10,14 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AdReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_DA_CPID = "";
     public static final String DEFAULT_DA_EXT_INFO = "";
     public static final Integer DEFAULT_DA_FID;
     public static final String DEFAULT_DA_GOOD_ID = "";
+    public static final Boolean DEFAULT_DA_ISCACHE;
     public static final String DEFAULT_DA_LOCATE = "";
     public static final String DEFAULT_DA_OBJ_ID = "";
     public static final String DEFAULT_DA_PAGE = "";
@@ -40,6 +41,8 @@ public final class AdReq extends Message {
     public final Integer da_fid;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String da_good_id;
+    @ProtoField(tag = 19, type = Message.Datatype.BOOL)
+    public final Boolean da_iscache;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String da_locate;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -69,7 +72,7 @@ public final class AdReq extends Message {
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String ext;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<AdReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -77,6 +80,7 @@ public final class AdReq extends Message {
         public String da_ext_info;
         public Integer da_fid;
         public String da_good_id;
+        public Boolean da_iscache;
         public String da_locate;
         public String da_obj_id;
         public String da_page;
@@ -145,6 +149,7 @@ public final class AdReq extends Message {
             this.da_threadid = adReq.da_threadid;
             this.da_utime = adReq.da_utime;
             this.da_pn = adReq.da_pn;
+            this.da_iscache = adReq.da_iscache;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -156,7 +161,7 @@ public final class AdReq extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -180,6 +185,7 @@ public final class AdReq extends Message {
         DEFAULT_DA_THREADID = 0L;
         DEFAULT_DA_UTIME = 0L;
         DEFAULT_DA_PN = 0;
+        DEFAULT_DA_ISCACHE = Boolean.FALSE;
     }
 
     public /* synthetic */ AdReq(Builder builder, boolean z, a aVar) {
@@ -310,9 +316,15 @@ public final class AdReq extends Message {
             Integer num3 = builder.da_pn;
             if (num3 == null) {
                 this.da_pn = DEFAULT_DA_PN;
-                return;
             } else {
                 this.da_pn = num3;
+            }
+            Boolean bool = builder.da_iscache;
+            if (bool == null) {
+                this.da_iscache = DEFAULT_DA_ISCACHE;
+                return;
+            } else {
+                this.da_iscache = bool;
                 return;
             }
         }
@@ -334,5 +346,6 @@ public final class AdReq extends Message {
         this.da_threadid = builder.da_threadid;
         this.da_utime = builder.da_utime;
         this.da_pn = builder.da_pn;
+        this.da_iscache = builder.da_iscache;
     }
 }

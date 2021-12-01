@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ItemInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_APK_NAME = "";
@@ -60,8 +60,6 @@ public final class ItemInfo extends Message {
     public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer id;
-    @ProtoField(tag = 25)
-    public final ApkDetail ios_detail;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer is_school;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -85,7 +83,7 @@ public final class ItemInfo extends Message {
     @ProtoField(tag = 10)
     public final ItemThemeColor theme_color;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ItemInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -102,7 +100,6 @@ public final class ItemInfo extends Message {
         public Double icon_size;
         public String icon_url;
         public Integer id;
-        public ApkDetail ios_detail;
         public Integer is_school;
         public String item_appid;
         public List<ItemOptions> item_options;
@@ -174,7 +171,6 @@ public final class ItemInfo extends Message {
             this.button_link_type = itemInfo.button_link_type;
             this.apk_name = itemInfo.apk_name;
             this.apk_detail = itemInfo.apk_detail;
-            this.ios_detail = itemInfo.ios_detail;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -186,7 +182,7 @@ public final class ItemInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -351,7 +347,6 @@ public final class ItemInfo extends Message {
                 this.apk_name = str11;
             }
             this.apk_detail = builder.apk_detail;
-            this.ios_detail = builder.ios_detail;
             return;
         }
         this.id = builder.id;
@@ -378,6 +373,5 @@ public final class ItemInfo extends Message {
         this.button_link_type = builder.button_link_type;
         this.apk_name = builder.apk_name;
         this.apk_detail = builder.apk_detail;
-        this.ios_detail = builder.ios_detail;
     }
 }

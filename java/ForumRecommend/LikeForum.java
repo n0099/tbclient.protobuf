@@ -24,7 +24,6 @@ public final class LikeForum extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final Long DEFAULT_HOT_THREAD_ID;
     public static final Integer DEFAULT_IS_BRAND_FORUM;
-    public static final Integer DEFAULT_IS_LIVEFORUM;
     public static final Integer DEFAULT_IS_MANAGER;
     public static final Integer DEFAULT_IS_PRIVATE_FORUM;
     public static final Integer DEFAULT_IS_SIGN;
@@ -46,8 +45,6 @@ public final class LikeForum extends Message {
     public final Long hot_thread_id;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer is_brand_forum;
-    @ProtoField(tag = 6, type = Message.Datatype.INT32)
-    public final Integer is_liveforum;
     @ProtoField(tag = 18, type = Message.Datatype.INT32)
     public final Integer is_manager;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
@@ -79,7 +76,6 @@ public final class LikeForum extends Message {
         public String forum_name;
         public Long hot_thread_id;
         public Integer is_brand_forum;
-        public Integer is_liveforum;
         public Integer is_manager;
         public Integer is_private_forum;
         public Integer is_sign;
@@ -131,7 +127,6 @@ public final class LikeForum extends Message {
             this.avatar = likeForum.avatar;
             this.is_sign = likeForum.is_sign;
             this.level_id = likeForum.level_id;
-            this.is_liveforum = likeForum.is_liveforum;
             this.is_brand_forum = likeForum.is_brand_forum;
             this.content = likeForum.content;
             this.is_top = likeForum.is_top;
@@ -176,7 +171,6 @@ public final class LikeForum extends Message {
         DEFAULT_FORUM_ID = 0L;
         DEFAULT_IS_SIGN = 0;
         DEFAULT_LEVEL_ID = 0;
-        DEFAULT_IS_LIVEFORUM = 0;
         DEFAULT_IS_BRAND_FORUM = 0;
         DEFAULT_IS_TOP = 0;
         DEFAULT_SORT_TYPE = 0;
@@ -240,17 +234,11 @@ public final class LikeForum extends Message {
             } else {
                 this.level_id = num2;
             }
-            Integer num3 = builder.is_liveforum;
+            Integer num3 = builder.is_brand_forum;
             if (num3 == null) {
-                this.is_liveforum = DEFAULT_IS_LIVEFORUM;
-            } else {
-                this.is_liveforum = num3;
-            }
-            Integer num4 = builder.is_brand_forum;
-            if (num4 == null) {
                 this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
             } else {
-                this.is_brand_forum = num4;
+                this.is_brand_forum = num3;
             }
             String str3 = builder.content;
             if (str3 == null) {
@@ -258,17 +246,17 @@ public final class LikeForum extends Message {
             } else {
                 this.content = str3;
             }
-            Integer num5 = builder.is_top;
-            if (num5 == null) {
+            Integer num4 = builder.is_top;
+            if (num4 == null) {
                 this.is_top = DEFAULT_IS_TOP;
             } else {
-                this.is_top = num5;
+                this.is_top = num4;
             }
-            Integer num6 = builder.sort_type;
-            if (num6 == null) {
+            Integer num5 = builder.sort_type;
+            if (num5 == null) {
                 this.sort_type = DEFAULT_SORT_TYPE;
             } else {
-                this.sort_type = num6;
+                this.sort_type = num5;
             }
             this.theme_color = builder.theme_color;
             Boolean bool = builder.need_trans;
@@ -277,17 +265,17 @@ public final class LikeForum extends Message {
             } else {
                 this.need_trans = bool;
             }
-            Integer num7 = builder.is_private_forum;
-            if (num7 == null) {
+            Integer num6 = builder.is_private_forum;
+            if (num6 == null) {
                 this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
             } else {
-                this.is_private_forum = num7;
+                this.is_private_forum = num6;
             }
-            Integer num8 = builder.is_manager;
-            if (num8 == null) {
+            Integer num7 = builder.is_manager;
+            if (num7 == null) {
                 this.is_manager = DEFAULT_IS_MANAGER;
             } else {
-                this.is_manager = num8;
+                this.is_manager = num7;
             }
             this.private_forum_info = builder.private_forum_info;
             Long l2 = builder.hot_thread_id;
@@ -310,7 +298,6 @@ public final class LikeForum extends Message {
         this.avatar = builder.avatar;
         this.is_sign = builder.is_sign;
         this.level_id = builder.level_id;
-        this.is_liveforum = builder.is_liveforum;
         this.is_brand_forum = builder.is_brand_forum;
         this.content = builder.content;
         this.is_top = builder.is_top;

@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.SendCardInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BusinessPromotInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_IS_HEADLINEPOST;
@@ -27,7 +27,7 @@ public final class BusinessPromotInfo extends Message {
     @ProtoField(tag = 4)
     public final SendCardInfo send_card_info;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<BusinessPromotInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -86,7 +86,7 @@ public final class BusinessPromotInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

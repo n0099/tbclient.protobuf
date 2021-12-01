@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class OrderList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVITY_DESC = "";
@@ -19,8 +19,11 @@ public final class OrderList extends Message {
     public static final Long DEFAULT_CREATE_TIME;
     public static final Long DEFAULT_FINISH_TIME;
     public static final Long DEFAULT_MONEY;
+    public static final Double DEFAULT_ORDER_AMOUNT;
     public static final String DEFAULT_ORDER_ID = "";
+    public static final Double DEFAULT_ORDER_YY_AMOUNT;
     public static final String DEFAULT_PREG_FIELD = "";
+    public static final Integer DEFAULT_PRICE_TYPE;
     public static final Integer DEFAULT_SCENE_ID;
     public static final Long DEFAULT_SCORES;
     public static final Integer DEFAULT_STATUS;
@@ -38,10 +41,16 @@ public final class OrderList extends Message {
     public final Long finish_time;
     @ProtoField(tag = 19, type = Message.Datatype.INT64)
     public final Long money;
+    @ProtoField(tag = 24, type = Message.Datatype.DOUBLE)
+    public final Double order_amount;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String order_id;
+    @ProtoField(tag = 23, type = Message.Datatype.DOUBLE)
+    public final Double order_yy_amount;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String preg_field;
+    @ProtoField(tag = 22, type = Message.Datatype.INT32)
+    public final Integer price_type;
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer scene_id;
     @ProtoField(tag = 20, type = Message.Datatype.INT64)
@@ -51,7 +60,7 @@ public final class OrderList extends Message {
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<OrderList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -61,8 +70,11 @@ public final class OrderList extends Message {
         public Long create_time;
         public Long finish_time;
         public Long money;
+        public Double order_amount;
         public String order_id;
+        public Double order_yy_amount;
         public String preg_field;
+        public Integer price_type;
         public Integer scene_id;
         public Long scores;
         public Integer status;
@@ -115,6 +127,9 @@ public final class OrderList extends Message {
             this.money = orderList.money;
             this.scores = orderList.scores;
             this.preg_field = orderList.preg_field;
+            this.price_type = orderList.price_type;
+            this.order_yy_amount = orderList.order_yy_amount;
+            this.order_amount = orderList.order_amount;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -126,7 +141,7 @@ public final class OrderList extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -151,6 +166,10 @@ public final class OrderList extends Message {
         DEFAULT_SCENE_ID = 0;
         DEFAULT_MONEY = 0L;
         DEFAULT_SCORES = 0L;
+        DEFAULT_PRICE_TYPE = 0;
+        Double valueOf = Double.valueOf(0.0d);
+        DEFAULT_ORDER_YY_AMOUNT = valueOf;
+        DEFAULT_ORDER_AMOUNT = valueOf;
     }
 
     public /* synthetic */ OrderList(Builder builder, boolean z, a aVar) {
@@ -245,9 +264,27 @@ public final class OrderList extends Message {
             String str6 = builder.preg_field;
             if (str6 == null) {
                 this.preg_field = "";
-                return;
             } else {
                 this.preg_field = str6;
+            }
+            Integer num3 = builder.price_type;
+            if (num3 == null) {
+                this.price_type = DEFAULT_PRICE_TYPE;
+            } else {
+                this.price_type = num3;
+            }
+            Double d2 = builder.order_yy_amount;
+            if (d2 == null) {
+                this.order_yy_amount = DEFAULT_ORDER_YY_AMOUNT;
+            } else {
+                this.order_yy_amount = d2;
+            }
+            Double d3 = builder.order_amount;
+            if (d3 == null) {
+                this.order_amount = DEFAULT_ORDER_AMOUNT;
+                return;
+            } else {
+                this.order_amount = d3;
                 return;
             }
         }
@@ -263,5 +300,8 @@ public final class OrderList extends Message {
         this.money = builder.money;
         this.scores = builder.scores;
         this.preg_field = builder.preg_field;
+        this.price_type = builder.price_type;
+        this.order_yy_amount = builder.order_yy_amount;
+        this.order_amount = builder.order_amount;
     }
 }

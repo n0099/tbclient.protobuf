@@ -12,14 +12,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.ForumInfo;
 import tbclient.Item;
 import tbclient.RecommendForumInfo;
 import tbclient.SugLiveInfo;
 import tbclient.SugRankingInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
-    public static final List<tbclient.ForumInfo> DEFAULT_FORUM_LIST;
+    public static final List<ForumInfo> DEFAULT_FORUM_LIST;
     public static final Integer DEFAULT_FORUM_LOC;
     public static final List<String> DEFAULT_LIST;
     public static final List<SugLiveInfo> DEFAULT_LIVE_CARD;
@@ -27,7 +28,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 4)
     public final RecommendForumInfo forum_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
-    public final List<tbclient.ForumInfo> forum_list;
+    public final List<ForumInfo> forum_list;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer forum_loc;
     @ProtoField(tag = 5)
@@ -39,12 +40,12 @@ public final class DataRes extends Message {
     @ProtoField(tag = 7)
     public final SugRankingInfo ranking_card;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public RecommendForumInfo forum_card;
-        public List<tbclient.ForumInfo> forum_list;
+        public List<ForumInfo> forum_list;
         public Integer forum_loc;
         public Item item_card;
         public List<String> list;
@@ -104,7 +105,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -164,7 +165,7 @@ public final class DataRes extends Message {
             } else {
                 this.list = Message.immutableCopyOf(list);
             }
-            List<tbclient.ForumInfo> list2 = builder.forum_list;
+            List<ForumInfo> list2 = builder.forum_list;
             if (list2 == null) {
                 this.forum_list = DEFAULT_FORUM_LIST;
             } else {

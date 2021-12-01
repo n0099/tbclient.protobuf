@@ -15,16 +15,14 @@ import java.util.List;
 import tbclient.DealWindow;
 import tbclient.DynamicInfo;
 import tbclient.ForumDynamic;
-import tbclient.Profile.UserGodInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST;
     public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST;
     public static final Integer DEFAULT_HAS_MORE;
-    public static final Integer DEFAULT_MASK_TYPE;
     public static final Integer DEFAULT_PN;
     public static final List<ThreadInfo> DEFAULT_VIDEO_PAGE;
     public transient /* synthetic */ FieldHolder $fh;
@@ -34,8 +32,6 @@ public final class DataRes extends Message {
     public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer has_more;
-    @ProtoField(tag = 9, type = Message.Datatype.INT32)
-    public final Integer mask_type;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 1)
@@ -47,14 +43,13 @@ public final class DataRes extends Message {
     @ProtoField(tag = 8)
     public final DealWindow window;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public List<ForumDynamic> concerned_forum_list;
         public List<DynamicInfo> dynamic_list;
         public Integer has_more;
-        public Integer mask_type;
         public Integer pn;
         public User user;
         public UserGodInfo user_god_info;
@@ -104,7 +99,6 @@ public final class DataRes extends Message {
             this.has_more = dataRes.has_more;
             this.user_god_info = dataRes.user_god_info;
             this.window = dataRes.window;
-            this.mask_type = dataRes.mask_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -116,7 +110,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -140,7 +134,6 @@ public final class DataRes extends Message {
         DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
         DEFAULT_PN = 0;
         DEFAULT_HAS_MORE = 0;
-        DEFAULT_MASK_TYPE = 0;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -199,14 +192,7 @@ public final class DataRes extends Message {
             }
             this.user_god_info = builder.user_god_info;
             this.window = builder.window;
-            Integer num3 = builder.mask_type;
-            if (num3 == null) {
-                this.mask_type = DEFAULT_MASK_TYPE;
-                return;
-            } else {
-                this.mask_type = num3;
-                return;
-            }
+            return;
         }
         this.user = builder.user;
         this.video_page = Message.immutableCopyOf(builder.video_page);
@@ -216,6 +202,5 @@ public final class DataRes extends Message {
         this.has_more = builder.has_more;
         this.user_god_info = builder.user_god_info;
         this.window = builder.window;
-        this.mask_type = builder.mask_type;
     }
 }

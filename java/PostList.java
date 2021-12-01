@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PostList extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<Abstract> DEFAULT_ABSTRACT;
@@ -24,6 +24,8 @@ public final class PostList extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Abstract> _abstract;
+    @ProtoField(tag = 8)
+    public final Agree agree;
     @ProtoField(tag = 2)
     public final User author;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
@@ -37,11 +39,12 @@ public final class PostList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
     public final List<Voice> voice_info;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PostList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public List<Abstract> _abstract;
+        public Agree agree;
         public User author;
         public Long author_id;
         public Long id;
@@ -91,6 +94,7 @@ public final class PostList extends Message {
             this.media_num = Message.copyOf(postList.media_num);
             this.voice_info = Message.copyOf(postList.voice_info);
             this.author_id = postList.author_id;
+            this.agree = postList.agree;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -102,7 +106,7 @@ public final class PostList extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -186,11 +190,11 @@ public final class PostList extends Message {
             Long l2 = builder.author_id;
             if (l2 == null) {
                 this.author_id = DEFAULT_AUTHOR_ID;
-                return;
             } else {
                 this.author_id = l2;
-                return;
             }
+            this.agree = builder.agree;
+            return;
         }
         this.id = builder.id;
         this.author = builder.author;
@@ -199,5 +203,6 @@ public final class PostList extends Message {
         this.media_num = Message.immutableCopyOf(builder.media_num);
         this.voice_info = Message.immutableCopyOf(builder.voice_info);
         this.author_id = builder.author_id;
+        this.agree = builder.agree;
     }
 }

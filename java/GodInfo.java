@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GodInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_CAN_SEND_MSG;
@@ -19,6 +19,7 @@ public final class GodInfo extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final Long DEFAULT_ID;
     public static final String DEFAULT_INTRO = "";
+    public static final String DEFAULT_PREFIX = "";
     public static final String DEFAULT_RECOMMEND_REASON = "";
     public static final Integer DEFAULT_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
@@ -34,12 +35,14 @@ public final class GodInfo extends Message {
     public final Long id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String intro;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String prefix;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String recommend_reason;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<GodInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -49,6 +52,7 @@ public final class GodInfo extends Message {
         public String forum_name;
         public Long id;
         public String intro;
+        public String prefix;
         public String recommend_reason;
         public Integer type;
 
@@ -95,6 +99,7 @@ public final class GodInfo extends Message {
             this.recommend_reason = godInfo.recommend_reason;
             this.forum_name = godInfo.forum_name;
             this.can_send_msg = godInfo.can_send_msg;
+            this.prefix = godInfo.prefix;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -106,7 +111,7 @@ public final class GodInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -200,9 +205,15 @@ public final class GodInfo extends Message {
             Integer num3 = builder.can_send_msg;
             if (num3 == null) {
                 this.can_send_msg = DEFAULT_CAN_SEND_MSG;
-                return;
             } else {
                 this.can_send_msg = num3;
+            }
+            String str4 = builder.prefix;
+            if (str4 == null) {
+                this.prefix = "";
+                return;
+            } else {
+                this.prefix = str4;
                 return;
             }
         }
@@ -214,5 +225,6 @@ public final class GodInfo extends Message {
         this.recommend_reason = builder.recommend_reason;
         this.forum_name = builder.forum_name;
         this.can_send_msg = builder.can_send_msg;
+        this.prefix = builder.prefix;
     }
 }

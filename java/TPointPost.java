@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TPointPost extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<ActBtn> DEFAULT_ACT_BTN;
@@ -21,6 +21,8 @@ public final class TPointPost extends Message {
     public static final String DEFAULT_MONITOR_ID = "";
     public static final String DEFAULT_POSITION = "";
     public static final String DEFAULT_TAG_NAME = "";
+    public static final String DEFAULT_TAG_NAME_URL = "";
+    public static final String DEFAULT_TAG_NAME_WH = "";
     public static final Long DEFAULT_TEMPLATE_ID;
     public static final Integer DEFAULT_TEMPLATE_TYPE;
     public static final List<Timgs> DEFAULT_T_IMGS;
@@ -43,12 +45,16 @@ public final class TPointPost extends Message {
     public final VideoInfo t_video;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String tag_name;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String tag_name_url;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String tag_name_wh;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long template_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer template_type;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<TPointPost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -61,6 +67,8 @@ public final class TPointPost extends Message {
         public List<Timgs> t_imgs;
         public VideoInfo t_video;
         public String tag_name;
+        public String tag_name_url;
+        public String tag_name_wh;
         public Long template_id;
         public Integer template_type;
 
@@ -110,6 +118,8 @@ public final class TPointPost extends Message {
             this.hidden_day = tPointPost.hidden_day;
             this.t_video = tPointPost.t_video;
             this.tag_name = tPointPost.tag_name;
+            this.tag_name_url = tPointPost.tag_name_url;
+            this.tag_name_wh = tPointPost.tag_name_wh;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -121,7 +131,7 @@ public final class TPointPost extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -224,9 +234,21 @@ public final class TPointPost extends Message {
             String str3 = builder.tag_name;
             if (str3 == null) {
                 this.tag_name = "";
-                return;
             } else {
                 this.tag_name = str3;
+            }
+            String str4 = builder.tag_name_url;
+            if (str4 == null) {
+                this.tag_name_url = "";
+            } else {
+                this.tag_name_url = str4;
+            }
+            String str5 = builder.tag_name_wh;
+            if (str5 == null) {
+                this.tag_name_wh = "";
+                return;
+            } else {
+                this.tag_name_wh = str5;
                 return;
             }
         }
@@ -241,5 +263,7 @@ public final class TPointPost extends Message {
         this.hidden_day = builder.hidden_day;
         this.t_video = builder.t_video;
         this.tag_name = builder.tag_name;
+        this.tag_name_url = builder.tag_name_url;
+        this.tag_name_wh = builder.tag_name_wh;
     }
 }

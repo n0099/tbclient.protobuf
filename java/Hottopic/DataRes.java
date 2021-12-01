@@ -12,9 +12,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+import tbclient.Banner;
+/* loaded from: classes4.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final List<Banner> DEFAULT_BANNER;
     public static final Integer DEFAULT_IS_GLOBAL_BLOCK;
     public static final Integer DEFAULT_IS_NEW_URL;
     public static final List<RelateForum> DEFAULT_POST_FORUM;
@@ -22,6 +24,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_RELATE_FORUM_TITLE = "";
     public static final List<SpecialTopic> DEFAULT_SPECIAL_TOPIC;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(label = Message.Label.REPEATED, tag = 16)
+    public final List<Banner> banner;
     @ProtoField(tag = 7)
     public final CommonInteraction bless_module;
     @ProtoField(tag = 8)
@@ -53,10 +57,11 @@ public final class DataRes extends Message {
     @ProtoField(tag = 15)
     public final CommonInteraction weiguan_module;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public List<Banner> banner;
         public CommonInteraction bless_module;
         public CommonInteraction candle_module;
         public HotThread good_threads;
@@ -123,6 +128,7 @@ public final class DataRes extends Message {
             this.special_topic = Message.copyOf(dataRes.special_topic);
             this.relate_forum_title = dataRes.relate_forum_title;
             this.weiguan_module = dataRes.weiguan_module;
+            this.banner = Message.copyOf(dataRes.banner);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -134,7 +140,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -158,6 +164,7 @@ public final class DataRes extends Message {
         DEFAULT_POST_FORUM = Collections.emptyList();
         DEFAULT_IS_GLOBAL_BLOCK = 0;
         DEFAULT_SPECIAL_TOPIC = Collections.emptyList();
+        DEFAULT_BANNER = Collections.emptyList();
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -228,7 +235,14 @@ public final class DataRes extends Message {
                 this.relate_forum_title = str;
             }
             this.weiguan_module = builder.weiguan_module;
-            return;
+            List<Banner> list4 = builder.banner;
+            if (list4 == null) {
+                this.banner = DEFAULT_BANNER;
+                return;
+            } else {
+                this.banner = Message.immutableCopyOf(list4);
+                return;
+            }
         }
         this.relate_forum = Message.immutableCopyOf(builder.relate_forum);
         this.magic_post = builder.magic_post;
@@ -245,5 +259,6 @@ public final class DataRes extends Message {
         this.special_topic = Message.immutableCopyOf(builder.special_topic);
         this.relate_forum_title = builder.relate_forum_title;
         this.weiguan_module = builder.weiguan_module;
+        this.banner = Message.immutableCopyOf(builder.banner);
     }
 }

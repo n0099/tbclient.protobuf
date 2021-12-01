@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PostInfoList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABSTRACT = "";
@@ -187,12 +187,14 @@ public final class PostInfoList extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
+    @ProtoField(tag = 64)
+    public final VoiceRoom voice_room;
     @ProtoField(tag = 51, type = Message.Datatype.STRING)
     public final String wonderful_post_info;
     @ProtoField(tag = 58)
     public final WorksInfo works_info;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -257,6 +259,7 @@ public final class PostInfoList extends Message {
         public VideoInfo video_info;
         public Integer view_num;
         public List<Voice> voice_info;
+        public VoiceRoom voice_room;
         public String wonderful_post_info;
         public WorksInfo works_info;
 
@@ -358,6 +361,7 @@ public final class PostInfoList extends Message {
             this.good_types = postInfoList.good_types;
             this.top_types = postInfoList.top_types;
             this.user_post_perm = postInfoList.user_post_perm;
+            this.voice_room = postInfoList.voice_room;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -369,7 +373,7 @@ public final class PostInfoList extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -758,6 +762,7 @@ public final class PostInfoList extends Message {
                 this.top_types = num18;
             }
             this.user_post_perm = builder.user_post_perm;
+            this.voice_room = builder.voice_room;
             return;
         }
         this.forum_id = builder.forum_id;
@@ -823,5 +828,6 @@ public final class PostInfoList extends Message {
         this.good_types = builder.good_types;
         this.top_types = builder.top_types;
         this.user_post_perm = builder.user_post_perm;
+        this.voice_room = builder.voice_room;
     }
 }

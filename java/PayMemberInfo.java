@@ -10,11 +10,12 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PayMemberInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_END_TIME;
     public static final String DEFAULT_EXPIRE_REMIND = "";
+    public static final String DEFAULT_PIC_URL = "";
     public static final Integer DEFAULT_PROPS_ID;
     public static final String DEFAULT_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
@@ -22,17 +23,20 @@ public final class PayMemberInfo extends Message {
     public final Integer end_time;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String expire_remind;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String pic_url;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer props_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PayMemberInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer end_time;
         public String expire_remind;
+        public String pic_url;
         public Integer props_id;
         public String url;
 
@@ -75,6 +79,7 @@ public final class PayMemberInfo extends Message {
             this.end_time = payMemberInfo.end_time;
             this.url = payMemberInfo.url;
             this.expire_remind = payMemberInfo.expire_remind;
+            this.pic_url = payMemberInfo.pic_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -86,7 +91,7 @@ public final class PayMemberInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -153,9 +158,15 @@ public final class PayMemberInfo extends Message {
             String str2 = builder.expire_remind;
             if (str2 == null) {
                 this.expire_remind = "";
-                return;
             } else {
                 this.expire_remind = str2;
+            }
+            String str3 = builder.pic_url;
+            if (str3 == null) {
+                this.pic_url = "";
+                return;
+            } else {
+                this.pic_url = str3;
                 return;
             }
         }
@@ -163,5 +174,6 @@ public final class PayMemberInfo extends Message {
         this.end_time = builder.end_time;
         this.url = builder.url;
         this.expire_remind = builder.expire_remind;
+        this.pic_url = builder.pic_url;
     }
 }

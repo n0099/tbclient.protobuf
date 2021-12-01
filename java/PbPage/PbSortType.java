@@ -10,21 +10,18 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PbSortType extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_SORT_NAME = "";
     public static final Integer DEFAULT_SORT_TYPE;
-    public static final int SORT_TYPE_ASC = 0;
-    public static final int SORT_TYPE_DESC = 1;
-    public static final int SORT_TYPE_HOT = 2;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String sort_name;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer sort_type;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PbSortType> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,7 +76,7 @@ public final class PbSortType extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

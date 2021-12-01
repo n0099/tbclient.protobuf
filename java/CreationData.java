@@ -15,6 +15,10 @@ public final class CreationData extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_AGREE_COUNT;
     public static final Integer DEFAULT_AGREE_COUNT_TREND;
+    public static final Integer DEFAULT_COMMENT_COUNT;
+    public static final Integer DEFAULT_COMMENT_TREND;
+    public static final Integer DEFAULT_VALID_PLAY_COUNT;
+    public static final Integer DEFAULT_VALID_PLAY_COUNT_TREND;
     public static final Integer DEFAULT_VIEW_COUNT;
     public static final Integer DEFAULT_VIEW_COUNT_TREND;
     public transient /* synthetic */ FieldHolder $fh;
@@ -22,6 +26,14 @@ public final class CreationData extends Message {
     public final Integer agree_count;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer agree_count_trend;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer comment_count;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer comment_trend;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer valid_play_count;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer valid_play_count_trend;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer view_count;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -33,6 +45,10 @@ public final class CreationData extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public Integer agree_count;
         public Integer agree_count_trend;
+        public Integer comment_count;
+        public Integer comment_trend;
+        public Integer valid_play_count;
+        public Integer valid_play_count_trend;
         public Integer view_count;
         public Integer view_count_trend;
 
@@ -75,6 +91,10 @@ public final class CreationData extends Message {
             this.agree_count = creationData.agree_count;
             this.view_count_trend = creationData.view_count_trend;
             this.agree_count_trend = creationData.agree_count_trend;
+            this.comment_count = creationData.comment_count;
+            this.comment_trend = creationData.comment_trend;
+            this.valid_play_count = creationData.valid_play_count;
+            this.valid_play_count_trend = creationData.valid_play_count_trend;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -109,6 +129,10 @@ public final class CreationData extends Message {
         DEFAULT_AGREE_COUNT = 0;
         DEFAULT_VIEW_COUNT_TREND = 0;
         DEFAULT_AGREE_COUNT_TREND = 0;
+        DEFAULT_COMMENT_COUNT = 0;
+        DEFAULT_COMMENT_TREND = 0;
+        DEFAULT_VALID_PLAY_COUNT = 0;
+        DEFAULT_VALID_PLAY_COUNT_TREND = 0;
     }
 
     public /* synthetic */ CreationData(Builder builder, boolean z, a aVar) {
@@ -155,9 +179,33 @@ public final class CreationData extends Message {
             Integer num4 = builder.agree_count_trend;
             if (num4 == null) {
                 this.agree_count_trend = DEFAULT_AGREE_COUNT_TREND;
-                return;
             } else {
                 this.agree_count_trend = num4;
+            }
+            Integer num5 = builder.comment_count;
+            if (num5 == null) {
+                this.comment_count = DEFAULT_COMMENT_COUNT;
+            } else {
+                this.comment_count = num5;
+            }
+            Integer num6 = builder.comment_trend;
+            if (num6 == null) {
+                this.comment_trend = DEFAULT_COMMENT_TREND;
+            } else {
+                this.comment_trend = num6;
+            }
+            Integer num7 = builder.valid_play_count;
+            if (num7 == null) {
+                this.valid_play_count = DEFAULT_VALID_PLAY_COUNT;
+            } else {
+                this.valid_play_count = num7;
+            }
+            Integer num8 = builder.valid_play_count_trend;
+            if (num8 == null) {
+                this.valid_play_count_trend = DEFAULT_VALID_PLAY_COUNT_TREND;
+                return;
+            } else {
+                this.valid_play_count_trend = num8;
                 return;
             }
         }
@@ -165,5 +213,9 @@ public final class CreationData extends Message {
         this.agree_count = builder.agree_count;
         this.view_count_trend = builder.view_count_trend;
         this.agree_count_trend = builder.agree_count_trend;
+        this.comment_count = builder.comment_count;
+        this.comment_trend = builder.comment_trend;
+        this.valid_play_count = builder.valid_play_count;
+        this.valid_play_count_trend = builder.valid_play_count_trend;
     }
 }

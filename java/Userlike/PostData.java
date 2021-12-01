@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
 import tbclient.User;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PostData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<PbContent> DEFAULT_CONTENT;
@@ -33,7 +33,7 @@ public final class PostData extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT64)
     public final Long time;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PostData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -94,7 +94,7 @@ public final class PostData extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

@@ -21,7 +21,7 @@ public final class Calendar extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
 
     /* renamed from: d  reason: collision with root package name */
-    public final Integer f73723d;
+    public final Integer f64530d;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer rank;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -35,7 +35,7 @@ public final class Calendar extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: d  reason: collision with root package name */
-        public Integer f73724d;
+        public Integer f64531d;
         public Integer rank;
         public Integer sign_type;
         public String t;
@@ -75,7 +75,7 @@ public final class Calendar extends Message {
             if (calendar == null) {
                 return;
             }
-            this.f73724d = calendar.f73723d;
+            this.f64531d = calendar.f64530d;
             this.t = calendar.t;
             this.rank = calendar.rank;
             this.sign_type = calendar.sign_type;
@@ -137,11 +137,11 @@ public final class Calendar extends Message {
             }
         }
         if (z) {
-            Integer num = builder.f73724d;
+            Integer num = builder.f64531d;
             if (num == null) {
-                this.f73723d = DEFAULT_D;
+                this.f64530d = DEFAULT_D;
             } else {
-                this.f73723d = num;
+                this.f64530d = num;
             }
             String str = builder.t;
             if (str == null) {
@@ -164,7 +164,7 @@ public final class Calendar extends Message {
                 return;
             }
         }
-        this.f73723d = builder.f73724d;
+        this.f64530d = builder.f64531d;
         this.t = builder.t;
         this.rank = builder.rank;
         this.sign_type = builder.sign_type;

@@ -8,9 +8,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import org.json.JSONException;
-import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ThreadPicList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_PIC = "";
@@ -18,7 +16,7 @@ public final class ThreadPicList extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ThreadPicList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -71,7 +69,7 @@ public final class ThreadPicList extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,38 +77,6 @@ public final class ThreadPicList extends Message {
 
     public /* synthetic */ ThreadPicList(Builder builder, boolean z, a aVar) {
         this(builder, z);
-    }
-
-    public static ThreadPicList parseFromJson(JSONObject jSONObject) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(65538, null, jSONObject)) == null) {
-            if (jSONObject == null) {
-                return null;
-            }
-            Builder builder = new Builder();
-            builder.pic = jSONObject.optString("pic");
-            return builder.build(false);
-        }
-        return (ThreadPicList) invokeL.objValue;
-    }
-
-    public static JSONObject toJson(ThreadPicList threadPicList) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(65539, null, threadPicList)) == null) {
-            if (threadPicList == null) {
-                return null;
-            }
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("pic", threadPicList.pic);
-            } catch (JSONException e2) {
-                e2.printStackTrace();
-            }
-            return jSONObject;
-        }
-        return (JSONObject) invokeL.objValue;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

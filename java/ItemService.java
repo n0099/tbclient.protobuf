@@ -10,15 +10,18 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ItemService extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_APP_ID;
     public static final Integer DEFAULT_CLIENT_TYPE;
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_NAME = "";
     public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer app_id;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer client_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -30,10 +33,11 @@ public final class ItemService extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ItemService> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public Integer app_id;
         public Integer client_type;
         public String icon;
         public String name;
@@ -80,6 +84,7 @@ public final class ItemService extends Message {
             this.type = itemService.type;
             this.name = itemService.name;
             this.url = itemService.url;
+            this.app_id = itemService.app_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -91,7 +96,7 @@ public final class ItemService extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -112,6 +117,7 @@ public final class ItemService extends Message {
         }
         DEFAULT_CLIENT_TYPE = 0;
         DEFAULT_TYPE = 0;
+        DEFAULT_APP_ID = 0;
     }
 
     public /* synthetic */ ItemService(Builder builder, boolean z, a aVar) {
@@ -164,9 +170,15 @@ public final class ItemService extends Message {
             String str3 = builder.url;
             if (str3 == null) {
                 this.url = "";
-                return;
             } else {
                 this.url = str3;
+            }
+            Integer num3 = builder.app_id;
+            if (num3 == null) {
+                this.app_id = DEFAULT_APP_ID;
+                return;
+            } else {
+                this.app_id = num3;
                 return;
             }
         }
@@ -175,5 +187,6 @@ public final class ItemService extends Message {
         this.type = builder.type;
         this.name = builder.name;
         this.url = builder.url;
+        this.app_id = builder.app_id;
     }
 }

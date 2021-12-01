@@ -17,12 +17,15 @@ public final class BottomMenu extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_NAME = "";
     public static final List<SubBottomMenu> DEFAULT_SUBMENU;
+    public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<SubBottomMenu> submenu;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer type;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
@@ -32,6 +35,7 @@ public final class BottomMenu extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public String name;
         public List<SubBottomMenu> submenu;
+        public Integer type;
         public String url;
 
         public Builder() {
@@ -72,6 +76,7 @@ public final class BottomMenu extends Message {
             this.name = bottomMenu.name;
             this.url = bottomMenu.url;
             this.submenu = Message.copyOf(bottomMenu.submenu);
+            this.type = bottomMenu.type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -103,6 +108,7 @@ public final class BottomMenu extends Message {
             }
         }
         DEFAULT_SUBMENU = Collections.emptyList();
+        DEFAULT_TYPE = 0;
     }
 
     public /* synthetic */ BottomMenu(Builder builder, boolean z, a aVar) {
@@ -143,14 +149,21 @@ public final class BottomMenu extends Message {
             List<SubBottomMenu> list = builder.submenu;
             if (list == null) {
                 this.submenu = DEFAULT_SUBMENU;
-                return;
             } else {
                 this.submenu = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+                return;
+            } else {
+                this.type = num;
                 return;
             }
         }
         this.name = builder.name;
         this.url = builder.url;
         this.submenu = Message.immutableCopyOf(builder.submenu);
+        this.type = builder.type;
     }
 }

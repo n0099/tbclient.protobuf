@@ -8,11 +8,16 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.CommonReq;
 /* loaded from: classes3.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_TYPE = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 2)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f64560common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String type;
 
@@ -20,6 +25,9 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f64561common;
         public String type;
 
         public Builder() {
@@ -58,6 +66,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.type = dataReq.type;
+            this.f64561common = dataReq.f64560common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -101,12 +110,13 @@ public final class DataReq extends Message {
             String str = builder.type;
             if (str == null) {
                 this.type = "";
-                return;
             } else {
                 this.type = str;
-                return;
             }
+            this.f64560common = builder.f64561common;
+            return;
         }
         this.type = builder.type;
+        this.f64560common = builder.f64561common;
     }
 }

@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UserGodInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ADDRESS = "";
@@ -44,7 +44,7 @@ public final class UserGodInfo extends Message {
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String total_thread;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<UserGodInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -113,7 +113,7 @@ public final class UserGodInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

@@ -6,11 +6,8 @@ import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
-import com.baidu.ugc.editvideo.data.MultiMediaDataConstant;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import org.json.JSONException;
-import org.json.JSONObject;
 /* loaded from: classes3.dex */
 public final class ActionControl extends Message {
     public static /* synthetic */ Interceptable $ic = null;
@@ -95,44 +92,6 @@ public final class ActionControl extends Message {
 
     public /* synthetic */ ActionControl(Builder builder, boolean z, a aVar) {
         this(builder, z);
-    }
-
-    public static ActionControl parseFromJson(JSONObject jSONObject) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(65538, null, jSONObject)) == null) {
-            if (jSONObject == null) {
-                return null;
-            }
-            Builder builder = new Builder();
-            builder.url = jSONObject.optString("url");
-            builder.name = jSONObject.optString("name");
-            builder.text_color = jSONObject.optString(MultiMediaDataConstant.KEY_EXT_TEXT_WORDS_COLOR);
-            builder.text_color_pressed = jSONObject.optString("text_color_pressed");
-            return builder.build(false);
-        }
-        return (ActionControl) invokeL.objValue;
-    }
-
-    public static JSONObject toJson(ActionControl actionControl) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(65539, null, actionControl)) == null) {
-            if (actionControl == null) {
-                return null;
-            }
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("url", actionControl.url);
-                jSONObject.put("name", actionControl.name);
-                jSONObject.put(MultiMediaDataConstant.KEY_EXT_TEXT_WORDS_COLOR, actionControl.text_color);
-                jSONObject.put("text_color_pressed", actionControl.text_color_pressed);
-            } catch (JSONException e2) {
-                e2.printStackTrace();
-            }
-            return jSONObject;
-        }
-        return (JSONObject) invokeL.objValue;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

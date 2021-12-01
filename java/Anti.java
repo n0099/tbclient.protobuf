@@ -198,9 +198,9 @@ public final class Anti extends Message {
             this.del_thread_text = Message.copyOf(anti.del_thread_text);
             this.multi_delthread = anti.multi_delthread;
             this.poll_level = anti.poll_level;
+            this.can_goods = anti.can_goods;
             this.is_sexyforum = anti.is_sexyforum;
             this.teenmode_interval = anti.teenmode_interval;
-            this.can_goods = anti.can_goods;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -246,8 +246,8 @@ public final class Anti extends Message {
         DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
         DEFAULT_MULTI_DELTHREAD = 0;
         DEFAULT_POLL_LEVEL = 0;
-        DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
         DEFAULT_CAN_GOODS = 0;
+        DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
     }
 
     public /* synthetic */ Anti(Builder builder, boolean z, a aVar) {
@@ -424,6 +424,12 @@ public final class Anti extends Message {
             } else {
                 this.poll_level = num14;
             }
+            Integer num15 = builder.can_goods;
+            if (num15 == null) {
+                this.can_goods = DEFAULT_CAN_GOODS;
+            } else {
+                this.can_goods = num15;
+            }
             Boolean bool = builder.is_sexyforum;
             if (bool == null) {
                 this.is_sexyforum = DEFAULT_IS_SEXYFORUM;
@@ -433,15 +439,9 @@ public final class Anti extends Message {
             String str11 = builder.teenmode_interval;
             if (str11 == null) {
                 this.teenmode_interval = "";
-            } else {
-                this.teenmode_interval = str11;
-            }
-            Integer num15 = builder.can_goods;
-            if (num15 == null) {
-                this.can_goods = DEFAULT_CAN_GOODS;
                 return;
             } else {
-                this.can_goods = num15;
+                this.teenmode_interval = str11;
                 return;
             }
         }
@@ -471,8 +471,8 @@ public final class Anti extends Message {
         this.del_thread_text = Message.immutableCopyOf(builder.del_thread_text);
         this.multi_delthread = builder.multi_delthread;
         this.poll_level = builder.poll_level;
+        this.can_goods = builder.can_goods;
         this.is_sexyforum = builder.is_sexyforum;
         this.teenmode_interval = builder.teenmode_interval;
-        this.can_goods = builder.can_goods;
     }
 }

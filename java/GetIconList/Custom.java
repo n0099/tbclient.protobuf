@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Custom extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CREATE_TIME = "";
@@ -27,6 +27,7 @@ public final class Custom extends Message {
     public static final Integer DEFAULT_IOS_DISPLAY;
     public static final String DEFAULT_IOS_ICON_ID = "";
     public static final Integer DEFAULT_IS_CUSTOM_PRICE;
+    public static final Integer DEFAULT_IS_DEFAULT;
     public static final String DEFAULT_NAME = "";
     public static final Integer DEFAULT_NON_MEMBER_I;
     public static final Integer DEFAULT_NON_MEMBER_T;
@@ -62,6 +63,8 @@ public final class Custom extends Message {
     public final String ios_icon_id;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer is_custom_price;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer is_default;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -83,7 +86,7 @@ public final class Custom extends Message {
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer validity;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<Custom> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -99,6 +102,7 @@ public final class Custom extends Message {
         public Integer ios_display;
         public String ios_icon_id;
         public Integer is_custom_price;
+        public Integer is_default;
         public String name;
         public Integer non_member_i;
         public Integer non_member_t;
@@ -167,6 +171,7 @@ public final class Custom extends Message {
             this.pic_url = custom.pic_url;
             this.icon_name = custom.icon_name;
             this.icon_pic = custom.icon_pic;
+            this.is_default = custom.is_default;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -178,7 +183,7 @@ public final class Custom extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -208,6 +213,7 @@ public final class Custom extends Message {
         DEFAULT_PROPS_ID = 0;
         DEFAULT_VALIDITY = 0;
         DEFAULT_IS_CUSTOM_PRICE = 0;
+        DEFAULT_IS_DEFAULT = 0;
     }
 
     public /* synthetic */ Custom(Builder builder, boolean z, a aVar) {
@@ -362,9 +368,15 @@ public final class Custom extends Message {
             String str11 = builder.icon_pic;
             if (str11 == null) {
                 this.icon_pic = "";
-                return;
             } else {
                 this.icon_pic = str11;
+            }
+            Integer num11 = builder.is_default;
+            if (num11 == null) {
+                this.is_default = DEFAULT_IS_DEFAULT;
+                return;
+            } else {
+                this.is_default = num11;
                 return;
             }
         }
@@ -390,5 +402,6 @@ public final class Custom extends Message {
         this.pic_url = builder.pic_url;
         this.icon_name = builder.icon_name;
         this.icon_pic = builder.icon_pic;
+        this.is_default = builder.is_default;
     }
 }

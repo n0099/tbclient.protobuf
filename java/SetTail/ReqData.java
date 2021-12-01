@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ReqData extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_TAILID;
@@ -20,19 +20,19 @@ public final class ReqData extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f73979common;
+    public final CommonReq f64754common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer tailId;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer type;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f73980common;
+        public CommonReq f64755common;
         public Integer tailId;
         public Integer type;
 
@@ -73,7 +73,7 @@ public final class ReqData extends Message {
             }
             this.type = reqData.type;
             this.tailId = reqData.tailId;
-            this.f73980common = reqData.f73979common;
+            this.f64755common = reqData.f64754common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,7 +85,7 @@ public final class ReqData extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -143,11 +143,11 @@ public final class ReqData extends Message {
             } else {
                 this.tailId = num2;
             }
-            this.f73979common = builder.f73980common;
+            this.f64754common = builder.f64755common;
             return;
         }
         this.type = builder.type;
         this.tailId = builder.tailId;
-        this.f73979common = builder.f73980common;
+        this.f64754common = builder.f64755common;
     }
 }

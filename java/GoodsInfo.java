@@ -1,11 +1,6 @@
 package tbclient;
 
-import androidx.core.view.InputDeviceCompat;
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.mobads.container.util.AdIconUtil;
-import com.baidu.swan.game.guide.GameGuideConfigInfo;
-import com.baidu.tbadk.core.atomData.MissonDetailsActivityConfig;
-import com.baidu.tbadk.core.atomData.WriteActivityConfig;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -15,13 +10,9 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GoodsInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_SOURCE = "";
@@ -111,7 +102,7 @@ public final class GoodsInfo extends Message {
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer width;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<GoodsInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -220,7 +211,7 @@ public final class GoodsInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -251,104 +242,6 @@ public final class GoodsInfo extends Message {
 
     public /* synthetic */ GoodsInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
-    }
-
-    public static GoodsInfo parseFromJson(JSONObject jSONObject) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(InputDeviceCompat.SOURCE_TRACKBALL, null, jSONObject)) == null) {
-            if (jSONObject == null) {
-                return null;
-            }
-            Builder builder = new Builder();
-            builder.id = Integer.valueOf(jSONObject.optInt("id"));
-            builder.user_name = jSONObject.optString("user_name");
-            builder.user_portrait = jSONObject.optString("user_portrait");
-            builder.thread_title = jSONObject.optString(MissonDetailsActivityConfig.THREAD_TITLE);
-            builder.thread_pic = jSONObject.optString("thread_pic");
-            builder.pop_window_text = jSONObject.optString("pop_window_text");
-            builder.goods_style = Integer.valueOf(jSONObject.optInt("goods_style"));
-            ArrayList arrayList = new ArrayList();
-            JSONArray optJSONArray = jSONObject.optJSONArray("thread_pic_list");
-            int length = optJSONArray.length();
-            for (int i2 = 0; i2 < length; i2++) {
-                arrayList.add(ThreadPicList.parseFromJson(optJSONArray.optJSONObject(i2)));
-            }
-            builder.thread_pic_list = arrayList;
-            builder.label_visible = Integer.valueOf(jSONObject.optInt("label_visible"));
-            builder.label_text = jSONObject.optString("label_text");
-            builder.rank_level = Integer.valueOf(jSONObject.optInt("rank_level"));
-            builder.thread_type = jSONObject.optString("thread_type");
-            builder.button_text = jSONObject.optString(GameGuideConfigInfo.KEY_BUTTON_TEXT);
-            builder.card_desc = jSONObject.optString("card_desc");
-            builder.card_tag = jSONObject.optString("card_tag");
-            builder.width = Integer.valueOf(jSONObject.optInt("width"));
-            builder.height = Integer.valueOf(jSONObject.optInt("height"));
-            builder.label_measure = Integer.valueOf(jSONObject.optInt("label_measure"));
-            builder.thread_content = jSONObject.optString("thread_content");
-            builder.lego_card = jSONObject.optString("lego_card");
-            builder.video_info = VideoInfo.parseFromJson(jSONObject.optJSONObject(WriteActivityConfig.VIDEO_INFO));
-            builder.tag_name = jSONObject.optString("tag_name");
-            builder.button_url = jSONObject.optString("button_url");
-            builder.ad_source = jSONObject.optString("ad_source");
-            builder.tag_name_url = jSONObject.optString("tag_name_url");
-            builder.tag_name_wh = jSONObject.optString("tag_name_wh");
-            builder.brand_icon = jSONObject.optString("brand_icon");
-            builder.brand_icon_wh = jSONObject.optString("brand_icon_wh");
-            builder.close_info = AdCloseInfo.parseFromJson(jSONObject.optJSONObject(GameGuideConfigInfo.KEY_CLOSE_INFO));
-            return builder.build(false);
-        }
-        return (GoodsInfo) invokeL.objValue;
-    }
-
-    public static JSONObject toJson(GoodsInfo goodsInfo) {
-        InterceptResult invokeL;
-        Interceptable interceptable = $ic;
-        if (interceptable == null || (invokeL = interceptable.invokeL(AdIconUtil.AD_TEXT_ID, null, goodsInfo)) == null) {
-            if (goodsInfo == null) {
-                return null;
-            }
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("id", goodsInfo.id);
-                jSONObject.put("user_name", goodsInfo.user_name);
-                jSONObject.put("user_portrait", goodsInfo.user_portrait);
-                jSONObject.put(MissonDetailsActivityConfig.THREAD_TITLE, goodsInfo.thread_title);
-                jSONObject.put("thread_pic", goodsInfo.thread_pic);
-                jSONObject.put("pop_window_text", goodsInfo.pop_window_text);
-                jSONObject.put("goods_style", goodsInfo.goods_style);
-                JSONArray jSONArray = new JSONArray();
-                for (ThreadPicList threadPicList : goodsInfo.thread_pic_list) {
-                    jSONArray.put(ThreadPicList.toJson(threadPicList));
-                }
-                jSONObject.put("thread_pic_list", jSONArray);
-                jSONObject.put("label_visible", goodsInfo.label_visible);
-                jSONObject.put("label_text", goodsInfo.label_text);
-                jSONObject.put("rank_level", goodsInfo.rank_level);
-                jSONObject.put("thread_type", goodsInfo.thread_type);
-                jSONObject.put(GameGuideConfigInfo.KEY_BUTTON_TEXT, goodsInfo.button_text);
-                jSONObject.put("card_desc", goodsInfo.card_desc);
-                jSONObject.put("card_tag", goodsInfo.card_tag);
-                jSONObject.put("width", goodsInfo.width);
-                jSONObject.put("height", goodsInfo.height);
-                jSONObject.put("label_measure", goodsInfo.label_measure);
-                jSONObject.put("thread_content", goodsInfo.thread_content);
-                jSONObject.put("lego_card", goodsInfo.lego_card);
-                jSONObject.put(WriteActivityConfig.VIDEO_INFO, VideoInfo.toJson(goodsInfo.video_info));
-                jSONObject.put("tag_name", goodsInfo.tag_name);
-                jSONObject.put("button_url", goodsInfo.button_url);
-                jSONObject.put("ad_source", goodsInfo.ad_source);
-                jSONObject.put("tag_name_url", goodsInfo.tag_name_url);
-                jSONObject.put("tag_name_wh", goodsInfo.tag_name_wh);
-                jSONObject.put("brand_icon", goodsInfo.brand_icon);
-                jSONObject.put("brand_icon_wh", goodsInfo.brand_icon_wh);
-                jSONObject.put(GameGuideConfigInfo.KEY_CLOSE_INFO, AdCloseInfo.toJson(goodsInfo.close_info));
-            } catch (JSONException e2) {
-                e2.printStackTrace();
-            }
-            return jSONObject;
-        }
-        return (JSONObject) invokeL.objValue;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

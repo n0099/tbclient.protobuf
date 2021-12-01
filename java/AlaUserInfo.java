@@ -86,6 +86,8 @@ public final class AlaUserInfo extends Message {
     public final String user_name;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String verify_status;
+    @ProtoField(tag = 25)
+    public final YyExt yy_ext;
 
     /* loaded from: classes3.dex */
     public static final class Builder extends Message.Builder<AlaUserInfo> {
@@ -115,6 +117,7 @@ public final class AlaUserInfo extends Message {
         public Long user_id;
         public String user_name;
         public String verify_status;
+        public YyExt yy_ext;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -175,6 +178,7 @@ public final class AlaUserInfo extends Message {
             this.level_name = alaUserInfo.level_name;
             this.user_id = alaUserInfo.user_id;
             this.anchor_fans = alaUserInfo.anchor_fans;
+            this.yy_ext = alaUserInfo.yy_ext;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -386,11 +390,11 @@ public final class AlaUserInfo extends Message {
             Integer num5 = builder.anchor_fans;
             if (num5 == null) {
                 this.anchor_fans = DEFAULT_ANCHOR_FANS;
-                return;
             } else {
                 this.anchor_fans = num5;
-                return;
             }
+            this.yy_ext = builder.yy_ext;
+            return;
         }
         this.ala_id = builder.ala_id;
         this.user_name = builder.user_name;
@@ -416,5 +420,6 @@ public final class AlaUserInfo extends Message {
         this.level_name = builder.level_name;
         this.user_id = builder.user_id;
         this.anchor_fans = builder.anchor_fans;
+        this.yy_ext = builder.yy_ext;
     }
 }

@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeBgProp;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ThemePendantInMain extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_PENDANT_CATEGORY = "";
@@ -24,7 +24,7 @@ public final class ThemePendantInMain extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThemeBgProp> props;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<ThemePendantInMain> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,7 +79,7 @@ public final class ThemePendantInMain extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

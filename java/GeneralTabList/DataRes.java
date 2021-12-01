@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.App;
 import tbclient.ItemInfo;
+import tbclient.SortOption;
 import tbclient.SportPageHeadInfo;
 import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
@@ -25,6 +26,7 @@ public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_GENERAL_LIST;
     public static final Integer DEFAULT_HAS_MORE;
     public static final Integer DEFAULT_NEW_THREAD_NUM;
+    public static final List<SortOption> DEFAULT_SORT_OPTION;
     public static final Integer DEFAULT_SORT_TYPE;
     public static final List<User> DEFAULT_USER_LIST;
     public transient /* synthetic */ FieldHolder $fh;
@@ -38,6 +40,8 @@ public final class DataRes extends Message {
     public final ItemInfo item_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer new_thread_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 9)
+    public final List<SortOption> sort_option;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(tag = 5)
@@ -56,6 +60,7 @@ public final class DataRes extends Message {
         public Integer has_more;
         public ItemInfo item_info;
         public Integer new_thread_num;
+        public List<SortOption> sort_option;
         public Integer sort_type;
         public SportPageHeadInfo sport_head_info;
         public SportScheduleInfo sport_schedule_info;
@@ -104,6 +109,7 @@ public final class DataRes extends Message {
             this.new_thread_num = dataRes.new_thread_num;
             this.sort_type = dataRes.sort_type;
             this.item_info = dataRes.item_info;
+            this.sort_option = Message.copyOf(dataRes.sort_option);
             this.app_list = Message.copyOf(dataRes.app_list);
         }
 
@@ -140,6 +146,7 @@ public final class DataRes extends Message {
         DEFAULT_USER_LIST = Collections.emptyList();
         DEFAULT_NEW_THREAD_NUM = 0;
         DEFAULT_SORT_TYPE = 0;
+        DEFAULT_SORT_OPTION = Collections.emptyList();
         DEFAULT_APP_LIST = Collections.emptyList();
     }
 
@@ -199,12 +206,18 @@ public final class DataRes extends Message {
                 this.sort_type = num3;
             }
             this.item_info = builder.item_info;
-            List<App> list3 = builder.app_list;
+            List<SortOption> list3 = builder.sort_option;
             if (list3 == null) {
+                this.sort_option = DEFAULT_SORT_OPTION;
+            } else {
+                this.sort_option = Message.immutableCopyOf(list3);
+            }
+            List<App> list4 = builder.app_list;
+            if (list4 == null) {
                 this.app_list = DEFAULT_APP_LIST;
                 return;
             } else {
-                this.app_list = Message.immutableCopyOf(list3);
+                this.app_list = Message.immutableCopyOf(list4);
                 return;
             }
         }
@@ -216,6 +229,7 @@ public final class DataRes extends Message {
         this.new_thread_num = builder.new_thread_num;
         this.sort_type = builder.sort_type;
         this.item_info = builder.item_info;
+        this.sort_option = Message.immutableCopyOf(builder.sort_option);
         this.app_list = Message.immutableCopyOf(builder.app_list);
     }
 }

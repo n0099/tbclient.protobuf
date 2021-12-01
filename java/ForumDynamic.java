@@ -20,7 +20,6 @@ public final class ForumDynamic extends Message {
     public static final Integer DEFAULT_MEMBER_COUNT;
     public static final String DEFAULT_SLOGAN = "";
     public static final Integer DEFAULT_THREAD_COUNT;
-    public static final String DEFAULT_TITLE = "";
     public static final Integer DEFAULT_USER_THREAD_COUNT;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -37,8 +36,6 @@ public final class ForumDynamic extends Message {
     public final String slogan;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer thread_count;
-    @ProtoField(tag = 8, type = Message.Datatype.STRING)
-    public final String title;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer user_thread_count;
 
@@ -53,7 +50,6 @@ public final class ForumDynamic extends Message {
         public Integer member_count;
         public String slogan;
         public Integer thread_count;
-        public String title;
         public Integer user_thread_count;
 
         public Builder() {
@@ -98,7 +94,6 @@ public final class ForumDynamic extends Message {
             this.is_like = forumDynamic.is_like;
             this.member_count = forumDynamic.member_count;
             this.thread_count = forumDynamic.thread_count;
-            this.title = forumDynamic.title;
             this.user_thread_count = forumDynamic.user_thread_count;
         }
 
@@ -202,12 +197,6 @@ public final class ForumDynamic extends Message {
             } else {
                 this.thread_count = num3;
             }
-            String str4 = builder.title;
-            if (str4 == null) {
-                this.title = "";
-            } else {
-                this.title = str4;
-            }
             Integer num4 = builder.user_thread_count;
             if (num4 == null) {
                 this.user_thread_count = DEFAULT_USER_THREAD_COUNT;
@@ -224,7 +213,6 @@ public final class ForumDynamic extends Message {
         this.is_like = builder.is_like;
         this.member_count = builder.member_count;
         this.thread_count = builder.thread_count;
-        this.title = builder.title;
         this.user_thread_count = builder.user_thread_count;
     }
 }

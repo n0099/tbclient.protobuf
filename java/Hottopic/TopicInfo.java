@@ -11,17 +11,20 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.VideoInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TopicInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BANG_JUMP_DESC = "";
     public static final String DEFAULT_BANG_TITLE = "";
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_DISCUSS_FORUM = "";
+    public static final String DEFAULT_HEAD_BACKGROUND_URL = "";
     public static final String DEFAULT_HEAD_PHOTO_JUMP_URL = "";
     public static final String DEFAULT_HEAD_PHOTO_URL = "";
     public static final Long DEFAULT_IDX_NUM;
     public static final Long DEFAULT_IS_DELETED;
+    public static final Integer DEFAULT_IS_VIDEO_TOPIC;
+    public static final Integer DEFAULT_PLAY_COUNT;
     public static final Integer DEFAULT_PMY_SOURCE;
     public static final Long DEFAULT_PMY_TOPIC_ID;
     public static final String DEFAULT_SHARE_PIC = "";
@@ -40,6 +43,8 @@ public final class TopicInfo extends Message {
     public final String desc;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String discuss_forum;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String head_background_url;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String head_photo_jump_url;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -48,8 +53,12 @@ public final class TopicInfo extends Message {
     public final Long idx_num;
     @ProtoField(tag = 19, type = Message.Datatype.INT64)
     public final Long is_deleted;
+    @ProtoField(tag = 20, type = Message.Datatype.INT32)
+    public final Integer is_video_topic;
     @ProtoField(tag = 16)
     public final JoinUser join_info;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer play_count;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer pmy_source;
     @ProtoField(tag = 14, type = Message.Datatype.UINT64)
@@ -71,7 +80,7 @@ public final class TopicInfo extends Message {
     @ProtoField(tag = 12)
     public final VideoInfo video_info;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<TopicInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,11 +88,14 @@ public final class TopicInfo extends Message {
         public String bang_title;
         public String desc;
         public String discuss_forum;
+        public String head_background_url;
         public String head_photo_jump_url;
         public String head_photo_url;
         public Long idx_num;
         public Long is_deleted;
+        public Integer is_video_topic;
         public JoinUser join_info;
+        public Integer play_count;
         public Integer pmy_source;
         public Long pmy_topic_id;
         public String share_pic;
@@ -149,6 +161,9 @@ public final class TopicInfo extends Message {
             this.head_photo_jump_url = topicInfo.head_photo_jump_url;
             this.topic_tag = topicInfo.topic_tag;
             this.is_deleted = topicInfo.is_deleted;
+            this.is_video_topic = topicInfo.is_video_topic;
+            this.play_count = topicInfo.play_count;
+            this.head_background_url = topicInfo.head_background_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -160,7 +175,7 @@ public final class TopicInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -186,6 +201,8 @@ public final class TopicInfo extends Message {
         DEFAULT_PMY_SOURCE = 0;
         DEFAULT_TOPIC_TAG = 0;
         DEFAULT_IS_DELETED = 0L;
+        DEFAULT_IS_VIDEO_TOPIC = 0;
+        DEFAULT_PLAY_COUNT = 0;
     }
 
     public /* synthetic */ TopicInfo(Builder builder, boolean z, a aVar) {
@@ -312,9 +329,27 @@ public final class TopicInfo extends Message {
             Long l5 = builder.is_deleted;
             if (l5 == null) {
                 this.is_deleted = DEFAULT_IS_DELETED;
-                return;
             } else {
                 this.is_deleted = l5;
+            }
+            Integer num3 = builder.is_video_topic;
+            if (num3 == null) {
+                this.is_video_topic = DEFAULT_IS_VIDEO_TOPIC;
+            } else {
+                this.is_video_topic = num3;
+            }
+            Integer num4 = builder.play_count;
+            if (num4 == null) {
+                this.play_count = DEFAULT_PLAY_COUNT;
+            } else {
+                this.play_count = num4;
+            }
+            String str11 = builder.head_background_url;
+            if (str11 == null) {
+                this.head_background_url = "";
+                return;
+            } else {
+                this.head_background_url = str11;
                 return;
             }
         }
@@ -337,5 +372,8 @@ public final class TopicInfo extends Message {
         this.head_photo_jump_url = builder.head_photo_jump_url;
         this.topic_tag = builder.topic_tag;
         this.is_deleted = builder.is_deleted;
+        this.is_video_topic = builder.is_video_topic;
+        this.play_count = builder.play_count;
+        this.head_background_url = builder.head_background_url;
     }
 }

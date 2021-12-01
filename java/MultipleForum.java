@@ -10,23 +10,35 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MultipleForum extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_BAWU_TYPE = "";
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final Integer DEFAULT_IS_BAWU;
+    public static final Integer DEFAULT_IS_DELETED;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String bawu_type;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer is_bawu;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer is_deleted;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<MultipleForum> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String bawu_type;
         public Long forum_id;
         public String forum_name;
+        public Integer is_bawu;
+        public Integer is_deleted;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -65,6 +77,9 @@ public final class MultipleForum extends Message {
             }
             this.forum_id = multipleForum.forum_id;
             this.forum_name = multipleForum.forum_name;
+            this.is_bawu = multipleForum.is_bawu;
+            this.bawu_type = multipleForum.bawu_type;
+            this.is_deleted = multipleForum.is_deleted;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -76,7 +91,7 @@ public final class MultipleForum extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -96,6 +111,8 @@ public final class MultipleForum extends Message {
             }
         }
         DEFAULT_FORUM_ID = 0L;
+        DEFAULT_IS_BAWU = 0;
+        DEFAULT_IS_DELETED = 0;
     }
 
     public /* synthetic */ MultipleForum(Builder builder, boolean z, a aVar) {
@@ -130,13 +147,34 @@ public final class MultipleForum extends Message {
             String str = builder.forum_name;
             if (str == null) {
                 this.forum_name = "";
-                return;
             } else {
                 this.forum_name = str;
+            }
+            Integer num = builder.is_bawu;
+            if (num == null) {
+                this.is_bawu = DEFAULT_IS_BAWU;
+            } else {
+                this.is_bawu = num;
+            }
+            String str2 = builder.bawu_type;
+            if (str2 == null) {
+                this.bawu_type = "";
+            } else {
+                this.bawu_type = str2;
+            }
+            Integer num2 = builder.is_deleted;
+            if (num2 == null) {
+                this.is_deleted = DEFAULT_IS_DELETED;
+                return;
+            } else {
+                this.is_deleted = num2;
                 return;
             }
         }
         this.forum_id = builder.forum_id;
         this.forum_name = builder.forum_name;
+        this.is_bawu = builder.is_bawu;
+        this.bawu_type = builder.bawu_type;
+        this.is_deleted = builder.is_deleted;
     }
 }
