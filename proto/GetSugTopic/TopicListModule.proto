@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetSugTopic/TopicList.proto";
+
+message TopicListModule {
+    string module_title = 1;
+    repeated TopicList topic_list = 2;
+}

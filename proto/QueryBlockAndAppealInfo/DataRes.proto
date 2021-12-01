@@ -6,5 +6,5 @@ message DataRes {
     string ahead_url = 4;
     string ok_info = 5;
     string block_id_code = 7;
-    int32 win_type = 8;
+    uint32 win_type = 8;
 }

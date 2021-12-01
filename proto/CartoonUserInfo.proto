@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message CartoonUserInfo {
-    uint32 is_vip = 1;
-}

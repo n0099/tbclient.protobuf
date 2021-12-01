@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message SignInfo {
+    string sign_date = 1;
+    int32 is_sign_in = 2;
+}

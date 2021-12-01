@@ -19,4 +19,5 @@ message AdReq {
     int64 da_threadid = 16;
     int64 da_utime = 17;
     int32 da_pn = 18;
+    bool da_iscache = 19;
 }

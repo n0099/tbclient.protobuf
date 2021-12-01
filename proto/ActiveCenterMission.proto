@@ -10,4 +10,6 @@ message ActiveCenterMission {
     string final_reward_url = 7;
     string mission = 8;
     string desc = 9;
+    string is_completed = 10;
+    int32 activity_id = 11;
 }

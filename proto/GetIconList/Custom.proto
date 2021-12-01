@@ -25,4 +25,5 @@ message Custom {
     string pic_url = 20;
     string icon_name = 21;
     string icon_pic = 22;
+    int32 is_default = 23;
 }

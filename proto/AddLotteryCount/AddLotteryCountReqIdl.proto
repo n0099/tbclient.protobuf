@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "AddLotteryCount/DataReq.proto";
-
-message AddLotteryCountReqIdl {
-    DataReq data = 1;
-}

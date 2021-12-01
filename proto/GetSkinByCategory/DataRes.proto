@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "GetSkinByCategory/ThemeSkinInMain.proto";
-import "ThemeRecommand.proto";
-
-message DataRes {
-    ThemeRecommand recommend = 1;
-    repeated ThemeSkinInMain skins = 2;
-}

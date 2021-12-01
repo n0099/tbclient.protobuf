@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message SgsRes1 {
-    uint32 aa = 1;
-}

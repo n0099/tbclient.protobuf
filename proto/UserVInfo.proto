@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message UserVInfo {
-    int32 v_type = 1;
-}

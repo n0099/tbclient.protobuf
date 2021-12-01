@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetForumData/ForumDataGroup.proto";
+
+message ForumDataItem {
+    int32 type = 1;
+    repeated ForumDataGroup group = 2;
+}

@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message UrlTitle {
-    string name = 1;
-    string url = 2;
-}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message CartoonInfo {
+    int64 forum_id = 1;
+    int64 cartoon_id = 2;
+    string cartoon_name = 3;
+    string introduction = 4;
+    int32 is_finish = 5;
+    string cover_img = 6;
+    int32 total_chapter = 7;
+}

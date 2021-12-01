@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "CommonReq.proto";
-
-message DataReq {
-    string action = 2;
-    uint64 ftid = 3;
-}

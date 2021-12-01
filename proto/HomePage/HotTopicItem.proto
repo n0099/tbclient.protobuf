@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message HotTopicItem {
+    int64 topic_id = 1;
+    string topic_name = 2;
+    int64 topic_discuss_num = 3;
+}

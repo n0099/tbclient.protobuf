@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message ThemePendantProp {
-    int32 props_id = 1;
-    string title = 2;
-}

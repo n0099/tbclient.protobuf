@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "ForcusUsers.proto";
-
-message ForcusRecommand {
-    uint32 type = 1;
-    repeated ForcusUsers users = 2;
-}

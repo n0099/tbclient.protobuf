@@ -9,5 +9,5 @@ message DataRes {
     string activity_url = 6;
     int32 free_user_level = 7;
     int32 is_finished = 8;
-    uint32 daily_previlege_status = 9;
+    uint32 daily_privilege_status = 9;
 }

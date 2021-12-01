@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "ShowLiveSecondPage/DataReq.proto";
-
-message ShowLiveSecondPageReqIdl {
-    DataReq data = 1;
-}

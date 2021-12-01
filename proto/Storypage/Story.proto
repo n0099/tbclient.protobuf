@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+import "User.proto";
+
+message Story {
+    repeated ThreadInfo story_list = 1;
+    User story_user = 2;
+    int32 story_user_type = 3;
+}

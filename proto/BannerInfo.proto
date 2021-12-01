@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "GodBanner.proto";
-
-message BannerInfo {
-    repeated GodBanner god_banner_list = 1;
-    string god_good_url = 2;
-    string god_rank_url = 3;
-}

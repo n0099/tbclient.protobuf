@@ -23,6 +23,5 @@ message RecommendForumInfo {
     string lv1_name = 18;
     string lv2_name = 19;
     string avatar_origin = 20;
-    int32 hot_num = 21;
     uint64 hot_thread_id = 22;
 }

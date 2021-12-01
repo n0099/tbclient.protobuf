@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message UserInfo {
+    int64 user_id = 1;
+    string user_name = 2;
+    string portrait = 3;
+    uint64 grade = 4;
+    string achievement = 5;
+}

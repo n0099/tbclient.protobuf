@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "ShowLiveSecondPage/DataRes.proto";
-
-message ShowLiveSecondPageResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

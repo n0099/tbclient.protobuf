@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message LastViewFeeds {
-    repeated uint32 live = 1;
-}

@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "GetForumsFromForumClass/ForumSpaceForumInfo.proto";
-
-message WeeklyForum {
-    ForumSpaceForumInfo forum_info = 1;
-    int32 hot_rank = 2;
-}

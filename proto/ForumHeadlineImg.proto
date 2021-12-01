@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message ForumHeadlineImg {
-    int64 thread_id = 1;
-    int64 thread_user_id = 2;
-    int64 img_user_id = 3;
-    string img_url = 4;
-}

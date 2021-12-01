@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "ConcernList.proto";
-import "ThreadUser.proto";
-
-message DataRes {
-    ConcernList concern_list = 1;
-    repeated ThreadUser forum_friends = 2;
-}

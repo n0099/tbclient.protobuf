@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "ConcernTab/DataReq.proto";
-
-message ConcernTabReqIdl {
-    DataReq data = 1;
-}

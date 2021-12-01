@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message Tab {
+    int64 tab_id = 1;
+    string tab_name = 2;
+    string seq = 3;
+}

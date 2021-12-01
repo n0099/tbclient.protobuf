@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "UserInfo.proto";
+import "Hottopic/UserInfo.proto";
 
 message JoinUser {
     repeated UserInfo join_user = 1;

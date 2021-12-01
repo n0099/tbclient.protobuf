@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "App.proto";
 import "ItemInfo.proto";
+import "SortOption.proto";
 import "SportPageHeadInfo.proto";
 import "SportScheduleInfo.proto";
 import "ThreadInfo.proto";
@@ -16,5 +17,6 @@ message DataRes {
     int32 new_thread_num = 6;
     int32 sort_type = 7;
     ItemInfo item_info = 8;
+    repeated SortOption sort_option = 9;
     repeated App app_list = 10;
 }

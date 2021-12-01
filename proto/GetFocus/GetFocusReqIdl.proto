@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetFocus/DataReq.proto";
-
-message GetFocusReqIdl {
-    DataReq data = 1;
-}

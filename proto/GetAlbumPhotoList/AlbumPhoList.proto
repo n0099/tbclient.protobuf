@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message AlbumPhoList {
+    string picture_id = 1;
+    string album_id = 2;
+    string small_pic = 3;
+    string big_pic = 4;
+}

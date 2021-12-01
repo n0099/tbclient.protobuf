@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message Mark {
+    string book_id = 1;
+    uint64 chapter_id = 2;
+    string chapter_title = 3;
+    uint32 page_id = 4;
+    uint32 paragraph_id = 5;
+    uint32 word_id = 6;
+    uint64 position = 7;
+    string content = 8;
+    uint32 update_time = 9;
+}

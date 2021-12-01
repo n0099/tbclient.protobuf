@@ -2,9 +2,9 @@ syntax = "proto3";
 
 import "Banner.proto";
 import "Entry.proto";
+import "HotLiveWithCategory.proto";
 import "LiveSquare/FunctionListInfo.proto";
 import "LiveSquare/HeadLiveInfo.proto";
-import "LiveSquare/HotLiveWithCategory.proto";
 import "ThreadInfo.proto";
 
 message DataRes {

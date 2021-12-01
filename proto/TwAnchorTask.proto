@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "TwAnchorTaskItem.proto";
-
-message TwAnchorTask {
-    string describe = 1;
-    repeated TwAnchorTaskItem task_list = 2;
-    string task_name = 3;
-}

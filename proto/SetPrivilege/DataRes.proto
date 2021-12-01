@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message DataRes {
-    string field_text = 1;
-}

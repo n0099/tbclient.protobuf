@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "User.proto";
+
+message DanmuInfo {
+    string content = 1;
+    User author = 2;
+    int64 post_id = 3;
+}

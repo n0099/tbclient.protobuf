@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetUpdateInfo/DataReq.proto";
-
-message GetUpdateInfoReqIdl {
-    DataReq data = 1;
-}

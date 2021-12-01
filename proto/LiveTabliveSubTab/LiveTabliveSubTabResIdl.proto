@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "LiveTabliveSubTab/DataRes.proto";
-
-message LiveTabliveSubTabResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

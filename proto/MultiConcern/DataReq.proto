@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "CommonReq.proto";
-
-message DataReq {
-    repeated uint64 arr_forum_id = 3;
-}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "SetPrivilege/DataReq.proto";
-
-message SetPrivilegeReqIdl {
-    DataReq data = 1;
-}

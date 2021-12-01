@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GetCardList/DataRes.proto";
-
-message GetCardListResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

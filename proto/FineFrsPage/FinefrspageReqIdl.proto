@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "FineFrsPage/DataReq.proto";
-
-message FinefrspageReqIdl {
-    DataReq data = 1;
-}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "VoiceRoom/DataReq.proto";
-
-message VoiceRoomReqIdl {
-    DataReq data = 1;
-}

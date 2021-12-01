@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message SmRankItem {
+    string portrait = 1;
+    uint32 user_level = 2;
+    string user_name = 3;
+    uint32 win = 4;
+    uint64 user_id = 5;
+}

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message Dev {
-    string os = 1;
-    string version = 2;
-    string cuid = 3;
-}

@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "Banner.proto";
 import "Hottopic/CommonInteraction.proto";
 import "Hottopic/HotThread.proto";
 import "Hottopic/MagicPost.proto";
@@ -25,4 +26,5 @@ message DataRes {
     repeated SpecialTopic special_topic = 13;
     string relate_forum_title = 14;
     CommonInteraction weiguan_module = 15;
+    repeated Banner banner = 16;
 }

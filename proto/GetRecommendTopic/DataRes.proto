@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "GetRecommendTopic/TopicListModule.proto";
+
 message DataRes {
     TopicListModule recommend_topic = 3;
 }

@@ -5,4 +5,5 @@ message PayMemberInfo {
     int32 end_time = 2;
     string url = 3;
     string expire_remind = 4;
+    string pic_url = 5;
 }

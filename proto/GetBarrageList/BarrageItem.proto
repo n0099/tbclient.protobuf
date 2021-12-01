@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetBarrageList/Barrage.proto";
+
+message BarrageItem {
+    double time = 1;
+    repeated Barrage list = 2;
+}

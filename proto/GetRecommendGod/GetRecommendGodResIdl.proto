@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "GetRecommendGod/DataRes.proto";
-
-message GetRecommendGodResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

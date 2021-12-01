@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "AlaTab/DataReq.proto";
-
-message AlaTabReqIdl {
-    DataReq data = 1;
-}

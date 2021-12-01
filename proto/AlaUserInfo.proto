@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "YyExt.proto";
+
 message AlaUserInfo {
     uint64 ala_id = 1;
     string user_name = 2;
@@ -25,4 +27,5 @@ message AlaUserInfo {
     string level_name = 22;
     uint64 user_id = 23;
     int32 anchor_fans = 24;
+    YyExt yy_ext = 25;
 }

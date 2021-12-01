@@ -8,6 +8,5 @@ message ForumDynamic {
     uint32 is_like = 5;
     uint32 member_count = 6;
     uint32 thread_count = 7;
-    string title = 8;
     uint32 user_thread_count = 9;
 }

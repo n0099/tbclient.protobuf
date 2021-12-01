@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message AcrossForum {
+    string forum_name = 1;
+    string desc = 2;
+}

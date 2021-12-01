@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "DailyPage/DataReq.proto";
-
-message DailyPageReqIdl {
-    DataReq data = 1;
-}

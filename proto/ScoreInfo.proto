@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message ScoreInfo {
-    int32 score = 1;
-    int32 endtime = 2;
-}

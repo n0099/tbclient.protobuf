@@ -22,6 +22,7 @@ import "Quote.proto";
 import "UserPostPerm.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
+import "VoiceRoom.proto";
 import "WorksInfo.proto";
 import "ZhiBoInfoTW.proto";
 
@@ -89,4 +90,5 @@ message PostInfoList {
     int32 good_types = 61;
     int32 top_types = 62;
     UserPostPerm user_post_perm = 63;
+    VoiceRoom voice_room = 64;
 }

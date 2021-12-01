@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "AlaTab/DataRes.proto";
-import "Error.proto";
-
-message AlaTabResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

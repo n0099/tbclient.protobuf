@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "CommonReq.proto";
+
 message DataReq {
     string type = 1;
 }

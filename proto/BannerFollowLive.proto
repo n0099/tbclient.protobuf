@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "AlaLiveInfo.proto";
-
-message BannerFollowLive {
-    repeated AlaLiveInfo ala_live_list = 1;
-    uint32 _switch = 2;
-}

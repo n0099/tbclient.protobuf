@@ -9,4 +9,5 @@ message GodInfo {
     string recommend_reason = 6;
     string forum_name = 7;
     int32 can_send_msg = 8;
+    string prefix = 9;
 }

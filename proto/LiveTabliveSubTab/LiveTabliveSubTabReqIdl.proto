@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "LiveTabliveSubTab/DataReq.proto";
-
-message LiveTabliveSubTabReqIdl {
-    DataReq data = 1;
-}

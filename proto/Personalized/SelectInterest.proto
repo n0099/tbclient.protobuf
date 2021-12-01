@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message SelectInterest {
-    string select_interest_name = 1;
-}

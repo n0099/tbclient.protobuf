@@ -13,4 +13,7 @@ message OrderList {
     int64 money = 19;
     int64 scores = 20;
     string preg_field = 21;
+    int32 price_type = 22;
+    double order_yy_amount = 23;
+    double order_amount = 24;
 }

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "PermissionList.proto";
+
+message UserPermList {
+    int64 uid = 1;
+    PermissionList perm_list = 2;
+    string user_name = 3;
+    string name_show = 4;
+    string portrait = 5;
+}

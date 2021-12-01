@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message DefaultInfo {
-    string url = 2;
-    string icon = 3;
-}

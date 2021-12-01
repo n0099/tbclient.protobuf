@@ -10,4 +10,5 @@ message DataReq {
     int32 scr_h = 6;
     int32 st_type = 7;
     int32 is_comm_reverse = 8;
+    int32 floor_rn = 9;
 }

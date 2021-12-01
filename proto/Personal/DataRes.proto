@@ -3,7 +3,7 @@ syntax = "proto3";
 import "DealWindow.proto";
 import "DynamicInfo.proto";
 import "ForumDynamic.proto";
-import "Profile/UserGodInfo.proto";
+import "Personal/UserGodInfo.proto";
 import "ThreadInfo.proto";
 import "User.proto";
 
@@ -16,5 +16,4 @@ message DataRes {
     int32 has_more = 6;
     UserGodInfo user_god_info = 7;
     DealWindow window = 8;
-    int32 mask_type = 9;
 }

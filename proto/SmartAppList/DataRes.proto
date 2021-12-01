@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "SmartApp.proto";
-
-message DataRes {
-    repeated SmartApp smart_app_list = 1;
-    bool has_more = 2;
-}

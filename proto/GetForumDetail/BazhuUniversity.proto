@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "GetForumDetail/UniversityInfo.proto";
+import "GetForumDetail/UniversityTabInfo.proto";
+
+message BazhuUniversity {
+    repeated UniversityInfo entrance = 1;
+    repeated UniversityInfo banner = 2;
+    repeated UniversityTabInfo tab = 3;
+}

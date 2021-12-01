@@ -45,7 +45,6 @@ message DataRes {
     NicknameInfo nickname_info = 17;
     repeated AlaLiveInfo ala_live_record = 19;
     repeated UserMap url_map = 20;
-    int32 show_answer = 21;
     repeated BannerImage banner = 22;
     repeated SmartApp recom_swan_list = 23;
     Duxiaoman duxiaoman = 24;
@@ -53,4 +52,5 @@ message DataRes {
     GoodsWin goods_win = 26;
     HotUserRankEntry new_god_rankinfo = 27;
     string uk = 28;
+    int32 is_black_white = 29;
 }

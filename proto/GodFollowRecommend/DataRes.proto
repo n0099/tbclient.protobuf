@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "GodFollowRecommend/GodUserInfo.proto";
-
-message DataRes {
-    string tag = 1;
-    repeated GodUserInfo gods_info = 2;
-}

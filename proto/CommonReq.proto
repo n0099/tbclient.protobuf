@@ -55,4 +55,7 @@ message CommonReq {
     int32 cmode = 55;
     string start_scheme = 56;
     int32 start_type = 57;
+    string shoubai_cuid = 58;
+    string mac = 59;
+    string idfv = 60;
 }

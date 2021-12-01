@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "SquareRecommand/DataReq.proto";
-
-message SquareRecommandReqIdl {
-    DataReq data = 1;
-}

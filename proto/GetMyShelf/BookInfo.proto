@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message BookInfo {
+    int64 forum_id = 1;
+    int64 cartoon_id = 2;
+    string cover_img = 3;
+    string cartoon_name = 4;
+    int32 total_chapter = 5;
+    string first_chapter_id = 6;
+    int32 is_finish = 7;
+    string author_name = 8;
+}

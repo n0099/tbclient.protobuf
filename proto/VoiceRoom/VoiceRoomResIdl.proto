@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "VoiceRoom/DataRes.proto";
-
-message VoiceRoomResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

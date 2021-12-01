@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "BazhuGrade/GradeRight.proto";
+
+message GradeDesc {
+    string grade = 1;
+    int32 point = 2;
+    repeated GradeRight rights = 3;
+}

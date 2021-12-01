@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "GetSugTopic/TopicListModule.proto";
+
+message DataRes {
+    TopicListModule user_his_topic = 1;
+    TopicListModule bang_topic = 2;
+    TopicListModule sug_topic = 3;
+    TopicListModule video_topic = 5;
+}

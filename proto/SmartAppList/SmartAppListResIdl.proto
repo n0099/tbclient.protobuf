@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "SmartAppList/DataRes.proto";
-
-message SmartAppListResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

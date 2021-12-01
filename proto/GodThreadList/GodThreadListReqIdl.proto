@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GodThreadList/DataReq.proto";
-
-message GodThreadListReqIdl {
-    DataReq data = 1;
-}

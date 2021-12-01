@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "RecommendFriend/LikeUserInfo.proto";
-import "UserInfo.proto";
-
-message DataRes {
-    UserInfo new_user = 1;
-    repeated LikeUserInfo like_user = 2;
-}

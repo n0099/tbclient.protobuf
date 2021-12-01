@@ -23,4 +23,7 @@ message TopicInfo {
     string head_photo_jump_url = 17;
     int32 topic_tag = 18;
     int64 is_deleted = 19;
+    int32 is_video_topic = 20;
+    int32 play_count = 21;
+    string head_background_url = 22;
 }

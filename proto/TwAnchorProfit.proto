@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "TwAnchorProfitItem.proto";
-
-message TwAnchorProfit {
-    repeated TwAnchorProfitItem profit_list = 1;
-}

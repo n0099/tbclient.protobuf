@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message DealerInfo {
+    int64 user_id = 1;
+    string name = 2;
+    string portrait = 3;
+    int64 score = 4;
+}

@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "PluginUser.proto";
+
 message TiebaPlusInfo {
     string title = 1;
     string desc = 2;
@@ -19,4 +21,5 @@ message TiebaPlusInfo {
     int32 jump_type = 16;
     string item_id = 17;
     int32 is_appoint = 18;
+    PluginUser plugin_user = 19;
 }

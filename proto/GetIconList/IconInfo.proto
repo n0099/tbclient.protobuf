@@ -13,4 +13,5 @@ message IconInfo {
     repeated Discount discount = 8;
     string sign = 9;
     string tag_name = 10;
+    int32 is_default = 11;
 }

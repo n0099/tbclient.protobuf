@@ -10,7 +10,6 @@ message LikeForum {
     string avatar = 3;
     int32 is_sign = 4;
     int32 level_id = 5;
-    int32 is_liveforum = 6;
     uint32 is_brand_forum = 7;
     string content = 9;
     int32 is_top = 10;
