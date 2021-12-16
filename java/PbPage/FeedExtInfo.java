@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FeedExtInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<String> DEFAULT_FEED_BAR;
@@ -23,7 +23,7 @@ public final class FeedExtInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
     public final List<String> feed_tab;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<FeedExtInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -78,7 +78,7 @@ public final class FeedExtInfo extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

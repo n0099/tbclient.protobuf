@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CommonReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_ACTIVE_TIMESTAMP;
@@ -27,6 +27,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
     public static final String DEFAULT_EVENT_DAY = "";
+    public static final String DEFAULT_EXTRA = "";
     public static final Long DEFAULT_FIRST_INSTALL_TIME;
     public static final String DEFAULT_FRAMEWORK_VER = "";
     public static final String DEFAULT_FROM = "";
@@ -113,6 +114,8 @@ public final class CommonReq extends Message {
     public final String cuid_gid;
     @ProtoField(tag = 53, type = Message.Datatype.STRING)
     public final String event_day;
+    @ProtoField(tag = 61, type = Message.Datatype.STRING)
+    public final String extra;
     @ProtoField(tag = 50, type = Message.Datatype.INT64)
     public final Long first_install_time;
     @ProtoField(tag = 43, type = Message.Datatype.STRING)
@@ -186,7 +189,7 @@ public final class CommonReq extends Message {
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String z_id;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -211,6 +214,7 @@ public final class CommonReq extends Message {
         public String cuid_galaxy2;
         public String cuid_gid;
         public String event_day;
+        public String extra;
         public Long first_install_time;
         public String framework_ver;
         public String from;
@@ -340,6 +344,7 @@ public final class CommonReq extends Message {
             this.shoubai_cuid = commonReq.shoubai_cuid;
             this.mac = commonReq.mac;
             this.idfv = commonReq.idfv;
+            this.extra = commonReq.extra;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -351,7 +356,7 @@ public final class CommonReq extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -747,9 +752,15 @@ public final class CommonReq extends Message {
             String str44 = builder.idfv;
             if (str44 == null) {
                 this.idfv = "";
-                return;
             } else {
                 this.idfv = str44;
+            }
+            String str45 = builder.extra;
+            if (str45 == null) {
+                this.extra = "";
+                return;
+            } else {
+                this.extra = str45;
                 return;
             }
         }
@@ -810,5 +821,6 @@ public final class CommonReq extends Message {
         this.shoubai_cuid = builder.shoubai_cuid;
         this.mac = builder.mac;
         this.idfv = builder.idfv;
+        this.extra = builder.extra;
     }
 }

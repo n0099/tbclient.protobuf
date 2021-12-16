@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PermissionList;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class UserPermList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_NAME_SHOW = "";
@@ -30,7 +30,7 @@ public final class UserPermList extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<UserPermList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -91,7 +91,7 @@ public final class UserPermList extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

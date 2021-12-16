@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AlaLiveInfo;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class UserFollowLive extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_SWITCH;
@@ -24,7 +24,7 @@ public final class UserFollowLive extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<AlaLiveInfo> user_follow_live;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<UserFollowLive> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,7 +79,7 @@ public final class UserFollowLive extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

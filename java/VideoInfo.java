@@ -12,9 +12,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class VideoInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_FIRST_FRAME_THUMBNAIL = "";
     public static final Double DEFAULT_HTH_MID_LOC;
     public static final Integer DEFAULT_IS_VERTICAL;
     public static final String DEFAULT_MCN_LEAD_PAGE = "";
@@ -35,6 +36,8 @@ public final class VideoInfo extends Message {
     public static final Integer DEFAULT_VIDEO_WIDTH;
     public static final Double DEFAULT_WTH_MID_LOC;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String first_frame_thumbnail;
     @ProtoField(tag = 20, type = Message.Datatype.DOUBLE)
     public final Double hth_mid_loc;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
@@ -78,10 +81,11 @@ public final class VideoInfo extends Message {
     @ProtoField(tag = 19, type = Message.Datatype.DOUBLE)
     public final Double wth_mid_loc;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String first_frame_thumbnail;
         public Double hth_mid_loc;
         public Integer is_vertical;
         public McnAdInfo mcn_ad_card;
@@ -160,6 +164,7 @@ public final class VideoInfo extends Message {
             this.wth_mid_loc = videoInfo.wth_mid_loc;
             this.hth_mid_loc = videoInfo.hth_mid_loc;
             this.small_thumbnail_url = videoInfo.small_thumbnail_url;
+            this.first_frame_thumbnail = videoInfo.first_frame_thumbnail;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -171,7 +176,7 @@ public final class VideoInfo extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -342,9 +347,15 @@ public final class VideoInfo extends Message {
             String str6 = builder.small_thumbnail_url;
             if (str6 == null) {
                 this.small_thumbnail_url = "";
-                return;
             } else {
                 this.small_thumbnail_url = str6;
+            }
+            String str7 = builder.first_frame_thumbnail;
+            if (str7 == null) {
+                this.first_frame_thumbnail = "";
+                return;
+            } else {
+                this.first_frame_thumbnail = str7;
                 return;
             }
         }
@@ -369,5 +380,6 @@ public final class VideoInfo extends Message {
         this.wth_mid_loc = builder.wth_mid_loc;
         this.hth_mid_loc = builder.hth_mid_loc;
         this.small_thumbnail_url = builder.small_thumbnail_url;
+        this.first_frame_thumbnail = builder.first_frame_thumbnail;
     }
 }

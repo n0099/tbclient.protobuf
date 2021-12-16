@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class TiebaPlusInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_APP_COMPANY = "";
@@ -22,15 +22,18 @@ public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_APP_VERSION = "";
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_DOWNLOAD_URL = "";
+    public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_H5_JUMP_NUMBER = "";
     public static final String DEFAULT_H5_JUMP_PARAM = "";
     public static final Integer DEFAULT_H5_JUMP_TYPE;
     public static final Integer DEFAULT_IS_APPOINT;
     public static final String DEFAULT_ITEM_ID = "";
+    public static final Integer DEFAULT_JUMP_SETTING;
     public static final Integer DEFAULT_JUMP_TYPE;
     public static final String DEFAULT_JUMP_URL = "";
     public static final Integer DEFAULT_TARGET_TYPE;
     public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_WX_THUMBNAIL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String app_company;
@@ -50,6 +53,8 @@ public final class TiebaPlusInfo extends Message {
     public final String desc;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String download_url;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String forum_name;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String h5_jump_number;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -60,6 +65,8 @@ public final class TiebaPlusInfo extends Message {
     public final Integer is_appoint;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String item_id;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer jump_setting;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer jump_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -70,8 +77,10 @@ public final class TiebaPlusInfo extends Message {
     public final Integer target_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String wx_thumbnail;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<TiebaPlusInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -84,16 +93,19 @@ public final class TiebaPlusInfo extends Message {
         public String app_version;
         public String desc;
         public String download_url;
+        public String forum_name;
         public String h5_jump_number;
         public String h5_jump_param;
         public Integer h5_jump_type;
         public Integer is_appoint;
         public String item_id;
+        public Integer jump_setting;
         public Integer jump_type;
         public String jump_url;
         public PluginUser plugin_user;
         public Integer target_type;
         public String title;
+        public String wx_thumbnail;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -149,6 +161,9 @@ public final class TiebaPlusInfo extends Message {
             this.item_id = tiebaPlusInfo.item_id;
             this.is_appoint = tiebaPlusInfo.is_appoint;
             this.plugin_user = tiebaPlusInfo.plugin_user;
+            this.forum_name = tiebaPlusInfo.forum_name;
+            this.jump_setting = tiebaPlusInfo.jump_setting;
+            this.wx_thumbnail = tiebaPlusInfo.wx_thumbnail;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -160,7 +175,7 @@ public final class TiebaPlusInfo extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -183,6 +198,7 @@ public final class TiebaPlusInfo extends Message {
         DEFAULT_H5_JUMP_TYPE = 0;
         DEFAULT_JUMP_TYPE = 0;
         DEFAULT_IS_APPOINT = 0;
+        DEFAULT_JUMP_SETTING = 0;
     }
 
     public /* synthetic */ TiebaPlusInfo(Builder builder, boolean z, a aVar) {
@@ -317,7 +333,26 @@ public final class TiebaPlusInfo extends Message {
                 this.is_appoint = num4;
             }
             this.plugin_user = builder.plugin_user;
-            return;
+            String str15 = builder.forum_name;
+            if (str15 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str15;
+            }
+            Integer num5 = builder.jump_setting;
+            if (num5 == null) {
+                this.jump_setting = DEFAULT_JUMP_SETTING;
+            } else {
+                this.jump_setting = num5;
+            }
+            String str16 = builder.wx_thumbnail;
+            if (str16 == null) {
+                this.wx_thumbnail = "";
+                return;
+            } else {
+                this.wx_thumbnail = str16;
+                return;
+            }
         }
         this.title = builder.title;
         this.desc = builder.desc;
@@ -338,5 +373,8 @@ public final class TiebaPlusInfo extends Message {
         this.item_id = builder.item_id;
         this.is_appoint = builder.is_appoint;
         this.plugin_user = builder.plugin_user;
+        this.forum_name = builder.forum_name;
+        this.jump_setting = builder.jump_setting;
+        this.wx_thumbnail = builder.wx_thumbnail;
     }
 }

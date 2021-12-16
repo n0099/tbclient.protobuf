@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PushThreadInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_HAS_PUSHCARD;
@@ -31,7 +31,7 @@ public final class PushThreadInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<User> user_list;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<PushThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -90,7 +90,7 @@ public final class PushThreadInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

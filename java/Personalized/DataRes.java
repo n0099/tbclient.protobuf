@@ -16,9 +16,10 @@ import tbclient.ActiveCenter;
 import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.DiscoverHotForum;
+import tbclient.FavoritePanel;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<CardForum> DEFAULT_CARD_FORUM;
@@ -50,6 +51,8 @@ public final class DataRes extends Message {
     public final List<CardGod> card_god;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<CardTopic> card_topic;
+    @ProtoField(tag = 24)
+    public final FavoritePanel favorite_panel;
     @ProtoField(tag = 18)
     public final FloatInfo float_info;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
@@ -83,7 +86,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 20)
     public final UserFollowLive user_follow_live;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -94,6 +97,7 @@ public final class DataRes extends Message {
         public List<CardForum> card_forum;
         public List<CardGod> card_god;
         public List<CardTopic> card_topic;
+        public FavoritePanel favorite_panel;
         public FloatInfo float_info;
         public Integer fresh_ctrl_num;
         public DiscoverHotForum hot_recomforum;
@@ -169,6 +173,7 @@ public final class DataRes extends Message {
             this.fresh_ctrl_num = dataRes.fresh_ctrl_num;
             this.active_center = dataRes.active_center;
             this.hot_recomforum = dataRes.hot_recomforum;
+            this.favorite_panel = dataRes.favorite_panel;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -180,7 +185,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -330,6 +335,7 @@ public final class DataRes extends Message {
             }
             this.active_center = builder.active_center;
             this.hot_recomforum = builder.hot_recomforum;
+            this.favorite_panel = builder.favorite_panel;
             return;
         }
         this.tag_list = Message.immutableCopyOf(builder.tag_list);
@@ -355,5 +361,6 @@ public final class DataRes extends Message {
         this.fresh_ctrl_num = builder.fresh_ctrl_num;
         this.active_center = builder.active_center;
         this.hot_recomforum = builder.hot_recomforum;
+        this.favorite_panel = builder.favorite_panel;
     }
 }

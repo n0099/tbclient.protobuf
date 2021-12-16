@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<Long> DEFAULT_BCAST_IDS;
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f64564common;
+    public final CommonReq f65135common;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -40,14 +40,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long staff_id64;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public List<Long> bcast_ids;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f64565common;
+        public CommonReq f65136common;
         public Long forum_id;
         public Integer need_cnt;
         public Integer query_type;
@@ -89,7 +89,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f64565common = dataReq.f64564common;
+            this.f65136common = dataReq.f65135common;
             this.query_type = dataReq.query_type;
             this.staff_id = dataReq.staff_id;
             this.need_cnt = dataReq.need_cnt;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -157,7 +157,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f64564common = builder.f64565common;
+            this.f65135common = builder.f65136common;
             Integer num = builder.query_type;
             if (num == null) {
                 this.query_type = DEFAULT_QUERY_TYPE;
@@ -197,7 +197,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f64564common = builder.f64565common;
+        this.f65135common = builder.f65136common;
         this.query_type = builder.query_type;
         this.staff_id = builder.staff_id;
         this.need_cnt = builder.need_cnt;

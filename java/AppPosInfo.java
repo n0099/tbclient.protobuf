@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppPosInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_ADDR_TIMESTAMP;
@@ -21,8 +21,11 @@ public final class AppPosInfo extends Message {
     public static final String DEFAULT_LATITUDE = "";
     public static final String DEFAULT_LONGITUDE = "";
     public static final Integer DEFAULT_MERCATOR_CITY;
+    public static final String DEFAULT_MERCATOR_CITY_NAME = "";
+    public static final String DEFAULT_MERCATOR_DISTRICT_NAME = "";
     public static final String DEFAULT_MERCATOR_LAT = "";
     public static final String DEFAULT_MERCATOR_LON = "";
+    public static final String DEFAULT_MERCATOR_PROVINCE_NAME = "";
     public static final String DEFAULT_MERCATOR_RADIUS = "";
     public static final Long DEFAULT_MERCATOR_TIME;
     public transient /* synthetic */ FieldHolder $fh;
@@ -42,16 +45,22 @@ public final class AppPosInfo extends Message {
     public final String longitude;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer mercator_city;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String mercator_city_name;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String mercator_district_name;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String mercator_lat;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String mercator_lon;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String mercator_province_name;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String mercator_radius;
     @ProtoField(tag = 11, type = Message.Datatype.INT64)
     public final Long mercator_time;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<AppPosInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -63,8 +72,11 @@ public final class AppPosInfo extends Message {
         public String latitude;
         public String longitude;
         public Integer mercator_city;
+        public String mercator_city_name;
+        public String mercator_district_name;
         public String mercator_lat;
         public String mercator_lon;
+        public String mercator_province_name;
         public String mercator_radius;
         public Long mercator_time;
 
@@ -115,6 +127,9 @@ public final class AppPosInfo extends Message {
             this.mercator_radius = appPosInfo.mercator_radius;
             this.mercator_time = appPosInfo.mercator_time;
             this.mercator_city = appPosInfo.mercator_city;
+            this.mercator_province_name = appPosInfo.mercator_province_name;
+            this.mercator_city_name = appPosInfo.mercator_city_name;
+            this.mercator_district_name = appPosInfo.mercator_district_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -126,7 +141,7 @@ public final class AppPosInfo extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -243,9 +258,27 @@ public final class AppPosInfo extends Message {
             Integer num = builder.mercator_city;
             if (num == null) {
                 this.mercator_city = DEFAULT_MERCATOR_CITY;
-                return;
             } else {
                 this.mercator_city = num;
+            }
+            String str9 = builder.mercator_province_name;
+            if (str9 == null) {
+                this.mercator_province_name = "";
+            } else {
+                this.mercator_province_name = str9;
+            }
+            String str10 = builder.mercator_city_name;
+            if (str10 == null) {
+                this.mercator_city_name = "";
+            } else {
+                this.mercator_city_name = str10;
+            }
+            String str11 = builder.mercator_district_name;
+            if (str11 == null) {
+                this.mercator_district_name = "";
+                return;
+            } else {
+                this.mercator_district_name = str11;
                 return;
             }
         }
@@ -261,5 +294,8 @@ public final class AppPosInfo extends Message {
         this.mercator_radius = builder.mercator_radius;
         this.mercator_time = builder.mercator_time;
         this.mercator_city = builder.mercator_city;
+        this.mercator_province_name = builder.mercator_province_name;
+        this.mercator_city_name = builder.mercator_city_name;
+        this.mercator_district_name = builder.mercator_district_name;
     }
 }

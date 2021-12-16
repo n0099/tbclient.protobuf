@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RecommendForumList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CLASS_NAME = "";
@@ -27,7 +27,7 @@ public final class RecommendForumList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<RecommendForumInfo> forum_list;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<RecommendForumList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -84,7 +84,7 @@ public final class RecommendForumList extends Message {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

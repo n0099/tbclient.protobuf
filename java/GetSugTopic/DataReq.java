@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FID;
@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f64632common;
+    public final CommonReq f65203common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -35,13 +35,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String second_dir;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f64633common;
+        public CommonReq f65204common;
         public Long fid;
         public String first_dir;
         public Integer is_video_topic;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f64633common = dataReq.f64632common;
+            this.f65204common = dataReq.f65203common;
             this.prefix = dataReq.prefix;
             this.fid = dataReq.fid;
             this.first_dir = dataReq.first_dir;
@@ -100,7 +100,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f64632common = builder.f64633common;
+            this.f65203common = builder.f65204common;
             String str = builder.prefix;
             if (str == null) {
                 this.prefix = "";
@@ -180,7 +180,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f64632common = builder.f64633common;
+        this.f65203common = builder.f65204common;
         this.prefix = builder.prefix;
         this.fid = builder.fid;
         this.first_dir = builder.first_dir;
