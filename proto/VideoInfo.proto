@@ -25,4 +25,5 @@ message VideoInfo {
     double wth_mid_loc = 19;
     double hth_mid_loc = 20;
     string small_thumbnail_url = 21;
+    string first_frame_thumbnail = 22;
 }

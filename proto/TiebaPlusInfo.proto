@@ -22,4 +22,7 @@ message TiebaPlusInfo {
     string item_id = 17;
     int32 is_appoint = 18;
     PluginUser plugin_user = 19;
+    string forum_name = 20;
+    int32 jump_setting = 21;
+    string wx_thumbnail = 22;
 }

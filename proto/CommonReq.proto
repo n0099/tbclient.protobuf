@@ -58,4 +58,5 @@ message CommonReq {
     string shoubai_cuid = 58;
     string mac = 59;
     string idfv = 60;
+    string extra = 61;
 }

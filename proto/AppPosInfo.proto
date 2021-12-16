@@ -13,4 +13,7 @@ message AppPosInfo {
     string mercator_radius = 10;
     int64 mercator_time = 11;
     int32 mercator_city = 12;
+    string mercator_province_name = 13;
+    string mercator_city_name = 14;
+    string mercator_district_name = 15;
 }
