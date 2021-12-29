@@ -9,22 +9,22 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65171common;
+    public final CommonReq f65166common;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65172common;
+        public CommonReq f65167common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -61,7 +61,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65172common = dataReq.f65171common;
+            this.f65167common = dataReq.f65166common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -102,9 +102,9 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65171common = builder.f65172common;
+            this.f65166common = builder.f65167common;
         } else {
-            this.f65171common = builder.f65172common;
+            this.f65166common = builder.f65167common;
         }
     }
 }

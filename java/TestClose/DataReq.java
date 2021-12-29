@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65337common;
+    public final CommonReq f65332common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long from_page;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65338common;
+        public CommonReq f65333common;
         public Long from_page;
         public Long test_id;
 
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65338common = dataReq.f65337common;
+            this.f65333common = dataReq.f65332common;
             this.test_id = dataReq.test_id;
             this.from_page = dataReq.from_page;
         }
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65337common = builder.f65338common;
+            this.f65332common = builder.f65333common;
             Long l = builder.test_id;
             if (l == null) {
                 this.test_id = DEFAULT_TEST_ID;
@@ -147,7 +147,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65337common = builder.f65338common;
+        this.f65332common = builder.f65333common;
         this.test_id = builder.test_id;
         this.from_page = builder.from_page;
     }

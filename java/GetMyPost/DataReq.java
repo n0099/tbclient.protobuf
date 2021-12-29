@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BFROM = "";
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65177common;
+    public final CommonReq f65172common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -55,7 +55,7 @@ public final class DataReq extends Message {
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65178common;
+        public CommonReq f65173common;
         public Long forum_id;
         public Long post_id;
         public Integer q_type;
@@ -99,7 +99,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65178common = dataReq.f65177common;
+            this.f65173common = dataReq.f65172common;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
             this.forum_id = dataReq.forum_id;
@@ -120,7 +120,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -172,7 +172,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65177common = builder.f65178common;
+            this.f65172common = builder.f65173common;
             Long l = builder.thread_id;
             if (l == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
@@ -230,7 +230,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65177common = builder.f65178common;
+        this.f65172common = builder.f65173common;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;
         this.forum_id = builder.forum_id;

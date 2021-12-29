@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_TIMESTAMP;
@@ -19,17 +19,17 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65145common;
+    public final CommonReq f65140common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer timestamp;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65146common;
+        public CommonReq f65141common;
         public Integer timestamp;
 
         public Builder() {
@@ -68,7 +68,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.timestamp = dataReq.timestamp;
-            this.f65146common = dataReq.f65145common;
+            this.f65141common = dataReq.f65140common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -80,7 +80,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -131,10 +131,10 @@ public final class DataReq extends Message {
             } else {
                 this.timestamp = num;
             }
-            this.f65145common = builder.f65146common;
+            this.f65140common = builder.f65141common;
             return;
         }
         this.timestamp = builder.timestamp;
-        this.f65145common = builder.f65146common;
+        this.f65140common = builder.f65141common;
     }
 }

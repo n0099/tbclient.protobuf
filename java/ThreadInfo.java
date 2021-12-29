@@ -245,7 +245,7 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = Opcodes.NEWARRAY)
     public final ForumFriendWatchingInfo forum_friend_watching_info;
-    @ProtoField(tag = com.baidu.apollon.a.f33242e)
+    @ProtoField(tag = com.baidu.apollon.a.f33398e)
     public final SimpleForum forum_info;
     @ProtoField(tag = Opcodes.NEW, type = Message.Datatype.STRING)
     public final String forum_user_live_msg;
@@ -491,6 +491,8 @@ public final class ThreadInfo extends Message {
     public final Long tid;
     @ProtoField(tag = ContactPermissionUtil.DIALOG_NO_PERMISSION_CONTACTS, type = Message.Datatype.STRING)
     public final String tieba_game_information_source;
+    @ProtoField(tag = 201)
+    public final TiebaPlusAd tiebaplus_ad;
     @ProtoField(tag = Constants.METHOD_IM_DELIVER_CONFIG_MSG, type = Message.Datatype.INT32)
     public final Integer tiebaplus_cant_delete;
     @ProtoField(tag = 196, type = Message.Datatype.STRING)
@@ -721,6 +723,7 @@ public final class ThreadInfo extends Message {
         public Integer thread_types;
         public Long tid;
         public String tieba_game_information_source;
+        public TiebaPlusAd tiebaplus_ad;
         public Integer tiebaplus_cant_delete;
         public String tiebaplus_extra_param;
         public String tiebaplus_order_id;
@@ -982,6 +985,7 @@ public final class ThreadInfo extends Message {
             this.is_frs_mask = threadInfo.is_frs_mask;
             this.voice_room = threadInfo.voice_room;
             this.tab_show_mode = threadInfo.tab_show_mode;
+            this.tiebaplus_ad = threadInfo.tiebaplus_ad;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -2065,11 +2069,11 @@ public final class ThreadInfo extends Message {
             Integer num74 = builder.tab_show_mode;
             if (num74 == null) {
                 this.tab_show_mode = DEFAULT_TAB_SHOW_MODE;
-                return;
             } else {
                 this.tab_show_mode = num74;
-                return;
             }
+            this.tiebaplus_ad = builder.tiebaplus_ad;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -2264,5 +2268,6 @@ public final class ThreadInfo extends Message {
         this.is_frs_mask = builder.is_frs_mask;
         this.voice_room = builder.voice_room;
         this.tab_show_mode = builder.tab_show_mode;
+        this.tiebaplus_ad = builder.tiebaplus_ad;
     }
 }

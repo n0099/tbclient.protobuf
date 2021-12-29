@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.User;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class MemberGodInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<User> DEFAULT_FORUM_GOD_LIST;
@@ -24,7 +24,7 @@ public final class MemberGodInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer forum_god_num;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<MemberGodInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,7 +79,7 @@ public final class MemberGodInfo extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

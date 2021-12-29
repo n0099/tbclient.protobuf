@@ -47,6 +47,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_M_SIZE_U = "";
     public static final Integer DEFAULT_NET_TYPE;
     public static final String DEFAULT_OAID = "";
+    public static final Integer DEFAULT_PERSONALIZED_REC_SWITCH;
     public static final String DEFAULT_PVERSION = "";
     public static final Integer DEFAULT_Q_TYPE;
     public static final String DEFAULT_SAMPLE_ID = "";
@@ -63,6 +64,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_SUBAPP_TYPE = "";
     public static final String DEFAULT_SWAN_GAME_VER = "";
     public static final String DEFAULT_TBS = "";
+    public static final String DEFAULT_USER_AGENT = "";
     public static final String DEFAULT_Z_ID = "";
     public static final String DEFAULT__CLIENT_ID = "";
     public static final Integer DEFAULT__CLIENT_TYPE;
@@ -154,6 +156,8 @@ public final class CommonReq extends Message {
     public final Integer net_type;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String oaid;
+    @ProtoField(tag = 63, type = Message.Datatype.INT32)
+    public final Integer personalized_rec_switch;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String pversion;
     @ProtoField(tag = 40, type = Message.Datatype.INT32)
@@ -186,6 +190,8 @@ public final class CommonReq extends Message {
     public final String swan_game_ver;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String tbs;
+    @ProtoField(tag = 62, type = Message.Datatype.STRING)
+    public final String user_agent;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String z_id;
 
@@ -234,6 +240,7 @@ public final class CommonReq extends Message {
         public String model;
         public Integer net_type;
         public String oaid;
+        public Integer personalized_rec_switch;
         public String pversion;
         public Integer q_type;
         public String sample_id;
@@ -250,6 +257,7 @@ public final class CommonReq extends Message {
         public String subapp_type;
         public String swan_game_ver;
         public String tbs;
+        public String user_agent;
         public String z_id;
 
         public Builder() {
@@ -345,6 +353,8 @@ public final class CommonReq extends Message {
             this.mac = commonReq.mac;
             this.idfv = commonReq.idfv;
             this.extra = commonReq.extra;
+            this.user_agent = commonReq.user_agent;
+            this.personalized_rec_switch = commonReq.personalized_rec_switch;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -388,6 +398,7 @@ public final class CommonReq extends Message {
         DEFAULT_LAST_UPDATE_TIME = 0L;
         DEFAULT_CMODE = 0;
         DEFAULT_START_TYPE = 0;
+        DEFAULT_PERSONALIZED_REC_SWITCH = 0;
     }
 
     public /* synthetic */ CommonReq(Builder builder, boolean z, a aVar) {
@@ -758,9 +769,21 @@ public final class CommonReq extends Message {
             String str45 = builder.extra;
             if (str45 == null) {
                 this.extra = "";
-                return;
             } else {
                 this.extra = str45;
+            }
+            String str46 = builder.user_agent;
+            if (str46 == null) {
+                this.user_agent = "";
+            } else {
+                this.user_agent = str46;
+            }
+            Integer num9 = builder.personalized_rec_switch;
+            if (num9 == null) {
+                this.personalized_rec_switch = DEFAULT_PERSONALIZED_REC_SWITCH;
+                return;
+            } else {
+                this.personalized_rec_switch = num9;
                 return;
             }
         }
@@ -822,5 +845,7 @@ public final class CommonReq extends Message {
         this.mac = builder.mac;
         this.idfv = builder.idfv;
         this.extra = builder.extra;
+        this.user_agent = builder.user_agent;
+        this.personalized_rec_switch = builder.personalized_rec_switch;
     }
 }

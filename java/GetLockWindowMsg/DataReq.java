@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Long DEFAULT_TASK_ID;
@@ -20,19 +20,19 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65163common;
+    public final CommonReq f65158common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long task_id;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long tid;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65164common;
+        public CommonReq f65159common;
         public Long task_id;
         public Long tid;
 
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65164common = dataReq.f65163common;
+            this.f65159common = dataReq.f65158common;
             this.tid = dataReq.tid;
             this.task_id = dataReq.task_id;
         }
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65163common = builder.f65164common;
+            this.f65158common = builder.f65159common;
             Long l = builder.tid;
             if (l == null) {
                 this.tid = DEFAULT_TID;
@@ -147,7 +147,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65163common = builder.f65164common;
+        this.f65158common = builder.f65159common;
         this.tid = builder.tid;
         this.task_id = builder.task_id;
     }

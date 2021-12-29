@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FORUM_ID;
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 6)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65159common;
+    public final CommonReq f65154common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -32,13 +32,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tieba_name;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65160common;
+        public CommonReq f65155common;
         public Long forum_id;
         public Integer pn;
         public Integer rn;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             this.forum_id = dataReq.forum_id;
             this.rn = dataReq.rn;
             this.pn = dataReq.pn;
-            this.f65160common = dataReq.f65159common;
+            this.f65155common = dataReq.f65154common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -166,13 +166,13 @@ public final class DataReq extends Message {
             } else {
                 this.pn = num2;
             }
-            this.f65159common = builder.f65160common;
+            this.f65154common = builder.f65155common;
             return;
         }
         this.tieba_name = builder.tieba_name;
         this.forum_id = builder.forum_id;
         this.rn = builder.rn;
         this.pn = builder.pn;
-        this.f65159common = builder.f65160common;
+        this.f65154common = builder.f65155common;
     }
 }

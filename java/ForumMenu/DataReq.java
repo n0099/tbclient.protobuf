@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65095common;
+    public final CommonReq f65090common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65096common;
+        public CommonReq f65091common;
         public String cookie;
         public Integer forum_id;
         public Integer st_param;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             this.forum_id = dataReq.forum_id;
             this.st_param = dataReq.st_param;
             this.cookie = dataReq.cookie;
-            this.f65096common = dataReq.f65095common;
+            this.f65091common = dataReq.f65090common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -166,13 +166,13 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = str;
             }
-            this.f65095common = builder.f65096common;
+            this.f65090common = builder.f65091common;
             return;
         }
         this.update_time = builder.update_time;
         this.forum_id = builder.forum_id;
         this.st_param = builder.st_param;
         this.cookie = builder.cookie;
-        this.f65095common = builder.f65096common;
+        this.f65090common = builder.f65091common;
     }
 }

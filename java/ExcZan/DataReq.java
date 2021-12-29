@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65089common;
+    public final CommonReq f65084common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long excid;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
@@ -39,7 +39,7 @@ public final class DataReq extends Message {
         public Integer action;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65090common;
+        public CommonReq f65085common;
         public Long excid;
         public Long post_id;
         public Long thread_id;
@@ -79,7 +79,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65090common = dataReq.f65089common;
+            this.f65085common = dataReq.f65084common;
             this.excid = dataReq.excid;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
@@ -143,7 +143,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65089common = builder.f65090common;
+            this.f65084common = builder.f65085common;
             Long l = builder.excid;
             if (l == null) {
                 this.excid = DEFAULT_EXCID;
@@ -171,7 +171,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65089common = builder.f65090common;
+        this.f65084common = builder.f65085common;
         this.excid = builder.excid;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;

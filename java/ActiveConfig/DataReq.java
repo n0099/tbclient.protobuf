@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65043common;
+    public final CommonReq f65038common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer is_first_up;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65044common;
+        public CommonReq f65039common;
         public Integer is_first_up;
         public Integer is_schema_up;
 
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65044common = dataReq.f65043common;
+            this.f65039common = dataReq.f65038common;
             this.is_schema_up = dataReq.is_schema_up;
             this.is_first_up = dataReq.is_first_up;
         }
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65043common = builder.f65044common;
+            this.f65038common = builder.f65039common;
             Integer num = builder.is_schema_up;
             if (num == null) {
                 this.is_schema_up = DEFAULT_IS_SCHEMA_UP;
@@ -147,7 +147,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65043common = builder.f65044common;
+        this.f65038common = builder.f65039common;
         this.is_schema_up = builder.is_schema_up;
         this.is_first_up = builder.is_first_up;
     }

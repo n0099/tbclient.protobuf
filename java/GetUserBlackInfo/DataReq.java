@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65219common;
+    public final CommonReq f65214common;
 
     /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
         public Long black_uid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65220common;
+        public CommonReq f65215common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65220common = dataReq.f65219common;
+            this.f65215common = dataReq.f65214common;
             this.black_uid = dataReq.black_uid;
         }
 
@@ -125,7 +125,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65219common = builder.f65220common;
+            this.f65214common = builder.f65215common;
             Long l = builder.black_uid;
             if (l == null) {
                 this.black_uid = DEFAULT_BLACK_UID;
@@ -135,7 +135,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65219common = builder.f65220common;
+        this.f65214common = builder.f65215common;
         this.black_uid = builder.black_uid;
     }
 }

@@ -24,6 +24,7 @@ public final class DataRes extends Message {
     public static final List<AlbumElement> DEFAULT_ALBUM_LIST;
     public static final Integer DEFAULT_DISCUSSION_ID;
     public static final List<ThreadInfo> DEFAULT_DISCUSSION_LIST;
+    public static final Integer DEFAULT_HAS_TORNADO;
     public static final String DEFAULT_LINK = "";
     public static final List<RecommendForumInfo> DEFAULT_RECOMMEND_FORUM;
     public static final List<ItemInfo> DEFAULT_RECOMMEND_ITEM;
@@ -35,6 +36,8 @@ public final class DataRes extends Message {
     public final Integer discussion_id;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
     public final List<ThreadInfo> discussion_list;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer has_tornado;
     @ProtoField(tag = 10)
     public final ItemGameCode item_game_code;
     @ProtoField(tag = 9)
@@ -57,6 +60,7 @@ public final class DataRes extends Message {
         public List<AlbumElement> album_list;
         public Integer discussion_id;
         public List<ThreadInfo> discussion_list;
+        public Integer has_tornado;
         public ItemGameCode item_game_code;
         public ItemGameInfo item_game_info;
         public ItemInfo item_info;
@@ -110,6 +114,7 @@ public final class DataRes extends Message {
             this.discussion_id = dataRes.discussion_id;
             this.item_game_info = dataRes.item_game_info;
             this.item_game_code = dataRes.item_game_code;
+            this.has_tornado = dataRes.has_tornado;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -146,6 +151,7 @@ public final class DataRes extends Message {
         DEFAULT_ALBUM_LIST = Collections.emptyList();
         DEFAULT_DISCUSSION_LIST = Collections.emptyList();
         DEFAULT_DISCUSSION_ID = 0;
+        DEFAULT_HAS_TORNADO = 0;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -216,7 +222,14 @@ public final class DataRes extends Message {
             }
             this.item_game_info = builder.item_game_info;
             this.item_game_code = builder.item_game_code;
-            return;
+            Integer num2 = builder.has_tornado;
+            if (num2 == null) {
+                this.has_tornado = DEFAULT_HAS_TORNADO;
+                return;
+            } else {
+                this.has_tornado = num2;
+                return;
+            }
         }
         this.item_info = builder.item_info;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
@@ -228,5 +241,6 @@ public final class DataRes extends Message {
         this.discussion_id = builder.discussion_id;
         this.item_game_info = builder.item_game_info;
         this.item_game_code = builder.item_game_code;
+        this.has_tornado = builder.has_tornado;
     }
 }

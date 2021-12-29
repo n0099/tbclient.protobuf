@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ForumDataCenter extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT;
@@ -51,7 +51,7 @@ public final class ForumDataCenter extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
     public final Double user_sign_rate_diff;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<ForumDataCenter> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -126,7 +126,7 @@ public final class ForumDataCenter extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

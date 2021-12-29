@@ -15,7 +15,7 @@ import java.util.List;
 import tbclient.ForumMember;
 import tbclient.MemberGroupInfo;
 import tbclient.PriManagerApplyInfo;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_IS_BAWUAPPLY_SHOW;
@@ -37,7 +37,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 7)
     public final PriManagerApplyInfo primanager_apply_info;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -102,7 +102,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

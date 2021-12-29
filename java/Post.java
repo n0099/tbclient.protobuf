@@ -121,6 +121,8 @@ public final class Post extends Message {
     public final String lego_card;
     @ProtoField(tag = 40, type = Message.Datatype.INT32)
     public final Integer need_log;
+    @ProtoField(tag = 58)
+    public final NovelInfo novel_info;
     @ProtoField(tag = 42)
     public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 54)
@@ -203,6 +205,7 @@ public final class Post extends Message {
         public Lbs lbs_info;
         public String lego_card;
         public Integer need_log;
+        public NovelInfo novel_info;
         public OriginThreadInfo origin_thread_info;
         public Item outer_item;
         public DealInfo pb_deal_info;
@@ -316,6 +319,7 @@ public final class Post extends Message {
             this.advertisement = post.advertisement;
             this.fold_comment_status = post.fold_comment_status;
             this.fold_comment_apply_url = post.fold_comment_apply_url;
+            this.novel_info = post.novel_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -625,11 +629,11 @@ public final class Post extends Message {
             String str9 = builder.fold_comment_apply_url;
             if (str9 == null) {
                 this.fold_comment_apply_url = "";
-                return;
             } else {
                 this.fold_comment_apply_url = str9;
-                return;
             }
+            this.novel_info = builder.novel_info;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -687,5 +691,6 @@ public final class Post extends Message {
         this.advertisement = builder.advertisement;
         this.fold_comment_status = builder.fold_comment_status;
         this.fold_comment_apply_url = builder.fold_comment_apply_url;
+        this.novel_info = builder.novel_info;
     }
 }

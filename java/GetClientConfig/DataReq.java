@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65131common;
+    public final CommonReq f65126common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String type;
 
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65132common;
+        public CommonReq f65127common;
         public String type;
 
         public Builder() {
@@ -66,7 +66,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.type = dataReq.type;
-            this.f65132common = dataReq.f65131common;
+            this.f65127common = dataReq.f65126common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -113,10 +113,10 @@ public final class DataReq extends Message {
             } else {
                 this.type = str;
             }
-            this.f65131common = builder.f65132common;
+            this.f65126common = builder.f65127common;
             return;
         }
         this.type = builder.type;
-        this.f65131common = builder.f65132common;
+        this.f65126common = builder.f65127common;
     }
 }

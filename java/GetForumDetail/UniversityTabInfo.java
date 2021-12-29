@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class UniversityTabInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<UniversityInfo> DEFAULT_CONTENT;
@@ -23,7 +23,7 @@ public final class UniversityTabInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tab_name;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<UniversityTabInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -78,7 +78,7 @@ public final class UniversityTabInfo extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

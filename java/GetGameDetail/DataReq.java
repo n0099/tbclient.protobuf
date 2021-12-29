@@ -9,7 +9,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_GAME_ID = "";
@@ -17,17 +17,17 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65143common;
+    public final CommonReq f65138common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String game_id;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65144common;
+        public CommonReq f65139common;
         public String game_id;
 
         public Builder() {
@@ -66,7 +66,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.game_id = dataReq.game_id;
-            this.f65144common = dataReq.f65143common;
+            this.f65139common = dataReq.f65138common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -78,7 +78,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -113,10 +113,10 @@ public final class DataReq extends Message {
             } else {
                 this.game_id = str;
             }
-            this.f65143common = builder.f65144common;
+            this.f65138common = builder.f65139common;
             return;
         }
         this.game_id = builder.game_id;
-        this.f65143common = builder.f65144common;
+        this.f65138common = builder.f65139common;
     }
 }
