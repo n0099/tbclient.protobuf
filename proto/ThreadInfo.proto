@@ -43,6 +43,7 @@ import "StarRankIcon.proto";
 import "TailInfo.proto";
 import "TaskInfo.proto";
 import "TbreadDispatch.proto";
+import "TiebaPlusAd.proto";
 import "TogetherHi.proto";
 import "Topic.proto";
 import "TopicModule.proto";
@@ -227,4 +228,5 @@ message ThreadInfo {
     string tiebaplus_extra_param = 196;
     VoiceRoom voice_room = 199;
     int32 tab_show_mode = 200;
+    TiebaPlusAd tiebaplus_ad = 201;
 }

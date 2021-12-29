@@ -8,6 +8,7 @@ import "DealInfo.proto";
 import "HeadItem.proto";
 import "Item.proto";
 import "Lbs.proto";
+import "NovelInfo.proto";
 import "OriginThreadInfo.proto";
 import "PbContent.proto";
 import "PbPostZan.proto";
@@ -80,4 +81,5 @@ message Post {
     Advertisement advertisement = 55;
     int32 fold_comment_status = 56;
     string fold_comment_apply_url = 57;
+    NovelInfo novel_info = 58;
 }

@@ -59,4 +59,6 @@ message CommonReq {
     string mac = 59;
     string idfv = 60;
     string extra = 61;
+    string user_agent = 62;
+    int32 personalized_rec_switch = 63;
 }
