@@ -13,4 +13,5 @@ message FloatingIconItem {
     string float_type = 10;
     string fold_name = 11;
     string unfold_name = 12;
+    string display_ad_icon = 13;
 }

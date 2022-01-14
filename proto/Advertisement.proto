@@ -12,4 +12,5 @@ message Advertisement {
     string deeplink = 9;
     string scheme = 10;
     string package_name = 11;
+    string display_ad_icon = 12;
 }

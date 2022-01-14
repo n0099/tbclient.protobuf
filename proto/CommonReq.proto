@@ -61,4 +61,10 @@ message CommonReq {
     string extra = 61;
     string user_agent = 62;
     int32 personalized_rec_switch = 63;
+    string iemi = 64;
+    string iemiwen = 65;
+    string cam = 66;
+    string afdi = 67;
+    string di_diordna = 68;
+    string vfdi = 69;
 }

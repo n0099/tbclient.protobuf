@@ -8,4 +8,5 @@ message DataRes {
     repeated RecommendForumInfo forum_info = 2;
     Page page = 3;
     string class_name = 4;
+    repeated string second_class_list = 5;
 }

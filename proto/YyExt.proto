@@ -8,4 +8,5 @@ message YyExt {
     int32 is_yy_game = 5;
     string stream_info = 6;
     string rank_show = 7;
+    string icon_url = 8;
 }

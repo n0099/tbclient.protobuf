@@ -7,4 +7,5 @@ message DataReq {
     int32 pn = 3;
     int32 rn = 4;
     int64 user_id = 5;
+    string second_class_name = 6;
 }

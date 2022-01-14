@@ -36,6 +36,7 @@ import "Post.proto";
 import "PostList.proto";
 import "PsInfo.proto";
 import "PushStatus.proto";
+import "RecommendTip.proto";
 import "ReportInfo.proto";
 import "SkinInfo.proto";
 import "SmartApp.proto";
@@ -229,4 +230,5 @@ message ThreadInfo {
     VoiceRoom voice_room = 199;
     int32 tab_show_mode = 200;
     TiebaPlusAd tiebaplus_ad = 201;
+    RecommendTip recommend_tip = 202;
 }
