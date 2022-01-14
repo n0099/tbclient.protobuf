@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Long DEFAULT_PROPS_ID;
@@ -19,17 +19,17 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65122common;
+    public final CommonReq f62682common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long props_id;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65123common;
+        public CommonReq f62683common;
         public Long props_id;
 
         public Builder() {
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65123common = dataReq.f65122common;
+            this.f62683common = dataReq.f62682common;
             this.props_id = dataReq.props_id;
         }
 
@@ -80,7 +80,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -125,7 +125,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65122common = builder.f65123common;
+            this.f62682common = builder.f62683common;
             Long l = builder.props_id;
             if (l == null) {
                 this.props_id = DEFAULT_PROPS_ID;
@@ -135,7 +135,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65122common = builder.f65123common;
+        this.f62682common = builder.f62683common;
         this.props_id = builder.props_id;
     }
 }

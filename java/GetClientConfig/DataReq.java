@@ -9,7 +9,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_TYPE = "";
@@ -17,17 +17,17 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65126common;
+    public final CommonReq f62686common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String type;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65127common;
+        public CommonReq f62687common;
         public String type;
 
         public Builder() {
@@ -66,7 +66,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.type = dataReq.type;
-            this.f65127common = dataReq.f65126common;
+            this.f62687common = dataReq.f62686common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -78,7 +78,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -113,10 +113,10 @@ public final class DataReq extends Message {
             } else {
                 this.type = str;
             }
-            this.f65126common = builder.f65127common;
+            this.f62686common = builder.f62687common;
             return;
         }
         this.type = builder.type;
-        this.f65126common = builder.f65127common;
+        this.f62686common = builder.f62687common;
     }
 }

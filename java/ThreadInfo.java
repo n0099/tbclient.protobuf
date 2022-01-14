@@ -245,7 +245,7 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = Opcodes.NEWARRAY)
     public final ForumFriendWatchingInfo forum_friend_watching_info;
-    @ProtoField(tag = com.baidu.apollon.a.f33398e)
+    @ProtoField(tag = com.baidu.apollon.a.f32337e)
     public final SimpleForum forum_info;
     @ProtoField(tag = Opcodes.NEW, type = Message.Datatype.STRING)
     public final String forum_user_live_msg;
@@ -267,7 +267,7 @@ public final class ThreadInfo extends Message {
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = w0.f57478i, type = Message.Datatype.INT32)
+    @ProtoField(tag = w0.f55298i, type = Message.Datatype.INT32)
     public final Integer if_comment;
     @ProtoField(tag = 174, type = Message.Datatype.STRING)
     public final String if_comment_info;
@@ -443,6 +443,8 @@ public final class ThreadInfo extends Message {
     public final String recom_tag_icon;
     @ProtoField(tag = 105, type = Message.Datatype.STRING)
     public final String recom_weight;
+    @ProtoField(tag = 202)
+    public final RecommendTip recommend_tip;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer reply_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 118)
@@ -699,6 +701,7 @@ public final class ThreadInfo extends Message {
         public String recom_source;
         public String recom_tag_icon;
         public String recom_weight;
+        public RecommendTip recommend_tip;
         public Integer reply_num;
         public List<ReportInfo> report_info;
         public Integer repost_num;
@@ -986,6 +989,7 @@ public final class ThreadInfo extends Message {
             this.voice_room = threadInfo.voice_room;
             this.tab_show_mode = threadInfo.tab_show_mode;
             this.tiebaplus_ad = threadInfo.tiebaplus_ad;
+            this.recommend_tip = threadInfo.recommend_tip;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -2073,6 +2077,7 @@ public final class ThreadInfo extends Message {
                 this.tab_show_mode = num74;
             }
             this.tiebaplus_ad = builder.tiebaplus_ad;
+            this.recommend_tip = builder.recommend_tip;
             return;
         }
         this.id = builder.id;
@@ -2269,5 +2274,6 @@ public final class ThreadInfo extends Message {
         this.voice_room = builder.voice_room;
         this.tab_show_mode = builder.tab_show_mode;
         this.tiebaplus_ad = builder.tiebaplus_ad;
+        this.recommend_tip = builder.recommend_tip;
     }
 }

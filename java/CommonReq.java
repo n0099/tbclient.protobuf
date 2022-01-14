@@ -14,6 +14,7 @@ import com.squareup.wire.ProtoField;
 public final class CommonReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_ACTIVE_TIMESTAMP;
+    public static final String DEFAULT_AFDI = "";
     public static final String DEFAULT_ANDROID_ID = "";
     public static final String DEFAULT_APID = "";
     public static final String DEFAULT_APPLIST = "";
@@ -22,10 +23,12 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_BRAND_TYPE = "";
     public static final String DEFAULT_C3_AID = "";
     public static final String DEFAULT_CAID = "";
+    public static final String DEFAULT_CAM = "";
     public static final Integer DEFAULT_CMODE;
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
+    public static final String DEFAULT_DI_DIORDNA = "";
     public static final String DEFAULT_EVENT_DAY = "";
     public static final String DEFAULT_EXTRA = "";
     public static final Long DEFAULT_FIRST_INSTALL_TIME;
@@ -33,6 +36,8 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_IDFA = "";
     public static final String DEFAULT_IDFV = "";
+    public static final String DEFAULT_IEMI = "";
+    public static final String DEFAULT_IEMIWEN = "";
     public static final Integer DEFAULT_IS_TEENAGER;
     public static final String DEFAULT_KA = "";
     public static final Long DEFAULT_LAST_UPDATE_TIME;
@@ -65,6 +70,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_SWAN_GAME_VER = "";
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT_USER_AGENT = "";
+    public static final String DEFAULT_VFDI = "";
     public static final String DEFAULT_Z_ID = "";
     public static final String DEFAULT__CLIENT_ID = "";
     public static final Integer DEFAULT__CLIENT_TYPE;
@@ -92,6 +98,8 @@ public final class CommonReq extends Message {
     public final Long _timestamp;
     @ProtoField(tag = 49, type = Message.Datatype.INT64)
     public final Long active_timestamp;
+    @ProtoField(tag = 67, type = Message.Datatype.STRING)
+    public final String afdi;
     @ProtoField(tag = 54, type = Message.Datatype.STRING)
     public final String android_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -106,6 +114,8 @@ public final class CommonReq extends Message {
     public final String c3_aid;
     @ProtoField(tag = 46, type = Message.Datatype.STRING)
     public final String caid;
+    @ProtoField(tag = 66, type = Message.Datatype.STRING)
+    public final String cam;
     @ProtoField(tag = 55, type = Message.Datatype.INT32)
     public final Integer cmode;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -114,6 +124,8 @@ public final class CommonReq extends Message {
     public final String cuid_galaxy2;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String cuid_gid;
+    @ProtoField(tag = 68, type = Message.Datatype.STRING)
+    public final String di_diordna;
     @ProtoField(tag = 53, type = Message.Datatype.STRING)
     public final String event_day;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
@@ -128,6 +140,10 @@ public final class CommonReq extends Message {
     public final String idfa;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String idfv;
+    @ProtoField(tag = 64, type = Message.Datatype.STRING)
+    public final String iemi;
+    @ProtoField(tag = 65, type = Message.Datatype.STRING)
+    public final String iemiwen;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
     public final Integer is_teenager;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -192,6 +208,8 @@ public final class CommonReq extends Message {
     public final String tbs;
     @ProtoField(tag = 62, type = Message.Datatype.STRING)
     public final String user_agent;
+    @ProtoField(tag = 69, type = Message.Datatype.STRING)
+    public final String vfdi;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String z_id;
 
@@ -208,6 +226,7 @@ public final class CommonReq extends Message {
         public String _phone_newimei;
         public Long _timestamp;
         public Long active_timestamp;
+        public String afdi;
         public String android_id;
         public String apid;
         public String applist;
@@ -215,10 +234,12 @@ public final class CommonReq extends Message {
         public String brand_type;
         public String c3_aid;
         public String caid;
+        public String cam;
         public Integer cmode;
         public String cuid;
         public String cuid_galaxy2;
         public String cuid_gid;
+        public String di_diordna;
         public String event_day;
         public String extra;
         public Long first_install_time;
@@ -226,6 +247,8 @@ public final class CommonReq extends Message {
         public String from;
         public String idfa;
         public String idfv;
+        public String iemi;
+        public String iemiwen;
         public Integer is_teenager;
         public String ka;
         public Long last_update_time;
@@ -258,6 +281,7 @@ public final class CommonReq extends Message {
         public String swan_game_ver;
         public String tbs;
         public String user_agent;
+        public String vfdi;
         public String z_id;
 
         public Builder() {
@@ -355,6 +379,12 @@ public final class CommonReq extends Message {
             this.extra = commonReq.extra;
             this.user_agent = commonReq.user_agent;
             this.personalized_rec_switch = commonReq.personalized_rec_switch;
+            this.iemi = commonReq.iemi;
+            this.iemiwen = commonReq.iemiwen;
+            this.cam = commonReq.cam;
+            this.afdi = commonReq.afdi;
+            this.di_diordna = commonReq.di_diordna;
+            this.vfdi = commonReq.vfdi;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -781,9 +811,45 @@ public final class CommonReq extends Message {
             Integer num9 = builder.personalized_rec_switch;
             if (num9 == null) {
                 this.personalized_rec_switch = DEFAULT_PERSONALIZED_REC_SWITCH;
-                return;
             } else {
                 this.personalized_rec_switch = num9;
+            }
+            String str47 = builder.iemi;
+            if (str47 == null) {
+                this.iemi = "";
+            } else {
+                this.iemi = str47;
+            }
+            String str48 = builder.iemiwen;
+            if (str48 == null) {
+                this.iemiwen = "";
+            } else {
+                this.iemiwen = str48;
+            }
+            String str49 = builder.cam;
+            if (str49 == null) {
+                this.cam = "";
+            } else {
+                this.cam = str49;
+            }
+            String str50 = builder.afdi;
+            if (str50 == null) {
+                this.afdi = "";
+            } else {
+                this.afdi = str50;
+            }
+            String str51 = builder.di_diordna;
+            if (str51 == null) {
+                this.di_diordna = "";
+            } else {
+                this.di_diordna = str51;
+            }
+            String str52 = builder.vfdi;
+            if (str52 == null) {
+                this.vfdi = "";
+                return;
+            } else {
+                this.vfdi = str52;
                 return;
             }
         }
@@ -847,5 +913,11 @@ public final class CommonReq extends Message {
         this.extra = builder.extra;
         this.user_agent = builder.user_agent;
         this.personalized_rec_switch = builder.personalized_rec_switch;
+        this.iemi = builder.iemi;
+        this.iemiwen = builder.iemiwen;
+        this.cam = builder.cam;
+        this.afdi = builder.afdi;
+        this.di_diordna = builder.di_diordna;
+        this.vfdi = builder.vfdi;
     }
 }

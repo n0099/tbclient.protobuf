@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65322common;
+    public final CommonReq f62882common;
     @ProtoField(tag = 3)
     public final PermissionList perm_list;
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public Long black_uid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65323common;
+        public CommonReq f62883common;
         public PermissionList perm_list;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65323common = dataReq.f65322common;
+            this.f62883common = dataReq.f62882common;
             this.black_uid = dataReq.black_uid;
             this.perm_list = dataReq.perm_list;
         }
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65322common = builder.f65323common;
+            this.f62882common = builder.f62883common;
             Long l = builder.black_uid;
             if (l == null) {
                 this.black_uid = DEFAULT_BLACK_UID;
@@ -140,7 +140,7 @@ public final class DataReq extends Message {
             this.perm_list = builder.perm_list;
             return;
         }
-        this.f65322common = builder.f65323common;
+        this.f62882common = builder.f62883common;
         this.black_uid = builder.black_uid;
         this.perm_list = builder.perm_list;
     }

@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Long DEFAULT_FORUM_ID;
@@ -19,17 +19,17 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65094common;
+    public final CommonReq f62654common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65095common;
+        public CommonReq f62655common;
         public Long forum_id;
 
         public Builder() {
@@ -68,7 +68,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.forum_id = dataReq.forum_id;
-            this.f65095common = dataReq.f65094common;
+            this.f62655common = dataReq.f62654common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -80,7 +80,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -131,10 +131,10 @@ public final class DataReq extends Message {
             } else {
                 this.forum_id = l;
             }
-            this.f65094common = builder.f65095common;
+            this.f62654common = builder.f62655common;
             return;
         }
         this.forum_id = builder.forum_id;
-        this.f65094common = builder.f65095common;
+        this.f62654common = builder.f62655common;
     }
 }

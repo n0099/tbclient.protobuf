@@ -20,6 +20,7 @@ public final class DataRes extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final List<RecommendForumInfo> DEFAULT_FORUM_INFO;
     public static final List<String> DEFAULT_PAGE_STRUCTURE;
+    public static final List<String> DEFAULT_SECOND_CLASS_LIST;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String class_name;
@@ -29,6 +30,8 @@ public final class DataRes extends Message {
     public final Page page;
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
     public final List<String> page_structure;
+    @ProtoField(label = Message.Label.REPEATED, tag = 5, type = Message.Datatype.STRING)
+    public final List<String> second_class_list;
 
     /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -38,6 +41,7 @@ public final class DataRes extends Message {
         public List<RecommendForumInfo> forum_info;
         public Page page;
         public List<String> page_structure;
+        public List<String> second_class_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -78,6 +82,7 @@ public final class DataRes extends Message {
             this.forum_info = Message.copyOf(dataRes.forum_info);
             this.page = dataRes.page;
             this.class_name = dataRes.class_name;
+            this.second_class_list = Message.copyOf(dataRes.second_class_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -110,6 +115,7 @@ public final class DataRes extends Message {
         }
         DEFAULT_PAGE_STRUCTURE = Collections.emptyList();
         DEFAULT_FORUM_INFO = Collections.emptyList();
+        DEFAULT_SECOND_CLASS_LIST = Collections.emptyList();
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -151,9 +157,15 @@ public final class DataRes extends Message {
             String str = builder.class_name;
             if (str == null) {
                 this.class_name = "";
-                return;
             } else {
                 this.class_name = str;
+            }
+            List<String> list3 = builder.second_class_list;
+            if (list3 == null) {
+                this.second_class_list = DEFAULT_SECOND_CLASS_LIST;
+                return;
+            } else {
+                this.second_class_list = Message.immutableCopyOf(list3);
                 return;
             }
         }
@@ -161,5 +173,6 @@ public final class DataRes extends Message {
         this.forum_info = Message.immutableCopyOf(builder.forum_info);
         this.page = builder.page;
         this.class_name = builder.class_name;
+        this.second_class_list = Message.immutableCopyOf(builder.second_class_list);
     }
 }

@@ -16,6 +16,7 @@ public final class Advertisement extends Message {
     public static final String DEFAULT_ADVERTISEMENT_ID = "";
     public static final String DEFAULT_CLICK_STATISTICS_URL = "";
     public static final String DEFAULT_DEEPLINK = "";
+    public static final String DEFAULT_DISPLAY_AD_ICON = "";
     public static final String DEFAULT_FLOATING_TEXT = "";
     public static final String DEFAULT_JUMP_LINK = "";
     public static final String DEFAULT_PACKAGE_NAME = "";
@@ -31,6 +32,8 @@ public final class Advertisement extends Message {
     public final String click_statistics_url;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String deeplink;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String display_ad_icon;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String floating_text;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -55,6 +58,7 @@ public final class Advertisement extends Message {
         public String advertisement_id;
         public String click_statistics_url;
         public String deeplink;
+        public String display_ad_icon;
         public String floating_text;
         public String jump_link;
         public String package_name;
@@ -110,6 +114,7 @@ public final class Advertisement extends Message {
             this.deeplink = advertisement.deeplink;
             this.scheme = advertisement.scheme;
             this.package_name = advertisement.package_name;
+            this.display_ad_icon = advertisement.display_ad_icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -229,9 +234,15 @@ public final class Advertisement extends Message {
             String str10 = builder.package_name;
             if (str10 == null) {
                 this.package_name = "";
-                return;
             } else {
                 this.package_name = str10;
+            }
+            String str11 = builder.display_ad_icon;
+            if (str11 == null) {
+                this.display_ad_icon = "";
+                return;
+            } else {
+                this.display_ad_icon = str11;
                 return;
             }
         }
@@ -246,5 +257,6 @@ public final class Advertisement extends Message {
         this.deeplink = builder.deeplink;
         this.scheme = builder.scheme;
         this.package_name = builder.package_name;
+        this.display_ad_icon = builder.display_ad_icon;
     }
 }

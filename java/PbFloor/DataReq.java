@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65266common;
+    public final CommonReq f62826common;
     @ProtoField(tag = 11, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65267common;
+        public CommonReq f62827common;
         public Long forum_id;
         public Integer is_comm_reverse;
         public Long kz;
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
             this.scr_h = dataReq.scr_h;
             this.scr_dip = dataReq.scr_dip;
             this.st_type = dataReq.st_type;
-            this.f65267common = dataReq.f65266common;
+            this.f62827common = dataReq.f62826common;
             this.is_comm_reverse = dataReq.is_comm_reverse;
             this.forum_id = dataReq.forum_id;
             this.ori_ugc_nid = dataReq.ori_ugc_nid;
@@ -252,7 +252,7 @@ public final class DataReq extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f65266common = builder.f65267common;
+            this.f62826common = builder.f62827common;
             Integer num4 = builder.is_comm_reverse;
             if (num4 == null) {
                 this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
@@ -306,7 +306,7 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
         this.st_type = builder.st_type;
-        this.f65266common = builder.f65267common;
+        this.f62826common = builder.f62827common;
         this.is_comm_reverse = builder.is_comm_reverse;
         this.forum_id = builder.forum_id;
         this.ori_ugc_nid = builder.ori_ugc_nid;

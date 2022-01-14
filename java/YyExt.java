@@ -13,6 +13,7 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes5.dex */
 public final class YyExt extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_ICON_URL = "";
     public static final Integer DEFAULT_IS_YY_GAME;
     public static final String DEFAULT_RANK_SHOW = "";
     public static final String DEFAULT_SID = "";
@@ -21,6 +22,8 @@ public final class YyExt extends Message {
     public static final String DEFAULT_TEMPLATE_ID = "";
     public static final String DEFAULT_YY_UID = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String icon_url;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer is_yy_game;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -40,6 +43,7 @@ public final class YyExt extends Message {
     public static final class Builder extends Message.Builder<YyExt> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String icon_url;
         public Integer is_yy_game;
         public String rank_show;
         public String sid;
@@ -90,6 +94,7 @@ public final class YyExt extends Message {
             this.is_yy_game = yyExt.is_yy_game;
             this.stream_info = yyExt.stream_info;
             this.rank_show = yyExt.rank_show;
+            this.icon_url = yyExt.icon_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -185,9 +190,15 @@ public final class YyExt extends Message {
             String str6 = builder.rank_show;
             if (str6 == null) {
                 this.rank_show = "";
-                return;
             } else {
                 this.rank_show = str6;
+            }
+            String str7 = builder.icon_url;
+            if (str7 == null) {
+                this.icon_url = "";
+                return;
+            } else {
+                this.icon_url = str7;
                 return;
             }
         }
@@ -198,5 +209,6 @@ public final class YyExt extends Message {
         this.is_yy_game = builder.is_yy_game;
         this.stream_info = builder.stream_info;
         this.rank_show = builder.rank_show;
+        this.icon_url = builder.icon_url;
     }
 }

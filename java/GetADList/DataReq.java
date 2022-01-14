@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Long DEFAULT_FID;
@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65104common;
+    public final CommonReq f62664common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
@@ -29,13 +29,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer rn;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65105common;
+        public CommonReq f62665common;
         public Long fid;
         public Long offset;
         public Integer rn;
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65105common = dataReq.f65104common;
+            this.f62665common = dataReq.f62664common;
             this.fid = dataReq.fid;
             this.offset = dataReq.offset;
             this.rn = dataReq.rn;
@@ -90,7 +90,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -137,7 +137,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65104common = builder.f65105common;
+            this.f62664common = builder.f62665common;
             Long l = builder.fid;
             if (l == null) {
                 this.fid = DEFAULT_FID;
@@ -159,7 +159,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65104common = builder.f65105common;
+        this.f62664common = builder.f62665common;
         this.fid = builder.fid;
         this.offset = builder.offset;
         this.rn = builder.rn;

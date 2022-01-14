@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
@@ -102,7 +102,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 39)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65098common;
+    public final CommonReq f62658common;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -208,7 +208,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 46, type = Message.Datatype.STRING)
     public final String yuelaou_params;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -225,7 +225,7 @@ public final class DataReq extends Message {
         public Integer class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65099common;
+        public CommonReq f62659common;
         public String cookie;
         public Integer ctime;
         public String da_idfa;
@@ -352,7 +352,7 @@ public final class DataReq extends Message {
             this.email = dataReq.email;
             this.debug = dataReq.debug;
             this.cookie = dataReq.cookie;
-            this.f65099common = dataReq.f65098common;
+            this.f62659common = dataReq.f62658common;
             this.lastids = dataReq.lastids;
             this.issdk = dataReq.issdk;
             this.da_idfa = dataReq.da_idfa;
@@ -389,7 +389,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -700,7 +700,7 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = str10;
             }
-            this.f65098common = builder.f65099common;
+            this.f62658common = builder.f62659common;
             String str11 = builder.lastids;
             if (str11 == null) {
                 this.lastids = "";
@@ -876,7 +876,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.debug = builder.debug;
         this.cookie = builder.cookie;
-        this.f65098common = builder.f65099common;
+        this.f62658common = builder.f62659common;
         this.lastids = builder.lastids;
         this.issdk = builder.issdk;
         this.da_idfa = builder.da_idfa;

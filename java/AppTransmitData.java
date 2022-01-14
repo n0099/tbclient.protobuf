@@ -12,15 +12,23 @@ import com.squareup.wire.ProtoField;
 public final class AppTransmitData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_WISE_SAMPLE_ID = "";
+    public static final String DEFAULT_YY_HDID = "";
+    public static final String DEFAULT_YY_VERSION = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String wise_sample_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String yy_hdid;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String yy_version;
 
     /* loaded from: classes4.dex */
     public static final class Builder extends Message.Builder<AppTransmitData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String wise_sample_id;
+        public String yy_hdid;
+        public String yy_version;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -58,6 +66,8 @@ public final class AppTransmitData extends Message {
                 return;
             }
             this.wise_sample_id = appTransmitData.wise_sample_id;
+            this.yy_hdid = appTransmitData.yy_hdid;
+            this.yy_version = appTransmitData.yy_version;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -101,12 +111,26 @@ public final class AppTransmitData extends Message {
             String str = builder.wise_sample_id;
             if (str == null) {
                 this.wise_sample_id = "";
-                return;
             } else {
                 this.wise_sample_id = str;
+            }
+            String str2 = builder.yy_hdid;
+            if (str2 == null) {
+                this.yy_hdid = "";
+            } else {
+                this.yy_hdid = str2;
+            }
+            String str3 = builder.yy_version;
+            if (str3 == null) {
+                this.yy_version = "";
+                return;
+            } else {
+                this.yy_version = str3;
                 return;
             }
         }
         this.wise_sample_id = builder.wise_sample_id;
+        this.yy_hdid = builder.yy_hdid;
+        this.yy_version = builder.yy_version;
     }
 }

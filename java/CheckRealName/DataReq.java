@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65062common;
+    public final CommonReq f62622common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String obj_source;
 
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65063common;
+        public CommonReq f62623common;
         public String obj_source;
 
         public Builder() {
@@ -65,7 +65,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65063common = dataReq.f65062common;
+            this.f62623common = dataReq.f62622common;
             this.obj_source = dataReq.obj_source;
         }
 
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65062common = builder.f65063common;
+            this.f62622common = builder.f62623common;
             String str = builder.obj_source;
             if (str == null) {
                 this.obj_source = "";
@@ -117,7 +117,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65062common = builder.f65063common;
+        this.f62622common = builder.f62623common;
         this.obj_source = builder.obj_source;
     }
 }

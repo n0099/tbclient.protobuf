@@ -29,6 +29,7 @@ public final class RecommendForumInfo extends Message {
     public static final Integer DEFAULT_IS_BRAND_FORUM;
     public static final Integer DEFAULT_IS_LIKE;
     public static final Integer DEFAULT_IS_PRIVATE_FORUM;
+    public static final Integer DEFAULT_IS_RECOMMEND_FORUM;
     public static final String DEFAULT_LV1_NAME = "";
     public static final String DEFAULT_LV2_NAME = "";
     public static final Integer DEFAULT_MEMBER_COUNT;
@@ -65,6 +66,8 @@ public final class RecommendForumInfo extends Message {
     public final Integer is_like;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
     public final Integer is_private_forum;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer is_recommend_forum;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String lv1_name;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
@@ -98,6 +101,7 @@ public final class RecommendForumInfo extends Message {
         public Integer is_brand_forum;
         public Integer is_like;
         public Integer is_private_forum;
+        public Integer is_recommend_forum;
         public String lv1_name;
         public String lv2_name;
         public Integer member_count;
@@ -162,6 +166,7 @@ public final class RecommendForumInfo extends Message {
             this.lv2_name = recommendForumInfo.lv2_name;
             this.avatar_origin = recommendForumInfo.avatar_origin;
             this.hot_thread_id = recommendForumInfo.hot_thread_id;
+            this.is_recommend_forum = recommendForumInfo.is_recommend_forum;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -201,6 +206,7 @@ public final class RecommendForumInfo extends Message {
         DEFAULT_IS_BRAND_FORUM = 0;
         DEFAULT_IS_PRIVATE_FORUM = 0;
         DEFAULT_HOT_THREAD_ID = 0L;
+        DEFAULT_IS_RECOMMEND_FORUM = 0;
     }
 
     public /* synthetic */ RecommendForumInfo(Builder builder, boolean z, a aVar) {
@@ -349,9 +355,15 @@ public final class RecommendForumInfo extends Message {
             Long l2 = builder.hot_thread_id;
             if (l2 == null) {
                 this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
-                return;
             } else {
                 this.hot_thread_id = l2;
+            }
+            Integer num7 = builder.is_recommend_forum;
+            if (num7 == null) {
+                this.is_recommend_forum = DEFAULT_IS_RECOMMEND_FORUM;
+                return;
+            } else {
+                this.is_recommend_forum = num7;
                 return;
             }
         }
@@ -376,5 +388,6 @@ public final class RecommendForumInfo extends Message {
         this.lv2_name = builder.lv2_name;
         this.avatar_origin = builder.avatar_origin;
         this.hot_thread_id = builder.hot_thread_id;
+        this.is_recommend_forum = builder.is_recommend_forum;
     }
 }

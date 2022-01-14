@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NtSpreadInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_LINK_URL = "";
@@ -44,7 +44,7 @@ public final class NtSpreadInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<NtSpreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -113,7 +113,7 @@ public final class NtSpreadInfo extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

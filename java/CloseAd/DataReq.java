@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65064common;
+    public final CommonReq f62624common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer vip_close;
 
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65065common;
+        public CommonReq f62625common;
         public Integer vip_close;
 
         public Builder() {
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65065common = dataReq.f65064common;
+            this.f62625common = dataReq.f62624common;
             this.vip_close = dataReq.vip_close;
         }
 
@@ -125,7 +125,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65064common = builder.f65065common;
+            this.f62624common = builder.f62625common;
             Integer num = builder.vip_close;
             if (num == null) {
                 this.vip_close = DEFAULT_VIP_CLOSE;
@@ -135,7 +135,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65064common = builder.f65065common;
+        this.f62624common = builder.f62625common;
         this.vip_close = builder.vip_close;
     }
 }

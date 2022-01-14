@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_PN;
@@ -20,19 +20,19 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65114common;
+    public final CommonReq f62674common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer rn;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65115common;
+        public CommonReq f62675common;
         public Integer pn;
         public Integer rn;
 
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             }
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
-            this.f65115common = dataReq.f65114common;
+            this.f62675common = dataReq.f62674common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -143,11 +143,11 @@ public final class DataReq extends Message {
             } else {
                 this.rn = num2;
             }
-            this.f65114common = builder.f65115common;
+            this.f62674common = builder.f62675common;
             return;
         }
         this.pn = builder.pn;
         this.rn = builder.rn;
-        this.f65114common = builder.f65115common;
+        this.f62674common = builder.f62675common;
     }
 }

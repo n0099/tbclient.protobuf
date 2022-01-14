@@ -17,6 +17,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final Integer DEFAULT_PN;
     public static final Integer DEFAULT_RN;
+    public static final String DEFAULT_SECOND_CLASS_NAME = "";
     public static final Long DEFAULT_USER_ID;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -24,11 +25,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65134common;
+    public final CommonReq f62694common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer rn;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String second_class_name;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long user_id;
 
@@ -39,9 +42,10 @@ public final class DataReq extends Message {
         public String class_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65135common;
+        public CommonReq f62695common;
         public Integer pn;
         public Integer rn;
+        public String second_class_name;
         public Long user_id;
 
         public Builder() {
@@ -79,11 +83,12 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65135common = dataReq.f65134common;
+            this.f62695common = dataReq.f62694common;
             this.class_name = dataReq.class_name;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
             this.user_id = dataReq.user_id;
+            this.second_class_name = dataReq.second_class_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -142,7 +147,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65134common = builder.f65135common;
+            this.f62694common = builder.f62695common;
             String str = builder.class_name;
             if (str == null) {
                 this.class_name = "";
@@ -164,16 +169,23 @@ public final class DataReq extends Message {
             Long l = builder.user_id;
             if (l == null) {
                 this.user_id = DEFAULT_USER_ID;
-                return;
             } else {
                 this.user_id = l;
+            }
+            String str2 = builder.second_class_name;
+            if (str2 == null) {
+                this.second_class_name = "";
+                return;
+            } else {
+                this.second_class_name = str2;
                 return;
             }
         }
-        this.f65134common = builder.f65135common;
+        this.f62694common = builder.f62695common;
         this.class_name = builder.class_name;
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.user_id = builder.user_id;
+        this.second_class_name = builder.second_class_name;
     }
 }

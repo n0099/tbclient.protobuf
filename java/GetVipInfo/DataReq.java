@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f65224common;
+    public final CommonReq f62784common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer is_jail_broken;
 
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f65225common;
+        public CommonReq f62785common;
         public Integer is_jail_broken;
 
         public Builder() {
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f65225common = dataReq.f65224common;
+            this.f62785common = dataReq.f62784common;
             this.is_jail_broken = dataReq.is_jail_broken;
         }
 
@@ -125,7 +125,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f65224common = builder.f65225common;
+            this.f62784common = builder.f62785common;
             Integer num = builder.is_jail_broken;
             if (num == null) {
                 this.is_jail_broken = DEFAULT_IS_JAIL_BROKEN;
@@ -135,7 +135,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f65224common = builder.f65225common;
+        this.f62784common = builder.f62785common;
         this.is_jail_broken = builder.is_jail_broken;
     }
 }

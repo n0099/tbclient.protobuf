@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ForumHeadIcon extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_GRADE;
@@ -21,7 +21,7 @@ public final class ForumHeadIcon extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<ForumHeadIcon> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -76,7 +76,7 @@ public final class ForumHeadIcon extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

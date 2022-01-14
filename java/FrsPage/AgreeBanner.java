@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.SimpleUser;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AgreeBanner extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ICON_URL = "";
@@ -30,7 +30,7 @@ public final class AgreeBanner extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends Message.Builder<AgreeBanner> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -89,7 +89,7 @@ public final class AgreeBanner extends Message {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
