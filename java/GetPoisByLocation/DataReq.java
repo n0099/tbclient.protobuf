@@ -18,7 +18,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62740common;
+    public final CommonReq f62783common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String lat;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62741common;
+        public CommonReq f62784common;
         public String lat;
         public String lng;
 
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             }
             this.lat = dataReq.lat;
             this.lng = dataReq.lng;
-            this.f62741common = dataReq.f62740common;
+            this.f62784common = dataReq.f62783common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -124,11 +124,11 @@ public final class DataReq extends Message {
             } else {
                 this.lng = str2;
             }
-            this.f62740common = builder.f62741common;
+            this.f62783common = builder.f62784common;
             return;
         }
         this.lat = builder.lat;
         this.lng = builder.lng;
-        this.f62740common = builder.f62741common;
+        this.f62783common = builder.f62784common;
     }
 }

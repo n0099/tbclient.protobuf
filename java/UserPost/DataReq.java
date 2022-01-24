@@ -61,7 +61,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 27)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62914common;
+    public final CommonReq f62957common;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
@@ -140,7 +140,7 @@ public final class DataReq extends Message {
         public Integer check_login;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62915common;
+        public CommonReq f62958common;
         public String cookie;
         public String email;
         public Integer end_time;
@@ -237,7 +237,7 @@ public final class DataReq extends Message {
             this.email = dataReq.email;
             this.cookie = dataReq.cookie;
             this.pn = dataReq.pn;
-            this.f62915common = dataReq.f62914common;
+            this.f62958common = dataReq.f62957common;
             this.is_twzhibo = dataReq.is_twzhibo;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
@@ -490,7 +490,7 @@ public final class DataReq extends Message {
             } else {
                 this.pn = num16;
             }
-            this.f62914common = builder.f62915common;
+            this.f62957common = builder.f62958common;
             Integer num17 = builder.is_twzhibo;
             if (num17 == null) {
                 this.is_twzhibo = DEFAULT_IS_TWZHIBO;
@@ -586,7 +586,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.cookie = builder.cookie;
         this.pn = builder.pn;
-        this.f62914common = builder.f62915common;
+        this.f62957common = builder.f62958common;
         this.is_twzhibo = builder.is_twzhibo;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
