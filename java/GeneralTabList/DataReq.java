@@ -34,7 +34,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62707common;
+    public final CommonReq f62874common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -69,7 +69,7 @@ public final class DataReq extends Message {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62708common;
+        public CommonReq f62875common;
         public Long forum_id;
         public Integer is_default_navtab;
         public Integer is_general_tab;
@@ -119,7 +119,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f62708common = dataReq.f62707common;
+            this.f62875common = dataReq.f62874common;
             this.tab_id = dataReq.tab_id;
             this.forum_id = dataReq.forum_id;
             this.pn = dataReq.pn;
@@ -201,7 +201,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f62707common = builder.f62708common;
+            this.f62874common = builder.f62875common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -289,7 +289,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f62707common = builder.f62708common;
+        this.f62874common = builder.f62875common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;

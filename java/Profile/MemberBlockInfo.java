@@ -1,4 +1,4 @@
-package tbclient.Search;
+package tbclient.Profile;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -10,31 +10,23 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.CommonReq;
 /* loaded from: classes5.dex */
-public final class DataReq extends Message {
+public final class MemberBlockInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
-    public static final Integer DEFAULT_APPLY_ID;
-    public static final Long DEFAULT_FID;
+    public static final Integer DEFAULT_IS_AUTO_PAY;
+    public static final Integer DEFAULT_IS_PERMANENT_BAN;
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public final Integer apply_id;
-    @ProtoField(tag = 1)
-
-    /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f63072common;
-    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
-    public final Long fid;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer is_auto_pay;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer is_permanent_ban;
 
     /* loaded from: classes5.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<MemberBlockInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public Integer apply_id;
-
-        /* renamed from: common  reason: collision with root package name */
-        public CommonReq f63073common;
-        public Long fid;
+        public Integer is_auto_pay;
+        public Integer is_permanent_ban;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -51,13 +43,13 @@ public final class DataReq extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(DataReq dataReq) {
-            super(dataReq);
+        public Builder(MemberBlockInfo memberBlockInfo) {
+            super(memberBlockInfo);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
+                Object[] objArr = {memberBlockInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i2 = newInitContext.flag;
                 if ((i2 & 1) != 0) {
@@ -68,20 +60,19 @@ public final class DataReq extends Message {
                     return;
                 }
             }
-            if (dataReq == null) {
+            if (memberBlockInfo == null) {
                 return;
             }
-            this.f63073common = dataReq.f63072common;
-            this.apply_id = dataReq.apply_id;
-            this.fid = dataReq.fid;
+            this.is_permanent_ban = memberBlockInfo.is_permanent_ban;
+            this.is_auto_pay = memberBlockInfo.is_auto_pay;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DataReq build(boolean z) {
+        public MemberBlockInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MemberBlockInfo(this, z, null) : (MemberBlockInfo) invokeZ.objValue;
         }
     }
 
@@ -94,26 +85,26 @@ public final class DataReq extends Message {
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1141427364, "Ltbclient/Search/DataReq;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-2119296598, "Ltbclient/Profile/MemberBlockInfo;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1141427364, "Ltbclient/Search/DataReq;");
+                classClinitInterceptable.invokePostClinit(-2119296598, "Ltbclient/Profile/MemberBlockInfo;");
                 return;
             }
         }
-        DEFAULT_APPLY_ID = 0;
-        DEFAULT_FID = 0L;
+        DEFAULT_IS_PERMANENT_BAN = 0;
+        DEFAULT_IS_AUTO_PAY = 0;
     }
 
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ MemberBlockInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DataReq(Builder builder, boolean z) {
+    public MemberBlockInfo(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -131,24 +122,22 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f63072common = builder.f63073common;
-            Integer num = builder.apply_id;
+            Integer num = builder.is_permanent_ban;
             if (num == null) {
-                this.apply_id = DEFAULT_APPLY_ID;
+                this.is_permanent_ban = DEFAULT_IS_PERMANENT_BAN;
             } else {
-                this.apply_id = num;
+                this.is_permanent_ban = num;
             }
-            Long l = builder.fid;
-            if (l == null) {
-                this.fid = DEFAULT_FID;
+            Integer num2 = builder.is_auto_pay;
+            if (num2 == null) {
+                this.is_auto_pay = DEFAULT_IS_AUTO_PAY;
                 return;
             } else {
-                this.fid = l;
+                this.is_auto_pay = num2;
                 return;
             }
         }
-        this.f63072common = builder.f63073common;
-        this.apply_id = builder.apply_id;
-        this.fid = builder.fid;
+        this.is_permanent_ban = builder.is_permanent_ban;
+        this.is_auto_pay = builder.is_auto_pay;
     }
 }

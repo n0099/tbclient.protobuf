@@ -20,6 +20,7 @@ public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_APP_POWER = "";
     public static final String DEFAULT_APP_PRIVACY = "";
     public static final String DEFAULT_APP_VERSION = "";
+    public static final String DEFAULT_BUTTON_DESC = "";
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_DOWNLOAD_URL = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -49,6 +50,8 @@ public final class TiebaPlusInfo extends Message {
     public final String app_privacy;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String app_version;
+    @ProtoField(tag = 23, type = Message.Datatype.STRING)
+    public final String button_desc;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String desc;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -91,6 +94,7 @@ public final class TiebaPlusInfo extends Message {
         public String app_power;
         public String app_privacy;
         public String app_version;
+        public String button_desc;
         public String desc;
         public String download_url;
         public String forum_name;
@@ -164,6 +168,7 @@ public final class TiebaPlusInfo extends Message {
             this.forum_name = tiebaPlusInfo.forum_name;
             this.jump_setting = tiebaPlusInfo.jump_setting;
             this.wx_thumbnail = tiebaPlusInfo.wx_thumbnail;
+            this.button_desc = tiebaPlusInfo.button_desc;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -348,9 +353,15 @@ public final class TiebaPlusInfo extends Message {
             String str16 = builder.wx_thumbnail;
             if (str16 == null) {
                 this.wx_thumbnail = "";
-                return;
             } else {
                 this.wx_thumbnail = str16;
+            }
+            String str17 = builder.button_desc;
+            if (str17 == null) {
+                this.button_desc = "";
+                return;
+            } else {
+                this.button_desc = str17;
                 return;
             }
         }
@@ -376,5 +387,6 @@ public final class TiebaPlusInfo extends Message {
         this.forum_name = builder.forum_name;
         this.jump_setting = builder.jump_setting;
         this.wx_thumbnail = builder.wx_thumbnail;
+        this.button_desc = builder.button_desc;
     }
 }

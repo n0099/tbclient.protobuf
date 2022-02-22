@@ -53,6 +53,8 @@ public final class DataRes extends Message {
     public final Anti anti_stat;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<BannerImage> banner;
+    @ProtoField(tag = 36)
+    public final MemberBlockInfo block_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<ForumDynamic> concerned_forum_list;
     @ProtoField(tag = 24)
@@ -108,6 +110,7 @@ public final class DataRes extends Message {
         public List<AlaLiveInfo> ala_live_record;
         public Anti anti_stat;
         public List<BannerImage> banner;
+        public MemberBlockInfo block_info;
         public List<ForumDynamic> concerned_forum_list;
         public Duxiaoman duxiaoman;
         public List<DynamicInfo> dynamic_list;
@@ -194,6 +197,7 @@ public final class DataRes extends Message {
             this.new_god_rankinfo = dataRes.new_god_rankinfo;
             this.uk = dataRes.uk;
             this.is_black_white = dataRes.is_black_white;
+            this.block_info = dataRes.block_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -332,11 +336,11 @@ public final class DataRes extends Message {
             Integer num = builder.is_black_white;
             if (num == null) {
                 this.is_black_white = DEFAULT_IS_BLACK_WHITE;
-                return;
             } else {
                 this.is_black_white = num;
-                return;
             }
+            this.block_info = builder.block_info;
+            return;
         }
         this.user = builder.user;
         this.anti_stat = builder.anti_stat;
@@ -365,5 +369,6 @@ public final class DataRes extends Message {
         this.new_god_rankinfo = builder.new_god_rankinfo;
         this.uk = builder.uk;
         this.is_black_white = builder.is_black_white;
+        this.block_info = builder.block_info;
     }
 }

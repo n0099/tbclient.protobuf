@@ -2,8 +2,8 @@ package tbclient;
 
 import com.alibaba.fastjson.asm.Opcodes;
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.android.imsdk.upload.action.pb.IMPushPb;
 import com.baidu.android.lbspay.channelpay.IChannelPay;
+import com.baidu.tieba.advert.sdk.stretagy.SplashNativePolicy;
 import com.baidu.tieba.pb.pb.main.PbFullScreenEditorActivity;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -245,7 +245,7 @@ public final class ThreadInfo extends Message {
     public final String fname;
     @ProtoField(tag = Opcodes.NEWARRAY)
     public final ForumFriendWatchingInfo forum_friend_watching_info;
-    @ProtoField(tag = com.baidu.apollon.a.f32365e)
+    @ProtoField(tag = com.baidu.apollon.a.f32571e)
     public final SimpleForum forum_info;
     @ProtoField(tag = Opcodes.NEW, type = Message.Datatype.STRING)
     public final String forum_user_live_msg;
@@ -267,7 +267,7 @@ public final class ThreadInfo extends Message {
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = w0.f55343i, type = Message.Datatype.INT32)
+    @ProtoField(tag = w0.f55510i, type = Message.Datatype.INT32)
     public final Integer if_comment;
     @ProtoField(tag = 174, type = Message.Datatype.STRING)
     public final String if_comment_info;
@@ -299,7 +299,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_frs_mask;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
-    @ProtoField(tag = IMPushPb.PushImClient.SDK_VERSION_FIELD_NUMBER, type = Message.Datatype.INT32)
+    @ProtoField(tag = 131, type = Message.Datatype.INT32)
     public final Integer is_god;
     @ProtoField(tag = 85, type = Message.Datatype.INT32)
     public final Integer is_godthread_recommend;
@@ -375,7 +375,7 @@ public final class ThreadInfo extends Message {
     public final Integer last_time_int;
     @ProtoField(tag = 94, type = Message.Datatype.STRING)
     public final String lego_card;
-    @ProtoField(tag = 129)
+    @ProtoField(tag = SplashNativePolicy.SPLASH_CMD_SHOW_PLG)
     public final LinkThreadInfo link_info;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String live_post_type;
@@ -411,7 +411,7 @@ public final class ThreadInfo extends Message {
     public final List<PbGoodsInfo> pb_goods_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 178)
     public final List<PbLinkInfo> pb_link_info;
-    @ProtoField(tag = 133)
+    @ProtoField(tag = SplashNativePolicy.SPLASH_CMD_ERROR)
     public final Media pic_info;
     @ProtoField(tag = 84, type = Message.Datatype.UINT32)
     public final Integer pic_num;

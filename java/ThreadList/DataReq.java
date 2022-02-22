@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 8)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62937common;
+    public final CommonReq f63104common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -90,7 +90,7 @@ public final class DataReq extends Message {
         public AppTransmitData app_transmit_data;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62938common;
+        public CommonReq f63105common;
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
@@ -149,7 +149,7 @@ public final class DataReq extends Message {
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
-            this.f62938common = dataReq.f62937common;
+            this.f63105common = dataReq.f63104common;
             this.user_id = dataReq.user_id;
             this.da_idfa = dataReq.da_idfa;
             this.platform = dataReq.platform;
@@ -271,7 +271,7 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = num5;
             }
-            this.f62937common = builder.f62938common;
+            this.f63104common = builder.f63105common;
             Long l2 = builder.user_id;
             if (l2 == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -344,7 +344,7 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
-        this.f62937common = builder.f62938common;
+        this.f63104common = builder.f63105common;
         this.user_id = builder.user_id;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;

@@ -13,9 +13,12 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.BawuThrones;
+import tbclient.ForumMemberInfo;
+import tbclient.HotUserRankEntry;
 import tbclient.ManagerApplyInfo;
 import tbclient.PriManagerApplyInfo;
 import tbclient.RecommendForumInfo;
+import tbclient.ServiceArea;
 import tbclient.SimpleThreadInfo;
 /* loaded from: classes5.dex */
 public final class DataRes extends Message {
@@ -46,6 +49,10 @@ public final class DataRes extends Message {
     public final ForumDataCenter forum_data;
     @ProtoField(tag = 1)
     public final RecommendForumInfo forum_info;
+    @ProtoField(tag = 21)
+    public final ForumMemberInfo forum_member;
+    @ProtoField(tag = 19)
+    public final HotUserRankEntry hot_user_entry;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_bawu_show;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
@@ -58,6 +65,8 @@ public final class DataRes extends Message {
     public final Integer is_forum_data_show;
     @ProtoField(tag = 7)
     public final PriManagerApplyInfo pribz_apply_info;
+    @ProtoField(tag = 20)
+    public final ServiceArea small_app;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<SimpleThreadInfo> thread_list;
 
@@ -74,12 +83,15 @@ public final class DataRes extends Message {
         public ManagerElectionTab election_tab;
         public ForumDataCenter forum_data;
         public RecommendForumInfo forum_info;
+        public ForumMemberInfo forum_member;
+        public HotUserRankEntry hot_user_entry;
         public Integer is_bawu_show;
         public String is_bazhu_show;
         public Integer is_complaint_show;
         public Integer is_forum_card_enable;
         public Integer is_forum_data_show;
         public PriManagerApplyInfo pribz_apply_info;
+        public ServiceArea small_app;
         public List<SimpleThreadInfo> thread_list;
 
         public Builder() {
@@ -133,6 +145,9 @@ public final class DataRes extends Message {
             this.is_forum_card_enable = dataRes.is_forum_card_enable;
             this.bawu_thrones = dataRes.bawu_thrones;
             this.is_bazhu_show = dataRes.is_bazhu_show;
+            this.hot_user_entry = dataRes.hot_user_entry;
+            this.small_app = dataRes.small_app;
+            this.forum_member = dataRes.forum_member;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -242,11 +257,13 @@ public final class DataRes extends Message {
             String str = builder.is_bazhu_show;
             if (str == null) {
                 this.is_bazhu_show = "";
-                return;
             } else {
                 this.is_bazhu_show = str;
-                return;
             }
+            this.hot_user_entry = builder.hot_user_entry;
+            this.small_app = builder.small_app;
+            this.forum_member = builder.forum_member;
+            return;
         }
         this.forum_info = builder.forum_info;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
@@ -264,5 +281,8 @@ public final class DataRes extends Message {
         this.is_forum_card_enable = builder.is_forum_card_enable;
         this.bawu_thrones = builder.bawu_thrones;
         this.is_bazhu_show = builder.is_bazhu_show;
+        this.hot_user_entry = builder.hot_user_entry;
+        this.small_app = builder.small_app;
+        this.forum_member = builder.forum_member;
     }
 }

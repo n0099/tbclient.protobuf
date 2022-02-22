@@ -68,6 +68,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_LEFT_CALL_NUM;
     public static final Integer DEFAULT_LEVEL_ID;
     public static final String DEFAULT_LEVEL_INFLUENCE = "";
+    public static final String DEFAULT_LEVEL_NAME = "";
     public static final List<LikeForumInfo> DEFAULT_LIKEFORUM;
     public static final List<BazhuSign> DEFAULT_MANAGER_FORUM;
     public static final Integer DEFAULT_MEIZHI_LEVEL;
@@ -240,6 +241,8 @@ public final class User extends Message {
     public final Integer level_id;
     @ProtoField(tag = 100, type = Message.Datatype.STRING)
     public final String level_influence;
+    @ProtoField(tag = 125, type = Message.Datatype.STRING)
+    public final String level_name;
     @ProtoField(label = Message.Label.REPEATED, tag = 47)
     public final List<LikeForumInfo> likeForum;
     @ProtoField(tag = 110)
@@ -419,6 +422,7 @@ public final class User extends Message {
         public Integer left_call_num;
         public Integer level_id;
         public String level_influence;
+        public String level_name;
         public List<LikeForumInfo> likeForum;
         public LiveRoomInfo live_room_info;
         public List<BazhuSign> manager_forum;
@@ -629,6 +633,7 @@ public final class User extends Message {
             this.manager_forum = Message.copyOf(user.manager_forum);
             this.display_auth_type = user.display_auth_type;
             this.work_creator_info = user.work_creator_info;
+            this.level_name = user.level_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1311,7 +1316,14 @@ public final class User extends Message {
                 this.display_auth_type = num53;
             }
             this.work_creator_info = builder.work_creator_info;
-            return;
+            String str23 = builder.level_name;
+            if (str23 == null) {
+                this.level_name = "";
+                return;
+            } else {
+                this.level_name = str23;
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -1434,5 +1446,6 @@ public final class User extends Message {
         this.manager_forum = Message.immutableCopyOf(builder.manager_forum);
         this.display_auth_type = builder.display_auth_type;
         this.work_creator_info = builder.work_creator_info;
+        this.level_name = builder.level_name;
     }
 }

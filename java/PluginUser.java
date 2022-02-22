@@ -13,11 +13,14 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes5.dex */
 public final class PluginUser extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_IS_DOWNLOAD_CARD_WHITEUSER;
     public static final Long DEFAULT_USER_ID;
     public static final String DEFAULT_USER_NAME_SHOW = "";
     public static final String DEFAULT_USER_PHOTO = "";
     public static final Integer DEFAULT_USER_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer is_download_card_whiteuser;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long user_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -31,6 +34,7 @@ public final class PluginUser extends Message {
     public static final class Builder extends Message.Builder<PluginUser> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public Integer is_download_card_whiteuser;
         public Long user_id;
         public String user_name_show;
         public String user_photo;
@@ -75,6 +79,7 @@ public final class PluginUser extends Message {
             this.user_name_show = pluginUser.user_name_show;
             this.user_type = pluginUser.user_type;
             this.user_photo = pluginUser.user_photo;
+            this.is_download_card_whiteuser = pluginUser.is_download_card_whiteuser;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,6 +112,7 @@ public final class PluginUser extends Message {
         }
         DEFAULT_USER_ID = 0L;
         DEFAULT_USER_TYPE = 0;
+        DEFAULT_IS_DOWNLOAD_CARD_WHITEUSER = 0;
     }
 
     public /* synthetic */ PluginUser(Builder builder, boolean z, a aVar) {
@@ -153,9 +159,15 @@ public final class PluginUser extends Message {
             String str2 = builder.user_photo;
             if (str2 == null) {
                 this.user_photo = "";
-                return;
             } else {
                 this.user_photo = str2;
+            }
+            Integer num2 = builder.is_download_card_whiteuser;
+            if (num2 == null) {
+                this.is_download_card_whiteuser = DEFAULT_IS_DOWNLOAD_CARD_WHITEUSER;
+                return;
+            } else {
+                this.is_download_card_whiteuser = num2;
                 return;
             }
         }
@@ -163,5 +175,6 @@ public final class PluginUser extends Message {
         this.user_name_show = builder.user_name_show;
         this.user_type = builder.user_type;
         this.user_photo = builder.user_photo;
+        this.is_download_card_whiteuser = builder.is_download_card_whiteuser;
     }
 }
