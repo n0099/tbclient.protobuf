@@ -1,15 +1,18 @@
 syntax = "proto3";
 
 import "BawuThrones.proto";
+import "ForumMemberInfo.proto";
 import "GetForumDetail/ApplyStatus.proto";
 import "GetForumDetail/BawuAction.proto";
 import "GetForumDetail/BazhuGrade.proto";
 import "GetForumDetail/BazhuUniversity.proto";
 import "GetForumDetail/ForumDataCenter.proto";
 import "GetForumDetail/ManagerElectionTab.proto";
+import "HotUserRankEntry.proto";
 import "ManagerApplyInfo.proto";
 import "PriManagerApplyInfo.proto";
 import "RecommendForumInfo.proto";
+import "ServiceArea.proto";
 import "SimpleThreadInfo.proto";
 
 message DataRes {
@@ -29,4 +32,7 @@ message DataRes {
     int32 is_forum_card_enable = 16;
     BawuThrones bawu_thrones = 17;
     string is_bazhu_show = 18;
+    HotUserRankEntry hot_user_entry = 19;
+    ServiceArea small_app = 20;
+    ForumMemberInfo forum_member = 21;
 }

@@ -13,6 +13,7 @@ import "HotUserRankEntry.proto";
 import "ModuleInfo.proto";
 import "PostInfoList.proto";
 import "Profile/Duxiaoman.proto";
+import "Profile/MemberBlockInfo.proto";
 import "Profile/NicknameInfo.proto";
 import "Profile/TAInfo.proto";
 import "Profile/UserAgreeInfo.proto";
@@ -53,4 +54,5 @@ message DataRes {
     HotUserRankEntry new_god_rankinfo = 27;
     string uk = 28;
     int32 is_black_white = 29;
+    MemberBlockInfo block_info = 36;
 }

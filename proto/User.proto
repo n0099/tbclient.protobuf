@@ -164,4 +164,5 @@ message User {
     repeated BazhuSign manager_forum = 122;
     int32 display_auth_type = 123;
     WorkCreatorInfo work_creator_info = 124;
+    string level_name = 125;
 }

@@ -25,4 +25,5 @@ message TiebaPlusInfo {
     string forum_name = 20;
     int32 jump_setting = 21;
     string wx_thumbnail = 22;
+    string button_desc = 23;
 }
