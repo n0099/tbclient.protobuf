@@ -69,4 +69,8 @@ message DataReq {
     string ad_ext_params = 62;
     int32 default_sort_type = 63;
     AppTransmitData app_transmit_data = 64;
+    string ad_bear_context = 65;
+    int32 has_ad_bear = 66;
+    string ad_bear_sid = 67;
+    double ad_bear_sid_price = 68;
 }

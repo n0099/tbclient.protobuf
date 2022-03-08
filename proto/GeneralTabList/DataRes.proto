@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AdMixFloor.proto";
 import "App.proto";
 import "ItemInfo.proto";
 import "SortOption.proto";
@@ -19,4 +20,7 @@ message DataRes {
     ItemInfo item_info = 8;
     repeated SortOption sort_option = 9;
     repeated App app_list = 10;
+    int32 ad_show_select = 11;
+    repeated AdMixFloor ad_mix_list = 12;
+    string ad_sample_map_key = 13;
 }
