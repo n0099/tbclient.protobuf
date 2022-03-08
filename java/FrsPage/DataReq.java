@@ -13,9 +13,12 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_AD_BEAR_CONTEXT = "";
+    public static final String DEFAULT_AD_BEAR_SID = "";
+    public static final Double DEFAULT_AD_BEAR_SID_PRICE;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final Integer DEFAULT_CALL_FROM;
@@ -33,6 +36,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_EMAIL = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final Integer DEFAULT_FRS_RN;
+    public static final Integer DEFAULT_HAS_AD_BEAR;
     public static final Long DEFAULT_HOT_THREAD_ID;
     public static final Integer DEFAULT_IP_INT;
     public static final String DEFAULT_IP_STR = "";
@@ -77,6 +81,12 @@ public final class DataReq extends Message {
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 65, type = Message.Datatype.STRING)
+    public final String ad_bear_context;
+    @ProtoField(tag = 67, type = Message.Datatype.STRING)
+    public final String ad_bear_sid;
+    @ProtoField(tag = 68, type = Message.Datatype.DOUBLE)
+    public final Double ad_bear_sid_price;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ad_context_list;
     @ProtoField(tag = 62, type = Message.Datatype.STRING)
@@ -102,7 +112,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 39)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62870common;
+    public final CommonReq f61220common;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -121,6 +131,8 @@ public final class DataReq extends Message {
     public final String forum_name;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer frs_rn;
+    @ProtoField(tag = 66, type = Message.Datatype.INT32)
+    public final Integer has_ad_bear;
     @ProtoField(tag = 58, type = Message.Datatype.INT64)
     public final Long hot_thread_id;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
@@ -208,10 +220,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 46, type = Message.Datatype.STRING)
     public final String yuelaou_params;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String ad_bear_context;
+        public String ad_bear_sid;
+        public Double ad_bear_sid_price;
         public String ad_context_list;
         public String ad_ext_params;
         public AdParam ad_param;
@@ -225,7 +240,7 @@ public final class DataReq extends Message {
         public Integer class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62871common;
+        public CommonReq f61221common;
         public String cookie;
         public Integer ctime;
         public String da_idfa;
@@ -235,6 +250,7 @@ public final class DataReq extends Message {
         public String email;
         public String forum_name;
         public Integer frs_rn;
+        public Integer has_ad_bear;
         public Long hot_thread_id;
         public Integer ip_int;
         public String ip_str;
@@ -352,7 +368,7 @@ public final class DataReq extends Message {
             this.email = dataReq.email;
             this.debug = dataReq.debug;
             this.cookie = dataReq.cookie;
-            this.f62871common = dataReq.f62870common;
+            this.f61221common = dataReq.f61220common;
             this.lastids = dataReq.lastids;
             this.issdk = dataReq.issdk;
             this.da_idfa = dataReq.da_idfa;
@@ -378,6 +394,10 @@ public final class DataReq extends Message {
             this.ad_ext_params = dataReq.ad_ext_params;
             this.default_sort_type = dataReq.default_sort_type;
             this.app_transmit_data = dataReq.app_transmit_data;
+            this.ad_bear_context = dataReq.ad_bear_context;
+            this.has_ad_bear = dataReq.has_ad_bear;
+            this.ad_bear_sid = dataReq.ad_bear_sid;
+            this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -389,7 +409,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -419,7 +439,8 @@ public final class DataReq extends Message {
         DEFAULT_FRS_RN = 0;
         DEFAULT_SCR_W = 0;
         DEFAULT_SCR_H = 0;
-        DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+        Double valueOf = Double.valueOf(0.0d);
+        DEFAULT_SCR_DIP = valueOf;
         DEFAULT_Q_TYPE = 0;
         DEFAULT_PN = 0;
         DEFAULT_CTIME = 0;
@@ -447,6 +468,8 @@ public final class DataReq extends Message {
         DEFAULT_HOT_THREAD_ID = 0L;
         DEFAULT_IS_DEFAULT_NAVTAB = 0;
         DEFAULT_DEFAULT_SORT_TYPE = 0;
+        DEFAULT_HAS_AD_BEAR = 0;
+        DEFAULT_AD_BEAR_SID_PRICE = valueOf;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -700,7 +723,7 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = str10;
             }
-            this.f62870common = builder.f62871common;
+            this.f61220common = builder.f61221common;
             String str11 = builder.lastids;
             if (str11 == null) {
                 this.lastids = "";
@@ -836,7 +859,32 @@ public final class DataReq extends Message {
                 this.default_sort_type = num30;
             }
             this.app_transmit_data = builder.app_transmit_data;
-            return;
+            String str23 = builder.ad_bear_context;
+            if (str23 == null) {
+                this.ad_bear_context = "";
+            } else {
+                this.ad_bear_context = str23;
+            }
+            Integer num31 = builder.has_ad_bear;
+            if (num31 == null) {
+                this.has_ad_bear = DEFAULT_HAS_AD_BEAR;
+            } else {
+                this.has_ad_bear = num31;
+            }
+            String str24 = builder.ad_bear_sid;
+            if (str24 == null) {
+                this.ad_bear_sid = "";
+            } else {
+                this.ad_bear_sid = str24;
+            }
+            Double d3 = builder.ad_bear_sid_price;
+            if (d3 == null) {
+                this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
+                return;
+            } else {
+                this.ad_bear_sid_price = d3;
+                return;
+            }
         }
         this.kw = builder.kw;
         this.rn = builder.rn;
@@ -876,7 +924,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.debug = builder.debug;
         this.cookie = builder.cookie;
-        this.f62870common = builder.f62871common;
+        this.f61220common = builder.f61221common;
         this.lastids = builder.lastids;
         this.issdk = builder.issdk;
         this.da_idfa = builder.da_idfa;
@@ -902,5 +950,9 @@ public final class DataReq extends Message {
         this.ad_ext_params = builder.ad_ext_params;
         this.default_sort_type = builder.default_sort_type;
         this.app_transmit_data = builder.app_transmit_data;
+        this.ad_bear_context = builder.ad_bear_context;
+        this.has_ad_bear = builder.has_ad_bear;
+        this.ad_bear_sid = builder.ad_bear_sid;
+        this.ad_bear_sid_price = builder.ad_bear_sid_price;
     }
 }

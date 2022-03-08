@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class VipUser extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CARD_ID = "";
@@ -54,7 +54,7 @@ public final class VipUser extends Message {
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String vip_link;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VipUser> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -133,7 +133,7 @@ public final class VipUser extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class ReqData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FRIEND_ID;
@@ -21,7 +21,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62816common;
+    public final CommonReq f61166common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -29,13 +29,13 @@ public final class ReqData extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String st_type;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62817common;
+        public CommonReq f61167common;
         public Long friend_id;
         public String message;
         public String st_type;
@@ -78,7 +78,7 @@ public final class ReqData extends Message {
             this.friend_id = reqData.friend_id;
             this.message = reqData.message;
             this.st_type = reqData.st_type;
-            this.f62817common = reqData.f62816common;
+            this.f61167common = reqData.f61166common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -90,7 +90,7 @@ public final class ReqData extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -153,12 +153,12 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = str2;
             }
-            this.f62816common = builder.f62817common;
+            this.f61166common = builder.f61167common;
             return;
         }
         this.friend_id = builder.friend_id;
         this.message = builder.message;
         this.st_type = builder.st_type;
-        this.f62816common = builder.f62817common;
+        this.f61166common = builder.f61167common;
     }
 }

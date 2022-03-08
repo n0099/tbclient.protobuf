@@ -13,14 +13,18 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_AD_BEAR_CONTEXT = "";
+    public static final String DEFAULT_AD_BEAR_SID = "";
+    public static final Double DEFAULT_AD_BEAR_SID_PRICE;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final Integer DEFAULT_HAS_AD_BEAR;
     public static final Long DEFAULT_LAST_CLICK_TID;
     public static final Integer DEFAULT_NEED_ABSTRACT;
     public static final String DEFAULT_PLATFORM = "";
@@ -34,6 +38,12 @@ public final class DataReq extends Message {
     public static final String DEFAULT_THREAD_IDS = "";
     public static final Long DEFAULT_USER_ID;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String ad_bear_context;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String ad_bear_sid;
+    @ProtoField(tag = 25, type = Message.Datatype.DOUBLE)
+    public final Double ad_bear_sid_price;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String ad_context_list;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
@@ -47,13 +57,15 @@ public final class DataReq extends Message {
     @ProtoField(tag = 8)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f63104common;
+    public final CommonReq f61454common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer has_ad_bear;
     @ProtoField(tag = 15, type = Message.Datatype.UINT64)
     public final Long last_click_tid;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -79,10 +91,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long user_id;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String ad_bear_context;
+        public String ad_bear_sid;
+        public Double ad_bear_sid_price;
         public String ad_context_list;
         public String ad_ext_params;
         public AdParam ad_param;
@@ -90,10 +105,11 @@ public final class DataReq extends Message {
         public AppTransmitData app_transmit_data;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f63105common;
+        public CommonReq f61455common;
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
+        public Integer has_ad_bear;
         public Long last_click_tid;
         public Integer need_abstract;
         public String platform;
@@ -149,7 +165,7 @@ public final class DataReq extends Message {
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
-            this.f63105common = dataReq.f63104common;
+            this.f61455common = dataReq.f61454common;
             this.user_id = dataReq.user_id;
             this.da_idfa = dataReq.da_idfa;
             this.platform = dataReq.platform;
@@ -163,6 +179,10 @@ public final class DataReq extends Message {
             this.ad_context_list = dataReq.ad_context_list;
             this.ad_ext_params = dataReq.ad_ext_params;
             this.app_transmit_data = dataReq.app_transmit_data;
+            this.ad_bear_context = dataReq.ad_bear_context;
+            this.has_ad_bear = dataReq.has_ad_bear;
+            this.ad_bear_sid = dataReq.ad_bear_sid;
+            this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -174,7 +194,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -200,10 +220,13 @@ public final class DataReq extends Message {
         DEFAULT_SCR_H = 0;
         DEFAULT_Q_TYPE = 0;
         DEFAULT_USER_ID = 0L;
-        DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+        Double valueOf = Double.valueOf(0.0d);
+        DEFAULT_SCR_DIP = valueOf;
         DEFAULT_PN = 0;
         DEFAULT_LAST_CLICK_TID = 0L;
         DEFAULT_SORT_TYPE = 0;
+        DEFAULT_HAS_AD_BEAR = 0;
+        DEFAULT_AD_BEAR_SID_PRICE = valueOf;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -271,7 +294,7 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = num5;
             }
-            this.f63104common = builder.f63105common;
+            this.f61454common = builder.f61455common;
             Long l2 = builder.user_id;
             if (l2 == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -335,7 +358,32 @@ public final class DataReq extends Message {
                 this.ad_ext_params = str6;
             }
             this.app_transmit_data = builder.app_transmit_data;
-            return;
+            String str7 = builder.ad_bear_context;
+            if (str7 == null) {
+                this.ad_bear_context = "";
+            } else {
+                this.ad_bear_context = str7;
+            }
+            Integer num8 = builder.has_ad_bear;
+            if (num8 == null) {
+                this.has_ad_bear = DEFAULT_HAS_AD_BEAR;
+            } else {
+                this.has_ad_bear = num8;
+            }
+            String str8 = builder.ad_bear_sid;
+            if (str8 == null) {
+                this.ad_bear_sid = "";
+            } else {
+                this.ad_bear_sid = str8;
+            }
+            Double d3 = builder.ad_bear_sid_price;
+            if (d3 == null) {
+                this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
+                return;
+            } else {
+                this.ad_bear_sid_price = d3;
+                return;
+            }
         }
         this.thread_ids = builder.thread_ids;
         this.forum_id = builder.forum_id;
@@ -344,7 +392,7 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
-        this.f63104common = builder.f63105common;
+        this.f61454common = builder.f61455common;
         this.user_id = builder.user_id;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
@@ -358,5 +406,9 @@ public final class DataReq extends Message {
         this.ad_context_list = builder.ad_context_list;
         this.ad_ext_params = builder.ad_ext_params;
         this.app_transmit_data = builder.app_transmit_data;
+        this.ad_bear_context = builder.ad_bear_context;
+        this.has_ad_bear = builder.has_ad_bear;
+        this.ad_bear_sid = builder.ad_bear_sid;
+        this.ad_bear_sid_price = builder.ad_bear_sid_price;
     }
 }

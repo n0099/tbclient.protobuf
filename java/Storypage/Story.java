@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class Story extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<ThreadInfo> DEFAULT_STORY_LIST;
@@ -27,7 +27,7 @@ public final class Story extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer story_user_type;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Story> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -84,7 +84,7 @@ public final class Story extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABTEST_TAG = "";
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f63054common;
+    public final CommonReq f61404common;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer location;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -53,14 +53,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String weight;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String abtest_tag;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f63055common;
+        public CommonReq f61405common;
         public Integer location;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f63055common = dataReq.f63054common;
+            this.f61405common = dataReq.f61404common;
             this.tid = dataReq.tid;
             this.weight = dataReq.weight;
             this.source = dataReq.source;
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -177,7 +177,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f63054common = builder.f63055common;
+            this.f61404common = builder.f61405common;
             Long l = builder.tid;
             if (l == null) {
                 this.tid = DEFAULT_TID;
@@ -247,7 +247,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f63054common = builder.f63055common;
+        this.f61404common = builder.f61405common;
         this.tid = builder.tid;
         this.weight = builder.weight;
         this.source = builder.source;

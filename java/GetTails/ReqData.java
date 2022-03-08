@@ -9,7 +9,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class ReqData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ST_TYPE = "";
@@ -17,17 +17,17 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62974common;
+    public final CommonReq f61324common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String st_type;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62975common;
+        public CommonReq f61325common;
         public String st_type;
 
         public Builder() {
@@ -66,7 +66,7 @@ public final class ReqData extends Message {
                 return;
             }
             this.st_type = reqData.st_type;
-            this.f62975common = reqData.f62974common;
+            this.f61325common = reqData.f61324common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -78,7 +78,7 @@ public final class ReqData extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -113,10 +113,10 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f62974common = builder.f62975common;
+            this.f61324common = builder.f61325common;
             return;
         }
         this.st_type = builder.st_type;
-        this.f62974common = builder.f62975common;
+        this.f61324common = builder.f61325common;
     }
 }

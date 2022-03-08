@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_CARD_TYPE;
@@ -22,18 +22,18 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62838common;
+    public final CommonReq f61188common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String image_info;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer card_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62839common;
+        public CommonReq f61189common;
         public String image_info;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f62839common = dataReq.f62838common;
+            this.f61189common = dataReq.f61188common;
             this.card_type = dataReq.card_type;
             this.image_info = dataReq.image_info;
         }
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f62838common = builder.f62839common;
+            this.f61188common = builder.f61189common;
             Integer num = builder.card_type;
             if (num == null) {
                 this.card_type = DEFAULT_CARD_TYPE;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f62838common = builder.f62839common;
+        this.f61188common = builder.f61189common;
         this.card_type = builder.card_type;
         this.image_info = builder.image_info;
     }

@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class UserPostPerm extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_NOT_SHOW_HIDE_THREAD;
@@ -18,7 +18,7 @@ public final class UserPostPerm extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer not_show_hide_thread;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<UserPostPerm> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -71,7 +71,7 @@ public final class UserPostPerm extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

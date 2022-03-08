@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CALL_TYPE = "";
@@ -86,7 +86,14 @@ public final class DataRes extends Message {
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes5.dex */
+    /* renamed from: tbclient.GetOrder.DataRes$1  reason: invalid class name */
+    /* loaded from: classes9.dex */
+    public static /* synthetic */ class AnonymousClass1 {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -185,12 +192,6 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
@@ -214,7 +215,7 @@ public final class DataRes extends Message {
         DEFAULT_SIGNTYPE = 0;
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ DataRes(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
         this(builder, z);
     }
 

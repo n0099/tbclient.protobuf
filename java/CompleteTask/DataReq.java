@@ -9,7 +9,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_COMPELETE_ID = "";
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62840common;
+    public final CommonReq f61190common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String compelete_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -27,13 +27,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String token;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62841common;
+        public CommonReq f61191common;
         public String compelete_id;
         public String shoubaicuid;
         public String token;
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f62841common = dataReq.f62840common;
+            this.f61191common = dataReq.f61190common;
             this.shoubaicuid = dataReq.shoubaicuid;
             this.compelete_id = dataReq.compelete_id;
             this.token = dataReq.token;
@@ -88,7 +88,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -117,7 +117,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f62840common = builder.f62841common;
+            this.f61190common = builder.f61191common;
             String str = builder.shoubaicuid;
             if (str == null) {
                 this.shoubaicuid = "";
@@ -139,7 +139,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f62840common = builder.f62841common;
+        this.f61190common = builder.f61191common;
         this.shoubaicuid = builder.shoubaicuid;
         this.compelete_id = builder.compelete_id;
         this.token = builder.token;

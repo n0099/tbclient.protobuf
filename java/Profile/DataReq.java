@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FRIEND_UID;
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f63046common;
+    public final CommonReq f61396common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -65,13 +65,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long uid;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f63047common;
+        public CommonReq f61397common;
         public Long friend_uid;
         public String friend_uid_portrait;
         public Integer has_plist;
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
             this.has_plist = dataReq.has_plist;
-            this.f63047common = dataReq.f63046common;
+            this.f61397common = dataReq.f61396common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
@@ -150,7 +150,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -255,7 +255,7 @@ public final class DataReq extends Message {
             } else {
                 this.has_plist = num5;
             }
-            this.f63046common = builder.f63047common;
+            this.f61396common = builder.f61397common;
             Integer num6 = builder.scr_w;
             if (num6 == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -309,7 +309,7 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
-        this.f63046common = builder.f63047common;
+        this.f61396common = builder.f61397common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;

@@ -8,14 +8,21 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class GetOrderReqIdl extends Message {
     public static /* synthetic */ Interceptable $ic;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* loaded from: classes5.dex */
+    /* renamed from: tbclient.GetOrder.GetOrderReqIdl$1  reason: invalid class name */
+    /* loaded from: classes9.dex */
+    public static /* synthetic */ class AnonymousClass1 {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GetOrderReqIdl> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -68,13 +75,7 @@ public final class GetOrderReqIdl extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ GetOrderReqIdl(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ GetOrderReqIdl(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
         this(builder, z);
     }
 

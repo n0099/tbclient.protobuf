@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class PbContent extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BIG_CDN_SRC = "";
@@ -64,7 +64,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f63034c;
+    public final String f61384c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -134,7 +134,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer width;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PbContent> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -146,7 +146,7 @@ public final class PbContent extends Message {
         public Integer btn_type;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f63035c;
+        public String f61385c;
         public String cdn_src;
         public String cdn_src_active;
         public Integer count;
@@ -227,7 +227,7 @@ public final class PbContent extends Message {
             this.cdn_src = pbContent.cdn_src;
             this.big_cdn_src = pbContent.big_cdn_src;
             this.imgtype = pbContent.imgtype;
-            this.f63035c = pbContent.f63034c;
+            this.f61385c = pbContent.f61384c;
             this.voice_md5 = pbContent.voice_md5;
             this.during_time = pbContent.during_time;
             this.is_sub = pbContent.is_sub;
@@ -269,7 +269,7 @@ public final class PbContent extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -388,11 +388,11 @@ public final class PbContent extends Message {
             } else {
                 this.imgtype = str9;
             }
-            String str10 = builder.f63035c;
+            String str10 = builder.f61385c;
             if (str10 == null) {
-                this.f63034c = "";
+                this.f61384c = "";
             } else {
-                this.f63034c = str10;
+                this.f61384c = str10;
             }
             String str11 = builder.voice_md5;
             if (str11 == null) {
@@ -556,7 +556,7 @@ public final class PbContent extends Message {
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
         this.imgtype = builder.imgtype;
-        this.f63034c = builder.f63035c;
+        this.f61384c = builder.f61385c;
         this.voice_md5 = builder.voice_md5;
         this.during_time = builder.during_time;
         this.is_sub = builder.is_sub;

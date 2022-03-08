@@ -12,6 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.AdMixFloor;
 import tbclient.App;
 import tbclient.ItemInfo;
 import tbclient.SortOption;
@@ -19,9 +20,12 @@ import tbclient.SportPageHeadInfo;
 import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic;
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST;
+    public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
+    public static final Integer DEFAULT_AD_SHOW_SELECT;
     public static final List<App> DEFAULT_APP_LIST;
     public static final List<ThreadInfo> DEFAULT_GENERAL_LIST;
     public static final Integer DEFAULT_HAS_MORE;
@@ -30,6 +34,12 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SORT_TYPE;
     public static final List<User> DEFAULT_USER_LIST;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(label = Message.Label.REPEATED, tag = 12)
+    public final List<AdMixFloor> ad_mix_list;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String ad_sample_map_key;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer ad_show_select;
     @ProtoField(label = Message.Label.REPEATED, tag = 10)
     public final List<App> app_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -51,10 +61,13 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<User> user_list;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public List<AdMixFloor> ad_mix_list;
+        public String ad_sample_map_key;
+        public Integer ad_show_select;
         public List<App> app_list;
         public List<ThreadInfo> general_list;
         public Integer has_more;
@@ -111,6 +124,9 @@ public final class DataRes extends Message {
             this.item_info = dataRes.item_info;
             this.sort_option = Message.copyOf(dataRes.sort_option);
             this.app_list = Message.copyOf(dataRes.app_list);
+            this.ad_show_select = dataRes.ad_show_select;
+            this.ad_mix_list = Message.copyOf(dataRes.ad_mix_list);
+            this.ad_sample_map_key = dataRes.ad_sample_map_key;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -122,7 +138,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -148,6 +164,8 @@ public final class DataRes extends Message {
         DEFAULT_SORT_TYPE = 0;
         DEFAULT_SORT_OPTION = Collections.emptyList();
         DEFAULT_APP_LIST = Collections.emptyList();
+        DEFAULT_AD_SHOW_SELECT = 0;
+        DEFAULT_AD_MIX_LIST = Collections.emptyList();
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -215,9 +233,27 @@ public final class DataRes extends Message {
             List<App> list4 = builder.app_list;
             if (list4 == null) {
                 this.app_list = DEFAULT_APP_LIST;
-                return;
             } else {
                 this.app_list = Message.immutableCopyOf(list4);
+            }
+            Integer num4 = builder.ad_show_select;
+            if (num4 == null) {
+                this.ad_show_select = DEFAULT_AD_SHOW_SELECT;
+            } else {
+                this.ad_show_select = num4;
+            }
+            List<AdMixFloor> list5 = builder.ad_mix_list;
+            if (list5 == null) {
+                this.ad_mix_list = DEFAULT_AD_MIX_LIST;
+            } else {
+                this.ad_mix_list = Message.immutableCopyOf(list5);
+            }
+            String str = builder.ad_sample_map_key;
+            if (str == null) {
+                this.ad_sample_map_key = "";
+                return;
+            } else {
+                this.ad_sample_map_key = str;
                 return;
             }
         }
@@ -231,5 +267,8 @@ public final class DataRes extends Message {
         this.item_info = builder.item_info;
         this.sort_option = Message.immutableCopyOf(builder.sort_option);
         this.app_list = Message.immutableCopyOf(builder.app_list);
+        this.ad_show_select = builder.ad_show_select;
+        this.ad_mix_list = Message.immutableCopyOf(builder.ad_mix_list);
+        this.ad_sample_map_key = builder.ad_sample_map_key;
     }
 }

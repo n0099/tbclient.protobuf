@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_BEGIN_THREAD_ID;
@@ -61,7 +61,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 27)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f63124common;
+    public final CommonReq f61474common;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 35, type = Message.Datatype.UINT32)
     public final Integer work_tab_id;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -140,7 +140,7 @@ public final class DataReq extends Message {
         public Integer check_login;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f63125common;
+        public CommonReq f61475common;
         public String cookie;
         public String email;
         public Integer end_time;
@@ -237,7 +237,7 @@ public final class DataReq extends Message {
             this.email = dataReq.email;
             this.cookie = dataReq.cookie;
             this.pn = dataReq.pn;
-            this.f63125common = dataReq.f63124common;
+            this.f61475common = dataReq.f61474common;
             this.is_twzhibo = dataReq.is_twzhibo;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
@@ -260,7 +260,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -490,7 +490,7 @@ public final class DataReq extends Message {
             } else {
                 this.pn = num16;
             }
-            this.f63124common = builder.f63125common;
+            this.f61474common = builder.f61475common;
             Integer num17 = builder.is_twzhibo;
             if (num17 == null) {
                 this.is_twzhibo = DEFAULT_IS_TWZHIBO;
@@ -586,7 +586,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.cookie = builder.cookie;
         this.pn = builder.pn;
-        this.f63124common = builder.f63125common;
+        this.f61474common = builder.f61475common;
         this.is_twzhibo = builder.is_twzhibo;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;

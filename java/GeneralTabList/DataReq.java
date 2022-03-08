@@ -11,11 +11,15 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_AD_BEAR_CONTEXT = "";
+    public static final String DEFAULT_AD_BEAR_SID = "";
+    public static final Double DEFAULT_AD_BEAR_SID_PRICE;
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final Long DEFAULT_FORUM_ID;
+    public static final Integer DEFAULT_HAS_AD_BEAR;
     public static final Integer DEFAULT_IS_DEFAULT_NAVTAB;
     public static final Integer DEFAULT_IS_GENERAL_TAB;
     public static final Long DEFAULT_LAST_THREAD_ID;
@@ -29,14 +33,22 @@ public final class DataReq extends Message {
     public static final String DEFAULT_TAB_NAME = "";
     public static final Integer DEFAULT_TAB_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String ad_bear_context;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String ad_bear_sid;
+    @ProtoField(tag = 19, type = Message.Datatype.DOUBLE)
+    public final Double ad_bear_sid_price;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String ad_ext_params;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f62874common;
+    public final CommonReq f61224common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
+    @ProtoField(tag = 17, type = Message.Datatype.INT32)
+    public final Integer has_ad_bear;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_default_navtab;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
@@ -62,15 +74,19 @@ public final class DataReq extends Message {
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer tab_type;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String ad_bear_context;
+        public String ad_bear_sid;
+        public Double ad_bear_sid_price;
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f62875common;
+        public CommonReq f61225common;
         public Long forum_id;
+        public Integer has_ad_bear;
         public Integer is_default_navtab;
         public Integer is_general_tab;
         public Long last_thread_id;
@@ -119,7 +135,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f62875common = dataReq.f62874common;
+            this.f61225common = dataReq.f61224common;
             this.tab_id = dataReq.tab_id;
             this.forum_id = dataReq.forum_id;
             this.pn = dataReq.pn;
@@ -134,6 +150,10 @@ public final class DataReq extends Message {
             this.sort_type = dataReq.sort_type;
             this.tab_type = dataReq.tab_type;
             this.ad_ext_params = dataReq.ad_ext_params;
+            this.ad_bear_context = dataReq.ad_bear_context;
+            this.has_ad_bear = dataReq.has_ad_bear;
+            this.ad_bear_sid = dataReq.ad_bear_sid;
+            this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -145,7 +165,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -176,6 +196,8 @@ public final class DataReq extends Message {
         DEFAULT_IS_GENERAL_TAB = 0;
         DEFAULT_SORT_TYPE = 0;
         DEFAULT_TAB_TYPE = 0;
+        DEFAULT_HAS_AD_BEAR = 0;
+        DEFAULT_AD_BEAR_SID_PRICE = Double.valueOf(0.0d);
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -201,7 +223,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f62874common = builder.f62875common;
+            this.f61224common = builder.f61225common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -283,13 +305,37 @@ public final class DataReq extends Message {
             String str2 = builder.ad_ext_params;
             if (str2 == null) {
                 this.ad_ext_params = "";
-                return;
             } else {
                 this.ad_ext_params = str2;
+            }
+            String str3 = builder.ad_bear_context;
+            if (str3 == null) {
+                this.ad_bear_context = "";
+            } else {
+                this.ad_bear_context = str3;
+            }
+            Integer num11 = builder.has_ad_bear;
+            if (num11 == null) {
+                this.has_ad_bear = DEFAULT_HAS_AD_BEAR;
+            } else {
+                this.has_ad_bear = num11;
+            }
+            String str4 = builder.ad_bear_sid;
+            if (str4 == null) {
+                this.ad_bear_sid = "";
+            } else {
+                this.ad_bear_sid = str4;
+            }
+            Double d2 = builder.ad_bear_sid_price;
+            if (d2 == null) {
+                this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
+                return;
+            } else {
+                this.ad_bear_sid_price = d2;
                 return;
             }
         }
-        this.f62874common = builder.f62875common;
+        this.f61224common = builder.f61225common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;
@@ -304,5 +350,9 @@ public final class DataReq extends Message {
         this.sort_type = builder.sort_type;
         this.tab_type = builder.tab_type;
         this.ad_ext_params = builder.ad_ext_params;
+        this.ad_bear_context = builder.ad_bear_context;
+        this.has_ad_bear = builder.has_ad_bear;
+        this.ad_bear_sid = builder.ad_bear_sid;
+        this.ad_bear_sid_price = builder.ad_bear_sid_price;
     }
 }

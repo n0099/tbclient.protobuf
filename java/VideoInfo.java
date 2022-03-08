@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class VideoInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_FIRST_FRAME_THUMBNAIL = "";
@@ -81,7 +81,7 @@ public final class VideoInfo extends Message {
     @ProtoField(tag = 19, type = Message.Datatype.DOUBLE)
     public final Double wth_mid_loc;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -176,7 +176,7 @@ public final class VideoInfo extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

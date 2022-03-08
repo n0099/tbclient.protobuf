@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class ReqData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FRIEND_ID;
@@ -20,19 +20,19 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f63068common;
+    public final CommonReq f61418common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String message;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f63069common;
+        public CommonReq f61419common;
         public Long friend_id;
         public String message;
 
@@ -73,7 +73,7 @@ public final class ReqData extends Message {
             }
             this.friend_id = reqData.friend_id;
             this.message = reqData.message;
-            this.f63069common = reqData.f63068common;
+            this.f61419common = reqData.f61418common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -85,7 +85,7 @@ public final class ReqData extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -142,11 +142,11 @@ public final class ReqData extends Message {
             } else {
                 this.message = str;
             }
-            this.f63068common = builder.f63069common;
+            this.f61418common = builder.f61419common;
             return;
         }
         this.friend_id = builder.friend_id;
         this.message = builder.message;
-        this.f63068common = builder.f63069common;
+        this.f61418common = builder.f61419common;
     }
 }

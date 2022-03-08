@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class HotLiveWithCategory extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
@@ -42,7 +42,7 @@ public final class HotLiveWithCategory extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer tab_id;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<HotLiveWithCategory> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -109,7 +109,7 @@ public final class HotLiveWithCategory extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

@@ -15,7 +15,7 @@ import java.util.List;
 import tbclient.ElectionList;
 import tbclient.ManagerElection;
 import tbclient.Myrecord;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<ElectionList> DEFAULT_ELECTION_LIST;
@@ -32,7 +32,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 5)
     public final ManagerElection vote_limit;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -93,7 +93,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

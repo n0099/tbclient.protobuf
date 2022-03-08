@@ -12,6 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.AdMixFloor;
 import tbclient.AddBawuPopInfo;
 import tbclient.AlaLiveNotify;
 import tbclient.AnchorInfo;
@@ -44,9 +45,12 @@ import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes5.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST;
+    public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
+    public static final Integer DEFAULT_AD_SHOW_SELECT;
     public static final Integer DEFAULT_ALA_INSERT_FLOOR;
     public static final List<ThreadInfo> DEFAULT_ALA_INSERT_THREAD;
     public static final Integer DEFAULT_ALA_LIVE_COUNT;
@@ -99,6 +103,12 @@ public final class DataRes extends Message {
     public final ActivityConfig activity_config;
     @ProtoField(tag = 23)
     public final ActivityHead activityhead;
+    @ProtoField(label = Message.Label.REPEATED, tag = 113)
+    public final List<AdMixFloor> ad_mix_list;
+    @ProtoField(tag = 114, type = Message.Datatype.STRING)
+    public final String ad_sample_map_key;
+    @ProtoField(tag = 112, type = Message.Datatype.INT32)
+    public final Integer ad_show_select;
     @ProtoField(tag = 107)
     public final AddBawuPopInfo add_bawu_pop;
     @ProtoField(tag = 65)
@@ -302,12 +312,15 @@ public final class DataRes extends Message {
     @ProtoField(tag = 89)
     public final WorldcupSkin worldcup_skin;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActivityConfig activity_config;
         public ActivityHead activityhead;
+        public List<AdMixFloor> ad_mix_list;
+        public String ad_sample_map_key;
+        public Integer ad_show_select;
         public AddBawuPopInfo add_bawu_pop;
         public AgreeBanner agree_banner;
         public Integer ala_insert_floor;
@@ -548,6 +561,9 @@ public final class DataRes extends Message {
             this.frsmask_pop_info = dataRes.frsmask_pop_info;
             this.voice_room_list = Message.copyOf(dataRes.voice_room_list);
             this.voice_room_config = dataRes.voice_room_config;
+            this.ad_show_select = dataRes.ad_show_select;
+            this.ad_mix_list = Message.copyOf(dataRes.ad_mix_list);
+            this.ad_sample_map_key = dataRes.ad_sample_map_key;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -559,7 +575,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -621,6 +637,8 @@ public final class DataRes extends Message {
         DEFAULT_SHOW_ADSENSE = 0;
         DEFAULT_VOICE_ROOM_LIST = Collections.emptyList();
         DEFAULT_VOICE_ROOM_CONFIG = 0;
+        DEFAULT_AD_SHOW_SELECT = 0;
+        DEFAULT_AD_MIX_LIST = Collections.emptyList();
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -981,9 +999,27 @@ public final class DataRes extends Message {
             Integer num20 = builder.voice_room_config;
             if (num20 == null) {
                 this.voice_room_config = DEFAULT_VOICE_ROOM_CONFIG;
-                return;
             } else {
                 this.voice_room_config = num20;
+            }
+            Integer num21 = builder.ad_show_select;
+            if (num21 == null) {
+                this.ad_show_select = DEFAULT_AD_SHOW_SELECT;
+            } else {
+                this.ad_show_select = num21;
+            }
+            List<AdMixFloor> list23 = builder.ad_mix_list;
+            if (list23 == null) {
+                this.ad_mix_list = DEFAULT_AD_MIX_LIST;
+            } else {
+                this.ad_mix_list = Message.immutableCopyOf(list23);
+            }
+            String str5 = builder.ad_sample_map_key;
+            if (str5 == null) {
+                this.ad_sample_map_key = "";
+                return;
+            } else {
+                this.ad_sample_map_key = str5;
                 return;
             }
         }
@@ -1090,5 +1126,8 @@ public final class DataRes extends Message {
         this.frsmask_pop_info = builder.frsmask_pop_info;
         this.voice_room_list = Message.immutableCopyOf(builder.voice_room_list);
         this.voice_room_config = builder.voice_room_config;
+        this.ad_show_select = builder.ad_show_select;
+        this.ad_mix_list = Message.immutableCopyOf(builder.ad_mix_list);
+        this.ad_sample_map_key = builder.ad_sample_map_key;
     }
 }
