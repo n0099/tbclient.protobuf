@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "SetLikeForumSort/DataReq.proto";
+
+message SetLikeForumSortReqIdl {
+    DataReq data = 1;
+}

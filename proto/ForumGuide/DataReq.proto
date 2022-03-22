@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    int32 sort_type = 2;
+    int32 call_from = 3;
+}

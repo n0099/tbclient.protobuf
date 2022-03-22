@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    string original_like_list = 2;
+    string new_like_list = 3;
+    string tbs = 4;
+}
