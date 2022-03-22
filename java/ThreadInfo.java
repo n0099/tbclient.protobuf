@@ -1,8 +1,6 @@
 package tbclient;
 
-import com.alibaba.fastjson.asm.Opcodes;
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.android.lbspay.channelpay.IChannelPay;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -11,14 +9,16 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor;
+import com.google.android.exoplayer2.extractor.ts.H262Reader;
 import com.google.android.exoplayer2.extractor.ts.PsExtractor;
+import com.google.android.exoplayer2.extractor.ts.TsExtractor;
 import com.google.android.exoplayer2.text.cea.Cea708Decoder;
 import com.kuaishou.weapon.un.w0;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class ThreadInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<Abstract> DEFAULT_ABSTRACT;
@@ -87,6 +87,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_OPERATE_THREAD;
     public static final Integer DEFAULT_IS_PARTIAL_VISIBLE;
     public static final Integer DEFAULT_IS_PIC;
+    public static final Integer DEFAULT_IS_PICTXT;
     public static final Integer DEFAULT_IS_PROTAL;
     public static final Integer DEFAULT_IS_SHARE_THREAD;
     public static final Integer DEFAULT_IS_STORY_AUDIT;
@@ -199,9 +200,9 @@ public final class ThreadInfo extends Message {
     public final User author;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long author_id;
-    @ProtoField(tag = 169)
+    @ProtoField(tag = w0.w)
     public final Baijiahao baijiahao;
-    @ProtoField(tag = 163, type = Message.Datatype.INT32)
+    @ProtoField(tag = MatroskaExtractor.ID_SIMPLE_BLOCK, type = Message.Datatype.INT32)
     public final Integer bjh_content_tag;
     @ProtoField(tag = 102)
     public final BookThread book_chapter;
@@ -223,7 +224,7 @@ public final class ThreadInfo extends Message {
     public final Integer comment_num;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
-    @ProtoField(tag = 154, type = Message.Datatype.STRING)
+    @ProtoField(tag = Cea708Decoder.COMMAND_DF2, type = Message.Datatype.STRING)
     public final String daily_paper_time;
     @ProtoField(tag = 98)
     public final DealInfo deal_info;
@@ -243,11 +244,11 @@ public final class ThreadInfo extends Message {
     public final Long first_post_id;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String fname;
-    @ProtoField(tag = 188)
+    @ProtoField(tag = TsExtractor.TS_PACKET_SIZE)
     public final ForumFriendWatchingInfo forum_friend_watching_info;
     @ProtoField(tag = 155)
     public final SimpleForum forum_info;
-    @ProtoField(tag = 187, type = Message.Datatype.STRING)
+    @ProtoField(tag = MatroskaExtractor.ID_CUE_POINT, type = Message.Datatype.STRING)
     public final String forum_user_live_msg;
     @ProtoField(tag = 130, type = Message.Datatype.INT64)
     public final Long freq_num;
@@ -261,13 +262,13 @@ public final class ThreadInfo extends Message {
     public final TogetherHi high_together;
     @ProtoField(tag = 71)
     public final HotTWThreadInfo hotTWInfo;
-    @ProtoField(tag = Opcodes.INVOKEVIRTUAL, type = Message.Datatype.INT32)
+    @ProtoField(tag = 182, type = Message.Datatype.INT32)
     public final Integer hot_num;
     @ProtoField(tag = 66, type = Message.Datatype.INT32)
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = w0.f53860i, type = Message.Datatype.INT32)
+    @ProtoField(tag = w0.i, type = Message.Datatype.INT32)
     public final Integer if_comment;
     @ProtoField(tag = MatroskaExtractor.ID_TRACK_ENTRY, type = Message.Datatype.STRING)
     public final String if_comment_info;
@@ -295,7 +296,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_deal;
     @ProtoField(tag = 181, type = Message.Datatype.INT32)
     public final Integer is_deleted;
-    @ProtoField(tag = Opcodes.IFNULL, type = Message.Datatype.INT32)
+    @ProtoField(tag = 198, type = Message.Datatype.INT32)
     public final Integer is_frs_mask;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
     public final Integer is_global_top;
@@ -305,13 +306,13 @@ public final class ThreadInfo extends Message {
     public final Integer is_godthread_recommend;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = 165, type = Message.Datatype.INT32)
+    @ProtoField(tag = w0.n0, type = Message.Datatype.INT32)
     public final Integer is_headlinepost;
     @ProtoField(tag = 128, type = Message.Datatype.INT32)
     public final Integer is_link_thread;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
     public final Integer is_livepost;
-    @ProtoField(tag = 184, type = Message.Datatype.UINT32)
+    @ProtoField(tag = H262Reader.START_GROUP, type = Message.Datatype.UINT32)
     public final Integer is_local;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_meizhi;
@@ -335,6 +336,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_partial_visible;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
     public final Integer is_pic;
+    @ProtoField(tag = 204, type = Message.Datatype.INT32)
+    public final Integer is_pictxt;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer is_protal;
     @ProtoField(tag = Constants.METHOD_IM_GET_USER_PROFILE_BY_BAIDU_UID, type = Message.Datatype.UINT32)
@@ -351,7 +354,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_top;
     @ProtoField(tag = 158, type = Message.Datatype.STRING)
     public final String is_top_img;
-    @ProtoField(tag = 148, type = Message.Datatype.INT32)
+    @ProtoField(tag = w0.I, type = Message.Datatype.INT32)
     public final Integer is_topic;
     @ProtoField(tag = 153, type = Message.Datatype.INT32)
     public final Integer is_videobiggie_recomthread;
@@ -397,7 +400,7 @@ public final class ThreadInfo extends Message {
     public final String multi_forum_text;
     @ProtoField(label = Message.Label.REPEATED, tag = 122)
     public final List<MultipleForum> multiple_forum_list;
-    @ProtoField(tag = IChannelPay.ID_IPAY_PAY_GAME, type = Message.Datatype.STRING)
+    @ProtoField(tag = 164, type = Message.Datatype.STRING)
     public final String nid;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
     public final Integer operator_flag;
@@ -405,7 +408,7 @@ public final class ThreadInfo extends Message {
     public final OriForumInfo ori_forum_info;
     @ProtoField(tag = Cea708Decoder.COMMAND_DLY)
     public final OriginThreadInfo origin_thread_info;
-    @ProtoField(tag = 185, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.METHOD_IM_SEND_MCAST_MSG, type = Message.Datatype.INT32)
     public final Integer pb_entry;
     @ProtoField(label = Message.Label.REPEATED, tag = 183)
     public final List<PbGoodsInfo> pb_goods_info;
@@ -425,7 +428,7 @@ public final class ThreadInfo extends Message {
     public final List<PostList> post_list;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
     public final Integer post_num;
-    @ProtoField(tag = 151, type = Message.Datatype.STRING)
+    @ProtoField(tag = Cea708Decoder.COMMAND_SWA, type = Message.Datatype.STRING)
     public final String presentation_style;
     @ProtoField(tag = 101)
     public final PsInfo ps_info;
@@ -473,7 +476,7 @@ public final class ThreadInfo extends Message {
     public final String t_share_img;
     @ProtoField(tag = 175, type = Message.Datatype.INT32)
     public final Integer tab_id;
-    @ProtoField(tag = 176, type = Message.Datatype.STRING)
+    @ProtoField(tag = MatroskaExtractor.ID_PIXEL_WIDTH, type = Message.Datatype.STRING)
     public final String tab_name;
     @ProtoField(tag = 200, type = Message.Datatype.INT32)
     public final Integer tab_show_mode;
@@ -491,7 +494,7 @@ public final class ThreadInfo extends Message {
     public final Integer thread_types;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tid;
-    @ProtoField(tag = 137, type = Message.Datatype.STRING)
+    @ProtoField(tag = Cea708Decoder.COMMAND_DSW, type = Message.Datatype.STRING)
     public final String tieba_game_information_source;
     @ProtoField(tag = 201)
     public final TiebaPlusAd tiebaplus_ad;
@@ -517,7 +520,7 @@ public final class ThreadInfo extends Message {
     public final String topic_h5_url;
     @ProtoField(tag = 160)
     public final TopicModule topic_module;
-    @ProtoField(tag = Opcodes.FCMPL, type = Message.Datatype.STRING)
+    @ProtoField(tag = 149, type = Message.Datatype.STRING)
     public final String topic_user_name;
     @ProtoField(tag = 145, type = Message.Datatype.UINT64)
     public final Long trans_num;
@@ -549,9 +552,9 @@ public final class ThreadInfo extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
-    @ProtoField(tag = 199)
+    @ProtoField(tag = w0.b1)
     public final VoiceRoom voice_room;
-    @ProtoField(tag = 177, type = Message.Datatype.STRING)
+    @ProtoField(tag = w0.u, type = Message.Datatype.STRING)
     public final String wonderful_post_info;
     @ProtoField(tag = PsExtractor.PRIVATE_STREAM_1)
     public final WorksInfo works_info;
@@ -560,7 +563,7 @@ public final class ThreadInfo extends Message {
     @ProtoField(tag = 41)
     public final Zan zan;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -647,6 +650,7 @@ public final class ThreadInfo extends Message {
         public Integer is_operate_thread;
         public Integer is_partial_visible;
         public Integer is_pic;
+        public Integer is_pictxt;
         public Integer is_protal;
         public Integer is_s_card;
         public Integer is_share_thread;
@@ -765,9 +769,9 @@ public final class ThreadInfo extends Message {
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -783,9 +787,9 @@ public final class ThreadInfo extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {threadInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -990,6 +994,7 @@ public final class ThreadInfo extends Message {
             this.tab_show_mode = threadInfo.tab_show_mode;
             this.tiebaplus_ad = threadInfo.tiebaplus_ad;
             this.recommend_tip = threadInfo.recommend_tip;
+            this.is_pictxt = threadInfo.is_pictxt;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1001,7 +1006,7 @@ public final class ThreadInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -1123,6 +1128,7 @@ public final class ThreadInfo extends Message {
         DEFAULT_TIEBAPLUS_CANT_DELETE = 0;
         DEFAULT_IS_FRS_MASK = 0;
         DEFAULT_TAB_SHOW_MODE = 0;
+        DEFAULT_IS_PICTXT = 0;
     }
 
     public /* synthetic */ ThreadInfo(Builder builder, boolean z, a aVar) {
@@ -1138,9 +1144,9 @@ public final class ThreadInfo extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -2078,7 +2084,14 @@ public final class ThreadInfo extends Message {
             }
             this.tiebaplus_ad = builder.tiebaplus_ad;
             this.recommend_tip = builder.recommend_tip;
-            return;
+            Integer num75 = builder.is_pictxt;
+            if (num75 == null) {
+                this.is_pictxt = DEFAULT_IS_PICTXT;
+                return;
+            } else {
+                this.is_pictxt = num75;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -2275,5 +2288,6 @@ public final class ThreadInfo extends Message {
         this.tab_show_mode = builder.tab_show_mode;
         this.tiebaplus_ad = builder.tiebaplus_ad;
         this.recommend_tip = builder.recommend_tip;
+        this.is_pictxt = builder.is_pictxt;
     }
 }

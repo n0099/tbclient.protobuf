@@ -12,10 +12,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class BusinessPromot extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<BusinessPromotCommentList> DEFAULT_COMMENT_LIST;
+    public static final String DEFAULT_COVER_URL = "";
     public static final String DEFAULT_DOWNLOAD_APPID = "";
     public static final String DEFAULT_DOWNLOAD_APPNAME = "";
     public static final String DEFAULT_DOWNLOAD_DEVELOPER = "";
@@ -42,9 +43,12 @@ public final class BusinessPromot extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_URL = "";
+    public static final String DEFAULT_VIDEO_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<BusinessPromotCommentList> comment_list;
+    @ProtoField(tag = 28, type = Message.Datatype.STRING)
+    public final String cover_url;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
     public final String download_appid;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -97,12 +101,15 @@ public final class BusinessPromot extends Message {
     public final Integer type;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String url;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String video_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<BusinessPromot> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public List<BusinessPromotCommentList> comment_list;
+        public String cover_url;
         public String download_appid;
         public String download_appname;
         public String download_developer;
@@ -129,15 +136,16 @@ public final class BusinessPromot extends Message {
         public String title;
         public Integer type;
         public String url;
+        public String video_url;
 
         public Builder() {
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -153,9 +161,9 @@ public final class BusinessPromot extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {businessPromot};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -192,6 +200,8 @@ public final class BusinessPromot extends Message {
             this.download_item_id = businessPromot.download_item_id;
             this.download_package_name = businessPromot.download_package_name;
             this.download_appid = businessPromot.download_appid;
+            this.cover_url = businessPromot.cover_url;
+            this.video_url = businessPromot.video_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -203,7 +213,7 @@ public final class BusinessPromot extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -247,9 +257,9 @@ public final class BusinessPromot extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -416,9 +426,21 @@ public final class BusinessPromot extends Message {
             String str18 = builder.download_appid;
             if (str18 == null) {
                 this.download_appid = "";
-                return;
             } else {
                 this.download_appid = str18;
+            }
+            String str19 = builder.cover_url;
+            if (str19 == null) {
+                this.cover_url = "";
+            } else {
+                this.cover_url = str19;
+            }
+            String str20 = builder.video_url;
+            if (str20 == null) {
+                this.video_url = "";
+                return;
+            } else {
+                this.video_url = str20;
                 return;
             }
         }
@@ -449,5 +471,7 @@ public final class BusinessPromot extends Message {
         this.download_item_id = builder.download_item_id;
         this.download_package_name = builder.download_package_name;
         this.download_appid = builder.download_appid;
+        this.cover_url = builder.cover_url;
+        this.video_url = builder.video_url;
     }
 }

@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
@@ -34,6 +34,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
     public static final Integer DEFAULT_ISSDK;
     public static final Integer DEFAULT_IS_COMM_REVERSE;
+    public static final Integer DEFAULT_IS_EDIT_COMMENT_REQ;
     public static final Integer DEFAULT_IS_FOLD_COMMENT_REQ;
     public static final Integer DEFAULT_IS_JUMPFLOOR;
     public static final String DEFAULT_JFROM = "";
@@ -104,7 +105,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f61388common;
+    public final CommonReq f45726common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -125,6 +126,8 @@ public final class DataReq extends Message {
     public final Integer immersion_video_comment_source;
     @ProtoField(tag = 33, type = Message.Datatype.INT32)
     public final Integer is_comm_reverse;
+    @ProtoField(tag = 79, type = Message.Datatype.INT32)
+    public final Integer is_edit_comment_req;
     @ProtoField(tag = 78, type = Message.Datatype.INT32)
     public final Integer is_fold_comment_req;
     @ProtoField(tag = 34, type = Message.Datatype.INT32)
@@ -220,7 +223,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 48, type = Message.Datatype.STRING)
     public final String yuelaou_params;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -236,7 +239,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f61389common;
+        public CommonReq f45727common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -247,6 +250,7 @@ public final class DataReq extends Message {
         public Integer from_smart_frs;
         public Integer immersion_video_comment_source;
         public Integer is_comm_reverse;
+        public Integer is_edit_comment_req;
         public Integer is_fold_comment_req;
         public Integer is_jumpfloor;
         public Integer issdk;
@@ -300,9 +304,9 @@ public final class DataReq extends Message {
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -318,9 +322,9 @@ public final class DataReq extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {dataReq};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -354,7 +358,7 @@ public final class DataReq extends Message {
             this.arround = dataReq.arround;
             this.last = dataReq.last;
             this.msg_click = dataReq.msg_click;
-            this.f61389common = dataReq.f61388common;
+            this.f45727common = dataReq.f45726common;
             this.lastids = dataReq.lastids;
             this.st_from = dataReq.st_from;
             this.st_link = dataReq.st_link;
@@ -398,6 +402,7 @@ public final class DataReq extends Message {
             this.immersion_video_comment_source = dataReq.immersion_video_comment_source;
             this.app_transmit_data = dataReq.app_transmit_data;
             this.is_fold_comment_req = dataReq.is_fold_comment_req;
+            this.is_edit_comment_req = dataReq.is_edit_comment_req;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -409,7 +414,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -469,6 +474,7 @@ public final class DataReq extends Message {
         DEFAULT_SOURCE_TYPE = 0;
         DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE = 0;
         DEFAULT_IS_FOLD_COMMENT_REQ = 0;
+        DEFAULT_IS_EDIT_COMMENT_REQ = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -484,9 +490,9 @@ public final class DataReq extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -638,7 +644,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = str2;
             }
-            this.f61388common = builder.f61389common;
+            this.f45726common = builder.f45727common;
             String str3 = builder.lastids;
             if (str3 == null) {
                 this.lastids = "";
@@ -879,9 +885,15 @@ public final class DataReq extends Message {
             Integer num33 = builder.is_fold_comment_req;
             if (num33 == null) {
                 this.is_fold_comment_req = DEFAULT_IS_FOLD_COMMENT_REQ;
-                return;
             } else {
                 this.is_fold_comment_req = num33;
+            }
+            Integer num34 = builder.is_edit_comment_req;
+            if (num34 == null) {
+                this.is_edit_comment_req = DEFAULT_IS_EDIT_COMMENT_REQ;
+                return;
+            } else {
+                this.is_edit_comment_req = num34;
                 return;
             }
         }
@@ -909,7 +921,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f61388common = builder.f61389common;
+        this.f45726common = builder.f45727common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -953,5 +965,6 @@ public final class DataReq extends Message {
         this.immersion_video_comment_source = builder.immersion_video_comment_source;
         this.app_transmit_data = builder.app_transmit_data;
         this.is_fold_comment_req = builder.is_fold_comment_req;
+        this.is_edit_comment_req = builder.is_edit_comment_req;
     }
 }

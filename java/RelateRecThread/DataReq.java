@@ -11,9 +11,10 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic;
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_EQID = "";
     public static final Long DEFAULT_FORUM_ID;
     public static final Integer DEFAULT_SOURCE_FROM;
     public static final Integer DEFAULT_SOURCE_TYPE;
@@ -22,7 +23,9 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f61416common;
+    public final CommonReq f45754common;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String eqid;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -32,13 +35,14 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long thread_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f61417common;
+        public CommonReq f45755common;
+        public String eqid;
         public Long forum_id;
         public Integer source_from;
         public Integer source_type;
@@ -49,9 +53,9 @@ public final class DataReq extends Message {
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -67,9 +71,9 @@ public final class DataReq extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {dataReq};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -79,11 +83,12 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f61417common = dataReq.f61416common;
+            this.f45755common = dataReq.f45754common;
             this.forum_id = dataReq.forum_id;
             this.thread_id = dataReq.thread_id;
             this.source_type = dataReq.source_type;
             this.source_from = dataReq.source_from;
+            this.eqid = dataReq.eqid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -95,7 +100,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -133,9 +138,9 @@ public final class DataReq extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -143,7 +148,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f61416common = builder.f61417common;
+            this.f45754common = builder.f45755common;
             Long l = builder.forum_id;
             if (l == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
@@ -165,16 +170,23 @@ public final class DataReq extends Message {
             Integer num2 = builder.source_from;
             if (num2 == null) {
                 this.source_from = DEFAULT_SOURCE_FROM;
-                return;
             } else {
                 this.source_from = num2;
+            }
+            String str = builder.eqid;
+            if (str == null) {
+                this.eqid = "";
+                return;
+            } else {
+                this.eqid = str;
                 return;
             }
         }
-        this.f61416common = builder.f61417common;
+        this.f45754common = builder.f45755common;
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
         this.source_type = builder.source_type;
         this.source_from = builder.source_from;
+        this.eqid = builder.eqid;
     }
 }

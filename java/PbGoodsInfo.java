@@ -10,10 +10,11 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class PbGoodsInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_GOODS_FROM = "";
+    public static final Long DEFAULT_GOODS_ID;
     public static final String DEFAULT_GOODS_IMAGE = "";
     public static final String DEFAULT_GOODS_PRICE = "";
     public static final String DEFAULT_GOODS_TITLE = "";
@@ -23,6 +24,8 @@ public final class PbGoodsInfo extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String goods_from;
+    @ProtoField(tag = 8, type = Message.Datatype.INT64)
+    public final Long goods_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String goods_image;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -36,11 +39,12 @@ public final class PbGoodsInfo extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer sort;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<PbGoodsInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String goods_from;
+        public Long goods_id;
         public String goods_image;
         public String goods_price;
         public String goods_title;
@@ -53,9 +57,9 @@ public final class PbGoodsInfo extends Message {
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -71,9 +75,9 @@ public final class PbGoodsInfo extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {pbGoodsInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -90,6 +94,7 @@ public final class PbGoodsInfo extends Message {
             this.sort = pbGoodsInfo.sort;
             this.goods_from = pbGoodsInfo.goods_from;
             this.goods_url_h5 = pbGoodsInfo.goods_url_h5;
+            this.goods_id = pbGoodsInfo.goods_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -101,7 +106,7 @@ public final class PbGoodsInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -121,6 +126,7 @@ public final class PbGoodsInfo extends Message {
             }
         }
         DEFAULT_SORT = 0;
+        DEFAULT_GOODS_ID = 0L;
     }
 
     public /* synthetic */ PbGoodsInfo(Builder builder, boolean z, a aVar) {
@@ -136,9 +142,9 @@ public final class PbGoodsInfo extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -185,9 +191,15 @@ public final class PbGoodsInfo extends Message {
             String str6 = builder.goods_url_h5;
             if (str6 == null) {
                 this.goods_url_h5 = "";
-                return;
             } else {
                 this.goods_url_h5 = str6;
+            }
+            Long l = builder.goods_id;
+            if (l == null) {
+                this.goods_id = DEFAULT_GOODS_ID;
+                return;
+            } else {
+                this.goods_id = l;
                 return;
             }
         }
@@ -198,5 +210,6 @@ public final class PbGoodsInfo extends Message {
         this.sort = builder.sort;
         this.goods_from = builder.goods_from;
         this.goods_url_h5 = builder.goods_url_h5;
+        this.goods_id = builder.goods_id;
     }
 }

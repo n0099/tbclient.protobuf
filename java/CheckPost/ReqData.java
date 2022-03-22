@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class ReqData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_FORUMNAME = "";
@@ -26,7 +26,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f61182common;
+    public final CommonReq f45516common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String forumName;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -44,13 +44,13 @@ public final class ReqData extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT64)
     public final Long tid;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f61183common;
+        public CommonReq f45517common;
         public String forumName;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -65,9 +65,9 @@ public final class ReqData extends Message {
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -83,9 +83,9 @@ public final class ReqData extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {reqData};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -98,7 +98,7 @@ public final class ReqData extends Message {
             this.pid = reqData.pid;
             this.postType = reqData.postType;
             this.forumName = reqData.forumName;
-            this.f61183common = reqData.f61182common;
+            this.f45517common = reqData.f45516common;
             this.tid = reqData.tid;
             this.ori_ugc_type = reqData.ori_ugc_type;
             this.ori_ugc_nid = reqData.ori_ugc_nid;
@@ -115,7 +115,7 @@ public final class ReqData extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -153,9 +153,9 @@ public final class ReqData extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -181,7 +181,7 @@ public final class ReqData extends Message {
             } else {
                 this.forumName = str;
             }
-            this.f61182common = builder.f61183common;
+            this.f45516common = builder.f45517common;
             Long l2 = builder.tid;
             if (l2 == null) {
                 this.tid = DEFAULT_TID;
@@ -218,7 +218,7 @@ public final class ReqData extends Message {
         this.pid = builder.pid;
         this.postType = builder.postType;
         this.forumName = builder.forumName;
-        this.f61182common = builder.f61183common;
+        this.f45516common = builder.f45517common;
         this.tid = builder.tid;
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_nid = builder.ori_ugc_nid;

@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_BENEFIT_USERID;
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f61428common;
+    public final CommonReq f45766common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer gift_id;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -41,7 +41,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.UINT64)
     public final Long thread_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -49,7 +49,7 @@ public final class DataReq extends Message {
         public String benefit_username;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f61429common;
+        public CommonReq f45767common;
         public Integer gift_id;
         public Integer num;
         public Long post_id;
@@ -61,9 +61,9 @@ public final class DataReq extends Message {
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -79,9 +79,9 @@ public final class DataReq extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {dataReq};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
             this.benefit_userid = dataReq.benefit_userid;
             this.benefit_username = dataReq.benefit_username;
             this.num = dataReq.num;
-            this.f61429common = dataReq.f61428common;
+            this.f45767common = dataReq.f45766common;
             this.scene_from = dataReq.scene_from;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
@@ -110,7 +110,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -149,9 +149,9 @@ public final class DataReq extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -183,7 +183,7 @@ public final class DataReq extends Message {
             } else {
                 this.num = num2;
             }
-            this.f61428common = builder.f61429common;
+            this.f45766common = builder.f45767common;
             String str2 = builder.scene_from;
             if (str2 == null) {
                 this.scene_from = "";
@@ -209,7 +209,7 @@ public final class DataReq extends Message {
         this.benefit_userid = builder.benefit_userid;
         this.benefit_username = builder.benefit_username;
         this.num = builder.num;
-        this.f61428common = builder.f61429common;
+        this.f45766common = builder.f45767common;
         this.scene_from = builder.scene_from;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;

@@ -12,10 +12,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class HeadImgs extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BTN_TEXT = "";
+    public static final String DEFAULT_COVER_URL = "";
     public static final String DEFAULT_DOWNLOAD_APPID = "";
     public static final String DEFAULT_DOWNLOAD_APPNAME = "";
     public static final String DEFAULT_DOWNLOAD_DEVELOPER = "";
@@ -32,15 +33,21 @@ public final class HeadImgs extends Message {
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_PACKAGE_NAME = "";
     public static final String DEFAULT_PC_URL = "";
+    public static final String DEFAULT_PLAY_URL = "";
     public static final String DEFAULT_SCHEMA = "";
     public static final String DEFAULT_SUBTITLE = "";
     public static final String DEFAULT_TAG_NAME_URL = "";
     public static final String DEFAULT_TAG_NAME_WH = "";
     public static final List<String> DEFAULT_THIRD_STATISTICS_URL;
     public static final String DEFAULT_TITLE = "";
+    public static final List<VideoImageColor> DEFAULT_VIDEO_IMAGE_COLOR;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String btn_text;
+    @ProtoField(tag = 26)
+    public final CoverImageColor cover_image_color;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String cover_url;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String download_appid;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -73,6 +80,8 @@ public final class HeadImgs extends Message {
     public final String package_name;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String pc_url;
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
+    public final String play_url;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String schema;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -85,12 +94,16 @@ public final class HeadImgs extends Message {
     public final List<String> third_statistics_url;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(label = Message.Label.REPEATED, tag = 27)
+    public final List<VideoImageColor> video_image_color;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<HeadImgs> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String btn_text;
+        public CoverImageColor cover_image_color;
+        public String cover_url;
         public String download_appid;
         public String download_appname;
         public String download_developer;
@@ -107,21 +120,23 @@ public final class HeadImgs extends Message {
         public String img_url;
         public String package_name;
         public String pc_url;
+        public String play_url;
         public String schema;
         public String subtitle;
         public String tag_name_url;
         public String tag_name_wh;
         public List<String> third_statistics_url;
         public String title;
+        public List<VideoImageColor> video_image_color;
 
         public Builder() {
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -137,9 +152,9 @@ public final class HeadImgs extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {headImgs};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -172,6 +187,10 @@ public final class HeadImgs extends Message {
             this.download_package_name = headImgs.download_package_name;
             this.download_item_id = headImgs.download_item_id;
             this.download_appid = headImgs.download_appid;
+            this.cover_url = headImgs.cover_url;
+            this.play_url = headImgs.play_url;
+            this.cover_image_color = headImgs.cover_image_color;
+            this.video_image_color = Message.copyOf(headImgs.video_image_color);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -183,7 +202,7 @@ public final class HeadImgs extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -206,6 +225,7 @@ public final class HeadImgs extends Message {
         DEFAULT_HAS_SECOND_PAGE = 0;
         DEFAULT_DOWNLOAD_IS_THIRDPAGE = 0;
         DEFAULT_DOWNLOAD_ITEM_ID = 0;
+        DEFAULT_VIDEO_IMAGE_COLOR = Collections.emptyList();
     }
 
     public /* synthetic */ HeadImgs(Builder builder, boolean z, a aVar) {
@@ -221,9 +241,9 @@ public final class HeadImgs extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -366,9 +386,28 @@ public final class HeadImgs extends Message {
             String str19 = builder.download_appid;
             if (str19 == null) {
                 this.download_appid = "";
-                return;
             } else {
                 this.download_appid = str19;
+            }
+            String str20 = builder.cover_url;
+            if (str20 == null) {
+                this.cover_url = "";
+            } else {
+                this.cover_url = str20;
+            }
+            String str21 = builder.play_url;
+            if (str21 == null) {
+                this.play_url = "";
+            } else {
+                this.play_url = str21;
+            }
+            this.cover_image_color = builder.cover_image_color;
+            List<VideoImageColor> list2 = builder.video_image_color;
+            if (list2 == null) {
+                this.video_image_color = DEFAULT_VIDEO_IMAGE_COLOR;
+                return;
+            } else {
+                this.video_image_color = Message.immutableCopyOf(list2);
                 return;
             }
         }
@@ -395,5 +434,9 @@ public final class HeadImgs extends Message {
         this.download_package_name = builder.download_package_name;
         this.download_item_id = builder.download_item_id;
         this.download_appid = builder.download_appid;
+        this.cover_url = builder.cover_url;
+        this.play_url = builder.play_url;
+        this.cover_image_color = builder.cover_image_color;
+        this.video_image_color = Message.immutableCopyOf(builder.video_image_color);
     }
 }

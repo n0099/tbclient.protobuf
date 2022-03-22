@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class PbContent extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BIG_CDN_SRC = "";
@@ -38,6 +38,7 @@ public final class PbContent extends Message {
     public static final String DEFAULT_ORIGIN_SRC = "";
     public static final String DEFAULT_PACKET_NAME = "";
     public static final String DEFAULT_PHONETYPE = "";
+    public static final Long DEFAULT_PIC_ID;
     public static final Integer DEFAULT_SHOW_ORIGINAL_BTN;
     public static final String DEFAULT_SRC = "";
     public static final String DEFAULT_STATIC = "";
@@ -64,7 +65,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f61384c;
+    public final String f45722c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -113,6 +114,8 @@ public final class PbContent extends Message {
     public final String packet_name;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String phonetype;
+    @ProtoField(tag = 42, type = Message.Datatype.INT64)
+    public final Long pic_id;
     @ProtoField(tag = 35, type = Message.Datatype.UINT32)
     public final Integer show_original_btn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -134,7 +137,7 @@ public final class PbContent extends Message {
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer width;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<PbContent> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -146,7 +149,7 @@ public final class PbContent extends Message {
         public Integer btn_type;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f61385c;
+        public String f45723c;
         public String cdn_src;
         public String cdn_src_active;
         public Integer count;
@@ -171,6 +174,7 @@ public final class PbContent extends Message {
         public String origin_src;
         public String packet_name;
         public String phonetype;
+        public Long pic_id;
         public Integer show_original_btn;
         public String src;
         public String text;
@@ -187,9 +191,9 @@ public final class PbContent extends Message {
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 interceptable.invokeUnInit(65536, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65536, newInitContext);
                 }
@@ -205,9 +209,9 @@ public final class PbContent extends Message {
                 newInitContext.initArgs = r2;
                 Object[] objArr = {pbContent};
                 interceptable.invokeUnInit(65537, newInitContext);
-                int i2 = newInitContext.flag;
-                if ((i2 & 1) != 0) {
-                    int i3 = i2 & 2;
+                int i = newInitContext.flag;
+                if ((i & 1) != 0) {
+                    int i2 = i & 2;
                     super((Message) newInitContext.callArgs[0]);
                     newInitContext.thisArg = this;
                     interceptable.invokeInitBody(65537, newInitContext);
@@ -227,7 +231,7 @@ public final class PbContent extends Message {
             this.cdn_src = pbContent.cdn_src;
             this.big_cdn_src = pbContent.big_cdn_src;
             this.imgtype = pbContent.imgtype;
-            this.f61385c = pbContent.f61384c;
+            this.f45723c = pbContent.f45722c;
             this.voice_md5 = pbContent.voice_md5;
             this.during_time = pbContent.during_time;
             this.is_sub = pbContent.is_sub;
@@ -258,6 +262,7 @@ public final class PbContent extends Message {
             this.item_forum_name = pbContent.item_forum_name;
             this.tiebaplus_info = pbContent.tiebaplus_info;
             this.item = pbContent.item;
+            this.pic_id = pbContent.pic_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -269,7 +274,7 @@ public final class PbContent extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -303,6 +308,7 @@ public final class PbContent extends Message {
         DEFAULT_IS_LONG_PIC = 0;
         DEFAULT_SHOW_ORIGINAL_BTN = 0;
         DEFAULT_ITEM_ID = 0L;
+        DEFAULT_PIC_ID = 0L;
     }
 
     public /* synthetic */ PbContent(Builder builder, boolean z, a aVar) {
@@ -318,9 +324,9 @@ public final class PbContent extends Message {
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
             interceptable.invokeUnInit(65537, newInitContext);
-            int i2 = newInitContext.flag;
-            if ((i2 & 1) != 0) {
-                int i3 = i2 & 2;
+            int i = newInitContext.flag;
+            if ((i & 1) != 0) {
+                int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
                 interceptable.invokeInitBody(65537, newInitContext);
@@ -388,11 +394,11 @@ public final class PbContent extends Message {
             } else {
                 this.imgtype = str9;
             }
-            String str10 = builder.f61385c;
+            String str10 = builder.f45723c;
             if (str10 == null) {
-                this.f61384c = "";
+                this.f45722c = "";
             } else {
-                this.f61384c = str10;
+                this.f45722c = str10;
             }
             String str11 = builder.voice_md5;
             if (str11 == null) {
@@ -544,7 +550,14 @@ public final class PbContent extends Message {
             }
             this.tiebaplus_info = builder.tiebaplus_info;
             this.item = builder.item;
-            return;
+            Long l3 = builder.pic_id;
+            if (l3 == null) {
+                this.pic_id = DEFAULT_PIC_ID;
+                return;
+            } else {
+                this.pic_id = l3;
+                return;
+            }
         }
         this.type = builder.type;
         this.text = builder.text;
@@ -556,7 +569,7 @@ public final class PbContent extends Message {
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
         this.imgtype = builder.imgtype;
-        this.f61384c = builder.f61385c;
+        this.f45722c = builder.f45723c;
         this.voice_md5 = builder.voice_md5;
         this.during_time = builder.during_time;
         this.is_sub = builder.is_sub;
@@ -587,5 +600,6 @@ public final class PbContent extends Message {
         this.item_forum_name = builder.item_forum_name;
         this.tiebaplus_info = builder.tiebaplus_info;
         this.item = builder.item;
+        this.pic_id = builder.pic_id;
     }
 }
