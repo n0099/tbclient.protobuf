@@ -185,11 +185,11 @@ public final class UserInfos extends Message {
             } else {
                 this.sex = str3;
             }
-            Double d2 = builder.distance;
-            if (d2 == null) {
+            Double d = builder.distance;
+            if (d == null) {
                 this.distance = DEFAULT_DISTANCE;
             } else {
-                this.distance = d2;
+                this.distance = d;
             }
             Integer num = builder.lastest_time;
             if (num == null) {

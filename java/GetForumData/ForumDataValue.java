@@ -127,12 +127,12 @@ public final class ForumDataValue extends Message {
             } else {
                 this.date = str;
             }
-            Double d2 = builder.value;
-            if (d2 == null) {
+            Double d = builder.value;
+            if (d == null) {
                 this.value = DEFAULT_VALUE;
                 return;
             } else {
-                this.value = d2;
+                this.value = d;
                 return;
             }
         }

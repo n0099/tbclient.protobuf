@@ -291,11 +291,11 @@ public final class DataRes extends Message {
             } else {
                 this.mission_id = num5;
             }
-            Double d2 = builder.opacity;
-            if (d2 == null) {
+            Double d = builder.opacity;
+            if (d == null) {
                 this.opacity = DEFAULT_OPACITY;
             } else {
-                this.opacity = d2;
+                this.opacity = d;
             }
             String str9 = builder.btn_color;
             if (str9 == null) {

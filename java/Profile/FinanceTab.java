@@ -1,4 +1,4 @@
-package tbclient.MFollow;
+package tbclient.Profile;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -12,27 +12,31 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.CommonReq;
 /* loaded from: classes8.dex */
-public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic;
-    public static final List<String> DEFAULT_PORTRAIT;
+public final class FinanceTab extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_GENERAL_TAB_TEXT = "";
+    public static final String DEFAULT_GENERAL_TAB_URL = "";
+    public static final List<FinanceTabItems> DEFAULT_TABS;
+    public static final String DEFAULT_TITLE = "";
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 1)
-
-    /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45710common;
-    @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
-    public final List<String> portrait;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String general_tab_text;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String general_tab_url;
+    @ProtoField(label = Message.Label.REPEATED, tag = 4)
+    public final List<FinanceTabItems> tabs;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String title;
 
     /* loaded from: classes8.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<FinanceTab> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-
-        /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45711common;
-        public List<String> portrait;
+        public String general_tab_text;
+        public String general_tab_url;
+        public List<FinanceTabItems> tabs;
+        public String title;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -49,13 +53,13 @@ public final class DataReq extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(DataReq dataReq) {
-            super(dataReq);
+        public Builder(FinanceTab financeTab) {
+            super(financeTab);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
+                Object[] objArr = {financeTab};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -66,19 +70,21 @@ public final class DataReq extends Message {
                     return;
                 }
             }
-            if (dataReq == null) {
+            if (financeTab == null) {
                 return;
             }
-            this.f45711common = dataReq.f45710common;
-            this.portrait = Message.copyOf(dataReq.portrait);
+            this.title = financeTab.title;
+            this.general_tab_text = financeTab.general_tab_text;
+            this.general_tab_url = financeTab.general_tab_url;
+            this.tabs = Message.copyOf(financeTab.tabs);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DataReq build(boolean z) {
+        public FinanceTab build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FinanceTab(this, z, null) : (FinanceTab) invokeZ.objValue;
         }
     }
 
@@ -91,25 +97,25 @@ public final class DataReq extends Message {
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(659238818, "Ltbclient/MFollow/DataReq;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(778284432, "Ltbclient/Profile/FinanceTab;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(659238818, "Ltbclient/MFollow/DataReq;");
+                classClinitInterceptable.invokePostClinit(778284432, "Ltbclient/Profile/FinanceTab;");
                 return;
             }
         }
-        DEFAULT_PORTRAIT = Collections.emptyList();
+        DEFAULT_TABS = Collections.emptyList();
     }
 
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ FinanceTab(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DataReq(Builder builder, boolean z) {
+    public FinanceTab(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -127,17 +133,36 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f45710common = builder.f45711common;
-            List<String> list = builder.portrait;
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.general_tab_text;
+            if (str2 == null) {
+                this.general_tab_text = "";
+            } else {
+                this.general_tab_text = str2;
+            }
+            String str3 = builder.general_tab_url;
+            if (str3 == null) {
+                this.general_tab_url = "";
+            } else {
+                this.general_tab_url = str3;
+            }
+            List<FinanceTabItems> list = builder.tabs;
             if (list == null) {
-                this.portrait = DEFAULT_PORTRAIT;
+                this.tabs = DEFAULT_TABS;
                 return;
             } else {
-                this.portrait = Message.immutableCopyOf(list);
+                this.tabs = Message.immutableCopyOf(list);
                 return;
             }
         }
-        this.f45710common = builder.f45711common;
-        this.portrait = Message.immutableCopyOf(builder.portrait);
+        this.title = builder.title;
+        this.general_tab_text = builder.general_tab_text;
+        this.general_tab_url = builder.general_tab_url;
+        this.tabs = Message.immutableCopyOf(builder.tabs);
     }
 }

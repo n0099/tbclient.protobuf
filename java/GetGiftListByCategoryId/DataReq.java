@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45602common;
+    public final CommonReq f1140common;
 
     /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
         public Integer category_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45603common;
+        public CommonReq f1141common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -68,7 +68,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.category_id = dataReq.category_id;
-            this.f45603common = dataReq.f45602common;
+            this.f1141common = dataReq.f1140common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -131,10 +131,10 @@ public final class DataReq extends Message {
             } else {
                 this.category_id = num;
             }
-            this.f45602common = builder.f45603common;
+            this.f1140common = builder.f1141common;
             return;
         }
         this.category_id = builder.category_id;
-        this.f45602common = builder.f45603common;
+        this.f1140common = builder.f1141common;
     }
 }

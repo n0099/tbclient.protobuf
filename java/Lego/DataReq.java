@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45704common;
+    public final CommonReq f1240common;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String flip_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -56,7 +56,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45705common;
+        public CommonReq f1241common;
         public String flip_id;
         public String item_id;
         public Long page_id;
@@ -103,7 +103,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f45705common = dataReq.f45704common;
+            this.f1241common = dataReq.f1240common;
             this.page_id = dataReq.page_id;
             this.page_type = dataReq.page_type;
             this.pn = dataReq.pn;
@@ -176,7 +176,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f45704common = builder.f45705common;
+            this.f1240common = builder.f1241common;
             Long l = builder.page_id;
             if (l == null) {
                 this.page_id = DEFAULT_PAGE_ID;
@@ -231,16 +231,16 @@ public final class DataReq extends Message {
             } else {
                 this.scr_h = num5;
             }
-            Double d2 = builder.scr_dip;
-            if (d2 == null) {
+            Double d = builder.scr_dip;
+            if (d == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
                 return;
             } else {
-                this.scr_dip = d2;
+                this.scr_dip = d;
                 return;
             }
         }
-        this.f45704common = builder.f45705common;
+        this.f1240common = builder.f1241common;
         this.page_id = builder.page_id;
         this.page_type = builder.page_type;
         this.pn = builder.pn;

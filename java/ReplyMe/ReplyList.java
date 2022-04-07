@@ -10,7 +10,10 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 import tbclient.Baijiahao;
+import tbclient.NewFloorInfo;
 import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
@@ -25,6 +28,7 @@ public final class ReplyList extends Message {
     public static final Integer DEFAULT_IS_SHARE_THREAD;
     public static final Integer DEFAULT_IS_STORY;
     public static final String DEFAULT_ITEM_TYPE = "";
+    public static final List<NewFloorInfo> DEFAULT_NEW_FLOOR_INFO;
     public static final String DEFAULT_POST_FROM = "";
     public static final Long DEFAULT_POST_ID;
     public static final String DEFAULT_QUOTE_CONTENT = "";
@@ -57,6 +61,8 @@ public final class ReplyList extends Message {
     public final Integer is_story;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String item_type;
+    @ProtoField(label = Message.Label.REPEATED, tag = 28)
+    public final List<NewFloorInfo> new_floor_info;
     @ProtoField(tag = 21)
     public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
@@ -107,6 +113,7 @@ public final class ReplyList extends Message {
         public Integer is_share_thread;
         public Integer is_story;
         public String item_type;
+        public List<NewFloorInfo> new_floor_info;
         public OriginThreadInfo origin_thread_info;
         public String post_from;
         public Long post_id;
@@ -188,6 +195,7 @@ public final class ReplyList extends Message {
             this.thread_author_user = replyList.thread_author_user;
             this.is_bjh = replyList.is_bjh;
             this.baijiahao = replyList.baijiahao;
+            this.new_floor_info = Message.copyOf(replyList.new_floor_info);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -232,6 +240,7 @@ public final class ReplyList extends Message {
         DEFAULT_IS_STORY = 0;
         DEFAULT_IS_SHARE_THREAD = 0;
         DEFAULT_IS_BJH = 0;
+        DEFAULT_NEW_FLOOR_INFO = Collections.emptyList();
     }
 
     public /* synthetic */ ReplyList(Builder builder, boolean z, a aVar) {
@@ -389,7 +398,14 @@ public final class ReplyList extends Message {
                 this.is_bjh = num10;
             }
             this.baijiahao = builder.baijiahao;
-            return;
+            List<NewFloorInfo> list = builder.new_floor_info;
+            if (list == null) {
+                this.new_floor_info = DEFAULT_NEW_FLOOR_INFO;
+                return;
+            } else {
+                this.new_floor_info = Message.immutableCopyOf(list);
+                return;
+            }
         }
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;
@@ -418,5 +434,6 @@ public final class ReplyList extends Message {
         this.thread_author_user = builder.thread_author_user;
         this.is_bjh = builder.is_bjh;
         this.baijiahao = builder.baijiahao;
+        this.new_floor_info = Message.immutableCopyOf(builder.new_floor_info);
     }
 }

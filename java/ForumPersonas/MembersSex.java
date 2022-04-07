@@ -128,12 +128,12 @@ public final class MembersSex extends Message {
             } else {
                 this.sex = num;
             }
-            Double d2 = builder.rate;
-            if (d2 == null) {
+            Double d = builder.rate;
+            if (d == null) {
                 this.rate = DEFAULT_RATE;
                 return;
             } else {
-                this.rate = d2;
+                this.rate = d;
                 return;
             }
         }

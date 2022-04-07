@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45744common;
+    public final CommonReq f1276common;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -51,7 +51,7 @@ public final class DataReq extends Message {
         public String class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45745common;
+        public CommonReq f1277common;
         public Integer load_type;
         public Integer new_net_type;
         public Integer page_thread_count;
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f45745common = dataReq.f45744common;
+            this.f1277common = dataReq.f1276common;
             this.class_id = dataReq.class_id;
             this.sub_class_id = dataReq.sub_class_id;
             this.scr_w = dataReq.scr_w;
@@ -166,7 +166,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f45744common = builder.f45745common;
+            this.f1276common = builder.f1277common;
             String str = builder.class_id;
             if (str == null) {
                 this.class_id = "";
@@ -191,11 +191,11 @@ public final class DataReq extends Message {
             } else {
                 this.scr_h = num3;
             }
-            Double d2 = builder.scr_dip;
-            if (d2 == null) {
+            Double d = builder.scr_dip;
+            if (d == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
             } else {
-                this.scr_dip = d2;
+                this.scr_dip = d;
             }
             Integer num4 = builder.new_net_type;
             if (num4 == null) {
@@ -218,7 +218,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f45744common = builder.f45745common;
+        this.f1276common = builder.f1277common;
         this.class_id = builder.class_id;
         this.sub_class_id = builder.sub_class_id;
         this.scr_w = builder.scr_w;

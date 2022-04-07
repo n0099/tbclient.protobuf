@@ -332,17 +332,17 @@ public final class VideoInfo extends Message {
                 this.mcn_lead_page = str5;
             }
             this.mcn_ad_card = builder.mcn_ad_card;
-            Double d2 = builder.wth_mid_loc;
-            if (d2 == null) {
+            Double d = builder.wth_mid_loc;
+            if (d == null) {
                 this.wth_mid_loc = DEFAULT_WTH_MID_LOC;
             } else {
-                this.wth_mid_loc = d2;
+                this.wth_mid_loc = d;
             }
-            Double d3 = builder.hth_mid_loc;
-            if (d3 == null) {
+            Double d2 = builder.hth_mid_loc;
+            if (d2 == null) {
                 this.hth_mid_loc = DEFAULT_HTH_MID_LOC;
             } else {
-                this.hth_mid_loc = d3;
+                this.hth_mid_loc = d2;
             }
             String str6 = builder.small_thumbnail_url;
             if (str6 == null) {

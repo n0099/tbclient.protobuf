@@ -124,11 +124,11 @@ public final class BarrageItem extends Message {
             }
         }
         if (z) {
-            Double d2 = builder.time;
-            if (d2 == null) {
+            Double d = builder.time;
+            if (d == null) {
                 this.time = DEFAULT_TIME;
             } else {
-                this.time = d2;
+                this.time = d;
             }
             List<Barrage> list = builder.list;
             if (list == null) {

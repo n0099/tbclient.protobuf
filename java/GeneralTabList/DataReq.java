@@ -44,7 +44,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45560common;
+    public final CommonReq f1098common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -84,7 +84,7 @@ public final class DataReq extends Message {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45561common;
+        public CommonReq f1099common;
         public Long forum_id;
         public Integer has_ad_bear;
         public Integer is_default_navtab;
@@ -135,7 +135,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f45561common = dataReq.f45560common;
+            this.f1099common = dataReq.f1098common;
             this.tab_id = dataReq.tab_id;
             this.forum_id = dataReq.forum_id;
             this.pn = dataReq.pn;
@@ -223,7 +223,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f45560common = builder.f45561common;
+            this.f1098common = builder.f1099common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -326,16 +326,16 @@ public final class DataReq extends Message {
             } else {
                 this.ad_bear_sid = str4;
             }
-            Double d2 = builder.ad_bear_sid_price;
-            if (d2 == null) {
+            Double d = builder.ad_bear_sid_price;
+            if (d == null) {
                 this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
                 return;
             } else {
-                this.ad_bear_sid_price = d2;
+                this.ad_bear_sid_price = d;
                 return;
             }
         }
-        this.f45560common = builder.f45561common;
+        this.f1098common = builder.f1099common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;

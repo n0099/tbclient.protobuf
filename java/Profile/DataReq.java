@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45734common;
+    public final CommonReq f1266common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45735common;
+        public CommonReq f1267common;
         public Long friend_uid;
         public String friend_uid_portrait;
         public Integer has_plist;
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
             this.has_plist = dataReq.has_plist;
-            this.f45735common = dataReq.f45734common;
+            this.f1267common = dataReq.f1266common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
@@ -255,7 +255,7 @@ public final class DataReq extends Message {
             } else {
                 this.has_plist = num5;
             }
-            this.f45734common = builder.f45735common;
+            this.f1266common = builder.f1267common;
             Integer num6 = builder.scr_w;
             if (num6 == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -274,11 +274,11 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = num8;
             }
-            Double d2 = builder.scr_dip;
-            if (d2 == null) {
+            Double d = builder.scr_dip;
+            if (d == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
             } else {
-                this.scr_dip = d2;
+                this.scr_dip = d;
             }
             Integer num9 = builder.is_from_usercenter;
             if (num9 == null) {
@@ -309,7 +309,7 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
-        this.f45734common = builder.f45735common;
+        this.f1266common = builder.f1267common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;

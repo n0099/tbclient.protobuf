@@ -263,11 +263,11 @@ public final class ItemInfo extends Message {
             } else {
                 this.tags = Message.immutableCopyOf(list);
             }
-            Double d2 = builder.icon_size;
-            if (d2 == null) {
+            Double d = builder.icon_size;
+            if (d == null) {
                 this.icon_size = DEFAULT_ICON_SIZE;
             } else {
-                this.icon_size = d2;
+                this.icon_size = d;
             }
             List<ItemOptions> list2 = builder.item_options;
             if (list2 == null) {

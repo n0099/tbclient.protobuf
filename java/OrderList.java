@@ -273,18 +273,18 @@ public final class OrderList extends Message {
             } else {
                 this.price_type = num3;
             }
-            Double d2 = builder.order_yy_amount;
-            if (d2 == null) {
+            Double d = builder.order_yy_amount;
+            if (d == null) {
                 this.order_yy_amount = DEFAULT_ORDER_YY_AMOUNT;
             } else {
-                this.order_yy_amount = d2;
+                this.order_yy_amount = d;
             }
-            Double d3 = builder.order_amount;
-            if (d3 == null) {
+            Double d2 = builder.order_amount;
+            if (d2 == null) {
                 this.order_amount = DEFAULT_ORDER_AMOUNT;
                 return;
             } else {
-                this.order_amount = d3;
+                this.order_amount = d2;
                 return;
             }
         }

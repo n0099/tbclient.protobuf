@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45696common;
+    public final CommonReq f1232common;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -66,7 +66,7 @@ public final class DataReq extends Message {
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45697common;
+        public CommonReq f1233common;
         public Long fid;
         public String first_dir;
         public Integer is_video_topic;
@@ -115,7 +115,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f45697common = dataReq.f45696common;
+            this.f1233common = dataReq.f1232common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.scr_w = dataReq.scr_w;
@@ -194,7 +194,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f45696common = builder.f45697common;
+            this.f1232common = builder.f1233common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -219,11 +219,11 @@ public final class DataReq extends Message {
             } else {
                 this.scr_h = num2;
             }
-            Double d2 = builder.scr_dip;
-            if (d2 == null) {
+            Double d = builder.scr_dip;
+            if (d == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
             } else {
-                this.scr_dip = d2;
+                this.scr_dip = d;
             }
             Integer num3 = builder.q_type;
             if (num3 == null) {
@@ -276,7 +276,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f45696common = builder.f45697common;
+        this.f1232common = builder.f1233common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.scr_w = builder.scr_w;

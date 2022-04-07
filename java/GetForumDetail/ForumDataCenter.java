@@ -225,23 +225,23 @@ public final class ForumDataCenter extends Message {
             } else {
                 this.user_duration_avg = num7;
             }
-            Double d2 = builder.user_duration_avg_diff;
-            if (d2 == null) {
+            Double d = builder.user_duration_avg_diff;
+            if (d == null) {
                 this.user_duration_avg_diff = DEFAULT_USER_DURATION_AVG_DIFF;
             } else {
-                this.user_duration_avg_diff = d2;
+                this.user_duration_avg_diff = d;
             }
-            Double d3 = builder.user_sign_rate;
-            if (d3 == null) {
+            Double d2 = builder.user_sign_rate;
+            if (d2 == null) {
                 this.user_sign_rate = DEFAULT_USER_SIGN_RATE;
             } else {
-                this.user_sign_rate = d3;
+                this.user_sign_rate = d2;
             }
-            Double d4 = builder.user_sign_rate_diff;
-            if (d4 == null) {
+            Double d3 = builder.user_sign_rate_diff;
+            if (d3 == null) {
                 this.user_sign_rate_diff = DEFAULT_USER_SIGN_RATE_DIFF;
             } else {
-                this.user_sign_rate_diff = d4;
+                this.user_sign_rate_diff = d3;
             }
             Integer num8 = builder.homepage_thread_cnt;
             if (num8 == null) {

@@ -211,29 +211,29 @@ public final class VideoTemplateContent extends Message {
             } else {
                 this.end_time = l2;
             }
-            Double d2 = builder.position_x;
-            if (d2 == null) {
+            Double d = builder.position_x;
+            if (d == null) {
                 this.position_x = DEFAULT_POSITION_X;
             } else {
-                this.position_x = d2;
+                this.position_x = d;
             }
-            Double d3 = builder.position_y;
-            if (d3 == null) {
+            Double d2 = builder.position_y;
+            if (d2 == null) {
                 this.position_y = DEFAULT_POSITION_Y;
             } else {
-                this.position_y = d3;
+                this.position_y = d2;
             }
-            Double d4 = builder.position_type;
-            if (d4 == null) {
+            Double d3 = builder.position_type;
+            if (d3 == null) {
                 this.position_type = DEFAULT_POSITION_TYPE;
             } else {
-                this.position_type = d4;
+                this.position_type = d3;
             }
-            Double d5 = builder.text_size;
-            if (d5 == null) {
+            Double d4 = builder.text_size;
+            if (d4 == null) {
                 this.text_size = DEFAULT_TEXT_SIZE;
             } else {
-                this.text_size = d5;
+                this.text_size = d4;
             }
             String str2 = builder.text_color;
             if (str2 == null) {

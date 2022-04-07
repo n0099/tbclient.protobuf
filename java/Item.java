@@ -206,11 +206,11 @@ public final class Item extends Message {
             } else {
                 this.item_name = str;
             }
-            Double d2 = builder.icon_size;
-            if (d2 == null) {
+            Double d = builder.icon_size;
+            if (d == null) {
                 this.icon_size = DEFAULT_ICON_SIZE;
             } else {
-                this.icon_size = d2;
+                this.icon_size = d;
             }
             String str2 = builder.icon_url;
             if (str2 == null) {
@@ -224,11 +224,11 @@ public final class Item extends Message {
             } else {
                 this.tags = Message.immutableCopyOf(list);
             }
-            Double d3 = builder.score;
-            if (d3 == null) {
+            Double d2 = builder.score;
+            if (d2 == null) {
                 this.score = DEFAULT_SCORE;
             } else {
-                this.score = d3;
+                this.score = d2;
             }
             Integer num = builder.star;
             if (num == null) {

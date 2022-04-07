@@ -152,12 +152,12 @@ public final class RankInfo extends Message {
             } else {
                 this.member_count = num3;
             }
-            Double d2 = builder.dir_rate;
-            if (d2 == null) {
+            Double d = builder.dir_rate;
+            if (d == null) {
                 this.dir_rate = DEFAULT_DIR_RATE;
                 return;
             } else {
-                this.dir_rate = d2;
+                this.dir_rate = d;
                 return;
             }
         }

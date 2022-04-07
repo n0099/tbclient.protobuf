@@ -38,9 +38,7 @@ public final class ExcContent extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String bsize;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
-
-    /* renamed from: c  reason: collision with root package name */
-    public final String f45538c;
+    public final String c;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String cdn_src;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -65,9 +63,7 @@ public final class ExcContent extends Message {
         public String big_size;
         public String big_src;
         public String bsize;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f45539c;
+        public String c;
         public String cdn_src;
         public String color;
         public String link;
@@ -120,7 +116,7 @@ public final class ExcContent extends Message {
             this.big_size = excContent.big_size;
             this.cdn_src = excContent.cdn_src;
             this.big_cdn_src = excContent.big_cdn_src;
-            this.f45539c = excContent.f45538c;
+            this.c = excContent.c;
             this.align = excContent.align;
             this.color = excContent.color;
             this.size = excContent.size;
@@ -236,11 +232,11 @@ public final class ExcContent extends Message {
             } else {
                 this.big_cdn_src = str8;
             }
-            String str9 = builder.f45539c;
+            String str9 = builder.c;
             if (str9 == null) {
-                this.f45538c = "";
+                this.c = "";
             } else {
-                this.f45538c = str9;
+                this.c = str9;
             }
             Integer num = builder.align;
             if (num == null) {
@@ -272,7 +268,7 @@ public final class ExcContent extends Message {
         this.big_size = builder.big_size;
         this.cdn_src = builder.cdn_src;
         this.big_cdn_src = builder.big_cdn_src;
-        this.f45538c = builder.f45539c;
+        this.c = builder.c;
         this.align = builder.align;
         this.color = builder.color;
         this.size = builder.size;

@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45758common;
+    public final CommonReq f1290common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String ids;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45759common;
+        public CommonReq f1291common;
         public String ids;
         public Integer pn;
         public Integer q_type;
@@ -89,7 +89,7 @@ public final class DataReq extends Message {
             }
             this.pn = dataReq.pn;
             this.ids = dataReq.ids;
-            this.f45759common = dataReq.f45758common;
+            this.f1291common = dataReq.f1290common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.scr_dip = dataReq.scr_dip;
@@ -166,7 +166,7 @@ public final class DataReq extends Message {
             } else {
                 this.ids = str;
             }
-            this.f45758common = builder.f45759common;
+            this.f1290common = builder.f1291common;
             Integer num2 = builder.scr_w;
             if (num2 == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -179,11 +179,11 @@ public final class DataReq extends Message {
             } else {
                 this.scr_h = num3;
             }
-            Double d2 = builder.scr_dip;
-            if (d2 == null) {
+            Double d = builder.scr_dip;
+            if (d == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
             } else {
-                this.scr_dip = d2;
+                this.scr_dip = d;
             }
             Integer num4 = builder.q_type;
             if (num4 == null) {
@@ -196,7 +196,7 @@ public final class DataReq extends Message {
         }
         this.pn = builder.pn;
         this.ids = builder.ids;
-        this.f45758common = builder.f45759common;
+        this.f1290common = builder.f1291common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;

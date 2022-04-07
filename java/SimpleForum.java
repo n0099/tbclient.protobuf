@@ -68,6 +68,8 @@ public final class SimpleForum extends Message {
     public final String second_class;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<FrsTabInfo> tab_info;
+    @ProtoField(tag = 19)
+    public final ThemeColorInfo theme_color;
 
     /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<SimpleForum> {
@@ -91,6 +93,7 @@ public final class SimpleForum extends Message {
         public Integer post_num;
         public String second_class;
         public List<FrsTabInfo> tab_info;
+        public ThemeColorInfo theme_color;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -145,6 +148,7 @@ public final class SimpleForum extends Message {
             this.forum_toutu = simpleForum.forum_toutu;
             this.deleted_reason_info = simpleForum.deleted_reason_info;
             this.is_frs_mask = simpleForum.is_frs_mask;
+            this.theme_color = simpleForum.theme_color;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -305,11 +309,11 @@ public final class SimpleForum extends Message {
             Integer num8 = builder.is_frs_mask;
             if (num8 == null) {
                 this.is_frs_mask = DEFAULT_IS_FRS_MASK;
-                return;
             } else {
                 this.is_frs_mask = num8;
-                return;
             }
+            this.theme_color = builder.theme_color;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -329,5 +333,6 @@ public final class SimpleForum extends Message {
         this.forum_toutu = builder.forum_toutu;
         this.deleted_reason_info = builder.deleted_reason_info;
         this.is_frs_mask = builder.is_frs_mask;
+        this.theme_color = builder.theme_color;
     }
 }

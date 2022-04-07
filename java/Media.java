@@ -364,18 +364,18 @@ public final class Media extends Message {
             } else {
                 this.is_blocked_pic = num9;
             }
-            Double d2 = builder.wth_mid_loc;
-            if (d2 == null) {
+            Double d = builder.wth_mid_loc;
+            if (d == null) {
                 this.wth_mid_loc = DEFAULT_WTH_MID_LOC;
             } else {
-                this.wth_mid_loc = d2;
+                this.wth_mid_loc = d;
             }
-            Double d3 = builder.hth_mid_loc;
-            if (d3 == null) {
+            Double d2 = builder.hth_mid_loc;
+            if (d2 == null) {
                 this.hth_mid_loc = DEFAULT_HTH_MID_LOC;
                 return;
             } else {
-                this.hth_mid_loc = d3;
+                this.hth_mid_loc = d2;
                 return;
             }
         }

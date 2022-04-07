@@ -57,7 +57,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 8)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f45794common;
+    public final CommonReq f1326common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -105,7 +105,7 @@ public final class DataReq extends Message {
         public AppTransmitData app_transmit_data;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f45795common;
+        public CommonReq f1327common;
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
@@ -165,7 +165,7 @@ public final class DataReq extends Message {
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
-            this.f45795common = dataReq.f45794common;
+            this.f1327common = dataReq.f1326common;
             this.user_id = dataReq.user_id;
             this.da_idfa = dataReq.da_idfa;
             this.platform = dataReq.platform;
@@ -294,7 +294,7 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = num5;
             }
-            this.f45794common = builder.f45795common;
+            this.f1326common = builder.f1327common;
             Long l2 = builder.user_id;
             if (l2 == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -313,11 +313,11 @@ public final class DataReq extends Message {
             } else {
                 this.platform = str3;
             }
-            Double d2 = builder.scr_dip;
-            if (d2 == null) {
+            Double d = builder.scr_dip;
+            if (d == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
             } else {
-                this.scr_dip = d2;
+                this.scr_dip = d;
             }
             Integer num6 = builder.pn;
             if (num6 == null) {
@@ -376,12 +376,12 @@ public final class DataReq extends Message {
             } else {
                 this.ad_bear_sid = str8;
             }
-            Double d3 = builder.ad_bear_sid_price;
-            if (d3 == null) {
+            Double d2 = builder.ad_bear_sid_price;
+            if (d2 == null) {
                 this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
                 return;
             } else {
-                this.ad_bear_sid_price = d3;
+                this.ad_bear_sid_price = d2;
                 return;
             }
         }
@@ -392,7 +392,7 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
-        this.f45794common = builder.f45795common;
+        this.f1326common = builder.f1327common;
         this.user_id = builder.user_id;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;

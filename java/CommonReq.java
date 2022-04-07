@@ -682,11 +682,11 @@ public final class CommonReq extends Message {
             } else {
                 this.scr_h = num4;
             }
-            Double d2 = builder.scr_dip;
-            if (d2 == null) {
+            Double d = builder.scr_dip;
+            if (d == null) {
                 this.scr_dip = DEFAULT_SCR_DIP;
             } else {
-                this.scr_dip = d2;
+                this.scr_dip = d;
             }
             Integer num5 = builder.q_type;
             if (num5 == null) {

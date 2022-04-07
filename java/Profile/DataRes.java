@@ -44,6 +44,7 @@ public final class DataRes extends Message {
     public static final List<SmartApp> DEFAULT_RECOM_SWAN_LIST;
     public static final String DEFAULT_UK = "";
     public static final List<UserMap> DEFAULT_URL_MAP;
+    public static final Integer DEFAULT_WORK_TAB_ID;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 16)
     public final AlaLiveInfo ala_live_info;
@@ -63,6 +64,8 @@ public final class DataRes extends Message {
     public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 10)
     public final Feedback feedback;
+    @ProtoField(tag = 35)
+    public final FinanceTab finance_tab;
     @ProtoField(tag = 26)
     public final GoodsWin goods_win;
     @ProtoField(tag = 7)
@@ -101,6 +104,8 @@ public final class DataRes extends Message {
     public final UserManChannelInfo video_channel_info;
     @ProtoField(tag = 8)
     public final DealWindow window;
+    @ProtoField(tag = 34, type = Message.Datatype.UINT32)
+    public final Integer work_tab_id;
 
     /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -115,6 +120,7 @@ public final class DataRes extends Message {
         public Duxiaoman duxiaoman;
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
+        public FinanceTab finance_tab;
         public GoodsWin goods_win;
         public Highlist highs;
         public Integer is_black_white;
@@ -134,6 +140,7 @@ public final class DataRes extends Message {
         public UserGodInfo user_god_info;
         public UserManChannelInfo video_channel_info;
         public DealWindow window;
+        public Integer work_tab_id;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -197,6 +204,8 @@ public final class DataRes extends Message {
             this.new_god_rankinfo = dataRes.new_god_rankinfo;
             this.uk = dataRes.uk;
             this.is_black_white = dataRes.is_black_white;
+            this.work_tab_id = dataRes.work_tab_id;
+            this.finance_tab = dataRes.finance_tab;
             this.block_info = dataRes.block_info;
         }
 
@@ -237,6 +246,7 @@ public final class DataRes extends Message {
         DEFAULT_RECOM_SWAN_LIST = Collections.emptyList();
         DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
         DEFAULT_IS_BLACK_WHITE = 0;
+        DEFAULT_WORK_TAB_ID = 0;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -339,6 +349,13 @@ public final class DataRes extends Message {
             } else {
                 this.is_black_white = num;
             }
+            Integer num2 = builder.work_tab_id;
+            if (num2 == null) {
+                this.work_tab_id = DEFAULT_WORK_TAB_ID;
+            } else {
+                this.work_tab_id = num2;
+            }
+            this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
             return;
         }
@@ -369,6 +386,8 @@ public final class DataRes extends Message {
         this.new_god_rankinfo = builder.new_god_rankinfo;
         this.uk = builder.uk;
         this.is_black_white = builder.is_black_white;
+        this.work_tab_id = builder.work_tab_id;
+        this.finance_tab = builder.finance_tab;
         this.block_info = builder.block_info;
     }
 }

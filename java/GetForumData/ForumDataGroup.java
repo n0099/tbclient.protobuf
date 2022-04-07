@@ -124,11 +124,11 @@ public final class ForumDataGroup extends Message {
             }
         }
         if (z) {
-            Double d2 = builder.total;
-            if (d2 == null) {
+            Double d = builder.total;
+            if (d == null) {
                 this.total = DEFAULT_TOTAL;
             } else {
-                this.total = d2;
+                this.total = d;
             }
             List<ForumDataValue> list = builder.values;
             if (list == null) {

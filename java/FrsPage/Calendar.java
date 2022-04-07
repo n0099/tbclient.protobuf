@@ -19,9 +19,7 @@ public final class Calendar extends Message {
     public static final String DEFAULT_T = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
-
-    /* renamed from: d  reason: collision with root package name */
-    public final Integer f45554d;
+    public final Integer d;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer rank;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -33,9 +31,7 @@ public final class Calendar extends Message {
     public static final class Builder extends Message.Builder<Calendar> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-
-        /* renamed from: d  reason: collision with root package name */
-        public Integer f45555d;
+        public Integer d;
         public Integer rank;
         public Integer sign_type;
         public String t;
@@ -75,7 +71,7 @@ public final class Calendar extends Message {
             if (calendar == null) {
                 return;
             }
-            this.f45555d = calendar.f45554d;
+            this.d = calendar.d;
             this.t = calendar.t;
             this.rank = calendar.rank;
             this.sign_type = calendar.sign_type;
@@ -137,11 +133,11 @@ public final class Calendar extends Message {
             }
         }
         if (z) {
-            Integer num = builder.f45555d;
+            Integer num = builder.d;
             if (num == null) {
-                this.f45554d = DEFAULT_D;
+                this.d = DEFAULT_D;
             } else {
-                this.f45554d = num;
+                this.d = num;
             }
             String str = builder.t;
             if (str == null) {
@@ -164,7 +160,7 @@ public final class Calendar extends Message {
                 return;
             }
         }
-        this.f45554d = builder.f45555d;
+        this.d = builder.d;
         this.t = builder.t;
         this.rank = builder.rank;
         this.sign_type = builder.sign_type;

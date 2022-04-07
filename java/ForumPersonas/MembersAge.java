@@ -139,12 +139,12 @@ public final class MembersAge extends Message {
             } else {
                 this.name = str;
             }
-            Double d2 = builder.rate;
-            if (d2 == null) {
+            Double d = builder.rate;
+            if (d == null) {
                 this.rate = DEFAULT_RATE;
                 return;
             } else {
-                this.rate = d2;
+                this.rate = d;
                 return;
             }
         }

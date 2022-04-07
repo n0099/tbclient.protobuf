@@ -127,12 +127,12 @@ public final class ItemPoint extends Message {
             } else {
                 this.time_intval = str;
             }
-            Double d2 = builder.point;
-            if (d2 == null) {
+            Double d = builder.point;
+            if (d == null) {
                 this.point = DEFAULT_POINT;
                 return;
             } else {
-                this.point = d2;
+                this.point = d;
                 return;
             }
         }
