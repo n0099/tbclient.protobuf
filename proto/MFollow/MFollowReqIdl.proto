@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "MFollow/DataReq.proto";
-
-message MFollowReqIdl {
-    DataReq data = 1;
-}

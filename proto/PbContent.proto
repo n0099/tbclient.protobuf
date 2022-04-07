@@ -18,6 +18,7 @@ message PbContent {
     string cdn_src = 8;
     string big_cdn_src = 9;
     string imgtype = 10;
+    string c = 11;
     string voice_md5 = 12;
     uint32 during_time = 13;
     uint32 is_sub = 14;
