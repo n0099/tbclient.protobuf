@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message DataRes {
+    string block_info = 2;
+    string ahead_info = 3;
+    string ahead_url = 4;
+    string ok_info = 5;
+    string block_id_code = 7;
+    uint32 win_type = 8;
+}

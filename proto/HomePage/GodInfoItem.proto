@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message GodInfoItem {
+    int64 uid = 1;
+    string avatar = 2;
+    string user_name = 3;
+    string user_intro = 4;
+    string god_intro = 5;
+}

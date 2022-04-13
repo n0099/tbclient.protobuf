@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "GetLockWindowMsg/LockWindowThreadInfo.proto";
+import "User.proto";
+
+message DataRes {
+    User author = 1;
+    string publish_pic = 2;
+    string publish_user = 3;
+    LockWindowThreadInfo thread_info = 4;
+}

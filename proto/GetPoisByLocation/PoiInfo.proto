@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message PoiInfo {
+    string name = 1;
+    string addr = 2;
+    string sn = 3;
+}

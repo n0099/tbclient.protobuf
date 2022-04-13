@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Search/DataReq.proto";
+
+message SearchReqIdl {
+    DataReq data = 1;
+}

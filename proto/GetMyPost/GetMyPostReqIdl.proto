@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetMyPost/DataReq.proto";
+
+message GetMyPostReqIdl {
+    DataReq data = 1;
+}

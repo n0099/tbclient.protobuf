@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message Pic {
+    string small_pic = 1;
+    string big_pic = 2;
+    string water_pic = 3;
+}

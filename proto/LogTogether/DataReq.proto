@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+import "LogTogether/AdReq.proto";
+
+message DataReq {
+    repeated AdReq Ad = 1;
+    CommonReq common = 2;
+}

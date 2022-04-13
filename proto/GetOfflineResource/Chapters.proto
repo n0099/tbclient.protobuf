@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message Chapters {
+    int32 chapter_id = 1;
+    string resource_url = 2;
+    int32 resource_size = 3;
+    int32 total_img_num = 4;
+    uint32 chapter_vip = 5;
+}

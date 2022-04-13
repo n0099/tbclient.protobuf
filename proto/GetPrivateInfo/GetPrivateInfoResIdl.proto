@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetPrivateInfo/ResData.proto";
+
+message GetPrivateInfoResIdl {
+    ResData data = 1;
+    Error error = 2;
+}

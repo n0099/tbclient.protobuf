@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "RecomTopicList.proto";
+
+message WorksInfo {
+    int32 is_works = 1;
+    repeated RecomTopicList topic_list = 2;
+}

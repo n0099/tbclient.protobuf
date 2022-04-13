@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message TimeLineInfo {
+    int64 tid = 1;
+    string title = 2;
+    string show_time = 3;
+    string bg_color = 4;
+    string small_title = 5;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetInterview/InterviewInfo.proto";
+
+message InterviewDetail {
+    InterviewInfo question = 1;
+    InterviewInfo answer = 2;
+    int64 order_id = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message SpecialColumn {
+    uint32 type = 1;
+    int64 thread_id = 2;
+    int64 live_id = 3;
+    string title = 4;
+    string image = 5;
+    string text = 6;
+    int32 freq_num = 7;
+    int32 agree_num = 8;
+}

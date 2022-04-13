@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "SimpleUser.proto";
+
+message AgreeBanner {
+    string text = 1;
+    string icon_url = 2;
+    string url = 3;
+    repeated SimpleUser top_agree_user = 4;
+}

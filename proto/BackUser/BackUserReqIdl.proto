@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "BackUser/DataReq.proto";
+
+message BackUserReqIdl {
+    DataReq data = 1;
+}

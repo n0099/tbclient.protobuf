@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "PermissionList.proto";
+
+message DataRes {
+    int32 is_black_white = 1;
+    PermissionList perm_list = 2;
+}

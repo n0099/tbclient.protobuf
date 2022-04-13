@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message VipSpecialItem {
+    string img_url = 1;
+    string title = 2;
+    string desc = 3;
+    string link = 4;
+    string update_time = 5;
+    uint32 id = 6;
+    uint32 type = 7;
+    string desc_ext = 8;
+    uint32 task_id = 9;
+    uint32 is_finish = 10;
+    string button_text_initial = 11;
+    string button_text_finish = 12;
+}

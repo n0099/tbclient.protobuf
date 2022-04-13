@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "FrsPage/BusinessPromotCommentList.proto";
+
+message BusinessPromot {
+    string title = 1;
+    string img = 2;
+    string img_popup = 3;
+    int32 type = 4;
+    string thread_id = 5;
+    string url = 6;
+    int32 join_num = 7;
+    repeated BusinessPromotCommentList comment_list = 8;
+    int64 id = 9;
+    int32 thread_type = 10;
+    string schema = 11;
+    repeated string third_statistics_url = 12;
+    bool is_allow_shake = 13;
+    bool is_ad = 14;
+    string package_name = 15;
+    string download_appname = 16;
+    string download_developer = 17;
+    string download_package_size = 18;
+    string download_privacy_policy = 19;
+    string download_url = 20;
+    string download_img = 21;
+    string download_version = 22;
+    string download_user_power = 23;
+    bool is_download = 24;
+    string download_item_id = 25;
+    string download_package_name = 26;
+    string download_appid = 27;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message PrivateForumShareinfo {
+    int32 create_time = 1;
+    string share_url = 2;
+    string manager_user_name = 3;
+    string manager_portrait = 4;
+}

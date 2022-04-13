@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "RankRuler.proto";
+import "TiebaFieldsInfo.proto";
+import "User.proto";
+
+message DataRes {
+    repeated User user_rank = 1;
+    User current_user = 2;
+    TiebaFieldsInfo field_info = 3;
+    RankRuler rank_description = 4;
+    int64 timestamp = 5;
+    bool has_more = 6;
+}

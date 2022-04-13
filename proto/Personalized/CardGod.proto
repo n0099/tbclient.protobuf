@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "User.proto";
+
+message CardGod {
+    string card_title = 1;
+    repeated User gods = 2;
+    int32 position = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message TailInfo {
+    uint32 tailId = 1;
+    uint32 is_selected = 2;
+    string tailContent = 3;
+    string fontColor = 4;
+    string fontKeyName = 5;
+}

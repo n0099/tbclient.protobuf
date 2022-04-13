@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message GameForumSubLabel {
+    int32 id = 1;
+    string sub_tab_name = 2;
+    repeated tbclient.GameForumGuideTab.GameForumSubLabel sub_label_list = 3;
+}

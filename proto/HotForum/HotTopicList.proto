@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message HotTopicList {
+    uint64 topic_id = 1;
+    string topic_name = 2;
+    uint32 type = 3;
+    uint64 discuss_num = 4;
+    int32 tag = 5;
+}

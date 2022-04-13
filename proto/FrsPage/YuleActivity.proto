@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message YuleActivity {
+    int64 activity_id = 1;
+    int32 activity_type = 2;
+    string activity_url = 3;
+    string activity_all_icon = 4;
+    string activity_half_icon = 5;
+}

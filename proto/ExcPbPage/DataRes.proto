@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "ExcPbPage/ExcellentPbThreadInfo.proto";
+import "ExcPbPage/UserInfo.proto";
+import "Post.proto";
+import "User.proto";
+
+message DataRes {
+    ExcellentPbThreadInfo thread_info = 1;
+    repeated Post post_list = 2;
+    repeated User user_list = 3;
+    UserInfo user_info = 4;
+}

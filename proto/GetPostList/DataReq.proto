@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    int64 kz = 2;
+    int32 with_floor = 3;
+    repeated int64 post_id = 4;
+    int32 scr_w = 5;
+    int32 scr_h = 6;
+    int32 st_type = 7;
+    int32 is_comm_reverse = 8;
+    int32 floor_rn = 9;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "MoreTreasureTrove/DataReq.proto";
+
+message MoreTreasureTroveReqIdl {
+    DataReq data = 1;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Bottle {
+    int32 has_enter_display = 1;
+    int64 tid = 2;
+}

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "ForumCreateInfo.proto";
+import "ForumPopupInfo.proto";
+import "ForumRecommend/Banner.proto";
+import "ForumRecommend/HotSearch.proto";
+import "ForumRecommend/LikeForum.proto";
+import "ForumRecommend/NewRecommend.proto";
+import "FrequentlyForumInfo.proto";
+import "FrsTabInfo.proto";
+import "PrivatePopInfo.proto";
+import "RecommendForumInfo.proto";
+
+message DataRes {
+    repeated LikeForum like_forum = 1;
+    repeated Banner banner = 2;
+    repeated NewRecommend new_recommend = 3;
+    int32 is_login = 4;
+    int32 msign_valid = 5;
+    string msign_text = 6;
+    int32 msign_level = 7;
+    int32 time = 8;
+    int32 is_mem = 9;
+    repeated RecommendForumInfo recommend_forum_info = 10;
+    HotSearch hot_search = 11;
+    int32 redirect = 12;
+    repeated Banner new_banner_info = 13;
+    repeated FrequentlyForumInfo frequently_forum_info = 14;
+    repeated RecommendForumInfo tag_recommend_forum = 15;
+    int32 sort_type = 18;
+    ForumCreateInfo forum_create_info = 19;
+    PrivatePopInfo private_forum_popinfo = 20;
+    repeated FrsTabInfo nav_tab_info = 21;
+    ForumPopupInfo forum_popup_info = 22;
+}

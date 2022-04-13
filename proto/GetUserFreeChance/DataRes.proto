@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DataRes {
+    uint32 free_chance = 1;
+    uint32 scene_id = 2;
+}

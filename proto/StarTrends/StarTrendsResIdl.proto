@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "StarTrends/DataRes.proto";
+
+message StarTrendsResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

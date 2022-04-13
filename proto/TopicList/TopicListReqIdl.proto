@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "TopicList/DataReq.proto";
+
+message TopicListReqIdl {
+    DataReq data = 1;
+}

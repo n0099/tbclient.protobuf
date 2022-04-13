@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "UrlParser/DataRes.proto";
+
+message UrlParserResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

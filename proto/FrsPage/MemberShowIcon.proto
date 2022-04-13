@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message MemberShowIcon {
+    string icon = 1;
+    string name = 2;
+    string url = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetHorseRaceLampList/DataRes.proto";
+
+message GetHorseRaceLampListResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

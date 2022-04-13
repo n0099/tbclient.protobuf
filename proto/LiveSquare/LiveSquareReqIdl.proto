@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "LiveSquare/DataReq.proto";
+
+message LiveSquareReqIdl {
+    DataReq data = 1;
+}

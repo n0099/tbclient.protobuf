@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message StarEnter {
+    string icon = 1;
+    string title = 2;
+    int32 weight = 3;
+    int32 type = 4;
+    string url = 5;
+    int32 time = 6;
+    string obj_id = 7;
+    string text = 8;
+    int32 rank_num = 9;
+    int32 bazhu_mark = 10;
+}

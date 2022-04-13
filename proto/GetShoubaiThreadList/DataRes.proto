@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetShoubaiThreadList/PageInfo.proto";
+import "ThreadInfo.proto";
+
+message DataRes {
+    PageInfo page = 1;
+    repeated ThreadInfo thread_list = 2;
+}

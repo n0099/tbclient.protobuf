@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message StarSchedule {
+    uint32 time = 1;
+    string type = 2;
+    string desc = 3;
+    string url = 4;
+}

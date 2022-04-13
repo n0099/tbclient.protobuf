@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ClassForumInfo.proto";
+import "Page.proto";
+
+message DataRes {
+    repeated ClassForumInfo class_foruminfo = 1;
+    Page page = 2;
+}

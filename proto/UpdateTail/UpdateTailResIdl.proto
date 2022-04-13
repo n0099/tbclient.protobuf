@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "UpdateTail/ResData.proto";
+
+message UpdateTailResIdl {
+    ResData data = 1;
+    Error error = 2;
+}

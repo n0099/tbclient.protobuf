@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "Icon.proto";
+import "Person/LbsInfo.proto";
+
+message UserInfos {
+    int64 user_id = 1;
+    string user_name = 2;
+    string portrait = 3;
+    string sex = 4;
+    double distance = 5;
+    int32 lastest_time = 6;
+    repeated Icon iconinfo = 7;
+    string userdetail = 8;
+    LbsInfo location = 9;
+}

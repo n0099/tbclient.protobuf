@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Userlike/DataReq.proto";
+
+message UserlikeReqIdl {
+    DataReq data = 1;
+}

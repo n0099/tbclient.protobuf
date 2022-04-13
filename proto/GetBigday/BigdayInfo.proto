@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message BigdayInfo {
+    int64 start_time = 1;
+    int64 end_time = 2;
+    int32 position = 3;
+    string img_url = 4;
+    int64 id = 5;
+    string jump_url = 6;
+    int32 img_colour = 7;
+}

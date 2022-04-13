@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "NewTopicList/NewTopicList.proto";
+
+message DataRes {
+    repeated NewTopicList topic_list = 1;
+}

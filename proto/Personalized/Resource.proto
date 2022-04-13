@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message Resource {
+    uint64 res_id = 1;
+    string user_name = 2;
+    string user_image = 3;
+    string user_link = 4;
+    string res_title = 5;
+    string res_image = 6;
+    string res_link = 7;
+    uint64 position = 8;
+    string icon_text = 9;
+}

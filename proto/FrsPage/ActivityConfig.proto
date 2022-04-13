@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message ActivityConfig {
+    uint32 type = 1;
+    string agree_icon = 2;
+    string night_agree_icon = 3;
+    string agreed_icon = 7;
+    string night_agreed_icon = 8;
+    uint64 activity_id = 9;
+    string addthread_icon = 10;
+    string night_addthread_icon = 11;
+    string addthread_text = 12;
+}

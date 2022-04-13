@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message Banner {
+    string banner_url = 1;
+    int32 banner_type = 2;
+    string value = 3;
+    int32 type = 4;
+    string desc = 5;
+    int32 template_id = 6;
+    string obj_id = 7;
+    string tag_name = 8;
+    string tag_name_url = 9;
+    string tag_name_wh = 10;
+}

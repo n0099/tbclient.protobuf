@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ResignRule {
+    string range = 1;
+    int32 card_num = 2;
+}

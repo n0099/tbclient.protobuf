@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "FrsPage/WorldCupGame.proto";
+import "FrsPage/WorldCupLottery.proto";
+import "FrsPage/WorldCupNews.proto";
+import "FrsPage/WorldCupPk.proto";
+
+message WorldCup {
+    WorldCupNews news = 1;
+    WorldCupPk pk = 2;
+    WorldCupLottery lottery = 3;
+    WorldCupGame game = 4;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "FrsPage/Fans.proto";
+import "FrsPage/Focus.proto";
+import "FrsPage/Good.proto";
+import "FrsPage/Identify.proto";
+import "FrsPage/Info.proto";
+import "FrsPage/Music.proto";
+import "FrsPage/PhotoInfo.proto";
+import "FrsPage/Size.proto";
+import "FrsPage/Ticket.proto";
+import "FrsPage/Video.proto";
+
+message StarInfo {
+    int32 has_frs_star = 1;
+    string top = 2;
+    string head = 3;
+    int32 gender = 4;
+    Info info = 5;
+    Fans fans = 6;
+    repeated Focus focus = 7;
+    PhotoInfo photo = 8;
+    Video video = 9;
+    Music music = 10;
+    Music mv = 11;
+    Good good = 12;
+    Identify identify = 13;
+    Size top_size = 14;
+    Size head_size = 15;
+    Ticket trade = 16;
+    string star_forum_headimg = 17;
+}

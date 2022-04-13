@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "NewTopicList/PkModule.proto";
+import "Post.proto";
+
+message NewTopicList {
+    int64 topic_id = 1;
+    string topic_name = 2;
+    string topic_desc = 3;
+    int64 discuss_num = 4;
+    string topic_image = 5;
+    Post top_agree_post = 6;
+    PkModule pk_module = 7;
+}

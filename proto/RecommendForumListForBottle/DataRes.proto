@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "RecommendForumListForBottle/ForumInfo.proto";
+
+message DataRes {
+    repeated ForumInfo forum_info = 1;
+}

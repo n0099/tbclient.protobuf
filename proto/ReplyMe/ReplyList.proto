@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+import "Baijiahao.proto";
+import "OriginThreadInfo.proto";
+import "User.proto";
+import "Zan.proto";
+
+message ReplyList {
+    uint64 thread_id = 1;
+    uint64 post_id = 2;
+    uint32 time = 3;
+    string title = 4;
+    string fname = 5;
+    string content = 6;
+    uint32 is_floor = 7;
+    string quote_content = 8;
+    User replyer = 9;
+    uint32 type = 10;
+    uint32 unread = 11;
+    string item_type = 12;
+    Zan zan = 13;
+    uint64 quote_pid = 14;
+    User quote_user = 15;
+    int32 server_time = 16;
+    uint32 thread_type = 17;
+    uint64 v_forum_id = 18;
+    uint32 hide_fname = 19;
+    int32 is_story = 20;
+    OriginThreadInfo origin_thread_info = 21;
+    string post_from = 22;
+    int32 is_share_thread = 23;
+    string thread_img_url = 24;
+    User thread_author_user = 25;
+    int32 is_bjh = 26;
+    Baijiahao baijiahao = 27;
+}

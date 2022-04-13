@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DataRes {
+    uint64 pk_id = 1;
+    int64 user_pk_id = 2;
+}

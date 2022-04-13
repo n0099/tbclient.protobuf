@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "CompleteTask/DataRes.proto";
+import "Error.proto";
+
+message CompleteTaskResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

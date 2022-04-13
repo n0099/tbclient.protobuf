@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ReportType {
+    int32 type_id = 1;
+    string type_text = 2;
+}

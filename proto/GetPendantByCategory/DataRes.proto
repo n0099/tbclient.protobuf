@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "GetPendantByCategory/ThemePendantInMain.proto";
+import "ThemeRecommand.proto";
+
+message DataRes {
+    ThemeRecommand recommend = 1;
+    repeated ThemePendantInMain pendant = 2;
+    int32 has_more = 3;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Category {
+    string first_class = 1;
+    repeated string second_class = 2;
+}

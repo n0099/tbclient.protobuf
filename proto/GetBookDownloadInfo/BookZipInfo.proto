@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message BookZipInfo {
+    string name = 1;
+    string url = 2;
+    string size = 3;
+    string md5 = 4;
+}

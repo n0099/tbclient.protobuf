@@ -1,0 +1,14 @@
+syntax = "proto3";
+package tbClient.api.response;
+import "Error.proto";
+import "Page.proto";
+import "Post/SubReply.proto";
+
+message SubReplyResponse {
+    Error error = 1;
+    message Data {
+        Page page = 1;
+        repeated tbClient.post.SubReply subpost_list = 4;
+    };
+    Data data = 2;
+}

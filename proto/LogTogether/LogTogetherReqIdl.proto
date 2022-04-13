@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "LogTogether/DataReq.proto";
+
+message LogTogetherReqIdl {
+    DataReq data = 1;
+}

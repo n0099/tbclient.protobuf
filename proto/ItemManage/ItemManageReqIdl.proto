@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ItemManage/DataReq.proto";
+
+message ItemManageReqIdl {
+    DataReq data = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "GetVipInfo/VipTaskItem.proto";
+
+message VipTaskList {
+    string class_name = 1;
+    string class_url_name = 2;
+    string class_url = 3;
+    repeated VipTaskItem item = 4;
+    string card_id = 5;
+}

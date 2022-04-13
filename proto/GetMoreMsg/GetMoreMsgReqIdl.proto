@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetMoreMsg/DataReq.proto";
+
+message GetMoreMsgReqIdl {
+    DataReq data = 1;
+}

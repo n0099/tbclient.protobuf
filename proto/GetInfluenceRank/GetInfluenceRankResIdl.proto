@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetInfluenceRank/DataRes.proto";
+
+message GetInfluenceRankResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

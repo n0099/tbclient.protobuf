@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Page.proto";
+import "RecommendForumInfo.proto";
+
+message DataRes {
+    repeated RecommendForumInfo forum_list = 1;
+    Page page_info = 2;
+}

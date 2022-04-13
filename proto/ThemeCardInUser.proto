@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message ThemeCardInUser {
+    uint64 props_id = 1;
+    string img_ios = 2;
+    string coordinate = 3;
+    string img_android = 4;
+    uint32 level = 5;
+}

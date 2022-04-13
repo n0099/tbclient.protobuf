@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ThreadIdListInfo {
+    int64 tid = 1;
+    int32 is_partial_visible = 2;
+}

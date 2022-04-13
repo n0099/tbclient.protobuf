@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetHorseRaceLampList/LiveList.proto";
+
+message DataRes {
+    repeated LiveList live_list = 1;
+}

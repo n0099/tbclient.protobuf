@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FrsPage/NebulaHotThread.proto";
+
+message NebulaHotThreads {
+    string url = 1;
+    repeated NebulaHotThread threads = 2;
+}

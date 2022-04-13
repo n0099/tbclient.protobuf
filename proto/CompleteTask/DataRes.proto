@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message DataRes {
+    int32 show_type = 1;
+    int32 ahead_type = 2;
+    string message = 3;
+    string btn_text = 4;
+    string btn_confirm = 5;
+    string btn_cancel = 6;
+    uint32 toast_duration = 7;
+    string img_url = 8;
+    string url = 9;
+    string schema = 10;
+    string token = 11;
+    int32 activity_id = 12;
+    int32 mission_id = 13;
+    double opacity = 14;
+    string btn_color = 15;
+    string message_color = 16;
+    string btn_text_color = 17;
+    int32 interface_type = 18;
+    int32 is_not_complete = 19;
+}

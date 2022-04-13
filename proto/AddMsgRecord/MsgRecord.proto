@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message MsgRecord {
+    int32 type = 1;
+    string task_ids = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "SetUserBlack/DataReq.proto";
+
+message SetUserBlackReqIdl {
+    DataReq data = 1;
+}

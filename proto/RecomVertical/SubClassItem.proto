@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message SubClassItem {
+    int32 sub_class_id = 1;
+    string sub_class_name = 2;
+    string sub_class_icon = 3;
+    int32 enable = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FineFrsPage/FineThreadInfo.proto";
+
+message EverydayThread {
+    repeated FineThreadInfo fine_thread_list = 1;
+    int32 show_time = 2;
+}

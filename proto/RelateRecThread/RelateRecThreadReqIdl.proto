@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "RelateRecThread/DataReq.proto";
+
+message RelateRecThreadReqIdl {
+    DataReq data = 1;
+}

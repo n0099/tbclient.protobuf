@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ElectionInfo/DataReq.proto";
+
+message ElectionInfoReqIdl {
+    DataReq data = 1;
+}

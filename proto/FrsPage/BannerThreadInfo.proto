@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message BannerThreadInfo {
+    ThreadInfo thread_info = 1;
+    uint32 from = 2;
+}

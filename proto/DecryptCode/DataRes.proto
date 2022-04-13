@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message DataRes {
+    string title = 1;
+    string img = 2;
+    string tips = 3;
+    string url = 4;
+    string btn_sure = 5;
+    string btn_cancel = 6;
+    int32 acitivity_id = 7;
+    int32 type = 8;
+}

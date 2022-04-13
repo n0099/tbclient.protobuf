@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+import "ActiveCenter.proto";
+import "Anti.proto";
+import "BannerList.proto";
+import "DiscoverHotForum.proto";
+import "FavoritePanel.proto";
+import "Personalized/AgeSexModule.proto";
+import "Personalized/CardForum.proto";
+import "Personalized/CardGod.proto";
+import "Personalized/CardTopic.proto";
+import "Personalized/FloatInfo.proto";
+import "Personalized/LiveAnswer.proto";
+import "Personalized/RecomPostTopic.proto";
+import "Personalized/Resource.proto";
+import "Personalized/TagInfo.proto";
+import "Personalized/TagStruct.proto";
+import "Personalized/ThreadPersonalized.proto";
+import "Personalized/UserFollowLive.proto";
+import "SimpleForum.proto";
+import "ThreadInfo.proto";
+
+message DataRes {
+    repeated TagInfo tag_list = 1;
+    repeated ThreadInfo thread_list = 2;
+    repeated Resource resource_list = 3;
+    repeated CardForum card_forum = 4;
+    repeated CardTopic card_topic = 5;
+    uint32 sug_seconds = 6;
+    repeated ThreadPersonalized thread_personalized = 7;
+    int32 is_new_url = 8;
+    BannerList banner_list = 9;
+    AgeSexModule age_sex = 10;
+    repeated TagStruct interestion = 11;
+    repeated CardGod card_god = 12;
+    string stat_key = 13;
+    repeated SimpleForum like_forums = 14;
+    int32 style_ab_tag = 15;
+    Anti anti = 16;
+    LiveAnswer live_answer = 17;
+    FloatInfo float_info = 18;
+    RecomPostTopic recom_post_topic = 19;
+    UserFollowLive user_follow_live = 20;
+    int32 fresh_ctrl_num = 21;
+    ActiveCenter active_center = 22;
+    DiscoverHotForum hot_recomforum = 23;
+    FavoritePanel favorite_panel = 24;
+}

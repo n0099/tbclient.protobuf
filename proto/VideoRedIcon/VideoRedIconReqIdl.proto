@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "VideoRedIcon/DataReq.proto";
+
+message VideoRedIconReqIdl {
+    DataReq data = 1;
+}

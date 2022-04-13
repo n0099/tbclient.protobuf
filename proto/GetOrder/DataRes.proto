@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "GetOrder/NotifyPopup.proto";
+
+message DataRes {
+    int64 customerId = 1;
+    string service = 2;
+    string orderId = 3;
+    uint32 orderCreateTime = 4;
+    uint32 deviceType = 5;
+    uint64 payAmount = 6;
+    uint64 originalAmount = 7;
+    string notifyUrl = 8;
+    string passuid = 9;
+    string title = 10;
+    string tn = 11;
+    string url = 12;
+    string mobile = 13;
+    string itemInfo = 14;
+    string imei = 15;
+    uint32 sdk = 16;
+    uint32 sdkStyle = 17;
+    string extData = 18;
+    uint32 signType = 19;
+    string sign = 20;
+    NotifyPopup popup = 21;
+    string pay_url = 22;
+    string call_type = 23;
+    string pay_channel = 24;
+}

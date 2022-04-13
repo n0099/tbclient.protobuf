@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message AlbumList {
+    string album_id = 1;
+    string album_name = 2;
+    int32 picture_num = 3;
+    string cover_picture_url = 4;
+    string app_id = 5;
+    int32 is_system = 6;
+    int32 create_time = 7;
+    int32 update_time = 8;
+    int32 is_netdisk = 9;
+}

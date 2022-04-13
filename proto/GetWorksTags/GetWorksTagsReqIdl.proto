@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetWorksTags/DataReq.proto";
+
+message GetWorksTagsReqIdl {
+    DataReq data = 1;
+}

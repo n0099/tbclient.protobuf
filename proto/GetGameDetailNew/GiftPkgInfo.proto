@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message GiftPkgInfo {
+    string giftpkg_name = 1;
+    string thumbnails = 2;
+    int64 acquire_num = 3;
+    string corner_mark = 4;
+    string button_text = 5;
+    string giftpkg_url = 6;
+}

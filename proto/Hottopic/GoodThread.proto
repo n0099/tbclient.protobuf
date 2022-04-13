@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message GoodThread {
+    uint64 tid = 1;
+    string title = 2;
+    uint64 reply_num = 3;
+    string _abstract = 4;
+    uint64 zan_num = 5;
+    string fname = 6;
+    uint64 fid = 7;
+    uint64 post_id = 8;
+    string head_pic = 9;
+}

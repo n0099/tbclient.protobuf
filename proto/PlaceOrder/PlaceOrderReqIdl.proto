@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PlaceOrder/DataReq.proto";
+
+message PlaceOrderReqIdl {
+    DataReq data = 1;
+}

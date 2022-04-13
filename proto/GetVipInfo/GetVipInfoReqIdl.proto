@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetVipInfo/DataReq.proto";
+
+message GetVipInfoReqIdl {
+    DataReq data = 1;
+}

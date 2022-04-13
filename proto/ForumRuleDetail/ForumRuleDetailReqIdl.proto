@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ForumRuleDetail/DataReq.proto";
+
+message ForumRuleDetailReqIdl {
+    DataReq data = 1;
+}

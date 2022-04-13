@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "GetTails/ColorInfo.proto";
+import "GetTails/TailInfo.proto";
+
+message ResData {
+    repeated TailInfo tailList = 1;
+    repeated ColorInfo colorList = 2;
+    string default_color = 3;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message MembersSex {
+    int32 sex = 1;
+    double rate = 2;
+}

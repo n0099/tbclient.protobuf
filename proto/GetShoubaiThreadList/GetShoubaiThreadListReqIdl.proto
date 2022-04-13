@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetShoubaiThreadList/DataReq.proto";
+
+message GetShoubaiThreadListReqIdl {
+    DataReq data = 1;
+}

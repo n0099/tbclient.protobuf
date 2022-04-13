@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Page.proto";
+import "UserMuteQuery/MuteUser.proto";
+
+message DataRes {
+    repeated MuteUser mute_user = 1;
+    Page page = 2;
+}

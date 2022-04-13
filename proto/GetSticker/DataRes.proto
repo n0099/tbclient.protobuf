@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message DataRes {
+    repeated string pic_info = 1;
+}

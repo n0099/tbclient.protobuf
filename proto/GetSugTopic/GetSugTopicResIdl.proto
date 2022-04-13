@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetSugTopic/DataRes.proto";
+
+message GetSugTopicResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

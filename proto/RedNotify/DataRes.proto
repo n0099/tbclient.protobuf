@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "RedNotify/RedNotify.proto";
+
+message DataRes {
+    RedNotify notify_data = 1;
+}

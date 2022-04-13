@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "GetVipInfo/VipInfo.proto";
+import "GetVipInfo/VipParrScores.proto";
+import "GetVipInfo/VipPayMemberInfo.proto";
+
+message VipUser {
+    string name = 1;
+    uint64 id = 2;
+    string portrait = 3;
+    string name_show = 4;
+    VipPayMemberInfo pay_member_info = 5;
+    VipInfo vipInfo = 6;
+    uint32 now_time = 7;
+    VipParrScores Parr_scores = 8;
+    uint32 task_scores = 9;
+    string total_scores_link = 10;
+    string speed_link = 11;
+    string task_scores_link = 12;
+    string vip_link = 13;
+    string card_id = 14;
+}

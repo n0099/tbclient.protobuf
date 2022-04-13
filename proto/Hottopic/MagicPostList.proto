@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "Hottopic/UserInfo.proto";
+import "Quote.proto";
+import "Zan.proto";
+
+message MagicPostList {
+    uint64 thread_id = 1;
+    uint64 post_id = 2;
+    UserInfo user_info = 3;
+    string title = 4;
+    string content_text = 5;
+    uint32 create_time = 6;
+    uint32 post_no = 7;
+    uint32 is_comment = 8;
+    Zan zan = 9;
+    Quote quote = 10;
+}

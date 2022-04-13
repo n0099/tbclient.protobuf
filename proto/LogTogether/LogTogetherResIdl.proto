@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Error.proto";
+
+message LogTogetherResIdl {
+    Error error = 1;
+}

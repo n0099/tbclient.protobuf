@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetVipInfo/DataRes.proto";
+
+message GetVipInfoResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

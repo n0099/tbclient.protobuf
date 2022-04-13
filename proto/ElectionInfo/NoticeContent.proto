@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message NoticeContent {
+    string public_notice = 1;
+}

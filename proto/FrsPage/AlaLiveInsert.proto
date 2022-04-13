@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message AlaLiveInsert {
+    repeated ThreadInfo ala_live_list = 1;
+}

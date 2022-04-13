@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "AdInfo.proto";
+
+message DataRes {
+    repeated AdInfo ad_list = 1;
+    int32 has_more = 2;
+    int64 offset = 3;
+}

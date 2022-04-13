@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message VipTaskItem {
+    string img_url = 1;
+    uint32 task_id = 2;
+    string title = 3;
+    string desc = 4;
+    string link = 5;
+    uint32 is_finish = 6;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "GetWebviewCacheInfo/Offpack.proto";
+
+message DataRes {
+    string src = 1;
+    string webview_version = 2;
+    string md5 = 3;
+    repeated Offpack offpack_list = 7;
+}

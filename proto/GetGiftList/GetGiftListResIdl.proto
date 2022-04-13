@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetGiftList/DataRes.proto";
+
+message GetGiftListResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "CommitCardInfo/DataReq.proto";
+
+message CommitCardInfoReqIdl {
+    DataReq data = 1;
+}

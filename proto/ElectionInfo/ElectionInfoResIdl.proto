@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ElectionInfo/DataRes.proto";
+import "Error.proto";
+
+message ElectionInfoResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

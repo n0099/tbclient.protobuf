@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message OnlineTimes {
+    string time = 1;
+    string start = 2;
+    string end = 3;
+    int32 seq = 4;
+}

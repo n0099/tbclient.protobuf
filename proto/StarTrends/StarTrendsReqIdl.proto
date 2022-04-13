@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "StarTrends/DataReq.proto";
+
+message StarTrendsReqIdl {
+    DataReq data = 1;
+}

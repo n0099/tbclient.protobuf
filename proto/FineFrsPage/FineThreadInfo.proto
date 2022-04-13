@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "ZhiBoInfoTW.proto";
+
+message FineThreadInfo {
+    int64 ftid = 1;
+    string title = 2;
+    int32 type = 3;
+    string _abstract = 4;
+    repeated string thumbnail = 5;
+    int32 publish_time = 6;
+    string tag = 7;
+    int64 zansum = 8;
+    int64 threadsnum = 9;
+    string fromfname = 10;
+    uint64 forumid = 11;
+    ZhiBoInfoTW twzhibo_info = 12;
+    int32 thread_type = 13;
+    int32 forder = 14;
+}

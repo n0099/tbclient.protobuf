@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetForumData/ForumDataValue.proto";
+
+message ForumDataGroup {
+    double total = 1;
+    repeated ForumDataValue values = 2;
+}

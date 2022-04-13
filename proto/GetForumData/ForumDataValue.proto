@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ForumDataValue {
+    string date = 1;
+    double value = 2;
+}

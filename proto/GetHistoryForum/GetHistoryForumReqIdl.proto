@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetHistoryForum/DataReq.proto";
+
+message GetHistoryForumReqIdl {
+    DataReq data = 1;
+}

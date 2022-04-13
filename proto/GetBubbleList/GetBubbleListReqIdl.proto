@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetBubbleList/DataReq.proto";
+
+message GetBubbleListReqIdl {
+    DataReq data = 1;
+}

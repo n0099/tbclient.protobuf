@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "AlbumElement.proto";
+import "ItemGameCode.proto";
+import "ItemGameInfo.proto";
+import "ItemInfo.proto";
+import "RecommendForumInfo.proto";
+import "ThreadInfo.proto";
+
+message DataRes {
+    ItemInfo item_info = 1;
+    repeated ThreadInfo thread_list = 2;
+    repeated ItemInfo recommend_item = 3;
+    repeated RecommendForumInfo recommend_forum = 4;
+    string link = 5;
+    repeated AlbumElement album_list = 6;
+    repeated ThreadInfo discussion_list = 7;
+    uint32 discussion_id = 8;
+    ItemGameInfo item_game_info = 9;
+    ItemGameCode item_game_code = 10;
+    int32 has_tornado = 11;
+}

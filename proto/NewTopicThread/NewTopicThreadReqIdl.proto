@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "NewTopicThread/DataReq.proto";
+
+message NewTopicThreadReqIdl {
+    DataReq data = 1;
+}

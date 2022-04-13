@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetPoisByLocation/DataReq.proto";
+
+message GetPoisByLocationReqIdl {
+    DataReq data = 1;
+}

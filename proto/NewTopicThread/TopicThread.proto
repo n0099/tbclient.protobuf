@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ThreadInfo.proto";
+
+message TopicThread {
+    int64 feed_id = 2;
+    ThreadInfo thread_info = 3;
+    string user_agree = 4;
+    int32 source = 6;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetPendantByCategory/DataReq.proto";
+
+message GetPendantByCategoryReqIdl {
+    DataReq data = 1;
+}

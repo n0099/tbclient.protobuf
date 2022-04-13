@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message MemberBlockInfo {
+    int32 is_permanent_ban = 1;
+    int32 is_auto_pay = 2;
+}

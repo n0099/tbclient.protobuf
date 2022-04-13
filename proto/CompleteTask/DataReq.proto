@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    string shoubaicuid = 2;
+    string compelete_id = 3;
+    string token = 4;
+}

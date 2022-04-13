@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "AlaLiveInfo.proto";
+
+message UserFollowLive {
+    repeated AlaLiveInfo user_follow_live = 1;
+    uint32 _switch = 2;
+}

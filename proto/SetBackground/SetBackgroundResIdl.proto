@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "SetBackground/DataRes.proto";
+
+message SetBackgroundResIdl {
+    DataRes data = 1;
+    Error error = 2;
+}

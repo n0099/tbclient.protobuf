@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetWebviewCacheInfo/DataReq.proto";
+
+message GetWebviewCacheInfoReqIdl {
+    DataReq data = 1;
+}

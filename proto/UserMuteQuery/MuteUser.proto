@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message MuteUser {
+    int64 user_id = 1;
+    string user_name = 2;
+    int32 mute_time = 3;
+    string portrait = 4;
+    string name_show = 5;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Hottopic/CommonThread.proto";
+
+message ThreadModule {
+    CommonThread thread_module_1 = 1;
+    CommonThread thread_module_2 = 2;
+    CommonThread thread_module_3 = 3;
+}

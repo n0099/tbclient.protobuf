@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetUserInfo/DataRes.proto";
+
+message GetUserInfoResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

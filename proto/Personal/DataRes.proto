@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "DealWindow.proto";
+import "DynamicInfo.proto";
+import "ForumDynamic.proto";
+import "Personal/UserGodInfo.proto";
+import "ThreadInfo.proto";
+import "User.proto";
+
+message DataRes {
+    User user = 1;
+    repeated ThreadInfo video_page = 2;
+    repeated DynamicInfo dynamic_list = 3;
+    repeated ForumDynamic concerned_forum_list = 4;
+    int32 pn = 5;
+    int32 has_more = 6;
+    UserGodInfo user_god_info = 7;
+    DealWindow window = 8;
+}

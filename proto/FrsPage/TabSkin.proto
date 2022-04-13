@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message TabSkin {
+    int32 tab_id = 1;
+    string icon = 2;
+    string icon_night = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GeneralTabList/DataRes.proto";
+
+message GeneralTabListResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

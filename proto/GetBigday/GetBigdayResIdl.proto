@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetBigday/DataRes.proto";
+
+message GetBigdayResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

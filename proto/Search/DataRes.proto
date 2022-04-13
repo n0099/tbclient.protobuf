@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message DataRes {
+    int64 uid = 1;
+    string portrait = 2;
+    string name_show = 3;
+    uint32 vote_num = 4;
+    bool is_vote = 5;
+    int32 forum_level = 6;
+    uint32 agree_num = 7;
+    uint32 thread_num = 8;
+    uint32 post_num = 9;
+    int64 apply_id = 10;
+    int64 tid = 11;
+}

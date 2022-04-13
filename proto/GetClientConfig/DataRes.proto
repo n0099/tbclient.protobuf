@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GetClientConfig/CLocalDialog.proto";
+import "GetClientConfig/CPayType.proto";
+
+message DataRes {
+    CPayType payType = 1;
+    CLocalDialog local_dialog = 2;
+}

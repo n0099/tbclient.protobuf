@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "Personalized/TagStruct.proto";
+
+message AgeSexModule {
+    repeated TagStruct sex_tag = 1;
+    repeated TagStruct age_tag = 2;
+}

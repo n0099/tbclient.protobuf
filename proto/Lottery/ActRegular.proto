@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message ActRegular {
+    int32 type = 1;
+    int32 chance = 2;
+    string url = 3;
+    string btn_name = 4;
+}

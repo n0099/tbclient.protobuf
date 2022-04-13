@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message AdReq {
+    string da_page = 1;
+    string da_locate = 2;
+    string da_obj_id = 3;
+    int32 da_fid = 4;
+    int32 da_tid = 5;
+    string da_good_id = 6;
+    string da_ext_info = 7;
+    string da_plan_id = 8;
+    string da_user_id = 9;
+    string da_price = 10;
+    string da_verify = 11;
+    string da_cpid = 12;
+    string ext = 13;
+    string da_task = 14;
+    string da_type = 15;
+    int64 da_threadid = 16;
+    int64 da_utime = 17;
+    int32 da_pn = 18;
+    bool da_iscache = 19;
+}

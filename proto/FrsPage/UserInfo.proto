@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FrsPage/ShowIcon.proto";
+
+message UserInfo {
+    int64 user_id = 1;
+    string portrait = 2;
+    string user_name = 3;
+    int32 gender = 4;
+    string intro = 6;
+    ShowIcon tshow_icon = 7;
+}

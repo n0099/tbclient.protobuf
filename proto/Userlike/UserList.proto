@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "NewGodInfo.proto";
+import "ThreadInfo.proto";
+
+message UserList {
+    string name = 1;
+    string prefix = 2;
+    string intro = 3;
+    uint32 fans_num = 4;
+    uint32 post_num = 5;
+    string recom_reason = 6;
+    string portrait = 7;
+    uint64 id = 8;
+    uint32 is_god = 9;
+    uint32 level = 10;
+    ThreadInfo thread_info = 11;
+    NewGodInfo new_god_data = 12;
+}

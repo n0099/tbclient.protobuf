@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message TabList {
+    string tab_name = 1;
+    string tab_type = 2;
+    string share_pic = 3;
+    string share_title = 4;
+    string share_desc = 5;
+    string share_url = 6;
+}

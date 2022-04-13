@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ReplyFriend/ReqData.proto";
+
+message ReplyFriendReqIdl {
+    ReqData data = 1;
+}

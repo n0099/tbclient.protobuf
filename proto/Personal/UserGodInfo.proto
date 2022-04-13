@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Personal/ForumGodDetailInfo.proto";
+import "Personal/GodDetailInfo.proto";
+
+message UserGodInfo {
+    int32 god_type = 1;
+    GodDetailInfo god_info = 2;
+    repeated ForumGodDetailInfo forum_god_list = 3;
+}

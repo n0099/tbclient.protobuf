@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message StarTaskInfo {
+    string task_title = 1;
+    string task_desc = 2;
+    string task_score_desc = 3;
+    int32 task_status = 4;
+}

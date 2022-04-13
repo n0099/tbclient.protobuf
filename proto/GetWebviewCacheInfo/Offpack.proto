@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message Offpack {
+    string mod_name = 1;
+    string src = 2;
+    string md5 = 3;
+    string webview_version = 4;
+    int32 is_use = 5;
+}

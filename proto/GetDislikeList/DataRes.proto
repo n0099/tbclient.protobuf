@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ForumList.proto";
+
+message DataRes {
+    repeated ForumList forum_list = 1;
+    int32 has_more = 2;
+    int32 cur_page = 3;
+}

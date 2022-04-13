@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "ElectionInfo/Basic.proto";
+import "ElectionList.proto";
+import "ManagerElection.proto";
+import "Myrecord.proto";
+
+message DataRes {
+    Basic basic = 1;
+    Myrecord my_record = 2;
+    repeated ElectionList election_list = 3;
+    uint32 has_more = 4;
+    ManagerElection vote_limit = 5;
+}

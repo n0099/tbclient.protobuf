@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "GetAddressList/deleteList.proto";
+import "GetAddressList/listData.proto";
+import "GetAddressList/robotsList.proto";
+
+message DataRes {
+    repeated listData address_list = 1;
+    repeated deleteList deleted_list = 2;
+    int64 timestamp = 3;
+    repeated robotsList robots_list = 4;
+}

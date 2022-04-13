@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "AddMsgRecord/MsgRecord.proto";
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    repeated MsgRecord records = 2;
+}

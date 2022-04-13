@@ -1,0 +1,145 @@
+package LiveSquare;
+
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.squareup.wire.Message;
+import com.squareup.wire.ProtoField;
+import tbclient.CommonReq;
+
+public final class DataReq extends Message {
+  public static final Integer DEFAULT_IS_REFRESH;
+  
+  public static final String DEFAULT_NETWORK_TYPE = "";
+  
+  public static final Integer DEFAULT_PN;
+  
+  public static final Integer DEFAULT_PS;
+  
+  public static final Integer DEFAULT_Q_TYPE;
+  
+  public static final Integer DEFAULT_SCR_DIP;
+  
+  public static final Integer DEFAULT_SCR_H;
+  
+  public static final Integer DEFAULT_SCR_W;
+  
+  @ProtoField(tag = 1)
+  public final CommonReq common;
+  
+  @ProtoField(tag = 9, type = Message.Datatype.INT32)
+  public final Integer is_refresh;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.STRING)
+  public final String network_type;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.INT32)
+  public final Integer pn;
+  
+  @ProtoField(tag = 3, type = Message.Datatype.INT32)
+  public final Integer ps;
+  
+  @ProtoField(tag = 7, type = Message.Datatype.INT32)
+  public final Integer q_type;
+  
+  @ProtoField(tag = 8, type = Message.Datatype.INT32)
+  public final Integer scr_dip;
+  
+  @ProtoField(tag = 6, type = Message.Datatype.INT32)
+  public final Integer scr_h;
+  
+  @ProtoField(tag = 5, type = Message.Datatype.INT32)
+  public final Integer scr_w;
+  
+  static {
+    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+    if (classClinitInterceptable != null) {
+      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1827709763, "Ltbclient/LiveSquare/DataReq;");
+      if (interceptResult != null) {
+        Interceptable interceptable = interceptResult.interceptor;
+        if (interceptable != null)
+          $ic = interceptable; 
+        if ((interceptResult.flags & 0x1) != 0) {
+          classClinitInterceptable.invokePostClinit(1827709763, "Ltbclient/LiveSquare/DataReq;");
+          return;
+        } 
+      } 
+    } 
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_PN = integer;
+    DEFAULT_PS = integer;
+    DEFAULT_SCR_W = integer;
+    DEFAULT_SCR_H = integer;
+    DEFAULT_Q_TYPE = integer;
+    DEFAULT_SCR_DIP = integer;
+    DEFAULT_IS_REFRESH = integer;
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean) {
+    super((Message.Builder)paramBuilder);
+    Integer integer;
+    if (paramBoolean == true) {
+      this.common = paramBuilder.common;
+      Integer integer2 = paramBuilder.pn;
+      if (integer2 == null) {
+        this.pn = DEFAULT_PN;
+      } else {
+        this.pn = integer2;
+      } 
+      integer2 = paramBuilder.ps;
+      if (integer2 == null) {
+        this.ps = DEFAULT_PS;
+      } else {
+        this.ps = integer2;
+      } 
+      String str = paramBuilder.network_type;
+      if (str == null) {
+        this.network_type = "";
+      } else {
+        this.network_type = str;
+      } 
+      Integer integer1 = paramBuilder.scr_w;
+      if (integer1 == null) {
+        this.scr_w = DEFAULT_SCR_W;
+      } else {
+        this.scr_w = integer1;
+      } 
+      integer1 = paramBuilder.scr_h;
+      if (integer1 == null) {
+        this.scr_h = DEFAULT_SCR_H;
+      } else {
+        this.scr_h = integer1;
+      } 
+      integer1 = paramBuilder.q_type;
+      if (integer1 == null) {
+        this.q_type = DEFAULT_Q_TYPE;
+      } else {
+        this.q_type = integer1;
+      } 
+      integer1 = paramBuilder.scr_dip;
+      if (integer1 == null) {
+        this.scr_dip = DEFAULT_SCR_DIP;
+      } else {
+        this.scr_dip = integer1;
+      } 
+      integer = paramBuilder.is_refresh;
+      if (integer == null) {
+        this.is_refresh = DEFAULT_IS_REFRESH;
+      } else {
+        this.is_refresh = integer;
+      } 
+    } else {
+      this.common = ((Builder)integer).common;
+      this.pn = ((Builder)integer).pn;
+      this.ps = ((Builder)integer).ps;
+      this.network_type = ((Builder)integer).network_type;
+      this.scr_w = ((Builder)integer).scr_w;
+      this.scr_h = ((Builder)integer).scr_h;
+      this.q_type = ((Builder)integer).q_type;
+      this.scr_dip = ((Builder)integer).scr_dip;
+      this.is_refresh = ((Builder)integer).is_refresh;
+    } 
+  }
+}

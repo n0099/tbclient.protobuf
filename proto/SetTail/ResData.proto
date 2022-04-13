@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ResData {
+    uint64 tailId = 1;
+}

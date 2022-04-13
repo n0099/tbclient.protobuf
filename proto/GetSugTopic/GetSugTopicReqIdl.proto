@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetSugTopic/DataReq.proto";
+
+message GetSugTopicReqIdl {
+    DataReq data = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "ExcFrsPage/ExcellentTagInfo.proto";
+import "ExcFrsPage/ExcellentThreadInfo.proto";
+
+message DataRes {
+    repeated ExcellentTagInfo tag_list = 1;
+    repeated ExcellentThreadInfo thread_list = 2;
+    uint32 has_more = 3;
+    uint32 pn = 4;
+}

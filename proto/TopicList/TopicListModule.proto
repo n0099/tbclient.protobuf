@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "TopicList/TopicList.proto";
+
+message TopicListModule {
+    string module_title = 1;
+    repeated TopicList topic_list = 2;
+    string tips = 3;
+    string rule_jump_url = 4;
+}

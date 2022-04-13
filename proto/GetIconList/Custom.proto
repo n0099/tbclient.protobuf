@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "GetIconList/Discount.proto";
+
+message Custom {
+    string name = 1;
+    int32 non_member_t = 2;
+    int32 non_member_i = 3;
+    int32 dubi = 4;
+    int32 dubi_ios = 5;
+    int32 ios_display = 6;
+    int32 duration = 7;
+    int32 hide = 8;
+    repeated Discount discount = 9;
+    int32 props_id = 10;
+    string ios_icon_id = 11;
+    int32 validity = 12;
+    string update_time = 13;
+    string create_time = 14;
+    string package_pic = 15;
+    int32 is_custom_price = 16;
+    string tag_name = 17;
+    string product_id = 18;
+    string icon_id = 19;
+    string pic_url = 20;
+    string icon_name = 21;
+    string icon_pic = 22;
+    int32 is_default = 23;
+}

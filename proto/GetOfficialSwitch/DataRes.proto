@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetOfficialSwitch/OfficialList.proto";
+
+message DataRes {
+    repeated OfficialList official_list = 1;
+}

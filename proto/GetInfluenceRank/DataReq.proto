@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    string tieba_name = 2;
+    int64 forum_id = 3;
+    int32 rn = 4;
+    int32 pn = 5;
+    CommonReq common = 6;
+}

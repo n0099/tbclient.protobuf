@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "ThreadPublish/DataRes.proto";
+
+message ThreadPublishResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

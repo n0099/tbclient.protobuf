@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetADList/DataReq.proto";
+
+message GetADListReqIdl {
+    DataReq data = 1;
+}

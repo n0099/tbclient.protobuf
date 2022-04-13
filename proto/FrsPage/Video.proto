@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Video {
+    string pic = 1;
+    int32 num = 2;
+}

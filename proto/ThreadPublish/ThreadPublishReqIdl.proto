@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ThreadPublish/DataReq.proto";
+
+message ThreadPublishReqIdl {
+    DataReq data = 1;
+}

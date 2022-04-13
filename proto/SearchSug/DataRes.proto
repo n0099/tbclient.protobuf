@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "ForumInfo.proto";
+import "Item.proto";
+import "RecommendForumInfo.proto";
+import "SugLiveInfo.proto";
+import "SugRankingInfo.proto";
+
+message DataRes {
+    int32 forum_loc = 1;
+    repeated string list = 2;
+    repeated ForumInfo forum_list = 3;
+    RecommendForumInfo forum_card = 4;
+    Item item_card = 5;
+    repeated SugLiveInfo live_card = 6;
+    SugRankingInfo ranking_card = 7;
+}

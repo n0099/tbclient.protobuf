@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ActiveConfig/DataReq.proto";
+
+message ActiveConfigReqIdl {
+    DataReq data = 1;
+}

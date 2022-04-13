@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DataRes {
+    string is_mute = 1;
+    string mute_confirm = 2;
+}

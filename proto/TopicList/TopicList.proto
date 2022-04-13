@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "Media.proto";
+import "VideoInfo.proto";
+
+message TopicList {
+    uint64 topic_id = 1;
+    string topic_name = 2;
+    uint64 discuss_num = 3;
+    int32 tag = 4;
+    string topic_desc = 5;
+    string topic_pic = 6;
+    int64 update_time = 7;
+    string topic_user_name = 8;
+    repeated Media media = 9;
+    int64 topic_tid = 10;
+    string topic_h5_url = 11;
+    VideoInfo video_info = 12;
+    int32 topic_thread_types = 13;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message Badges {
+    int32 badge_id = 1;
+    string badge_url = 2;
+    string webview = 3;
+}

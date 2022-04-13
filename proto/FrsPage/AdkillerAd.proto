@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "App.proto";
+
+message AdkillerAd {
+    string tag = 1;
+    string game_url = 2;
+    App app = 3;
+    uint32 can_close = 4;
+}

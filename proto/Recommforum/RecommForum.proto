@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "RecommendForumInfo.proto";
+
+message RecommForum {
+    string title = 1;
+    repeated RecommendForumInfo forums = 2;
+    int32 page_size = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message MembersArea {
+    int32 seq = 1;
+    string name = 2;
+    double rate = 3;
+}

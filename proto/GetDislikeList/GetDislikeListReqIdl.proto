@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetDislikeList/DataReq.proto";
+
+message GetDislikeListReqIdl {
+    DataReq data = 1;
+}

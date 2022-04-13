@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "FansRankUserInfo.proto";
+import "GetMyGift/presentMoneyTxt.proto";
+import "PresentMyList.proto";
+import "PresetMyGiftPage.proto";
+
+message DataRes {
+    uint32 total_num = 1;
+    uint32 money = 2;
+    presentMoneyTxt money_txt = 3;
+    repeated PresentMyList gift_list = 4;
+    PresetMyGiftPage page = 5;
+    uint32 scene_id = 6;
+    uint32 blue_diamond = 7;
+    presentMoneyTxt blue_diamond_txt = 8;
+    repeated FansRankUserInfo rank_list = 9;
+    uint32 currency = 11;
+}

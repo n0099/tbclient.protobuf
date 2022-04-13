@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message SignUser {
+    int64 user_id = 1;
+    int32 is_sign_in = 2;
+    int32 user_sign_rank = 3;
+    int32 sign_time = 4;
+    int32 cont_sign_num = 5;
+    int32 cout_total_sign_num = 6;
+    int32 is_org_disabled = 7;
+    int32 c_sign_num = 8;
+    int32 hun_sign_num = 9;
+    int32 total_resign_num = 10;
+    int32 miss_sign_num = 11;
+}

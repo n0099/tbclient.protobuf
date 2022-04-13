@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "RecomVertical/SubClassItem.proto";
+
+message ClassInfo {
+    int32 class_id = 1;
+    string class_name = 2;
+    repeated SubClassItem sub_class_list = 3;
+}

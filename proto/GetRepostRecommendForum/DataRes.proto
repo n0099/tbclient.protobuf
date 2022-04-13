@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "SimpleForum.proto";
+
+message DataRes {
+    repeated SimpleForum recommend_forum_list = 1;
+    string recommend_ext = 2;
+    int32 priv_thread = 3;
+}

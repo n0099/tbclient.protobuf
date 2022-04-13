@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ActivityPage/DataReq.proto";
+
+message ActivityPageReqIdl {
+    DataReq data = 1;
+}

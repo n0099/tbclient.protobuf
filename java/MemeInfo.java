@@ -1,0 +1,125 @@
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
+import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
+import com.baidu.titan.sdk.runtime.Interceptable;
+import com.squareup.wire.Message;
+import com.squareup.wire.ProtoField;
+import tbclient.MemeInfo;
+
+public final class MemeInfo extends Message {
+  public static final String DEFAULT_DETAIL_LINK = "";
+  
+  public static final Integer DEFAULT_HEIGHT;
+  
+  public static final Integer DEFAULT_PCK_ID;
+  
+  public static final Long DEFAULT_PIC_ID = Long.valueOf(0L);
+  
+  public static final String DEFAULT_PIC_URL = "";
+  
+  public static final String DEFAULT_THUMBNAIL = "";
+  
+  public static final Integer DEFAULT_WIDTH;
+  
+  @ProtoField(tag = 7, type = Message.Datatype.STRING)
+  public final String detail_link;
+  
+  @ProtoField(tag = 6, type = Message.Datatype.UINT32)
+  public final Integer height;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+  public final Integer pck_id;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+  public final Long pic_id;
+  
+  @ProtoField(tag = 3, type = Message.Datatype.STRING)
+  public final String pic_url;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.STRING)
+  public final String thumbnail;
+  
+  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+  public final Integer width;
+  
+  static {
+    DEFAULT_WIDTH = integer;
+    DEFAULT_HEIGHT = integer;
+  }
+  
+  public MemeInfo(Builder paramBuilder, boolean paramBoolean) {
+    super((Message.Builder)paramBuilder);
+    String str;
+    if (paramBoolean == true) {
+      Integer integer2 = paramBuilder.pck_id;
+      if (integer2 == null) {
+        this.pck_id = DEFAULT_PCK_ID;
+      } else {
+        this.pck_id = integer2;
+      } 
+      Long long_ = paramBuilder.pic_id;
+      if (long_ == null) {
+        this.pic_id = DEFAULT_PIC_ID;
+      } else {
+        this.pic_id = long_;
+      } 
+      String str1 = paramBuilder.pic_url;
+      if (str1 == null) {
+        this.pic_url = "";
+      } else {
+        this.pic_url = str1;
+      } 
+      str1 = paramBuilder.thumbnail;
+      if (str1 == null) {
+        this.thumbnail = "";
+      } else {
+        this.thumbnail = str1;
+      } 
+      Integer integer1 = paramBuilder.width;
+      if (integer1 == null) {
+        this.width = DEFAULT_WIDTH;
+      } else {
+        this.width = integer1;
+      } 
+      integer1 = paramBuilder.height;
+      if (integer1 == null) {
+        this.height = DEFAULT_HEIGHT;
+      } else {
+        this.height = integer1;
+      } 
+      str = paramBuilder.detail_link;
+      if (str == null) {
+        this.detail_link = "";
+      } else {
+        this.detail_link = str;
+      } 
+    } else {
+      this.pck_id = ((Builder)str).pck_id;
+      this.pic_id = ((Builder)str).pic_id;
+      this.pic_url = ((Builder)str).pic_url;
+      this.thumbnail = ((Builder)str).thumbnail;
+      this.width = ((Builder)str).width;
+      this.height = ((Builder)str).height;
+      this.detail_link = ((Builder)str).detail_link;
+    } 
+  }
+  
+  static {
+    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+    if (classClinitInterceptable != null) {
+      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1305491539, "Ltbclient/MemeInfo;");
+      if (interceptResult != null) {
+        Interceptable interceptable = interceptResult.interceptor;
+        if (interceptable != null)
+          $ic = interceptable; 
+        if ((interceptResult.flags & 0x1) != 0) {
+          classClinitInterceptable.invokePostClinit(1305491539, "Ltbclient/MemeInfo;");
+          return;
+        } 
+      } 
+    } 
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_PCK_ID = integer;
+  }
+}

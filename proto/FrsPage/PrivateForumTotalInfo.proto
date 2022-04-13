@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "FrsPage/HeadImgs.proto";
+import "FrsPage/PrivateForumShareinfo.proto";
+import "PrivateForumInfo.proto";
+import "PrivatePopInfo.proto";
+
+message PrivateForumTotalInfo {
+    PrivateForumShareinfo private_forum_shareinfo = 1;
+    PrivatePopInfo private_forum_popinfo = 2;
+    PrivateForumInfo private_forum_info = 3;
+    int32 private_forum_taskpercent = 4;
+    HeadImgs head_imgs = 5;
+}

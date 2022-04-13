@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message RecomPostTopic {
+    string recom_title = 1;
+    string recom_topic = 2;
+    uint64 uniq_topicid = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    int64 page_id = 2;
+    int32 page_type = 3;
+    int32 pn = 4;
+    int32 rn = 5;
+    string flip_id = 6;
+    string item_id = 7;
+    string params = 8;
+    int32 scr_w = 9;
+    int32 scr_h = 10;
+    double scr_dip = 11;
+}

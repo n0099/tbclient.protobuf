@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message Sender {
+    int64 id = 1;
+    string name_show = 2;
+    string portrait = 3;
+}

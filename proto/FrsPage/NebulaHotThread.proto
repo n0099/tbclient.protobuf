@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "PbContent.proto";
+
+message NebulaHotThread {
+    string thread_id = 1;
+    string group_name = 2;
+    int32 comment_number = 3;
+    int32 rank = 4;
+    string url = 5;
+    int32 thread_thumbnail_type = 6;
+    string thread_thumbnail = 7;
+    repeated PbContent content = 8;
+}

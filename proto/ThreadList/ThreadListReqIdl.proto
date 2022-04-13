@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ThreadList/DataReq.proto";
+
+message ThreadListReqIdl {
+    DataReq data = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GameInfo.proto";
+
+message CategoryList {
+    string category_name = 1;
+    repeated GameInfo category_game_list = 2;
+    uint32 category_id = 3;
+}

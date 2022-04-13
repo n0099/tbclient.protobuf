@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ForumButton {
+    int32 is_blueV = 1;
+}

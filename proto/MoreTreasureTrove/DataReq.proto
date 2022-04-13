@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "AppPosInfo.proto";
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    string tab_code = 2;
+    string lf_user = 3;
+    string lf_user_taskid = 4;
+    AppPosInfo app_pos = 5;
+}

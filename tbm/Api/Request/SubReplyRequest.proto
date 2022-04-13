@@ -1,0 +1,15 @@
+syntax = "proto3";
+package tbClient.api.request;
+import "Api/Request/Common.proto";
+
+message SubReplyRequest {
+    message Data {
+        int64 kz = 1;
+        int64 pid = 2;
+        int64 spid = 3;
+        int32 pn = 4;
+        Common common = 9;
+        int64 forum_id = 11;
+    };
+    Data data = 1;
+}

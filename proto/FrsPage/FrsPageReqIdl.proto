@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "FrsPage/DataReq.proto";
+
+message FrsPageReqIdl {
+    DataReq data = 1;
+}

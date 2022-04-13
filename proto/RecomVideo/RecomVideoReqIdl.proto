@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "RecomVideo/DataReq.proto";
+
+message RecomVideoReqIdl {
+    DataReq data = 1;
+}

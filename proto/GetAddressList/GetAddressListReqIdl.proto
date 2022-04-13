@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GetAddressList/ReqData.proto";
+
+message GetAddressListReqIdl {
+    ReqData data = 1;
+}
