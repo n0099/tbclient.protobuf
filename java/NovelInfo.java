@@ -14,18 +14,23 @@ import com.squareup.wire.ProtoField;
 public final class NovelInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AUTHOR = "";
+    public static final String DEFAULT_BUY_URL = "";
     public static final Long DEFAULT_CHAPTERS;
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_DISCOUNT_PRICE = "";
     public static final String DEFAULT_H5_URL = "";
     public static final String DEFAULT_IMG = "";
     public static final String DEFAULT_IS_PAY = "";
+    public static final String DEFAULT_MEMBER_IMG = "";
+    public static final String DEFAULT_MEMBER_TEXT = "";
     public static final String DEFAULT_NAME = "";
     public static final Long DEFAULT_NOVEL_ID;
     public static final Long DEFAULT_PERCENT;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String author;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String buy_url;
     @ProtoField(tag = 10, type = Message.Datatype.INT64)
     public final Long chapters;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -38,6 +43,10 @@ public final class NovelInfo extends Message {
     public final String img;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String is_pay;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String member_img;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String member_text;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -50,12 +59,15 @@ public final class NovelInfo extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String author;
+        public String buy_url;
         public Long chapters;
         public String desc;
         public String discount_price;
         public String h5_url;
         public String img;
         public String is_pay;
+        public String member_img;
+        public String member_text;
         public String name;
         public Long novel_id;
         public Long percent;
@@ -105,6 +117,9 @@ public final class NovelInfo extends Message {
             this.h5_url = novelInfo.h5_url;
             this.is_pay = novelInfo.is_pay;
             this.chapters = novelInfo.chapters;
+            this.member_text = novelInfo.member_text;
+            this.member_img = novelInfo.member_img;
+            this.buy_url = novelInfo.buy_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -220,9 +235,27 @@ public final class NovelInfo extends Message {
             Long l3 = builder.chapters;
             if (l3 == null) {
                 this.chapters = DEFAULT_CHAPTERS;
-                return;
             } else {
                 this.chapters = l3;
+            }
+            String str8 = builder.member_text;
+            if (str8 == null) {
+                this.member_text = "";
+            } else {
+                this.member_text = str8;
+            }
+            String str9 = builder.member_img;
+            if (str9 == null) {
+                this.member_img = "";
+            } else {
+                this.member_img = str9;
+            }
+            String str10 = builder.buy_url;
+            if (str10 == null) {
+                this.buy_url = "";
+                return;
+            } else {
+                this.buy_url = str10;
                 return;
             }
         }
@@ -236,5 +269,8 @@ public final class NovelInfo extends Message {
         this.h5_url = builder.h5_url;
         this.is_pay = builder.is_pay;
         this.chapters = builder.chapters;
+        this.member_text = builder.member_text;
+        this.member_img = builder.member_img;
+        this.buy_url = builder.buy_url;
     }
 }
