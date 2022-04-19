@@ -1,0 +1,7 @@
+syntax = "proto3";
+package tbClient.wrapper;
+import "Post/Common/Content.proto";
+
+message PostContentWrapper {
+    repeated tbClient.post.common.Content value = 1;
+}

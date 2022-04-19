@@ -10,7 +10,6 @@ import "Post/Common/PollInfo.proto";
 import "Post/ReplyDeps/TailInfo.proto";
 
 message Thread {
-    int64 id = 1;
     int64 tid = 2;
     string title = 3;
     int32 reply_num = 4;
@@ -31,11 +30,9 @@ message Thread {
     User last_replyer = 19;
     int32 comment_num = 20;
     string meizhi_pic = 24;
-    int32 thread_type = 26;
     int64 fid = 27;
     string fname = 28;
     string live_post_type = 29;
-    int32 is_livepost = 30;
     int64 first_post_id = 40;
     common.Zan zan = 41;
     int32 is_global_top = 42;

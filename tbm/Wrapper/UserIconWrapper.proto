@@ -1,0 +1,7 @@
+syntax = "proto3";
+package tbClient.wrapper;
+import "UserDeps/Icon.proto";
+
+message UserIconWrapper {
+    repeated tbClient.userDeps.Icon value = 1;
+}

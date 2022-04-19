@@ -1,4 +1,4 @@
-DIR=cs
+DIR=tbm_cs
 rm -rf $DIR
 mkdir $DIR
 ./protoc --csharp_out=$DIR --csharp_opt=base_namespace=TbClient,file_extension=.g.cs --proto_path=tbm $(find tbm -type f -name '*.proto')
