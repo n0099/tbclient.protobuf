@@ -28,50 +28,49 @@ namespace TbClient.Post {
             "bxoPSXRlbS9JdGVtLnByb3RvGhBQb3N0L1JlcGx5LnByb3RvGhVQb3N0L0Nv",
             "bW1vbi9aYW4ucHJvdG8aFVBvc3QvQ29tbW9uL0xicy5wcm90bxoXUG9zdC9D",
             "b21tb24vQWdyZWUucHJvdG8aGlBvc3QvQ29tbW9uL1BvbGxJbmZvLnByb3Rv",
-            "Gh1Qb3N0L1JlcGx5RGVwcy9UYWlsSW5mby5wcm90byLYDQoGVGhyZWFkEgoK",
-            "AmlkGAEgASgDEgsKA3RpZBgCIAEoAxINCgV0aXRsZRgDIAEoCRIRCglyZXBs",
-            "eV9udW0YBCABKAUSEAoIdmlld19udW0YBSABKAUSEQoJbGFzdF90aW1lGAYg",
-            "ASgJEhUKDWxhc3RfdGltZV9pbnQYByABKAUSFAoMdGhyZWFkX3R5cGVzGAgg",
-            "ASgFEg4KBmlzX3RvcBgJIAEoBRIPCgdpc19nb29kGAogASgFEg8KB2lzX3Zv",
-            "dGUYCyABKAUSEAoIaXNfYmFrYW4YDCABKAUSEQoJaXNfcHJvdGFsGA0gASgF",
-            "EhEKCWlzX21laXpoaRgOIAEoBRIXCg9pc192b2ljZV90aHJlYWQYDyABKAUS",
-            "EwoLaXNfYWN0aXZpdHkYECABKAUSEQoJaXNfbm90aWNlGBEgASgFEh4KBmF1",
-            "dGhvchgSIAEoCzIOLnRiQ2xpZW50LlVzZXISJAoMbGFzdF9yZXBseWVyGBMg",
-            "ASgLMg4udGJDbGllbnQuVXNlchITCgtjb21tZW50X251bRgUIAEoBRISCgpt",
-            "ZWl6aGlfcGljGBggASgJEhMKC3RocmVhZF90eXBlGBogASgFEgsKA2ZpZBgb",
-            "IAEoAxINCgVmbmFtZRgcIAEoCRIWCg5saXZlX3Bvc3RfdHlwZRgdIAEoCRIT",
-            "Cgtpc19saXZlcG9zdBgeIAEoBRIVCg1maXJzdF9wb3N0X2lkGCggASgDEiYK",
-            "A3phbhgpIAEoCzIZLnRiQ2xpZW50LnBvc3QuY29tbW9uLlphbhIVCg1pc19n",
-            "bG9iYWxfdG9wGCogASgFEhMKC2NyZWF0ZV90aW1lGC0gASgFEhIKCnJlcG9z",
-            "dF9udW0YLiABKAUSKgoFdG9waWMYLyABKAsyGy50YkNsaWVudC5wb3N0LlRo",
-            "cmVhZC5Ub3BpYxIVCg1oYXNfY29tbWVudGVkGDAgASgFEgwKBGZyb20YMSAB",
-            "KAkSDwoHcG9zdF9pZBg0IAEoAxIMCgR0aW1lGDUgASgFEhQKDGlzX21lbWJl",
-            "cnRvcBg2IAEoBRIRCglhdXRob3JfaWQYOCABKAMSFgoOdmFsaWRfcG9zdF9u",
-            "dW0YOSABKA0SFQoNaXNMekRlbGV0ZUFsbBg6IAEoDRINCgVpc19hZBg7IAEo",
-            "DRIMCgRlY29tGDwgASgJEgwKBHBpZHMYPSABKAkSKwoIbG9jYXRpb24YPiAB",
-            "KAsyGS50YkNsaWVudC5wb3N0LmNvbW1vbi5MYnMSEAoIcG9zdF9udW0YRSAB",
-            "KAUSFQoNY2F0ZWdvcnlfbmFtZRhJIAEoCRIxCglwb2xsX2luZm8YSiABKAsy",
-            "Hi50YkNsaWVudC5wb3N0LmNvbW1vbi5Qb2xsSW5mbxIQCghpc19ub3ZlbBhM",
-            "IAEoBRIWCg5pc19ub3ZlbF90aGFuaxhNIAEoBRIXCg9pc19ub3ZlbF9yZXdh",
-            "cmQYTiABKAUSFQoNaXNfY29weXRocmVhZBhRIAEoDRIVCg1vcGVyYXRvcl9m",
-            "bGFnGFIgASgNEg8KB3BpY19udW0YVCABKA0SHgoWaXNfZ29kdGhyZWFkX3Jl",
-            "Y29tbWVuZBhVIAEoBRI0CglleHRfdGFpbHMYWiADKAsyIS50YkNsaWVudC5w",
-            "b3N0LnJlcGx5RGVwcy5UYWlsSW5mbxIcChRpc19tdWx0aWZvcnVtX3RocmVh",
-            "ZBh7IAEoBRIRCglhZ3JlZV9udW0YfCABKAUSLAoOdG9wX2FncmVlX3Bvc3QY",
-            "fSABKAsyFC50YkNsaWVudC5wb3N0LlJlcGx5EioKBWFncmVlGH4gASgLMhsu",
-            "dGJDbGllbnQucG9zdC5jb21tb24uQWdyZWUSGgoSaXNfcGFydGlhbF92aXNp",
-            "YmxlGH8gASgFEhcKDmlzX2xpbmtfdGhyZWFkGIABIAEoBRIRCghmcmVxX251",
-            "bRiCASABKAMSDwoGaXNfZ29kGIMBIAEoBRISCglzaGFyZV9udW0YhwEgASgD",
-            "EhgKD2lzX3NoYXJlX3RocmVhZBiPASABKAUSEQoIaXNfdG9waWMYlAEgASgF",
-            "EhgKD3RvcGljX3VzZXJfbmFtZRiVASABKAkSFQoMdG9waWNfaDVfdXJsGJYB",
-            "IAEoCRIbChJwcmVzZW50YXRpb25fc3R5bGUYlwEgASgJEg8KBnRhYl9pZBiv",
-            "ASABKAUSEQoIdGFiX25hbWUYsAEgASgJEiIKBGl0ZW0YswEgASgLMhMudGJD",
-            "bGllbnQuaXRlbS5JdGVtGjsKBVRvcGljEhAKCGlzX2xwb3N0GAEgASgFEhIK",
-            "CnRvcGljX3R5cGUYAiABKAUSDAoEbGluaxgDIAEoCWIGcHJvdG8z"));
+            "Gh1Qb3N0L1JlcGx5RGVwcy9UYWlsSW5mby5wcm90byKiDQoGVGhyZWFkEgsK",
+            "A3RpZBgCIAEoAxINCgV0aXRsZRgDIAEoCRIRCglyZXBseV9udW0YBCABKAUS",
+            "EAoIdmlld19udW0YBSABKAUSEQoJbGFzdF90aW1lGAYgASgJEhUKDWxhc3Rf",
+            "dGltZV9pbnQYByABKAUSFAoMdGhyZWFkX3R5cGVzGAggASgFEg4KBmlzX3Rv",
+            "cBgJIAEoBRIPCgdpc19nb29kGAogASgFEg8KB2lzX3ZvdGUYCyABKAUSEAoI",
+            "aXNfYmFrYW4YDCABKAUSEQoJaXNfcHJvdGFsGA0gASgFEhEKCWlzX21laXpo",
+            "aRgOIAEoBRIXCg9pc192b2ljZV90aHJlYWQYDyABKAUSEwoLaXNfYWN0aXZp",
+            "dHkYECABKAUSEQoJaXNfbm90aWNlGBEgASgFEh4KBmF1dGhvchgSIAEoCzIO",
+            "LnRiQ2xpZW50LlVzZXISJAoMbGFzdF9yZXBseWVyGBMgASgLMg4udGJDbGll",
+            "bnQuVXNlchITCgtjb21tZW50X251bRgUIAEoBRISCgptZWl6aGlfcGljGBgg",
+            "ASgJEgsKA2ZpZBgbIAEoAxINCgVmbmFtZRgcIAEoCRIWCg5saXZlX3Bvc3Rf",
+            "dHlwZRgdIAEoCRIVCg1maXJzdF9wb3N0X2lkGCggASgDEiYKA3phbhgpIAEo",
+            "CzIZLnRiQ2xpZW50LnBvc3QuY29tbW9uLlphbhIVCg1pc19nbG9iYWxfdG9w",
+            "GCogASgFEhMKC2NyZWF0ZV90aW1lGC0gASgFEhIKCnJlcG9zdF9udW0YLiAB",
+            "KAUSKgoFdG9waWMYLyABKAsyGy50YkNsaWVudC5wb3N0LlRocmVhZC5Ub3Bp",
+            "YxIVCg1oYXNfY29tbWVudGVkGDAgASgFEgwKBGZyb20YMSABKAkSDwoHcG9z",
+            "dF9pZBg0IAEoAxIMCgR0aW1lGDUgASgFEhQKDGlzX21lbWJlcnRvcBg2IAEo",
+            "BRIRCglhdXRob3JfaWQYOCABKAMSFgoOdmFsaWRfcG9zdF9udW0YOSABKA0S",
+            "FQoNaXNMekRlbGV0ZUFsbBg6IAEoDRINCgVpc19hZBg7IAEoDRIMCgRlY29t",
+            "GDwgASgJEgwKBHBpZHMYPSABKAkSKwoIbG9jYXRpb24YPiABKAsyGS50YkNs",
+            "aWVudC5wb3N0LmNvbW1vbi5MYnMSEAoIcG9zdF9udW0YRSABKAUSFQoNY2F0",
+            "ZWdvcnlfbmFtZRhJIAEoCRIxCglwb2xsX2luZm8YSiABKAsyHi50YkNsaWVu",
+            "dC5wb3N0LmNvbW1vbi5Qb2xsSW5mbxIQCghpc19ub3ZlbBhMIAEoBRIWCg5p",
+            "c19ub3ZlbF90aGFuaxhNIAEoBRIXCg9pc19ub3ZlbF9yZXdhcmQYTiABKAUS",
+            "FQoNaXNfY29weXRocmVhZBhRIAEoDRIVCg1vcGVyYXRvcl9mbGFnGFIgASgN",
+            "Eg8KB3BpY19udW0YVCABKA0SHgoWaXNfZ29kdGhyZWFkX3JlY29tbWVuZBhV",
+            "IAEoBRI0CglleHRfdGFpbHMYWiADKAsyIS50YkNsaWVudC5wb3N0LnJlcGx5",
+            "RGVwcy5UYWlsSW5mbxIcChRpc19tdWx0aWZvcnVtX3RocmVhZBh7IAEoBRIR",
+            "CglhZ3JlZV9udW0YfCABKAUSLAoOdG9wX2FncmVlX3Bvc3QYfSABKAsyFC50",
+            "YkNsaWVudC5wb3N0LlJlcGx5EioKBWFncmVlGH4gASgLMhsudGJDbGllbnQu",
+            "cG9zdC5jb21tb24uQWdyZWUSGgoSaXNfcGFydGlhbF92aXNpYmxlGH8gASgF",
+            "EhcKDmlzX2xpbmtfdGhyZWFkGIABIAEoBRIRCghmcmVxX251bRiCASABKAMS",
+            "DwoGaXNfZ29kGIMBIAEoBRISCglzaGFyZV9udW0YhwEgASgDEhgKD2lzX3No",
+            "YXJlX3RocmVhZBiPASABKAUSEQoIaXNfdG9waWMYlAEgASgFEhgKD3RvcGlj",
+            "X3VzZXJfbmFtZRiVASABKAkSFQoMdG9waWNfaDVfdXJsGJYBIAEoCRIbChJw",
+            "cmVzZW50YXRpb25fc3R5bGUYlwEgASgJEg8KBnRhYl9pZBivASABKAUSEQoI",
+            "dGFiX25hbWUYsAEgASgJEiIKBGl0ZW0YswEgASgLMhMudGJDbGllbnQuaXRl",
+            "bS5JdGVtGjsKBVRvcGljEhAKCGlzX2xwb3N0GAEgASgFEhIKCnRvcGljX3R5",
+            "cGUYAiABKAUSDAoEbGluaxgDIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.UserReflection.Descriptor, global::TbClient.Item.ItemReflection.Descriptor, global::TbClient.Post.ReplyReflection.Descriptor, global::TbClient.Post.Common.ZanReflection.Descriptor, global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, global::TbClient.Post.Common.PollInfoReflection.Descriptor, global::TbClient.Post.ReplyDeps.TailInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread), global::TbClient.Post.Thread.Parser, new[]{ "Id", "Tid", "Title", "ReplyNum", "ViewNum", "LastTime", "LastTimeInt", "ThreadTypes", "IsTop", "IsGood", "IsVote", "IsBakan", "IsProtal", "IsMeizhi", "IsVoiceThread", "IsActivity", "IsNotice", "Author", "LastReplyer", "CommentNum", "MeizhiPic", "ThreadType", "Fid", "Fname", "LivePostType", "IsLivepost", "FirstPostId", "Zan", "IsGlobalTop", "CreateTime", "RepostNum", "Topic", "HasCommented", "From", "PostId", "Time", "IsMembertop", "AuthorId", "ValidPostNum", "IsLzDeleteAll", "IsAd", "Ecom", "Pids", "Location", "PostNum", "CategoryName", "PollInfo", "IsNovel", "IsNovelThank", "IsNovelReward", "IsCopythread", "OperatorFlag", "PicNum", "IsGodthreadRecommend", "ExtTails", "IsMultiforumThread", "AgreeNum", "TopAgreePost", "Agree", "IsPartialVisible", "IsLinkThread", "FreqNum", "IsGod", "ShareNum", "IsShareThread", "IsTopic", "TopicUserName", "TopicH5Url", "PresentationStyle", "TabId", "TabName", "Item" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread.Types.Topic), global::TbClient.Post.Thread.Types.Topic.Parser, new[]{ "IsLpost", "TopicType", "Link" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread), global::TbClient.Post.Thread.Parser, new[]{ "Tid", "Title", "ReplyNum", "ViewNum", "LastTime", "LastTimeInt", "ThreadTypes", "IsTop", "IsGood", "IsVote", "IsBakan", "IsProtal", "IsMeizhi", "IsVoiceThread", "IsActivity", "IsNotice", "Author", "LastReplyer", "CommentNum", "MeizhiPic", "Fid", "Fname", "LivePostType", "FirstPostId", "Zan", "IsGlobalTop", "CreateTime", "RepostNum", "Topic", "HasCommented", "From", "PostId", "Time", "IsMembertop", "AuthorId", "ValidPostNum", "IsLzDeleteAll", "IsAd", "Ecom", "Pids", "Location", "PostNum", "CategoryName", "PollInfo", "IsNovel", "IsNovelThank", "IsNovelReward", "IsCopythread", "OperatorFlag", "PicNum", "IsGodthreadRecommend", "ExtTails", "IsMultiforumThread", "AgreeNum", "TopAgreePost", "Agree", "IsPartialVisible", "IsLinkThread", "FreqNum", "IsGod", "ShareNum", "IsShareThread", "IsTopic", "TopicUserName", "TopicH5Url", "PresentationStyle", "TabId", "TabName", "Item" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread.Types.Topic), global::TbClient.Post.Thread.Types.Topic.Parser, new[]{ "IsLpost", "TopicType", "Link" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -112,7 +111,6 @@ namespace TbClient.Post {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Thread(Thread other) : this() {
-      id_ = other.id_;
       tid_ = other.tid_;
       title_ = other.title_;
       replyNum_ = other.replyNum_;
@@ -133,11 +131,9 @@ namespace TbClient.Post {
       lastReplyer_ = other.lastReplyer_ != null ? other.lastReplyer_.Clone() : null;
       commentNum_ = other.commentNum_;
       meizhiPic_ = other.meizhiPic_;
-      threadType_ = other.threadType_;
       fid_ = other.fid_;
       fname_ = other.fname_;
       livePostType_ = other.livePostType_;
-      isLivepost_ = other.isLivepost_;
       firstPostId_ = other.firstPostId_;
       zan_ = other.zan_ != null ? other.zan_.Clone() : null;
       isGlobalTop_ = other.isGlobalTop_;
@@ -191,18 +187,6 @@ namespace TbClient.Post {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Thread Clone() {
       return new Thread(this);
-    }
-
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private long id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
     }
 
     /// <summary>Field number for the "tid" field.</summary>
@@ -445,18 +429,6 @@ namespace TbClient.Post {
       }
     }
 
-    /// <summary>Field number for the "thread_type" field.</summary>
-    public const int ThreadTypeFieldNumber = 26;
-    private int threadType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int ThreadType {
-      get { return threadType_; }
-      set {
-        threadType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "fid" field.</summary>
     public const int FidFieldNumber = 27;
     private long fid_;
@@ -490,18 +462,6 @@ namespace TbClient.Post {
       get { return livePostType_; }
       set {
         livePostType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "is_livepost" field.</summary>
-    public const int IsLivepostFieldNumber = 30;
-    private int isLivepost_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int IsLivepost {
-      get { return isLivepost_; }
-      set {
-        isLivepost_ = value;
       }
     }
 
@@ -1071,7 +1031,6 @@ namespace TbClient.Post {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Id != other.Id) return false;
       if (Tid != other.Tid) return false;
       if (Title != other.Title) return false;
       if (ReplyNum != other.ReplyNum) return false;
@@ -1092,11 +1051,9 @@ namespace TbClient.Post {
       if (!object.Equals(LastReplyer, other.LastReplyer)) return false;
       if (CommentNum != other.CommentNum) return false;
       if (MeizhiPic != other.MeizhiPic) return false;
-      if (ThreadType != other.ThreadType) return false;
       if (Fid != other.Fid) return false;
       if (Fname != other.Fname) return false;
       if (LivePostType != other.LivePostType) return false;
-      if (IsLivepost != other.IsLivepost) return false;
       if (FirstPostId != other.FirstPostId) return false;
       if (!object.Equals(Zan, other.Zan)) return false;
       if (IsGlobalTop != other.IsGlobalTop) return false;
@@ -1150,7 +1107,6 @@ namespace TbClient.Post {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id != 0L) hash ^= Id.GetHashCode();
       if (Tid != 0L) hash ^= Tid.GetHashCode();
       if (Title.Length != 0) hash ^= Title.GetHashCode();
       if (ReplyNum != 0) hash ^= ReplyNum.GetHashCode();
@@ -1171,11 +1127,9 @@ namespace TbClient.Post {
       if (lastReplyer_ != null) hash ^= LastReplyer.GetHashCode();
       if (CommentNum != 0) hash ^= CommentNum.GetHashCode();
       if (MeizhiPic.Length != 0) hash ^= MeizhiPic.GetHashCode();
-      if (ThreadType != 0) hash ^= ThreadType.GetHashCode();
       if (Fid != 0L) hash ^= Fid.GetHashCode();
       if (Fname.Length != 0) hash ^= Fname.GetHashCode();
       if (LivePostType.Length != 0) hash ^= LivePostType.GetHashCode();
-      if (IsLivepost != 0) hash ^= IsLivepost.GetHashCode();
       if (FirstPostId != 0L) hash ^= FirstPostId.GetHashCode();
       if (zan_ != null) hash ^= Zan.GetHashCode();
       if (IsGlobalTop != 0) hash ^= IsGlobalTop.GetHashCode();
@@ -1240,10 +1194,6 @@ namespace TbClient.Post {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Id != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(Id);
-      }
       if (Tid != 0L) {
         output.WriteRawTag(16);
         output.WriteInt64(Tid);
@@ -1324,10 +1274,6 @@ namespace TbClient.Post {
         output.WriteRawTag(194, 1);
         output.WriteString(MeizhiPic);
       }
-      if (ThreadType != 0) {
-        output.WriteRawTag(208, 1);
-        output.WriteInt32(ThreadType);
-      }
       if (Fid != 0L) {
         output.WriteRawTag(216, 1);
         output.WriteInt64(Fid);
@@ -1339,10 +1285,6 @@ namespace TbClient.Post {
       if (LivePostType.Length != 0) {
         output.WriteRawTag(234, 1);
         output.WriteString(LivePostType);
-      }
-      if (IsLivepost != 0) {
-        output.WriteRawTag(240, 1);
-        output.WriteInt32(IsLivepost);
       }
       if (FirstPostId != 0L) {
         output.WriteRawTag(192, 2);
@@ -1535,10 +1477,6 @@ namespace TbClient.Post {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Id != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(Id);
-      }
       if (Tid != 0L) {
         output.WriteRawTag(16);
         output.WriteInt64(Tid);
@@ -1619,10 +1557,6 @@ namespace TbClient.Post {
         output.WriteRawTag(194, 1);
         output.WriteString(MeizhiPic);
       }
-      if (ThreadType != 0) {
-        output.WriteRawTag(208, 1);
-        output.WriteInt32(ThreadType);
-      }
       if (Fid != 0L) {
         output.WriteRawTag(216, 1);
         output.WriteInt64(Fid);
@@ -1634,10 +1568,6 @@ namespace TbClient.Post {
       if (LivePostType.Length != 0) {
         output.WriteRawTag(234, 1);
         output.WriteString(LivePostType);
-      }
-      if (IsLivepost != 0) {
-        output.WriteRawTag(240, 1);
-        output.WriteInt32(IsLivepost);
       }
       if (FirstPostId != 0L) {
         output.WriteRawTag(192, 2);
@@ -1830,9 +1760,6 @@ namespace TbClient.Post {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Id != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
-      }
       if (Tid != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Tid);
       }
@@ -1893,9 +1820,6 @@ namespace TbClient.Post {
       if (MeizhiPic.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(MeizhiPic);
       }
-      if (ThreadType != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(ThreadType);
-      }
       if (Fid != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeInt64Size(Fid);
       }
@@ -1904,9 +1828,6 @@ namespace TbClient.Post {
       }
       if (LivePostType.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(LivePostType);
-      }
-      if (IsLivepost != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(IsLivepost);
       }
       if (FirstPostId != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeInt64Size(FirstPostId);
@@ -2056,9 +1977,6 @@ namespace TbClient.Post {
       if (other == null) {
         return;
       }
-      if (other.Id != 0L) {
-        Id = other.Id;
-      }
       if (other.Tid != 0L) {
         Tid = other.Tid;
       }
@@ -2125,9 +2043,6 @@ namespace TbClient.Post {
       if (other.MeizhiPic.Length != 0) {
         MeizhiPic = other.MeizhiPic;
       }
-      if (other.ThreadType != 0) {
-        ThreadType = other.ThreadType;
-      }
       if (other.Fid != 0L) {
         Fid = other.Fid;
       }
@@ -2136,9 +2051,6 @@ namespace TbClient.Post {
       }
       if (other.LivePostType.Length != 0) {
         LivePostType = other.LivePostType;
-      }
-      if (other.IsLivepost != 0) {
-        IsLivepost = other.IsLivepost;
       }
       if (other.FirstPostId != 0L) {
         FirstPostId = other.FirstPostId;
@@ -2312,10 +2224,6 @@ namespace TbClient.Post {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Id = input.ReadInt64();
-            break;
-          }
           case 16: {
             Tid = input.ReadInt64();
             break;
@@ -2402,10 +2310,6 @@ namespace TbClient.Post {
             MeizhiPic = input.ReadString();
             break;
           }
-          case 208: {
-            ThreadType = input.ReadInt32();
-            break;
-          }
           case 216: {
             Fid = input.ReadInt64();
             break;
@@ -2416,10 +2320,6 @@ namespace TbClient.Post {
           }
           case 234: {
             LivePostType = input.ReadString();
-            break;
-          }
-          case 240: {
-            IsLivepost = input.ReadInt32();
             break;
           }
           case 320: {
@@ -2642,10 +2542,6 @@ namespace TbClient.Post {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Id = input.ReadInt64();
-            break;
-          }
           case 16: {
             Tid = input.ReadInt64();
             break;
@@ -2732,10 +2628,6 @@ namespace TbClient.Post {
             MeizhiPic = input.ReadString();
             break;
           }
-          case 208: {
-            ThreadType = input.ReadInt32();
-            break;
-          }
           case 216: {
             Fid = input.ReadInt64();
             break;
@@ -2746,10 +2638,6 @@ namespace TbClient.Post {
           }
           case 234: {
             LivePostType = input.ReadString();
-            break;
-          }
-          case 240: {
-            IsLivepost = input.ReadInt32();
             break;
           }
           case 320: {

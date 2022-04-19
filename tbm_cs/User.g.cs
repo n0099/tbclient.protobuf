@@ -34,58 +34,58 @@ namespace TbClient {
             "ckRlcHMvTmV3R29kSW5mby5wcm90bxoaVXNlckRlcHMvQmF3dVRocm9uZXMu",
             "cHJvdG8aG1VzZXJEZXBzL0NhbGxGYW5zSW5mby5wcm90bxoYVXNlckRlcHMv",
             "QmF6aHVTaWduLnByb3RvGhtVc2VyRGVwcy9DcmVhdGlvbkRhdGEucHJvdG8i",
-            "yRAKBFVzZXISEAoIaXNfbG9naW4YASABKAUSCgoCaWQYAiABKAMSDAoEbmFt",
-            "ZRgDIAEoCRIRCgluYW1lX3Nob3cYBCABKAkSEAoIcG9ydHJhaXQYBSABKAkS",
-            "DQoFbm9fdW4YBiABKAUSDAoEdHlwZRgHIAEoBRIQCgh1c2VyaGlkZRgJIAEo",
-            "BRIlCgRiYWx2GAogASgLMhcudGJDbGllbnQudXNlckRlcHMuQmFsdhISCgpp",
-            "c19tYW5hZ2VyGAsgASgFEgwKBHJhbmsYDCABKAkSEAoIYmltZ191cmwYDSAB",
-            "KAkSFAoMbWVpemhpX2xldmVsGA4gASgFEhEKCWlzX3ZlcmlmeRgPIAEoBRIW",
-            "Cg5pc19pbnRlcmVzdG1hbhgQIAEoBRIpCghpY29uaW5mbxgRIAMoCzIXLnRi",
-            "Q2xpZW50LnVzZXJEZXBzLkljb24SMAoKdHNob3dfaWNvbhgSIAMoCzIcLnRi",
-            "Q2xpZW50LnVzZXJEZXBzLlRzaG93SW5mbxIRCgl1c2VyX3R5cGUYEyABKAUS",
-            "EwoLaXNfY29yZXVzZXIYFCABKAUSFAoMaXNfaHVpbmlidWtlGBUgASgFEhcK",
-            "D2lvc19iaW1nX2Zvcm1hdBgWIAEoCRIQCghsZXZlbF9pZBgXIAEoBRIPCgdp",
-            "c19saWtlGBggASgFEg8KB2lzX2Jhd3UYGSABKAUSEQoJYmF3dV90eXBlGBog",
-            "ASgJEhEKCXBvcnRyYWl0aBgbIAEoCRIKCgJpcBgcIAEoCRINCgVCRFVTUxgd",
-            "IAEoCRIQCghmYW5zX251bRgeIAEoBRITCgtjb25jZXJuX251bRgfIAEoBRIL",
-            "CgNzZXgYICABKAUSEwoLbXlfbGlrZV9udW0YISABKAUSDQoFaW50cm8YIiAB",
-            "KAkSDgoGcGFzc3dkGCQgASgJEhAKCHBvc3RfbnVtGCUgASgFEg4KBnRiX2Fn",
-            "ZRgmIAEoCRIOCgZpc19tZW0YJyABKAUSFQoNYmltZ19lbmRfdGltZRgoIAEo",
-            "BRI5Cg9wYXlfbWVtYmVyX2luZm8YKSABKAsyIC50YkNsaWVudC51c2VyRGVw",
-            "cy5QYXlNZW1iZXJJbmZvEg4KBmdlbmRlchgqIAEoBRIPCgdpc19tYXNrGCsg",
-            "ASgFEi4KCXByaXZfc2V0cxgtIAEoCzIbLnRiQ2xpZW50LnVzZXJEZXBzLlBy",
-            "aXZTZXRzEhAKCGdpZnRfbnVtGDEgASgFEhYKDmlzX3NlbGVjdF90YWlsGDMg",
-            "ASgFEhMKC2lzX2d1YW5mYW5nGDQgASgFEhYKDmJvb2ttYXJrX2NvdW50GDUg",
-            "ASgFEhoKEmJvb2ttYXJrX25ld19jb3VudBg2IAEoBRISCgpmcmllbmRfbnVt",
-            "GDggASgDEhUKDWZhbnNfbmlja25hbWUYOSABKAkSDgoGYmdfcGljGDogASgJ",
-            "EiwKCGdvZF9kYXRhGD4gASgLMhoudGJDbGllbnQudXNlckRlcHMuR29kSW5m",
-            "bxISCgpoZWF2eV91c2VyGD8gASgFEjQKDm5ld190c2hvd19pY29uGEEgAygL",
-            "MhwudGJDbGllbnQudXNlckRlcHMuVHNob3dJbmZvEiwKBnRiX3ZpcBhIIAEo",
-            "CzIcLnRiQ2xpZW50LnVzZXJEZXBzLlRiVmlwSW5mbxIUCgxub19wb3N0X2hp",
-            "Z2gYSSABKA0SEwoLdmlzaXRvcl9udW0YSyABKAUSGQoRdG90YWxfdmlzaXRv",
-            "cl9udW0YTCABKAUSKwoHcGVuZGFudBhNIAEoCzIaLnRiQ2xpZW50LnVzZXJE",
-            "ZXBzLlBlbmRhbnQSNAoIYWxhX2luZm8YTiABKAsyIi50YkNsaWVudC51c2Vy",
-            "RGVwcy5hbGEuQWxhVXNlckluZm8SEwoLc2VhbF9wcmVmaXgYTyABKAkSGAoQ",
-            "aGFzX2JvdHRsZV9lbnRlchhQIAEoBRIcChRuaWNrbmFtZV91cGRhdGVfdGlt",
-            "ZRhWIAEoBRISCgp0aHJlYWRfbnVtGFcgASgFEhEKCWFncmVlX251bRhYIAEo",
-            "BRIVCg1sZWZ0X2NhbGxfbnVtGFkgASgFEhIKCmlzX2ludml0ZWQYWiABKAUS",
-            "DwoHaXNfZmFucxhbIAEoBRITCgtwcml2X3RocmVhZBhcIAEoBRI4Cg5iYWlq",
-            "aWFoYW9faW5mbxhfIAEoCzIgLnRiQ2xpZW50LnVzZXJEZXBzLkJhaWppYWhh",
-            "b0luZm8SNgoNYmlydGhkYXlfaW5mbxhgIAEoCzIfLnRiQ2xpZW50LnVzZXJE",
-            "ZXBzLkJpcnRoZGF5SW5mbxIZChFjYW5fbW9kaWZ5X2F2YXRhchhhIAEoBRIa",
-            "ChJtb2RpZnlfYXZhdGFyX2Rlc2MYYiABKAkSMwoMbmV3X2dvZF9kYXRhGGUg",
-            "ASgLMh0udGJDbGllbnQudXNlckRlcHMuTmV3R29kSW5mbxI0CgxiYXd1X3Ro",
-            "cm9uZXMYZyABKAsyHi50YkNsaWVudC51c2VyRGVwcy5CYXd1VGhyb25lcxI3",
-            "Cg5jYWxsX2ZhbnNfaW5mbxhoIAEoCzIfLnRiQ2xpZW50LnVzZXJEZXBzLkNh",
-            "bGxGYW5zSW5mbxIxCgtiYXpodV9ncmFkZRhpIAEoCzIcLnRiQ2xpZW50LnVz",
-            "ZXJEZXBzLkJhemh1U2lnbhIZChFpc19kZWZhdWx0X2F2YXRhchhqIAEoBRI2",
-            "Cg1jcmVhdGlvbl9kYXRhGGwgASgLMh8udGJDbGllbnQudXNlckRlcHMuQ3Jl",
-            "YXRpb25EYXRhEhcKD3RvdGFsX2FncmVlX251bRh2IAEoDRIRCgl0aWViYV91",
-            "aWQYeCABKAliBnByb3RvMw=="));
+            "yhAKBFVzZXISEAoIaXNfbG9naW4YASABKAUSCwoDdWlkGAIgASgDEgwKBG5h",
+            "bWUYAyABKAkSEQoJbmFtZV9zaG93GAQgASgJEhAKCHBvcnRyYWl0GAUgASgJ",
+            "Eg0KBW5vX3VuGAYgASgFEgwKBHR5cGUYByABKAUSEAoIdXNlcmhpZGUYCSAB",
+            "KAUSJQoEYmFsdhgKIAEoCzIXLnRiQ2xpZW50LnVzZXJEZXBzLkJhbHYSEgoK",
+            "aXNfbWFuYWdlchgLIAEoBRIMCgRyYW5rGAwgASgJEhAKCGJpbWdfdXJsGA0g",
+            "ASgJEhQKDG1laXpoaV9sZXZlbBgOIAEoBRIRCglpc192ZXJpZnkYDyABKAUS",
+            "FgoOaXNfaW50ZXJlc3RtYW4YECABKAUSKQoIaWNvbmluZm8YESADKAsyFy50",
+            "YkNsaWVudC51c2VyRGVwcy5JY29uEjAKCnRzaG93X2ljb24YEiADKAsyHC50",
+            "YkNsaWVudC51c2VyRGVwcy5Uc2hvd0luZm8SEQoJdXNlcl90eXBlGBMgASgF",
+            "EhMKC2lzX2NvcmV1c2VyGBQgASgFEhQKDGlzX2h1aW5pYnVrZRgVIAEoBRIX",
+            "Cg9pb3NfYmltZ19mb3JtYXQYFiABKAkSEAoIbGV2ZWxfaWQYFyABKAUSDwoH",
+            "aXNfbGlrZRgYIAEoBRIPCgdpc19iYXd1GBkgASgFEhEKCWJhd3VfdHlwZRga",
+            "IAEoCRIRCglwb3J0cmFpdGgYGyABKAkSCgoCaXAYHCABKAkSDQoFQkRVU1MY",
+            "HSABKAkSEAoIZmFuc19udW0YHiABKAUSEwoLY29uY2Vybl9udW0YHyABKAUS",
+            "CwoDc2V4GCAgASgFEhMKC215X2xpa2VfbnVtGCEgASgFEg0KBWludHJvGCIg",
+            "ASgJEg4KBnBhc3N3ZBgkIAEoCRIQCghwb3N0X251bRglIAEoBRIOCgZ0Yl9h",
+            "Z2UYJiABKAkSDgoGaXNfbWVtGCcgASgFEhUKDWJpbWdfZW5kX3RpbWUYKCAB",
+            "KAUSOQoPcGF5X21lbWJlcl9pbmZvGCkgASgLMiAudGJDbGllbnQudXNlckRl",
+            "cHMuUGF5TWVtYmVySW5mbxIOCgZnZW5kZXIYKiABKAUSDwoHaXNfbWFzaxgr",
+            "IAEoBRIuCglwcml2X3NldHMYLSABKAsyGy50YkNsaWVudC51c2VyRGVwcy5Q",
+            "cml2U2V0cxIQCghnaWZ0X251bRgxIAEoBRIWCg5pc19zZWxlY3RfdGFpbBgz",
+            "IAEoBRITCgtpc19ndWFuZmFuZxg0IAEoBRIWCg5ib29rbWFya19jb3VudBg1",
+            "IAEoBRIaChJib29rbWFya19uZXdfY291bnQYNiABKAUSEgoKZnJpZW5kX251",
+            "bRg4IAEoAxIVCg1mYW5zX25pY2tuYW1lGDkgASgJEg4KBmJnX3BpYxg6IAEo",
+            "CRIsCghnb2RfZGF0YRg+IAEoCzIaLnRiQ2xpZW50LnVzZXJEZXBzLkdvZElu",
+            "Zm8SEgoKaGVhdnlfdXNlchg/IAEoBRI0Cg5uZXdfdHNob3dfaWNvbhhBIAMo",
+            "CzIcLnRiQ2xpZW50LnVzZXJEZXBzLlRzaG93SW5mbxIsCgZ0Yl92aXAYSCAB",
+            "KAsyHC50YkNsaWVudC51c2VyRGVwcy5UYlZpcEluZm8SFAoMbm9fcG9zdF9o",
+            "aWdoGEkgASgNEhMKC3Zpc2l0b3JfbnVtGEsgASgFEhkKEXRvdGFsX3Zpc2l0",
+            "b3JfbnVtGEwgASgFEisKB3BlbmRhbnQYTSABKAsyGi50YkNsaWVudC51c2Vy",
+            "RGVwcy5QZW5kYW50EjQKCGFsYV9pbmZvGE4gASgLMiIudGJDbGllbnQudXNl",
+            "ckRlcHMuYWxhLkFsYVVzZXJJbmZvEhMKC3NlYWxfcHJlZml4GE8gASgJEhgK",
+            "EGhhc19ib3R0bGVfZW50ZXIYUCABKAUSHAoUbmlja25hbWVfdXBkYXRlX3Rp",
+            "bWUYViABKAUSEgoKdGhyZWFkX251bRhXIAEoBRIRCglhZ3JlZV9udW0YWCAB",
+            "KAUSFQoNbGVmdF9jYWxsX251bRhZIAEoBRISCgppc19pbnZpdGVkGFogASgF",
+            "Eg8KB2lzX2ZhbnMYWyABKAUSEwoLcHJpdl90aHJlYWQYXCABKAUSOAoOYmFp",
+            "amlhaGFvX2luZm8YXyABKAsyIC50YkNsaWVudC51c2VyRGVwcy5CYWlqaWFo",
+            "YW9JbmZvEjYKDWJpcnRoZGF5X2luZm8YYCABKAsyHy50YkNsaWVudC51c2Vy",
+            "RGVwcy5CaXJ0aGRheUluZm8SGQoRY2FuX21vZGlmeV9hdmF0YXIYYSABKAUS",
+            "GgoSbW9kaWZ5X2F2YXRhcl9kZXNjGGIgASgJEjMKDG5ld19nb2RfZGF0YRhl",
+            "IAEoCzIdLnRiQ2xpZW50LnVzZXJEZXBzLk5ld0dvZEluZm8SNAoMYmF3dV90",
+            "aHJvbmVzGGcgASgLMh4udGJDbGllbnQudXNlckRlcHMuQmF3dVRocm9uZXMS",
+            "NwoOY2FsbF9mYW5zX2luZm8YaCABKAsyHy50YkNsaWVudC51c2VyRGVwcy5D",
+            "YWxsRmFuc0luZm8SMQoLYmF6aHVfZ3JhZGUYaSABKAsyHC50YkNsaWVudC51",
+            "c2VyRGVwcy5CYXpodVNpZ24SGQoRaXNfZGVmYXVsdF9hdmF0YXIYaiABKAUS",
+            "NgoNY3JlYXRpb25fZGF0YRhsIAEoCzIfLnRiQ2xpZW50LnVzZXJEZXBzLkNy",
+            "ZWF0aW9uRGF0YRIXCg90b3RhbF9hZ3JlZV9udW0YdiABKA0SEQoJdGllYmFf",
+            "dWlkGHggASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.UserDeps.BalvReflection.Descriptor, global::TbClient.UserDeps.IconReflection.Descriptor, global::TbClient.UserDeps.PayMemberInfoReflection.Descriptor, global::TbClient.UserDeps.PrivSetsReflection.Descriptor, global::TbClient.UserDeps.GodInfoReflection.Descriptor, global::TbClient.UserDeps.TshowInfoReflection.Descriptor, global::TbClient.UserDeps.TbVipInfoReflection.Descriptor, global::TbClient.UserDeps.PendantReflection.Descriptor, global::TbClient.UserDeps.Ala.AlaUserInfoReflection.Descriptor, global::TbClient.UserDeps.BaijiahaoInfoReflection.Descriptor, global::TbClient.UserDeps.BirthdayInfoReflection.Descriptor, global::TbClient.UserDeps.NewGodInfoReflection.Descriptor, global::TbClient.UserDeps.BawuThronesReflection.Descriptor, global::TbClient.UserDeps.CallFansInfoReflection.Descriptor, global::TbClient.UserDeps.BazhuSignReflection.Descriptor, global::TbClient.UserDeps.CreationDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.User), global::TbClient.User.Parser, new[]{ "IsLogin", "Id", "Name", "NameShow", "Portrait", "NoUn", "Type", "Userhide", "Balv", "IsManager", "Rank", "BimgUrl", "MeizhiLevel", "IsVerify", "IsInterestman", "Iconinfo", "TshowIcon", "UserType", "IsCoreuser", "IsHuinibuke", "IosBimgFormat", "LevelId", "IsLike", "IsBawu", "BawuType", "Portraith", "Ip", "BDUSS", "FansNum", "ConcernNum", "Sex", "MyLikeNum", "Intro", "Passwd", "PostNum", "TbAge", "IsMem", "BimgEndTime", "PayMemberInfo", "Gender", "IsMask", "PrivSets", "GiftNum", "IsSelectTail", "IsGuanfang", "BookmarkCount", "BookmarkNewCount", "FriendNum", "FansNickname", "BgPic", "GodData", "HeavyUser", "NewTshowIcon", "TbVip", "NoPostHigh", "VisitorNum", "TotalVisitorNum", "Pendant", "AlaInfo", "SealPrefix", "HasBottleEnter", "NicknameUpdateTime", "ThreadNum", "AgreeNum", "LeftCallNum", "IsInvited", "IsFans", "PrivThread", "BaijiahaoInfo", "BirthdayInfo", "CanModifyAvatar", "ModifyAvatarDesc", "NewGodData", "BawuThrones", "CallFansInfo", "BazhuGrade", "IsDefaultAvatar", "CreationData", "TotalAgreeNum", "TiebaUid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.User), global::TbClient.User.Parser, new[]{ "IsLogin", "Uid", "Name", "NameShow", "Portrait", "NoUn", "Type", "Userhide", "Balv", "IsManager", "Rank", "BimgUrl", "MeizhiLevel", "IsVerify", "IsInterestman", "Iconinfo", "TshowIcon", "UserType", "IsCoreuser", "IsHuinibuke", "IosBimgFormat", "LevelId", "IsLike", "IsBawu", "BawuType", "Portraith", "Ip", "BDUSS", "FansNum", "ConcernNum", "Sex", "MyLikeNum", "Intro", "Passwd", "PostNum", "TbAge", "IsMem", "BimgEndTime", "PayMemberInfo", "Gender", "IsMask", "PrivSets", "GiftNum", "IsSelectTail", "IsGuanfang", "BookmarkCount", "BookmarkNewCount", "FriendNum", "FansNickname", "BgPic", "GodData", "HeavyUser", "NewTshowIcon", "TbVip", "NoPostHigh", "VisitorNum", "TotalVisitorNum", "Pendant", "AlaInfo", "SealPrefix", "HasBottleEnter", "NicknameUpdateTime", "ThreadNum", "AgreeNum", "LeftCallNum", "IsInvited", "IsFans", "PrivThread", "BaijiahaoInfo", "BirthdayInfo", "CanModifyAvatar", "ModifyAvatarDesc", "NewGodData", "BawuThrones", "CallFansInfo", "BazhuGrade", "IsDefaultAvatar", "CreationData", "TotalAgreeNum", "TiebaUid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -127,7 +127,7 @@ namespace TbClient {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public User(User other) : this() {
       isLogin_ = other.isLogin_;
-      id_ = other.id_;
+      uid_ = other.uid_;
       name_ = other.name_;
       nameShow_ = other.nameShow_;
       portrait_ = other.portrait_;
@@ -227,15 +227,15 @@ namespace TbClient {
       }
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 2;
-    private long id_;
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 2;
+    private long uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long Id {
-      get { return id_; }
+    public long Uid {
+      get { return uid_; }
       set {
-        id_ = value;
+        uid_ = value;
       }
     }
 
@@ -1188,7 +1188,7 @@ namespace TbClient {
         return true;
       }
       if (IsLogin != other.IsLogin) return false;
-      if (Id != other.Id) return false;
+      if (Uid != other.Uid) return false;
       if (Name != other.Name) return false;
       if (NameShow != other.NameShow) return false;
       if (Portrait != other.Portrait) return false;
@@ -1275,7 +1275,7 @@ namespace TbClient {
     public override int GetHashCode() {
       int hash = 1;
       if (IsLogin != 0) hash ^= IsLogin.GetHashCode();
-      if (Id != 0L) hash ^= Id.GetHashCode();
+      if (Uid != 0L) hash ^= Uid.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (NameShow.Length != 0) hash ^= NameShow.GetHashCode();
       if (Portrait.Length != 0) hash ^= Portrait.GetHashCode();
@@ -1376,9 +1376,9 @@ namespace TbClient {
         output.WriteRawTag(8);
         output.WriteInt32(IsLogin);
       }
-      if (Id != 0L) {
+      if (Uid != 0L) {
         output.WriteRawTag(16);
-        output.WriteInt64(Id);
+        output.WriteInt64(Uid);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(26);
@@ -1697,9 +1697,9 @@ namespace TbClient {
         output.WriteRawTag(8);
         output.WriteInt32(IsLogin);
       }
-      if (Id != 0L) {
+      if (Uid != 0L) {
         output.WriteRawTag(16);
-        output.WriteInt64(Id);
+        output.WriteInt64(Uid);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(26);
@@ -2017,8 +2017,8 @@ namespace TbClient {
       if (IsLogin != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(IsLogin);
       }
-      if (Id != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
+      if (Uid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Uid);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -2263,8 +2263,8 @@ namespace TbClient {
       if (other.IsLogin != 0) {
         IsLogin = other.IsLogin;
       }
-      if (other.Id != 0L) {
-        Id = other.Id;
+      if (other.Uid != 0L) {
+        Uid = other.Uid;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -2556,7 +2556,7 @@ namespace TbClient {
             break;
           }
           case 16: {
-            Id = input.ReadInt64();
+            Uid = input.ReadInt64();
             break;
           }
           case 26: {
@@ -2933,7 +2933,7 @@ namespace TbClient {
             break;
           }
           case 16: {
-            Id = input.ReadInt64();
+            Uid = input.ReadInt64();
             break;
           }
           case 26: {
