@@ -26,18 +26,19 @@ namespace TbClient.Api.Response {
           string.Concat(
             "CiBBcGkvUmVzcG9uc2UvUmVwbHlSZXNwb25zZS5wcm90bxIVdGJDbGllbnQu",
             "YXBpLnJlc3BvbnNlGhVQb3N0L0NvbW1vbi9MYnMucHJvdG8aEFBvc3QvUmVw",
-            "bHkucHJvdG8aC0Vycm9yLnByb3RvGgpQYWdlLnByb3RvGgpVc2VyLnByb3Rv",
-            "IogCCg1SZXBseVJlc3BvbnNlEh4KBWVycm9yGAEgASgLMg8udGJDbGllbnQu",
-            "RXJyb3ISNwoEZGF0YRgCIAEoCzIpLnRiQ2xpZW50LmFwaS5yZXNwb25zZS5S",
-            "ZXBseVJlc3BvbnNlLkRhdGEanQEKBERhdGESHAoEcGFnZRgDIAEoCzIOLnRi",
-            "Q2xpZW50LlBhZ2USJwoJcG9zdF9saXN0GAYgAygLMhQudGJDbGllbnQucG9z",
-            "dC5SZXBseRIrCghsb2NhdGlvbhgJIAEoCzIZLnRiQ2xpZW50LnBvc3QuY29t",
-            "bW9uLkxicxIhCgl1c2VyX2xpc3QYDSADKAsyDi50YkNsaWVudC5Vc2VyYgZw",
-            "cm90bzM="));
+            "bHkucHJvdG8aF0ZvcnVtL1NpbXBsZUZvcnVtLnByb3RvGgtFcnJvci5wcm90",
+            "bxoKUGFnZS5wcm90bxoKVXNlci5wcm90byK0AgoNUmVwbHlSZXNwb25zZRIe",
+            "CgVlcnJvchgBIAEoCzIPLnRiQ2xpZW50LkVycm9yEjcKBGRhdGEYAiABKAsy",
+            "KS50YkNsaWVudC5hcGkucmVzcG9uc2UuUmVwbHlSZXNwb25zZS5EYXRhGskB",
+            "CgREYXRhEhwKBHBhZ2UYAyABKAsyDi50YkNsaWVudC5QYWdlEioKBWZvcnVt",
+            "GAIgASgLMhsudGJDbGllbnQuZm9ydW0uU2ltcGxlRm9ydW0SJwoJcG9zdF9s",
+            "aXN0GAYgAygLMhQudGJDbGllbnQucG9zdC5SZXBseRIrCghsb2NhdGlvbhgJ",
+            "IAEoCzIZLnRiQ2xpZW50LnBvc3QuY29tbW9uLkxicxIhCgl1c2VyX2xpc3QY",
+            "DSADKAsyDi50YkNsaWVudC5Vc2VyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.ReplyReflection.Descriptor, global::TbClient.ErrorReflection.Descriptor, global::TbClient.PageReflection.Descriptor, global::TbClient.UserReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.ReplyReflection.Descriptor, global::TbClient.Forum.SimpleForumReflection.Descriptor, global::TbClient.ErrorReflection.Descriptor, global::TbClient.PageReflection.Descriptor, global::TbClient.UserReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Response.ReplyResponse), global::TbClient.Api.Response.ReplyResponse.Parser, new[]{ "Error", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Response.ReplyResponse.Types.Data), global::TbClient.Api.Response.ReplyResponse.Types.Data.Parser, new[]{ "Page", "PostList", "Location", "UserList" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Response.ReplyResponse), global::TbClient.Api.Response.ReplyResponse.Parser, new[]{ "Error", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Response.ReplyResponse.Types.Data), global::TbClient.Api.Response.ReplyResponse.Types.Data.Parser, new[]{ "Page", "Forum", "PostList", "Location", "UserList" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -326,6 +327,7 @@ namespace TbClient.Api.Response {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Data(Data other) : this() {
           page_ = other.page_ != null ? other.page_.Clone() : null;
+          forum_ = other.forum_ != null ? other.forum_.Clone() : null;
           postList_ = other.postList_.Clone();
           location_ = other.location_ != null ? other.location_.Clone() : null;
           userList_ = other.userList_.Clone();
@@ -347,6 +349,18 @@ namespace TbClient.Api.Response {
           get { return page_; }
           set {
             page_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "forum" field.</summary>
+        public const int ForumFieldNumber = 2;
+        private global::TbClient.Forum.SimpleForum forum_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::TbClient.Forum.SimpleForum Forum {
+          get { return forum_; }
+          set {
+            forum_ = value;
           }
         }
 
@@ -400,6 +414,7 @@ namespace TbClient.Api.Response {
             return true;
           }
           if (!object.Equals(Page, other.Page)) return false;
+          if (!object.Equals(Forum, other.Forum)) return false;
           if(!postList_.Equals(other.postList_)) return false;
           if (!object.Equals(Location, other.Location)) return false;
           if(!userList_.Equals(other.userList_)) return false;
@@ -411,6 +426,7 @@ namespace TbClient.Api.Response {
         public override int GetHashCode() {
           int hash = 1;
           if (page_ != null) hash ^= Page.GetHashCode();
+          if (forum_ != null) hash ^= Forum.GetHashCode();
           hash ^= postList_.GetHashCode();
           if (location_ != null) hash ^= Location.GetHashCode();
           hash ^= userList_.GetHashCode();
@@ -432,6 +448,10 @@ namespace TbClient.Api.Response {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
+          if (forum_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(Forum);
+          }
           if (page_ != null) {
             output.WriteRawTag(26);
             output.WriteMessage(Page);
@@ -452,6 +472,10 @@ namespace TbClient.Api.Response {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (forum_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(Forum);
+          }
           if (page_ != null) {
             output.WriteRawTag(26);
             output.WriteMessage(Page);
@@ -474,6 +498,9 @@ namespace TbClient.Api.Response {
           int size = 0;
           if (page_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Page);
+          }
+          if (forum_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Forum);
           }
           size += postList_.CalculateSize(_repeated_postList_codec);
           if (location_ != null) {
@@ -498,6 +525,12 @@ namespace TbClient.Api.Response {
             }
             Page.MergeFrom(other.Page);
           }
+          if (other.forum_ != null) {
+            if (forum_ == null) {
+              Forum = new global::TbClient.Forum.SimpleForum();
+            }
+            Forum.MergeFrom(other.Forum);
+          }
           postList_.Add(other.postList_);
           if (other.location_ != null) {
             if (location_ == null) {
@@ -521,6 +554,13 @@ namespace TbClient.Api.Response {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
+              case 18: {
+                if (forum_ == null) {
+                  Forum = new global::TbClient.Forum.SimpleForum();
+                }
+                input.ReadMessage(Forum);
+                break;
+              }
               case 26: {
                 if (page_ == null) {
                   Page = new global::TbClient.Page();
@@ -558,6 +598,13 @@ namespace TbClient.Api.Response {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
+              case 18: {
+                if (forum_ == null) {
+                  Forum = new global::TbClient.Forum.SimpleForum();
+                }
+                input.ReadMessage(Forum);
+                break;
+              }
               case 26: {
                 if (page_ == null) {
                   Page = new global::TbClient.Page();
