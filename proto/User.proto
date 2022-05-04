@@ -13,6 +13,7 @@ import "CallFansInfo.proto";
 import "ConsumeInfo.proto";
 import "CreationData.proto";
 import "Ecom.proto";
+import "EditConfig.proto";
 import "EsportInfo.proto";
 import "ForumToolPerm.proto";
 import "GiftInfo.proto";
@@ -165,4 +166,6 @@ message User {
     int32 display_auth_type = 123;
     WorkCreatorInfo work_creator_info = 124;
     string level_name = 125;
+    EditConfig edit_config = 126;
+    string ip_address = 127;
 }

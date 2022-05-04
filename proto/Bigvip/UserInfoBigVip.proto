@@ -8,4 +8,5 @@ message UserInfoBigVip {
     uint32 message_accept = 5;
     string portrait = 6;
     string portraith = 7;
+    uint32 mute_notifications = 8;
 }
