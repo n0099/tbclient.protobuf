@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<Integer> DEFAULT_ARR_TAG_ID;
@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     /* renamed from: common  reason: collision with root package name */
     public final CommonReq f1320common;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -82,7 +82,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

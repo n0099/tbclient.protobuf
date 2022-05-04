@@ -234,6 +234,8 @@ public final class ThreadInfo extends Message {
     public final List<DislikeInfo> dislike_info;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String ecom;
+    @ProtoField(tag = 203)
+    public final EditInfo edit_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 90)
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
@@ -599,6 +601,7 @@ public final class ThreadInfo extends Message {
         public List<DeclareInfo> declare_list;
         public List<DislikeInfo> dislike_info;
         public String ecom;
+        public EditInfo edit_info;
         public List<TailInfo> ext_tails;
         public Long fid;
         public List<PbContent> first_post_content;
@@ -994,6 +997,7 @@ public final class ThreadInfo extends Message {
             this.tab_show_mode = threadInfo.tab_show_mode;
             this.tiebaplus_ad = threadInfo.tiebaplus_ad;
             this.recommend_tip = threadInfo.recommend_tip;
+            this.edit_info = threadInfo.edit_info;
             this.is_pictxt = threadInfo.is_pictxt;
         }
 
@@ -2084,6 +2088,7 @@ public final class ThreadInfo extends Message {
             }
             this.tiebaplus_ad = builder.tiebaplus_ad;
             this.recommend_tip = builder.recommend_tip;
+            this.edit_info = builder.edit_info;
             Integer num75 = builder.is_pictxt;
             if (num75 == null) {
                 this.is_pictxt = DEFAULT_IS_PICTXT;
@@ -2288,6 +2293,7 @@ public final class ThreadInfo extends Message {
         this.tab_show_mode = builder.tab_show_mode;
         this.tiebaplus_ad = builder.tiebaplus_ad;
         this.recommend_tip = builder.recommend_tip;
+        this.edit_info = builder.edit_info;
         this.is_pictxt = builder.is_pictxt;
     }
 }

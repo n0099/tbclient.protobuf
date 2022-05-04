@@ -10,40 +10,39 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.Collections;
-import java.util.List;
-/* loaded from: classes9.dex */
-public final class SeniorLottery extends Message {
+/* loaded from: classes8.dex */
+public final class EditInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
-    public static final String DEFAULT_ACT_DESC = "";
-    public static final List<LotteryRegular> DEFAULT_ACT_REGULAR;
-    public static final List<AwardInfo> DEFAULT_AWARD_INFO;
-    public static final List<AwardUser> DEFAULT_LUCK_USERS;
-    public static final String DEFAULT_MYAWARD = "";
+    public static final Integer DEFAULT_EDIT_ENABLE;
+    public static final String DEFAULT_EDIT_ERROR_MSG = "";
+    public static final Integer DEFAULT_EDIT_ERROR_NO;
+    public static final Integer DEFAULT_EDIT_FROM;
+    public static final Integer DEFAULT_EDIT_STATUS;
+    public static final Integer DEFAULT_LAST_EDIT_TIME;
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 5, type = Message.Datatype.STRING)
-    public final String act_desc;
-    @ProtoField(label = Message.Label.REPEATED, tag = 6)
-    public final List<LotteryRegular> act_regular;
-    @ProtoField(label = Message.Label.REPEATED, tag = 2)
-    public final List<AwardInfo> award_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = 4)
-    public final List<AwardUser> luck_users;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer edit_enable;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
-    public final String myaward;
-    @ProtoField(tag = 1)
-    public final LotteryTheme theme;
+    public final String edit_error_msg;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer edit_error_no;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer edit_from;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer edit_status;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer last_edit_time;
 
-    /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SeniorLottery> {
+    /* loaded from: classes8.dex */
+    public static final class Builder extends Message.Builder<EditInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public String act_desc;
-        public List<LotteryRegular> act_regular;
-        public List<AwardInfo> award_info;
-        public List<AwardUser> luck_users;
-        public String myaward;
-        public LotteryTheme theme;
+        public Integer edit_enable;
+        public String edit_error_msg;
+        public Integer edit_error_no;
+        public Integer edit_from;
+        public Integer edit_status;
+        public Integer last_edit_time;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -60,13 +59,13 @@ public final class SeniorLottery extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(SeniorLottery seniorLottery) {
-            super(seniorLottery);
+        public Builder(EditInfo editInfo) {
+            super(editInfo);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {seniorLottery};
+                Object[] objArr = {editInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -77,27 +76,27 @@ public final class SeniorLottery extends Message {
                     return;
                 }
             }
-            if (seniorLottery == null) {
+            if (editInfo == null) {
                 return;
             }
-            this.theme = seniorLottery.theme;
-            this.award_info = Message.copyOf(seniorLottery.award_info);
-            this.myaward = seniorLottery.myaward;
-            this.luck_users = Message.copyOf(seniorLottery.luck_users);
-            this.act_desc = seniorLottery.act_desc;
-            this.act_regular = Message.copyOf(seniorLottery.act_regular);
+            this.edit_status = editInfo.edit_status;
+            this.edit_enable = editInfo.edit_enable;
+            this.edit_error_msg = editInfo.edit_error_msg;
+            this.last_edit_time = editInfo.last_edit_time;
+            this.edit_from = editInfo.edit_from;
+            this.edit_error_no = editInfo.edit_error_no;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public SeniorLottery build(boolean z) {
+        public EditInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SeniorLottery(this, z, null) : (SeniorLottery) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new EditInfo(this, z, null) : (EditInfo) invokeZ.objValue;
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -106,27 +105,29 @@ public final class SeniorLottery extends Message {
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(110930892, "Ltbclient/SeniorLottery;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1983162439, "Ltbclient/EditInfo;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(110930892, "Ltbclient/SeniorLottery;");
+                classClinitInterceptable.invokePostClinit(-1983162439, "Ltbclient/EditInfo;");
                 return;
             }
         }
-        DEFAULT_AWARD_INFO = Collections.emptyList();
-        DEFAULT_LUCK_USERS = Collections.emptyList();
-        DEFAULT_ACT_REGULAR = Collections.emptyList();
+        DEFAULT_EDIT_STATUS = 0;
+        DEFAULT_EDIT_ENABLE = 0;
+        DEFAULT_LAST_EDIT_TIME = 0;
+        DEFAULT_EDIT_FROM = 0;
+        DEFAULT_EDIT_ERROR_NO = 0;
     }
 
-    public /* synthetic */ SeniorLottery(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ EditInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public SeniorLottery(Builder builder, boolean z) {
+    public EditInfo(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -144,45 +145,50 @@ public final class SeniorLottery extends Message {
             }
         }
         if (z) {
-            this.theme = builder.theme;
-            List<AwardInfo> list = builder.award_info;
-            if (list == null) {
-                this.award_info = DEFAULT_AWARD_INFO;
+            Integer num = builder.edit_status;
+            if (num == null) {
+                this.edit_status = DEFAULT_EDIT_STATUS;
             } else {
-                this.award_info = Message.immutableCopyOf(list);
+                this.edit_status = num;
             }
-            String str = builder.myaward;
+            Integer num2 = builder.edit_enable;
+            if (num2 == null) {
+                this.edit_enable = DEFAULT_EDIT_ENABLE;
+            } else {
+                this.edit_enable = num2;
+            }
+            String str = builder.edit_error_msg;
             if (str == null) {
-                this.myaward = "";
+                this.edit_error_msg = "";
             } else {
-                this.myaward = str;
+                this.edit_error_msg = str;
             }
-            List<AwardUser> list2 = builder.luck_users;
-            if (list2 == null) {
-                this.luck_users = DEFAULT_LUCK_USERS;
+            Integer num3 = builder.last_edit_time;
+            if (num3 == null) {
+                this.last_edit_time = DEFAULT_LAST_EDIT_TIME;
             } else {
-                this.luck_users = Message.immutableCopyOf(list2);
+                this.last_edit_time = num3;
             }
-            String str2 = builder.act_desc;
-            if (str2 == null) {
-                this.act_desc = "";
+            Integer num4 = builder.edit_from;
+            if (num4 == null) {
+                this.edit_from = DEFAULT_EDIT_FROM;
             } else {
-                this.act_desc = str2;
+                this.edit_from = num4;
             }
-            List<LotteryRegular> list3 = builder.act_regular;
-            if (list3 == null) {
-                this.act_regular = DEFAULT_ACT_REGULAR;
+            Integer num5 = builder.edit_error_no;
+            if (num5 == null) {
+                this.edit_error_no = DEFAULT_EDIT_ERROR_NO;
                 return;
             } else {
-                this.act_regular = Message.immutableCopyOf(list3);
+                this.edit_error_no = num5;
                 return;
             }
         }
-        this.theme = builder.theme;
-        this.award_info = Message.immutableCopyOf(builder.award_info);
-        this.myaward = builder.myaward;
-        this.luck_users = Message.immutableCopyOf(builder.luck_users);
-        this.act_desc = builder.act_desc;
-        this.act_regular = Message.immutableCopyOf(builder.act_regular);
+        this.edit_status = builder.edit_status;
+        this.edit_enable = builder.edit_enable;
+        this.edit_error_msg = builder.edit_error_msg;
+        this.last_edit_time = builder.last_edit_time;
+        this.edit_from = builder.edit_from;
+        this.edit_error_no = builder.edit_error_no;
     }
 }

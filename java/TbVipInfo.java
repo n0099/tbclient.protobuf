@@ -8,7 +8,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class TbVipInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_INTRO = "";
@@ -22,7 +22,7 @@ public final class TbVipInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String v_url;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<TbVipInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,7 +79,7 @@ public final class TbVipInfo extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

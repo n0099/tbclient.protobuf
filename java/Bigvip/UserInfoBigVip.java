@@ -14,6 +14,7 @@ import com.squareup.wire.ProtoField;
 public final class UserInfoBigVip extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_MESSAGE_ACCEPT;
+    public static final Integer DEFAULT_MUTE_NOTIFICATIONS;
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_PORTRAITH = "";
     public static final String DEFAULT_USER_DETAIL = "";
@@ -23,6 +24,8 @@ public final class UserInfoBigVip extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer message_accept;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT32)
+    public final Integer mute_notifications;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -41,6 +44,7 @@ public final class UserInfoBigVip extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer message_accept;
+        public Integer mute_notifications;
         public String portrait;
         public String portraith;
         public String user_detail;
@@ -90,6 +94,7 @@ public final class UserInfoBigVip extends Message {
             this.message_accept = userInfoBigVip.message_accept;
             this.portrait = userInfoBigVip.portrait;
             this.portraith = userInfoBigVip.portraith;
+            this.mute_notifications = userInfoBigVip.mute_notifications;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -122,6 +127,7 @@ public final class UserInfoBigVip extends Message {
         }
         DEFAULT_USER_ID = 0L;
         DEFAULT_MESSAGE_ACCEPT = 0;
+        DEFAULT_MUTE_NOTIFICATIONS = 0;
     }
 
     public /* synthetic */ UserInfoBigVip(Builder builder, boolean z, a aVar) {
@@ -186,9 +192,15 @@ public final class UserInfoBigVip extends Message {
             String str5 = builder.portraith;
             if (str5 == null) {
                 this.portraith = "";
-                return;
             } else {
                 this.portraith = str5;
+            }
+            Integer num2 = builder.mute_notifications;
+            if (num2 == null) {
+                this.mute_notifications = DEFAULT_MUTE_NOTIFICATIONS;
+                return;
+            } else {
+                this.mute_notifications = num2;
                 return;
             }
         }
@@ -199,5 +211,6 @@ public final class UserInfoBigVip extends Message {
         this.message_accept = builder.message_accept;
         this.portrait = builder.portrait;
         this.portraith = builder.portraith;
+        this.mute_notifications = builder.mute_notifications;
     }
 }

@@ -47,6 +47,7 @@ public final class User extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_IP = "";
+    public static final String DEFAULT_IP_ADDRESS = "";
     public static final Integer DEFAULT_IS_BAWU;
     public static final Integer DEFAULT_IS_COREUSER;
     public static final Integer DEFAULT_IS_DEFAULT_AVATAR;
@@ -157,6 +158,8 @@ public final class User extends Message {
     public final Integer each_other_friend;
     @ProtoField(tag = 74)
     public final Ecom ecom;
+    @ProtoField(tag = 126)
+    public final EditConfig edit_config;
     @ProtoField(tag = 84)
     public final EsportInfo esport_data;
     @ProtoField(tag = 57, type = Message.Datatype.STRING)
@@ -199,6 +202,8 @@ public final class User extends Message {
     public final String ios_bimg_format;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
     public final String ip;
+    @ProtoField(tag = 127, type = Message.Datatype.STRING)
+    public final String ip_address;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer is_bawu;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
@@ -380,6 +385,7 @@ public final class User extends Message {
         public Integer display_auth_type;
         public Integer each_other_friend;
         public Ecom ecom;
+        public EditConfig edit_config;
         public EsportInfo esport_data;
         public String fans_nickname;
         public Integer fans_num;
@@ -401,6 +407,7 @@ public final class User extends Message {
         public String intro;
         public String ios_bimg_format;
         public String ip;
+        public String ip_address;
         public Integer is_bawu;
         public Integer is_coreuser;
         public Integer is_default_avatar;
@@ -634,6 +641,8 @@ public final class User extends Message {
             this.display_auth_type = user.display_auth_type;
             this.work_creator_info = user.work_creator_info;
             this.level_name = user.level_name;
+            this.edit_config = user.edit_config;
+            this.ip_address = user.ip_address;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1319,9 +1328,16 @@ public final class User extends Message {
             String str23 = builder.level_name;
             if (str23 == null) {
                 this.level_name = "";
-                return;
             } else {
                 this.level_name = str23;
+            }
+            this.edit_config = builder.edit_config;
+            String str24 = builder.ip_address;
+            if (str24 == null) {
+                this.ip_address = "";
+                return;
+            } else {
+                this.ip_address = str24;
                 return;
             }
         }
@@ -1447,5 +1463,7 @@ public final class User extends Message {
         this.display_auth_type = builder.display_auth_type;
         this.work_creator_info = builder.work_creator_info;
         this.level_name = builder.level_name;
+        this.edit_config = builder.edit_config;
+        this.ip_address = builder.ip_address;
     }
 }
