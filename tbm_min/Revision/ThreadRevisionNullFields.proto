@@ -1,0 +1,18 @@
+syntax = "proto3";
+package tbClient.revision;
+
+message ThreadRevisionNullFields {
+    bool ThreadType = 1;
+    bool StickyType = 2;
+    bool TopicType = 3;
+    bool IsGood = 4;
+    bool AuthorManagerType = 5;
+    bool LatestReplyTime = 6;
+    bool LatestReplierUid = 7;
+    bool ReplyNum = 8;
+    bool ViewNum = 9;
+    bool ShareNum = 10;
+    bool AgreeNum = 11;
+    bool DisagreeNum = 12;
+    bool ZanInfo = 13;
+}

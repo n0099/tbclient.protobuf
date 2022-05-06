@@ -1,0 +1,7 @@
+syntax = "proto3";
+package tbClient.revision;
+
+message SubReplyRevisionNullFields {
+    bool authorManagerType = 1;
+    bool authorExpGrade = 2;
+}

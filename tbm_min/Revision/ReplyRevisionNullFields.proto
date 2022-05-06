@@ -1,0 +1,11 @@
+syntax = "proto3";
+package tbClient.revision;
+
+message ReplyRevisionNullFields {
+    bool authorManagerType = 1;
+    bool authorExpGrade = 2;
+    bool subReplyNum = 3;
+    bool isFold = 4;
+    bool agreeNum = 5;
+    bool disagreeNum = 6;
+}
