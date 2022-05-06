@@ -1,7 +1,0 @@
-syntax = "proto3";
-package tbClient.userDeps;
-
-message Pendant {
-    uint64 props_id = 1;
-    string img_url = 2;
-}

@@ -1,8 +1,0 @@
-syntax = "proto3";
-package tbClient.userDeps;
-
-message Balv {
-    int32 is_black = 1;
-    int32 is_block = 2;
-    int32 days_tofree = 3;
-}

@@ -1,8 +1,8 @@
 syntax = "proto3";
 package tbClient.api.response;
+import "Post/SubReply.proto";
 import "Error.proto";
 import "Page.proto";
-import "Post/SubReply.proto";
 
 message SubReplyResponse {
     Error error = 1;

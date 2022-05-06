@@ -7,22 +7,10 @@ message ThreadRequest {
         string kw = 1;
         int32 rn = 2;
         int32 rn_need = 3;
-        int32 is_good = 4;
-        int32 with_group = 8;
-        int32 frs_rn = 10;
         int32 q_type = 14;
         int32 pn = 15;
-        int32 result_num = 22;
-        int64 user_id = 31;
-        string user_name = 32;
-        int32 no_un = 33;
-        string portrait = 34;
-        string mobile = 35;
-        string email = 36;
-        bool debug = 37;
         Common common = 39;
         int32 sort_type = 47;
-        int32 load_type = 49;
     };
     Data data = 1;
 }

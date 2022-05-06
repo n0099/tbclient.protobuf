@@ -2,7 +2,5 @@ syntax = "proto3";
 package tbClient.api.request;
 
 message Common {
-    int32 _client_type = 1;
     string _client_version = 2;
-    string _client_id = 3;
 }
