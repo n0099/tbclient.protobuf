@@ -1,0 +1,24 @@
+syntax = "proto3";
+package tbClient.userDeps;
+
+message Icon {
+    string name = 1;
+    int32 weight = 2;
+    string url = 3;
+    string icon = 4;
+    int32 value = 5;
+    message Terminal {
+        int32 pc = 1;
+        int32 wap = 2;
+        int32 client = 3;
+    };
+    Terminal terminal = 6;
+    message Position {
+        int32 frs = 1;
+        int32 pb = 2;
+        int32 home = 3;
+        int32 card = 4;
+    };
+    Position position = 7;
+    repeated string sprite_info = 8;
+}

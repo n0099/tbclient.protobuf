@@ -1,0 +1,13 @@
+syntax = "proto3";
+package tbClient.post.replyDeps;
+
+message SignatureData {
+    int32 signature_id = 1;
+    string fontKeyName = 2;
+    string fontColor = 3;
+    message SignatureContent {
+        int32 type = 1;
+        string text = 2;
+    };
+    repeated SignatureContent content = 4;
+}

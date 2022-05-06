@@ -1,0 +1,7 @@
+syntax = "proto3";
+package tbClient.userDeps;
+
+message BazhuSign {
+    string desc = 1;
+    string level = 2;
+}

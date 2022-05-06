@@ -1,0 +1,16 @@
+syntax = "proto3";
+package tbClient.api.response;
+import "Post/Thread.proto";
+import "Error.proto";
+import "Page.proto";
+import "User.proto";
+
+message ThreadResponse {
+    Error error = 1;
+    message Data {
+        Page page = 4;
+        repeated tbClient.post.Thread thread_list = 7;
+        repeated User user_list = 17;
+    };
+    Data data = 2;
+}
