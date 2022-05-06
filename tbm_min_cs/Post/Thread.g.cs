@@ -26,22 +26,22 @@ namespace TbClient.Post {
           string.Concat(
             "ChFQb3N0L1RocmVhZC5wcm90bxINdGJDbGllbnQucG9zdBoKVXNlci5wcm90",
             "bxoVUG9zdC9Db21tb24vWmFuLnByb3RvGhVQb3N0L0NvbW1vbi9MYnMucHJv",
-            "dG8aF1Bvc3QvQ29tbW9uL0FncmVlLnByb3RvIswDCgZUaHJlYWQSCwoDdGlk",
+            "dG8aF1Bvc3QvQ29tbW9uL0FncmVlLnByb3RvIvIDCgZUaHJlYWQSCwoDdGlk",
             "GAIgASgDEg0KBXRpdGxlGAMgASgJEhEKCXJlcGx5X251bRgEIAEoBRIQCgh2",
             "aWV3X251bRgFIAEoBRIVCg1sYXN0X3RpbWVfaW50GAcgASgFEhQKDHRocmVh",
             "ZF90eXBlcxgIIAEoBRIOCgZpc190b3AYCSABKAUSDwoHaXNfZ29vZBgKIAEo",
-            "BRIeCgZhdXRob3IYEiABKAsyDi50YkNsaWVudC5Vc2VyEhYKDmxpdmVfcG9z",
-            "dF90eXBlGB0gASgJEhUKDWZpcnN0X3Bvc3RfaWQYKCABKAMSJgoDemFuGCkg",
-            "ASgLMhkudGJDbGllbnQucG9zdC5jb21tb24uWmFuEhMKC2NyZWF0ZV90aW1l",
-            "GC0gASgFEhQKDGlzX21lbWJlcnRvcBg2IAEoBRIRCglhdXRob3JfaWQYOCAB",
-            "KAMSKwoIbG9jYXRpb24YPiABKAsyGS50YkNsaWVudC5wb3N0LmNvbW1vbi5M",
-            "YnMSEQoJYWdyZWVfbnVtGHwgASgFEioKBWFncmVlGH4gASgLMhsudGJDbGll",
-            "bnQucG9zdC5jb21tb24uQWdyZWUSEgoJc2hhcmVfbnVtGIcBIAEoA2IGcHJv",
-            "dG8z"));
+            "BRIeCgZhdXRob3IYEiABKAsyDi50YkNsaWVudC5Vc2VyEiQKDGxhc3RfcmVw",
+            "bHllchgTIAEoCzIOLnRiQ2xpZW50LlVzZXISFgoObGl2ZV9wb3N0X3R5cGUY",
+            "HSABKAkSFQoNZmlyc3RfcG9zdF9pZBgoIAEoAxImCgN6YW4YKSABKAsyGS50",
+            "YkNsaWVudC5wb3N0LmNvbW1vbi5aYW4SEwoLY3JlYXRlX3RpbWUYLSABKAUS",
+            "FAoMaXNfbWVtYmVydG9wGDYgASgFEhEKCWF1dGhvcl9pZBg4IAEoAxIrCghs",
+            "b2NhdGlvbhg+IAEoCzIZLnRiQ2xpZW50LnBvc3QuY29tbW9uLkxicxIRCglh",
+            "Z3JlZV9udW0YfCABKAUSKgoFYWdyZWUYfiABKAsyGy50YkNsaWVudC5wb3N0",
+            "LmNvbW1vbi5BZ3JlZRISCglzaGFyZV9udW0YhwEgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.UserReflection.Descriptor, global::TbClient.Post.Common.ZanReflection.Descriptor, global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread), global::TbClient.Post.Thread.Parser, new[]{ "Tid", "Title", "ReplyNum", "ViewNum", "LastTimeInt", "ThreadTypes", "IsTop", "IsGood", "Author", "LivePostType", "FirstPostId", "Zan", "CreateTime", "IsMembertop", "AuthorId", "Location", "AgreeNum", "Agree", "ShareNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread), global::TbClient.Post.Thread.Parser, new[]{ "Tid", "Title", "ReplyNum", "ViewNum", "LastTimeInt", "ThreadTypes", "IsTop", "IsGood", "Author", "LastReplyer", "LivePostType", "FirstPostId", "Zan", "CreateTime", "IsMembertop", "AuthorId", "Location", "AgreeNum", "Agree", "ShareNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -91,6 +91,7 @@ namespace TbClient.Post {
       isTop_ = other.isTop_;
       isGood_ = other.isGood_;
       author_ = other.author_ != null ? other.author_.Clone() : null;
+      lastReplyer_ = other.lastReplyer_ != null ? other.lastReplyer_.Clone() : null;
       livePostType_ = other.livePostType_;
       firstPostId_ = other.firstPostId_;
       zan_ = other.zan_ != null ? other.zan_.Clone() : null;
@@ -215,6 +216,18 @@ namespace TbClient.Post {
       get { return author_; }
       set {
         author_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_replyer" field.</summary>
+    public const int LastReplyerFieldNumber = 19;
+    private global::TbClient.User lastReplyer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TbClient.User LastReplyer {
+      get { return lastReplyer_; }
+      set {
+        lastReplyer_ = value;
       }
     }
 
@@ -362,6 +375,7 @@ namespace TbClient.Post {
       if (IsTop != other.IsTop) return false;
       if (IsGood != other.IsGood) return false;
       if (!object.Equals(Author, other.Author)) return false;
+      if (!object.Equals(LastReplyer, other.LastReplyer)) return false;
       if (LivePostType != other.LivePostType) return false;
       if (FirstPostId != other.FirstPostId) return false;
       if (!object.Equals(Zan, other.Zan)) return false;
@@ -388,6 +402,7 @@ namespace TbClient.Post {
       if (IsTop != 0) hash ^= IsTop.GetHashCode();
       if (IsGood != 0) hash ^= IsGood.GetHashCode();
       if (author_ != null) hash ^= Author.GetHashCode();
+      if (lastReplyer_ != null) hash ^= LastReplyer.GetHashCode();
       if (LivePostType.Length != 0) hash ^= LivePostType.GetHashCode();
       if (FirstPostId != 0L) hash ^= FirstPostId.GetHashCode();
       if (zan_ != null) hash ^= Zan.GetHashCode();
@@ -451,6 +466,10 @@ namespace TbClient.Post {
       if (author_ != null) {
         output.WriteRawTag(146, 1);
         output.WriteMessage(Author);
+      }
+      if (lastReplyer_ != null) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(LastReplyer);
       }
       if (LivePostType.Length != 0) {
         output.WriteRawTag(234, 1);
@@ -538,6 +557,10 @@ namespace TbClient.Post {
         output.WriteRawTag(146, 1);
         output.WriteMessage(Author);
       }
+      if (lastReplyer_ != null) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(LastReplyer);
+      }
       if (LivePostType.Length != 0) {
         output.WriteRawTag(234, 1);
         output.WriteString(LivePostType);
@@ -615,6 +638,9 @@ namespace TbClient.Post {
       if (author_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Author);
       }
+      if (lastReplyer_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(LastReplyer);
+      }
       if (LivePostType.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(LivePostType);
       }
@@ -686,6 +712,12 @@ namespace TbClient.Post {
           Author = new global::TbClient.User();
         }
         Author.MergeFrom(other.Author);
+      }
+      if (other.lastReplyer_ != null) {
+        if (lastReplyer_ == null) {
+          LastReplyer = new global::TbClient.User();
+        }
+        LastReplyer.MergeFrom(other.LastReplyer);
       }
       if (other.LivePostType.Length != 0) {
         LivePostType = other.LivePostType;
@@ -778,6 +810,13 @@ namespace TbClient.Post {
               Author = new global::TbClient.User();
             }
             input.ReadMessage(Author);
+            break;
+          }
+          case 154: {
+            if (lastReplyer_ == null) {
+              LastReplyer = new global::TbClient.User();
+            }
+            input.ReadMessage(LastReplyer);
             break;
           }
           case 234: {
@@ -881,6 +920,13 @@ namespace TbClient.Post {
               Author = new global::TbClient.User();
             }
             input.ReadMessage(Author);
+            break;
+          }
+          case 154: {
+            if (lastReplyer_ == null) {
+              LastReplyer = new global::TbClient.User();
+            }
+            input.ReadMessage(LastReplyer);
             break;
           }
           case 234: {

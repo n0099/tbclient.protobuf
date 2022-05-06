@@ -15,6 +15,7 @@ message Thread {
     int32 is_top = 9;
     int32 is_good = 10;
     User author = 18;
+    User last_replyer = 19;
     string live_post_type = 29;
     int64 first_post_id = 40;
     common.Zan zan = 41;
