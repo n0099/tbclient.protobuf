@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class TPointPost extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<ActBtn> DEFAULT_ACT_BTN;
@@ -54,7 +54,7 @@ public final class TPointPost extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer template_type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<TPointPost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -131,7 +131,7 @@ public final class TPointPost extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

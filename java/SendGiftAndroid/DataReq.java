@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_GIFT_FROM;
@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1300common;
+    public final CommonReq f1294common;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long gift_from;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -38,13 +38,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long receiver_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1301common;
+        public CommonReq f1295common;
         public Long gift_from;
         public Integer gift_id;
         public Integer num;
@@ -87,7 +87,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1301common = dataReq.f1300common;
+            this.f1295common = dataReq.f1294common;
             this.receiver_id = dataReq.receiver_id;
             this.gift_id = dataReq.gift_id;
             this.price = dataReq.price;
@@ -105,7 +105,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -154,7 +154,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1300common = builder.f1301common;
+            this.f1294common = builder.f1295common;
             Long l = builder.receiver_id;
             if (l == null) {
                 this.receiver_id = DEFAULT_RECEIVER_ID;
@@ -194,7 +194,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1300common = builder.f1301common;
+        this.f1294common = builder.f1295common;
         this.receiver_id = builder.receiver_id;
         this.gift_id = builder.gift_id;
         this.price = builder.price;

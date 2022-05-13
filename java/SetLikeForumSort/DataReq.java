@@ -9,7 +9,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_NEW_LIKE_LIST = "";
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1308common;
+    public final CommonReq f1302common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String new_like_list;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -27,13 +27,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String tbs;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1309common;
+        public CommonReq f1303common;
         public String new_like_list;
         public String original_like_list;
         public String tbs;
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1309common = dataReq.f1308common;
+            this.f1303common = dataReq.f1302common;
             this.original_like_list = dataReq.original_like_list;
             this.new_like_list = dataReq.new_like_list;
             this.tbs = dataReq.tbs;
@@ -88,7 +88,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -117,7 +117,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1308common = builder.f1309common;
+            this.f1302common = builder.f1303common;
             String str = builder.original_like_list;
             if (str == null) {
                 this.original_like_list = "";
@@ -139,7 +139,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1308common = builder.f1309common;
+        this.f1302common = builder.f1303common;
         this.original_like_list = builder.original_like_list;
         this.new_like_list = builder.new_like_list;
         this.tbs = builder.tbs;

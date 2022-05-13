@@ -18,7 +18,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class ThreadInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<Abstract> DEFAULT_ABSTRACT;
@@ -31,6 +31,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_BJH_CONTENT_TAG;
     public static final String DEFAULT_CATEGORY_NAME = "";
     public static final Integer DEFAULT_CHEAK_REPEAT;
+    public static final String DEFAULT_CLICK_MONITOR_URL = "";
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
     public static final Integer DEFAULT_COLLECT_NUM;
@@ -41,6 +42,7 @@ public final class ThreadInfo extends Message {
     public static final List<DeclareInfo> DEFAULT_DECLARE_LIST;
     public static final List<DislikeInfo> DEFAULT_DISLIKE_INFO;
     public static final String DEFAULT_ECOM = "";
+    public static final String DEFAULT_EXPOSURE_MONITOR_URL = "";
     public static final List<TailInfo> DEFAULT_EXT_TAILS;
     public static final Long DEFAULT_FID;
     public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT;
@@ -212,6 +214,8 @@ public final class ThreadInfo extends Message {
     public final String category_name;
     @ProtoField(tag = 107, type = Message.Datatype.UINT32)
     public final Integer cheak_repeat;
+    @ProtoField(tag = 206, type = Message.Datatype.STRING)
+    public final String click_monitor_url;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String click_url;
     @ProtoField(tag = 51, type = Message.Datatype.STRING)
@@ -236,6 +240,8 @@ public final class ThreadInfo extends Message {
     public final String ecom;
     @ProtoField(tag = 203)
     public final EditInfo edit_info;
+    @ProtoField(tag = 205, type = Message.Datatype.STRING)
+    public final String exposure_monitor_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 90)
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 27, type = Message.Datatype.INT64)
@@ -565,7 +571,7 @@ public final class ThreadInfo extends Message {
     @ProtoField(tag = 41)
     public final Zan zan;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -590,6 +596,7 @@ public final class ThreadInfo extends Message {
         public CartoonThread cartoon_info;
         public String category_name;
         public Integer cheak_repeat;
+        public String click_monitor_url;
         public String click_url;
         public String collect_mark_pid;
         public Integer collect_num;
@@ -602,6 +609,7 @@ public final class ThreadInfo extends Message {
         public List<DislikeInfo> dislike_info;
         public String ecom;
         public EditInfo edit_info;
+        public String exposure_monitor_url;
         public List<TailInfo> ext_tails;
         public Long fid;
         public List<PbContent> first_post_content;
@@ -999,6 +1007,8 @@ public final class ThreadInfo extends Message {
             this.recommend_tip = threadInfo.recommend_tip;
             this.edit_info = threadInfo.edit_info;
             this.is_pictxt = threadInfo.is_pictxt;
+            this.exposure_monitor_url = threadInfo.exposure_monitor_url;
+            this.click_monitor_url = threadInfo.click_monitor_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1010,7 +1020,7 @@ public final class ThreadInfo extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -2092,9 +2102,21 @@ public final class ThreadInfo extends Message {
             Integer num75 = builder.is_pictxt;
             if (num75 == null) {
                 this.is_pictxt = DEFAULT_IS_PICTXT;
-                return;
             } else {
                 this.is_pictxt = num75;
+            }
+            String str45 = builder.exposure_monitor_url;
+            if (str45 == null) {
+                this.exposure_monitor_url = "";
+            } else {
+                this.exposure_monitor_url = str45;
+            }
+            String str46 = builder.click_monitor_url;
+            if (str46 == null) {
+                this.click_monitor_url = "";
+                return;
+            } else {
+                this.click_monitor_url = str46;
                 return;
             }
         }
@@ -2295,5 +2317,7 @@ public final class ThreadInfo extends Message {
         this.recommend_tip = builder.recommend_tip;
         this.edit_info = builder.edit_info;
         this.is_pictxt = builder.is_pictxt;
+        this.exposure_monitor_url = builder.exposure_monitor_url;
+        this.click_monitor_url = builder.click_monitor_url;
     }
 }

@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1232common;
+    public final CommonReq f1230common;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -66,7 +66,7 @@ public final class DataReq extends Message {
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1233common;
+        public CommonReq f1231common;
         public Long fid;
         public String first_dir;
         public Integer is_video_topic;
@@ -115,7 +115,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1233common = dataReq.f1232common;
+            this.f1231common = dataReq.f1230common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.scr_w = dataReq.scr_w;
@@ -194,7 +194,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1232common = builder.f1233common;
+            this.f1230common = builder.f1231common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -276,7 +276,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1232common = builder.f1233common;
+        this.f1230common = builder.f1231common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.scr_w = builder.scr_w;
