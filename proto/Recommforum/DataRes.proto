@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Recommforum/RecommForum.proto";
-import "Recommforum/TestInfo.proto";
-
-message DataRes {
-    repeated TestInfo test_info = 1;
-    repeated RecommForum recomm_forum = 2;
-}

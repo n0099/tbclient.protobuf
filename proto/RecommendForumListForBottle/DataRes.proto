@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "ForumInfo.proto";
-
-message DataRes {
-    repeated ForumInfo forum_info = 1;
-}

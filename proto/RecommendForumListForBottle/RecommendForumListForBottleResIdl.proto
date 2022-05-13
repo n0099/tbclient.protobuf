@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "RecommendForumListForBottle/DataRes.proto";
-
-message RecommendForumListForBottleResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}
