@@ -14,10 +14,13 @@ import com.squareup.wire.ProtoField;
 public final class MemberBlockInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_IS_AUTO_PAY;
+    public static final Integer DEFAULT_IS_BAN;
     public static final Integer DEFAULT_IS_PERMANENT_BAN;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_auto_pay;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer is_ban;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_permanent_ban;
 
@@ -26,6 +29,7 @@ public final class MemberBlockInfo extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_auto_pay;
+        public Integer is_ban;
         public Integer is_permanent_ban;
 
         public Builder() {
@@ -65,6 +69,7 @@ public final class MemberBlockInfo extends Message {
             }
             this.is_permanent_ban = memberBlockInfo.is_permanent_ban;
             this.is_auto_pay = memberBlockInfo.is_auto_pay;
+            this.is_ban = memberBlockInfo.is_ban;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -97,6 +102,7 @@ public final class MemberBlockInfo extends Message {
         }
         DEFAULT_IS_PERMANENT_BAN = 0;
         DEFAULT_IS_AUTO_PAY = 0;
+        DEFAULT_IS_BAN = 0;
     }
 
     public /* synthetic */ MemberBlockInfo(Builder builder, boolean z, a aVar) {
@@ -131,13 +137,20 @@ public final class MemberBlockInfo extends Message {
             Integer num2 = builder.is_auto_pay;
             if (num2 == null) {
                 this.is_auto_pay = DEFAULT_IS_AUTO_PAY;
-                return;
             } else {
                 this.is_auto_pay = num2;
+            }
+            Integer num3 = builder.is_ban;
+            if (num3 == null) {
+                this.is_ban = DEFAULT_IS_BAN;
+                return;
+            } else {
+                this.is_ban = num3;
                 return;
             }
         }
         this.is_permanent_ban = builder.is_permanent_ban;
         this.is_auto_pay = builder.is_auto_pay;
+        this.is_ban = builder.is_ban;
     }
 }

@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1190common;
+    public final CommonReq f1186common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -41,7 +41,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1191common;
+        public CommonReq f1187common;
         public Long fid;
         public String first_dir;
         public Integer is_video_topic;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1191common = dataReq.f1190common;
+            this.f1187common = dataReq.f1186common;
             this.prefix = dataReq.prefix;
             this.fid = dataReq.fid;
             this.first_dir = dataReq.first_dir;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1190common = builder.f1191common;
+            this.f1186common = builder.f1187common;
             String str = builder.prefix;
             if (str == null) {
                 this.prefix = "";
@@ -180,7 +180,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1190common = builder.f1191common;
+        this.f1186common = builder.f1187common;
         this.prefix = builder.prefix;
         this.fid = builder.fid;
         this.first_dir = builder.first_dir;

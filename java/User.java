@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class User extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_AGREE_NUM;
@@ -28,6 +28,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_CONCERN_NUM;
     public static final Integer DEFAULT_DISPLAY_AUTH_TYPE;
     public static final Integer DEFAULT_EACH_OTHER_FRIEND;
+    public static final String DEFAULT_EDITING_NICKNAME = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
     public static final Integer DEFAULT_FANS_NUM;
     public static final Integer DEFAULT_FAVORITE_NUM;
@@ -62,6 +63,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_IS_MANAGER;
     public static final Integer DEFAULT_IS_MASK;
     public static final Integer DEFAULT_IS_MEM;
+    public static final Integer DEFAULT_IS_NICKNAME_EDITING;
     public static final Integer DEFAULT_IS_SELECT_TAIL;
     public static final Integer DEFAULT_IS_SHOW_REDPACKET;
     public static final Integer DEFAULT_IS_VERIFY;
@@ -160,6 +162,8 @@ public final class User extends Message {
     public final Ecom ecom;
     @ProtoField(tag = 126)
     public final EditConfig edit_config;
+    @ProtoField(tag = 129, type = Message.Datatype.STRING)
+    public final String editing_nickname;
     @ProtoField(tag = 84)
     public final EsportInfo esport_data;
     @ProtoField(tag = 57, type = Message.Datatype.STRING)
@@ -232,6 +236,8 @@ public final class User extends Message {
     public final Integer is_mask;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer is_mem;
+    @ProtoField(tag = 128, type = Message.Datatype.INT32)
+    public final Integer is_nickname_editing;
     @ProtoField(tag = 51, type = Message.Datatype.INT32)
     public final Integer is_select_tail;
     @ProtoField(tag = 94, type = Message.Datatype.INT32)
@@ -355,7 +361,7 @@ public final class User extends Message {
     @ProtoField(tag = 119)
     public final CreationData workcreation_data;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<User> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -386,6 +392,7 @@ public final class User extends Message {
         public Integer each_other_friend;
         public Ecom ecom;
         public EditConfig edit_config;
+        public String editing_nickname;
         public EsportInfo esport_data;
         public String fans_nickname;
         public Integer fans_num;
@@ -422,6 +429,7 @@ public final class User extends Message {
         public Integer is_manager;
         public Integer is_mask;
         public Integer is_mem;
+        public Integer is_nickname_editing;
         public Integer is_select_tail;
         public Integer is_show_redpacket;
         public Integer is_verify;
@@ -643,6 +651,8 @@ public final class User extends Message {
             this.level_name = user.level_name;
             this.edit_config = user.edit_config;
             this.ip_address = user.ip_address;
+            this.is_nickname_editing = user.is_nickname_editing;
+            this.editing_nickname = user.editing_nickname;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -654,7 +664,7 @@ public final class User extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -739,6 +749,7 @@ public final class User extends Message {
         DEFAULT_TOTAL_AGREE_NUM = 0;
         DEFAULT_MANAGER_FORUM = Collections.emptyList();
         DEFAULT_DISPLAY_AUTH_TYPE = 0;
+        DEFAULT_IS_NICKNAME_EDITING = 0;
     }
 
     public /* synthetic */ User(Builder builder, boolean z, a aVar) {
@@ -1335,9 +1346,21 @@ public final class User extends Message {
             String str24 = builder.ip_address;
             if (str24 == null) {
                 this.ip_address = "";
-                return;
             } else {
                 this.ip_address = str24;
+            }
+            Integer num54 = builder.is_nickname_editing;
+            if (num54 == null) {
+                this.is_nickname_editing = DEFAULT_IS_NICKNAME_EDITING;
+            } else {
+                this.is_nickname_editing = num54;
+            }
+            String str25 = builder.editing_nickname;
+            if (str25 == null) {
+                this.editing_nickname = "";
+                return;
+            } else {
+                this.editing_nickname = str25;
                 return;
             }
         }
@@ -1465,5 +1488,7 @@ public final class User extends Message {
         this.level_name = builder.level_name;
         this.edit_config = builder.edit_config;
         this.ip_address = builder.ip_address;
+        this.is_nickname_editing = builder.is_nickname_editing;
+        this.editing_nickname = builder.editing_nickname;
     }
 }

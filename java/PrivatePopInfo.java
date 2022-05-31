@@ -13,11 +13,15 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes8.dex */
 public final class PrivatePopInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_DAY;
     public static final String DEFAULT_POP_CONTENT = "";
     public static final Integer DEFAULT_POP_FORUM_ID;
     public static final String DEFAULT_POP_TYPE = "";
     public static final String DEFAULT_POP_URL = "";
+    public static final String DEFAULT_TITLE = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer day;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String pop_content;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -26,15 +30,19 @@ public final class PrivatePopInfo extends Message {
     public final String pop_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String pop_url;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String title;
 
     /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<PrivatePopInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public Integer day;
         public String pop_content;
         public Integer pop_forum_id;
         public String pop_type;
         public String pop_url;
+        public String title;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -75,6 +83,8 @@ public final class PrivatePopInfo extends Message {
             this.pop_content = privatePopInfo.pop_content;
             this.pop_url = privatePopInfo.pop_url;
             this.pop_forum_id = privatePopInfo.pop_forum_id;
+            this.title = privatePopInfo.title;
+            this.day = privatePopInfo.day;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -106,6 +116,7 @@ public final class PrivatePopInfo extends Message {
             }
         }
         DEFAULT_POP_FORUM_ID = 0;
+        DEFAULT_DAY = 0;
     }
 
     public /* synthetic */ PrivatePopInfo(Builder builder, boolean z, a aVar) {
@@ -152,9 +163,21 @@ public final class PrivatePopInfo extends Message {
             Integer num = builder.pop_forum_id;
             if (num == null) {
                 this.pop_forum_id = DEFAULT_POP_FORUM_ID;
-                return;
             } else {
                 this.pop_forum_id = num;
+            }
+            String str4 = builder.title;
+            if (str4 == null) {
+                this.title = "";
+            } else {
+                this.title = str4;
+            }
+            Integer num2 = builder.day;
+            if (num2 == null) {
+                this.day = DEFAULT_DAY;
+                return;
+            } else {
+                this.day = num2;
                 return;
             }
         }
@@ -162,5 +185,7 @@ public final class PrivatePopInfo extends Message {
         this.pop_content = builder.pop_content;
         this.pop_url = builder.pop_url;
         this.pop_forum_id = builder.pop_forum_id;
+        this.title = builder.title;
+        this.day = builder.day;
     }
 }

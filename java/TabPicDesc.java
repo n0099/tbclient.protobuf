@@ -1,4 +1,4 @@
-package tbclient.GetGiftCommonList;
+package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -10,27 +10,31 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.CommonReq;
 /* loaded from: classes8.dex */
-public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic;
-    public static final Integer DEFAULT_TIMESTAMP;
+public final class TabPicDesc extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_PIC_HEIGHT;
+    public static final Integer DEFAULT_PIC_WIDTH;
+    public static final String DEFAULT_SELECTED_PIC_URL = "";
+    public static final String DEFAULT_UNSELECTED_PIC_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 2)
-
-    /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1134common;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer timestamp;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer pic_height;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer pic_width;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String selected_pic_url;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String unselected_pic_url;
 
     /* loaded from: classes8.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public static final class Builder extends Message.Builder<TabPicDesc> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-
-        /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1135common;
-        public Integer timestamp;
+        public Integer pic_height;
+        public Integer pic_width;
+        public String selected_pic_url;
+        public String unselected_pic_url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -47,13 +51,13 @@ public final class DataReq extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(DataReq dataReq) {
-            super(dataReq);
+        public Builder(TabPicDesc tabPicDesc) {
+            super(tabPicDesc);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
+                Object[] objArr = {tabPicDesc};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -64,19 +68,21 @@ public final class DataReq extends Message {
                     return;
                 }
             }
-            if (dataReq == null) {
+            if (tabPicDesc == null) {
                 return;
             }
-            this.timestamp = dataReq.timestamp;
-            this.f1135common = dataReq.f1134common;
+            this.selected_pic_url = tabPicDesc.selected_pic_url;
+            this.unselected_pic_url = tabPicDesc.unselected_pic_url;
+            this.pic_height = tabPicDesc.pic_height;
+            this.pic_width = tabPicDesc.pic_width;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DataReq build(boolean z) {
+        public TabPicDesc build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TabPicDesc(this, z, null) : (TabPicDesc) invokeZ.objValue;
         }
     }
 
@@ -89,25 +95,26 @@ public final class DataReq extends Message {
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(468335953, "Ltbclient/GetGiftCommonList/DataReq;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-9148437, "Ltbclient/TabPicDesc;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(468335953, "Ltbclient/GetGiftCommonList/DataReq;");
+                classClinitInterceptable.invokePostClinit(-9148437, "Ltbclient/TabPicDesc;");
                 return;
             }
         }
-        DEFAULT_TIMESTAMP = 0;
+        DEFAULT_PIC_HEIGHT = 0;
+        DEFAULT_PIC_WIDTH = 0;
     }
 
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ TabPicDesc(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DataReq(Builder builder, boolean z) {
+    public TabPicDesc(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -125,16 +132,36 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            Integer num = builder.timestamp;
-            if (num == null) {
-                this.timestamp = DEFAULT_TIMESTAMP;
+            String str = builder.selected_pic_url;
+            if (str == null) {
+                this.selected_pic_url = "";
             } else {
-                this.timestamp = num;
+                this.selected_pic_url = str;
             }
-            this.f1134common = builder.f1135common;
-            return;
+            String str2 = builder.unselected_pic_url;
+            if (str2 == null) {
+                this.unselected_pic_url = "";
+            } else {
+                this.unselected_pic_url = str2;
+            }
+            Integer num = builder.pic_height;
+            if (num == null) {
+                this.pic_height = DEFAULT_PIC_HEIGHT;
+            } else {
+                this.pic_height = num;
+            }
+            Integer num2 = builder.pic_width;
+            if (num2 == null) {
+                this.pic_width = DEFAULT_PIC_WIDTH;
+                return;
+            } else {
+                this.pic_width = num2;
+                return;
+            }
         }
-        this.timestamp = builder.timestamp;
-        this.f1134common = builder.f1135common;
+        this.selected_pic_url = builder.selected_pic_url;
+        this.unselected_pic_url = builder.unselected_pic_url;
+        this.pic_height = builder.pic_height;
+        this.pic_width = builder.pic_width;
     }
 }

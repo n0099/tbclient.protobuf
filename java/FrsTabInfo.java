@@ -25,6 +25,8 @@ public final class FrsTabInfo extends Message {
     public static final String DEFAULT_TAB_URL = "";
     public static final Integer DEFAULT_TAB_VERSION;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 12)
+    public final TabPic head_pics;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_default;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -52,6 +54,7 @@ public final class FrsTabInfo extends Message {
     public static final class Builder extends Message.Builder<FrsTabInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public TabPic head_pics;
         public Integer is_default;
         public Integer is_general_tab;
         public Integer need_page;
@@ -110,6 +113,7 @@ public final class FrsTabInfo extends Message {
             this.tab_version = frsTabInfo.tab_version;
             this.is_default = frsTabInfo.is_default;
             this.need_page = frsTabInfo.need_page;
+            this.head_pics = frsTabInfo.head_pics;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -234,11 +238,11 @@ public final class FrsTabInfo extends Message {
             Integer num6 = builder.need_page;
             if (num6 == null) {
                 this.need_page = DEFAULT_NEED_PAGE;
-                return;
             } else {
                 this.need_page = num6;
-                return;
             }
+            this.head_pics = builder.head_pics;
+            return;
         }
         this.tab_id = builder.tab_id;
         this.tab_type = builder.tab_type;
@@ -251,5 +255,6 @@ public final class FrsTabInfo extends Message {
         this.tab_version = builder.tab_version;
         this.is_default = builder.is_default;
         this.need_page = builder.need_page;
+        this.head_pics = builder.head_pics;
     }
 }

@@ -18,6 +18,7 @@ public final class ThreadRecommendInfo extends Message {
     public static final String DEFAULT_RECOMMEND_REASON = "";
     public static final Integer DEFAULT_SHOW_NUM;
     public static final String DEFAULT_SHOW_TYPE = "";
+    public static final Long DEFAULT_TOPIC_ID;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String forum_avatar;
@@ -29,6 +30,8 @@ public final class ThreadRecommendInfo extends Message {
     public final Integer show_num;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String show_type;
+    @ProtoField(tag = 6, type = Message.Datatype.INT64)
+    public final Long topic_id;
 
     /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<ThreadRecommendInfo> {
@@ -39,6 +42,7 @@ public final class ThreadRecommendInfo extends Message {
         public String recommend_reason;
         public Integer show_num;
         public String show_type;
+        public Long topic_id;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -80,6 +84,7 @@ public final class ThreadRecommendInfo extends Message {
             this.show_num = threadRecommendInfo.show_num;
             this.show_type = threadRecommendInfo.show_type;
             this.recommend_reason = threadRecommendInfo.recommend_reason;
+            this.topic_id = threadRecommendInfo.topic_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -111,6 +116,7 @@ public final class ThreadRecommendInfo extends Message {
             }
         }
         DEFAULT_SHOW_NUM = 0;
+        DEFAULT_TOPIC_ID = 0L;
     }
 
     public /* synthetic */ ThreadRecommendInfo(Builder builder, boolean z, a aVar) {
@@ -163,9 +169,15 @@ public final class ThreadRecommendInfo extends Message {
             String str4 = builder.recommend_reason;
             if (str4 == null) {
                 this.recommend_reason = "";
-                return;
             } else {
                 this.recommend_reason = str4;
+            }
+            Long l = builder.topic_id;
+            if (l == null) {
+                this.topic_id = DEFAULT_TOPIC_ID;
+                return;
+            } else {
+                this.topic_id = l;
                 return;
             }
         }
@@ -174,5 +186,6 @@ public final class ThreadRecommendInfo extends Message {
         this.show_num = builder.show_num;
         this.show_type = builder.show_type;
         this.recommend_reason = builder.recommend_reason;
+        this.topic_id = builder.topic_id;
     }
 }

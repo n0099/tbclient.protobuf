@@ -33,6 +33,7 @@ import tbclient.NaGuide;
 import tbclient.Novel;
 import tbclient.Page;
 import tbclient.PopInfo;
+import tbclient.PrivatePopInfo;
 import tbclient.RecommendInfo;
 import tbclient.RedpacketRain;
 import tbclient.SdkTopicThread;
@@ -133,6 +134,8 @@ public final class DataRes extends Message {
     public final BannerUserStory banner_user_story;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String bawu_enter_url;
+    @ProtoField(tag = 115)
+    public final PrivatePopInfo bawutask_pop;
     @ProtoField(tag = 101)
     public final WindowToast bazhu_exam_fail;
     @ProtoField(tag = 50)
@@ -333,6 +336,7 @@ public final class DataRes extends Message {
         public List<BannerThreadInfo> banner_thread_list;
         public BannerUserStory banner_user_story;
         public String bawu_enter_url;
+        public PrivatePopInfo bawutask_pop;
         public WindowToast bazhu_exam_fail;
         public ForumBookInfo book_info;
         public Bottle bottle;
@@ -564,6 +568,7 @@ public final class DataRes extends Message {
             this.ad_show_select = dataRes.ad_show_select;
             this.ad_mix_list = Message.copyOf(dataRes.ad_mix_list);
             this.ad_sample_map_key = dataRes.ad_sample_map_key;
+            this.bawutask_pop = dataRes.bawutask_pop;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1017,11 +1022,11 @@ public final class DataRes extends Message {
             String str5 = builder.ad_sample_map_key;
             if (str5 == null) {
                 this.ad_sample_map_key = "";
-                return;
             } else {
                 this.ad_sample_map_key = str5;
-                return;
             }
+            this.bawutask_pop = builder.bawutask_pop;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1129,5 +1134,6 @@ public final class DataRes extends Message {
         this.ad_show_select = builder.ad_show_select;
         this.ad_mix_list = Message.immutableCopyOf(builder.ad_mix_list);
         this.ad_sample_map_key = builder.ad_sample_map_key;
+        this.bawutask_pop = builder.bawutask_pop;
     }
 }

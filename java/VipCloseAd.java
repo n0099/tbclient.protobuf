@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class VipCloseAd extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<Integer> DEFAULT_FORUM_CLOSE;
@@ -26,7 +26,7 @@ public final class VipCloseAd extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer vip_close;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<VipCloseAd> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -83,7 +83,7 @@ public final class VipCloseAd extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
