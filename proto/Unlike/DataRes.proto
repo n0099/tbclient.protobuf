@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message DataRes {
-    uint64 thread_id = 1;
-    uint32 type = 2;
-}

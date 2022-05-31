@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "CommonReq.proto";
-
-message DataReq {
-    uint64 thread_id = 2;
-    uint32 type = 3;
-}

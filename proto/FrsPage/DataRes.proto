@@ -53,6 +53,7 @@ import "NaGuide.proto";
 import "Novel.proto";
 import "Page.proto";
 import "PopInfo.proto";
+import "PrivatePopInfo.proto";
 import "RecommendInfo.proto";
 import "RedpacketRain.proto";
 import "SdkTopicThread.proto";
@@ -173,4 +174,5 @@ message DataRes {
     int32 ad_show_select = 112;
     repeated AdMixFloor ad_mix_list = 113;
     string ad_sample_map_key = 114;
+    PrivatePopInfo bawutask_pop = 115;
 }

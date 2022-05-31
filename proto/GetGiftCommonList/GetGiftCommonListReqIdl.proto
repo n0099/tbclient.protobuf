@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetGiftCommonList/DataReq.proto";
-
-message GetGiftCommonListReqIdl {
-    DataReq data = 1;
-}

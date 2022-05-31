@@ -6,4 +6,5 @@ message ThreadRecommendInfo {
     uint32 show_num = 3;
     string show_type = 4;
     string recommend_reason = 5;
+    int64 topic_id = 6;
 }
