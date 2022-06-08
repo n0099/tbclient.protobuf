@@ -8,4 +8,6 @@ message ReplyRevisionNullFields {
     bool isFold = 4;
     bool agreeNum = 5;
     bool disagreeNum = 6;
+    bool location = 7;
+    bool signInfo = 8;
 }

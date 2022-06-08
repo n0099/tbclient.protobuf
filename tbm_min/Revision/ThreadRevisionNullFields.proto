@@ -2,17 +2,17 @@ syntax = "proto3";
 package tbClient.revision;
 
 message ThreadRevisionNullFields {
-    bool ThreadType = 1;
-    bool StickyType = 2;
-    bool TopicType = 3;
-    bool IsGood = 4;
-    bool AuthorManagerType = 5;
-    bool LatestReplyTime = 6;
-    bool LatestReplierUid = 7;
-    bool ReplyNum = 8;
-    bool ViewNum = 9;
-    bool ShareNum = 10;
-    bool AgreeNum = 11;
-    bool DisagreeNum = 12;
-    bool ZanInfo = 13;
+    bool threadType = 1;
+    bool stickyType = 2;
+    bool topicType = 3;
+    bool isGood = 4;
+    bool authorManagerType = 5;
+    bool latestReplyTime = 6;
+    bool latestReplierUid = 7;
+    bool replyNum = 8;
+    bool viewNum = 9;
+    bool shareNum = 10;
+    bool agreeNum = 11;
+    bool disagreeNum = 12;
+    bool location = 13;
 }

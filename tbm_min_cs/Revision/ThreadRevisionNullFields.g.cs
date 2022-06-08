@@ -25,17 +25,17 @@ namespace TbClient.Revision {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidSZXZpc2lvbi9UaHJlYWRSZXZpc2lvbk51bGxGaWVsZHMucHJvdG8SEXRi",
-            "Q2xpZW50LnJldmlzaW9uIqACChhUaHJlYWRSZXZpc2lvbk51bGxGaWVsZHMS",
-            "EgoKVGhyZWFkVHlwZRgBIAEoCBISCgpTdGlja3lUeXBlGAIgASgIEhEKCVRv",
-            "cGljVHlwZRgDIAEoCBIOCgZJc0dvb2QYBCABKAgSGQoRQXV0aG9yTWFuYWdl",
-            "clR5cGUYBSABKAgSFwoPTGF0ZXN0UmVwbHlUaW1lGAYgASgIEhgKEExhdGVz",
-            "dFJlcGxpZXJVaWQYByABKAgSEAoIUmVwbHlOdW0YCCABKAgSDwoHVmlld051",
-            "bRgJIAEoCBIQCghTaGFyZU51bRgKIAEoCBIQCghBZ3JlZU51bRgLIAEoCBIT",
-            "CgtEaXNhZ3JlZU51bRgMIAEoCBIPCgdaYW5JbmZvGA0gASgIYgZwcm90bzM="));
+            "Q2xpZW50LnJldmlzaW9uIqECChhUaHJlYWRSZXZpc2lvbk51bGxGaWVsZHMS",
+            "EgoKdGhyZWFkVHlwZRgBIAEoCBISCgpzdGlja3lUeXBlGAIgASgIEhEKCXRv",
+            "cGljVHlwZRgDIAEoCBIOCgZpc0dvb2QYBCABKAgSGQoRYXV0aG9yTWFuYWdl",
+            "clR5cGUYBSABKAgSFwoPbGF0ZXN0UmVwbHlUaW1lGAYgASgIEhgKEGxhdGVz",
+            "dFJlcGxpZXJVaWQYByABKAgSEAoIcmVwbHlOdW0YCCABKAgSDwoHdmlld051",
+            "bRgJIAEoCBIQCghzaGFyZU51bRgKIAEoCBIQCghhZ3JlZU51bRgLIAEoCBIT",
+            "CgtkaXNhZ3JlZU51bRgMIAEoCBIQCghsb2NhdGlvbhgNIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.ThreadRevisionNullFields), global::TbClient.Revision.ThreadRevisionNullFields.Parser, new[]{ "ThreadType", "StickyType", "TopicType", "IsGood", "AuthorManagerType", "LatestReplyTime", "LatestReplierUid", "ReplyNum", "ViewNum", "ShareNum", "AgreeNum", "DisagreeNum", "ZanInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.ThreadRevisionNullFields), global::TbClient.Revision.ThreadRevisionNullFields.Parser, new[]{ "ThreadType", "StickyType", "TopicType", "IsGood", "AuthorManagerType", "LatestReplyTime", "LatestReplierUid", "ReplyNum", "ViewNum", "ShareNum", "AgreeNum", "DisagreeNum", "Location" }, null, null, null, null)
           }));
     }
     #endregion
@@ -88,7 +88,7 @@ namespace TbClient.Revision {
       shareNum_ = other.shareNum_;
       agreeNum_ = other.agreeNum_;
       disagreeNum_ = other.disagreeNum_;
-      zanInfo_ = other.zanInfo_;
+      location_ = other.location_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -98,7 +98,7 @@ namespace TbClient.Revision {
       return new ThreadRevisionNullFields(this);
     }
 
-    /// <summary>Field number for the "ThreadType" field.</summary>
+    /// <summary>Field number for the "threadType" field.</summary>
     public const int ThreadTypeFieldNumber = 1;
     private bool threadType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "StickyType" field.</summary>
+    /// <summary>Field number for the "stickyType" field.</summary>
     public const int StickyTypeFieldNumber = 2;
     private bool stickyType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "TopicType" field.</summary>
+    /// <summary>Field number for the "topicType" field.</summary>
     public const int TopicTypeFieldNumber = 3;
     private bool topicType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,7 +134,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "IsGood" field.</summary>
+    /// <summary>Field number for the "isGood" field.</summary>
     public const int IsGoodFieldNumber = 4;
     private bool isGood_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -146,7 +146,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "AuthorManagerType" field.</summary>
+    /// <summary>Field number for the "authorManagerType" field.</summary>
     public const int AuthorManagerTypeFieldNumber = 5;
     private bool authorManagerType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -158,7 +158,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "LatestReplyTime" field.</summary>
+    /// <summary>Field number for the "latestReplyTime" field.</summary>
     public const int LatestReplyTimeFieldNumber = 6;
     private bool latestReplyTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -170,7 +170,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "LatestReplierUid" field.</summary>
+    /// <summary>Field number for the "latestReplierUid" field.</summary>
     public const int LatestReplierUidFieldNumber = 7;
     private bool latestReplierUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -182,7 +182,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "ReplyNum" field.</summary>
+    /// <summary>Field number for the "replyNum" field.</summary>
     public const int ReplyNumFieldNumber = 8;
     private bool replyNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,7 +194,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "ViewNum" field.</summary>
+    /// <summary>Field number for the "viewNum" field.</summary>
     public const int ViewNumFieldNumber = 9;
     private bool viewNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,7 +206,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "ShareNum" field.</summary>
+    /// <summary>Field number for the "shareNum" field.</summary>
     public const int ShareNumFieldNumber = 10;
     private bool shareNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -218,7 +218,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "AgreeNum" field.</summary>
+    /// <summary>Field number for the "agreeNum" field.</summary>
     public const int AgreeNumFieldNumber = 11;
     private bool agreeNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -230,7 +230,7 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "DisagreeNum" field.</summary>
+    /// <summary>Field number for the "disagreeNum" field.</summary>
     public const int DisagreeNumFieldNumber = 12;
     private bool disagreeNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -242,15 +242,15 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "ZanInfo" field.</summary>
-    public const int ZanInfoFieldNumber = 13;
-    private bool zanInfo_;
+    /// <summary>Field number for the "location" field.</summary>
+    public const int LocationFieldNumber = 13;
+    private bool location_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool ZanInfo {
-      get { return zanInfo_; }
+    public bool Location {
+      get { return location_; }
       set {
-        zanInfo_ = value;
+        location_ = value;
       }
     }
 
@@ -281,7 +281,7 @@ namespace TbClient.Revision {
       if (ShareNum != other.ShareNum) return false;
       if (AgreeNum != other.AgreeNum) return false;
       if (DisagreeNum != other.DisagreeNum) return false;
-      if (ZanInfo != other.ZanInfo) return false;
+      if (Location != other.Location) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -301,7 +301,7 @@ namespace TbClient.Revision {
       if (ShareNum != false) hash ^= ShareNum.GetHashCode();
       if (AgreeNum != false) hash ^= AgreeNum.GetHashCode();
       if (DisagreeNum != false) hash ^= DisagreeNum.GetHashCode();
-      if (ZanInfo != false) hash ^= ZanInfo.GetHashCode();
+      if (Location != false) hash ^= Location.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -368,9 +368,9 @@ namespace TbClient.Revision {
         output.WriteRawTag(96);
         output.WriteBool(DisagreeNum);
       }
-      if (ZanInfo != false) {
+      if (Location != false) {
         output.WriteRawTag(104);
-        output.WriteBool(ZanInfo);
+        output.WriteBool(Location);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -430,9 +430,9 @@ namespace TbClient.Revision {
         output.WriteRawTag(96);
         output.WriteBool(DisagreeNum);
       }
-      if (ZanInfo != false) {
+      if (Location != false) {
         output.WriteRawTag(104);
-        output.WriteBool(ZanInfo);
+        output.WriteBool(Location);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -480,7 +480,7 @@ namespace TbClient.Revision {
       if (DisagreeNum != false) {
         size += 1 + 1;
       }
-      if (ZanInfo != false) {
+      if (Location != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -531,8 +531,8 @@ namespace TbClient.Revision {
       if (other.DisagreeNum != false) {
         DisagreeNum = other.DisagreeNum;
       }
-      if (other.ZanInfo != false) {
-        ZanInfo = other.ZanInfo;
+      if (other.Location != false) {
+        Location = other.Location;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -598,7 +598,7 @@ namespace TbClient.Revision {
             break;
           }
           case 104: {
-            ZanInfo = input.ReadBool();
+            Location = input.ReadBool();
             break;
           }
         }
@@ -665,7 +665,7 @@ namespace TbClient.Revision {
             break;
           }
           case 104: {
-            ZanInfo = input.ReadBool();
+            Location = input.ReadBool();
             break;
           }
         }
