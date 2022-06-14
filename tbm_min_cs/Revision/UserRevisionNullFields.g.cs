@@ -25,14 +25,15 @@ namespace TbClient.Revision {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVSZXZpc2lvbi9Vc2VyUmV2aXNpb25OdWxsRmllbGRzLnByb3RvEhF0YkNs",
-            "aWVudC5yZXZpc2lvbiKGAQoWVXNlclJldmlzaW9uTnVsbEZpZWxkcxIMCgRu",
-            "YW1lGAEgASgIEhMKC2Rpc3BsYXlOYW1lGAIgASgIEhEKCWF2YXRhclVybBgD",
-            "IAEoCBIOCgZnZW5kZXIYBCABKAgSFAoMZmFuc05pY2tuYW1lGAUgASgIEhAK",
-            "CGljb25JbmZvGAYgASgIYgZwcm90bzM="));
+            "aWVudC5yZXZpc2lvbiKhAQoWVXNlclJldmlzaW9uTnVsbEZpZWxkcxIMCgRu",
+            "YW1lGAEgASgIEhMKC2Rpc3BsYXlOYW1lGAIgASgIEhAKCHBvcnRyYWl0GAMg",
+            "ASgIEhoKEnBvcnRyYWl0VXBkYXRlVGltZRgHIAEoCBIOCgZnZW5kZXIYBCAB",
+            "KAgSFAoMZmFuc05pY2tuYW1lGAUgASgIEhAKCGljb25JbmZvGAYgASgIYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.UserRevisionNullFields), global::TbClient.Revision.UserRevisionNullFields.Parser, new[]{ "Name", "DisplayName", "AvatarUrl", "Gender", "FansNickname", "IconInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.UserRevisionNullFields), global::TbClient.Revision.UserRevisionNullFields.Parser, new[]{ "Name", "DisplayName", "Portrait", "PortraitUpdateTime", "Gender", "FansNickname", "IconInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,7 +76,8 @@ namespace TbClient.Revision {
     public UserRevisionNullFields(UserRevisionNullFields other) : this() {
       name_ = other.name_;
       displayName_ = other.displayName_;
-      avatarUrl_ = other.avatarUrl_;
+      portrait_ = other.portrait_;
+      portraitUpdateTime_ = other.portraitUpdateTime_;
       gender_ = other.gender_;
       fansNickname_ = other.fansNickname_;
       iconInfo_ = other.iconInfo_;
@@ -112,15 +114,27 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "avatarUrl" field.</summary>
-    public const int AvatarUrlFieldNumber = 3;
-    private bool avatarUrl_;
+    /// <summary>Field number for the "portrait" field.</summary>
+    public const int PortraitFieldNumber = 3;
+    private bool portrait_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool AvatarUrl {
-      get { return avatarUrl_; }
+    public bool Portrait {
+      get { return portrait_; }
       set {
-        avatarUrl_ = value;
+        portrait_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "portraitUpdateTime" field.</summary>
+    public const int PortraitUpdateTimeFieldNumber = 7;
+    private bool portraitUpdateTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PortraitUpdateTime {
+      get { return portraitUpdateTime_; }
+      set {
+        portraitUpdateTime_ = value;
       }
     }
 
@@ -177,7 +191,8 @@ namespace TbClient.Revision {
       }
       if (Name != other.Name) return false;
       if (DisplayName != other.DisplayName) return false;
-      if (AvatarUrl != other.AvatarUrl) return false;
+      if (Portrait != other.Portrait) return false;
+      if (PortraitUpdateTime != other.PortraitUpdateTime) return false;
       if (Gender != other.Gender) return false;
       if (FansNickname != other.FansNickname) return false;
       if (IconInfo != other.IconInfo) return false;
@@ -190,7 +205,8 @@ namespace TbClient.Revision {
       int hash = 1;
       if (Name != false) hash ^= Name.GetHashCode();
       if (DisplayName != false) hash ^= DisplayName.GetHashCode();
-      if (AvatarUrl != false) hash ^= AvatarUrl.GetHashCode();
+      if (Portrait != false) hash ^= Portrait.GetHashCode();
+      if (PortraitUpdateTime != false) hash ^= PortraitUpdateTime.GetHashCode();
       if (Gender != false) hash ^= Gender.GetHashCode();
       if (FansNickname != false) hash ^= FansNickname.GetHashCode();
       if (IconInfo != false) hash ^= IconInfo.GetHashCode();
@@ -220,9 +236,9 @@ namespace TbClient.Revision {
         output.WriteRawTag(16);
         output.WriteBool(DisplayName);
       }
-      if (AvatarUrl != false) {
+      if (Portrait != false) {
         output.WriteRawTag(24);
-        output.WriteBool(AvatarUrl);
+        output.WriteBool(Portrait);
       }
       if (Gender != false) {
         output.WriteRawTag(32);
@@ -235,6 +251,10 @@ namespace TbClient.Revision {
       if (IconInfo != false) {
         output.WriteRawTag(48);
         output.WriteBool(IconInfo);
+      }
+      if (PortraitUpdateTime != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(PortraitUpdateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -254,9 +274,9 @@ namespace TbClient.Revision {
         output.WriteRawTag(16);
         output.WriteBool(DisplayName);
       }
-      if (AvatarUrl != false) {
+      if (Portrait != false) {
         output.WriteRawTag(24);
-        output.WriteBool(AvatarUrl);
+        output.WriteBool(Portrait);
       }
       if (Gender != false) {
         output.WriteRawTag(32);
@@ -269,6 +289,10 @@ namespace TbClient.Revision {
       if (IconInfo != false) {
         output.WriteRawTag(48);
         output.WriteBool(IconInfo);
+      }
+      if (PortraitUpdateTime != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(PortraitUpdateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -286,7 +310,10 @@ namespace TbClient.Revision {
       if (DisplayName != false) {
         size += 1 + 1;
       }
-      if (AvatarUrl != false) {
+      if (Portrait != false) {
+        size += 1 + 1;
+      }
+      if (PortraitUpdateTime != false) {
         size += 1 + 1;
       }
       if (Gender != false) {
@@ -316,8 +343,11 @@ namespace TbClient.Revision {
       if (other.DisplayName != false) {
         DisplayName = other.DisplayName;
       }
-      if (other.AvatarUrl != false) {
-        AvatarUrl = other.AvatarUrl;
+      if (other.Portrait != false) {
+        Portrait = other.Portrait;
+      }
+      if (other.PortraitUpdateTime != false) {
+        PortraitUpdateTime = other.PortraitUpdateTime;
       }
       if (other.Gender != false) {
         Gender = other.Gender;
@@ -352,7 +382,7 @@ namespace TbClient.Revision {
             break;
           }
           case 24: {
-            AvatarUrl = input.ReadBool();
+            Portrait = input.ReadBool();
             break;
           }
           case 32: {
@@ -365,6 +395,10 @@ namespace TbClient.Revision {
           }
           case 48: {
             IconInfo = input.ReadBool();
+            break;
+          }
+          case 56: {
+            PortraitUpdateTime = input.ReadBool();
             break;
           }
         }
@@ -391,7 +425,7 @@ namespace TbClient.Revision {
             break;
           }
           case 24: {
-            AvatarUrl = input.ReadBool();
+            Portrait = input.ReadBool();
             break;
           }
           case 32: {
@@ -404,6 +438,10 @@ namespace TbClient.Revision {
           }
           case 48: {
             IconInfo = input.ReadBool();
+            break;
+          }
+          case 56: {
+            PortraitUpdateTime = input.ReadBool();
             break;
           }
         }

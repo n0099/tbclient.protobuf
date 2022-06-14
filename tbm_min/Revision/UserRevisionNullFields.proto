@@ -4,7 +4,8 @@ package tbClient.revision;
 message UserRevisionNullFields {
     bool name = 1;
     bool displayName = 2;
-    bool avatarUrl = 3;
+    bool portrait = 3;
+    bool portraitUpdateTime = 7;
     bool gender = 4;
     bool fansNickname = 5;
     bool iconInfo = 6;
