@@ -25,15 +25,15 @@ namespace TbClient.Revision {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZSZXZpc2lvbi9SZXBseVJldmlzaW9uTnVsbEZpZWxkcy5wcm90bxIRdGJD",
-            "bGllbnQucmV2aXNpb24ivAEKF1JlcGx5UmV2aXNpb25OdWxsRmllbGRzEhkK",
+            "bGllbnQucmV2aXNpb24iqgEKF1JlcGx5UmV2aXNpb25OdWxsRmllbGRzEhkK",
             "EWF1dGhvck1hbmFnZXJUeXBlGAEgASgIEhYKDmF1dGhvckV4cEdyYWRlGAIg",
             "ASgIEhMKC3N1YlJlcGx5TnVtGAMgASgIEg4KBmlzRm9sZBgEIAEoCBIQCghh",
             "Z3JlZU51bRgFIAEoCBITCgtkaXNhZ3JlZU51bRgGIAEoCBIQCghsb2NhdGlv",
-            "bhgHIAEoCBIQCghzaWduSW5mbxgIIAEoCGIGcHJvdG8z"));
+            "bhgHIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.ReplyRevisionNullFields), global::TbClient.Revision.ReplyRevisionNullFields.Parser, new[]{ "AuthorManagerType", "AuthorExpGrade", "SubReplyNum", "IsFold", "AgreeNum", "DisagreeNum", "Location", "SignInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.ReplyRevisionNullFields), global::TbClient.Revision.ReplyRevisionNullFields.Parser, new[]{ "AuthorManagerType", "AuthorExpGrade", "SubReplyNum", "IsFold", "AgreeNum", "DisagreeNum", "Location" }, null, null, null, null)
           }));
     }
     #endregion
@@ -81,7 +81,6 @@ namespace TbClient.Revision {
       agreeNum_ = other.agreeNum_;
       disagreeNum_ = other.disagreeNum_;
       location_ = other.location_;
-      signInfo_ = other.signInfo_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -175,18 +174,6 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "signInfo" field.</summary>
-    public const int SignInfoFieldNumber = 8;
-    private bool signInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool SignInfo {
-      get { return signInfo_; }
-      set {
-        signInfo_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -209,7 +196,6 @@ namespace TbClient.Revision {
       if (AgreeNum != other.AgreeNum) return false;
       if (DisagreeNum != other.DisagreeNum) return false;
       if (Location != other.Location) return false;
-      if (SignInfo != other.SignInfo) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -224,7 +210,6 @@ namespace TbClient.Revision {
       if (AgreeNum != false) hash ^= AgreeNum.GetHashCode();
       if (DisagreeNum != false) hash ^= DisagreeNum.GetHashCode();
       if (Location != false) hash ^= Location.GetHashCode();
-      if (SignInfo != false) hash ^= SignInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -271,10 +256,6 @@ namespace TbClient.Revision {
         output.WriteRawTag(56);
         output.WriteBool(Location);
       }
-      if (SignInfo != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(SignInfo);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -313,10 +294,6 @@ namespace TbClient.Revision {
         output.WriteRawTag(56);
         output.WriteBool(Location);
       }
-      if (SignInfo != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(SignInfo);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -346,9 +323,6 @@ namespace TbClient.Revision {
         size += 1 + 1;
       }
       if (Location != false) {
-        size += 1 + 1;
-      }
-      if (SignInfo != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -383,9 +357,6 @@ namespace TbClient.Revision {
       }
       if (other.Location != false) {
         Location = other.Location;
-      }
-      if (other.SignInfo != false) {
-        SignInfo = other.SignInfo;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -430,10 +401,6 @@ namespace TbClient.Revision {
             Location = input.ReadBool();
             break;
           }
-          case 64: {
-            SignInfo = input.ReadBool();
-            break;
-          }
         }
       }
     #endif
@@ -475,10 +442,6 @@ namespace TbClient.Revision {
           }
           case 56: {
             Location = input.ReadBool();
-            break;
-          }
-          case 64: {
-            SignInfo = input.ReadBool();
             break;
           }
         }
