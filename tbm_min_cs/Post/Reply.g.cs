@@ -27,22 +27,20 @@ namespace TbClient.Post {
             "ChBQb3N0L1JlcGx5LnByb3RvEg10YkNsaWVudC5wb3N0GgpVc2VyLnByb3Rv",
             "GhlQb3N0L0NvbW1vbi9Db250ZW50LnByb3RvGhVQb3N0L0NvbW1vbi9MYnMu",
             "cHJvdG8aF1Bvc3QvQ29tbW9uL0FncmVlLnByb3RvGhVQb3N0L0NvbW1vbi9a",
-            "YW4ucHJvdG8aIlBvc3QvUmVwbHlEZXBzL1NpZ25hdHVyZURhdGEucHJvdG8a",
-            "HVBvc3QvUmVwbHlEZXBzL1RhaWxJbmZvLnByb3RvIr8DCgVSZXBseRILCgNw",
-            "aWQYASABKAQSDQoFdGl0bGUYAiABKAkSDQoFZmxvb3IYAyABKA0SDAoEdGlt",
-            "ZRgEIAEoDRIuCgdjb250ZW50GAUgAygLMh0udGJDbGllbnQucG9zdC5jb21t",
-            "b24uQ29udGVudBIrCghsYnNfaW5mbxgHIAEoCzIZLnRiQ2xpZW50LnBvc3Qu",
-            "Y29tbW9uLkxicxIXCg9zdWJfcG9zdF9udW1iZXIYDSABKA0SEQoJYXV0aG9y",
-            "X2lkGBMgASgDEjkKCXNpZ25hdHVyZRgVIAEoCzImLnRiQ2xpZW50LnBvc3Qu",
-            "cmVwbHlEZXBzLlNpZ25hdHVyZURhdGESNAoJdGFpbF9pbmZvGBYgASgLMiEu",
-            "dGJDbGllbnQucG9zdC5yZXBseURlcHMuVGFpbEluZm8SHgoGYXV0aG9yGBcg",
-            "ASgLMg4udGJDbGllbnQuVXNlchImCgN6YW4YGCABKAsyGS50YkNsaWVudC5w",
-            "b3N0LmNvbW1vbi5aYW4SKgoFYWdyZWUYJSABKAsyGy50YkNsaWVudC5wb3N0",
-            "LmNvbW1vbi5BZ3JlZRIPCgdpc19mb2xkGCsgASgFYgZwcm90bzM="));
+            "YW4ucHJvdG8aIlBvc3QvUmVwbHlEZXBzL1NpZ25hdHVyZURhdGEucHJvdG8i",
+            "iQMKBVJlcGx5EgsKA3BpZBgBIAEoBBINCgV0aXRsZRgCIAEoCRINCgVmbG9v",
+            "chgDIAEoDRIMCgR0aW1lGAQgASgNEi4KB2NvbnRlbnQYBSADKAsyHS50YkNs",
+            "aWVudC5wb3N0LmNvbW1vbi5Db250ZW50EisKCGxic19pbmZvGAcgASgLMhku",
+            "dGJDbGllbnQucG9zdC5jb21tb24uTGJzEhcKD3N1Yl9wb3N0X251bWJlchgN",
+            "IAEoDRIRCglhdXRob3JfaWQYEyABKAMSOQoJc2lnbmF0dXJlGBUgASgLMiYu",
+            "dGJDbGllbnQucG9zdC5yZXBseURlcHMuU2lnbmF0dXJlRGF0YRIeCgZhdXRo",
+            "b3IYFyABKAsyDi50YkNsaWVudC5Vc2VyEiYKA3phbhgYIAEoCzIZLnRiQ2xp",
+            "ZW50LnBvc3QuY29tbW9uLlphbhIqCgVhZ3JlZRglIAEoCzIbLnRiQ2xpZW50",
+            "LnBvc3QuY29tbW9uLkFncmVlEg8KB2lzX2ZvbGQYKyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TbClient.UserReflection.Descriptor, global::TbClient.Post.Common.ContentReflection.Descriptor, global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, global::TbClient.Post.Common.ZanReflection.Descriptor, global::TbClient.Post.ReplyDeps.SignatureDataReflection.Descriptor, global::TbClient.Post.ReplyDeps.TailInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TbClient.UserReflection.Descriptor, global::TbClient.Post.Common.ContentReflection.Descriptor, global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, global::TbClient.Post.Common.ZanReflection.Descriptor, global::TbClient.Post.ReplyDeps.SignatureDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Reply), global::TbClient.Post.Reply.Parser, new[]{ "Pid", "Title", "Floor", "Time", "Content", "LbsInfo", "SubPostNumber", "AuthorId", "Signature", "TailInfo", "Author", "Zan", "Agree", "IsFold" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Reply), global::TbClient.Post.Reply.Parser, new[]{ "Pid", "Title", "Floor", "Time", "Content", "LbsInfo", "SubPostNumber", "AuthorId", "Signature", "Author", "Zan", "Agree", "IsFold" }, null, null, null, null)
           }));
     }
     #endregion
@@ -92,7 +90,6 @@ namespace TbClient.Post {
       subPostNumber_ = other.subPostNumber_;
       authorId_ = other.authorId_;
       signature_ = other.signature_ != null ? other.signature_.Clone() : null;
-      tailInfo_ = other.tailInfo_ != null ? other.tailInfo_.Clone() : null;
       author_ = other.author_ != null ? other.author_.Clone() : null;
       zan_ = other.zan_ != null ? other.zan_.Clone() : null;
       agree_ = other.agree_ != null ? other.agree_.Clone() : null;
@@ -213,18 +210,6 @@ namespace TbClient.Post {
       }
     }
 
-    /// <summary>Field number for the "tail_info" field.</summary>
-    public const int TailInfoFieldNumber = 22;
-    private global::TbClient.Post.ReplyDeps.TailInfo tailInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TbClient.Post.ReplyDeps.TailInfo TailInfo {
-      get { return tailInfo_; }
-      set {
-        tailInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "author" field.</summary>
     public const int AuthorFieldNumber = 23;
     private global::TbClient.User author_;
@@ -297,7 +282,6 @@ namespace TbClient.Post {
       if (SubPostNumber != other.SubPostNumber) return false;
       if (AuthorId != other.AuthorId) return false;
       if (!object.Equals(Signature, other.Signature)) return false;
-      if (!object.Equals(TailInfo, other.TailInfo)) return false;
       if (!object.Equals(Author, other.Author)) return false;
       if (!object.Equals(Zan, other.Zan)) return false;
       if (!object.Equals(Agree, other.Agree)) return false;
@@ -318,7 +302,6 @@ namespace TbClient.Post {
       if (SubPostNumber != 0) hash ^= SubPostNumber.GetHashCode();
       if (AuthorId != 0L) hash ^= AuthorId.GetHashCode();
       if (signature_ != null) hash ^= Signature.GetHashCode();
-      if (tailInfo_ != null) hash ^= TailInfo.GetHashCode();
       if (author_ != null) hash ^= Author.GetHashCode();
       if (zan_ != null) hash ^= Zan.GetHashCode();
       if (agree_ != null) hash ^= Agree.GetHashCode();
@@ -373,10 +356,6 @@ namespace TbClient.Post {
       if (signature_ != null) {
         output.WriteRawTag(170, 1);
         output.WriteMessage(Signature);
-      }
-      if (tailInfo_ != null) {
-        output.WriteRawTag(178, 1);
-        output.WriteMessage(TailInfo);
       }
       if (author_ != null) {
         output.WriteRawTag(186, 1);
@@ -437,10 +416,6 @@ namespace TbClient.Post {
         output.WriteRawTag(170, 1);
         output.WriteMessage(Signature);
       }
-      if (tailInfo_ != null) {
-        output.WriteRawTag(178, 1);
-        output.WriteMessage(TailInfo);
-      }
       if (author_ != null) {
         output.WriteRawTag(186, 1);
         output.WriteMessage(Author);
@@ -491,9 +466,6 @@ namespace TbClient.Post {
       }
       if (signature_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Signature);
-      }
-      if (tailInfo_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TailInfo);
       }
       if (author_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Author);
@@ -549,12 +521,6 @@ namespace TbClient.Post {
           Signature = new global::TbClient.Post.ReplyDeps.SignatureData();
         }
         Signature.MergeFrom(other.Signature);
-      }
-      if (other.tailInfo_ != null) {
-        if (tailInfo_ == null) {
-          TailInfo = new global::TbClient.Post.ReplyDeps.TailInfo();
-        }
-        TailInfo.MergeFrom(other.TailInfo);
       }
       if (other.author_ != null) {
         if (author_ == null) {
@@ -632,13 +598,6 @@ namespace TbClient.Post {
               Signature = new global::TbClient.Post.ReplyDeps.SignatureData();
             }
             input.ReadMessage(Signature);
-            break;
-          }
-          case 178: {
-            if (tailInfo_ == null) {
-              TailInfo = new global::TbClient.Post.ReplyDeps.TailInfo();
-            }
-            input.ReadMessage(TailInfo);
             break;
           }
           case 186: {
@@ -721,13 +680,6 @@ namespace TbClient.Post {
               Signature = new global::TbClient.Post.ReplyDeps.SignatureData();
             }
             input.ReadMessage(Signature);
-            break;
-          }
-          case 178: {
-            if (tailInfo_ == null) {
-              TailInfo = new global::TbClient.Post.ReplyDeps.TailInfo();
-            }
-            input.ReadMessage(TailInfo);
             break;
           }
           case 186: {

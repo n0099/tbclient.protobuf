@@ -6,7 +6,6 @@ import "Post/Common/Lbs.proto";
 import "Post/Common/Agree.proto";
 import "Post/Common/Zan.proto";
 import "Post/ReplyDeps/SignatureData.proto";
-import "Post/ReplyDeps/TailInfo.proto";
 
 message Reply {
     uint64 pid = 1;
@@ -18,7 +17,6 @@ message Reply {
     uint32 sub_post_number = 13;
     int64 author_id = 19;
     replyDeps.SignatureData signature = 21;
-    replyDeps.TailInfo tail_info = 22;
     User author = 23;
     common.Zan zan = 24;
     common.Agree agree = 37;
