@@ -1,4 +1,4 @@
-package tbclient.GetIconList;
+package tbclient.Userlike;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -12,29 +12,20 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.AlaLiveInfo;
 /* loaded from: classes8.dex */
-public final class DataRes extends Message {
+public final class UserFollowLive extends Message {
     public static /* synthetic */ Interceptable $ic;
-    public static final List<Custom> DEFAULT_CUSTOM;
-    public static final List<IconInfo> DEFAULT_ICON_INFO;
+    public static final List<AlaLiveInfo> DEFAULT_USER_FOLLOW_LIVE;
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(label = Message.Label.REPEATED, tag = 4)
-    public final List<Custom> custom;
-    @ProtoField(label = Message.Label.REPEATED, tag = 2)
-    public final List<IconInfo> icon_info;
-    @ProtoField(tag = 3)
-    public final Setting setting;
-    @ProtoField(tag = 1)
-    public final UserInfo user_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<AlaLiveInfo> user_follow_live;
 
     /* loaded from: classes8.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public static final class Builder extends Message.Builder<UserFollowLive> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Custom> custom;
-        public List<IconInfo> icon_info;
-        public Setting setting;
-        public UserInfo user_info;
+        public List<AlaLiveInfo> user_follow_live;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -51,13 +42,13 @@ public final class DataRes extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(DataRes dataRes) {
-            super(dataRes);
+        public Builder(UserFollowLive userFollowLive) {
+            super(userFollowLive);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
+                Object[] objArr = {userFollowLive};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -68,21 +59,18 @@ public final class DataRes extends Message {
                     return;
                 }
             }
-            if (dataRes == null) {
+            if (userFollowLive == null) {
                 return;
             }
-            this.user_info = dataRes.user_info;
-            this.icon_info = Message.copyOf(dataRes.icon_info);
-            this.setting = dataRes.setting;
-            this.custom = Message.copyOf(dataRes.custom);
+            this.user_follow_live = Message.copyOf(userFollowLive.user_follow_live);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DataRes build(boolean z) {
+        public UserFollowLive build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserFollowLive(this, z, null) : (UserFollowLive) invokeZ.objValue;
         }
     }
 
@@ -95,26 +83,25 @@ public final class DataRes extends Message {
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1119909871, "Ltbclient/GetIconList/DataRes;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(441880432, "Ltbclient/Userlike/UserFollowLive;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1119909871, "Ltbclient/GetIconList/DataRes;");
+                classClinitInterceptable.invokePostClinit(441880432, "Ltbclient/Userlike/UserFollowLive;");
                 return;
             }
         }
-        DEFAULT_ICON_INFO = Collections.emptyList();
-        DEFAULT_CUSTOM = Collections.emptyList();
+        DEFAULT_USER_FOLLOW_LIVE = Collections.emptyList();
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ UserFollowLive(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DataRes(Builder builder, boolean z) {
+    public UserFollowLive(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -132,26 +119,15 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            this.user_info = builder.user_info;
-            List<IconInfo> list = builder.icon_info;
+            List<AlaLiveInfo> list = builder.user_follow_live;
             if (list == null) {
-                this.icon_info = DEFAULT_ICON_INFO;
-            } else {
-                this.icon_info = Message.immutableCopyOf(list);
-            }
-            this.setting = builder.setting;
-            List<Custom> list2 = builder.custom;
-            if (list2 == null) {
-                this.custom = DEFAULT_CUSTOM;
+                this.user_follow_live = DEFAULT_USER_FOLLOW_LIVE;
                 return;
             } else {
-                this.custom = Message.immutableCopyOf(list2);
+                this.user_follow_live = Message.immutableCopyOf(list);
                 return;
             }
         }
-        this.user_info = builder.user_info;
-        this.icon_info = Message.immutableCopyOf(builder.icon_info);
-        this.setting = builder.setting;
-        this.custom = Message.immutableCopyOf(builder.custom);
+        this.user_follow_live = Message.immutableCopyOf(builder.user_follow_live);
     }
 }

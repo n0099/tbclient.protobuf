@@ -76,6 +76,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
     public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP;
     public static final Integer DEFAULT_IS_NEW_URL;
+    public static final List<LiveFuseForumData> DEFAULT_LIVE_FUSE_FORUM;
     public static final Long DEFAULT_LOGID;
     public static final Integer DEFAULT_NEED_LOG;
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
@@ -220,6 +221,8 @@ public final class DataRes extends Message {
     public final ItemInfo item_info;
     @ProtoField(tag = 69)
     public final AlaLiveNotify live_frs_notify;
+    @ProtoField(label = Message.Label.REPEATED, tag = 116)
+    public final List<LiveFuseForumData> live_fuse_forum;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
     public final Long logid;
     @ProtoField(tag = 67)
@@ -379,6 +382,7 @@ public final class DataRes extends Message {
         public Integer is_new_url;
         public ItemInfo item_info;
         public AlaLiveNotify live_frs_notify;
+        public List<LiveFuseForumData> live_fuse_forum;
         public Long logid;
         public NaGuide na_guide;
         public NavTabInfo nav_tab_info;
@@ -569,6 +573,7 @@ public final class DataRes extends Message {
             this.ad_mix_list = Message.copyOf(dataRes.ad_mix_list);
             this.ad_sample_map_key = dataRes.ad_sample_map_key;
             this.bawutask_pop = dataRes.bawutask_pop;
+            this.live_fuse_forum = Message.copyOf(dataRes.live_fuse_forum);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -644,6 +649,7 @@ public final class DataRes extends Message {
         DEFAULT_VOICE_ROOM_CONFIG = 0;
         DEFAULT_AD_SHOW_SELECT = 0;
         DEFAULT_AD_MIX_LIST = Collections.emptyList();
+        DEFAULT_LIVE_FUSE_FORUM = Collections.emptyList();
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -1026,7 +1032,14 @@ public final class DataRes extends Message {
                 this.ad_sample_map_key = str5;
             }
             this.bawutask_pop = builder.bawutask_pop;
-            return;
+            List<LiveFuseForumData> list24 = builder.live_fuse_forum;
+            if (list24 == null) {
+                this.live_fuse_forum = DEFAULT_LIVE_FUSE_FORUM;
+                return;
+            } else {
+                this.live_fuse_forum = Message.immutableCopyOf(list24);
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1135,5 +1148,6 @@ public final class DataRes extends Message {
         this.ad_mix_list = Message.immutableCopyOf(builder.ad_mix_list);
         this.ad_sample_map_key = builder.ad_sample_map_key;
         this.bawutask_pop = builder.bawutask_pop;
+        this.live_fuse_forum = Message.immutableCopyOf(builder.live_fuse_forum);
     }
 }

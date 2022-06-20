@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1220common;
+    public final CommonReq f1257common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer lyo;
 
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1221common;
+        public CommonReq f1258common;
         public Integer lyo;
 
         public Builder() {
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1221common = dataReq.f1220common;
+            this.f1258common = dataReq.f1257common;
             this.lyo = dataReq.lyo;
         }
 
@@ -125,7 +125,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1220common = builder.f1221common;
+            this.f1257common = builder.f1258common;
             Integer num = builder.lyo;
             if (num == null) {
                 this.lyo = DEFAULT_LYO;
@@ -135,7 +135,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1220common = builder.f1221common;
+        this.f1257common = builder.f1258common;
         this.lyo = builder.lyo;
     }
 }

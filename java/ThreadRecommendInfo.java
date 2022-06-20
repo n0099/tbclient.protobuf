@@ -15,21 +15,38 @@ public final class ThreadRecommendInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_FORUM_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_RECOMMEND_ICON = "";
     public static final String DEFAULT_RECOMMEND_REASON = "";
+    public static final String DEFAULT_RECOMMEND_TAIL = "";
+    public static final String DEFAULT_RECOMMEND_TYPE = "";
     public static final Integer DEFAULT_SHOW_NUM;
     public static final String DEFAULT_SHOW_TYPE = "";
     public static final Long DEFAULT_TOPIC_ID;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 13)
+    public final ThemeColorInfo background_color;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String forum_avatar;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String recommend_icon;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String recommend_reason;
+    @ProtoField(tag = 11)
+    public final ThemeColorInfo recommend_reason_color;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String recommend_tail;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String recommend_type;
+    @ProtoField(tag = 10)
+    public final ThemeColorInfo recommend_type_color;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer show_num;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String show_type;
+    @ProtoField(tag = 12)
+    public final ThemeColorInfo strip_color;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long topic_id;
 
@@ -37,11 +54,18 @@ public final class ThreadRecommendInfo extends Message {
     public static final class Builder extends Message.Builder<ThreadRecommendInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public ThemeColorInfo background_color;
         public String forum_avatar;
         public String forum_name;
+        public String recommend_icon;
         public String recommend_reason;
+        public ThemeColorInfo recommend_reason_color;
+        public String recommend_tail;
+        public String recommend_type;
+        public ThemeColorInfo recommend_type_color;
         public Integer show_num;
         public String show_type;
+        public ThemeColorInfo strip_color;
         public Long topic_id;
 
         public Builder() {
@@ -85,6 +109,13 @@ public final class ThreadRecommendInfo extends Message {
             this.show_type = threadRecommendInfo.show_type;
             this.recommend_reason = threadRecommendInfo.recommend_reason;
             this.topic_id = threadRecommendInfo.topic_id;
+            this.recommend_type = threadRecommendInfo.recommend_type;
+            this.recommend_tail = threadRecommendInfo.recommend_tail;
+            this.recommend_icon = threadRecommendInfo.recommend_icon;
+            this.recommend_type_color = threadRecommendInfo.recommend_type_color;
+            this.recommend_reason_color = threadRecommendInfo.recommend_reason_color;
+            this.strip_color = threadRecommendInfo.strip_color;
+            this.background_color = threadRecommendInfo.background_color;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -175,11 +206,32 @@ public final class ThreadRecommendInfo extends Message {
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
-                return;
             } else {
                 this.topic_id = l;
-                return;
             }
+            String str5 = builder.recommend_type;
+            if (str5 == null) {
+                this.recommend_type = "";
+            } else {
+                this.recommend_type = str5;
+            }
+            String str6 = builder.recommend_tail;
+            if (str6 == null) {
+                this.recommend_tail = "";
+            } else {
+                this.recommend_tail = str6;
+            }
+            String str7 = builder.recommend_icon;
+            if (str7 == null) {
+                this.recommend_icon = "";
+            } else {
+                this.recommend_icon = str7;
+            }
+            this.recommend_type_color = builder.recommend_type_color;
+            this.recommend_reason_color = builder.recommend_reason_color;
+            this.strip_color = builder.strip_color;
+            this.background_color = builder.background_color;
+            return;
         }
         this.forum_avatar = builder.forum_avatar;
         this.forum_name = builder.forum_name;
@@ -187,5 +239,12 @@ public final class ThreadRecommendInfo extends Message {
         this.show_type = builder.show_type;
         this.recommend_reason = builder.recommend_reason;
         this.topic_id = builder.topic_id;
+        this.recommend_type = builder.recommend_type;
+        this.recommend_tail = builder.recommend_tail;
+        this.recommend_icon = builder.recommend_icon;
+        this.recommend_type_color = builder.recommend_type_color;
+        this.recommend_reason_color = builder.recommend_reason_color;
+        this.strip_color = builder.strip_color;
+        this.background_color = builder.background_color;
     }
 }

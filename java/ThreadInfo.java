@@ -402,7 +402,7 @@ public final class ThreadInfo extends Message {
     public final String meizhi_pic;
     @ProtoField(tag = 139, type = Message.Datatype.INT32)
     public final Integer middle_page_num;
-    @ProtoField(tag = 140, type = Message.Datatype.INT32)
+    @ProtoField(tag = Cea708Decoder.COMMAND_DLW, type = Message.Datatype.INT32)
     public final Integer middle_page_pass_flag;
     @ProtoField(tag = Cea708Decoder.COMMAND_SPL, type = Message.Datatype.STRING)
     public final String multi_forum_text;

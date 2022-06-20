@@ -19,6 +19,7 @@ public final class Post extends Message {
     public static final List<String> DEFAULT_ARR_VIDEO;
     public static final Long DEFAULT_AUTHOR_ID;
     public static final String DEFAULT_BIMG_URL = "";
+    public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO;
     public static final List<PbContent> DEFAULT_CONTENT;
     public static final List<TailInfo> DEFAULT_EXT_TAILS;
     public static final Integer DEFAULT_FLOOR;
@@ -69,6 +70,8 @@ public final class Post extends Message {
     public final Long author_id;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String bimg_url;
+    @ProtoField(label = Message.Label.REPEATED, tag = 59)
+    public final List<CardLinkInfo> card_link_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<PbContent> content;
     @ProtoField(label = Message.Label.REPEATED, tag = 32)
@@ -179,6 +182,7 @@ public final class Post extends Message {
         public User author;
         public Long author_id;
         public String bimg_url;
+        public List<CardLinkInfo> card_link_info;
         public List<PbContent> content;
         public List<TailInfo> ext_tails;
         public Integer floor;
@@ -320,6 +324,7 @@ public final class Post extends Message {
             this.fold_comment_status = post.fold_comment_status;
             this.fold_comment_apply_url = post.fold_comment_apply_url;
             this.novel_info = post.novel_info;
+            this.card_link_info = Message.copyOf(post.card_link_info);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -376,6 +381,7 @@ public final class Post extends Message {
         DEFAULT_IS_WONDERFUL_POST = 0;
         DEFAULT_ITEM_STAR = Collections.emptyList();
         DEFAULT_FOLD_COMMENT_STATUS = 0;
+        DEFAULT_CARD_LINK_INFO = Collections.emptyList();
     }
 
     public /* synthetic */ Post(Builder builder, boolean z, a aVar) {
@@ -633,7 +639,14 @@ public final class Post extends Message {
                 this.fold_comment_apply_url = str9;
             }
             this.novel_info = builder.novel_info;
-            return;
+            List<CardLinkInfo> list5 = builder.card_link_info;
+            if (list5 == null) {
+                this.card_link_info = DEFAULT_CARD_LINK_INFO;
+                return;
+            } else {
+                this.card_link_info = Message.immutableCopyOf(list5);
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -692,5 +705,6 @@ public final class Post extends Message {
         this.fold_comment_status = builder.fold_comment_status;
         this.fold_comment_apply_url = builder.fold_comment_apply_url;
         this.novel_info = builder.novel_info;
+        this.card_link_info = Message.immutableCopyOf(builder.card_link_info);
     }
 }

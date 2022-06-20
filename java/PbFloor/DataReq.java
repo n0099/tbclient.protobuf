@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1248common;
+    public final CommonReq f1285common;
     @ProtoField(tag = 11, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1249common;
+        public CommonReq f1286common;
         public Long forum_id;
         public Integer is_comm_reverse;
         public Long kz;
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
             this.scr_h = dataReq.scr_h;
             this.scr_dip = dataReq.scr_dip;
             this.st_type = dataReq.st_type;
-            this.f1249common = dataReq.f1248common;
+            this.f1286common = dataReq.f1285common;
             this.is_comm_reverse = dataReq.is_comm_reverse;
             this.forum_id = dataReq.forum_id;
             this.ori_ugc_nid = dataReq.ori_ugc_nid;
@@ -252,7 +252,7 @@ public final class DataReq extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f1248common = builder.f1249common;
+            this.f1285common = builder.f1286common;
             Integer num4 = builder.is_comm_reverse;
             if (num4 == null) {
                 this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
@@ -306,7 +306,7 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
         this.st_type = builder.st_type;
-        this.f1248common = builder.f1249common;
+        this.f1285common = builder.f1286common;
         this.is_comm_reverse = builder.is_comm_reverse;
         this.forum_id = builder.forum_id;
         this.ori_ugc_nid = builder.ori_ugc_nid;

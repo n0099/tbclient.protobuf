@@ -10,6 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.CardLinkInfo;
 /* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
@@ -22,6 +23,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final Integer DEFAULT_URL_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 9)
+    public final CardLinkInfo card_link_info;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String description;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -43,6 +46,7 @@ public final class DataRes extends Message {
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public CardLinkInfo card_link_info;
         public String description;
         public String image;
         public Integer is_recognize;
@@ -95,6 +99,7 @@ public final class DataRes extends Message {
             this.price_txt = dataRes.price_txt;
             this.is_recognize = dataRes.is_recognize;
             this.description = dataRes.description;
+            this.card_link_info = dataRes.card_link_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -198,11 +203,11 @@ public final class DataRes extends Message {
             String str5 = builder.description;
             if (str5 == null) {
                 this.description = "";
-                return;
             } else {
                 this.description = str5;
-                return;
             }
+            this.card_link_info = builder.card_link_info;
+            return;
         }
         this.url_type = builder.url_type;
         this.status = builder.status;
@@ -212,5 +217,6 @@ public final class DataRes extends Message {
         this.price_txt = builder.price_txt;
         this.is_recognize = builder.is_recognize;
         this.description = builder.description;
+        this.card_link_info = builder.card_link_info;
     }
 }

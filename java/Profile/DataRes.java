@@ -16,6 +16,7 @@ import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerImage;
 import tbclient.DealWindow;
+import tbclient.DuxiaomanEntry;
 import tbclient.DynamicInfo;
 import tbclient.Feedback;
 import tbclient.ForumDynamic;
@@ -60,6 +61,8 @@ public final class DataRes extends Message {
     public final List<ForumDynamic> concerned_forum_list;
     @ProtoField(tag = 24)
     public final Duxiaoman duxiaoman;
+    @ProtoField(tag = 37)
+    public final DuxiaomanEntry duxiaoman_entry;
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
     public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 10)
@@ -118,6 +121,7 @@ public final class DataRes extends Message {
         public MemberBlockInfo block_info;
         public List<ForumDynamic> concerned_forum_list;
         public Duxiaoman duxiaoman;
+        public DuxiaomanEntry duxiaoman_entry;
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
         public FinanceTab finance_tab;
@@ -207,6 +211,7 @@ public final class DataRes extends Message {
             this.work_tab_id = dataRes.work_tab_id;
             this.finance_tab = dataRes.finance_tab;
             this.block_info = dataRes.block_info;
+            this.duxiaoman_entry = dataRes.duxiaoman_entry;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -357,6 +362,7 @@ public final class DataRes extends Message {
             }
             this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
+            this.duxiaoman_entry = builder.duxiaoman_entry;
             return;
         }
         this.user = builder.user;
@@ -389,5 +395,6 @@ public final class DataRes extends Message {
         this.work_tab_id = builder.work_tab_id;
         this.finance_tab = builder.finance_tab;
         this.block_info = builder.block_info;
+        this.duxiaoman_entry = builder.duxiaoman_entry;
     }
 }

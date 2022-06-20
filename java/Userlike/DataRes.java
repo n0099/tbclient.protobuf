@@ -51,6 +51,8 @@ public final class DataRes extends Message {
     public final String top_tips;
     @ProtoField(tag = 9)
     public final UserList top_user_info;
+    @ProtoField(tag = 17)
+    public final UserFollowLive user_follow_live;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<UserList> user_list;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -73,6 +75,7 @@ public final class DataRes extends Message {
         public List<ConcernData> thread_info;
         public String top_tips;
         public UserList top_user_info;
+        public UserFollowLive user_follow_live;
         public List<UserList> user_list;
         public String user_tips;
         public Integer user_tips_type;
@@ -126,6 +129,7 @@ public final class DataRes extends Message {
             this.banner_follow_live = dataRes.banner_follow_live;
             this.hot_recomforum = dataRes.hot_recomforum;
             this.app_list = Message.copyOf(dataRes.app_list);
+            this.user_follow_live = dataRes.user_follow_live;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -248,11 +252,11 @@ public final class DataRes extends Message {
             List<App> list3 = builder.app_list;
             if (list3 == null) {
                 this.app_list = DEFAULT_APP_LIST;
-                return;
             } else {
                 this.app_list = Message.immutableCopyOf(list3);
-                return;
             }
+            this.user_follow_live = builder.user_follow_live;
+            return;
         }
         this.thread_info = Message.immutableCopyOf(builder.thread_info);
         this.page_tag = builder.page_tag;
@@ -268,5 +272,6 @@ public final class DataRes extends Message {
         this.banner_follow_live = builder.banner_follow_live;
         this.hot_recomforum = builder.hot_recomforum;
         this.app_list = Message.immutableCopyOf(builder.app_list);
+        this.user_follow_live = builder.user_follow_live;
     }
 }
