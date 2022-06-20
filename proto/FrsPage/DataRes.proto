@@ -32,6 +32,7 @@ import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
 import "FrsPage/HeadSdk.proto";
 import "FrsPage/Info.proto";
+import "FrsPage/LiveFuseForumData.proto";
 import "FrsPage/NavTabInfo.proto";
 import "FrsPage/NebulaHotThreads.proto";
 import "FrsPage/NtSpreadInfo.proto";
@@ -175,4 +176,5 @@ message DataRes {
     repeated AdMixFloor ad_mix_list = 113;
     string ad_sample_map_key = 114;
     PrivatePopInfo bawutask_pop = 115;
+    repeated LiveFuseForumData live_fuse_forum = 116;
 }

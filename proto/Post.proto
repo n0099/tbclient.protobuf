@@ -4,6 +4,7 @@ import "ActPost.proto";
 import "AddPostList.proto";
 import "Advertisement.proto";
 import "Agree.proto";
+import "CardLinkInfo.proto";
 import "DealInfo.proto";
 import "HeadItem.proto";
 import "Item.proto";
@@ -82,4 +83,5 @@ message Post {
     int32 fold_comment_status = 56;
     string fold_comment_apply_url = 57;
     NovelInfo novel_info = 58;
+    repeated CardLinkInfo card_link_info = 59;
 }

@@ -4,6 +4,7 @@ import "AlaLiveInfo.proto";
 import "Anti.proto";
 import "BannerImage.proto";
 import "DealWindow.proto";
+import "DuxiaomanEntry.proto";
 import "DynamicInfo.proto";
 import "Feedback.proto";
 import "ForumDynamic.proto";
@@ -58,4 +59,5 @@ message DataRes {
     uint32 work_tab_id = 34;
     FinanceTab finance_tab = 35;
     MemberBlockInfo block_info = 36;
+    DuxiaomanEntry duxiaoman_entry = 37;
 }

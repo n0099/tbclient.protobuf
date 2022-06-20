@@ -5,6 +5,7 @@ import "BannerUserStory.proto";
 import "DiscoverHotForum.proto";
 import "Userlike/BannerFollowLive.proto";
 import "Userlike/ConcernData.proto";
+import "Userlike/UserFollowLive.proto";
 import "Userlike/UserList.proto";
 
 message DataRes {
@@ -22,4 +23,5 @@ message DataRes {
     BannerFollowLive banner_follow_live = 13;
     DiscoverHotForum hot_recomforum = 14;
     repeated App app_list = 16;
+    UserFollowLive user_follow_live = 17;
 }

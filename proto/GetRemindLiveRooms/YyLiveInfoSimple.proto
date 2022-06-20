@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "YyExt.proto";
+
+message YyLiveInfoSimple {
+    string user_name = 1;
+    string portrait = 2;
+    string title = 3;
+    string desc = 4;
+    YyExt yy_ext = 5;
+    uint64 room_id = 6;
+    string btn_text = 7;
+    string feed_id = 8;
+}

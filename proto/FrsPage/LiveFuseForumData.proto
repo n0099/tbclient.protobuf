@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message LiveFuseForumData {
+    string online_users = 1;
+    repeated string head_img = 2;
+    repeated string title = 3;
+    string schema = 4;
+    int32 type = 5;
+    string yyext = 6;
+    string icon_url = 7;
+    string bjimg_dark_big = 8;
+    string bjimg_light_big = 9;
+    string bjimg_dark_small = 10;
+    string bjimg_light_small = 11;
+}
