@@ -29,6 +29,10 @@ class SubReply extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.tbClient.User author = 7;</code>
      */
     protected $author = null;
+    /**
+     * Generated from protobuf field <code>.tbClient.post.common.Agree agree = 9;</code>
+     */
+    protected $agree = null;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class SubReply extends \Google\Protobuf\Internal\Message
      *     @type array<\TbClient\Post\Common\Content>|\Google\Protobuf\Internal\RepeatedField $content
      *     @type int $time
      *     @type \TbClient\User $author
+     *     @type \TbClient\Post\Common\Agree $agree
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +146,38 @@ class SubReply extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \TbClient\User::class);
         $this->author = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.tbClient.post.common.Agree agree = 9;</code>
+     * @return \TbClient\Post\Common\Agree|null
+     */
+    public function getAgree()
+    {
+        return $this->agree;
+    }
+
+    public function hasAgree()
+    {
+        return isset($this->agree);
+    }
+
+    public function clearAgree()
+    {
+        unset($this->agree);
+    }
+
+    /**
+     * Generated from protobuf field <code>.tbClient.post.common.Agree agree = 9;</code>
+     * @param \TbClient\Post\Common\Agree $var
+     * @return $this
+     */
+    public function setAgree($var)
+    {
+        GPBUtil::checkMessage($var, \TbClient\Post\Common\Agree::class);
+        $this->agree = $var;
 
         return $this;
     }

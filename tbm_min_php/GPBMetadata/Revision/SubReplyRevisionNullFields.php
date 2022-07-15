@@ -16,11 +16,12 @@ class SubReplyRevisionNullFields
         }
         $pool->internalAddGeneratedFile(
             '
-—
-)Revision/SubReplyRevisionNullFields.prototbClient.revision"O
+¦
+)Revision/SubReplyRevisionNullFields.prototbClient.revision"^
 SubReplyRevisionNullFields
-authorManagerType (
-authorExpGrade (bproto3'
+authorManagerType (
+agreeNum (
+disagreeNum (bproto3'
         , true);
 
         static::$is_initialized = true;

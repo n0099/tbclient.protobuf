@@ -16,17 +16,14 @@ class ThreadRevisionNullFields
         }
         $pool->internalAddGeneratedFile(
             '
-è
-\'Revision/ThreadRevisionNullFields.prototbClient.revision"¡
+»
+\'Revision/ThreadRevisionNullFields.prototbClient.revision"ô
 ThreadRevisionNullFields
-
-threadType (
 
 stickyType (
 	topicType (
 isGood (
-authorManagerType (
-latestReplyTime (
+authorManagerType (
 latestReplierUid (
 replyNum (
 viewNum	 (

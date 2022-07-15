@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ThreadRevisionNullFields extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bool threadType = 1;</code>
-     */
-    protected $threadType = false;
-    /**
      * Generated from protobuf field <code>bool stickyType = 2;</code>
      */
     protected $stickyType = false;
@@ -33,10 +29,6 @@ class ThreadRevisionNullFields extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool authorManagerType = 5;</code>
      */
     protected $authorManagerType = false;
-    /**
-     * Generated from protobuf field <code>bool latestReplyTime = 6;</code>
-     */
-    protected $latestReplyTime = false;
     /**
      * Generated from protobuf field <code>bool latestReplierUid = 7;</code>
      */
@@ -72,12 +64,10 @@ class ThreadRevisionNullFields extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $threadType
      *     @type bool $stickyType
      *     @type bool $topicType
      *     @type bool $isGood
      *     @type bool $authorManagerType
-     *     @type bool $latestReplyTime
      *     @type bool $latestReplierUid
      *     @type bool $replyNum
      *     @type bool $viewNum
@@ -90,28 +80,6 @@ class ThreadRevisionNullFields extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Revision\ThreadRevisionNullFields::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>bool threadType = 1;</code>
-     * @return bool
-     */
-    public function getThreadType()
-    {
-        return $this->threadType;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool threadType = 1;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setThreadType($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->threadType = $var;
-
-        return $this;
     }
 
     /**
@@ -198,28 +166,6 @@ class ThreadRevisionNullFields extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->authorManagerType = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool latestReplyTime = 6;</code>
-     * @return bool
-     */
-    public function getLatestReplyTime()
-    {
-        return $this->latestReplyTime;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool latestReplyTime = 6;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setLatestReplyTime($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->latestReplyTime = $var;
 
         return $this;
     }

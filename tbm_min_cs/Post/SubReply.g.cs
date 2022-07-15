@@ -25,14 +25,16 @@ namespace TbClient.Post {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNQb3N0L1N1YlJlcGx5LnByb3RvEg10YkNsaWVudC5wb3N0GhlQb3N0L0Nv",
-            "bW1vbi9Db250ZW50LnByb3RvGgpVc2VyLnByb3RvInYKCFN1YlJlcGx5EgwK",
-            "BHNwaWQYASABKAQSLgoHY29udGVudBgCIAMoCzIdLnRiQ2xpZW50LnBvc3Qu",
-            "Y29tbW9uLkNvbnRlbnQSDAoEdGltZRgDIAEoDRIeCgZhdXRob3IYByABKAsy",
-            "Di50YkNsaWVudC5Vc2VyYgZwcm90bzM="));
+            "bW1vbi9Db250ZW50LnByb3RvGhdQb3N0L0NvbW1vbi9BZ3JlZS5wcm90bxoK",
+            "VXNlci5wcm90byKiAQoIU3ViUmVwbHkSDAoEc3BpZBgBIAEoBBIuCgdjb250",
+            "ZW50GAIgAygLMh0udGJDbGllbnQucG9zdC5jb21tb24uQ29udGVudBIMCgR0",
+            "aW1lGAMgASgNEh4KBmF1dGhvchgHIAEoCzIOLnRiQ2xpZW50LlVzZXISKgoF",
+            "YWdyZWUYCSABKAsyGy50YkNsaWVudC5wb3N0LmNvbW1vbi5BZ3JlZWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TbClient.Post.Common.ContentReflection.Descriptor, global::TbClient.UserReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TbClient.Post.Common.ContentReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, global::TbClient.UserReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.SubReply), global::TbClient.Post.SubReply.Parser, new[]{ "Spid", "Content", "Time", "Author" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.SubReply), global::TbClient.Post.SubReply.Parser, new[]{ "Spid", "Content", "Time", "Author", "Agree" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,6 +79,7 @@ namespace TbClient.Post {
       content_ = other.content_.Clone();
       time_ = other.time_;
       author_ = other.author_ != null ? other.author_.Clone() : null;
+      agree_ = other.agree_ != null ? other.agree_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -133,6 +136,18 @@ namespace TbClient.Post {
       }
     }
 
+    /// <summary>Field number for the "agree" field.</summary>
+    public const int AgreeFieldNumber = 9;
+    private global::TbClient.Post.Common.Agree agree_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TbClient.Post.Common.Agree Agree {
+      get { return agree_; }
+      set {
+        agree_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -152,6 +167,7 @@ namespace TbClient.Post {
       if(!content_.Equals(other.content_)) return false;
       if (Time != other.Time) return false;
       if (!object.Equals(Author, other.Author)) return false;
+      if (!object.Equals(Agree, other.Agree)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -163,6 +179,7 @@ namespace TbClient.Post {
       hash ^= content_.GetHashCode();
       if (Time != 0) hash ^= Time.GetHashCode();
       if (author_ != null) hash ^= Author.GetHashCode();
+      if (agree_ != null) hash ^= Agree.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -194,6 +211,10 @@ namespace TbClient.Post {
         output.WriteRawTag(58);
         output.WriteMessage(Author);
       }
+      if (agree_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Agree);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -217,6 +238,10 @@ namespace TbClient.Post {
         output.WriteRawTag(58);
         output.WriteMessage(Author);
       }
+      if (agree_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Agree);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -236,6 +261,9 @@ namespace TbClient.Post {
       }
       if (author_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Author);
+      }
+      if (agree_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Agree);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -261,6 +289,12 @@ namespace TbClient.Post {
           Author = new global::TbClient.User();
         }
         Author.MergeFrom(other.Author);
+      }
+      if (other.agree_ != null) {
+        if (agree_ == null) {
+          Agree = new global::TbClient.Post.Common.Agree();
+        }
+        Agree.MergeFrom(other.Agree);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -296,6 +330,13 @@ namespace TbClient.Post {
             input.ReadMessage(Author);
             break;
           }
+          case 74: {
+            if (agree_ == null) {
+              Agree = new global::TbClient.Post.Common.Agree();
+            }
+            input.ReadMessage(Agree);
+            break;
+          }
         }
       }
     #endif
@@ -328,6 +369,13 @@ namespace TbClient.Post {
               Author = new global::TbClient.User();
             }
             input.ReadMessage(Author);
+            break;
+          }
+          case 74: {
+            if (agree_ == null) {
+              Agree = new global::TbClient.Post.Common.Agree();
+            }
+            input.ReadMessage(Agree);
             break;
           }
         }

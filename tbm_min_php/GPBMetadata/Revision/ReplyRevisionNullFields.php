@@ -16,11 +16,10 @@ class ReplyRevisionNullFields
         }
         $pool->internalAddGeneratedFile(
             '
-ð
-&Revision/ReplyRevisionNullFields.prototbClient.revision"ª
+Ø
+&Revision/ReplyRevisionNullFields.prototbClient.revision"’
 ReplyRevisionNullFields
-authorManagerType (
-authorExpGrade (
+authorManagerType (
 subReplyNum (
 isFold (
 agreeNum (

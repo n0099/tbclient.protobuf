@@ -3,4 +3,6 @@ package tbClient.revision;
 
 message SubReplyRevisionNullFields {
     bool authorManagerType = 1;
+    bool agreeNum = 2;
+    bool disagreeNum = 3;
 }

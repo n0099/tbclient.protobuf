@@ -25,13 +25,13 @@ namespace TbClient.Revision {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilSZXZpc2lvbi9TdWJSZXBseVJldmlzaW9uTnVsbEZpZWxkcy5wcm90bxIR",
-            "dGJDbGllbnQucmV2aXNpb24iTwoaU3ViUmVwbHlSZXZpc2lvbk51bGxGaWVs",
-            "ZHMSGQoRYXV0aG9yTWFuYWdlclR5cGUYASABKAgSFgoOYXV0aG9yRXhwR3Jh",
-            "ZGUYAiABKAhiBnByb3RvMw=="));
+            "dGJDbGllbnQucmV2aXNpb24iXgoaU3ViUmVwbHlSZXZpc2lvbk51bGxGaWVs",
+            "ZHMSGQoRYXV0aG9yTWFuYWdlclR5cGUYASABKAgSEAoIYWdyZWVOdW0YAiAB",
+            "KAgSEwoLZGlzYWdyZWVOdW0YAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.SubReplyRevisionNullFields), global::TbClient.Revision.SubReplyRevisionNullFields.Parser, new[]{ "AuthorManagerType", "AuthorExpGrade" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.SubReplyRevisionNullFields), global::TbClient.Revision.SubReplyRevisionNullFields.Parser, new[]{ "AuthorManagerType", "AgreeNum", "DisagreeNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,7 +73,8 @@ namespace TbClient.Revision {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SubReplyRevisionNullFields(SubReplyRevisionNullFields other) : this() {
       authorManagerType_ = other.authorManagerType_;
-      authorExpGrade_ = other.authorExpGrade_;
+      agreeNum_ = other.agreeNum_;
+      disagreeNum_ = other.disagreeNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,15 +96,27 @@ namespace TbClient.Revision {
       }
     }
 
-    /// <summary>Field number for the "authorExpGrade" field.</summary>
-    public const int AuthorExpGradeFieldNumber = 2;
-    private bool authorExpGrade_;
+    /// <summary>Field number for the "agreeNum" field.</summary>
+    public const int AgreeNumFieldNumber = 2;
+    private bool agreeNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool AuthorExpGrade {
-      get { return authorExpGrade_; }
+    public bool AgreeNum {
+      get { return agreeNum_; }
       set {
-        authorExpGrade_ = value;
+        agreeNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "disagreeNum" field.</summary>
+    public const int DisagreeNumFieldNumber = 3;
+    private bool disagreeNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool DisagreeNum {
+      get { return disagreeNum_; }
+      set {
+        disagreeNum_ = value;
       }
     }
 
@@ -123,7 +136,8 @@ namespace TbClient.Revision {
         return true;
       }
       if (AuthorManagerType != other.AuthorManagerType) return false;
-      if (AuthorExpGrade != other.AuthorExpGrade) return false;
+      if (AgreeNum != other.AgreeNum) return false;
+      if (DisagreeNum != other.DisagreeNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,7 +146,8 @@ namespace TbClient.Revision {
     public override int GetHashCode() {
       int hash = 1;
       if (AuthorManagerType != false) hash ^= AuthorManagerType.GetHashCode();
-      if (AuthorExpGrade != false) hash ^= AuthorExpGrade.GetHashCode();
+      if (AgreeNum != false) hash ^= AgreeNum.GetHashCode();
+      if (DisagreeNum != false) hash ^= DisagreeNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,9 +170,13 @@ namespace TbClient.Revision {
         output.WriteRawTag(8);
         output.WriteBool(AuthorManagerType);
       }
-      if (AuthorExpGrade != false) {
+      if (AgreeNum != false) {
         output.WriteRawTag(16);
-        output.WriteBool(AuthorExpGrade);
+        output.WriteBool(AgreeNum);
+      }
+      if (DisagreeNum != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(DisagreeNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -173,9 +192,13 @@ namespace TbClient.Revision {
         output.WriteRawTag(8);
         output.WriteBool(AuthorManagerType);
       }
-      if (AuthorExpGrade != false) {
+      if (AgreeNum != false) {
         output.WriteRawTag(16);
-        output.WriteBool(AuthorExpGrade);
+        output.WriteBool(AgreeNum);
+      }
+      if (DisagreeNum != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(DisagreeNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -190,7 +213,10 @@ namespace TbClient.Revision {
       if (AuthorManagerType != false) {
         size += 1 + 1;
       }
-      if (AuthorExpGrade != false) {
+      if (AgreeNum != false) {
+        size += 1 + 1;
+      }
+      if (DisagreeNum != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -208,8 +234,11 @@ namespace TbClient.Revision {
       if (other.AuthorManagerType != false) {
         AuthorManagerType = other.AuthorManagerType;
       }
-      if (other.AuthorExpGrade != false) {
-        AuthorExpGrade = other.AuthorExpGrade;
+      if (other.AgreeNum != false) {
+        AgreeNum = other.AgreeNum;
+      }
+      if (other.DisagreeNum != false) {
+        DisagreeNum = other.DisagreeNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,7 +260,11 @@ namespace TbClient.Revision {
             break;
           }
           case 16: {
-            AuthorExpGrade = input.ReadBool();
+            AgreeNum = input.ReadBool();
+            break;
+          }
+          case 24: {
+            DisagreeNum = input.ReadBool();
             break;
           }
         }
@@ -254,7 +287,11 @@ namespace TbClient.Revision {
             break;
           }
           case 16: {
-            AuthorExpGrade = input.ReadBool();
+            AgreeNum = input.ReadBool();
+            break;
+          }
+          case 24: {
+            DisagreeNum = input.ReadBool();
             break;
           }
         }

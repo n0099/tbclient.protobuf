@@ -25,17 +25,16 @@ namespace TbClient.Revision {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidSZXZpc2lvbi9UaHJlYWRSZXZpc2lvbk51bGxGaWVsZHMucHJvdG8SEXRi",
-            "Q2xpZW50LnJldmlzaW9uIqECChhUaHJlYWRSZXZpc2lvbk51bGxGaWVsZHMS",
-            "EgoKdGhyZWFkVHlwZRgBIAEoCBISCgpzdGlja3lUeXBlGAIgASgIEhEKCXRv",
-            "cGljVHlwZRgDIAEoCBIOCgZpc0dvb2QYBCABKAgSGQoRYXV0aG9yTWFuYWdl",
-            "clR5cGUYBSABKAgSFwoPbGF0ZXN0UmVwbHlUaW1lGAYgASgIEhgKEGxhdGVz",
+            "Q2xpZW50LnJldmlzaW9uIvQBChhUaHJlYWRSZXZpc2lvbk51bGxGaWVsZHMS",
+            "EgoKc3RpY2t5VHlwZRgCIAEoCBIRCgl0b3BpY1R5cGUYAyABKAgSDgoGaXNH",
+            "b29kGAQgASgIEhkKEWF1dGhvck1hbmFnZXJUeXBlGAUgASgIEhgKEGxhdGVz",
             "dFJlcGxpZXJVaWQYByABKAgSEAoIcmVwbHlOdW0YCCABKAgSDwoHdmlld051",
             "bRgJIAEoCBIQCghzaGFyZU51bRgKIAEoCBIQCghhZ3JlZU51bRgLIAEoCBIT",
             "CgtkaXNhZ3JlZU51bRgMIAEoCBIQCghsb2NhdGlvbhgNIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.ThreadRevisionNullFields), global::TbClient.Revision.ThreadRevisionNullFields.Parser, new[]{ "ThreadType", "StickyType", "TopicType", "IsGood", "AuthorManagerType", "LatestReplyTime", "LatestReplierUid", "ReplyNum", "ViewNum", "ShareNum", "AgreeNum", "DisagreeNum", "Location" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.ThreadRevisionNullFields), global::TbClient.Revision.ThreadRevisionNullFields.Parser, new[]{ "StickyType", "TopicType", "IsGood", "AuthorManagerType", "LatestReplierUid", "ReplyNum", "ViewNum", "ShareNum", "AgreeNum", "DisagreeNum", "Location" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,12 +75,10 @@ namespace TbClient.Revision {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ThreadRevisionNullFields(ThreadRevisionNullFields other) : this() {
-      threadType_ = other.threadType_;
       stickyType_ = other.stickyType_;
       topicType_ = other.topicType_;
       isGood_ = other.isGood_;
       authorManagerType_ = other.authorManagerType_;
-      latestReplyTime_ = other.latestReplyTime_;
       latestReplierUid_ = other.latestReplierUid_;
       replyNum_ = other.replyNum_;
       viewNum_ = other.viewNum_;
@@ -96,18 +93,6 @@ namespace TbClient.Revision {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ThreadRevisionNullFields Clone() {
       return new ThreadRevisionNullFields(this);
-    }
-
-    /// <summary>Field number for the "threadType" field.</summary>
-    public const int ThreadTypeFieldNumber = 1;
-    private bool threadType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool ThreadType {
-      get { return threadType_; }
-      set {
-        threadType_ = value;
-      }
     }
 
     /// <summary>Field number for the "stickyType" field.</summary>
@@ -155,18 +140,6 @@ namespace TbClient.Revision {
       get { return authorManagerType_; }
       set {
         authorManagerType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "latestReplyTime" field.</summary>
-    public const int LatestReplyTimeFieldNumber = 6;
-    private bool latestReplyTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool LatestReplyTime {
-      get { return latestReplyTime_; }
-      set {
-        latestReplyTime_ = value;
       }
     }
 
@@ -269,12 +242,10 @@ namespace TbClient.Revision {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ThreadType != other.ThreadType) return false;
       if (StickyType != other.StickyType) return false;
       if (TopicType != other.TopicType) return false;
       if (IsGood != other.IsGood) return false;
       if (AuthorManagerType != other.AuthorManagerType) return false;
-      if (LatestReplyTime != other.LatestReplyTime) return false;
       if (LatestReplierUid != other.LatestReplierUid) return false;
       if (ReplyNum != other.ReplyNum) return false;
       if (ViewNum != other.ViewNum) return false;
@@ -289,12 +260,10 @@ namespace TbClient.Revision {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ThreadType != false) hash ^= ThreadType.GetHashCode();
       if (StickyType != false) hash ^= StickyType.GetHashCode();
       if (TopicType != false) hash ^= TopicType.GetHashCode();
       if (IsGood != false) hash ^= IsGood.GetHashCode();
       if (AuthorManagerType != false) hash ^= AuthorManagerType.GetHashCode();
-      if (LatestReplyTime != false) hash ^= LatestReplyTime.GetHashCode();
       if (LatestReplierUid != false) hash ^= LatestReplierUid.GetHashCode();
       if (ReplyNum != false) hash ^= ReplyNum.GetHashCode();
       if (ViewNum != false) hash ^= ViewNum.GetHashCode();
@@ -320,10 +289,6 @@ namespace TbClient.Revision {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ThreadType != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(ThreadType);
-      }
       if (StickyType != false) {
         output.WriteRawTag(16);
         output.WriteBool(StickyType);
@@ -339,10 +304,6 @@ namespace TbClient.Revision {
       if (AuthorManagerType != false) {
         output.WriteRawTag(40);
         output.WriteBool(AuthorManagerType);
-      }
-      if (LatestReplyTime != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(LatestReplyTime);
       }
       if (LatestReplierUid != false) {
         output.WriteRawTag(56);
@@ -382,10 +343,6 @@ namespace TbClient.Revision {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ThreadType != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(ThreadType);
-      }
       if (StickyType != false) {
         output.WriteRawTag(16);
         output.WriteBool(StickyType);
@@ -401,10 +358,6 @@ namespace TbClient.Revision {
       if (AuthorManagerType != false) {
         output.WriteRawTag(40);
         output.WriteBool(AuthorManagerType);
-      }
-      if (LatestReplyTime != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(LatestReplyTime);
       }
       if (LatestReplierUid != false) {
         output.WriteRawTag(56);
@@ -444,9 +397,6 @@ namespace TbClient.Revision {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ThreadType != false) {
-        size += 1 + 1;
-      }
       if (StickyType != false) {
         size += 1 + 1;
       }
@@ -457,9 +407,6 @@ namespace TbClient.Revision {
         size += 1 + 1;
       }
       if (AuthorManagerType != false) {
-        size += 1 + 1;
-      }
-      if (LatestReplyTime != false) {
         size += 1 + 1;
       }
       if (LatestReplierUid != false) {
@@ -495,9 +442,6 @@ namespace TbClient.Revision {
       if (other == null) {
         return;
       }
-      if (other.ThreadType != false) {
-        ThreadType = other.ThreadType;
-      }
       if (other.StickyType != false) {
         StickyType = other.StickyType;
       }
@@ -509,9 +453,6 @@ namespace TbClient.Revision {
       }
       if (other.AuthorManagerType != false) {
         AuthorManagerType = other.AuthorManagerType;
-      }
-      if (other.LatestReplyTime != false) {
-        LatestReplyTime = other.LatestReplyTime;
       }
       if (other.LatestReplierUid != false) {
         LatestReplierUid = other.LatestReplierUid;
@@ -549,10 +490,6 @@ namespace TbClient.Revision {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            ThreadType = input.ReadBool();
-            break;
-          }
           case 16: {
             StickyType = input.ReadBool();
             break;
@@ -567,10 +504,6 @@ namespace TbClient.Revision {
           }
           case 40: {
             AuthorManagerType = input.ReadBool();
-            break;
-          }
-          case 48: {
-            LatestReplyTime = input.ReadBool();
             break;
           }
           case 56: {
@@ -616,10 +549,6 @@ namespace TbClient.Revision {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            ThreadType = input.ReadBool();
-            break;
-          }
           case 16: {
             StickyType = input.ReadBool();
             break;
@@ -634,10 +563,6 @@ namespace TbClient.Revision {
           }
           case 40: {
             AuthorManagerType = input.ReadBool();
-            break;
-          }
-          case 48: {
-            LatestReplyTime = input.ReadBool();
             break;
           }
           case 56: {

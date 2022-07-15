@@ -18,10 +18,6 @@ class ReplyRevisionNullFields extends \Google\Protobuf\Internal\Message
      */
     protected $authorManagerType = false;
     /**
-     * Generated from protobuf field <code>bool authorExpGrade = 2;</code>
-     */
-    protected $authorExpGrade = false;
-    /**
      * Generated from protobuf field <code>bool subReplyNum = 3;</code>
      */
     protected $subReplyNum = false;
@@ -49,7 +45,6 @@ class ReplyRevisionNullFields extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $authorManagerType
-     *     @type bool $authorExpGrade
      *     @type bool $subReplyNum
      *     @type bool $isFold
      *     @type bool $agreeNum
@@ -80,28 +75,6 @@ class ReplyRevisionNullFields extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->authorManagerType = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool authorExpGrade = 2;</code>
-     * @return bool
-     */
-    public function getAuthorExpGrade()
-    {
-        return $this->authorExpGrade;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool authorExpGrade = 2;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setAuthorExpGrade($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->authorExpGrade = $var;
 
         return $this;
     }

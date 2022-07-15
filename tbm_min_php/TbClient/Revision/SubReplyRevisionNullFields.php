@@ -18,9 +18,13 @@ class SubReplyRevisionNullFields extends \Google\Protobuf\Internal\Message
      */
     protected $authorManagerType = false;
     /**
-     * Generated from protobuf field <code>bool authorExpGrade = 2;</code>
+     * Generated from protobuf field <code>bool agreeNum = 2;</code>
      */
-    protected $authorExpGrade = false;
+    protected $agreeNum = false;
+    /**
+     * Generated from protobuf field <code>bool disagreeNum = 3;</code>
+     */
+    protected $disagreeNum = false;
 
     /**
      * Constructor.
@@ -29,7 +33,8 @@ class SubReplyRevisionNullFields extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $authorManagerType
-     *     @type bool $authorExpGrade
+     *     @type bool $agreeNum
+     *     @type bool $disagreeNum
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +65,45 @@ class SubReplyRevisionNullFields extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool authorExpGrade = 2;</code>
+     * Generated from protobuf field <code>bool agreeNum = 2;</code>
      * @return bool
      */
-    public function getAuthorExpGrade()
+    public function getAgreeNum()
     {
-        return $this->authorExpGrade;
+        return $this->agreeNum;
     }
 
     /**
-     * Generated from protobuf field <code>bool authorExpGrade = 2;</code>
+     * Generated from protobuf field <code>bool agreeNum = 2;</code>
      * @param bool $var
      * @return $this
      */
-    public function setAuthorExpGrade($var)
+    public function setAgreeNum($var)
     {
         GPBUtil::checkBool($var);
-        $this->authorExpGrade = $var;
+        $this->agreeNum = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool disagreeNum = 3;</code>
+     * @return bool
+     */
+    public function getDisagreeNum()
+    {
+        return $this->disagreeNum;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool disagreeNum = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisagreeNum($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->disagreeNum = $var;
 
         return $this;
     }

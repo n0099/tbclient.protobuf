@@ -25,15 +25,14 @@ namespace TbClient.Revision {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZSZXZpc2lvbi9SZXBseVJldmlzaW9uTnVsbEZpZWxkcy5wcm90bxIRdGJD",
-            "bGllbnQucmV2aXNpb24iqgEKF1JlcGx5UmV2aXNpb25OdWxsRmllbGRzEhkK",
-            "EWF1dGhvck1hbmFnZXJUeXBlGAEgASgIEhYKDmF1dGhvckV4cEdyYWRlGAIg",
-            "ASgIEhMKC3N1YlJlcGx5TnVtGAMgASgIEg4KBmlzRm9sZBgEIAEoCBIQCghh",
-            "Z3JlZU51bRgFIAEoCBITCgtkaXNhZ3JlZU51bRgGIAEoCBIQCghsb2NhdGlv",
-            "bhgHIAEoCGIGcHJvdG8z"));
+            "bGllbnQucmV2aXNpb24ikgEKF1JlcGx5UmV2aXNpb25OdWxsRmllbGRzEhkK",
+            "EWF1dGhvck1hbmFnZXJUeXBlGAEgASgIEhMKC3N1YlJlcGx5TnVtGAMgASgI",
+            "Eg4KBmlzRm9sZBgEIAEoCBIQCghhZ3JlZU51bRgFIAEoCBITCgtkaXNhZ3Jl",
+            "ZU51bRgGIAEoCBIQCghsb2NhdGlvbhgHIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.ReplyRevisionNullFields), global::TbClient.Revision.ReplyRevisionNullFields.Parser, new[]{ "AuthorManagerType", "AuthorExpGrade", "SubReplyNum", "IsFold", "AgreeNum", "DisagreeNum", "Location" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Revision.ReplyRevisionNullFields), global::TbClient.Revision.ReplyRevisionNullFields.Parser, new[]{ "AuthorManagerType", "SubReplyNum", "IsFold", "AgreeNum", "DisagreeNum", "Location" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,7 +74,6 @@ namespace TbClient.Revision {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReplyRevisionNullFields(ReplyRevisionNullFields other) : this() {
       authorManagerType_ = other.authorManagerType_;
-      authorExpGrade_ = other.authorExpGrade_;
       subReplyNum_ = other.subReplyNum_;
       isFold_ = other.isFold_;
       agreeNum_ = other.agreeNum_;
@@ -99,18 +97,6 @@ namespace TbClient.Revision {
       get { return authorManagerType_; }
       set {
         authorManagerType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "authorExpGrade" field.</summary>
-    public const int AuthorExpGradeFieldNumber = 2;
-    private bool authorExpGrade_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool AuthorExpGrade {
-      get { return authorExpGrade_; }
-      set {
-        authorExpGrade_ = value;
       }
     }
 
@@ -190,7 +176,6 @@ namespace TbClient.Revision {
         return true;
       }
       if (AuthorManagerType != other.AuthorManagerType) return false;
-      if (AuthorExpGrade != other.AuthorExpGrade) return false;
       if (SubReplyNum != other.SubReplyNum) return false;
       if (IsFold != other.IsFold) return false;
       if (AgreeNum != other.AgreeNum) return false;
@@ -204,7 +189,6 @@ namespace TbClient.Revision {
     public override int GetHashCode() {
       int hash = 1;
       if (AuthorManagerType != false) hash ^= AuthorManagerType.GetHashCode();
-      if (AuthorExpGrade != false) hash ^= AuthorExpGrade.GetHashCode();
       if (SubReplyNum != false) hash ^= SubReplyNum.GetHashCode();
       if (IsFold != false) hash ^= IsFold.GetHashCode();
       if (AgreeNum != false) hash ^= AgreeNum.GetHashCode();
@@ -231,10 +215,6 @@ namespace TbClient.Revision {
       if (AuthorManagerType != false) {
         output.WriteRawTag(8);
         output.WriteBool(AuthorManagerType);
-      }
-      if (AuthorExpGrade != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(AuthorExpGrade);
       }
       if (SubReplyNum != false) {
         output.WriteRawTag(24);
@@ -270,10 +250,6 @@ namespace TbClient.Revision {
         output.WriteRawTag(8);
         output.WriteBool(AuthorManagerType);
       }
-      if (AuthorExpGrade != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(AuthorExpGrade);
-      }
       if (SubReplyNum != false) {
         output.WriteRawTag(24);
         output.WriteBool(SubReplyNum);
@@ -307,9 +283,6 @@ namespace TbClient.Revision {
       if (AuthorManagerType != false) {
         size += 1 + 1;
       }
-      if (AuthorExpGrade != false) {
-        size += 1 + 1;
-      }
       if (SubReplyNum != false) {
         size += 1 + 1;
       }
@@ -339,9 +312,6 @@ namespace TbClient.Revision {
       }
       if (other.AuthorManagerType != false) {
         AuthorManagerType = other.AuthorManagerType;
-      }
-      if (other.AuthorExpGrade != false) {
-        AuthorExpGrade = other.AuthorExpGrade;
       }
       if (other.SubReplyNum != false) {
         SubReplyNum = other.SubReplyNum;
@@ -375,10 +345,6 @@ namespace TbClient.Revision {
             break;
           case 8: {
             AuthorManagerType = input.ReadBool();
-            break;
-          }
-          case 16: {
-            AuthorExpGrade = input.ReadBool();
             break;
           }
           case 24: {
@@ -418,10 +384,6 @@ namespace TbClient.Revision {
             break;
           case 8: {
             AuthorManagerType = input.ReadBool();
-            break;
-          }
-          case 16: {
-            AuthorExpGrade = input.ReadBool();
             break;
           }
           case 24: {

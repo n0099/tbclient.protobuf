@@ -15,17 +15,19 @@ class SubReply
           return;
         }
         \GPBMetadata\Post\Common\Content::initOnce();
+        \GPBMetadata\Post\Common\Agree::initOnce();
         \GPBMetadata\User::initOnce();
         $pool->internalAddGeneratedFile(
             '
-°
-Post/SubReply.prototbClient.post
-User.proto"v
+ö
+Post/SubReply.prototbClient.postPost/Common/Agree.proto
+User.proto"¢
 SubReply
 spid (.
 content (2.tbClient.post.common.Content
 time (
-author (2.tbClient.Userbproto3'
+author (2.tbClient.User*
+agree	 (2.tbClient.post.common.Agreebproto3'
         , true);
 
         static::$is_initialized = true;
