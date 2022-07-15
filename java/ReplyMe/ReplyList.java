@@ -22,6 +22,7 @@ public final class ReplyList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FNAME = "";
+    public static final Integer DEFAULT_HAS_AGREE;
     public static final Integer DEFAULT_HIDE_FNAME;
     public static final Integer DEFAULT_IS_BJH;
     public static final Integer DEFAULT_IS_FLOOR;
@@ -49,6 +50,8 @@ public final class ReplyList extends Message {
     public final String content;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String fname;
+    @ProtoField(tag = 29, type = Message.Datatype.INT32)
+    public final Integer has_agree;
     @ProtoField(tag = 19, type = Message.Datatype.UINT32)
     public final Integer hide_fname;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
@@ -107,6 +110,7 @@ public final class ReplyList extends Message {
         public Baijiahao baijiahao;
         public String content;
         public String fname;
+        public Integer has_agree;
         public Integer hide_fname;
         public Integer is_bjh;
         public Integer is_floor;
@@ -196,6 +200,7 @@ public final class ReplyList extends Message {
             this.is_bjh = replyList.is_bjh;
             this.baijiahao = replyList.baijiahao;
             this.new_floor_info = Message.copyOf(replyList.new_floor_info);
+            this.has_agree = replyList.has_agree;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -241,6 +246,7 @@ public final class ReplyList extends Message {
         DEFAULT_IS_SHARE_THREAD = 0;
         DEFAULT_IS_BJH = 0;
         DEFAULT_NEW_FLOOR_INFO = Collections.emptyList();
+        DEFAULT_HAS_AGREE = 0;
     }
 
     public /* synthetic */ ReplyList(Builder builder, boolean z, a aVar) {
@@ -401,9 +407,15 @@ public final class ReplyList extends Message {
             List<NewFloorInfo> list = builder.new_floor_info;
             if (list == null) {
                 this.new_floor_info = DEFAULT_NEW_FLOOR_INFO;
-                return;
             } else {
                 this.new_floor_info = Message.immutableCopyOf(list);
+            }
+            Integer num11 = builder.has_agree;
+            if (num11 == null) {
+                this.has_agree = DEFAULT_HAS_AGREE;
+                return;
+            } else {
+                this.has_agree = num11;
                 return;
             }
         }
@@ -435,5 +447,6 @@ public final class ReplyList extends Message {
         this.is_bjh = builder.is_bjh;
         this.baijiahao = builder.baijiahao;
         this.new_floor_info = Message.immutableCopyOf(builder.new_floor_info);
+        this.has_agree = builder.has_agree;
     }
 }

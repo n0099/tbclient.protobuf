@@ -36,6 +36,7 @@ public final class Anti extends Message {
     public static final Integer DEFAULT_REPLY_PRIVATE_FLAG;
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT_TEENMODE_INTERVAL = "";
+    public static final Integer DEFAULT_USER_CHAT_BLOCK;
     public static final String DEFAULT_USER_MUTE = "";
     public static final String DEFAULT_VCODE_MD5 = "";
     public static final String DEFAULT_VCODE_PIC_URL = "";
@@ -88,6 +89,8 @@ public final class Anti extends Message {
     public final String tbs;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String teenmode_interval;
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
+    public final Integer user_chat_block;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String user_mute;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -129,6 +132,7 @@ public final class Anti extends Message {
         public Integer reply_private_flag;
         public String tbs;
         public String teenmode_interval;
+        public Integer user_chat_block;
         public String user_mute;
         public String vcode_md5;
         public String vcode_pic_url;
@@ -201,6 +205,7 @@ public final class Anti extends Message {
             this.can_goods = anti.can_goods;
             this.is_sexyforum = anti.is_sexyforum;
             this.teenmode_interval = anti.teenmode_interval;
+            this.user_chat_block = anti.user_chat_block;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -248,6 +253,7 @@ public final class Anti extends Message {
         DEFAULT_POLL_LEVEL = 0;
         DEFAULT_CAN_GOODS = 0;
         DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
+        DEFAULT_USER_CHAT_BLOCK = 0;
     }
 
     public /* synthetic */ Anti(Builder builder, boolean z, a aVar) {
@@ -439,9 +445,15 @@ public final class Anti extends Message {
             String str11 = builder.teenmode_interval;
             if (str11 == null) {
                 this.teenmode_interval = "";
-                return;
             } else {
                 this.teenmode_interval = str11;
+            }
+            Integer num16 = builder.user_chat_block;
+            if (num16 == null) {
+                this.user_chat_block = DEFAULT_USER_CHAT_BLOCK;
+                return;
+            } else {
+                this.user_chat_block = num16;
                 return;
             }
         }
@@ -474,5 +486,6 @@ public final class Anti extends Message {
         this.can_goods = builder.can_goods;
         this.is_sexyforum = builder.is_sexyforum;
         this.teenmode_interval = builder.teenmode_interval;
+        this.user_chat_block = builder.user_chat_block;
     }
 }

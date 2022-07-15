@@ -12,11 +12,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes8.dex */
 public final class AgreeList extends Message {
-    public static /* synthetic */ Interceptable $ic;
+    public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_ID;
     public static final Integer DEFAULT_IS_DEL;
+    public static final Integer DEFAULT_SNAPSHOOT_PIC_ID;
     public static final Integer DEFAULT_TIME;
     public static final Integer DEFAULT_TYPE;
+    public static final String DEFAULT_VIRTUAL_IMAGE_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 8)
     public final User agreeer;
@@ -26,12 +28,16 @@ public final class AgreeList extends Message {
     public final Integer is_del;
     @ProtoField(tag = 9)
     public final Post post_info;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer snapshoot_pic_id;
     @ProtoField(tag = 1)
     public final ThreadInfo thread_info;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer time;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer type;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String virtual_image_url;
 
     /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<AgreeList> {
@@ -41,9 +47,11 @@ public final class AgreeList extends Message {
         public Long id;
         public Integer is_del;
         public Post post_info;
+        public Integer snapshoot_pic_id;
         public ThreadInfo thread_info;
         public Integer time;
         public Integer type;
+        public String virtual_image_url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -87,6 +95,8 @@ public final class AgreeList extends Message {
             this.id = agreeList.id;
             this.agreeer = agreeList.agreeer;
             this.post_info = agreeList.post_info;
+            this.virtual_image_url = agreeList.virtual_image_url;
+            this.snapshoot_pic_id = agreeList.snapshoot_pic_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -121,6 +131,7 @@ public final class AgreeList extends Message {
         DEFAULT_IS_DEL = 0;
         DEFAULT_TYPE = 0;
         DEFAULT_ID = 0L;
+        DEFAULT_SNAPSHOOT_PIC_ID = 0;
     }
 
     public /* synthetic */ AgreeList(Builder builder, boolean z, a aVar) {
@@ -173,7 +184,20 @@ public final class AgreeList extends Message {
             }
             this.agreeer = builder.agreeer;
             this.post_info = builder.post_info;
-            return;
+            String str = builder.virtual_image_url;
+            if (str == null) {
+                this.virtual_image_url = "";
+            } else {
+                this.virtual_image_url = str;
+            }
+            Integer num4 = builder.snapshoot_pic_id;
+            if (num4 == null) {
+                this.snapshoot_pic_id = DEFAULT_SNAPSHOOT_PIC_ID;
+                return;
+            } else {
+                this.snapshoot_pic_id = num4;
+                return;
+            }
         }
         this.thread_info = builder.thread_info;
         this.time = builder.time;
@@ -182,5 +206,7 @@ public final class AgreeList extends Message {
         this.id = builder.id;
         this.agreeer = builder.agreeer;
         this.post_info = builder.post_info;
+        this.virtual_image_url = builder.virtual_image_url;
+        this.snapshoot_pic_id = builder.snapshoot_pic_id;
     }
 }

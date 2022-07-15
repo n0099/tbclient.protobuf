@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1077common;
+    public final CommonReq f1803common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer da_from;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1078common;
+        public CommonReq f1804common;
         public Integer da_from;
         public String da_locate;
         public String da_type;
@@ -87,7 +87,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1078common = dataReq.f1077common;
+            this.f1804common = dataReq.f1803common;
             this.token = dataReq.token;
             this.da_locate = dataReq.da_locate;
             this.da_from = dataReq.da_from;
@@ -150,7 +150,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1077common = builder.f1078common;
+            this.f1803common = builder.f1804common;
             String str = builder.token;
             if (str == null) {
                 this.token = "";
@@ -190,7 +190,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1077common = builder.f1078common;
+        this.f1803common = builder.f1804common;
         this.token = builder.token;
         this.da_locate = builder.da_locate;
         this.da_from = builder.da_from;

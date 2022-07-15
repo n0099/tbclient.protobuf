@@ -1,6 +1,8 @@
 package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.down.manage.DownloadConstants;
+import com.baidu.location.BDLocation;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -13,7 +15,7 @@ import com.google.android.exoplayer2.extractor.ts.H262Reader;
 import com.google.android.exoplayer2.extractor.ts.PsExtractor;
 import com.google.android.exoplayer2.extractor.ts.TsExtractor;
 import com.google.android.exoplayer2.text.cea.Cea708Decoder;
-import com.kuaishou.weapon.un.w0;
+import com.google.android.material.behavior.HideBottomViewOnScrollBehavior;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -194,7 +196,7 @@ public final class ThreadInfo extends Message {
     public final AppCode app_code;
     @ProtoField(tag = 117)
     public final AppInfo app_info;
-    @ProtoField(tag = 162, type = Message.Datatype.STRING)
+    @ProtoField(tag = BDLocation.TypeServerDecryptError, type = Message.Datatype.STRING)
     public final String article_cover;
     @ProtoField(tag = 138, type = Message.Datatype.INT64)
     public final Long audit_time;
@@ -202,7 +204,7 @@ public final class ThreadInfo extends Message {
     public final User author;
     @ProtoField(tag = 56, type = Message.Datatype.INT64)
     public final Long author_id;
-    @ProtoField(tag = w0.w)
+    @ProtoField(tag = 169)
     public final Baijiahao baijiahao;
     @ProtoField(tag = MatroskaExtractor.ID_SIMPLE_BLOCK, type = Message.Datatype.INT32)
     public final Integer bjh_content_tag;
@@ -228,6 +230,10 @@ public final class ThreadInfo extends Message {
     public final Integer comment_num;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
+    @ProtoField(tag = 211)
+    public final CustomFigure custom_figure;
+    @ProtoField(tag = 212)
+    public final CustomState custom_state;
     @ProtoField(tag = Cea708Decoder.COMMAND_DF2, type = Message.Datatype.STRING)
     public final String daily_paper_time;
     @ProtoField(tag = 98)
@@ -276,7 +282,7 @@ public final class ThreadInfo extends Message {
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long id;
-    @ProtoField(tag = w0.i, type = Message.Datatype.INT32)
+    @ProtoField(tag = 173, type = Message.Datatype.INT32)
     public final Integer if_comment;
     @ProtoField(tag = MatroskaExtractor.ID_TRACK_ENTRY, type = Message.Datatype.STRING)
     public final String if_comment_info;
@@ -286,7 +292,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_activity;
     @ProtoField(tag = 59, type = Message.Datatype.UINT32)
     public final Integer is_ad;
-    @ProtoField(tag = 186, type = Message.Datatype.INT32)
+    @ProtoField(tag = MatroskaExtractor.ID_PIXEL_HEIGHT, type = Message.Datatype.INT32)
     public final Integer is_author_view;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_bakan;
@@ -314,7 +320,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_godthread_recommend;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_good;
-    @ProtoField(tag = w0.n0, type = Message.Datatype.INT32)
+    @ProtoField(tag = 165, type = Message.Datatype.INT32)
     public final Integer is_headlinepost;
     @ProtoField(tag = 128, type = Message.Datatype.INT32)
     public final Integer is_link_thread;
@@ -350,7 +356,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_protal;
     @ProtoField(tag = Constants.METHOD_IM_GET_USER_PROFILE_BY_BAIDU_UID, type = Message.Datatype.UINT32)
     public final Integer is_s_card;
-    @ProtoField(tag = 143, type = Message.Datatype.INT32)
+    @ProtoField(tag = Cea708Decoder.COMMAND_RST, type = Message.Datatype.INT32)
     public final Integer is_share_thread;
     @ProtoField(tag = 134, type = Message.Datatype.INT32)
     public final Integer is_story_audit;
@@ -360,9 +366,9 @@ public final class ThreadInfo extends Message {
     public final String is_tiebaplus_ad;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_top;
-    @ProtoField(tag = 158, type = Message.Datatype.STRING)
+    @ProtoField(tag = Cea708Decoder.COMMAND_DF6, type = Message.Datatype.STRING)
     public final String is_top_img;
-    @ProtoField(tag = w0.I, type = Message.Datatype.INT32)
+    @ProtoField(tag = 148, type = Message.Datatype.INT32)
     public final Integer is_topic;
     @ProtoField(tag = 153, type = Message.Datatype.INT32)
     public final Integer is_videobiggie_recomthread;
@@ -400,7 +406,7 @@ public final class ThreadInfo extends Message {
     public final List<MediaNum> media_num;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String meizhi_pic;
-    @ProtoField(tag = 139, type = Message.Datatype.INT32)
+    @ProtoField(tag = Cea708Decoder.COMMAND_TGW, type = Message.Datatype.INT32)
     public final Integer middle_page_num;
     @ProtoField(tag = Cea708Decoder.COMMAND_DLW, type = Message.Datatype.INT32)
     public final Integer middle_page_pass_flag;
@@ -482,7 +488,7 @@ public final class ThreadInfo extends Message {
     public final SmartApp swan_info;
     @ProtoField(tag = 159, type = Message.Datatype.STRING)
     public final String t_share_img;
-    @ProtoField(tag = 175, type = Message.Datatype.INT32)
+    @ProtoField(tag = HideBottomViewOnScrollBehavior.EXIT_ANIMATION_DURATION, type = Message.Datatype.INT32)
     public final Integer tab_id;
     @ProtoField(tag = MatroskaExtractor.ID_PIXEL_WIDTH, type = Message.Datatype.STRING)
     public final String tab_name;
@@ -492,8 +498,10 @@ public final class ThreadInfo extends Message {
     public final TaskInfo task_info;
     @ProtoField(tag = 116)
     public final TbreadDispatch tbread_dispatch_info;
-    @ProtoField(label = Message.Label.REPEATED, tag = w0.M)
+    @ProtoField(label = Message.Label.REPEATED, tag = 191)
     public final List<ThreadRecommendInfo> thread_recommend_infos;
+    @ProtoField(tag = 210)
+    public final ThreadRecommendTag thread_recommend_tag;
     @ProtoField(tag = 172, type = Message.Datatype.STRING)
     public final String thread_share_link;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
@@ -512,7 +520,7 @@ public final class ThreadInfo extends Message {
     public final String tiebaplus_extra_param;
     @ProtoField(tag = 194, type = Message.Datatype.STRING)
     public final String tiebaplus_order_id;
-    @ProtoField(tag = 195, type = Message.Datatype.STRING)
+    @ProtoField(tag = DownloadConstants.STATUS_WAITING_FOR_NETWORK, type = Message.Datatype.STRING)
     public final String tiebaplus_token;
     @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer time;
@@ -530,7 +538,7 @@ public final class ThreadInfo extends Message {
     public final TopicModule topic_module;
     @ProtoField(tag = 149, type = Message.Datatype.STRING)
     public final String topic_user_name;
-    @ProtoField(tag = 145, type = Message.Datatype.UINT64)
+    @ProtoField(tag = Cea708Decoder.COMMAND_SPC, type = Message.Datatype.UINT64)
     public final Long trans_num;
     @ProtoField(tag = 72)
     public final ZhiBoInfoTW twzhibo_info;
@@ -550,7 +558,7 @@ public final class ThreadInfo extends Message {
     public final VideoInfo video_info;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String video_mobile_url;
-    @ProtoField(tag = 157)
+    @ProtoField(tag = Cea708Decoder.COMMAND_DF5)
     public final VideoDesc video_segment;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String video_swf;
@@ -560,9 +568,9 @@ public final class ThreadInfo extends Message {
     public final Integer view_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<Voice> voice_info;
-    @ProtoField(tag = w0.b1)
+    @ProtoField(tag = 199)
     public final VoiceRoom voice_room;
-    @ProtoField(tag = w0.u, type = Message.Datatype.STRING)
+    @ProtoField(tag = 177, type = Message.Datatype.STRING)
     public final String wonderful_post_info;
     @ProtoField(tag = PsExtractor.PRIVATE_STREAM_1)
     public final WorksInfo works_info;
@@ -603,6 +611,8 @@ public final class ThreadInfo extends Message {
         public Integer collect_status;
         public Integer comment_num;
         public Integer create_time;
+        public CustomFigure custom_figure;
+        public CustomState custom_state;
         public String daily_paper_time;
         public DealInfo deal_info;
         public List<DeclareInfo> declare_list;
@@ -736,6 +746,7 @@ public final class ThreadInfo extends Message {
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
         public List<ThreadRecommendInfo> thread_recommend_infos;
+        public ThreadRecommendTag thread_recommend_tag;
         public String thread_share_link;
         public Integer thread_type;
         public Integer thread_types;
@@ -1009,6 +1020,9 @@ public final class ThreadInfo extends Message {
             this.is_pictxt = threadInfo.is_pictxt;
             this.exposure_monitor_url = threadInfo.exposure_monitor_url;
             this.click_monitor_url = threadInfo.click_monitor_url;
+            this.thread_recommend_tag = threadInfo.thread_recommend_tag;
+            this.custom_figure = threadInfo.custom_figure;
+            this.custom_state = threadInfo.custom_state;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -2114,11 +2128,13 @@ public final class ThreadInfo extends Message {
             String str46 = builder.click_monitor_url;
             if (str46 == null) {
                 this.click_monitor_url = "";
-                return;
             } else {
                 this.click_monitor_url = str46;
-                return;
             }
+            this.thread_recommend_tag = builder.thread_recommend_tag;
+            this.custom_figure = builder.custom_figure;
+            this.custom_state = builder.custom_state;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -2319,5 +2335,8 @@ public final class ThreadInfo extends Message {
         this.is_pictxt = builder.is_pictxt;
         this.exposure_monitor_url = builder.exposure_monitor_url;
         this.click_monitor_url = builder.click_monitor_url;
+        this.thread_recommend_tag = builder.thread_recommend_tag;
+        this.custom_figure = builder.custom_figure;
+        this.custom_state = builder.custom_state;
     }
 }

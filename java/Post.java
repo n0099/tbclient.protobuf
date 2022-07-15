@@ -74,6 +74,10 @@ public final class Post extends Message {
     public final List<CardLinkInfo> card_link_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<PbContent> content;
+    @ProtoField(tag = 60)
+    public final CustomFigure custom_figure;
+    @ProtoField(tag = 61)
+    public final CustomState custom_state;
     @ProtoField(label = Message.Label.REPEATED, tag = 32)
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -184,6 +188,8 @@ public final class Post extends Message {
         public String bimg_url;
         public List<CardLinkInfo> card_link_info;
         public List<PbContent> content;
+        public CustomFigure custom_figure;
+        public CustomState custom_state;
         public List<TailInfo> ext_tails;
         public Integer floor;
         public String fold_comment_apply_url;
@@ -325,6 +331,8 @@ public final class Post extends Message {
             this.fold_comment_apply_url = post.fold_comment_apply_url;
             this.novel_info = post.novel_info;
             this.card_link_info = Message.copyOf(post.card_link_info);
+            this.custom_figure = post.custom_figure;
+            this.custom_state = post.custom_state;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -642,11 +650,12 @@ public final class Post extends Message {
             List<CardLinkInfo> list5 = builder.card_link_info;
             if (list5 == null) {
                 this.card_link_info = DEFAULT_CARD_LINK_INFO;
-                return;
             } else {
                 this.card_link_info = Message.immutableCopyOf(list5);
-                return;
             }
+            this.custom_figure = builder.custom_figure;
+            this.custom_state = builder.custom_state;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -706,5 +715,7 @@ public final class Post extends Message {
         this.fold_comment_apply_url = builder.fold_comment_apply_url;
         this.novel_info = builder.novel_info;
         this.card_link_info = Message.immutableCopyOf(builder.card_link_info);
+        this.custom_figure = builder.custom_figure;
+        this.custom_state = builder.custom_state;
     }
 }

@@ -59,6 +59,7 @@ public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final List<BannerThreadInfo> DEFAULT_BANNER_THREAD_LIST;
     public static final String DEFAULT_BAWU_ENTER_URL = "";
+    public static final Integer DEFAULT_BAWU_UNREAD_NOTICE_NUM;
     public static final List<BottomMenu> DEFAULT_BOTTOM_MENU;
     public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_INFO;
     public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW;
@@ -135,6 +136,8 @@ public final class DataRes extends Message {
     public final BannerUserStory banner_user_story;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String bawu_enter_url;
+    @ProtoField(tag = 117, type = Message.Datatype.INT32)
+    public final Integer bawu_unread_notice_num;
     @ProtoField(tag = 115)
     public final PrivatePopInfo bawutask_pop;
     @ProtoField(tag = 101)
@@ -339,6 +342,7 @@ public final class DataRes extends Message {
         public List<BannerThreadInfo> banner_thread_list;
         public BannerUserStory banner_user_story;
         public String bawu_enter_url;
+        public Integer bawu_unread_notice_num;
         public PrivatePopInfo bawutask_pop;
         public WindowToast bazhu_exam_fail;
         public ForumBookInfo book_info;
@@ -574,6 +578,7 @@ public final class DataRes extends Message {
             this.ad_sample_map_key = dataRes.ad_sample_map_key;
             this.bawutask_pop = dataRes.bawutask_pop;
             this.live_fuse_forum = Message.copyOf(dataRes.live_fuse_forum);
+            this.bawu_unread_notice_num = dataRes.bawu_unread_notice_num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -650,6 +655,7 @@ public final class DataRes extends Message {
         DEFAULT_AD_SHOW_SELECT = 0;
         DEFAULT_AD_MIX_LIST = Collections.emptyList();
         DEFAULT_LIVE_FUSE_FORUM = Collections.emptyList();
+        DEFAULT_BAWU_UNREAD_NOTICE_NUM = 0;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -1035,9 +1041,15 @@ public final class DataRes extends Message {
             List<LiveFuseForumData> list24 = builder.live_fuse_forum;
             if (list24 == null) {
                 this.live_fuse_forum = DEFAULT_LIVE_FUSE_FORUM;
-                return;
             } else {
                 this.live_fuse_forum = Message.immutableCopyOf(list24);
+            }
+            Integer num22 = builder.bawu_unread_notice_num;
+            if (num22 == null) {
+                this.bawu_unread_notice_num = DEFAULT_BAWU_UNREAD_NOTICE_NUM;
+                return;
+            } else {
+                this.bawu_unread_notice_num = num22;
                 return;
             }
         }
@@ -1149,5 +1161,6 @@ public final class DataRes extends Message {
         this.ad_sample_map_key = builder.ad_sample_map_key;
         this.bawutask_pop = builder.bawutask_pop;
         this.live_fuse_forum = Message.immutableCopyOf(builder.live_fuse_forum);
+        this.bawu_unread_notice_num = builder.bawu_unread_notice_num;
     }
 }

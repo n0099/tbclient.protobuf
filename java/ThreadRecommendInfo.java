@@ -15,6 +15,7 @@ public final class ThreadRecommendInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_FORUM_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_JUMP_LINK = "";
     public static final String DEFAULT_RECOMMEND_ICON = "";
     public static final String DEFAULT_RECOMMEND_REASON = "";
     public static final String DEFAULT_RECOMMEND_TAIL = "";
@@ -29,6 +30,8 @@ public final class ThreadRecommendInfo extends Message {
     public final String forum_avatar;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String jump_link;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String recommend_icon;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -57,6 +60,7 @@ public final class ThreadRecommendInfo extends Message {
         public ThemeColorInfo background_color;
         public String forum_avatar;
         public String forum_name;
+        public String jump_link;
         public String recommend_icon;
         public String recommend_reason;
         public ThemeColorInfo recommend_reason_color;
@@ -116,6 +120,7 @@ public final class ThreadRecommendInfo extends Message {
             this.recommend_reason_color = threadRecommendInfo.recommend_reason_color;
             this.strip_color = threadRecommendInfo.strip_color;
             this.background_color = threadRecommendInfo.background_color;
+            this.jump_link = threadRecommendInfo.jump_link;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -231,7 +236,14 @@ public final class ThreadRecommendInfo extends Message {
             this.recommend_reason_color = builder.recommend_reason_color;
             this.strip_color = builder.strip_color;
             this.background_color = builder.background_color;
-            return;
+            String str8 = builder.jump_link;
+            if (str8 == null) {
+                this.jump_link = "";
+                return;
+            } else {
+                this.jump_link = str8;
+                return;
+            }
         }
         this.forum_avatar = builder.forum_avatar;
         this.forum_name = builder.forum_name;
@@ -246,5 +258,6 @@ public final class ThreadRecommendInfo extends Message {
         this.recommend_reason_color = builder.recommend_reason_color;
         this.strip_color = builder.strip_color;
         this.background_color = builder.background_color;
+        this.jump_link = builder.jump_link;
     }
 }

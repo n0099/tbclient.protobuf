@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1145common;
+    public final CommonReq f1875common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1146common;
+        public CommonReq f1876common;
         public Integer pn;
         public Integer rn;
 
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             }
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
-            this.f1146common = dataReq.f1145common;
+            this.f1876common = dataReq.f1875common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -143,11 +143,11 @@ public final class DataReq extends Message {
             } else {
                 this.rn = num2;
             }
-            this.f1145common = builder.f1146common;
+            this.f1875common = builder.f1876common;
             return;
         }
         this.pn = builder.pn;
         this.rn = builder.rn;
-        this.f1145common = builder.f1146common;
+        this.f1875common = builder.f1876common;
     }
 }

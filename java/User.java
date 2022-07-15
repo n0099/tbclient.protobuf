@@ -352,6 +352,8 @@ public final class User extends Message {
     public final VipCloseAd vip_close_ad;
     @ProtoField(tag = 64)
     public final VipShowInfo vip_show_info;
+    @ProtoField(tag = 136)
+    public final VirtualImageInfo virtual_image_info;
     @ProtoField(tag = 75, type = Message.Datatype.INT32)
     public final Integer visitor_num;
     @ProtoField(tag = 124)
@@ -487,6 +489,7 @@ public final class User extends Message {
         public UserVipInfo vipInfo;
         public VipCloseAd vip_close_ad;
         public VipShowInfo vip_show_info;
+        public VirtualImageInfo virtual_image_info;
         public Integer visitor_num;
         public WorkCreatorInfo work_creator_info;
         public Integer work_num;
@@ -653,6 +656,7 @@ public final class User extends Message {
             this.ip_address = user.ip_address;
             this.is_nickname_editing = user.is_nickname_editing;
             this.editing_nickname = user.editing_nickname;
+            this.virtual_image_info = user.virtual_image_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1358,11 +1362,11 @@ public final class User extends Message {
             String str25 = builder.editing_nickname;
             if (str25 == null) {
                 this.editing_nickname = "";
-                return;
             } else {
                 this.editing_nickname = str25;
-                return;
             }
+            this.virtual_image_info = builder.virtual_image_info;
+            return;
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -1490,5 +1494,6 @@ public final class User extends Message {
         this.ip_address = builder.ip_address;
         this.is_nickname_editing = builder.is_nickname_editing;
         this.editing_nickname = builder.editing_nickname;
+        this.virtual_image_info = builder.virtual_image_info;
     }
 }
