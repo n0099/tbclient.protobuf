@@ -12,4 +12,6 @@ message AgreeList {
     uint64 id = 7;
     User agreeer = 8;
     Post post_info = 9;
+    string virtual_image_url = 10;
+    int32 snapshoot_pic_id = 11;
 }

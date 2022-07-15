@@ -41,6 +41,7 @@ import "UserVideoChannelInfo.proto";
 import "UserVipInfo.proto";
 import "VipCloseAd.proto";
 import "VipShowInfo.proto";
+import "VirtualImageInfo.proto";
 import "WorkCreatorInfo.proto";
 
 message User {
@@ -170,4 +171,5 @@ message User {
     string ip_address = 127;
     int32 is_nickname_editing = 128;
     string editing_nickname = 129;
+    VirtualImageInfo virtual_image_info = 136;
 }

@@ -16,4 +16,5 @@ message ThreadRecommendInfo {
     ThemeColorInfo recommend_reason_color = 11;
     ThemeColorInfo strip_color = 12;
     ThemeColorInfo background_color = 13;
+    string jump_link = 14;
 }

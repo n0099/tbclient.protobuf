@@ -5,6 +5,8 @@ import "AddPostList.proto";
 import "Advertisement.proto";
 import "Agree.proto";
 import "CardLinkInfo.proto";
+import "CustomFigure.proto";
+import "CustomState.proto";
 import "DealInfo.proto";
 import "HeadItem.proto";
 import "Item.proto";
@@ -84,4 +86,6 @@ message Post {
     string fold_comment_apply_url = 57;
     NovelInfo novel_info = 58;
     repeated CardLinkInfo card_link_info = 59;
+    CustomFigure custom_figure = 60;
+    CustomState custom_state = 61;
 }

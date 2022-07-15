@@ -33,4 +33,5 @@ message Anti {
     int32 can_goods = 27;
     bool is_sexyforum = 28;
     string teenmode_interval = 29;
+    int32 user_chat_block = 30;
 }

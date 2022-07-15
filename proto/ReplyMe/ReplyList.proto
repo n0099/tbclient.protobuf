@@ -35,4 +35,5 @@ message ReplyList {
     int32 is_bjh = 26;
     Baijiahao baijiahao = 27;
     repeated NewFloorInfo new_floor_info = 28;
+    int32 has_agree = 29;
 }
