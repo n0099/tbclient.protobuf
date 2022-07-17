@@ -17,10 +17,10 @@ class ReplyRequest
         \GPBMetadata\Api\Request\Common::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ð
-Api/Request/ReplyRequest.prototbClient.api.request"¯
+Ž
+Api/Request/ReplyRequest.prototbClient.api.request"Í
 ReplyRequest5
-data (2\'.tbClient.api.request.ReplyRequest.Datah
+data (2\'.tbClient.api.request.ReplyRequest.Data…
 Data
 
 kz (
@@ -29,7 +29,8 @@ class ReplyRequest
 q_type (
 
 pn (,
-common (2.tbClient.api.request.Commonbproto3'
+common (2.tbClient.api.request.Common
+is_fold_comment_reqN (bproto3'
         , true);
 
         static::$is_initialized = true;

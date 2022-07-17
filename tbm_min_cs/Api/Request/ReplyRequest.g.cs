@@ -25,15 +25,16 @@ namespace TbClient.Api.Request {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5BcGkvUmVxdWVzdC9SZXBseVJlcXVlc3QucHJvdG8SFHRiQ2xpZW50LmFw",
-            "aS5yZXF1ZXN0GhhBcGkvUmVxdWVzdC9Db21tb24ucHJvdG8irwEKDFJlcGx5",
+            "aS5yZXF1ZXN0GhhBcGkvUmVxdWVzdC9Db21tb24ucHJvdG8izQEKDFJlcGx5",
             "UmVxdWVzdBI1CgRkYXRhGAEgASgLMicudGJDbGllbnQuYXBpLnJlcXVlc3Qu",
-            "UmVwbHlSZXF1ZXN0LkRhdGEaaAoERGF0YRIKCgJrehgEIAEoAxIKCgJybhgN",
-            "IAEoBRIOCgZxX3R5cGUYESABKAUSCgoCcG4YEiABKAUSLAoGY29tbW9uGBkg",
-            "ASgLMhwudGJDbGllbnQuYXBpLnJlcXVlc3QuQ29tbW9uYgZwcm90bzM="));
+            "UmVwbHlSZXF1ZXN0LkRhdGEahQEKBERhdGESCgoCa3oYBCABKAMSCgoCcm4Y",
+            "DSABKAUSDgoGcV90eXBlGBEgASgFEgoKAnBuGBIgASgFEiwKBmNvbW1vbhgZ",
+            "IAEoCzIcLnRiQ2xpZW50LmFwaS5yZXF1ZXN0LkNvbW1vbhIbChNpc19mb2xk",
+            "X2NvbW1lbnRfcmVxGE4gASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.Api.Request.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.ReplyRequest), global::TbClient.Api.Request.ReplyRequest.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.ReplyRequest.Types.Data), global::TbClient.Api.Request.ReplyRequest.Types.Data.Parser, new[]{ "Kz", "Rn", "QType", "Pn", "Common" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.ReplyRequest), global::TbClient.Api.Request.ReplyRequest.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.ReplyRequest.Types.Data), global::TbClient.Api.Request.ReplyRequest.Types.Data.Parser, new[]{ "Kz", "Rn", "QType", "Pn", "Common", "IsFoldCommentReq" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -280,6 +281,7 @@ namespace TbClient.Api.Request {
           qType_ = other.qType_;
           pn_ = other.pn_;
           common_ = other.common_ != null ? other.common_.Clone() : null;
+          isFoldCommentReq_ = other.isFoldCommentReq_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -349,6 +351,18 @@ namespace TbClient.Api.Request {
           }
         }
 
+        /// <summary>Field number for the "is_fold_comment_req" field.</summary>
+        public const int IsFoldCommentReqFieldNumber = 78;
+        private int isFoldCommentReq_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int IsFoldCommentReq {
+          get { return isFoldCommentReq_; }
+          set {
+            isFoldCommentReq_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
@@ -369,6 +383,7 @@ namespace TbClient.Api.Request {
           if (QType != other.QType) return false;
           if (Pn != other.Pn) return false;
           if (!object.Equals(Common, other.Common)) return false;
+          if (IsFoldCommentReq != other.IsFoldCommentReq) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -381,6 +396,7 @@ namespace TbClient.Api.Request {
           if (QType != 0) hash ^= QType.GetHashCode();
           if (Pn != 0) hash ^= Pn.GetHashCode();
           if (common_ != null) hash ^= Common.GetHashCode();
+          if (IsFoldCommentReq != 0) hash ^= IsFoldCommentReq.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -419,6 +435,10 @@ namespace TbClient.Api.Request {
             output.WriteRawTag(202, 1);
             output.WriteMessage(Common);
           }
+          if (IsFoldCommentReq != 0) {
+            output.WriteRawTag(240, 4);
+            output.WriteInt32(IsFoldCommentReq);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -449,6 +469,10 @@ namespace TbClient.Api.Request {
             output.WriteRawTag(202, 1);
             output.WriteMessage(Common);
           }
+          if (IsFoldCommentReq != 0) {
+            output.WriteRawTag(240, 4);
+            output.WriteInt32(IsFoldCommentReq);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -473,6 +497,9 @@ namespace TbClient.Api.Request {
           }
           if (common_ != null) {
             size += 2 + pb::CodedOutputStream.ComputeMessageSize(Common);
+          }
+          if (IsFoldCommentReq != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeInt32Size(IsFoldCommentReq);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -503,6 +530,9 @@ namespace TbClient.Api.Request {
               Common = new global::TbClient.Api.Request.Common();
             }
             Common.MergeFrom(other.Common);
+          }
+          if (other.IsFoldCommentReq != 0) {
+            IsFoldCommentReq = other.IsFoldCommentReq;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -542,6 +572,10 @@ namespace TbClient.Api.Request {
                 input.ReadMessage(Common);
                 break;
               }
+              case 624: {
+                IsFoldCommentReq = input.ReadInt32();
+                break;
+              }
             }
           }
         #endif
@@ -578,6 +612,10 @@ namespace TbClient.Api.Request {
                   Common = new global::TbClient.Api.Request.Common();
                 }
                 input.ReadMessage(Common);
+                break;
+              }
+              case 624: {
+                IsFoldCommentReq = input.ReadInt32();
                 break;
               }
             }
