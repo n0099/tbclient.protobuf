@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Agree;
 
 public final class Agree extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_AGREE_NUM;
   
   public static final Integer DEFAULT_AGREE_TYPE;
@@ -17,6 +20,8 @@ public final class Agree extends Message {
   public static final Long DEFAULT_DISAGREE_NUM;
   
   public static final Integer DEFAULT_HAS_AGREE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long agree_num;
@@ -57,7 +62,7 @@ public final class Agree extends Message {
   }
   
   public Agree(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.agree_num;
@@ -97,5 +102,54 @@ public final class Agree extends Message {
       this.disagree_num = ((Builder)long_).disagree_num;
       this.diff_agree_num = ((Builder)long_).diff_agree_num;
     } 
+  }
+  
+  public Agree(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Agree> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long agree_num;
+    
+    public Integer agree_type;
+    
+    public Long diff_agree_num;
+    
+    public Long disagree_num;
+    
+    public Integer has_agree;
+    
+    public Builder() {}
+    
+    public Builder(Agree param1Agree) {
+      super(param1Agree);
+      if (param1Agree == null)
+        return; 
+      this.agree_num = param1Agree.agree_num;
+      this.has_agree = param1Agree.has_agree;
+      this.agree_type = param1Agree.agree_type;
+      this.disagree_num = param1Agree.disagree_num;
+      this.diff_agree_num = param1Agree.diff_agree_num;
+    }
+    
+    public Agree build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Agree)interceptResult.objValue; 
+      } 
+      return new Agree(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

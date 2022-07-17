@@ -1,4 +1,4 @@
-package GetForumDetail;
+package tbclient.GetForumDetail;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class UniversityInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_AGREE_NUM;
   
   public static final Long DEFAULT_BROWSE_NUM;
@@ -22,6 +24,8 @@ public final class UniversityInfo extends Message {
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
   
   public static final Long DEFAULT_VIDEO_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT64)
   public final Long agree_num;
@@ -52,7 +56,7 @@ public final class UniversityInfo extends Message {
   }
   
   public UniversityInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -108,6 +112,10 @@ public final class UniversityInfo extends Message {
     } 
   }
   
+  public UniversityInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -122,5 +130,56 @@ public final class UniversityInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<UniversityInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long agree_num;
+    
+    public Long browse_num;
+    
+    public String pic_url;
+    
+    public String title;
+    
+    public String to_url;
+    
+    public Integer type;
+    
+    public Long video_time;
+    
+    public Builder() {}
+    
+    public Builder(UniversityInfo param1UniversityInfo) {
+      super(param1UniversityInfo);
+      if (param1UniversityInfo == null)
+        return; 
+      this.title = param1UniversityInfo.title;
+      this.pic_url = param1UniversityInfo.pic_url;
+      this.to_url = param1UniversityInfo.to_url;
+      this.type = param1UniversityInfo.type;
+      this.agree_num = param1UniversityInfo.agree_num;
+      this.browse_num = param1UniversityInfo.browse_num;
+      this.video_time = param1UniversityInfo.video_time;
+    }
+    
+    public UniversityInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UniversityInfo)interceptResult.objValue; 
+      } 
+      return new UniversityInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

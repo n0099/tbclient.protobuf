@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,14 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Esport;
-import tbclient.EsportRank;
-import tbclient.EsportStatic;
 
 public final class Esport extends Message {
+  public static Interceptable $ic;
+  
   public static final List<EsportRank> DEFAULT_BILLBOARD;
   
   public static final Integer DEFAULT_FLOOR_NO = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final EsportStatic _static;
@@ -30,8 +33,8 @@ public final class Esport extends Message {
   }
   
   public Esport(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<EsportRank> list;
     if (paramBoolean == true) {
       this._static = paramBuilder._static;
       Integer integer = paramBuilder.floor_no;
@@ -53,6 +56,10 @@ public final class Esport extends Message {
     } 
   }
   
+  public Esport(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -67,5 +74,44 @@ public final class Esport extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Esport> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public EsportStatic _static;
+    
+    public List<EsportRank> billboard;
+    
+    public Integer floor_no;
+    
+    public Builder() {}
+    
+    public Builder(Esport param1Esport) {
+      super(param1Esport);
+      if (param1Esport == null)
+        return; 
+      this._static = param1Esport._static;
+      this.floor_no = param1Esport.floor_no;
+      this.billboard = Message.copyOf(param1Esport.billboard);
+    }
+    
+    public Esport build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Esport)interceptResult.objValue; 
+      } 
+      return new Esport(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

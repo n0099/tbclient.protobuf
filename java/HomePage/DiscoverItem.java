@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DiscoverItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESCRIBE = "";
   
   public static final String DEFAULT_ICON_URL = "";
@@ -22,6 +24,8 @@ public final class DiscoverItem extends Message {
   public static final String DEFAULT_STATISTICS = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String describe;
@@ -64,7 +68,7 @@ public final class DiscoverItem extends Message {
   }
   
   public DiscoverItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.icon_url;
@@ -118,5 +122,60 @@ public final class DiscoverItem extends Message {
       this.statistics = ((Builder)integer).statistics;
       this.is_red_point = ((Builder)integer).is_red_point;
     } 
+  }
+  
+  public DiscoverItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DiscoverItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String describe;
+    
+    public String icon_url;
+    
+    public Integer is_new;
+    
+    public Integer is_red_point;
+    
+    public String link_url;
+    
+    public String statistics;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(DiscoverItem param1DiscoverItem) {
+      super(param1DiscoverItem);
+      if (param1DiscoverItem == null)
+        return; 
+      this.icon_url = param1DiscoverItem.icon_url;
+      this.title = param1DiscoverItem.title;
+      this.link_url = param1DiscoverItem.link_url;
+      this.is_new = param1DiscoverItem.is_new;
+      this.describe = param1DiscoverItem.describe;
+      this.statistics = param1DiscoverItem.statistics;
+      this.is_red_point = param1DiscoverItem.is_red_point;
+    }
+    
+    public DiscoverItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DiscoverItem)interceptResult.objValue; 
+      } 
+      return new DiscoverItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ActHot;
 
 public final class ActHot extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUTHOR_NAME = "";
   
   public static final String DEFAULT_BSIZE = "";
@@ -19,6 +22,8 @@ public final class ActHot extends Message {
   public static final Integer DEFAULT_IMG_TYPE = Integer.valueOf(0);
   
   public static final String DEFAULT_LINK = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String author_name;
@@ -39,7 +44,7 @@ public final class ActHot extends Message {
   public final String link;
   
   public ActHot(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.bsize;
@@ -88,6 +93,10 @@ public final class ActHot extends Message {
     } 
   }
   
+  public ActHot(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -102,5 +111,53 @@ public final class ActHot extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ActHot> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String author_name;
+    
+    public String bsize;
+    
+    public String img_des;
+    
+    public String img_src;
+    
+    public Integer img_type;
+    
+    public String link;
+    
+    public Builder() {}
+    
+    public Builder(ActHot param1ActHot) {
+      super(param1ActHot);
+      if (param1ActHot == null)
+        return; 
+      this.bsize = param1ActHot.bsize;
+      this.img_src = param1ActHot.img_src;
+      this.link = param1ActHot.link;
+      this.author_name = param1ActHot.author_name;
+      this.img_des = param1ActHot.img_des;
+      this.img_type = param1ActHot.img_type;
+    }
+    
+    public ActHot build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActHot)interceptResult.objValue; 
+      } 
+      return new ActHot(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

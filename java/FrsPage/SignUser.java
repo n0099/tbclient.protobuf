@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SignUser extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CONT_SIGN_NUM;
   
   public static final Integer DEFAULT_COUT_TOTAL_SIGN_NUM;
@@ -30,6 +32,8 @@ public final class SignUser extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final Integer DEFAULT_USER_SIGN_RANK;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer c_sign_num;
@@ -79,7 +83,7 @@ public final class SignUser extends Message {
   }
   
   public SignUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
@@ -163,6 +167,10 @@ public final class SignUser extends Message {
     } 
   }
   
+  public SignUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -177,5 +185,68 @@ public final class SignUser extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SignUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer c_sign_num;
+    
+    public Integer cont_sign_num;
+    
+    public Integer cout_total_sign_num;
+    
+    public Integer hun_sign_num;
+    
+    public Integer is_org_disabled;
+    
+    public Integer is_sign_in;
+    
+    public Integer miss_sign_num;
+    
+    public Integer sign_time;
+    
+    public Integer total_resign_num;
+    
+    public Long user_id;
+    
+    public Integer user_sign_rank;
+    
+    public Builder() {}
+    
+    public Builder(SignUser param1SignUser) {
+      super(param1SignUser);
+      if (param1SignUser == null)
+        return; 
+      this.user_id = param1SignUser.user_id;
+      this.is_sign_in = param1SignUser.is_sign_in;
+      this.user_sign_rank = param1SignUser.user_sign_rank;
+      this.sign_time = param1SignUser.sign_time;
+      this.cont_sign_num = param1SignUser.cont_sign_num;
+      this.cout_total_sign_num = param1SignUser.cout_total_sign_num;
+      this.is_org_disabled = param1SignUser.is_org_disabled;
+      this.c_sign_num = param1SignUser.c_sign_num;
+      this.hun_sign_num = param1SignUser.hun_sign_num;
+      this.total_resign_num = param1SignUser.total_resign_num;
+      this.miss_sign_num = param1SignUser.miss_sign_num;
+    }
+    
+    public SignUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SignUser)interceptResult.objValue; 
+      } 
+      return new SignUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

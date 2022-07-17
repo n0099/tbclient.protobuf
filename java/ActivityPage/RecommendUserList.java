@@ -1,4 +1,4 @@
-package ActivityPage;
+package tbclient.ActivityPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,9 +12,13 @@ import java.util.List;
 import tbclient.User;
 
 public final class RecommendUserList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FLOOR_POSITION = Integer.valueOf(0);
   
   public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer floor_position;
@@ -23,8 +27,8 @@ public final class RecommendUserList extends Message {
   public final List<User> user_list;
   
   public RecommendUserList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<User> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.floor_position;
       if (integer == null) {
@@ -44,6 +48,10 @@ public final class RecommendUserList extends Message {
     } 
   }
   
+  public RecommendUserList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +66,41 @@ public final class RecommendUserList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendUserList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer floor_position;
+    
+    public List<User> user_list;
+    
+    public Builder() {}
+    
+    public Builder(RecommendUserList param1RecommendUserList) {
+      super(param1RecommendUserList);
+      if (param1RecommendUserList == null)
+        return; 
+      this.floor_position = param1RecommendUserList.floor_position;
+      this.user_list = Message.copyOf(param1RecommendUserList.user_list);
+    }
+    
+    public RecommendUserList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendUserList)interceptResult.objValue; 
+      } 
+      return new RecommendUserList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

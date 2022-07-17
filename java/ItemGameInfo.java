@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,12 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ItemGameInfo;
-import tbclient.RecentUpdate;
-import tbclient.ThreadInfo;
 
 public final class ItemGameInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ThreadInfo> DEFAULT_HOT_VIDEOS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<ThreadInfo> hot_videos;
@@ -21,9 +24,9 @@ public final class ItemGameInfo extends Message {
   public final RecentUpdate recent_update;
   
   public ItemGameInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list = paramBuilder.hot_videos;
+      List<ThreadInfo> list = paramBuilder.hot_videos;
       if (list == null) {
         this.hot_videos = DEFAULT_HOT_VIDEOS;
       } else {
@@ -34,6 +37,10 @@ public final class ItemGameInfo extends Message {
       this.hot_videos = Message.immutableCopyOf(paramBuilder.hot_videos);
       this.recent_update = paramBuilder.recent_update;
     } 
+  }
+  
+  public ItemGameInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -50,5 +57,41 @@ public final class ItemGameInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ItemGameInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ThreadInfo> hot_videos;
+    
+    public RecentUpdate recent_update;
+    
+    public Builder() {}
+    
+    public Builder(ItemGameInfo param1ItemGameInfo) {
+      super(param1ItemGameInfo);
+      if (param1ItemGameInfo == null)
+        return; 
+      this.hot_videos = Message.copyOf(param1ItemGameInfo.hot_videos);
+      this.recent_update = param1ItemGameInfo.recent_update;
+    }
+    
+    public ItemGameInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ItemGameInfo)interceptResult.objValue; 
+      } 
+      return new ItemGameInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

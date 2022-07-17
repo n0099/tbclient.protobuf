@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.DealMedia;
 
 public final class DealMedia extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BIG_PIC = "";
   
   public static final String DEFAULT_SMALL_PIC = "";
@@ -15,6 +18,8 @@ public final class DealMedia extends Message {
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
   
   public static final String DEFAULT_WATER_PIC = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String big_pic;
@@ -29,7 +34,7 @@ public final class DealMedia extends Message {
   public final String water_pic;
   
   public DealMedia(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -64,6 +69,10 @@ public final class DealMedia extends Message {
     } 
   }
   
+  public DealMedia(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -78,5 +87,47 @@ public final class DealMedia extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DealMedia> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String big_pic;
+    
+    public String small_pic;
+    
+    public Integer type;
+    
+    public String water_pic;
+    
+    public Builder() {}
+    
+    public Builder(DealMedia param1DealMedia) {
+      super(param1DealMedia);
+      if (param1DealMedia == null)
+        return; 
+      this.type = param1DealMedia.type;
+      this.small_pic = param1DealMedia.small_pic;
+      this.big_pic = param1DealMedia.big_pic;
+      this.water_pic = param1DealMedia.water_pic;
+    }
+    
+    public DealMedia build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DealMedia)interceptResult.objValue; 
+      } 
+      return new DealMedia(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

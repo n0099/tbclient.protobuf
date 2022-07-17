@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SubBottomMenu;
 
 public final class SubBottomMenu extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_NAME = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String name;
@@ -24,7 +29,7 @@ public final class SubBottomMenu extends Message {
   public final String url;
   
   public SubBottomMenu(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.name;
@@ -52,6 +57,10 @@ public final class SubBottomMenu extends Message {
     } 
   }
   
+  public SubBottomMenu(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class SubBottomMenu extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SubBottomMenu> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String name;
+    
+    public Integer type;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(SubBottomMenu param1SubBottomMenu) {
+      super(param1SubBottomMenu);
+      if (param1SubBottomMenu == null)
+        return; 
+      this.name = param1SubBottomMenu.name;
+      this.url = param1SubBottomMenu.url;
+      this.type = param1SubBottomMenu.type;
+    }
+    
+    public SubBottomMenu build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SubBottomMenu)interceptResult.objValue; 
+      } 
+      return new SubBottomMenu(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

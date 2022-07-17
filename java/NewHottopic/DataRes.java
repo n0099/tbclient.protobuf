@@ -1,4 +1,4 @@
-package NewHottopic;
+package tbclient.NewHottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,14 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.NewHottopic.PkModule;
-import tbclient.NewHottopic.RelateThread;
-import tbclient.NewHottopic.SpecialTopic;
-import tbclient.NewHottopic.TimeLine;
-import tbclient.NewHottopic.TopicDetail;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<SpecialTopic> DEFAULT_SPECIAL_TOPIC = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final PkModule pk_module;
@@ -34,12 +33,12 @@ public final class DataRes extends Message {
   public final TopicDetail topic_info;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.topic_info = paramBuilder.topic_info;
       this.pk_module = paramBuilder.pk_module;
       this.time_line = paramBuilder.time_line;
-      List list = paramBuilder.special_topic;
+      List<SpecialTopic> list = paramBuilder.special_topic;
       if (list == null) {
         this.special_topic = DEFAULT_SPECIAL_TOPIC;
       } else {
@@ -53,6 +52,10 @@ public final class DataRes extends Message {
       this.special_topic = Message.immutableCopyOf(paramBuilder.special_topic);
       this.relate_thread = paramBuilder.relate_thread;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -69,5 +72,50 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public PkModule pk_module;
+    
+    public RelateThread relate_thread;
+    
+    public List<SpecialTopic> special_topic;
+    
+    public TimeLine time_line;
+    
+    public TopicDetail topic_info;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.topic_info = param1DataRes.topic_info;
+      this.pk_module = param1DataRes.pk_module;
+      this.time_line = param1DataRes.time_line;
+      this.special_topic = Message.copyOf(param1DataRes.special_topic);
+      this.relate_thread = param1DataRes.relate_thread;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

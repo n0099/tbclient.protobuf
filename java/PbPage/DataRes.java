@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -21,19 +21,6 @@ import tbclient.ManagerElection;
 import tbclient.NaGuide;
 import tbclient.Page;
 import tbclient.PbHotPost;
-import tbclient.PbPage.AddPost;
-import tbclient.PbPage.AppealInfo;
-import tbclient.PbPage.BusinessPromotInfo;
-import tbclient.PbPage.FeedExtInfo;
-import tbclient.PbPage.FloatingIcon;
-import tbclient.PbPage.ForumHeadlineImgInfo;
-import tbclient.PbPage.GodCard;
-import tbclient.PbPage.GuessLikeStruct;
-import tbclient.PbPage.NewsInfo;
-import tbclient.PbPage.PbFollowTip;
-import tbclient.PbPage.PbSortType;
-import tbclient.PbPage.PostBanner;
-import tbclient.PbPage.RecommendBook;
 import tbclient.PbTopAgreePost;
 import tbclient.Post;
 import tbclient.Promotion;
@@ -48,6 +35,8 @@ import tbclient.TwZhiBoAnti;
 import tbclient.User;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ASP_SHOWN_INFO = "";
   
   public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND;
@@ -121,6 +110,8 @@ public final class DataRes extends Message {
   public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC;
   
   public static final List<User> DEFAULT_USER_LIST;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final AddPost add_post;
@@ -365,7 +356,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       this.user = paramBuilder.user;
@@ -373,11 +364,11 @@ public final class DataRes extends Message {
       this.page = paramBuilder.page;
       this.anti = paramBuilder.anti;
       this.add_post = paramBuilder.add_post;
-      List list9 = paramBuilder.post_list;
-      if (list9 == null) {
+      List<Post> list12 = paramBuilder.post_list;
+      if (list12 == null) {
         this.post_list = DEFAULT_POST_LIST;
       } else {
-        this.post_list = Message.immutableCopyOf(list9);
+        this.post_list = Message.immutableCopyOf(list12);
       } 
       Integer integer8 = paramBuilder.has_floor;
       if (integer8 == null) {
@@ -393,18 +384,18 @@ public final class DataRes extends Message {
       } else {
         this.is_new_url = integer8;
       } 
-      List list8 = paramBuilder.post_banner;
-      if (list8 == null) {
+      List<PostBanner> list11 = paramBuilder.post_banner;
+      if (list11 == null) {
         this.post_banner = DEFAULT_POST_BANNER;
       } else {
-        this.post_banner = Message.immutableCopyOf(list8);
+        this.post_banner = Message.immutableCopyOf(list11);
       } 
       this.banner_list = paramBuilder.banner_list;
-      list8 = paramBuilder.user_list;
-      if (list8 == null) {
+      List<User> list10 = paramBuilder.user_list;
+      if (list10 == null) {
         this.user_list = DEFAULT_USER_LIST;
       } else {
-        this.user_list = Message.immutableCopyOf(list8);
+        this.user_list = Message.immutableCopyOf(list10);
       } 
       Integer integer7 = paramBuilder.server_time;
       if (integer7 == null) {
@@ -413,17 +404,17 @@ public final class DataRes extends Message {
         this.server_time = integer7;
       } 
       this.news_info = paramBuilder.news_info;
-      List list7 = paramBuilder.recommend_threads;
-      if (list7 == null) {
+      List<RecommendThread> list9 = paramBuilder.recommend_threads;
+      if (list9 == null) {
         this.recommend_threads = DEFAULT_RECOMMEND_THREADS;
       } else {
-        this.recommend_threads = Message.immutableCopyOf(list7);
+        this.recommend_threads = Message.immutableCopyOf(list9);
       } 
-      list7 = paramBuilder.fine_banner;
-      if (list7 == null) {
+      List<FineBannerPb> list8 = paramBuilder.fine_banner;
+      if (list8 == null) {
         this.fine_banner = DEFAULT_FINE_BANNER;
       } else {
-        this.fine_banner = Message.immutableCopyOf(list7);
+        this.fine_banner = Message.immutableCopyOf(list8);
       } 
       this.twzhibo_anti = paramBuilder.twzhibo_anti;
       this.sdk_topic_thread = paramBuilder.sdk_topic_thread;
@@ -431,7 +422,7 @@ public final class DataRes extends Message {
       this.graffiti_rank_list_info = paramBuilder.graffiti_rank_list_info;
       this.appeal_info = paramBuilder.appeal_info;
       this.god_card = paramBuilder.god_card;
-      list7 = paramBuilder.play_rank_list;
+      List<PsRankListItem> list7 = paramBuilder.play_rank_list;
       if (list7 == null) {
         this.play_rank_list = DEFAULT_PLAY_RANK_LIST;
       } else {
@@ -447,7 +438,7 @@ public final class DataRes extends Message {
         this.asp_shown_info = str5;
       } 
       this.guess_like = paramBuilder.guess_like;
-      List list6 = paramBuilder.feed_thread_list;
+      List<ThreadInfo> list6 = paramBuilder.feed_thread_list;
       if (list6 == null) {
         this.feed_thread_list = DEFAULT_FEED_THREAD_LIST;
       } else {
@@ -467,7 +458,7 @@ public final class DataRes extends Message {
       } 
       this.feed_info = paramBuilder.feed_info;
       this.top_agree_post_list = paramBuilder.top_agree_post_list;
-      List list5 = paramBuilder.repost_recommend_forum_list;
+      List<SimpleForum> list5 = paramBuilder.repost_recommend_forum_list;
       if (list5 == null) {
         this.repost_recommend_forum_list = DEFAULT_REPOST_RECOMMEND_FORUM_LIST;
       } else {
@@ -487,7 +478,7 @@ public final class DataRes extends Message {
       } 
       this.first_floor_post = paramBuilder.first_floor_post;
       this.display_forum = paramBuilder.display_forum;
-      List list4 = paramBuilder.new_agree_user;
+      List<SimpleUser> list4 = paramBuilder.new_agree_user;
       if (list4 == null) {
         this.new_agree_user = DEFAULT_NEW_AGREE_USER;
       } else {
@@ -525,17 +516,17 @@ public final class DataRes extends Message {
       } else {
         this.multi_forum_text = str3;
       } 
-      List list3 = paramBuilder.thread_topic;
+      List<RecomTopicList> list3 = paramBuilder.thread_topic;
       if (list3 == null) {
         this.thread_topic = DEFAULT_THREAD_TOPIC;
       } else {
         this.thread_topic = Message.immutableCopyOf(list3);
       } 
-      list3 = paramBuilder.pb_sort_info;
-      if (list3 == null) {
+      List<PbSortType> list = paramBuilder.pb_sort_info;
+      if (list == null) {
         this.pb_sort_info = DEFAULT_PB_SORT_INFO;
       } else {
-        this.pb_sort_info = Message.immutableCopyOf(list3);
+        this.pb_sort_info = Message.immutableCopyOf(list);
       } 
       Integer integer4 = paramBuilder.sort_type;
       if (integer4 == null) {
@@ -544,7 +535,7 @@ public final class DataRes extends Message {
         this.sort_type = integer4;
       } 
       this.manager_election = paramBuilder.manager_election;
-      List list2 = paramBuilder.bjh_recommend;
+      List<ThreadInfo> list2 = paramBuilder.bjh_recommend;
       if (list2 == null) {
         this.bjh_recommend = DEFAULT_BJH_RECOMMEND;
       } else {
@@ -566,7 +557,7 @@ public final class DataRes extends Message {
         this.jumptotab2 = str2;
       } 
       this.business_account_info = paramBuilder.business_account_info;
-      List list1 = paramBuilder.recom_thread_info;
+      List<ThreadInfo> list1 = paramBuilder.recom_thread_info;
       if (list1 == null) {
         this.recom_thread_info = DEFAULT_RECOM_THREAD_INFO;
       } else {
@@ -695,6 +686,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -709,5 +704,242 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public AddPost add_post;
+    
+    public AlaLiveInfo ala_info;
+    
+    public Anti anti;
+    
+    public AppealInfo appeal_info;
+    
+    public String asp_shown_info;
+    
+    public BannerList banner_list;
+    
+    public List<ThreadInfo> bjh_recommend;
+    
+    public BusinessAccountInfo business_account_info;
+    
+    public BusinessPromotInfo business_promot_info;
+    
+    public SimpleForum display_forum;
+    
+    public Integer exp_guide_today;
+    
+    public Integer exp_news_today;
+    
+    public FeedExtInfo feed_info;
+    
+    public List<ThreadInfo> feed_thread_list;
+    
+    public List<FineBannerPb> fine_banner;
+    
+    public Post first_floor_post;
+    
+    public FloatingIcon floating_icon;
+    
+    public Long fold_comment_num;
+    
+    public String fold_tip;
+    
+    public PbFollowTip follow_tip;
+    
+    public SimpleForum forum;
+    
+    public ForumHeadlineImgInfo forum_headline_img_info;
+    
+    public ForumRuleStatus forum_rule;
+    
+    public List<SimpleForum> from_forum_list;
+    
+    public GodCard god_card;
+    
+    public GraffitiRankListInfo graffiti_rank_list_info;
+    
+    public GuessLikeStruct guess_like;
+    
+    public Integer has_floor;
+    
+    public Integer has_fold_comment;
+    
+    public PbHotPost hot_post_list;
+    
+    public Integer is_black_white;
+    
+    public Integer is_follow_current_channel;
+    
+    public Integer is_new_url;
+    
+    public Integer is_official_forum;
+    
+    public Integer is_purchase;
+    
+    public Integer jumptotab1;
+    
+    public String jumptotab2;
+    
+    public Lbs location;
+    
+    public ManagerElection manager_election;
+    
+    public String multi_forum_text;
+    
+    public NaGuide na_guide;
+    
+    public List<SimpleUser> new_agree_user;
+    
+    public NewsInfo news_info;
+    
+    public Page page;
+    
+    public String partial_visible_toast;
+    
+    public String pb_notice;
+    
+    public Integer pb_notice_type;
+    
+    public List<PbSortType> pb_sort_info;
+    
+    public List<PsRankListItem> play_rank_list;
+    
+    public List<PostBanner> post_banner;
+    
+    public List<Post> post_list;
+    
+    public Promotion promotion;
+    
+    public AlaLiveInfo recom_ala_info;
+    
+    public List<ThreadInfo> recom_thread_info;
+    
+    public RecommendBook recommend_book;
+    
+    public List<RecommendThread> recommend_threads;
+    
+    public List<SimpleForum> repost_recommend_forum_list;
+    
+    public SdkTopicThread sdk_topic_thread;
+    
+    public Integer server_time;
+    
+    public Integer show_adsense;
+    
+    public Integer sort_type;
+    
+    public Integer switch_read_open;
+    
+    public ThreadInfo thread;
+    
+    public Long thread_freq_num;
+    
+    public List<RecomTopicList> thread_topic;
+    
+    public PbTopAgreePost top_agree_post_list;
+    
+    public TwZhiBoAnti twzhibo_anti;
+    
+    public User user;
+    
+    public List<User> user_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.user = param1DataRes.user;
+      this.forum = param1DataRes.forum;
+      this.page = param1DataRes.page;
+      this.anti = param1DataRes.anti;
+      this.add_post = param1DataRes.add_post;
+      this.post_list = Message.copyOf(param1DataRes.post_list);
+      this.has_floor = param1DataRes.has_floor;
+      this.thread = param1DataRes.thread;
+      this.location = param1DataRes.location;
+      this.is_new_url = param1DataRes.is_new_url;
+      this.post_banner = Message.copyOf(param1DataRes.post_banner);
+      this.banner_list = param1DataRes.banner_list;
+      this.user_list = Message.copyOf(param1DataRes.user_list);
+      this.server_time = param1DataRes.server_time;
+      this.news_info = param1DataRes.news_info;
+      this.recommend_threads = Message.copyOf(param1DataRes.recommend_threads);
+      this.fine_banner = Message.copyOf(param1DataRes.fine_banner);
+      this.twzhibo_anti = param1DataRes.twzhibo_anti;
+      this.sdk_topic_thread = param1DataRes.sdk_topic_thread;
+      this.hot_post_list = param1DataRes.hot_post_list;
+      this.graffiti_rank_list_info = param1DataRes.graffiti_rank_list_info;
+      this.appeal_info = param1DataRes.appeal_info;
+      this.god_card = param1DataRes.god_card;
+      this.play_rank_list = Message.copyOf(param1DataRes.play_rank_list);
+      this.recommend_book = param1DataRes.recommend_book;
+      this.ala_info = param1DataRes.ala_info;
+      this.forum_headline_img_info = param1DataRes.forum_headline_img_info;
+      this.asp_shown_info = param1DataRes.asp_shown_info;
+      this.guess_like = param1DataRes.guess_like;
+      this.feed_thread_list = Message.copyOf(param1DataRes.feed_thread_list);
+      this.is_follow_current_channel = param1DataRes.is_follow_current_channel;
+      this.switch_read_open = param1DataRes.switch_read_open;
+      this.feed_info = param1DataRes.feed_info;
+      this.top_agree_post_list = param1DataRes.top_agree_post_list;
+      this.repost_recommend_forum_list = Message.copyOf(param1DataRes.repost_recommend_forum_list);
+      this.from_forum_list = Message.copyOf(param1DataRes.from_forum_list);
+      this.thread_freq_num = param1DataRes.thread_freq_num;
+      this.first_floor_post = param1DataRes.first_floor_post;
+      this.display_forum = param1DataRes.display_forum;
+      this.new_agree_user = Message.copyOf(param1DataRes.new_agree_user);
+      this.partial_visible_toast = param1DataRes.partial_visible_toast;
+      this.na_guide = param1DataRes.na_guide;
+      this.follow_tip = param1DataRes.follow_tip;
+      this.fold_tip = param1DataRes.fold_tip;
+      this.exp_news_today = param1DataRes.exp_news_today;
+      this.exp_guide_today = param1DataRes.exp_guide_today;
+      this.multi_forum_text = param1DataRes.multi_forum_text;
+      this.thread_topic = Message.copyOf(param1DataRes.thread_topic);
+      this.pb_sort_info = Message.copyOf(param1DataRes.pb_sort_info);
+      this.sort_type = param1DataRes.sort_type;
+      this.manager_election = param1DataRes.manager_election;
+      this.bjh_recommend = Message.copyOf(param1DataRes.bjh_recommend);
+      this.business_promot_info = param1DataRes.business_promot_info;
+      this.promotion = param1DataRes.promotion;
+      this.recom_ala_info = param1DataRes.recom_ala_info;
+      this.jumptotab1 = param1DataRes.jumptotab1;
+      this.jumptotab2 = param1DataRes.jumptotab2;
+      this.business_account_info = param1DataRes.business_account_info;
+      this.recom_thread_info = Message.copyOf(param1DataRes.recom_thread_info);
+      this.forum_rule = param1DataRes.forum_rule;
+      this.show_adsense = param1DataRes.show_adsense;
+      this.is_black_white = param1DataRes.is_black_white;
+      this.is_official_forum = param1DataRes.is_official_forum;
+      this.floating_icon = param1DataRes.floating_icon;
+      this.is_purchase = param1DataRes.is_purchase;
+      this.pb_notice_type = param1DataRes.pb_notice_type;
+      this.pb_notice = param1DataRes.pb_notice;
+      this.has_fold_comment = param1DataRes.has_fold_comment;
+      this.fold_comment_num = param1DataRes.fold_comment_num;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

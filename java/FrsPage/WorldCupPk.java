@@ -1,11 +1,14 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class WorldCupPk extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PRIZE_URL = "";
   
   public static final String DEFAULT_SUM_BONUS = "";
@@ -13,6 +16,8 @@ public final class WorldCupPk extends Message {
   public static final String DEFAULT_SUM_GAME = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String prize_url;
@@ -27,7 +32,7 @@ public final class WorldCupPk extends Message {
   public final String url;
   
   public WorldCupPk(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.sum_game;
@@ -60,5 +65,51 @@ public final class WorldCupPk extends Message {
       this.prize_url = ((Builder)str).prize_url;
       this.url = ((Builder)str).url;
     } 
+  }
+  
+  public WorldCupPk(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<WorldCupPk> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String prize_url;
+    
+    public String sum_bonus;
+    
+    public String sum_game;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(WorldCupPk param1WorldCupPk) {
+      super(param1WorldCupPk);
+      if (param1WorldCupPk == null)
+        return; 
+      this.sum_game = param1WorldCupPk.sum_game;
+      this.sum_bonus = param1WorldCupPk.sum_bonus;
+      this.prize_url = param1WorldCupPk.prize_url;
+      this.url = param1WorldCupPk.url;
+    }
+    
+    public WorldCupPk build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (WorldCupPk)interceptResult.objValue; 
+      } 
+      return new WorldCupPk(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

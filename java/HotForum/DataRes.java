@@ -1,4 +1,4 @@
-package HotForum;
+package tbclient.HotForum;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.HotForum.ForumInfo;
-import tbclient.HotForum.HotSearch;
-import tbclient.HotForum.HotTopic;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<ForumInfo> forum_info;
@@ -26,9 +27,9 @@ public final class DataRes extends Message {
   public final HotTopic hot_topic;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list = paramBuilder.forum_info;
+      List<ForumInfo> list = paramBuilder.forum_info;
       if (list == null) {
         this.forum_info = DEFAULT_FORUM_INFO;
       } else {
@@ -41,6 +42,10 @@ public final class DataRes extends Message {
       this.hot_search = paramBuilder.hot_search;
       this.hot_topic = paramBuilder.hot_topic;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -57,5 +62,44 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ForumInfo> forum_info;
+    
+    public HotSearch hot_search;
+    
+    public HotTopic hot_topic;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.forum_info = Message.copyOf(param1DataRes.forum_info);
+      this.hot_search = param1DataRes.hot_search;
+      this.hot_topic = param1DataRes.hot_topic;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

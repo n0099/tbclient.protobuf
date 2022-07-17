@@ -1,4 +1,4 @@
-package GetForumClassList;
+package tbclient.GetForumClassList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class RecommendForumClass extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final Long DEFAULT_FORUM_CLASS_ID = Long.valueOf(0L);
@@ -22,6 +24,8 @@ public final class RecommendForumClass extends Message {
   public static final String DEFAULT_RECOMMEND_TITLE = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -45,7 +49,7 @@ public final class RecommendForumClass extends Message {
   public final String title;
   
   public RecommendForumClass(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.recommend_title;
@@ -101,6 +105,10 @@ public final class RecommendForumClass extends Message {
     } 
   }
   
+  public RecommendForumClass(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -115,5 +123,56 @@ public final class RecommendForumClass extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendForumClass> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public Long forum_class_id;
+    
+    public String image_url;
+    
+    public String link_url;
+    
+    public String recommend_image_url;
+    
+    public String recommend_title;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(RecommendForumClass param1RecommendForumClass) {
+      super(param1RecommendForumClass);
+      if (param1RecommendForumClass == null)
+        return; 
+      this.recommend_title = param1RecommendForumClass.recommend_title;
+      this.recommend_image_url = param1RecommendForumClass.recommend_image_url;
+      this.link_url = param1RecommendForumClass.link_url;
+      this.forum_class_id = param1RecommendForumClass.forum_class_id;
+      this.title = param1RecommendForumClass.title;
+      this._abstract = param1RecommendForumClass._abstract;
+      this.image_url = param1RecommendForumClass.image_url;
+    }
+    
+    public RecommendForumClass build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendForumClass)interceptResult.objValue; 
+      } 
+      return new RecommendForumClass(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

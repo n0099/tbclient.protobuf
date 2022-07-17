@@ -1,4 +1,4 @@
-package GetIconList;
+package tbclient.GetIconList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetIconList.Discount;
 
 public final class Custom extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CREATE_TIME = "";
   
   public static final List<Discount> DEFAULT_DISCOUNT;
@@ -57,6 +58,8 @@ public final class Custom extends Message {
   public static final String DEFAULT_UPDATE_TIME = "";
   
   public static final Integer DEFAULT_VALIDITY;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 14, type = Message.Datatype.STRING)
   public final String create_time;
@@ -157,7 +160,7 @@ public final class Custom extends Message {
   }
   
   public Custom(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str4 = paramBuilder.name;
@@ -208,7 +211,7 @@ public final class Custom extends Message {
       } else {
         this.hide = integer4;
       } 
-      List list = paramBuilder.discount;
+      List<Discount> list = paramBuilder.discount;
       if (list == null) {
         this.discount = DEFAULT_DISCOUNT;
       } else {
@@ -323,5 +326,108 @@ public final class Custom extends Message {
       this.icon_pic = ((Builder)integer).icon_pic;
       this.is_default = ((Builder)integer).is_default;
     } 
+  }
+  
+  public Custom(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Custom> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String create_time;
+    
+    public List<Discount> discount;
+    
+    public Integer dubi;
+    
+    public Integer dubi_ios;
+    
+    public Integer duration;
+    
+    public Integer hide;
+    
+    public String icon_id;
+    
+    public String icon_name;
+    
+    public String icon_pic;
+    
+    public Integer ios_display;
+    
+    public String ios_icon_id;
+    
+    public Integer is_custom_price;
+    
+    public Integer is_default;
+    
+    public String name;
+    
+    public Integer non_member_i;
+    
+    public Integer non_member_t;
+    
+    public String package_pic;
+    
+    public String pic_url;
+    
+    public String product_id;
+    
+    public Integer props_id;
+    
+    public String tag_name;
+    
+    public String update_time;
+    
+    public Integer validity;
+    
+    public Builder() {}
+    
+    public Builder(Custom param1Custom) {
+      super(param1Custom);
+      if (param1Custom == null)
+        return; 
+      this.name = param1Custom.name;
+      this.non_member_t = param1Custom.non_member_t;
+      this.non_member_i = param1Custom.non_member_i;
+      this.dubi = param1Custom.dubi;
+      this.dubi_ios = param1Custom.dubi_ios;
+      this.ios_display = param1Custom.ios_display;
+      this.duration = param1Custom.duration;
+      this.hide = param1Custom.hide;
+      this.discount = Message.copyOf(param1Custom.discount);
+      this.props_id = param1Custom.props_id;
+      this.ios_icon_id = param1Custom.ios_icon_id;
+      this.validity = param1Custom.validity;
+      this.update_time = param1Custom.update_time;
+      this.create_time = param1Custom.create_time;
+      this.package_pic = param1Custom.package_pic;
+      this.is_custom_price = param1Custom.is_custom_price;
+      this.tag_name = param1Custom.tag_name;
+      this.product_id = param1Custom.product_id;
+      this.icon_id = param1Custom.icon_id;
+      this.pic_url = param1Custom.pic_url;
+      this.icon_name = param1Custom.icon_name;
+      this.icon_pic = param1Custom.icon_pic;
+      this.is_default = param1Custom.is_default;
+    }
+    
+    public Custom build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Custom)interceptResult.objValue; 
+      } 
+      return new Custom(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

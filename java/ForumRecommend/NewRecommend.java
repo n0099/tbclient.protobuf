@@ -1,4 +1,4 @@
-package ForumRecommend;
+package tbclient.ForumRecommend;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class NewRecommend extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
@@ -18,6 +20,8 @@ public final class NewRecommend extends Message {
   public static final Integer DEFAULT_IS_BRAND_FORUM;
   
   public static final Integer DEFAULT_MEMBER_COUNT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String avatar;
@@ -41,7 +45,7 @@ public final class NewRecommend extends Message {
   }
   
   public NewRecommend(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -83,6 +87,10 @@ public final class NewRecommend extends Message {
     } 
   }
   
+  public NewRecommend(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -97,5 +105,50 @@ public final class NewRecommend extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<NewRecommend> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_brand_forum;
+    
+    public Integer member_count;
+    
+    public Builder() {}
+    
+    public Builder(NewRecommend param1NewRecommend) {
+      super(param1NewRecommend);
+      if (param1NewRecommend == null)
+        return; 
+      this.forum_id = param1NewRecommend.forum_id;
+      this.forum_name = param1NewRecommend.forum_name;
+      this.member_count = param1NewRecommend.member_count;
+      this.avatar = param1NewRecommend.avatar;
+      this.is_brand_forum = param1NewRecommend.is_brand_forum;
+    }
+    
+    public NewRecommend build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NewRecommend)interceptResult.objValue; 
+      } 
+      return new NewRecommend(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

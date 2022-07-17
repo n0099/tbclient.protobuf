@@ -1,4 +1,4 @@
-package GetForumClassList;
+package tbclient.GetForumClassList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class BannerBaseInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_IMAGE_URL = "";
   
   public static final String DEFAULT_LINK = "";
@@ -20,6 +22,8 @@ public final class BannerBaseInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String image_url;
@@ -59,7 +63,7 @@ public final class BannerBaseInfo extends Message {
   }
   
   public BannerBaseInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -106,5 +110,57 @@ public final class BannerBaseInfo extends Message {
       this.rank = ((Builder)integer).rank;
       this.type = ((Builder)integer).type;
     } 
+  }
+  
+  public BannerBaseInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BannerBaseInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String image_url;
+    
+    public String link;
+    
+    public Integer rank;
+    
+    public String tag;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(BannerBaseInfo param1BannerBaseInfo) {
+      super(param1BannerBaseInfo);
+      if (param1BannerBaseInfo == null)
+        return; 
+      this.title = param1BannerBaseInfo.title;
+      this.tag = param1BannerBaseInfo.tag;
+      this.link = param1BannerBaseInfo.link;
+      this.image_url = param1BannerBaseInfo.image_url;
+      this.rank = param1BannerBaseInfo.rank;
+      this.type = param1BannerBaseInfo.type;
+    }
+    
+    public BannerBaseInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BannerBaseInfo)interceptResult.objValue; 
+      } 
+      return new BannerBaseInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

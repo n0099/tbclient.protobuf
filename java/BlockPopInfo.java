@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BlockPopInfo;
 
 public final class BlockPopInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AHEAD_INFO = "";
   
   public static final Integer DEFAULT_AHEAD_TYPE;
@@ -25,6 +28,8 @@ public final class BlockPopInfo extends Message {
   public static final String DEFAULT_OK_INFO = "";
   
   public static final String DEFAULT_SUB_BLOCK_INFO = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String ahead_info;
@@ -74,7 +79,7 @@ public final class BlockPopInfo extends Message {
   }
   
   public BlockPopInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.can_post;
@@ -142,5 +147,66 @@ public final class BlockPopInfo extends Message {
       this.appeal_msg = ((Builder)str).appeal_msg;
       this.sub_block_info = ((Builder)str).sub_block_info;
     } 
+  }
+  
+  public BlockPopInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BlockPopInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ahead_info;
+    
+    public Integer ahead_type;
+    
+    public String ahead_url;
+    
+    public String appeal_msg;
+    
+    public Integer appeal_status;
+    
+    public String block_info;
+    
+    public Integer can_post;
+    
+    public String ok_info;
+    
+    public String sub_block_info;
+    
+    public Builder() {}
+    
+    public Builder(BlockPopInfo param1BlockPopInfo) {
+      super(param1BlockPopInfo);
+      if (param1BlockPopInfo == null)
+        return; 
+      this.can_post = param1BlockPopInfo.can_post;
+      this.block_info = param1BlockPopInfo.block_info;
+      this.ahead_info = param1BlockPopInfo.ahead_info;
+      this.ahead_url = param1BlockPopInfo.ahead_url;
+      this.ok_info = param1BlockPopInfo.ok_info;
+      this.ahead_type = param1BlockPopInfo.ahead_type;
+      this.appeal_status = param1BlockPopInfo.appeal_status;
+      this.appeal_msg = param1BlockPopInfo.appeal_msg;
+      this.sub_block_info = param1BlockPopInfo.sub_block_info;
+    }
+    
+    public BlockPopInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BlockPopInfo)interceptResult.objValue; 
+      } 
+      return new BlockPopInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

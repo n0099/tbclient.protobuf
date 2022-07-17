@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -13,11 +13,15 @@ import tbclient.Page;
 import tbclient.ThreadInfo;
 
 public final class HotThread extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_HOT_TITLE = "";
   
   public static final Integer DEFAULT_IS_NEW_URL;
   
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String hot_title;
@@ -36,7 +40,7 @@ public final class HotThread extends Message {
   }
   
   public HotThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.hot_title;
@@ -45,7 +49,7 @@ public final class HotThread extends Message {
       } else {
         this.hot_title = str;
       } 
-      List list = paramBuilder.thread_list;
+      List<ThreadInfo> list = paramBuilder.thread_list;
       if (list == null) {
         this.thread_list = DEFAULT_THREAD_LIST;
       } else {
@@ -66,6 +70,10 @@ public final class HotThread extends Message {
     } 
   }
   
+  public HotThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -80,5 +88,47 @@ public final class HotThread extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HotThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String hot_title;
+    
+    public Integer is_new_url;
+    
+    public Page page;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public Builder() {}
+    
+    public Builder(HotThread param1HotThread) {
+      super(param1HotThread);
+      if (param1HotThread == null)
+        return; 
+      this.hot_title = param1HotThread.hot_title;
+      this.thread_list = Message.copyOf(param1HotThread.thread_list);
+      this.page = param1HotThread.page;
+      this.is_new_url = param1HotThread.is_new_url;
+    }
+    
+    public HotThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotThread)interceptResult.objValue; 
+      } 
+      return new HotThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

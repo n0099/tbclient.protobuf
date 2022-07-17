@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PersonalForum extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
@@ -20,6 +22,8 @@ public final class PersonalForum extends Message {
   public static final String DEFAULT_RECOM_REASON = "";
   
   public static final String DEFAULT_WEIGHT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -40,7 +44,7 @@ public final class PersonalForum extends Message {
   public final String weight;
   
   public PersonalForum(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -89,6 +93,10 @@ public final class PersonalForum extends Message {
     } 
   }
   
+  public PersonalForum(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -103,5 +111,53 @@ public final class PersonalForum extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PersonalForum> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_like;
+    
+    public String recom_reason;
+    
+    public String weight;
+    
+    public Builder() {}
+    
+    public Builder(PersonalForum param1PersonalForum) {
+      super(param1PersonalForum);
+      if (param1PersonalForum == null)
+        return; 
+      this.forum_id = param1PersonalForum.forum_id;
+      this.forum_name = param1PersonalForum.forum_name;
+      this.avatar = param1PersonalForum.avatar;
+      this.is_like = param1PersonalForum.is_like;
+      this.weight = param1PersonalForum.weight;
+      this.recom_reason = param1PersonalForum.recom_reason;
+    }
+    
+    public PersonalForum build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PersonalForum)interceptResult.objValue; 
+      } 
+      return new PersonalForum(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

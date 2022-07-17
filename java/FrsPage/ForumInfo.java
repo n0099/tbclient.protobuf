@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,34 +11,12 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.BannerList;
 import tbclient.DeletedReasonInfo;
-import tbclient.FrsPage.AcrossForumIcon;
-import tbclient.FrsPage.Adkiller;
-import tbclient.FrsPage.AnchorPower;
-import tbclient.FrsPage.Badges;
-import tbclient.FrsPage.Banner;
-import tbclient.FrsPage.Calendar;
-import tbclient.FrsPage.Classify;
-import tbclient.FrsPage.ForumButton;
-import tbclient.FrsPage.Manager;
-import tbclient.FrsPage.MemberShowIcon;
-import tbclient.FrsPage.PostPrefix;
-import tbclient.FrsPage.PostTopic;
-import tbclient.FrsPage.RealTime;
-import tbclient.FrsPage.RecomUserInfo;
-import tbclient.FrsPage.RecommendForum;
-import tbclient.FrsPage.SignInfo;
-import tbclient.FrsPage.TagInfo;
-import tbclient.FrsPage.TipInfo;
-import tbclient.FrsPage.TopCode;
-import tbclient.FrsPage.TopNews;
-import tbclient.FrsPage.TopNotice;
-import tbclient.FrsPage.WorldCup;
-import tbclient.FrsPage.Yule;
-import tbclient.FrsPage.Zhibo;
 import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
 
 public final class ForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACCELERATE_COTENT = "";
   
   public static final Integer DEFAULT_ALBUM_OPEN_PHOTO_FRS;
@@ -162,6 +140,8 @@ public final class ForumInfo extends Message {
   public static final Integer DEFAULT_USER_LEVEL;
   
   public static final String DEFAULT_WARNING_MSG = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 50, type = Message.Datatype.STRING)
   public final String accelerate_cotent;
@@ -458,7 +438,7 @@ public final class ForumInfo extends Message {
   }
   
   public ForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.id;
@@ -547,17 +527,17 @@ public final class ForumInfo extends Message {
       } 
       this.sign_in_info = paramBuilder.sign_in_info;
       this.zhibo = paramBuilder.zhibo;
-      List list6 = paramBuilder.managers;
+      List<Manager> list6 = paramBuilder.managers;
       if (list6 == null) {
         this.managers = DEFAULT_MANAGERS;
       } else {
         this.managers = Message.immutableCopyOf(list6);
       } 
-      list6 = paramBuilder.forum_sign_calendar;
-      if (list6 == null) {
+      List<Calendar> list5 = paramBuilder.forum_sign_calendar;
+      if (list5 == null) {
         this.forum_sign_calendar = DEFAULT_FORUM_SIGN_CALENDAR;
       } else {
-        this.forum_sign_calendar = Message.immutableCopyOf(list6);
+        this.forum_sign_calendar = Message.immutableCopyOf(list5);
       } 
       Integer integer11 = paramBuilder.is_search_people;
       if (integer11 == null) {
@@ -571,11 +551,11 @@ public final class ForumInfo extends Message {
       } else {
         this.tids = str10;
       } 
-      List list5 = paramBuilder.good_classify;
-      if (list5 == null) {
+      List<Classify> list4 = paramBuilder.good_classify;
+      if (list4 == null) {
         this.good_classify = DEFAULT_GOOD_CLASSIFY;
       } else {
-        this.good_classify = Message.immutableCopyOf(list5);
+        this.good_classify = Message.immutableCopyOf(list4);
       } 
       String str9 = paramBuilder.is_readonly;
       if (str9 == null) {
@@ -629,11 +609,11 @@ public final class ForumInfo extends Message {
       } 
       this.banner = paramBuilder.banner;
       this.banner_list = paramBuilder.banner_list;
-      List list4 = paramBuilder.badges;
-      if (list4 == null) {
+      List<Badges> list3 = paramBuilder.badges;
+      if (list3 == null) {
         this.badges = DEFAULT_BADGES;
       } else {
-        this.badges = Message.immutableCopyOf(list4);
+        this.badges = Message.immutableCopyOf(list3);
       } 
       Integer integer8 = paramBuilder.level_id;
       if (integer8 == null) {
@@ -673,11 +653,11 @@ public final class ForumInfo extends Message {
       } else {
         this.is_local_effect = integer7;
       } 
-      List list3 = paramBuilder.recommend_forum;
-      if (list3 == null) {
+      List<RecommendForum> list2 = paramBuilder.recommend_forum;
+      if (list2 == null) {
         this.recommend_forum = DEFAULT_RECOMMEND_FORUM;
       } else {
-        this.recommend_forum = Message.immutableCopyOf(list3);
+        this.recommend_forum = Message.immutableCopyOf(list2);
       } 
       this.anchor_power = paramBuilder.anchor_power;
       this.worldcupinfo = paramBuilder.worldcupinfo;
@@ -708,11 +688,11 @@ public final class ForumInfo extends Message {
       } 
       this.top_code = paramBuilder.top_code;
       this.news_info = paramBuilder.news_info;
-      List list2 = paramBuilder.game_card;
-      if (list2 == null) {
+      List<GameInfo> list1 = paramBuilder.game_card;
+      if (list1 == null) {
         this.game_card = DEFAULT_GAME_CARD;
       } else {
-        this.game_card = Message.immutableCopyOf(list2);
+        this.game_card = Message.immutableCopyOf(list1);
       } 
       String str4 = paramBuilder.game_name;
       if (str4 == null) {
@@ -836,11 +816,11 @@ public final class ForumInfo extends Message {
       } else {
         this.risk_tip_pop_title = str1;
       } 
-      List list1 = paramBuilder.tip_list;
-      if (list1 == null) {
+      List<TipInfo> list = paramBuilder.tip_list;
+      if (list == null) {
         this.tip_list = DEFAULT_TIP_LIST;
       } else {
-        this.tip_list = Message.immutableCopyOf(list1);
+        this.tip_list = Message.immutableCopyOf(list);
       } 
       Integer integer1 = paramBuilder.is_show_forumrule;
       if (integer1 == null) {
@@ -943,6 +923,10 @@ public final class ForumInfo extends Message {
     } 
   }
   
+  public ForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -957,5 +941,287 @@ public final class ForumInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String accelerate_cotent;
+    
+    public AcrossForumIcon across_forum_hide;
+    
+    public AcrossForumIcon across_forum_show;
+    
+    public Adkiller adkiller_data;
+    
+    public Integer album_open_photo_frs;
+    
+    public AnchorPower anchor_power;
+    
+    public String avatar;
+    
+    public List<Badges> badges;
+    
+    public Banner banner;
+    
+    public BannerList banner_list;
+    
+    public Integer can_use_accelerate;
+    
+    public Integer cur_score;
+    
+    public DeletedReasonInfo deleted_reason_info;
+    
+    public String f_share_img;
+    
+    public Integer favo_type;
+    
+    public String first_class;
+    
+    public ForumButton forum_button;
+    
+    public String forum_game_label;
+    
+    public String forum_share_link;
+    
+    public List<Calendar> forum_sign_calendar;
+    
+    public MemberShowIcon forumvip_show_icon;
+    
+    public List<GameInfo> game_card;
+    
+    public String game_name;
+    
+    public String game_url;
+    
+    public List<Classify> good_classify;
+    
+    public Integer has_frs_star;
+    
+    public Integer has_game;
+    
+    public Integer has_paper;
+    
+    public Integer has_postpre;
+    
+    public Long id;
+    
+    public Integer is_brand_forum;
+    
+    public Integer is_exists;
+    
+    public Integer is_forbidden;
+    
+    public Integer is_frs_mask;
+    
+    public Integer is_like;
+    
+    public Integer is_live_game;
+    
+    public Integer is_live_game_forum;
+    
+    public Integer is_local_effect;
+    
+    public Integer is_new_game_forum;
+    
+    public Integer is_private_forum;
+    
+    public String is_readonly;
+    
+    public Integer is_search_people;
+    
+    public Integer is_show_all_top_thread;
+    
+    public Integer is_show_bawutask;
+    
+    public Integer is_show_forumrule;
+    
+    public Integer is_stage_forum;
+    
+    public Integer is_support_local;
+    
+    public String is_top_img;
+    
+    public Integer level_id;
+    
+    public String level_name;
+    
+    public Integer levelup_score;
+    
+    public List<Manager> managers;
+    
+    public Integer meizhi_tag;
+    
+    public Integer member_num;
+    
+    public String name;
+    
+    public TopNews news_info;
+    
+    public Integer post_num;
+    
+    public PostPrefix post_prefix;
+    
+    public PostTopic post_topic;
+    
+    public RealTime realtime_data;
+    
+    public List<RecommendForum> recommend_forum;
+    
+    public RecomUserInfo recommend_user_info;
+    
+    public String risk_tip_notice;
+    
+    public String risk_tip_pop;
+    
+    public String risk_tip_pop_title;
+    
+    public String second_class;
+    
+    public SignInfo sign_in_info;
+    
+    public String slogan;
+    
+    public String special_forum_type;
+    
+    public String superboy;
+    
+    public TagInfo tag_info;
+    
+    public ThemeColorInfo theme_color;
+    
+    public Integer thread_num;
+    
+    public String tids;
+    
+    public List<TipInfo> tip_list;
+    
+    public TopCode top_code;
+    
+    public TopNotice top_notice;
+    
+    public String topic_special_icon;
+    
+    public String topic_special_icon_right;
+    
+    public Integer user_level;
+    
+    public String warning_msg;
+    
+    public WorldCup worldcupinfo;
+    
+    public Yule yule;
+    
+    public Zhibo zhibo;
+    
+    public Builder() {}
+    
+    public Builder(ForumInfo param1ForumInfo) {
+      super(param1ForumInfo);
+      if (param1ForumInfo == null)
+        return; 
+      this.id = param1ForumInfo.id;
+      this.name = param1ForumInfo.name;
+      this.first_class = param1ForumInfo.first_class;
+      this.second_class = param1ForumInfo.second_class;
+      this.is_exists = param1ForumInfo.is_exists;
+      this.is_like = param1ForumInfo.is_like;
+      this.user_level = param1ForumInfo.user_level;
+      this.level_name = param1ForumInfo.level_name;
+      this.member_num = param1ForumInfo.member_num;
+      this.thread_num = param1ForumInfo.thread_num;
+      this.post_num = param1ForumInfo.post_num;
+      this.has_frs_star = param1ForumInfo.has_frs_star;
+      this.cur_score = param1ForumInfo.cur_score;
+      this.levelup_score = param1ForumInfo.levelup_score;
+      this.sign_in_info = param1ForumInfo.sign_in_info;
+      this.zhibo = param1ForumInfo.zhibo;
+      this.managers = Message.copyOf(param1ForumInfo.managers);
+      this.forum_sign_calendar = Message.copyOf(param1ForumInfo.forum_sign_calendar);
+      this.is_search_people = param1ForumInfo.is_search_people;
+      this.tids = param1ForumInfo.tids;
+      this.good_classify = Message.copyOf(param1ForumInfo.good_classify);
+      this.is_readonly = param1ForumInfo.is_readonly;
+      this.album_open_photo_frs = param1ForumInfo.album_open_photo_frs;
+      this.avatar = param1ForumInfo.avatar;
+      this.slogan = param1ForumInfo.slogan;
+      this.has_postpre = param1ForumInfo.has_postpre;
+      this.forum_button = param1ForumInfo.forum_button;
+      this.top_notice = param1ForumInfo.top_notice;
+      this.has_paper = param1ForumInfo.has_paper;
+      this.is_stage_forum = param1ForumInfo.is_stage_forum;
+      this.meizhi_tag = param1ForumInfo.meizhi_tag;
+      this.banner = param1ForumInfo.banner;
+      this.banner_list = param1ForumInfo.banner_list;
+      this.badges = Message.copyOf(param1ForumInfo.badges);
+      this.level_id = param1ForumInfo.level_id;
+      this.is_forbidden = param1ForumInfo.is_forbidden;
+      this.favo_type = param1ForumInfo.favo_type;
+      this.tag_info = param1ForumInfo.tag_info;
+      this.post_prefix = param1ForumInfo.post_prefix;
+      this.superboy = param1ForumInfo.superboy;
+      this.is_support_local = param1ForumInfo.is_support_local;
+      this.is_local_effect = param1ForumInfo.is_local_effect;
+      this.recommend_forum = Message.copyOf(param1ForumInfo.recommend_forum);
+      this.anchor_power = param1ForumInfo.anchor_power;
+      this.worldcupinfo = param1ForumInfo.worldcupinfo;
+      this.has_game = param1ForumInfo.has_game;
+      this.game_url = param1ForumInfo.game_url;
+      this.recommend_user_info = param1ForumInfo.recommend_user_info;
+      this.can_use_accelerate = param1ForumInfo.can_use_accelerate;
+      this.accelerate_cotent = param1ForumInfo.accelerate_cotent;
+      this.top_code = param1ForumInfo.top_code;
+      this.news_info = param1ForumInfo.news_info;
+      this.game_card = Message.copyOf(param1ForumInfo.game_card);
+      this.game_name = param1ForumInfo.game_name;
+      this.forumvip_show_icon = param1ForumInfo.forumvip_show_icon;
+      this.adkiller_data = param1ForumInfo.adkiller_data;
+      this.yule = param1ForumInfo.yule;
+      this.realtime_data = param1ForumInfo.realtime_data;
+      this.across_forum_show = param1ForumInfo.across_forum_show;
+      this.post_topic = param1ForumInfo.post_topic;
+      this.across_forum_hide = param1ForumInfo.across_forum_hide;
+      this.is_live_game_forum = param1ForumInfo.is_live_game_forum;
+      this.is_live_game = param1ForumInfo.is_live_game;
+      this.is_new_game_forum = param1ForumInfo.is_new_game_forum;
+      this.forum_game_label = param1ForumInfo.forum_game_label;
+      this.warning_msg = param1ForumInfo.warning_msg;
+      this.special_forum_type = param1ForumInfo.special_forum_type;
+      this.topic_special_icon = param1ForumInfo.topic_special_icon;
+      this.topic_special_icon_right = param1ForumInfo.topic_special_icon_right;
+      this.is_brand_forum = param1ForumInfo.is_brand_forum;
+      this.is_show_all_top_thread = param1ForumInfo.is_show_all_top_thread;
+      this.theme_color = param1ForumInfo.theme_color;
+      this.is_top_img = param1ForumInfo.is_top_img;
+      this.is_private_forum = param1ForumInfo.is_private_forum;
+      this.is_show_bawutask = param1ForumInfo.is_show_bawutask;
+      this.f_share_img = param1ForumInfo.f_share_img;
+      this.forum_share_link = param1ForumInfo.forum_share_link;
+      this.risk_tip_pop = param1ForumInfo.risk_tip_pop;
+      this.risk_tip_notice = param1ForumInfo.risk_tip_notice;
+      this.risk_tip_pop_title = param1ForumInfo.risk_tip_pop_title;
+      this.tip_list = Message.copyOf(param1ForumInfo.tip_list);
+      this.is_show_forumrule = param1ForumInfo.is_show_forumrule;
+      this.deleted_reason_info = param1ForumInfo.deleted_reason_info;
+      this.is_frs_mask = param1ForumInfo.is_frs_mask;
+    }
+    
+    public ForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumInfo)interceptResult.objValue; 
+      } 
+      return new ForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

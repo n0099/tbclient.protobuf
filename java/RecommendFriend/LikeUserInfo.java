@@ -1,4 +1,4 @@
-package RecommendFriend;
+package tbclient.RecommendFriend;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,16 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.RecommendFriend.ForumInfo;
-import tbclient.RecommendFriend.PostInfo;
-import tbclient.RecommendFriend.UserInfo;
 
 public final class LikeUserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
   
   public static final String DEFAULT_MESSAGE = "";
   
   public static final List<PostInfo> DEFAULT_POST_INFO = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<ForumInfo> forum_info;
@@ -33,17 +34,17 @@ public final class LikeUserInfo extends Message {
   public final UserInfo user_info;
   
   public LikeUserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       this.user_info = paramBuilder.user_info;
-      List list = paramBuilder.forum_info;
-      if (list == null) {
+      List<ForumInfo> list1 = paramBuilder.forum_info;
+      if (list1 == null) {
         this.forum_info = DEFAULT_FORUM_INFO;
       } else {
-        this.forum_info = Message.immutableCopyOf(list);
+        this.forum_info = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.post_info;
+      List<PostInfo> list = paramBuilder.post_info;
       if (list == null) {
         this.post_info = DEFAULT_POST_INFO;
       } else {
@@ -63,6 +64,10 @@ public final class LikeUserInfo extends Message {
     } 
   }
   
+  public LikeUserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -77,5 +82,47 @@ public final class LikeUserInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<LikeUserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ForumInfo> forum_info;
+    
+    public String message;
+    
+    public List<PostInfo> post_info;
+    
+    public UserInfo user_info;
+    
+    public Builder() {}
+    
+    public Builder(LikeUserInfo param1LikeUserInfo) {
+      super(param1LikeUserInfo);
+      if (param1LikeUserInfo == null)
+        return; 
+      this.user_info = param1LikeUserInfo.user_info;
+      this.forum_info = Message.copyOf(param1LikeUserInfo.forum_info);
+      this.post_info = Message.copyOf(param1LikeUserInfo.post_info);
+      this.message = param1LikeUserInfo.message;
+    }
+    
+    public LikeUserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LikeUserInfo)interceptResult.objValue; 
+      } 
+      return new LikeUserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

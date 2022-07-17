@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PbFollowTip extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_TOAST_TIP = Integer.valueOf(0);
   
   public static final String DEFAULT_TIP_TEXT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer is_toast_tip;
@@ -20,7 +24,7 @@ public final class PbFollowTip extends Message {
   public final String tip_text;
   
   public PbFollowTip(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.is_toast_tip;
@@ -41,6 +45,10 @@ public final class PbFollowTip extends Message {
     } 
   }
   
+  public PbFollowTip(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class PbFollowTip extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PbFollowTip> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_toast_tip;
+    
+    public String tip_text;
+    
+    public Builder() {}
+    
+    public Builder(PbFollowTip param1PbFollowTip) {
+      super(param1PbFollowTip);
+      if (param1PbFollowTip == null)
+        return; 
+      this.is_toast_tip = param1PbFollowTip.is_toast_tip;
+      this.tip_text = param1PbFollowTip.tip_text;
+    }
+    
+    public PbFollowTip build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PbFollowTip)interceptResult.objValue; 
+      } 
+      return new PbFollowTip(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

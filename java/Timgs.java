@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Timgs;
 
 public final class Timgs extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BIG_CDN_URL = "";
   
   public static final String DEFAULT_BSIZE = "";
@@ -21,6 +24,8 @@ public final class Timgs extends Message {
   public static final String DEFAULT_IMG_URL = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String big_cdn_url;
@@ -44,7 +49,7 @@ public final class Timgs extends Message {
   public final String url;
   
   public Timgs(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.img_url;
@@ -100,6 +105,10 @@ public final class Timgs extends Message {
     } 
   }
   
+  public Timgs(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -114,5 +123,56 @@ public final class Timgs extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Timgs> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String big_cdn_url;
+    
+    public String bsize;
+    
+    public String des_main;
+    
+    public String des_sub;
+    
+    public Integer flag;
+    
+    public String img_url;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(Timgs param1Timgs) {
+      super(param1Timgs);
+      if (param1Timgs == null)
+        return; 
+      this.img_url = param1Timgs.img_url;
+      this.url = param1Timgs.url;
+      this.flag = param1Timgs.flag;
+      this.des_main = param1Timgs.des_main;
+      this.des_sub = param1Timgs.des_sub;
+      this.bsize = param1Timgs.bsize;
+      this.big_cdn_url = param1Timgs.big_cdn_url;
+    }
+    
+    public Timgs build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Timgs)interceptResult.objValue; 
+      } 
+      return new Timgs(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

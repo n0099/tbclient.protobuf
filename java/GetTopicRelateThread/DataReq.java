@@ -1,4 +1,4 @@
-package GetTopicRelateThread;
+package tbclient.GetTopicRelateThread;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_LAST_ID;
   
   public static final Integer DEFAULT_PAGE_NO;
@@ -33,6 +35,8 @@ public final class DataReq extends Message {
   public static final Long DEFAULT_TOPIC_ID;
   
   public static final String DEFAULT_TOPIC_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final CommonReq common;
@@ -103,7 +107,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -194,5 +198,78 @@ public final class DataReq extends Message {
       this.pmy_source = ((Builder)integer).pmy_source;
       this.sort_type = ((Builder)integer).sort_type;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public Long last_id;
+    
+    public Integer page_no;
+    
+    public Integer pmy_source;
+    
+    public Long pmy_topic_id;
+    
+    public Integer q_type;
+    
+    public Integer rn;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public Integer sort_type;
+    
+    public Long topic_id;
+    
+    public String topic_name;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.topic_id = param1DataReq.topic_id;
+      this.topic_name = param1DataReq.topic_name;
+      this.rn = param1DataReq.rn;
+      this.page_no = param1DataReq.page_no;
+      this.last_id = param1DataReq.last_id;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.q_type = param1DataReq.q_type;
+      this.pmy_topic_id = param1DataReq.pmy_topic_id;
+      this.pmy_source = param1DataReq.pmy_source;
+      this.sort_type = param1DataReq.sort_type;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

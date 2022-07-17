@@ -1,4 +1,4 @@
-package GetRecommendTopic;
+package tbclient.GetRecommendTopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetRecommendTopic.TopicList;
 
 public final class TopicListModule extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_MODULE_TITLE = "";
   
   public static final List<TopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String module_title;
@@ -23,8 +26,8 @@ public final class TopicListModule extends Message {
   public final List<TopicList> topic_list;
   
   public TopicListModule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<TopicList> list;
     if (paramBoolean == true) {
       String str = paramBuilder.module_title;
       if (str == null) {
@@ -44,6 +47,10 @@ public final class TopicListModule extends Message {
     } 
   }
   
+  public TopicListModule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +65,41 @@ public final class TopicListModule extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TopicListModule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String module_title;
+    
+    public List<TopicList> topic_list;
+    
+    public Builder() {}
+    
+    public Builder(TopicListModule param1TopicListModule) {
+      super(param1TopicListModule);
+      if (param1TopicListModule == null)
+        return; 
+      this.module_title = param1TopicListModule.module_title;
+      this.topic_list = Message.copyOf(param1TopicListModule.topic_list);
+    }
+    
+    public TopicListModule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TopicListModule)interceptResult.objValue; 
+      } 
+      return new TopicListModule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

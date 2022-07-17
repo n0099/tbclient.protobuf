@@ -1,4 +1,4 @@
-package AddMsgRecord;
+package tbclient.AddMsgRecord;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MsgRecord extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_TASK_IDS = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String task_ids;
@@ -20,7 +24,7 @@ public final class MsgRecord extends Message {
   public final Integer type;
   
   public MsgRecord(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -41,6 +45,10 @@ public final class MsgRecord extends Message {
     } 
   }
   
+  public MsgRecord(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class MsgRecord extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MsgRecord> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String task_ids;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(MsgRecord param1MsgRecord) {
+      super(param1MsgRecord);
+      if (param1MsgRecord == null)
+        return; 
+      this.type = param1MsgRecord.type;
+      this.task_ids = param1MsgRecord.task_ids;
+    }
+    
+    public MsgRecord build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MsgRecord)interceptResult.objValue; 
+      } 
+      return new MsgRecord(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

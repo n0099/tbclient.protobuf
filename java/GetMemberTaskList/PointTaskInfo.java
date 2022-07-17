@@ -1,4 +1,4 @@
-package GetMemberTaskList;
+package tbclient.GetMemberTaskList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PointTaskInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_FINISH;
   
   public static final Integer DEFAULT_POINTS_ADD;
@@ -20,6 +22,8 @@ public final class PointTaskInfo extends Message {
   public static final String DEFAULT_TASK_NAME = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer is_finish;
@@ -47,7 +51,7 @@ public final class PointTaskInfo extends Message {
   }
   
   public PointTaskInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.task_id;
@@ -96,6 +100,10 @@ public final class PointTaskInfo extends Message {
     } 
   }
   
+  public PointTaskInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -110,5 +118,53 @@ public final class PointTaskInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PointTaskInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_finish;
+    
+    public Integer points_add;
+    
+    public Long task_id;
+    
+    public String task_intro;
+    
+    public String task_name;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(PointTaskInfo param1PointTaskInfo) {
+      super(param1PointTaskInfo);
+      if (param1PointTaskInfo == null)
+        return; 
+      this.task_id = param1PointTaskInfo.task_id;
+      this.task_name = param1PointTaskInfo.task_name;
+      this.task_intro = param1PointTaskInfo.task_intro;
+      this.is_finish = param1PointTaskInfo.is_finish;
+      this.type = param1PointTaskInfo.type;
+      this.points_add = param1PointTaskInfo.points_add;
+    }
+    
+    public PointTaskInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PointTaskInfo)interceptResult.objValue; 
+      } 
+      return new PointTaskInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

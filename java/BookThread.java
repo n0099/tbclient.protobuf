@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BookThread;
 
 public final class BookThread extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BOOK_ID = "";
   
   public static final Integer DEFAULT_BOOK_TYPE = Integer.valueOf(0);
   
   public static final Long DEFAULT_CHAPTER_ID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String book_id;
@@ -24,7 +29,7 @@ public final class BookThread extends Message {
   public final Long chapter_id;
   
   public BookThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.book_id;
@@ -52,6 +57,10 @@ public final class BookThread extends Message {
     } 
   }
   
+  public BookThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class BookThread extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BookThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String book_id;
+    
+    public Integer book_type;
+    
+    public Long chapter_id;
+    
+    public Builder() {}
+    
+    public Builder(BookThread param1BookThread) {
+      super(param1BookThread);
+      if (param1BookThread == null)
+        return; 
+      this.book_id = param1BookThread.book_id;
+      this.book_type = param1BookThread.book_type;
+      this.chapter_id = param1BookThread.chapter_id;
+    }
+    
+    public BookThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BookThread)interceptResult.objValue; 
+      } 
+      return new BookThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

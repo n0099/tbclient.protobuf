@@ -1,4 +1,4 @@
-package GetForumClassList;
+package tbclient.GetForumClassList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ChildDir extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_DESC = "";
@@ -28,6 +30,8 @@ public final class ChildDir extends Message {
   public static final Long DEFAULT_THREAD_NUM;
   
   public static final Long DEFAULT_TORDER;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String avatar;
@@ -81,7 +85,7 @@ public final class ChildDir extends Message {
   }
   
   public ChildDir(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.forum_lid;
@@ -156,5 +160,69 @@ public final class ChildDir extends Message {
       this.member_count = ((Builder)long_).member_count;
       this.thread_num = ((Builder)long_).thread_num;
     } 
+  }
+  
+  public ChildDir(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ChildDir> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String desc;
+    
+    public String explain;
+    
+    public Long forum_lid;
+    
+    public String forum_name;
+    
+    public String link;
+    
+    public Long member_count;
+    
+    public String tag;
+    
+    public Long thread_num;
+    
+    public Long torder;
+    
+    public Builder() {}
+    
+    public Builder(ChildDir param1ChildDir) {
+      super(param1ChildDir);
+      if (param1ChildDir == null)
+        return; 
+      this.forum_lid = param1ChildDir.forum_lid;
+      this.forum_name = param1ChildDir.forum_name;
+      this.torder = param1ChildDir.torder;
+      this.explain = param1ChildDir.explain;
+      this.tag = param1ChildDir.tag;
+      this.link = param1ChildDir.link;
+      this.avatar = param1ChildDir.avatar;
+      this.desc = param1ChildDir.desc;
+      this.member_count = param1ChildDir.member_count;
+      this.thread_num = param1ChildDir.thread_num;
+    }
+    
+    public ChildDir build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ChildDir)interceptResult.objValue; 
+      } 
+      return new ChildDir(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

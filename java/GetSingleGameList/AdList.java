@@ -1,4 +1,4 @@
-package GetSingleGameList;
+package tbclient.GetSingleGameList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class AdList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_LINK_ANDROID = "";
   
   public static final String DEFAULT_AD_LINK_IOS = "";
@@ -18,6 +20,8 @@ public final class AdList extends Message {
   public static final String DEFAULT_AD_LINK_WEBVIEW = "";
   
   public static final List<String> DEFAULT_AD_PIC = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String ad_link_android;
@@ -32,8 +36,8 @@ public final class AdList extends Message {
   public final List<String> ad_pic;
   
   public AdList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       String str = paramBuilder.ad_link_android;
       if (str == null) {
@@ -67,6 +71,10 @@ public final class AdList extends Message {
     } 
   }
   
+  public AdList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -81,5 +89,47 @@ public final class AdList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AdList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_link_android;
+    
+    public String ad_link_ios;
+    
+    public String ad_link_webview;
+    
+    public List<String> ad_pic;
+    
+    public Builder() {}
+    
+    public Builder(AdList param1AdList) {
+      super(param1AdList);
+      if (param1AdList == null)
+        return; 
+      this.ad_link_android = param1AdList.ad_link_android;
+      this.ad_link_webview = param1AdList.ad_link_webview;
+      this.ad_link_ios = param1AdList.ad_link_ios;
+      this.ad_pic = Message.copyOf(param1AdList.ad_pic);
+    }
+    
+    public AdList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AdList)interceptResult.objValue; 
+      } 
+      return new AdList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

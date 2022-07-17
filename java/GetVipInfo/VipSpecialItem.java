@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipSpecialItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BUTTON_TEXT_FINISH = "";
   
   public static final String DEFAULT_BUTTON_TEXT_INITIAL = "";
@@ -32,6 +34,8 @@ public final class VipSpecialItem extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_UPDATE_TIME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 12, type = Message.Datatype.STRING)
   public final String button_text_finish;
@@ -91,7 +95,7 @@ public final class VipSpecialItem extends Message {
   }
   
   public VipSpecialItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str3 = paramBuilder.img_url;
@@ -180,5 +184,75 @@ public final class VipSpecialItem extends Message {
       this.button_text_initial = ((Builder)str).button_text_initial;
       this.button_text_finish = ((Builder)str).button_text_finish;
     } 
+  }
+  
+  public VipSpecialItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VipSpecialItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String button_text_finish;
+    
+    public String button_text_initial;
+    
+    public String desc;
+    
+    public String desc_ext;
+    
+    public Integer id;
+    
+    public String img_url;
+    
+    public Integer is_finish;
+    
+    public String link;
+    
+    public Integer task_id;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public String update_time;
+    
+    public Builder() {}
+    
+    public Builder(VipSpecialItem param1VipSpecialItem) {
+      super(param1VipSpecialItem);
+      if (param1VipSpecialItem == null)
+        return; 
+      this.img_url = param1VipSpecialItem.img_url;
+      this.title = param1VipSpecialItem.title;
+      this.desc = param1VipSpecialItem.desc;
+      this.link = param1VipSpecialItem.link;
+      this.update_time = param1VipSpecialItem.update_time;
+      this.id = param1VipSpecialItem.id;
+      this.type = param1VipSpecialItem.type;
+      this.desc_ext = param1VipSpecialItem.desc_ext;
+      this.task_id = param1VipSpecialItem.task_id;
+      this.is_finish = param1VipSpecialItem.is_finish;
+      this.button_text_initial = param1VipSpecialItem.button_text_initial;
+      this.button_text_finish = param1VipSpecialItem.button_text_finish;
+    }
+    
+    public VipSpecialItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipSpecialItem)interceptResult.objValue; 
+      } 
+      return new VipSpecialItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

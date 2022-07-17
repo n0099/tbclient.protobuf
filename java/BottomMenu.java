@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BottomMenu;
-import tbclient.SubBottomMenu;
 
 public final class BottomMenu extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_NAME = "";
   
   public static final List<SubBottomMenu> DEFAULT_SUBMENU = Collections.emptyList();
@@ -18,6 +20,8 @@ public final class BottomMenu extends Message {
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String name;
@@ -32,7 +36,7 @@ public final class BottomMenu extends Message {
   public final String url;
   
   public BottomMenu(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.name;
@@ -47,7 +51,7 @@ public final class BottomMenu extends Message {
       } else {
         this.url = str;
       } 
-      List list = paramBuilder.submenu;
+      List<SubBottomMenu> list = paramBuilder.submenu;
       if (list == null) {
         this.submenu = DEFAULT_SUBMENU;
       } else {
@@ -67,6 +71,10 @@ public final class BottomMenu extends Message {
     } 
   }
   
+  public BottomMenu(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -81,5 +89,47 @@ public final class BottomMenu extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BottomMenu> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String name;
+    
+    public List<SubBottomMenu> submenu;
+    
+    public Integer type;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(BottomMenu param1BottomMenu) {
+      super(param1BottomMenu);
+      if (param1BottomMenu == null)
+        return; 
+      this.name = param1BottomMenu.name;
+      this.url = param1BottomMenu.url;
+      this.submenu = Message.copyOf(param1BottomMenu.submenu);
+      this.type = param1BottomMenu.type;
+    }
+    
+    public BottomMenu build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BottomMenu)interceptResult.objValue; 
+      } 
+      return new BottomMenu(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

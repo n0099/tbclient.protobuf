@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.LinkThreadContent;
 
 public final class LinkThreadContent extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_LINK_ABSTRACT = "";
   
   public static final String DEFAULT_LINK_HEAD_BIG_PIC = "";
@@ -19,6 +22,8 @@ public final class LinkThreadContent extends Message {
   public static final String DEFAULT_LINK_TITLE = "";
   
   public static final Integer DEFAULT_LINK_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String link_abstract;
@@ -39,7 +44,7 @@ public final class LinkThreadContent extends Message {
   public final Integer link_type;
   
   public LinkThreadContent(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.link_type;
@@ -88,6 +93,10 @@ public final class LinkThreadContent extends Message {
     } 
   }
   
+  public LinkThreadContent(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -102,5 +111,53 @@ public final class LinkThreadContent extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<LinkThreadContent> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String link_abstract;
+    
+    public String link_head_big_pic;
+    
+    public String link_head_pic;
+    
+    public String link_head_small_pic;
+    
+    public String link_title;
+    
+    public Integer link_type;
+    
+    public Builder() {}
+    
+    public Builder(LinkThreadContent param1LinkThreadContent) {
+      super(param1LinkThreadContent);
+      if (param1LinkThreadContent == null)
+        return; 
+      this.link_type = param1LinkThreadContent.link_type;
+      this.link_title = param1LinkThreadContent.link_title;
+      this.link_abstract = param1LinkThreadContent.link_abstract;
+      this.link_head_pic = param1LinkThreadContent.link_head_pic;
+      this.link_head_small_pic = param1LinkThreadContent.link_head_small_pic;
+      this.link_head_big_pic = param1LinkThreadContent.link_head_big_pic;
+    }
+    
+    public LinkThreadContent build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LinkThreadContent)interceptResult.objValue; 
+      } 
+      return new LinkThreadContent(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package UserPost;
+package tbclient.UserPost;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_BEGIN_THREAD_ID;
   
   public static final Integer DEFAULT_BEGIN_TIME;
@@ -83,6 +85,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final Integer DEFAULT_WORK_TAB_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 38, type = Message.Datatype.UINT64)
   public final Long begin_thread_id;
@@ -247,7 +251,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.uid;
@@ -513,5 +517,153 @@ public final class DataReq extends Message {
       this.from_type = ((Builder)long_).from_type;
       this.begin_thread_id = ((Builder)long_).begin_thread_id;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long begin_thread_id;
+    
+    public Integer begin_time;
+    
+    public Integer check_login;
+    
+    public CommonReq common;
+    
+    public String cookie;
+    
+    public String email;
+    
+    public Integer end_time;
+    
+    public Long forum_id;
+    
+    public Integer from_type;
+    
+    public Integer ip_int;
+    
+    public String ip_str;
+    
+    public Integer is_thread;
+    
+    public Integer is_twzhibo;
+    
+    public Integer is_view_card;
+    
+    public Integer last_thread_time;
+    
+    public Integer login;
+    
+    public String mobile;
+    
+    public String module_name;
+    
+    public Integer need_content;
+    
+    public Integer no_un;
+    
+    public Integer offset;
+    
+    public Integer pn;
+    
+    public String portrait;
+    
+    public Integer q_type;
+    
+    public Integer rn;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public Integer smile_grade;
+    
+    public Integer st_param;
+    
+    public Integer st_type;
+    
+    public Integer subtype;
+    
+    public Integer support_noun;
+    
+    public Integer type;
+    
+    public Long uid;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Integer work_tab_id;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.uid = param1DataReq.uid;
+      this.rn = param1DataReq.rn;
+      this.offset = param1DataReq.offset;
+      this.is_thread = param1DataReq.is_thread;
+      this.need_content = param1DataReq.need_content;
+      this.forum_id = param1DataReq.forum_id;
+      this.begin_time = param1DataReq.begin_time;
+      this.end_time = param1DataReq.end_time;
+      this.subtype = param1DataReq.subtype;
+      this.check_login = param1DataReq.check_login;
+      this.ip_str = param1DataReq.ip_str;
+      this.ip_int = param1DataReq.ip_int;
+      this.module_name = param1DataReq.module_name;
+      this.st_type = param1DataReq.st_type;
+      this.st_param = param1DataReq.st_param;
+      this.smile_grade = param1DataReq.smile_grade;
+      this.support_noun = param1DataReq.support_noun;
+      this.login = param1DataReq.login;
+      this.user_id = param1DataReq.user_id;
+      this.user_name = param1DataReq.user_name;
+      this.no_un = param1DataReq.no_un;
+      this.portrait = param1DataReq.portrait;
+      this.mobile = param1DataReq.mobile;
+      this.email = param1DataReq.email;
+      this.cookie = param1DataReq.cookie;
+      this.pn = param1DataReq.pn;
+      this.common = param1DataReq.common;
+      this.is_twzhibo = param1DataReq.is_twzhibo;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.q_type = param1DataReq.q_type;
+      this.is_view_card = param1DataReq.is_view_card;
+      this.last_thread_time = param1DataReq.last_thread_time;
+      this.work_tab_id = param1DataReq.work_tab_id;
+      this.type = param1DataReq.type;
+      this.from_type = param1DataReq.from_type;
+      this.begin_thread_id = param1DataReq.begin_thread_id;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

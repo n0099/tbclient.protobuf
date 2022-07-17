@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.RecommendInfo;
-import tbclient.SchoolRecomUserInfo;
 
 public final class RecommendInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_TITLE = "";
   
   public static final List<SchoolRecomUserInfo> DEFAULT_USER_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String title;
@@ -22,8 +26,8 @@ public final class RecommendInfo extends Message {
   public final List<SchoolRecomUserInfo> user_list;
   
   public RecommendInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<SchoolRecomUserInfo> list;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
       if (str == null) {
@@ -43,6 +47,10 @@ public final class RecommendInfo extends Message {
     } 
   }
   
+  public RecommendInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -57,5 +65,41 @@ public final class RecommendInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String title;
+    
+    public List<SchoolRecomUserInfo> user_list;
+    
+    public Builder() {}
+    
+    public Builder(RecommendInfo param1RecommendInfo) {
+      super(param1RecommendInfo);
+      if (param1RecommendInfo == null)
+        return; 
+      this.title = param1RecommendInfo.title;
+      this.user_list = Message.copyOf(param1RecommendInfo.user_list);
+    }
+    
+    public RecommendInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendInfo)interceptResult.objValue; 
+      } 
+      return new RecommendInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

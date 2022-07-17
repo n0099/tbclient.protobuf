@@ -1,4 +1,4 @@
-package LoadMon;
+package tbclient.LoadMon;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ResignRule extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CARD_NUM = Integer.valueOf(0);
   
   public static final String DEFAULT_RANGE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer card_num;
@@ -20,7 +24,7 @@ public final class ResignRule extends Message {
   public final String range;
   
   public ResignRule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.range;
@@ -41,6 +45,10 @@ public final class ResignRule extends Message {
     } 
   }
   
+  public ResignRule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class ResignRule extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ResignRule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer card_num;
+    
+    public String range;
+    
+    public Builder() {}
+    
+    public Builder(ResignRule param1ResignRule) {
+      super(param1ResignRule);
+      if (param1ResignRule == null)
+        return; 
+      this.range = param1ResignRule.range;
+      this.card_num = param1ResignRule.card_num;
+    }
+    
+    public ResignRule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ResignRule)interceptResult.objValue; 
+      } 
+      return new ResignRule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

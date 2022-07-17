@@ -1,4 +1,4 @@
-package Profile;
+package tbclient.Profile;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FRIEND_UID;
   
   public static final String DEFAULT_FRIEND_UID_PORTRAIT = "";
@@ -39,6 +41,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_ST_TYPE = "";
   
   public static final Long DEFAULT_UID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9)
   public final CommonReq common;
@@ -120,7 +124,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.uid;
@@ -232,5 +236,87 @@ public final class DataReq extends Message {
       this.page = ((Builder)str).page;
       this.friend_uid_portrait = ((Builder)str).friend_uid_portrait;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public Long friend_uid;
+    
+    public String friend_uid_portrait;
+    
+    public Integer has_plist;
+    
+    public Integer is_from_usercenter;
+    
+    public Integer is_guest;
+    
+    public Integer need_post_count;
+    
+    public Integer page;
+    
+    public Integer pn;
+    
+    public Integer q_type;
+    
+    public Integer rn;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public String st_type;
+    
+    public Long uid;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.uid = param1DataReq.uid;
+      this.need_post_count = param1DataReq.need_post_count;
+      this.friend_uid = param1DataReq.friend_uid;
+      this.is_guest = param1DataReq.is_guest;
+      this.st_type = param1DataReq.st_type;
+      this.pn = param1DataReq.pn;
+      this.rn = param1DataReq.rn;
+      this.has_plist = param1DataReq.has_plist;
+      this.common = param1DataReq.common;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.q_type = param1DataReq.q_type;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.is_from_usercenter = param1DataReq.is_from_usercenter;
+      this.page = param1DataReq.page;
+      this.friend_uid_portrait = param1DataReq.friend_uid_portrait;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

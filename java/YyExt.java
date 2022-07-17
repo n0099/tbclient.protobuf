@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.YyExt;
 
 public final class YyExt extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ICON_URL = "";
   
   public static final Integer DEFAULT_IS_YY_GAME = Integer.valueOf(0);
@@ -23,6 +26,8 @@ public final class YyExt extends Message {
   public static final String DEFAULT_TEMPLATE_ID = "";
   
   public static final String DEFAULT_YY_UID = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String icon_url;
@@ -49,7 +54,7 @@ public final class YyExt extends Message {
   public final String yy_uid;
   
   public YyExt(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.sid;
@@ -112,6 +117,10 @@ public final class YyExt extends Message {
     } 
   }
   
+  public YyExt(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -126,5 +135,59 @@ public final class YyExt extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<YyExt> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String icon_url;
+    
+    public Integer is_yy_game;
+    
+    public String rank_show;
+    
+    public String sid;
+    
+    public String ssid;
+    
+    public String stream_info;
+    
+    public String template_id;
+    
+    public String yy_uid;
+    
+    public Builder() {}
+    
+    public Builder(YyExt param1YyExt) {
+      super(param1YyExt);
+      if (param1YyExt == null)
+        return; 
+      this.sid = param1YyExt.sid;
+      this.ssid = param1YyExt.ssid;
+      this.template_id = param1YyExt.template_id;
+      this.yy_uid = param1YyExt.yy_uid;
+      this.is_yy_game = param1YyExt.is_yy_game;
+      this.stream_info = param1YyExt.stream_info;
+      this.rank_show = param1YyExt.rank_show;
+      this.icon_url = param1YyExt.icon_url;
+    }
+    
+    public YyExt build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (YyExt)interceptResult.objValue; 
+      } 
+      return new YyExt(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

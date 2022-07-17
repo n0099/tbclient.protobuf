@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumHeadlineImgInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_IMG_URL = "";
   
   public static final Long DEFAULT_IMG_USER_ID;
@@ -20,6 +22,8 @@ public final class ForumHeadlineImgInfo extends Message {
   public static final String DEFAULT_RANK_UP_INFO = "";
   
   public static final String DEFAULT_RANK_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String img_url;
@@ -44,7 +48,7 @@ public final class ForumHeadlineImgInfo extends Message {
   }
   
   public ForumHeadlineImgInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.img_user_name;
@@ -93,6 +97,10 @@ public final class ForumHeadlineImgInfo extends Message {
     } 
   }
   
+  public ForumHeadlineImgInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -107,5 +115,53 @@ public final class ForumHeadlineImgInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumHeadlineImgInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String img_url;
+    
+    public Long img_user_id;
+    
+    public String img_user_name;
+    
+    public Integer rank_num;
+    
+    public String rank_up_info;
+    
+    public String rank_url;
+    
+    public Builder() {}
+    
+    public Builder(ForumHeadlineImgInfo param1ForumHeadlineImgInfo) {
+      super(param1ForumHeadlineImgInfo);
+      if (param1ForumHeadlineImgInfo == null)
+        return; 
+      this.img_user_name = param1ForumHeadlineImgInfo.img_user_name;
+      this.img_url = param1ForumHeadlineImgInfo.img_url;
+      this.rank_num = param1ForumHeadlineImgInfo.rank_num;
+      this.img_user_id = param1ForumHeadlineImgInfo.img_user_id;
+      this.rank_url = param1ForumHeadlineImgInfo.rank_url;
+      this.rank_up_info = param1ForumHeadlineImgInfo.rank_up_info;
+    }
+    
+    public ForumHeadlineImgInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumHeadlineImgInfo)interceptResult.objValue; 
+      } 
+      return new ForumHeadlineImgInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

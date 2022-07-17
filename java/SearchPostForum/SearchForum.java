@@ -1,4 +1,4 @@
-package SearchPostForum;
+package tbclient.SearchPostForum;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 
 public final class SearchForum extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_CONCERN_NUM = "";
@@ -29,6 +31,8 @@ public final class SearchForum extends Message {
   public static final String DEFAULT_SLOGAN = "";
   
   public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -58,8 +62,8 @@ public final class SearchForum extends Message {
   public final List<FrsTabInfo> tab_info;
   
   public SearchForum(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<FrsTabInfo> list;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
       if (long_ == null) {
@@ -128,6 +132,10 @@ public final class SearchForum extends Message {
     } 
   }
   
+  public SearchForum(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -142,5 +150,62 @@ public final class SearchForum extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SearchForum> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String concern_num;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer has_concerned;
+    
+    public String intro;
+    
+    public String post_num;
+    
+    public String slogan;
+    
+    public List<FrsTabInfo> tab_info;
+    
+    public Builder() {}
+    
+    public Builder(SearchForum param1SearchForum) {
+      super(param1SearchForum);
+      if (param1SearchForum == null)
+        return; 
+      this.forum_id = param1SearchForum.forum_id;
+      this.forum_name = param1SearchForum.forum_name;
+      this.avatar = param1SearchForum.avatar;
+      this.post_num = param1SearchForum.post_num;
+      this.concern_num = param1SearchForum.concern_num;
+      this.slogan = param1SearchForum.slogan;
+      this.intro = param1SearchForum.intro;
+      this.has_concerned = param1SearchForum.has_concerned;
+      this.tab_info = Message.copyOf(param1SearchForum.tab_info);
+    }
+    
+    public SearchForum build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SearchForum)interceptResult.objValue; 
+      } 
+      return new SearchForum(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

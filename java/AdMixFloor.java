@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,20 +7,28 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AdMixFloor;
 
 public final class AdMixFloor extends Message {
+  public static Interceptable $ic;
+  
+  public static final String DEFAULT_ADVERTISE_ID = "";
+  
   public static final Long DEFAULT_AD_ID;
   
   public static final Integer DEFAULT_AD_TYPE;
   
   public static final Integer DEFAULT_FLOOR_NUM;
   
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 3, type = Message.Datatype.INT64)
   public final Long ad_id;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer ad_type;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.STRING)
+  public final String advertise_id;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer floor_num;
@@ -44,8 +54,8 @@ public final class AdMixFloor extends Message {
   }
   
   public AdMixFloor(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    Long long_;
+    super(paramBuilder);
+    String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.ad_type;
       if (integer == null) {
@@ -59,16 +69,69 @@ public final class AdMixFloor extends Message {
       } else {
         this.floor_num = integer;
       } 
-      long_ = paramBuilder.ad_id;
+      Long long_ = paramBuilder.ad_id;
       if (long_ == null) {
         this.ad_id = DEFAULT_AD_ID;
       } else {
         this.ad_id = long_;
       } 
+      str = paramBuilder.advertise_id;
+      if (str == null) {
+        this.advertise_id = "";
+      } else {
+        this.advertise_id = str;
+      } 
     } else {
-      this.ad_type = ((Builder)long_).ad_type;
-      this.floor_num = ((Builder)long_).floor_num;
-      this.ad_id = ((Builder)long_).ad_id;
+      this.ad_type = ((Builder)str).ad_type;
+      this.floor_num = ((Builder)str).floor_num;
+      this.ad_id = ((Builder)str).ad_id;
+      this.advertise_id = ((Builder)str).advertise_id;
     } 
+  }
+  
+  public AdMixFloor(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AdMixFloor> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long ad_id;
+    
+    public Integer ad_type;
+    
+    public String advertise_id;
+    
+    public Integer floor_num;
+    
+    public Builder() {}
+    
+    public Builder(AdMixFloor param1AdMixFloor) {
+      super(param1AdMixFloor);
+      if (param1AdMixFloor == null)
+        return; 
+      this.ad_type = param1AdMixFloor.ad_type;
+      this.floor_num = param1AdMixFloor.floor_num;
+      this.ad_id = param1AdMixFloor.ad_id;
+      this.advertise_id = param1AdMixFloor.advertise_id;
+    }
+    
+    public AdMixFloor build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AdMixFloor)interceptResult.objValue; 
+      } 
+      return new AdMixFloor(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GuessLikeThreadInfo;
 
 public final class GuessLikeThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FORUM_ID;
   
   public static final String DEFAULT_FORUM_NAME = "";
@@ -21,6 +24,8 @@ public final class GuessLikeThreadInfo extends Message {
   public static final Long DEFAULT_THREAD_ID;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long forum_id;
@@ -64,7 +69,7 @@ public final class GuessLikeThreadInfo extends Message {
   }
   
   public GuessLikeThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.thread_id;
@@ -118,5 +123,60 @@ public final class GuessLikeThreadInfo extends Message {
       this.recom_reason = ((Builder)str).recom_reason;
       this.title = ((Builder)str).title;
     } 
+  }
+  
+  public GuessLikeThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GuessLikeThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public String recom_cover;
+    
+    public String recom_reason;
+    
+    public Long reply_num;
+    
+    public Long thread_id;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(GuessLikeThreadInfo param1GuessLikeThreadInfo) {
+      super(param1GuessLikeThreadInfo);
+      if (param1GuessLikeThreadInfo == null)
+        return; 
+      this.thread_id = param1GuessLikeThreadInfo.thread_id;
+      this.forum_id = param1GuessLikeThreadInfo.forum_id;
+      this.forum_name = param1GuessLikeThreadInfo.forum_name;
+      this.reply_num = param1GuessLikeThreadInfo.reply_num;
+      this.recom_cover = param1GuessLikeThreadInfo.recom_cover;
+      this.recom_reason = param1GuessLikeThreadInfo.recom_reason;
+      this.title = param1GuessLikeThreadInfo.title;
+    }
+    
+    public GuessLikeThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GuessLikeThreadInfo)interceptResult.objValue; 
+      } 
+      return new GuessLikeThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

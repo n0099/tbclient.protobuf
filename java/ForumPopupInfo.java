@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ForumPopupInfo;
 
 public final class ForumPopupInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FORUM_ID;
   
   public static final String DEFAULT_FORUM_NAME = "";
@@ -19,6 +22,8 @@ public final class ForumPopupInfo extends Message {
   public static final Integer DEFAULT_MEM_COUNT_STATIC;
   
   public static final Integer DEFAULT_THREAD_COUNT_STATIC;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer forum_id;
@@ -57,7 +62,7 @@ public final class ForumPopupInfo extends Message {
   }
   
   public ForumPopupInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.forum_id;
@@ -78,7 +83,7 @@ public final class ForumPopupInfo extends Message {
       } else {
         this.thread_count_static = integer;
       } 
-      List list = paramBuilder.forum_names;
+      List<String> list = paramBuilder.forum_names;
       if (list == null) {
         this.forum_names = DEFAULT_FORUM_NAMES;
       } else {
@@ -97,5 +102,54 @@ public final class ForumPopupInfo extends Message {
       this.forum_names = Message.immutableCopyOf(((Builder)str).forum_names);
       this.forum_name = ((Builder)str).forum_name;
     } 
+  }
+  
+  public ForumPopupInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ForumPopupInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer forum_id;
+    
+    public String forum_name;
+    
+    public List<String> forum_names;
+    
+    public Integer mem_count_static;
+    
+    public Integer thread_count_static;
+    
+    public Builder() {}
+    
+    public Builder(ForumPopupInfo param1ForumPopupInfo) {
+      super(param1ForumPopupInfo);
+      if (param1ForumPopupInfo == null)
+        return; 
+      this.forum_id = param1ForumPopupInfo.forum_id;
+      this.mem_count_static = param1ForumPopupInfo.mem_count_static;
+      this.thread_count_static = param1ForumPopupInfo.thread_count_static;
+      this.forum_names = Message.copyOf(param1ForumPopupInfo.forum_names);
+      this.forum_name = param1ForumPopupInfo.forum_name;
+    }
+    
+    public ForumPopupInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumPopupInfo)interceptResult.objValue; 
+      } 
+      return new ForumPopupInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

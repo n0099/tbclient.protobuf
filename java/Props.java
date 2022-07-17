@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Props;
 
 public final class Props extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_END_TIME = "";
   
   public static final String DEFAULT_EXPIRED_NOTIFY = "";
@@ -39,6 +42,8 @@ public final class Props extends Message {
   public static final String DEFAULT_USED_STATUS = "";
   
   public static final List<String> DEFAULT__WORD;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 14, type = Message.Datatype.STRING)
   public final List<String> _word;
@@ -109,8 +114,8 @@ public final class Props extends Message {
   }
   
   public Props(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       Integer integer4 = paramBuilder.props_id;
       if (integer4 == null) {
@@ -190,7 +195,7 @@ public final class Props extends Message {
       } else {
         this.title = str1;
       } 
-      List list1 = paramBuilder._word;
+      List<String> list1 = paramBuilder._word;
       if (list1 == null) {
         this._word = DEFAULT__WORD;
       } else {
@@ -219,5 +224,84 @@ public final class Props extends Message {
       this._word = Message.immutableCopyOf(((Builder)list)._word);
       this.pattern = Message.immutableCopyOf(((Builder)list).pattern);
     } 
+  }
+  
+  public Props(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Props> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<String> _word;
+    
+    public String end_time;
+    
+    public String expired_notify;
+    
+    public String expiring_notify;
+    
+    public Integer left_num;
+    
+    public String notice;
+    
+    public Integer num;
+    
+    public String open_status;
+    
+    public List<String> pattern;
+    
+    public String props_category;
+    
+    public Integer props_id;
+    
+    public String props_type;
+    
+    public String title;
+    
+    public Integer update_time;
+    
+    public String used_status;
+    
+    public Builder() {}
+    
+    public Builder(Props param1Props) {
+      super(param1Props);
+      if (param1Props == null)
+        return; 
+      this.props_id = param1Props.props_id;
+      this.props_type = param1Props.props_type;
+      this.props_category = param1Props.props_category;
+      this.left_num = param1Props.left_num;
+      this.used_status = param1Props.used_status;
+      this.num = param1Props.num;
+      this.end_time = param1Props.end_time;
+      this.notice = param1Props.notice;
+      this.update_time = param1Props.update_time;
+      this.open_status = param1Props.open_status;
+      this.expiring_notify = param1Props.expiring_notify;
+      this.expired_notify = param1Props.expired_notify;
+      this.title = param1Props.title;
+      this._word = Message.copyOf(param1Props._word);
+      this.pattern = Message.copyOf(param1Props.pattern);
+    }
+    
+    public Props build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Props)interceptResult.objValue; 
+      } 
+      return new Props(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

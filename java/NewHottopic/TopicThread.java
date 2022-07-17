@@ -1,4 +1,4 @@
-package NewHottopic;
+package tbclient.NewHottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,11 +10,15 @@ import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
 
 public final class TopicThread extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FEED_ID = Long.valueOf(0L);
   
   public static final Integer DEFAULT_SOURCE;
   
   public static final Integer DEFAULT_USER_AGREE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long feed_id;
@@ -35,7 +39,7 @@ public final class TopicThread extends Message {
   }
   
   public TopicThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.feed_id;
@@ -65,6 +69,10 @@ public final class TopicThread extends Message {
     } 
   }
   
+  public TopicThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class TopicThread extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TopicThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long feed_id;
+    
+    public Integer source;
+    
+    public ThreadInfo thread_info;
+    
+    public Integer user_agree;
+    
+    public Builder() {}
+    
+    public Builder(TopicThread param1TopicThread) {
+      super(param1TopicThread);
+      if (param1TopicThread == null)
+        return; 
+      this.feed_id = param1TopicThread.feed_id;
+      this.thread_info = param1TopicThread.thread_info;
+      this.user_agree = param1TopicThread.user_agree;
+      this.source = param1TopicThread.source;
+    }
+    
+    public TopicThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TopicThread)interceptResult.objValue; 
+      } 
+      return new TopicThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

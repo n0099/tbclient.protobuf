@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,11 +10,15 @@ import com.squareup.wire.ProtoField;
 import tbclient.App;
 
 public final class AdkillerAd extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CAN_CLOSE = Integer.valueOf(0);
   
   public static final String DEFAULT_GAME_URL = "";
   
   public static final String DEFAULT_TAG = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3)
   public final App app;
@@ -29,7 +33,7 @@ public final class AdkillerAd extends Message {
   public final String tag;
   
   public AdkillerAd(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.tag;
@@ -59,6 +63,10 @@ public final class AdkillerAd extends Message {
     } 
   }
   
+  public AdkillerAd(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -73,5 +81,47 @@ public final class AdkillerAd extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AdkillerAd> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public App app;
+    
+    public Integer can_close;
+    
+    public String game_url;
+    
+    public String tag;
+    
+    public Builder() {}
+    
+    public Builder(AdkillerAd param1AdkillerAd) {
+      super(param1AdkillerAd);
+      if (param1AdkillerAd == null)
+        return; 
+      this.tag = param1AdkillerAd.tag;
+      this.game_url = param1AdkillerAd.game_url;
+      this.app = param1AdkillerAd.app;
+      this.can_close = param1AdkillerAd.can_close;
+    }
+    
+    public AdkillerAd build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AdkillerAd)interceptResult.objValue; 
+      } 
+      return new AdkillerAd(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

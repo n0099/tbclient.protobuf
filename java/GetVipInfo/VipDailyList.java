@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetVipInfo.VipThemeItem;
 
 public final class VipDailyList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CARD_ID = "";
   
   public static final String DEFAULT_CLASS_NAME = "";
@@ -21,6 +22,8 @@ public final class VipDailyList extends Message {
   public static final String DEFAULT_CLASS_URL_NAME = "";
   
   public static final List<VipThemeItem> DEFAULT_ITEM = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String card_id;
@@ -38,7 +41,7 @@ public final class VipDailyList extends Message {
   public final List<VipThemeItem> item;
   
   public VipDailyList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.class_name;
@@ -59,7 +62,7 @@ public final class VipDailyList extends Message {
       } else {
         this.class_url = str1;
       } 
-      List list = paramBuilder.item;
+      List<VipThemeItem> list = paramBuilder.item;
       if (list == null) {
         this.item = DEFAULT_ITEM;
       } else {
@@ -80,6 +83,10 @@ public final class VipDailyList extends Message {
     } 
   }
   
+  public VipDailyList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -94,5 +101,50 @@ public final class VipDailyList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<VipDailyList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String card_id;
+    
+    public String class_name;
+    
+    public String class_url;
+    
+    public String class_url_name;
+    
+    public List<VipThemeItem> item;
+    
+    public Builder() {}
+    
+    public Builder(VipDailyList param1VipDailyList) {
+      super(param1VipDailyList);
+      if (param1VipDailyList == null)
+        return; 
+      this.class_name = param1VipDailyList.class_name;
+      this.class_url_name = param1VipDailyList.class_url_name;
+      this.class_url = param1VipDailyList.class_url;
+      this.item = Message.copyOf(param1VipDailyList.item);
+      this.card_id = param1VipDailyList.card_id;
+    }
+    
+    public VipDailyList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipDailyList)interceptResult.objValue; 
+      } 
+      return new VipDailyList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

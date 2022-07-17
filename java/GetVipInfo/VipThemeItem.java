@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipThemeItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESC = "";
   
   public static final Integer DEFAULT_ID;
@@ -30,6 +32,8 @@ public final class VipThemeItem extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_UPDATE_TIME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String desc;
@@ -86,7 +90,7 @@ public final class VipThemeItem extends Message {
   }
   
   public VipThemeItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.img_url;
@@ -168,5 +172,72 @@ public final class VipThemeItem extends Message {
       this.type = ((Builder)integer).type;
       this.id = ((Builder)integer).id;
     } 
+  }
+  
+  public VipThemeItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VipThemeItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String desc;
+    
+    public Integer id;
+    
+    public String img_url;
+    
+    public String link;
+    
+    public Integer props_category;
+    
+    public String props_category_name;
+    
+    public Integer props_id;
+    
+    public String tag_img_url;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public String update_time;
+    
+    public Builder() {}
+    
+    public Builder(VipThemeItem param1VipThemeItem) {
+      super(param1VipThemeItem);
+      if (param1VipThemeItem == null)
+        return; 
+      this.img_url = param1VipThemeItem.img_url;
+      this.title = param1VipThemeItem.title;
+      this.props_id = param1VipThemeItem.props_id;
+      this.props_category = param1VipThemeItem.props_category;
+      this.props_category_name = param1VipThemeItem.props_category_name;
+      this.desc = param1VipThemeItem.desc;
+      this.link = param1VipThemeItem.link;
+      this.tag_img_url = param1VipThemeItem.tag_img_url;
+      this.update_time = param1VipThemeItem.update_time;
+      this.type = param1VipThemeItem.type;
+      this.id = param1VipThemeItem.id;
+    }
+    
+    public VipThemeItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipThemeItem)interceptResult.objValue; 
+      } 
+      return new VipThemeItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

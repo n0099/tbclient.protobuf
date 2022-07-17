@@ -1,4 +1,4 @@
-package HistorySwan;
+package tbclient.HistorySwan;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,14 +12,18 @@ import java.util.List;
 import tbclient.SmartApp;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<SmartApp> DEFAULT_SWAN_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<SmartApp> swan_list;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<SmartApp> list;
     if (paramBoolean == true) {
       list = paramBuilder.swan_list;
       if (list == null) {
@@ -30,6 +34,10 @@ public final class DataRes extends Message {
     } else {
       this.swan_list = Message.immutableCopyOf(((Builder)list).swan_list);
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -46,5 +54,38 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<SmartApp> swan_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.swan_list = Message.copyOf(param1DataRes.swan_list);
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.OrderList;
 
 public final class OrderList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_DESC = "";
   
   public static final String DEFAULT_ACTIVITY_URL = "";
@@ -37,6 +40,8 @@ public final class OrderList extends Message {
   public static final Integer DEFAULT_STATUS;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 15, type = Message.Datatype.STRING)
   public final String activity_desc;
@@ -112,7 +117,7 @@ public final class OrderList extends Message {
   }
   
   public OrderList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Double double_;
     if (paramBoolean == true) {
       String str3 = paramBuilder.order_id;
@@ -222,5 +227,84 @@ public final class OrderList extends Message {
       this.order_yy_amount = ((Builder)double_).order_yy_amount;
       this.order_amount = ((Builder)double_).order_amount;
     } 
+  }
+  
+  public OrderList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<OrderList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_desc;
+    
+    public String activity_url;
+    
+    public String button_name;
+    
+    public Long create_time;
+    
+    public Long finish_time;
+    
+    public Long money;
+    
+    public Double order_amount;
+    
+    public String order_id;
+    
+    public Double order_yy_amount;
+    
+    public String preg_field;
+    
+    public Integer price_type;
+    
+    public Integer scene_id;
+    
+    public Long scores;
+    
+    public Integer status;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(OrderList param1OrderList) {
+      super(param1OrderList);
+      if (param1OrderList == null)
+        return; 
+      this.order_id = param1OrderList.order_id;
+      this.status = param1OrderList.status;
+      this.create_time = param1OrderList.create_time;
+      this.finish_time = param1OrderList.finish_time;
+      this.title = param1OrderList.title;
+      this.activity_desc = param1OrderList.activity_desc;
+      this.activity_url = param1OrderList.activity_url;
+      this.button_name = param1OrderList.button_name;
+      this.scene_id = param1OrderList.scene_id;
+      this.money = param1OrderList.money;
+      this.scores = param1OrderList.scores;
+      this.preg_field = param1OrderList.preg_field;
+      this.price_type = param1OrderList.price_type;
+      this.order_yy_amount = param1OrderList.order_yy_amount;
+      this.order_amount = param1OrderList.order_amount;
+    }
+    
+    public OrderList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (OrderList)interceptResult.objValue; 
+      } 
+      return new OrderList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

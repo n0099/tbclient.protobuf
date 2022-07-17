@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ChannelVideoInfo;
 
 public final class ChannelVideoInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CREATE_TIME;
   
   public static final Integer DEFAULT_FORUM_ID;
@@ -39,6 +42,8 @@ public final class ChannelVideoInfo extends Message {
   public static final String DEFAULT_VIDEO_URL = "";
   
   public static final Integer DEFAULT_VIDEO_WIDTH;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 16, type = Message.Datatype.UINT32)
   public final Integer create_time;
@@ -119,7 +124,7 @@ public final class ChannelVideoInfo extends Message {
   }
   
   public ChannelVideoInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.thread_id;
@@ -236,5 +241,87 @@ public final class ChannelVideoInfo extends Message {
       this.is_top = ((Builder)integer).is_top;
       this.create_time = ((Builder)integer).create_time;
     } 
+  }
+  
+  public ChannelVideoInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ChannelVideoInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer create_time;
+    
+    public Integer forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_top;
+    
+    public Integer play_count;
+    
+    public Long thread_id;
+    
+    public Integer thumbnail_height;
+    
+    public String thumbnail_url;
+    
+    public Integer thumbnail_width;
+    
+    public String title;
+    
+    public Integer video_duration;
+    
+    public Integer video_height;
+    
+    public Integer video_length;
+    
+    public Long video_type;
+    
+    public String video_url;
+    
+    public Integer video_width;
+    
+    public Builder() {}
+    
+    public Builder(ChannelVideoInfo param1ChannelVideoInfo) {
+      super(param1ChannelVideoInfo);
+      if (param1ChannelVideoInfo == null)
+        return; 
+      this.thread_id = param1ChannelVideoInfo.thread_id;
+      this.forum_id = param1ChannelVideoInfo.forum_id;
+      this.forum_name = param1ChannelVideoInfo.forum_name;
+      this.title = param1ChannelVideoInfo.title;
+      this.play_count = param1ChannelVideoInfo.play_count;
+      this.video_url = param1ChannelVideoInfo.video_url;
+      this.video_duration = param1ChannelVideoInfo.video_duration;
+      this.video_width = param1ChannelVideoInfo.video_width;
+      this.video_height = param1ChannelVideoInfo.video_height;
+      this.video_length = param1ChannelVideoInfo.video_length;
+      this.video_type = param1ChannelVideoInfo.video_type;
+      this.thumbnail_url = param1ChannelVideoInfo.thumbnail_url;
+      this.thumbnail_width = param1ChannelVideoInfo.thumbnail_width;
+      this.thumbnail_height = param1ChannelVideoInfo.thumbnail_height;
+      this.is_top = param1ChannelVideoInfo.is_top;
+      this.create_time = param1ChannelVideoInfo.create_time;
+    }
+    
+    public ChannelVideoInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ChannelVideoInfo)interceptResult.objValue; 
+      } 
+      return new ChannelVideoInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

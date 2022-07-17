@@ -1,4 +1,4 @@
-package GetGameDetailNew;
+package tbclient.GetGameDetailNew;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CodeInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CODE_STATUS;
   
   public static final Integer DEFAULT_CODE_TYPE;
@@ -20,6 +22,8 @@ public final class CodeInfo extends Message {
   public static final Integer DEFAULT_KAIFU_ID;
   
   public static final Integer DEFAULT_USER_STATUS;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer code_status;
@@ -61,7 +65,7 @@ public final class CodeInfo extends Message {
   }
   
   public CodeInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.user_status;
@@ -108,5 +112,57 @@ public final class CodeInfo extends Message {
       this.gift_code = ((Builder)str).gift_code;
       this.game_code = ((Builder)str).game_code;
     } 
+  }
+  
+  public CodeInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<CodeInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer code_status;
+    
+    public Integer code_type;
+    
+    public String game_code;
+    
+    public String gift_code;
+    
+    public Integer kaifu_id;
+    
+    public Integer user_status;
+    
+    public Builder() {}
+    
+    public Builder(CodeInfo param1CodeInfo) {
+      super(param1CodeInfo);
+      if (param1CodeInfo == null)
+        return; 
+      this.user_status = param1CodeInfo.user_status;
+      this.code_status = param1CodeInfo.code_status;
+      this.kaifu_id = param1CodeInfo.kaifu_id;
+      this.code_type = param1CodeInfo.code_type;
+      this.gift_code = param1CodeInfo.gift_code;
+      this.game_code = param1CodeInfo.game_code;
+    }
+    
+    public CodeInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CodeInfo)interceptResult.objValue; 
+      } 
+      return new CodeInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

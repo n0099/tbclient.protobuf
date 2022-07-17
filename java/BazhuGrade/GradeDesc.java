@@ -1,4 +1,4 @@
-package BazhuGrade;
+package tbclient.BazhuGrade;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,14 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BazhuGrade.GradeRight;
 
 public final class GradeDesc extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_GRADE = "";
   
   public static final Integer DEFAULT_POINT = Integer.valueOf(0);
   
   public static final List<GradeRight> DEFAULT_RIGHTS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String grade;
@@ -28,8 +31,8 @@ public final class GradeDesc extends Message {
   public final List<GradeRight> rights;
   
   public GradeDesc(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<GradeRight> list;
     if (paramBoolean == true) {
       String str = paramBuilder.grade;
       if (str == null) {
@@ -56,6 +59,10 @@ public final class GradeDesc extends Message {
     } 
   }
   
+  public GradeDesc(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +77,44 @@ public final class GradeDesc extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GradeDesc> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String grade;
+    
+    public Integer point;
+    
+    public List<GradeRight> rights;
+    
+    public Builder() {}
+    
+    public Builder(GradeDesc param1GradeDesc) {
+      super(param1GradeDesc);
+      if (param1GradeDesc == null)
+        return; 
+      this.grade = param1GradeDesc.grade;
+      this.point = param1GradeDesc.point;
+      this.rights = Message.copyOf(param1GradeDesc.rights);
+    }
+    
+    public GradeDesc build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GradeDesc)interceptResult.objValue; 
+      } 
+      return new GradeDesc(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

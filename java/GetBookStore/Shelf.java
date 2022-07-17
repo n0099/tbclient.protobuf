@@ -1,4 +1,4 @@
-package GetBookStore;
+package tbclient.GetBookStore;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Shelf extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_CARTOON_ID;
   
   public static final String DEFAULT_CARTOON_NAME = "";
@@ -22,6 +24,8 @@ public final class Shelf extends Message {
   public static final Integer DEFAULT_TOTAL_CHAPTER;
   
   public static final Long DEFAULT_UPDATE_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long cartoon_id;
@@ -68,7 +72,7 @@ public final class Shelf extends Message {
   }
   
   public Shelf(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_1 = paramBuilder.forum_id;
@@ -122,5 +126,60 @@ public final class Shelf extends Message {
       this.cover_img = ((Builder)long_).cover_img;
       this.update_time = ((Builder)long_).update_time;
     } 
+  }
+  
+  public Shelf(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Shelf> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long cartoon_id;
+    
+    public String cartoon_name;
+    
+    public String cover_img;
+    
+    public Integer first_chapter_id;
+    
+    public Long forum_id;
+    
+    public Integer total_chapter;
+    
+    public Long update_time;
+    
+    public Builder() {}
+    
+    public Builder(Shelf param1Shelf) {
+      super(param1Shelf);
+      if (param1Shelf == null)
+        return; 
+      this.forum_id = param1Shelf.forum_id;
+      this.cartoon_id = param1Shelf.cartoon_id;
+      this.cartoon_name = param1Shelf.cartoon_name;
+      this.total_chapter = param1Shelf.total_chapter;
+      this.first_chapter_id = param1Shelf.first_chapter_id;
+      this.cover_img = param1Shelf.cover_img;
+      this.update_time = param1Shelf.update_time;
+    }
+    
+    public Shelf build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Shelf)interceptResult.objValue; 
+      } 
+      return new Shelf(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,12 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.AdCloseInfo;
-import tbclient.GoodsInfo;
-import tbclient.ThreadPicList;
-import tbclient.VideoInfo;
 
 public final class GoodsInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_SOURCE = "";
   
   public static final String DEFAULT_BRAND_ICON = "";
@@ -66,6 +66,8 @@ public final class GoodsInfo extends Message {
   public static final String DEFAULT_USER_PORTRAIT = "";
   
   public static final Integer DEFAULT_WIDTH;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 24, type = Message.Datatype.STRING)
   public final String ad_source;
@@ -180,7 +182,7 @@ public final class GoodsInfo extends Message {
   }
   
   public GoodsInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Integer integer5 = paramBuilder.id;
       if (integer5 == null) {
@@ -224,7 +226,7 @@ public final class GoodsInfo extends Message {
       } else {
         this.goods_style = integer4;
       } 
-      List list = paramBuilder.thread_pic_list;
+      List<ThreadPicList> list = paramBuilder.thread_pic_list;
       if (list == null) {
         this.thread_pic_list = DEFAULT_THREAD_PIC_LIST;
       } else {
@@ -377,5 +379,126 @@ public final class GoodsInfo extends Message {
       this.brand_icon_wh = paramBuilder.brand_icon_wh;
       this.close_info = paramBuilder.close_info;
     } 
+  }
+  
+  public GoodsInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GoodsInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_source;
+    
+    public String brand_icon;
+    
+    public String brand_icon_wh;
+    
+    public String button_text;
+    
+    public String button_url;
+    
+    public String card_desc;
+    
+    public String card_tag;
+    
+    public AdCloseInfo close_info;
+    
+    public Integer goods_style;
+    
+    public Integer height;
+    
+    public Integer id;
+    
+    public Integer label_measure;
+    
+    public String label_text;
+    
+    public Integer label_visible;
+    
+    public String lego_card;
+    
+    public String pop_window_text;
+    
+    public Integer rank_level;
+    
+    public String tag_name;
+    
+    public String tag_name_url;
+    
+    public String tag_name_wh;
+    
+    public String thread_content;
+    
+    public String thread_pic;
+    
+    public List<ThreadPicList> thread_pic_list;
+    
+    public String thread_title;
+    
+    public String thread_type;
+    
+    public String user_name;
+    
+    public String user_portrait;
+    
+    public VideoInfo video_info;
+    
+    public Integer width;
+    
+    public Builder() {}
+    
+    public Builder(GoodsInfo param1GoodsInfo) {
+      super(param1GoodsInfo);
+      if (param1GoodsInfo == null)
+        return; 
+      this.id = param1GoodsInfo.id;
+      this.user_name = param1GoodsInfo.user_name;
+      this.user_portrait = param1GoodsInfo.user_portrait;
+      this.thread_title = param1GoodsInfo.thread_title;
+      this.thread_pic = param1GoodsInfo.thread_pic;
+      this.pop_window_text = param1GoodsInfo.pop_window_text;
+      this.goods_style = param1GoodsInfo.goods_style;
+      this.thread_pic_list = Message.copyOf(param1GoodsInfo.thread_pic_list);
+      this.label_visible = param1GoodsInfo.label_visible;
+      this.label_text = param1GoodsInfo.label_text;
+      this.rank_level = param1GoodsInfo.rank_level;
+      this.thread_type = param1GoodsInfo.thread_type;
+      this.button_text = param1GoodsInfo.button_text;
+      this.card_desc = param1GoodsInfo.card_desc;
+      this.card_tag = param1GoodsInfo.card_tag;
+      this.width = param1GoodsInfo.width;
+      this.height = param1GoodsInfo.height;
+      this.label_measure = param1GoodsInfo.label_measure;
+      this.thread_content = param1GoodsInfo.thread_content;
+      this.lego_card = param1GoodsInfo.lego_card;
+      this.video_info = param1GoodsInfo.video_info;
+      this.tag_name = param1GoodsInfo.tag_name;
+      this.button_url = param1GoodsInfo.button_url;
+      this.ad_source = param1GoodsInfo.ad_source;
+      this.tag_name_url = param1GoodsInfo.tag_name_url;
+      this.tag_name_wh = param1GoodsInfo.tag_name_wh;
+      this.brand_icon = param1GoodsInfo.brand_icon;
+      this.brand_icon_wh = param1GoodsInfo.brand_icon_wh;
+      this.close_info = param1GoodsInfo.close_info;
+    }
+    
+    public GoodsInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GoodsInfo)interceptResult.objValue; 
+      } 
+      return new GoodsInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

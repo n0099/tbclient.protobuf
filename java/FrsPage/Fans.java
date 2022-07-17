@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Fans extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_GET;
   
   public static final Integer DEFAULT_LEFT_TIME;
@@ -18,6 +20,8 @@ public final class Fans extends Message {
   public static final Integer DEFAULT_OPEN;
   
   public static final Integer DEFAULT_START_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer is_get;
@@ -57,7 +61,7 @@ public final class Fans extends Message {
   }
   
   public Fans(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.start_time;
@@ -97,5 +101,54 @@ public final class Fans extends Message {
       this.is_get = ((Builder)integer).is_get;
       this.num = ((Builder)integer).num;
     } 
+  }
+  
+  public Fans(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Fans> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_get;
+    
+    public Integer left_time;
+    
+    public Integer num;
+    
+    public Integer open;
+    
+    public Integer start_time;
+    
+    public Builder() {}
+    
+    public Builder(Fans param1Fans) {
+      super(param1Fans);
+      if (param1Fans == null)
+        return; 
+      this.start_time = param1Fans.start_time;
+      this.left_time = param1Fans.left_time;
+      this.open = param1Fans.open;
+      this.is_get = param1Fans.is_get;
+      this.num = param1Fans.num;
+    }
+    
+    public Fans build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Fans)interceptResult.objValue; 
+      } 
+      return new Fans(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

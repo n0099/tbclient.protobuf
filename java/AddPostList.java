@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.AddPostList;
-import tbclient.SubPostList;
 
 public final class AddPostList extends Message {
+  public static Interceptable $ic;
+  
   public static final List<SubPostList> DEFAULT_ADD_POST_LIST;
   
   public static final Long DEFAULT_PID = Long.valueOf(0L);
@@ -18,6 +20,8 @@ public final class AddPostList extends Message {
   public static final Integer DEFAULT_TOTAL_COUNT;
   
   public static final Integer DEFAULT_TOTAL_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 4)
   public final List<SubPostList> add_post_list;
@@ -39,8 +43,8 @@ public final class AddPostList extends Message {
   }
   
   public AddPostList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<SubPostList> list;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.pid;
       if (long_ == null) {
@@ -74,6 +78,10 @@ public final class AddPostList extends Message {
     } 
   }
   
+  public AddPostList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -88,5 +96,47 @@ public final class AddPostList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AddPostList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<SubPostList> add_post_list;
+    
+    public Long pid;
+    
+    public Integer total_count;
+    
+    public Integer total_num;
+    
+    public Builder() {}
+    
+    public Builder(AddPostList param1AddPostList) {
+      super(param1AddPostList);
+      if (param1AddPostList == null)
+        return; 
+      this.pid = param1AddPostList.pid;
+      this.total_num = param1AddPostList.total_num;
+      this.total_count = param1AddPostList.total_count;
+      this.add_post_list = Message.copyOf(param1AddPostList.add_post_list);
+    }
+    
+    public AddPostList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AddPostList)interceptResult.objValue; 
+      } 
+      return new AddPostList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

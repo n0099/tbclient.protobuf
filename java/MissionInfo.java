@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.MissionInfo;
 
 public final class MissionInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTIVITYID;
   
   public static final Integer DEFAULT_BROWSETIME;
@@ -25,6 +28,8 @@ public final class MissionInfo extends Message {
   public static final Integer DEFAULT_THREADNUM;
   
   public static final Integer DEFAULT_TOTAL_LIMIT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.INT32)
   public final Integer activityid;
@@ -79,7 +84,7 @@ public final class MissionInfo extends Message {
   }
   
   public MissionInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.missionid;
@@ -147,5 +152,66 @@ public final class MissionInfo extends Message {
       this.cleartype = ((Builder)integer).cleartype;
       this.cleartime = ((Builder)integer).cleartime;
     } 
+  }
+  
+  public MissionInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<MissionInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer activityid;
+    
+    public Integer browsetime;
+    
+    public String browsetimepage;
+    
+    public Integer cleartime;
+    
+    public Integer cleartype;
+    
+    public Integer missionid;
+    
+    public Integer tasktype;
+    
+    public Integer threadnum;
+    
+    public Integer total_limit;
+    
+    public Builder() {}
+    
+    public Builder(MissionInfo param1MissionInfo) {
+      super(param1MissionInfo);
+      if (param1MissionInfo == null)
+        return; 
+      this.missionid = param1MissionInfo.missionid;
+      this.total_limit = param1MissionInfo.total_limit;
+      this.browsetime = param1MissionInfo.browsetime;
+      this.tasktype = param1MissionInfo.tasktype;
+      this.threadnum = param1MissionInfo.threadnum;
+      this.browsetimepage = param1MissionInfo.browsetimepage;
+      this.activityid = param1MissionInfo.activityid;
+      this.cleartype = param1MissionInfo.cleartype;
+      this.cleartime = param1MissionInfo.cleartime;
+    }
+    
+    public MissionInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MissionInfo)interceptResult.objValue; 
+      } 
+      return new MissionInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

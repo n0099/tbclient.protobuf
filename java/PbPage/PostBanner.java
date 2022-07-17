@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PostBanner extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BANNER_NAME = "";
   
   public static final String DEFAULT_BANNER_PIC = "";
@@ -20,6 +22,8 @@ public final class PostBanner extends Message {
   public static final Integer DEFAULT_CLIENT_TYPE;
   
   public static final Integer DEFAULT_LINK_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String banner_name;
@@ -60,7 +64,7 @@ public final class PostBanner extends Message {
   }
   
   public PostBanner(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.banner_pic;
@@ -107,5 +111,57 @@ public final class PostBanner extends Message {
       this.banner_url = ((Builder)integer).banner_url;
       this.client_type = ((Builder)integer).client_type;
     } 
+  }
+  
+  public PostBanner(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PostBanner> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String banner_name;
+    
+    public String banner_pic;
+    
+    public Integer banner_position;
+    
+    public String banner_url;
+    
+    public Integer client_type;
+    
+    public Integer link_type;
+    
+    public Builder() {}
+    
+    public Builder(PostBanner param1PostBanner) {
+      super(param1PostBanner);
+      if (param1PostBanner == null)
+        return; 
+      this.banner_pic = param1PostBanner.banner_pic;
+      this.banner_name = param1PostBanner.banner_name;
+      this.banner_position = param1PostBanner.banner_position;
+      this.link_type = param1PostBanner.link_type;
+      this.banner_url = param1PostBanner.banner_url;
+      this.client_type = param1PostBanner.client_type;
+    }
+    
+    public PostBanner build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PostBanner)interceptResult.objValue; 
+      } 
+      return new PostBanner(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

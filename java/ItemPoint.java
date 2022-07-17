@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ItemPoint;
 
 public final class ItemPoint extends Message {
+  public static Interceptable $ic;
+  
   public static final Double DEFAULT_POINT = Double.valueOf(0.0D);
   
   public static final String DEFAULT_TIME_INTVAL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.DOUBLE)
   public final Double point;
@@ -19,7 +24,7 @@ public final class ItemPoint extends Message {
   public final String time_intval;
   
   public ItemPoint(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Double double_;
     if (paramBoolean == true) {
       String str = paramBuilder.time_intval;
@@ -40,6 +45,10 @@ public final class ItemPoint extends Message {
     } 
   }
   
+  public ItemPoint(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class ItemPoint extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ItemPoint> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Double point;
+    
+    public String time_intval;
+    
+    public Builder() {}
+    
+    public Builder(ItemPoint param1ItemPoint) {
+      super(param1ItemPoint);
+      if (param1ItemPoint == null)
+        return; 
+      this.time_intval = param1ItemPoint.time_intval;
+      this.point = param1ItemPoint.point;
+    }
+    
+    public ItemPoint build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ItemPoint)interceptResult.objValue; 
+      } 
+      return new ItemPoint(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

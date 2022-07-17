@@ -1,4 +1,4 @@
-package Person;
+package tbclient.Person;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class LbsInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DISTANCE = "";
   
   public static final Integer DEFAULT_IS_HIDE;
   
   public static final Long DEFAULT_TIME = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String distance;
@@ -29,7 +33,7 @@ public final class LbsInfo extends Message {
   }
   
   public LbsInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.distance;
@@ -57,6 +61,10 @@ public final class LbsInfo extends Message {
     } 
   }
   
+  public LbsInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -71,5 +79,44 @@ public final class LbsInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<LbsInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String distance;
+    
+    public Integer is_hide;
+    
+    public Long time;
+    
+    public Builder() {}
+    
+    public Builder(LbsInfo param1LbsInfo) {
+      super(param1LbsInfo);
+      if (param1LbsInfo == null)
+        return; 
+      this.distance = param1LbsInfo.distance;
+      this.time = param1LbsInfo.time;
+      this.is_hide = param1LbsInfo.is_hide;
+    }
+    
+    public LbsInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LbsInfo)interceptResult.objValue; 
+      } 
+      return new LbsInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

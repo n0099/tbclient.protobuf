@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.RedpacketRain;
 
 public final class RedpacketRain extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_ID = "";
   
   public static final List<String> DEFAULT_DYNAMIC_IMG;
@@ -23,6 +26,8 @@ public final class RedpacketRain extends Message {
   public static final Integer DEFAULT_SHOW_TYPE;
   
   public static final Long DEFAULT_START_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String activity_id;
@@ -67,7 +72,7 @@ public final class RedpacketRain extends Message {
   }
   
   public RedpacketRain(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.start_time;
@@ -94,7 +99,7 @@ public final class RedpacketRain extends Message {
       } else {
         this.float_url = str2;
       } 
-      List list = paramBuilder.dynamic_img;
+      List<String> list = paramBuilder.dynamic_img;
       if (list == null) {
         this.dynamic_img = DEFAULT_DYNAMIC_IMG;
       } else {
@@ -121,5 +126,60 @@ public final class RedpacketRain extends Message {
       this.activity_id = ((Builder)integer).activity_id;
       this.show_type = ((Builder)integer).show_type;
     } 
+  }
+  
+  public RedpacketRain(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RedpacketRain> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_id;
+    
+    public List<String> dynamic_img;
+    
+    public Long end_time;
+    
+    public String float_url;
+    
+    public String jump_url;
+    
+    public Integer show_type;
+    
+    public Long start_time;
+    
+    public Builder() {}
+    
+    public Builder(RedpacketRain param1RedpacketRain) {
+      super(param1RedpacketRain);
+      if (param1RedpacketRain == null)
+        return; 
+      this.start_time = param1RedpacketRain.start_time;
+      this.end_time = param1RedpacketRain.end_time;
+      this.jump_url = param1RedpacketRain.jump_url;
+      this.float_url = param1RedpacketRain.float_url;
+      this.dynamic_img = Message.copyOf(param1RedpacketRain.dynamic_img);
+      this.activity_id = param1RedpacketRain.activity_id;
+      this.show_type = param1RedpacketRain.show_type;
+    }
+    
+    public RedpacketRain build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RedpacketRain)interceptResult.objValue; 
+      } 
+      return new RedpacketRain(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

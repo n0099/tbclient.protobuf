@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,9 +10,10 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-import tbclient.FrsPage.AdParam;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_BEAR_CONTEXT = "";
   
   public static final String DEFAULT_AD_BEAR_SID = "";
@@ -140,6 +141,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_YUELAOU_LOCATE = "";
   
   public static final String DEFAULT_YUELAOU_PARAMS = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 65, type = Message.Datatype.STRING)
   public final String ad_bear_context;
@@ -406,7 +409,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Double double_;
     if (paramBoolean == true) {
       String str15 = paramBuilder.kw;
@@ -867,5 +870,243 @@ public final class DataReq extends Message {
       this.ad_bear_sid = ((Builder)double_).ad_bear_sid;
       this.ad_bear_sid_price = ((Builder)double_).ad_bear_sid_price;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_bear_context;
+    
+    public String ad_bear_sid;
+    
+    public Double ad_bear_sid_price;
+    
+    public String ad_context_list;
+    
+    public String ad_ext_params;
+    
+    public AdParam ad_param;
+    
+    public AppPosInfo app_pos;
+    
+    public AppTransmitData app_transmit_data;
+    
+    public Integer call_from;
+    
+    public String call_url;
+    
+    public Integer category_id;
+    
+    public Boolean check_login;
+    
+    public Integer cid;
+    
+    public Integer class_id;
+    
+    public CommonReq common;
+    
+    public String cookie;
+    
+    public Integer ctime;
+    
+    public String da_idfa;
+    
+    public Integer data_size;
+    
+    public Boolean debug;
+    
+    public Integer default_sort_type;
+    
+    public String email;
+    
+    public String forum_name;
+    
+    public Integer frs_rn;
+    
+    public Integer has_ad_bear;
+    
+    public Long hot_thread_id;
+    
+    public Integer ip_int;
+    
+    public String ip_str;
+    
+    public Integer is_default_navtab;
+    
+    public Integer is_good;
+    
+    public Integer is_selection;
+    
+    public Integer issdk;
+    
+    public String kw;
+    
+    public Long last_click_tid;
+    
+    public String lastids;
+    
+    public Integer load_type;
+    
+    public Boolean login;
+    
+    public String mobile;
+    
+    public String module_name;
+    
+    public Integer need_badge;
+    
+    public Integer net_error;
+    
+    public Integer no_un;
+    
+    public Integer noval;
+    
+    public String obj_locate;
+    
+    public String obj_source;
+    
+    public String platform;
+    
+    public Integer pn;
+    
+    public String portrait;
+    
+    public Integer q_type;
+    
+    public Integer result_num;
+    
+    public Integer rn;
+    
+    public Integer rn_need;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public String shoubai_cuid;
+    
+    public Integer smile_grade;
+    
+    public Integer sort_type;
+    
+    public Integer st_param;
+    
+    public String st_type;
+    
+    public Boolean support_noun;
+    
+    public String up_schema;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Integer with_group;
+    
+    public Integer withcal;
+    
+    public String yuelaou_locate;
+    
+    public String yuelaou_params;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.kw = param1DataReq.kw;
+      this.rn = param1DataReq.rn;
+      this.rn_need = param1DataReq.rn_need;
+      this.is_good = param1DataReq.is_good;
+      this.cid = param1DataReq.cid;
+      this.withcal = param1DataReq.withcal;
+      this.noval = param1DataReq.noval;
+      this.with_group = param1DataReq.with_group;
+      this.need_badge = param1DataReq.need_badge;
+      this.frs_rn = param1DataReq.frs_rn;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.q_type = param1DataReq.q_type;
+      this.pn = param1DataReq.pn;
+      this.st_type = param1DataReq.st_type;
+      this.ctime = param1DataReq.ctime;
+      this.data_size = param1DataReq.data_size;
+      this.net_error = param1DataReq.net_error;
+      this.check_login = param1DataReq.check_login;
+      this.forum_name = param1DataReq.forum_name;
+      this.result_num = param1DataReq.result_num;
+      this.class_id = param1DataReq.class_id;
+      this.ip_str = param1DataReq.ip_str;
+      this.ip_int = param1DataReq.ip_int;
+      this.module_name = param1DataReq.module_name;
+      this.st_param = param1DataReq.st_param;
+      this.smile_grade = param1DataReq.smile_grade;
+      this.support_noun = param1DataReq.support_noun;
+      this.login = param1DataReq.login;
+      this.user_id = param1DataReq.user_id;
+      this.user_name = param1DataReq.user_name;
+      this.no_un = param1DataReq.no_un;
+      this.portrait = param1DataReq.portrait;
+      this.mobile = param1DataReq.mobile;
+      this.email = param1DataReq.email;
+      this.debug = param1DataReq.debug;
+      this.cookie = param1DataReq.cookie;
+      this.common = param1DataReq.common;
+      this.lastids = param1DataReq.lastids;
+      this.issdk = param1DataReq.issdk;
+      this.da_idfa = param1DataReq.da_idfa;
+      this.platform = param1DataReq.platform;
+      this.category_id = param1DataReq.category_id;
+      this.yuelaou_locate = param1DataReq.yuelaou_locate;
+      this.yuelaou_params = param1DataReq.yuelaou_params;
+      this.sort_type = param1DataReq.sort_type;
+      this.last_click_tid = param1DataReq.last_click_tid;
+      this.load_type = param1DataReq.load_type;
+      this.app_pos = param1DataReq.app_pos;
+      this.ad_param = param1DataReq.ad_param;
+      this.obj_locate = param1DataReq.obj_locate;
+      this.obj_source = param1DataReq.obj_source;
+      this.call_url = param1DataReq.call_url;
+      this.is_selection = param1DataReq.is_selection;
+      this.call_from = param1DataReq.call_from;
+      this.shoubai_cuid = param1DataReq.shoubai_cuid;
+      this.hot_thread_id = param1DataReq.hot_thread_id;
+      this.is_default_navtab = param1DataReq.is_default_navtab;
+      this.ad_context_list = param1DataReq.ad_context_list;
+      this.up_schema = param1DataReq.up_schema;
+      this.ad_ext_params = param1DataReq.ad_ext_params;
+      this.default_sort_type = param1DataReq.default_sort_type;
+      this.app_transmit_data = param1DataReq.app_transmit_data;
+      this.ad_bear_context = param1DataReq.ad_bear_context;
+      this.has_ad_bear = param1DataReq.has_ad_bear;
+      this.ad_bear_sid = param1DataReq.ad_bear_sid;
+      this.ad_bear_sid_price = param1DataReq.ad_bear_sid_price;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

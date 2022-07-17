@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ForcusUsers;
 
 public final class ForcusUsers extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Long DEFAULT_THREAD_ID;
@@ -15,6 +18,8 @@ public final class ForcusUsers extends Message {
   public static final Long DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String portrait;
@@ -48,7 +53,7 @@ public final class ForcusUsers extends Message {
   }
   
   public ForcusUsers(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.thread_id;
@@ -81,5 +86,51 @@ public final class ForcusUsers extends Message {
       this.user_id = ((Builder)str).user_id;
       this.portrait = ((Builder)str).portrait;
     } 
+  }
+  
+  public ForcusUsers(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ForcusUsers> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String portrait;
+    
+    public Long thread_id;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(ForcusUsers param1ForcusUsers) {
+      super(param1ForcusUsers);
+      if (param1ForcusUsers == null)
+        return; 
+      this.thread_id = param1ForcusUsers.thread_id;
+      this.user_name = param1ForcusUsers.user_name;
+      this.user_id = param1ForcusUsers.user_id;
+      this.portrait = param1ForcusUsers.portrait;
+    }
+    
+    public ForcusUsers build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForcusUsers)interceptResult.objValue; 
+      } 
+      return new ForcusUsers(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

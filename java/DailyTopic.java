@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.DailyTopic;
 
 public final class DailyTopic extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_TOPIC_ABSTRACT = "";
   
   public static final String DEFAULT_TOPIC_PIC = "";
@@ -14,6 +18,8 @@ public final class DailyTopic extends Message {
   public static final String DEFAULT_TOPIC_TITLE = "";
   
   public static final String DEFAULT_TOPIC_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String topic_abstract;
@@ -31,7 +37,7 @@ public final class DailyTopic extends Message {
   public final String topic_url;
   
   public DailyTopic(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.topic_title;
@@ -71,5 +77,54 @@ public final class DailyTopic extends Message {
       this.topic_url = ((Builder)str).topic_url;
       this.topic_rank_url = ((Builder)str).topic_rank_url;
     } 
+  }
+  
+  public DailyTopic(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DailyTopic> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String topic_abstract;
+    
+    public String topic_pic;
+    
+    public String topic_rank_url;
+    
+    public String topic_title;
+    
+    public String topic_url;
+    
+    public Builder() {}
+    
+    public Builder(DailyTopic param1DailyTopic) {
+      super(param1DailyTopic);
+      if (param1DailyTopic == null)
+        return; 
+      this.topic_title = param1DailyTopic.topic_title;
+      this.topic_abstract = param1DailyTopic.topic_abstract;
+      this.topic_pic = param1DailyTopic.topic_pic;
+      this.topic_url = param1DailyTopic.topic_url;
+      this.topic_rank_url = param1DailyTopic.topic_rank_url;
+    }
+    
+    public DailyTopic build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DailyTopic)interceptResult.objValue; 
+      } 
+      return new DailyTopic(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

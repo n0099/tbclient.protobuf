@@ -1,21 +1,62 @@
-package GetBgByCategory;
+package tbclient.GetBgByCategory;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GetBgByCategory.DataReq;
 
 public final class GetBgByCategoryReqIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 1)
   public final DataReq data;
   
   public GetBgByCategoryReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.data = paramBuilder.data;
     } else {
       this.data = paramBuilder.data;
     } 
+  }
+  
+  public GetBgByCategoryReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GetBgByCategoryReqIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataReq data;
+    
+    public Builder() {}
+    
+    public Builder(GetBgByCategoryReqIdl param1GetBgByCategoryReqIdl) {
+      super(param1GetBgByCategoryReqIdl);
+      if (param1GetBgByCategoryReqIdl == null)
+        return; 
+      this.data = param1GetBgByCategoryReqIdl.data;
+    }
+    
+    public GetBgByCategoryReqIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GetBgByCategoryReqIdl)interceptResult.objValue; 
+      } 
+      return new GetBgByCategoryReqIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

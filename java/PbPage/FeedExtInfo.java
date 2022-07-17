@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,9 +11,13 @@ import java.util.Collections;
 import java.util.List;
 
 public final class FeedExtInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<String> DEFAULT_FEED_BAR;
   
   public static final List<String> DEFAULT_FEED_TAB = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
   public final List<String> feed_bar;
@@ -26,10 +30,10 @@ public final class FeedExtInfo extends Message {
   }
   
   public FeedExtInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.feed_tab;
+      List<String> list1 = paramBuilder.feed_tab;
       if (list1 == null) {
         this.feed_tab = DEFAULT_FEED_TAB;
       } else {
@@ -47,6 +51,10 @@ public final class FeedExtInfo extends Message {
     } 
   }
   
+  public FeedExtInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -61,5 +69,41 @@ public final class FeedExtInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeedExtInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<String> feed_bar;
+    
+    public List<String> feed_tab;
+    
+    public Builder() {}
+    
+    public Builder(FeedExtInfo param1FeedExtInfo) {
+      super(param1FeedExtInfo);
+      if (param1FeedExtInfo == null)
+        return; 
+      this.feed_tab = Message.copyOf(param1FeedExtInfo.feed_tab);
+      this.feed_bar = Message.copyOf(param1FeedExtInfo.feed_bar);
+    }
+    
+    public FeedExtInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FeedExtInfo)interceptResult.objValue; 
+      } 
+      return new FeedExtInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

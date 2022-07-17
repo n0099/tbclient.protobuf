@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.McnAdInfo;
-import tbclient.VideoDesc;
-import tbclient.VideoInfo;
 
 public final class VideoInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FIRST_FRAME_THUMBNAIL = "";
   
   public static final Double DEFAULT_HTH_MID_LOC;
@@ -51,6 +52,8 @@ public final class VideoInfo extends Message {
   public static final Integer DEFAULT_VIDEO_WIDTH;
   
   public static final Double DEFAULT_WTH_MID_LOC;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 22, type = Message.Datatype.STRING)
   public final String first_frame_thumbnail;
@@ -150,7 +153,7 @@ public final class VideoInfo extends Message {
   }
   
   public VideoInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str5 = paramBuilder.video_md5;
@@ -219,7 +222,7 @@ public final class VideoInfo extends Message {
       } else {
         this.media_subtitle = str3;
       } 
-      List list = paramBuilder.video_desc;
+      List<VideoDesc> list = paramBuilder.video_desc;
       if (list == null) {
         this.video_desc = DEFAULT_VIDEO_DESC;
       } else {
@@ -299,5 +302,105 @@ public final class VideoInfo extends Message {
       this.small_thumbnail_url = ((Builder)str).small_thumbnail_url;
       this.first_frame_thumbnail = ((Builder)str).first_frame_thumbnail;
     } 
+  }
+  
+  public VideoInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VideoInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String first_frame_thumbnail;
+    
+    public Double hth_mid_loc;
+    
+    public Integer is_vertical;
+    
+    public McnAdInfo mcn_ad_card;
+    
+    public String mcn_lead_page;
+    
+    public String media_subtitle;
+    
+    public Integer play_count;
+    
+    public String small_thumbnail_url;
+    
+    public Integer thumbnail_height;
+    
+    public String thumbnail_url;
+    
+    public Integer thumbnail_width;
+    
+    public List<VideoDesc> video_desc;
+    
+    public Integer video_duration;
+    
+    public VideoDesc video_h265;
+    
+    public Integer video_height;
+    
+    public Integer video_length;
+    
+    public String video_md5;
+    
+    public Integer video_select_flag;
+    
+    public Integer video_type;
+    
+    public String video_url;
+    
+    public Integer video_width;
+    
+    public Double wth_mid_loc;
+    
+    public Builder() {}
+    
+    public Builder(VideoInfo param1VideoInfo) {
+      super(param1VideoInfo);
+      if (param1VideoInfo == null)
+        return; 
+      this.video_md5 = param1VideoInfo.video_md5;
+      this.video_url = param1VideoInfo.video_url;
+      this.video_duration = param1VideoInfo.video_duration;
+      this.video_width = param1VideoInfo.video_width;
+      this.video_height = param1VideoInfo.video_height;
+      this.thumbnail_url = param1VideoInfo.thumbnail_url;
+      this.thumbnail_width = param1VideoInfo.thumbnail_width;
+      this.thumbnail_height = param1VideoInfo.thumbnail_height;
+      this.video_length = param1VideoInfo.video_length;
+      this.play_count = param1VideoInfo.play_count;
+      this.media_subtitle = param1VideoInfo.media_subtitle;
+      this.video_desc = Message.copyOf(param1VideoInfo.video_desc);
+      this.video_select_flag = param1VideoInfo.video_select_flag;
+      this.video_type = param1VideoInfo.video_type;
+      this.is_vertical = param1VideoInfo.is_vertical;
+      this.video_h265 = param1VideoInfo.video_h265;
+      this.mcn_lead_page = param1VideoInfo.mcn_lead_page;
+      this.mcn_ad_card = param1VideoInfo.mcn_ad_card;
+      this.wth_mid_loc = param1VideoInfo.wth_mid_loc;
+      this.hth_mid_loc = param1VideoInfo.hth_mid_loc;
+      this.small_thumbnail_url = param1VideoInfo.small_thumbnail_url;
+      this.first_frame_thumbnail = param1VideoInfo.first_frame_thumbnail;
+    }
+    
+    public VideoInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VideoInfo)interceptResult.objValue; 
+      } 
+      return new VideoInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

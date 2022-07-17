@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HotThreadItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final Long DEFAULT_COMMENT_NUM;
@@ -28,6 +30,8 @@ public final class HotThreadItem extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Long DEFAULT_ZAN_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -83,7 +87,7 @@ public final class HotThreadItem extends Message {
   }
   
   public HotThreadItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.tid;
@@ -158,5 +162,69 @@ public final class HotThreadItem extends Message {
       this.zan_num = ((Builder)long_).zan_num;
       this.comment_num = ((Builder)long_).comment_num;
     } 
+  }
+  
+  public HotThreadItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<HotThreadItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public Long comment_num;
+    
+    public Long excid;
+    
+    public String forum_name;
+    
+    public Integer pb_type;
+    
+    public String pic_url;
+    
+    public Long tag_code;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public Long zan_num;
+    
+    public Builder() {}
+    
+    public Builder(HotThreadItem param1HotThreadItem) {
+      super(param1HotThreadItem);
+      if (param1HotThreadItem == null)
+        return; 
+      this.tid = param1HotThreadItem.tid;
+      this.excid = param1HotThreadItem.excid;
+      this.tag_code = param1HotThreadItem.tag_code;
+      this.pb_type = param1HotThreadItem.pb_type;
+      this.title = param1HotThreadItem.title;
+      this._abstract = param1HotThreadItem._abstract;
+      this.forum_name = param1HotThreadItem.forum_name;
+      this.pic_url = param1HotThreadItem.pic_url;
+      this.zan_num = param1HotThreadItem.zan_num;
+      this.comment_num = param1HotThreadItem.comment_num;
+    }
+    
+    public HotThreadItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotThreadItem)interceptResult.objValue; 
+      } 
+      return new HotThreadItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

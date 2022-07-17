@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.User;
-import tbclient.Zan;
 
 public final class Zan extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CONSENT_TYPE;
   
   public static final Integer DEFAULT_IS_LIKED;
@@ -22,6 +24,8 @@ public final class Zan extends Message {
   public static final List<User> DEFAULT_LIKER_LIST;
   
   public static final Integer DEFAULT_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.INT32)
   public final Integer consent_type;
@@ -65,7 +69,7 @@ public final class Zan extends Message {
   }
   
   public Zan(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.num;
@@ -74,11 +78,11 @@ public final class Zan extends Message {
       } else {
         this.num = integer2;
       } 
-      List list2 = paramBuilder.liker_list;
-      if (list2 == null) {
+      List<User> list1 = paramBuilder.liker_list;
+      if (list1 == null) {
         this.liker_list = DEFAULT_LIKER_LIST;
       } else {
-        this.liker_list = Message.immutableCopyOf(list2);
+        this.liker_list = Message.immutableCopyOf(list1);
       } 
       Integer integer1 = paramBuilder.is_liked;
       if (integer1 == null) {
@@ -92,11 +96,11 @@ public final class Zan extends Message {
       } else {
         this.last_time = integer1;
       } 
-      List list1 = paramBuilder.liker_id;
-      if (list1 == null) {
+      List<Long> list = paramBuilder.liker_id;
+      if (list == null) {
         this.liker_id = DEFAULT_LIKER_ID;
       } else {
-        this.liker_id = Message.immutableCopyOf(list1);
+        this.liker_id = Message.immutableCopyOf(list);
       } 
       integer = paramBuilder.consent_type;
       if (integer == null) {
@@ -112,5 +116,57 @@ public final class Zan extends Message {
       this.liker_id = Message.immutableCopyOf(((Builder)integer).liker_id);
       this.consent_type = ((Builder)integer).consent_type;
     } 
+  }
+  
+  public Zan(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Zan> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer consent_type;
+    
+    public Integer is_liked;
+    
+    public Integer last_time;
+    
+    public List<Long> liker_id;
+    
+    public List<User> liker_list;
+    
+    public Integer num;
+    
+    public Builder() {}
+    
+    public Builder(Zan param1Zan) {
+      super(param1Zan);
+      if (param1Zan == null)
+        return; 
+      this.num = param1Zan.num;
+      this.liker_list = Message.copyOf(param1Zan.liker_list);
+      this.is_liked = param1Zan.is_liked;
+      this.last_time = param1Zan.last_time;
+      this.liker_id = Message.copyOf(param1Zan.liker_id);
+      this.consent_type = param1Zan.consent_type;
+    }
+    
+    public Zan build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Zan)interceptResult.objValue; 
+      } 
+      return new Zan(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

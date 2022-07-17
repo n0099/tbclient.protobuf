@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.CategoryInfo;
 
 public final class CategoryInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CATEGORY_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_CATEGORY_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer category_id;
@@ -19,7 +24,7 @@ public final class CategoryInfo extends Message {
   public final String category_name;
   
   public CategoryInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.category_id;
@@ -40,6 +45,10 @@ public final class CategoryInfo extends Message {
     } 
   }
   
+  public CategoryInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class CategoryInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<CategoryInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer category_id;
+    
+    public String category_name;
+    
+    public Builder() {}
+    
+    public Builder(CategoryInfo param1CategoryInfo) {
+      super(param1CategoryInfo);
+      if (param1CategoryInfo == null)
+        return; 
+      this.category_id = param1CategoryInfo.category_id;
+      this.category_name = param1CategoryInfo.category_name;
+    }
+    
+    public CategoryInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CategoryInfo)interceptResult.objValue; 
+      } 
+      return new CategoryInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

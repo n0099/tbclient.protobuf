@@ -1,4 +1,4 @@
-package GetWebviewCacheInfo;
+package tbclient.GetWebviewCacheInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Offpack extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_USE = Integer.valueOf(0);
   
   public static final String DEFAULT_MD5 = "";
@@ -18,6 +20,8 @@ public final class Offpack extends Message {
   public static final String DEFAULT_SRC = "";
   
   public static final String DEFAULT_WEBVIEW_VERSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer is_use;
@@ -35,7 +39,7 @@ public final class Offpack extends Message {
   public final String webview_version;
   
   public Offpack(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.mod_name;
@@ -77,6 +81,10 @@ public final class Offpack extends Message {
     } 
   }
   
+  public Offpack(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class Offpack extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Offpack> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_use;
+    
+    public String md5;
+    
+    public String mod_name;
+    
+    public String src;
+    
+    public String webview_version;
+    
+    public Builder() {}
+    
+    public Builder(Offpack param1Offpack) {
+      super(param1Offpack);
+      if (param1Offpack == null)
+        return; 
+      this.mod_name = param1Offpack.mod_name;
+      this.src = param1Offpack.src;
+      this.md5 = param1Offpack.md5;
+      this.webview_version = param1Offpack.webview_version;
+      this.is_use = param1Offpack.is_use;
+    }
+    
+    public Offpack build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Offpack)interceptResult.objValue; 
+      } 
+      return new Offpack(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

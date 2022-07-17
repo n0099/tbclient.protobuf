@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PriManagerApplyInfo;
 
 public final class PriManagerApplyInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ASSIST_APPLY_STATUS;
   
   public static final String DEFAULT_ASSIST_APPLY_URL = "";
   
   public static final Integer DEFAULT_ASSIST_LEFT_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer assist_apply_status;
@@ -43,7 +48,7 @@ public final class PriManagerApplyInfo extends Message {
   }
   
   public PriManagerApplyInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.assist_left_num;
@@ -69,5 +74,48 @@ public final class PriManagerApplyInfo extends Message {
       this.assist_apply_url = ((Builder)integer).assist_apply_url;
       this.assist_apply_status = ((Builder)integer).assist_apply_status;
     } 
+  }
+  
+  public PriManagerApplyInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PriManagerApplyInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer assist_apply_status;
+    
+    public String assist_apply_url;
+    
+    public Integer assist_left_num;
+    
+    public Builder() {}
+    
+    public Builder(PriManagerApplyInfo param1PriManagerApplyInfo) {
+      super(param1PriManagerApplyInfo);
+      if (param1PriManagerApplyInfo == null)
+        return; 
+      this.assist_left_num = param1PriManagerApplyInfo.assist_left_num;
+      this.assist_apply_url = param1PriManagerApplyInfo.assist_apply_url;
+      this.assist_apply_status = param1PriManagerApplyInfo.assist_apply_status;
+    }
+    
+    public PriManagerApplyInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PriManagerApplyInfo)interceptResult.objValue; 
+      } 
+      return new PriManagerApplyInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

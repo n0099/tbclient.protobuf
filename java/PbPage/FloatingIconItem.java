@@ -1,11 +1,14 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FloatingIconItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CLICK_STATISTICS_URL = "";
   
   public static final String DEFAULT_DEEPLINK = "";
@@ -31,6 +34,8 @@ public final class FloatingIconItem extends Message {
   public static final String DEFAULT_URL = "";
   
   public static final String DEFAULT_VIEW_STATISTICS_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String click_statistics_url;
@@ -72,7 +77,7 @@ public final class FloatingIconItem extends Message {
   public final String view_statistics_url;
   
   public FloatingIconItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.url;
@@ -168,5 +173,78 @@ public final class FloatingIconItem extends Message {
       this.unfold_name = ((Builder)str).unfold_name;
       this.display_ad_icon = ((Builder)str).display_ad_icon;
     } 
+  }
+  
+  public FloatingIconItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FloatingIconItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String click_statistics_url;
+    
+    public String deeplink;
+    
+    public String display_ad_icon;
+    
+    public String float_type;
+    
+    public String fold_lottie;
+    
+    public String fold_name;
+    
+    public String icon_url;
+    
+    public String package_name;
+    
+    public String scheme;
+    
+    public String unfold_lottie;
+    
+    public String unfold_name;
+    
+    public String url;
+    
+    public String view_statistics_url;
+    
+    public Builder() {}
+    
+    public Builder(FloatingIconItem param1FloatingIconItem) {
+      super(param1FloatingIconItem);
+      if (param1FloatingIconItem == null)
+        return; 
+      this.url = param1FloatingIconItem.url;
+      this.icon_url = param1FloatingIconItem.icon_url;
+      this.view_statistics_url = param1FloatingIconItem.view_statistics_url;
+      this.click_statistics_url = param1FloatingIconItem.click_statistics_url;
+      this.deeplink = param1FloatingIconItem.deeplink;
+      this.scheme = param1FloatingIconItem.scheme;
+      this.package_name = param1FloatingIconItem.package_name;
+      this.fold_lottie = param1FloatingIconItem.fold_lottie;
+      this.unfold_lottie = param1FloatingIconItem.unfold_lottie;
+      this.float_type = param1FloatingIconItem.float_type;
+      this.fold_name = param1FloatingIconItem.fold_name;
+      this.unfold_name = param1FloatingIconItem.unfold_name;
+      this.display_ad_icon = param1FloatingIconItem.display_ad_icon;
+    }
+    
+    public FloatingIconItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FloatingIconItem)interceptResult.objValue; 
+      } 
+      return new FloatingIconItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetShoubaiThreadList;
+package tbclient.GetShoubaiThreadList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PageInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_CURSOR;
   
   public static final Integer DEFAULT_HAS_MORE;
   
   public static final Integer DEFAULT_PAGE_SIZE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long cursor;
@@ -45,7 +49,7 @@ public final class PageInfo extends Message {
   }
   
   public PageInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.page_size;
@@ -71,5 +75,48 @@ public final class PageInfo extends Message {
       this.cursor = ((Builder)integer).cursor;
       this.has_more = ((Builder)integer).has_more;
     } 
+  }
+  
+  public PageInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PageInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long cursor;
+    
+    public Integer has_more;
+    
+    public Integer page_size;
+    
+    public Builder() {}
+    
+    public Builder(PageInfo param1PageInfo) {
+      super(param1PageInfo);
+      if (param1PageInfo == null)
+        return; 
+      this.page_size = param1PageInfo.page_size;
+      this.cursor = param1PageInfo.cursor;
+      this.has_more = param1PageInfo.has_more;
+    }
+    
+    public PageInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PageInfo)interceptResult.objValue; 
+      } 
+      return new PageInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

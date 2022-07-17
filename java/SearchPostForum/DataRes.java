@@ -1,4 +1,4 @@
-package SearchPostForum;
+package tbclient.SearchPostForum;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,10 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.SearchPostForum.SearchForum;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<SearchForum> DEFAULT_FUZZY_MATCH = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final SearchForum exact_match;
@@ -21,8 +24,8 @@ public final class DataRes extends Message {
   public final List<SearchForum> fuzzy_match;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<SearchForum> list;
     if (paramBoolean == true) {
       this.exact_match = paramBuilder.exact_match;
       list = paramBuilder.fuzzy_match;
@@ -35,6 +38,10 @@ public final class DataRes extends Message {
       this.exact_match = ((Builder)list).exact_match;
       this.fuzzy_match = Message.immutableCopyOf(((Builder)list).fuzzy_match);
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -51,5 +58,41 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public SearchForum exact_match;
+    
+    public List<SearchForum> fuzzy_match;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.exact_match = param1DataRes.exact_match;
+      this.fuzzy_match = Message.copyOf(param1DataRes.fuzzy_match);
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

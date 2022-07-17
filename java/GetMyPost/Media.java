@@ -1,4 +1,4 @@
-package GetMyPost;
+package tbclient.GetMyPost;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Media extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PIC_URL = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String pic_url;
@@ -20,7 +24,7 @@ public final class Media extends Message {
   public final Integer type;
   
   public Media(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -41,6 +45,10 @@ public final class Media extends Message {
     } 
   }
   
+  public Media(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class Media extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Media> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String pic_url;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(Media param1Media) {
+      super(param1Media);
+      if (param1Media == null)
+        return; 
+      this.type = param1Media.type;
+      this.pic_url = param1Media.pic_url;
+    }
+    
+    public Media build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Media)interceptResult.objValue; 
+      } 
+      return new Media(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

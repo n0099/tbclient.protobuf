@@ -1,4 +1,4 @@
-package Userlike;
+package tbclient.Userlike;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,6 +11,8 @@ import tbclient.NewGodInfo;
 import tbclient.ThreadInfo;
 
 public final class UserList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FANS_NUM;
   
   public static final Long DEFAULT_ID;
@@ -30,6 +32,8 @@ public final class UserList extends Message {
   public static final String DEFAULT_PREFIX = "";
   
   public static final String DEFAULT_RECOM_REASON = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT32)
   public final Integer fans_num;
@@ -90,7 +94,7 @@ public final class UserList extends Message {
   }
   
   public UserList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       String str2 = paramBuilder.name;
       if (str2 == null) {
@@ -168,5 +172,75 @@ public final class UserList extends Message {
       this.thread_info = paramBuilder.thread_info;
       this.new_god_data = paramBuilder.new_god_data;
     } 
+  }
+  
+  public UserList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<UserList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer fans_num;
+    
+    public Long id;
+    
+    public String intro;
+    
+    public Integer is_god;
+    
+    public Integer level;
+    
+    public String name;
+    
+    public NewGodInfo new_god_data;
+    
+    public String portrait;
+    
+    public Integer post_num;
+    
+    public String prefix;
+    
+    public String recom_reason;
+    
+    public ThreadInfo thread_info;
+    
+    public Builder() {}
+    
+    public Builder(UserList param1UserList) {
+      super(param1UserList);
+      if (param1UserList == null)
+        return; 
+      this.name = param1UserList.name;
+      this.prefix = param1UserList.prefix;
+      this.intro = param1UserList.intro;
+      this.fans_num = param1UserList.fans_num;
+      this.post_num = param1UserList.post_num;
+      this.recom_reason = param1UserList.recom_reason;
+      this.portrait = param1UserList.portrait;
+      this.id = param1UserList.id;
+      this.is_god = param1UserList.is_god;
+      this.level = param1UserList.level;
+      this.thread_info = param1UserList.thread_info;
+      this.new_god_data = param1UserList.new_god_data;
+    }
+    
+    public UserList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserList)interceptResult.objValue; 
+      } 
+      return new UserList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

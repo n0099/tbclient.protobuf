@@ -1,4 +1,4 @@
-package LiveSquareInfo;
+package tbclient.LiveSquareInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FunctionListInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESCRIBE = "";
   
   public static final String DEFAULT_ICON = "";
@@ -20,6 +22,8 @@ public final class FunctionListInfo extends Message {
   public static final Long DEFAULT_UPDATE_TIME = Long.valueOf(0L);
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String describe;
@@ -40,7 +44,7 @@ public final class FunctionListInfo extends Message {
   public final String url;
   
   public FunctionListInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.id;
@@ -89,6 +93,10 @@ public final class FunctionListInfo extends Message {
     } 
   }
   
+  public FunctionListInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -103,5 +111,53 @@ public final class FunctionListInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<FunctionListInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String describe;
+    
+    public String icon;
+    
+    public Integer id;
+    
+    public String title;
+    
+    public Long update_time;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(FunctionListInfo param1FunctionListInfo) {
+      super(param1FunctionListInfo);
+      if (param1FunctionListInfo == null)
+        return; 
+      this.id = param1FunctionListInfo.id;
+      this.title = param1FunctionListInfo.title;
+      this.describe = param1FunctionListInfo.describe;
+      this.url = param1FunctionListInfo.url;
+      this.update_time = param1FunctionListInfo.update_time;
+      this.icon = param1FunctionListInfo.icon;
+    }
+    
+    public FunctionListInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FunctionListInfo)interceptResult.objValue; 
+      } 
+      return new FunctionListInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

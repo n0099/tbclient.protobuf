@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPage.CommonDistance;
-import tbclient.FrsPage.CommonForum;
-import tbclient.FrsPage.PostInfo;
-import tbclient.FrsPage.UserInfo;
 
 public final class RecomUserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<CommonForum> DEFAULT_COMMON_FORUM = Collections.emptyList();
   
   public static final String DEFAULT_MESSAGE = "";
@@ -22,6 +20,8 @@ public final class RecomUserInfo extends Message {
   public static final List<PostInfo> DEFAULT_POST_INFO = Collections.emptyList();
   
   public static final String DEFAULT_POS_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<CommonForum> common_forum;
@@ -42,16 +42,16 @@ public final class RecomUserInfo extends Message {
   public final UserInfo user_info;
   
   public RecomUserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.user_info = paramBuilder.user_info;
-      List list = paramBuilder.common_forum;
-      if (list == null) {
+      List<CommonForum> list1 = paramBuilder.common_forum;
+      if (list1 == null) {
         this.common_forum = DEFAULT_COMMON_FORUM;
       } else {
-        this.common_forum = Message.immutableCopyOf(list);
+        this.common_forum = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.post_info;
+      List<PostInfo> list = paramBuilder.post_info;
       if (list == null) {
         this.post_info = DEFAULT_POST_INFO;
       } else {
@@ -80,6 +80,10 @@ public final class RecomUserInfo extends Message {
     } 
   }
   
+  public RecomUserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -94,5 +98,53 @@ public final class RecomUserInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecomUserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<CommonForum> common_forum;
+    
+    public CommonDistance distanceinfo;
+    
+    public String message;
+    
+    public String pos_name;
+    
+    public List<PostInfo> post_info;
+    
+    public UserInfo user_info;
+    
+    public Builder() {}
+    
+    public Builder(RecomUserInfo param1RecomUserInfo) {
+      super(param1RecomUserInfo);
+      if (param1RecomUserInfo == null)
+        return; 
+      this.user_info = param1RecomUserInfo.user_info;
+      this.common_forum = Message.copyOf(param1RecomUserInfo.common_forum);
+      this.post_info = Message.copyOf(param1RecomUserInfo.post_info);
+      this.pos_name = param1RecomUserInfo.pos_name;
+      this.message = param1RecomUserInfo.message;
+      this.distanceinfo = param1RecomUserInfo.distanceinfo;
+    }
+    
+    public RecomUserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecomUserInfo)interceptResult.objValue; 
+      } 
+      return new RecomUserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

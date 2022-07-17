@@ -1,4 +1,4 @@
-package GetForumClassList;
+package tbclient.GetForumClassList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class WeeklyInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_AVATAR = "";
@@ -18,6 +20,8 @@ public final class WeeklyInfo extends Message {
   public static final String DEFAULT_FORUM_NAME = "";
   
   public static final Integer DEFAULT_IS_LIKE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -35,7 +39,7 @@ public final class WeeklyInfo extends Message {
   public final Integer is_like;
   
   public WeeklyInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -77,6 +81,10 @@ public final class WeeklyInfo extends Message {
     } 
   }
   
+  public WeeklyInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class WeeklyInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<WeeklyInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String avatar;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_like;
+    
+    public Builder() {}
+    
+    public Builder(WeeklyInfo param1WeeklyInfo) {
+      super(param1WeeklyInfo);
+      if (param1WeeklyInfo == null)
+        return; 
+      this.forum_id = param1WeeklyInfo.forum_id;
+      this.forum_name = param1WeeklyInfo.forum_name;
+      this.avatar = param1WeeklyInfo.avatar;
+      this._abstract = param1WeeklyInfo._abstract;
+      this.is_like = param1WeeklyInfo.is_like;
+    }
+    
+    public WeeklyInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (WeeklyInfo)interceptResult.objValue; 
+      } 
+      return new WeeklyInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

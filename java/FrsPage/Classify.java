@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Classify extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CLASS_ID;
   
   public static final String DEFAULT_CLASS_NAME = "";
@@ -16,6 +18,8 @@ public final class Classify extends Message {
   public static final Long DEFAULT_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer class_id;
@@ -34,7 +38,7 @@ public final class Classify extends Message {
   }
   
   public Classify(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.name;
@@ -69,6 +73,10 @@ public final class Classify extends Message {
     } 
   }
   
+  public Classify(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -83,5 +91,47 @@ public final class Classify extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Classify> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer class_id;
+    
+    public String class_name;
+    
+    public Long id;
+    
+    public String name;
+    
+    public Builder() {}
+    
+    public Builder(Classify param1Classify) {
+      super(param1Classify);
+      if (param1Classify == null)
+        return; 
+      this.name = param1Classify.name;
+      this.id = param1Classify.id;
+      this.class_id = param1Classify.class_id;
+      this.class_name = param1Classify.class_name;
+    }
+    
+    public Classify build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Classify)interceptResult.objValue; 
+      } 
+      return new Classify(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

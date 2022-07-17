@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ElectionList;
 
 public final class ElectionList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AGREE_NUM;
   
   public static final String DEFAULT_APPLY_DECLARATION = "";
@@ -35,6 +38,8 @@ public final class ElectionList extends Message {
   public static final Long DEFAULT_UID;
   
   public static final Integer DEFAULT_VOTE_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer agree_num;
@@ -108,7 +113,7 @@ public final class ElectionList extends Message {
   }
   
   public ElectionList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.apply_id;
@@ -211,5 +216,81 @@ public final class ElectionList extends Message {
       this.is_cheat = ((Builder)integer).is_cheat;
       this.is_pass_audit = ((Builder)integer).is_pass_audit;
     } 
+  }
+  
+  public ElectionList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ElectionList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer agree_num;
+    
+    public String apply_declaration;
+    
+    public Integer apply_id;
+    
+    public Integer forum_level;
+    
+    public Integer is_cheat;
+    
+    public Integer is_pass_audit;
+    
+    public String name_show;
+    
+    public String portrait;
+    
+    public Integer post_num;
+    
+    public Integer rank;
+    
+    public Integer thread_num;
+    
+    public Long tid;
+    
+    public Long uid;
+    
+    public Integer vote_num;
+    
+    public Builder() {}
+    
+    public Builder(ElectionList param1ElectionList) {
+      super(param1ElectionList);
+      if (param1ElectionList == null)
+        return; 
+      this.apply_id = param1ElectionList.apply_id;
+      this.rank = param1ElectionList.rank;
+      this.uid = param1ElectionList.uid;
+      this.portrait = param1ElectionList.portrait;
+      this.name_show = param1ElectionList.name_show;
+      this.forum_level = param1ElectionList.forum_level;
+      this.vote_num = param1ElectionList.vote_num;
+      this.agree_num = param1ElectionList.agree_num;
+      this.thread_num = param1ElectionList.thread_num;
+      this.post_num = param1ElectionList.post_num;
+      this.apply_declaration = param1ElectionList.apply_declaration;
+      this.tid = param1ElectionList.tid;
+      this.is_cheat = param1ElectionList.is_cheat;
+      this.is_pass_audit = param1ElectionList.is_pass_audit;
+    }
+    
+    public ElectionList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ElectionList)interceptResult.objValue; 
+      } 
+      return new ElectionList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

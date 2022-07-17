@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ActiveBannerList;
 
 public final class ActiveBannerList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVE_DESC = "";
   
   public static final String DEFAULT_ACTIVE_NAME = "";
@@ -19,6 +22,8 @@ public final class ActiveBannerList extends Message {
   public static final Integer DEFAULT_ID;
   
   public static final String DEFAULT_SKIP_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String active_desc;
@@ -58,7 +63,7 @@ public final class ActiveBannerList extends Message {
   }
   
   public ActiveBannerList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.id;
@@ -105,5 +110,57 @@ public final class ActiveBannerList extends Message {
       this.skip_url = ((Builder)integer).skip_url;
       this.active_type = ((Builder)integer).active_type;
     } 
+  }
+  
+  public ActiveBannerList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ActiveBannerList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String active_desc;
+    
+    public String active_name;
+    
+    public Integer active_type;
+    
+    public String active_url;
+    
+    public Integer id;
+    
+    public String skip_url;
+    
+    public Builder() {}
+    
+    public Builder(ActiveBannerList param1ActiveBannerList) {
+      super(param1ActiveBannerList);
+      if (param1ActiveBannerList == null)
+        return; 
+      this.id = param1ActiveBannerList.id;
+      this.active_name = param1ActiveBannerList.active_name;
+      this.active_url = param1ActiveBannerList.active_url;
+      this.active_desc = param1ActiveBannerList.active_desc;
+      this.skip_url = param1ActiveBannerList.skip_url;
+      this.active_type = param1ActiveBannerList.active_type;
+    }
+    
+    public ActiveBannerList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActiveBannerList)interceptResult.objValue; 
+      } 
+      return new ActiveBannerList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

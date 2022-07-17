@@ -1,4 +1,4 @@
-package GetForumDetail;
+package tbclient.GetForumDetail;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ApplyStatus extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FDIR_NEXT_APPLY_TIME;
   
   public static final Integer DEFAULT_IS_AVATAR_APPLYING;
@@ -20,6 +22,8 @@ public final class ApplyStatus extends Message {
   public static final Integer DEFAULT_NEXT_AVATAR_APPLY_TIME;
   
   public static final Integer DEFAULT_NEXT_DESC_APPLY_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.INT32)
   public final Integer fdir_next_apply_time;
@@ -63,7 +67,7 @@ public final class ApplyStatus extends Message {
   }
   
   public ApplyStatus(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.is_avatar_applying;
@@ -110,5 +114,57 @@ public final class ApplyStatus extends Message {
       this.is_fdir_applying = ((Builder)integer).is_fdir_applying;
       this.fdir_next_apply_time = ((Builder)integer).fdir_next_apply_time;
     } 
+  }
+  
+  public ApplyStatus(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ApplyStatus> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer fdir_next_apply_time;
+    
+    public Integer is_avatar_applying;
+    
+    public Integer is_desc_applying;
+    
+    public Integer is_fdir_applying;
+    
+    public Integer next_avatar_apply_time;
+    
+    public Integer next_desc_apply_time;
+    
+    public Builder() {}
+    
+    public Builder(ApplyStatus param1ApplyStatus) {
+      super(param1ApplyStatus);
+      if (param1ApplyStatus == null)
+        return; 
+      this.is_avatar_applying = param1ApplyStatus.is_avatar_applying;
+      this.is_desc_applying = param1ApplyStatus.is_desc_applying;
+      this.next_avatar_apply_time = param1ApplyStatus.next_avatar_apply_time;
+      this.next_desc_apply_time = param1ApplyStatus.next_desc_apply_time;
+      this.is_fdir_applying = param1ApplyStatus.is_fdir_applying;
+      this.fdir_next_apply_time = param1ApplyStatus.fdir_next_apply_time;
+    }
+    
+    public ApplyStatus build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ApplyStatus)interceptResult.objValue; 
+      } 
+      return new ApplyStatus(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetRecommendGodList;
+package tbclient.GetRecommendGodList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,15 @@ import java.util.List;
 import tbclient.User;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CURRENT_PAGE;
   
   public static final Integer DEFAULT_HAS_MORE;
   
   public static final List<User> DEFAULT_RECOM_USER_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer current_page;
@@ -34,10 +38,10 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
-      List list = paramBuilder.recom_user_list;
+      List<User> list = paramBuilder.recom_user_list;
       if (list == null) {
         this.recom_user_list = DEFAULT_RECOM_USER_LIST;
       } else {
@@ -62,6 +66,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -76,5 +84,44 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer current_page;
+    
+    public Integer has_more;
+    
+    public List<User> recom_user_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.recom_user_list = Message.copyOf(param1DataRes.recom_user_list);
+      this.current_page = param1DataRes.current_page;
+      this.has_more = param1DataRes.has_more;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetInterview;
+package tbclient.GetInterview;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -13,6 +13,8 @@ import tbclient.PbContent;
 import tbclient.User;
 
 public final class InterviewInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<PbContent> DEFAULT_CONTENT;
   
   public static final Long DEFAULT_CREATE_TIME;
@@ -22,6 +24,8 @@ public final class InterviewInfo extends Message {
   public static final Long DEFAULT_POST_ID;
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final User author;
@@ -64,7 +68,7 @@ public final class InterviewInfo extends Message {
   }
   
   public InterviewInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.post_id;
@@ -73,7 +77,7 @@ public final class InterviewInfo extends Message {
       } else {
         this.post_id = long_2;
       } 
-      List list = paramBuilder.content;
+      List<PbContent> list = paramBuilder.content;
       if (list == null) {
         this.content = DEFAULT_CONTENT;
       } else {
@@ -106,5 +110,57 @@ public final class InterviewInfo extends Message {
       this.type = ((Builder)long_).type;
       this.main_pid = ((Builder)long_).main_pid;
     } 
+  }
+  
+  public InterviewInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<InterviewInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public User author;
+    
+    public List<PbContent> content;
+    
+    public Long create_time;
+    
+    public Long main_pid;
+    
+    public Long post_id;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(InterviewInfo param1InterviewInfo) {
+      super(param1InterviewInfo);
+      if (param1InterviewInfo == null)
+        return; 
+      this.post_id = param1InterviewInfo.post_id;
+      this.content = Message.copyOf(param1InterviewInfo.content);
+      this.create_time = param1InterviewInfo.create_time;
+      this.author = param1InterviewInfo.author;
+      this.type = param1InterviewInfo.type;
+      this.main_pid = param1InterviewInfo.main_pid;
+    }
+    
+    public InterviewInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (InterviewInfo)interceptResult.objValue; 
+      } 
+      return new InterviewInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

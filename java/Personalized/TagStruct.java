@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TagStruct extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_SELECTED = Integer.valueOf(0);
   
   public static final String DEFAULT_TAG_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT32)
   public final Integer selected;
@@ -20,7 +24,7 @@ public final class TagStruct extends Message {
   public final String tag_name;
   
   public TagStruct(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.tag_name;
@@ -41,6 +45,10 @@ public final class TagStruct extends Message {
     } 
   }
   
+  public TagStruct(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class TagStruct extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TagStruct> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer selected;
+    
+    public String tag_name;
+    
+    public Builder() {}
+    
+    public Builder(TagStruct param1TagStruct) {
+      super(param1TagStruct);
+      if (param1TagStruct == null)
+        return; 
+      this.tag_name = param1TagStruct.tag_name;
+      this.selected = param1TagStruct.selected;
+    }
+    
+    public TagStruct build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TagStruct)interceptResult.objValue; 
+      } 
+      return new TagStruct(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

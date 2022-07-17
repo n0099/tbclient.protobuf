@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumBookInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUTHOR = "";
   
   public static final String DEFAULT_BOOK_COVER = "";
@@ -38,6 +40,8 @@ public final class ForumBookInfo extends Message {
   public static final Long DEFAULT_SHOW_PAGE_ID;
   
   public static final Long DEFAULT_SHOW_PARAGRAPH_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String author;
@@ -95,7 +99,7 @@ public final class ForumBookInfo extends Message {
   }
   
   public ForumBookInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str2 = paramBuilder.book_id;
@@ -207,6 +211,10 @@ public final class ForumBookInfo extends Message {
     } 
   }
   
+  public ForumBookInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -221,5 +229,80 @@ public final class ForumBookInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumBookInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String author;
+    
+    public String book_cover;
+    
+    public String book_id;
+    
+    public String book_title;
+    
+    public Integer book_type;
+    
+    public String forum_pic;
+    
+    public Long history_page_id;
+    
+    public Long history_paragraph_id;
+    
+    public Long history_percent;
+    
+    public Long history_word_id;
+    
+    public String show_chapter_id;
+    
+    public String show_chapter_no;
+    
+    public String show_chapter_title;
+    
+    public Long show_page_id;
+    
+    public Long show_paragraph_id;
+    
+    public Builder() {}
+    
+    public Builder(ForumBookInfo param1ForumBookInfo) {
+      super(param1ForumBookInfo);
+      if (param1ForumBookInfo == null)
+        return; 
+      this.book_id = param1ForumBookInfo.book_id;
+      this.book_type = param1ForumBookInfo.book_type;
+      this.book_title = param1ForumBookInfo.book_title;
+      this.book_cover = param1ForumBookInfo.book_cover;
+      this.author = param1ForumBookInfo.author;
+      this.forum_pic = param1ForumBookInfo.forum_pic;
+      this.show_chapter_id = param1ForumBookInfo.show_chapter_id;
+      this.show_chapter_no = param1ForumBookInfo.show_chapter_no;
+      this.show_chapter_title = param1ForumBookInfo.show_chapter_title;
+      this.history_page_id = param1ForumBookInfo.history_page_id;
+      this.history_paragraph_id = param1ForumBookInfo.history_paragraph_id;
+      this.history_word_id = param1ForumBookInfo.history_word_id;
+      this.history_percent = param1ForumBookInfo.history_percent;
+      this.show_page_id = param1ForumBookInfo.show_page_id;
+      this.show_paragraph_id = param1ForumBookInfo.show_paragraph_id;
+    }
+    
+    public ForumBookInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumBookInfo)interceptResult.objValue; 
+      } 
+      return new ForumBookInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

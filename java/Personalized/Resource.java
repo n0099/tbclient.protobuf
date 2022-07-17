@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Resource extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ICON_TEXT = "";
   
   public static final Long DEFAULT_POSITION;
@@ -26,6 +28,8 @@ public final class Resource extends Message {
   public static final String DEFAULT_USER_LINK = "";
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String icon_text;
@@ -74,7 +78,7 @@ public final class Resource extends Message {
   }
   
   public Resource(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.res_id;
@@ -142,5 +146,66 @@ public final class Resource extends Message {
       this.position = ((Builder)str).position;
       this.icon_text = ((Builder)str).icon_text;
     } 
+  }
+  
+  public Resource(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Resource> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String icon_text;
+    
+    public Long position;
+    
+    public Long res_id;
+    
+    public String res_image;
+    
+    public String res_link;
+    
+    public String res_title;
+    
+    public String user_image;
+    
+    public String user_link;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(Resource param1Resource) {
+      super(param1Resource);
+      if (param1Resource == null)
+        return; 
+      this.res_id = param1Resource.res_id;
+      this.user_name = param1Resource.user_name;
+      this.user_image = param1Resource.user_image;
+      this.user_link = param1Resource.user_link;
+      this.res_title = param1Resource.res_title;
+      this.res_image = param1Resource.res_image;
+      this.res_link = param1Resource.res_link;
+      this.position = param1Resource.position;
+      this.icon_text = param1Resource.icon_text;
+    }
+    
+    public Resource build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Resource)interceptResult.objValue; 
+      } 
+      return new Resource(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

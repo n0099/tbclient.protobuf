@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Lbs;
 
 public final class Lbs extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DISTANCE = "";
   
   public static final String DEFAULT_LAT = "";
@@ -14,6 +18,8 @@ public final class Lbs extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final String DEFAULT_SN = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String distance;
@@ -31,7 +37,7 @@ public final class Lbs extends Message {
   public final String sn;
   
   public Lbs(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.lat;
@@ -71,5 +77,54 @@ public final class Lbs extends Message {
       this.sn = ((Builder)str).sn;
       this.distance = ((Builder)str).distance;
     } 
+  }
+  
+  public Lbs(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Lbs> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String distance;
+    
+    public String lat;
+    
+    public String lng;
+    
+    public String name;
+    
+    public String sn;
+    
+    public Builder() {}
+    
+    public Builder(Lbs param1Lbs) {
+      super(param1Lbs);
+      if (param1Lbs == null)
+        return; 
+      this.lat = param1Lbs.lat;
+      this.lng = param1Lbs.lng;
+      this.name = param1Lbs.name;
+      this.sn = param1Lbs.sn;
+      this.distance = param1Lbs.distance;
+    }
+    
+    public Lbs build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Lbs)interceptResult.objValue; 
+      } 
+      return new Lbs(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

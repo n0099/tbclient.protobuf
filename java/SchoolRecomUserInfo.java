@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SchoolRecomUserInfo;
 
 public final class SchoolRecomUserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_INSTITUTE = "";
   
   public static final Integer DEFAULT_IS_LIKED;
@@ -17,6 +20,8 @@ public final class SchoolRecomUserInfo extends Message {
   public static final Long DEFAULT_UID = Long.valueOf(0L);
   
   public static final String DEFAULT_UNAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String institute;
@@ -38,7 +43,7 @@ public final class SchoolRecomUserInfo extends Message {
   }
   
   public SchoolRecomUserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.uid;
@@ -80,6 +85,10 @@ public final class SchoolRecomUserInfo extends Message {
     } 
   }
   
+  public SchoolRecomUserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -94,5 +103,50 @@ public final class SchoolRecomUserInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SchoolRecomUserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String institute;
+    
+    public Integer is_liked;
+    
+    public String portrait;
+    
+    public Long uid;
+    
+    public String uname;
+    
+    public Builder() {}
+    
+    public Builder(SchoolRecomUserInfo param1SchoolRecomUserInfo) {
+      super(param1SchoolRecomUserInfo);
+      if (param1SchoolRecomUserInfo == null)
+        return; 
+      this.uid = param1SchoolRecomUserInfo.uid;
+      this.uname = param1SchoolRecomUserInfo.uname;
+      this.portrait = param1SchoolRecomUserInfo.portrait;
+      this.institute = param1SchoolRecomUserInfo.institute;
+      this.is_liked = param1SchoolRecomUserInfo.is_liked;
+    }
+    
+    public SchoolRecomUserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SchoolRecomUserInfo)interceptResult.objValue; 
+      } 
+      return new SchoolRecomUserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

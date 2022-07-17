@@ -1,4 +1,4 @@
-package ZoneRight;
+package tbclient.ZoneRight;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Toast extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String content;
@@ -20,7 +24,7 @@ public final class Toast extends Message {
   public final Integer type;
   
   public Toast(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -41,6 +45,10 @@ public final class Toast extends Message {
     } 
   }
   
+  public Toast(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class Toast extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Toast> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String content;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(Toast param1Toast) {
+      super(param1Toast);
+      if (param1Toast == null)
+        return; 
+      this.type = param1Toast.type;
+      this.content = param1Toast.content;
+    }
+    
+    public Toast build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Toast)interceptResult.objValue; 
+      } 
+      return new Toast(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

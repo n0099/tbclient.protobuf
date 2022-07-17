@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Hottopic.GoodThread;
 
 public final class CommonThread extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_MODULE_NAME = "";
   
   public static final List<GoodThread> DEFAULT_THREAD_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String module_name;
@@ -23,8 +26,8 @@ public final class CommonThread extends Message {
   public final List<GoodThread> thread_list;
   
   public CommonThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<GoodThread> list;
     if (paramBoolean == true) {
       String str = paramBuilder.module_name;
       if (str == null) {
@@ -44,6 +47,10 @@ public final class CommonThread extends Message {
     } 
   }
   
+  public CommonThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +65,41 @@ public final class CommonThread extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<CommonThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String module_name;
+    
+    public List<GoodThread> thread_list;
+    
+    public Builder() {}
+    
+    public Builder(CommonThread param1CommonThread) {
+      super(param1CommonThread);
+      if (param1CommonThread == null)
+        return; 
+      this.module_name = param1CommonThread.module_name;
+      this.thread_list = Message.copyOf(param1CommonThread.thread_list);
+    }
+    
+    public CommonThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CommonThread)interceptResult.objValue; 
+      } 
+      return new CommonThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

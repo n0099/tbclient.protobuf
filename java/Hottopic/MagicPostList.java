@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,11 +7,12 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Hottopic.UserInfo;
 import tbclient.Quote;
 import tbclient.Zan;
 
 public final class MagicPostList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT_TEXT = "";
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -25,6 +26,8 @@ public final class MagicPostList extends Message {
   public static final Long DEFAULT_THREAD_ID;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String content_text;
@@ -80,7 +83,7 @@ public final class MagicPostList extends Message {
   }
   
   public MagicPostList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.thread_id;
       if (long_ == null) {
@@ -139,5 +142,69 @@ public final class MagicPostList extends Message {
       this.zan = paramBuilder.zan;
       this.quote = paramBuilder.quote;
     } 
+  }
+  
+  public MagicPostList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<MagicPostList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String content_text;
+    
+    public Integer create_time;
+    
+    public Integer is_comment;
+    
+    public Long post_id;
+    
+    public Integer post_no;
+    
+    public Quote quote;
+    
+    public Long thread_id;
+    
+    public String title;
+    
+    public UserInfo user_info;
+    
+    public Zan zan;
+    
+    public Builder() {}
+    
+    public Builder(MagicPostList param1MagicPostList) {
+      super(param1MagicPostList);
+      if (param1MagicPostList == null)
+        return; 
+      this.thread_id = param1MagicPostList.thread_id;
+      this.post_id = param1MagicPostList.post_id;
+      this.user_info = param1MagicPostList.user_info;
+      this.title = param1MagicPostList.title;
+      this.content_text = param1MagicPostList.content_text;
+      this.create_time = param1MagicPostList.create_time;
+      this.post_no = param1MagicPostList.post_no;
+      this.is_comment = param1MagicPostList.is_comment;
+      this.zan = param1MagicPostList.zan;
+      this.quote = param1MagicPostList.quote;
+    }
+    
+    public MagicPostList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MagicPostList)interceptResult.objValue; 
+      } 
+      return new MagicPostList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

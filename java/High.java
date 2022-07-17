@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.High;
 
 public final class High extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ALBUM_ID;
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -29,6 +32,8 @@ public final class High extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final Integer DEFAULT_WEIGHT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long album_id;
@@ -90,7 +95,7 @@ public final class High extends Message {
   }
   
   public High(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.album_id;
@@ -172,5 +177,72 @@ public final class High extends Message {
       this.portrait = ((Builder)str).portrait;
       this.user_name = ((Builder)str).user_name;
     } 
+  }
+  
+  public High(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<High> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long album_id;
+    
+    public Integer create_time;
+    
+    public Long hid;
+    
+    public Integer num_cai;
+    
+    public Integer num_zan;
+    
+    public String pic_url;
+    
+    public String portrait;
+    
+    public Integer type;
+    
+    public Long uid;
+    
+    public String user_name;
+    
+    public Integer weight;
+    
+    public Builder() {}
+    
+    public Builder(High param1High) {
+      super(param1High);
+      if (param1High == null)
+        return; 
+      this.album_id = param1High.album_id;
+      this.hid = param1High.hid;
+      this.uid = param1High.uid;
+      this.pic_url = param1High.pic_url;
+      this.create_time = param1High.create_time;
+      this.num_zan = param1High.num_zan;
+      this.num_cai = param1High.num_cai;
+      this.weight = param1High.weight;
+      this.type = param1High.type;
+      this.portrait = param1High.portrait;
+      this.user_name = param1High.user_name;
+    }
+    
+    public High build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (High)interceptResult.objValue; 
+      } 
+      return new High(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

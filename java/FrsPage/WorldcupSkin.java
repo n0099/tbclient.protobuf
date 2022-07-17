@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPage.TabSkin;
 
 public final class WorldcupSkin extends Message {
+  public static Interceptable $ic;
+  
   public static final List<TabSkin> DEFAULT_TAB_SKIN;
   
   public static final String DEFAULT_WORLDCUP_BOTTOM = "";
@@ -23,6 +24,8 @@ public final class WorldcupSkin extends Message {
   public static final String DEFAULT_WORLDCUP_TOP = "";
   
   public static final String DEFAULT_WORLDCUP_TOP_NIGHT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 6)
   public final List<TabSkin> tab_skin;
@@ -47,8 +50,8 @@ public final class WorldcupSkin extends Message {
   }
   
   public WorldcupSkin(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<TabSkin> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.worldcup_icon_height;
       if (integer == null) {
@@ -96,6 +99,10 @@ public final class WorldcupSkin extends Message {
     } 
   }
   
+  public WorldcupSkin(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -110,5 +117,53 @@ public final class WorldcupSkin extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<WorldcupSkin> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<TabSkin> tab_skin;
+    
+    public String worldcup_bottom;
+    
+    public String worldcup_bottom_night;
+    
+    public Integer worldcup_icon_height;
+    
+    public String worldcup_top;
+    
+    public String worldcup_top_night;
+    
+    public Builder() {}
+    
+    public Builder(WorldcupSkin param1WorldcupSkin) {
+      super(param1WorldcupSkin);
+      if (param1WorldcupSkin == null)
+        return; 
+      this.worldcup_icon_height = param1WorldcupSkin.worldcup_icon_height;
+      this.worldcup_bottom = param1WorldcupSkin.worldcup_bottom;
+      this.worldcup_bottom_night = param1WorldcupSkin.worldcup_bottom_night;
+      this.worldcup_top = param1WorldcupSkin.worldcup_top;
+      this.worldcup_top_night = param1WorldcupSkin.worldcup_top_night;
+      this.tab_skin = Message.copyOf(param1WorldcupSkin.tab_skin);
+    }
+    
+    public WorldcupSkin build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (WorldcupSkin)interceptResult.objValue; 
+      } 
+      return new WorldcupSkin(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

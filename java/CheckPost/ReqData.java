@@ -1,4 +1,4 @@
-package CheckPost;
+package tbclient.CheckPost;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class ReqData extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FORUMNAME = "";
   
   public static final String DEFAULT_ORI_UGC_NID = "";
@@ -25,6 +27,8 @@ public final class ReqData extends Message {
   public static final Integer DEFAULT_POSTTYPE;
   
   public static final Long DEFAULT_TID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final CommonReq common;
@@ -76,7 +80,7 @@ public final class ReqData extends Message {
   }
   
   public ReqData(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.pid;
@@ -139,5 +143,66 @@ public final class ReqData extends Message {
       this.ori_ugc_vid = ((Builder)str).ori_ugc_vid;
       this.ori_ugc_tid = ((Builder)str).ori_ugc_tid;
     } 
+  }
+  
+  public ReqData(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ReqData> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public String forumName;
+    
+    public String ori_ugc_nid;
+    
+    public String ori_ugc_tid;
+    
+    public Integer ori_ugc_type;
+    
+    public String ori_ugc_vid;
+    
+    public Long pid;
+    
+    public Integer postType;
+    
+    public Long tid;
+    
+    public Builder() {}
+    
+    public Builder(ReqData param1ReqData) {
+      super(param1ReqData);
+      if (param1ReqData == null)
+        return; 
+      this.pid = param1ReqData.pid;
+      this.postType = param1ReqData.postType;
+      this.forumName = param1ReqData.forumName;
+      this.common = param1ReqData.common;
+      this.tid = param1ReqData.tid;
+      this.ori_ugc_type = param1ReqData.ori_ugc_type;
+      this.ori_ugc_nid = param1ReqData.ori_ugc_nid;
+      this.ori_ugc_vid = param1ReqData.ori_ugc_vid;
+      this.ori_ugc_tid = param1ReqData.ori_ugc_tid;
+    }
+    
+    public ReqData build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ReqData)interceptResult.objValue; 
+      } 
+      return new ReqData(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package TalkBall;
+package tbclient.TalkBall;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.TalkBall.Country;
 
 public final class Competition extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BTN_TITLE = "";
   
   public static final List<Country> DEFAULT_COUNTRY = Collections.emptyList();
@@ -19,6 +20,8 @@ public final class Competition extends Message {
   public static final Long DEFAULT_TIME = Long.valueOf(0L);
   
   public static final String DEFAULT_TYPE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String btn_title;
@@ -33,10 +36,10 @@ public final class Competition extends Message {
   public final String type;
   
   public Competition(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list = paramBuilder.country;
+      List<Country> list = paramBuilder.country;
       if (list == null) {
         this.country = DEFAULT_COUNTRY;
       } else {
@@ -68,6 +71,10 @@ public final class Competition extends Message {
     } 
   }
   
+  public Competition(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -82,5 +89,47 @@ public final class Competition extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Competition> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String btn_title;
+    
+    public List<Country> country;
+    
+    public Long time;
+    
+    public String type;
+    
+    public Builder() {}
+    
+    public Builder(Competition param1Competition) {
+      super(param1Competition);
+      if (param1Competition == null)
+        return; 
+      this.country = Message.copyOf(param1Competition.country);
+      this.time = param1Competition.time;
+      this.type = param1Competition.type;
+      this.btn_title = param1Competition.btn_title;
+    }
+    
+    public Competition build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Competition)interceptResult.objValue; 
+      } 
+      return new Competition(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

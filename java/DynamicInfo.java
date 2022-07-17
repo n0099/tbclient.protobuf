@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,17 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.DynamicInfo;
-import tbclient.ForumDynamic;
-import tbclient.ThreadInfo;
-import tbclient.UserDynamic;
 
 public final class DynamicInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_DYNAMIC_TIMESTAMP = Long.valueOf(0L);
   
   public static final String DEFAULT_IS_HIDE = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long dynamic_timestamp;
@@ -36,7 +38,7 @@ public final class DynamicInfo extends Message {
   public final UserDynamic user_dynamic;
   
   public DynamicInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       this.thread_dynamic = paramBuilder.thread_dynamic;
@@ -70,6 +72,10 @@ public final class DynamicInfo extends Message {
     } 
   }
   
+  public DynamicInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -84,5 +90,53 @@ public final class DynamicInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DynamicInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long dynamic_timestamp;
+    
+    public ForumDynamic forum_dynamic;
+    
+    public String is_hide;
+    
+    public ThreadInfo thread_dynamic;
+    
+    public Integer type;
+    
+    public UserDynamic user_dynamic;
+    
+    public Builder() {}
+    
+    public Builder(DynamicInfo param1DynamicInfo) {
+      super(param1DynamicInfo);
+      if (param1DynamicInfo == null)
+        return; 
+      this.thread_dynamic = param1DynamicInfo.thread_dynamic;
+      this.dynamic_timestamp = param1DynamicInfo.dynamic_timestamp;
+      this.forum_dynamic = param1DynamicInfo.forum_dynamic;
+      this.user_dynamic = param1DynamicInfo.user_dynamic;
+      this.type = param1DynamicInfo.type;
+      this.is_hide = param1DynamicInfo.is_hide;
+    }
+    
+    public DynamicInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DynamicInfo)interceptResult.objValue; 
+      } 
+      return new DynamicInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

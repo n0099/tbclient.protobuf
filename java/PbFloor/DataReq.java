@@ -1,4 +1,4 @@
-package PbFloor;
+package tbclient.PbFloor;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FORUM_ID;
   
   public static final Integer DEFAULT_IS_COMM_REVERSE;
@@ -39,6 +41,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_ST_TYPE = "";
   
   public static final String DEFAULT_TOP_UGC_PID = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9)
   public final CommonReq common;
@@ -117,7 +121,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.kz;
@@ -229,5 +233,87 @@ public final class DataReq extends Message {
       this.ori_ugc_vid = ((Builder)str).ori_ugc_vid;
       this.top_ugc_pid = ((Builder)str).top_ugc_pid;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public Long forum_id;
+    
+    public Integer is_comm_reverse;
+    
+    public Long kz;
+    
+    public String ori_ugc_nid;
+    
+    public String ori_ugc_tid;
+    
+    public Integer ori_ugc_type;
+    
+    public String ori_ugc_vid;
+    
+    public Long pid;
+    
+    public Integer pn;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public Long spid;
+    
+    public String st_type;
+    
+    public String top_ugc_pid;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.kz = param1DataReq.kz;
+      this.pid = param1DataReq.pid;
+      this.spid = param1DataReq.spid;
+      this.pn = param1DataReq.pn;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.st_type = param1DataReq.st_type;
+      this.common = param1DataReq.common;
+      this.is_comm_reverse = param1DataReq.is_comm_reverse;
+      this.forum_id = param1DataReq.forum_id;
+      this.ori_ugc_nid = param1DataReq.ori_ugc_nid;
+      this.ori_ugc_tid = param1DataReq.ori_ugc_tid;
+      this.ori_ugc_type = param1DataReq.ori_ugc_type;
+      this.ori_ugc_vid = param1DataReq.ori_ugc_vid;
+      this.top_ugc_pid = param1DataReq.top_ugc_pid;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

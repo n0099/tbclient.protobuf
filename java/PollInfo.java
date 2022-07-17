@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.PollInfo;
-import tbclient.PollOption;
 
 public final class PollInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_END_TIME;
   
   public static final Integer DEFAULT_IS_MULTI;
@@ -36,6 +38,8 @@ public final class PollInfo extends Message {
   public static final Long DEFAULT_TOTAL_POLL;
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer end_time;
@@ -105,7 +109,7 @@ public final class PollInfo extends Message {
   }
   
   public PollInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer4 = paramBuilder.type;
@@ -156,7 +160,7 @@ public final class PollInfo extends Message {
       } else {
         this.end_time = integer2;
       } 
-      List list = paramBuilder.options;
+      List<PollOption> list = paramBuilder.options;
       if (list == null) {
         this.options = DEFAULT_OPTIONS;
       } else {
@@ -201,5 +205,78 @@ public final class PollInfo extends Message {
       this.title = ((Builder)integer).title;
       this.last_time = ((Builder)integer).last_time;
     } 
+  }
+  
+  public PollInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PollInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer end_time;
+    
+    public Integer is_multi;
+    
+    public Integer is_polled;
+    
+    public Integer last_time;
+    
+    public List<PollOption> options;
+    
+    public Integer options_count;
+    
+    public String polled_value;
+    
+    public Integer status;
+    
+    public String tips;
+    
+    public String title;
+    
+    public Long total_num;
+    
+    public Long total_poll;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(PollInfo param1PollInfo) {
+      super(param1PollInfo);
+      if (param1PollInfo == null)
+        return; 
+      this.type = param1PollInfo.type;
+      this.is_multi = param1PollInfo.is_multi;
+      this.total_num = param1PollInfo.total_num;
+      this.options_count = param1PollInfo.options_count;
+      this.is_polled = param1PollInfo.is_polled;
+      this.polled_value = param1PollInfo.polled_value;
+      this.tips = param1PollInfo.tips;
+      this.end_time = param1PollInfo.end_time;
+      this.options = Message.copyOf(param1PollInfo.options);
+      this.status = param1PollInfo.status;
+      this.total_poll = param1PollInfo.total_poll;
+      this.title = param1PollInfo.title;
+      this.last_time = param1PollInfo.last_time;
+    }
+    
+    public PollInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PollInfo)interceptResult.objValue; 
+      } 
+      return new PollInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

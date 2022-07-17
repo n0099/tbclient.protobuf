@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,15 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GraffitiInfo;
-import tbclient.Item;
-import tbclient.MemeInfo;
-import tbclient.NativeApp;
-import tbclient.PbContent;
-import tbclient.TiebaPlusInfo;
-import tbclient.TogetherHi;
 
 public final class PbContent extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BIG_CDN_SRC = "";
   
   public static final String DEFAULT_BIG_SIZE = "";
@@ -64,6 +61,8 @@ public final class PbContent extends Message {
   
   public static final String DEFAULT_PHONETYPE = "";
   
+  public static final Long DEFAULT_PIC_ID;
+  
   public static final Integer DEFAULT_SHOW_ORIGINAL_BTN;
   
   public static final String DEFAULT_SRC = "";
@@ -83,6 +82,8 @@ public final class PbContent extends Message {
   public static final String DEFAULT_VOICE_MD5 = "";
   
   public static final Integer DEFAULT_WIDTH;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 17, type = Message.Datatype.STRING)
   public final String _static;
@@ -177,6 +178,9 @@ public final class PbContent extends Message {
   @ProtoField(tag = 21, type = Message.Datatype.STRING)
   public final String phonetype;
   
+  @ProtoField(tag = 42, type = Message.Datatype.INT64)
+  public final Long pic_id;
+  
   @ProtoField(tag = 35, type = Message.Datatype.UINT32)
   public final Integer show_original_btn;
   
@@ -238,10 +242,12 @@ public final class PbContent extends Message {
     DEFAULT_IS_LONG_PIC = integer;
     DEFAULT_SHOW_ORIGINAL_BTN = integer;
     DEFAULT_ITEM_ID = long_;
+    DEFAULT_PIC_ID = long_;
   }
   
   public PbContent(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
+    Long long_;
     if (paramBoolean == true) {
       Integer integer6 = paramBuilder.type;
       if (integer6 == null) {
@@ -459,48 +465,215 @@ public final class PbContent extends Message {
       } 
       this.tiebaplus_info = paramBuilder.tiebaplus_info;
       this.item = paramBuilder.item;
+      long_ = paramBuilder.pic_id;
+      if (long_ == null) {
+        this.pic_id = DEFAULT_PIC_ID;
+      } else {
+        this.pic_id = long_;
+      } 
     } else {
-      this.type = paramBuilder.type;
-      this.text = paramBuilder.text;
-      this.link = paramBuilder.link;
-      this.src = paramBuilder.src;
-      this.bsize = paramBuilder.bsize;
-      this.big_src = paramBuilder.big_src;
-      this.big_size = paramBuilder.big_size;
-      this.cdn_src = paramBuilder.cdn_src;
-      this.big_cdn_src = paramBuilder.big_cdn_src;
-      this.imgtype = paramBuilder.imgtype;
-      this.c = paramBuilder.c;
-      this.voice_md5 = paramBuilder.voice_md5;
-      this.during_time = paramBuilder.during_time;
-      this.is_sub = paramBuilder.is_sub;
-      this.uid = paramBuilder.uid;
-      this.dynamic = paramBuilder.dynamic;
-      this._static = paramBuilder._static;
-      this.width = paramBuilder.width;
-      this.height = paramBuilder.height;
-      this.packet_name = paramBuilder.packet_name;
-      this.phonetype = paramBuilder.phonetype;
-      this.is_native_app = paramBuilder.is_native_app;
-      this.native_app = paramBuilder.native_app;
-      this.e_type = paramBuilder.e_type;
-      this.origin_src = paramBuilder.origin_src;
-      this.btn_type = paramBuilder.btn_type;
-      this.origin_size = paramBuilder.origin_size;
-      this.count = paramBuilder.count;
-      this.graffiti_info = paramBuilder.graffiti_info;
-      this.high_together = paramBuilder.high_together;
-      this.media_subtitle = paramBuilder.media_subtitle;
-      this.url_type = paramBuilder.url_type;
-      this.meme_info = paramBuilder.meme_info;
-      this.is_long_pic = paramBuilder.is_long_pic;
-      this.show_original_btn = paramBuilder.show_original_btn;
-      this.cdn_src_active = paramBuilder.cdn_src_active;
-      this.topic_special_icon = paramBuilder.topic_special_icon;
-      this.item_id = paramBuilder.item_id;
-      this.item_forum_name = paramBuilder.item_forum_name;
-      this.tiebaplus_info = paramBuilder.tiebaplus_info;
-      this.item = paramBuilder.item;
+      this.type = ((Builder)long_).type;
+      this.text = ((Builder)long_).text;
+      this.link = ((Builder)long_).link;
+      this.src = ((Builder)long_).src;
+      this.bsize = ((Builder)long_).bsize;
+      this.big_src = ((Builder)long_).big_src;
+      this.big_size = ((Builder)long_).big_size;
+      this.cdn_src = ((Builder)long_).cdn_src;
+      this.big_cdn_src = ((Builder)long_).big_cdn_src;
+      this.imgtype = ((Builder)long_).imgtype;
+      this.c = ((Builder)long_).c;
+      this.voice_md5 = ((Builder)long_).voice_md5;
+      this.during_time = ((Builder)long_).during_time;
+      this.is_sub = ((Builder)long_).is_sub;
+      this.uid = ((Builder)long_).uid;
+      this.dynamic = ((Builder)long_).dynamic;
+      this._static = ((Builder)long_)._static;
+      this.width = ((Builder)long_).width;
+      this.height = ((Builder)long_).height;
+      this.packet_name = ((Builder)long_).packet_name;
+      this.phonetype = ((Builder)long_).phonetype;
+      this.is_native_app = ((Builder)long_).is_native_app;
+      this.native_app = ((Builder)long_).native_app;
+      this.e_type = ((Builder)long_).e_type;
+      this.origin_src = ((Builder)long_).origin_src;
+      this.btn_type = ((Builder)long_).btn_type;
+      this.origin_size = ((Builder)long_).origin_size;
+      this.count = ((Builder)long_).count;
+      this.graffiti_info = ((Builder)long_).graffiti_info;
+      this.high_together = ((Builder)long_).high_together;
+      this.media_subtitle = ((Builder)long_).media_subtitle;
+      this.url_type = ((Builder)long_).url_type;
+      this.meme_info = ((Builder)long_).meme_info;
+      this.is_long_pic = ((Builder)long_).is_long_pic;
+      this.show_original_btn = ((Builder)long_).show_original_btn;
+      this.cdn_src_active = ((Builder)long_).cdn_src_active;
+      this.topic_special_icon = ((Builder)long_).topic_special_icon;
+      this.item_id = ((Builder)long_).item_id;
+      this.item_forum_name = ((Builder)long_).item_forum_name;
+      this.tiebaplus_info = ((Builder)long_).tiebaplus_info;
+      this.item = ((Builder)long_).item;
+      this.pic_id = ((Builder)long_).pic_id;
     } 
+  }
+  
+  public PbContent(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PbContent> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _static;
+    
+    public String big_cdn_src;
+    
+    public String big_size;
+    
+    public String big_src;
+    
+    public String bsize;
+    
+    public Integer btn_type;
+    
+    public String c;
+    
+    public String cdn_src;
+    
+    public String cdn_src_active;
+    
+    public Integer count;
+    
+    public Integer during_time;
+    
+    public String dynamic;
+    
+    public Integer e_type;
+    
+    public GraffitiInfo graffiti_info;
+    
+    public Integer height;
+    
+    public TogetherHi high_together;
+    
+    public String imgtype;
+    
+    public Integer is_long_pic;
+    
+    public Integer is_native_app;
+    
+    public Integer is_sub;
+    
+    public Item item;
+    
+    public String item_forum_name;
+    
+    public Long item_id;
+    
+    public String link;
+    
+    public String media_subtitle;
+    
+    public MemeInfo meme_info;
+    
+    public NativeApp native_app;
+    
+    public Integer origin_size;
+    
+    public String origin_src;
+    
+    public String packet_name;
+    
+    public String phonetype;
+    
+    public Long pic_id;
+    
+    public Integer show_original_btn;
+    
+    public String src;
+    
+    public String text;
+    
+    public TiebaPlusInfo tiebaplus_info;
+    
+    public String topic_special_icon;
+    
+    public Integer type;
+    
+    public Long uid;
+    
+    public Integer url_type;
+    
+    public String voice_md5;
+    
+    public Integer width;
+    
+    public Builder() {}
+    
+    public Builder(PbContent param1PbContent) {
+      super(param1PbContent);
+      if (param1PbContent == null)
+        return; 
+      this.type = param1PbContent.type;
+      this.text = param1PbContent.text;
+      this.link = param1PbContent.link;
+      this.src = param1PbContent.src;
+      this.bsize = param1PbContent.bsize;
+      this.big_src = param1PbContent.big_src;
+      this.big_size = param1PbContent.big_size;
+      this.cdn_src = param1PbContent.cdn_src;
+      this.big_cdn_src = param1PbContent.big_cdn_src;
+      this.imgtype = param1PbContent.imgtype;
+      this.c = param1PbContent.c;
+      this.voice_md5 = param1PbContent.voice_md5;
+      this.during_time = param1PbContent.during_time;
+      this.is_sub = param1PbContent.is_sub;
+      this.uid = param1PbContent.uid;
+      this.dynamic = param1PbContent.dynamic;
+      this._static = param1PbContent._static;
+      this.width = param1PbContent.width;
+      this.height = param1PbContent.height;
+      this.packet_name = param1PbContent.packet_name;
+      this.phonetype = param1PbContent.phonetype;
+      this.is_native_app = param1PbContent.is_native_app;
+      this.native_app = param1PbContent.native_app;
+      this.e_type = param1PbContent.e_type;
+      this.origin_src = param1PbContent.origin_src;
+      this.btn_type = param1PbContent.btn_type;
+      this.origin_size = param1PbContent.origin_size;
+      this.count = param1PbContent.count;
+      this.graffiti_info = param1PbContent.graffiti_info;
+      this.high_together = param1PbContent.high_together;
+      this.media_subtitle = param1PbContent.media_subtitle;
+      this.url_type = param1PbContent.url_type;
+      this.meme_info = param1PbContent.meme_info;
+      this.is_long_pic = param1PbContent.is_long_pic;
+      this.show_original_btn = param1PbContent.show_original_btn;
+      this.cdn_src_active = param1PbContent.cdn_src_active;
+      this.topic_special_icon = param1PbContent.topic_special_icon;
+      this.item_id = param1PbContent.item_id;
+      this.item_forum_name = param1PbContent.item_forum_name;
+      this.tiebaplus_info = param1PbContent.tiebaplus_info;
+      this.item = param1PbContent.item;
+      this.pic_id = param1PbContent.pic_id;
+    }
+    
+    public PbContent build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PbContent)interceptResult.objValue; 
+      } 
+      return new PbContent(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

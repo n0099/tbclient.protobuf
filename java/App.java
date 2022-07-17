@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.App;
-import tbclient.GoodsInfo;
 
 public final class App extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABTEST = "";
   
   public static final String DEFAULT_AD_ID = "";
@@ -74,6 +76,8 @@ public final class App extends Message {
   public static final String DEFAULT_VERIFY = "";
   
   public static final String DEFAULT_WEB_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 24, type = Message.Datatype.STRING)
   public final String abtest;
@@ -196,7 +200,7 @@ public final class App extends Message {
   }
   
   public App(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer5 = paramBuilder.type;
@@ -373,7 +377,7 @@ public final class App extends Message {
       } else {
         this.ext_info = str2;
       } 
-      List list = paramBuilder.goods_info;
+      List<GoodsInfo> list = paramBuilder.goods_info;
       if (list == null) {
         this.goods_info = DEFAULT_GOODS_INFO;
       } else {
@@ -425,5 +429,135 @@ public final class App extends Message {
       this.loc_code = ((Builder)str).loc_code;
       this.deep_url = ((Builder)str).deep_url;
     } 
+  }
+  
+  public App(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<App> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String abtest;
+    
+    public String ad_id;
+    
+    public String apk_name;
+    
+    public String apk_url;
+    
+    public String app_desc;
+    
+    public String app_name;
+    
+    public Integer app_time;
+    
+    public Integer cpid;
+    
+    public String deep_url;
+    
+    public String ext_info;
+    
+    public String first_name;
+    
+    public List<GoodsInfo> goods_info;
+    
+    public String icon_link;
+    
+    public String icon_url;
+    
+    public String id;
+    
+    public String img_url;
+    
+    public String ios_url;
+    
+    public String loc_code;
+    
+    public String name;
+    
+    public String p_name;
+    
+    public String p_url;
+    
+    public Integer plan_id;
+    
+    public Integer pos;
+    
+    public String pos_name;
+    
+    public String price;
+    
+    public String second_name;
+    
+    public Integer type;
+    
+    public String url;
+    
+    public Integer url_type;
+    
+    public String user_id;
+    
+    public String verify;
+    
+    public String web_url;
+    
+    public Builder() {}
+    
+    public Builder(App param1App) {
+      super(param1App);
+      if (param1App == null)
+        return; 
+      this.type = param1App.type;
+      this.pos = param1App.pos;
+      this.icon_url = param1App.icon_url;
+      this.icon_link = param1App.icon_link;
+      this.app_name = param1App.app_name;
+      this.app_desc = param1App.app_desc;
+      this.p_name = param1App.p_name;
+      this.p_url = param1App.p_url;
+      this.img_url = param1App.img_url;
+      this.app_time = param1App.app_time;
+      this.web_url = param1App.web_url;
+      this.ad_id = param1App.ad_id;
+      this.id = param1App.id;
+      this.name = param1App.name;
+      this.url_type = param1App.url_type;
+      this.url = param1App.url;
+      this.ios_url = param1App.ios_url;
+      this.apk_url = param1App.apk_url;
+      this.apk_name = param1App.apk_name;
+      this.pos_name = param1App.pos_name;
+      this.first_name = param1App.first_name;
+      this.second_name = param1App.second_name;
+      this.cpid = param1App.cpid;
+      this.abtest = param1App.abtest;
+      this.plan_id = param1App.plan_id;
+      this.user_id = param1App.user_id;
+      this.price = param1App.price;
+      this.verify = param1App.verify;
+      this.ext_info = param1App.ext_info;
+      this.goods_info = Message.copyOf(param1App.goods_info);
+      this.loc_code = param1App.loc_code;
+      this.deep_url = param1App.deep_url;
+    }
+    
+    public App build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (App)interceptResult.objValue; 
+      } 
+      return new App(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

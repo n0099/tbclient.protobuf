@@ -1,4 +1,4 @@
-package GetLockWindowMsg;
+package tbclient.GetLockWindowMsg;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.PbContent;
 
 public final class LockWindowThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<PbContent> DEFAULT_CONTENT;
   
   public static final Integer DEFAULT_POST_NUM;
@@ -19,6 +21,8 @@ public final class LockWindowThreadInfo extends Message {
   public static final Long DEFAULT_TID = Long.valueOf(0L);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<PbContent> content;
@@ -38,7 +42,7 @@ public final class LockWindowThreadInfo extends Message {
   }
   
   public LockWindowThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.tid;
@@ -53,7 +57,7 @@ public final class LockWindowThreadInfo extends Message {
       } else {
         this.title = str;
       } 
-      List list = paramBuilder.content;
+      List<PbContent> list = paramBuilder.content;
       if (list == null) {
         this.content = DEFAULT_CONTENT;
       } else {
@@ -73,6 +77,10 @@ public final class LockWindowThreadInfo extends Message {
     } 
   }
   
+  public LockWindowThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -87,5 +95,47 @@ public final class LockWindowThreadInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<LockWindowThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<PbContent> content;
+    
+    public Integer post_num;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(LockWindowThreadInfo param1LockWindowThreadInfo) {
+      super(param1LockWindowThreadInfo);
+      if (param1LockWindowThreadInfo == null)
+        return; 
+      this.tid = param1LockWindowThreadInfo.tid;
+      this.title = param1LockWindowThreadInfo.title;
+      this.content = Message.copyOf(param1LockWindowThreadInfo.content);
+      this.post_num = param1LockWindowThreadInfo.post_num;
+    }
+    
+    public LockWindowThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LockWindowThreadInfo)interceptResult.objValue; 
+      } 
+      return new LockWindowThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

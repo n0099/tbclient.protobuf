@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SendCardInfo;
 
 public final class SendCardInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CARD_GET_STATUS = Integer.valueOf(0);
   
   public static final String DEFAULT_CARD_LOGO = "";
@@ -17,6 +20,8 @@ public final class SendCardInfo extends Message {
   public static final String DEFAULT_CARD_PRO = "";
   
   public static final Long DEFAULT_PACKET_ID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer card_get_status;
@@ -34,7 +39,7 @@ public final class SendCardInfo extends Message {
   public final Long packet_id;
   
   public SendCardInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.card_logo;
@@ -76,6 +81,10 @@ public final class SendCardInfo extends Message {
     } 
   }
   
+  public SendCardInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -90,5 +99,50 @@ public final class SendCardInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SendCardInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer card_get_status;
+    
+    public String card_logo;
+    
+    public String card_name;
+    
+    public String card_pro;
+    
+    public Long packet_id;
+    
+    public Builder() {}
+    
+    public Builder(SendCardInfo param1SendCardInfo) {
+      super(param1SendCardInfo);
+      if (param1SendCardInfo == null)
+        return; 
+      this.card_logo = param1SendCardInfo.card_logo;
+      this.card_name = param1SendCardInfo.card_name;
+      this.card_pro = param1SendCardInfo.card_pro;
+      this.card_get_status = param1SendCardInfo.card_get_status;
+      this.packet_id = param1SendCardInfo.packet_id;
+    }
+    
+    public SendCardInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SendCardInfo)interceptResult.objValue; 
+      } 
+      return new SendCardInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.NaGuide;
-import tbclient.RecGuide;
 
 public final class NaGuide extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DWNL_URL = "";
   
   public static final List<RecGuide> DEFAULT_REC_INFO = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String dwnl_url;
@@ -22,8 +26,8 @@ public final class NaGuide extends Message {
   public final List<RecGuide> rec_info;
   
   public NaGuide(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<RecGuide> list;
     if (paramBoolean == true) {
       String str = paramBuilder.dwnl_url;
       if (str == null) {
@@ -43,6 +47,10 @@ public final class NaGuide extends Message {
     } 
   }
   
+  public NaGuide(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -57,5 +65,41 @@ public final class NaGuide extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<NaGuide> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String dwnl_url;
+    
+    public List<RecGuide> rec_info;
+    
+    public Builder() {}
+    
+    public Builder(NaGuide param1NaGuide) {
+      super(param1NaGuide);
+      if (param1NaGuide == null)
+        return; 
+      this.dwnl_url = param1NaGuide.dwnl_url;
+      this.rec_info = Message.copyOf(param1NaGuide.rec_info);
+    }
+    
+    public NaGuide build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NaGuide)interceptResult.objValue; 
+      } 
+      return new NaGuide(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ConcernUser;
 
 public final class ConcernUser extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String portrait;
@@ -24,7 +29,7 @@ public final class ConcernUser extends Message {
   public final String user_name;
   
   public ConcernUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.user_name;
@@ -52,6 +57,10 @@ public final class ConcernUser extends Message {
     } 
   }
   
+  public ConcernUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class ConcernUser extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ConcernUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String portrait;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(ConcernUser param1ConcernUser) {
+      super(param1ConcernUser);
+      if (param1ConcernUser == null)
+        return; 
+      this.user_name = param1ConcernUser.user_name;
+      this.portrait = param1ConcernUser.portrait;
+      this.user_id = param1ConcernUser.user_id;
+    }
+    
+    public ConcernUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ConcernUser)interceptResult.objValue; 
+      } 
+      return new ConcernUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

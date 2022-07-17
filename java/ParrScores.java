@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ParrScores;
 
 public final class ParrScores extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_I_MONEY;
   
   public static final Long DEFAULT_I_OTHER;
@@ -27,6 +30,8 @@ public final class ParrScores extends Message {
   public static final Integer DEFAULT_SCORES_TOTAL;
   
   public static final Integer DEFAULT_UPDATE_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.UINT64)
   public final Long i_money;
@@ -87,7 +92,7 @@ public final class ParrScores extends Message {
   }
   
   public ParrScores(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.scores_total;
@@ -162,5 +167,69 @@ public final class ParrScores extends Message {
       this.i_money = ((Builder)long_).i_money;
       this.i_other = ((Builder)long_).i_other;
     } 
+  }
+  
+  public ParrScores(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ParrScores> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long i_money;
+    
+    public Long i_other;
+    
+    public Long i_total;
+    
+    public Integer level;
+    
+    public Integer limit;
+    
+    public Integer scores_fetch;
+    
+    public Integer scores_money;
+    
+    public Integer scores_other;
+    
+    public Integer scores_total;
+    
+    public Integer update_time;
+    
+    public Builder() {}
+    
+    public Builder(ParrScores param1ParrScores) {
+      super(param1ParrScores);
+      if (param1ParrScores == null)
+        return; 
+      this.scores_total = param1ParrScores.scores_total;
+      this.scores_fetch = param1ParrScores.scores_fetch;
+      this.scores_money = param1ParrScores.scores_money;
+      this.scores_other = param1ParrScores.scores_other;
+      this.update_time = param1ParrScores.update_time;
+      this.level = param1ParrScores.level;
+      this.limit = param1ParrScores.limit;
+      this.i_total = param1ParrScores.i_total;
+      this.i_money = param1ParrScores.i_money;
+      this.i_other = param1ParrScores.i_other;
+    }
+    
+    public ParrScores build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ParrScores)interceptResult.objValue; 
+      } 
+      return new ParrScores(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

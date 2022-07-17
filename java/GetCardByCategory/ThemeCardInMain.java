@@ -1,4 +1,4 @@
-package GetCardByCategory;
+package tbclient.GetCardByCategory;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,9 +12,13 @@ import java.util.List;
 import tbclient.ThemeCardPropMain;
 
 public final class ThemeCardInMain extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CARD_CATEGORY = "";
   
   public static final List<ThemeCardPropMain> DEFAULT_PROPS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String card_category;
@@ -23,8 +27,8 @@ public final class ThemeCardInMain extends Message {
   public final List<ThemeCardPropMain> props;
   
   public ThemeCardInMain(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ThemeCardPropMain> list;
     if (paramBoolean == true) {
       String str = paramBuilder.card_category;
       if (str == null) {
@@ -44,6 +48,10 @@ public final class ThemeCardInMain extends Message {
     } 
   }
   
+  public ThemeCardInMain(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +66,41 @@ public final class ThemeCardInMain extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ThemeCardInMain> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String card_category;
+    
+    public List<ThemeCardPropMain> props;
+    
+    public Builder() {}
+    
+    public Builder(ThemeCardInMain param1ThemeCardInMain) {
+      super(param1ThemeCardInMain);
+      if (param1ThemeCardInMain == null)
+        return; 
+      this.card_category = param1ThemeCardInMain.card_category;
+      this.props = Message.copyOf(param1ThemeCardInMain.props);
+    }
+    
+    public ThemeCardInMain build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThemeCardInMain)interceptResult.objValue; 
+      } 
+      return new ThemeCardInMain(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

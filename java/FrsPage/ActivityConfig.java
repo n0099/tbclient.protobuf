@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ActivityConfig extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ACTIVITY_ID;
   
   public static final String DEFAULT_ADDTHREAD_ICON = "";
@@ -26,6 +28,8 @@ public final class ActivityConfig extends Message {
   public static final String DEFAULT_NIGHT_AGREE_ICON = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.UINT64)
   public final Long activity_id;
@@ -59,7 +63,7 @@ public final class ActivityConfig extends Message {
   }
   
   public ActivityConfig(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -129,6 +133,10 @@ public final class ActivityConfig extends Message {
     } 
   }
   
+  public ActivityConfig(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -143,5 +151,62 @@ public final class ActivityConfig extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ActivityConfig> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long activity_id;
+    
+    public String addthread_icon;
+    
+    public String addthread_text;
+    
+    public String agree_icon;
+    
+    public String agreed_icon;
+    
+    public String night_addthread_icon;
+    
+    public String night_agree_icon;
+    
+    public String night_agreed_icon;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(ActivityConfig param1ActivityConfig) {
+      super(param1ActivityConfig);
+      if (param1ActivityConfig == null)
+        return; 
+      this.type = param1ActivityConfig.type;
+      this.agree_icon = param1ActivityConfig.agree_icon;
+      this.night_agree_icon = param1ActivityConfig.night_agree_icon;
+      this.agreed_icon = param1ActivityConfig.agreed_icon;
+      this.night_agreed_icon = param1ActivityConfig.night_agreed_icon;
+      this.activity_id = param1ActivityConfig.activity_id;
+      this.addthread_icon = param1ActivityConfig.addthread_icon;
+      this.night_addthread_icon = param1ActivityConfig.night_addthread_icon;
+      this.addthread_text = param1ActivityConfig.addthread_text;
+    }
+    
+    public ActivityConfig build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActivityConfig)interceptResult.objValue; 
+      } 
+      return new ActivityConfig(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package Userlike;
+package tbclient.Userlike;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,10 @@ import java.util.List;
 import tbclient.App;
 import tbclient.BannerUserStory;
 import tbclient.DiscoverHotForum;
-import tbclient.Userlike.BannerFollowLive;
-import tbclient.Userlike.ConcernData;
-import tbclient.Userlike.UserList;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<App> DEFAULT_APP_LIST;
   
   public static final Integer DEFAULT_HAS_MORE;
@@ -36,6 +35,8 @@ public final class DataRes extends Message {
   public static final String DEFAULT_USER_TIPS = "";
   
   public static final Integer DEFAULT_USER_TIPS_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 16)
   public final List<App> app_list;
@@ -70,6 +71,9 @@ public final class DataRes extends Message {
   @ProtoField(tag = 9)
   public final UserList top_user_info;
   
+  @ProtoField(tag = 17)
+  public final UserFollowLive user_follow_live;
+  
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<UserList> user_list;
   
@@ -88,10 +92,9 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list2 = paramBuilder.thread_info;
+      List<ConcernData> list2 = paramBuilder.thread_info;
       if (list2 == null) {
         this.thread_info = DEFAULT_THREAD_INFO;
       } else {
@@ -103,7 +106,7 @@ public final class DataRes extends Message {
       } else {
         this.page_tag = str3;
       } 
-      List list1 = paramBuilder.user_list;
+      List<UserList> list1 = paramBuilder.user_list;
       if (list1 == null) {
         this.user_list = DEFAULT_USER_LIST;
       } else {
@@ -149,28 +152,34 @@ public final class DataRes extends Message {
       } 
       this.banner_follow_live = paramBuilder.banner_follow_live;
       this.hot_recomforum = paramBuilder.hot_recomforum;
-      list = paramBuilder.app_list;
+      List<App> list = paramBuilder.app_list;
       if (list == null) {
         this.app_list = DEFAULT_APP_LIST;
       } else {
         this.app_list = Message.immutableCopyOf(list);
       } 
+      this.user_follow_live = paramBuilder.user_follow_live;
     } else {
-      this.thread_info = Message.immutableCopyOf(((Builder)list).thread_info);
-      this.page_tag = ((Builder)list).page_tag;
-      this.user_list = Message.immutableCopyOf(((Builder)list).user_list);
-      this.has_more = ((Builder)list).has_more;
-      this.user_tips = ((Builder)list).user_tips;
-      this.banner_user_story = ((Builder)list).banner_user_story;
-      this.last_tips = ((Builder)list).last_tips;
-      this.top_user_info = ((Builder)list).top_user_info;
-      this.req_unix = ((Builder)list).req_unix;
-      this.user_tips_type = ((Builder)list).user_tips_type;
-      this.top_tips = ((Builder)list).top_tips;
-      this.banner_follow_live = ((Builder)list).banner_follow_live;
-      this.hot_recomforum = ((Builder)list).hot_recomforum;
-      this.app_list = Message.immutableCopyOf(((Builder)list).app_list);
+      this.thread_info = Message.immutableCopyOf(paramBuilder.thread_info);
+      this.page_tag = paramBuilder.page_tag;
+      this.user_list = Message.immutableCopyOf(paramBuilder.user_list);
+      this.has_more = paramBuilder.has_more;
+      this.user_tips = paramBuilder.user_tips;
+      this.banner_user_story = paramBuilder.banner_user_story;
+      this.last_tips = paramBuilder.last_tips;
+      this.top_user_info = paramBuilder.top_user_info;
+      this.req_unix = paramBuilder.req_unix;
+      this.user_tips_type = paramBuilder.user_tips_type;
+      this.top_tips = paramBuilder.top_tips;
+      this.banner_follow_live = paramBuilder.banner_follow_live;
+      this.hot_recomforum = paramBuilder.hot_recomforum;
+      this.app_list = Message.immutableCopyOf(paramBuilder.app_list);
+      this.user_follow_live = paramBuilder.user_follow_live;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -187,5 +196,80 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<App> app_list;
+    
+    public BannerFollowLive banner_follow_live;
+    
+    public BannerUserStory banner_user_story;
+    
+    public Integer has_more;
+    
+    public DiscoverHotForum hot_recomforum;
+    
+    public String last_tips;
+    
+    public String page_tag;
+    
+    public Long req_unix;
+    
+    public List<ConcernData> thread_info;
+    
+    public String top_tips;
+    
+    public UserList top_user_info;
+    
+    public UserFollowLive user_follow_live;
+    
+    public List<UserList> user_list;
+    
+    public String user_tips;
+    
+    public Integer user_tips_type;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.thread_info = Message.copyOf(param1DataRes.thread_info);
+      this.page_tag = param1DataRes.page_tag;
+      this.user_list = Message.copyOf(param1DataRes.user_list);
+      this.has_more = param1DataRes.has_more;
+      this.user_tips = param1DataRes.user_tips;
+      this.banner_user_story = param1DataRes.banner_user_story;
+      this.last_tips = param1DataRes.last_tips;
+      this.top_user_info = param1DataRes.top_user_info;
+      this.req_unix = param1DataRes.req_unix;
+      this.user_tips_type = param1DataRes.user_tips_type;
+      this.top_tips = param1DataRes.top_tips;
+      this.banner_follow_live = param1DataRes.banner_follow_live;
+      this.hot_recomforum = param1DataRes.hot_recomforum;
+      this.app_list = Message.copyOf(param1DataRes.app_list);
+      this.user_follow_live = param1DataRes.user_follow_live;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

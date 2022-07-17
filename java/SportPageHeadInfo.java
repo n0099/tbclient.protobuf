@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SportPageHeadInfo;
 
 public final class SportPageHeadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_HEAD_URL = "";
   
   public static final Integer DEFAULT_IS_AD = Integer.valueOf(0);
   
   public static final String DEFAULT_JUMP_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String head_url;
@@ -24,7 +29,7 @@ public final class SportPageHeadInfo extends Message {
   public final String jump_url;
   
   public SportPageHeadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.head_url;
@@ -52,6 +57,10 @@ public final class SportPageHeadInfo extends Message {
     } 
   }
   
+  public SportPageHeadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class SportPageHeadInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SportPageHeadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String head_url;
+    
+    public Integer is_ad;
+    
+    public String jump_url;
+    
+    public Builder() {}
+    
+    public Builder(SportPageHeadInfo param1SportPageHeadInfo) {
+      super(param1SportPageHeadInfo);
+      if (param1SportPageHeadInfo == null)
+        return; 
+      this.head_url = param1SportPageHeadInfo.head_url;
+      this.is_ad = param1SportPageHeadInfo.is_ad;
+      this.jump_url = param1SportPageHeadInfo.jump_url;
+    }
+    
+    public SportPageHeadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SportPageHeadInfo)interceptResult.objValue; 
+      } 
+      return new SportPageHeadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

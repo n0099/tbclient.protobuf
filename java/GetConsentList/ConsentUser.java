@@ -1,4 +1,4 @@
-package GetConsentList;
+package tbclient.GetConsentList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ConsentUser extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_AUTHOR_ID;
   
   public static final String DEFAULT_AUTHOR_NAME = "";
@@ -30,6 +32,8 @@ public final class ConsentUser extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final String DEFAULT_USER_NAME_SHOW = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT64)
   public final Long author_id;
@@ -88,7 +92,7 @@ public final class ConsentUser extends Message {
   }
   
   public ConsentUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_4 = paramBuilder.user_id;
@@ -170,5 +174,72 @@ public final class ConsentUser extends Message {
       this.author_name_show = ((Builder)str).author_name_show;
       this.user_name_show = ((Builder)str).user_name_show;
     } 
+  }
+  
+  public ConsentUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ConsentUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long author_id;
+    
+    public String author_name;
+    
+    public String author_name_show;
+    
+    public Integer create_time;
+    
+    public Long gid;
+    
+    public String portrait;
+    
+    public Long post_id;
+    
+    public Long thread_id;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public String user_name_show;
+    
+    public Builder() {}
+    
+    public Builder(ConsentUser param1ConsentUser) {
+      super(param1ConsentUser);
+      if (param1ConsentUser == null)
+        return; 
+      this.user_id = param1ConsentUser.user_id;
+      this.user_name = param1ConsentUser.user_name;
+      this.author_id = param1ConsentUser.author_id;
+      this.author_name = param1ConsentUser.author_name;
+      this.portrait = param1ConsentUser.portrait;
+      this.thread_id = param1ConsentUser.thread_id;
+      this.post_id = param1ConsentUser.post_id;
+      this.create_time = param1ConsentUser.create_time;
+      this.gid = param1ConsentUser.gid;
+      this.author_name_show = param1ConsentUser.author_name_show;
+      this.user_name_show = param1ConsentUser.user_name_show;
+    }
+    
+    public ConsentUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ConsentUser)interceptResult.objValue; 
+      } 
+      return new ConsentUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

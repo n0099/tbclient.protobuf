@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BaijiahaoInfo;
 
 public final class BaijiahaoInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUTH_DESC = "";
   
   public static final Integer DEFAULT_AUTH_ID;
@@ -21,6 +24,8 @@ public final class BaijiahaoInfo extends Message {
   public static final Integer DEFAULT_CAN_MODIFY_AVATAR;
   
   public static final String DEFAULT_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String auth_desc;
@@ -63,7 +68,7 @@ public final class BaijiahaoInfo extends Message {
   }
   
   public BaijiahaoInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.name;
@@ -117,5 +122,60 @@ public final class BaijiahaoInfo extends Message {
       this.auth_desc = ((Builder)integer).auth_desc;
       this.can_modify_avatar = ((Builder)integer).can_modify_avatar;
     } 
+  }
+  
+  public BaijiahaoInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BaijiahaoInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String auth_desc;
+    
+    public Integer auth_id;
+    
+    public String avatar;
+    
+    public String avatar_h;
+    
+    public String brief;
+    
+    public Integer can_modify_avatar;
+    
+    public String name;
+    
+    public Builder() {}
+    
+    public Builder(BaijiahaoInfo param1BaijiahaoInfo) {
+      super(param1BaijiahaoInfo);
+      if (param1BaijiahaoInfo == null)
+        return; 
+      this.name = param1BaijiahaoInfo.name;
+      this.avatar = param1BaijiahaoInfo.avatar;
+      this.avatar_h = param1BaijiahaoInfo.avatar_h;
+      this.brief = param1BaijiahaoInfo.brief;
+      this.auth_id = param1BaijiahaoInfo.auth_id;
+      this.auth_desc = param1BaijiahaoInfo.auth_desc;
+      this.can_modify_avatar = param1BaijiahaoInfo.can_modify_avatar;
+    }
+    
+    public BaijiahaoInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BaijiahaoInfo)interceptResult.objValue; 
+      } 
+      return new BaijiahaoInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

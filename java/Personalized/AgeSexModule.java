@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Personalized.TagStruct;
 
 public final class AgeSexModule extends Message {
+  public static Interceptable $ic;
+  
   public static final List<TagStruct> DEFAULT_AGE_TAG;
   
   public static final List<TagStruct> DEFAULT_SEX_TAG = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<TagStruct> age_tag;
@@ -27,10 +30,10 @@ public final class AgeSexModule extends Message {
   }
   
   public AgeSexModule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<TagStruct> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.sex_tag;
+      List<TagStruct> list1 = paramBuilder.sex_tag;
       if (list1 == null) {
         this.sex_tag = DEFAULT_SEX_TAG;
       } else {
@@ -48,6 +51,10 @@ public final class AgeSexModule extends Message {
     } 
   }
   
+  public AgeSexModule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -62,5 +69,41 @@ public final class AgeSexModule extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AgeSexModule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<TagStruct> age_tag;
+    
+    public List<TagStruct> sex_tag;
+    
+    public Builder() {}
+    
+    public Builder(AgeSexModule param1AgeSexModule) {
+      super(param1AgeSexModule);
+      if (param1AgeSexModule == null)
+        return; 
+      this.sex_tag = Message.copyOf(param1AgeSexModule.sex_tag);
+      this.age_tag = Message.copyOf(param1AgeSexModule.age_tag);
+    }
+    
+    public AgeSexModule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AgeSexModule)interceptResult.objValue; 
+      } 
+      return new AgeSexModule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

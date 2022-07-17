@@ -1,4 +1,4 @@
-package GetIconList;
+package tbclient.GetIconList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetIconList.Discount;
 
 public final class IconInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Discount> DEFAULT_DISCOUNT;
   
   public static final Integer DEFAULT_DUBI;
@@ -33,6 +34,8 @@ public final class IconInfo extends Message {
   public static final String DEFAULT_SIGN = "";
   
   public static final String DEFAULT_TAG_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 8)
   public final List<Discount> discount;
@@ -91,7 +94,7 @@ public final class IconInfo extends Message {
   }
   
   public IconInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.name;
@@ -136,7 +139,7 @@ public final class IconInfo extends Message {
       } else {
         this.hide = integer1;
       } 
-      List list = paramBuilder.discount;
+      List<Discount> list = paramBuilder.discount;
       if (list == null) {
         this.discount = DEFAULT_DISCOUNT;
       } else {
@@ -173,5 +176,72 @@ public final class IconInfo extends Message {
       this.tag_name = ((Builder)integer).tag_name;
       this.is_default = ((Builder)integer).is_default;
     } 
+  }
+  
+  public IconInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<IconInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Discount> discount;
+    
+    public Integer dubi;
+    
+    public Integer duration;
+    
+    public Integer hide;
+    
+    public String iconId;
+    
+    public Integer is_default;
+    
+    public String name;
+    
+    public Integer non_member_t;
+    
+    public String picUrl;
+    
+    public String sign;
+    
+    public String tag_name;
+    
+    public Builder() {}
+    
+    public Builder(IconInfo param1IconInfo) {
+      super(param1IconInfo);
+      if (param1IconInfo == null)
+        return; 
+      this.name = param1IconInfo.name;
+      this.iconId = param1IconInfo.iconId;
+      this.picUrl = param1IconInfo.picUrl;
+      this.non_member_t = param1IconInfo.non_member_t;
+      this.dubi = param1IconInfo.dubi;
+      this.duration = param1IconInfo.duration;
+      this.hide = param1IconInfo.hide;
+      this.discount = Message.copyOf(param1IconInfo.discount);
+      this.sign = param1IconInfo.sign;
+      this.tag_name = param1IconInfo.tag_name;
+      this.is_default = param1IconInfo.is_default;
+    }
+    
+    public IconInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (IconInfo)interceptResult.objValue; 
+      } 
+      return new IconInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

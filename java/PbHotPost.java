@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.HotPost;
-import tbclient.PbHotPost;
-import tbclient.Post;
 
 public final class PbHotPost extends Message {
+  public static Interceptable $ic;
+  
   public static final List<HotPost> DEFAULT_HOT_POST_LIST;
   
   public static final Integer DEFAULT_NEED_HOT_POST;
@@ -19,6 +20,8 @@ public final class PbHotPost extends Message {
   public static final Integer DEFAULT_NEED_POST_ZAN;
   
   public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 4)
   public final List<HotPost> hot_post_list;
@@ -40,10 +43,10 @@ public final class PbHotPost extends Message {
   }
   
   public PbHotPost(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<HotPost> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.post_list;
+      List<Post> list1 = paramBuilder.post_list;
       if (list1 == null) {
         this.post_list = DEFAULT_POST_LIST;
       } else {
@@ -75,6 +78,10 @@ public final class PbHotPost extends Message {
     } 
   }
   
+  public PbHotPost(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -89,5 +96,47 @@ public final class PbHotPost extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PbHotPost> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<HotPost> hot_post_list;
+    
+    public Integer need_hot_post;
+    
+    public Integer need_post_zan;
+    
+    public List<Post> post_list;
+    
+    public Builder() {}
+    
+    public Builder(PbHotPost param1PbHotPost) {
+      super(param1PbHotPost);
+      if (param1PbHotPost == null)
+        return; 
+      this.post_list = Message.copyOf(param1PbHotPost.post_list);
+      this.need_hot_post = param1PbHotPost.need_hot_post;
+      this.need_post_zan = param1PbHotPost.need_post_zan;
+      this.hot_post_list = Message.copyOf(param1PbHotPost.hot_post_list);
+    }
+    
+    public PbHotPost build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PbHotPost)interceptResult.objValue; 
+      } 
+      return new PbHotPost(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

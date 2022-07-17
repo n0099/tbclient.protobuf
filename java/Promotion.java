@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Promotion;
 
 public final class Promotion extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_APPEAR_TIME = Long.valueOf(0L);
   
   public static final String DEFAULT_IMAGE = "";
@@ -19,6 +22,8 @@ public final class Promotion extends Message {
   public static final String DEFAULT_SUB_TITLE = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.INT64)
   public final Long appear_time;
@@ -39,7 +44,7 @@ public final class Promotion extends Message {
   public final String title;
   
   public Promotion(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -88,6 +93,10 @@ public final class Promotion extends Message {
     } 
   }
   
+  public Promotion(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -102,5 +111,53 @@ public final class Promotion extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Promotion> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long appear_time;
+    
+    public String image;
+    
+    public String link;
+    
+    public String link_text;
+    
+    public String sub_title;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(Promotion param1Promotion) {
+      super(param1Promotion);
+      if (param1Promotion == null)
+        return; 
+      this.title = param1Promotion.title;
+      this.sub_title = param1Promotion.sub_title;
+      this.image = param1Promotion.image;
+      this.link = param1Promotion.link;
+      this.link_text = param1Promotion.link_text;
+      this.appear_time = param1Promotion.appear_time;
+    }
+    
+    public Promotion build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Promotion)interceptResult.objValue; 
+      } 
+      return new Promotion(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

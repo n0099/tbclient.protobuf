@@ -1,4 +1,4 @@
-package GetGambleResult;
+package tbclient.GetGambleResult;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Winnner extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Integer DEFAULT_SCORE;
@@ -18,6 +20,8 @@ public final class Winnner extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String portrait;
@@ -55,7 +59,7 @@ public final class Winnner extends Message {
   }
   
   public Winnner(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.user_name;
@@ -95,5 +99,54 @@ public final class Winnner extends Message {
       this.time = ((Builder)integer).time;
       this.type = ((Builder)integer).type;
     } 
+  }
+  
+  public Winnner(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Winnner> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String portrait;
+    
+    public Integer score;
+    
+    public Integer time;
+    
+    public Integer type;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(Winnner param1Winnner) {
+      super(param1Winnner);
+      if (param1Winnner == null)
+        return; 
+      this.user_name = param1Winnner.user_name;
+      this.portrait = param1Winnner.portrait;
+      this.score = param1Winnner.score;
+      this.time = param1Winnner.time;
+      this.type = param1Winnner.type;
+    }
+    
+    public Winnner build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Winnner)interceptResult.objValue; 
+      } 
+      return new Winnner(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

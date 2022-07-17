@@ -1,4 +1,4 @@
-package ForumMenu;
+package tbclient.ForumMenu;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ForumMenu.SubMenu;
 
 public final class Menu extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTION_TYPE;
   
   public static final String DEFAULT_CONTENT = "";
@@ -27,6 +28,8 @@ public final class Menu extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final List<SubMenu> DEFAULT_SUB_MENU;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer action_type;
@@ -76,8 +79,8 @@ public final class Menu extends Message {
   }
   
   public Menu(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<SubMenu> list;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.id;
       if (integer2 == null) {
@@ -137,5 +140,63 @@ public final class Menu extends Message {
       this.content = ((Builder)list).content;
       this.sub_menu = Message.immutableCopyOf(((Builder)list).sub_menu);
     } 
+  }
+  
+  public Menu(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Menu> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer action_type;
+    
+    public String content;
+    
+    public Integer create_time;
+    
+    public Integer forum_id;
+    
+    public Integer id;
+    
+    public Integer level;
+    
+    public String name;
+    
+    public List<SubMenu> sub_menu;
+    
+    public Builder() {}
+    
+    public Builder(Menu param1Menu) {
+      super(param1Menu);
+      if (param1Menu == null)
+        return; 
+      this.id = param1Menu.id;
+      this.forum_id = param1Menu.forum_id;
+      this.level = param1Menu.level;
+      this.name = param1Menu.name;
+      this.action_type = param1Menu.action_type;
+      this.create_time = param1Menu.create_time;
+      this.content = param1Menu.content;
+      this.sub_menu = Message.copyOf(param1Menu.sub_menu);
+    }
+    
+    public Menu build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Menu)interceptResult.objValue; 
+      } 
+      return new Menu(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

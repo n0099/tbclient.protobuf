@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AlaShareInfo;
 
 public final class AlaShareInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final Long DEFAULT_RECORD_TID;
@@ -15,6 +18,8 @@ public final class AlaShareInfo extends Message {
   public static final Integer DEFAULT_SHARE_COUNT;
   
   public static final Integer DEFAULT_SHARE_USER_COUNT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String content;
@@ -49,7 +54,7 @@ public final class AlaShareInfo extends Message {
   }
   
   public AlaShareInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.content;
@@ -82,5 +87,51 @@ public final class AlaShareInfo extends Message {
       this.share_count = ((Builder)long_).share_count;
       this.record_tid = ((Builder)long_).record_tid;
     } 
+  }
+  
+  public AlaShareInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AlaShareInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String content;
+    
+    public Long record_tid;
+    
+    public Integer share_count;
+    
+    public Integer share_user_count;
+    
+    public Builder() {}
+    
+    public Builder(AlaShareInfo param1AlaShareInfo) {
+      super(param1AlaShareInfo);
+      if (param1AlaShareInfo == null)
+        return; 
+      this.content = param1AlaShareInfo.content;
+      this.share_user_count = param1AlaShareInfo.share_user_count;
+      this.share_count = param1AlaShareInfo.share_count;
+      this.record_tid = param1AlaShareInfo.record_tid;
+    }
+    
+    public AlaShareInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AlaShareInfo)interceptResult.objValue; 
+      } 
+      return new AlaShareInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

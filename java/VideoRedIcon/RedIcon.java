@@ -1,4 +1,4 @@
-package VideoRedIcon;
+package tbclient.VideoRedIcon;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.ThreadInfo;
 
 public final class RedIcon extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_IMAGE = "";
   
   public static final String DEFAULT_TEXT = "";
@@ -19,6 +21,8 @@ public final class RedIcon extends Message {
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST;
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String image;
@@ -37,8 +41,8 @@ public final class RedIcon extends Message {
   }
   
   public RedIcon(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ThreadInfo> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
       if (integer == null) {
@@ -72,6 +76,10 @@ public final class RedIcon extends Message {
     } 
   }
   
+  public RedIcon(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -86,5 +94,47 @@ public final class RedIcon extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RedIcon> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String image;
+    
+    public String text;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(RedIcon param1RedIcon) {
+      super(param1RedIcon);
+      if (param1RedIcon == null)
+        return; 
+      this.type = param1RedIcon.type;
+      this.text = param1RedIcon.text;
+      this.image = param1RedIcon.image;
+      this.thread_list = Message.copyOf(param1RedIcon.thread_list);
+    }
+    
+    public RedIcon build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RedIcon)interceptResult.objValue; 
+      } 
+      return new RedIcon(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

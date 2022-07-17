@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ForumList;
 
 public final class ForumList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_CONTENT = "";
@@ -23,6 +26,8 @@ public final class ForumList extends Message {
   public static final String DEFAULT_SLOGAN = "";
   
   public static final Long DEFAULT_THREAD_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -54,7 +59,7 @@ public final class ForumList extends Message {
   }
   
   public ForumList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.forum_id;
@@ -117,6 +122,10 @@ public final class ForumList extends Message {
     } 
   }
   
+  public ForumList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -133,5 +142,59 @@ public final class ForumList extends Message {
     } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FORUM_ID = long_;
+  }
+  
+  public static final class Builder extends Message.Builder<ForumList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String content;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer member_count;
+    
+    public Long post_num;
+    
+    public String slogan;
+    
+    public Long thread_num;
+    
+    public Builder() {}
+    
+    public Builder(ForumList param1ForumList) {
+      super(param1ForumList);
+      if (param1ForumList == null)
+        return; 
+      this.forum_id = param1ForumList.forum_id;
+      this.forum_name = param1ForumList.forum_name;
+      this.avatar = param1ForumList.avatar;
+      this.member_count = param1ForumList.member_count;
+      this.slogan = param1ForumList.slogan;
+      this.content = param1ForumList.content;
+      this.post_num = param1ForumList.post_num;
+      this.thread_num = param1ForumList.thread_num;
+    }
+    
+    public ForumList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumList)interceptResult.objValue; 
+      } 
+      return new ForumList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

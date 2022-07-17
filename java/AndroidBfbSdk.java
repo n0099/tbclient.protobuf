@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AndroidBfbSdk;
 
 public final class AndroidBfbSdk extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_NO = "";
   
   public static final String DEFAULT_ORDER_NO = "";
@@ -21,6 +24,8 @@ public final class AndroidBfbSdk extends Message {
   public static final Integer DEFAULT_SP_NO;
   
   public static final String DEFAULT_VERSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String activity_no;
@@ -63,7 +68,7 @@ public final class AndroidBfbSdk extends Message {
   }
   
   public AndroidBfbSdk(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.sp_no;
@@ -117,5 +122,60 @@ public final class AndroidBfbSdk extends Message {
       this.sign = ((Builder)integer).sign;
       this.sign_method = ((Builder)integer).sign_method;
     } 
+  }
+  
+  public AndroidBfbSdk(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AndroidBfbSdk> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_no;
+    
+    public String order_no;
+    
+    public String return_url;
+    
+    public String sign;
+    
+    public Integer sign_method;
+    
+    public Integer sp_no;
+    
+    public String version;
+    
+    public Builder() {}
+    
+    public Builder(AndroidBfbSdk param1AndroidBfbSdk) {
+      super(param1AndroidBfbSdk);
+      if (param1AndroidBfbSdk == null)
+        return; 
+      this.sp_no = param1AndroidBfbSdk.sp_no;
+      this.version = param1AndroidBfbSdk.version;
+      this.activity_no = param1AndroidBfbSdk.activity_no;
+      this.order_no = param1AndroidBfbSdk.order_no;
+      this.return_url = param1AndroidBfbSdk.return_url;
+      this.sign = param1AndroidBfbSdk.sign;
+      this.sign_method = param1AndroidBfbSdk.sign_method;
+    }
+    
+    public AndroidBfbSdk build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AndroidBfbSdk)interceptResult.objValue; 
+      } 
+      return new AndroidBfbSdk(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ThreadInfo;
-import tbclient.ThreadModule;
 
 public final class ThreadModule extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_MODULE_ID;
   
   public static final String DEFAULT_MODULE_NAME = "";
@@ -18,6 +20,8 @@ public final class ThreadModule extends Message {
   public static final Long DEFAULT_SHOW_NUM;
   
   public static final List<ThreadInfo> DEFAULT_THREAD_INFO = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long module_id;
@@ -36,7 +40,7 @@ public final class ThreadModule extends Message {
   }
   
   public ThreadModule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_1 = paramBuilder.module_id;
@@ -51,7 +55,7 @@ public final class ThreadModule extends Message {
       } else {
         this.module_name = str;
       } 
-      List list = paramBuilder.thread_info;
+      List<ThreadInfo> list = paramBuilder.thread_info;
       if (list == null) {
         this.thread_info = DEFAULT_THREAD_INFO;
       } else {
@@ -71,6 +75,10 @@ public final class ThreadModule extends Message {
     } 
   }
   
+  public ThreadModule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -87,5 +95,47 @@ public final class ThreadModule extends Message {
     } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_MODULE_ID = long_;
+  }
+  
+  public static final class Builder extends Message.Builder<ThreadModule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long module_id;
+    
+    public String module_name;
+    
+    public Long show_num;
+    
+    public List<ThreadInfo> thread_info;
+    
+    public Builder() {}
+    
+    public Builder(ThreadModule param1ThreadModule) {
+      super(param1ThreadModule);
+      if (param1ThreadModule == null)
+        return; 
+      this.module_id = param1ThreadModule.module_id;
+      this.module_name = param1ThreadModule.module_name;
+      this.thread_info = Message.copyOf(param1ThreadModule.thread_info);
+      this.show_num = param1ThreadModule.show_num;
+    }
+    
+    public ThreadModule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThreadModule)interceptResult.objValue; 
+      } 
+      return new ThreadModule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

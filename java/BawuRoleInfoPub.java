@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BaijiahaoInfo;
-import tbclient.BawuRoleInfoPub;
 
 public final class BawuRoleInfoPub extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FORUM_ID;
   
   public static final String DEFAULT_LEVEL_NAME = "";
@@ -26,6 +28,8 @@ public final class BawuRoleInfoPub extends Message {
   public static final Integer DEFAULT_USER_LEVEL;
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 10)
   public final BaijiahaoInfo baijiahao_info;
@@ -80,7 +84,7 @@ public final class BawuRoleInfoPub extends Message {
   }
   
   public BawuRoleInfoPub(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
       if (long_ == null) {
@@ -149,5 +153,69 @@ public final class BawuRoleInfoPub extends Message {
       this.name_show = paramBuilder.name_show;
       this.baijiahao_info = paramBuilder.baijiahao_info;
     } 
+  }
+  
+  public BawuRoleInfoPub(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BawuRoleInfoPub> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public BaijiahaoInfo baijiahao_info;
+    
+    public Long forum_id;
+    
+    public String level_name;
+    
+    public String name_show;
+    
+    public String portrait;
+    
+    public Integer role_id;
+    
+    public String role_name;
+    
+    public Long user_id;
+    
+    public Integer user_level;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(BawuRoleInfoPub param1BawuRoleInfoPub) {
+      super(param1BawuRoleInfoPub);
+      if (param1BawuRoleInfoPub == null)
+        return; 
+      this.forum_id = param1BawuRoleInfoPub.forum_id;
+      this.user_id = param1BawuRoleInfoPub.user_id;
+      this.role_id = param1BawuRoleInfoPub.role_id;
+      this.role_name = param1BawuRoleInfoPub.role_name;
+      this.portrait = param1BawuRoleInfoPub.portrait;
+      this.user_level = param1BawuRoleInfoPub.user_level;
+      this.level_name = param1BawuRoleInfoPub.level_name;
+      this.user_name = param1BawuRoleInfoPub.user_name;
+      this.name_show = param1BawuRoleInfoPub.name_show;
+      this.baijiahao_info = param1BawuRoleInfoPub.baijiahao_info;
+    }
+    
+    public BawuRoleInfoPub build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BawuRoleInfoPub)interceptResult.objValue; 
+      } 
+      return new BawuRoleInfoPub(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

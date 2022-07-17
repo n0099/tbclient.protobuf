@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AdParam extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_REQ_AD;
   
   public static final Integer DEFAULT_LOAD_COUNT;
@@ -16,6 +18,8 @@ public final class AdParam extends Message {
   public static final Integer DEFAULT_REFRESH_COUNT;
   
   public static final String DEFAULT_YOGA_LIB_VERSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer is_req_ad;
@@ -50,7 +54,7 @@ public final class AdParam extends Message {
   }
   
   public AdParam(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.load_count;
@@ -83,5 +87,51 @@ public final class AdParam extends Message {
       this.yoga_lib_version = ((Builder)integer).yoga_lib_version;
       this.is_req_ad = ((Builder)integer).is_req_ad;
     } 
+  }
+  
+  public AdParam(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AdParam> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_req_ad;
+    
+    public Integer load_count;
+    
+    public Integer refresh_count;
+    
+    public String yoga_lib_version;
+    
+    public Builder() {}
+    
+    public Builder(AdParam param1AdParam) {
+      super(param1AdParam);
+      if (param1AdParam == null)
+        return; 
+      this.load_count = param1AdParam.load_count;
+      this.refresh_count = param1AdParam.refresh_count;
+      this.yoga_lib_version = param1AdParam.yoga_lib_version;
+      this.is_req_ad = param1AdParam.is_req_ad;
+    }
+    
+    public AdParam build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AdParam)interceptResult.objValue; 
+      } 
+      return new AdParam(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

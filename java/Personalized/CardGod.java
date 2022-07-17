@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,15 @@ import java.util.List;
 import tbclient.User;
 
 public final class CardGod extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CARD_TITLE = "";
   
   public static final List<User> DEFAULT_GODS = Collections.emptyList();
   
   public static final Integer DEFAULT_POSITION = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String card_title;
@@ -28,7 +32,7 @@ public final class CardGod extends Message {
   public final Integer position;
   
   public CardGod(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.card_title;
@@ -37,7 +41,7 @@ public final class CardGod extends Message {
       } else {
         this.card_title = str;
       } 
-      List list = paramBuilder.gods;
+      List<User> list = paramBuilder.gods;
       if (list == null) {
         this.gods = DEFAULT_GODS;
       } else {
@@ -56,6 +60,10 @@ public final class CardGod extends Message {
     } 
   }
   
+  public CardGod(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +78,44 @@ public final class CardGod extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<CardGod> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String card_title;
+    
+    public List<User> gods;
+    
+    public Integer position;
+    
+    public Builder() {}
+    
+    public Builder(CardGod param1CardGod) {
+      super(param1CardGod);
+      if (param1CardGod == null)
+        return; 
+      this.card_title = param1CardGod.card_title;
+      this.gods = Message.copyOf(param1CardGod.gods);
+      this.position = param1CardGod.position;
+    }
+    
+    public CardGod build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CardGod)interceptResult.objValue; 
+      } 
+      return new CardGod(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

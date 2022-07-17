@@ -1,4 +1,4 @@
-package RelateRecThread;
+package tbclient.RelateRecThread;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,10 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
+  public static final String DEFAULT_EQID = "";
+  
   public static final Long DEFAULT_FORUM_ID;
   
   public static final Integer DEFAULT_SOURCE_FROM;
@@ -18,8 +22,13 @@ public final class DataReq extends Message {
   
   public static final Long DEFAULT_THREAD_ID;
   
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 1)
   public final CommonReq common;
+  
+  @ProtoField(tag = 6, type = Message.Datatype.STRING)
+  public final String eqid;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long forum_id;
@@ -56,8 +65,8 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    Integer integer;
+    super(paramBuilder);
+    String str;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
       Long long_ = paramBuilder.forum_id;
@@ -72,11 +81,11 @@ public final class DataReq extends Message {
       } else {
         this.thread_id = long_;
       } 
-      Integer integer1 = paramBuilder.source_type;
-      if (integer1 == null) {
+      Integer integer = paramBuilder.source_type;
+      if (integer == null) {
         this.source_type = DEFAULT_SOURCE_TYPE;
       } else {
-        this.source_type = integer1;
+        this.source_type = integer;
       } 
       integer = paramBuilder.source_from;
       if (integer == null) {
@@ -84,12 +93,71 @@ public final class DataReq extends Message {
       } else {
         this.source_from = integer;
       } 
+      str = paramBuilder.eqid;
+      if (str == null) {
+        this.eqid = "";
+      } else {
+        this.eqid = str;
+      } 
     } else {
-      this.common = ((Builder)integer).common;
-      this.forum_id = ((Builder)integer).forum_id;
-      this.thread_id = ((Builder)integer).thread_id;
-      this.source_type = ((Builder)integer).source_type;
-      this.source_from = ((Builder)integer).source_from;
+      this.common = ((Builder)str).common;
+      this.forum_id = ((Builder)str).forum_id;
+      this.thread_id = ((Builder)str).thread_id;
+      this.source_type = ((Builder)str).source_type;
+      this.source_from = ((Builder)str).source_from;
+      this.eqid = ((Builder)str).eqid;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public String eqid;
+    
+    public Long forum_id;
+    
+    public Integer source_from;
+    
+    public Integer source_type;
+    
+    public Long thread_id;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.forum_id = param1DataReq.forum_id;
+      this.thread_id = param1DataReq.thread_id;
+      this.source_type = param1DataReq.source_type;
+      this.source_from = param1DataReq.source_from;
+      this.eqid = param1DataReq.eqid;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

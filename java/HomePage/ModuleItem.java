@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,13 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ModuleItem extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_MID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long mid;
   
   public ModuleItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       long_ = paramBuilder.mid;
@@ -27,6 +31,10 @@ public final class ModuleItem extends Message {
     } else {
       this.mid = ((Builder)long_).mid;
     } 
+  }
+  
+  public ModuleItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -43,5 +51,38 @@ public final class ModuleItem extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ModuleItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long mid;
+    
+    public Builder() {}
+    
+    public Builder(ModuleItem param1ModuleItem) {
+      super(param1ModuleItem);
+      if (param1ModuleItem == null)
+        return; 
+      this.mid = param1ModuleItem.mid;
+    }
+    
+    public ModuleItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ModuleItem)interceptResult.objValue; 
+      } 
+      return new ModuleItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

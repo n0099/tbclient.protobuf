@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GraffitiInfo;
 
 public final class GraffitiInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_GID = Long.valueOf(0L);
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long gid;
@@ -19,7 +24,7 @@ public final class GraffitiInfo extends Message {
   public final String url;
   
   public GraffitiInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.url;
@@ -40,6 +45,10 @@ public final class GraffitiInfo extends Message {
     } 
   }
   
+  public GraffitiInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class GraffitiInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GraffitiInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long gid;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(GraffitiInfo param1GraffitiInfo) {
+      super(param1GraffitiInfo);
+      if (param1GraffitiInfo == null)
+        return; 
+      this.url = param1GraffitiInfo.url;
+      this.gid = param1GraffitiInfo.gid;
+    }
+    
+    public GraffitiInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GraffitiInfo)interceptResult.objValue; 
+      } 
+      return new GraffitiInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

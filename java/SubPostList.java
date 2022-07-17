@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Agree;
-import tbclient.Lbs;
-import tbclient.PbContent;
-import tbclient.SubPostList;
-import tbclient.User;
 
 public final class SubPostList extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_AUTHOR_ID;
   
   public static final List<PbContent> DEFAULT_CONTENT;
@@ -31,6 +30,8 @@ public final class SubPostList extends Message {
   public static final Integer DEFAULT_TIME;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9)
   public final Agree agree;
@@ -95,7 +96,7 @@ public final class SubPostList extends Message {
   }
   
   public SubPostList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.id;
@@ -104,7 +105,7 @@ public final class SubPostList extends Message {
       } else {
         this.id = long_2;
       } 
-      List list = paramBuilder.content;
+      List<PbContent> list = paramBuilder.content;
       if (list == null) {
         this.content = DEFAULT_CONTENT;
       } else {
@@ -169,5 +170,75 @@ public final class SubPostList extends Message {
       this.is_fake_top = ((Builder)integer).is_fake_top;
       this.is_author_view = ((Builder)integer).is_author_view;
     } 
+  }
+  
+  public SubPostList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<SubPostList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Agree agree;
+    
+    public User author;
+    
+    public Long author_id;
+    
+    public List<PbContent> content;
+    
+    public Integer floor;
+    
+    public Long id;
+    
+    public Integer is_author_view;
+    
+    public Integer is_fake_top;
+    
+    public Integer is_giftpost;
+    
+    public Lbs location;
+    
+    public Integer time;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(SubPostList param1SubPostList) {
+      super(param1SubPostList);
+      if (param1SubPostList == null)
+        return; 
+      this.id = param1SubPostList.id;
+      this.content = Message.copyOf(param1SubPostList.content);
+      this.time = param1SubPostList.time;
+      this.author_id = param1SubPostList.author_id;
+      this.title = param1SubPostList.title;
+      this.floor = param1SubPostList.floor;
+      this.author = param1SubPostList.author;
+      this.is_giftpost = param1SubPostList.is_giftpost;
+      this.agree = param1SubPostList.agree;
+      this.location = param1SubPostList.location;
+      this.is_fake_top = param1SubPostList.is_fake_top;
+      this.is_author_view = param1SubPostList.is_author_view;
+    }
+    
+    public SubPostList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SubPostList)interceptResult.objValue; 
+      } 
+      return new SubPostList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

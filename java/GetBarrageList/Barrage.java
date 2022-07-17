@@ -1,4 +1,4 @@
-package GetBarrageList;
+package tbclient.GetBarrageList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Barrage extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_COLOR = "";
   
   public static final String DEFAULT_CONTENT = "";
   
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String color;
@@ -25,7 +29,7 @@ public final class Barrage extends Message {
   public final Long user_id;
   
   public Barrage(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.content;
@@ -53,6 +57,10 @@ public final class Barrage extends Message {
     } 
   }
   
+  public Barrage(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -67,5 +75,44 @@ public final class Barrage extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Barrage> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String color;
+    
+    public String content;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(Barrage param1Barrage) {
+      super(param1Barrage);
+      if (param1Barrage == null)
+        return; 
+      this.content = param1Barrage.content;
+      this.color = param1Barrage.color;
+      this.user_id = param1Barrage.user_id;
+    }
+    
+    public Barrage build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Barrage)interceptResult.objValue; 
+      } 
+      return new Barrage(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

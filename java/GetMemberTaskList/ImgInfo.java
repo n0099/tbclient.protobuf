@@ -1,4 +1,4 @@
-package GetMemberTaskList;
+package tbclient.GetMemberTaskList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ImgInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ID;
   
   public static final String DEFAULT_IMG_URL = "";
@@ -16,6 +18,8 @@ public final class ImgInfo extends Message {
   public static final String DEFAULT_JUMP_URL = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer id;
@@ -49,7 +53,7 @@ public final class ImgInfo extends Message {
   }
   
   public ImgInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.id;
@@ -82,5 +86,51 @@ public final class ImgInfo extends Message {
       this.img_url = ((Builder)str).img_url;
       this.jump_url = ((Builder)str).jump_url;
     } 
+  }
+  
+  public ImgInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ImgInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer id;
+    
+    public String img_url;
+    
+    public String jump_url;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(ImgInfo param1ImgInfo) {
+      super(param1ImgInfo);
+      if (param1ImgInfo == null)
+        return; 
+      this.id = param1ImgInfo.id;
+      this.type = param1ImgInfo.type;
+      this.img_url = param1ImgInfo.img_url;
+      this.jump_url = param1ImgInfo.jump_url;
+    }
+    
+    public ImgInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ImgInfo)interceptResult.objValue; 
+      } 
+      return new ImgInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

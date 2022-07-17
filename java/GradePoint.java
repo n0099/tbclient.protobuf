@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GradePoint;
 
 public final class GradePoint extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CURRENT_POINT;
   
   public static final Integer DEFAULT_NEXT_POINT;
@@ -15,6 +18,8 @@ public final class GradePoint extends Message {
   public static final String DEFAULT_POINT_NAME = "";
   
   public static final Integer DEFAULT_POINT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer current_point;
@@ -49,7 +54,7 @@ public final class GradePoint extends Message {
   }
   
   public GradePoint(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.point_name;
@@ -82,5 +87,51 @@ public final class GradePoint extends Message {
       this.current_point = ((Builder)integer).current_point;
       this.next_point = ((Builder)integer).next_point;
     } 
+  }
+  
+  public GradePoint(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GradePoint> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer current_point;
+    
+    public Integer next_point;
+    
+    public String point_name;
+    
+    public Integer point_type;
+    
+    public Builder() {}
+    
+    public Builder(GradePoint param1GradePoint) {
+      super(param1GradePoint);
+      if (param1GradePoint == null)
+        return; 
+      this.point_name = param1GradePoint.point_name;
+      this.point_type = param1GradePoint.point_type;
+      this.current_point = param1GradePoint.current_point;
+      this.next_point = param1GradePoint.next_point;
+    }
+    
+    public GradePoint build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GradePoint)interceptResult.objValue; 
+      } 
+      return new GradePoint(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

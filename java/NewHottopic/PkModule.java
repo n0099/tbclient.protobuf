@@ -1,4 +1,4 @@
-package NewHottopic;
+package tbclient.NewHottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.NewHottopic.PkItem;
 
 public final class PkModule extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_PK_ID;
   
   public static final Long DEFAULT_USER_PK_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3)
   public final PkItem agree;
@@ -46,7 +49,7 @@ public final class PkModule extends Message {
   }
   
   public PkModule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.pk_id;
       if (long_ == null) {
@@ -68,5 +71,51 @@ public final class PkModule extends Message {
       this.agree = paramBuilder.agree;
       this.disagree = paramBuilder.disagree;
     } 
+  }
+  
+  public PkModule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PkModule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public PkItem agree;
+    
+    public PkItem disagree;
+    
+    public Long pk_id;
+    
+    public Long user_pk_id;
+    
+    public Builder() {}
+    
+    public Builder(PkModule param1PkModule) {
+      super(param1PkModule);
+      if (param1PkModule == null)
+        return; 
+      this.pk_id = param1PkModule.pk_id;
+      this.user_pk_id = param1PkModule.user_pk_id;
+      this.agree = param1PkModule.agree;
+      this.disagree = param1PkModule.disagree;
+    }
+    
+    public PkModule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PkModule)interceptResult.objValue; 
+      } 
+      return new PkModule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

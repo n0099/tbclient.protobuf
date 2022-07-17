@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.WapRn;
 
 public final class WapRn extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FRSRN;
   
   public static final Integer DEFAULT_PBRN;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer frsrn;
@@ -38,7 +43,7 @@ public final class WapRn extends Message {
   }
   
   public WapRn(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.frsrn;
@@ -57,5 +62,45 @@ public final class WapRn extends Message {
       this.frsrn = ((Builder)integer).frsrn;
       this.pbrn = ((Builder)integer).pbrn;
     } 
+  }
+  
+  public WapRn(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<WapRn> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer frsrn;
+    
+    public Integer pbrn;
+    
+    public Builder() {}
+    
+    public Builder(WapRn param1WapRn) {
+      super(param1WapRn);
+      if (param1WapRn == null)
+        return; 
+      this.frsrn = param1WapRn.frsrn;
+      this.pbrn = param1WapRn.pbrn;
+    }
+    
+    public WapRn build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (WapRn)interceptResult.objValue; 
+      } 
+      return new WapRn(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

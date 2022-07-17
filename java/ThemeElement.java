@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ThemeElement;
 
 public final class ThemeElement extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_COMMON_COLOR = "";
   
   public static final String DEFAULT_DARK_COLOR = "";
@@ -14,6 +18,8 @@ public final class ThemeElement extends Message {
   public static final String DEFAULT_LIGHT_COLOR = "";
   
   public static final String DEFAULT_PATTERN_IMAGE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String common_color;
@@ -31,7 +37,7 @@ public final class ThemeElement extends Message {
   public final String pattern_image;
   
   public ThemeElement(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.common_color;
@@ -71,5 +77,54 @@ public final class ThemeElement extends Message {
       this.pattern_image = ((Builder)str).pattern_image;
       this.font_color = ((Builder)str).font_color;
     } 
+  }
+  
+  public ThemeElement(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ThemeElement> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String common_color;
+    
+    public String dark_color;
+    
+    public String font_color;
+    
+    public String light_color;
+    
+    public String pattern_image;
+    
+    public Builder() {}
+    
+    public Builder(ThemeElement param1ThemeElement) {
+      super(param1ThemeElement);
+      if (param1ThemeElement == null)
+        return; 
+      this.common_color = param1ThemeElement.common_color;
+      this.dark_color = param1ThemeElement.dark_color;
+      this.light_color = param1ThemeElement.light_color;
+      this.pattern_image = param1ThemeElement.pattern_image;
+      this.font_color = param1ThemeElement.font_color;
+    }
+    
+    public ThemeElement build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThemeElement)interceptResult.objValue; 
+      } 
+      return new ThemeElement(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class RecomPostTopic extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_RECOM_TITLE = "";
   
   public static final String DEFAULT_RECOM_TOPIC = "";
   
   public static final Long DEFAULT_UNIQ_TOPICID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String recom_title;
@@ -25,7 +29,7 @@ public final class RecomPostTopic extends Message {
   public final Long uniq_topicid;
   
   public RecomPostTopic(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.recom_title;
@@ -53,6 +57,10 @@ public final class RecomPostTopic extends Message {
     } 
   }
   
+  public RecomPostTopic(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -67,5 +75,44 @@ public final class RecomPostTopic extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecomPostTopic> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String recom_title;
+    
+    public String recom_topic;
+    
+    public Long uniq_topicid;
+    
+    public Builder() {}
+    
+    public Builder(RecomPostTopic param1RecomPostTopic) {
+      super(param1RecomPostTopic);
+      if (param1RecomPostTopic == null)
+        return; 
+      this.recom_title = param1RecomPostTopic.recom_title;
+      this.recom_topic = param1RecomPostTopic.recom_topic;
+      this.uniq_topicid = param1RecomPostTopic.uniq_topicid;
+    }
+    
+    public RecomPostTopic build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecomPostTopic)interceptResult.objValue; 
+      } 
+      return new RecomPostTopic(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

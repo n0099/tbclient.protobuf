@@ -1,4 +1,4 @@
-package Recommforum;
+package tbclient.Recommforum;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,15 @@ import java.util.List;
 import tbclient.RecommendForumInfo;
 
 public final class RecommForum extends Message {
+  public static Interceptable $ic;
+  
   public static final List<RecommendForumInfo> DEFAULT_FORUMS = Collections.emptyList();
   
   public static final Integer DEFAULT_PAGE_SIZE = Integer.valueOf(0);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<RecommendForumInfo> forums;
@@ -28,7 +32,7 @@ public final class RecommForum extends Message {
   public final String title;
   
   public RecommForum(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -37,7 +41,7 @@ public final class RecommForum extends Message {
       } else {
         this.title = str;
       } 
-      List list = paramBuilder.forums;
+      List<RecommendForumInfo> list = paramBuilder.forums;
       if (list == null) {
         this.forums = DEFAULT_FORUMS;
       } else {
@@ -56,6 +60,10 @@ public final class RecommForum extends Message {
     } 
   }
   
+  public RecommForum(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +78,44 @@ public final class RecommForum extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecommForum> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<RecommendForumInfo> forums;
+    
+    public Integer page_size;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(RecommForum param1RecommForum) {
+      super(param1RecommForum);
+      if (param1RecommForum == null)
+        return; 
+      this.title = param1RecommForum.title;
+      this.forums = Message.copyOf(param1RecommForum.forums);
+      this.page_size = param1RecommForum.page_size;
+    }
+    
+    public RecommForum build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommForum)interceptResult.objValue; 
+      } 
+      return new RecommForum(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

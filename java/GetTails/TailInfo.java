@@ -1,4 +1,4 @@
-package GetTails;
+package tbclient.GetTails;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TailInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FONTCOLOR = "";
   
   public static final String DEFAULT_FONTKEYNAME = "";
@@ -18,6 +20,8 @@ public final class TailInfo extends Message {
   public static final String DEFAULT_TAILCONTENT = "";
   
   public static final Integer DEFAULT_TAILID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String fontColor;
@@ -54,7 +58,7 @@ public final class TailInfo extends Message {
   }
   
   public TailInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.tailId;
@@ -94,5 +98,54 @@ public final class TailInfo extends Message {
       this.fontColor = ((Builder)str).fontColor;
       this.fontKeyName = ((Builder)str).fontKeyName;
     } 
+  }
+  
+  public TailInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TailInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String fontColor;
+    
+    public String fontKeyName;
+    
+    public Integer is_selected;
+    
+    public String tailContent;
+    
+    public Integer tailId;
+    
+    public Builder() {}
+    
+    public Builder(TailInfo param1TailInfo) {
+      super(param1TailInfo);
+      if (param1TailInfo == null)
+        return; 
+      this.tailId = param1TailInfo.tailId;
+      this.is_selected = param1TailInfo.is_selected;
+      this.tailContent = param1TailInfo.tailContent;
+      this.fontColor = param1TailInfo.fontColor;
+      this.fontKeyName = param1TailInfo.fontKeyName;
+    }
+    
+    public TailInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TailInfo)interceptResult.objValue; 
+      } 
+      return new TailInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

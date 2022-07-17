@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GodInfoItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_GOD_INTRO = "";
@@ -18,6 +20,8 @@ public final class GodInfoItem extends Message {
   public static final String DEFAULT_USER_INTRO = "";
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String avatar;
@@ -35,7 +39,7 @@ public final class GodInfoItem extends Message {
   public final String user_name;
   
   public GodInfoItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.uid;
@@ -77,6 +81,10 @@ public final class GodInfoItem extends Message {
     } 
   }
   
+  public GodInfoItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class GodInfoItem extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GodInfoItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String god_intro;
+    
+    public Long uid;
+    
+    public String user_intro;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(GodInfoItem param1GodInfoItem) {
+      super(param1GodInfoItem);
+      if (param1GodInfoItem == null)
+        return; 
+      this.uid = param1GodInfoItem.uid;
+      this.avatar = param1GodInfoItem.avatar;
+      this.user_name = param1GodInfoItem.user_name;
+      this.user_intro = param1GodInfoItem.user_intro;
+      this.god_intro = param1GodInfoItem.god_intro;
+    }
+    
+    public GodInfoItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GodInfoItem)interceptResult.objValue; 
+      } 
+      return new GodInfoItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

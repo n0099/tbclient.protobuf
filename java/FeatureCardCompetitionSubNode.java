@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FeatureCardCompetitionSubNode;
 
 public final class FeatureCardCompetitionSubNode extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_COMPETITION_IMAGE = "";
   
   public static final String DEFAULT_TEAM1_IMAGE = "";
@@ -18,6 +22,8 @@ public final class FeatureCardCompetitionSubNode extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String competition_image;
@@ -41,7 +47,7 @@ public final class FeatureCardCompetitionSubNode extends Message {
   public final String url;
   
   public FeatureCardCompetitionSubNode(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.title;
@@ -95,5 +101,60 @@ public final class FeatureCardCompetitionSubNode extends Message {
       this.team2_name = ((Builder)str).team2_name;
       this.team2_image = ((Builder)str).team2_image;
     } 
+  }
+  
+  public FeatureCardCompetitionSubNode(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FeatureCardCompetitionSubNode> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String competition_image;
+    
+    public String team1_image;
+    
+    public String team1_name;
+    
+    public String team2_image;
+    
+    public String team2_name;
+    
+    public String title;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(FeatureCardCompetitionSubNode param1FeatureCardCompetitionSubNode) {
+      super(param1FeatureCardCompetitionSubNode);
+      if (param1FeatureCardCompetitionSubNode == null)
+        return; 
+      this.title = param1FeatureCardCompetitionSubNode.title;
+      this.url = param1FeatureCardCompetitionSubNode.url;
+      this.competition_image = param1FeatureCardCompetitionSubNode.competition_image;
+      this.team1_name = param1FeatureCardCompetitionSubNode.team1_name;
+      this.team1_image = param1FeatureCardCompetitionSubNode.team1_image;
+      this.team2_name = param1FeatureCardCompetitionSubNode.team2_name;
+      this.team2_image = param1FeatureCardCompetitionSubNode.team2_image;
+    }
+    
+    public FeatureCardCompetitionSubNode build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FeatureCardCompetitionSubNode)interceptResult.objValue; 
+      } 
+      return new FeatureCardCompetitionSubNode(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

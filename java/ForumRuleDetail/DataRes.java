@@ -1,4 +1,4 @@
-package ForumRuleDetail;
+package tbclient.ForumRuleDetail;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -14,6 +14,8 @@ import tbclient.ForumInfo;
 import tbclient.ForumRule;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUDIT_OPINION = "";
   
   public static final Integer DEFAULT_AUDIT_STATUS;
@@ -31,6 +33,8 @@ public final class DataRes extends Message {
   public static final List<ForumRule> DEFAULT_RULES = Collections.emptyList();
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String audit_opinion;
@@ -73,7 +77,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       this.forum = paramBuilder.forum;
@@ -89,7 +93,7 @@ public final class DataRes extends Message {
       } else {
         this.preface = str3;
       } 
-      List list = paramBuilder.rules;
+      List<ForumRule> list = paramBuilder.rules;
       if (list == null) {
         this.rules = DEFAULT_RULES;
       } else {
@@ -147,6 +151,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -161,5 +169,68 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String audit_opinion;
+    
+    public Integer audit_status;
+    
+    public BawuRoleInfoPub bazhu;
+    
+    public String cur_time;
+    
+    public ForumInfo forum;
+    
+    public Long forum_rule_id;
+    
+    public Integer is_manager;
+    
+    public String preface;
+    
+    public String publish_time;
+    
+    public List<ForumRule> rules;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.forum = param1DataRes.forum;
+      this.title = param1DataRes.title;
+      this.preface = param1DataRes.preface;
+      this.rules = Message.copyOf(param1DataRes.rules);
+      this.audit_status = param1DataRes.audit_status;
+      this.audit_opinion = param1DataRes.audit_opinion;
+      this.is_manager = param1DataRes.is_manager;
+      this.forum_rule_id = param1DataRes.forum_rule_id;
+      this.publish_time = param1DataRes.publish_time;
+      this.bazhu = param1DataRes.bazhu;
+      this.cur_time = param1DataRes.cur_time;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

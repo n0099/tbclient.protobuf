@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,32 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ActPost;
-import tbclient.AddPostList;
-import tbclient.Advertisement;
-import tbclient.Agree;
-import tbclient.DealInfo;
-import tbclient.HeadItem;
-import tbclient.Item;
-import tbclient.Lbs;
-import tbclient.NovelInfo;
-import tbclient.OriginThreadInfo;
-import tbclient.PbContent;
-import tbclient.PbPostZan;
-import tbclient.PbPresent;
-import tbclient.Post;
-import tbclient.SignatureData;
-import tbclient.SimpleForum;
-import tbclient.SkinInfo;
-import tbclient.SubPost;
-import tbclient.TPointPost;
-import tbclient.TailInfo;
-import tbclient.TogetherHi;
-import tbclient.User;
-import tbclient.VideoInfo;
-import tbclient.Zan;
 
 public final class Post extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ADD_POST_NUMBER;
   
   public static final List<String> DEFAULT_ARR_VIDEO;
@@ -40,6 +20,8 @@ public final class Post extends Message {
   public static final Long DEFAULT_AUTHOR_ID;
   
   public static final String DEFAULT_BIMG_URL = "";
+  
+  public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO;
   
   public static final List<PbContent> DEFAULT_CONTENT;
   
@@ -103,6 +85,8 @@ public final class Post extends Message {
   
   public static final String DEFAULT_VOTE_CRYPT = "";
   
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 27)
   public final ActPost act_post;
   
@@ -130,8 +114,17 @@ public final class Post extends Message {
   @ProtoField(tag = 17, type = Message.Datatype.STRING)
   public final String bimg_url;
   
+  @ProtoField(label = Message.Label.REPEATED, tag = 59)
+  public final List<CardLinkInfo> card_link_info;
+  
   @ProtoField(label = Message.Label.REPEATED, tag = 5)
   public final List<PbContent> content;
+  
+  @ProtoField(tag = 60)
+  public final CustomFigure custom_figure;
+  
+  @ProtoField(tag = 61)
+  public final CustomState custom_state;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 32)
   public final List<TailInfo> ext_tails;
@@ -316,10 +309,11 @@ public final class Post extends Message {
     DEFAULT_IS_WONDERFUL_POST = integer;
     DEFAULT_ITEM_STAR = Collections.emptyList();
     DEFAULT_FOLD_COMMENT_STATUS = integer;
+    DEFAULT_CARD_LINK_INFO = Collections.emptyList();
   }
   
   public Post(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.id;
       if (long_3 == null) {
@@ -345,13 +339,13 @@ public final class Post extends Message {
       } else {
         this.time = integer9;
       } 
-      List list3 = paramBuilder.content;
-      if (list3 == null) {
+      List<PbContent> list4 = paramBuilder.content;
+      if (list4 == null) {
         this.content = DEFAULT_CONTENT;
       } else {
-        this.content = Message.immutableCopyOf(list3);
+        this.content = Message.immutableCopyOf(list4);
       } 
-      list3 = paramBuilder.arr_video;
+      List<String> list3 = paramBuilder.arr_video;
       if (list3 == null) {
         this.arr_video = DEFAULT_ARR_VIDEO;
       } else {
@@ -447,7 +441,7 @@ public final class Post extends Message {
       } else {
         this.is_hot_post = integer6;
       } 
-      List list2 = paramBuilder.ext_tails;
+      List<TailInfo> list2 = paramBuilder.ext_tails;
       if (list2 == null) {
         this.ext_tails = DEFAULT_EXT_TAILS;
       } else {
@@ -531,7 +525,7 @@ public final class Post extends Message {
       } else {
         this.is_wonderful_post = integer2;
       } 
-      List list1 = paramBuilder.item_star;
+      List<HeadItem> list1 = paramBuilder.item_star;
       if (list1 == null) {
         this.item_star = DEFAULT_ITEM_STAR;
       } else {
@@ -553,6 +547,14 @@ public final class Post extends Message {
         this.fold_comment_apply_url = str1;
       } 
       this.novel_info = paramBuilder.novel_info;
+      List<CardLinkInfo> list = paramBuilder.card_link_info;
+      if (list == null) {
+        this.card_link_info = DEFAULT_CARD_LINK_INFO;
+      } else {
+        this.card_link_info = Message.immutableCopyOf(list);
+      } 
+      this.custom_figure = paramBuilder.custom_figure;
+      this.custom_state = paramBuilder.custom_state;
     } else {
       this.id = paramBuilder.id;
       this.title = paramBuilder.title;
@@ -611,6 +613,223 @@ public final class Post extends Message {
       this.fold_comment_status = paramBuilder.fold_comment_status;
       this.fold_comment_apply_url = paramBuilder.fold_comment_apply_url;
       this.novel_info = paramBuilder.novel_info;
+      this.card_link_info = Message.immutableCopyOf(paramBuilder.card_link_info);
+      this.custom_figure = paramBuilder.custom_figure;
+      this.custom_state = paramBuilder.custom_state;
     } 
+  }
+  
+  public Post(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Post> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ActPost act_post;
+    
+    public AddPostList add_post_list;
+    
+    public Integer add_post_number;
+    
+    public Advertisement advertisement;
+    
+    public Agree agree;
+    
+    public List<String> arr_video;
+    
+    public User author;
+    
+    public Long author_id;
+    
+    public String bimg_url;
+    
+    public List<CardLinkInfo> card_link_info;
+    
+    public List<PbContent> content;
+    
+    public CustomFigure custom_figure;
+    
+    public CustomState custom_state;
+    
+    public List<TailInfo> ext_tails;
+    
+    public Integer floor;
+    
+    public String fold_comment_apply_url;
+    
+    public Integer fold_comment_status;
+    
+    public String fold_tip;
+    
+    public SimpleForum from_forum;
+    
+    public TogetherHi high_together;
+    
+    public Long id;
+    
+    public Integer img_num_abtest;
+    
+    public String ios_bimg_format;
+    
+    public Integer is_bjh;
+    
+    public Integer is_bub;
+    
+    public Integer is_fold;
+    
+    public Integer is_hot_post;
+    
+    public Integer is_ntitle;
+    
+    public Integer is_post_visible;
+    
+    public Integer is_top_agree_post;
+    
+    public Integer is_voice;
+    
+    public Integer is_vote;
+    
+    public Integer is_wonderful_post;
+    
+    public Item item;
+    
+    public List<HeadItem> item_star;
+    
+    public Lbs lbs_info;
+    
+    public String lego_card;
+    
+    public Integer need_log;
+    
+    public NovelInfo novel_info;
+    
+    public OriginThreadInfo origin_thread_info;
+    
+    public Item outer_item;
+    
+    public DealInfo pb_deal_info;
+    
+    public PbPostZan post_zan;
+    
+    public PbPresent present;
+    
+    public String quote_id;
+    
+    public Integer show_squared;
+    
+    public SignatureData signature;
+    
+    public SkinInfo skin_info;
+    
+    public Integer storecount;
+    
+    public SubPost sub_post_list;
+    
+    public Integer sub_post_number;
+    
+    public TailInfo tail_info;
+    
+    public Long tid;
+    
+    public Integer time;
+    
+    public String time_ex;
+    
+    public String title;
+    
+    public TPointPost tpoint_post;
+    
+    public VideoInfo video_info;
+    
+    public String vote_crypt;
+    
+    public Zan zan;
+    
+    public Builder() {}
+    
+    public Builder(Post param1Post) {
+      super(param1Post);
+      if (param1Post == null)
+        return; 
+      this.id = param1Post.id;
+      this.title = param1Post.title;
+      this.floor = param1Post.floor;
+      this.time = param1Post.time;
+      this.content = Message.copyOf(param1Post.content);
+      this.arr_video = Message.copyOf(param1Post.arr_video);
+      this.lbs_info = param1Post.lbs_info;
+      this.is_vote = param1Post.is_vote;
+      this.is_voice = param1Post.is_voice;
+      this.is_ntitle = param1Post.is_ntitle;
+      this.is_bub = param1Post.is_bub;
+      this.vote_crypt = param1Post.vote_crypt;
+      this.sub_post_number = param1Post.sub_post_number;
+      this.time_ex = param1Post.time_ex;
+      this.sub_post_list = param1Post.sub_post_list;
+      this.add_post_list = param1Post.add_post_list;
+      this.bimg_url = param1Post.bimg_url;
+      this.ios_bimg_format = param1Post.ios_bimg_format;
+      this.author_id = param1Post.author_id;
+      this.add_post_number = param1Post.add_post_number;
+      this.signature = param1Post.signature;
+      this.tail_info = param1Post.tail_info;
+      this.author = param1Post.author;
+      this.zan = param1Post.zan;
+      this.storecount = param1Post.storecount;
+      this.tpoint_post = param1Post.tpoint_post;
+      this.act_post = param1Post.act_post;
+      this.present = param1Post.present;
+      this.video_info = param1Post.video_info;
+      this.post_zan = param1Post.post_zan;
+      this.is_hot_post = param1Post.is_hot_post;
+      this.ext_tails = Message.copyOf(param1Post.ext_tails);
+      this.high_together = param1Post.high_together;
+      this.skin_info = param1Post.skin_info;
+      this.pb_deal_info = param1Post.pb_deal_info;
+      this.lego_card = param1Post.lego_card;
+      this.agree = param1Post.agree;
+      this.from_forum = param1Post.from_forum;
+      this.is_post_visible = param1Post.is_post_visible;
+      this.need_log = param1Post.need_log;
+      this.img_num_abtest = param1Post.img_num_abtest;
+      this.origin_thread_info = param1Post.origin_thread_info;
+      this.is_fold = param1Post.is_fold;
+      this.fold_tip = param1Post.fold_tip;
+      this.is_top_agree_post = param1Post.is_top_agree_post;
+      this.tid = param1Post.tid;
+      this.show_squared = param1Post.show_squared;
+      this.is_bjh = param1Post.is_bjh;
+      this.quote_id = param1Post.quote_id;
+      this.is_wonderful_post = param1Post.is_wonderful_post;
+      this.item_star = Message.copyOf(param1Post.item_star);
+      this.item = param1Post.item;
+      this.outer_item = param1Post.outer_item;
+      this.advertisement = param1Post.advertisement;
+      this.fold_comment_status = param1Post.fold_comment_status;
+      this.fold_comment_apply_url = param1Post.fold_comment_apply_url;
+      this.novel_info = param1Post.novel_info;
+      this.card_link_info = Message.copyOf(param1Post.card_link_info);
+      this.custom_figure = param1Post.custom_figure;
+      this.custom_state = param1Post.custom_state;
+    }
+    
+    public Post build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Post)interceptResult.objValue; 
+      } 
+      return new Post(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

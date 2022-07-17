@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.VideoTemplateContent;
 
 public final class VideoTemplateContent extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final Long DEFAULT_END_TIME;
@@ -29,6 +32,8 @@ public final class VideoTemplateContent extends Message {
   public static final Double DEFAULT_TEXT_SIZE;
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String content;
@@ -92,7 +97,7 @@ public final class VideoTemplateContent extends Message {
   }
   
   public VideoTemplateContent(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.content;
@@ -174,5 +179,72 @@ public final class VideoTemplateContent extends Message {
       this.text_size = ((Builder)str).text_size;
       this.text_color = ((Builder)str).text_color;
     } 
+  }
+  
+  public VideoTemplateContent(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VideoTemplateContent> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String content;
+    
+    public Long end_time;
+    
+    public Integer pic_height;
+    
+    public Integer pic_width;
+    
+    public Double position_type;
+    
+    public Double position_x;
+    
+    public Double position_y;
+    
+    public Long start_time;
+    
+    public String text_color;
+    
+    public Double text_size;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(VideoTemplateContent param1VideoTemplateContent) {
+      super(param1VideoTemplateContent);
+      if (param1VideoTemplateContent == null)
+        return; 
+      this.content = param1VideoTemplateContent.content;
+      this.type = param1VideoTemplateContent.type;
+      this.pic_width = param1VideoTemplateContent.pic_width;
+      this.pic_height = param1VideoTemplateContent.pic_height;
+      this.start_time = param1VideoTemplateContent.start_time;
+      this.end_time = param1VideoTemplateContent.end_time;
+      this.position_x = param1VideoTemplateContent.position_x;
+      this.position_y = param1VideoTemplateContent.position_y;
+      this.position_type = param1VideoTemplateContent.position_type;
+      this.text_size = param1VideoTemplateContent.text_size;
+      this.text_color = param1VideoTemplateContent.text_color;
+    }
+    
+    public VideoTemplateContent build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VideoTemplateContent)interceptResult.objValue; 
+      } 
+      return new VideoTemplateContent(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

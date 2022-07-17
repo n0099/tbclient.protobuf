@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,22 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Abstract;
-import tbclient.Agree;
-import tbclient.AlaLiveInfo;
-import tbclient.Baijiahao;
-import tbclient.HeadItem;
-import tbclient.Item;
-import tbclient.Media;
-import tbclient.OriginThreadInfo;
-import tbclient.PbContent;
-import tbclient.PbLinkInfo;
-import tbclient.PollInfo;
-import tbclient.User;
-import tbclient.VideoInfo;
-import tbclient.Voice;
 
 public final class OriginThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Abstract> DEFAULT_ABSTRACT;
   
   public static final List<PbContent> DEFAULT_CONTENT;
@@ -62,6 +52,8 @@ public final class OriginThreadInfo extends Message {
   public static final Integer DEFAULT_TOP_TYPES;
   
   public static final List<Voice> DEFAULT_VOICE_INFO;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<Abstract> _abstract;
@@ -166,7 +158,7 @@ public final class OriginThreadInfo extends Message {
   }
   
   public OriginThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.title;
@@ -175,17 +167,17 @@ public final class OriginThreadInfo extends Message {
       } else {
         this.title = str2;
       } 
-      List list3 = paramBuilder.media;
-      if (list3 == null) {
+      List<Media> list5 = paramBuilder.media;
+      if (list5 == null) {
         this.media = DEFAULT_MEDIA;
       } else {
-        this.media = Message.immutableCopyOf(list3);
+        this.media = Message.immutableCopyOf(list5);
       } 
-      list3 = paramBuilder._abstract;
-      if (list3 == null) {
+      List<Abstract> list4 = paramBuilder._abstract;
+      if (list4 == null) {
         this._abstract = DEFAULT_ABSTRACT;
       } else {
-        this._abstract = Message.immutableCopyOf(list3);
+        this._abstract = Message.immutableCopyOf(list4);
       } 
       String str1 = paramBuilder.fname;
       if (str1 == null) {
@@ -225,14 +217,14 @@ public final class OriginThreadInfo extends Message {
         this.is_ugc = integer3;
       } 
       this.ori_ugc_info = paramBuilder.ori_ugc_info;
-      List list2 = paramBuilder.voice_info;
-      if (list2 == null) {
+      List<Voice> list3 = paramBuilder.voice_info;
+      if (list3 == null) {
         this.voice_info = DEFAULT_VOICE_INFO;
       } else {
-        this.voice_info = Message.immutableCopyOf(list2);
+        this.voice_info = Message.immutableCopyOf(list3);
       } 
       this.video_info = paramBuilder.video_info;
-      list2 = paramBuilder.content;
+      List<PbContent> list2 = paramBuilder.content;
       if (list2 == null) {
         this.content = DEFAULT_CONTENT;
       } else {
@@ -260,17 +252,17 @@ public final class OriginThreadInfo extends Message {
       } 
       this.poll_info = paramBuilder.poll_info;
       this.item = paramBuilder.item;
-      List list1 = paramBuilder.item_star;
+      List<HeadItem> list1 = paramBuilder.item_star;
       if (list1 == null) {
         this.item_star = DEFAULT_ITEM_STAR;
       } else {
         this.item_star = Message.immutableCopyOf(list1);
       } 
-      list1 = paramBuilder.pb_link_info;
-      if (list1 == null) {
+      List<PbLinkInfo> list = paramBuilder.pb_link_info;
+      if (list == null) {
         this.pb_link_info = DEFAULT_PB_LINK_INFO;
       } else {
-        this.pb_link_info = Message.immutableCopyOf(list1);
+        this.pb_link_info = Message.immutableCopyOf(list);
       } 
       Long long_1 = paramBuilder.pid;
       if (long_1 == null) {
@@ -327,6 +319,10 @@ public final class OriginThreadInfo extends Message {
     } 
   }
   
+  public OriginThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -341,5 +337,116 @@ public final class OriginThreadInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<OriginThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Abstract> _abstract;
+    
+    public Agree agree;
+    
+    public AlaLiveInfo ala_info;
+    
+    public User author;
+    
+    public List<PbContent> content;
+    
+    public Long fid;
+    
+    public String fname;
+    
+    public Integer good_types;
+    
+    public Integer is_deleted;
+    
+    public Integer is_frs_mask;
+    
+    public Integer is_new_style;
+    
+    public Integer is_ugc;
+    
+    public Item item;
+    
+    public List<HeadItem> item_star;
+    
+    public List<Media> media;
+    
+    public Baijiahao ori_ugc_info;
+    
+    public List<PbLinkInfo> pb_link_info;
+    
+    public Long pid;
+    
+    public PollInfo poll_info;
+    
+    public Integer reply_num;
+    
+    public Integer shared_num;
+    
+    public Integer thread_type;
+    
+    public String tid;
+    
+    public String title;
+    
+    public Integer top_types;
+    
+    public VideoInfo video_info;
+    
+    public List<Voice> voice_info;
+    
+    public Builder() {}
+    
+    public Builder(OriginThreadInfo param1OriginThreadInfo) {
+      super(param1OriginThreadInfo);
+      if (param1OriginThreadInfo == null)
+        return; 
+      this.title = param1OriginThreadInfo.title;
+      this.media = Message.copyOf(param1OriginThreadInfo.media);
+      this._abstract = Message.copyOf(param1OriginThreadInfo._abstract);
+      this.fname = param1OriginThreadInfo.fname;
+      this.tid = param1OriginThreadInfo.tid;
+      this.ala_info = param1OriginThreadInfo.ala_info;
+      this.fid = param1OriginThreadInfo.fid;
+      this.thread_type = param1OriginThreadInfo.thread_type;
+      this.is_deleted = param1OriginThreadInfo.is_deleted;
+      this.is_ugc = param1OriginThreadInfo.is_ugc;
+      this.ori_ugc_info = param1OriginThreadInfo.ori_ugc_info;
+      this.voice_info = Message.copyOf(param1OriginThreadInfo.voice_info);
+      this.video_info = param1OriginThreadInfo.video_info;
+      this.content = Message.copyOf(param1OriginThreadInfo.content);
+      this.is_new_style = param1OriginThreadInfo.is_new_style;
+      this.reply_num = param1OriginThreadInfo.reply_num;
+      this.author = param1OriginThreadInfo.author;
+      this.agree = param1OriginThreadInfo.agree;
+      this.shared_num = param1OriginThreadInfo.shared_num;
+      this.poll_info = param1OriginThreadInfo.poll_info;
+      this.item = param1OriginThreadInfo.item;
+      this.item_star = Message.copyOf(param1OriginThreadInfo.item_star);
+      this.pb_link_info = Message.copyOf(param1OriginThreadInfo.pb_link_info);
+      this.pid = param1OriginThreadInfo.pid;
+      this.good_types = param1OriginThreadInfo.good_types;
+      this.top_types = param1OriginThreadInfo.top_types;
+      this.is_frs_mask = param1OriginThreadInfo.is_frs_mask;
+    }
+    
+    public OriginThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (OriginThreadInfo)interceptResult.objValue; 
+      } 
+      return new OriginThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetForumDetail;
+package tbclient.GetForumDetail;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.GradePoint;
 
 public final class BazhuGrade extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ESTIMATION_LEFT_TEXT = "";
   
   public static final Integer DEFAULT_ESTIMATION_LEFT_TIME;
@@ -21,6 +23,8 @@ public final class BazhuGrade extends Message {
   public static final List<GradePoint> DEFAULT_GRADE_POINT = Collections.emptyList();
   
   public static final String DEFAULT_GRADE_TEXT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String estimation_left_text;
@@ -42,7 +46,7 @@ public final class BazhuGrade extends Message {
   }
   
   public BazhuGrade(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.grade;
@@ -51,7 +55,7 @@ public final class BazhuGrade extends Message {
       } else {
         this.grade = str2;
       } 
-      List list = paramBuilder.grade_point;
+      List<GradePoint> list = paramBuilder.grade_point;
       if (list == null) {
         this.grade_point = DEFAULT_GRADE_POINT;
       } else {
@@ -84,6 +88,10 @@ public final class BazhuGrade extends Message {
     } 
   }
   
+  public BazhuGrade(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -98,5 +106,50 @@ public final class BazhuGrade extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BazhuGrade> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String estimation_left_text;
+    
+    public Integer estimation_left_time;
+    
+    public String grade;
+    
+    public List<GradePoint> grade_point;
+    
+    public String grade_text;
+    
+    public Builder() {}
+    
+    public Builder(BazhuGrade param1BazhuGrade) {
+      super(param1BazhuGrade);
+      if (param1BazhuGrade == null)
+        return; 
+      this.grade = param1BazhuGrade.grade;
+      this.grade_point = Message.copyOf(param1BazhuGrade.grade_point);
+      this.estimation_left_text = param1BazhuGrade.estimation_left_text;
+      this.grade_text = param1BazhuGrade.grade_text;
+      this.estimation_left_time = param1BazhuGrade.estimation_left_time;
+    }
+    
+    public BazhuGrade build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BazhuGrade)interceptResult.objValue; 
+      } 
+      return new BazhuGrade(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

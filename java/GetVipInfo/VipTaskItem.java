@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipTaskItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESC = "";
   
   public static final String DEFAULT_IMG_URL = "";
@@ -20,6 +22,8 @@ public final class VipTaskItem extends Message {
   public static final Integer DEFAULT_TASK_ID;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String desc;
@@ -59,7 +63,7 @@ public final class VipTaskItem extends Message {
   }
   
   public VipTaskItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.img_url;
@@ -106,5 +110,57 @@ public final class VipTaskItem extends Message {
       this.link = ((Builder)integer).link;
       this.is_finish = ((Builder)integer).is_finish;
     } 
+  }
+  
+  public VipTaskItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VipTaskItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String desc;
+    
+    public String img_url;
+    
+    public Integer is_finish;
+    
+    public String link;
+    
+    public Integer task_id;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(VipTaskItem param1VipTaskItem) {
+      super(param1VipTaskItem);
+      if (param1VipTaskItem == null)
+        return; 
+      this.img_url = param1VipTaskItem.img_url;
+      this.task_id = param1VipTaskItem.task_id;
+      this.title = param1VipTaskItem.title;
+      this.desc = param1VipTaskItem.desc;
+      this.link = param1VipTaskItem.link;
+      this.is_finish = param1VipTaskItem.is_finish;
+    }
+    
+    public VipTaskItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipTaskItem)interceptResult.objValue; 
+      } 
+      return new VipTaskItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

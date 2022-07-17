@@ -1,13 +1,17 @@
-package GetForumDetail;
+package tbclient.GetForumDetail;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-import tbclient.GetForumDetail.DataRes;
 
 public final class GetForumDetailResIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 2)
   public final DataRes data;
   
@@ -15,7 +19,7 @@ public final class GetForumDetailResIdl extends Message {
   public final Error error;
   
   public GetForumDetailResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
@@ -23,5 +27,45 @@ public final class GetForumDetailResIdl extends Message {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
     } 
+  }
+  
+  public GetForumDetailResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GetForumDetailResIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataRes data;
+    
+    public Error error;
+    
+    public Builder() {}
+    
+    public Builder(GetForumDetailResIdl param1GetForumDetailResIdl) {
+      super(param1GetForumDetailResIdl);
+      if (param1GetForumDetailResIdl == null)
+        return; 
+      this.error = param1GetForumDetailResIdl.error;
+      this.data = param1GetForumDetailResIdl.data;
+    }
+    
+    public GetForumDetailResIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GetForumDetailResIdl)interceptResult.objValue; 
+      } 
+      return new GetForumDetailResIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

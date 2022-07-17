@@ -1,4 +1,4 @@
-package GetHorseRaceLampList;
+package tbclient.GetHorseRaceLampList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class LiveList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AMOUNT;
   
   public static final Long DEFAULT_LIVE_ID;
@@ -22,6 +24,8 @@ public final class LiveList extends Message {
   public static final Long DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NICKNAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer amount;
@@ -68,7 +72,7 @@ public final class LiveList extends Message {
   }
   
   public LiveList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.live_id;
@@ -122,5 +126,60 @@ public final class LiveList extends Message {
       this.rob_end_tm = ((Builder)integer).rob_end_tm;
       this.screen_direction = ((Builder)integer).screen_direction;
     } 
+  }
+  
+  public LiveList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<LiveList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer amount;
+    
+    public Long live_id;
+    
+    public String live_title;
+    
+    public Long rob_end_tm;
+    
+    public Integer screen_direction;
+    
+    public Long user_id;
+    
+    public String user_nickname;
+    
+    public Builder() {}
+    
+    public Builder(LiveList param1LiveList) {
+      super(param1LiveList);
+      if (param1LiveList == null)
+        return; 
+      this.live_id = param1LiveList.live_id;
+      this.live_title = param1LiveList.live_title;
+      this.user_id = param1LiveList.user_id;
+      this.user_nickname = param1LiveList.user_nickname;
+      this.amount = param1LiveList.amount;
+      this.rob_end_tm = param1LiveList.rob_end_tm;
+      this.screen_direction = param1LiveList.screen_direction;
+    }
+    
+    public LiveList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LiveList)interceptResult.objValue; 
+      } 
+      return new LiveList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

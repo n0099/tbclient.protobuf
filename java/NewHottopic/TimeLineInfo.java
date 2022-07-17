@@ -1,4 +1,4 @@
-package NewHottopic;
+package tbclient.NewHottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TimeLineInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BG_COLOR = "";
   
   public static final String DEFAULT_SHOW_TIME = "";
@@ -18,6 +20,8 @@ public final class TimeLineInfo extends Message {
   public static final Long DEFAULT_TID = Long.valueOf(0L);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String bg_color;
@@ -35,7 +39,7 @@ public final class TimeLineInfo extends Message {
   public final String title;
   
   public TimeLineInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.tid;
@@ -77,6 +81,10 @@ public final class TimeLineInfo extends Message {
     } 
   }
   
+  public TimeLineInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class TimeLineInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TimeLineInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bg_color;
+    
+    public String show_time;
+    
+    public String small_title;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(TimeLineInfo param1TimeLineInfo) {
+      super(param1TimeLineInfo);
+      if (param1TimeLineInfo == null)
+        return; 
+      this.tid = param1TimeLineInfo.tid;
+      this.title = param1TimeLineInfo.title;
+      this.show_time = param1TimeLineInfo.show_time;
+      this.bg_color = param1TimeLineInfo.bg_color;
+      this.small_title = param1TimeLineInfo.small_title;
+    }
+    
+    public TimeLineInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TimeLineInfo)interceptResult.objValue; 
+      } 
+      return new TimeLineInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

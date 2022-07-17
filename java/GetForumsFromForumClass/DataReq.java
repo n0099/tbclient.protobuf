@@ -1,4 +1,4 @@
-package GetForumsFromForumClass;
+package tbclient.GetForumsFromForumClass;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_LIMIT;
   
   public static final Integer DEFAULT_PN;
@@ -23,6 +25,8 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_SCR_W;
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final CommonReq common;
@@ -73,7 +77,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -129,5 +133,63 @@ public final class DataReq extends Message {
       this.pn = ((Builder)integer).pn;
       this.limit = ((Builder)integer).limit;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public Integer limit;
+    
+    public Integer pn;
+    
+    public Long q_type;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.q_type = param1DataReq.q_type;
+      this.type = param1DataReq.type;
+      this.pn = param1DataReq.pn;
+      this.limit = param1DataReq.limit;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

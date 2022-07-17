@@ -1,4 +1,4 @@
-package GetMemberInfo;
+package tbclient.GetMemberInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,17 +10,19 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ForumMember;
-import tbclient.GetMemberInfo.ManagerApplyInfo;
-import tbclient.GetMemberInfo.MemberGodInfo;
 import tbclient.MemberGroupInfo;
 import tbclient.PriManagerApplyInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_BAWUAPPLY_SHOW;
   
   public static final Integer DEFAULT_IS_PRIVATE_FORUM;
   
   public static final List<MemberGroupInfo> DEFAULT_MEMBER_GROUP_INFO = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final ForumMember forum_member_info;
@@ -50,9 +52,9 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list = paramBuilder.member_group_info;
+      List<MemberGroupInfo> list = paramBuilder.member_group_info;
       if (list == null) {
         this.member_group_info = DEFAULT_MEMBER_GROUP_INFO;
       } else {
@@ -85,6 +87,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -99,5 +105,56 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ForumMember forum_member_info;
+    
+    public Integer is_bawuapply_show;
+    
+    public Integer is_private_forum;
+    
+    public ManagerApplyInfo manager_apply_info;
+    
+    public MemberGodInfo member_god_info;
+    
+    public List<MemberGroupInfo> member_group_info;
+    
+    public PriManagerApplyInfo primanager_apply_info;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.member_group_info = Message.copyOf(param1DataRes.member_group_info);
+      this.forum_member_info = param1DataRes.forum_member_info;
+      this.member_god_info = param1DataRes.member_god_info;
+      this.manager_apply_info = param1DataRes.manager_apply_info;
+      this.is_private_forum = param1DataRes.is_private_forum;
+      this.is_bawuapply_show = param1DataRes.is_bawuapply_show;
+      this.primanager_apply_info = param1DataRes.primanager_apply_info;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

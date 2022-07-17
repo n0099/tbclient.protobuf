@@ -1,4 +1,4 @@
-package GetForumData;
+package tbclient.GetForumData;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetForumData.ForumDataValue;
 
 public final class ForumDataGroup extends Message {
+  public static Interceptable $ic;
+  
   public static final Double DEFAULT_TOTAL = Double.valueOf(0.0D);
   
   public static final List<ForumDataValue> DEFAULT_VALUES = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.DOUBLE)
   public final Double total;
@@ -23,8 +26,8 @@ public final class ForumDataGroup extends Message {
   public final List<ForumDataValue> values;
   
   public ForumDataGroup(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ForumDataValue> list;
     if (paramBoolean == true) {
       Double double_ = paramBuilder.total;
       if (double_ == null) {
@@ -44,6 +47,10 @@ public final class ForumDataGroup extends Message {
     } 
   }
   
+  public ForumDataGroup(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +65,41 @@ public final class ForumDataGroup extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumDataGroup> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Double total;
+    
+    public List<ForumDataValue> values;
+    
+    public Builder() {}
+    
+    public Builder(ForumDataGroup param1ForumDataGroup) {
+      super(param1ForumDataGroup);
+      if (param1ForumDataGroup == null)
+        return; 
+      this.total = param1ForumDataGroup.total;
+      this.values = Message.copyOf(param1ForumDataGroup.values);
+    }
+    
+    public ForumDataGroup build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumDataGroup)interceptResult.objValue; 
+      } 
+      return new ForumDataGroup(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

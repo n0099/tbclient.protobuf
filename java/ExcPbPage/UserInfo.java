@@ -1,4 +1,4 @@
-package ExcPbPage;
+package tbclient.ExcPbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class UserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_GENDER;
   
   public static final Long DEFAULT_ID;
@@ -16,6 +18,8 @@ public final class UserInfo extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final String DEFAULT_PORTRAIT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT64)
   public final Long gender;
@@ -49,7 +53,7 @@ public final class UserInfo extends Message {
   }
   
   public UserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_1 = paramBuilder.id;
@@ -82,5 +86,51 @@ public final class UserInfo extends Message {
       this.portrait = ((Builder)long_).portrait;
       this.gender = ((Builder)long_).gender;
     } 
+  }
+  
+  public UserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<UserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long gender;
+    
+    public Long id;
+    
+    public String name;
+    
+    public String portrait;
+    
+    public Builder() {}
+    
+    public Builder(UserInfo param1UserInfo) {
+      super(param1UserInfo);
+      if (param1UserInfo == null)
+        return; 
+      this.id = param1UserInfo.id;
+      this.name = param1UserInfo.name;
+      this.portrait = param1UserInfo.portrait;
+      this.gender = param1UserInfo.gender;
+    }
+    
+    public UserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserInfo)interceptResult.objValue; 
+      } 
+      return new UserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

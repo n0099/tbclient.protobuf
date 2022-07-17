@@ -1,4 +1,4 @@
-package GetGiftList;
+package tbclient.GetGiftList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PresentNumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_NAME = "";
   
   public static final Integer DEFAULT_NUM = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String name;
@@ -20,7 +24,7 @@ public final class PresentNumInfo extends Message {
   public final Integer num;
   
   public PresentNumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.num;
@@ -41,6 +45,10 @@ public final class PresentNumInfo extends Message {
     } 
   }
   
+  public PresentNumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class PresentNumInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PresentNumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String name;
+    
+    public Integer num;
+    
+    public Builder() {}
+    
+    public Builder(PresentNumInfo param1PresentNumInfo) {
+      super(param1PresentNumInfo);
+      if (param1PresentNumInfo == null)
+        return; 
+      this.num = param1PresentNumInfo.num;
+      this.name = param1PresentNumInfo.name;
+    }
+    
+    public PresentNumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PresentNumInfo)interceptResult.objValue; 
+      } 
+      return new PresentNumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

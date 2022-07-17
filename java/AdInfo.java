@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.AdInfo;
-import tbclient.Media;
 
 public final class AdInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_DESC = "";
   
   public static final String DEFAULT_AD_NAME = "";
@@ -26,6 +28,8 @@ public final class AdInfo extends Message {
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Integer DEFAULT_SHOW_RULE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String ad_desc;
@@ -72,8 +76,8 @@ public final class AdInfo extends Message {
   }
   
   public AdInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<Media> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.show_rule;
       if (integer == null) {
@@ -133,5 +137,63 @@ public final class AdInfo extends Message {
       this.portrait = ((Builder)list).portrait;
       this.media = Message.immutableCopyOf(((Builder)list).media);
     } 
+  }
+  
+  public AdInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AdInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_desc;
+    
+    public String ad_name;
+    
+    public String ad_pic;
+    
+    public Integer ad_type;
+    
+    public String ad_url;
+    
+    public List<Media> media;
+    
+    public String portrait;
+    
+    public Integer show_rule;
+    
+    public Builder() {}
+    
+    public Builder(AdInfo param1AdInfo) {
+      super(param1AdInfo);
+      if (param1AdInfo == null)
+        return; 
+      this.show_rule = param1AdInfo.show_rule;
+      this.ad_type = param1AdInfo.ad_type;
+      this.ad_desc = param1AdInfo.ad_desc;
+      this.ad_pic = param1AdInfo.ad_pic;
+      this.ad_url = param1AdInfo.ad_url;
+      this.ad_name = param1AdInfo.ad_name;
+      this.portrait = param1AdInfo.portrait;
+      this.media = Message.copyOf(param1AdInfo.media);
+    }
+    
+    public AdInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AdInfo)interceptResult.objValue; 
+      } 
+      return new AdInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package HotThreadList;
+package tbclient.HotThreadList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -14,11 +14,15 @@ import tbclient.RecomTopicList;
 import tbclient.ThreadInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<FrsTabInfo> DEFAULT_HOT_THREAD_TAB_INFO;
   
   public static final List<ThreadInfo> DEFAULT_THREAD_INFO;
   
   public static final List<RecomTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<FrsTabInfo> hot_thread_tab_info;
@@ -35,16 +39,16 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<FrsTabInfo> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.topic_list;
-      if (list1 == null) {
+      List<RecomTopicList> list2 = paramBuilder.topic_list;
+      if (list2 == null) {
         this.topic_list = DEFAULT_TOPIC_LIST;
       } else {
-        this.topic_list = Message.immutableCopyOf(list1);
+        this.topic_list = Message.immutableCopyOf(list2);
       } 
-      list1 = paramBuilder.thread_info;
+      List<ThreadInfo> list1 = paramBuilder.thread_info;
       if (list1 == null) {
         this.thread_info = DEFAULT_THREAD_INFO;
       } else {
@@ -63,6 +67,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -77,5 +85,44 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<FrsTabInfo> hot_thread_tab_info;
+    
+    public List<ThreadInfo> thread_info;
+    
+    public List<RecomTopicList> topic_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.topic_list = Message.copyOf(param1DataRes.topic_list);
+      this.thread_info = Message.copyOf(param1DataRes.thread_info);
+      this.hot_thread_tab_info = Message.copyOf(param1DataRes.hot_thread_tab_info);
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

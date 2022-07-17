@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,15 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.HotTWThreadInfo;
-import tbclient.LabelInfo;
-import tbclient.LiveCoverStatus;
-import tbclient.NoticeInfo;
-import tbclient.User;
-import tbclient.Zan;
-import tbclient.ZhiBoInfoTW;
 
 public final class ZhiBoInfoTW extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final Integer DEFAULT_COPYTHREAD_REMIND;
@@ -49,6 +46,8 @@ public final class ZhiBoInfoTW extends Message {
   public static final Long DEFAULT_THREAD_ID;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.STRING)
   public final String content;
@@ -145,7 +144,7 @@ public final class ZhiBoInfoTW extends Message {
   }
   
   public ZhiBoInfoTW(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.thread_id;
@@ -211,7 +210,7 @@ public final class ZhiBoInfoTW extends Message {
       } 
       this.user = paramBuilder.user;
       this.hot_tw_info = paramBuilder.hot_tw_info;
-      List list = paramBuilder.labelInfo;
+      List<LabelInfo> list = paramBuilder.labelInfo;
       if (list == null) {
         this.labelInfo = DEFAULT_LABELINFO;
       } else {
@@ -279,5 +278,105 @@ public final class ZhiBoInfoTW extends Message {
       this.is_copytwzhibo = ((Builder)str).is_copytwzhibo;
       this.field_ex = ((Builder)str).field_ex;
     } 
+  }
+  
+  public ZhiBoInfoTW(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ZhiBoInfoTW> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String content;
+    
+    public Integer copythread_remind;
+    
+    public String field_ex;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer freq_num;
+    
+    public HotTWThreadInfo hot_tw_info;
+    
+    public Integer is_copytwzhibo;
+    
+    public Integer is_headline;
+    
+    public List<LabelInfo> labelInfo;
+    
+    public Long last_modified_time;
+    
+    public String livecover_src;
+    
+    public String livecover_src_bsize;
+    
+    public String livecover_src_status;
+    
+    public LiveCoverStatus livecover_status;
+    
+    public NoticeInfo notice_info;
+    
+    public Integer post_num;
+    
+    public Integer reply_num;
+    
+    public Long thread_id;
+    
+    public String title;
+    
+    public User user;
+    
+    public Zan zan;
+    
+    public Builder() {}
+    
+    public Builder(ZhiBoInfoTW param1ZhiBoInfoTW) {
+      super(param1ZhiBoInfoTW);
+      if (param1ZhiBoInfoTW == null)
+        return; 
+      this.thread_id = param1ZhiBoInfoTW.thread_id;
+      this.livecover_src = param1ZhiBoInfoTW.livecover_src;
+      this.livecover_src_bsize = param1ZhiBoInfoTW.livecover_src_bsize;
+      this.post_num = param1ZhiBoInfoTW.post_num;
+      this.reply_num = param1ZhiBoInfoTW.reply_num;
+      this.zan = param1ZhiBoInfoTW.zan;
+      this.forum_name = param1ZhiBoInfoTW.forum_name;
+      this.forum_id = param1ZhiBoInfoTW.forum_id;
+      this.last_modified_time = param1ZhiBoInfoTW.last_modified_time;
+      this.title = param1ZhiBoInfoTW.title;
+      this.content = param1ZhiBoInfoTW.content;
+      this.user = param1ZhiBoInfoTW.user;
+      this.hot_tw_info = param1ZhiBoInfoTW.hot_tw_info;
+      this.labelInfo = Message.copyOf(param1ZhiBoInfoTW.labelInfo);
+      this.livecover_src_status = param1ZhiBoInfoTW.livecover_src_status;
+      this.notice_info = param1ZhiBoInfoTW.notice_info;
+      this.is_headline = param1ZhiBoInfoTW.is_headline;
+      this.livecover_status = param1ZhiBoInfoTW.livecover_status;
+      this.freq_num = param1ZhiBoInfoTW.freq_num;
+      this.copythread_remind = param1ZhiBoInfoTW.copythread_remind;
+      this.is_copytwzhibo = param1ZhiBoInfoTW.is_copytwzhibo;
+      this.field_ex = param1ZhiBoInfoTW.field_ex;
+    }
+    
+    public ZhiBoInfoTW build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ZhiBoInfoTW)interceptResult.objValue; 
+      } 
+      return new ZhiBoInfoTW(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

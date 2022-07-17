@@ -1,4 +1,4 @@
-package GetMsgRecForumlist;
+package tbclient.GetMsgRecForumlist;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -13,7 +13,11 @@ import tbclient.Page;
 import tbclient.RecommendForumInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<RecommendForumInfo> DEFAULT_FORUM_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<RecommendForumInfo> forum_list;
@@ -22,9 +26,9 @@ public final class DataRes extends Message {
   public final Page page_info;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list = paramBuilder.forum_list;
+      List<RecommendForumInfo> list = paramBuilder.forum_list;
       if (list == null) {
         this.forum_list = DEFAULT_FORUM_LIST;
       } else {
@@ -35,6 +39,10 @@ public final class DataRes extends Message {
       this.forum_list = Message.immutableCopyOf(paramBuilder.forum_list);
       this.page_info = paramBuilder.page_info;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -51,5 +59,41 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<RecommendForumInfo> forum_list;
+    
+    public Page page_info;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.forum_list = Message.copyOf(param1DataRes.forum_list);
+      this.page_info = param1DataRes.page_info;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.MyGroupInfo;
 
 public final class MyGroupInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_GROUP_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_GROUP_NAME = "";
@@ -17,6 +20,8 @@ public final class MyGroupInfo extends Message {
   public static final Integer DEFAULT_MEMBER_NUM;
   
   public static final String DEFAULT_PORTRAIT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long group_id;
@@ -40,7 +45,7 @@ public final class MyGroupInfo extends Message {
   }
   
   public MyGroupInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.group_id;
@@ -82,6 +87,10 @@ public final class MyGroupInfo extends Message {
     } 
   }
   
+  public MyGroupInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -96,5 +105,50 @@ public final class MyGroupInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MyGroupInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long group_id;
+    
+    public String group_name;
+    
+    public Integer max_member_num;
+    
+    public Integer member_num;
+    
+    public String portrait;
+    
+    public Builder() {}
+    
+    public Builder(MyGroupInfo param1MyGroupInfo) {
+      super(param1MyGroupInfo);
+      if (param1MyGroupInfo == null)
+        return; 
+      this.group_id = param1MyGroupInfo.group_id;
+      this.group_name = param1MyGroupInfo.group_name;
+      this.portrait = param1MyGroupInfo.portrait;
+      this.member_num = param1MyGroupInfo.member_num;
+      this.max_member_num = param1MyGroupInfo.max_member_num;
+    }
+    
+    public MyGroupInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MyGroupInfo)interceptResult.objValue; 
+      } 
+      return new MyGroupInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

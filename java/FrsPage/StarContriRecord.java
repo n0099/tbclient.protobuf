@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class StarContriRecord extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_RECORD_NOTICE = "";
   
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String record_notice;
@@ -25,7 +29,7 @@ public final class StarContriRecord extends Message {
   public final String user_name;
   
   public StarContriRecord(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
@@ -53,6 +57,10 @@ public final class StarContriRecord extends Message {
     } 
   }
   
+  public StarContriRecord(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -67,5 +75,44 @@ public final class StarContriRecord extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<StarContriRecord> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String record_notice;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(StarContriRecord param1StarContriRecord) {
+      super(param1StarContriRecord);
+      if (param1StarContriRecord == null)
+        return; 
+      this.user_id = param1StarContriRecord.user_id;
+      this.user_name = param1StarContriRecord.user_name;
+      this.record_notice = param1StarContriRecord.record_notice;
+    }
+    
+    public StarContriRecord build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (StarContriRecord)interceptResult.objValue; 
+      } 
+      return new StarContriRecord(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

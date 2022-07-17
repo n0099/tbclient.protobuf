@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AlbumElement;
 
 public final class AlbumElement extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ALBUM_HEIGHT;
   
   public static final String DEFAULT_ALBUM_THUMB_URL = "";
@@ -17,6 +20,8 @@ public final class AlbumElement extends Message {
   public static final String DEFAULT_ALBUM_URL = "";
   
   public static final Integer DEFAULT_ALBUM_WIDTH;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT32)
   public final Integer album_height;
@@ -54,7 +59,7 @@ public final class AlbumElement extends Message {
   }
   
   public AlbumElement(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.album_type;
@@ -94,5 +99,54 @@ public final class AlbumElement extends Message {
       this.album_height = ((Builder)integer).album_height;
       this.album_width = ((Builder)integer).album_width;
     } 
+  }
+  
+  public AlbumElement(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AlbumElement> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer album_height;
+    
+    public String album_thumb_url;
+    
+    public Integer album_type;
+    
+    public String album_url;
+    
+    public Integer album_width;
+    
+    public Builder() {}
+    
+    public Builder(AlbumElement param1AlbumElement) {
+      super(param1AlbumElement);
+      if (param1AlbumElement == null)
+        return; 
+      this.album_type = param1AlbumElement.album_type;
+      this.album_url = param1AlbumElement.album_url;
+      this.album_thumb_url = param1AlbumElement.album_thumb_url;
+      this.album_height = param1AlbumElement.album_height;
+      this.album_width = param1AlbumElement.album_width;
+    }
+    
+    public AlbumElement build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AlbumElement)interceptResult.objValue; 
+      } 
+      return new AlbumElement(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

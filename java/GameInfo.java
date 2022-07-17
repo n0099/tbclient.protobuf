@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GameInfo;
 
 public final class GameInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_ANDR_PK_NAME = "";
@@ -81,6 +84,8 @@ public final class GameInfo extends Message {
   public static final String DEFAULT_SUPERSCRIPT_COLOR = "";
   
   public static final String DEFAULT_VERSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 26, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -218,7 +223,7 @@ public final class GameInfo extends Message {
   }
   
   public GameInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str9 = paramBuilder.game_id;
@@ -293,7 +298,7 @@ public final class GameInfo extends Message {
       } else {
         this.schema_url = str6;
       } 
-      List list = paramBuilder.game_pic;
+      List<String> list = paramBuilder.game_pic;
       if (list == null) {
         this.game_pic = DEFAULT_GAME_PIC;
       } else {
@@ -475,5 +480,147 @@ public final class GameInfo extends Message {
       this.category_name_sim = ((Builder)integer).category_name_sim;
       this.score = ((Builder)integer).score;
     } 
+  }
+  
+  public GameInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GameInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String andr_pk_name;
+    
+    public Integer app_id;
+    
+    public String apple_id;
+    
+    public String bundle_id;
+    
+    public Integer category_id;
+    
+    public String category_name;
+    
+    public String category_name_sim;
+    
+    public Integer day_downloads;
+    
+    public Long deadline;
+    
+    public String editor_rec;
+    
+    public String game_desc;
+    
+    public String game_details_url;
+    
+    public String game_id;
+    
+    public String game_link;
+    
+    public String game_name;
+    
+    public List<String> game_pic;
+    
+    public Integer game_type;
+    
+    public String icon_pic1;
+    
+    public String icon_pic2;
+    
+    public String icon_pic3;
+    
+    public String icon_url;
+    
+    public String introduce;
+    
+    public String launchComponent;
+    
+    public String launch_component;
+    
+    public Integer mark;
+    
+    public String package_link;
+    
+    public String package_size;
+    
+    public Integer player_num;
+    
+    public String schema_url;
+    
+    public Integer score;
+    
+    public String secret_key;
+    
+    public Integer star;
+    
+    public String subscript_color;
+    
+    public String superscript_color;
+    
+    public String version;
+    
+    public Builder() {}
+    
+    public Builder(GameInfo param1GameInfo) {
+      super(param1GameInfo);
+      if (param1GameInfo == null)
+        return; 
+      this.game_id = param1GameInfo.game_id;
+      this.game_name = param1GameInfo.game_name;
+      this.game_type = param1GameInfo.game_type;
+      this.icon_url = param1GameInfo.icon_url;
+      this.player_num = param1GameInfo.player_num;
+      this.package_link = param1GameInfo.package_link;
+      this.package_size = param1GameInfo.package_size;
+      this.game_link = param1GameInfo.game_link;
+      this.mark = param1GameInfo.mark;
+      this.apple_id = param1GameInfo.apple_id;
+      this.bundle_id = param1GameInfo.bundle_id;
+      this.schema_url = param1GameInfo.schema_url;
+      this.game_pic = Message.copyOf(param1GameInfo.game_pic);
+      this.introduce = param1GameInfo.introduce;
+      this.launch_component = param1GameInfo.launch_component;
+      this.andr_pk_name = param1GameInfo.andr_pk_name;
+      this.day_downloads = param1GameInfo.day_downloads;
+      this.secret_key = param1GameInfo.secret_key;
+      this.superscript_color = param1GameInfo.superscript_color;
+      this.star = param1GameInfo.star;
+      this.category_id = param1GameInfo.category_id;
+      this.category_name = param1GameInfo.category_name;
+      this.version = param1GameInfo.version;
+      this.deadline = param1GameInfo.deadline;
+      this.editor_rec = param1GameInfo.editor_rec;
+      this._abstract = param1GameInfo._abstract;
+      this.game_details_url = param1GameInfo.game_details_url;
+      this.app_id = param1GameInfo.app_id;
+      this.icon_pic1 = param1GameInfo.icon_pic1;
+      this.icon_pic2 = param1GameInfo.icon_pic2;
+      this.icon_pic3 = param1GameInfo.icon_pic3;
+      this.game_desc = param1GameInfo.game_desc;
+      this.subscript_color = param1GameInfo.subscript_color;
+      this.launchComponent = param1GameInfo.launchComponent;
+      this.category_name_sim = param1GameInfo.category_name_sim;
+      this.score = param1GameInfo.score;
+    }
+    
+    public GameInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GameInfo)interceptResult.objValue; 
+      } 
+      return new GameInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PbSortType extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_SORT_NAME = "";
   
   public static final Integer DEFAULT_SORT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String sort_name;
@@ -20,7 +24,7 @@ public final class PbSortType extends Message {
   public final Integer sort_type;
   
   public PbSortType(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.sort_type;
@@ -41,6 +45,10 @@ public final class PbSortType extends Message {
     } 
   }
   
+  public PbSortType(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class PbSortType extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PbSortType> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String sort_name;
+    
+    public Integer sort_type;
+    
+    public Builder() {}
+    
+    public Builder(PbSortType param1PbSortType) {
+      super(param1PbSortType);
+      if (param1PbSortType == null)
+        return; 
+      this.sort_type = param1PbSortType.sort_type;
+      this.sort_name = param1PbSortType.sort_name;
+    }
+    
+    public PbSortType build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PbSortType)interceptResult.objValue; 
+      } 
+      return new PbSortType(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ActiveCenterMission;
 
 public final class ActiveCenterMission extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTIVE_ID;
   
   public static final Integer DEFAULT_ACTIVITY_ID;
@@ -29,6 +32,8 @@ public final class ActiveCenterMission extends Message {
   public static final Integer DEFAULT_TASK_TYPE;
   
   public static final Integer DEFAULT_TOTAL_LIMIT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer active_id;
@@ -88,7 +93,7 @@ public final class ActiveCenterMission extends Message {
   }
   
   public ActiveCenterMission(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.active_id;
@@ -170,5 +175,72 @@ public final class ActiveCenterMission extends Message {
       this.is_completed = ((Builder)integer).is_completed;
       this.activity_id = ((Builder)integer).activity_id;
     } 
+  }
+  
+  public ActiveCenterMission(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ActiveCenterMission> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer active_id;
+    
+    public Integer activity_id;
+    
+    public Integer cleartime;
+    
+    public Integer cleartype;
+    
+    public String desc;
+    
+    public String final_reward_url;
+    
+    public String is_completed;
+    
+    public String mission;
+    
+    public Integer mission_id;
+    
+    public Integer task_type;
+    
+    public Integer total_limit;
+    
+    public Builder() {}
+    
+    public Builder(ActiveCenterMission param1ActiveCenterMission) {
+      super(param1ActiveCenterMission);
+      if (param1ActiveCenterMission == null)
+        return; 
+      this.active_id = param1ActiveCenterMission.active_id;
+      this.mission_id = param1ActiveCenterMission.mission_id;
+      this.task_type = param1ActiveCenterMission.task_type;
+      this.cleartype = param1ActiveCenterMission.cleartype;
+      this.cleartime = param1ActiveCenterMission.cleartime;
+      this.total_limit = param1ActiveCenterMission.total_limit;
+      this.final_reward_url = param1ActiveCenterMission.final_reward_url;
+      this.mission = param1ActiveCenterMission.mission;
+      this.desc = param1ActiveCenterMission.desc;
+      this.is_completed = param1ActiveCenterMission.is_completed;
+      this.activity_id = param1ActiveCenterMission.activity_id;
+    }
+    
+    public ActiveCenterMission build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActiveCenterMission)interceptResult.objValue; 
+      } 
+      return new ActiveCenterMission(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

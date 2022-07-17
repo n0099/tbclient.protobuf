@@ -1,4 +1,4 @@
-package TalkBall;
+package tbclient.TalkBall;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,14 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.TalkBall.VideoCard;
 
 public final class InsertFloor extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_TOPIC_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_TOPIC_NAME = "";
   
   public static final List<VideoCard> DEFAULT_WANDER_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer topic_id;
@@ -28,8 +31,8 @@ public final class InsertFloor extends Message {
   public final List<VideoCard> wander_list;
   
   public InsertFloor(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<VideoCard> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.topic_id;
       if (integer == null) {
@@ -56,6 +59,10 @@ public final class InsertFloor extends Message {
     } 
   }
   
+  public InsertFloor(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +77,44 @@ public final class InsertFloor extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<InsertFloor> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer topic_id;
+    
+    public String topic_name;
+    
+    public List<VideoCard> wander_list;
+    
+    public Builder() {}
+    
+    public Builder(InsertFloor param1InsertFloor) {
+      super(param1InsertFloor);
+      if (param1InsertFloor == null)
+        return; 
+      this.topic_id = param1InsertFloor.topic_id;
+      this.topic_name = param1InsertFloor.topic_name;
+      this.wander_list = Message.copyOf(param1InsertFloor.wander_list);
+    }
+    
+    public InsertFloor build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (InsertFloor)interceptResult.objValue; 
+      } 
+      return new InsertFloor(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

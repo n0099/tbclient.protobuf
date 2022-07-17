@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ForumRuleStatus;
 
 public final class ForumRuleStatus extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AUDIT_STATUS;
   
   public static final Integer DEFAULT_HAS_FORUM_RULE;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer audit_status;
@@ -43,7 +48,7 @@ public final class ForumRuleStatus extends Message {
   }
   
   public ForumRuleStatus(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -69,5 +74,48 @@ public final class ForumRuleStatus extends Message {
       this.audit_status = ((Builder)integer).audit_status;
       this.has_forum_rule = ((Builder)integer).has_forum_rule;
     } 
+  }
+  
+  public ForumRuleStatus(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ForumRuleStatus> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer audit_status;
+    
+    public Integer has_forum_rule;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(ForumRuleStatus param1ForumRuleStatus) {
+      super(param1ForumRuleStatus);
+      if (param1ForumRuleStatus == null)
+        return; 
+      this.title = param1ForumRuleStatus.title;
+      this.audit_status = param1ForumRuleStatus.audit_status;
+      this.has_forum_rule = param1ForumRuleStatus.has_forum_rule;
+    }
+    
+    public ForumRuleStatus build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumRuleStatus)interceptResult.objValue; 
+      } 
+      return new ForumRuleStatus(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

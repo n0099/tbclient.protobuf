@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumHeadIcon extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_GRADE = Integer.valueOf(0);
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer grade;
@@ -20,7 +24,7 @@ public final class ForumHeadIcon extends Message {
   public final String url;
   
   public ForumHeadIcon(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.grade;
@@ -41,6 +45,10 @@ public final class ForumHeadIcon extends Message {
     } 
   }
   
+  public ForumHeadIcon(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class ForumHeadIcon extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumHeadIcon> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer grade;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(ForumHeadIcon param1ForumHeadIcon) {
+      super(param1ForumHeadIcon);
+      if (param1ForumHeadIcon == null)
+        return; 
+      this.grade = param1ForumHeadIcon.grade;
+      this.url = param1ForumHeadIcon.url;
+    }
+    
+    public ForumHeadIcon build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumHeadIcon)interceptResult.objValue; 
+      } 
+      return new ForumHeadIcon(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

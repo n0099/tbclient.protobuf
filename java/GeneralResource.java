@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GeneralResource;
 
 public final class GeneralResource extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_RES_FLOOR = Integer.valueOf(0);
   
   public static final String DEFAULT_RES_IMAGE = "";
   
   public static final String DEFAULT_RES_LINK = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT32)
   public final Integer res_floor;
@@ -24,7 +29,7 @@ public final class GeneralResource extends Message {
   public final String res_link;
   
   public GeneralResource(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.res_image;
@@ -52,6 +57,10 @@ public final class GeneralResource extends Message {
     } 
   }
   
+  public GeneralResource(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class GeneralResource extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GeneralResource> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer res_floor;
+    
+    public String res_image;
+    
+    public String res_link;
+    
+    public Builder() {}
+    
+    public Builder(GeneralResource param1GeneralResource) {
+      super(param1GeneralResource);
+      if (param1GeneralResource == null)
+        return; 
+      this.res_image = param1GeneralResource.res_image;
+      this.res_link = param1GeneralResource.res_link;
+      this.res_floor = param1GeneralResource.res_floor;
+    }
+    
+    public GeneralResource build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GeneralResource)interceptResult.objValue; 
+      } 
+      return new GeneralResource(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

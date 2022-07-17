@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AwardInfo;
 
 public final class AwardInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_AWARD_ACT_ID;
   
   public static final Long DEFAULT_AWARD_ID;
@@ -15,6 +18,8 @@ public final class AwardInfo extends Message {
   public static final String DEFAULT_AWARD_IMGSRC = "";
   
   public static final String DEFAULT_AWARD_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long award_act_id;
@@ -48,7 +53,7 @@ public final class AwardInfo extends Message {
   }
   
   public AwardInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.award_id;
@@ -81,5 +86,51 @@ public final class AwardInfo extends Message {
       this.award_name = ((Builder)str).award_name;
       this.award_imgsrc = ((Builder)str).award_imgsrc;
     } 
+  }
+  
+  public AwardInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AwardInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long award_act_id;
+    
+    public Long award_id;
+    
+    public String award_imgsrc;
+    
+    public String award_name;
+    
+    public Builder() {}
+    
+    public Builder(AwardInfo param1AwardInfo) {
+      super(param1AwardInfo);
+      if (param1AwardInfo == null)
+        return; 
+      this.award_id = param1AwardInfo.award_id;
+      this.award_act_id = param1AwardInfo.award_act_id;
+      this.award_name = param1AwardInfo.award_name;
+      this.award_imgsrc = param1AwardInfo.award_imgsrc;
+    }
+    
+    public AwardInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AwardInfo)interceptResult.objValue; 
+      } 
+      return new AwardInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

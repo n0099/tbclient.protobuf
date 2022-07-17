@@ -1,4 +1,4 @@
-package NewHottopic;
+package tbclient.NewHottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.NewHottopic.TimeLineInfo;
 
 public final class TimeLine extends Message {
+  public static Interceptable $ic;
+  
   public static final List<TimeLineInfo> DEFAULT_TIMELINE_INFO = Collections.emptyList();
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<TimeLineInfo> timeline_info;
@@ -23,8 +26,8 @@ public final class TimeLine extends Message {
   public final String title;
   
   public TimeLine(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<TimeLineInfo> list;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
       if (str == null) {
@@ -44,6 +47,10 @@ public final class TimeLine extends Message {
     } 
   }
   
+  public TimeLine(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +65,41 @@ public final class TimeLine extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TimeLine> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<TimeLineInfo> timeline_info;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(TimeLine param1TimeLine) {
+      super(param1TimeLine);
+      if (param1TimeLine == null)
+        return; 
+      this.title = param1TimeLine.title;
+      this.timeline_info = Message.copyOf(param1TimeLine.timeline_info);
+    }
+    
+    public TimeLine build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TimeLine)interceptResult.objValue; 
+      } 
+      return new TimeLine(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

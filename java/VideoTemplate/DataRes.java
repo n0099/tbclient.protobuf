@@ -1,4 +1,4 @@
-package VideoTemplate;
+package tbclient.VideoTemplate;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.VideoTemplateContent;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_URL = "";
   
   public static final String DEFAULT_BACK_URL = "";
@@ -23,6 +25,8 @@ public final class DataRes extends Message {
   public static final List<VideoTemplateContent> DEFAULT_VIDEO_TEMPLATE_CONTENT = Collections.emptyList();
   
   public static final String DEFAULT_VIDEO_TEMPLATE_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String activity_url;
@@ -47,10 +51,10 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list = paramBuilder.video_template_content;
+      List<VideoTemplateContent> list = paramBuilder.video_template_content;
       if (list == null) {
         this.video_template_content = DEFAULT_VIDEO_TEMPLATE_CONTENT;
       } else {
@@ -96,6 +100,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -110,5 +118,53 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_url;
+    
+    public String back_url;
+    
+    public Integer topic_id;
+    
+    public String topic_name;
+    
+    public List<VideoTemplateContent> video_template_content;
+    
+    public String video_template_url;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.video_template_content = Message.copyOf(param1DataRes.video_template_content);
+      this.topic_id = param1DataRes.topic_id;
+      this.topic_name = param1DataRes.topic_name;
+      this.back_url = param1DataRes.back_url;
+      this.video_template_url = param1DataRes.video_template_url;
+      this.activity_url = param1DataRes.activity_url;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

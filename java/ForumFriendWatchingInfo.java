@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ForumFriendWatchingInfo;
 
 public final class ForumFriendWatchingInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FORUM_AVATAR = "";
   
   public static final String DEFAULT_FORUM_NAME = "";
@@ -15,6 +18,8 @@ public final class ForumFriendWatchingInfo extends Message {
   public static final Integer DEFAULT_SHOW_NUM = Integer.valueOf(0);
   
   public static final String DEFAULT_SHOW_TYPE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String forum_avatar;
@@ -29,7 +34,7 @@ public final class ForumFriendWatchingInfo extends Message {
   public final String show_type;
   
   public ForumFriendWatchingInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.forum_avatar;
@@ -64,6 +69,10 @@ public final class ForumFriendWatchingInfo extends Message {
     } 
   }
   
+  public ForumFriendWatchingInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -78,5 +87,47 @@ public final class ForumFriendWatchingInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumFriendWatchingInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String forum_avatar;
+    
+    public String forum_name;
+    
+    public Integer show_num;
+    
+    public String show_type;
+    
+    public Builder() {}
+    
+    public Builder(ForumFriendWatchingInfo param1ForumFriendWatchingInfo) {
+      super(param1ForumFriendWatchingInfo);
+      if (param1ForumFriendWatchingInfo == null)
+        return; 
+      this.forum_avatar = param1ForumFriendWatchingInfo.forum_avatar;
+      this.forum_name = param1ForumFriendWatchingInfo.forum_name;
+      this.show_num = param1ForumFriendWatchingInfo.show_num;
+      this.show_type = param1ForumFriendWatchingInfo.show_type;
+    }
+    
+    public ForumFriendWatchingInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumFriendWatchingInfo)interceptResult.objValue; 
+      } 
+      return new ForumFriendWatchingInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

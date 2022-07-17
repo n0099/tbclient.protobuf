@@ -1,4 +1,4 @@
-package GetThemeList;
+package tbclient.GetThemeList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,14 +9,16 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetThemeList.ThemeCarousel;
-import tbclient.GetThemeList.ThemeList;
 import tbclient.ThemeRecommand;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ThemeCarousel> DEFAULT_CAROUSEL;
   
   public static final List<ThemeList> DEFAULT_THEME_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<ThemeCarousel> carousel;
@@ -32,15 +34,15 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list = paramBuilder.theme_list;
-      if (list == null) {
+      List<ThemeList> list1 = paramBuilder.theme_list;
+      if (list1 == null) {
         this.theme_list = DEFAULT_THEME_LIST;
       } else {
-        this.theme_list = Message.immutableCopyOf(list);
+        this.theme_list = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.carousel;
+      List<ThemeCarousel> list = paramBuilder.carousel;
       if (list == null) {
         this.carousel = DEFAULT_CAROUSEL;
       } else {
@@ -52,6 +54,10 @@ public final class DataRes extends Message {
       this.carousel = Message.immutableCopyOf(paramBuilder.carousel);
       this.recommend = paramBuilder.recommend;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -68,5 +74,44 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ThemeCarousel> carousel;
+    
+    public ThemeRecommand recommend;
+    
+    public List<ThemeList> theme_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.theme_list = Message.copyOf(param1DataRes.theme_list);
+      this.carousel = Message.copyOf(param1DataRes.carousel);
+      this.recommend = param1DataRes.recommend;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

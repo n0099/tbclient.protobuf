@@ -1,4 +1,4 @@
-package GetMyPost;
+package tbclient.GetMyPost;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,12 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.BaijiahaoInfo;
 import tbclient.BusinessAccountInfo;
-import tbclient.GetMyPost.Balv;
 import tbclient.GodInfo;
 import tbclient.NewGodInfo;
 
 public final class User_Info extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BAWU_TYPE = "";
   
   public static final String DEFAULT_FANS_NICKNAME = "";
@@ -43,6 +44,8 @@ public final class User_Info extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final Integer DEFAULT_USERHIDE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 18)
   public final BaijiahaoInfo baijiahao_info;
@@ -132,7 +135,7 @@ public final class User_Info extends Message {
   }
   
   public User_Info(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.is_login;
       if (integer3 == null) {
@@ -251,5 +254,99 @@ public final class User_Info extends Message {
       this.new_god_data = paramBuilder.new_god_data;
       this.business_account_info = paramBuilder.business_account_info;
     } 
+  }
+  
+  public User_Info(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<User_Info> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public BaijiahaoInfo baijiahao_info;
+    
+    public Balv balv;
+    
+    public String bawu_type;
+    
+    public BusinessAccountInfo business_account_info;
+    
+    public String fans_nickname;
+    
+    public Integer fans_num;
+    
+    public Integer gender;
+    
+    public GodInfo god_data;
+    
+    public Long id;
+    
+    public Integer is_bawu;
+    
+    public Integer is_login;
+    
+    public Integer is_manager;
+    
+    public Integer is_mem;
+    
+    public Integer is_select_tail;
+    
+    public String name;
+    
+    public String name_show;
+    
+    public NewGodInfo new_god_data;
+    
+    public String portrait;
+    
+    public Integer type;
+    
+    public Integer userhide;
+    
+    public Builder() {}
+    
+    public Builder(User_Info param1User_Info) {
+      super(param1User_Info);
+      if (param1User_Info == null)
+        return; 
+      this.is_login = param1User_Info.is_login;
+      this.id = param1User_Info.id;
+      this.name = param1User_Info.name;
+      this.name_show = param1User_Info.name_show;
+      this.portrait = param1User_Info.portrait;
+      this.gender = param1User_Info.gender;
+      this.type = param1User_Info.type;
+      this.is_manager = param1User_Info.is_manager;
+      this.is_mem = param1User_Info.is_mem;
+      this.is_select_tail = param1User_Info.is_select_tail;
+      this.userhide = param1User_Info.userhide;
+      this.balv = param1User_Info.balv;
+      this.god_data = param1User_Info.god_data;
+      this.fans_num = param1User_Info.fans_num;
+      this.fans_nickname = param1User_Info.fans_nickname;
+      this.is_bawu = param1User_Info.is_bawu;
+      this.bawu_type = param1User_Info.bawu_type;
+      this.baijiahao_info = param1User_Info.baijiahao_info;
+      this.new_god_data = param1User_Info.new_god_data;
+      this.business_account_info = param1User_Info.business_account_info;
+    }
+    
+    public User_Info build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (User_Info)interceptResult.objValue; 
+      } 
+      return new User_Info(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

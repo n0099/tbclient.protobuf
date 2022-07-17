@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AutoPayInfo;
 
 public final class AutoPayInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUTOPAY_URL = "";
   
   public static final Long DEFAULT_BEGIN_TIME;
@@ -15,6 +18,8 @@ public final class AutoPayInfo extends Message {
   public static final Long DEFAULT_CREATE_TIME;
   
   public static final Integer DEFAULT_PAY_CHANNEL = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String autopay_url;
@@ -33,7 +38,7 @@ public final class AutoPayInfo extends Message {
   }
   
   public AutoPayInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.create_time;
@@ -68,6 +73,10 @@ public final class AutoPayInfo extends Message {
     } 
   }
   
+  public AutoPayInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -84,5 +93,47 @@ public final class AutoPayInfo extends Message {
     } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_CREATE_TIME = long_;
+  }
+  
+  public static final class Builder extends Message.Builder<AutoPayInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String autopay_url;
+    
+    public Long begin_time;
+    
+    public Long create_time;
+    
+    public Integer pay_channel;
+    
+    public Builder() {}
+    
+    public Builder(AutoPayInfo param1AutoPayInfo) {
+      super(param1AutoPayInfo);
+      if (param1AutoPayInfo == null)
+        return; 
+      this.create_time = param1AutoPayInfo.create_time;
+      this.pay_channel = param1AutoPayInfo.pay_channel;
+      this.begin_time = param1AutoPayInfo.begin_time;
+      this.autopay_url = param1AutoPayInfo.autopay_url;
+    }
+    
+    public AutoPayInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AutoPayInfo)interceptResult.objValue; 
+      } 
+      return new AutoPayInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

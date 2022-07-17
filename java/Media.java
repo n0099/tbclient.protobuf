@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Media;
 
 public final class Media extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BIG_PIC = "";
   
   public static final String DEFAULT_BSIZE = "";
@@ -53,6 +56,8 @@ public final class Media extends Message {
   public static final Integer DEFAULT_WIDTH;
   
   public static final Double DEFAULT_WTH_MID_LOC;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String big_pic;
@@ -154,7 +159,7 @@ public final class Media extends Message {
   }
   
   public Media(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Double double_;
     if (paramBoolean == true) {
       Integer integer5 = paramBuilder.type;
@@ -320,5 +325,108 @@ public final class Media extends Message {
       this.wth_mid_loc = ((Builder)double_).wth_mid_loc;
       this.hth_mid_loc = ((Builder)double_).hth_mid_loc;
     } 
+  }
+  
+  public Media(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Media> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String big_pic;
+    
+    public String bsize;
+    
+    public Integer during_time;
+    
+    public String dynamic_pic;
+    
+    public Integer e_type;
+    
+    public Integer height;
+    
+    public Double hth_mid_loc;
+    
+    public Integer is_blocked_pic;
+    
+    public Integer is_long_pic;
+    
+    public String origin_pic;
+    
+    public Integer origin_size;
+    
+    public Long post_id;
+    
+    public Integer show_original_btn;
+    
+    public String small_pic;
+    
+    public String src_pic;
+    
+    public String text;
+    
+    public Integer type;
+    
+    public String vhsrc;
+    
+    public String vpic;
+    
+    public String vsrc;
+    
+    public String water_pic;
+    
+    public Integer width;
+    
+    public Double wth_mid_loc;
+    
+    public Builder() {}
+    
+    public Builder(Media param1Media) {
+      super(param1Media);
+      if (param1Media == null)
+        return; 
+      this.type = param1Media.type;
+      this.small_pic = param1Media.small_pic;
+      this.big_pic = param1Media.big_pic;
+      this.water_pic = param1Media.water_pic;
+      this.vpic = param1Media.vpic;
+      this.vsrc = param1Media.vsrc;
+      this.vhsrc = param1Media.vhsrc;
+      this.src_pic = param1Media.src_pic;
+      this.text = param1Media.text;
+      this.width = param1Media.width;
+      this.height = param1Media.height;
+      this.bsize = param1Media.bsize;
+      this.during_time = param1Media.during_time;
+      this.e_type = param1Media.e_type;
+      this.origin_pic = param1Media.origin_pic;
+      this.origin_size = param1Media.origin_size;
+      this.post_id = param1Media.post_id;
+      this.dynamic_pic = param1Media.dynamic_pic;
+      this.is_long_pic = param1Media.is_long_pic;
+      this.show_original_btn = param1Media.show_original_btn;
+      this.is_blocked_pic = param1Media.is_blocked_pic;
+      this.wth_mid_loc = param1Media.wth_mid_loc;
+      this.hth_mid_loc = param1Media.hth_mid_loc;
+    }
+    
+    public Media build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Media)interceptResult.objValue; 
+      } 
+      return new Media(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

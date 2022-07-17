@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TagInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_COLOR;
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
@@ -28,6 +30,8 @@ public final class TagInfo extends Message {
   public static final String DEFAULT_TAG_NAME = "";
   
   public static final Integer DEFAULT_TAG_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer color;
@@ -72,7 +76,7 @@ public final class TagInfo extends Message {
   }
   
   public TagInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -149,6 +153,10 @@ public final class TagInfo extends Message {
     } 
   }
   
+  public TagInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -163,5 +171,65 @@ public final class TagInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TagInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer color;
+    
+    public Long forum_id;
+    
+    public Integer hot_value;
+    
+    public Integer influence;
+    
+    public Integer op_time;
+    
+    public Integer relation_weight;
+    
+    public Integer tag_id;
+    
+    public Integer tag_level;
+    
+    public String tag_name;
+    
+    public Integer tag_type;
+    
+    public Builder() {}
+    
+    public Builder(TagInfo param1TagInfo) {
+      super(param1TagInfo);
+      if (param1TagInfo == null)
+        return; 
+      this.forum_id = param1TagInfo.forum_id;
+      this.tag_id = param1TagInfo.tag_id;
+      this.tag_name = param1TagInfo.tag_name;
+      this.color = param1TagInfo.color;
+      this.hot_value = param1TagInfo.hot_value;
+      this.tag_type = param1TagInfo.tag_type;
+      this.tag_level = param1TagInfo.tag_level;
+      this.influence = param1TagInfo.influence;
+      this.relation_weight = param1TagInfo.relation_weight;
+      this.op_time = param1TagInfo.op_time;
+    }
+    
+    public TagInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TagInfo)interceptResult.objValue; 
+      } 
+      return new TagInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

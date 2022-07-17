@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,15 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ForumMemberInfo;
-import tbclient.User;
 
 public final class ForumMemberInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<User> DEFAULT_MEMBER_LIST = Collections.emptyList();
   
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_TOTAL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<User> member_list;
@@ -27,8 +31,8 @@ public final class ForumMemberInfo extends Message {
   public final String total;
   
   public ForumMemberInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<User> list;
     if (paramBoolean == true) {
       String str = paramBuilder.total;
       if (str == null) {
@@ -55,6 +59,10 @@ public final class ForumMemberInfo extends Message {
     } 
   }
   
+  public ForumMemberInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -69,5 +77,44 @@ public final class ForumMemberInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumMemberInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<User> member_list;
+    
+    public String title;
+    
+    public String total;
+    
+    public Builder() {}
+    
+    public Builder(ForumMemberInfo param1ForumMemberInfo) {
+      super(param1ForumMemberInfo);
+      if (param1ForumMemberInfo == null)
+        return; 
+      this.total = param1ForumMemberInfo.total;
+      this.title = param1ForumMemberInfo.title;
+      this.member_list = Message.copyOf(param1ForumMemberInfo.member_list);
+    }
+    
+    public ForumMemberInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumMemberInfo)interceptResult.objValue; 
+      } 
+      return new ForumMemberInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

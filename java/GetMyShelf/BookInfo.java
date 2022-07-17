@@ -1,4 +1,4 @@
-package GetMyShelf;
+package tbclient.GetMyShelf;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class BookInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUTHOR_NAME = "";
   
   public static final Long DEFAULT_CARTOON_ID;
@@ -24,6 +26,8 @@ public final class BookInfo extends Message {
   public static final Integer DEFAULT_IS_FINISH;
   
   public static final Integer DEFAULT_TOTAL_CHAPTER;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String author_name;
@@ -72,7 +76,7 @@ public final class BookInfo extends Message {
   }
   
   public BookInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -133,5 +137,63 @@ public final class BookInfo extends Message {
       this.is_finish = ((Builder)str).is_finish;
       this.author_name = ((Builder)str).author_name;
     } 
+  }
+  
+  public BookInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BookInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String author_name;
+    
+    public Long cartoon_id;
+    
+    public String cartoon_name;
+    
+    public String cover_img;
+    
+    public String first_chapter_id;
+    
+    public Long forum_id;
+    
+    public Integer is_finish;
+    
+    public Integer total_chapter;
+    
+    public Builder() {}
+    
+    public Builder(BookInfo param1BookInfo) {
+      super(param1BookInfo);
+      if (param1BookInfo == null)
+        return; 
+      this.forum_id = param1BookInfo.forum_id;
+      this.cartoon_id = param1BookInfo.cartoon_id;
+      this.cover_img = param1BookInfo.cover_img;
+      this.cartoon_name = param1BookInfo.cartoon_name;
+      this.total_chapter = param1BookInfo.total_chapter;
+      this.first_chapter_id = param1BookInfo.first_chapter_id;
+      this.is_finish = param1BookInfo.is_finish;
+      this.author_name = param1BookInfo.author_name;
+    }
+    
+    public BookInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BookInfo)interceptResult.objValue; 
+      } 
+      return new BookInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

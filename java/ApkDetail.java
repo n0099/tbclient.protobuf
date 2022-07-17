@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ApkDetail;
 
 public final class ApkDetail extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUTHORITY_URL = "";
   
   public static final String DEFAULT_DEVELOPER = "";
@@ -29,6 +32,8 @@ public final class ApkDetail extends Message {
   public static final String DEFAULT_VERSION = "";
   
   public static final Integer DEFAULT_VERSION_CODE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.STRING)
   public final String authority_url;
@@ -85,7 +90,7 @@ public final class ApkDetail extends Message {
   }
   
   public ApkDetail(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str3 = paramBuilder.developer;
@@ -167,5 +172,72 @@ public final class ApkDetail extends Message {
       this.privacy_url = ((Builder)integer).privacy_url;
       this.pkg_source = ((Builder)integer).pkg_source;
     } 
+  }
+  
+  public ApkDetail(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ApkDetail> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String authority_url;
+    
+    public String developer;
+    
+    public Integer need_inner_buy;
+    
+    public Integer need_network;
+    
+    public Integer pkg_source;
+    
+    public String privacy_url;
+    
+    public String publisher;
+    
+    public String size;
+    
+    public String update_time;
+    
+    public String version;
+    
+    public Integer version_code;
+    
+    public Builder() {}
+    
+    public Builder(ApkDetail param1ApkDetail) {
+      super(param1ApkDetail);
+      if (param1ApkDetail == null)
+        return; 
+      this.developer = param1ApkDetail.developer;
+      this.publisher = param1ApkDetail.publisher;
+      this.version = param1ApkDetail.version;
+      this.version_code = param1ApkDetail.version_code;
+      this.update_time = param1ApkDetail.update_time;
+      this.size = param1ApkDetail.size;
+      this.need_network = param1ApkDetail.need_network;
+      this.need_inner_buy = param1ApkDetail.need_inner_buy;
+      this.authority_url = param1ApkDetail.authority_url;
+      this.privacy_url = param1ApkDetail.privacy_url;
+      this.pkg_source = param1ApkDetail.pkg_source;
+    }
+    
+    public ApkDetail build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ApkDetail)interceptResult.objValue; 
+      } 
+      return new ApkDetail(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

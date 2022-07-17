@@ -1,4 +1,4 @@
-package CartoonReader;
+package tbclient.CartoonReader;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Images extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_HEIGHT;
   
   public static final String DEFAULT_IMG_URL = "";
   
   public static final Integer DEFAULT_WIDTH;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer height;
@@ -44,7 +48,7 @@ public final class Images extends Message {
   }
   
   public Images(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.img_url;
@@ -70,5 +74,48 @@ public final class Images extends Message {
       this.height = ((Builder)integer).height;
       this.width = ((Builder)integer).width;
     } 
+  }
+  
+  public Images(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Images> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer height;
+    
+    public String img_url;
+    
+    public Integer width;
+    
+    public Builder() {}
+    
+    public Builder(Images param1Images) {
+      super(param1Images);
+      if (param1Images == null)
+        return; 
+      this.img_url = param1Images.img_url;
+      this.height = param1Images.height;
+      this.width = param1Images.width;
+    }
+    
+    public Images build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Images)interceptResult.objValue; 
+      } 
+      return new Images(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

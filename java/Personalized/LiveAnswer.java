@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class LiveAnswer extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_BANNER_HIGH;
   
   public static final String DEFAULT_BANNER_URL = "";
@@ -16,6 +18,8 @@ public final class LiveAnswer extends Message {
   public static final Integer DEFAULT_BANNER_WIDTH;
   
   public static final String DEFAULT_JUMP_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer banner_high;
@@ -49,7 +53,7 @@ public final class LiveAnswer extends Message {
   }
   
   public LiveAnswer(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.banner_url;
@@ -82,5 +86,51 @@ public final class LiveAnswer extends Message {
       this.banner_high = ((Builder)str).banner_high;
       this.jump_url = ((Builder)str).jump_url;
     } 
+  }
+  
+  public LiveAnswer(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<LiveAnswer> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer banner_high;
+    
+    public String banner_url;
+    
+    public Integer banner_width;
+    
+    public String jump_url;
+    
+    public Builder() {}
+    
+    public Builder(LiveAnswer param1LiveAnswer) {
+      super(param1LiveAnswer);
+      if (param1LiveAnswer == null)
+        return; 
+      this.banner_url = param1LiveAnswer.banner_url;
+      this.banner_width = param1LiveAnswer.banner_width;
+      this.banner_high = param1LiveAnswer.banner_high;
+      this.jump_url = param1LiveAnswer.jump_url;
+    }
+    
+    public LiveAnswer build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LiveAnswer)interceptResult.objValue; 
+      } 
+      return new LiveAnswer(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

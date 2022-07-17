@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GodInfo;
 
 public final class GodInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CAN_SEND_MSG;
   
   public static final Long DEFAULT_FID;
@@ -25,6 +28,8 @@ public final class GodInfo extends Message {
   public static final String DEFAULT_RECOMMEND_REASON = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer can_send_msg;
@@ -77,7 +82,7 @@ public final class GodInfo extends Message {
   }
   
   public GodInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.id;
@@ -145,5 +150,66 @@ public final class GodInfo extends Message {
       this.can_send_msg = ((Builder)str).can_send_msg;
       this.prefix = ((Builder)str).prefix;
     } 
+  }
+  
+  public GodInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GodInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer can_send_msg;
+    
+    public Long fid;
+    
+    public Integer followed;
+    
+    public String forum_name;
+    
+    public Long id;
+    
+    public String intro;
+    
+    public String prefix;
+    
+    public String recommend_reason;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(GodInfo param1GodInfo) {
+      super(param1GodInfo);
+      if (param1GodInfo == null)
+        return; 
+      this.id = param1GodInfo.id;
+      this.intro = param1GodInfo.intro;
+      this.type = param1GodInfo.type;
+      this.fid = param1GodInfo.fid;
+      this.followed = param1GodInfo.followed;
+      this.recommend_reason = param1GodInfo.recommend_reason;
+      this.forum_name = param1GodInfo.forum_name;
+      this.can_send_msg = param1GodInfo.can_send_msg;
+      this.prefix = param1GodInfo.prefix;
+    }
+    
+    public GodInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GodInfo)interceptResult.objValue; 
+      } 
+      return new GodInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

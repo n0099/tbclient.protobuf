@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FeatureCardTopicSubNode;
 
 public final class FeatureCardTopicSubNode extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ARTICLE_NUM;
   
   public static final String DEFAULT_IMAGE = "";
@@ -17,6 +20,8 @@ public final class FeatureCardTopicSubNode extends Message {
   public static final Integer DEFAULT_UPDATE_TIME;
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT32)
   public final Integer article_num;
@@ -53,7 +58,7 @@ public final class FeatureCardTopicSubNode extends Message {
   }
   
   public FeatureCardTopicSubNode(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.image;
@@ -93,5 +98,54 @@ public final class FeatureCardTopicSubNode extends Message {
       this.url = ((Builder)str).url;
       this.title = ((Builder)str).title;
     } 
+  }
+  
+  public FeatureCardTopicSubNode(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FeatureCardTopicSubNode> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer article_num;
+    
+    public String image;
+    
+    public String title;
+    
+    public Integer update_time;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(FeatureCardTopicSubNode param1FeatureCardTopicSubNode) {
+      super(param1FeatureCardTopicSubNode);
+      if (param1FeatureCardTopicSubNode == null)
+        return; 
+      this.image = param1FeatureCardTopicSubNode.image;
+      this.update_time = param1FeatureCardTopicSubNode.update_time;
+      this.article_num = param1FeatureCardTopicSubNode.article_num;
+      this.url = param1FeatureCardTopicSubNode.url;
+      this.title = param1FeatureCardTopicSubNode.title;
+    }
+    
+    public FeatureCardTopicSubNode build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FeatureCardTopicSubNode)interceptResult.objValue; 
+      } 
+      return new FeatureCardTopicSubNode(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetInfluenceRank;
+package tbclient.GetInfluenceRank;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -14,11 +14,15 @@ import tbclient.TiebaFieldsInfo;
 import tbclient.User;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Boolean DEFAULT_HAS_MORE;
   
   public static final Long DEFAULT_TIMESTAMP;
   
   public static final List<User> DEFAULT_USER_RANK = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final User current_user;
@@ -44,10 +48,10 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Boolean bool;
     if (paramBoolean == true) {
-      List list = paramBuilder.user_rank;
+      List<User> list = paramBuilder.user_rank;
       if (list == null) {
         this.user_rank = DEFAULT_USER_RANK;
       } else {
@@ -78,6 +82,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -92,5 +100,53 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public User current_user;
+    
+    public TiebaFieldsInfo field_info;
+    
+    public Boolean has_more;
+    
+    public RankRuler rank_description;
+    
+    public Long timestamp;
+    
+    public List<User> user_rank;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.user_rank = Message.copyOf(param1DataRes.user_rank);
+      this.current_user = param1DataRes.current_user;
+      this.field_info = param1DataRes.field_info;
+      this.rank_description = param1DataRes.rank_description;
+      this.timestamp = param1DataRes.timestamp;
+      this.has_more = param1DataRes.has_more;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

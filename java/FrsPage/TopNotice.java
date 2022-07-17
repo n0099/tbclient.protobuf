@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TopNotice extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUTHOR = "";
   
   public static final Integer DEFAULT_ID = Integer.valueOf(0);
@@ -16,6 +18,8 @@ public final class TopNotice extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_TITLE_LINK = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String author;
@@ -30,7 +34,7 @@ public final class TopNotice extends Message {
   public final String title_link;
   
   public TopNotice(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -65,6 +69,10 @@ public final class TopNotice extends Message {
     } 
   }
   
+  public TopNotice(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class TopNotice extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TopNotice> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String author;
+    
+    public Integer id;
+    
+    public String title;
+    
+    public String title_link;
+    
+    public Builder() {}
+    
+    public Builder(TopNotice param1TopNotice) {
+      super(param1TopNotice);
+      if (param1TopNotice == null)
+        return; 
+      this.title = param1TopNotice.title;
+      this.title_link = param1TopNotice.title_link;
+      this.author = param1TopNotice.author;
+      this.id = param1TopNotice.id;
+    }
+    
+    public TopNotice build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TopNotice)interceptResult.objValue; 
+      } 
+      return new TopNotice(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

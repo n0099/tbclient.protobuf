@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.TwAnchorPKItem;
 
 public final class TwAnchorPKItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FANS_NUM = "";
   
   public static final String DEFAULT_HEAD_URL = "";
@@ -19,6 +22,8 @@ public final class TwAnchorPKItem extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final Integer DEFAULT_USER_SEX = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String fans_num;
@@ -39,7 +44,7 @@ public final class TwAnchorPKItem extends Message {
   public final Integer user_sex;
   
   public TwAnchorPKItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.order;
@@ -88,6 +93,10 @@ public final class TwAnchorPKItem extends Message {
     } 
   }
   
+  public TwAnchorPKItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -102,5 +111,53 @@ public final class TwAnchorPKItem extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TwAnchorPKItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String fans_num;
+    
+    public String head_url;
+    
+    public String order;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Integer user_sex;
+    
+    public Builder() {}
+    
+    public Builder(TwAnchorPKItem param1TwAnchorPKItem) {
+      super(param1TwAnchorPKItem);
+      if (param1TwAnchorPKItem == null)
+        return; 
+      this.order = param1TwAnchorPKItem.order;
+      this.user_id = param1TwAnchorPKItem.user_id;
+      this.head_url = param1TwAnchorPKItem.head_url;
+      this.user_name = param1TwAnchorPKItem.user_name;
+      this.fans_num = param1TwAnchorPKItem.fans_num;
+      this.user_sex = param1TwAnchorPKItem.user_sex;
+    }
+    
+    public TwAnchorPKItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TwAnchorPKItem)interceptResult.objValue; 
+      } 
+      return new TwAnchorPKItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

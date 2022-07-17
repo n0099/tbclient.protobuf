@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GconAccount extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_HAS_ACCOUNT = Integer.valueOf(0);
   
   public static final String DEFAULT_MENU_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer has_account;
@@ -20,7 +24,7 @@ public final class GconAccount extends Message {
   public final String menu_name;
   
   public GconAccount(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.has_account;
@@ -41,6 +45,10 @@ public final class GconAccount extends Message {
     } 
   }
   
+  public GconAccount(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class GconAccount extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GconAccount> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer has_account;
+    
+    public String menu_name;
+    
+    public Builder() {}
+    
+    public Builder(GconAccount param1GconAccount) {
+      super(param1GconAccount);
+      if (param1GconAccount == null)
+        return; 
+      this.has_account = param1GconAccount.has_account;
+      this.menu_name = param1GconAccount.menu_name;
+    }
+    
+    public GconAccount build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GconAccount)interceptResult.objValue; 
+      } 
+      return new GconAccount(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

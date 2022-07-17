@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PresentMyList;
 
 public final class PresentMyList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CREATE_TIME;
   
   public static final String DEFAULT_CURRENCY_TYPE = "";
@@ -33,6 +36,8 @@ public final class PresentMyList extends Message {
   public static final Long DEFAULT_PRESENT_SCORES;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.UINT32)
   public final Integer create_time;
@@ -98,7 +103,7 @@ public final class PresentMyList extends Message {
   }
   
   public PresentMyList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.pay_userid;
@@ -194,5 +199,78 @@ public final class PresentMyList extends Message {
       this.present_scores = ((Builder)str).present_scores;
       this.name_show = ((Builder)str).name_show;
     } 
+  }
+  
+  public PresentMyList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PresentMyList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer create_time;
+    
+    public String currency_type;
+    
+    public Integer currency_unit;
+    
+    public Integer gift_id;
+    
+    public String gift_name;
+    
+    public String name_show;
+    
+    public Integer num;
+    
+    public Long pay_userid;
+    
+    public String pay_username;
+    
+    public String play_url;
+    
+    public String portrait;
+    
+    public Long present_scores;
+    
+    public String thumbnail_url;
+    
+    public Builder() {}
+    
+    public Builder(PresentMyList param1PresentMyList) {
+      super(param1PresentMyList);
+      if (param1PresentMyList == null)
+        return; 
+      this.pay_userid = param1PresentMyList.pay_userid;
+      this.pay_username = param1PresentMyList.pay_username;
+      this.portrait = param1PresentMyList.portrait;
+      this.gift_id = param1PresentMyList.gift_id;
+      this.gift_name = param1PresentMyList.gift_name;
+      this.play_url = param1PresentMyList.play_url;
+      this.thumbnail_url = param1PresentMyList.thumbnail_url;
+      this.create_time = param1PresentMyList.create_time;
+      this.num = param1PresentMyList.num;
+      this.currency_unit = param1PresentMyList.currency_unit;
+      this.currency_type = param1PresentMyList.currency_type;
+      this.present_scores = param1PresentMyList.present_scores;
+      this.name_show = param1PresentMyList.name_show;
+    }
+    
+    public PresentMyList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PresentMyList)interceptResult.objValue; 
+      } 
+      return new PresentMyList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

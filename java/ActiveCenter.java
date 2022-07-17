@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ActiveCenter;
-import tbclient.ActiveCenterMission;
-import tbclient.ActiveCenterStatus;
 
 public final class ActiveCenter extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_FIRST_UP;
   
   public static final Integer DEFAULT_IS_NEW_WINDOW;
@@ -23,6 +24,8 @@ public final class ActiveCenter extends Message {
   public static final Integer DEFAULT_WIN_JUMP_TIME;
   
   public static final String DEFAULT_WIN_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.INT32)
   public final Integer is_first_up;
@@ -53,7 +56,7 @@ public final class ActiveCenter extends Message {
   }
   
   public ActiveCenter(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.win_title;
@@ -69,7 +72,7 @@ public final class ActiveCenter extends Message {
         this.win_desc = str;
       } 
       this.mission = paramBuilder.mission;
-      List list = paramBuilder.mission_status_list;
+      List<ActiveCenterStatus> list = paramBuilder.mission_status_list;
       if (list == null) {
         this.mission_status_list = DEFAULT_MISSION_STATUS_LIST;
       } else {
@@ -104,6 +107,10 @@ public final class ActiveCenter extends Message {
     } 
   }
   
+  public ActiveCenter(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -118,5 +125,56 @@ public final class ActiveCenter extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ActiveCenter> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_first_up;
+    
+    public Integer is_new_window;
+    
+    public ActiveCenterMission mission;
+    
+    public List<ActiveCenterStatus> mission_status_list;
+    
+    public String win_desc;
+    
+    public Integer win_jump_time;
+    
+    public String win_title;
+    
+    public Builder() {}
+    
+    public Builder(ActiveCenter param1ActiveCenter) {
+      super(param1ActiveCenter);
+      if (param1ActiveCenter == null)
+        return; 
+      this.win_title = param1ActiveCenter.win_title;
+      this.win_desc = param1ActiveCenter.win_desc;
+      this.mission = param1ActiveCenter.mission;
+      this.mission_status_list = Message.copyOf(param1ActiveCenter.mission_status_list);
+      this.win_jump_time = param1ActiveCenter.win_jump_time;
+      this.is_new_window = param1ActiveCenter.is_new_window;
+      this.is_first_up = param1ActiveCenter.is_first_up;
+    }
+    
+    public ActiveCenter build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActiveCenter)interceptResult.objValue; 
+      } 
+      return new ActiveCenter(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

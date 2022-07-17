@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ActBtn;
-import tbclient.DetailInfo;
-import tbclient.TPointPost;
-import tbclient.Timgs;
-import tbclient.VideoInfo;
 
 public final class TPointPost extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ActBtn> DEFAULT_ACT_BTN;
   
   public static final Integer DEFAULT_HIDDEN_DAY;
@@ -35,6 +34,8 @@ public final class TPointPost extends Message {
   public static final Integer DEFAULT_TEMPLATE_TYPE;
   
   public static final List<Timgs> DEFAULT_T_IMGS;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 5)
   public final List<ActBtn> act_btn;
@@ -83,7 +84,7 @@ public final class TPointPost extends Message {
   }
   
   public TPointPost(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.is_tuiguang;
@@ -110,13 +111,13 @@ public final class TPointPost extends Message {
       } else {
         this.template_type = integer2;
       } 
-      List list = paramBuilder.act_btn;
-      if (list == null) {
+      List<ActBtn> list1 = paramBuilder.act_btn;
+      if (list1 == null) {
         this.act_btn = DEFAULT_ACT_BTN;
       } else {
-        this.act_btn = Message.immutableCopyOf(list);
+        this.act_btn = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.t_imgs;
+      List<Timgs> list = paramBuilder.t_imgs;
       if (list == null) {
         this.t_imgs = DEFAULT_T_IMGS;
       } else {
@@ -171,6 +172,10 @@ public final class TPointPost extends Message {
     } 
   }
   
+  public TPointPost(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -187,5 +192,74 @@ public final class TPointPost extends Message {
     } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_IS_TUIGUANG = integer;
+  }
+  
+  public static final class Builder extends Message.Builder<TPointPost> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ActBtn> act_btn;
+    
+    public DetailInfo detail_info;
+    
+    public Integer hidden_day;
+    
+    public Integer is_tuiguang;
+    
+    public String monitor_id;
+    
+    public String position;
+    
+    public List<Timgs> t_imgs;
+    
+    public VideoInfo t_video;
+    
+    public String tag_name;
+    
+    public String tag_name_url;
+    
+    public String tag_name_wh;
+    
+    public Long template_id;
+    
+    public Integer template_type;
+    
+    public Builder() {}
+    
+    public Builder(TPointPost param1TPointPost) {
+      super(param1TPointPost);
+      if (param1TPointPost == null)
+        return; 
+      this.is_tuiguang = param1TPointPost.is_tuiguang;
+      this.position = param1TPointPost.position;
+      this.template_id = param1TPointPost.template_id;
+      this.template_type = param1TPointPost.template_type;
+      this.act_btn = Message.copyOf(param1TPointPost.act_btn);
+      this.t_imgs = Message.copyOf(param1TPointPost.t_imgs);
+      this.detail_info = param1TPointPost.detail_info;
+      this.monitor_id = param1TPointPost.monitor_id;
+      this.hidden_day = param1TPointPost.hidden_day;
+      this.t_video = param1TPointPost.t_video;
+      this.tag_name = param1TPointPost.tag_name;
+      this.tag_name_url = param1TPointPost.tag_name_url;
+      this.tag_name_wh = param1TPointPost.tag_name_wh;
+    }
+    
+    public TPointPost build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TPointPost)interceptResult.objValue; 
+      } 
+      return new TPointPost(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

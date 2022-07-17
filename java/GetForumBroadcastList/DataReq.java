@@ -1,4 +1,4 @@
-package GetForumBroadcastList;
+package tbclient.GetForumBroadcastList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Long> DEFAULT_BCAST_IDS;
   
   public static final Long DEFAULT_FORUM_ID;
@@ -23,6 +25,8 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_STAFF_ID;
   
   public static final Long DEFAULT_STAFF_ID64;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.INT64)
   public final List<Long> bcast_ids;
@@ -70,7 +74,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -98,7 +102,7 @@ public final class DataReq extends Message {
       } else {
         this.forum_id = long_1;
       } 
-      List list = paramBuilder.bcast_ids;
+      List<Long> list = paramBuilder.bcast_ids;
       if (list == null) {
         this.bcast_ids = DEFAULT_BCAST_IDS;
       } else {
@@ -119,5 +123,60 @@ public final class DataReq extends Message {
       this.bcast_ids = Message.immutableCopyOf(((Builder)long_).bcast_ids);
       this.staff_id64 = ((Builder)long_).staff_id64;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Long> bcast_ids;
+    
+    public CommonReq common;
+    
+    public Long forum_id;
+    
+    public Integer need_cnt;
+    
+    public Integer query_type;
+    
+    public Integer staff_id;
+    
+    public Long staff_id64;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.query_type = param1DataReq.query_type;
+      this.staff_id = param1DataReq.staff_id;
+      this.need_cnt = param1DataReq.need_cnt;
+      this.forum_id = param1DataReq.forum_id;
+      this.bcast_ids = Message.copyOf(param1DataReq.bcast_ids);
+      this.staff_id64 = param1DataReq.staff_id64;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

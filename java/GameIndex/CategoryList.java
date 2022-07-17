@@ -1,4 +1,4 @@
-package GameIndex;
+package tbclient.GameIndex;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,15 @@ import java.util.List;
 import tbclient.GameInfo;
 
 public final class CategoryList extends Message {
+  public static Interceptable $ic;
+  
   public static final List<GameInfo> DEFAULT_CATEGORY_GAME_LIST = Collections.emptyList();
   
   public static final Integer DEFAULT_CATEGORY_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_CATEGORY_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<GameInfo> category_game_list;
@@ -28,7 +32,7 @@ public final class CategoryList extends Message {
   public final String category_name;
   
   public CategoryList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.category_name;
@@ -37,7 +41,7 @@ public final class CategoryList extends Message {
       } else {
         this.category_name = str;
       } 
-      List list = paramBuilder.category_game_list;
+      List<GameInfo> list = paramBuilder.category_game_list;
       if (list == null) {
         this.category_game_list = DEFAULT_CATEGORY_GAME_LIST;
       } else {
@@ -56,6 +60,10 @@ public final class CategoryList extends Message {
     } 
   }
   
+  public CategoryList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +78,44 @@ public final class CategoryList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<CategoryList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<GameInfo> category_game_list;
+    
+    public Integer category_id;
+    
+    public String category_name;
+    
+    public Builder() {}
+    
+    public Builder(CategoryList param1CategoryList) {
+      super(param1CategoryList);
+      if (param1CategoryList == null)
+        return; 
+      this.category_name = param1CategoryList.category_name;
+      this.category_game_list = Message.copyOf(param1CategoryList.category_game_list);
+      this.category_id = param1CategoryList.category_id;
+    }
+    
+    public CategoryList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CategoryList)interceptResult.objValue; 
+      } 
+      return new CategoryList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

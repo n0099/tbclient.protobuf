@@ -1,4 +1,4 @@
-package GetAddressList;
+package tbclient.GetAddressList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GetAddressList.LbsInfo;
 
 public final class friendList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_NAME_SHOW = "";
   
   public static final String DEFAULT_PORTRAIT = "";
@@ -19,6 +20,8 @@ public final class friendList extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final LbsInfo location;
@@ -39,7 +42,7 @@ public final class friendList extends Message {
   public final String user_name;
   
   public friendList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.portrait;
@@ -83,6 +86,10 @@ public final class friendList extends Message {
     } 
   }
   
+  public friendList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -97,5 +104,53 @@ public final class friendList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<friendList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public LbsInfo location;
+    
+    public String name_show;
+    
+    public String portrait;
+    
+    public String quanpin;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(friendList param1friendList) {
+      super(param1friendList);
+      if (param1friendList == null)
+        return; 
+      this.portrait = param1friendList.portrait;
+      this.user_name = param1friendList.user_name;
+      this.user_id = param1friendList.user_id;
+      this.quanpin = param1friendList.quanpin;
+      this.location = param1friendList.location;
+      this.name_show = param1friendList.name_show;
+    }
+    
+    public friendList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (friendList)interceptResult.objValue; 
+      } 
+      return new friendList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

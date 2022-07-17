@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class NewsInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BUTTON_TEXT = "";
   
   public static final String DEFAULT_NEWS_ICON = "";
@@ -22,6 +24,8 @@ public final class NewsInfo extends Message {
   public static final String DEFAULT_SUBTITLE = "";
   
   public static final String DEFAULT_SUMMARY = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String button_text;
@@ -64,7 +68,7 @@ public final class NewsInfo extends Message {
   }
   
   public NewsInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.news_link;
@@ -118,5 +122,60 @@ public final class NewsInfo extends Message {
       this.subtitle = ((Builder)str).subtitle;
       this.button_text = ((Builder)str).button_text;
     } 
+  }
+  
+  public NewsInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<NewsInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String button_text;
+    
+    public String news_icon;
+    
+    public String news_link;
+    
+    public Integer news_type;
+    
+    public Integer position;
+    
+    public String subtitle;
+    
+    public String summary;
+    
+    public Builder() {}
+    
+    public Builder(NewsInfo param1NewsInfo) {
+      super(param1NewsInfo);
+      if (param1NewsInfo == null)
+        return; 
+      this.news_link = param1NewsInfo.news_link;
+      this.summary = param1NewsInfo.summary;
+      this.position = param1NewsInfo.position;
+      this.news_type = param1NewsInfo.news_type;
+      this.news_icon = param1NewsInfo.news_icon;
+      this.subtitle = param1NewsInfo.subtitle;
+      this.button_text = param1NewsInfo.button_text;
+    }
+    
+    public NewsInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NewsInfo)interceptResult.objValue; 
+      } 
+      return new NewsInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

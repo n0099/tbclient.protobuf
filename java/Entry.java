@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Entry;
 
 public final class Entry extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BITMAP_WH_RATIO = "";
   
   public static final String DEFAULT_ICON = "";
@@ -17,6 +20,8 @@ public final class Entry extends Message {
   public static final Integer DEFAULT_ID;
   
   public static final String DEFAULT_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String bitmap_wh_ratio;
@@ -53,7 +58,7 @@ public final class Entry extends Message {
   }
   
   public Entry(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.icon;
@@ -93,5 +98,54 @@ public final class Entry extends Message {
       this.bitmap_wh_ratio = ((Builder)integer).bitmap_wh_ratio;
       this.icon_type = ((Builder)integer).icon_type;
     } 
+  }
+  
+  public Entry(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Entry> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bitmap_wh_ratio;
+    
+    public String icon;
+    
+    public Integer icon_type;
+    
+    public Integer id;
+    
+    public String name;
+    
+    public Builder() {}
+    
+    public Builder(Entry param1Entry) {
+      super(param1Entry);
+      if (param1Entry == null)
+        return; 
+      this.icon = param1Entry.icon;
+      this.name = param1Entry.name;
+      this.id = param1Entry.id;
+      this.bitmap_wh_ratio = param1Entry.bitmap_wh_ratio;
+      this.icon_type = param1Entry.icon_type;
+    }
+    
+    public Entry build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Entry)interceptResult.objValue; 
+      } 
+      return new Entry(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

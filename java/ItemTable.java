@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ItemPlot;
-import tbclient.ItemPoint;
-import tbclient.ItemTable;
 
 public final class ItemTable extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_COMMENT_STAR;
   
   public static final Integer DEFAULT_IS_COMMENTED;
@@ -21,6 +22,8 @@ public final class ItemTable extends Message {
   public static final List<ItemPoint> DEFAULT_ITEM_POINT;
   
   public static final Integer DEFAULT_TOTAL_POINT_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer comment_star;
@@ -60,8 +63,8 @@ public final class ItemTable extends Message {
   }
   
   public ItemTable(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ItemPlot> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.is_commented;
       if (integer == null) {
@@ -81,7 +84,7 @@ public final class ItemTable extends Message {
       } else {
         this.total_point_num = integer;
       } 
-      List list1 = paramBuilder.item_point;
+      List<ItemPoint> list1 = paramBuilder.item_point;
       if (list1 == null) {
         this.item_point = DEFAULT_ITEM_POINT;
       } else {
@@ -100,5 +103,54 @@ public final class ItemTable extends Message {
       this.item_point = Message.immutableCopyOf(((Builder)list).item_point);
       this.item_plot = Message.immutableCopyOf(((Builder)list).item_plot);
     } 
+  }
+  
+  public ItemTable(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ItemTable> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer comment_star;
+    
+    public Integer is_commented;
+    
+    public List<ItemPlot> item_plot;
+    
+    public List<ItemPoint> item_point;
+    
+    public Integer total_point_num;
+    
+    public Builder() {}
+    
+    public Builder(ItemTable param1ItemTable) {
+      super(param1ItemTable);
+      if (param1ItemTable == null)
+        return; 
+      this.is_commented = param1ItemTable.is_commented;
+      this.comment_star = param1ItemTable.comment_star;
+      this.total_point_num = param1ItemTable.total_point_num;
+      this.item_point = Message.copyOf(param1ItemTable.item_point);
+      this.item_plot = Message.copyOf(param1ItemTable.item_plot);
+    }
+    
+    public ItemTable build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ItemTable)interceptResult.objValue; 
+      } 
+      return new ItemTable(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

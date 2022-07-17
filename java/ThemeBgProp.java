@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ThemeBgProp;
 
 public final class ThemeBgProp extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_URL = "";
   
   public static final String DEFAULT_DESCRIPTION = "";
@@ -27,6 +30,8 @@ public final class ThemeBgProp extends Message {
   public static final String DEFAULT_PROPS_STATE_IMG = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String activity_url;
@@ -80,7 +85,7 @@ public final class ThemeBgProp extends Message {
   }
   
   public ThemeBgProp(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.props_id;
@@ -155,5 +160,69 @@ public final class ThemeBgProp extends Message {
       this.activity_url = ((Builder)integer).activity_url;
       this.is_finished = ((Builder)integer).is_finished;
     } 
+  }
+  
+  public ThemeBgProp(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ThemeBgProp> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_url;
+    
+    public String description;
+    
+    public String example_url;
+    
+    public Integer free_user_level;
+    
+    public Integer in_use;
+    
+    public Integer is_finished;
+    
+    public String permission;
+    
+    public Integer props_id;
+    
+    public String props_state_img;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(ThemeBgProp param1ThemeBgProp) {
+      super(param1ThemeBgProp);
+      if (param1ThemeBgProp == null)
+        return; 
+      this.props_id = param1ThemeBgProp.props_id;
+      this.title = param1ThemeBgProp.title;
+      this.description = param1ThemeBgProp.description;
+      this.example_url = param1ThemeBgProp.example_url;
+      this.permission = param1ThemeBgProp.permission;
+      this.props_state_img = param1ThemeBgProp.props_state_img;
+      this.in_use = param1ThemeBgProp.in_use;
+      this.free_user_level = param1ThemeBgProp.free_user_level;
+      this.activity_url = param1ThemeBgProp.activity_url;
+      this.is_finished = param1ThemeBgProp.is_finished;
+    }
+    
+    public ThemeBgProp build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThemeBgProp)interceptResult.objValue; 
+      } 
+      return new ThemeBgProp(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

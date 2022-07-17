@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TwzbThreadItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_LINK_URL = "";
@@ -18,6 +20,8 @@ public final class TwzbThreadItem extends Message {
   public static final Long DEFAULT_TID = Long.valueOf(0L);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -35,7 +39,7 @@ public final class TwzbThreadItem extends Message {
   public final String title;
   
   public TwzbThreadItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.tid;
@@ -77,6 +81,10 @@ public final class TwzbThreadItem extends Message {
     } 
   }
   
+  public TwzbThreadItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class TwzbThreadItem extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TwzbThreadItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String link_url;
+    
+    public String pic_url;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(TwzbThreadItem param1TwzbThreadItem) {
+      super(param1TwzbThreadItem);
+      if (param1TwzbThreadItem == null)
+        return; 
+      this.tid = param1TwzbThreadItem.tid;
+      this.title = param1TwzbThreadItem.title;
+      this._abstract = param1TwzbThreadItem._abstract;
+      this.pic_url = param1TwzbThreadItem.pic_url;
+      this.link_url = param1TwzbThreadItem.link_url;
+    }
+    
+    public TwzbThreadItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TwzbThreadItem)interceptResult.objValue; 
+      } 
+      return new TwzbThreadItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

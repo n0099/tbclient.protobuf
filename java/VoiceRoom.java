@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.User;
-import tbclient.VoiceRoom;
 
 public final class VoiceRoom extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_JOINED_NUM;
   
   public static final Long DEFAULT_ROOM_ID;
@@ -22,6 +24,8 @@ public final class VoiceRoom extends Message {
   public static final List<User> DEFAULT_TALKER = Collections.emptyList();
   
   public static final Long DEFAULT_TALKER_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final User author;
@@ -51,7 +55,7 @@ public final class VoiceRoom extends Message {
   }
   
   public VoiceRoom(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.room_id;
@@ -61,7 +65,7 @@ public final class VoiceRoom extends Message {
         this.room_id = long_2;
       } 
       this.author = paramBuilder.author;
-      List list = paramBuilder.talker;
+      List<User> list = paramBuilder.talker;
       if (list == null) {
         this.talker = DEFAULT_TALKER;
       } else {
@@ -102,6 +106,10 @@ public final class VoiceRoom extends Message {
     } 
   }
   
+  public VoiceRoom(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -118,5 +126,56 @@ public final class VoiceRoom extends Message {
     } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ROOM_ID = long_;
+  }
+  
+  public static final class Builder extends Message.Builder<VoiceRoom> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public User author;
+    
+    public Long joined_num;
+    
+    public Long room_id;
+    
+    public String room_name;
+    
+    public Integer status;
+    
+    public List<User> talker;
+    
+    public Long talker_num;
+    
+    public Builder() {}
+    
+    public Builder(VoiceRoom param1VoiceRoom) {
+      super(param1VoiceRoom);
+      if (param1VoiceRoom == null)
+        return; 
+      this.room_id = param1VoiceRoom.room_id;
+      this.author = param1VoiceRoom.author;
+      this.talker = Message.copyOf(param1VoiceRoom.talker);
+      this.joined_num = param1VoiceRoom.joined_num;
+      this.talker_num = param1VoiceRoom.talker_num;
+      this.status = param1VoiceRoom.status;
+      this.room_name = param1VoiceRoom.room_name;
+    }
+    
+    public VoiceRoom build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VoiceRoom)interceptResult.objValue; 
+      } 
+      return new VoiceRoom(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

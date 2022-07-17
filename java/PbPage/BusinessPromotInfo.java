@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,11 +10,15 @@ import com.squareup.wire.ProtoField;
 import tbclient.SendCardInfo;
 
 public final class BusinessPromotInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_HEADLINEPOST;
   
   public static final Long DEFAULT_IS_PROMOT = Long.valueOf(0L);
   
   public static final Integer DEFAULT_IS_S_CARD;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer is_headlinepost;
@@ -35,7 +39,7 @@ public final class BusinessPromotInfo extends Message {
   }
   
   public BusinessPromotInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.is_promot;
       if (long_ == null) {
@@ -64,6 +68,10 @@ public final class BusinessPromotInfo extends Message {
     } 
   }
   
+  public BusinessPromotInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -78,5 +86,47 @@ public final class BusinessPromotInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BusinessPromotInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_headlinepost;
+    
+    public Long is_promot;
+    
+    public Integer is_s_card;
+    
+    public SendCardInfo send_card_info;
+    
+    public Builder() {}
+    
+    public Builder(BusinessPromotInfo param1BusinessPromotInfo) {
+      super(param1BusinessPromotInfo);
+      if (param1BusinessPromotInfo == null)
+        return; 
+      this.is_promot = param1BusinessPromotInfo.is_promot;
+      this.is_headlinepost = param1BusinessPromotInfo.is_headlinepost;
+      this.is_s_card = param1BusinessPromotInfo.is_s_card;
+      this.send_card_info = param1BusinessPromotInfo.send_card_info;
+    }
+    
+    public BusinessPromotInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BusinessPromotInfo)interceptResult.objValue; 
+      } 
+      return new BusinessPromotInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

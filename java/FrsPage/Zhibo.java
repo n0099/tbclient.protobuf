@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Zhibo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FORUM;
   
   public static final Integer DEFAULT_HAS_LPOST;
@@ -22,6 +24,8 @@ public final class Zhibo extends Message {
   public static final Long DEFAULT_TID;
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long forum;
@@ -70,7 +74,7 @@ public final class Zhibo extends Message {
   }
   
   public Zhibo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum;
@@ -124,5 +128,60 @@ public final class Zhibo extends Message {
       this.has_lpost = ((Builder)integer).has_lpost;
       this.lpost_type = ((Builder)integer).lpost_type;
     } 
+  }
+  
+  public Zhibo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Zhibo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long forum;
+    
+    public Integer has_lpost;
+    
+    public Integer int1;
+    
+    public Integer lpost_type;
+    
+    public Integer status;
+    
+    public Long tid;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(Zhibo param1Zhibo) {
+      super(param1Zhibo);
+      if (param1Zhibo == null)
+        return; 
+      this.forum = param1Zhibo.forum;
+      this.tid = param1Zhibo.tid;
+      this.status = param1Zhibo.status;
+      this.type = param1Zhibo.type;
+      this.int1 = param1Zhibo.int1;
+      this.has_lpost = param1Zhibo.has_lpost;
+      this.lpost_type = param1Zhibo.lpost_type;
+    }
+    
+    public Zhibo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Zhibo)interceptResult.objValue; 
+      } 
+      return new Zhibo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

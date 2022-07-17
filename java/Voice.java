@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Voice;
 
 public final class Voice extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_DURING_TIME;
   
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_VOICE_MD5 = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer during_time;
@@ -43,7 +48,7 @@ public final class Voice extends Message {
   }
   
   public Voice(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -69,5 +74,48 @@ public final class Voice extends Message {
       this.during_time = ((Builder)str).during_time;
       this.voice_md5 = ((Builder)str).voice_md5;
     } 
+  }
+  
+  public Voice(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Voice> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer during_time;
+    
+    public Integer type;
+    
+    public String voice_md5;
+    
+    public Builder() {}
+    
+    public Builder(Voice param1Voice) {
+      super(param1Voice);
+      if (param1Voice == null)
+        return; 
+      this.type = param1Voice.type;
+      this.during_time = param1Voice.during_time;
+      this.voice_md5 = param1Voice.voice_md5;
+    }
+    
+    public Voice build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Voice)interceptResult.objValue; 
+      } 
+      return new Voice(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

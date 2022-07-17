@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Novel;
 
 public final class Novel extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ANDROID_DETAIL_PARAMS = "";
   
   public static final String DEFAULT_ANDROID_LAST_CHARPTER_PARAMS = "";
@@ -38,6 +42,8 @@ public final class Novel extends Message {
   public static final String DEFAULT_LAST_CHAPTER_TITLE = "";
   
   public static final String DEFAULT_LAST_CHAPTER_UPDATE_TIME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 13, type = Message.Datatype.STRING)
   public final String android_detail_params;
@@ -91,7 +97,7 @@ public final class Novel extends Message {
   public final String last_chapter_update_time;
   
   public Novel(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.book_id;
@@ -215,5 +221,90 @@ public final class Novel extends Message {
       this.android_last_read_params = ((Builder)str).android_last_read_params;
       this.ios_last_read_params = ((Builder)str).ios_last_read_params;
     } 
+  }
+  
+  public Novel(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Novel> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String android_detail_params;
+    
+    public String android_last_charpter_params;
+    
+    public String android_last_read_params;
+    
+    public String author;
+    
+    public String author_id;
+    
+    public String book_id;
+    
+    public String book_name;
+    
+    public String description;
+    
+    public String gid;
+    
+    public String ios_detail_params;
+    
+    public String ios_last_charpter_params;
+    
+    public String ios_last_read_params;
+    
+    public String last_chapter_id;
+    
+    public String last_chapter_index;
+    
+    public String last_chapter_page_id;
+    
+    public String last_chapter_title;
+    
+    public String last_chapter_update_time;
+    
+    public Builder() {}
+    
+    public Builder(Novel param1Novel) {
+      super(param1Novel);
+      if (param1Novel == null)
+        return; 
+      this.book_id = param1Novel.book_id;
+      this.gid = param1Novel.gid;
+      this.book_name = param1Novel.book_name;
+      this.author_id = param1Novel.author_id;
+      this.author = param1Novel.author;
+      this.description = param1Novel.description;
+      this.last_chapter_id = param1Novel.last_chapter_id;
+      this.last_chapter_index = param1Novel.last_chapter_index;
+      this.last_chapter_title = param1Novel.last_chapter_title;
+      this.last_chapter_page_id = param1Novel.last_chapter_page_id;
+      this.last_chapter_update_time = param1Novel.last_chapter_update_time;
+      this.ios_detail_params = param1Novel.ios_detail_params;
+      this.android_detail_params = param1Novel.android_detail_params;
+      this.ios_last_charpter_params = param1Novel.ios_last_charpter_params;
+      this.android_last_charpter_params = param1Novel.android_last_charpter_params;
+      this.android_last_read_params = param1Novel.android_last_read_params;
+      this.ios_last_read_params = param1Novel.ios_last_read_params;
+    }
+    
+    public Novel build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Novel)interceptResult.objValue; 
+      } 
+      return new Novel(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

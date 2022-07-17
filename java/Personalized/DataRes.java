@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -14,22 +14,12 @@ import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.DiscoverHotForum;
 import tbclient.FavoritePanel;
-import tbclient.Personalized.AgeSexModule;
-import tbclient.Personalized.CardForum;
-import tbclient.Personalized.CardGod;
-import tbclient.Personalized.CardTopic;
-import tbclient.Personalized.FloatInfo;
-import tbclient.Personalized.LiveAnswer;
-import tbclient.Personalized.RecomPostTopic;
-import tbclient.Personalized.Resource;
-import tbclient.Personalized.TagInfo;
-import tbclient.Personalized.TagStruct;
-import tbclient.Personalized.ThreadPersonalized;
-import tbclient.Personalized.UserFollowLive;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<CardForum> DEFAULT_CARD_FORUM;
   
   public static final List<CardGod> DEFAULT_CARD_GOD;
@@ -57,6 +47,8 @@ public final class DataRes extends Message {
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
   
   public static final List<ThreadPersonalized> DEFAULT_THREAD_PERSONALIZED;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 22)
   public final ActiveCenter active_center;
@@ -146,33 +138,33 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list4 = paramBuilder.tag_list;
-      if (list4 == null) {
+      List<TagInfo> list8 = paramBuilder.tag_list;
+      if (list8 == null) {
         this.tag_list = DEFAULT_TAG_LIST;
       } else {
-        this.tag_list = Message.immutableCopyOf(list4);
+        this.tag_list = Message.immutableCopyOf(list8);
       } 
-      list4 = paramBuilder.thread_list;
-      if (list4 == null) {
+      List<ThreadInfo> list7 = paramBuilder.thread_list;
+      if (list7 == null) {
         this.thread_list = DEFAULT_THREAD_LIST;
       } else {
-        this.thread_list = Message.immutableCopyOf(list4);
+        this.thread_list = Message.immutableCopyOf(list7);
       } 
-      list4 = paramBuilder.resource_list;
-      if (list4 == null) {
+      List<Resource> list6 = paramBuilder.resource_list;
+      if (list6 == null) {
         this.resource_list = DEFAULT_RESOURCE_LIST;
       } else {
-        this.resource_list = Message.immutableCopyOf(list4);
+        this.resource_list = Message.immutableCopyOf(list6);
       } 
-      list4 = paramBuilder.card_forum;
-      if (list4 == null) {
+      List<CardForum> list5 = paramBuilder.card_forum;
+      if (list5 == null) {
         this.card_forum = DEFAULT_CARD_FORUM;
       } else {
-        this.card_forum = Message.immutableCopyOf(list4);
+        this.card_forum = Message.immutableCopyOf(list5);
       } 
-      list4 = paramBuilder.card_topic;
+      List<CardTopic> list4 = paramBuilder.card_topic;
       if (list4 == null) {
         this.card_topic = DEFAULT_CARD_TOPIC;
       } else {
@@ -184,7 +176,7 @@ public final class DataRes extends Message {
       } else {
         this.sug_seconds = integer3;
       } 
-      List list3 = paramBuilder.thread_personalized;
+      List<ThreadPersonalized> list3 = paramBuilder.thread_personalized;
       if (list3 == null) {
         this.thread_personalized = DEFAULT_THREAD_PERSONALIZED;
       } else {
@@ -198,17 +190,17 @@ public final class DataRes extends Message {
       } 
       this.banner_list = paramBuilder.banner_list;
       this.age_sex = paramBuilder.age_sex;
-      List list2 = paramBuilder.interestion;
+      List<TagStruct> list2 = paramBuilder.interestion;
       if (list2 == null) {
         this.interestion = DEFAULT_INTERESTION;
       } else {
         this.interestion = Message.immutableCopyOf(list2);
       } 
-      list2 = paramBuilder.card_god;
-      if (list2 == null) {
+      List<CardGod> list1 = paramBuilder.card_god;
+      if (list1 == null) {
         this.card_god = DEFAULT_CARD_GOD;
       } else {
-        this.card_god = Message.immutableCopyOf(list2);
+        this.card_god = Message.immutableCopyOf(list1);
       } 
       String str = paramBuilder.stat_key;
       if (str == null) {
@@ -216,11 +208,11 @@ public final class DataRes extends Message {
       } else {
         this.stat_key = str;
       } 
-      List list1 = paramBuilder.like_forums;
-      if (list1 == null) {
+      List<SimpleForum> list = paramBuilder.like_forums;
+      if (list == null) {
         this.like_forums = DEFAULT_LIKE_FORUMS;
       } else {
-        this.like_forums = Message.immutableCopyOf(list1);
+        this.like_forums = Message.immutableCopyOf(list);
       } 
       Integer integer1 = paramBuilder.style_ab_tag;
       if (integer1 == null) {
@@ -270,6 +262,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -284,5 +280,107 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ActiveCenter active_center;
+    
+    public AgeSexModule age_sex;
+    
+    public Anti anti;
+    
+    public BannerList banner_list;
+    
+    public List<CardForum> card_forum;
+    
+    public List<CardGod> card_god;
+    
+    public List<CardTopic> card_topic;
+    
+    public FavoritePanel favorite_panel;
+    
+    public FloatInfo float_info;
+    
+    public Integer fresh_ctrl_num;
+    
+    public DiscoverHotForum hot_recomforum;
+    
+    public List<TagStruct> interestion;
+    
+    public Integer is_new_url;
+    
+    public List<SimpleForum> like_forums;
+    
+    public LiveAnswer live_answer;
+    
+    public RecomPostTopic recom_post_topic;
+    
+    public List<Resource> resource_list;
+    
+    public String stat_key;
+    
+    public Integer style_ab_tag;
+    
+    public Integer sug_seconds;
+    
+    public List<TagInfo> tag_list;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public List<ThreadPersonalized> thread_personalized;
+    
+    public UserFollowLive user_follow_live;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.tag_list = Message.copyOf(param1DataRes.tag_list);
+      this.thread_list = Message.copyOf(param1DataRes.thread_list);
+      this.resource_list = Message.copyOf(param1DataRes.resource_list);
+      this.card_forum = Message.copyOf(param1DataRes.card_forum);
+      this.card_topic = Message.copyOf(param1DataRes.card_topic);
+      this.sug_seconds = param1DataRes.sug_seconds;
+      this.thread_personalized = Message.copyOf(param1DataRes.thread_personalized);
+      this.is_new_url = param1DataRes.is_new_url;
+      this.banner_list = param1DataRes.banner_list;
+      this.age_sex = param1DataRes.age_sex;
+      this.interestion = Message.copyOf(param1DataRes.interestion);
+      this.card_god = Message.copyOf(param1DataRes.card_god);
+      this.stat_key = param1DataRes.stat_key;
+      this.like_forums = Message.copyOf(param1DataRes.like_forums);
+      this.style_ab_tag = param1DataRes.style_ab_tag;
+      this.anti = param1DataRes.anti;
+      this.live_answer = param1DataRes.live_answer;
+      this.float_info = param1DataRes.float_info;
+      this.recom_post_topic = param1DataRes.recom_post_topic;
+      this.user_follow_live = param1DataRes.user_follow_live;
+      this.fresh_ctrl_num = param1DataRes.fresh_ctrl_num;
+      this.active_center = param1DataRes.active_center;
+      this.hot_recomforum = param1DataRes.hot_recomforum;
+      this.favorite_panel = param1DataRes.favorite_panel;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

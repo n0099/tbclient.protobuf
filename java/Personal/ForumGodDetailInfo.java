@@ -1,4 +1,4 @@
-package Personal;
+package tbclient.Personal;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumGodDetailInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_DETAIL_INTRO = "";
@@ -22,6 +24,8 @@ public final class ForumGodDetailInfo extends Message {
   public static final String DEFAULT_INTRO = "";
   
   public static final Long DEFAULT_USER_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String avatar;
@@ -65,7 +69,7 @@ public final class ForumGodDetailInfo extends Message {
   }
   
   public ForumGodDetailInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.god_id;
@@ -119,5 +123,60 @@ public final class ForumGodDetailInfo extends Message {
       this.forum_name = ((Builder)str).forum_name;
       this.avatar = ((Builder)str).avatar;
     } 
+  }
+  
+  public ForumGodDetailInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ForumGodDetailInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String detail_intro;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Long god_id;
+    
+    public String intro;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(ForumGodDetailInfo param1ForumGodDetailInfo) {
+      super(param1ForumGodDetailInfo);
+      if (param1ForumGodDetailInfo == null)
+        return; 
+      this.god_id = param1ForumGodDetailInfo.god_id;
+      this.user_id = param1ForumGodDetailInfo.user_id;
+      this.intro = param1ForumGodDetailInfo.intro;
+      this.detail_intro = param1ForumGodDetailInfo.detail_intro;
+      this.forum_id = param1ForumGodDetailInfo.forum_id;
+      this.forum_name = param1ForumGodDetailInfo.forum_name;
+      this.avatar = param1ForumGodDetailInfo.avatar;
+    }
+    
+    public ForumGodDetailInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumGodDetailInfo)interceptResult.objValue; 
+      } 
+      return new ForumGodDetailInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

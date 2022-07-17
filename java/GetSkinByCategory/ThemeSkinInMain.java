@@ -1,4 +1,4 @@
-package GetSkinByCategory;
+package tbclient.GetSkinByCategory;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,9 +12,13 @@ import java.util.List;
 import tbclient.ThemeSkinPropMain;
 
 public final class ThemeSkinInMain extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ThemeSkinPropMain> DEFAULT_PROPS = Collections.emptyList();
   
   public static final String DEFAULT_SKIN_CATEGORY = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<ThemeSkinPropMain> props;
@@ -23,8 +27,8 @@ public final class ThemeSkinInMain extends Message {
   public final String skin_category;
   
   public ThemeSkinInMain(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ThemeSkinPropMain> list;
     if (paramBoolean == true) {
       String str = paramBuilder.skin_category;
       if (str == null) {
@@ -44,6 +48,10 @@ public final class ThemeSkinInMain extends Message {
     } 
   }
   
+  public ThemeSkinInMain(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +66,41 @@ public final class ThemeSkinInMain extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ThemeSkinInMain> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ThemeSkinPropMain> props;
+    
+    public String skin_category;
+    
+    public Builder() {}
+    
+    public Builder(ThemeSkinInMain param1ThemeSkinInMain) {
+      super(param1ThemeSkinInMain);
+      if (param1ThemeSkinInMain == null)
+        return; 
+      this.skin_category = param1ThemeSkinInMain.skin_category;
+      this.props = Message.copyOf(param1ThemeSkinInMain.props);
+    }
+    
+    public ThemeSkinInMain build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThemeSkinInMain)interceptResult.objValue; 
+      } 
+      return new ThemeSkinInMain(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

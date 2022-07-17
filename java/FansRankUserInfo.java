@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FansRankUserInfo;
 
 public final class FansRankUserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Integer DEFAULT_PRESENT_NUM;
@@ -17,6 +20,8 @@ public final class FansRankUserInfo extends Message {
   public static final Integer DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String portrait;
@@ -53,7 +58,7 @@ public final class FansRankUserInfo extends Message {
   }
   
   public FansRankUserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.user_id;
@@ -93,5 +98,54 @@ public final class FansRankUserInfo extends Message {
       this.present_scores = ((Builder)str).present_scores;
       this.portrait = ((Builder)str).portrait;
     } 
+  }
+  
+  public FansRankUserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FansRankUserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String portrait;
+    
+    public Integer present_num;
+    
+    public String present_scores;
+    
+    public Integer user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(FansRankUserInfo param1FansRankUserInfo) {
+      super(param1FansRankUserInfo);
+      if (param1FansRankUserInfo == null)
+        return; 
+      this.user_id = param1FansRankUserInfo.user_id;
+      this.user_name = param1FansRankUserInfo.user_name;
+      this.present_num = param1FansRankUserInfo.present_num;
+      this.present_scores = param1FansRankUserInfo.present_scores;
+      this.portrait = param1FansRankUserInfo.portrait;
+    }
+    
+    public FansRankUserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FansRankUserInfo)interceptResult.objValue; 
+      } 
+      return new FansRankUserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

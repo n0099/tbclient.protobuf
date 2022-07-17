@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,9 +12,13 @@ import java.util.List;
 import tbclient.GuessLikeThreadInfo;
 
 public final class GuessLikeStruct extends Message {
+  public static Interceptable $ic;
+  
   public static final List<GuessLikeThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<GuessLikeThreadInfo> thread_list;
@@ -23,8 +27,8 @@ public final class GuessLikeStruct extends Message {
   public final String title;
   
   public GuessLikeStruct(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<GuessLikeThreadInfo> list;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
       if (str == null) {
@@ -44,6 +48,10 @@ public final class GuessLikeStruct extends Message {
     } 
   }
   
+  public GuessLikeStruct(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +66,41 @@ public final class GuessLikeStruct extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GuessLikeStruct> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<GuessLikeThreadInfo> thread_list;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(GuessLikeStruct param1GuessLikeStruct) {
+      super(param1GuessLikeStruct);
+      if (param1GuessLikeStruct == null)
+        return; 
+      this.title = param1GuessLikeStruct.title;
+      this.thread_list = Message.copyOf(param1GuessLikeStruct.thread_list);
+    }
+    
+    public GuessLikeStruct build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GuessLikeStruct)interceptResult.objValue; 
+      } 
+      return new GuessLikeStruct(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

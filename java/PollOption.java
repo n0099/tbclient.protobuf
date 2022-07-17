@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PollOption;
 
 public final class PollOption extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_IMAGE = "";
@@ -15,6 +18,8 @@ public final class PollOption extends Message {
   public static final Long DEFAULT_NUM = Long.valueOf(0L);
   
   public static final String DEFAULT_TEXT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer id;
@@ -29,7 +34,7 @@ public final class PollOption extends Message {
   public final String text;
   
   public PollOption(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.id;
@@ -64,6 +69,10 @@ public final class PollOption extends Message {
     } 
   }
   
+  public PollOption(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -78,5 +87,47 @@ public final class PollOption extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PollOption> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer id;
+    
+    public String image;
+    
+    public Long num;
+    
+    public String text;
+    
+    public Builder() {}
+    
+    public Builder(PollOption param1PollOption) {
+      super(param1PollOption);
+      if (param1PollOption == null)
+        return; 
+      this.id = param1PollOption.id;
+      this.num = param1PollOption.num;
+      this.text = param1PollOption.text;
+      this.image = param1PollOption.image;
+    }
+    
+    public PollOption build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PollOption)interceptResult.objValue; 
+      } 
+      return new PollOption(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

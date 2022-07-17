@@ -1,13 +1,19 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BookTag;
 
 public final class BookTag extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String title;
@@ -16,7 +22,7 @@ public final class BookTag extends Message {
   public final String url;
   
   public BookTag(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.title;
@@ -35,5 +41,45 @@ public final class BookTag extends Message {
       this.title = ((Builder)str).title;
       this.url = ((Builder)str).url;
     } 
+  }
+  
+  public BookTag(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BookTag> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String title;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(BookTag param1BookTag) {
+      super(param1BookTag);
+      if (param1BookTag == null)
+        return; 
+      this.title = param1BookTag.title;
+      this.url = param1BookTag.url;
+    }
+    
+    public BookTag build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BookTag)interceptResult.objValue; 
+      } 
+      return new BookTag(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

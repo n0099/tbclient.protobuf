@@ -1,4 +1,4 @@
-package ForumRecommend;
+package tbclient.ForumRecommend;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SearchValue extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESC = "";
   
   public static final Long DEFAULT_ID;
@@ -16,6 +18,8 @@ public final class SearchValue extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final Long DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String desc;
@@ -49,7 +53,7 @@ public final class SearchValue extends Message {
   }
   
   public SearchValue(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.type;
@@ -82,5 +86,51 @@ public final class SearchValue extends Message {
       this.name = ((Builder)str).name;
       this.desc = ((Builder)str).desc;
     } 
+  }
+  
+  public SearchValue(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<SearchValue> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String desc;
+    
+    public Long id;
+    
+    public String name;
+    
+    public Long type;
+    
+    public Builder() {}
+    
+    public Builder(SearchValue param1SearchValue) {
+      super(param1SearchValue);
+      if (param1SearchValue == null)
+        return; 
+      this.type = param1SearchValue.type;
+      this.id = param1SearchValue.id;
+      this.name = param1SearchValue.name;
+      this.desc = param1SearchValue.desc;
+    }
+    
+    public SearchValue build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SearchValue)interceptResult.objValue; 
+      } 
+      return new SearchValue(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

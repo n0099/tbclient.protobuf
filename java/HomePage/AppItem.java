@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AppItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_APP_ICON = "";
   
   public static final String DEFAULT_APP_LINK = "";
@@ -16,6 +18,8 @@ public final class AppItem extends Message {
   public static final String DEFAULT_APP_NAME = "";
   
   public static final Integer DEFAULT_ICON_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String app_icon;
@@ -30,7 +34,7 @@ public final class AppItem extends Message {
   public final Integer icon_type;
   
   public AppItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.app_name;
@@ -65,6 +69,10 @@ public final class AppItem extends Message {
     } 
   }
   
+  public AppItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class AppItem extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AppItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String app_icon;
+    
+    public String app_link;
+    
+    public String app_name;
+    
+    public Integer icon_type;
+    
+    public Builder() {}
+    
+    public Builder(AppItem param1AppItem) {
+      super(param1AppItem);
+      if (param1AppItem == null)
+        return; 
+      this.app_name = param1AppItem.app_name;
+      this.app_icon = param1AppItem.app_icon;
+      this.app_link = param1AppItem.app_link;
+      this.icon_type = param1AppItem.icon_type;
+    }
+    
+    public AppItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AppItem)interceptResult.objValue; 
+      } 
+      return new AppItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

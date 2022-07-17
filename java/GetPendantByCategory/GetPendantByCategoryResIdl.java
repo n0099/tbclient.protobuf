@@ -1,13 +1,17 @@
-package GetPendantByCategory;
+package tbclient.GetPendantByCategory;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-import tbclient.GetPendantByCategory.DataRes;
 
 public final class GetPendantByCategoryResIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 2)
   public final DataRes data;
   
@@ -15,7 +19,7 @@ public final class GetPendantByCategoryResIdl extends Message {
   public final Error error;
   
   public GetPendantByCategoryResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
@@ -23,5 +27,45 @@ public final class GetPendantByCategoryResIdl extends Message {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
     } 
+  }
+  
+  public GetPendantByCategoryResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GetPendantByCategoryResIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataRes data;
+    
+    public Error error;
+    
+    public Builder() {}
+    
+    public Builder(GetPendantByCategoryResIdl param1GetPendantByCategoryResIdl) {
+      super(param1GetPendantByCategoryResIdl);
+      if (param1GetPendantByCategoryResIdl == null)
+        return; 
+      this.error = param1GetPendantByCategoryResIdl.error;
+      this.data = param1GetPendantByCategoryResIdl.data;
+    }
+    
+    public GetPendantByCategoryResIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GetPendantByCategoryResIdl)interceptResult.objValue; 
+      } 
+      return new GetPendantByCategoryResIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

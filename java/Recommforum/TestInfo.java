@@ -1,4 +1,4 @@
-package Recommforum;
+package tbclient.Recommforum;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Recommforum.RecommForum;
 
 public final class TestInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ANSWERED;
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -21,6 +22,8 @@ public final class TestInfo extends Message {
   public static final Long DEFAULT_TEST_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.INT32)
   public final Integer answered;
@@ -50,7 +53,7 @@ public final class TestInfo extends Message {
   }
   
   public TestInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.test_id;
       if (long_ == null) {
@@ -100,6 +103,10 @@ public final class TestInfo extends Message {
     } 
   }
   
+  public TestInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -114,5 +121,56 @@ public final class TestInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TestInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer answered;
+    
+    public Integer create_time;
+    
+    public String image_url;
+    
+    public RecommForum recomm_forum;
+    
+    public String result_img;
+    
+    public Long test_id;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(TestInfo param1TestInfo) {
+      super(param1TestInfo);
+      if (param1TestInfo == null)
+        return; 
+      this.test_id = param1TestInfo.test_id;
+      this.title = param1TestInfo.title;
+      this.image_url = param1TestInfo.image_url;
+      this.create_time = param1TestInfo.create_time;
+      this.answered = param1TestInfo.answered;
+      this.result_img = param1TestInfo.result_img;
+      this.recomm_forum = param1TestInfo.recomm_forum;
+    }
+    
+    public TestInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TestInfo)interceptResult.objValue; 
+      } 
+      return new TestInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

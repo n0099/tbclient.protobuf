@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Terminal;
 
 public final class Terminal extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CLIENT;
   
   public static final Integer DEFAULT_PC;
   
   public static final Integer DEFAULT_WAP;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer client;
@@ -44,7 +49,7 @@ public final class Terminal extends Message {
   }
   
   public Terminal(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.pc;
@@ -70,5 +75,48 @@ public final class Terminal extends Message {
       this.wap = ((Builder)integer).wap;
       this.client = ((Builder)integer).client;
     } 
+  }
+  
+  public Terminal(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Terminal> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer client;
+    
+    public Integer pc;
+    
+    public Integer wap;
+    
+    public Builder() {}
+    
+    public Builder(Terminal param1Terminal) {
+      super(param1Terminal);
+      if (param1Terminal == null)
+        return; 
+      this.pc = param1Terminal.pc;
+      this.wap = param1Terminal.wap;
+      this.client = param1Terminal.client;
+    }
+    
+    public Terminal build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Terminal)interceptResult.objValue; 
+      } 
+      return new Terminal(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

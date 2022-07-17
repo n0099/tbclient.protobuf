@@ -1,4 +1,4 @@
-package CompleteTask;
+package tbclient.CompleteTask;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTIVITY_ID;
   
   public static final Integer DEFAULT_AHEAD_TYPE;
@@ -46,6 +48,8 @@ public final class DataRes extends Message {
   public static final String DEFAULT_TOKEN = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 12, type = Message.Datatype.INT32)
   public final Integer activity_id;
@@ -130,7 +134,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer4 = paramBuilder.show_type;
@@ -268,5 +272,96 @@ public final class DataRes extends Message {
       this.interface_type = ((Builder)integer).interface_type;
       this.is_not_complete = ((Builder)integer).is_not_complete;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer activity_id;
+    
+    public Integer ahead_type;
+    
+    public String btn_cancel;
+    
+    public String btn_color;
+    
+    public String btn_confirm;
+    
+    public String btn_text;
+    
+    public String btn_text_color;
+    
+    public String img_url;
+    
+    public Integer interface_type;
+    
+    public Integer is_not_complete;
+    
+    public String message;
+    
+    public String message_color;
+    
+    public Integer mission_id;
+    
+    public Double opacity;
+    
+    public String schema;
+    
+    public Integer show_type;
+    
+    public Integer toast_duration;
+    
+    public String token;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.show_type = param1DataRes.show_type;
+      this.ahead_type = param1DataRes.ahead_type;
+      this.message = param1DataRes.message;
+      this.btn_text = param1DataRes.btn_text;
+      this.btn_confirm = param1DataRes.btn_confirm;
+      this.btn_cancel = param1DataRes.btn_cancel;
+      this.toast_duration = param1DataRes.toast_duration;
+      this.img_url = param1DataRes.img_url;
+      this.url = param1DataRes.url;
+      this.schema = param1DataRes.schema;
+      this.token = param1DataRes.token;
+      this.activity_id = param1DataRes.activity_id;
+      this.mission_id = param1DataRes.mission_id;
+      this.opacity = param1DataRes.opacity;
+      this.btn_color = param1DataRes.btn_color;
+      this.message_color = param1DataRes.message_color;
+      this.btn_text_color = param1DataRes.btn_text_color;
+      this.interface_type = param1DataRes.interface_type;
+      this.is_not_complete = param1DataRes.is_not_complete;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

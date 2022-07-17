@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PopInfo;
 
 public final class PopInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AHEAD_INFO = "";
   
   public static final String DEFAULT_AHEAD_URL = "";
@@ -19,6 +22,8 @@ public final class PopInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_V_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String ahead_info;
@@ -39,7 +44,7 @@ public final class PopInfo extends Message {
   public final String v_title;
   
   public PopInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.if_pop;
@@ -88,6 +93,10 @@ public final class PopInfo extends Message {
     } 
   }
   
+  public PopInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -102,5 +111,53 @@ public final class PopInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PopInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ahead_info;
+    
+    public String ahead_url;
+    
+    public Integer if_pop;
+    
+    public String ok_info;
+    
+    public String title;
+    
+    public String v_title;
+    
+    public Builder() {}
+    
+    public Builder(PopInfo param1PopInfo) {
+      super(param1PopInfo);
+      if (param1PopInfo == null)
+        return; 
+      this.if_pop = param1PopInfo.if_pop;
+      this.title = param1PopInfo.title;
+      this.v_title = param1PopInfo.v_title;
+      this.ahead_info = param1PopInfo.ahead_info;
+      this.ahead_url = param1PopInfo.ahead_url;
+      this.ok_info = param1PopInfo.ok_info;
+    }
+    
+    public PopInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PopInfo)interceptResult.objValue; 
+      } 
+      return new PopInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

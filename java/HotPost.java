@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.HotPost;
-import tbclient.PbContent;
-import tbclient.PbPostZan;
 
 public final class HotPost extends Message {
+  public static Interceptable $ic;
+  
   public static final List<PbContent> DEFAULT_CONTENT;
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -29,6 +30,8 @@ public final class HotPost extends Message {
   public static final Long DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 7)
   public final List<PbContent> content;
@@ -86,7 +89,7 @@ public final class HotPost extends Message {
   }
   
   public HotPost(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.thread_id;
@@ -120,7 +123,7 @@ public final class HotPost extends Message {
       } else {
         this.post_num = integer2;
       } 
-      List list = paramBuilder.content;
+      List<PbContent> list = paramBuilder.content;
       if (list == null) {
         this.content = DEFAULT_CONTENT;
       } else {
@@ -156,5 +159,69 @@ public final class HotPost extends Message {
       this.floor = ((Builder)str).floor;
       this.portrait = ((Builder)str).portrait;
     } 
+  }
+  
+  public HotPost(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<HotPost> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<PbContent> content;
+    
+    public Integer create_time;
+    
+    public Integer floor;
+    
+    public String portrait;
+    
+    public Long post_id;
+    
+    public Integer post_num;
+    
+    public PbPostZan post_zan;
+    
+    public Long thread_id;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(HotPost param1HotPost) {
+      super(param1HotPost);
+      if (param1HotPost == null)
+        return; 
+      this.thread_id = param1HotPost.thread_id;
+      this.post_id = param1HotPost.post_id;
+      this.user_name = param1HotPost.user_name;
+      this.user_id = param1HotPost.user_id;
+      this.post_zan = param1HotPost.post_zan;
+      this.post_num = param1HotPost.post_num;
+      this.content = Message.copyOf(param1HotPost.content);
+      this.create_time = param1HotPost.create_time;
+      this.floor = param1HotPost.floor;
+      this.portrait = param1HotPost.portrait;
+    }
+    
+    public HotPost build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotPost)interceptResult.objValue; 
+      } 
+      return new HotPost(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,16 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.AlaLiveInfo;
-import tbclient.BannerUserStory;
-import tbclient.UserStory;
 
 public final class BannerUserStory extends Message {
+  public static Interceptable $ic;
+  
   public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_LIST;
   
   public static final Integer DEFAULT_SWITCH;
   
   public static final List<UserStory> DEFAULT_USER_STORY = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer _switch;
@@ -33,10 +36,10 @@ public final class BannerUserStory extends Message {
   }
   
   public BannerUserStory(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<AlaLiveInfo> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.user_story;
+      List<UserStory> list1 = paramBuilder.user_story;
       if (list1 == null) {
         this.user_story = DEFAULT_USER_STORY;
       } else {
@@ -61,6 +64,10 @@ public final class BannerUserStory extends Message {
     } 
   }
   
+  public BannerUserStory(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -75,5 +82,44 @@ public final class BannerUserStory extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BannerUserStory> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer _switch;
+    
+    public List<AlaLiveInfo> ala_live_list;
+    
+    public List<UserStory> user_story;
+    
+    public Builder() {}
+    
+    public Builder(BannerUserStory param1BannerUserStory) {
+      super(param1BannerUserStory);
+      if (param1BannerUserStory == null)
+        return; 
+      this.user_story = Message.copyOf(param1BannerUserStory.user_story);
+      this._switch = param1BannerUserStory._switch;
+      this.ala_live_list = Message.copyOf(param1BannerUserStory.ala_live_list);
+    }
+    
+    public BannerUserStory build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BannerUserStory)interceptResult.objValue; 
+      } 
+      return new BannerUserStory(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

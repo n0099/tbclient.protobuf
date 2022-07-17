@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,11 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GetVipInfo.VipInfo;
-import tbclient.GetVipInfo.VipParrScores;
-import tbclient.GetVipInfo.VipPayMemberInfo;
 
 public final class VipUser extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CARD_ID = "";
   
   public static final Long DEFAULT_ID = Long.valueOf(0L);
@@ -33,6 +32,8 @@ public final class VipUser extends Message {
   public static final String DEFAULT_TOTAL_SCORES_LINK = "";
   
   public static final String DEFAULT_VIP_LINK = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8)
   public final VipParrScores Parr_scores;
@@ -83,7 +84,7 @@ public final class VipUser extends Message {
   }
   
   public VipUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str3 = paramBuilder.name;
@@ -173,6 +174,10 @@ public final class VipUser extends Message {
     } 
   }
   
+  public VipUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -187,5 +192,77 @@ public final class VipUser extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<VipUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public VipParrScores Parr_scores;
+    
+    public String card_id;
+    
+    public Long id;
+    
+    public String name;
+    
+    public String name_show;
+    
+    public Integer now_time;
+    
+    public VipPayMemberInfo pay_member_info;
+    
+    public String portrait;
+    
+    public String speed_link;
+    
+    public Integer task_scores;
+    
+    public String task_scores_link;
+    
+    public String total_scores_link;
+    
+    public VipInfo vipInfo;
+    
+    public String vip_link;
+    
+    public Builder() {}
+    
+    public Builder(VipUser param1VipUser) {
+      super(param1VipUser);
+      if (param1VipUser == null)
+        return; 
+      this.name = param1VipUser.name;
+      this.id = param1VipUser.id;
+      this.portrait = param1VipUser.portrait;
+      this.name_show = param1VipUser.name_show;
+      this.pay_member_info = param1VipUser.pay_member_info;
+      this.vipInfo = param1VipUser.vipInfo;
+      this.now_time = param1VipUser.now_time;
+      this.Parr_scores = param1VipUser.Parr_scores;
+      this.task_scores = param1VipUser.task_scores;
+      this.total_scores_link = param1VipUser.total_scores_link;
+      this.speed_link = param1VipUser.speed_link;
+      this.task_scores_link = param1VipUser.task_scores_link;
+      this.vip_link = param1VipUser.vip_link;
+      this.card_id = param1VipUser.card_id;
+    }
+    
+    public VipUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipUser)interceptResult.objValue; 
+      } 
+      return new VipUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.High;
-import tbclient.Highlist;
 
 public final class Highlist extends Message {
+  public static Interceptable $ic;
+  
   public static final Boolean DEFAULT_HAS_MORE;
   
   public static final List<High> DEFAULT_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.BOOL)
   public final Boolean has_more;
@@ -26,10 +30,10 @@ public final class Highlist extends Message {
   }
   
   public Highlist(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Boolean bool;
     if (paramBoolean == true) {
-      List list = paramBuilder.list;
+      List<High> list = paramBuilder.list;
       if (list == null) {
         this.list = DEFAULT_LIST;
       } else {
@@ -47,6 +51,10 @@ public final class Highlist extends Message {
     } 
   }
   
+  public Highlist(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -61,5 +69,41 @@ public final class Highlist extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Highlist> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Boolean has_more;
+    
+    public List<High> list;
+    
+    public Builder() {}
+    
+    public Builder(Highlist param1Highlist) {
+      super(param1Highlist);
+      if (param1Highlist == null)
+        return; 
+      this.list = Message.copyOf(param1Highlist.list);
+      this.has_more = param1Highlist.has_more;
+    }
+    
+    public Highlist build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Highlist)interceptResult.objValue; 
+      } 
+      return new Highlist(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

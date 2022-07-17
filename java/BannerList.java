@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,12 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.App;
-import tbclient.BannerList;
-import tbclient.FeedForumInfo;
-import tbclient.RecomTopicInfo;
 
 public final class BannerList extends Message {
+  public static Interceptable $ic;
+  
   public static final List<App> DEFAULT_APP = Collections.emptyList();
   
   public static final String DEFAULT_APPLIST = "";
@@ -20,6 +20,8 @@ public final class BannerList extends Message {
   public static final List<FeedForumInfo> DEFAULT_FEED_FORUM = Collections.emptyList();
   
   public static final List<App> DEFAULT_VIDEO_RECOMMEND_AD = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<App> app;
@@ -40,16 +42,16 @@ public final class BannerList extends Message {
   public final List<App> video_recommend_ad;
   
   public BannerList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<App> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.app;
-      if (list1 == null) {
+      List<App> list2 = paramBuilder.app;
+      if (list2 == null) {
         this.app = DEFAULT_APP;
       } else {
-        this.app = Message.immutableCopyOf(list1);
+        this.app = Message.immutableCopyOf(list2);
       } 
-      list1 = paramBuilder.feed_forum;
+      List<FeedForumInfo> list1 = paramBuilder.feed_forum;
       if (list1 == null) {
         this.feed_forum = DEFAULT_FEED_FORUM;
       } else {
@@ -79,6 +81,10 @@ public final class BannerList extends Message {
     } 
   }
   
+  public BannerList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -93,5 +99,53 @@ public final class BannerList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BannerList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<App> app;
+    
+    public String applist;
+    
+    public List<FeedForumInfo> feed_forum;
+    
+    public RecomTopicInfo hot_topic;
+    
+    public App pb_banner_ad;
+    
+    public List<App> video_recommend_ad;
+    
+    public Builder() {}
+    
+    public Builder(BannerList param1BannerList) {
+      super(param1BannerList);
+      if (param1BannerList == null)
+        return; 
+      this.app = Message.copyOf(param1BannerList.app);
+      this.feed_forum = Message.copyOf(param1BannerList.feed_forum);
+      this.hot_topic = param1BannerList.hot_topic;
+      this.applist = param1BannerList.applist;
+      this.pb_banner_ad = param1BannerList.pb_banner_ad;
+      this.video_recommend_ad = Message.copyOf(param1BannerList.video_recommend_ad);
+    }
+    
+    public BannerList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BannerList)interceptResult.objValue; 
+      } 
+      return new BannerList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

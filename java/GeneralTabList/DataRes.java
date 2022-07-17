@@ -1,4 +1,4 @@
-package GeneralTabList;
+package tbclient.GeneralTabList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -19,6 +19,8 @@ import tbclient.ThreadInfo;
 import tbclient.User;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST;
   
   public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
@@ -38,6 +40,8 @@ public final class DataRes extends Message {
   public static final Integer DEFAULT_SORT_TYPE;
   
   public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 12)
   public final List<AdMixFloor> ad_mix_list;
@@ -88,10 +92,10 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list4 = paramBuilder.general_list;
+      List<ThreadInfo> list4 = paramBuilder.general_list;
       if (list4 == null) {
         this.general_list = DEFAULT_GENERAL_LIST;
       } else {
@@ -103,7 +107,7 @@ public final class DataRes extends Message {
       } else {
         this.has_more = integer3;
       } 
-      List list3 = paramBuilder.user_list;
+      List<User> list3 = paramBuilder.user_list;
       if (list3 == null) {
         this.user_list = DEFAULT_USER_LIST;
       } else {
@@ -124,17 +128,17 @@ public final class DataRes extends Message {
         this.sort_type = integer2;
       } 
       this.item_info = paramBuilder.item_info;
-      List list2 = paramBuilder.sort_option;
+      List<SortOption> list2 = paramBuilder.sort_option;
       if (list2 == null) {
         this.sort_option = DEFAULT_SORT_OPTION;
       } else {
         this.sort_option = Message.immutableCopyOf(list2);
       } 
-      list2 = paramBuilder.app_list;
-      if (list2 == null) {
+      List<App> list1 = paramBuilder.app_list;
+      if (list1 == null) {
         this.app_list = DEFAULT_APP_LIST;
       } else {
-        this.app_list = Message.immutableCopyOf(list2);
+        this.app_list = Message.immutableCopyOf(list1);
       } 
       Integer integer1 = paramBuilder.ad_show_select;
       if (integer1 == null) {
@@ -142,11 +146,11 @@ public final class DataRes extends Message {
       } else {
         this.ad_show_select = integer1;
       } 
-      List list1 = paramBuilder.ad_mix_list;
-      if (list1 == null) {
+      List<AdMixFloor> list = paramBuilder.ad_mix_list;
+      if (list == null) {
         this.ad_mix_list = DEFAULT_AD_MIX_LIST;
       } else {
-        this.ad_mix_list = Message.immutableCopyOf(list1);
+        this.ad_mix_list = Message.immutableCopyOf(list);
       } 
       str = paramBuilder.ad_sample_map_key;
       if (str == null) {
@@ -171,6 +175,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -190,5 +198,74 @@ public final class DataRes extends Message {
   static {
     Integer integer = Integer.valueOf(0);
     DEFAULT_HAS_MORE = integer;
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<AdMixFloor> ad_mix_list;
+    
+    public String ad_sample_map_key;
+    
+    public Integer ad_show_select;
+    
+    public List<App> app_list;
+    
+    public List<ThreadInfo> general_list;
+    
+    public Integer has_more;
+    
+    public ItemInfo item_info;
+    
+    public Integer new_thread_num;
+    
+    public List<SortOption> sort_option;
+    
+    public Integer sort_type;
+    
+    public SportPageHeadInfo sport_head_info;
+    
+    public SportScheduleInfo sport_schedule_info;
+    
+    public List<User> user_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.general_list = Message.copyOf(param1DataRes.general_list);
+      this.has_more = param1DataRes.has_more;
+      this.user_list = Message.copyOf(param1DataRes.user_list);
+      this.sport_schedule_info = param1DataRes.sport_schedule_info;
+      this.sport_head_info = param1DataRes.sport_head_info;
+      this.new_thread_num = param1DataRes.new_thread_num;
+      this.sort_type = param1DataRes.sort_type;
+      this.item_info = param1DataRes.item_info;
+      this.sort_option = Message.copyOf(param1DataRes.sort_option);
+      this.app_list = Message.copyOf(param1DataRes.app_list);
+      this.ad_show_select = param1DataRes.ad_show_select;
+      this.ad_mix_list = Message.copyOf(param1DataRes.ad_mix_list);
+      this.ad_sample_map_key = param1DataRes.ad_sample_map_key;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

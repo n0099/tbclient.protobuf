@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -14,6 +14,8 @@ import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_CONTEXT_LIST = "";
   
   public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -77,6 +79,8 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_TAG_CHANGED;
   
   public static final Integer DEFAULT_TAG_CODE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 30, type = Message.Datatype.STRING)
   public final String ad_context_list;
@@ -221,7 +225,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
       Integer integer6 = paramBuilder.tag_code;
@@ -326,7 +330,7 @@ public final class DataReq extends Message {
       } else {
         this.need_age_module = integer3;
       } 
-      List list = paramBuilder.interest_tag;
+      List<String> list = paramBuilder.interest_tag;
       if (list == null) {
         this.interest_tag = DEFAULT_INTEREST_TAG;
       } else {
@@ -455,5 +459,144 @@ public final class DataReq extends Message {
       this.ad_ext_params = paramBuilder.ad_ext_params;
       this.app_transmit_data = paramBuilder.app_transmit_data;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_context_list;
+    
+    public String ad_ext_params;
+    
+    public String age_tag;
+    
+    public AppPosInfo app_pos;
+    
+    public AppTransmitData app_transmit_data;
+    
+    public CommonReq common;
+    
+    public String da_idfa;
+    
+    public String first_dir;
+    
+    public Long from_tid;
+    
+    public List<String> interest_tag;
+    
+    public String invoke_source;
+    
+    public Integer issdk;
+    
+    public String lastids;
+    
+    public Integer load_type;
+    
+    public Integer need_age_module;
+    
+    public Integer need_forumlist;
+    
+    public Integer need_tags;
+    
+    public Integer new_install;
+    
+    public Integer new_net_type;
+    
+    public Integer page_thread_count;
+    
+    public String platform;
+    
+    public Integer pn;
+    
+    public Integer pre_ad_thread_count;
+    
+    public Integer q_type;
+    
+    public String query_eqid;
+    
+    public Integer request_times;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public String second_dir;
+    
+    public String sex_tag;
+    
+    public String shoubai_cuid;
+    
+    public Integer sug_count;
+    
+    public Integer tag_changed;
+    
+    public Integer tag_code;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.tag_code = param1DataReq.tag_code;
+      this.need_tags = param1DataReq.need_tags;
+      this.load_type = param1DataReq.load_type;
+      this.page_thread_count = param1DataReq.page_thread_count;
+      this.pn = param1DataReq.pn;
+      this.sug_count = param1DataReq.sug_count;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.q_type = param1DataReq.q_type;
+      this.lastids = param1DataReq.lastids;
+      this.issdk = param1DataReq.issdk;
+      this.da_idfa = param1DataReq.da_idfa;
+      this.platform = param1DataReq.platform;
+      this.sex_tag = param1DataReq.sex_tag;
+      this.age_tag = param1DataReq.age_tag;
+      this.need_age_module = param1DataReq.need_age_module;
+      this.interest_tag = Message.copyOf(param1DataReq.interest_tag);
+      this.tag_changed = param1DataReq.tag_changed;
+      this.need_forumlist = param1DataReq.need_forumlist;
+      this.new_net_type = param1DataReq.new_net_type;
+      this.shoubai_cuid = param1DataReq.shoubai_cuid;
+      this.from_tid = param1DataReq.from_tid;
+      this.pre_ad_thread_count = param1DataReq.pre_ad_thread_count;
+      this.new_install = param1DataReq.new_install;
+      this.request_times = param1DataReq.request_times;
+      this.invoke_source = param1DataReq.invoke_source;
+      this.ad_context_list = param1DataReq.ad_context_list;
+      this.query_eqid = param1DataReq.query_eqid;
+      this.first_dir = param1DataReq.first_dir;
+      this.second_dir = param1DataReq.second_dir;
+      this.app_pos = param1DataReq.app_pos;
+      this.ad_ext_params = param1DataReq.ad_ext_params;
+      this.app_transmit_data = param1DataReq.app_transmit_data;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

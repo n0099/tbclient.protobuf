@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetVipInfo.VipSpecialItem;
 
 public final class VipBasicList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CARD_ID = "";
   
   public static final Integer DEFAULT_CARD_TYPE;
@@ -23,6 +24,8 @@ public final class VipBasicList extends Message {
   public static final String DEFAULT_CLASS_URL_NAME = "";
   
   public static final List<VipSpecialItem> DEFAULT_ITEM = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 12, type = Message.Datatype.STRING)
   public final String card_id;
@@ -47,10 +50,10 @@ public final class VipBasicList extends Message {
   }
   
   public VipBasicList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list = paramBuilder.item;
+      List<VipSpecialItem> list = paramBuilder.item;
       if (list == null) {
         this.item = DEFAULT_ITEM;
       } else {
@@ -96,6 +99,10 @@ public final class VipBasicList extends Message {
     } 
   }
   
+  public VipBasicList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -110,5 +117,53 @@ public final class VipBasicList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<VipBasicList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String card_id;
+    
+    public Integer card_type;
+    
+    public String class_name;
+    
+    public String class_url;
+    
+    public String class_url_name;
+    
+    public List<VipSpecialItem> item;
+    
+    public Builder() {}
+    
+    public Builder(VipBasicList param1VipBasicList) {
+      super(param1VipBasicList);
+      if (param1VipBasicList == null)
+        return; 
+      this.item = Message.copyOf(param1VipBasicList.item);
+      this.card_type = param1VipBasicList.card_type;
+      this.class_name = param1VipBasicList.class_name;
+      this.class_url_name = param1VipBasicList.class_url_name;
+      this.class_url = param1VipBasicList.class_url;
+      this.card_id = param1VipBasicList.card_id;
+    }
+    
+    public VipBasicList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipBasicList)interceptResult.objValue; 
+      } 
+      return new VipBasicList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

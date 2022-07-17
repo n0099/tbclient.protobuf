@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AvatarFrame;
 
 public final class AvatarFrame extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_END_TIME;
   
   public static final Integer DEFAULT_PROPS_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer end_time;
@@ -38,7 +43,7 @@ public final class AvatarFrame extends Message {
   }
   
   public AvatarFrame(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.props_id;
@@ -57,5 +62,45 @@ public final class AvatarFrame extends Message {
       this.props_id = ((Builder)integer).props_id;
       this.end_time = ((Builder)integer).end_time;
     } 
+  }
+  
+  public AvatarFrame(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AvatarFrame> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer end_time;
+    
+    public Integer props_id;
+    
+    public Builder() {}
+    
+    public Builder(AvatarFrame param1AvatarFrame) {
+      super(param1AvatarFrame);
+      if (param1AvatarFrame == null)
+        return; 
+      this.props_id = param1AvatarFrame.props_id;
+      this.end_time = param1AvatarFrame.end_time;
+    }
+    
+    public AvatarFrame build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AvatarFrame)interceptResult.objValue; 
+      } 
+      return new AvatarFrame(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

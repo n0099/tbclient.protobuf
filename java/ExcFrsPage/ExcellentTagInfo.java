@@ -1,4 +1,4 @@
-package ExcFrsPage;
+package tbclient.ExcFrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ExcellentTagInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_TAG_CODE = Long.valueOf(0L);
   
   public static final String DEFAULT_TAG_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long tag_code;
@@ -20,7 +24,7 @@ public final class ExcellentTagInfo extends Message {
   public final String tag_name;
   
   public ExcellentTagInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.tag_code;
@@ -41,6 +45,10 @@ public final class ExcellentTagInfo extends Message {
     } 
   }
   
+  public ExcellentTagInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class ExcellentTagInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ExcellentTagInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long tag_code;
+    
+    public String tag_name;
+    
+    public Builder() {}
+    
+    public Builder(ExcellentTagInfo param1ExcellentTagInfo) {
+      super(param1ExcellentTagInfo);
+      if (param1ExcellentTagInfo == null)
+        return; 
+      this.tag_code = param1ExcellentTagInfo.tag_code;
+      this.tag_name = param1ExcellentTagInfo.tag_name;
+    }
+    
+    public ExcellentTagInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ExcellentTagInfo)interceptResult.objValue; 
+      } 
+      return new ExcellentTagInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

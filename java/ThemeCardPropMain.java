@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ThemeCardPropMain;
 
 public final class ThemeCardPropMain extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_URL = "";
   
   public static final String DEFAULT_DESCRIPTION = "";
@@ -27,6 +30,8 @@ public final class ThemeCardPropMain extends Message {
   public static final String DEFAULT_PROPS_STATE_IMG = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String activity_url;
@@ -66,7 +71,7 @@ public final class ThemeCardPropMain extends Message {
   }
   
   public ThemeCardPropMain(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.props_id;
@@ -143,6 +148,10 @@ public final class ThemeCardPropMain extends Message {
     } 
   }
   
+  public ThemeCardPropMain(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -157,5 +166,65 @@ public final class ThemeCardPropMain extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ThemeCardPropMain> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_url;
+    
+    public String description;
+    
+    public String example_url;
+    
+    public Integer free_user_level;
+    
+    public Integer in_use;
+    
+    public Integer is_finished;
+    
+    public String permission;
+    
+    public Long props_id;
+    
+    public String props_state_img;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(ThemeCardPropMain param1ThemeCardPropMain) {
+      super(param1ThemeCardPropMain);
+      if (param1ThemeCardPropMain == null)
+        return; 
+      this.props_id = param1ThemeCardPropMain.props_id;
+      this.title = param1ThemeCardPropMain.title;
+      this.description = param1ThemeCardPropMain.description;
+      this.example_url = param1ThemeCardPropMain.example_url;
+      this.permission = param1ThemeCardPropMain.permission;
+      this.props_state_img = param1ThemeCardPropMain.props_state_img;
+      this.in_use = param1ThemeCardPropMain.in_use;
+      this.free_user_level = param1ThemeCardPropMain.free_user_level;
+      this.activity_url = param1ThemeCardPropMain.activity_url;
+      this.is_finished = param1ThemeCardPropMain.is_finished;
+    }
+    
+    public ThemeCardPropMain build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThemeCardPropMain)interceptResult.objValue; 
+      } 
+      return new ThemeCardPropMain(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

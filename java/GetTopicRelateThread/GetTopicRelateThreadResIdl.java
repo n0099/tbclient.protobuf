@@ -1,13 +1,17 @@
-package GetTopicRelateThread;
+package tbclient.GetTopicRelateThread;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-import tbclient.GetTopicRelateThread.DataRes;
 
 public final class GetTopicRelateThreadResIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 1)
   public final DataRes data;
   
@@ -15,7 +19,7 @@ public final class GetTopicRelateThreadResIdl extends Message {
   public final Error error;
   
   public GetTopicRelateThreadResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.data = paramBuilder.data;
       this.error = paramBuilder.error;
@@ -23,5 +27,45 @@ public final class GetTopicRelateThreadResIdl extends Message {
       this.data = paramBuilder.data;
       this.error = paramBuilder.error;
     } 
+  }
+  
+  public GetTopicRelateThreadResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GetTopicRelateThreadResIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataRes data;
+    
+    public Error error;
+    
+    public Builder() {}
+    
+    public Builder(GetTopicRelateThreadResIdl param1GetTopicRelateThreadResIdl) {
+      super(param1GetTopicRelateThreadResIdl);
+      if (param1GetTopicRelateThreadResIdl == null)
+        return; 
+      this.data = param1GetTopicRelateThreadResIdl.data;
+      this.error = param1GetTopicRelateThreadResIdl.error;
+    }
+    
+    public GetTopicRelateThreadResIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GetTopicRelateThreadResIdl)interceptResult.objValue; 
+      } 
+      return new GetTopicRelateThreadResIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

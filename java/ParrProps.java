@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,14 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Level;
-import tbclient.ParrProps;
-import tbclient.Props;
 
 public final class ParrProps extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_PORTRAIT_TIME = Integer.valueOf(0);
   
   public static final List<Props> DEFAULT_PROPS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final Level level;
@@ -26,8 +29,8 @@ public final class ParrProps extends Message {
   public final List<Props> props;
   
   public ParrProps(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<Props> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.portrait_time;
       if (integer == null) {
@@ -49,6 +52,10 @@ public final class ParrProps extends Message {
     } 
   }
   
+  public ParrProps(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -63,5 +70,44 @@ public final class ParrProps extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ParrProps> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Level level;
+    
+    public Integer portrait_time;
+    
+    public List<Props> props;
+    
+    public Builder() {}
+    
+    public Builder(ParrProps param1ParrProps) {
+      super(param1ParrProps);
+      if (param1ParrProps == null)
+        return; 
+      this.portrait_time = param1ParrProps.portrait_time;
+      this.level = param1ParrProps.level;
+      this.props = Message.copyOf(param1ParrProps.props);
+    }
+    
+    public ParrProps build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ParrProps)interceptResult.objValue; 
+      } 
+      return new ParrProps(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

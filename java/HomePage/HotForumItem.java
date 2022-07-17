@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HotForumItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FORUM_AVATAR = "";
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
@@ -16,6 +18,8 @@ public final class HotForumItem extends Message {
   public static final String DEFAULT_FORUM_NAME = "";
   
   public static final Integer DEFAULT_IS_LIKED = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String forum_avatar;
@@ -30,7 +34,7 @@ public final class HotForumItem extends Message {
   public final Integer is_liked;
   
   public HotForumItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -65,6 +69,10 @@ public final class HotForumItem extends Message {
     } 
   }
   
+  public HotForumItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class HotForumItem extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HotForumItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String forum_avatar;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_liked;
+    
+    public Builder() {}
+    
+    public Builder(HotForumItem param1HotForumItem) {
+      super(param1HotForumItem);
+      if (param1HotForumItem == null)
+        return; 
+      this.forum_id = param1HotForumItem.forum_id;
+      this.forum_name = param1HotForumItem.forum_name;
+      this.forum_avatar = param1HotForumItem.forum_avatar;
+      this.is_liked = param1HotForumItem.is_liked;
+    }
+    
+    public HotForumItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotForumItem)interceptResult.objValue; 
+      } 
+      return new HotForumItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

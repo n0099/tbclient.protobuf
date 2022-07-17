@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GoodsWin;
 
 public final class GoodsWin extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_GOODS_URL = "";
   
   public static final Integer DEFAULT_SHOW = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String goods_url;
@@ -19,7 +24,7 @@ public final class GoodsWin extends Message {
   public final Integer show;
   
   public GoodsWin(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.show;
@@ -40,6 +45,10 @@ public final class GoodsWin extends Message {
     } 
   }
   
+  public GoodsWin(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class GoodsWin extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GoodsWin> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String goods_url;
+    
+    public Integer show;
+    
+    public Builder() {}
+    
+    public Builder(GoodsWin param1GoodsWin) {
+      super(param1GoodsWin);
+      if (param1GoodsWin == null)
+        return; 
+      this.show = param1GoodsWin.show;
+      this.goods_url = param1GoodsWin.goods_url;
+    }
+    
+    public GoodsWin build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GoodsWin)interceptResult.objValue; 
+      } 
+      return new GoodsWin(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

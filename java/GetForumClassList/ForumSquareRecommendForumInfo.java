@@ -1,4 +1,4 @@
-package GetForumClassList;
+package tbclient.GetForumClassList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumSquareRecommendForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_AVATAR = "";
@@ -24,6 +26,8 @@ public final class ForumSquareRecommendForumInfo extends Message {
   public static final String DEFAULT_RECOMMEND_REASON = "";
   
   public static final Long DEFAULT_THREAD_COUNT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -55,7 +59,7 @@ public final class ForumSquareRecommendForumInfo extends Message {
   }
   
   public ForumSquareRecommendForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str2 = paramBuilder.recommend_reason;
@@ -118,6 +122,10 @@ public final class ForumSquareRecommendForumInfo extends Message {
     } 
   }
   
+  public ForumSquareRecommendForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -134,5 +142,59 @@ public final class ForumSquareRecommendForumInfo extends Message {
     } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FORUM_ID = long_;
+  }
+  
+  public static final class Builder extends Message.Builder<ForumSquareRecommendForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String avatar;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_like;
+    
+    public Long member_count;
+    
+    public String recommend_reason;
+    
+    public Long thread_count;
+    
+    public Builder() {}
+    
+    public Builder(ForumSquareRecommendForumInfo param1ForumSquareRecommendForumInfo) {
+      super(param1ForumSquareRecommendForumInfo);
+      if (param1ForumSquareRecommendForumInfo == null)
+        return; 
+      this.recommend_reason = param1ForumSquareRecommendForumInfo.recommend_reason;
+      this.forum_id = param1ForumSquareRecommendForumInfo.forum_id;
+      this.forum_name = param1ForumSquareRecommendForumInfo.forum_name;
+      this.avatar = param1ForumSquareRecommendForumInfo.avatar;
+      this._abstract = param1ForumSquareRecommendForumInfo._abstract;
+      this.is_like = param1ForumSquareRecommendForumInfo.is_like;
+      this.member_count = param1ForumSquareRecommendForumInfo.member_count;
+      this.thread_count = param1ForumSquareRecommendForumInfo.thread_count;
+    }
+    
+    public ForumSquareRecommendForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumSquareRecommendForumInfo)interceptResult.objValue; 
+      } 
+      return new ForumSquareRecommendForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

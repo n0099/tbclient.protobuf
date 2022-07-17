@@ -1,4 +1,4 @@
-package Profile;
+package tbclient.Profile;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Duxiaoman extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_END;
   
   public static final Integer DEFAULT_TOTAL_CASH;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer is_end;
@@ -39,7 +43,7 @@ public final class Duxiaoman extends Message {
   }
   
   public Duxiaoman(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.total_cash;
@@ -58,5 +62,45 @@ public final class Duxiaoman extends Message {
       this.total_cash = ((Builder)integer).total_cash;
       this.is_end = ((Builder)integer).is_end;
     } 
+  }
+  
+  public Duxiaoman(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Duxiaoman> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_end;
+    
+    public Integer total_cash;
+    
+    public Builder() {}
+    
+    public Builder(Duxiaoman param1Duxiaoman) {
+      super(param1Duxiaoman);
+      if (param1Duxiaoman == null)
+        return; 
+      this.total_cash = param1Duxiaoman.total_cash;
+      this.is_end = param1Duxiaoman.is_end;
+    }
+    
+    public Duxiaoman build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Duxiaoman)interceptResult.objValue; 
+      } 
+      return new Duxiaoman(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

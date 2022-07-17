@@ -1,4 +1,4 @@
-package ItemManage;
+package tbclient.ItemManage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,11 +10,15 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_PN;
   
   public static final Integer DEFAULT_RN;
   
   public static final Integer DEFAULT_TAB_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final CommonReq common;
@@ -49,7 +53,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -77,5 +81,51 @@ public final class DataReq extends Message {
       this.pn = ((Builder)integer).pn;
       this.rn = ((Builder)integer).rn;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public Integer pn;
+    
+    public Integer rn;
+    
+    public Integer tab_id;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.tab_id = param1DataReq.tab_id;
+      this.pn = param1DataReq.pn;
+      this.rn = param1DataReq.rn;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

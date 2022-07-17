@@ -1,4 +1,4 @@
-package RecomVertical;
+package tbclient.RecomVertical;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,16 +9,18 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.RecomVertical.ClassInfo;
-import tbclient.RecomVertical.ThreadPersonalized;
 import tbclient.ThreadInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_NEED_RECHOOSE;
   
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
   
   public static final List<ThreadPersonalized> DEFAULT_THREAD_PERSONALIZED = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final ClassInfo class_info;
@@ -37,16 +39,16 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
-      List list = paramBuilder.thread_list;
-      if (list == null) {
+      List<ThreadInfo> list1 = paramBuilder.thread_list;
+      if (list1 == null) {
         this.thread_list = DEFAULT_THREAD_LIST;
       } else {
-        this.thread_list = Message.immutableCopyOf(list);
+        this.thread_list = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.thread_personalized;
+      List<ThreadPersonalized> list = paramBuilder.thread_personalized;
       if (list == null) {
         this.thread_personalized = DEFAULT_THREAD_PERSONALIZED;
       } else {
@@ -67,6 +69,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -81,5 +87,47 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ClassInfo class_info;
+    
+    public Integer need_rechoose;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public List<ThreadPersonalized> thread_personalized;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.thread_list = Message.copyOf(param1DataRes.thread_list);
+      this.thread_personalized = Message.copyOf(param1DataRes.thread_personalized);
+      this.class_info = param1DataRes.class_info;
+      this.need_rechoose = param1DataRes.need_rechoose;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package DoDailyTask;
+package tbclient.DoDailyTask;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,11 +7,13 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.DoDailyTask.DialogItem;
-import tbclient.DoDailyTask.TaskInfoItem;
 
 public final class RetDataList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_NEED_DIALOG = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final DialogItem dialog;
@@ -23,7 +25,7 @@ public final class RetDataList extends Message {
   public final TaskInfoItem task_info;
   
   public RetDataList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       this.dialog = paramBuilder.dialog;
@@ -41,6 +43,10 @@ public final class RetDataList extends Message {
     } 
   }
   
+  public RetDataList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +61,44 @@ public final class RetDataList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RetDataList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DialogItem dialog;
+    
+    public Integer need_dialog;
+    
+    public TaskInfoItem task_info;
+    
+    public Builder() {}
+    
+    public Builder(RetDataList param1RetDataList) {
+      super(param1RetDataList);
+      if (param1RetDataList == null)
+        return; 
+      this.dialog = param1RetDataList.dialog;
+      this.task_info = param1RetDataList.task_info;
+      this.need_dialog = param1RetDataList.need_dialog;
+    }
+    
+    public RetDataList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RetDataList)interceptResult.objValue; 
+      } 
+      return new RetDataList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetForumDetail;
+package tbclient.GetForumDetail;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumDataCenter extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT;
   
   public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT_DIFF;
@@ -32,6 +34,8 @@ public final class ForumDataCenter extends Message {
   public static final Double DEFAULT_USER_SIGN_RATE;
   
   public static final Double DEFAULT_USER_SIGN_RATE_DIFF;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.INT32)
   public final Integer homepage_thread_cnt;
@@ -100,7 +104,7 @@ public final class ForumDataCenter extends Message {
   }
   
   public ForumDataCenter(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.new_pv_cnt;
@@ -189,5 +193,75 @@ public final class ForumDataCenter extends Message {
       this.homepage_thread_cnt = ((Builder)integer).homepage_thread_cnt;
       this.homepage_thread_cnt_diff = ((Builder)integer).homepage_thread_cnt_diff;
     } 
+  }
+  
+  public ForumDataCenter(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ForumDataCenter> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer homepage_thread_cnt;
+    
+    public Integer homepage_thread_cnt_diff;
+    
+    public Integer new_follow_cnt;
+    
+    public Integer new_follow_cnt_diff;
+    
+    public Integer new_pv_cnt;
+    
+    public Integer new_pv_cnt_diff;
+    
+    public Integer new_thread_cnt;
+    
+    public Integer new_thread_cnt_diff;
+    
+    public Integer user_duration_avg;
+    
+    public Double user_duration_avg_diff;
+    
+    public Double user_sign_rate;
+    
+    public Double user_sign_rate_diff;
+    
+    public Builder() {}
+    
+    public Builder(ForumDataCenter param1ForumDataCenter) {
+      super(param1ForumDataCenter);
+      if (param1ForumDataCenter == null)
+        return; 
+      this.new_pv_cnt = param1ForumDataCenter.new_pv_cnt;
+      this.new_pv_cnt_diff = param1ForumDataCenter.new_pv_cnt_diff;
+      this.new_thread_cnt = param1ForumDataCenter.new_thread_cnt;
+      this.new_thread_cnt_diff = param1ForumDataCenter.new_thread_cnt_diff;
+      this.new_follow_cnt = param1ForumDataCenter.new_follow_cnt;
+      this.new_follow_cnt_diff = param1ForumDataCenter.new_follow_cnt_diff;
+      this.user_duration_avg = param1ForumDataCenter.user_duration_avg;
+      this.user_duration_avg_diff = param1ForumDataCenter.user_duration_avg_diff;
+      this.user_sign_rate = param1ForumDataCenter.user_sign_rate;
+      this.user_sign_rate_diff = param1ForumDataCenter.user_sign_rate_diff;
+      this.homepage_thread_cnt = param1ForumDataCenter.homepage_thread_cnt;
+      this.homepage_thread_cnt_diff = param1ForumDataCenter.homepage_thread_cnt_diff;
+    }
+    
+    public ForumDataCenter build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumDataCenter)interceptResult.objValue; 
+      } 
+      return new ForumDataCenter(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

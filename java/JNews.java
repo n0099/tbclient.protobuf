@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.JNews;
 
 public final class JNews extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FROM = "";
   
   public static final Long DEFAULT_JID = Long.valueOf(0L);
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String from;
@@ -24,7 +29,7 @@ public final class JNews extends Message {
   public final String url;
   
   public JNews(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.jid;
@@ -52,6 +57,10 @@ public final class JNews extends Message {
     } 
   }
   
+  public JNews(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class JNews extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<JNews> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String from;
+    
+    public Long jid;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(JNews param1JNews) {
+      super(param1JNews);
+      if (param1JNews == null)
+        return; 
+      this.jid = param1JNews.jid;
+      this.url = param1JNews.url;
+      this.from = param1JNews.from;
+    }
+    
+    public JNews build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (JNews)interceptResult.objValue; 
+      } 
+      return new JNews(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

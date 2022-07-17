@@ -1,4 +1,4 @@
-package ForumGuide;
+package tbclient.ForumGuide;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HotSearch extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_FORUM_NAME = "";
@@ -16,6 +18,8 @@ public final class HotSearch extends Message {
   public static final String DEFAULT_SEARCH_TITLE = "";
   
   public static final String DEFAULT_SLOGAN = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long forum_id;
@@ -30,7 +34,7 @@ public final class HotSearch extends Message {
   public final String slogan;
   
   public HotSearch(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -65,6 +69,10 @@ public final class HotSearch extends Message {
     } 
   }
   
+  public HotSearch(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class HotSearch extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HotSearch> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public String search_title;
+    
+    public String slogan;
+    
+    public Builder() {}
+    
+    public Builder(HotSearch param1HotSearch) {
+      super(param1HotSearch);
+      if (param1HotSearch == null)
+        return; 
+      this.forum_id = param1HotSearch.forum_id;
+      this.forum_name = param1HotSearch.forum_name;
+      this.slogan = param1HotSearch.slogan;
+      this.search_title = param1HotSearch.search_title;
+    }
+    
+    public HotSearch build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotSearch)interceptResult.objValue; 
+      } 
+      return new HotSearch(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

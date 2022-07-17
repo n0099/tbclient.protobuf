@@ -1,4 +1,4 @@
-package GetGiftList;
+package tbclient.GetGiftList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PresentGiftList1 extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTIVITY_TYPE;
   
   public static final Integer DEFAULT_BEGIN_TIME;
@@ -42,6 +44,8 @@ public final class PresentGiftList1 extends Message {
   public static final Integer DEFAULT_PROPORTION;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.UINT32)
   public final Integer activity_type;
@@ -125,7 +129,7 @@ public final class PresentGiftList1 extends Message {
   }
   
   public PresentGiftList1(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer5 = paramBuilder.gift_id;
@@ -249,5 +253,90 @@ public final class PresentGiftList1 extends Message {
       this.currency_unit = ((Builder)integer).currency_unit;
       this.currency = ((Builder)integer).currency;
     } 
+  }
+  
+  public PresentGiftList1(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PresentGiftList1> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer activity_type;
+    
+    public Integer begin_time;
+    
+    public Integer currency;
+    
+    public Integer currency_unit;
+    
+    public Integer discount;
+    
+    public Integer end_time;
+    
+    public Integer gift_count;
+    
+    public String gift_desc;
+    
+    public Integer gift_id;
+    
+    public String gift_name;
+    
+    public Integer ios_discount;
+    
+    public Integer ios_price;
+    
+    public String mark_url;
+    
+    public Integer pitch_on;
+    
+    public Integer price;
+    
+    public Integer proportion;
+    
+    public String thumbnail_url;
+    
+    public Builder() {}
+    
+    public Builder(PresentGiftList1 param1PresentGiftList1) {
+      super(param1PresentGiftList1);
+      if (param1PresentGiftList1 == null)
+        return; 
+      this.gift_id = param1PresentGiftList1.gift_id;
+      this.gift_name = param1PresentGiftList1.gift_name;
+      this.price = param1PresentGiftList1.price;
+      this.thumbnail_url = param1PresentGiftList1.thumbnail_url;
+      this.ios_price = param1PresentGiftList1.ios_price;
+      this.gift_desc = param1PresentGiftList1.gift_desc;
+      this.activity_type = param1PresentGiftList1.activity_type;
+      this.mark_url = param1PresentGiftList1.mark_url;
+      this.begin_time = param1PresentGiftList1.begin_time;
+      this.end_time = param1PresentGiftList1.end_time;
+      this.discount = param1PresentGiftList1.discount;
+      this.ios_discount = param1PresentGiftList1.ios_discount;
+      this.proportion = param1PresentGiftList1.proportion;
+      this.gift_count = param1PresentGiftList1.gift_count;
+      this.pitch_on = param1PresentGiftList1.pitch_on;
+      this.currency_unit = param1PresentGiftList1.currency_unit;
+      this.currency = param1PresentGiftList1.currency;
+    }
+    
+    public PresentGiftList1 build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PresentGiftList1)interceptResult.objValue; 
+      } 
+      return new PresentGiftList1(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

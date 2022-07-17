@@ -1,4 +1,4 @@
-package ForumRecommend;
+package tbclient.ForumRecommend;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -14,6 +14,8 @@ import tbclient.PrivateForumInfo;
 import tbclient.ThemeColorInfo;
 
 public final class LikeForum extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_CONTENT = "";
@@ -41,6 +43,8 @@ public final class LikeForum extends Message {
   public static final Integer DEFAULT_SORT_TYPE;
   
   public static final List<FrsTabInfo> DEFAULT_TAB_INFO;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -120,8 +124,8 @@ public final class LikeForum extends Message {
   }
   
   public LikeForum(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<FrsTabInfo> list;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.forum_id;
       if (long_2 == null) {
@@ -227,5 +231,87 @@ public final class LikeForum extends Message {
       this.hot_thread_id = ((Builder)list).hot_thread_id;
       this.tab_info = Message.immutableCopyOf(((Builder)list).tab_info);
     } 
+  }
+  
+  public LikeForum(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<LikeForum> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String content;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Long hot_thread_id;
+    
+    public Integer is_brand_forum;
+    
+    public Integer is_manager;
+    
+    public Integer is_private_forum;
+    
+    public Integer is_sign;
+    
+    public Integer is_top;
+    
+    public Integer level_id;
+    
+    public Boolean need_trans;
+    
+    public PrivateForumInfo private_forum_info;
+    
+    public Integer sort_type;
+    
+    public List<FrsTabInfo> tab_info;
+    
+    public ThemeColorInfo theme_color;
+    
+    public Builder() {}
+    
+    public Builder(LikeForum param1LikeForum) {
+      super(param1LikeForum);
+      if (param1LikeForum == null)
+        return; 
+      this.forum_id = param1LikeForum.forum_id;
+      this.forum_name = param1LikeForum.forum_name;
+      this.avatar = param1LikeForum.avatar;
+      this.is_sign = param1LikeForum.is_sign;
+      this.level_id = param1LikeForum.level_id;
+      this.is_brand_forum = param1LikeForum.is_brand_forum;
+      this.content = param1LikeForum.content;
+      this.is_top = param1LikeForum.is_top;
+      this.sort_type = param1LikeForum.sort_type;
+      this.theme_color = param1LikeForum.theme_color;
+      this.need_trans = param1LikeForum.need_trans;
+      this.is_private_forum = param1LikeForum.is_private_forum;
+      this.is_manager = param1LikeForum.is_manager;
+      this.private_forum_info = param1LikeForum.private_forum_info;
+      this.hot_thread_id = param1LikeForum.hot_thread_id;
+      this.tab_info = Message.copyOf(param1LikeForum.tab_info);
+    }
+    
+    public LikeForum build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LikeForum)interceptResult.objValue; 
+      } 
+      return new LikeForum(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

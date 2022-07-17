@@ -1,4 +1,4 @@
-package Profile;
+package tbclient.Profile;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Profile.ForumGodDetailInfo;
-import tbclient.Profile.GodDetailInfo;
 import tbclient.ThreadInfo;
 
 public final class UserGodInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ADDRESS = "";
   
   public static final Integer DEFAULT_AGE;
@@ -29,6 +29,8 @@ public final class UserGodInfo extends Message {
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST;
   
   public static final String DEFAULT_TOTAL_THREAD = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String address;
@@ -81,7 +83,7 @@ public final class UserGodInfo extends Message {
   }
   
   public UserGodInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.god_type;
@@ -91,11 +93,11 @@ public final class UserGodInfo extends Message {
         this.god_type = integer3;
       } 
       this.god_info = paramBuilder.god_info;
-      List list2 = paramBuilder.forum_god_list;
-      if (list2 == null) {
+      List<ForumGodDetailInfo> list1 = paramBuilder.forum_god_list;
+      if (list1 == null) {
         this.forum_god_list = DEFAULT_FORUM_GOD_LIST;
       } else {
-        this.forum_god_list = Message.immutableCopyOf(list2);
+        this.forum_god_list = Message.immutableCopyOf(list1);
       } 
       Integer integer2 = paramBuilder.sex;
       if (integer2 == null) {
@@ -115,11 +117,11 @@ public final class UserGodInfo extends Message {
       } else {
         this.address = str1;
       } 
-      List list1 = paramBuilder.thread_list;
-      if (list1 == null) {
+      List<ThreadInfo> list = paramBuilder.thread_list;
+      if (list == null) {
         this.thread_list = DEFAULT_THREAD_LIST;
       } else {
-        this.thread_list = Message.immutableCopyOf(list1);
+        this.thread_list = Message.immutableCopyOf(list);
       } 
       Integer integer1 = paramBuilder.cur_page;
       if (integer1 == null) {
@@ -144,5 +146,66 @@ public final class UserGodInfo extends Message {
       this.cur_page = ((Builder)str).cur_page;
       this.total_thread = ((Builder)str).total_thread;
     } 
+  }
+  
+  public UserGodInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<UserGodInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String address;
+    
+    public Integer age;
+    
+    public Integer cur_page;
+    
+    public List<ForumGodDetailInfo> forum_god_list;
+    
+    public GodDetailInfo god_info;
+    
+    public Integer god_type;
+    
+    public Integer sex;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public String total_thread;
+    
+    public Builder() {}
+    
+    public Builder(UserGodInfo param1UserGodInfo) {
+      super(param1UserGodInfo);
+      if (param1UserGodInfo == null)
+        return; 
+      this.god_type = param1UserGodInfo.god_type;
+      this.god_info = param1UserGodInfo.god_info;
+      this.forum_god_list = Message.copyOf(param1UserGodInfo.forum_god_list);
+      this.sex = param1UserGodInfo.sex;
+      this.age = param1UserGodInfo.age;
+      this.address = param1UserGodInfo.address;
+      this.thread_list = Message.copyOf(param1UserGodInfo.thread_list);
+      this.cur_page = param1UserGodInfo.cur_page;
+      this.total_thread = param1UserGodInfo.total_thread;
+    }
+    
+    public UserGodInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserGodInfo)interceptResult.objValue; 
+      } 
+      return new UserGodInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

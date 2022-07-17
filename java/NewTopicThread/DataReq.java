@@ -1,4 +1,4 @@
-package NewTopicThread;
+package tbclient.NewTopicThread;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CALL_FROM = "";
   
   public static final Long DEFAULT_LAST_FEED_ID;
@@ -17,6 +19,8 @@ public final class DataReq extends Message {
   public static final Long DEFAULT_PAGE_NO;
   
   public static final Long DEFAULT_TOPIC_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String call_from;
@@ -54,7 +58,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -89,5 +93,54 @@ public final class DataReq extends Message {
       this.call_from = ((Builder)long_).call_from;
       this.last_feed_id = ((Builder)long_).last_feed_id;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String call_from;
+    
+    public CommonReq common;
+    
+    public Long last_feed_id;
+    
+    public Long page_no;
+    
+    public Long topic_id;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.topic_id = param1DataReq.topic_id;
+      this.page_no = param1DataReq.page_no;
+      this.call_from = param1DataReq.call_from;
+      this.last_feed_id = param1DataReq.last_feed_id;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPage.StarContriRecord;
-import tbclient.FrsPage.StarTaskInfo;
 
 public final class StarRank extends Message {
+  public static Interceptable $ic;
+  
   public static final List<StarContriRecord> DEFAULT_CONTRI_RECORD_LIST;
   
   public static final String DEFAULT_RANK_NAME = "";
@@ -28,6 +28,8 @@ public final class StarRank extends Message {
   public static final List<StarTaskInfo> DEFAULT_USER_TASK_INFO;
   
   public static final String DEFAULT_USER_TASK_NOTICE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<StarContriRecord> contri_record_list;
@@ -75,7 +77,7 @@ public final class StarRank extends Message {
   }
   
   public StarRank(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str3 = paramBuilder.rank_name;
@@ -90,11 +92,11 @@ public final class StarRank extends Message {
       } else {
         this.rank_ranking = integer2;
       } 
-      List list2 = paramBuilder.contri_record_list;
-      if (list2 == null) {
+      List<StarContriRecord> list1 = paramBuilder.contri_record_list;
+      if (list1 == null) {
         this.contri_record_list = DEFAULT_CONTRI_RECORD_LIST;
       } else {
-        this.contri_record_list = Message.immutableCopyOf(list2);
+        this.contri_record_list = Message.immutableCopyOf(list1);
       } 
       Integer integer1 = paramBuilder.user_contri_score;
       if (integer1 == null) {
@@ -108,11 +110,11 @@ public final class StarRank extends Message {
       } else {
         this.user_task_notice = str2;
       } 
-      List list1 = paramBuilder.user_task_info;
-      if (list1 == null) {
+      List<StarTaskInfo> list = paramBuilder.user_task_info;
+      if (list == null) {
         this.user_task_info = DEFAULT_USER_TASK_INFO;
       } else {
-        this.user_task_info = Message.immutableCopyOf(list1);
+        this.user_task_info = Message.immutableCopyOf(list);
       } 
       String str1 = paramBuilder.user_current_score_notice;
       if (str1 == null) {
@@ -136,5 +138,63 @@ public final class StarRank extends Message {
       this.user_current_score_notice = ((Builder)str).user_current_score_notice;
       this.url = ((Builder)str).url;
     } 
+  }
+  
+  public StarRank(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<StarRank> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<StarContriRecord> contri_record_list;
+    
+    public String rank_name;
+    
+    public Integer rank_ranking;
+    
+    public String url;
+    
+    public Integer user_contri_score;
+    
+    public String user_current_score_notice;
+    
+    public List<StarTaskInfo> user_task_info;
+    
+    public String user_task_notice;
+    
+    public Builder() {}
+    
+    public Builder(StarRank param1StarRank) {
+      super(param1StarRank);
+      if (param1StarRank == null)
+        return; 
+      this.rank_name = param1StarRank.rank_name;
+      this.rank_ranking = param1StarRank.rank_ranking;
+      this.contri_record_list = Message.copyOf(param1StarRank.contri_record_list);
+      this.user_contri_score = param1StarRank.user_contri_score;
+      this.user_task_notice = param1StarRank.user_task_notice;
+      this.user_task_info = Message.copyOf(param1StarRank.user_task_info);
+      this.user_current_score_notice = param1StarRank.user_current_score_notice;
+      this.url = param1StarRank.url;
+    }
+    
+    public StarRank build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (StarRank)interceptResult.objValue; 
+      } 
+      return new StarRank(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,13 +1,17 @@
-package GetMyGift;
+package tbclient.GetMyGift;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-import tbclient.GetMyGift.DataRes;
 
 public final class GetMyGiftResIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 1)
   public final DataRes data;
   
@@ -15,7 +19,7 @@ public final class GetMyGiftResIdl extends Message {
   public final Error error;
   
   public GetMyGiftResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.data = paramBuilder.data;
       this.error = paramBuilder.error;
@@ -23,5 +27,45 @@ public final class GetMyGiftResIdl extends Message {
       this.data = paramBuilder.data;
       this.error = paramBuilder.error;
     } 
+  }
+  
+  public GetMyGiftResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GetMyGiftResIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataRes data;
+    
+    public Error error;
+    
+    public Builder() {}
+    
+    public Builder(GetMyGiftResIdl param1GetMyGiftResIdl) {
+      super(param1GetMyGiftResIdl);
+      if (param1GetMyGiftResIdl == null)
+        return; 
+      this.data = param1GetMyGiftResIdl.data;
+      this.error = param1GetMyGiftResIdl.error;
+    }
+    
+    public GetMyGiftResIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GetMyGiftResIdl)interceptResult.objValue; 
+      } 
+      return new GetMyGiftResIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

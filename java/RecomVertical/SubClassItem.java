@@ -1,4 +1,4 @@
-package RecomVertical;
+package tbclient.RecomVertical;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SubClassItem extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ENABLE;
   
   public static final String DEFAULT_SUB_CLASS_ICON = "";
@@ -16,6 +18,8 @@ public final class SubClassItem extends Message {
   public static final Integer DEFAULT_SUB_CLASS_ID;
   
   public static final String DEFAULT_SUB_CLASS_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer enable;
@@ -49,7 +53,7 @@ public final class SubClassItem extends Message {
   }
   
   public SubClassItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.sub_class_id;
@@ -82,5 +86,51 @@ public final class SubClassItem extends Message {
       this.sub_class_icon = ((Builder)integer).sub_class_icon;
       this.enable = ((Builder)integer).enable;
     } 
+  }
+  
+  public SubClassItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<SubClassItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer enable;
+    
+    public String sub_class_icon;
+    
+    public Integer sub_class_id;
+    
+    public String sub_class_name;
+    
+    public Builder() {}
+    
+    public Builder(SubClassItem param1SubClassItem) {
+      super(param1SubClassItem);
+      if (param1SubClassItem == null)
+        return; 
+      this.sub_class_id = param1SubClassItem.sub_class_id;
+      this.sub_class_name = param1SubClassItem.sub_class_name;
+      this.sub_class_icon = param1SubClassItem.sub_class_icon;
+      this.enable = param1SubClassItem.enable;
+    }
+    
+    public SubClassItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SubClassItem)interceptResult.objValue; 
+      } 
+      return new SubClassItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

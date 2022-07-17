@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Error;
 
 public final class Error extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ERRMSG = "";
   
   public static final Integer DEFAULT_ERRORNO = Integer.valueOf(0);
   
   public static final String DEFAULT_USERMSG = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String errmsg;
@@ -24,7 +29,7 @@ public final class Error extends Message {
   public final String usermsg;
   
   public Error(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.errorno;
@@ -52,6 +57,10 @@ public final class Error extends Message {
     } 
   }
   
+  public Error(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class Error extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Error> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String errmsg;
+    
+    public Integer errorno;
+    
+    public String usermsg;
+    
+    public Builder() {}
+    
+    public Builder(Error param1Error) {
+      super(param1Error);
+      if (param1Error == null)
+        return; 
+      this.errorno = param1Error.errorno;
+      this.errmsg = param1Error.errmsg;
+      this.usermsg = param1Error.usermsg;
+    }
+    
+    public Error build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Error)interceptResult.objValue; 
+      } 
+      return new Error(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

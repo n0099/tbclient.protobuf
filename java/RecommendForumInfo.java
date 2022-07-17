@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.PbContent;
-import tbclient.RecommendForumInfo;
 
 public final class RecommendForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABTEST_TAG = "";
   
   public static final String DEFAULT_AUTHEN = "";
@@ -54,6 +56,8 @@ public final class RecommendForumInfo extends Message {
   public static final String DEFAULT_SOURCE = "";
   
   public static final Integer DEFAULT_THREAD_COUNT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 14, type = Message.Datatype.STRING)
   public final String abtest_tag;
@@ -150,7 +154,7 @@ public final class RecommendForumInfo extends Message {
   }
   
   public RecommendForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str6 = paramBuilder.avatar;
@@ -195,7 +199,7 @@ public final class RecommendForumInfo extends Message {
       } else {
         this.slogan = str4;
       } 
-      List list = paramBuilder.content;
+      List<PbContent> list = paramBuilder.content;
       if (list == null) {
         this.content = DEFAULT_CONTENT;
       } else {
@@ -309,5 +313,105 @@ public final class RecommendForumInfo extends Message {
       this.hot_thread_id = ((Builder)integer).hot_thread_id;
       this.is_recommend_forum = ((Builder)integer).is_recommend_forum;
     } 
+  }
+  
+  public RecommendForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String abtest_tag;
+    
+    public String authen;
+    
+    public String avatar;
+    
+    public String avatar_origin;
+    
+    public List<PbContent> content;
+    
+    public String extra;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer forum_type;
+    
+    public String hot_text;
+    
+    public Long hot_thread_id;
+    
+    public Integer is_brand_forum;
+    
+    public Integer is_like;
+    
+    public Integer is_private_forum;
+    
+    public Integer is_recommend_forum;
+    
+    public String lv1_name;
+    
+    public String lv2_name;
+    
+    public Integer member_count;
+    
+    public String recom_reason;
+    
+    public String slogan;
+    
+    public String source;
+    
+    public Integer thread_count;
+    
+    public Builder() {}
+    
+    public Builder(RecommendForumInfo param1RecommendForumInfo) {
+      super(param1RecommendForumInfo);
+      if (param1RecommendForumInfo == null)
+        return; 
+      this.avatar = param1RecommendForumInfo.avatar;
+      this.forum_id = param1RecommendForumInfo.forum_id;
+      this.forum_name = param1RecommendForumInfo.forum_name;
+      this.is_like = param1RecommendForumInfo.is_like;
+      this.member_count = param1RecommendForumInfo.member_count;
+      this.thread_count = param1RecommendForumInfo.thread_count;
+      this.slogan = param1RecommendForumInfo.slogan;
+      this.content = Message.copyOf(param1RecommendForumInfo.content);
+      this.forum_type = param1RecommendForumInfo.forum_type;
+      this.authen = param1RecommendForumInfo.authen;
+      this.recom_reason = param1RecommendForumInfo.recom_reason;
+      this.is_brand_forum = param1RecommendForumInfo.is_brand_forum;
+      this.hot_text = param1RecommendForumInfo.hot_text;
+      this.abtest_tag = param1RecommendForumInfo.abtest_tag;
+      this.source = param1RecommendForumInfo.source;
+      this.extra = param1RecommendForumInfo.extra;
+      this.is_private_forum = param1RecommendForumInfo.is_private_forum;
+      this.lv1_name = param1RecommendForumInfo.lv1_name;
+      this.lv2_name = param1RecommendForumInfo.lv2_name;
+      this.avatar_origin = param1RecommendForumInfo.avatar_origin;
+      this.hot_thread_id = param1RecommendForumInfo.hot_thread_id;
+      this.is_recommend_forum = param1RecommendForumInfo.is_recommend_forum;
+    }
+    
+    public RecommendForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendForumInfo)interceptResult.objValue; 
+      } 
+      return new RecommendForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.DealAuthInfo;
-import tbclient.DealInfo;
-import tbclient.DealMedia;
 
 public final class DealInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<DealAuthInfo> DEFAULT_AUTH_INFO;
   
   public static final String DEFAULT_DES = "";
@@ -39,6 +40,8 @@ public final class DealInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Long DEFAULT_UNIT_PRICE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 13)
   public final List<DealAuthInfo> auth_info;
@@ -112,7 +115,7 @@ public final class DealInfo extends Message {
   }
   
   public DealInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str2 = paramBuilder.title;
@@ -181,13 +184,13 @@ public final class DealInfo extends Message {
       } else {
         this.status = integer1;
       } 
-      List list = paramBuilder.media;
-      if (list == null) {
+      List<DealMedia> list1 = paramBuilder.media;
+      if (list1 == null) {
         this.media = DEFAULT_MEDIA;
       } else {
-        this.media = Message.immutableCopyOf(list);
+        this.media = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.auth_info;
+      List<DealAuthInfo> list = paramBuilder.auth_info;
       if (list == null) {
         this.auth_info = DEFAULT_AUTH_INFO;
       } else {
@@ -215,5 +218,81 @@ public final class DealInfo extends Message {
       this.auth_info = Message.immutableCopyOf(((Builder)long_).auth_info);
       this.ship_fee = ((Builder)long_).ship_fee;
     } 
+  }
+  
+  public DealInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DealInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<DealAuthInfo> auth_info;
+    
+    public String des;
+    
+    public Integer expire_time;
+    
+    public Boolean has_recommend;
+    
+    public List<DealMedia> media;
+    
+    public Long product_id;
+    
+    public Long recommendations;
+    
+    public Long sales;
+    
+    public String seller_address;
+    
+    public Long ship_fee;
+    
+    public Integer status;
+    
+    public Long stock;
+    
+    public String title;
+    
+    public Long unit_price;
+    
+    public Builder() {}
+    
+    public Builder(DealInfo param1DealInfo) {
+      super(param1DealInfo);
+      if (param1DealInfo == null)
+        return; 
+      this.title = param1DealInfo.title;
+      this.des = param1DealInfo.des;
+      this.stock = param1DealInfo.stock;
+      this.sales = param1DealInfo.sales;
+      this.expire_time = param1DealInfo.expire_time;
+      this.unit_price = param1DealInfo.unit_price;
+      this.product_id = param1DealInfo.product_id;
+      this.seller_address = param1DealInfo.seller_address;
+      this.recommendations = param1DealInfo.recommendations;
+      this.has_recommend = param1DealInfo.has_recommend;
+      this.status = param1DealInfo.status;
+      this.media = Message.copyOf(param1DealInfo.media);
+      this.auth_info = Message.copyOf(param1DealInfo.auth_info);
+      this.ship_fee = param1DealInfo.ship_fee;
+    }
+    
+    public DealInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DealInfo)interceptResult.objValue; 
+      } 
+      return new DealInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

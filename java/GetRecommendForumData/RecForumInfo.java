@@ -1,4 +1,4 @@
-package GetRecommendForumData;
+package tbclient.GetRecommendForumData;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,10 +9,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetRecommendForumData.ThreadList;
 import tbclient.ThemeColorInfo;
 
 public final class RecForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_FORUM_ID = "";
@@ -28,6 +29,8 @@ public final class RecForumInfo extends Message {
   public static final List<ThreadList> DEFAULT_THREADLIST;
   
   public static final Integer DEFAULT_THREAD_COUNT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -78,7 +81,7 @@ public final class RecForumInfo extends Message {
   }
   
   public RecForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Boolean bool;
     if (paramBoolean == true) {
       String str2 = paramBuilder.forum_id;
@@ -117,7 +120,7 @@ public final class RecForumInfo extends Message {
       } else {
         this.from = str1;
       } 
-      List list = paramBuilder.threadlist;
+      List<ThreadList> list = paramBuilder.threadlist;
       if (list == null) {
         this.threadlist = DEFAULT_THREADLIST;
       } else {
@@ -141,5 +144,66 @@ public final class RecForumInfo extends Message {
       this.theme_color = ((Builder)bool).theme_color;
       this.need_trans = ((Builder)bool).need_trans;
     } 
+  }
+  
+  public RecForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RecForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String forum_id;
+    
+    public String forum_name;
+    
+    public String from;
+    
+    public Integer member_count;
+    
+    public Boolean need_trans;
+    
+    public ThemeColorInfo theme_color;
+    
+    public Integer thread_count;
+    
+    public List<ThreadList> threadlist;
+    
+    public Builder() {}
+    
+    public Builder(RecForumInfo param1RecForumInfo) {
+      super(param1RecForumInfo);
+      if (param1RecForumInfo == null)
+        return; 
+      this.forum_id = param1RecForumInfo.forum_id;
+      this.forum_name = param1RecForumInfo.forum_name;
+      this.avatar = param1RecForumInfo.avatar;
+      this.member_count = param1RecForumInfo.member_count;
+      this.thread_count = param1RecForumInfo.thread_count;
+      this.from = param1RecForumInfo.from;
+      this.threadlist = Message.copyOf(param1RecForumInfo.threadlist);
+      this.theme_color = param1RecForumInfo.theme_color;
+      this.need_trans = param1RecForumInfo.need_trans;
+    }
+    
+    public RecForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecForumInfo)interceptResult.objValue; 
+      } 
+      return new RecForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

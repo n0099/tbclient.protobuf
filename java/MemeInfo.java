@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.MemeInfo;
 
 public final class MemeInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DETAIL_LINK = "";
   
   public static final Integer DEFAULT_HEIGHT;
@@ -21,6 +24,8 @@ public final class MemeInfo extends Message {
   public static final String DEFAULT_THUMBNAIL = "";
   
   public static final Integer DEFAULT_WIDTH;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String detail_link;
@@ -49,7 +54,7 @@ public final class MemeInfo extends Message {
   }
   
   public MemeInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.pck_id;
@@ -105,6 +110,10 @@ public final class MemeInfo extends Message {
     } 
   }
   
+  public MemeInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -121,5 +130,56 @@ public final class MemeInfo extends Message {
     } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_PCK_ID = integer;
+  }
+  
+  public static final class Builder extends Message.Builder<MemeInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String detail_link;
+    
+    public Integer height;
+    
+    public Integer pck_id;
+    
+    public Long pic_id;
+    
+    public String pic_url;
+    
+    public String thumbnail;
+    
+    public Integer width;
+    
+    public Builder() {}
+    
+    public Builder(MemeInfo param1MemeInfo) {
+      super(param1MemeInfo);
+      if (param1MemeInfo == null)
+        return; 
+      this.pck_id = param1MemeInfo.pck_id;
+      this.pic_id = param1MemeInfo.pic_id;
+      this.pic_url = param1MemeInfo.pic_url;
+      this.thumbnail = param1MemeInfo.thumbnail;
+      this.width = param1MemeInfo.width;
+      this.height = param1MemeInfo.height;
+      this.detail_link = param1MemeInfo.detail_link;
+    }
+    
+    public MemeInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MemeInfo)interceptResult.objValue; 
+      } 
+      return new MemeInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

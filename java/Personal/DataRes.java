@@ -1,4 +1,4 @@
-package Personal;
+package tbclient.Personal;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,12 @@ import java.util.List;
 import tbclient.DealWindow;
 import tbclient.DynamicInfo;
 import tbclient.ForumDynamic;
-import tbclient.Personal.UserGodInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST;
   
   public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST;
@@ -26,6 +27,8 @@ public final class DataRes extends Message {
   public static final Integer DEFAULT_PN;
   
   public static final List<ThreadInfo> DEFAULT_VIDEO_PAGE = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 4)
   public final List<ForumDynamic> concerned_forum_list;
@@ -60,22 +63,22 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.user = paramBuilder.user;
-      List list = paramBuilder.video_page;
-      if (list == null) {
+      List<ThreadInfo> list2 = paramBuilder.video_page;
+      if (list2 == null) {
         this.video_page = DEFAULT_VIDEO_PAGE;
       } else {
-        this.video_page = Message.immutableCopyOf(list);
+        this.video_page = Message.immutableCopyOf(list2);
       } 
-      list = paramBuilder.dynamic_list;
-      if (list == null) {
+      List<DynamicInfo> list1 = paramBuilder.dynamic_list;
+      if (list1 == null) {
         this.dynamic_list = DEFAULT_DYNAMIC_LIST;
       } else {
-        this.dynamic_list = Message.immutableCopyOf(list);
+        this.dynamic_list = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.concerned_forum_list;
+      List<ForumDynamic> list = paramBuilder.concerned_forum_list;
       if (list == null) {
         this.concerned_forum_list = DEFAULT_CONCERNED_FORUM_LIST;
       } else {
@@ -107,6 +110,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -121,5 +128,59 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ForumDynamic> concerned_forum_list;
+    
+    public List<DynamicInfo> dynamic_list;
+    
+    public Integer has_more;
+    
+    public Integer pn;
+    
+    public User user;
+    
+    public UserGodInfo user_god_info;
+    
+    public List<ThreadInfo> video_page;
+    
+    public DealWindow window;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.user = param1DataRes.user;
+      this.video_page = Message.copyOf(param1DataRes.video_page);
+      this.dynamic_list = Message.copyOf(param1DataRes.dynamic_list);
+      this.concerned_forum_list = Message.copyOf(param1DataRes.concerned_forum_list);
+      this.pn = param1DataRes.pn;
+      this.has_more = param1DataRes.has_more;
+      this.user_god_info = param1DataRes.user_god_info;
+      this.window = param1DataRes.window;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

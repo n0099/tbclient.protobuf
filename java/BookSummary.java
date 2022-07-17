@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BookInfo;
-import tbclient.BookSummary;
 
 public final class BookSummary extends Message {
+  public static Interceptable $ic;
+  
   public static final List<BookInfo> DEFAULT_BOOK_LIST;
   
   public static final String DEFAULT_COVER = "";
@@ -20,6 +22,8 @@ public final class BookSummary extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 4)
   public final List<BookInfo> book_list;
@@ -41,7 +45,7 @@ public final class BookSummary extends Message {
   }
   
   public BookSummary(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.title;
@@ -62,7 +66,7 @@ public final class BookSummary extends Message {
       } else {
         this.url = str1;
       } 
-      List list = paramBuilder.book_list;
+      List<BookInfo> list = paramBuilder.book_list;
       if (list == null) {
         this.book_list = DEFAULT_BOOK_LIST;
       } else {
@@ -83,6 +87,10 @@ public final class BookSummary extends Message {
     } 
   }
   
+  public BookSummary(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -97,5 +105,50 @@ public final class BookSummary extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BookSummary> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<BookInfo> book_list;
+    
+    public String cover;
+    
+    public Long num;
+    
+    public String title;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(BookSummary param1BookSummary) {
+      super(param1BookSummary);
+      if (param1BookSummary == null)
+        return; 
+      this.title = param1BookSummary.title;
+      this.num = param1BookSummary.num;
+      this.url = param1BookSummary.url;
+      this.book_list = Message.copyOf(param1BookSummary.book_list);
+      this.cover = param1BookSummary.cover;
+    }
+    
+    public BookSummary build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BookSummary)interceptResult.objValue; 
+      } 
+      return new BookSummary(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

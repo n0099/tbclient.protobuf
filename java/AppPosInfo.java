@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AppPosInfo;
 
 public final class AppPosInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ADDR_TIMESTAMP;
   
   public static final Boolean DEFAULT_AP_CONNECTED = Boolean.FALSE;
@@ -37,6 +40,8 @@ public final class AppPosInfo extends Message {
   public static final String DEFAULT_MERCATOR_RADIUS = "";
   
   public static final Long DEFAULT_MERCATOR_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.INT64)
   public final Long addr_timestamp;
@@ -91,7 +96,7 @@ public final class AppPosInfo extends Message {
   }
   
   public AppPosInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str4 = paramBuilder.ap_mac;
@@ -203,6 +208,10 @@ public final class AppPosInfo extends Message {
     } 
   }
   
+  public AppPosInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -217,5 +226,80 @@ public final class AppPosInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AppPosInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long addr_timestamp;
+    
+    public Boolean ap_connected;
+    
+    public String ap_mac;
+    
+    public String asp_shown_info;
+    
+    public String coordinate_type;
+    
+    public String latitude;
+    
+    public String longitude;
+    
+    public Integer mercator_city;
+    
+    public String mercator_city_name;
+    
+    public String mercator_district_name;
+    
+    public String mercator_lat;
+    
+    public String mercator_lon;
+    
+    public String mercator_province_name;
+    
+    public String mercator_radius;
+    
+    public Long mercator_time;
+    
+    public Builder() {}
+    
+    public Builder(AppPosInfo param1AppPosInfo) {
+      super(param1AppPosInfo);
+      if (param1AppPosInfo == null)
+        return; 
+      this.ap_mac = param1AppPosInfo.ap_mac;
+      this.ap_connected = param1AppPosInfo.ap_connected;
+      this.coordinate_type = param1AppPosInfo.coordinate_type;
+      this.longitude = param1AppPosInfo.longitude;
+      this.latitude = param1AppPosInfo.latitude;
+      this.addr_timestamp = param1AppPosInfo.addr_timestamp;
+      this.asp_shown_info = param1AppPosInfo.asp_shown_info;
+      this.mercator_lat = param1AppPosInfo.mercator_lat;
+      this.mercator_lon = param1AppPosInfo.mercator_lon;
+      this.mercator_radius = param1AppPosInfo.mercator_radius;
+      this.mercator_time = param1AppPosInfo.mercator_time;
+      this.mercator_city = param1AppPosInfo.mercator_city;
+      this.mercator_province_name = param1AppPosInfo.mercator_province_name;
+      this.mercator_city_name = param1AppPosInfo.mercator_city_name;
+      this.mercator_district_name = param1AppPosInfo.mercator_district_name;
+    }
+    
+    public AppPosInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AppPosInfo)interceptResult.objValue; 
+      } 
+      return new AppPosInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

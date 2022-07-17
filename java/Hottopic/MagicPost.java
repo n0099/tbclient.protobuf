@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Hottopic.MagicPostList;
 
 public final class MagicPost extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_MAGIC_TITLE = "";
   
   public static final List<MagicPostList> DEFAULT_MC_POST_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String magic_title;
@@ -23,8 +26,8 @@ public final class MagicPost extends Message {
   public final List<MagicPostList> mc_post_list;
   
   public MagicPost(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<MagicPostList> list;
     if (paramBoolean == true) {
       String str = paramBuilder.magic_title;
       if (str == null) {
@@ -44,6 +47,10 @@ public final class MagicPost extends Message {
     } 
   }
   
+  public MagicPost(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +65,41 @@ public final class MagicPost extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MagicPost> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String magic_title;
+    
+    public List<MagicPostList> mc_post_list;
+    
+    public Builder() {}
+    
+    public Builder(MagicPost param1MagicPost) {
+      super(param1MagicPost);
+      if (param1MagicPost == null)
+        return; 
+      this.magic_title = param1MagicPost.magic_title;
+      this.mc_post_list = Message.copyOf(param1MagicPost.mc_post_list);
+    }
+    
+    public MagicPost build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MagicPost)interceptResult.objValue; 
+      } 
+      return new MagicPost(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

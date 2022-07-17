@@ -1,4 +1,4 @@
-package FineFrsPage;
+package tbclient.FineFrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.ZhiBoInfoTW;
 
 public final class FineBanner extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FTID = Long.valueOf(0L);
   
   public static final String DEFAULT_LINK_URL = "";
@@ -19,6 +21,8 @@ public final class FineBanner extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long ftid;
@@ -39,7 +43,7 @@ public final class FineBanner extends Message {
   public final Integer type;
   
   public FineBanner(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.ftid;
       if (long_ == null) {
@@ -82,6 +86,10 @@ public final class FineBanner extends Message {
     } 
   }
   
+  public FineBanner(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -96,5 +104,53 @@ public final class FineBanner extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<FineBanner> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long ftid;
+    
+    public String link_url;
+    
+    public String pic_url;
+    
+    public String title;
+    
+    public ZhiBoInfoTW twzhibo_info;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(FineBanner param1FineBanner) {
+      super(param1FineBanner);
+      if (param1FineBanner == null)
+        return; 
+      this.ftid = param1FineBanner.ftid;
+      this.title = param1FineBanner.title;
+      this.pic_url = param1FineBanner.pic_url;
+      this.link_url = param1FineBanner.link_url;
+      this.type = param1FineBanner.type;
+      this.twzhibo_info = param1FineBanner.twzhibo_info;
+    }
+    
+    public FineBanner build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FineBanner)interceptResult.objValue; 
+      } 
+      return new FineBanner(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

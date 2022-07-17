@@ -1,4 +1,4 @@
-package Personal;
+package tbclient.Personal;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GodDetailInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DETAIL_INTRO = "";
   
   public static final Long DEFAULT_GOD_ID;
@@ -16,6 +18,8 @@ public final class GodDetailInfo extends Message {
   public static final String DEFAULT_INTRO = "";
   
   public static final Long DEFAULT_USER_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String detail_intro;
@@ -49,7 +53,7 @@ public final class GodDetailInfo extends Message {
   }
   
   public GodDetailInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.god_id;
@@ -82,5 +86,51 @@ public final class GodDetailInfo extends Message {
       this.intro = ((Builder)str).intro;
       this.detail_intro = ((Builder)str).detail_intro;
     } 
+  }
+  
+  public GodDetailInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GodDetailInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String detail_intro;
+    
+    public Long god_id;
+    
+    public String intro;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(GodDetailInfo param1GodDetailInfo) {
+      super(param1GodDetailInfo);
+      if (param1GodDetailInfo == null)
+        return; 
+      this.god_id = param1GodDetailInfo.god_id;
+      this.user_id = param1GodDetailInfo.user_id;
+      this.intro = param1GodDetailInfo.intro;
+      this.detail_intro = param1GodDetailInfo.detail_intro;
+    }
+    
+    public GodDetailInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GodDetailInfo)interceptResult.objValue; 
+      } 
+      return new GodDetailInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

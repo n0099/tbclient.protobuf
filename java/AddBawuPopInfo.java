@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AddBawuPopInfo;
 
 public final class AddBawuPopInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final String DEFAULT_IMG_URL = "";
@@ -12,6 +16,8 @@ public final class AddBawuPopInfo extends Message {
   public static final String DEFAULT_JUMP_URL = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String content;
@@ -26,7 +32,7 @@ public final class AddBawuPopInfo extends Message {
   public final String title;
   
   public AddBawuPopInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.title;
@@ -59,5 +65,51 @@ public final class AddBawuPopInfo extends Message {
       this.img_url = ((Builder)str).img_url;
       this.jump_url = ((Builder)str).jump_url;
     } 
+  }
+  
+  public AddBawuPopInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AddBawuPopInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String content;
+    
+    public String img_url;
+    
+    public String jump_url;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(AddBawuPopInfo param1AddBawuPopInfo) {
+      super(param1AddBawuPopInfo);
+      if (param1AddBawuPopInfo == null)
+        return; 
+      this.title = param1AddBawuPopInfo.title;
+      this.content = param1AddBawuPopInfo.content;
+      this.img_url = param1AddBawuPopInfo.img_url;
+      this.jump_url = param1AddBawuPopInfo.jump_url;
+    }
+    
+    public AddBawuPopInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AddBawuPopInfo)interceptResult.objValue; 
+      } 
+      return new AddBawuPopInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

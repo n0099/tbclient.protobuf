@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.MoneyInfoAndroid;
 
 public final class MoneyInfoAndroid extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_DEFAULT;
   
   public static final String DEFAULT_DESC = "";
@@ -33,6 +36,8 @@ public final class MoneyInfoAndroid extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 10, type = Message.Datatype.INT32)
   public final Integer _default;
@@ -97,7 +102,7 @@ public final class MoneyInfoAndroid extends Message {
   }
   
   public MoneyInfoAndroid(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str3 = paramBuilder.icon;
@@ -193,5 +198,78 @@ public final class MoneyInfoAndroid extends Message {
       this.packet_text = ((Builder)integer).packet_text;
       this.original_cost = ((Builder)integer).original_cost;
     } 
+  }
+  
+  public MoneyInfoAndroid(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<MoneyInfoAndroid> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer _default;
+    
+    public String desc;
+    
+    public String icon;
+    
+    public Integer money;
+    
+    public String months;
+    
+    public Integer original_cost;
+    
+    public String packet_text;
+    
+    public String payment_pos_key;
+    
+    public String product_id;
+    
+    public Integer props_id;
+    
+    public Integer socres;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(MoneyInfoAndroid param1MoneyInfoAndroid) {
+      super(param1MoneyInfoAndroid);
+      if (param1MoneyInfoAndroid == null)
+        return; 
+      this.icon = param1MoneyInfoAndroid.icon;
+      this.product_id = param1MoneyInfoAndroid.product_id;
+      this.type = param1MoneyInfoAndroid.type;
+      this.props_id = param1MoneyInfoAndroid.props_id;
+      this.title = param1MoneyInfoAndroid.title;
+      this.desc = param1MoneyInfoAndroid.desc;
+      this.months = param1MoneyInfoAndroid.months;
+      this.socres = param1MoneyInfoAndroid.socres;
+      this.money = param1MoneyInfoAndroid.money;
+      this._default = param1MoneyInfoAndroid._default;
+      this.payment_pos_key = param1MoneyInfoAndroid.payment_pos_key;
+      this.packet_text = param1MoneyInfoAndroid.packet_text;
+      this.original_cost = param1MoneyInfoAndroid.original_cost;
+    }
+    
+    public MoneyInfoAndroid build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MoneyInfoAndroid)interceptResult.objValue; 
+      } 
+      return new MoneyInfoAndroid(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

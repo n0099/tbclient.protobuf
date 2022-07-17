@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,14 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.AvatarFrame;
-import tbclient.Level;
-import tbclient.MparrProps;
-import tbclient.Portrait;
-import tbclient.Props;
 
 public final class MparrProps extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Props> DEFAULT_PROPS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final AvatarFrame avatarframe;
@@ -29,8 +30,8 @@ public final class MparrProps extends Message {
   public final List<Props> props;
   
   public MparrProps(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<Props> list;
     if (paramBoolean == true) {
       this.avatarframe = paramBuilder.avatarframe;
       this.portrait = paramBuilder.portrait;
@@ -49,6 +50,10 @@ public final class MparrProps extends Message {
     } 
   }
   
+  public MparrProps(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -63,5 +68,47 @@ public final class MparrProps extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MparrProps> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public AvatarFrame avatarframe;
+    
+    public Level level;
+    
+    public Portrait portrait;
+    
+    public List<Props> props;
+    
+    public Builder() {}
+    
+    public Builder(MparrProps param1MparrProps) {
+      super(param1MparrProps);
+      if (param1MparrProps == null)
+        return; 
+      this.avatarframe = param1MparrProps.avatarframe;
+      this.portrait = param1MparrProps.portrait;
+      this.level = param1MparrProps.level;
+      this.props = Message.copyOf(param1MparrProps.props);
+    }
+    
+    public MparrProps build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MparrProps)interceptResult.objValue; 
+      } 
+      return new MparrProps(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package ReplyMe;
+package tbclient.ReplyMe;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,15 +7,22 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 import tbclient.Baijiahao;
+import tbclient.NewFloorInfo;
 import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
 
 public final class ReplyList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final String DEFAULT_FNAME = "";
+  
+  public static final Integer DEFAULT_HAS_AGREE;
   
   public static final Integer DEFAULT_HIDE_FNAME;
   
@@ -28,6 +35,8 @@ public final class ReplyList extends Message {
   public static final Integer DEFAULT_IS_STORY;
   
   public static final String DEFAULT_ITEM_TYPE = "";
+  
+  public static final List<NewFloorInfo> DEFAULT_NEW_FLOOR_INFO;
   
   public static final String DEFAULT_POST_FROM = "";
   
@@ -55,6 +64,8 @@ public final class ReplyList extends Message {
   
   public static final Long DEFAULT_V_FORUM_ID;
   
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 27)
   public final Baijiahao baijiahao;
   
@@ -63,6 +74,9 @@ public final class ReplyList extends Message {
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String fname;
+  
+  @ProtoField(tag = 29, type = Message.Datatype.INT32)
+  public final Integer has_agree;
   
   @ProtoField(tag = 19, type = Message.Datatype.UINT32)
   public final Integer hide_fname;
@@ -81,6 +95,9 @@ public final class ReplyList extends Message {
   
   @ProtoField(tag = 12, type = Message.Datatype.STRING)
   public final String item_type;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 28)
+  public final List<NewFloorInfo> new_floor_info;
   
   @ProtoField(tag = 21)
   public final OriginThreadInfo origin_thread_info;
@@ -166,10 +183,13 @@ public final class ReplyList extends Message {
     DEFAULT_IS_STORY = integer;
     DEFAULT_IS_SHARE_THREAD = integer;
     DEFAULT_IS_BJH = integer;
+    DEFAULT_NEW_FLOOR_INFO = Collections.emptyList();
+    DEFAULT_HAS_AGREE = integer;
   }
   
   public ReplyList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
+    Integer integer;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.thread_id;
       if (long_3 == null) {
@@ -303,34 +323,169 @@ public final class ReplyList extends Message {
         this.is_bjh = integer1;
       } 
       this.baijiahao = paramBuilder.baijiahao;
+      List<NewFloorInfo> list = paramBuilder.new_floor_info;
+      if (list == null) {
+        this.new_floor_info = DEFAULT_NEW_FLOOR_INFO;
+      } else {
+        this.new_floor_info = Message.immutableCopyOf(list);
+      } 
+      integer = paramBuilder.has_agree;
+      if (integer == null) {
+        this.has_agree = DEFAULT_HAS_AGREE;
+      } else {
+        this.has_agree = integer;
+      } 
     } else {
-      this.thread_id = paramBuilder.thread_id;
-      this.post_id = paramBuilder.post_id;
-      this.time = paramBuilder.time;
-      this.title = paramBuilder.title;
-      this.fname = paramBuilder.fname;
-      this.content = paramBuilder.content;
-      this.is_floor = paramBuilder.is_floor;
-      this.quote_content = paramBuilder.quote_content;
-      this.replyer = paramBuilder.replyer;
-      this.type = paramBuilder.type;
-      this.unread = paramBuilder.unread;
-      this.item_type = paramBuilder.item_type;
-      this.zan = paramBuilder.zan;
-      this.quote_pid = paramBuilder.quote_pid;
-      this.quote_user = paramBuilder.quote_user;
-      this.server_time = paramBuilder.server_time;
-      this.thread_type = paramBuilder.thread_type;
-      this.v_forum_id = paramBuilder.v_forum_id;
-      this.hide_fname = paramBuilder.hide_fname;
-      this.is_story = paramBuilder.is_story;
-      this.origin_thread_info = paramBuilder.origin_thread_info;
-      this.post_from = paramBuilder.post_from;
-      this.is_share_thread = paramBuilder.is_share_thread;
-      this.thread_img_url = paramBuilder.thread_img_url;
-      this.thread_author_user = paramBuilder.thread_author_user;
-      this.is_bjh = paramBuilder.is_bjh;
-      this.baijiahao = paramBuilder.baijiahao;
+      this.thread_id = ((Builder)integer).thread_id;
+      this.post_id = ((Builder)integer).post_id;
+      this.time = ((Builder)integer).time;
+      this.title = ((Builder)integer).title;
+      this.fname = ((Builder)integer).fname;
+      this.content = ((Builder)integer).content;
+      this.is_floor = ((Builder)integer).is_floor;
+      this.quote_content = ((Builder)integer).quote_content;
+      this.replyer = ((Builder)integer).replyer;
+      this.type = ((Builder)integer).type;
+      this.unread = ((Builder)integer).unread;
+      this.item_type = ((Builder)integer).item_type;
+      this.zan = ((Builder)integer).zan;
+      this.quote_pid = ((Builder)integer).quote_pid;
+      this.quote_user = ((Builder)integer).quote_user;
+      this.server_time = ((Builder)integer).server_time;
+      this.thread_type = ((Builder)integer).thread_type;
+      this.v_forum_id = ((Builder)integer).v_forum_id;
+      this.hide_fname = ((Builder)integer).hide_fname;
+      this.is_story = ((Builder)integer).is_story;
+      this.origin_thread_info = ((Builder)integer).origin_thread_info;
+      this.post_from = ((Builder)integer).post_from;
+      this.is_share_thread = ((Builder)integer).is_share_thread;
+      this.thread_img_url = ((Builder)integer).thread_img_url;
+      this.thread_author_user = ((Builder)integer).thread_author_user;
+      this.is_bjh = ((Builder)integer).is_bjh;
+      this.baijiahao = ((Builder)integer).baijiahao;
+      this.new_floor_info = Message.immutableCopyOf(((Builder)integer).new_floor_info);
+      this.has_agree = ((Builder)integer).has_agree;
     } 
+  }
+  
+  public ReplyList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ReplyList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Baijiahao baijiahao;
+    
+    public String content;
+    
+    public String fname;
+    
+    public Integer has_agree;
+    
+    public Integer hide_fname;
+    
+    public Integer is_bjh;
+    
+    public Integer is_floor;
+    
+    public Integer is_share_thread;
+    
+    public Integer is_story;
+    
+    public String item_type;
+    
+    public List<NewFloorInfo> new_floor_info;
+    
+    public OriginThreadInfo origin_thread_info;
+    
+    public String post_from;
+    
+    public Long post_id;
+    
+    public String quote_content;
+    
+    public Long quote_pid;
+    
+    public User quote_user;
+    
+    public User replyer;
+    
+    public Integer server_time;
+    
+    public User thread_author_user;
+    
+    public Long thread_id;
+    
+    public String thread_img_url;
+    
+    public Integer thread_type;
+    
+    public Integer time;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Integer unread;
+    
+    public Long v_forum_id;
+    
+    public Zan zan;
+    
+    public Builder() {}
+    
+    public Builder(ReplyList param1ReplyList) {
+      super(param1ReplyList);
+      if (param1ReplyList == null)
+        return; 
+      this.thread_id = param1ReplyList.thread_id;
+      this.post_id = param1ReplyList.post_id;
+      this.time = param1ReplyList.time;
+      this.title = param1ReplyList.title;
+      this.fname = param1ReplyList.fname;
+      this.content = param1ReplyList.content;
+      this.is_floor = param1ReplyList.is_floor;
+      this.quote_content = param1ReplyList.quote_content;
+      this.replyer = param1ReplyList.replyer;
+      this.type = param1ReplyList.type;
+      this.unread = param1ReplyList.unread;
+      this.item_type = param1ReplyList.item_type;
+      this.zan = param1ReplyList.zan;
+      this.quote_pid = param1ReplyList.quote_pid;
+      this.quote_user = param1ReplyList.quote_user;
+      this.server_time = param1ReplyList.server_time;
+      this.thread_type = param1ReplyList.thread_type;
+      this.v_forum_id = param1ReplyList.v_forum_id;
+      this.hide_fname = param1ReplyList.hide_fname;
+      this.is_story = param1ReplyList.is_story;
+      this.origin_thread_info = param1ReplyList.origin_thread_info;
+      this.post_from = param1ReplyList.post_from;
+      this.is_share_thread = param1ReplyList.is_share_thread;
+      this.thread_img_url = param1ReplyList.thread_img_url;
+      this.thread_author_user = param1ReplyList.thread_author_user;
+      this.is_bjh = param1ReplyList.is_bjh;
+      this.baijiahao = param1ReplyList.baijiahao;
+      this.new_floor_info = Message.copyOf(param1ReplyList.new_floor_info);
+      this.has_agree = param1ReplyList.has_agree;
+    }
+    
+    public ReplyList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ReplyList)interceptResult.objValue; 
+      } 
+      return new ReplyList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

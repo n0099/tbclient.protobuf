@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,16 +10,10 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Banner;
-import tbclient.Hottopic.CommonInteraction;
-import tbclient.Hottopic.HotThread;
-import tbclient.Hottopic.MagicPost;
-import tbclient.Hottopic.PkModule;
-import tbclient.Hottopic.RelateForum;
-import tbclient.Hottopic.SpecialTopic;
-import tbclient.Hottopic.ThreadModule;
-import tbclient.Hottopic.TopicInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Banner> DEFAULT_BANNER;
   
   public static final Integer DEFAULT_IS_GLOBAL_BLOCK;
@@ -33,6 +27,8 @@ public final class DataRes extends Message {
   public static final String DEFAULT_RELATE_FORUM_TITLE = "";
   
   public static final List<SpecialTopic> DEFAULT_SPECIAL_TOPIC;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 16)
   public final List<Banner> banner;
@@ -92,10 +88,10 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<Banner> list;
     if (paramBoolean == true) {
-      List list3 = paramBuilder.relate_forum;
+      List<RelateForum> list3 = paramBuilder.relate_forum;
       if (list3 == null) {
         this.relate_forum = DEFAULT_RELATE_FORUM;
       } else {
@@ -115,7 +111,7 @@ public final class DataRes extends Message {
       } else {
         this.is_new_url = integer2;
       } 
-      List list2 = paramBuilder.post_forum;
+      List<RelateForum> list2 = paramBuilder.post_forum;
       if (list2 == null) {
         this.post_forum = DEFAULT_POST_FORUM;
       } else {
@@ -127,7 +123,7 @@ public final class DataRes extends Message {
       } else {
         this.is_global_block = integer1;
       } 
-      List list1 = paramBuilder.special_topic;
+      List<SpecialTopic> list1 = paramBuilder.special_topic;
       if (list1 == null) {
         this.special_topic = DEFAULT_SPECIAL_TOPIC;
       } else {
@@ -166,6 +162,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -180,5 +180,83 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Banner> banner;
+    
+    public CommonInteraction bless_module;
+    
+    public CommonInteraction candle_module;
+    
+    public HotThread good_threads;
+    
+    public HotThread hot_thread;
+    
+    public Integer is_global_block;
+    
+    public Integer is_new_url;
+    
+    public MagicPost magic_post;
+    
+    public PkModule pk_module;
+    
+    public List<RelateForum> post_forum;
+    
+    public List<RelateForum> relate_forum;
+    
+    public String relate_forum_title;
+    
+    public List<SpecialTopic> special_topic;
+    
+    public ThreadModule thread_module;
+    
+    public TopicInfo topic_info;
+    
+    public CommonInteraction weiguan_module;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.relate_forum = Message.copyOf(param1DataRes.relate_forum);
+      this.magic_post = param1DataRes.magic_post;
+      this.hot_thread = param1DataRes.hot_thread;
+      this.topic_info = param1DataRes.topic_info;
+      this.thread_module = param1DataRes.thread_module;
+      this.pk_module = param1DataRes.pk_module;
+      this.bless_module = param1DataRes.bless_module;
+      this.candle_module = param1DataRes.candle_module;
+      this.good_threads = param1DataRes.good_threads;
+      this.is_new_url = param1DataRes.is_new_url;
+      this.post_forum = Message.copyOf(param1DataRes.post_forum);
+      this.is_global_block = param1DataRes.is_global_block;
+      this.special_topic = Message.copyOf(param1DataRes.special_topic);
+      this.relate_forum_title = param1DataRes.relate_forum_title;
+      this.weiguan_module = param1DataRes.weiguan_module;
+      this.banner = Message.copyOf(param1DataRes.banner);
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

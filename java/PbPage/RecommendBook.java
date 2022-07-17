@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class RecommendBook extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BOOK_COVER = "";
   
   public static final String DEFAULT_BOOK_ID = "";
@@ -30,6 +32,8 @@ public final class RecommendBook extends Message {
   public static final String DEFAULT_SUGGEST_TEXT = "";
   
   public static final String DEFAULT_SUGGEST_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String book_cover;
@@ -66,7 +70,7 @@ public final class RecommendBook extends Message {
   }
   
   public RecommendBook(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str3 = paramBuilder.recommend_text;
@@ -111,7 +115,7 @@ public final class RecommendBook extends Message {
       } else {
         this.book_title = str2;
       } 
-      List list = paramBuilder.book_tips;
+      List<String> list = paramBuilder.book_tips;
       if (list == null) {
         this.book_tips = DEFAULT_BOOK_TIPS;
       } else {
@@ -143,6 +147,10 @@ public final class RecommendBook extends Message {
     } 
   }
   
+  public RecommendBook(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -157,5 +165,65 @@ public final class RecommendBook extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendBook> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String book_cover;
+    
+    public String book_id;
+    
+    public List<String> book_tips;
+    
+    public String book_title;
+    
+    public Integer book_type;
+    
+    public String botton_text;
+    
+    public String recommend_text;
+    
+    public String subscript_icon;
+    
+    public String suggest_text;
+    
+    public String suggest_url;
+    
+    public Builder() {}
+    
+    public Builder(RecommendBook param1RecommendBook) {
+      super(param1RecommendBook);
+      if (param1RecommendBook == null)
+        return; 
+      this.recommend_text = param1RecommendBook.recommend_text;
+      this.suggest_text = param1RecommendBook.suggest_text;
+      this.suggest_url = param1RecommendBook.suggest_url;
+      this.book_id = param1RecommendBook.book_id;
+      this.book_type = param1RecommendBook.book_type;
+      this.book_cover = param1RecommendBook.book_cover;
+      this.book_title = param1RecommendBook.book_title;
+      this.book_tips = Message.copyOf(param1RecommendBook.book_tips);
+      this.botton_text = param1RecommendBook.botton_text;
+      this.subscript_icon = param1RecommendBook.subscript_icon;
+    }
+    
+    public RecommendBook build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendBook)interceptResult.objValue; 
+      } 
+      return new RecommendBook(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

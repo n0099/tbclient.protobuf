@@ -1,12 +1,14 @@
-package GetToken;
+package tbclient.GetToken;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GetToken.ToastInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BTN_CANCEL = "";
   
   public static final String DEFAULT_BTN_SURE = "";
@@ -18,6 +20,8 @@ public final class DataRes extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7)
   public final ToastInfo activity_done;
@@ -41,7 +45,7 @@ public final class DataRes extends Message {
   public final String url;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       String str = paramBuilder.title;
       if (str == null) {
@@ -89,5 +93,60 @@ public final class DataRes extends Message {
       this.btn_cancel = paramBuilder.btn_cancel;
       this.activity_done = paramBuilder.activity_done;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ToastInfo activity_done;
+    
+    public String btn_cancel;
+    
+    public String btn_sure;
+    
+    public String img;
+    
+    public String tips;
+    
+    public String title;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.title = param1DataRes.title;
+      this.img = param1DataRes.img;
+      this.tips = param1DataRes.tips;
+      this.url = param1DataRes.url;
+      this.btn_sure = param1DataRes.btn_sure;
+      this.btn_cancel = param1DataRes.btn_cancel;
+      this.activity_done = param1DataRes.activity_done;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

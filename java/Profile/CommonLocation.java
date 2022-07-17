@@ -1,4 +1,4 @@
-package Profile;
+package tbclient.Profile;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CommonLocation extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DISTANCE = "";
   
   public static final Long DEFAULT_TIME = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String distance;
@@ -20,7 +24,7 @@ public final class CommonLocation extends Message {
   public final Long time;
   
   public CommonLocation(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.distance;
@@ -41,6 +45,10 @@ public final class CommonLocation extends Message {
     } 
   }
   
+  public CommonLocation(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class CommonLocation extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<CommonLocation> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String distance;
+    
+    public Long time;
+    
+    public Builder() {}
+    
+    public Builder(CommonLocation param1CommonLocation) {
+      super(param1CommonLocation);
+      if (param1CommonLocation == null)
+        return; 
+      this.distance = param1CommonLocation.distance;
+      this.time = param1CommonLocation.time;
+    }
+    
+    public CommonLocation build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CommonLocation)interceptResult.objValue; 
+      } 
+      return new CommonLocation(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

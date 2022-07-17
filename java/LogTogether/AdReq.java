@@ -1,4 +1,4 @@
-package LogTogether;
+package tbclient.LogTogether;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AdReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DA_CPID = "";
   
   public static final String DEFAULT_DA_EXT_INFO = "";
@@ -46,6 +48,8 @@ public final class AdReq extends Message {
   public static final String DEFAULT_DA_VERIFY = "";
   
   public static final String DEFAULT_EXT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 12, type = Message.Datatype.STRING)
   public final String da_cpid;
@@ -129,7 +133,7 @@ public final class AdReq extends Message {
   }
   
   public AdReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Boolean bool;
     if (paramBoolean == true) {
       String str2 = paramBuilder.da_page;
@@ -267,5 +271,96 @@ public final class AdReq extends Message {
       this.da_pn = ((Builder)bool).da_pn;
       this.da_iscache = ((Builder)bool).da_iscache;
     } 
+  }
+  
+  public AdReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AdReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String da_cpid;
+    
+    public String da_ext_info;
+    
+    public Integer da_fid;
+    
+    public String da_good_id;
+    
+    public Boolean da_iscache;
+    
+    public String da_locate;
+    
+    public String da_obj_id;
+    
+    public String da_page;
+    
+    public String da_plan_id;
+    
+    public Integer da_pn;
+    
+    public String da_price;
+    
+    public String da_task;
+    
+    public Long da_threadid;
+    
+    public Integer da_tid;
+    
+    public String da_type;
+    
+    public String da_user_id;
+    
+    public Long da_utime;
+    
+    public String da_verify;
+    
+    public String ext;
+    
+    public Builder() {}
+    
+    public Builder(AdReq param1AdReq) {
+      super(param1AdReq);
+      if (param1AdReq == null)
+        return; 
+      this.da_page = param1AdReq.da_page;
+      this.da_locate = param1AdReq.da_locate;
+      this.da_obj_id = param1AdReq.da_obj_id;
+      this.da_fid = param1AdReq.da_fid;
+      this.da_tid = param1AdReq.da_tid;
+      this.da_good_id = param1AdReq.da_good_id;
+      this.da_ext_info = param1AdReq.da_ext_info;
+      this.da_plan_id = param1AdReq.da_plan_id;
+      this.da_user_id = param1AdReq.da_user_id;
+      this.da_price = param1AdReq.da_price;
+      this.da_verify = param1AdReq.da_verify;
+      this.da_cpid = param1AdReq.da_cpid;
+      this.ext = param1AdReq.ext;
+      this.da_task = param1AdReq.da_task;
+      this.da_type = param1AdReq.da_type;
+      this.da_threadid = param1AdReq.da_threadid;
+      this.da_utime = param1AdReq.da_utime;
+      this.da_pn = param1AdReq.da_pn;
+      this.da_iscache = param1AdReq.da_iscache;
+    }
+    
+    public AdReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AdReq)interceptResult.objValue; 
+      } 
+      return new AdReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

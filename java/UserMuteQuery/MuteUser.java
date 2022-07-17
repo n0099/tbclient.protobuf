@@ -1,4 +1,4 @@
-package UserMuteQuery;
+package tbclient.UserMuteQuery;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MuteUser extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_MUTE_TIME;
   
   public static final String DEFAULT_NAME_SHOW = "";
@@ -18,6 +20,8 @@ public final class MuteUser extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer mute_time;
@@ -39,7 +43,7 @@ public final class MuteUser extends Message {
   }
   
   public MuteUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
@@ -81,6 +85,10 @@ public final class MuteUser extends Message {
     } 
   }
   
+  public MuteUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -95,5 +103,50 @@ public final class MuteUser extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MuteUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer mute_time;
+    
+    public String name_show;
+    
+    public String portrait;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(MuteUser param1MuteUser) {
+      super(param1MuteUser);
+      if (param1MuteUser == null)
+        return; 
+      this.user_id = param1MuteUser.user_id;
+      this.user_name = param1MuteUser.user_name;
+      this.mute_time = param1MuteUser.mute_time;
+      this.portrait = param1MuteUser.portrait;
+      this.name_show = param1MuteUser.name_show;
+    }
+    
+    public MuteUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MuteUser)interceptResult.objValue; 
+      } 
+      return new MuteUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GodCard extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BUTTON_TEXT = "";
   
   public static final String DEFAULT_BUTTON_URL = "";
@@ -24,6 +26,8 @@ public final class GodCard extends Message {
   public static final String DEFAULT_TIME_EX = "";
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String button_text;
@@ -50,7 +54,7 @@ public final class GodCard extends Message {
   public final String user_name;
   
   public GodCard(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.user_name;
@@ -113,6 +117,10 @@ public final class GodCard extends Message {
     } 
   }
   
+  public GodCard(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -127,5 +135,59 @@ public final class GodCard extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GodCard> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String button_text;
+    
+    public String button_url;
+    
+    public String pic_url;
+    
+    public String portrait;
+    
+    public Integer show_floor;
+    
+    public String text;
+    
+    public String time_ex;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(GodCard param1GodCard) {
+      super(param1GodCard);
+      if (param1GodCard == null)
+        return; 
+      this.user_name = param1GodCard.user_name;
+      this.portrait = param1GodCard.portrait;
+      this.time_ex = param1GodCard.time_ex;
+      this.text = param1GodCard.text;
+      this.pic_url = param1GodCard.pic_url;
+      this.button_text = param1GodCard.button_text;
+      this.button_url = param1GodCard.button_url;
+      this.show_floor = param1GodCard.show_floor;
+    }
+    
+    public GodCard build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GodCard)interceptResult.objValue; 
+      } 
+      return new GodCard(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

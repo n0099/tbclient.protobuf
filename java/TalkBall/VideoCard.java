@@ -1,11 +1,14 @@
-package TalkBall;
+package tbclient.TalkBall;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VideoCard extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_COVER_IMAGE = "";
   
   public static final String DEFAULT_THREAD_ID = "";
@@ -17,6 +20,8 @@ public final class VideoCard extends Message {
   public static final String DEFAULT_TOPIC_TITLE = "";
   
   public static final String DEFAULT_VIDEO_DURATION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String cover_image;
@@ -37,7 +42,7 @@ public final class VideoCard extends Message {
   public final String video_duration;
   
   public VideoCard(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.title;
@@ -84,5 +89,57 @@ public final class VideoCard extends Message {
       this.thread_id = ((Builder)str).thread_id;
       this.thread_url = ((Builder)str).thread_url;
     } 
+  }
+  
+  public VideoCard(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VideoCard> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String cover_image;
+    
+    public String thread_id;
+    
+    public String thread_url;
+    
+    public String title;
+    
+    public String topic_title;
+    
+    public String video_duration;
+    
+    public Builder() {}
+    
+    public Builder(VideoCard param1VideoCard) {
+      super(param1VideoCard);
+      if (param1VideoCard == null)
+        return; 
+      this.title = param1VideoCard.title;
+      this.cover_image = param1VideoCard.cover_image;
+      this.video_duration = param1VideoCard.video_duration;
+      this.topic_title = param1VideoCard.topic_title;
+      this.thread_id = param1VideoCard.thread_id;
+      this.thread_url = param1VideoCard.thread_url;
+    }
+    
+    public VideoCard build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VideoCard)interceptResult.objValue; 
+      } 
+      return new VideoCard(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

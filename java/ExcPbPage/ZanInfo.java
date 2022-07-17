@@ -1,4 +1,4 @@
-package ExcPbPage;
+package tbclient.ExcPbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ZanInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Boolean DEFAULT_IS_ZAN;
   
   public static final Long DEFAULT_ZANSUM = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.BOOL)
   public final Boolean is_zan;
@@ -24,7 +28,7 @@ public final class ZanInfo extends Message {
   }
   
   public ZanInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Boolean bool;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.zansum;
@@ -45,6 +49,10 @@ public final class ZanInfo extends Message {
     } 
   }
   
+  public ZanInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -59,5 +67,41 @@ public final class ZanInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ZanInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Boolean is_zan;
+    
+    public Long zansum;
+    
+    public Builder() {}
+    
+    public Builder(ZanInfo param1ZanInfo) {
+      super(param1ZanInfo);
+      if (param1ZanInfo == null)
+        return; 
+      this.zansum = param1ZanInfo.zansum;
+      this.is_zan = param1ZanInfo.is_zan;
+    }
+    
+    public ZanInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ZanInfo)interceptResult.objValue; 
+      } 
+      return new ZanInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

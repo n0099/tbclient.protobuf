@@ -1,4 +1,4 @@
-package SearchSug;
+package tbclient.SearchSug;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -16,6 +16,8 @@ import tbclient.SugLiveInfo;
 import tbclient.SugRankingInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ForumInfo> DEFAULT_FORUM_LIST;
   
   public static final Integer DEFAULT_FORUM_LOC = Integer.valueOf(0);
@@ -23,6 +25,8 @@ public final class DataRes extends Message {
   public static final List<String> DEFAULT_LIST = Collections.emptyList();
   
   public static final List<SugLiveInfo> DEFAULT_LIVE_CARD;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final RecommendForumInfo forum_card;
@@ -51,7 +55,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Integer integer = paramBuilder.forum_loc;
       if (integer == null) {
@@ -59,21 +63,21 @@ public final class DataRes extends Message {
       } else {
         this.forum_loc = integer;
       } 
-      List list = paramBuilder.list;
-      if (list == null) {
+      List<String> list2 = paramBuilder.list;
+      if (list2 == null) {
         this.list = DEFAULT_LIST;
       } else {
-        this.list = Message.immutableCopyOf(list);
+        this.list = Message.immutableCopyOf(list2);
       } 
-      list = paramBuilder.forum_list;
-      if (list == null) {
+      List<ForumInfo> list1 = paramBuilder.forum_list;
+      if (list1 == null) {
         this.forum_list = DEFAULT_FORUM_LIST;
       } else {
-        this.forum_list = Message.immutableCopyOf(list);
+        this.forum_list = Message.immutableCopyOf(list1);
       } 
       this.forum_card = paramBuilder.forum_card;
       this.item_card = paramBuilder.item_card;
-      list = paramBuilder.live_card;
+      List<SugLiveInfo> list = paramBuilder.live_card;
       if (list == null) {
         this.live_card = DEFAULT_LIVE_CARD;
       } else {
@@ -91,6 +95,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -105,5 +113,56 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public RecommendForumInfo forum_card;
+    
+    public List<ForumInfo> forum_list;
+    
+    public Integer forum_loc;
+    
+    public Item item_card;
+    
+    public List<String> list;
+    
+    public List<SugLiveInfo> live_card;
+    
+    public SugRankingInfo ranking_card;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.forum_loc = param1DataRes.forum_loc;
+      this.list = Message.copyOf(param1DataRes.list);
+      this.forum_list = Message.copyOf(param1DataRes.forum_list);
+      this.forum_card = param1DataRes.forum_card;
+      this.item_card = param1DataRes.item_card;
+      this.live_card = Message.copyOf(param1DataRes.live_card);
+      this.ranking_card = param1DataRes.ranking_card;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

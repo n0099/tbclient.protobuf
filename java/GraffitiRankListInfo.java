@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GraffitiRankItem;
-import tbclient.GraffitiRankListInfo;
-import tbclient.User;
 
 public final class GraffitiRankListInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<User> DEFAULT_CONSENT_LIST;
   
   public static final Integer DEFAULT_HAS_MORE;
@@ -27,6 +28,8 @@ public final class GraffitiRankListInfo extends Message {
   public static final Long DEFAULT_TID;
   
   public static final Integer DEFAULT_TOTAL;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 8)
   public final List<User> consent_list;
@@ -78,8 +81,8 @@ public final class GraffitiRankListInfo extends Message {
   }
   
   public GraffitiRankListInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<User> list;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.has_more;
       if (integer2 == null) {
@@ -93,7 +96,7 @@ public final class GraffitiRankListInfo extends Message {
       } else {
         this.total = integer2;
       } 
-      List list1 = paramBuilder.list;
+      List<GraffitiRankItem> list1 = paramBuilder.list;
       if (list1 == null) {
         this.list = DEFAULT_LIST;
       } else {
@@ -139,5 +142,63 @@ public final class GraffitiRankListInfo extends Message {
       this.tid = ((Builder)list).tid;
       this.consent_list = Message.immutableCopyOf(((Builder)list).consent_list);
     } 
+  }
+  
+  public GraffitiRankListInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GraffitiRankListInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<User> consent_list;
+    
+    public Integer has_more;
+    
+    public Integer has_state;
+    
+    public List<GraffitiRankItem> list;
+    
+    public Integer quick_list_count;
+    
+    public Integer show_list_count;
+    
+    public Long tid;
+    
+    public Integer total;
+    
+    public Builder() {}
+    
+    public Builder(GraffitiRankListInfo param1GraffitiRankListInfo) {
+      super(param1GraffitiRankListInfo);
+      if (param1GraffitiRankListInfo == null)
+        return; 
+      this.has_more = param1GraffitiRankListInfo.has_more;
+      this.total = param1GraffitiRankListInfo.total;
+      this.list = Message.copyOf(param1GraffitiRankListInfo.list);
+      this.show_list_count = param1GraffitiRankListInfo.show_list_count;
+      this.quick_list_count = param1GraffitiRankListInfo.quick_list_count;
+      this.has_state = param1GraffitiRankListInfo.has_state;
+      this.tid = param1GraffitiRankListInfo.tid;
+      this.consent_list = Message.copyOf(param1GraffitiRankListInfo.consent_list);
+    }
+    
+    public GraffitiRankListInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GraffitiRankListInfo)interceptResult.objValue; 
+      } 
+      return new GraffitiRankListInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

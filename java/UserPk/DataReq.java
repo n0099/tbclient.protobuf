@@ -1,4 +1,4 @@
-package UserPk;
+package tbclient.UserPk;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CLICK_TYPE;
   
   public static final Long DEFAULT_PK_ID;
@@ -21,6 +23,8 @@ public final class DataReq extends Message {
   public static final Long DEFAULT_TOPIC_ID;
   
   public static final Long DEFAULT_USER_PK_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer click_type;
@@ -68,7 +72,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -117,5 +121,60 @@ public final class DataReq extends Message {
       this.pk_type = ((Builder)long_).pk_type;
       this.user_pk_id = ((Builder)long_).user_pk_id;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer click_type;
+    
+    public CommonReq common;
+    
+    public Long pk_id;
+    
+    public Integer pk_index;
+    
+    public Integer pk_type;
+    
+    public Long topic_id;
+    
+    public Long user_pk_id;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.pk_id = param1DataReq.pk_id;
+      this.topic_id = param1DataReq.topic_id;
+      this.pk_index = param1DataReq.pk_index;
+      this.click_type = param1DataReq.click_type;
+      this.pk_type = param1DataReq.pk_type;
+      this.user_pk_id = param1DataReq.user_pk_id;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

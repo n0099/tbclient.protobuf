@@ -1,4 +1,4 @@
-package ReSign;
+package tbclient.ReSign;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SignInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_SIGN_IN = Integer.valueOf(0);
   
   public static final String DEFAULT_SIGN_DATE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer is_sign_in;
@@ -20,7 +24,7 @@ public final class SignInfo extends Message {
   public final String sign_date;
   
   public SignInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.sign_date;
@@ -41,6 +45,10 @@ public final class SignInfo extends Message {
     } 
   }
   
+  public SignInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class SignInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SignInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_sign_in;
+    
+    public String sign_date;
+    
+    public Builder() {}
+    
+    public Builder(SignInfo param1SignInfo) {
+      super(param1SignInfo);
+      if (param1SignInfo == null)
+        return; 
+      this.sign_date = param1SignInfo.sign_date;
+      this.is_sign_in = param1SignInfo.is_sign_in;
+    }
+    
+    public SignInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SignInfo)interceptResult.objValue; 
+      } 
+      return new SignInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

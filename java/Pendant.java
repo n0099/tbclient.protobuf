@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Pendant;
 
 public final class Pendant extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_IMG_URL = "";
   
   public static final Long DEFAULT_PROPS_ID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String img_url;
@@ -19,7 +24,7 @@ public final class Pendant extends Message {
   public final Long props_id;
   
   public Pendant(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.props_id;
@@ -40,6 +45,10 @@ public final class Pendant extends Message {
     } 
   }
   
+  public Pendant(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class Pendant extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Pendant> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String img_url;
+    
+    public Long props_id;
+    
+    public Builder() {}
+    
+    public Builder(Pendant param1Pendant) {
+      super(param1Pendant);
+      if (param1Pendant == null)
+        return; 
+      this.props_id = param1Pendant.props_id;
+      this.img_url = param1Pendant.img_url;
+    }
+    
+    public Pendant build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Pendant)interceptResult.objValue; 
+      } 
+      return new Pendant(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

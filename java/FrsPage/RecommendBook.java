@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class RecommendBook extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BOOK_ID = "";
   
   public static final List<String> DEFAULT_DESC;
@@ -22,6 +24,8 @@ public final class RecommendBook extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String book_id;
@@ -46,7 +50,7 @@ public final class RecommendBook extends Message {
   }
   
   public RecommendBook(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -73,7 +77,7 @@ public final class RecommendBook extends Message {
       } else {
         this.image = str1;
       } 
-      List list = paramBuilder.desc;
+      List<String> list = paramBuilder.desc;
       if (list == null) {
         this.desc = DEFAULT_DESC;
       } else {
@@ -95,6 +99,10 @@ public final class RecommendBook extends Message {
     } 
   }
   
+  public RecommendBook(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -109,5 +117,53 @@ public final class RecommendBook extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendBook> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String book_id;
+    
+    public List<String> desc;
+    
+    public String image;
+    
+    public String link_url;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(RecommendBook param1RecommendBook) {
+      super(param1RecommendBook);
+      if (param1RecommendBook == null)
+        return; 
+      this.type = param1RecommendBook.type;
+      this.book_id = param1RecommendBook.book_id;
+      this.title = param1RecommendBook.title;
+      this.image = param1RecommendBook.image;
+      this.desc = Message.copyOf(param1RecommendBook.desc);
+      this.link_url = param1RecommendBook.link_url;
+    }
+    
+    public RecommendBook build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendBook)interceptResult.objValue; 
+      } 
+      return new RecommendBook(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

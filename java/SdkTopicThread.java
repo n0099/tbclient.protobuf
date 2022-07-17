@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SdkTopicThread;
 
 public final class SdkTopicThread extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_NEED_TOPIC;
   
   public static final String DEFAULT_PIC_URL = "";
@@ -19,6 +22,8 @@ public final class SdkTopicThread extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Long DEFAULT_ZAN_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.INT32)
   public final Integer need_topic;
@@ -60,7 +65,7 @@ public final class SdkTopicThread extends Message {
   }
   
   public SdkTopicThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.pic_url;
@@ -107,5 +112,57 @@ public final class SdkTopicThread extends Message {
       this.tid = ((Builder)integer).tid;
       this.need_topic = ((Builder)integer).need_topic;
     } 
+  }
+  
+  public SdkTopicThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<SdkTopicThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer need_topic;
+    
+    public String pic_url;
+    
+    public Long post_num;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public Long zan_num;
+    
+    public Builder() {}
+    
+    public Builder(SdkTopicThread param1SdkTopicThread) {
+      super(param1SdkTopicThread);
+      if (param1SdkTopicThread == null)
+        return; 
+      this.pic_url = param1SdkTopicThread.pic_url;
+      this.title = param1SdkTopicThread.title;
+      this.post_num = param1SdkTopicThread.post_num;
+      this.zan_num = param1SdkTopicThread.zan_num;
+      this.tid = param1SdkTopicThread.tid;
+      this.need_topic = param1SdkTopicThread.need_topic;
+    }
+    
+    public SdkTopicThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SdkTopicThread)interceptResult.objValue; 
+      } 
+      return new SdkTopicThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

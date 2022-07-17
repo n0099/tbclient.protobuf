@@ -1,4 +1,4 @@
-package GetOfficialSwitch;
+package tbclient.GetOfficialSwitch;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class OfficialList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_ON;
   
   public static final String DEFAULT_NAME = "";
   
   public static final Long DEFAULT_UID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer is_on;
@@ -29,7 +33,7 @@ public final class OfficialList extends Message {
   }
   
   public OfficialList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.uid;
@@ -57,6 +61,10 @@ public final class OfficialList extends Message {
     } 
   }
   
+  public OfficialList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -71,5 +79,44 @@ public final class OfficialList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<OfficialList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_on;
+    
+    public String name;
+    
+    public Long uid;
+    
+    public Builder() {}
+    
+    public Builder(OfficialList param1OfficialList) {
+      super(param1OfficialList);
+      if (param1OfficialList == null)
+        return; 
+      this.uid = param1OfficialList.uid;
+      this.name = param1OfficialList.name;
+      this.is_on = param1OfficialList.is_on;
+    }
+    
+    public OfficialList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (OfficialList)interceptResult.objValue; 
+      } 
+      return new OfficialList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

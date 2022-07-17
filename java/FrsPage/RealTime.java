@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class RealTime extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ICON = "";
   
   public static final Long DEFAULT_TASK_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String icon;
@@ -25,7 +29,7 @@ public final class RealTime extends Message {
   public final String url;
   
   public RealTime(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.task_id;
@@ -53,6 +57,10 @@ public final class RealTime extends Message {
     } 
   }
   
+  public RealTime(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -67,5 +75,44 @@ public final class RealTime extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RealTime> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String icon;
+    
+    public Long task_id;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(RealTime param1RealTime) {
+      super(param1RealTime);
+      if (param1RealTime == null)
+        return; 
+      this.task_id = param1RealTime.task_id;
+      this.icon = param1RealTime.icon;
+      this.url = param1RealTime.url;
+    }
+    
+    public RealTime build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RealTime)interceptResult.objValue; 
+      } 
+      return new RealTime(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

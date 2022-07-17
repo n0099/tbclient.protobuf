@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.NovelFansInfo;
 
 public final class NovelFansInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_LEVEL = Integer.valueOf(0);
   
   public static final String DEFAULT_LEVEL_ICON = "";
   
   public static final String DEFAULT_LEVEL_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer level;
@@ -24,7 +29,7 @@ public final class NovelFansInfo extends Message {
   public final String level_name;
   
   public NovelFansInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.level;
@@ -52,6 +57,10 @@ public final class NovelFansInfo extends Message {
     } 
   }
   
+  public NovelFansInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class NovelFansInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<NovelFansInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer level;
+    
+    public String level_icon;
+    
+    public String level_name;
+    
+    public Builder() {}
+    
+    public Builder(NovelFansInfo param1NovelFansInfo) {
+      super(param1NovelFansInfo);
+      if (param1NovelFansInfo == null)
+        return; 
+      this.level = param1NovelFansInfo.level;
+      this.level_name = param1NovelFansInfo.level_name;
+      this.level_icon = param1NovelFansInfo.level_icon;
+    }
+    
+    public NovelFansInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NovelFansInfo)interceptResult.objValue; 
+      } 
+      return new NovelFansInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

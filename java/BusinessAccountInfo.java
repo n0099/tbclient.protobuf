@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BusinessAccountInfo;
 
 public final class BusinessAccountInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BUSINESS_NAME = "";
   
   public static final String DEFAULT_IDENTIFI_EXPLAIN = "";
@@ -15,6 +18,8 @@ public final class BusinessAccountInfo extends Message {
   public static final Integer DEFAULT_IS_BUSINESS_ACCOUNT;
   
   public static final Integer DEFAULT_IS_FORUM_BUSINESS_ACCOUNT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String business_name;
@@ -48,7 +53,7 @@ public final class BusinessAccountInfo extends Message {
   }
   
   public BusinessAccountInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.is_business_account;
@@ -81,5 +86,51 @@ public final class BusinessAccountInfo extends Message {
       this.business_name = ((Builder)str).business_name;
       this.identifi_explain = ((Builder)str).identifi_explain;
     } 
+  }
+  
+  public BusinessAccountInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BusinessAccountInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String business_name;
+    
+    public String identifi_explain;
+    
+    public Integer is_business_account;
+    
+    public Integer is_forum_business_account;
+    
+    public Builder() {}
+    
+    public Builder(BusinessAccountInfo param1BusinessAccountInfo) {
+      super(param1BusinessAccountInfo);
+      if (param1BusinessAccountInfo == null)
+        return; 
+      this.is_business_account = param1BusinessAccountInfo.is_business_account;
+      this.is_forum_business_account = param1BusinessAccountInfo.is_forum_business_account;
+      this.business_name = param1BusinessAccountInfo.business_name;
+      this.identifi_explain = param1BusinessAccountInfo.identifi_explain;
+    }
+    
+    public BusinessAccountInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BusinessAccountInfo)interceptResult.objValue; 
+      } 
+      return new BusinessAccountInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

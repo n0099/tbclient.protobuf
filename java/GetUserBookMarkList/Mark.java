@@ -1,4 +1,4 @@
-package GetUserBookMarkList;
+package tbclient.GetUserBookMarkList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Mark extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BOOK_ID = "";
   
   public static final Long DEFAULT_CHAPTER_ID;
@@ -26,6 +28,8 @@ public final class Mark extends Message {
   public static final Integer DEFAULT_UPDATE_TIME;
   
   public static final Integer DEFAULT_WORD_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String book_id;
@@ -79,7 +83,7 @@ public final class Mark extends Message {
   }
   
   public Mark(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str3 = paramBuilder.book_id;
@@ -147,5 +151,66 @@ public final class Mark extends Message {
       this.content = ((Builder)integer).content;
       this.update_time = ((Builder)integer).update_time;
     } 
+  }
+  
+  public Mark(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Mark> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String book_id;
+    
+    public Long chapter_id;
+    
+    public String chapter_title;
+    
+    public String content;
+    
+    public Integer page_id;
+    
+    public Integer paragraph_id;
+    
+    public Long position;
+    
+    public Integer update_time;
+    
+    public Integer word_id;
+    
+    public Builder() {}
+    
+    public Builder(Mark param1Mark) {
+      super(param1Mark);
+      if (param1Mark == null)
+        return; 
+      this.book_id = param1Mark.book_id;
+      this.chapter_id = param1Mark.chapter_id;
+      this.chapter_title = param1Mark.chapter_title;
+      this.page_id = param1Mark.page_id;
+      this.paragraph_id = param1Mark.paragraph_id;
+      this.word_id = param1Mark.word_id;
+      this.position = param1Mark.position;
+      this.content = param1Mark.content;
+      this.update_time = param1Mark.update_time;
+    }
+    
+    public Mark build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Mark)interceptResult.objValue; 
+      } 
+      return new Mark(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

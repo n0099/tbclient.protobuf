@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,15 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BawuRoleInfoPub;
-import tbclient.MemberGroupInfo;
 
 public final class MemberGroupInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<BawuRoleInfoPub> DEFAULT_MEMBER_GROUP_LIST;
   
   public static final Integer DEFAULT_MEMBER_GROUP_NUM = Integer.valueOf(0);
   
   public static final String DEFAULT_MEMBER_GROUP_TYPE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<BawuRoleInfoPub> member_group_list;
@@ -31,8 +35,8 @@ public final class MemberGroupInfo extends Message {
   }
   
   public MemberGroupInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<BawuRoleInfoPub> list;
     if (paramBoolean == true) {
       String str = paramBuilder.member_group_type;
       if (str == null) {
@@ -59,6 +63,10 @@ public final class MemberGroupInfo extends Message {
     } 
   }
   
+  public MemberGroupInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -73,5 +81,44 @@ public final class MemberGroupInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MemberGroupInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<BawuRoleInfoPub> member_group_list;
+    
+    public Integer member_group_num;
+    
+    public String member_group_type;
+    
+    public Builder() {}
+    
+    public Builder(MemberGroupInfo param1MemberGroupInfo) {
+      super(param1MemberGroupInfo);
+      if (param1MemberGroupInfo == null)
+        return; 
+      this.member_group_type = param1MemberGroupInfo.member_group_type;
+      this.member_group_num = param1MemberGroupInfo.member_group_num;
+      this.member_group_list = Message.copyOf(param1MemberGroupInfo.member_group_list);
+    }
+    
+    public MemberGroupInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MemberGroupInfo)interceptResult.objValue; 
+      } 
+      return new MemberGroupInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

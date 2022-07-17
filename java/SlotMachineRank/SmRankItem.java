@@ -1,4 +1,4 @@
-package SlotMachineRank;
+package tbclient.SlotMachineRank;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SmRankItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Long DEFAULT_USER_ID;
@@ -18,6 +20,8 @@ public final class SmRankItem extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final Integer DEFAULT_WIN;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String portrait;
@@ -55,7 +59,7 @@ public final class SmRankItem extends Message {
   }
   
   public SmRankItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str2 = paramBuilder.portrait;
@@ -95,5 +99,54 @@ public final class SmRankItem extends Message {
       this.win = ((Builder)long_).win;
       this.user_id = ((Builder)long_).user_id;
     } 
+  }
+  
+  public SmRankItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<SmRankItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String portrait;
+    
+    public Long user_id;
+    
+    public Integer user_level;
+    
+    public String user_name;
+    
+    public Integer win;
+    
+    public Builder() {}
+    
+    public Builder(SmRankItem param1SmRankItem) {
+      super(param1SmRankItem);
+      if (param1SmRankItem == null)
+        return; 
+      this.portrait = param1SmRankItem.portrait;
+      this.user_level = param1SmRankItem.user_level;
+      this.user_name = param1SmRankItem.user_name;
+      this.win = param1SmRankItem.win;
+      this.user_id = param1SmRankItem.user_id;
+    }
+    
+    public SmRankItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SmRankItem)interceptResult.objValue; 
+      } 
+      return new SmRankItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

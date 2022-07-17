@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,10 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPage.BusinessPromotCommentList;
 
 public final class BusinessPromot extends Message {
+  public static Interceptable $ic;
+  
   public static final List<BusinessPromotCommentList> DEFAULT_COMMENT_LIST;
+  
+  public static final String DEFAULT_COVER_URL = "";
   
   public static final String DEFAULT_DOWNLOAD_APPID = "";
   
@@ -66,8 +69,15 @@ public final class BusinessPromot extends Message {
   
   public static final String DEFAULT_URL = "";
   
+  public static final String DEFAULT_VIDEO_URL = "";
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(label = Message.Label.REPEATED, tag = 8)
   public final List<BusinessPromotCommentList> comment_list;
+  
+  @ProtoField(tag = 28, type = Message.Datatype.STRING)
+  public final String cover_url;
   
   @ProtoField(tag = 27, type = Message.Datatype.STRING)
   public final String download_appid;
@@ -147,6 +157,9 @@ public final class BusinessPromot extends Message {
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String url;
   
+  @ProtoField(tag = 29, type = Message.Datatype.STRING)
+  public final String video_url;
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -175,7 +188,7 @@ public final class BusinessPromot extends Message {
   }
   
   public BusinessPromot(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str5 = paramBuilder.title;
@@ -220,11 +233,11 @@ public final class BusinessPromot extends Message {
       } else {
         this.join_num = integer2;
       } 
-      List list2 = paramBuilder.comment_list;
-      if (list2 == null) {
+      List<BusinessPromotCommentList> list1 = paramBuilder.comment_list;
+      if (list1 == null) {
         this.comment_list = DEFAULT_COMMENT_LIST;
       } else {
-        this.comment_list = Message.immutableCopyOf(list2);
+        this.comment_list = Message.immutableCopyOf(list1);
       } 
       Long long_ = paramBuilder.id;
       if (long_ == null) {
@@ -244,11 +257,11 @@ public final class BusinessPromot extends Message {
       } else {
         this.schema = str3;
       } 
-      List list1 = paramBuilder.third_statistics_url;
-      if (list1 == null) {
+      List<String> list = paramBuilder.third_statistics_url;
+      if (list == null) {
         this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
       } else {
-        this.third_statistics_url = Message.immutableCopyOf(list1);
+        this.third_statistics_url = Message.immutableCopyOf(list);
       } 
       Boolean bool2 = paramBuilder.is_allow_shake;
       if (bool2 == null) {
@@ -334,11 +347,23 @@ public final class BusinessPromot extends Message {
       } else {
         this.download_package_name = str1;
       } 
-      str = paramBuilder.download_appid;
-      if (str == null) {
+      str1 = paramBuilder.download_appid;
+      if (str1 == null) {
         this.download_appid = "";
       } else {
-        this.download_appid = str;
+        this.download_appid = str1;
+      } 
+      str1 = paramBuilder.cover_url;
+      if (str1 == null) {
+        this.cover_url = "";
+      } else {
+        this.cover_url = str1;
+      } 
+      str = paramBuilder.video_url;
+      if (str == null) {
+        this.video_url = "";
+      } else {
+        this.video_url = str;
       } 
     } else {
       this.title = ((Builder)str).title;
@@ -368,6 +393,129 @@ public final class BusinessPromot extends Message {
       this.download_item_id = ((Builder)str).download_item_id;
       this.download_package_name = ((Builder)str).download_package_name;
       this.download_appid = ((Builder)str).download_appid;
+      this.cover_url = ((Builder)str).cover_url;
+      this.video_url = ((Builder)str).video_url;
     } 
+  }
+  
+  public BusinessPromot(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BusinessPromot> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<BusinessPromotCommentList> comment_list;
+    
+    public String cover_url;
+    
+    public String download_appid;
+    
+    public String download_appname;
+    
+    public String download_developer;
+    
+    public String download_img;
+    
+    public String download_item_id;
+    
+    public String download_package_name;
+    
+    public String download_package_size;
+    
+    public String download_privacy_policy;
+    
+    public String download_url;
+    
+    public String download_user_power;
+    
+    public String download_version;
+    
+    public Long id;
+    
+    public String img;
+    
+    public String img_popup;
+    
+    public Boolean is_ad;
+    
+    public Boolean is_allow_shake;
+    
+    public Boolean is_download;
+    
+    public Integer join_num;
+    
+    public String package_name;
+    
+    public String schema;
+    
+    public List<String> third_statistics_url;
+    
+    public String thread_id;
+    
+    public Integer thread_type;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public String url;
+    
+    public String video_url;
+    
+    public Builder() {}
+    
+    public Builder(BusinessPromot param1BusinessPromot) {
+      super(param1BusinessPromot);
+      if (param1BusinessPromot == null)
+        return; 
+      this.title = param1BusinessPromot.title;
+      this.img = param1BusinessPromot.img;
+      this.img_popup = param1BusinessPromot.img_popup;
+      this.type = param1BusinessPromot.type;
+      this.thread_id = param1BusinessPromot.thread_id;
+      this.url = param1BusinessPromot.url;
+      this.join_num = param1BusinessPromot.join_num;
+      this.comment_list = Message.copyOf(param1BusinessPromot.comment_list);
+      this.id = param1BusinessPromot.id;
+      this.thread_type = param1BusinessPromot.thread_type;
+      this.schema = param1BusinessPromot.schema;
+      this.third_statistics_url = Message.copyOf(param1BusinessPromot.third_statistics_url);
+      this.is_allow_shake = param1BusinessPromot.is_allow_shake;
+      this.is_ad = param1BusinessPromot.is_ad;
+      this.package_name = param1BusinessPromot.package_name;
+      this.download_appname = param1BusinessPromot.download_appname;
+      this.download_developer = param1BusinessPromot.download_developer;
+      this.download_package_size = param1BusinessPromot.download_package_size;
+      this.download_privacy_policy = param1BusinessPromot.download_privacy_policy;
+      this.download_url = param1BusinessPromot.download_url;
+      this.download_img = param1BusinessPromot.download_img;
+      this.download_version = param1BusinessPromot.download_version;
+      this.download_user_power = param1BusinessPromot.download_user_power;
+      this.is_download = param1BusinessPromot.is_download;
+      this.download_item_id = param1BusinessPromot.download_item_id;
+      this.download_package_name = param1BusinessPromot.download_package_name;
+      this.download_appid = param1BusinessPromot.download_appid;
+      this.cover_url = param1BusinessPromot.cover_url;
+      this.video_url = param1BusinessPromot.video_url;
+    }
+    
+    public BusinessPromot build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BusinessPromot)interceptResult.objValue; 
+      } 
+      return new BusinessPromot(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

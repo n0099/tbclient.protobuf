@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ActivityInfo;
 
 public final class ActivityInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ACTIVITY_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_BACK_PIC = "";
@@ -21,6 +24,8 @@ public final class ActivityInfo extends Message {
   public static final String DEFAULT_SUBPAGE_LINK = "";
   
   public static final String DEFAULT_SUB_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long activity_id;
@@ -50,7 +55,7 @@ public final class ActivityInfo extends Message {
   }
   
   public ActivityInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.activity_id;
@@ -106,6 +111,10 @@ public final class ActivityInfo extends Message {
     } 
   }
   
+  public ActivityInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -120,5 +129,56 @@ public final class ActivityInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ActivityInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long activity_id;
+    
+    public String back_pic;
+    
+    public Integer back_pic_height;
+    
+    public Integer back_pic_width;
+    
+    public String main_title;
+    
+    public String sub_title;
+    
+    public String subpage_link;
+    
+    public Builder() {}
+    
+    public Builder(ActivityInfo param1ActivityInfo) {
+      super(param1ActivityInfo);
+      if (param1ActivityInfo == null)
+        return; 
+      this.activity_id = param1ActivityInfo.activity_id;
+      this.main_title = param1ActivityInfo.main_title;
+      this.sub_title = param1ActivityInfo.sub_title;
+      this.back_pic = param1ActivityInfo.back_pic;
+      this.back_pic_width = param1ActivityInfo.back_pic_width;
+      this.back_pic_height = param1ActivityInfo.back_pic_height;
+      this.subpage_link = param1ActivityInfo.subpage_link;
+    }
+    
+    public ActivityInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActivityInfo)interceptResult.objValue; 
+      } 
+      return new ActivityInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

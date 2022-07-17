@@ -1,4 +1,4 @@
-package MFollow;
+package tbclient.MFollow;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MFollowResult extends Message {
+  public static Interceptable $ic;
+  
   public static final Boolean DEFAULT_IS_SUCCESS = Boolean.FALSE;
   
   public static final String DEFAULT_MSG = "";
   
   public static final String DEFAULT_PORTRAIT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.BOOL)
   public final Boolean is_success;
@@ -25,7 +29,7 @@ public final class MFollowResult extends Message {
   public final String portrait;
   
   public MFollowResult(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.portrait;
@@ -53,6 +57,10 @@ public final class MFollowResult extends Message {
     } 
   }
   
+  public MFollowResult(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -67,5 +75,44 @@ public final class MFollowResult extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MFollowResult> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Boolean is_success;
+    
+    public String msg;
+    
+    public String portrait;
+    
+    public Builder() {}
+    
+    public Builder(MFollowResult param1MFollowResult) {
+      super(param1MFollowResult);
+      if (param1MFollowResult == null)
+        return; 
+      this.portrait = param1MFollowResult.portrait;
+      this.is_success = param1MFollowResult.is_success;
+      this.msg = param1MFollowResult.msg;
+    }
+    
+    public MFollowResult build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MFollowResult)interceptResult.objValue; 
+      } 
+      return new MFollowResult(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

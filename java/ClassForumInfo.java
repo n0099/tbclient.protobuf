@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ClassForumInfo;
-import tbclient.RecommendForumInfo;
 
 public final class ClassForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CLASS_ICON = "";
   
   public static final Integer DEFAULT_CLASS_ID;
@@ -18,6 +20,8 @@ public final class ClassForumInfo extends Message {
   public static final String DEFAULT_CLASS_NAME = "";
   
   public static final List<RecommendForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String class_icon;
@@ -36,10 +40,10 @@ public final class ClassForumInfo extends Message {
   }
   
   public ClassForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list = paramBuilder.forum_info;
+      List<RecommendForumInfo> list = paramBuilder.forum_info;
       if (list == null) {
         this.forum_info = DEFAULT_FORUM_INFO;
       } else {
@@ -71,6 +75,10 @@ public final class ClassForumInfo extends Message {
     } 
   }
   
+  public ClassForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -85,5 +93,47 @@ public final class ClassForumInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ClassForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String class_icon;
+    
+    public Integer class_id;
+    
+    public String class_name;
+    
+    public List<RecommendForumInfo> forum_info;
+    
+    public Builder() {}
+    
+    public Builder(ClassForumInfo param1ClassForumInfo) {
+      super(param1ClassForumInfo);
+      if (param1ClassForumInfo == null)
+        return; 
+      this.forum_info = Message.copyOf(param1ClassForumInfo.forum_info);
+      this.class_id = param1ClassForumInfo.class_id;
+      this.class_name = param1ClassForumInfo.class_name;
+      this.class_icon = param1ClassForumInfo.class_icon;
+    }
+    
+    public ClassForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ClassForumInfo)interceptResult.objValue; 
+      } 
+      return new ClassForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

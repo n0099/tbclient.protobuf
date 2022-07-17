@@ -1,4 +1,4 @@
-package RelateRecThread;
+package tbclient.RelateRecThread;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,9 +12,13 @@ import java.util.List;
 import tbclient.ThreadInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ThreadInfo> DEFAULT_RECOM_THREAD_INFO = Collections.emptyList();
   
   public static final Integer DEFAULT_REC_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer rec_type;
@@ -23,10 +27,10 @@ public final class DataRes extends Message {
   public final List<ThreadInfo> recom_thread_info;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
-      List list = paramBuilder.recom_thread_info;
+      List<ThreadInfo> list = paramBuilder.recom_thread_info;
       if (list == null) {
         this.recom_thread_info = DEFAULT_RECOM_THREAD_INFO;
       } else {
@@ -44,6 +48,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +66,41 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer rec_type;
+    
+    public List<ThreadInfo> recom_thread_info;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.recom_thread_info = Message.copyOf(param1DataRes.recom_thread_info);
+      this.rec_type = param1DataRes.rec_type;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

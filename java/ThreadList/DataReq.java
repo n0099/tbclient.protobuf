@@ -1,4 +1,4 @@
-package ThreadList;
+package tbclient.ThreadList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,9 +10,10 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-import tbclient.ThreadList.AdParam;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_BEAR_CONTEXT = "";
   
   public static final String DEFAULT_AD_BEAR_SID = "";
@@ -54,6 +55,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_THREAD_IDS = "";
   
   public static final Long DEFAULT_USER_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 22, type = Message.Datatype.STRING)
   public final String ad_bear_context;
@@ -163,7 +166,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Double double_;
     if (paramBoolean == true) {
       String str5 = paramBuilder.thread_ids;
@@ -323,5 +326,114 @@ public final class DataReq extends Message {
       this.ad_bear_sid = ((Builder)double_).ad_bear_sid;
       this.ad_bear_sid_price = ((Builder)double_).ad_bear_sid_price;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_bear_context;
+    
+    public String ad_bear_sid;
+    
+    public Double ad_bear_sid_price;
+    
+    public String ad_context_list;
+    
+    public String ad_ext_params;
+    
+    public AdParam ad_param;
+    
+    public AppPosInfo app_pos;
+    
+    public AppTransmitData app_transmit_data;
+    
+    public CommonReq common;
+    
+    public String da_idfa;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer has_ad_bear;
+    
+    public Long last_click_tid;
+    
+    public Integer need_abstract;
+    
+    public String platform;
+    
+    public Integer pn;
+    
+    public Integer q_type;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public Integer sort_type;
+    
+    public Integer st_type;
+    
+    public String thread_ids;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.thread_ids = param1DataReq.thread_ids;
+      this.forum_id = param1DataReq.forum_id;
+      this.need_abstract = param1DataReq.need_abstract;
+      this.st_type = param1DataReq.st_type;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.q_type = param1DataReq.q_type;
+      this.common = param1DataReq.common;
+      this.user_id = param1DataReq.user_id;
+      this.da_idfa = param1DataReq.da_idfa;
+      this.platform = param1DataReq.platform;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.pn = param1DataReq.pn;
+      this.forum_name = param1DataReq.forum_name;
+      this.last_click_tid = param1DataReq.last_click_tid;
+      this.sort_type = param1DataReq.sort_type;
+      this.app_pos = param1DataReq.app_pos;
+      this.ad_param = param1DataReq.ad_param;
+      this.ad_context_list = param1DataReq.ad_context_list;
+      this.ad_ext_params = param1DataReq.ad_ext_params;
+      this.app_transmit_data = param1DataReq.app_transmit_data;
+      this.ad_bear_context = param1DataReq.ad_bear_context;
+      this.has_ad_bear = param1DataReq.has_ad_bear;
+      this.ad_bear_sid = param1DataReq.ad_bear_sid;
+      this.ad_bear_sid_price = param1DataReq.ad_bear_sid_price;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

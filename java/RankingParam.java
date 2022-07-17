@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.RankingParam;
 
 public final class RankingParam extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_PN;
   
   public static final Integer DEFAULT_RANK_CODE;
@@ -19,6 +22,8 @@ public final class RankingParam extends Message {
   public static final String DEFAULT_SORT_TYPE = "";
   
   public static final Integer DEFAULT_TAB_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer pn;
@@ -61,7 +66,7 @@ public final class RankingParam extends Message {
   }
   
   public RankingParam(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.rank_type;
@@ -108,5 +113,57 @@ public final class RankingParam extends Message {
       this.pn = ((Builder)integer).pn;
       this.rn = ((Builder)integer).rn;
     } 
+  }
+  
+  public RankingParam(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RankingParam> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer pn;
+    
+    public Integer rank_code;
+    
+    public Integer rank_type;
+    
+    public Integer rn;
+    
+    public String sort_type;
+    
+    public Integer tab_id;
+    
+    public Builder() {}
+    
+    public Builder(RankingParam param1RankingParam) {
+      super(param1RankingParam);
+      if (param1RankingParam == null)
+        return; 
+      this.rank_type = param1RankingParam.rank_type;
+      this.rank_code = param1RankingParam.rank_code;
+      this.sort_type = param1RankingParam.sort_type;
+      this.tab_id = param1RankingParam.tab_id;
+      this.pn = param1RankingParam.pn;
+      this.rn = param1RankingParam.rn;
+    }
+    
+    public RankingParam build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RankingParam)interceptResult.objValue; 
+      } 
+      return new RankingParam(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

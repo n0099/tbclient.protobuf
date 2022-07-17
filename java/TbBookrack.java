@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BookInfo;
-import tbclient.TbBookrack;
 
 public final class TbBookrack extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BOOKTOWN = "";
   
   public static final List<BookInfo> DEFAULT_BOOK_LIST;
@@ -22,6 +24,8 @@ public final class TbBookrack extends Message {
   public static final String DEFAULT_TIP = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<BookInfo> book_list;
@@ -46,7 +50,7 @@ public final class TbBookrack extends Message {
   }
   
   public TbBookrack(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.booktown;
@@ -61,7 +65,7 @@ public final class TbBookrack extends Message {
       } else {
         this.num = integer;
       } 
-      List list = paramBuilder.book_list;
+      List<BookInfo> list = paramBuilder.book_list;
       if (list == null) {
         this.book_list = DEFAULT_BOOK_LIST;
       } else {
@@ -95,6 +99,10 @@ public final class TbBookrack extends Message {
     } 
   }
   
+  public TbBookrack(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -109,5 +117,53 @@ public final class TbBookrack extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TbBookrack> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<BookInfo> book_list;
+    
+    public String booktown;
+    
+    public String icon;
+    
+    public Integer num;
+    
+    public String tip;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(TbBookrack param1TbBookrack) {
+      super(param1TbBookrack);
+      if (param1TbBookrack == null)
+        return; 
+      this.booktown = param1TbBookrack.booktown;
+      this.num = param1TbBookrack.num;
+      this.book_list = Message.copyOf(param1TbBookrack.book_list);
+      this.title = param1TbBookrack.title;
+      this.icon = param1TbBookrack.icon;
+      this.tip = param1TbBookrack.tip;
+    }
+    
+    public TbBookrack build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TbBookrack)interceptResult.objValue; 
+      } 
+      return new TbBookrack(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

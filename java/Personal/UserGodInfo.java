@@ -1,4 +1,4 @@
-package Personal;
+package tbclient.Personal;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Personal.ForumGodDetailInfo;
-import tbclient.Personal.GodDetailInfo;
 
 public final class UserGodInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ForumGodDetailInfo> DEFAULT_FORUM_GOD_LIST;
   
   public static final Integer DEFAULT_GOD_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<ForumGodDetailInfo> forum_god_list;
@@ -31,8 +33,8 @@ public final class UserGodInfo extends Message {
   }
   
   public UserGodInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ForumGodDetailInfo> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.god_type;
       if (integer == null) {
@@ -54,6 +56,10 @@ public final class UserGodInfo extends Message {
     } 
   }
   
+  public UserGodInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -68,5 +74,44 @@ public final class UserGodInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<UserGodInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ForumGodDetailInfo> forum_god_list;
+    
+    public GodDetailInfo god_info;
+    
+    public Integer god_type;
+    
+    public Builder() {}
+    
+    public Builder(UserGodInfo param1UserGodInfo) {
+      super(param1UserGodInfo);
+      if (param1UserGodInfo == null)
+        return; 
+      this.god_type = param1UserGodInfo.god_type;
+      this.god_info = param1UserGodInfo.god_info;
+      this.forum_god_list = Message.copyOf(param1UserGodInfo.forum_god_list);
+    }
+    
+    public UserGodInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserGodInfo)interceptResult.objValue; 
+      } 
+      return new UserGodInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

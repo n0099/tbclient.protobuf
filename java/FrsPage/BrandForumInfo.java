@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,10 +9,11 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPage.HeadImgs;
 import tbclient.OriForumInfo;
 
 public final class BrandForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BRAND_DESC = "";
   
   public static final String DEFAULT_JUMP_DESC = "";
@@ -20,6 +21,8 @@ public final class BrandForumInfo extends Message {
   public static final String DEFAULT_JUMP_URL = "";
   
   public static final List<OriForumInfo> DEFAULT_RELATION_FORUM = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String brand_desc;
@@ -37,10 +40,10 @@ public final class BrandForumInfo extends Message {
   public final List<OriForumInfo> relation_forum;
   
   public BrandForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list = paramBuilder.relation_forum;
+      List<OriForumInfo> list = paramBuilder.relation_forum;
       if (list == null) {
         this.relation_forum = DEFAULT_RELATION_FORUM;
       } else {
@@ -74,6 +77,10 @@ public final class BrandForumInfo extends Message {
     } 
   }
   
+  public BrandForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -88,5 +95,50 @@ public final class BrandForumInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BrandForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String brand_desc;
+    
+    public HeadImgs head_imgs;
+    
+    public String jump_desc;
+    
+    public String jump_url;
+    
+    public List<OriForumInfo> relation_forum;
+    
+    public Builder() {}
+    
+    public Builder(BrandForumInfo param1BrandForumInfo) {
+      super(param1BrandForumInfo);
+      if (param1BrandForumInfo == null)
+        return; 
+      this.relation_forum = Message.copyOf(param1BrandForumInfo.relation_forum);
+      this.head_imgs = param1BrandForumInfo.head_imgs;
+      this.brand_desc = param1BrandForumInfo.brand_desc;
+      this.jump_url = param1BrandForumInfo.jump_url;
+      this.jump_desc = param1BrandForumInfo.jump_desc;
+    }
+    
+    public BrandForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BrandForumInfo)interceptResult.objValue; 
+      } 
+      return new BrandForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

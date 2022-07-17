@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.SimpleUser;
 
 public final class AgreeBanner extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ICON_URL = "";
   
   public static final String DEFAULT_TEXT = "";
@@ -19,6 +21,8 @@ public final class AgreeBanner extends Message {
   public static final List<SimpleUser> DEFAULT_TOP_AGREE_USER = Collections.emptyList();
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String icon_url;
@@ -33,8 +37,8 @@ public final class AgreeBanner extends Message {
   public final String url;
   
   public AgreeBanner(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<SimpleUser> list;
     if (paramBoolean == true) {
       String str = paramBuilder.text;
       if (str == null) {
@@ -68,6 +72,10 @@ public final class AgreeBanner extends Message {
     } 
   }
   
+  public AgreeBanner(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -82,5 +90,47 @@ public final class AgreeBanner extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AgreeBanner> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String icon_url;
+    
+    public String text;
+    
+    public List<SimpleUser> top_agree_user;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(AgreeBanner param1AgreeBanner) {
+      super(param1AgreeBanner);
+      if (param1AgreeBanner == null)
+        return; 
+      this.text = param1AgreeBanner.text;
+      this.icon_url = param1AgreeBanner.icon_url;
+      this.url = param1AgreeBanner.url;
+      this.top_agree_user = Message.copyOf(param1AgreeBanner.top_agree_user);
+    }
+    
+    public AgreeBanner build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AgreeBanner)interceptResult.objValue; 
+      } 
+      return new AgreeBanner(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

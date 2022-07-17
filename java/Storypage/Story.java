@@ -1,4 +1,4 @@
-package Storypage;
+package tbclient.Storypage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -13,9 +13,13 @@ import tbclient.ThreadInfo;
 import tbclient.User;
 
 public final class Story extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ThreadInfo> DEFAULT_STORY_LIST = Collections.emptyList();
   
   public static final Integer DEFAULT_STORY_USER_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<ThreadInfo> story_list;
@@ -27,10 +31,10 @@ public final class Story extends Message {
   public final Integer story_user_type;
   
   public Story(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
-      List list = paramBuilder.story_list;
+      List<ThreadInfo> list = paramBuilder.story_list;
       if (list == null) {
         this.story_list = DEFAULT_STORY_LIST;
       } else {
@@ -50,6 +54,10 @@ public final class Story extends Message {
     } 
   }
   
+  public Story(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -64,5 +72,44 @@ public final class Story extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Story> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ThreadInfo> story_list;
+    
+    public User story_user;
+    
+    public Integer story_user_type;
+    
+    public Builder() {}
+    
+    public Builder(Story param1Story) {
+      super(param1Story);
+      if (param1Story == null)
+        return; 
+      this.story_list = Message.copyOf(param1Story.story_list);
+      this.story_user = param1Story.story_user;
+      this.story_user_type = param1Story.story_user_type;
+    }
+    
+    public Story build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Story)interceptResult.objValue; 
+      } 
+      return new Story(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

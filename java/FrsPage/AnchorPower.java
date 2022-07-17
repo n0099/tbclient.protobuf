@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AnchorPower extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ANCHOR_MESSAGE = "";
   
   public static final Integer DEFAULT_CAN_ADD_LIVE_POST;
@@ -18,6 +20,8 @@ public final class AnchorPower extends Message {
   public static final Integer DEFAULT_CAN_DEL_LIVE_POST;
   
   public static final Integer DEFAULT_HAVE_POWER;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String anchor_message;
@@ -55,7 +59,7 @@ public final class AnchorPower extends Message {
   }
   
   public AnchorPower(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.have_power;
@@ -95,5 +99,54 @@ public final class AnchorPower extends Message {
       this.can_del_live_post = ((Builder)str).can_del_live_post;
       this.can_add_live_post_msg = ((Builder)str).can_add_live_post_msg;
     } 
+  }
+  
+  public AnchorPower(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AnchorPower> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String anchor_message;
+    
+    public Integer can_add_live_post;
+    
+    public String can_add_live_post_msg;
+    
+    public Integer can_del_live_post;
+    
+    public Integer have_power;
+    
+    public Builder() {}
+    
+    public Builder(AnchorPower param1AnchorPower) {
+      super(param1AnchorPower);
+      if (param1AnchorPower == null)
+        return; 
+      this.have_power = param1AnchorPower.have_power;
+      this.anchor_message = param1AnchorPower.anchor_message;
+      this.can_add_live_post = param1AnchorPower.can_add_live_post;
+      this.can_del_live_post = param1AnchorPower.can_del_live_post;
+      this.can_add_live_post_msg = param1AnchorPower.can_add_live_post_msg;
+    }
+    
+    public AnchorPower build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AnchorPower)interceptResult.objValue; 
+      } 
+      return new AnchorPower(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

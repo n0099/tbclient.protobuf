@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HotOfficialThread extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final Integer DEFAULT_ICON_TYPE;
@@ -18,6 +20,8 @@ public final class HotOfficialThread extends Message {
   public static final Long DEFAULT_TID = Long.valueOf(0L);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -39,7 +43,7 @@ public final class HotOfficialThread extends Message {
   }
   
   public HotOfficialThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.tid;
@@ -81,6 +85,10 @@ public final class HotOfficialThread extends Message {
     } 
   }
   
+  public HotOfficialThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -95,5 +103,50 @@ public final class HotOfficialThread extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HotOfficialThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public Integer icon_type;
+    
+    public String thread_pic;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(HotOfficialThread param1HotOfficialThread) {
+      super(param1HotOfficialThread);
+      if (param1HotOfficialThread == null)
+        return; 
+      this.tid = param1HotOfficialThread.tid;
+      this.title = param1HotOfficialThread.title;
+      this._abstract = param1HotOfficialThread._abstract;
+      this.icon_type = param1HotOfficialThread.icon_type;
+      this.thread_pic = param1HotOfficialThread.thread_pic;
+    }
+    
+    public HotOfficialThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotOfficialThread)interceptResult.objValue; 
+      } 
+      return new HotOfficialThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

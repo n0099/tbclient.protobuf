@@ -1,4 +1,4 @@
-package GetOfflineResource;
+package tbclient.GetOfflineResource;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Chapters extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CHAPTER_ID;
   
   public static final Integer DEFAULT_CHAPTER_VIP;
@@ -18,6 +20,8 @@ public final class Chapters extends Message {
   public static final String DEFAULT_RESOURCE_URL = "";
   
   public static final Integer DEFAULT_TOTAL_IMG_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer chapter_id;
@@ -56,7 +60,7 @@ public final class Chapters extends Message {
   }
   
   public Chapters(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.chapter_id;
@@ -96,5 +100,54 @@ public final class Chapters extends Message {
       this.total_img_num = ((Builder)integer).total_img_num;
       this.chapter_vip = ((Builder)integer).chapter_vip;
     } 
+  }
+  
+  public Chapters(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Chapters> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer chapter_id;
+    
+    public Integer chapter_vip;
+    
+    public Integer resource_size;
+    
+    public String resource_url;
+    
+    public Integer total_img_num;
+    
+    public Builder() {}
+    
+    public Builder(Chapters param1Chapters) {
+      super(param1Chapters);
+      if (param1Chapters == null)
+        return; 
+      this.chapter_id = param1Chapters.chapter_id;
+      this.resource_url = param1Chapters.resource_url;
+      this.resource_size = param1Chapters.resource_size;
+      this.total_img_num = param1Chapters.total_img_num;
+      this.chapter_vip = param1Chapters.chapter_vip;
+    }
+    
+    public Chapters build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Chapters)interceptResult.objValue; 
+      } 
+      return new Chapters(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

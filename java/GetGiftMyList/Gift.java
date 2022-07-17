@@ -1,4 +1,4 @@
-package GetGiftMyList;
+package tbclient.GetGiftMyList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Gift extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_GIFT_ID;
   
   public static final String DEFAULT_NAME = "";
@@ -20,6 +22,8 @@ public final class Gift extends Message {
   public static final Integer DEFAULT_SEND_TIME;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer gift_id;
@@ -60,7 +64,7 @@ public final class Gift extends Message {
   }
   
   public Gift(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.gift_id;
@@ -107,5 +111,57 @@ public final class Gift extends Message {
       this.send_time = ((Builder)integer).send_time;
       this.num = ((Builder)integer).num;
     } 
+  }
+  
+  public Gift(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Gift> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer gift_id;
+    
+    public String name;
+    
+    public Integer num;
+    
+    public String play_url;
+    
+    public Integer send_time;
+    
+    public String thumbnail_url;
+    
+    public Builder() {}
+    
+    public Builder(Gift param1Gift) {
+      super(param1Gift);
+      if (param1Gift == null)
+        return; 
+      this.gift_id = param1Gift.gift_id;
+      this.name = param1Gift.name;
+      this.play_url = param1Gift.play_url;
+      this.thumbnail_url = param1Gift.thumbnail_url;
+      this.send_time = param1Gift.send_time;
+      this.num = param1Gift.num;
+    }
+    
+    public Gift build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Gift)interceptResult.objValue; 
+      } 
+      return new Gift(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

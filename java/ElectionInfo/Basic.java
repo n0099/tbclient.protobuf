@@ -1,4 +1,4 @@
-package ElectionInfo;
+package tbclient.ElectionInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ElectionInfo.NoticeContent;
 
 public final class Basic extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BEGIN_APPLY_TIME = "";
   
   public static final String DEFAULT_BEGIN_PUBLIC_TIME = "";
@@ -25,6 +26,8 @@ public final class Basic extends Message {
   public static final Integer DEFAULT_STATUS;
   
   public static final Integer DEFAULT_TOTAL_VOTE_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String begin_apply_time;
@@ -75,7 +78,7 @@ public final class Basic extends Message {
   }
   
   public Basic(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       String str2 = paramBuilder.begin_apply_time;
       if (str2 == null) {
@@ -137,5 +140,66 @@ public final class Basic extends Message {
       this.is_voted = paramBuilder.is_voted;
       this.notice = paramBuilder.notice;
     } 
+  }
+  
+  public Basic(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Basic> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String begin_apply_time;
+    
+    public String begin_public_time;
+    
+    public String begin_vote_time;
+    
+    public Integer candidate_num;
+    
+    public Boolean is_voted;
+    
+    public NoticeContent notice;
+    
+    public String remind_time;
+    
+    public Integer status;
+    
+    public Integer total_vote_num;
+    
+    public Builder() {}
+    
+    public Builder(Basic param1Basic) {
+      super(param1Basic);
+      if (param1Basic == null)
+        return; 
+      this.begin_apply_time = param1Basic.begin_apply_time;
+      this.begin_vote_time = param1Basic.begin_vote_time;
+      this.begin_public_time = param1Basic.begin_public_time;
+      this.status = param1Basic.status;
+      this.remind_time = param1Basic.remind_time;
+      this.candidate_num = param1Basic.candidate_num;
+      this.total_vote_num = param1Basic.total_vote_num;
+      this.is_voted = param1Basic.is_voted;
+      this.notice = param1Basic.notice;
+    }
+    
+    public Basic build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Basic)interceptResult.objValue; 
+      } 
+      return new Basic(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

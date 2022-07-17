@@ -1,4 +1,4 @@
-package Profile;
+package tbclient.Profile;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Profile.CommonDistance;
-import tbclient.Profile.CommonLocation;
-import tbclient.Profile.ReplyList;
 
 public final class TAInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<String> DEFAULT_FORUMINFO = Collections.emptyList();
   
   public static final List<String> DEFAULT_FRIENDINFO;
@@ -31,6 +30,8 @@ public final class TAInfo extends Message {
   public static final List<ReplyList> DEFAULT_REPLY_LIST;
   
   public static final Integer DEFAULT_USERCLIENTVERSIONISLOWER;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final CommonDistance distanceinfo;
@@ -76,26 +77,26 @@ public final class TAInfo extends Message {
   }
   
   public TAInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list2 = paramBuilder.foruminfo;
-      if (list2 == null) {
+      List<String> list1 = paramBuilder.foruminfo;
+      if (list1 == null) {
         this.foruminfo = DEFAULT_FORUMINFO;
       } else {
-        this.foruminfo = Message.immutableCopyOf(list2);
+        this.foruminfo = Message.immutableCopyOf(list1);
       } 
-      list2 = paramBuilder.groupinfo;
-      if (list2 == null) {
+      list1 = paramBuilder.groupinfo;
+      if (list1 == null) {
         this.groupinfo = DEFAULT_GROUPINFO;
       } else {
-        this.groupinfo = Message.immutableCopyOf(list2);
+        this.groupinfo = Message.immutableCopyOf(list1);
       } 
-      list2 = paramBuilder.friendinfo;
-      if (list2 == null) {
+      list1 = paramBuilder.friendinfo;
+      if (list1 == null) {
         this.friendinfo = DEFAULT_FRIENDINFO;
       } else {
-        this.friendinfo = Message.immutableCopyOf(list2);
+        this.friendinfo = Message.immutableCopyOf(list1);
       } 
       this.distanceinfo = paramBuilder.distanceinfo;
       Integer integer2 = paramBuilder.groupnum;
@@ -116,11 +117,11 @@ public final class TAInfo extends Message {
       } else {
         this.is_friend = integer2;
       } 
-      List list1 = paramBuilder.reply_list;
-      if (list1 == null) {
+      List<ReplyList> list = paramBuilder.reply_list;
+      if (list == null) {
         this.reply_list = DEFAULT_REPLY_LIST;
       } else {
-        this.reply_list = Message.immutableCopyOf(list1);
+        this.reply_list = Message.immutableCopyOf(list);
       } 
       Integer integer1 = paramBuilder.userClientVersionIsLower;
       if (integer1 == null) {
@@ -150,6 +151,10 @@ public final class TAInfo extends Message {
     } 
   }
   
+  public TAInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -164,5 +169,68 @@ public final class TAInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TAInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonDistance distanceinfo;
+    
+    public List<String> foruminfo;
+    
+    public List<String> friendinfo;
+    
+    public Integer friendnum;
+    
+    public List<String> groupinfo;
+    
+    public Integer groupnum;
+    
+    public String hide_user_feed;
+    
+    public Integer is_friend;
+    
+    public CommonLocation location;
+    
+    public List<ReplyList> reply_list;
+    
+    public Integer userClientVersionIsLower;
+    
+    public Builder() {}
+    
+    public Builder(TAInfo param1TAInfo) {
+      super(param1TAInfo);
+      if (param1TAInfo == null)
+        return; 
+      this.foruminfo = Message.copyOf(param1TAInfo.foruminfo);
+      this.groupinfo = Message.copyOf(param1TAInfo.groupinfo);
+      this.friendinfo = Message.copyOf(param1TAInfo.friendinfo);
+      this.distanceinfo = param1TAInfo.distanceinfo;
+      this.groupnum = param1TAInfo.groupnum;
+      this.friendnum = param1TAInfo.friendnum;
+      this.is_friend = param1TAInfo.is_friend;
+      this.reply_list = Message.copyOf(param1TAInfo.reply_list);
+      this.userClientVersionIsLower = param1TAInfo.userClientVersionIsLower;
+      this.location = param1TAInfo.location;
+      this.hide_user_feed = param1TAInfo.hide_user_feed;
+    }
+    
+    public TAInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TAInfo)interceptResult.objValue; 
+      } 
+      return new TAInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

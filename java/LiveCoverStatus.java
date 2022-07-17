@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.LiveCoverStatus;
 
 public final class LiveCoverStatus extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_STATUS = "";
   
   public static final Integer DEFAULT_STATUS_NUM = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String status;
@@ -19,7 +24,7 @@ public final class LiveCoverStatus extends Message {
   public final Integer status_num;
   
   public LiveCoverStatus(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.status_num;
@@ -40,6 +45,10 @@ public final class LiveCoverStatus extends Message {
     } 
   }
   
+  public LiveCoverStatus(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class LiveCoverStatus extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<LiveCoverStatus> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String status;
+    
+    public Integer status_num;
+    
+    public Builder() {}
+    
+    public Builder(LiveCoverStatus param1LiveCoverStatus) {
+      super(param1LiveCoverStatus);
+      if (param1LiveCoverStatus == null)
+        return; 
+      this.status_num = param1LiveCoverStatus.status_num;
+      this.status = param1LiveCoverStatus.status;
+    }
+    
+    public LiveCoverStatus build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LiveCoverStatus)interceptResult.objValue; 
+      } 
+      return new LiveCoverStatus(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

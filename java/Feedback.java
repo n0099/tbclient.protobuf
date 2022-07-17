@@ -1,15 +1,21 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Feedback;
 
 public final class Feedback extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ICON = "";
   
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String icon;
@@ -21,7 +27,7 @@ public final class Feedback extends Message {
   public final String url;
   
   public Feedback(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.icon;
@@ -47,5 +53,48 @@ public final class Feedback extends Message {
       this.title = ((Builder)str).title;
       this.url = ((Builder)str).url;
     } 
+  }
+  
+  public Feedback(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Feedback> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String icon;
+    
+    public String title;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(Feedback param1Feedback) {
+      super(param1Feedback);
+      if (param1Feedback == null)
+        return; 
+      this.icon = param1Feedback.icon;
+      this.title = param1Feedback.title;
+      this.url = param1Feedback.url;
+    }
+    
+    public Feedback build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Feedback)interceptResult.objValue; 
+      } 
+      return new Feedback(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

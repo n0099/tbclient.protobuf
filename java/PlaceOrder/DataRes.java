@@ -1,4 +1,4 @@
-package PlaceOrder;
+package tbclient.PlaceOrder;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CURRENCY;
   
   public static final Integer DEFAULT_GIFT_COUNT;
@@ -44,6 +46,8 @@ public final class DataRes extends Message {
   public static final Integer DEFAULT_TIMESTAMP;
   
   public static final Long DEFAULT_USER_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 18, type = Message.Datatype.UINT32)
   public final Integer currency;
@@ -132,7 +136,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str3 = paramBuilder.order_id;
@@ -263,5 +267,93 @@ public final class DataRes extends Message {
       this.gift_count = ((Builder)integer).gift_count;
       this.currency = ((Builder)integer).currency;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer currency;
+    
+    public Integer gift_count;
+    
+    public Integer goods_duration;
+    
+    public String goods_name;
+    
+    public Integer goods_num;
+    
+    public String goods_pic;
+    
+    public Integer goods_price;
+    
+    public String goods_unit;
+    
+    public Integer goods_user_level;
+    
+    public Long open_id;
+    
+    public String order_id;
+    
+    public Integer pay_type;
+    
+    public Integer scene_id;
+    
+    public Integer tb_timestamp;
+    
+    public Integer tdou_num;
+    
+    public Integer terminal;
+    
+    public Integer timestamp;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.order_id = param1DataRes.order_id;
+      this.goods_unit = param1DataRes.goods_unit;
+      this.tdou_num = param1DataRes.tdou_num;
+      this.goods_price = param1DataRes.goods_price;
+      this.goods_num = param1DataRes.goods_num;
+      this.pay_type = param1DataRes.pay_type;
+      this.user_id = param1DataRes.user_id;
+      this.tb_timestamp = param1DataRes.tb_timestamp;
+      this.timestamp = param1DataRes.timestamp;
+      this.goods_name = param1DataRes.goods_name;
+      this.scene_id = param1DataRes.scene_id;
+      this.goods_user_level = param1DataRes.goods_user_level;
+      this.goods_duration = param1DataRes.goods_duration;
+      this.goods_pic = param1DataRes.goods_pic;
+      this.terminal = param1DataRes.terminal;
+      this.open_id = param1DataRes.open_id;
+      this.gift_count = param1DataRes.gift_count;
+      this.currency = param1DataRes.currency;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetGiftListByCategoryId;
+package tbclient.GetGiftListByCategoryId;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PresentGiftListByCategoryId1 extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTIVITY_TYPE;
   
   public static final Integer DEFAULT_BEGIN_TIME;
@@ -42,6 +44,8 @@ public final class PresentGiftListByCategoryId1 extends Message {
   public static final Integer DEFAULT_PROPORTION;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.UINT32)
   public final Integer activity_type;
@@ -125,7 +129,7 @@ public final class PresentGiftListByCategoryId1 extends Message {
   }
   
   public PresentGiftListByCategoryId1(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer5 = paramBuilder.gift_id;
@@ -249,5 +253,90 @@ public final class PresentGiftListByCategoryId1 extends Message {
       this.currency_unit = ((Builder)integer).currency_unit;
       this.currency = ((Builder)integer).currency;
     } 
+  }
+  
+  public PresentGiftListByCategoryId1(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PresentGiftListByCategoryId1> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer activity_type;
+    
+    public Integer begin_time;
+    
+    public Integer currency;
+    
+    public Integer currency_unit;
+    
+    public Integer discount;
+    
+    public Integer end_time;
+    
+    public Integer gift_count;
+    
+    public String gift_desc;
+    
+    public Integer gift_id;
+    
+    public String gift_name;
+    
+    public Integer ios_discount;
+    
+    public Integer ios_price;
+    
+    public String mark_url;
+    
+    public Integer pitch_on;
+    
+    public Integer price;
+    
+    public Integer proportion;
+    
+    public String thumbnail_url;
+    
+    public Builder() {}
+    
+    public Builder(PresentGiftListByCategoryId1 param1PresentGiftListByCategoryId1) {
+      super(param1PresentGiftListByCategoryId1);
+      if (param1PresentGiftListByCategoryId1 == null)
+        return; 
+      this.gift_id = param1PresentGiftListByCategoryId1.gift_id;
+      this.gift_name = param1PresentGiftListByCategoryId1.gift_name;
+      this.price = param1PresentGiftListByCategoryId1.price;
+      this.thumbnail_url = param1PresentGiftListByCategoryId1.thumbnail_url;
+      this.ios_price = param1PresentGiftListByCategoryId1.ios_price;
+      this.gift_desc = param1PresentGiftListByCategoryId1.gift_desc;
+      this.activity_type = param1PresentGiftListByCategoryId1.activity_type;
+      this.mark_url = param1PresentGiftListByCategoryId1.mark_url;
+      this.begin_time = param1PresentGiftListByCategoryId1.begin_time;
+      this.end_time = param1PresentGiftListByCategoryId1.end_time;
+      this.discount = param1PresentGiftListByCategoryId1.discount;
+      this.ios_discount = param1PresentGiftListByCategoryId1.ios_discount;
+      this.proportion = param1PresentGiftListByCategoryId1.proportion;
+      this.pitch_on = param1PresentGiftListByCategoryId1.pitch_on;
+      this.gift_count = param1PresentGiftListByCategoryId1.gift_count;
+      this.currency_unit = param1PresentGiftListByCategoryId1.currency_unit;
+      this.currency = param1PresentGiftListByCategoryId1.currency;
+    }
+    
+    public PresentGiftListByCategoryId1 build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PresentGiftListByCategoryId1)interceptResult.objValue; 
+      } 
+      return new PresentGiftListByCategoryId1(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PushType;
 
 public final class PushType extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ICON = "";
   
   public static final String DEFAULT_NAME = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String icon;
@@ -24,7 +29,7 @@ public final class PushType extends Message {
   public final Integer type;
   
   public PushType(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -52,6 +57,10 @@ public final class PushType extends Message {
     } 
   }
   
+  public PushType(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class PushType extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PushType> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String icon;
+    
+    public String name;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(PushType param1PushType) {
+      super(param1PushType);
+      if (param1PushType == null)
+        return; 
+      this.type = param1PushType.type;
+      this.name = param1PushType.name;
+      this.icon = param1PushType.icon;
+    }
+    
+    public PushType build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PushType)interceptResult.objValue; 
+      } 
+      return new PushType(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

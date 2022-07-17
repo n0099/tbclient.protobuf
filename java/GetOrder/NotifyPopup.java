@@ -1,4 +1,4 @@
-package GetOrder;
+package tbclient.GetOrder;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class NotifyPopup extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_APPENDIX_LINK = "";
   
   public static final Integer DEFAULT_APPENDIX_OPTIONAL;
@@ -36,6 +38,8 @@ public final class NotifyPopup extends Message {
   public static final String DEFAULT_Y_BTN_LINK = "";
   
   public static final String DEFAULT_Y_BTN_TEXT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.UINT32)
   public final Integer app_size;
@@ -102,7 +106,7 @@ public final class NotifyPopup extends Message {
   }
   
   public NotifyPopup(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.popup_id;
@@ -205,5 +209,71 @@ public final class NotifyPopup extends Message {
       this.n_btn_text = ((Builder)str).n_btn_text;
       this.n_btn_link = ((Builder)str).n_btn_link;
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<NotifyPopup> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer app_size;
+    
+    public String app_version;
+    
+    public String appendix_link;
+    
+    public Integer appendix_optional;
+    
+    public String appendix_text;
+    
+    public String changelogs;
+    
+    public String hint;
+    
+    public String n_btn_link;
+    
+    public String n_btn_text;
+    
+    public Integer popup_id;
+    
+    public Integer popup_times;
+    
+    public Integer popup_type;
+    
+    public String y_btn_link;
+    
+    public String y_btn_text;
+    
+    public Builder() {}
+    
+    public Builder(NotifyPopup param1NotifyPopup) {
+      super(param1NotifyPopup);
+      if (param1NotifyPopup == null)
+        return; 
+      this.popup_id = param1NotifyPopup.popup_id;
+      this.popup_times = param1NotifyPopup.popup_times;
+      this.popup_type = param1NotifyPopup.popup_type;
+      this.hint = param1NotifyPopup.hint;
+      this.app_version = param1NotifyPopup.app_version;
+      this.app_size = param1NotifyPopup.app_size;
+      this.changelogs = param1NotifyPopup.changelogs;
+      this.appendix_text = param1NotifyPopup.appendix_text;
+      this.appendix_link = param1NotifyPopup.appendix_link;
+      this.appendix_optional = param1NotifyPopup.appendix_optional;
+      this.y_btn_text = param1NotifyPopup.y_btn_text;
+      this.y_btn_link = param1NotifyPopup.y_btn_link;
+      this.n_btn_text = param1NotifyPopup.n_btn_text;
+      this.n_btn_link = param1NotifyPopup.n_btn_link;
+    }
+    
+    public NotifyPopup build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NotifyPopup)interceptResult.objValue; 
+      } 
+      return new NotifyPopup(this, param1Boolean);
+    }
   }
 }

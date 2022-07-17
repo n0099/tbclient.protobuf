@@ -1,4 +1,4 @@
-package FineFrsPage;
+package tbclient.FineFrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.ZhiBoInfoTW;
 
 public final class FineThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final Integer DEFAULT_FORDER;
@@ -37,6 +39,8 @@ public final class FineThreadInfo extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final Long DEFAULT_ZANSUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -108,7 +112,7 @@ public final class FineThreadInfo extends Message {
   }
   
   public FineThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.ftid;
@@ -135,7 +139,7 @@ public final class FineThreadInfo extends Message {
       } else {
         this._abstract = str3;
       } 
-      List list = paramBuilder.thumbnail;
+      List<String> list = paramBuilder.thumbnail;
       if (list == null) {
         this.thumbnail = DEFAULT_THUMBNAIL;
       } else {
@@ -206,5 +210,81 @@ public final class FineThreadInfo extends Message {
       this.thread_type = ((Builder)integer).thread_type;
       this.forder = ((Builder)integer).forder;
     } 
+  }
+  
+  public FineThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FineThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public Integer forder;
+    
+    public Long forumid;
+    
+    public String fromfname;
+    
+    public Long ftid;
+    
+    public Integer publish_time;
+    
+    public String tag;
+    
+    public Integer thread_type;
+    
+    public Long threadsnum;
+    
+    public List<String> thumbnail;
+    
+    public String title;
+    
+    public ZhiBoInfoTW twzhibo_info;
+    
+    public Integer type;
+    
+    public Long zansum;
+    
+    public Builder() {}
+    
+    public Builder(FineThreadInfo param1FineThreadInfo) {
+      super(param1FineThreadInfo);
+      if (param1FineThreadInfo == null)
+        return; 
+      this.ftid = param1FineThreadInfo.ftid;
+      this.title = param1FineThreadInfo.title;
+      this.type = param1FineThreadInfo.type;
+      this._abstract = param1FineThreadInfo._abstract;
+      this.thumbnail = Message.copyOf(param1FineThreadInfo.thumbnail);
+      this.publish_time = param1FineThreadInfo.publish_time;
+      this.tag = param1FineThreadInfo.tag;
+      this.zansum = param1FineThreadInfo.zansum;
+      this.threadsnum = param1FineThreadInfo.threadsnum;
+      this.fromfname = param1FineThreadInfo.fromfname;
+      this.forumid = param1FineThreadInfo.forumid;
+      this.twzhibo_info = param1FineThreadInfo.twzhibo_info;
+      this.thread_type = param1FineThreadInfo.thread_type;
+      this.forder = param1FineThreadInfo.forder;
+    }
+    
+    public FineThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FineThreadInfo)interceptResult.objValue; 
+      } 
+      return new FineThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

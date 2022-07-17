@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,14 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.VipCloseAd;
 
 public final class VipCloseAd extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Integer> DEFAULT_FORUM_CLOSE;
   
   public static final Integer DEFAULT_IS_OPEN;
   
   public static final Integer DEFAULT_VIP_CLOSE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.INT32)
   public final List<Integer> forum_close;
@@ -46,8 +51,8 @@ public final class VipCloseAd extends Message {
   }
   
   public VipCloseAd(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<Integer> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.is_open;
       if (integer == null) {
@@ -72,5 +77,48 @@ public final class VipCloseAd extends Message {
       this.vip_close = ((Builder)list).vip_close;
       this.forum_close = Message.immutableCopyOf(((Builder)list).forum_close);
     } 
+  }
+  
+  public VipCloseAd(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VipCloseAd> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Integer> forum_close;
+    
+    public Integer is_open;
+    
+    public Integer vip_close;
+    
+    public Builder() {}
+    
+    public Builder(VipCloseAd param1VipCloseAd) {
+      super(param1VipCloseAd);
+      if (param1VipCloseAd == null)
+        return; 
+      this.is_open = param1VipCloseAd.is_open;
+      this.vip_close = param1VipCloseAd.vip_close;
+      this.forum_close = Message.copyOf(param1VipCloseAd.forum_close);
+    }
+    
+    public VipCloseAd build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipCloseAd)interceptResult.objValue; 
+      } 
+      return new VipCloseAd(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

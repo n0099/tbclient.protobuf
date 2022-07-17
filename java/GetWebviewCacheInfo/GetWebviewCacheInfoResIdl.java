@@ -1,13 +1,17 @@
-package GetWebviewCacheInfo;
+package tbclient.GetWebviewCacheInfo;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-import tbclient.GetWebviewCacheInfo.DataRes;
 
 public final class GetWebviewCacheInfoResIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 2)
   public final DataRes data;
   
@@ -15,7 +19,7 @@ public final class GetWebviewCacheInfoResIdl extends Message {
   public final Error error;
   
   public GetWebviewCacheInfoResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
@@ -23,5 +27,45 @@ public final class GetWebviewCacheInfoResIdl extends Message {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
     } 
+  }
+  
+  public GetWebviewCacheInfoResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GetWebviewCacheInfoResIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataRes data;
+    
+    public Error error;
+    
+    public Builder() {}
+    
+    public Builder(GetWebviewCacheInfoResIdl param1GetWebviewCacheInfoResIdl) {
+      super(param1GetWebviewCacheInfoResIdl);
+      if (param1GetWebviewCacheInfoResIdl == null)
+        return; 
+      this.error = param1GetWebviewCacheInfoResIdl.error;
+      this.data = param1GetWebviewCacheInfoResIdl.data;
+    }
+    
+    public GetWebviewCacheInfoResIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GetWebviewCacheInfoResIdl)interceptResult.objValue; 
+      } 
+      return new GetWebviewCacheInfoResIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

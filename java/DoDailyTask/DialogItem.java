@@ -1,4 +1,4 @@
-package DoDailyTask;
+package tbclient.DoDailyTask;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,14 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.DoDailyTask.ButtonItem;
 
 public final class DialogItem extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ButtonItem> DEFAULT_BUTTON = Collections.emptyList();
   
   public static final String DEFAULT_CONTENT = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<ButtonItem> button;
@@ -28,8 +31,8 @@ public final class DialogItem extends Message {
   public final String title;
   
   public DialogItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ButtonItem> list;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
       if (str == null) {
@@ -56,6 +59,10 @@ public final class DialogItem extends Message {
     } 
   }
   
+  public DialogItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +77,44 @@ public final class DialogItem extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DialogItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ButtonItem> button;
+    
+    public String content;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(DialogItem param1DialogItem) {
+      super(param1DialogItem);
+      if (param1DialogItem == null)
+        return; 
+      this.title = param1DialogItem.title;
+      this.content = param1DialogItem.content;
+      this.button = Message.copyOf(param1DialogItem.button);
+    }
+    
+    public DialogItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DialogItem)interceptResult.objValue; 
+      } 
+      return new DialogItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

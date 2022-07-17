@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PbPresentList;
 
 public final class PbPresentList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_GIFT_ID;
   
   public static final String DEFAULT_GIFT_NAME = "";
@@ -15,6 +18,8 @@ public final class PbPresentList extends Message {
   public static final Integer DEFAULT_NUM;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer gift_id;
@@ -48,7 +53,7 @@ public final class PbPresentList extends Message {
   }
   
   public PbPresentList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.gift_id;
@@ -81,5 +86,51 @@ public final class PbPresentList extends Message {
       this.thumbnail_url = ((Builder)integer).thumbnail_url;
       this.num = ((Builder)integer).num;
     } 
+  }
+  
+  public PbPresentList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PbPresentList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer gift_id;
+    
+    public String gift_name;
+    
+    public Integer num;
+    
+    public String thumbnail_url;
+    
+    public Builder() {}
+    
+    public Builder(PbPresentList param1PbPresentList) {
+      super(param1PbPresentList);
+      if (param1PbPresentList == null)
+        return; 
+      this.gift_id = param1PbPresentList.gift_id;
+      this.gift_name = param1PbPresentList.gift_name;
+      this.thumbnail_url = param1PbPresentList.thumbnail_url;
+      this.num = param1PbPresentList.num;
+    }
+    
+    public PbPresentList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PbPresentList)interceptResult.objValue; 
+      } 
+      return new PbPresentList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

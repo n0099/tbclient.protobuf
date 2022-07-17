@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class FloatInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ACTIVITY_ID;
   
   public static final List<String> DEFAULT_DYNAMIC_URL;
@@ -24,6 +26,8 @@ public final class FloatInfo extends Message {
   public static final Integer DEFAULT_SHOW_TYPE;
   
   public static final Long DEFAULT_START_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.UINT64)
   public final Long activity_id;
@@ -69,7 +73,7 @@ public final class FloatInfo extends Message {
   }
   
   public FloatInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.float_url;
@@ -90,7 +94,7 @@ public final class FloatInfo extends Message {
       } else {
         this.end_time = long_2;
       } 
-      List list = paramBuilder.dynamic_url;
+      List<String> list = paramBuilder.dynamic_url;
       if (list == null) {
         this.dynamic_url = DEFAULT_DYNAMIC_URL;
       } else {
@@ -123,5 +127,60 @@ public final class FloatInfo extends Message {
       this.jump_url = ((Builder)integer).jump_url;
       this.show_type = ((Builder)integer).show_type;
     } 
+  }
+  
+  public FloatInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FloatInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long activity_id;
+    
+    public List<String> dynamic_url;
+    
+    public Long end_time;
+    
+    public String float_url;
+    
+    public String jump_url;
+    
+    public Integer show_type;
+    
+    public Long start_time;
+    
+    public Builder() {}
+    
+    public Builder(FloatInfo param1FloatInfo) {
+      super(param1FloatInfo);
+      if (param1FloatInfo == null)
+        return; 
+      this.float_url = param1FloatInfo.float_url;
+      this.start_time = param1FloatInfo.start_time;
+      this.end_time = param1FloatInfo.end_time;
+      this.dynamic_url = Message.copyOf(param1FloatInfo.dynamic_url);
+      this.activity_id = param1FloatInfo.activity_id;
+      this.jump_url = param1FloatInfo.jump_url;
+      this.show_type = param1FloatInfo.show_type;
+    }
+    
+    public FloatInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FloatInfo)interceptResult.objValue; 
+      } 
+      return new FloatInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

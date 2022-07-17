@@ -1,4 +1,4 @@
-package ExcFrsPage;
+package tbclient.ExcFrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.ZhiBoInfoTW;
 
 public final class ExcellentThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_ABTEST = "";
@@ -47,6 +49,8 @@ public final class ExcellentThreadInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Long DEFAULT_ZANSUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -137,7 +141,7 @@ public final class ExcellentThreadInfo extends Message {
   }
   
   public ExcellentThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_5 = paramBuilder.excid;
@@ -176,7 +180,7 @@ public final class ExcellentThreadInfo extends Message {
       } else {
         this._abstract = str3;
       } 
-      List list = paramBuilder.thumbnail;
+      List<String> list = paramBuilder.thumbnail;
       if (list == null) {
         this.thumbnail = DEFAULT_THUMBNAIL;
       } else {
@@ -270,5 +274,96 @@ public final class ExcellentThreadInfo extends Message {
       this.rank = ((Builder)integer).rank;
       this.publish_time = ((Builder)integer).publish_time;
     } 
+  }
+  
+  public ExcellentThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ExcellentThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String abtest;
+    
+    public Long excid;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer frs_type;
+    
+    public Integer pb_type;
+    
+    public Long post_num;
+    
+    public Integer publish_time;
+    
+    public Long rank;
+    
+    public Integer source;
+    
+    public Long tag_code;
+    
+    public String tag_name;
+    
+    public Long thread_id;
+    
+    public Integer thread_type;
+    
+    public List<String> thumbnail;
+    
+    public String title;
+    
+    public ZhiBoInfoTW twzhibo_info;
+    
+    public Long zansum;
+    
+    public Builder() {}
+    
+    public Builder(ExcellentThreadInfo param1ExcellentThreadInfo) {
+      super(param1ExcellentThreadInfo);
+      if (param1ExcellentThreadInfo == null)
+        return; 
+      this.excid = param1ExcellentThreadInfo.excid;
+      this.thread_id = param1ExcellentThreadInfo.thread_id;
+      this.frs_type = param1ExcellentThreadInfo.frs_type;
+      this.pb_type = param1ExcellentThreadInfo.pb_type;
+      this.title = param1ExcellentThreadInfo.title;
+      this._abstract = param1ExcellentThreadInfo._abstract;
+      this.thumbnail = Message.copyOf(param1ExcellentThreadInfo.thumbnail);
+      this.tag_code = param1ExcellentThreadInfo.tag_code;
+      this.tag_name = param1ExcellentThreadInfo.tag_name;
+      this.zansum = param1ExcellentThreadInfo.zansum;
+      this.post_num = param1ExcellentThreadInfo.post_num;
+      this.thread_type = param1ExcellentThreadInfo.thread_type;
+      this.twzhibo_info = param1ExcellentThreadInfo.twzhibo_info;
+      this.forum_id = param1ExcellentThreadInfo.forum_id;
+      this.forum_name = param1ExcellentThreadInfo.forum_name;
+      this.abtest = param1ExcellentThreadInfo.abtest;
+      this.source = param1ExcellentThreadInfo.source;
+      this.rank = param1ExcellentThreadInfo.rank;
+      this.publish_time = param1ExcellentThreadInfo.publish_time;
+    }
+    
+    public ExcellentThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ExcellentThreadInfo)interceptResult.objValue; 
+      } 
+      return new ExcellentThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

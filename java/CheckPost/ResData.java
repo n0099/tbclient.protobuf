@@ -1,4 +1,4 @@
-package CheckPost;
+package tbclient.CheckPost;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ResData extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FNAME = "";
   
   public static final Long DEFAULT_FORUMID;
@@ -18,6 +20,8 @@ public final class ResData extends Message {
   public static final Long DEFAULT_QUOTEID;
   
   public static final Long DEFAULT_REPOSTID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String fname;
@@ -56,7 +60,7 @@ public final class ResData extends Message {
   }
   
   public ResData(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.postState;
@@ -96,5 +100,54 @@ public final class ResData extends Message {
       this.repostId = ((Builder)str).repostId;
       this.fname = ((Builder)str).fname;
     } 
+  }
+  
+  public ResData(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ResData> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String fname;
+    
+    public Long forumId;
+    
+    public Long postState;
+    
+    public Long quoteId;
+    
+    public Long repostId;
+    
+    public Builder() {}
+    
+    public Builder(ResData param1ResData) {
+      super(param1ResData);
+      if (param1ResData == null)
+        return; 
+      this.postState = param1ResData.postState;
+      this.forumId = param1ResData.forumId;
+      this.quoteId = param1ResData.quoteId;
+      this.repostId = param1ResData.repostId;
+      this.fname = param1ResData.fname;
+    }
+    
+    public ResData build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ResData)interceptResult.objValue; 
+      } 
+      return new ResData(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

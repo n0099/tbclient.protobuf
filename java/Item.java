@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ApkDetail;
-import tbclient.Item;
 
 public final class Item extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_APK_NAME = "";
   
   public static final String DEFAULT_BUTTON_LINK = "";
@@ -38,6 +40,8 @@ public final class Item extends Message {
   public static final Integer DEFAULT_STAR;
   
   public static final List<String> DEFAULT_TAGS;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 15)
   public final ApkDetail apk_detail;
@@ -96,7 +100,7 @@ public final class Item extends Message {
   }
   
   public Item(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.item_id;
       if (long_ == null) {
@@ -122,7 +126,7 @@ public final class Item extends Message {
       } else {
         this.icon_url = str3;
       } 
-      List list = paramBuilder.tags;
+      List<String> list = paramBuilder.tags;
       if (list == null) {
         this.tags = DEFAULT_TAGS;
       } else {
@@ -202,6 +206,10 @@ public final class Item extends Message {
     } 
   }
   
+  public Item(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -216,5 +224,80 @@ public final class Item extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Item> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ApkDetail apk_detail;
+    
+    public String apk_name;
+    
+    public String button_link;
+    
+    public Integer button_link_type;
+    
+    public String button_name;
+    
+    public Integer category_id;
+    
+    public String forum_name;
+    
+    public Double icon_size;
+    
+    public String icon_url;
+    
+    public String item_appid;
+    
+    public Long item_id;
+    
+    public String item_name;
+    
+    public Double score;
+    
+    public Integer star;
+    
+    public List<String> tags;
+    
+    public Builder() {}
+    
+    public Builder(Item param1Item) {
+      super(param1Item);
+      if (param1Item == null)
+        return; 
+      this.item_id = param1Item.item_id;
+      this.item_name = param1Item.item_name;
+      this.icon_size = param1Item.icon_size;
+      this.icon_url = param1Item.icon_url;
+      this.tags = Message.copyOf(param1Item.tags);
+      this.score = param1Item.score;
+      this.star = param1Item.star;
+      this.button_name = param1Item.button_name;
+      this.button_link = param1Item.button_link;
+      this.item_appid = param1Item.item_appid;
+      this.category_id = param1Item.category_id;
+      this.button_link_type = param1Item.button_link_type;
+      this.apk_name = param1Item.apk_name;
+      this.forum_name = param1Item.forum_name;
+      this.apk_detail = param1Item.apk_detail;
+    }
+    
+    public Item build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Item)interceptResult.objValue; 
+      } 
+      return new Item(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

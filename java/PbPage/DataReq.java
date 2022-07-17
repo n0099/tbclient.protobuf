@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,9 +10,10 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-import tbclient.PbPage.AdParam;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_CONTEXT_LIST = "";
   
   public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -48,6 +49,8 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_ISSDK;
   
   public static final Integer DEFAULT_IS_COMM_REVERSE;
+  
+  public static final Integer DEFAULT_IS_EDIT_COMMENT_REQ;
   
   public static final Integer DEFAULT_IS_FOLD_COMMENT_REQ;
   
@@ -141,6 +144,8 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_YUELAOU_PARAMS = "";
   
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 68, type = Message.Datatype.STRING)
   public final String ad_context_list;
   
@@ -203,6 +208,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 33, type = Message.Datatype.INT32)
   public final Integer is_comm_reverse;
+  
+  @ProtoField(tag = 79, type = Message.Datatype.INT32)
+  public final Integer is_edit_comment_req;
   
   @ProtoField(tag = 78, type = Message.Datatype.INT32)
   public final Integer is_fold_comment_req;
@@ -402,10 +410,11 @@ public final class DataReq extends Message {
     DEFAULT_SOURCE_TYPE = integer;
     DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE = integer;
     DEFAULT_IS_FOLD_COMMENT_REQ = integer;
+    DEFAULT_IS_EDIT_COMMENT_REQ = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer13 = paramBuilder.pb_rn;
@@ -790,11 +799,17 @@ public final class DataReq extends Message {
         this.immersion_video_comment_source = integer1;
       } 
       this.app_transmit_data = paramBuilder.app_transmit_data;
-      integer = paramBuilder.is_fold_comment_req;
-      if (integer == null) {
+      integer1 = paramBuilder.is_fold_comment_req;
+      if (integer1 == null) {
         this.is_fold_comment_req = DEFAULT_IS_FOLD_COMMENT_REQ;
       } else {
-        this.is_fold_comment_req = integer;
+        this.is_fold_comment_req = integer1;
+      } 
+      integer = paramBuilder.is_edit_comment_req;
+      if (integer == null) {
+        this.is_edit_comment_req = DEFAULT_IS_EDIT_COMMENT_REQ;
+      } else {
+        this.is_edit_comment_req = integer;
       } 
     } else {
       this.pb_rn = ((Builder)integer).pb_rn;
@@ -865,6 +880,248 @@ public final class DataReq extends Message {
       this.immersion_video_comment_source = ((Builder)integer).immersion_video_comment_source;
       this.app_transmit_data = ((Builder)integer).app_transmit_data;
       this.is_fold_comment_req = ((Builder)integer).is_fold_comment_req;
+      this.is_edit_comment_req = ((Builder)integer).is_edit_comment_req;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_context_list;
+    
+    public String ad_ext_params;
+    
+    public AdParam ad_param;
+    
+    public AppPosInfo app_pos;
+    
+    public AppTransmitData app_transmit_data;
+    
+    public Integer arround;
+    
+    public Integer back;
+    
+    public Integer banner;
+    
+    public Long broadcast_id;
+    
+    public String call_url;
+    
+    public CommonReq common;
+    
+    public String da_idfa;
+    
+    public String feed_nid;
+    
+    public Long fid;
+    
+    public Integer floor_rn;
+    
+    public Integer floor_sort_type;
+    
+    public Long forum_id;
+    
+    public Integer from_push;
+    
+    public Integer from_smart_frs;
+    
+    public Integer immersion_video_comment_source;
+    
+    public Integer is_comm_reverse;
+    
+    public Integer is_edit_comment_req;
+    
+    public Integer is_fold_comment_req;
+    
+    public Integer is_jumpfloor;
+    
+    public Integer issdk;
+    
+    public String jfrom;
+    
+    public Long jid;
+    
+    public Integer jumpfloor_num;
+    
+    public Long kz;
+    
+    public Integer last;
+    
+    public String lastids;
+    
+    public Integer lz;
+    
+    public Integer mark;
+    
+    public Integer message_id;
+    
+    public String msg_click;
+    
+    public Integer need_log;
+    
+    public Integer need_repost_recommend_forum;
+    
+    public String obj_locate;
+    
+    public String obj_param1;
+    
+    public String obj_source;
+    
+    public String ori_ugc_nid;
+    
+    public String ori_ugc_tid;
+    
+    public Integer ori_ugc_type;
+    
+    public String ori_ugc_vid;
+    
+    public Integer pb_rn;
+    
+    public Long pid;
+    
+    public String platform;
+    
+    public Integer pn;
+    
+    public Integer q_type;
+    
+    public String query_word;
+    
+    public Integer r;
+    
+    public Integer rn;
+    
+    public Integer s_model;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public String shoubai_cuid;
+    
+    public Integer source_type;
+    
+    public String st_from;
+    
+    public String st_link;
+    
+    public Integer st_stat;
+    
+    public Long st_task;
+    
+    public String st_type;
+    
+    public Integer thread_type;
+    
+    public String up_schema;
+    
+    public Integer weipost;
+    
+    public Integer with_floor;
+    
+    public String yuelaou_locate;
+    
+    public String yuelaou_params;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.pb_rn = param1DataReq.pb_rn;
+      this.mark = param1DataReq.mark;
+      this.back = param1DataReq.back;
+      this.kz = param1DataReq.kz;
+      this.lz = param1DataReq.lz;
+      this.r = param1DataReq.r;
+      this.pid = param1DataReq.pid;
+      this.with_floor = param1DataReq.with_floor;
+      this.floor_rn = param1DataReq.floor_rn;
+      this.weipost = param1DataReq.weipost;
+      this.message_id = param1DataReq.message_id;
+      this.s_model = param1DataReq.s_model;
+      this.rn = param1DataReq.rn;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.q_type = param1DataReq.q_type;
+      this.pn = param1DataReq.pn;
+      this.st_type = param1DataReq.st_type;
+      this.thread_type = param1DataReq.thread_type;
+      this.banner = param1DataReq.banner;
+      this.arround = param1DataReq.arround;
+      this.last = param1DataReq.last;
+      this.msg_click = param1DataReq.msg_click;
+      this.common = param1DataReq.common;
+      this.lastids = param1DataReq.lastids;
+      this.st_from = param1DataReq.st_from;
+      this.st_link = param1DataReq.st_link;
+      this.st_stat = param1DataReq.st_stat;
+      this.st_task = param1DataReq.st_task;
+      this.issdk = param1DataReq.issdk;
+      this.query_word = param1DataReq.query_word;
+      this.is_comm_reverse = param1DataReq.is_comm_reverse;
+      this.is_jumpfloor = param1DataReq.is_jumpfloor;
+      this.jumpfloor_num = param1DataReq.jumpfloor_num;
+      this.da_idfa = param1DataReq.da_idfa;
+      this.platform = param1DataReq.platform;
+      this.jid = param1DataReq.jid;
+      this.fid = param1DataReq.fid;
+      this.jfrom = param1DataReq.jfrom;
+      this.yuelaou_locate = param1DataReq.yuelaou_locate;
+      this.yuelaou_params = param1DataReq.yuelaou_params;
+      this.obj_source = param1DataReq.obj_source;
+      this.obj_locate = param1DataReq.obj_locate;
+      this.obj_param1 = param1DataReq.obj_param1;
+      this.app_pos = param1DataReq.app_pos;
+      this.from_smart_frs = param1DataReq.from_smart_frs;
+      this.feed_nid = param1DataReq.feed_nid;
+      this.forum_id = param1DataReq.forum_id;
+      this.need_repost_recommend_forum = param1DataReq.need_repost_recommend_forum;
+      this.ad_param = param1DataReq.ad_param;
+      this.need_log = param1DataReq.need_log;
+      this.call_url = param1DataReq.call_url;
+      this.shoubai_cuid = param1DataReq.shoubai_cuid;
+      this.ori_ugc_nid = param1DataReq.ori_ugc_nid;
+      this.ori_ugc_tid = param1DataReq.ori_ugc_tid;
+      this.ori_ugc_type = param1DataReq.ori_ugc_type;
+      this.ori_ugc_vid = param1DataReq.ori_ugc_vid;
+      this.ad_context_list = param1DataReq.ad_context_list;
+      this.up_schema = param1DataReq.up_schema;
+      this.from_push = param1DataReq.from_push;
+      this.ad_ext_params = param1DataReq.ad_ext_params;
+      this.broadcast_id = param1DataReq.broadcast_id;
+      this.floor_sort_type = param1DataReq.floor_sort_type;
+      this.source_type = param1DataReq.source_type;
+      this.immersion_video_comment_source = param1DataReq.immersion_video_comment_source;
+      this.app_transmit_data = param1DataReq.app_transmit_data;
+      this.is_fold_comment_req = param1DataReq.is_fold_comment_req;
+      this.is_edit_comment_req = param1DataReq.is_edit_comment_req;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

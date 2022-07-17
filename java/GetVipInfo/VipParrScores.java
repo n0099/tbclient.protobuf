@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipParrScores extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_I_MONEY;
   
   public static final Integer DEFAULT_I_OTHER;
@@ -28,6 +30,8 @@ public final class VipParrScores extends Message {
   public static final Integer DEFAULT_SCORES_TOTAL;
   
   public static final Integer DEFAULT_UPDATE_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.UINT32)
   public final Integer i_money;
@@ -87,7 +91,7 @@ public final class VipParrScores extends Message {
   }
   
   public VipParrScores(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.scores_total;
@@ -162,5 +166,69 @@ public final class VipParrScores extends Message {
       this.level = ((Builder)integer).level;
       this.limit = ((Builder)integer).limit;
     } 
+  }
+  
+  public VipParrScores(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VipParrScores> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer i_money;
+    
+    public Integer i_other;
+    
+    public Integer i_total;
+    
+    public Integer level;
+    
+    public Integer limit;
+    
+    public Integer scores_fetch;
+    
+    public Integer scores_money;
+    
+    public Integer scores_other;
+    
+    public Integer scores_total;
+    
+    public Integer update_time;
+    
+    public Builder() {}
+    
+    public Builder(VipParrScores param1VipParrScores) {
+      super(param1VipParrScores);
+      if (param1VipParrScores == null)
+        return; 
+      this.scores_total = param1VipParrScores.scores_total;
+      this.scores_fetch = param1VipParrScores.scores_fetch;
+      this.scores_money = param1VipParrScores.scores_money;
+      this.scores_other = param1VipParrScores.scores_other;
+      this.update_time = param1VipParrScores.update_time;
+      this.i_total = param1VipParrScores.i_total;
+      this.i_money = param1VipParrScores.i_money;
+      this.i_other = param1VipParrScores.i_other;
+      this.level = param1VipParrScores.level;
+      this.limit = param1VipParrScores.limit;
+    }
+    
+    public VipParrScores build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipParrScores)interceptResult.objValue; 
+      } 
+      return new VipParrScores(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

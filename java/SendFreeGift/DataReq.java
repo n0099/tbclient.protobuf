@@ -1,4 +1,4 @@
-package SendFreeGift;
+package tbclient.SendFreeGift;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_BENEFIT_USERID;
   
   public static final String DEFAULT_BENEFIT_USERNAME = "";
@@ -23,6 +25,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_SCENE_FROM = "";
   
   public static final Long DEFAULT_THREAD_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT64)
   public final Long benefit_userid;
@@ -72,7 +76,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.gift_id;
@@ -128,5 +132,63 @@ public final class DataReq extends Message {
       this.thread_id = ((Builder)long_).thread_id;
       this.post_id = ((Builder)long_).post_id;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long benefit_userid;
+    
+    public String benefit_username;
+    
+    public CommonReq common;
+    
+    public Integer gift_id;
+    
+    public Integer num;
+    
+    public Long post_id;
+    
+    public String scene_from;
+    
+    public Long thread_id;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.gift_id = param1DataReq.gift_id;
+      this.benefit_userid = param1DataReq.benefit_userid;
+      this.benefit_username = param1DataReq.benefit_username;
+      this.num = param1DataReq.num;
+      this.common = param1DataReq.common;
+      this.scene_from = param1DataReq.scene_from;
+      this.thread_id = param1DataReq.thread_id;
+      this.post_id = param1DataReq.post_id;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

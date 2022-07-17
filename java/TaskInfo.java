@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.TaskInfo;
 
 public final class TaskInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BGIMG = "";
   
   public static final Long DEFAULT_END_TIME;
@@ -27,6 +30,8 @@ public final class TaskInfo extends Message {
   public static final String DEFAULT_THREAD_IMG = "";
   
   public static final String DEFAULT_THREAD_IMG_SIZE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String bgimg;
@@ -81,7 +86,7 @@ public final class TaskInfo extends Message {
   }
   
   public TaskInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.task_id;
@@ -156,5 +161,69 @@ public final class TaskInfo extends Message {
       this.forum_name = ((Builder)str).forum_name;
       this.obj_id = ((Builder)str).obj_id;
     } 
+  }
+  
+  public TaskInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TaskInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bgimg;
+    
+    public Long end_time;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public String obj_id;
+    
+    public Long start_time;
+    
+    public Long task_id;
+    
+    public Long thread_id;
+    
+    public String thread_img;
+    
+    public String thread_img_size;
+    
+    public Builder() {}
+    
+    public Builder(TaskInfo param1TaskInfo) {
+      super(param1TaskInfo);
+      if (param1TaskInfo == null)
+        return; 
+      this.task_id = param1TaskInfo.task_id;
+      this.thread_id = param1TaskInfo.thread_id;
+      this.bgimg = param1TaskInfo.bgimg;
+      this.thread_img = param1TaskInfo.thread_img;
+      this.start_time = param1TaskInfo.start_time;
+      this.end_time = param1TaskInfo.end_time;
+      this.thread_img_size = param1TaskInfo.thread_img_size;
+      this.forum_id = param1TaskInfo.forum_id;
+      this.forum_name = param1TaskInfo.forum_name;
+      this.obj_id = param1TaskInfo.obj_id;
+    }
+    
+    public TaskInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TaskInfo)interceptResult.objValue; 
+      } 
+      return new TaskInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Calendar extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_D;
   
   public static final Integer DEFAULT_RANK;
@@ -16,6 +18,8 @@ public final class Calendar extends Message {
   public static final Integer DEFAULT_SIGN_TYPE;
   
   public static final String DEFAULT_T = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer d;
@@ -50,7 +54,7 @@ public final class Calendar extends Message {
   }
   
   public Calendar(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.d;
@@ -83,5 +87,51 @@ public final class Calendar extends Message {
       this.rank = ((Builder)integer).rank;
       this.sign_type = ((Builder)integer).sign_type;
     } 
+  }
+  
+  public Calendar(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Calendar> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer d;
+    
+    public Integer rank;
+    
+    public Integer sign_type;
+    
+    public String t;
+    
+    public Builder() {}
+    
+    public Builder(Calendar param1Calendar) {
+      super(param1Calendar);
+      if (param1Calendar == null)
+        return; 
+      this.d = param1Calendar.d;
+      this.t = param1Calendar.t;
+      this.rank = param1Calendar.rank;
+      this.sign_type = param1Calendar.sign_type;
+    }
+    
+    public Calendar build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Calendar)interceptResult.objValue; 
+      } 
+      return new Calendar(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

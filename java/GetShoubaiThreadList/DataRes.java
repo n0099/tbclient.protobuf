@@ -1,4 +1,4 @@
-package GetShoubaiThreadList;
+package tbclient.GetShoubaiThreadList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,14 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetShoubaiThreadList.PageInfo;
 import tbclient.ThreadInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final PageInfo page;
@@ -22,8 +25,8 @@ public final class DataRes extends Message {
   public final List<ThreadInfo> thread_list;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ThreadInfo> list;
     if (paramBoolean == true) {
       this.page = paramBuilder.page;
       list = paramBuilder.thread_list;
@@ -36,6 +39,10 @@ public final class DataRes extends Message {
       this.page = ((Builder)list).page;
       this.thread_list = Message.immutableCopyOf(((Builder)list).thread_list);
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -52,5 +59,41 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public PageInfo page;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.page = param1DataRes.page;
+      this.thread_list = Message.copyOf(param1DataRes.thread_list);
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

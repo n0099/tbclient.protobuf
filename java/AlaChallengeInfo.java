@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AlaChallengeInfo;
 
 public final class AlaChallengeInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_CHALLENGE_ID;
   
   public static final String DEFAULT_EXT = "";
@@ -19,6 +22,8 @@ public final class AlaChallengeInfo extends Message {
   public static final String DEFAULT_RIVAL_SESSION = "";
   
   public static final Long DEFAULT_WINNING_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long challenge_id;
@@ -58,7 +63,7 @@ public final class AlaChallengeInfo extends Message {
   }
   
   public AlaChallengeInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.challenge_id;
@@ -105,5 +110,57 @@ public final class AlaChallengeInfo extends Message {
       this.rival_hls_url = ((Builder)str).rival_hls_url;
       this.ext = ((Builder)str).ext;
     } 
+  }
+  
+  public AlaChallengeInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AlaChallengeInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long challenge_id;
+    
+    public String ext;
+    
+    public String rival_hls_url;
+    
+    public String rival_rtmp_url;
+    
+    public String rival_session;
+    
+    public Long winning_num;
+    
+    public Builder() {}
+    
+    public Builder(AlaChallengeInfo param1AlaChallengeInfo) {
+      super(param1AlaChallengeInfo);
+      if (param1AlaChallengeInfo == null)
+        return; 
+      this.challenge_id = param1AlaChallengeInfo.challenge_id;
+      this.winning_num = param1AlaChallengeInfo.winning_num;
+      this.rival_session = param1AlaChallengeInfo.rival_session;
+      this.rival_rtmp_url = param1AlaChallengeInfo.rival_rtmp_url;
+      this.rival_hls_url = param1AlaChallengeInfo.rival_hls_url;
+      this.ext = param1AlaChallengeInfo.ext;
+    }
+    
+    public AlaChallengeInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AlaChallengeInfo)interceptResult.objValue; 
+      } 
+      return new AlaChallengeInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

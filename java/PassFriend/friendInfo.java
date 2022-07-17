@@ -1,4 +1,4 @@
-package PassFriend;
+package tbclient.PassFriend;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class friendInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_KEY = "";
   
   public static final String DEFAULT_PORTRAIT = "";
@@ -18,6 +20,8 @@ public final class friendInfo extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String key;
@@ -35,7 +39,7 @@ public final class friendInfo extends Message {
   public final String user_name;
   
   public friendInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.portrait;
@@ -77,6 +81,10 @@ public final class friendInfo extends Message {
     } 
   }
   
+  public friendInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class friendInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<friendInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String key;
+    
+    public String portrait;
+    
+    public String quanpin;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(friendInfo param1friendInfo) {
+      super(param1friendInfo);
+      if (param1friendInfo == null)
+        return; 
+      this.portrait = param1friendInfo.portrait;
+      this.user_name = param1friendInfo.user_name;
+      this.user_id = param1friendInfo.user_id;
+      this.quanpin = param1friendInfo.quanpin;
+      this.key = param1friendInfo.key;
+    }
+    
+    public friendInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (friendInfo)interceptResult.objValue; 
+      } 
+      return new friendInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

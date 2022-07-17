@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.PbContent;
 
 public final class NebulaHotThread extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_COMMENT_NUMBER;
   
   public static final List<PbContent> DEFAULT_CONTENT;
@@ -27,6 +29,8 @@ public final class NebulaHotThread extends Message {
   public static final Integer DEFAULT_THREAD_THUMBNAIL_TYPE;
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer comment_number;
@@ -74,8 +78,8 @@ public final class NebulaHotThread extends Message {
   }
   
   public NebulaHotThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<PbContent> list;
     if (paramBoolean == true) {
       String str3 = paramBuilder.thread_id;
       if (str3 == null) {
@@ -135,5 +139,63 @@ public final class NebulaHotThread extends Message {
       this.thread_thumbnail = ((Builder)list).thread_thumbnail;
       this.content = Message.immutableCopyOf(((Builder)list).content);
     } 
+  }
+  
+  public NebulaHotThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<NebulaHotThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer comment_number;
+    
+    public List<PbContent> content;
+    
+    public String group_name;
+    
+    public Integer rank;
+    
+    public String thread_id;
+    
+    public String thread_thumbnail;
+    
+    public Integer thread_thumbnail_type;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(NebulaHotThread param1NebulaHotThread) {
+      super(param1NebulaHotThread);
+      if (param1NebulaHotThread == null)
+        return; 
+      this.thread_id = param1NebulaHotThread.thread_id;
+      this.group_name = param1NebulaHotThread.group_name;
+      this.comment_number = param1NebulaHotThread.comment_number;
+      this.rank = param1NebulaHotThread.rank;
+      this.url = param1NebulaHotThread.url;
+      this.thread_thumbnail_type = param1NebulaHotThread.thread_thumbnail_type;
+      this.thread_thumbnail = param1NebulaHotThread.thread_thumbnail;
+      this.content = Message.copyOf(param1NebulaHotThread.content);
+    }
+    
+    public NebulaHotThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NebulaHotThread)interceptResult.objValue; 
+      } 
+      return new NebulaHotThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package ActiveConfig;
+package tbclient.ActiveConfig;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -14,6 +14,8 @@ import tbclient.FloatStrategy;
 import tbclient.MissionInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVE_URL = "";
   
   public static final List<FloatStrategy> DEFAULT_FLOAT_LIST;
@@ -27,6 +29,8 @@ public final class DataRes extends Message {
   public static final String DEFAULT_NEWUSER_POP_MONEY = "";
   
   public static final String DEFAULT_NEWUSER_POP_TOP = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9)
   public final ActiveCenter active_center;
@@ -57,7 +61,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Integer integer = paramBuilder.is_new_user;
       if (integer == null) {
@@ -71,13 +75,13 @@ public final class DataRes extends Message {
       } else {
         this.active_url = str2;
       } 
-      List list = paramBuilder.mission_list;
-      if (list == null) {
+      List<MissionInfo> list1 = paramBuilder.mission_list;
+      if (list1 == null) {
         this.mission_list = DEFAULT_MISSION_LIST;
       } else {
-        this.mission_list = Message.immutableCopyOf(list);
+        this.mission_list = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.float_list;
+      List<FloatStrategy> list = paramBuilder.float_list;
       if (list == null) {
         this.float_list = DEFAULT_FLOAT_LIST;
       } else {
@@ -114,6 +118,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -128,5 +136,59 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ActiveCenter active_center;
+    
+    public String active_url;
+    
+    public List<FloatStrategy> float_list;
+    
+    public Integer is_new_user;
+    
+    public List<MissionInfo> mission_list;
+    
+    public String newuser_pop_clickurl;
+    
+    public String newuser_pop_money;
+    
+    public String newuser_pop_top;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.is_new_user = param1DataRes.is_new_user;
+      this.active_url = param1DataRes.active_url;
+      this.mission_list = Message.copyOf(param1DataRes.mission_list);
+      this.float_list = Message.copyOf(param1DataRes.float_list);
+      this.newuser_pop_clickurl = param1DataRes.newuser_pop_clickurl;
+      this.newuser_pop_money = param1DataRes.newuser_pop_money;
+      this.newuser_pop_top = param1DataRes.newuser_pop_top;
+      this.active_center = param1DataRes.active_center;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

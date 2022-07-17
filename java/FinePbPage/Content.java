@@ -1,4 +1,4 @@
-package FinePbPage;
+package tbclient.FinePbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Content extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ALIGN;
   
   public static final String DEFAULT_BIG_CDN_SRC = "";
@@ -34,6 +36,8 @@ public final class Content extends Message {
   public static final String DEFAULT_TEXT = "";
   
   public static final Long DEFAULT_TYPE = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.INT32)
   public final Integer align;
@@ -81,7 +85,7 @@ public final class Content extends Message {
   }
   
   public Content(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.type;
@@ -179,6 +183,10 @@ public final class Content extends Message {
     } 
   }
   
+  public Content(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -193,5 +201,74 @@ public final class Content extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Content> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer align;
+    
+    public String big_cdn_src;
+    
+    public String big_size;
+    
+    public String big_src;
+    
+    public String bsize;
+    
+    public String c;
+    
+    public String cdn_src;
+    
+    public String color;
+    
+    public String link;
+    
+    public Integer size;
+    
+    public String src;
+    
+    public String text;
+    
+    public Long type;
+    
+    public Builder() {}
+    
+    public Builder(Content param1Content) {
+      super(param1Content);
+      if (param1Content == null)
+        return; 
+      this.type = param1Content.type;
+      this.text = param1Content.text;
+      this.link = param1Content.link;
+      this.src = param1Content.src;
+      this.bsize = param1Content.bsize;
+      this.big_src = param1Content.big_src;
+      this.big_size = param1Content.big_size;
+      this.cdn_src = param1Content.cdn_src;
+      this.big_cdn_src = param1Content.big_cdn_src;
+      this.c = param1Content.c;
+      this.align = param1Content.align;
+      this.color = param1Content.color;
+      this.size = param1Content.size;
+    }
+    
+    public Content build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Content)interceptResult.objValue; 
+      } 
+      return new Content(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

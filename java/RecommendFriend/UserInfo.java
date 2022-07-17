@@ -1,4 +1,4 @@
-package RecommendFriend;
+package tbclient.RecommendFriend;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.RecommendFriend.LbsInfo;
-import tbclient.RecommendFriend.ShowIcon;
 
 public final class UserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_DISTANCE;
   
   public static final Long DEFAULT_ID = Long.valueOf(0L);
@@ -28,6 +28,8 @@ public final class UserInfo extends Message {
   public static final String DEFAULT_ST_TYPE = "";
   
   public static final String DEFAULT_TAG_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer distance;
@@ -69,7 +71,7 @@ public final class UserInfo extends Message {
   }
   
   public UserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.id;
@@ -143,6 +145,10 @@ public final class UserInfo extends Message {
     } 
   }
   
+  public UserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -157,5 +163,68 @@ public final class UserInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<UserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer distance;
+    
+    public Long id;
+    
+    public String intro;
+    
+    public LbsInfo location;
+    
+    public String message;
+    
+    public String name;
+    
+    public String portrait;
+    
+    public Integer sex;
+    
+    public String st_type;
+    
+    public String tag_name;
+    
+    public ShowIcon tshow_icon;
+    
+    public Builder() {}
+    
+    public Builder(UserInfo param1UserInfo) {
+      super(param1UserInfo);
+      if (param1UserInfo == null)
+        return; 
+      this.id = param1UserInfo.id;
+      this.portrait = param1UserInfo.portrait;
+      this.name = param1UserInfo.name;
+      this.sex = param1UserInfo.sex;
+      this.distance = param1UserInfo.distance;
+      this.intro = param1UserInfo.intro;
+      this.tshow_icon = param1UserInfo.tshow_icon;
+      this.location = param1UserInfo.location;
+      this.tag_name = param1UserInfo.tag_name;
+      this.st_type = param1UserInfo.st_type;
+      this.message = param1UserInfo.message;
+    }
+    
+    public UserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserInfo)interceptResult.objValue; 
+      } 
+      return new UserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.TWGuideDesc;
 
 public final class TWGuideDesc extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_LINK = "";
   
   public static final Integer DEFAULT_ORDER = Integer.valueOf(0);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String link;
@@ -24,7 +29,7 @@ public final class TWGuideDesc extends Message {
   public final String title;
   
   public TWGuideDesc(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.order;
@@ -52,6 +57,10 @@ public final class TWGuideDesc extends Message {
     } 
   }
   
+  public TWGuideDesc(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class TWGuideDesc extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TWGuideDesc> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String link;
+    
+    public Integer order;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(TWGuideDesc param1TWGuideDesc) {
+      super(param1TWGuideDesc);
+      if (param1TWGuideDesc == null)
+        return; 
+      this.order = param1TWGuideDesc.order;
+      this.title = param1TWGuideDesc.title;
+      this.link = param1TWGuideDesc.link;
+    }
+    
+    public TWGuideDesc build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TWGuideDesc)interceptResult.objValue; 
+      } 
+      return new TWGuideDesc(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

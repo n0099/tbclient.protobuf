@@ -1,4 +1,4 @@
-package GetOrder;
+package tbclient.GetOrder;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GetOrder.NotifyPopup;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CALL_TYPE = "";
   
   public static final Long DEFAULT_CUSTOMERID;
@@ -55,6 +56,8 @@ public final class DataRes extends Message {
   public static final String DEFAULT_TN = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 23, type = Message.Datatype.STRING)
   public final String call_type;
@@ -155,7 +158,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.customerId;
@@ -323,5 +326,101 @@ public final class DataRes extends Message {
       this.call_type = ((Builder)str).call_type;
       this.pay_channel = ((Builder)str).pay_channel;
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String call_type;
+    
+    public Long customerId;
+    
+    public Integer deviceType;
+    
+    public String extData;
+    
+    public String imei;
+    
+    public String itemInfo;
+    
+    public String mobile;
+    
+    public String notifyUrl;
+    
+    public Integer orderCreateTime;
+    
+    public String orderId;
+    
+    public Long originalAmount;
+    
+    public String passuid;
+    
+    public Long payAmount;
+    
+    public String pay_channel;
+    
+    public String pay_url;
+    
+    public NotifyPopup popup;
+    
+    public Integer sdk;
+    
+    public Integer sdkStyle;
+    
+    public String service;
+    
+    public String sign;
+    
+    public Integer signType;
+    
+    public String title;
+    
+    public String tn;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.customerId = param1DataRes.customerId;
+      this.service = param1DataRes.service;
+      this.orderId = param1DataRes.orderId;
+      this.orderCreateTime = param1DataRes.orderCreateTime;
+      this.deviceType = param1DataRes.deviceType;
+      this.payAmount = param1DataRes.payAmount;
+      this.originalAmount = param1DataRes.originalAmount;
+      this.notifyUrl = param1DataRes.notifyUrl;
+      this.passuid = param1DataRes.passuid;
+      this.title = param1DataRes.title;
+      this.tn = param1DataRes.tn;
+      this.url = param1DataRes.url;
+      this.mobile = param1DataRes.mobile;
+      this.itemInfo = param1DataRes.itemInfo;
+      this.imei = param1DataRes.imei;
+      this.sdk = param1DataRes.sdk;
+      this.sdkStyle = param1DataRes.sdkStyle;
+      this.extData = param1DataRes.extData;
+      this.signType = param1DataRes.signType;
+      this.sign = param1DataRes.sign;
+      this.popup = param1DataRes.popup;
+      this.pay_url = param1DataRes.pay_url;
+      this.call_type = param1DataRes.call_type;
+      this.pay_channel = param1DataRes.pay_channel;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean);
+    }
   }
 }

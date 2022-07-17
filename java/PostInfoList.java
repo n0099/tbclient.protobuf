@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,34 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Abstract;
-import tbclient.Agree;
-import tbclient.AlaLiveInfo;
-import tbclient.AnchorInfo;
-import tbclient.BaijiahaoInfo;
-import tbclient.DealInfo;
-import tbclient.HeadItem;
-import tbclient.Item;
-import tbclient.LbsInfo;
-import tbclient.Media;
-import tbclient.MultipleForum;
-import tbclient.OriginThreadInfo;
-import tbclient.PbContent;
-import tbclient.PbGoodsInfo;
-import tbclient.PbLinkInfo;
-import tbclient.PollInfo;
-import tbclient.PostInfoContent;
-import tbclient.PostInfoList;
-import tbclient.PrivSets;
-import tbclient.Quote;
-import tbclient.UserPostPerm;
-import tbclient.VideoInfo;
-import tbclient.Voice;
-import tbclient.VoiceRoom;
-import tbclient.WorksInfo;
-import tbclient.ZhiBoInfoTW;
 
 public final class PostInfoList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final List<Abstract> DEFAULT_ABSTRACT_THREAD;
@@ -132,6 +110,8 @@ public final class PostInfoList extends Message {
   public static final Long DEFAULT_V_FORUM_ID;
   
   public static final String DEFAULT_WONDERFUL_POST_INFO = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 14, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -381,7 +361,7 @@ public final class PostInfoList extends Message {
   }
   
   public PostInfoList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_4 = paramBuilder.forum_id;
       if (long_4 == null) {
@@ -425,11 +405,11 @@ public final class PostInfoList extends Message {
       } else {
         this.title = str7;
       } 
-      List list7 = paramBuilder.content;
-      if (list7 == null) {
+      List<PostInfoContent> list10 = paramBuilder.content;
+      if (list10 == null) {
         this.content = DEFAULT_CONTENT;
       } else {
-        this.content = Message.immutableCopyOf(list7);
+        this.content = Message.immutableCopyOf(list10);
       } 
       String str6 = paramBuilder.content_thread;
       if (str6 == null) {
@@ -467,17 +447,17 @@ public final class PostInfoList extends Message {
       } else {
         this._abstract = str5;
       } 
-      List list6 = paramBuilder.abstract_thread;
-      if (list6 == null) {
+      List<Abstract> list9 = paramBuilder.abstract_thread;
+      if (list9 == null) {
         this.abstract_thread = DEFAULT_ABSTRACT_THREAD;
       } else {
-        this.abstract_thread = Message.immutableCopyOf(list6);
+        this.abstract_thread = Message.immutableCopyOf(list9);
       } 
-      list6 = paramBuilder.media;
-      if (list6 == null) {
+      List<Media> list8 = paramBuilder.media;
+      if (list8 == null) {
         this.media = DEFAULT_MEDIA;
       } else {
-        this.media = Message.immutableCopyOf(list6);
+        this.media = Message.immutableCopyOf(list8);
       } 
       Integer integer6 = paramBuilder.reply_num;
       if (integer6 == null) {
@@ -505,11 +485,11 @@ public final class PostInfoList extends Message {
       } 
       this.lbs_info = paramBuilder.lbs_info;
       this.quote = paramBuilder.quote;
-      List list5 = paramBuilder.voice_info;
-      if (list5 == null) {
+      List<Voice> list7 = paramBuilder.voice_info;
+      if (list7 == null) {
         this.voice_info = DEFAULT_VOICE_INFO;
       } else {
-        this.voice_info = Message.immutableCopyOf(list5);
+        this.voice_info = Message.immutableCopyOf(list7);
       } 
       this.anchor_info = paramBuilder.anchor_info;
       Integer integer5 = paramBuilder.hide_post;
@@ -534,11 +514,11 @@ public final class PostInfoList extends Message {
         this.is_deal = bool;
       } 
       this.deal_info = paramBuilder.deal_info;
-      List list4 = paramBuilder.multiple_forum_list;
-      if (list4 == null) {
+      List<MultipleForum> list6 = paramBuilder.multiple_forum_list;
+      if (list6 == null) {
         this.multiple_forum_list = DEFAULT_MULTIPLE_FORUM_LIST;
       } else {
-        this.multiple_forum_list = Message.immutableCopyOf(list4);
+        this.multiple_forum_list = Message.immutableCopyOf(list6);
       } 
       Integer integer4 = paramBuilder.freq_num;
       if (integer4 == null) {
@@ -597,17 +577,17 @@ public final class PostInfoList extends Message {
       } else {
         this.is_share_thread = integer3;
       } 
-      List list3 = paramBuilder.rich_title;
-      if (list3 == null) {
+      List<PbContent> list5 = paramBuilder.rich_title;
+      if (list5 == null) {
         this.rich_title = DEFAULT_RICH_TITLE;
       } else {
-        this.rich_title = Message.immutableCopyOf(list3);
+        this.rich_title = Message.immutableCopyOf(list5);
       } 
-      list3 = paramBuilder.rich_abstract;
-      if (list3 == null) {
+      list5 = paramBuilder.rich_abstract;
+      if (list5 == null) {
         this.rich_abstract = DEFAULT_RICH_ABSTRACT;
       } else {
-        this.rich_abstract = Message.immutableCopyOf(list3);
+        this.rich_abstract = Message.immutableCopyOf(list5);
       } 
       Integer integer2 = paramBuilder.is_ntitle;
       if (integer2 == null) {
@@ -621,11 +601,11 @@ public final class PostInfoList extends Message {
       } else {
         this.article_cover = str2;
       } 
-      List list2 = paramBuilder.first_post_content;
-      if (list2 == null) {
+      List<PbContent> list4 = paramBuilder.first_post_content;
+      if (list4 == null) {
         this.first_post_content = DEFAULT_FIRST_POST_CONTENT;
       } else {
-        this.first_post_content = Message.immutableCopyOf(list2);
+        this.first_post_content = Message.immutableCopyOf(list4);
       } 
       this.baijiahao_info = paramBuilder.baijiahao_info;
       String str1 = paramBuilder.wonderful_post_info;
@@ -635,29 +615,29 @@ public final class PostInfoList extends Message {
         this.wonderful_post_info = str1;
       } 
       this.item = paramBuilder.item;
-      List list1 = paramBuilder.item_star;
-      if (list1 == null) {
+      List<HeadItem> list3 = paramBuilder.item_star;
+      if (list3 == null) {
         this.item_star = DEFAULT_ITEM_STAR;
       } else {
-        this.item_star = Message.immutableCopyOf(list1);
+        this.item_star = Message.immutableCopyOf(list3);
       } 
-      list1 = paramBuilder.pb_link_info;
-      if (list1 == null) {
+      List<PbLinkInfo> list2 = paramBuilder.pb_link_info;
+      if (list2 == null) {
         this.pb_link_info = DEFAULT_PB_LINK_INFO;
       } else {
-        this.pb_link_info = Message.immutableCopyOf(list1);
+        this.pb_link_info = Message.immutableCopyOf(list2);
       } 
-      list1 = paramBuilder.pb_goods_info;
+      List<PbGoodsInfo> list1 = paramBuilder.pb_goods_info;
       if (list1 == null) {
         this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
       } else {
         this.pb_goods_info = Message.immutableCopyOf(list1);
       } 
-      list1 = paramBuilder.priv_sets;
-      if (list1 == null) {
+      List<PrivSets> list = paramBuilder.priv_sets;
+      if (list == null) {
         this.priv_sets = DEFAULT_PRIV_SETS;
       } else {
-        this.priv_sets = Message.immutableCopyOf(list1);
+        this.priv_sets = Message.immutableCopyOf(list);
       } 
       Integer integer1 = paramBuilder.is_author_view;
       if (integer1 == null) {
@@ -758,5 +738,231 @@ public final class PostInfoList extends Message {
       this.user_post_perm = paramBuilder.user_post_perm;
       this.voice_room = paramBuilder.voice_room;
     } 
+  }
+  
+  public PostInfoList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PostInfoList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public List<Abstract> abstract_thread;
+    
+    public Agree agree;
+    
+    public Integer agree_num;
+    
+    public AlaLiveInfo ala_info;
+    
+    public AnchorInfo anchor_info;
+    
+    public String article_cover;
+    
+    public BaijiahaoInfo baijiahao_info;
+    
+    public List<PostInfoContent> content;
+    
+    public String content_thread;
+    
+    public Integer create_time;
+    
+    public DealInfo deal_info;
+    
+    public List<PbContent> first_post_content;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer freq_num;
+    
+    public Integer good_types;
+    
+    public Integer hide_post;
+    
+    public String ip;
+    
+    public Integer is_author_view;
+    
+    public Boolean is_deal;
+    
+    public Integer is_manager;
+    
+    public Integer is_ntitle;
+    
+    public Integer is_origin_manager;
+    
+    public Integer is_post_deleted;
+    
+    public Integer is_remain;
+    
+    public Integer is_share_thread;
+    
+    public Integer is_thread;
+    
+    public Integer is_view_year;
+    
+    public Item item;
+    
+    public List<HeadItem> item_star;
+    
+    public LbsInfo lbs_info;
+    
+    public List<Media> media;
+    
+    public List<MultipleForum> multiple_forum_list;
+    
+    public String name_show;
+    
+    public OriginThreadInfo origin_thread_info;
+    
+    public List<PbGoodsInfo> pb_goods_info;
+    
+    public List<PbLinkInfo> pb_link_info;
+    
+    public PollInfo poll_info;
+    
+    public Long post_id;
+    
+    public String post_type;
+    
+    public List<PrivSets> priv_sets;
+    
+    public String ptype;
+    
+    public Quote quote;
+    
+    public Integer reply_num;
+    
+    public List<PbContent> rich_abstract;
+    
+    public List<PbContent> rich_title;
+    
+    public Integer share_num;
+    
+    public Long thread_id;
+    
+    public Long thread_type;
+    
+    public String title;
+    
+    public Integer top_types;
+    
+    public ZhiBoInfoTW twzhibo_info;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public String user_portrait;
+    
+    public UserPostPerm user_post_perm;
+    
+    public Long v_forum_id;
+    
+    public VideoInfo video_info;
+    
+    public Integer view_num;
+    
+    public List<Voice> voice_info;
+    
+    public VoiceRoom voice_room;
+    
+    public String wonderful_post_info;
+    
+    public WorksInfo works_info;
+    
+    public Builder() {}
+    
+    public Builder(PostInfoList param1PostInfoList) {
+      super(param1PostInfoList);
+      if (param1PostInfoList == null)
+        return; 
+      this.forum_id = param1PostInfoList.forum_id;
+      this.thread_id = param1PostInfoList.thread_id;
+      this.post_id = param1PostInfoList.post_id;
+      this.is_thread = param1PostInfoList.is_thread;
+      this.create_time = param1PostInfoList.create_time;
+      this.forum_name = param1PostInfoList.forum_name;
+      this.title = param1PostInfoList.title;
+      this.content = Message.copyOf(param1PostInfoList.content);
+      this.content_thread = param1PostInfoList.content_thread;
+      this.user_name = param1PostInfoList.user_name;
+      this.ip = param1PostInfoList.ip;
+      this.is_post_deleted = param1PostInfoList.is_post_deleted;
+      this.ptype = param1PostInfoList.ptype;
+      this._abstract = param1PostInfoList._abstract;
+      this.abstract_thread = Message.copyOf(param1PostInfoList.abstract_thread);
+      this.media = Message.copyOf(param1PostInfoList.media);
+      this.reply_num = param1PostInfoList.reply_num;
+      this.user_id = param1PostInfoList.user_id;
+      this.user_portrait = param1PostInfoList.user_portrait;
+      this.post_type = param1PostInfoList.post_type;
+      this.lbs_info = param1PostInfoList.lbs_info;
+      this.quote = param1PostInfoList.quote;
+      this.voice_info = Message.copyOf(param1PostInfoList.voice_info);
+      this.anchor_info = param1PostInfoList.anchor_info;
+      this.hide_post = param1PostInfoList.hide_post;
+      this.thread_type = param1PostInfoList.thread_type;
+      this.twzhibo_info = param1PostInfoList.twzhibo_info;
+      this.poll_info = param1PostInfoList.poll_info;
+      this.video_info = param1PostInfoList.video_info;
+      this.is_deal = param1PostInfoList.is_deal;
+      this.deal_info = param1PostInfoList.deal_info;
+      this.multiple_forum_list = Message.copyOf(param1PostInfoList.multiple_forum_list);
+      this.freq_num = param1PostInfoList.freq_num;
+      this.v_forum_id = param1PostInfoList.v_forum_id;
+      this.name_show = param1PostInfoList.name_show;
+      this.ala_info = param1PostInfoList.ala_info;
+      this.agree_num = param1PostInfoList.agree_num;
+      this.view_num = param1PostInfoList.view_num;
+      this.share_num = param1PostInfoList.share_num;
+      this.agree = param1PostInfoList.agree;
+      this.is_remain = param1PostInfoList.is_remain;
+      this.origin_thread_info = param1PostInfoList.origin_thread_info;
+      this.is_view_year = param1PostInfoList.is_view_year;
+      this.is_share_thread = param1PostInfoList.is_share_thread;
+      this.rich_title = Message.copyOf(param1PostInfoList.rich_title);
+      this.rich_abstract = Message.copyOf(param1PostInfoList.rich_abstract);
+      this.is_ntitle = param1PostInfoList.is_ntitle;
+      this.article_cover = param1PostInfoList.article_cover;
+      this.first_post_content = Message.copyOf(param1PostInfoList.first_post_content);
+      this.baijiahao_info = param1PostInfoList.baijiahao_info;
+      this.wonderful_post_info = param1PostInfoList.wonderful_post_info;
+      this.item = param1PostInfoList.item;
+      this.item_star = Message.copyOf(param1PostInfoList.item_star);
+      this.pb_link_info = Message.copyOf(param1PostInfoList.pb_link_info);
+      this.pb_goods_info = Message.copyOf(param1PostInfoList.pb_goods_info);
+      this.priv_sets = Message.copyOf(param1PostInfoList.priv_sets);
+      this.is_author_view = param1PostInfoList.is_author_view;
+      this.works_info = param1PostInfoList.works_info;
+      this.is_manager = param1PostInfoList.is_manager;
+      this.is_origin_manager = param1PostInfoList.is_origin_manager;
+      this.good_types = param1PostInfoList.good_types;
+      this.top_types = param1PostInfoList.top_types;
+      this.user_post_perm = param1PostInfoList.user_post_perm;
+      this.voice_room = param1PostInfoList.voice_room;
+    }
+    
+    public PostInfoList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PostInfoList)interceptResult.objValue; 
+      } 
+      return new PostInfoList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

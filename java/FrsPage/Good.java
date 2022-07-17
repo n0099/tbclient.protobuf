@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,13 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Good extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_NUM = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer num;
   
   public Good(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       integer = paramBuilder.num;
@@ -27,6 +31,10 @@ public final class Good extends Message {
     } else {
       this.num = ((Builder)integer).num;
     } 
+  }
+  
+  public Good(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -43,5 +51,38 @@ public final class Good extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Good> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer num;
+    
+    public Builder() {}
+    
+    public Builder(Good param1Good) {
+      super(param1Good);
+      if (param1Good == null)
+        return; 
+      this.num = param1Good.num;
+    }
+    
+    public Good build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Good)interceptResult.objValue; 
+      } 
+      return new Good(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

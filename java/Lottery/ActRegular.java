@@ -1,4 +1,4 @@
-package Lottery;
+package tbclient.Lottery;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ActRegular extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BTN_NAME = "";
   
   public static final Integer DEFAULT_CHANCE;
@@ -16,6 +18,8 @@ public final class ActRegular extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String btn_name;
@@ -49,7 +53,7 @@ public final class ActRegular extends Message {
   }
   
   public ActRegular(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -82,5 +86,51 @@ public final class ActRegular extends Message {
       this.url = ((Builder)str).url;
       this.btn_name = ((Builder)str).btn_name;
     } 
+  }
+  
+  public ActRegular(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ActRegular> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String btn_name;
+    
+    public Integer chance;
+    
+    public Integer type;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(ActRegular param1ActRegular) {
+      super(param1ActRegular);
+      if (param1ActRegular == null)
+        return; 
+      this.type = param1ActRegular.type;
+      this.chance = param1ActRegular.chance;
+      this.url = param1ActRegular.url;
+      this.btn_name = param1ActRegular.btn_name;
+    }
+    
+    public ActRegular build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActRegular)interceptResult.objValue; 
+      } 
+      return new ActRegular(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

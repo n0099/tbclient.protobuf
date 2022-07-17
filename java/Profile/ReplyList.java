@@ -1,4 +1,4 @@
-package Profile;
+package tbclient.Profile;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ReplyList extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_FRIEND_ID;
   
   public static final String DEFAULT_MESSAGE = "";
@@ -16,6 +18,8 @@ public final class ReplyList extends Message {
   public static final Integer DEFAULT_TIME;
   
   public static final Long DEFAULT_USER_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long friend_id;
@@ -50,7 +54,7 @@ public final class ReplyList extends Message {
   }
   
   public ReplyList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
@@ -83,5 +87,51 @@ public final class ReplyList extends Message {
       this.message = ((Builder)integer).message;
       this.time = ((Builder)integer).time;
     } 
+  }
+  
+  public ReplyList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ReplyList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long friend_id;
+    
+    public String message;
+    
+    public Integer time;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(ReplyList param1ReplyList) {
+      super(param1ReplyList);
+      if (param1ReplyList == null)
+        return; 
+      this.user_id = param1ReplyList.user_id;
+      this.friend_id = param1ReplyList.friend_id;
+      this.message = param1ReplyList.message;
+      this.time = param1ReplyList.time;
+    }
+    
+    public ReplyList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ReplyList)interceptResult.objValue; 
+      } 
+      return new ReplyList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

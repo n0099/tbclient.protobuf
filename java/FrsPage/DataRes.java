@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -21,38 +21,6 @@ import tbclient.Esport;
 import tbclient.ForumArIno;
 import tbclient.ForumPresentInfo;
 import tbclient.ForumRuleStatus;
-import tbclient.FrsPage.ActivityConfig;
-import tbclient.FrsPage.ActivityHead;
-import tbclient.FrsPage.AgreeBanner;
-import tbclient.FrsPage.AlaLiveInsert;
-import tbclient.FrsPage.BannerThreadInfo;
-import tbclient.FrsPage.Bottle;
-import tbclient.FrsPage.BrandForumInfo;
-import tbclient.FrsPage.BusinessPromot;
-import tbclient.FrsPage.CarrierEnter;
-import tbclient.FrsPage.ClientPlatform;
-import tbclient.FrsPage.ColorEgg;
-import tbclient.FrsPage.ForumActiveInfo;
-import tbclient.FrsPage.ForumBookInfo;
-import tbclient.FrsPage.ForumHeadIcon;
-import tbclient.FrsPage.ForumHeadlineImgInfo;
-import tbclient.FrsPage.ForumInfo;
-import tbclient.FrsPage.GconAccount;
-import tbclient.FrsPage.Group;
-import tbclient.FrsPage.HeadSdk;
-import tbclient.FrsPage.Info;
-import tbclient.FrsPage.NavTabInfo;
-import tbclient.FrsPage.NebulaHotThreads;
-import tbclient.FrsPage.NtSpreadInfo;
-import tbclient.FrsPage.PrivateForumTotalInfo;
-import tbclient.FrsPage.PushThreadInfo;
-import tbclient.FrsPage.RecomPostTopic;
-import tbclient.FrsPage.RecommendBook;
-import tbclient.FrsPage.StarEnter;
-import tbclient.FrsPage.StarInfo;
-import tbclient.FrsPage.StarRank;
-import tbclient.FrsPage.ThreadIdListInfo;
-import tbclient.FrsPage.WorldcupSkin;
 import tbclient.FrsPageUserExtend;
 import tbclient.FrsTabInfo;
 import tbclient.FrsVideo;
@@ -62,6 +30,7 @@ import tbclient.NaGuide;
 import tbclient.Novel;
 import tbclient.Page;
 import tbclient.PopInfo;
+import tbclient.PrivatePopInfo;
 import tbclient.RecommendInfo;
 import tbclient.RedpacketRain;
 import tbclient.SdkTopicThread;
@@ -76,6 +45,8 @@ import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST;
   
   public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
@@ -95,6 +66,8 @@ public final class DataRes extends Message {
   public static final List<BannerThreadInfo> DEFAULT_BANNER_THREAD_LIST;
   
   public static final String DEFAULT_BAWU_ENTER_URL = "";
+  
+  public static final Integer DEFAULT_BAWU_UNREAD_NOTICE_NUM;
   
   public static final List<BottomMenu> DEFAULT_BOTTOM_MENU;
   
@@ -129,6 +102,8 @@ public final class DataRes extends Message {
   public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP;
   
   public static final Integer DEFAULT_IS_NEW_URL;
+  
+  public static final List<LiveFuseForumData> DEFAULT_LIVE_FUSE_FORUM;
   
   public static final Long DEFAULT_LOGID;
   
@@ -175,6 +150,8 @@ public final class DataRes extends Message {
   public static final List<ThreadInfo> DEFAULT_VOICE_ROOM_LIST;
   
   public static final List<WindowToast> DEFAULT_WINDOW_TOAST;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 87)
   public final ActivityConfig activity_config;
@@ -226,6 +203,12 @@ public final class DataRes extends Message {
   
   @ProtoField(tag = 32, type = Message.Datatype.STRING)
   public final String bawu_enter_url;
+  
+  @ProtoField(tag = 117, type = Message.Datatype.INT32)
+  public final Integer bawu_unread_notice_num;
+  
+  @ProtoField(tag = 115)
+  public final PrivatePopInfo bawutask_pop;
   
   @ProtoField(tag = 101)
   public final WindowToast bazhu_exam_fail;
@@ -352,6 +335,9 @@ public final class DataRes extends Message {
   
   @ProtoField(tag = 69)
   public final AlaLiveNotify live_frs_notify;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 116)
+  public final List<LiveFuseForumData> live_fuse_forum;
   
   @ProtoField(tag = 13, type = Message.Datatype.INT64)
   public final Long logid;
@@ -540,11 +526,13 @@ public final class DataRes extends Message {
     DEFAULT_VOICE_ROOM_CONFIG = integer;
     DEFAULT_AD_SHOW_SELECT = integer;
     DEFAULT_AD_MIX_LIST = Collections.emptyList();
+    DEFAULT_LIVE_FUSE_FORUM = Collections.emptyList();
+    DEFAULT_BAWU_UNREAD_NOTICE_NUM = integer;
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    String str;
+    super(paramBuilder);
+    Integer integer;
     if (paramBoolean == true) {
       this.user = paramBuilder.user;
       this.forum = paramBuilder.forum;
@@ -552,17 +540,17 @@ public final class DataRes extends Message {
       this.page = paramBuilder.page;
       this.anti = paramBuilder.anti;
       this.group = paramBuilder.group;
-      List list14 = paramBuilder.thread_list;
-      if (list14 == null) {
+      List<ThreadInfo> list23 = paramBuilder.thread_list;
+      if (list23 == null) {
         this.thread_list = DEFAULT_THREAD_LIST;
       } else {
-        this.thread_list = Message.immutableCopyOf(list14);
+        this.thread_list = Message.immutableCopyOf(list23);
       } 
-      list14 = paramBuilder.thread_id_list;
-      if (list14 == null) {
+      List<Long> list22 = paramBuilder.thread_id_list;
+      if (list22 == null) {
         this.thread_id_list = DEFAULT_THREAD_ID_LIST;
       } else {
-        this.thread_id_list = Message.immutableCopyOf(list14);
+        this.thread_id_list = Message.immutableCopyOf(list22);
       } 
       Integer integer12 = paramBuilder.is_new_url;
       if (integer12 == null) {
@@ -601,49 +589,49 @@ public final class DataRes extends Message {
         this.server_time = integer11;
       } 
       this.info = paramBuilder.info;
-      List list13 = paramBuilder.forum_livegroup_list;
-      if (list13 == null) {
+      List<AnchorInfo> list21 = paramBuilder.forum_livegroup_list;
+      if (list21 == null) {
         this.forum_livegroup_list = DEFAULT_FORUM_LIVEGROUP_LIST;
       } else {
-        this.forum_livegroup_list = Message.immutableCopyOf(list13);
+        this.forum_livegroup_list = Message.immutableCopyOf(list21);
       } 
-      list13 = paramBuilder.user_list;
-      if (list13 == null) {
+      List<User> list20 = paramBuilder.user_list;
+      if (list20 == null) {
         this.user_list = DEFAULT_USER_LIST;
       } else {
-        this.user_list = Message.immutableCopyOf(list13);
+        this.user_list = Message.immutableCopyOf(list20);
       } 
       this.gcon_account = paramBuilder.gcon_account;
-      String str4 = paramBuilder.fortune_desc;
-      if (str4 == null) {
+      String str5 = paramBuilder.fortune_desc;
+      if (str5 == null) {
         this.fortune_desc = "";
       } else {
-        this.fortune_desc = str4;
+        this.fortune_desc = str5;
       } 
-      List list12 = paramBuilder.star_enter;
-      if (list12 == null) {
+      List<StarEnter> list19 = paramBuilder.star_enter;
+      if (list19 == null) {
         this.star_enter = DEFAULT_STAR_ENTER;
       } else {
-        this.star_enter = Message.immutableCopyOf(list12);
+        this.star_enter = Message.immutableCopyOf(list19);
       } 
-      list12 = paramBuilder.color_egg;
-      if (list12 == null) {
+      List<ColorEgg> list18 = paramBuilder.color_egg;
+      if (list18 == null) {
         this.color_egg = DEFAULT_COLOR_EGG;
       } else {
-        this.color_egg = Message.immutableCopyOf(list12);
+        this.color_egg = Message.immutableCopyOf(list18);
       } 
-      list12 = paramBuilder.frs_tab_info;
-      if (list12 == null) {
+      List<FrsTabInfo> list17 = paramBuilder.frs_tab_info;
+      if (list17 == null) {
         this.frs_tab_info = DEFAULT_FRS_TAB_INFO;
       } else {
-        this.frs_tab_info = Message.immutableCopyOf(list12);
+        this.frs_tab_info = Message.immutableCopyOf(list17);
       } 
       this.activityhead = paramBuilder.activityhead;
-      list12 = paramBuilder.twzhibo_info;
-      if (list12 == null) {
+      List<ZhiBoInfoTW> list16 = paramBuilder.twzhibo_info;
+      if (list16 == null) {
         this.twzhibo_info = DEFAULT_TWZHIBO_INFO;
       } else {
-        this.twzhibo_info = Message.immutableCopyOf(list12);
+        this.twzhibo_info = Message.immutableCopyOf(list16);
       } 
       this.novel = paramBuilder.novel;
       this.hot_twzhibo_info = paramBuilder.hot_twzhibo_info;
@@ -653,28 +641,28 @@ public final class DataRes extends Message {
       } else {
         this.twzhibo_pos = integer10;
       } 
-      List list11 = paramBuilder.category_list;
-      if (list11 == null) {
+      List<CategoryInfo> list15 = paramBuilder.category_list;
+      if (list15 == null) {
         this.category_list = DEFAULT_CATEGORY_LIST;
       } else {
-        this.category_list = Message.immutableCopyOf(list11);
+        this.category_list = Message.immutableCopyOf(list15);
       } 
       this.push_thread_info = paramBuilder.push_thread_info;
       this.store_card = paramBuilder.store_card;
       this.sdk_topic_thread = paramBuilder.sdk_topic_thread;
-      String str3 = paramBuilder.bawu_enter_url;
-      if (str3 == null) {
+      String str4 = paramBuilder.bawu_enter_url;
+      if (str4 == null) {
         this.bawu_enter_url = "";
       } else {
-        this.bawu_enter_url = str3;
+        this.bawu_enter_url = str4;
       } 
       this.client_platform = paramBuilder.client_platform;
       this.head_sdk = paramBuilder.head_sdk;
-      List list10 = paramBuilder.card_shipin_info;
-      if (list10 == null) {
+      List<ThreadInfo> list14 = paramBuilder.card_shipin_info;
+      if (list14 == null) {
         this.card_shipin_info = DEFAULT_CARD_SHIPIN_INFO;
       } else {
-        this.card_shipin_info = Message.immutableCopyOf(list10);
+        this.card_shipin_info = Message.immutableCopyOf(list14);
       } 
       this.nav_tab_info = paramBuilder.nav_tab_info;
       Integer integer9 = paramBuilder.frs_tab_default;
@@ -698,11 +686,11 @@ public final class DataRes extends Message {
       } 
       this.vitality_info = paramBuilder.vitality_info;
       this.carrier_enter = paramBuilder.carrier_enter;
-      List list9 = paramBuilder.banner_thread_list;
-      if (list9 == null) {
+      List<BannerThreadInfo> list13 = paramBuilder.banner_thread_list;
+      if (list13 == null) {
         this.banner_thread_list = DEFAULT_BANNER_THREAD_LIST;
       } else {
-        this.banner_thread_list = Message.immutableCopyOf(list9);
+        this.banner_thread_list = Message.immutableCopyOf(list13);
       } 
       this.recommend_book = paramBuilder.recommend_book;
       Integer integer8 = paramBuilder.smart_frs_type;
@@ -727,23 +715,23 @@ public final class DataRes extends Message {
       this.forum_present_info = paramBuilder.forum_present_info;
       this.forum_headline_img_info = paramBuilder.forum_headline_img_info;
       this.ntspread = paramBuilder.ntspread;
-      List list8 = paramBuilder.card_shipin_pos;
-      if (list8 == null) {
+      List<Integer> list12 = paramBuilder.card_shipin_pos;
+      if (list12 == null) {
         this.card_shipin_pos = DEFAULT_CARD_SHIPIN_POS;
       } else {
-        this.card_shipin_pos = Message.immutableCopyOf(list8);
+        this.card_shipin_pos = Message.immutableCopyOf(list12);
       } 
-      list8 = paramBuilder.card_shipin_new;
-      if (list8 == null) {
+      List<ThreadInfo> list11 = paramBuilder.card_shipin_new;
+      if (list11 == null) {
         this.card_shipin_new = DEFAULT_CARD_SHIPIN_NEW;
       } else {
-        this.card_shipin_new = Message.immutableCopyOf(list8);
+        this.card_shipin_new = Message.immutableCopyOf(list11);
       } 
-      String str2 = paramBuilder.asp_shown_info;
-      if (str2 == null) {
+      String str3 = paramBuilder.asp_shown_info;
+      if (str3 == null) {
         this.asp_shown_info = "";
       } else {
-        this.asp_shown_info = str2;
+        this.asp_shown_info = str3;
       } 
       Integer integer7 = paramBuilder.ala_live_count;
       if (integer7 == null) {
@@ -753,26 +741,26 @@ public final class DataRes extends Message {
       } 
       this.bottle = paramBuilder.bottle;
       this.enter_pop_info = paramBuilder.enter_pop_info;
-      String str1 = paramBuilder.partial_visible_toast;
-      if (str1 == null) {
+      String str2 = paramBuilder.partial_visible_toast;
+      if (str2 == null) {
         this.partial_visible_toast = "";
       } else {
-        this.partial_visible_toast = str1;
+        this.partial_visible_toast = str2;
       } 
       this.esport = paramBuilder.esport;
-      List list7 = paramBuilder.thread_id_list_info;
-      if (list7 == null) {
+      List<ThreadIdListInfo> list10 = paramBuilder.thread_id_list_info;
+      if (list10 == null) {
         this.thread_id_list_info = DEFAULT_THREAD_ID_LIST_INFO;
       } else {
-        this.thread_id_list_info = Message.immutableCopyOf(list7);
+        this.thread_id_list_info = Message.immutableCopyOf(list10);
       } 
       this.agree_banner = paramBuilder.agree_banner;
       this.na_guide = paramBuilder.na_guide;
-      list7 = paramBuilder.frs_game_tab_info;
-      if (list7 == null) {
+      List<FrsTabInfo> list9 = paramBuilder.frs_game_tab_info;
+      if (list9 == null) {
         this.frs_game_tab_info = DEFAULT_FRS_GAME_TAB_INFO;
       } else {
-        this.frs_game_tab_info = Message.immutableCopyOf(list7);
+        this.frs_game_tab_info = Message.immutableCopyOf(list9);
       } 
       this.live_frs_notify = paramBuilder.live_frs_notify;
       this.banner_user_story = paramBuilder.banner_user_story;
@@ -785,11 +773,11 @@ public final class DataRes extends Message {
       } else {
         this.game_default_tab_id = integer6;
       } 
-      List list6 = paramBuilder.ala_insert_thread;
-      if (list6 == null) {
+      List<ThreadInfo> list8 = paramBuilder.ala_insert_thread;
+      if (list8 == null) {
         this.ala_insert_thread = DEFAULT_ALA_INSERT_THREAD;
       } else {
-        this.ala_insert_thread = Message.immutableCopyOf(list6);
+        this.ala_insert_thread = Message.immutableCopyOf(list8);
       } 
       this.ala_live_insert = paramBuilder.ala_live_insert;
       Integer integer5 = paramBuilder.ala_insert_floor;
@@ -799,11 +787,11 @@ public final class DataRes extends Message {
         this.ala_insert_floor = integer5;
       } 
       this.forum_ar_info = paramBuilder.forum_ar_info;
-      List list5 = paramBuilder.ala_stage_list;
-      if (list5 == null) {
+      List<ThreadInfo> list7 = paramBuilder.ala_stage_list;
+      if (list7 == null) {
         this.ala_stage_list = DEFAULT_ALA_STAGE_LIST;
       } else {
-        this.ala_stage_list = Message.immutableCopyOf(list5);
+        this.ala_stage_list = Message.immutableCopyOf(list7);
       } 
       this.star_rank_info = paramBuilder.star_rank_info;
       Integer integer4 = paramBuilder.trends_redpoint;
@@ -812,11 +800,11 @@ public final class DataRes extends Message {
       } else {
         this.trends_redpoint = integer4;
       } 
-      List list4 = paramBuilder.window_toast;
-      if (list4 == null) {
+      List<WindowToast> list6 = paramBuilder.window_toast;
+      if (list6 == null) {
         this.window_toast = DEFAULT_WINDOW_TOAST;
       } else {
-        this.window_toast = Message.immutableCopyOf(list4);
+        this.window_toast = Message.immutableCopyOf(list6);
       } 
       this.recom_post_topic = paramBuilder.recom_post_topic;
       this.activity_config = paramBuilder.activity_config;
@@ -824,11 +812,11 @@ public final class DataRes extends Message {
       this.worldcup_skin = paramBuilder.worldcup_skin;
       this.redpacketrain = paramBuilder.redpacketrain;
       this.brand_forum_info = paramBuilder.brand_forum_info;
-      list4 = paramBuilder.bottom_menu;
-      if (list4 == null) {
+      List<BottomMenu> list5 = paramBuilder.bottom_menu;
+      if (list5 == null) {
         this.bottom_menu = DEFAULT_BOTTOM_MENU;
       } else {
-        this.bottom_menu = Message.immutableCopyOf(list4);
+        this.bottom_menu = Message.immutableCopyOf(list5);
       } 
       Integer integer3 = paramBuilder.video_auto_play;
       if (integer3 == null) {
@@ -836,18 +824,18 @@ public final class DataRes extends Message {
       } else {
         this.video_auto_play = integer3;
       } 
-      List list3 = paramBuilder.smart_app_avatar;
-      if (list3 == null) {
+      List<String> list4 = paramBuilder.smart_app_avatar;
+      if (list4 == null) {
         this.smart_app_avatar = DEFAULT_SMART_APP_AVATAR;
       } else {
-        this.smart_app_avatar = Message.immutableCopyOf(list3);
+        this.smart_app_avatar = Message.immutableCopyOf(list4);
       } 
       this.smart_app = paramBuilder.smart_app;
       this.nebula_hot_threads = paramBuilder.nebula_hot_threads;
       this.private_forum_info = paramBuilder.private_forum_info;
       this.private_forum_active_info = paramBuilder.private_forum_active_info;
       this.business_promot = paramBuilder.business_promot;
-      list3 = paramBuilder.service_area;
+      List<ServiceArea> list3 = paramBuilder.service_area;
       if (list3 == null) {
         this.service_area = DEFAULT_SERVICE_AREA;
       } else {
@@ -872,7 +860,7 @@ public final class DataRes extends Message {
         this.show_adsense = integer2;
       } 
       this.frsmask_pop_info = paramBuilder.frsmask_pop_info;
-      List list2 = paramBuilder.voice_room_list;
+      List<ThreadInfo> list2 = paramBuilder.voice_room_list;
       if (list2 == null) {
         this.voice_room_list = DEFAULT_VOICE_ROOM_LIST;
       } else {
@@ -890,126 +878,146 @@ public final class DataRes extends Message {
       } else {
         this.ad_show_select = integer1;
       } 
-      List list1 = paramBuilder.ad_mix_list;
+      List<AdMixFloor> list1 = paramBuilder.ad_mix_list;
       if (list1 == null) {
         this.ad_mix_list = DEFAULT_AD_MIX_LIST;
       } else {
         this.ad_mix_list = Message.immutableCopyOf(list1);
       } 
-      str = paramBuilder.ad_sample_map_key;
-      if (str == null) {
+      String str1 = paramBuilder.ad_sample_map_key;
+      if (str1 == null) {
         this.ad_sample_map_key = "";
       } else {
-        this.ad_sample_map_key = str;
+        this.ad_sample_map_key = str1;
+      } 
+      this.bawutask_pop = paramBuilder.bawutask_pop;
+      List<LiveFuseForumData> list = paramBuilder.live_fuse_forum;
+      if (list == null) {
+        this.live_fuse_forum = DEFAULT_LIVE_FUSE_FORUM;
+      } else {
+        this.live_fuse_forum = Message.immutableCopyOf(list);
+      } 
+      integer = paramBuilder.bawu_unread_notice_num;
+      if (integer == null) {
+        this.bawu_unread_notice_num = DEFAULT_BAWU_UNREAD_NOTICE_NUM;
+      } else {
+        this.bawu_unread_notice_num = integer;
       } 
     } else {
-      this.user = ((Builder)str).user;
-      this.forum = ((Builder)str).forum;
-      this.frs_star = ((Builder)str).frs_star;
-      this.page = ((Builder)str).page;
-      this.anti = ((Builder)str).anti;
-      this.group = ((Builder)str).group;
-      this.thread_list = Message.immutableCopyOf(((Builder)str).thread_list);
-      this.thread_id_list = Message.immutableCopyOf(((Builder)str).thread_id_list);
-      this.is_new_url = ((Builder)str).is_new_url;
-      this.fortune_bag = ((Builder)str).fortune_bag;
-      this.time = ((Builder)str).time;
-      this.ctime = ((Builder)str).ctime;
-      this.logid = ((Builder)str).logid;
-      this.server_time = ((Builder)str).server_time;
-      this.info = ((Builder)str).info;
-      this.forum_livegroup_list = Message.immutableCopyOf(((Builder)str).forum_livegroup_list);
-      this.user_list = Message.immutableCopyOf(((Builder)str).user_list);
-      this.gcon_account = ((Builder)str).gcon_account;
-      this.fortune_desc = ((Builder)str).fortune_desc;
-      this.star_enter = Message.immutableCopyOf(((Builder)str).star_enter);
-      this.color_egg = Message.immutableCopyOf(((Builder)str).color_egg);
-      this.frs_tab_info = Message.immutableCopyOf(((Builder)str).frs_tab_info);
-      this.activityhead = ((Builder)str).activityhead;
-      this.twzhibo_info = Message.immutableCopyOf(((Builder)str).twzhibo_info);
-      this.novel = ((Builder)str).novel;
-      this.hot_twzhibo_info = ((Builder)str).hot_twzhibo_info;
-      this.twzhibo_pos = ((Builder)str).twzhibo_pos;
-      this.category_list = Message.immutableCopyOf(((Builder)str).category_list);
-      this.push_thread_info = ((Builder)str).push_thread_info;
-      this.store_card = ((Builder)str).store_card;
-      this.sdk_topic_thread = ((Builder)str).sdk_topic_thread;
-      this.bawu_enter_url = ((Builder)str).bawu_enter_url;
-      this.client_platform = ((Builder)str).client_platform;
-      this.head_sdk = ((Builder)str).head_sdk;
-      this.card_shipin_info = Message.immutableCopyOf(((Builder)str).card_shipin_info);
-      this.nav_tab_info = ((Builder)str).nav_tab_info;
-      this.frs_tab_default = ((Builder)str).frs_tab_default;
-      this.sort_type = ((Builder)str).sort_type;
-      this.school_recom_info = ((Builder)str).school_recom_info;
-      this.school_recom_pos = ((Builder)str).school_recom_pos;
-      this.vitality_info = ((Builder)str).vitality_info;
-      this.carrier_enter = ((Builder)str).carrier_enter;
-      this.banner_thread_list = Message.immutableCopyOf(((Builder)str).banner_thread_list);
-      this.recommend_book = ((Builder)str).recommend_book;
-      this.smart_frs_type = ((Builder)str).smart_frs_type;
-      this.need_log = ((Builder)str).need_log;
-      this.is_auto_play_forumheadvideo = ((Builder)str).is_auto_play_forumheadvideo;
-      this.book_info = ((Builder)str).book_info;
-      this.forum_present_info = ((Builder)str).forum_present_info;
-      this.forum_headline_img_info = ((Builder)str).forum_headline_img_info;
-      this.ntspread = ((Builder)str).ntspread;
-      this.card_shipin_pos = Message.immutableCopyOf(((Builder)str).card_shipin_pos);
-      this.card_shipin_new = Message.immutableCopyOf(((Builder)str).card_shipin_new);
-      this.asp_shown_info = ((Builder)str).asp_shown_info;
-      this.ala_live_count = ((Builder)str).ala_live_count;
-      this.bottle = ((Builder)str).bottle;
-      this.enter_pop_info = ((Builder)str).enter_pop_info;
-      this.partial_visible_toast = ((Builder)str).partial_visible_toast;
-      this.esport = ((Builder)str).esport;
-      this.thread_id_list_info = Message.immutableCopyOf(((Builder)str).thread_id_list_info);
-      this.agree_banner = ((Builder)str).agree_banner;
-      this.na_guide = ((Builder)str).na_guide;
-      this.frs_game_tab_info = Message.immutableCopyOf(((Builder)str).frs_game_tab_info);
-      this.live_frs_notify = ((Builder)str).live_frs_notify;
-      this.banner_user_story = ((Builder)str).banner_user_story;
-      this.user_extend = ((Builder)str).user_extend;
-      this.forum_head_icon = ((Builder)str).forum_head_icon;
-      this.video = ((Builder)str).video;
-      this.game_default_tab_id = ((Builder)str).game_default_tab_id;
-      this.ala_insert_thread = Message.immutableCopyOf(((Builder)str).ala_insert_thread);
-      this.ala_live_insert = ((Builder)str).ala_live_insert;
-      this.ala_insert_floor = ((Builder)str).ala_insert_floor;
-      this.forum_ar_info = ((Builder)str).forum_ar_info;
-      this.ala_stage_list = Message.immutableCopyOf(((Builder)str).ala_stage_list);
-      this.star_rank_info = ((Builder)str).star_rank_info;
-      this.trends_redpoint = ((Builder)str).trends_redpoint;
-      this.window_toast = Message.immutableCopyOf(((Builder)str).window_toast);
-      this.recom_post_topic = ((Builder)str).recom_post_topic;
-      this.activity_config = ((Builder)str).activity_config;
-      this.star_voice = ((Builder)str).star_voice;
-      this.worldcup_skin = ((Builder)str).worldcup_skin;
-      this.redpacketrain = ((Builder)str).redpacketrain;
-      this.brand_forum_info = ((Builder)str).brand_forum_info;
-      this.bottom_menu = Message.immutableCopyOf(((Builder)str).bottom_menu);
-      this.video_auto_play = ((Builder)str).video_auto_play;
-      this.smart_app_avatar = Message.immutableCopyOf(((Builder)str).smart_app_avatar);
-      this.smart_app = ((Builder)str).smart_app;
-      this.nebula_hot_threads = ((Builder)str).nebula_hot_threads;
-      this.private_forum_info = ((Builder)str).private_forum_info;
-      this.private_forum_active_info = ((Builder)str).private_forum_active_info;
-      this.business_promot = ((Builder)str).business_promot;
-      this.service_area = Message.immutableCopyOf(((Builder)str).service_area);
-      this.bazhu_exam_fail = ((Builder)str).bazhu_exam_fail;
-      this.hot_user_entry = ((Builder)str).hot_user_entry;
-      this.item_info = ((Builder)str).item_info;
-      this.is_get_horse_race_lamp = ((Builder)str).is_get_horse_race_lamp;
-      this.forum_rule = ((Builder)str).forum_rule;
-      this.sign_activity_info = ((Builder)str).sign_activity_info;
-      this.add_bawu_pop = ((Builder)str).add_bawu_pop;
-      this.show_adsense = ((Builder)str).show_adsense;
-      this.frsmask_pop_info = ((Builder)str).frsmask_pop_info;
-      this.voice_room_list = Message.immutableCopyOf(((Builder)str).voice_room_list);
-      this.voice_room_config = ((Builder)str).voice_room_config;
-      this.ad_show_select = ((Builder)str).ad_show_select;
-      this.ad_mix_list = Message.immutableCopyOf(((Builder)str).ad_mix_list);
-      this.ad_sample_map_key = ((Builder)str).ad_sample_map_key;
+      this.user = ((Builder)integer).user;
+      this.forum = ((Builder)integer).forum;
+      this.frs_star = ((Builder)integer).frs_star;
+      this.page = ((Builder)integer).page;
+      this.anti = ((Builder)integer).anti;
+      this.group = ((Builder)integer).group;
+      this.thread_list = Message.immutableCopyOf(((Builder)integer).thread_list);
+      this.thread_id_list = Message.immutableCopyOf(((Builder)integer).thread_id_list);
+      this.is_new_url = ((Builder)integer).is_new_url;
+      this.fortune_bag = ((Builder)integer).fortune_bag;
+      this.time = ((Builder)integer).time;
+      this.ctime = ((Builder)integer).ctime;
+      this.logid = ((Builder)integer).logid;
+      this.server_time = ((Builder)integer).server_time;
+      this.info = ((Builder)integer).info;
+      this.forum_livegroup_list = Message.immutableCopyOf(((Builder)integer).forum_livegroup_list);
+      this.user_list = Message.immutableCopyOf(((Builder)integer).user_list);
+      this.gcon_account = ((Builder)integer).gcon_account;
+      this.fortune_desc = ((Builder)integer).fortune_desc;
+      this.star_enter = Message.immutableCopyOf(((Builder)integer).star_enter);
+      this.color_egg = Message.immutableCopyOf(((Builder)integer).color_egg);
+      this.frs_tab_info = Message.immutableCopyOf(((Builder)integer).frs_tab_info);
+      this.activityhead = ((Builder)integer).activityhead;
+      this.twzhibo_info = Message.immutableCopyOf(((Builder)integer).twzhibo_info);
+      this.novel = ((Builder)integer).novel;
+      this.hot_twzhibo_info = ((Builder)integer).hot_twzhibo_info;
+      this.twzhibo_pos = ((Builder)integer).twzhibo_pos;
+      this.category_list = Message.immutableCopyOf(((Builder)integer).category_list);
+      this.push_thread_info = ((Builder)integer).push_thread_info;
+      this.store_card = ((Builder)integer).store_card;
+      this.sdk_topic_thread = ((Builder)integer).sdk_topic_thread;
+      this.bawu_enter_url = ((Builder)integer).bawu_enter_url;
+      this.client_platform = ((Builder)integer).client_platform;
+      this.head_sdk = ((Builder)integer).head_sdk;
+      this.card_shipin_info = Message.immutableCopyOf(((Builder)integer).card_shipin_info);
+      this.nav_tab_info = ((Builder)integer).nav_tab_info;
+      this.frs_tab_default = ((Builder)integer).frs_tab_default;
+      this.sort_type = ((Builder)integer).sort_type;
+      this.school_recom_info = ((Builder)integer).school_recom_info;
+      this.school_recom_pos = ((Builder)integer).school_recom_pos;
+      this.vitality_info = ((Builder)integer).vitality_info;
+      this.carrier_enter = ((Builder)integer).carrier_enter;
+      this.banner_thread_list = Message.immutableCopyOf(((Builder)integer).banner_thread_list);
+      this.recommend_book = ((Builder)integer).recommend_book;
+      this.smart_frs_type = ((Builder)integer).smart_frs_type;
+      this.need_log = ((Builder)integer).need_log;
+      this.is_auto_play_forumheadvideo = ((Builder)integer).is_auto_play_forumheadvideo;
+      this.book_info = ((Builder)integer).book_info;
+      this.forum_present_info = ((Builder)integer).forum_present_info;
+      this.forum_headline_img_info = ((Builder)integer).forum_headline_img_info;
+      this.ntspread = ((Builder)integer).ntspread;
+      this.card_shipin_pos = Message.immutableCopyOf(((Builder)integer).card_shipin_pos);
+      this.card_shipin_new = Message.immutableCopyOf(((Builder)integer).card_shipin_new);
+      this.asp_shown_info = ((Builder)integer).asp_shown_info;
+      this.ala_live_count = ((Builder)integer).ala_live_count;
+      this.bottle = ((Builder)integer).bottle;
+      this.enter_pop_info = ((Builder)integer).enter_pop_info;
+      this.partial_visible_toast = ((Builder)integer).partial_visible_toast;
+      this.esport = ((Builder)integer).esport;
+      this.thread_id_list_info = Message.immutableCopyOf(((Builder)integer).thread_id_list_info);
+      this.agree_banner = ((Builder)integer).agree_banner;
+      this.na_guide = ((Builder)integer).na_guide;
+      this.frs_game_tab_info = Message.immutableCopyOf(((Builder)integer).frs_game_tab_info);
+      this.live_frs_notify = ((Builder)integer).live_frs_notify;
+      this.banner_user_story = ((Builder)integer).banner_user_story;
+      this.user_extend = ((Builder)integer).user_extend;
+      this.forum_head_icon = ((Builder)integer).forum_head_icon;
+      this.video = ((Builder)integer).video;
+      this.game_default_tab_id = ((Builder)integer).game_default_tab_id;
+      this.ala_insert_thread = Message.immutableCopyOf(((Builder)integer).ala_insert_thread);
+      this.ala_live_insert = ((Builder)integer).ala_live_insert;
+      this.ala_insert_floor = ((Builder)integer).ala_insert_floor;
+      this.forum_ar_info = ((Builder)integer).forum_ar_info;
+      this.ala_stage_list = Message.immutableCopyOf(((Builder)integer).ala_stage_list);
+      this.star_rank_info = ((Builder)integer).star_rank_info;
+      this.trends_redpoint = ((Builder)integer).trends_redpoint;
+      this.window_toast = Message.immutableCopyOf(((Builder)integer).window_toast);
+      this.recom_post_topic = ((Builder)integer).recom_post_topic;
+      this.activity_config = ((Builder)integer).activity_config;
+      this.star_voice = ((Builder)integer).star_voice;
+      this.worldcup_skin = ((Builder)integer).worldcup_skin;
+      this.redpacketrain = ((Builder)integer).redpacketrain;
+      this.brand_forum_info = ((Builder)integer).brand_forum_info;
+      this.bottom_menu = Message.immutableCopyOf(((Builder)integer).bottom_menu);
+      this.video_auto_play = ((Builder)integer).video_auto_play;
+      this.smart_app_avatar = Message.immutableCopyOf(((Builder)integer).smart_app_avatar);
+      this.smart_app = ((Builder)integer).smart_app;
+      this.nebula_hot_threads = ((Builder)integer).nebula_hot_threads;
+      this.private_forum_info = ((Builder)integer).private_forum_info;
+      this.private_forum_active_info = ((Builder)integer).private_forum_active_info;
+      this.business_promot = ((Builder)integer).business_promot;
+      this.service_area = Message.immutableCopyOf(((Builder)integer).service_area);
+      this.bazhu_exam_fail = ((Builder)integer).bazhu_exam_fail;
+      this.hot_user_entry = ((Builder)integer).hot_user_entry;
+      this.item_info = ((Builder)integer).item_info;
+      this.is_get_horse_race_lamp = ((Builder)integer).is_get_horse_race_lamp;
+      this.forum_rule = ((Builder)integer).forum_rule;
+      this.sign_activity_info = ((Builder)integer).sign_activity_info;
+      this.add_bawu_pop = ((Builder)integer).add_bawu_pop;
+      this.show_adsense = ((Builder)integer).show_adsense;
+      this.frsmask_pop_info = ((Builder)integer).frsmask_pop_info;
+      this.voice_room_list = Message.immutableCopyOf(((Builder)integer).voice_room_list);
+      this.voice_room_config = ((Builder)integer).voice_room_config;
+      this.ad_show_select = ((Builder)integer).ad_show_select;
+      this.ad_mix_list = Message.immutableCopyOf(((Builder)integer).ad_mix_list);
+      this.ad_sample_map_key = ((Builder)integer).ad_sample_map_key;
+      this.bawutask_pop = ((Builder)integer).bawutask_pop;
+      this.live_fuse_forum = Message.immutableCopyOf(((Builder)integer).live_fuse_forum);
+      this.bawu_unread_notice_num = ((Builder)integer).bawu_unread_notice_num;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -1026,5 +1034,362 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ActivityConfig activity_config;
+    
+    public ActivityHead activityhead;
+    
+    public List<AdMixFloor> ad_mix_list;
+    
+    public String ad_sample_map_key;
+    
+    public Integer ad_show_select;
+    
+    public AddBawuPopInfo add_bawu_pop;
+    
+    public AgreeBanner agree_banner;
+    
+    public Integer ala_insert_floor;
+    
+    public List<ThreadInfo> ala_insert_thread;
+    
+    public Integer ala_live_count;
+    
+    public AlaLiveInsert ala_live_insert;
+    
+    public List<ThreadInfo> ala_stage_list;
+    
+    public Anti anti;
+    
+    public String asp_shown_info;
+    
+    public List<BannerThreadInfo> banner_thread_list;
+    
+    public BannerUserStory banner_user_story;
+    
+    public String bawu_enter_url;
+    
+    public Integer bawu_unread_notice_num;
+    
+    public PrivatePopInfo bawutask_pop;
+    
+    public WindowToast bazhu_exam_fail;
+    
+    public ForumBookInfo book_info;
+    
+    public Bottle bottle;
+    
+    public List<BottomMenu> bottom_menu;
+    
+    public BrandForumInfo brand_forum_info;
+    
+    public BusinessPromot business_promot;
+    
+    public List<ThreadInfo> card_shipin_info;
+    
+    public List<ThreadInfo> card_shipin_new;
+    
+    public List<Integer> card_shipin_pos;
+    
+    public CarrierEnter carrier_enter;
+    
+    public List<CategoryInfo> category_list;
+    
+    public ClientPlatform client_platform;
+    
+    public List<ColorEgg> color_egg;
+    
+    public Integer ctime;
+    
+    public PopInfo enter_pop_info;
+    
+    public Esport esport;
+    
+    public Integer fortune_bag;
+    
+    public String fortune_desc;
+    
+    public ForumInfo forum;
+    
+    public ForumArIno forum_ar_info;
+    
+    public ForumHeadIcon forum_head_icon;
+    
+    public ForumHeadlineImgInfo forum_headline_img_info;
+    
+    public List<AnchorInfo> forum_livegroup_list;
+    
+    public ForumPresentInfo forum_present_info;
+    
+    public ForumRuleStatus forum_rule;
+    
+    public List<FrsTabInfo> frs_game_tab_info;
+    
+    public StarInfo frs_star;
+    
+    public Integer frs_tab_default;
+    
+    public List<FrsTabInfo> frs_tab_info;
+    
+    public PopInfo frsmask_pop_info;
+    
+    public Integer game_default_tab_id;
+    
+    public GconAccount gcon_account;
+    
+    public Group group;
+    
+    public HeadSdk head_sdk;
+    
+    public ZhiBoInfoTW hot_twzhibo_info;
+    
+    public HotUserRankEntry hot_user_entry;
+    
+    public Info info;
+    
+    public Integer is_auto_play_forumheadvideo;
+    
+    public Integer is_get_horse_race_lamp;
+    
+    public Integer is_new_url;
+    
+    public ItemInfo item_info;
+    
+    public AlaLiveNotify live_frs_notify;
+    
+    public List<LiveFuseForumData> live_fuse_forum;
+    
+    public Long logid;
+    
+    public NaGuide na_guide;
+    
+    public NavTabInfo nav_tab_info;
+    
+    public NebulaHotThreads nebula_hot_threads;
+    
+    public Integer need_log;
+    
+    public Novel novel;
+    
+    public NtSpreadInfo ntspread;
+    
+    public Page page;
+    
+    public String partial_visible_toast;
+    
+    public ForumActiveInfo private_forum_active_info;
+    
+    public PrivateForumTotalInfo private_forum_info;
+    
+    public PushThreadInfo push_thread_info;
+    
+    public RecomPostTopic recom_post_topic;
+    
+    public RecommendBook recommend_book;
+    
+    public RedpacketRain redpacketrain;
+    
+    public RecommendInfo school_recom_info;
+    
+    public Integer school_recom_pos;
+    
+    public SdkTopicThread sdk_topic_thread;
+    
+    public Integer server_time;
+    
+    public List<ServiceArea> service_area;
+    
+    public Integer show_adsense;
+    
+    public SignActivityInfo sign_activity_info;
+    
+    public SmartApp smart_app;
+    
+    public List<String> smart_app_avatar;
+    
+    public Integer smart_frs_type;
+    
+    public Integer sort_type;
+    
+    public List<StarEnter> star_enter;
+    
+    public StarRank star_rank_info;
+    
+    public StarVoice star_voice;
+    
+    public ThreadInfo store_card;
+    
+    public List<Long> thread_id_list;
+    
+    public List<ThreadIdListInfo> thread_id_list_info;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public Integer time;
+    
+    public Integer trends_redpoint;
+    
+    public List<ZhiBoInfoTW> twzhibo_info;
+    
+    public Integer twzhibo_pos;
+    
+    public User user;
+    
+    public FrsPageUserExtend user_extend;
+    
+    public List<User> user_list;
+    
+    public FrsVideo video;
+    
+    public Integer video_auto_play;
+    
+    public VitalityInfo vitality_info;
+    
+    public Integer voice_room_config;
+    
+    public List<ThreadInfo> voice_room_list;
+    
+    public List<WindowToast> window_toast;
+    
+    public WorldcupSkin worldcup_skin;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.user = param1DataRes.user;
+      this.forum = param1DataRes.forum;
+      this.frs_star = param1DataRes.frs_star;
+      this.page = param1DataRes.page;
+      this.anti = param1DataRes.anti;
+      this.group = param1DataRes.group;
+      this.thread_list = Message.copyOf(param1DataRes.thread_list);
+      this.thread_id_list = Message.copyOf(param1DataRes.thread_id_list);
+      this.is_new_url = param1DataRes.is_new_url;
+      this.fortune_bag = param1DataRes.fortune_bag;
+      this.time = param1DataRes.time;
+      this.ctime = param1DataRes.ctime;
+      this.logid = param1DataRes.logid;
+      this.server_time = param1DataRes.server_time;
+      this.info = param1DataRes.info;
+      this.forum_livegroup_list = Message.copyOf(param1DataRes.forum_livegroup_list);
+      this.user_list = Message.copyOf(param1DataRes.user_list);
+      this.gcon_account = param1DataRes.gcon_account;
+      this.fortune_desc = param1DataRes.fortune_desc;
+      this.star_enter = Message.copyOf(param1DataRes.star_enter);
+      this.color_egg = Message.copyOf(param1DataRes.color_egg);
+      this.frs_tab_info = Message.copyOf(param1DataRes.frs_tab_info);
+      this.activityhead = param1DataRes.activityhead;
+      this.twzhibo_info = Message.copyOf(param1DataRes.twzhibo_info);
+      this.novel = param1DataRes.novel;
+      this.hot_twzhibo_info = param1DataRes.hot_twzhibo_info;
+      this.twzhibo_pos = param1DataRes.twzhibo_pos;
+      this.category_list = Message.copyOf(param1DataRes.category_list);
+      this.push_thread_info = param1DataRes.push_thread_info;
+      this.store_card = param1DataRes.store_card;
+      this.sdk_topic_thread = param1DataRes.sdk_topic_thread;
+      this.bawu_enter_url = param1DataRes.bawu_enter_url;
+      this.client_platform = param1DataRes.client_platform;
+      this.head_sdk = param1DataRes.head_sdk;
+      this.card_shipin_info = Message.copyOf(param1DataRes.card_shipin_info);
+      this.nav_tab_info = param1DataRes.nav_tab_info;
+      this.frs_tab_default = param1DataRes.frs_tab_default;
+      this.sort_type = param1DataRes.sort_type;
+      this.school_recom_info = param1DataRes.school_recom_info;
+      this.school_recom_pos = param1DataRes.school_recom_pos;
+      this.vitality_info = param1DataRes.vitality_info;
+      this.carrier_enter = param1DataRes.carrier_enter;
+      this.banner_thread_list = Message.copyOf(param1DataRes.banner_thread_list);
+      this.recommend_book = param1DataRes.recommend_book;
+      this.smart_frs_type = param1DataRes.smart_frs_type;
+      this.need_log = param1DataRes.need_log;
+      this.is_auto_play_forumheadvideo = param1DataRes.is_auto_play_forumheadvideo;
+      this.book_info = param1DataRes.book_info;
+      this.forum_present_info = param1DataRes.forum_present_info;
+      this.forum_headline_img_info = param1DataRes.forum_headline_img_info;
+      this.ntspread = param1DataRes.ntspread;
+      this.card_shipin_pos = Message.copyOf(param1DataRes.card_shipin_pos);
+      this.card_shipin_new = Message.copyOf(param1DataRes.card_shipin_new);
+      this.asp_shown_info = param1DataRes.asp_shown_info;
+      this.ala_live_count = param1DataRes.ala_live_count;
+      this.bottle = param1DataRes.bottle;
+      this.enter_pop_info = param1DataRes.enter_pop_info;
+      this.partial_visible_toast = param1DataRes.partial_visible_toast;
+      this.esport = param1DataRes.esport;
+      this.thread_id_list_info = Message.copyOf(param1DataRes.thread_id_list_info);
+      this.agree_banner = param1DataRes.agree_banner;
+      this.na_guide = param1DataRes.na_guide;
+      this.frs_game_tab_info = Message.copyOf(param1DataRes.frs_game_tab_info);
+      this.live_frs_notify = param1DataRes.live_frs_notify;
+      this.banner_user_story = param1DataRes.banner_user_story;
+      this.user_extend = param1DataRes.user_extend;
+      this.forum_head_icon = param1DataRes.forum_head_icon;
+      this.video = param1DataRes.video;
+      this.game_default_tab_id = param1DataRes.game_default_tab_id;
+      this.ala_insert_thread = Message.copyOf(param1DataRes.ala_insert_thread);
+      this.ala_live_insert = param1DataRes.ala_live_insert;
+      this.ala_insert_floor = param1DataRes.ala_insert_floor;
+      this.forum_ar_info = param1DataRes.forum_ar_info;
+      this.ala_stage_list = Message.copyOf(param1DataRes.ala_stage_list);
+      this.star_rank_info = param1DataRes.star_rank_info;
+      this.trends_redpoint = param1DataRes.trends_redpoint;
+      this.window_toast = Message.copyOf(param1DataRes.window_toast);
+      this.recom_post_topic = param1DataRes.recom_post_topic;
+      this.activity_config = param1DataRes.activity_config;
+      this.star_voice = param1DataRes.star_voice;
+      this.worldcup_skin = param1DataRes.worldcup_skin;
+      this.redpacketrain = param1DataRes.redpacketrain;
+      this.brand_forum_info = param1DataRes.brand_forum_info;
+      this.bottom_menu = Message.copyOf(param1DataRes.bottom_menu);
+      this.video_auto_play = param1DataRes.video_auto_play;
+      this.smart_app_avatar = Message.copyOf(param1DataRes.smart_app_avatar);
+      this.smart_app = param1DataRes.smart_app;
+      this.nebula_hot_threads = param1DataRes.nebula_hot_threads;
+      this.private_forum_info = param1DataRes.private_forum_info;
+      this.private_forum_active_info = param1DataRes.private_forum_active_info;
+      this.business_promot = param1DataRes.business_promot;
+      this.service_area = Message.copyOf(param1DataRes.service_area);
+      this.bazhu_exam_fail = param1DataRes.bazhu_exam_fail;
+      this.hot_user_entry = param1DataRes.hot_user_entry;
+      this.item_info = param1DataRes.item_info;
+      this.is_get_horse_race_lamp = param1DataRes.is_get_horse_race_lamp;
+      this.forum_rule = param1DataRes.forum_rule;
+      this.sign_activity_info = param1DataRes.sign_activity_info;
+      this.add_bawu_pop = param1DataRes.add_bawu_pop;
+      this.show_adsense = param1DataRes.show_adsense;
+      this.frsmask_pop_info = param1DataRes.frsmask_pop_info;
+      this.voice_room_list = Message.copyOf(param1DataRes.voice_room_list);
+      this.voice_room_config = param1DataRes.voice_room_config;
+      this.ad_show_select = param1DataRes.ad_show_select;
+      this.ad_mix_list = Message.copyOf(param1DataRes.ad_mix_list);
+      this.ad_sample_map_key = param1DataRes.ad_sample_map_key;
+      this.bawutask_pop = param1DataRes.bawutask_pop;
+      this.live_fuse_forum = Message.copyOf(param1DataRes.live_fuse_forum);
+      this.bawu_unread_notice_num = param1DataRes.bawu_unread_notice_num;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

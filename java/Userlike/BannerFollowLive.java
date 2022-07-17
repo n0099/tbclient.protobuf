@@ -1,4 +1,4 @@
-package Userlike;
+package tbclient.Userlike;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,9 +12,13 @@ import java.util.List;
 import tbclient.AlaLiveInfo;
 
 public final class BannerFollowLive extends Message {
+  public static Interceptable $ic;
+  
   public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_LIST = Collections.emptyList();
   
   public static final Integer DEFAULT_SWITCH = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer _switch;
@@ -23,10 +27,10 @@ public final class BannerFollowLive extends Message {
   public final List<AlaLiveInfo> ala_live_list;
   
   public BannerFollowLive(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
-      List list = paramBuilder.ala_live_list;
+      List<AlaLiveInfo> list = paramBuilder.ala_live_list;
       if (list == null) {
         this.ala_live_list = DEFAULT_ALA_LIVE_LIST;
       } else {
@@ -44,6 +48,10 @@ public final class BannerFollowLive extends Message {
     } 
   }
   
+  public BannerFollowLive(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +66,41 @@ public final class BannerFollowLive extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BannerFollowLive> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer _switch;
+    
+    public List<AlaLiveInfo> ala_live_list;
+    
+    public Builder() {}
+    
+    public Builder(BannerFollowLive param1BannerFollowLive) {
+      super(param1BannerFollowLive);
+      if (param1BannerFollowLive == null)
+        return; 
+      this.ala_live_list = Message.copyOf(param1BannerFollowLive.ala_live_list);
+      this._switch = param1BannerFollowLive._switch;
+    }
+    
+    public BannerFollowLive build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BannerFollowLive)interceptResult.objValue; 
+      } 
+      return new BannerFollowLive(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

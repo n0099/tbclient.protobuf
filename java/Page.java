@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Page;
 
 public final class Page extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CURRENT_PAGE;
   
   public static final Integer DEFAULT_CUR_GOOD_ID;
@@ -35,6 +38,8 @@ public final class Page extends Message {
   public static final Integer DEFAULT_TOTAL_NUM;
   
   public static final Integer DEFAULT_TOTAL_PAGE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer cur_good_id;
@@ -110,7 +115,7 @@ public final class Page extends Message {
   }
   
   public Page(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.page_size;
@@ -213,5 +218,81 @@ public final class Page extends Message {
       this.lz_total_floor = ((Builder)integer).lz_total_floor;
       this.new_total_page = ((Builder)integer).new_total_page;
     } 
+  }
+  
+  public Page(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Page> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer cur_good_id;
+    
+    public Integer current_page;
+    
+    public Integer has_more;
+    
+    public Integer has_prev;
+    
+    public Integer lz_total_floor;
+    
+    public Integer new_total_page;
+    
+    public Integer offset;
+    
+    public Integer page_size;
+    
+    public Integer pnum;
+    
+    public Integer req_num;
+    
+    public Integer tnum;
+    
+    public Integer total_count;
+    
+    public Integer total_num;
+    
+    public Integer total_page;
+    
+    public Builder() {}
+    
+    public Builder(Page param1Page) {
+      super(param1Page);
+      if (param1Page == null)
+        return; 
+      this.page_size = param1Page.page_size;
+      this.offset = param1Page.offset;
+      this.current_page = param1Page.current_page;
+      this.total_count = param1Page.total_count;
+      this.total_page = param1Page.total_page;
+      this.has_more = param1Page.has_more;
+      this.has_prev = param1Page.has_prev;
+      this.cur_good_id = param1Page.cur_good_id;
+      this.req_num = param1Page.req_num;
+      this.pnum = param1Page.pnum;
+      this.tnum = param1Page.tnum;
+      this.total_num = param1Page.total_num;
+      this.lz_total_floor = param1Page.lz_total_floor;
+      this.new_total_page = param1Page.new_total_page;
+    }
+    
+    public Page build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Page)interceptResult.objValue; 
+      } 
+      return new Page(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

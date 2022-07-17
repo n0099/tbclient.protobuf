@@ -1,4 +1,4 @@
-package GetDealerList;
+package tbclient.GetDealerList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DealerInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_NAME = "";
   
   public static final String DEFAULT_PORTRAIT = "";
@@ -16,6 +18,8 @@ public final class DealerInfo extends Message {
   public static final Long DEFAULT_SCORE;
   
   public static final Long DEFAULT_USER_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String name;
@@ -49,7 +53,7 @@ public final class DealerInfo extends Message {
   }
   
   public DealerInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_1 = paramBuilder.user_id;
@@ -82,5 +86,51 @@ public final class DealerInfo extends Message {
       this.portrait = ((Builder)long_).portrait;
       this.score = ((Builder)long_).score;
     } 
+  }
+  
+  public DealerInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DealerInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String name;
+    
+    public String portrait;
+    
+    public Long score;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(DealerInfo param1DealerInfo) {
+      super(param1DealerInfo);
+      if (param1DealerInfo == null)
+        return; 
+      this.user_id = param1DealerInfo.user_id;
+      this.name = param1DealerInfo.name;
+      this.portrait = param1DealerInfo.portrait;
+      this.score = param1DealerInfo.score;
+    }
+    
+    public DealerInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DealerInfo)interceptResult.objValue; 
+      } 
+      return new DealerInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

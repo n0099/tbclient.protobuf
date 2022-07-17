@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,11 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BroadcastInfo;
-import tbclient.RecommendForumInfo;
-import tbclient.ThreadInfo;
 
 public final class BroadcastInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AUDIT_STATUS;
   
   public static final Long DEFAULT_BCAST_ID = Long.valueOf(0L);
@@ -27,6 +28,8 @@ public final class BroadcastInfo extends Message {
   public static final Integer DEFAULT_PV;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.INT32)
   public final Integer audit_status;
@@ -70,7 +73,7 @@ public final class BroadcastInfo extends Message {
   }
   
   public BroadcastInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.bcast_id;
@@ -144,6 +147,10 @@ public final class BroadcastInfo extends Message {
     } 
   }
   
+  public BroadcastInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -158,5 +165,68 @@ public final class BroadcastInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BroadcastInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer audit_status;
+    
+    public Long bcast_id;
+    
+    public String content;
+    
+    public String ctr;
+    
+    public RecommendForumInfo forum_info;
+    
+    public String pic_url;
+    
+    public Integer publish_time;
+    
+    public Integer pushuser_cnt;
+    
+    public Integer pv;
+    
+    public ThreadInfo thread_infos;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(BroadcastInfo param1BroadcastInfo) {
+      super(param1BroadcastInfo);
+      if (param1BroadcastInfo == null)
+        return; 
+      this.bcast_id = param1BroadcastInfo.bcast_id;
+      this.title = param1BroadcastInfo.title;
+      this.content = param1BroadcastInfo.content;
+      this.forum_info = param1BroadcastInfo.forum_info;
+      this.publish_time = param1BroadcastInfo.publish_time;
+      this.pushuser_cnt = param1BroadcastInfo.pushuser_cnt;
+      this.pv = param1BroadcastInfo.pv;
+      this.ctr = param1BroadcastInfo.ctr;
+      this.thread_infos = param1BroadcastInfo.thread_infos;
+      this.audit_status = param1BroadcastInfo.audit_status;
+      this.pic_url = param1BroadcastInfo.pic_url;
+    }
+    
+    public BroadcastInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BroadcastInfo)interceptResult.objValue; 
+      } 
+      return new BroadcastInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

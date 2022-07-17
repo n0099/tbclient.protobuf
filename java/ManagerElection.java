@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ManagerElection;
 
 public final class ManagerElection extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_BEGIN_VOTE_TIME;
   
   public static final Integer DEFAULT_CAN_VOTE;
@@ -29,6 +32,8 @@ public final class ManagerElection extends Message {
   public static final List<String> DEFAULT_VOTE_CONDITION_TITLE;
   
   public static final Integer DEFAULT_VOTE_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT32)
   public final Integer begin_vote_time;
@@ -87,8 +92,8 @@ public final class ManagerElection extends Message {
   }
   
   public ManagerElection(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.can_vote;
       if (integer2 == null) {
@@ -108,7 +113,7 @@ public final class ManagerElection extends Message {
       } else {
         this.begin_vote_time = integer2;
       } 
-      List list2 = paramBuilder.vote_condition;
+      List<String> list2 = paramBuilder.vote_condition;
       if (list2 == null) {
         this.vote_condition = DEFAULT_VOTE_CONDITION;
       } else {
@@ -138,7 +143,7 @@ public final class ManagerElection extends Message {
       } else {
         this.status = integer1;
       } 
-      List list1 = paramBuilder.vote_condition_title;
+      List<String> list1 = paramBuilder.vote_condition_title;
       if (list1 == null) {
         this.vote_condition_title = DEFAULT_VOTE_CONDITION_TITLE;
       } else {
@@ -162,5 +167,69 @@ public final class ManagerElection extends Message {
       this.vote_condition_title = Message.immutableCopyOf(((Builder)list).vote_condition_title);
       this.vote_condition_pic = Message.immutableCopyOf(((Builder)list).vote_condition_pic);
     } 
+  }
+  
+  public ManagerElection(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ManagerElection> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer begin_vote_time;
+    
+    public Integer can_vote;
+    
+    public Integer is_show_distribute;
+    
+    public Integer remainder_time;
+    
+    public Integer status;
+    
+    public String tail_text;
+    
+    public List<String> vote_condition;
+    
+    public List<String> vote_condition_pic;
+    
+    public List<String> vote_condition_title;
+    
+    public Integer vote_num;
+    
+    public Builder() {}
+    
+    public Builder(ManagerElection param1ManagerElection) {
+      super(param1ManagerElection);
+      if (param1ManagerElection == null)
+        return; 
+      this.can_vote = param1ManagerElection.can_vote;
+      this.vote_num = param1ManagerElection.vote_num;
+      this.begin_vote_time = param1ManagerElection.begin_vote_time;
+      this.vote_condition = Message.copyOf(param1ManagerElection.vote_condition);
+      this.tail_text = param1ManagerElection.tail_text;
+      this.is_show_distribute = param1ManagerElection.is_show_distribute;
+      this.remainder_time = param1ManagerElection.remainder_time;
+      this.status = param1ManagerElection.status;
+      this.vote_condition_title = Message.copyOf(param1ManagerElection.vote_condition_title);
+      this.vote_condition_pic = Message.copyOf(param1ManagerElection.vote_condition_pic);
+    }
+    
+    public ManagerElection build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ManagerElection)interceptResult.objValue; 
+      } 
+      return new ManagerElection(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

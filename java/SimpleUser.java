@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SimpleUser;
 
 public final class SimpleUser extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AGREE_TYPE;
   
   public static final String DEFAULT_AHEAD_URL = "";
@@ -31,6 +34,8 @@ public final class SimpleUser extends Message {
   public static final String DEFAULT_USER_NICKNAME = "";
   
   public static final Integer DEFAULT_USER_STATUS;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.INT32)
   public final Integer agree_type;
@@ -77,7 +82,7 @@ public final class SimpleUser extends Message {
   }
   
   public SimpleUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
@@ -168,6 +173,10 @@ public final class SimpleUser extends Message {
     } 
   }
   
+  public SimpleUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -182,5 +191,71 @@ public final class SimpleUser extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SimpleUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer agree_type;
+    
+    public String ahead_url;
+    
+    public String block_msg;
+    
+    public Integer incomplete_user;
+    
+    public String portrait;
+    
+    public String secureemail;
+    
+    public String securemobil;
+    
+    public Integer show_onlyme;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public String user_nickname;
+    
+    public Integer user_status;
+    
+    public Builder() {}
+    
+    public Builder(SimpleUser param1SimpleUser) {
+      super(param1SimpleUser);
+      if (param1SimpleUser == null)
+        return; 
+      this.user_id = param1SimpleUser.user_id;
+      this.user_status = param1SimpleUser.user_status;
+      this.secureemail = param1SimpleUser.secureemail;
+      this.securemobil = param1SimpleUser.securemobil;
+      this.user_name = param1SimpleUser.user_name;
+      this.user_nickname = param1SimpleUser.user_nickname;
+      this.incomplete_user = param1SimpleUser.incomplete_user;
+      this.portrait = param1SimpleUser.portrait;
+      this.agree_type = param1SimpleUser.agree_type;
+      this.ahead_url = param1SimpleUser.ahead_url;
+      this.block_msg = param1SimpleUser.block_msg;
+      this.show_onlyme = param1SimpleUser.show_onlyme;
+    }
+    
+    public SimpleUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SimpleUser)interceptResult.objValue; 
+      } 
+      return new SimpleUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

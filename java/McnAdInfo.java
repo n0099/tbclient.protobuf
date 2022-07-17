@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.McnAdInfo;
 
 public final class McnAdInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_AD_END_TIME;
   
   public static final Long DEFAULT_AD_START_TIME;
@@ -23,6 +26,8 @@ public final class McnAdInfo extends Message {
   public static final String DEFAULT_JUMP_URL = "";
   
   public static final String DEFAULT_PIC_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long ad_end_time;
@@ -70,7 +75,7 @@ public final class McnAdInfo extends Message {
   }
   
   public McnAdInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.ad_start_time;
@@ -131,5 +136,63 @@ public final class McnAdInfo extends Message {
       this.effect_time = ((Builder)long_).effect_time;
       this.expire_time = ((Builder)long_).expire_time;
     } 
+  }
+  
+  public McnAdInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<McnAdInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long ad_end_time;
+    
+    public Long ad_start_time;
+    
+    public String button_title;
+    
+    public String card_title;
+    
+    public Long effect_time;
+    
+    public Long expire_time;
+    
+    public String jump_url;
+    
+    public String pic_url;
+    
+    public Builder() {}
+    
+    public Builder(McnAdInfo param1McnAdInfo) {
+      super(param1McnAdInfo);
+      if (param1McnAdInfo == null)
+        return; 
+      this.ad_start_time = param1McnAdInfo.ad_start_time;
+      this.ad_end_time = param1McnAdInfo.ad_end_time;
+      this.pic_url = param1McnAdInfo.pic_url;
+      this.jump_url = param1McnAdInfo.jump_url;
+      this.card_title = param1McnAdInfo.card_title;
+      this.button_title = param1McnAdInfo.button_title;
+      this.effect_time = param1McnAdInfo.effect_time;
+      this.expire_time = param1McnAdInfo.expire_time;
+    }
+    
+    public McnAdInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (McnAdInfo)interceptResult.objValue; 
+      } 
+      return new McnAdInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

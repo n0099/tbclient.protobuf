@@ -1,4 +1,4 @@
-package GetWebviewCacheInfo;
+package tbclient.GetWebviewCacheInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetWebviewCacheInfo.Offpack;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_MD5 = "";
   
   public static final List<Offpack> DEFAULT_OFFPACK_LIST = Collections.emptyList();
@@ -19,6 +20,8 @@ public final class DataRes extends Message {
   public static final String DEFAULT_SRC = "";
   
   public static final String DEFAULT_WEBVIEW_VERSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String md5;
@@ -33,8 +36,8 @@ public final class DataRes extends Message {
   public final String webview_version;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<Offpack> list;
     if (paramBoolean == true) {
       String str = paramBuilder.src;
       if (str == null) {
@@ -68,6 +71,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -82,5 +89,47 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String md5;
+    
+    public List<Offpack> offpack_list;
+    
+    public String src;
+    
+    public String webview_version;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.src = param1DataRes.src;
+      this.webview_version = param1DataRes.webview_version;
+      this.md5 = param1DataRes.md5;
+      this.offpack_list = Message.copyOf(param1DataRes.offpack_list);
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

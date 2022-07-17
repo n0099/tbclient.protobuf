@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Baijiahao;
 
 public final class Baijiahao extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FORWARD_URL = "";
   
   public static final String DEFAULT_ORI_UGC_NID = "";
@@ -17,6 +20,8 @@ public final class Baijiahao extends Message {
   public static final Integer DEFAULT_ORI_UGC_TYPE = Integer.valueOf(0);
   
   public static final String DEFAULT_ORI_UGC_VID = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String forward_url;
@@ -34,7 +39,7 @@ public final class Baijiahao extends Message {
   public final String ori_ugc_vid;
   
   public Baijiahao(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.ori_ugc_nid;
@@ -76,6 +81,10 @@ public final class Baijiahao extends Message {
     } 
   }
   
+  public Baijiahao(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -90,5 +99,50 @@ public final class Baijiahao extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Baijiahao> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String forward_url;
+    
+    public String ori_ugc_nid;
+    
+    public String ori_ugc_tid;
+    
+    public Integer ori_ugc_type;
+    
+    public String ori_ugc_vid;
+    
+    public Builder() {}
+    
+    public Builder(Baijiahao param1Baijiahao) {
+      super(param1Baijiahao);
+      if (param1Baijiahao == null)
+        return; 
+      this.ori_ugc_nid = param1Baijiahao.ori_ugc_nid;
+      this.ori_ugc_tid = param1Baijiahao.ori_ugc_tid;
+      this.ori_ugc_type = param1Baijiahao.ori_ugc_type;
+      this.ori_ugc_vid = param1Baijiahao.ori_ugc_vid;
+      this.forward_url = param1Baijiahao.forward_url;
+    }
+    
+    public Baijiahao build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Baijiahao)interceptResult.objValue; 
+      } 
+      return new Baijiahao(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HotTopicItem extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_TOPIC_DISCUSS_NUM;
   
   public static final Long DEFAULT_TOPIC_ID;
   
   public static final String DEFAULT_TOPIC_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT64)
   public final Long topic_discuss_num;
@@ -44,7 +48,7 @@ public final class HotTopicItem extends Message {
   }
   
   public HotTopicItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_1 = paramBuilder.topic_id;
@@ -70,5 +74,48 @@ public final class HotTopicItem extends Message {
       this.topic_name = ((Builder)long_).topic_name;
       this.topic_discuss_num = ((Builder)long_).topic_discuss_num;
     } 
+  }
+  
+  public HotTopicItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<HotTopicItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long topic_discuss_num;
+    
+    public Long topic_id;
+    
+    public String topic_name;
+    
+    public Builder() {}
+    
+    public Builder(HotTopicItem param1HotTopicItem) {
+      super(param1HotTopicItem);
+      if (param1HotTopicItem == null)
+        return; 
+      this.topic_id = param1HotTopicItem.topic_id;
+      this.topic_name = param1HotTopicItem.topic_name;
+      this.topic_discuss_num = param1HotTopicItem.topic_discuss_num;
+    }
+    
+    public HotTopicItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotTopicItem)interceptResult.objValue; 
+      } 
+      return new HotTopicItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

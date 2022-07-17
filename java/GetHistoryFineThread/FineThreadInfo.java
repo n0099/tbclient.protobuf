@@ -1,4 +1,4 @@
-package GetHistoryFineThread;
+package tbclient.GetHistoryFineThread;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.Media;
 
 public final class FineThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_COMMENT = "";
@@ -27,6 +29,8 @@ public final class FineThreadInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -60,7 +64,7 @@ public final class FineThreadInfo extends Message {
   }
   
   public FineThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.ftid;
@@ -87,7 +91,7 @@ public final class FineThreadInfo extends Message {
       } else {
         this._abstract = str2;
       } 
-      List list = paramBuilder.media;
+      List<Media> list = paramBuilder.media;
       if (list == null) {
         this.media = DEFAULT_MEDIA;
       } else {
@@ -123,6 +127,10 @@ public final class FineThreadInfo extends Message {
     } 
   }
   
+  public FineThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -137,5 +145,59 @@ public final class FineThreadInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<FineThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String comment;
+    
+    public Long ftid;
+    
+    public List<Media> media;
+    
+    public Integer publish_time;
+    
+    public String tag;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(FineThreadInfo param1FineThreadInfo) {
+      super(param1FineThreadInfo);
+      if (param1FineThreadInfo == null)
+        return; 
+      this.ftid = param1FineThreadInfo.ftid;
+      this.title = param1FineThreadInfo.title;
+      this.type = param1FineThreadInfo.type;
+      this._abstract = param1FineThreadInfo._abstract;
+      this.media = Message.copyOf(param1FineThreadInfo.media);
+      this.publish_time = param1FineThreadInfo.publish_time;
+      this.tag = param1FineThreadInfo.tag;
+      this.comment = param1FineThreadInfo.comment;
+    }
+    
+    public FineThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FineThreadInfo)interceptResult.objValue; 
+      } 
+      return new FineThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

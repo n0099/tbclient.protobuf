@@ -1,4 +1,4 @@
-package ForumPersonas;
+package tbclient.ForumPersonas;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MembersArea extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_NAME = "";
   
   public static final Double DEFAULT_RATE;
   
   public static final Integer DEFAULT_SEQ = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String name;
@@ -29,7 +33,7 @@ public final class MembersArea extends Message {
   }
   
   public MembersArea(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Double double_;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.seq;
@@ -57,6 +61,10 @@ public final class MembersArea extends Message {
     } 
   }
   
+  public MembersArea(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -71,5 +79,44 @@ public final class MembersArea extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MembersArea> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String name;
+    
+    public Double rate;
+    
+    public Integer seq;
+    
+    public Builder() {}
+    
+    public Builder(MembersArea param1MembersArea) {
+      super(param1MembersArea);
+      if (param1MembersArea == null)
+        return; 
+      this.seq = param1MembersArea.seq;
+      this.name = param1MembersArea.name;
+      this.rate = param1MembersArea.rate;
+    }
+    
+    public MembersArea build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MembersArea)interceptResult.objValue; 
+      } 
+      return new MembersArea(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

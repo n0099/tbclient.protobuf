@@ -1,4 +1,4 @@
-package FriendFeedPage;
+package tbclient.FriendFeedPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -19,6 +19,8 @@ import tbclient.Voice;
 import tbclient.Zan;
 
 public final class FriendThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Abstract> DEFAULT_ABSTRACT;
   
   public static final Long DEFAULT_AUTHOR_ID;
@@ -60,6 +62,8 @@ public final class FriendThreadInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final List<Voice> DEFAULT_VOICE_INFO;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 14)
   public final List<Abstract> _abstract;
@@ -173,7 +177,7 @@ public final class FriendThreadInfo extends Message {
   }
   
   public FriendThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.id;
@@ -249,25 +253,25 @@ public final class FriendThreadInfo extends Message {
       } else {
         this.timeline = str2;
       } 
-      List list = paramBuilder._abstract;
-      if (list == null) {
+      List<Abstract> list3 = paramBuilder._abstract;
+      if (list3 == null) {
         this._abstract = DEFAULT_ABSTRACT;
       } else {
-        this._abstract = Message.immutableCopyOf(list);
+        this._abstract = Message.immutableCopyOf(list3);
       } 
-      list = paramBuilder.media;
-      if (list == null) {
+      List<Media> list2 = paramBuilder.media;
+      if (list2 == null) {
         this.media = DEFAULT_MEDIA;
       } else {
-        this.media = Message.immutableCopyOf(list);
+        this.media = Message.immutableCopyOf(list2);
       } 
-      list = paramBuilder.media_num;
-      if (list == null) {
+      List<MediaNum> list1 = paramBuilder.media_num;
+      if (list1 == null) {
         this.media_num = DEFAULT_MEDIA_NUM;
       } else {
-        this.media_num = Message.immutableCopyOf(list);
+        this.media_num = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.voice_info;
+      List<Voice> list = paramBuilder.voice_info;
       if (list == null) {
         this.voice_info = DEFAULT_VOICE_INFO;
       } else {
@@ -333,5 +337,114 @@ public final class FriendThreadInfo extends Message {
       this.is_voice_thread = ((Builder)long_).is_voice_thread;
       this.thread_type = ((Builder)long_).thread_type;
     } 
+  }
+  
+  public FriendThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FriendThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Abstract> _abstract;
+    
+    public AnchorInfo anchor_info;
+    
+    public Anti anti;
+    
+    public User author;
+    
+    public Long author_id;
+    
+    public Long fid;
+    
+    public Long first_post_id;
+    
+    public String fname;
+    
+    public Long id;
+    
+    public Integer is_good;
+    
+    public Integer is_livepost;
+    
+    public Integer is_membertop;
+    
+    public Integer is_ntitle;
+    
+    public Integer is_top;
+    
+    public Integer is_voice_thread;
+    
+    public Integer last_time_int;
+    
+    public List<Media> media;
+    
+    public List<MediaNum> media_num;
+    
+    public Integer reply_num;
+    
+    public Long thread_type;
+    
+    public Long tid;
+    
+    public String timeline;
+    
+    public String title;
+    
+    public List<Voice> voice_info;
+    
+    public Zan zan;
+    
+    public Builder() {}
+    
+    public Builder(FriendThreadInfo param1FriendThreadInfo) {
+      super(param1FriendThreadInfo);
+      if (param1FriendThreadInfo == null)
+        return; 
+      this.id = param1FriendThreadInfo.id;
+      this.tid = param1FriendThreadInfo.tid;
+      this.title = param1FriendThreadInfo.title;
+      this.reply_num = param1FriendThreadInfo.reply_num;
+      this.last_time_int = param1FriendThreadInfo.last_time_int;
+      this.is_top = param1FriendThreadInfo.is_top;
+      this.is_membertop = param1FriendThreadInfo.is_membertop;
+      this.is_good = param1FriendThreadInfo.is_good;
+      this.is_livepost = param1FriendThreadInfo.is_livepost;
+      this.author_id = param1FriendThreadInfo.author_id;
+      this.author = param1FriendThreadInfo.author;
+      this.is_ntitle = param1FriendThreadInfo.is_ntitle;
+      this.timeline = param1FriendThreadInfo.timeline;
+      this._abstract = Message.copyOf(param1FriendThreadInfo._abstract);
+      this.media = Message.copyOf(param1FriendThreadInfo.media);
+      this.media_num = Message.copyOf(param1FriendThreadInfo.media_num);
+      this.voice_info = Message.copyOf(param1FriendThreadInfo.voice_info);
+      this.first_post_id = param1FriendThreadInfo.first_post_id;
+      this.zan = param1FriendThreadInfo.zan;
+      this.anti = param1FriendThreadInfo.anti;
+      this.fid = param1FriendThreadInfo.fid;
+      this.fname = param1FriendThreadInfo.fname;
+      this.anchor_info = param1FriendThreadInfo.anchor_info;
+      this.is_voice_thread = param1FriendThreadInfo.is_voice_thread;
+      this.thread_type = param1FriendThreadInfo.thread_type;
+    }
+    
+    public FriendThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FriendThreadInfo)interceptResult.objValue; 
+      } 
+      return new FriendThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

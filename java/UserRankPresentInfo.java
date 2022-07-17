@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.UserRankPresentInfo;
 
 public final class UserRankPresentInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Integer DEFAULT_PRESENT_NUM;
@@ -17,6 +20,8 @@ public final class UserRankPresentInfo extends Message {
   public static final Integer DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String portrait;
@@ -54,7 +59,7 @@ public final class UserRankPresentInfo extends Message {
   }
   
   public UserRankPresentInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.user_id;
@@ -94,5 +99,54 @@ public final class UserRankPresentInfo extends Message {
       this.present_scores = ((Builder)str).present_scores;
       this.portrait = ((Builder)str).portrait;
     } 
+  }
+  
+  public UserRankPresentInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<UserRankPresentInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String portrait;
+    
+    public Integer present_num;
+    
+    public Long present_scores;
+    
+    public Integer user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(UserRankPresentInfo param1UserRankPresentInfo) {
+      super(param1UserRankPresentInfo);
+      if (param1UserRankPresentInfo == null)
+        return; 
+      this.user_id = param1UserRankPresentInfo.user_id;
+      this.user_name = param1UserRankPresentInfo.user_name;
+      this.present_num = param1UserRankPresentInfo.present_num;
+      this.present_scores = param1UserRankPresentInfo.present_scores;
+      this.portrait = param1UserRankPresentInfo.portrait;
+    }
+    
+    public UserRankPresentInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserRankPresentInfo)interceptResult.objValue; 
+      } 
+      return new UserRankPresentInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

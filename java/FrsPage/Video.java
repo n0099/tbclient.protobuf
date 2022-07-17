@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Video extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_NUM = Integer.valueOf(0);
   
   public static final String DEFAULT_PIC = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer num;
@@ -20,7 +24,7 @@ public final class Video extends Message {
   public final String pic;
   
   public Video(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.pic;
@@ -41,6 +45,10 @@ public final class Video extends Message {
     } 
   }
   
+  public Video(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class Video extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Video> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer num;
+    
+    public String pic;
+    
+    public Builder() {}
+    
+    public Builder(Video param1Video) {
+      super(param1Video);
+      if (param1Video == null)
+        return; 
+      this.pic = param1Video.pic;
+      this.num = param1Video.num;
+    }
+    
+    public Video build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Video)interceptResult.objValue; 
+      } 
+      return new Video(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

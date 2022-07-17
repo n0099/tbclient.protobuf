@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipRank extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CARD_ID = "";
   
   public static final String DEFAULT_CLASS_NAME = "";
@@ -20,6 +22,8 @@ public final class VipRank extends Message {
   public static final Integer DEFAULT_MY_SCORE_RANK;
   
   public static final Integer DEFAULT_TENDENCY;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String card_id;
@@ -59,7 +63,7 @@ public final class VipRank extends Message {
   }
   
   public VipRank(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.class_name;
@@ -106,5 +110,57 @@ public final class VipRank extends Message {
       this.tendency = ((Builder)str).tendency;
       this.card_id = ((Builder)str).card_id;
     } 
+  }
+  
+  public VipRank(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VipRank> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String card_id;
+    
+    public String class_name;
+    
+    public String class_url;
+    
+    public String class_url_name;
+    
+    public Integer my_score_rank;
+    
+    public Integer tendency;
+    
+    public Builder() {}
+    
+    public Builder(VipRank param1VipRank) {
+      super(param1VipRank);
+      if (param1VipRank == null)
+        return; 
+      this.class_name = param1VipRank.class_name;
+      this.class_url_name = param1VipRank.class_url_name;
+      this.class_url = param1VipRank.class_url;
+      this.my_score_rank = param1VipRank.my_score_rank;
+      this.tendency = param1VipRank.tendency;
+      this.card_id = param1VipRank.card_id;
+    }
+    
+    public VipRank build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipRank)interceptResult.objValue; 
+      } 
+      return new VipRank(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

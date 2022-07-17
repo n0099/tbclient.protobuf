@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FloatStrategy;
 
 public final class FloatStrategy extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BROWSETIMEPAGE = "";
   
   public static final Integer DEFAULT_DURATION;
@@ -21,6 +24,8 @@ public final class FloatStrategy extends Message {
   public static final String DEFAULT_TOAST = "";
   
   public static final Integer DEFAULT_UN_DO_MISSION;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String browsetimepage;
@@ -67,7 +72,7 @@ public final class FloatStrategy extends Message {
   }
   
   public FloatStrategy(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.un_do_mission;
@@ -121,5 +126,60 @@ public final class FloatStrategy extends Message {
       this.show_num = ((Builder)str).show_num;
       this.toast = ((Builder)str).toast;
     } 
+  }
+  
+  public FloatStrategy(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FloatStrategy> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String browsetimepage;
+    
+    public Integer duration;
+    
+    public Integer show_num;
+    
+    public Long show_time_begin;
+    
+    public Long show_time_end;
+    
+    public String toast;
+    
+    public Integer un_do_mission;
+    
+    public Builder() {}
+    
+    public Builder(FloatStrategy param1FloatStrategy) {
+      super(param1FloatStrategy);
+      if (param1FloatStrategy == null)
+        return; 
+      this.un_do_mission = param1FloatStrategy.un_do_mission;
+      this.browsetimepage = param1FloatStrategy.browsetimepage;
+      this.duration = param1FloatStrategy.duration;
+      this.show_time_begin = param1FloatStrategy.show_time_begin;
+      this.show_time_end = param1FloatStrategy.show_time_end;
+      this.show_num = param1FloatStrategy.show_num;
+      this.toast = param1FloatStrategy.toast;
+    }
+    
+    public FloatStrategy build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FloatStrategy)interceptResult.objValue; 
+      } 
+      return new FloatStrategy(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.CartoonThread;
 
 public final class CartoonThread extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_CARTOON_ID = Long.valueOf(0L);
   
   public static final Integer DEFAULT_CHAPTER_ID = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long cartoon_id;
@@ -19,7 +24,7 @@ public final class CartoonThread extends Message {
   public final Integer chapter_id;
   
   public CartoonThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.cartoon_id;
@@ -40,6 +45,10 @@ public final class CartoonThread extends Message {
     } 
   }
   
+  public CartoonThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class CartoonThread extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<CartoonThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long cartoon_id;
+    
+    public Integer chapter_id;
+    
+    public Builder() {}
+    
+    public Builder(CartoonThread param1CartoonThread) {
+      super(param1CartoonThread);
+      if (param1CartoonThread == null)
+        return; 
+      this.cartoon_id = param1CartoonThread.cartoon_id;
+      this.chapter_id = param1CartoonThread.chapter_id;
+    }
+    
+    public CartoonThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CartoonThread)interceptResult.objValue; 
+      } 
+      return new CartoonThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

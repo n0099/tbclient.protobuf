@@ -1,13 +1,19 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.RankRuler;
 
 public final class RankRuler extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BOTTOM_LINK = "";
   
   public static final String DEFAULT_TOP_LINK = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String bottom_link;
@@ -16,7 +22,7 @@ public final class RankRuler extends Message {
   public final String top_link;
   
   public RankRuler(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.top_link;
@@ -35,5 +41,45 @@ public final class RankRuler extends Message {
       this.top_link = ((Builder)str).top_link;
       this.bottom_link = ((Builder)str).bottom_link;
     } 
+  }
+  
+  public RankRuler(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RankRuler> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bottom_link;
+    
+    public String top_link;
+    
+    public Builder() {}
+    
+    public Builder(RankRuler param1RankRuler) {
+      super(param1RankRuler);
+      if (param1RankRuler == null)
+        return; 
+      this.top_link = param1RankRuler.top_link;
+      this.bottom_link = param1RankRuler.bottom_link;
+    }
+    
+    public RankRuler build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RankRuler)interceptResult.objValue; 
+      } 
+      return new RankRuler(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

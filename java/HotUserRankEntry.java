@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.HotUserRankEntry;
-import tbclient.ShortUserInfo;
 
 public final class HotUserRankEntry extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ShortUserInfo> DEFAULT_HOT_USER = Collections.emptyList();
   
   public static final Boolean DEFAULT_IS_IN_RANK;
@@ -22,6 +24,8 @@ public final class HotUserRankEntry extends Message {
   public static final Integer DEFAULT_TODAY_RANK;
   
   public static final Integer DEFAULT_YESTERDAY_RANK;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<ShortUserInfo> hot_user;
@@ -49,10 +53,10 @@ public final class HotUserRankEntry extends Message {
   }
   
   public HotUserRankEntry(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Boolean bool;
     if (paramBoolean == true) {
-      List list = paramBuilder.hot_user;
+      List<ShortUserInfo> list = paramBuilder.hot_user;
       if (list == null) {
         this.hot_user = DEFAULT_HOT_USER;
       } else {
@@ -98,6 +102,10 @@ public final class HotUserRankEntry extends Message {
     } 
   }
   
+  public HotUserRankEntry(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -112,5 +120,53 @@ public final class HotUserRankEntry extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HotUserRankEntry> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ShortUserInfo> hot_user;
+    
+    public Boolean is_in_rank;
+    
+    public String module_icon;
+    
+    public String module_name;
+    
+    public Integer today_rank;
+    
+    public Integer yesterday_rank;
+    
+    public Builder() {}
+    
+    public Builder(HotUserRankEntry param1HotUserRankEntry) {
+      super(param1HotUserRankEntry);
+      if (param1HotUserRankEntry == null)
+        return; 
+      this.hot_user = Message.copyOf(param1HotUserRankEntry.hot_user);
+      this.module_name = param1HotUserRankEntry.module_name;
+      this.module_icon = param1HotUserRankEntry.module_icon;
+      this.today_rank = param1HotUserRankEntry.today_rank;
+      this.yesterday_rank = param1HotUserRankEntry.yesterday_rank;
+      this.is_in_rank = param1HotUserRankEntry.is_in_rank;
+    }
+    
+    public HotUserRankEntry build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotUserRankEntry)interceptResult.objValue; 
+      } 
+      return new HotUserRankEntry(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package StoryReply;
+package tbclient.StoryReply;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.User;
 
 public final class StoryReplyInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT_TEXT = "";
   
   public static final Long DEFAULT_POST_ID;
@@ -17,6 +19,8 @@ public final class StoryReplyInfo extends Message {
   public static final Long DEFAULT_THREAD_ID;
   
   public static final Long DEFAULT_USER_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final User author;
@@ -54,7 +58,7 @@ public final class StoryReplyInfo extends Message {
   }
   
   public StoryReplyInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.post_id;
       if (long_2 == null) {
@@ -88,5 +92,54 @@ public final class StoryReplyInfo extends Message {
       this.thread_id = paramBuilder.thread_id;
       this.author = paramBuilder.author;
     } 
+  }
+  
+  public StoryReplyInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<StoryReplyInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public User author;
+    
+    public String content_text;
+    
+    public Long post_id;
+    
+    public Long thread_id;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(StoryReplyInfo param1StoryReplyInfo) {
+      super(param1StoryReplyInfo);
+      if (param1StoryReplyInfo == null)
+        return; 
+      this.post_id = param1StoryReplyInfo.post_id;
+      this.user_id = param1StoryReplyInfo.user_id;
+      this.content_text = param1StoryReplyInfo.content_text;
+      this.thread_id = param1StoryReplyInfo.thread_id;
+      this.author = param1StoryReplyInfo.author;
+    }
+    
+    public StoryReplyInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (StoryReplyInfo)interceptResult.objValue; 
+      } 
+      return new StoryReplyInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

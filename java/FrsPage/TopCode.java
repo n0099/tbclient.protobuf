@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TopCode extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CODE_LINK = "";
   
   public static final String DEFAULT_GAME_LINK = "";
@@ -26,6 +28,8 @@ public final class TopCode extends Message {
   public static final String DEFAULT_SURPLUSGIFT = "";
   
   public static final String DEFAULT_TYPE_TEXT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String code_link;
@@ -55,7 +59,7 @@ public final class TopCode extends Message {
   public final String type_text;
   
   public TopCode(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str3 = paramBuilder.img_url;
@@ -125,6 +129,10 @@ public final class TopCode extends Message {
     } 
   }
   
+  public TopCode(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -139,5 +147,62 @@ public final class TopCode extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TopCode> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String code_link;
+    
+    public String game_link;
+    
+    public Integer get_type;
+    
+    public Long giftworth;
+    
+    public String img_url;
+    
+    public String subtitle;
+    
+    public String summary;
+    
+    public String surplusgift;
+    
+    public String type_text;
+    
+    public Builder() {}
+    
+    public Builder(TopCode param1TopCode) {
+      super(param1TopCode);
+      if (param1TopCode == null)
+        return; 
+      this.img_url = param1TopCode.img_url;
+      this.game_link = param1TopCode.game_link;
+      this.summary = param1TopCode.summary;
+      this.code_link = param1TopCode.code_link;
+      this.get_type = param1TopCode.get_type;
+      this.surplusgift = param1TopCode.surplusgift;
+      this.giftworth = param1TopCode.giftworth;
+      this.type_text = param1TopCode.type_text;
+      this.subtitle = param1TopCode.subtitle;
+    }
+    
+    public TopCode build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TopCode)interceptResult.objValue; 
+      } 
+      return new TopCode(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

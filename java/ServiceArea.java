@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ServiceArea;
-import tbclient.SmartApp;
 
 public final class ServiceArea extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PICURL = "";
   
   public static final String DEFAULT_SCHEMA = "";
@@ -24,6 +26,8 @@ public final class ServiceArea extends Message {
   public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
   
   public static final String DEFAULT_VERSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6)
   public final SmartApp area_smart_app;
@@ -50,8 +54,8 @@ public final class ServiceArea extends Message {
   public final String version;
   
   public ServiceArea(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       String str = paramBuilder.servicename;
       if (str == null) {
@@ -108,6 +112,10 @@ public final class ServiceArea extends Message {
     } 
   }
   
+  public ServiceArea(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -122,5 +130,59 @@ public final class ServiceArea extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ServiceArea> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public SmartApp area_smart_app;
+    
+    public String picurl;
+    
+    public String schema;
+    
+    public String service_type;
+    
+    public String servicename;
+    
+    public String serviceurl;
+    
+    public List<String> third_statistics_url;
+    
+    public String version;
+    
+    public Builder() {}
+    
+    public Builder(ServiceArea param1ServiceArea) {
+      super(param1ServiceArea);
+      if (param1ServiceArea == null)
+        return; 
+      this.servicename = param1ServiceArea.servicename;
+      this.picurl = param1ServiceArea.picurl;
+      this.serviceurl = param1ServiceArea.serviceurl;
+      this.version = param1ServiceArea.version;
+      this.service_type = param1ServiceArea.service_type;
+      this.area_smart_app = param1ServiceArea.area_smart_app;
+      this.schema = param1ServiceArea.schema;
+      this.third_statistics_url = Message.copyOf(param1ServiceArea.third_statistics_url);
+    }
+    
+    public ServiceArea build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ServiceArea)interceptResult.objValue; 
+      } 
+      return new ServiceArea(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

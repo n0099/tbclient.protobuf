@@ -1,4 +1,4 @@
-package RecomVideo;
+package tbclient.RecomVideo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DislikeReason extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_DISLIKE_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_DISLIKE_REASON = "";
   
   public static final String DEFAULT_EXTRA = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer dislike_id;
@@ -25,7 +29,7 @@ public final class DislikeReason extends Message {
   public final String extra;
   
   public DislikeReason(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.dislike_reason;
@@ -53,6 +57,10 @@ public final class DislikeReason extends Message {
     } 
   }
   
+  public DislikeReason(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -67,5 +75,44 @@ public final class DislikeReason extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DislikeReason> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer dislike_id;
+    
+    public String dislike_reason;
+    
+    public String extra;
+    
+    public Builder() {}
+    
+    public Builder(DislikeReason param1DislikeReason) {
+      super(param1DislikeReason);
+      if (param1DislikeReason == null)
+        return; 
+      this.dislike_reason = param1DislikeReason.dislike_reason;
+      this.dislike_id = param1DislikeReason.dislike_id;
+      this.extra = param1DislikeReason.extra;
+    }
+    
+    public DislikeReason build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DislikeReason)interceptResult.objValue; 
+      } 
+      return new DislikeReason(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

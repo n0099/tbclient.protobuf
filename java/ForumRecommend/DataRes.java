@@ -1,4 +1,4 @@
-package ForumRecommend;
+package tbclient.ForumRecommend;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,16 +11,14 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ForumCreateInfo;
 import tbclient.ForumPopupInfo;
-import tbclient.ForumRecommend.Banner;
-import tbclient.ForumRecommend.HotSearch;
-import tbclient.ForumRecommend.LikeForum;
-import tbclient.ForumRecommend.NewRecommend;
 import tbclient.FrequentlyForumInfo;
 import tbclient.FrsTabInfo;
 import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Banner> DEFAULT_BANNER;
   
   public static final List<FrequentlyForumInfo> DEFAULT_FREQUENTLY_FORUM_INFO;
@@ -52,6 +50,8 @@ public final class DataRes extends Message {
   public static final List<RecommendForumInfo> DEFAULT_TAG_RECOMMEND_FORUM;
   
   public static final Integer DEFAULT_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<Banner> banner;
@@ -132,25 +132,25 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list4 = paramBuilder.like_forum;
-      if (list4 == null) {
+      List<LikeForum> list7 = paramBuilder.like_forum;
+      if (list7 == null) {
         this.like_forum = DEFAULT_LIKE_FORUM;
       } else {
-        this.like_forum = Message.immutableCopyOf(list4);
+        this.like_forum = Message.immutableCopyOf(list7);
       } 
-      list4 = paramBuilder.banner;
-      if (list4 == null) {
+      List<Banner> list6 = paramBuilder.banner;
+      if (list6 == null) {
         this.banner = DEFAULT_BANNER;
       } else {
-        this.banner = Message.immutableCopyOf(list4);
+        this.banner = Message.immutableCopyOf(list6);
       } 
-      list4 = paramBuilder.new_recommend;
-      if (list4 == null) {
+      List<NewRecommend> list5 = paramBuilder.new_recommend;
+      if (list5 == null) {
         this.new_recommend = DEFAULT_NEW_RECOMMEND;
       } else {
-        this.new_recommend = Message.immutableCopyOf(list4);
+        this.new_recommend = Message.immutableCopyOf(list5);
       } 
       Integer integer4 = paramBuilder.is_login;
       if (integer4 == null) {
@@ -188,11 +188,11 @@ public final class DataRes extends Message {
       } else {
         this.is_mem = integer3;
       } 
-      List list3 = paramBuilder.recommend_forum_info;
-      if (list3 == null) {
+      List<RecommendForumInfo> list4 = paramBuilder.recommend_forum_info;
+      if (list4 == null) {
         this.recommend_forum_info = DEFAULT_RECOMMEND_FORUM_INFO;
       } else {
-        this.recommend_forum_info = Message.immutableCopyOf(list3);
+        this.recommend_forum_info = Message.immutableCopyOf(list4);
       } 
       this.hot_search = paramBuilder.hot_search;
       Integer integer2 = paramBuilder.redirect;
@@ -201,23 +201,23 @@ public final class DataRes extends Message {
       } else {
         this.redirect = integer2;
       } 
-      List list2 = paramBuilder.new_banner_info;
-      if (list2 == null) {
+      List<Banner> list3 = paramBuilder.new_banner_info;
+      if (list3 == null) {
         this.new_banner_info = DEFAULT_NEW_BANNER_INFO;
       } else {
-        this.new_banner_info = Message.immutableCopyOf(list2);
+        this.new_banner_info = Message.immutableCopyOf(list3);
       } 
-      list2 = paramBuilder.frequently_forum_info;
+      List<FrequentlyForumInfo> list2 = paramBuilder.frequently_forum_info;
       if (list2 == null) {
         this.frequently_forum_info = DEFAULT_FREQUENTLY_FORUM_INFO;
       } else {
         this.frequently_forum_info = Message.immutableCopyOf(list2);
       } 
-      list2 = paramBuilder.tag_recommend_forum;
-      if (list2 == null) {
+      List<RecommendForumInfo> list1 = paramBuilder.tag_recommend_forum;
+      if (list1 == null) {
         this.tag_recommend_forum = DEFAULT_TAG_RECOMMEND_FORUM;
       } else {
-        this.tag_recommend_forum = Message.immutableCopyOf(list2);
+        this.tag_recommend_forum = Message.immutableCopyOf(list1);
       } 
       Integer integer1 = paramBuilder.sort_type;
       if (integer1 == null) {
@@ -227,11 +227,11 @@ public final class DataRes extends Message {
       } 
       this.forum_create_info = paramBuilder.forum_create_info;
       this.private_forum_popinfo = paramBuilder.private_forum_popinfo;
-      List list1 = paramBuilder.nav_tab_info;
-      if (list1 == null) {
+      List<FrsTabInfo> list = paramBuilder.nav_tab_info;
+      if (list == null) {
         this.nav_tab_info = DEFAULT_NAV_TAB_INFO;
       } else {
-        this.nav_tab_info = Message.immutableCopyOf(list1);
+        this.nav_tab_info = Message.immutableCopyOf(list);
       } 
       this.forum_popup_info = paramBuilder.forum_popup_info;
     } else {
@@ -258,6 +258,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -272,5 +276,95 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Banner> banner;
+    
+    public ForumCreateInfo forum_create_info;
+    
+    public ForumPopupInfo forum_popup_info;
+    
+    public List<FrequentlyForumInfo> frequently_forum_info;
+    
+    public HotSearch hot_search;
+    
+    public Integer is_login;
+    
+    public Integer is_mem;
+    
+    public List<LikeForum> like_forum;
+    
+    public Integer msign_level;
+    
+    public String msign_text;
+    
+    public Integer msign_valid;
+    
+    public List<FrsTabInfo> nav_tab_info;
+    
+    public List<Banner> new_banner_info;
+    
+    public List<NewRecommend> new_recommend;
+    
+    public PrivatePopInfo private_forum_popinfo;
+    
+    public List<RecommendForumInfo> recommend_forum_info;
+    
+    public Integer redirect;
+    
+    public Integer sort_type;
+    
+    public List<RecommendForumInfo> tag_recommend_forum;
+    
+    public Integer time;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.like_forum = Message.copyOf(param1DataRes.like_forum);
+      this.banner = Message.copyOf(param1DataRes.banner);
+      this.new_recommend = Message.copyOf(param1DataRes.new_recommend);
+      this.is_login = param1DataRes.is_login;
+      this.msign_valid = param1DataRes.msign_valid;
+      this.msign_text = param1DataRes.msign_text;
+      this.msign_level = param1DataRes.msign_level;
+      this.time = param1DataRes.time;
+      this.is_mem = param1DataRes.is_mem;
+      this.recommend_forum_info = Message.copyOf(param1DataRes.recommend_forum_info);
+      this.hot_search = param1DataRes.hot_search;
+      this.redirect = param1DataRes.redirect;
+      this.new_banner_info = Message.copyOf(param1DataRes.new_banner_info);
+      this.frequently_forum_info = Message.copyOf(param1DataRes.frequently_forum_info);
+      this.tag_recommend_forum = Message.copyOf(param1DataRes.tag_recommend_forum);
+      this.sort_type = param1DataRes.sort_type;
+      this.forum_create_info = param1DataRes.forum_create_info;
+      this.private_forum_popinfo = param1DataRes.private_forum_popinfo;
+      this.nav_tab_info = Message.copyOf(param1DataRes.nav_tab_info);
+      this.forum_popup_info = param1DataRes.forum_popup_info;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

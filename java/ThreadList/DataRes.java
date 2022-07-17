@@ -1,4 +1,4 @@
-package ThreadList;
+package tbclient.ThreadList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -15,6 +15,8 @@ import tbclient.ThreadInfo;
 import tbclient.User;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST;
   
   public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
@@ -28,6 +30,8 @@ public final class DataRes extends Message {
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
   
   public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 6)
   public final List<AdMixFloor> ad_mix_list;
@@ -59,20 +63,20 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list2 = paramBuilder.thread_list;
+      List<ThreadInfo> list2 = paramBuilder.thread_list;
       if (list2 == null) {
         this.thread_list = DEFAULT_THREAD_LIST;
       } else {
         this.thread_list = Message.immutableCopyOf(list2);
       } 
-      list2 = paramBuilder.user_list;
-      if (list2 == null) {
+      List<User> list1 = paramBuilder.user_list;
+      if (list1 == null) {
         this.user_list = DEFAULT_USER_LIST;
       } else {
-        this.user_list = Message.immutableCopyOf(list2);
+        this.user_list = Message.immutableCopyOf(list1);
       } 
       this.banner_list = paramBuilder.banner_list;
       String str1 = paramBuilder.asp_shown_info;
@@ -87,11 +91,11 @@ public final class DataRes extends Message {
       } else {
         this.partial_visible_toast = str1;
       } 
-      List list1 = paramBuilder.ad_mix_list;
-      if (list1 == null) {
+      List<AdMixFloor> list = paramBuilder.ad_mix_list;
+      if (list == null) {
         this.ad_mix_list = DEFAULT_AD_MIX_LIST;
       } else {
-        this.ad_mix_list = Message.immutableCopyOf(list1);
+        this.ad_mix_list = Message.immutableCopyOf(list);
       } 
       Integer integer = paramBuilder.ad_show_select;
       if (integer == null) {
@@ -117,6 +121,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -131,5 +139,59 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<AdMixFloor> ad_mix_list;
+    
+    public String ad_sample_map_key;
+    
+    public Integer ad_show_select;
+    
+    public String asp_shown_info;
+    
+    public BannerList banner_list;
+    
+    public String partial_visible_toast;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public List<User> user_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.thread_list = Message.copyOf(param1DataRes.thread_list);
+      this.user_list = Message.copyOf(param1DataRes.user_list);
+      this.banner_list = param1DataRes.banner_list;
+      this.asp_shown_info = param1DataRes.asp_shown_info;
+      this.partial_visible_toast = param1DataRes.partial_visible_toast;
+      this.ad_mix_list = Message.copyOf(param1DataRes.ad_mix_list);
+      this.ad_show_select = param1DataRes.ad_show_select;
+      this.ad_sample_map_key = param1DataRes.ad_sample_map_key;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

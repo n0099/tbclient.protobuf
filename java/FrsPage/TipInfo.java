@@ -1,11 +1,14 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TipInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_TIP_INTERVAL = "";
   
   public static final String DEFAULT_TIP_NAME = "";
@@ -15,6 +18,8 @@ public final class TipInfo extends Message {
   public static final String DEFAULT_TIP_POP = "";
   
   public static final String DEFAULT_TIP_POP_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String tip_interval;
@@ -32,7 +37,7 @@ public final class TipInfo extends Message {
   public final String tip_pop_title;
   
   public TipInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.tip_name;
@@ -72,5 +77,54 @@ public final class TipInfo extends Message {
       this.tip_notice = ((Builder)str).tip_notice;
       this.tip_interval = ((Builder)str).tip_interval;
     } 
+  }
+  
+  public TipInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TipInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String tip_interval;
+    
+    public String tip_name;
+    
+    public String tip_notice;
+    
+    public String tip_pop;
+    
+    public String tip_pop_title;
+    
+    public Builder() {}
+    
+    public Builder(TipInfo param1TipInfo) {
+      super(param1TipInfo);
+      if (param1TipInfo == null)
+        return; 
+      this.tip_name = param1TipInfo.tip_name;
+      this.tip_pop_title = param1TipInfo.tip_pop_title;
+      this.tip_pop = param1TipInfo.tip_pop;
+      this.tip_notice = param1TipInfo.tip_notice;
+      this.tip_interval = param1TipInfo.tip_interval;
+    }
+    
+    public TipInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TipInfo)interceptResult.objValue; 
+      } 
+      return new TipInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

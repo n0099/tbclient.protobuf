@@ -1,4 +1,4 @@
-package GetPrivateInfo;
+package tbclient.GetPrivateInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.SimpleUser;
 
 public final class ResData extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_BAZHU_SHOW_INSIDE;
   
   public static final Integer DEFAULT_BAZHU_SHOW_OUTSIDE;
@@ -27,6 +29,8 @@ public final class ResData extends Message {
   public static final Integer DEFAULT_POST;
   
   public static final Integer DEFAULT_REPLY;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.INT32)
   public final Integer bazhu_show_inside;
@@ -85,7 +89,7 @@ public final class ResData extends Message {
   }
   
   public ResData(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.location;
@@ -155,5 +159,69 @@ public final class ResData extends Message {
       this.bazhu_show_inside = ((Builder)integer).bazhu_show_inside;
       this.bazhu_show_outside = ((Builder)integer).bazhu_show_outside;
     } 
+  }
+  
+  public ResData(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ResData> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer bazhu_show_inside;
+    
+    public Integer bazhu_show_outside;
+    
+    public Integer forum_num;
+    
+    public Integer group;
+    
+    public Integer like;
+    
+    public Integer live;
+    
+    public Integer location;
+    
+    public Integer post;
+    
+    public Integer reply;
+    
+    public SimpleUser user;
+    
+    public Builder() {}
+    
+    public Builder(ResData param1ResData) {
+      super(param1ResData);
+      if (param1ResData == null)
+        return; 
+      this.location = param1ResData.location;
+      this.post = param1ResData.post;
+      this.like = param1ResData.like;
+      this.group = param1ResData.group;
+      this.user = param1ResData.user;
+      this.live = param1ResData.live;
+      this.forum_num = param1ResData.forum_num;
+      this.reply = param1ResData.reply;
+      this.bazhu_show_inside = param1ResData.bazhu_show_inside;
+      this.bazhu_show_outside = param1ResData.bazhu_show_outside;
+    }
+    
+    public ResData build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ResData)interceptResult.objValue; 
+      } 
+      return new ResData(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

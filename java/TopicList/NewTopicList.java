@@ -1,4 +1,4 @@
-package TopicList;
+package tbclient.TopicList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class NewTopicList extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_DISCUSS_NUM;
   
   public static final Integer DEFAULT_IS_VIDEO_TOPIC;
@@ -22,6 +24,8 @@ public final class NewTopicList extends Message {
   public static final String DEFAULT_TOPIC_NAME = "";
   
   public static final Integer DEFAULT_TOPIC_TAG;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT64)
   public final Long discuss_num;
@@ -67,7 +71,7 @@ public final class NewTopicList extends Message {
   }
   
   public NewTopicList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.topic_id;
@@ -121,5 +125,60 @@ public final class NewTopicList extends Message {
       this.topic_tag = ((Builder)integer).topic_tag;
       this.is_video_topic = ((Builder)integer).is_video_topic;
     } 
+  }
+  
+  public NewTopicList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<NewTopicList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long discuss_num;
+    
+    public Integer is_video_topic;
+    
+    public String topic_desc;
+    
+    public Long topic_id;
+    
+    public String topic_image;
+    
+    public String topic_name;
+    
+    public Integer topic_tag;
+    
+    public Builder() {}
+    
+    public Builder(NewTopicList param1NewTopicList) {
+      super(param1NewTopicList);
+      if (param1NewTopicList == null)
+        return; 
+      this.topic_id = param1NewTopicList.topic_id;
+      this.topic_name = param1NewTopicList.topic_name;
+      this.topic_desc = param1NewTopicList.topic_desc;
+      this.discuss_num = param1NewTopicList.discuss_num;
+      this.topic_image = param1NewTopicList.topic_image;
+      this.topic_tag = param1NewTopicList.topic_tag;
+      this.is_video_topic = param1NewTopicList.is_video_topic;
+    }
+    
+    public NewTopicList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NewTopicList)interceptResult.objValue; 
+      } 
+      return new NewTopicList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

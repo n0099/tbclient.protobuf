@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Icon;
-import tbclient.Position;
-import tbclient.Terminal;
 
 public final class Icon extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ICON = "";
   
   public static final String DEFAULT_NAME = "";
@@ -23,6 +24,8 @@ public final class Icon extends Message {
   public static final Integer DEFAULT_VALUE;
   
   public static final Integer DEFAULT_WEIGHT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String icon;
@@ -69,8 +72,8 @@ public final class Icon extends Message {
   }
   
   public Icon(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       String str2 = paramBuilder.name;
       if (str2 == null) {
@@ -120,5 +123,63 @@ public final class Icon extends Message {
       this.position = ((Builder)list).position;
       this.sprite_info = Message.immutableCopyOf(((Builder)list).sprite_info);
     } 
+  }
+  
+  public Icon(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Icon> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String icon;
+    
+    public String name;
+    
+    public Position position;
+    
+    public List<String> sprite_info;
+    
+    public Terminal terminal;
+    
+    public String url;
+    
+    public Integer value;
+    
+    public Integer weight;
+    
+    public Builder() {}
+    
+    public Builder(Icon param1Icon) {
+      super(param1Icon);
+      if (param1Icon == null)
+        return; 
+      this.name = param1Icon.name;
+      this.weight = param1Icon.weight;
+      this.url = param1Icon.url;
+      this.icon = param1Icon.icon;
+      this.value = param1Icon.value;
+      this.terminal = param1Icon.terminal;
+      this.position = param1Icon.position;
+      this.sprite_info = Message.copyOf(param1Icon.sprite_info);
+    }
+    
+    public Icon build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Icon)interceptResult.objValue; 
+      } 
+      return new Icon(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

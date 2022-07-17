@@ -1,4 +1,4 @@
-package LiveSquare;
+package tbclient.LiveSquare;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.ThreadInfo;
 
 public final class HotLiveWithCategory extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BITMAP_WH_RATIO = "";
   
   public static final Integer DEFAULT_ENTRY_ID;
@@ -27,6 +29,8 @@ public final class HotLiveWithCategory extends Message {
   public static final List<String> DEFAULT_SUB_TYPE_LIST;
   
   public static final Integer DEFAULT_TAB_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String bitmap_wh_ratio;
@@ -59,8 +63,8 @@ public final class HotLiveWithCategory extends Message {
   }
   
   public HotLiveWithCategory(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       String str3 = paramBuilder.entry_name;
       if (str3 == null) {
@@ -80,7 +84,7 @@ public final class HotLiveWithCategory extends Message {
       } else {
         this.bitmap_wh_ratio = str2;
       } 
-      List list1 = paramBuilder.live;
+      List<ThreadInfo> list1 = paramBuilder.live;
       if (list1 == null) {
         this.live = DEFAULT_LIVE;
       } else {
@@ -122,6 +126,10 @@ public final class HotLiveWithCategory extends Message {
     } 
   }
   
+  public HotLiveWithCategory(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -138,5 +146,59 @@ public final class HotLiveWithCategory extends Message {
     } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ENTRY_ID = integer;
+  }
+  
+  public static final class Builder extends Message.Builder<HotLiveWithCategory> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bitmap_wh_ratio;
+    
+    public Integer entry_id;
+    
+    public String entry_name;
+    
+    public String label_name;
+    
+    public List<ThreadInfo> live;
+    
+    public Integer live_tab_type;
+    
+    public List<String> sub_type_list;
+    
+    public Integer tab_id;
+    
+    public Builder() {}
+    
+    public Builder(HotLiveWithCategory param1HotLiveWithCategory) {
+      super(param1HotLiveWithCategory);
+      if (param1HotLiveWithCategory == null)
+        return; 
+      this.entry_name = param1HotLiveWithCategory.entry_name;
+      this.entry_id = param1HotLiveWithCategory.entry_id;
+      this.bitmap_wh_ratio = param1HotLiveWithCategory.bitmap_wh_ratio;
+      this.live = Message.copyOf(param1HotLiveWithCategory.live);
+      this.label_name = param1HotLiveWithCategory.label_name;
+      this.live_tab_type = param1HotLiveWithCategory.live_tab_type;
+      this.tab_id = param1HotLiveWithCategory.tab_id;
+      this.sub_type_list = Message.copyOf(param1HotLiveWithCategory.sub_type_list);
+    }
+    
+    public HotLiveWithCategory build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotLiveWithCategory)interceptResult.objValue; 
+      } 
+      return new HotLiveWithCategory(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

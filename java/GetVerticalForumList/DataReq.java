@@ -1,4 +1,4 @@
-package GetVerticalForumList;
+package tbclient.GetVerticalForumList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,15 @@ import java.util.List;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_BEGIN_ID;
   
   public static final List<Integer> DEFAULT_CLASSID_LIST = Collections.emptyList();
   
   public static final Integer DEFAULT_PN;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer begin_id;
@@ -37,11 +41,11 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
-      List list = paramBuilder.classid_list;
+      List<Integer> list = paramBuilder.classid_list;
       if (list == null) {
         this.classid_list = DEFAULT_CLASSID_LIST;
       } else {
@@ -67,6 +71,10 @@ public final class DataReq extends Message {
     } 
   }
   
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -81,5 +89,47 @@ public final class DataReq extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer begin_id;
+    
+    public List<Integer> classid_list;
+    
+    public CommonReq common;
+    
+    public Integer pn;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.classid_list = Message.copyOf(param1DataReq.classid_list);
+      this.begin_id = param1DataReq.begin_id;
+      this.pn = param1DataReq.pn;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

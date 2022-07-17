@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.NewGodInfo;
 
 public final class NewGodInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FIELD_ID;
   
   public static final String DEFAULT_FIELD_NAME = "";
@@ -17,6 +20,8 @@ public final class NewGodInfo extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_TYPE_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer field_id;
@@ -54,7 +59,7 @@ public final class NewGodInfo extends Message {
   }
   
   public NewGodInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.status;
@@ -94,5 +99,54 @@ public final class NewGodInfo extends Message {
       this.type = ((Builder)str).type;
       this.type_name = ((Builder)str).type_name;
     } 
+  }
+  
+  public NewGodInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<NewGodInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer field_id;
+    
+    public String field_name;
+    
+    public Integer status;
+    
+    public Integer type;
+    
+    public String type_name;
+    
+    public Builder() {}
+    
+    public Builder(NewGodInfo param1NewGodInfo) {
+      super(param1NewGodInfo);
+      if (param1NewGodInfo == null)
+        return; 
+      this.status = param1NewGodInfo.status;
+      this.field_id = param1NewGodInfo.field_id;
+      this.field_name = param1NewGodInfo.field_name;
+      this.type = param1NewGodInfo.type;
+      this.type_name = param1NewGodInfo.type_name;
+    }
+    
+    public NewGodInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NewGodInfo)interceptResult.objValue; 
+      } 
+      return new NewGodInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SportScheduleInfo;
 
 public final class SportScheduleInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_GUEST_TEAM_ICON = "";
   
   public static final String DEFAULT_GUEST_TEAM_NAME = "";
@@ -27,6 +30,8 @@ public final class SportScheduleInfo extends Message {
   public static final Integer DEFAULT_SPORT_TYPE = Integer.valueOf(0);
   
   public static final Long DEFAULT_UPDATE_TIME = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String guest_team_icon;
@@ -59,7 +64,7 @@ public final class SportScheduleInfo extends Message {
   public final Long update_time;
   
   public SportScheduleInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.sport_type;
@@ -136,6 +141,10 @@ public final class SportScheduleInfo extends Message {
     } 
   }
   
+  public SportScheduleInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -150,5 +159,65 @@ public final class SportScheduleInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SportScheduleInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String guest_team_icon;
+    
+    public String guest_team_name;
+    
+    public String home_team_icon;
+    
+    public String home_team_name;
+    
+    public String match_bottom_info;
+    
+    public String match_middle_info;
+    
+    public String match_top_info;
+    
+    public String msg_url;
+    
+    public Integer sport_type;
+    
+    public Long update_time;
+    
+    public Builder() {}
+    
+    public Builder(SportScheduleInfo param1SportScheduleInfo) {
+      super(param1SportScheduleInfo);
+      if (param1SportScheduleInfo == null)
+        return; 
+      this.sport_type = param1SportScheduleInfo.sport_type;
+      this.home_team_name = param1SportScheduleInfo.home_team_name;
+      this.guest_team_name = param1SportScheduleInfo.guest_team_name;
+      this.home_team_icon = param1SportScheduleInfo.home_team_icon;
+      this.guest_team_icon = param1SportScheduleInfo.guest_team_icon;
+      this.match_top_info = param1SportScheduleInfo.match_top_info;
+      this.match_middle_info = param1SportScheduleInfo.match_middle_info;
+      this.match_bottom_info = param1SportScheduleInfo.match_bottom_info;
+      this.msg_url = param1SportScheduleInfo.msg_url;
+      this.update_time = param1SportScheduleInfo.update_time;
+    }
+    
+    public SportScheduleInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SportScheduleInfo)interceptResult.objValue; 
+      } 
+      return new SportScheduleInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

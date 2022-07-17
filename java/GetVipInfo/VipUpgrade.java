@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipUpgrade extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BUTTON = "";
   
   public static final String DEFAULT_CARD_ID = "";
@@ -24,6 +26,8 @@ public final class VipUpgrade extends Message {
   public static final String DEFAULT_SVIP = "";
   
   public static final String DEFAULT_TEXT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String button;
@@ -69,7 +73,7 @@ public final class VipUpgrade extends Message {
   }
   
   public VipUpgrade(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.normal;
@@ -130,5 +134,63 @@ public final class VipUpgrade extends Message {
       this.expire = ((Builder)str).expire;
       this.card_id = ((Builder)str).card_id;
     } 
+  }
+  
+  public VipUpgrade(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<VipUpgrade> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String button;
+    
+    public String card_id;
+    
+    public String expire;
+    
+    public String link;
+    
+    public Integer normal;
+    
+    public Integer pay;
+    
+    public String svip;
+    
+    public String text;
+    
+    public Builder() {}
+    
+    public Builder(VipUpgrade param1VipUpgrade) {
+      super(param1VipUpgrade);
+      if (param1VipUpgrade == null)
+        return; 
+      this.normal = param1VipUpgrade.normal;
+      this.pay = param1VipUpgrade.pay;
+      this.text = param1VipUpgrade.text;
+      this.button = param1VipUpgrade.button;
+      this.link = param1VipUpgrade.link;
+      this.svip = param1VipUpgrade.svip;
+      this.expire = param1VipUpgrade.expire;
+      this.card_id = param1VipUpgrade.card_id;
+    }
+    
+    public VipUpgrade build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipUpgrade)interceptResult.objValue; 
+      } 
+      return new VipUpgrade(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

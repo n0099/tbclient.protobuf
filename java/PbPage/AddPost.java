@@ -1,4 +1,4 @@
-package PbPage;
+package tbclient.PbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AddPost extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ALREADY_COUNT;
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -22,6 +24,8 @@ public final class AddPost extends Message {
   public static final Integer DEFAULT_TOTAL_COUNT;
   
   public static final String DEFAULT_WARN_MSG = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer already_count;
@@ -66,7 +70,7 @@ public final class AddPost extends Message {
   }
   
   public AddPost(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.create_time;
@@ -120,5 +124,60 @@ public final class AddPost extends Message {
       this.last_addition_time = ((Builder)str).last_addition_time;
       this.warn_msg = ((Builder)str).warn_msg;
     } 
+  }
+  
+  public AddPost(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AddPost> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer already_count;
+    
+    public Integer create_time;
+    
+    public String last_addition_content;
+    
+    public Integer last_addition_time;
+    
+    public String post_id;
+    
+    public Integer total_count;
+    
+    public String warn_msg;
+    
+    public Builder() {}
+    
+    public Builder(AddPost param1AddPost) {
+      super(param1AddPost);
+      if (param1AddPost == null)
+        return; 
+      this.create_time = param1AddPost.create_time;
+      this.post_id = param1AddPost.post_id;
+      this.already_count = param1AddPost.already_count;
+      this.total_count = param1AddPost.total_count;
+      this.last_addition_content = param1AddPost.last_addition_content;
+      this.last_addition_time = param1AddPost.last_addition_time;
+      this.warn_msg = param1AddPost.warn_msg;
+    }
+    
+    public AddPost build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AddPost)interceptResult.objValue; 
+      } 
+      return new AddPost(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

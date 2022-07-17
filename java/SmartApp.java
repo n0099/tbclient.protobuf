@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SmartApp;
 
 public final class SmartApp extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_AVATAR = "";
@@ -27,6 +30,8 @@ public final class SmartApp extends Message {
   public static final String DEFAULT_PIC = "";
   
   public static final Long DEFAULT_SWAN_APP_ID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -65,7 +70,7 @@ public final class SmartApp extends Message {
   }
   
   public SmartApp(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.avatar;
@@ -142,6 +147,10 @@ public final class SmartApp extends Message {
     } 
   }
   
+  public SmartApp(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -156,5 +165,65 @@ public final class SmartApp extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SmartApp> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String avatar;
+    
+    public String h5_url;
+    
+    public String id;
+    
+    public Integer is_game;
+    
+    public Integer is_recom;
+    
+    public String link;
+    
+    public String name;
+    
+    public String pic;
+    
+    public Long swan_app_id;
+    
+    public Builder() {}
+    
+    public Builder(SmartApp param1SmartApp) {
+      super(param1SmartApp);
+      if (param1SmartApp == null)
+        return; 
+      this.avatar = param1SmartApp.avatar;
+      this.name = param1SmartApp.name;
+      this._abstract = param1SmartApp._abstract;
+      this.pic = param1SmartApp.pic;
+      this.h5_url = param1SmartApp.h5_url;
+      this.id = param1SmartApp.id;
+      this.link = param1SmartApp.link;
+      this.swan_app_id = param1SmartApp.swan_app_id;
+      this.is_recom = param1SmartApp.is_recom;
+      this.is_game = param1SmartApp.is_game;
+    }
+    
+    public SmartApp build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SmartApp)interceptResult.objValue; 
+      } 
+      return new SmartApp(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

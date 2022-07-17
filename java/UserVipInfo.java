@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.UserVipInfo;
 
 public final class UserVipInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_A_SCORE;
   
   public static final Integer DEFAULT_EXT_SCORE;
@@ -23,6 +26,8 @@ public final class UserVipInfo extends Message {
   public static final Integer DEFAULT_V_LEVEL;
   
   public static final Integer DEFAULT_V_STATUS;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.INT32)
   public final Integer a_score;
@@ -73,7 +78,7 @@ public final class UserVipInfo extends Message {
   }
   
   public UserVipInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.v_status;
@@ -134,5 +139,63 @@ public final class UserVipInfo extends Message {
       this.n_score = ((Builder)str).n_score;
       this.icon_url = ((Builder)str).icon_url;
     } 
+  }
+  
+  public UserVipInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<UserVipInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer a_score;
+    
+    public Integer e_time;
+    
+    public Integer ext_score;
+    
+    public String icon_url;
+    
+    public Integer n_score;
+    
+    public Integer s_time;
+    
+    public Integer v_level;
+    
+    public Integer v_status;
+    
+    public Builder() {}
+    
+    public Builder(UserVipInfo param1UserVipInfo) {
+      super(param1UserVipInfo);
+      if (param1UserVipInfo == null)
+        return; 
+      this.v_status = param1UserVipInfo.v_status;
+      this.s_time = param1UserVipInfo.s_time;
+      this.e_time = param1UserVipInfo.e_time;
+      this.ext_score = param1UserVipInfo.ext_score;
+      this.v_level = param1UserVipInfo.v_level;
+      this.a_score = param1UserVipInfo.a_score;
+      this.n_score = param1UserVipInfo.n_score;
+      this.icon_url = param1UserVipInfo.icon_url;
+    }
+    
+    public UserVipInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserVipInfo)interceptResult.objValue; 
+      } 
+      return new UserVipInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

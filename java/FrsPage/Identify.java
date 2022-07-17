@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Identify extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ID = "";
   
   public static final Integer DEFAULT_IS_IDENTIFY = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String id;
@@ -20,7 +24,7 @@ public final class Identify extends Message {
   public final Integer is_identify;
   
   public Identify(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.is_identify;
@@ -41,6 +45,10 @@ public final class Identify extends Message {
     } 
   }
   
+  public Identify(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -55,5 +63,41 @@ public final class Identify extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Identify> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String id;
+    
+    public Integer is_identify;
+    
+    public Builder() {}
+    
+    public Builder(Identify param1Identify) {
+      super(param1Identify);
+      if (param1Identify == null)
+        return; 
+      this.is_identify = param1Identify.is_identify;
+      this.id = param1Identify.id;
+    }
+    
+    public Identify build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Identify)interceptResult.objValue; 
+      } 
+      return new Identify(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

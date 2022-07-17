@@ -1,4 +1,4 @@
-package GetBigday;
+package tbclient.GetBigday;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class BigdayInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_END_TIME;
   
   public static final Long DEFAULT_ID;
@@ -22,6 +24,8 @@ public final class BigdayInfo extends Message {
   public static final Integer DEFAULT_POSITION;
   
   public static final Long DEFAULT_START_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long end_time;
@@ -68,7 +72,7 @@ public final class BigdayInfo extends Message {
   }
   
   public BigdayInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.start_time;
@@ -122,5 +126,60 @@ public final class BigdayInfo extends Message {
       this.jump_url = ((Builder)integer).jump_url;
       this.img_colour = ((Builder)integer).img_colour;
     } 
+  }
+  
+  public BigdayInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BigdayInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long end_time;
+    
+    public Long id;
+    
+    public Integer img_colour;
+    
+    public String img_url;
+    
+    public String jump_url;
+    
+    public Integer position;
+    
+    public Long start_time;
+    
+    public Builder() {}
+    
+    public Builder(BigdayInfo param1BigdayInfo) {
+      super(param1BigdayInfo);
+      if (param1BigdayInfo == null)
+        return; 
+      this.start_time = param1BigdayInfo.start_time;
+      this.end_time = param1BigdayInfo.end_time;
+      this.position = param1BigdayInfo.position;
+      this.img_url = param1BigdayInfo.img_url;
+      this.id = param1BigdayInfo.id;
+      this.jump_url = param1BigdayInfo.jump_url;
+      this.img_colour = param1BigdayInfo.img_colour;
+    }
+    
+    public BigdayInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BigdayInfo)interceptResult.objValue; 
+      } 
+      return new BigdayInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

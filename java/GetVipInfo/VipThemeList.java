@@ -1,4 +1,4 @@
-package GetVipInfo;
+package tbclient.GetVipInfo;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetVipInfo.VipThemeItem;
 
 public final class VipThemeList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CARD_ID = "";
   
   public static final String DEFAULT_CLASS_NAME = "";
@@ -23,6 +24,8 @@ public final class VipThemeList extends Message {
   public static final List<VipThemeItem> DEFAULT_ITEM = Collections.emptyList();
   
   public static final List<VipThemeItem> DEFAULT_ITEM_CARD = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String card_id;
@@ -43,7 +46,7 @@ public final class VipThemeList extends Message {
   public final List<VipThemeItem> item_card;
   
   public VipThemeList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.class_name;
@@ -64,7 +67,7 @@ public final class VipThemeList extends Message {
       } else {
         this.class_url = str1;
       } 
-      List list = paramBuilder.item;
+      List<VipThemeItem> list = paramBuilder.item;
       if (list == null) {
         this.item = DEFAULT_ITEM;
       } else {
@@ -92,6 +95,10 @@ public final class VipThemeList extends Message {
     } 
   }
   
+  public VipThemeList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -106,5 +113,53 @@ public final class VipThemeList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<VipThemeList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String card_id;
+    
+    public String class_name;
+    
+    public String class_url;
+    
+    public String class_url_name;
+    
+    public List<VipThemeItem> item;
+    
+    public List<VipThemeItem> item_card;
+    
+    public Builder() {}
+    
+    public Builder(VipThemeList param1VipThemeList) {
+      super(param1VipThemeList);
+      if (param1VipThemeList == null)
+        return; 
+      this.class_name = param1VipThemeList.class_name;
+      this.class_url_name = param1VipThemeList.class_url_name;
+      this.class_url = param1VipThemeList.class_url;
+      this.item = Message.copyOf(param1VipThemeList.item);
+      this.item_card = Message.copyOf(param1VipThemeList.item_card);
+      this.card_id = param1VipThemeList.card_id;
+    }
+    
+    public VipThemeList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VipThemeList)interceptResult.objValue; 
+      } 
+      return new VipThemeList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

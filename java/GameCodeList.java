@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GameCodeList;
 
 public final class GameCodeList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_BEGIN_TIME;
   
   public static final Integer DEFAULT_CLAIMED_STATUS;
@@ -23,6 +26,8 @@ public final class GameCodeList extends Message {
   public static final Integer DEFAULT_LIST_ID;
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer begin_time;
@@ -72,7 +77,7 @@ public final class GameCodeList extends Message {
   }
   
   public GameCodeList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.list_id;
@@ -133,5 +138,63 @@ public final class GameCodeList extends Message {
       this.claimed_status = ((Builder)str).claimed_status;
       this.claimed_value = ((Builder)str).claimed_value;
     } 
+  }
+  
+  public GameCodeList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GameCodeList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer begin_time;
+    
+    public Integer claimed_status;
+    
+    public String claimed_value;
+    
+    public Integer end_time;
+    
+    public Integer item_id;
+    
+    public String label;
+    
+    public Integer list_id;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(GameCodeList param1GameCodeList) {
+      super(param1GameCodeList);
+      if (param1GameCodeList == null)
+        return; 
+      this.list_id = param1GameCodeList.list_id;
+      this.type = param1GameCodeList.type;
+      this.label = param1GameCodeList.label;
+      this.begin_time = param1GameCodeList.begin_time;
+      this.end_time = param1GameCodeList.end_time;
+      this.item_id = param1GameCodeList.item_id;
+      this.claimed_status = param1GameCodeList.claimed_status;
+      this.claimed_value = param1GameCodeList.claimed_value;
+    }
+    
+    public GameCodeList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GameCodeList)interceptResult.objValue; 
+      } 
+      return new GameCodeList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

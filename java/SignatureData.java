@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.SignatureContent;
-import tbclient.SignatureData;
 
 public final class SignatureData extends Message {
+  public static Interceptable $ic;
+  
   public static final List<SignatureContent> DEFAULT_CONTENT;
   
   public static final String DEFAULT_FONTCOLOR = "";
@@ -18,6 +20,8 @@ public final class SignatureData extends Message {
   public static final String DEFAULT_FONTKEYNAME = "";
   
   public static final Integer DEFAULT_SIGNATURE_ID = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 4)
   public final List<SignatureContent> content;
@@ -36,8 +40,8 @@ public final class SignatureData extends Message {
   }
   
   public SignatureData(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<SignatureContent> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.signature_id;
       if (integer == null) {
@@ -71,6 +75,10 @@ public final class SignatureData extends Message {
     } 
   }
   
+  public SignatureData(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -85,5 +93,47 @@ public final class SignatureData extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SignatureData> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<SignatureContent> content;
+    
+    public String fontColor;
+    
+    public String fontKeyName;
+    
+    public Integer signature_id;
+    
+    public Builder() {}
+    
+    public Builder(SignatureData param1SignatureData) {
+      super(param1SignatureData);
+      if (param1SignatureData == null)
+        return; 
+      this.signature_id = param1SignatureData.signature_id;
+      this.fontKeyName = param1SignatureData.fontKeyName;
+      this.fontColor = param1SignatureData.fontColor;
+      this.content = Message.copyOf(param1SignatureData.content);
+    }
+    
+    public SignatureData build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SignatureData)interceptResult.objValue; 
+      } 
+      return new SignatureData(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

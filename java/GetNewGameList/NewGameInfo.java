@@ -1,4 +1,4 @@
-package GetNewGameList;
+package tbclient.GetNewGameList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class NewGameInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ANDR_PK_NAME = "";
   
   public static final String DEFAULT_API_KEY = "";
@@ -118,6 +120,8 @@ public final class NewGameInfo extends Message {
   public static final String DEFAULT_VERSION = "";
   
   public static final String DEFAULT_VERSION_IOS = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 51, type = Message.Datatype.STRING)
   public final String andr_pk_name;
@@ -318,7 +322,7 @@ public final class NewGameInfo extends Message {
   }
   
   public NewGameInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.id;
@@ -393,7 +397,7 @@ public final class NewGameInfo extends Message {
       } else {
         this.game_desc = str5;
       } 
-      List list2 = paramBuilder.game_pic;
+      List<String> list2 = paramBuilder.game_pic;
       if (list2 == null) {
         this.game_pic = DEFAULT_GAME_PIC;
       } else {
@@ -411,7 +415,7 @@ public final class NewGameInfo extends Message {
       } else {
         this.developer = str4;
       } 
-      List list1 = paramBuilder.recommend_platform;
+      List<String> list1 = paramBuilder.recommend_platform;
       if (list1 == null) {
         this.recommend_platform = DEFAULT_RECOMMEND_PLATFORM;
       } else {
@@ -701,5 +705,201 @@ public final class NewGameInfo extends Message {
       this.icon_url = ((Builder)str).icon_url;
       this.category_name_sim = ((Builder)str).category_name_sim;
     } 
+  }
+  
+  public NewGameInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<NewGameInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String andr_pk_name;
+    
+    public String api_key;
+    
+    public String app_id;
+    
+    public String apple_id;
+    
+    public String bundle_id;
+    
+    public String canvas_name;
+    
+    public Integer category_id;
+    
+    public String category_name;
+    
+    public String category_name_sim;
+    
+    public Integer channel;
+    
+    public Long deadline;
+    
+    public String developer;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public String game_desc;
+    
+    public String game_id;
+    
+    public String game_link;
+    
+    public String game_name;
+    
+    public List<String> game_pic;
+    
+    public Integer game_platform;
+    
+    public Integer game_type;
+    
+    public String gift_code;
+    
+    public String icon_pic1;
+    
+    public String icon_pic2;
+    
+    public String icon_pic3;
+    
+    public String icon_url;
+    
+    public Long id;
+    
+    public String inter_version;
+    
+    public String inter_version_ios;
+    
+    public String launchComponent;
+    
+    public Integer mark;
+    
+    public String package_link;
+    
+    public String package_name;
+    
+    public String package_size;
+    
+    public Integer play_count;
+    
+    public String praise;
+    
+    public List<String> recommend_platform;
+    
+    public String schema_url;
+    
+    public Integer score;
+    
+    public String secret_key;
+    
+    public String server_id;
+    
+    public String server_name;
+    
+    public Integer server_open_time;
+    
+    public Integer server_type;
+    
+    public String sign;
+    
+    public Integer status;
+    
+    public String subscript_color;
+    
+    public String test_userids;
+    
+    public String thread_forum_name;
+    
+    public Long thread_id;
+    
+    public Long thread_theme_id;
+    
+    public Integer time;
+    
+    public String version;
+    
+    public String version_ios;
+    
+    public Builder() {}
+    
+    public Builder(NewGameInfo param1NewGameInfo) {
+      super(param1NewGameInfo);
+      if (param1NewGameInfo == null)
+        return; 
+      this.id = param1NewGameInfo.id;
+      this.game_id = param1NewGameInfo.game_id;
+      this.server_id = param1NewGameInfo.server_id;
+      this.server_name = param1NewGameInfo.server_name;
+      this.server_open_time = param1NewGameInfo.server_open_time;
+      this.server_type = param1NewGameInfo.server_type;
+      this.time = param1NewGameInfo.time;
+      this.gift_code = param1NewGameInfo.gift_code;
+      this.game_link = param1NewGameInfo.game_link;
+      this.praise = param1NewGameInfo.praise;
+      this.test_userids = param1NewGameInfo.test_userids;
+      this.game_desc = param1NewGameInfo.game_desc;
+      this.game_pic = Message.copyOf(param1NewGameInfo.game_pic);
+      this.game_name = param1NewGameInfo.game_name;
+      this.developer = param1NewGameInfo.developer;
+      this.recommend_platform = Message.copyOf(param1NewGameInfo.recommend_platform);
+      this.package_name = param1NewGameInfo.package_name;
+      this.sign = param1NewGameInfo.sign;
+      this.launchComponent = param1NewGameInfo.launchComponent;
+      this.package_size = param1NewGameInfo.package_size;
+      this.apple_id = param1NewGameInfo.apple_id;
+      this.bundle_id = param1NewGameInfo.bundle_id;
+      this.schema_url = param1NewGameInfo.schema_url;
+      this.app_id = param1NewGameInfo.app_id;
+      this.canvas_name = param1NewGameInfo.canvas_name;
+      this.thread_forum_name = param1NewGameInfo.thread_forum_name;
+      this.forum_name = param1NewGameInfo.forum_name;
+      this.icon_pic1 = param1NewGameInfo.icon_pic1;
+      this.icon_pic2 = param1NewGameInfo.icon_pic2;
+      this.icon_pic3 = param1NewGameInfo.icon_pic3;
+      this.secret_key = param1NewGameInfo.secret_key;
+      this.thread_theme_id = param1NewGameInfo.thread_theme_id;
+      this.thread_id = param1NewGameInfo.thread_id;
+      this.forum_id = param1NewGameInfo.forum_id;
+      this.score = param1NewGameInfo.score;
+      this.deadline = param1NewGameInfo.deadline;
+      this.play_count = param1NewGameInfo.play_count;
+      this.game_type = param1NewGameInfo.game_type;
+      this.game_platform = param1NewGameInfo.game_platform;
+      this.channel = param1NewGameInfo.channel;
+      this.version = param1NewGameInfo.version;
+      this.api_key = param1NewGameInfo.api_key;
+      this.inter_version = param1NewGameInfo.inter_version;
+      this.version_ios = param1NewGameInfo.version_ios;
+      this.inter_version_ios = param1NewGameInfo.inter_version_ios;
+      this.subscript_color = param1NewGameInfo.subscript_color;
+      this.category_id = param1NewGameInfo.category_id;
+      this.status = param1NewGameInfo.status;
+      this.mark = param1NewGameInfo.mark;
+      this.package_link = param1NewGameInfo.package_link;
+      this.andr_pk_name = param1NewGameInfo.andr_pk_name;
+      this.category_name = param1NewGameInfo.category_name;
+      this.icon_url = param1NewGameInfo.icon_url;
+      this.category_name_sim = param1NewGameInfo.category_name_sim;
+    }
+    
+    public NewGameInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NewGameInfo)interceptResult.objValue; 
+      } 
+      return new NewGameInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

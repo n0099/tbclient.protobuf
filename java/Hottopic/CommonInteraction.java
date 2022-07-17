@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CommonInteraction extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AFTER_CLICK_PIC = "";
   
   public static final String DEFAULT_BEFORE_CLICK_PIC = "";
@@ -24,6 +26,8 @@ public final class CommonInteraction extends Message {
   public static final Long DEFAULT_TOTAL_NUM;
   
   public static final Long DEFAULT_USER_PK_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String after_click_pic;
@@ -71,7 +75,7 @@ public final class CommonInteraction extends Message {
   }
   
   public CommonInteraction(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str2 = paramBuilder.module_name;
@@ -132,5 +136,63 @@ public final class CommonInteraction extends Message {
       this.pk_id = ((Builder)long_).pk_id;
       this.user_pk_id = ((Builder)long_).user_pk_id;
     } 
+  }
+  
+  public CommonInteraction(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<CommonInteraction> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String after_click_pic;
+    
+    public String before_click_pic;
+    
+    public Integer has_clicked;
+    
+    public String module_name;
+    
+    public Long pk_id;
+    
+    public String ques_desc;
+    
+    public Long total_num;
+    
+    public Long user_pk_id;
+    
+    public Builder() {}
+    
+    public Builder(CommonInteraction param1CommonInteraction) {
+      super(param1CommonInteraction);
+      if (param1CommonInteraction == null)
+        return; 
+      this.module_name = param1CommonInteraction.module_name;
+      this.ques_desc = param1CommonInteraction.ques_desc;
+      this.total_num = param1CommonInteraction.total_num;
+      this.has_clicked = param1CommonInteraction.has_clicked;
+      this.before_click_pic = param1CommonInteraction.before_click_pic;
+      this.after_click_pic = param1CommonInteraction.after_click_pic;
+      this.pk_id = param1CommonInteraction.pk_id;
+      this.user_pk_id = param1CommonInteraction.user_pk_id;
+    }
+    
+    public CommonInteraction build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CommonInteraction)interceptResult.objValue; 
+      } 
+      return new CommonInteraction(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

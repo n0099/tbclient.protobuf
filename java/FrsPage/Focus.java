@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Focus extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_LINK = "";
   
   public static final Integer DEFAULT_TIME = Integer.valueOf(0);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String link;
@@ -25,7 +29,7 @@ public final class Focus extends Message {
   public final String title;
   
   public Focus(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.time;
@@ -53,6 +57,10 @@ public final class Focus extends Message {
     } 
   }
   
+  public Focus(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -67,5 +75,44 @@ public final class Focus extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Focus> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String link;
+    
+    public Integer time;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(Focus param1Focus) {
+      super(param1Focus);
+      if (param1Focus == null)
+        return; 
+      this.time = param1Focus.time;
+      this.title = param1Focus.title;
+      this.link = param1Focus.link;
+    }
+    
+    public Focus build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Focus)interceptResult.objValue; 
+      } 
+      return new Focus(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ThreadInfo;
-import tbclient.VideoActive;
 
 public final class VideoActive extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVE_NAME = "";
   
   public static final String DEFAULT_ACTIVE_URL = "";
@@ -26,6 +28,8 @@ public final class VideoActive extends Message {
   public static final String DEFAULT_REMARK = "";
   
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String active_name;
@@ -52,8 +56,8 @@ public final class VideoActive extends Message {
   public final List<ThreadInfo> thread_list;
   
   public VideoActive(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ThreadInfo> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.id;
       if (integer == null) {
@@ -115,6 +119,10 @@ public final class VideoActive extends Message {
     } 
   }
   
+  public VideoActive(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -129,5 +137,59 @@ public final class VideoActive extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<VideoActive> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String active_name;
+    
+    public String active_url;
+    
+    public String banner_url;
+    
+    public String description;
+    
+    public Integer id;
+    
+    public String native_url;
+    
+    public String remark;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public Builder() {}
+    
+    public Builder(VideoActive param1VideoActive) {
+      super(param1VideoActive);
+      if (param1VideoActive == null)
+        return; 
+      this.id = param1VideoActive.id;
+      this.active_name = param1VideoActive.active_name;
+      this.active_url = param1VideoActive.active_url;
+      this.native_url = param1VideoActive.native_url;
+      this.description = param1VideoActive.description;
+      this.banner_url = param1VideoActive.banner_url;
+      this.remark = param1VideoActive.remark;
+      this.thread_list = Message.copyOf(param1VideoActive.thread_list);
+    }
+    
+    public VideoActive build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VideoActive)interceptResult.objValue; 
+      } 
+      return new VideoActive(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

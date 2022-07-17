@@ -1,4 +1,4 @@
-package HotForum;
+package tbclient.HotForum;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.HotForum.HotTopicList;
 
 public final class HotTopic extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_TITLE = "";
   
   public static final List<HotTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String title;
@@ -23,8 +26,8 @@ public final class HotTopic extends Message {
   public final List<HotTopicList> topic_list;
   
   public HotTopic(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<HotTopicList> list;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
       if (str == null) {
@@ -44,6 +47,10 @@ public final class HotTopic extends Message {
     } 
   }
   
+  public HotTopic(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +65,41 @@ public final class HotTopic extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HotTopic> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String title;
+    
+    public List<HotTopicList> topic_list;
+    
+    public Builder() {}
+    
+    public Builder(HotTopic param1HotTopic) {
+      super(param1HotTopic);
+      if (param1HotTopic == null)
+        return; 
+      this.title = param1HotTopic.title;
+      this.topic_list = Message.copyOf(param1HotTopic.topic_list);
+    }
+    
+    public HotTopic build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotTopic)interceptResult.objValue; 
+      } 
+      return new HotTopic(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

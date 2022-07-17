@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Balv;
 
 public final class Balv extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_DAYS_TOFREE;
   
   public static final Integer DEFAULT_IS_BLACK;
   
   public static final Integer DEFAULT_IS_BLOCK;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer days_tofree;
@@ -44,7 +49,7 @@ public final class Balv extends Message {
   }
   
   public Balv(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.is_black;
@@ -70,5 +75,48 @@ public final class Balv extends Message {
       this.is_block = ((Builder)integer).is_block;
       this.days_tofree = ((Builder)integer).days_tofree;
     } 
+  }
+  
+  public Balv(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Balv> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer days_tofree;
+    
+    public Integer is_black;
+    
+    public Integer is_block;
+    
+    public Builder() {}
+    
+    public Builder(Balv param1Balv) {
+      super(param1Balv);
+      if (param1Balv == null)
+        return; 
+      this.is_black = param1Balv.is_black;
+      this.is_block = param1Balv.is_block;
+      this.days_tofree = param1Balv.days_tofree;
+    }
+    
+    public Balv build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Balv)interceptResult.objValue; 
+      } 
+      return new Balv(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BawuThrones;
 
 public final class BawuThrones extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BAZHU_LEVEL = "";
   
   public static final Integer DEFAULT_HAS_SEND_BCAST;
@@ -23,6 +26,8 @@ public final class BawuThrones extends Message {
   public static final Integer DEFAULT_USED_BCAST_CNT;
   
   public static final Integer DEFAULT_USED_RECOMMEND_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String bazhu_level;
@@ -73,7 +78,7 @@ public final class BawuThrones extends Message {
   }
   
   public BawuThrones(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.total_recommend_num;
@@ -134,5 +139,63 @@ public final class BawuThrones extends Message {
       this.has_send_bcast = ((Builder)integer).has_send_bcast;
       this.newest_bcast_pushuser_cnt = ((Builder)integer).newest_bcast_pushuser_cnt;
     } 
+  }
+  
+  public BawuThrones(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BawuThrones> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bazhu_level;
+    
+    public Integer has_send_bcast;
+    
+    public Integer newest_bcast_pushuser_cnt;
+    
+    public Integer newest_bcast_pv;
+    
+    public Integer total_bcast_cnt;
+    
+    public Integer total_recommend_num;
+    
+    public Integer used_bcast_cnt;
+    
+    public Integer used_recommend_num;
+    
+    public Builder() {}
+    
+    public Builder(BawuThrones param1BawuThrones) {
+      super(param1BawuThrones);
+      if (param1BawuThrones == null)
+        return; 
+      this.total_recommend_num = param1BawuThrones.total_recommend_num;
+      this.used_recommend_num = param1BawuThrones.used_recommend_num;
+      this.bazhu_level = param1BawuThrones.bazhu_level;
+      this.used_bcast_cnt = param1BawuThrones.used_bcast_cnt;
+      this.total_bcast_cnt = param1BawuThrones.total_bcast_cnt;
+      this.newest_bcast_pv = param1BawuThrones.newest_bcast_pv;
+      this.has_send_bcast = param1BawuThrones.has_send_bcast;
+      this.newest_bcast_pushuser_cnt = param1BawuThrones.newest_bcast_pushuser_cnt;
+    }
+    
+    public BawuThrones build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BawuThrones)interceptResult.objValue; 
+      } 
+      return new BawuThrones(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

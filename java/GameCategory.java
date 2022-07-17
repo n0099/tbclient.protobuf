@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GameCategory;
 
 public final class GameCategory extends Message {
+  public static Interceptable $ic;
+  
   public static final List<String> DEFAULT_GAME_LIST;
   
   public static final String DEFAULT_ICON_URL = "";
@@ -17,6 +20,8 @@ public final class GameCategory extends Message {
   public static final Integer DEFAULT_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 4, type = Message.Datatype.STRING)
   public final List<String> game_list;
@@ -35,8 +40,8 @@ public final class GameCategory extends Message {
   }
   
   public GameCategory(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.id;
       if (integer == null) {
@@ -70,6 +75,10 @@ public final class GameCategory extends Message {
     } 
   }
   
+  public GameCategory(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -84,5 +93,47 @@ public final class GameCategory extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GameCategory> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<String> game_list;
+    
+    public String icon_url;
+    
+    public Integer id;
+    
+    public String name;
+    
+    public Builder() {}
+    
+    public Builder(GameCategory param1GameCategory) {
+      super(param1GameCategory);
+      if (param1GameCategory == null)
+        return; 
+      this.id = param1GameCategory.id;
+      this.name = param1GameCategory.name;
+      this.icon_url = param1GameCategory.icon_url;
+      this.game_list = Message.copyOf(param1GameCategory.game_list);
+    }
+    
+    public GameCategory build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GameCategory)interceptResult.objValue; 
+      } 
+      return new GameCategory(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

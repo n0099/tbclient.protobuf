@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.DealMedia;
-import tbclient.DisplayWindowInfo;
 
 public final class DisplayWindowInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_INTRO = "";
   
   public static final Integer DEFAULT_IS_DISPLAY;
@@ -24,6 +26,8 @@ public final class DisplayWindowInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Long DEFAULT_UNIT_PRICE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final DealMedia img;
@@ -76,7 +80,7 @@ public final class DisplayWindowInfo extends Message {
   }
   
   public DisplayWindowInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.product_id;
@@ -139,5 +143,66 @@ public final class DisplayWindowInfo extends Message {
       this.is_display = ((Builder)long_).is_display;
       this.sales = ((Builder)long_).sales;
     } 
+  }
+  
+  public DisplayWindowInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DisplayWindowInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DealMedia img;
+    
+    public String intro;
+    
+    public Integer is_display;
+    
+    public Long product_id;
+    
+    public Long sales;
+    
+    public Long ship_fee;
+    
+    public Long stock;
+    
+    public String title;
+    
+    public Long unit_price;
+    
+    public Builder() {}
+    
+    public Builder(DisplayWindowInfo param1DisplayWindowInfo) {
+      super(param1DisplayWindowInfo);
+      if (param1DisplayWindowInfo == null)
+        return; 
+      this.product_id = param1DisplayWindowInfo.product_id;
+      this.title = param1DisplayWindowInfo.title;
+      this.intro = param1DisplayWindowInfo.intro;
+      this.img = param1DisplayWindowInfo.img;
+      this.unit_price = param1DisplayWindowInfo.unit_price;
+      this.stock = param1DisplayWindowInfo.stock;
+      this.ship_fee = param1DisplayWindowInfo.ship_fee;
+      this.is_display = param1DisplayWindowInfo.is_display;
+      this.sales = param1DisplayWindowInfo.sales;
+    }
+    
+    public DisplayWindowInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DisplayWindowInfo)interceptResult.objValue; 
+      } 
+      return new DisplayWindowInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

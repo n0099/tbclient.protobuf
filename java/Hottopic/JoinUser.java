@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Hottopic.UserInfo;
 
 public final class JoinUser extends Message {
+  public static Interceptable $ic;
+  
   public static final List<UserInfo> DEFAULT_JOIN_USER = Collections.emptyList();
   
   public static final Long DEFAULT_JOIN_USER_NUM = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<UserInfo> join_user;
@@ -23,10 +26,10 @@ public final class JoinUser extends Message {
   public final Long join_user_num;
   
   public JoinUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
-      List list = paramBuilder.join_user;
+      List<UserInfo> list = paramBuilder.join_user;
       if (list == null) {
         this.join_user = DEFAULT_JOIN_USER;
       } else {
@@ -44,6 +47,10 @@ public final class JoinUser extends Message {
     } 
   }
   
+  public JoinUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +65,41 @@ public final class JoinUser extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<JoinUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<UserInfo> join_user;
+    
+    public Long join_user_num;
+    
+    public Builder() {}
+    
+    public Builder(JoinUser param1JoinUser) {
+      super(param1JoinUser);
+      if (param1JoinUser == null)
+        return; 
+      this.join_user = Message.copyOf(param1JoinUser.join_user);
+      this.join_user_num = param1JoinUser.join_user_num;
+    }
+    
+    public JoinUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (JoinUser)interceptResult.objValue; 
+      } 
+      return new JoinUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

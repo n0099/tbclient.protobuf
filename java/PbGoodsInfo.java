@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,13 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PbGoodsInfo;
 
 public final class PbGoodsInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_GOODS_FROM = "";
+  
+  public static final Long DEFAULT_GOODS_ID;
   
   public static final String DEFAULT_GOODS_IMAGE = "";
   
@@ -22,8 +27,13 @@ public final class PbGoodsInfo extends Message {
   
   public static final Integer DEFAULT_SORT = Integer.valueOf(0);
   
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String goods_from;
+  
+  @ProtoField(tag = 8, type = Message.Datatype.INT64)
+  public final Long goods_id;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String goods_image;
@@ -43,9 +53,13 @@ public final class PbGoodsInfo extends Message {
   @ProtoField(tag = 5, type = Message.Datatype.UINT32)
   public final Integer sort;
   
+  static {
+    DEFAULT_GOODS_ID = Long.valueOf(0L);
+  }
+  
   public PbGoodsInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    String str;
+    super(paramBuilder);
+    Long long_;
     if (paramBoolean == true) {
       String str2 = paramBuilder.goods_title;
       if (str2 == null) {
@@ -83,21 +97,32 @@ public final class PbGoodsInfo extends Message {
       } else {
         this.goods_from = str1;
       } 
-      str = paramBuilder.goods_url_h5;
-      if (str == null) {
+      str1 = paramBuilder.goods_url_h5;
+      if (str1 == null) {
         this.goods_url_h5 = "";
       } else {
-        this.goods_url_h5 = str;
+        this.goods_url_h5 = str1;
+      } 
+      long_ = paramBuilder.goods_id;
+      if (long_ == null) {
+        this.goods_id = DEFAULT_GOODS_ID;
+      } else {
+        this.goods_id = long_;
       } 
     } else {
-      this.goods_title = ((Builder)str).goods_title;
-      this.goods_image = ((Builder)str).goods_image;
-      this.goods_price = ((Builder)str).goods_price;
-      this.goods_url = ((Builder)str).goods_url;
-      this.sort = ((Builder)str).sort;
-      this.goods_from = ((Builder)str).goods_from;
-      this.goods_url_h5 = ((Builder)str).goods_url_h5;
+      this.goods_title = ((Builder)long_).goods_title;
+      this.goods_image = ((Builder)long_).goods_image;
+      this.goods_price = ((Builder)long_).goods_price;
+      this.goods_url = ((Builder)long_).goods_url;
+      this.sort = ((Builder)long_).sort;
+      this.goods_from = ((Builder)long_).goods_from;
+      this.goods_url_h5 = ((Builder)long_).goods_url_h5;
+      this.goods_id = ((Builder)long_).goods_id;
     } 
+  }
+  
+  public PbGoodsInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -114,5 +139,59 @@ public final class PbGoodsInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PbGoodsInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String goods_from;
+    
+    public Long goods_id;
+    
+    public String goods_image;
+    
+    public String goods_price;
+    
+    public String goods_title;
+    
+    public String goods_url;
+    
+    public String goods_url_h5;
+    
+    public Integer sort;
+    
+    public Builder() {}
+    
+    public Builder(PbGoodsInfo param1PbGoodsInfo) {
+      super(param1PbGoodsInfo);
+      if (param1PbGoodsInfo == null)
+        return; 
+      this.goods_title = param1PbGoodsInfo.goods_title;
+      this.goods_image = param1PbGoodsInfo.goods_image;
+      this.goods_price = param1PbGoodsInfo.goods_price;
+      this.goods_url = param1PbGoodsInfo.goods_url;
+      this.sort = param1PbGoodsInfo.sort;
+      this.goods_from = param1PbGoodsInfo.goods_from;
+      this.goods_url_h5 = param1PbGoodsInfo.goods_url_h5;
+      this.goods_id = param1PbGoodsInfo.goods_id;
+    }
+    
+    public PbGoodsInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PbGoodsInfo)interceptResult.objValue; 
+      } 
+      return new PbGoodsInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

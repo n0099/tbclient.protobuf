@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.UserStory;
 
 public final class UserStory extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_HAS_READ;
   
   public static final String DEFAULT_PORTRAIT = "";
@@ -15,6 +18,8 @@ public final class UserStory extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT32)
   public final Integer has_read;
@@ -33,7 +38,7 @@ public final class UserStory extends Message {
   }
   
   public UserStory(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
@@ -68,6 +73,10 @@ public final class UserStory extends Message {
     } 
   }
   
+  public UserStory(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -82,5 +91,47 @@ public final class UserStory extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<UserStory> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer has_read;
+    
+    public String portrait;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(UserStory param1UserStory) {
+      super(param1UserStory);
+      if (param1UserStory == null)
+        return; 
+      this.user_id = param1UserStory.user_id;
+      this.user_name = param1UserStory.user_name;
+      this.portrait = param1UserStory.portrait;
+      this.has_read = param1UserStory.has_read;
+    }
+    
+    public UserStory build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserStory)interceptResult.objValue; 
+      } 
+      return new UserStory(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

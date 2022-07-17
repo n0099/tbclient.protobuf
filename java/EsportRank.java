@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.EsportRank;
-import tbclient.EsportUser;
 
 public final class EsportRank extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_RANK = Integer.valueOf(0);
   
   public static final String DEFAULT_TEXT = "";
@@ -16,6 +18,8 @@ public final class EsportRank extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer rank;
@@ -33,7 +37,7 @@ public final class EsportRank extends Message {
   public final EsportUser user;
   
   public EsportRank(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.title;
@@ -70,6 +74,10 @@ public final class EsportRank extends Message {
     } 
   }
   
+  public EsportRank(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -84,5 +92,50 @@ public final class EsportRank extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<EsportRank> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer rank;
+    
+    public String text;
+    
+    public String title;
+    
+    public String url;
+    
+    public EsportUser user;
+    
+    public Builder() {}
+    
+    public Builder(EsportRank param1EsportRank) {
+      super(param1EsportRank);
+      if (param1EsportRank == null)
+        return; 
+      this.title = param1EsportRank.title;
+      this.rank = param1EsportRank.rank;
+      this.user = param1EsportRank.user;
+      this.text = param1EsportRank.text;
+      this.url = param1EsportRank.url;
+    }
+    
+    public EsportRank build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (EsportRank)interceptResult.objValue; 
+      } 
+      return new EsportRank(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

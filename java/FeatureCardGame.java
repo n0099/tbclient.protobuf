@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FeatureCardGame;
-import tbclient.FeatureCardGameSubNode;
 
 public final class FeatureCardGame extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FLOOR;
   
   public static final List<FeatureCardGameSubNode> DEFAULT_SUB_NODES = Collections.emptyList();
@@ -18,6 +20,8 @@ public final class FeatureCardGame extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT32)
   public final Integer floor;
@@ -38,10 +42,10 @@ public final class FeatureCardGame extends Message {
   }
   
   public FeatureCardGame(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list = paramBuilder.sub_nodes;
+      List<FeatureCardGameSubNode> list = paramBuilder.sub_nodes;
       if (list == null) {
         this.sub_nodes = DEFAULT_SUB_NODES;
       } else {
@@ -73,6 +77,10 @@ public final class FeatureCardGame extends Message {
     } 
   }
   
+  public FeatureCardGame(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -87,5 +95,47 @@ public final class FeatureCardGame extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeatureCardGame> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer floor;
+    
+    public List<FeatureCardGameSubNode> sub_nodes;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(FeatureCardGame param1FeatureCardGame) {
+      super(param1FeatureCardGame);
+      if (param1FeatureCardGame == null)
+        return; 
+      this.sub_nodes = Message.copyOf(param1FeatureCardGame.sub_nodes);
+      this.type = param1FeatureCardGame.type;
+      this.floor = param1FeatureCardGame.floor;
+      this.title = param1FeatureCardGame.title;
+    }
+    
+    public FeatureCardGame build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FeatureCardGame)interceptResult.objValue; 
+      } 
+      return new FeatureCardGame(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

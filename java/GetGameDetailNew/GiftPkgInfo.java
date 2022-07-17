@@ -1,4 +1,4 @@
-package GetGameDetailNew;
+package tbclient.GetGameDetailNew;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GiftPkgInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ACQUIRE_NUM = Long.valueOf(0L);
   
   public static final String DEFAULT_BUTTON_TEXT = "";
@@ -20,6 +22,8 @@ public final class GiftPkgInfo extends Message {
   public static final String DEFAULT_GIFTPKG_URL = "";
   
   public static final String DEFAULT_THUMBNAILS = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT64)
   public final Long acquire_num;
@@ -40,7 +44,7 @@ public final class GiftPkgInfo extends Message {
   public final String thumbnails;
   
   public GiftPkgInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.giftpkg_name;
@@ -89,6 +93,10 @@ public final class GiftPkgInfo extends Message {
     } 
   }
   
+  public GiftPkgInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -103,5 +111,53 @@ public final class GiftPkgInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GiftPkgInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long acquire_num;
+    
+    public String button_text;
+    
+    public String corner_mark;
+    
+    public String giftpkg_name;
+    
+    public String giftpkg_url;
+    
+    public String thumbnails;
+    
+    public Builder() {}
+    
+    public Builder(GiftPkgInfo param1GiftPkgInfo) {
+      super(param1GiftPkgInfo);
+      if (param1GiftPkgInfo == null)
+        return; 
+      this.giftpkg_name = param1GiftPkgInfo.giftpkg_name;
+      this.thumbnails = param1GiftPkgInfo.thumbnails;
+      this.acquire_num = param1GiftPkgInfo.acquire_num;
+      this.corner_mark = param1GiftPkgInfo.corner_mark;
+      this.button_text = param1GiftPkgInfo.button_text;
+      this.giftpkg_url = param1GiftPkgInfo.giftpkg_url;
+    }
+    
+    public GiftPkgInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GiftPkgInfo)interceptResult.objValue; 
+      } 
+      return new GiftPkgInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

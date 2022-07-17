@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Advertisement;
 
 public final class Advertisement extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ADVERTISEMENT_ID = "";
   
   public static final String DEFAULT_CLICK_STATISTICS_URL = "";
@@ -31,6 +34,8 @@ public final class Advertisement extends Message {
   public static final Long DEFAULT_TIME = Long.valueOf(0L);
   
   public static final String DEFAULT_VIEW_STATISTICS_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String advertisement_id;
@@ -69,7 +74,7 @@ public final class Advertisement extends Message {
   public final String view_statistics_url;
   
   public Advertisement(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.time;
@@ -160,6 +165,10 @@ public final class Advertisement extends Message {
     } 
   }
   
+  public Advertisement(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -174,5 +183,71 @@ public final class Advertisement extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Advertisement> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String advertisement_id;
+    
+    public String click_statistics_url;
+    
+    public String deeplink;
+    
+    public String display_ad_icon;
+    
+    public String floating_text;
+    
+    public String jump_link;
+    
+    public String package_name;
+    
+    public String pic;
+    
+    public String pic_click;
+    
+    public String scheme;
+    
+    public Long time;
+    
+    public String view_statistics_url;
+    
+    public Builder() {}
+    
+    public Builder(Advertisement param1Advertisement) {
+      super(param1Advertisement);
+      if (param1Advertisement == null)
+        return; 
+      this.time = param1Advertisement.time;
+      this.pic = param1Advertisement.pic;
+      this.pic_click = param1Advertisement.pic_click;
+      this.jump_link = param1Advertisement.jump_link;
+      this.advertisement_id = param1Advertisement.advertisement_id;
+      this.view_statistics_url = param1Advertisement.view_statistics_url;
+      this.click_statistics_url = param1Advertisement.click_statistics_url;
+      this.floating_text = param1Advertisement.floating_text;
+      this.deeplink = param1Advertisement.deeplink;
+      this.scheme = param1Advertisement.scheme;
+      this.package_name = param1Advertisement.package_name;
+      this.display_ad_icon = param1Advertisement.display_ad_icon;
+    }
+    
+    public Advertisement build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Advertisement)interceptResult.objValue; 
+      } 
+      return new Advertisement(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

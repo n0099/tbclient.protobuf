@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,15 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPageUserExtend;
-import tbclient.User;
 
 public final class FrsPageUserExtend extends Message {
+  public static Interceptable $ic;
+  
   public static final List<User> DEFAULT_DATA;
   
   public static final String DEFAULT_TIPS = "";
   
   public static final Integer DEFAULT_USER_EXTEND_STOREY = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 4)
   public final List<User> data;
@@ -31,8 +35,8 @@ public final class FrsPageUserExtend extends Message {
   }
   
   public FrsPageUserExtend(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<User> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.user_extend_storey;
       if (integer == null) {
@@ -59,6 +63,10 @@ public final class FrsPageUserExtend extends Message {
     } 
   }
   
+  public FrsPageUserExtend(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -73,5 +81,44 @@ public final class FrsPageUserExtend extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<FrsPageUserExtend> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<User> data;
+    
+    public String tips;
+    
+    public Integer user_extend_storey;
+    
+    public Builder() {}
+    
+    public Builder(FrsPageUserExtend param1FrsPageUserExtend) {
+      super(param1FrsPageUserExtend);
+      if (param1FrsPageUserExtend == null)
+        return; 
+      this.user_extend_storey = param1FrsPageUserExtend.user_extend_storey;
+      this.tips = param1FrsPageUserExtend.tips;
+      this.data = Message.copyOf(param1FrsPageUserExtend.data);
+    }
+    
+    public FrsPageUserExtend build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FrsPageUserExtend)interceptResult.objValue; 
+      } 
+      return new FrsPageUserExtend(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

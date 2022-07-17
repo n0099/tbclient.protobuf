@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SkinInfo;
 
 public final class SkinInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_MONITOR_ID = "";
   
   public static final String DEFAULT_OBJ_ID = "";
@@ -14,6 +18,8 @@ public final class SkinInfo extends Message {
   public static final String DEFAULT_SKIN_SIZE = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String monitor_id;
@@ -31,7 +37,7 @@ public final class SkinInfo extends Message {
   public final String url;
   
   public SkinInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.skin;
@@ -71,5 +77,54 @@ public final class SkinInfo extends Message {
       this.obj_id = ((Builder)str).obj_id;
       this.monitor_id = ((Builder)str).monitor_id;
     } 
+  }
+  
+  public SkinInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<SkinInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String monitor_id;
+    
+    public String obj_id;
+    
+    public String skin;
+    
+    public String skin_size;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(SkinInfo param1SkinInfo) {
+      super(param1SkinInfo);
+      if (param1SkinInfo == null)
+        return; 
+      this.skin = param1SkinInfo.skin;
+      this.skin_size = param1SkinInfo.skin_size;
+      this.url = param1SkinInfo.url;
+      this.obj_id = param1SkinInfo.obj_id;
+      this.monitor_id = param1SkinInfo.monitor_id;
+    }
+    
+    public SkinInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SkinInfo)interceptResult.objValue; 
+      } 
+      return new SkinInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

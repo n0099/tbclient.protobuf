@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Quote;
 
 public final class Quote extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final String DEFAULT_IP = "";
@@ -17,6 +20,8 @@ public final class Quote extends Message {
   public static final Long DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String content;
@@ -53,7 +58,7 @@ public final class Quote extends Message {
   }
   
   public Quote(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.post_id;
@@ -93,5 +98,54 @@ public final class Quote extends Message {
       this.ip = ((Builder)str).ip;
       this.content = ((Builder)str).content;
     } 
+  }
+  
+  public Quote(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Quote> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String content;
+    
+    public String ip;
+    
+    public Long post_id;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(Quote param1Quote) {
+      super(param1Quote);
+      if (param1Quote == null)
+        return; 
+      this.post_id = param1Quote.post_id;
+      this.user_name = param1Quote.user_name;
+      this.user_id = param1Quote.user_id;
+      this.ip = param1Quote.ip;
+      this.content = param1Quote.content;
+    }
+    
+    public Quote build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Quote)interceptResult.objValue; 
+      } 
+      return new Quote(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

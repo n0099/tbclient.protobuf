@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.MultipleForum;
 
 public final class MultipleForum extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BAWU_TYPE = "";
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
@@ -17,6 +20,8 @@ public final class MultipleForum extends Message {
   public static final Integer DEFAULT_IS_BAWU;
   
   public static final Integer DEFAULT_IS_DELETED;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String bawu_type;
@@ -40,7 +45,7 @@ public final class MultipleForum extends Message {
   }
   
   public MultipleForum(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -82,6 +87,10 @@ public final class MultipleForum extends Message {
     } 
   }
   
+  public MultipleForum(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -96,5 +105,50 @@ public final class MultipleForum extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MultipleForum> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bawu_type;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_bawu;
+    
+    public Integer is_deleted;
+    
+    public Builder() {}
+    
+    public Builder(MultipleForum param1MultipleForum) {
+      super(param1MultipleForum);
+      if (param1MultipleForum == null)
+        return; 
+      this.forum_id = param1MultipleForum.forum_id;
+      this.forum_name = param1MultipleForum.forum_name;
+      this.is_bawu = param1MultipleForum.is_bawu;
+      this.bawu_type = param1MultipleForum.bawu_type;
+      this.is_deleted = param1MultipleForum.is_deleted;
+    }
+    
+    public MultipleForum build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MultipleForum)interceptResult.objValue; 
+      } 
+      return new MultipleForum(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetForumDetail;
+package tbclient.GetForumDetail;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ManagerElectionTab extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_NEW_STRATEGY;
   
   public static final Integer DEFAULT_NEW_MANAGER_STATUS;
@@ -18,6 +20,8 @@ public final class ManagerElectionTab extends Message {
   public static final String DEFAULT_NEW_STRATEGY_TEXT = "";
   
   public static final String DEFAULT_TOAST_TEXT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer is_new_strategy;
@@ -54,7 +58,7 @@ public final class ManagerElectionTab extends Message {
   }
   
   public ManagerElectionTab(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.is_new_strategy;
@@ -94,5 +98,54 @@ public final class ManagerElectionTab extends Message {
       this.new_strategy_text = ((Builder)str).new_strategy_text;
       this.toast_text = ((Builder)str).toast_text;
     } 
+  }
+  
+  public ManagerElectionTab(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ManagerElectionTab> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_new_strategy;
+    
+    public Integer new_manager_status;
+    
+    public String new_strategy_link;
+    
+    public String new_strategy_text;
+    
+    public String toast_text;
+    
+    public Builder() {}
+    
+    public Builder(ManagerElectionTab param1ManagerElectionTab) {
+      super(param1ManagerElectionTab);
+      if (param1ManagerElectionTab == null)
+        return; 
+      this.is_new_strategy = param1ManagerElectionTab.is_new_strategy;
+      this.new_strategy_link = param1ManagerElectionTab.new_strategy_link;
+      this.new_manager_status = param1ManagerElectionTab.new_manager_status;
+      this.new_strategy_text = param1ManagerElectionTab.new_strategy_text;
+      this.toast_text = param1ManagerElectionTab.toast_text;
+    }
+    
+    public ManagerElectionTab build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ManagerElectionTab)interceptResult.objValue; 
+      } 
+      return new ManagerElectionTab(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PluginUser;
-import tbclient.TiebaPlusInfo;
 
 public final class TiebaPlusInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_APP_COMPANY = "";
   
   public static final String DEFAULT_APP_ICON = "";
@@ -52,6 +54,8 @@ public final class TiebaPlusInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_WX_THUMBNAIL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.STRING)
   public final String app_company;
@@ -145,7 +149,7 @@ public final class TiebaPlusInfo extends Message {
   }
   
   public TiebaPlusInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str5 = paramBuilder.title;
@@ -306,5 +310,108 @@ public final class TiebaPlusInfo extends Message {
       this.wx_thumbnail = ((Builder)str).wx_thumbnail;
       this.button_desc = ((Builder)str).button_desc;
     } 
+  }
+  
+  public TiebaPlusInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TiebaPlusInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String app_company;
+    
+    public String app_icon;
+    
+    public String app_id;
+    
+    public String app_package;
+    
+    public String app_power;
+    
+    public String app_privacy;
+    
+    public String app_version;
+    
+    public String button_desc;
+    
+    public String desc;
+    
+    public String download_url;
+    
+    public String forum_name;
+    
+    public String h5_jump_number;
+    
+    public String h5_jump_param;
+    
+    public Integer h5_jump_type;
+    
+    public Integer is_appoint;
+    
+    public String item_id;
+    
+    public Integer jump_setting;
+    
+    public Integer jump_type;
+    
+    public String jump_url;
+    
+    public PluginUser plugin_user;
+    
+    public Integer target_type;
+    
+    public String title;
+    
+    public String wx_thumbnail;
+    
+    public Builder() {}
+    
+    public Builder(TiebaPlusInfo param1TiebaPlusInfo) {
+      super(param1TiebaPlusInfo);
+      if (param1TiebaPlusInfo == null)
+        return; 
+      this.title = param1TiebaPlusInfo.title;
+      this.desc = param1TiebaPlusInfo.desc;
+      this.jump_url = param1TiebaPlusInfo.jump_url;
+      this.download_url = param1TiebaPlusInfo.download_url;
+      this.app_id = param1TiebaPlusInfo.app_id;
+      this.app_icon = param1TiebaPlusInfo.app_icon;
+      this.app_package = param1TiebaPlusInfo.app_package;
+      this.app_version = param1TiebaPlusInfo.app_version;
+      this.app_privacy = param1TiebaPlusInfo.app_privacy;
+      this.app_power = param1TiebaPlusInfo.app_power;
+      this.app_company = param1TiebaPlusInfo.app_company;
+      this.target_type = param1TiebaPlusInfo.target_type;
+      this.h5_jump_type = param1TiebaPlusInfo.h5_jump_type;
+      this.h5_jump_number = param1TiebaPlusInfo.h5_jump_number;
+      this.h5_jump_param = param1TiebaPlusInfo.h5_jump_param;
+      this.jump_type = param1TiebaPlusInfo.jump_type;
+      this.item_id = param1TiebaPlusInfo.item_id;
+      this.is_appoint = param1TiebaPlusInfo.is_appoint;
+      this.plugin_user = param1TiebaPlusInfo.plugin_user;
+      this.forum_name = param1TiebaPlusInfo.forum_name;
+      this.jump_setting = param1TiebaPlusInfo.jump_setting;
+      this.wx_thumbnail = param1TiebaPlusInfo.wx_thumbnail;
+      this.button_desc = param1TiebaPlusInfo.button_desc;
+    }
+    
+    public TiebaPlusInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TiebaPlusInfo)interceptResult.objValue; 
+      } 
+      return new TiebaPlusInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

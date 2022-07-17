@@ -1,4 +1,4 @@
-package GeneralTabList;
+package tbclient.GeneralTabList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_BEAR_CONTEXT = "";
   
   public static final String DEFAULT_AD_BEAR_SID = "";
@@ -45,6 +47,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_TAB_NAME = "";
   
   public static final Integer DEFAULT_TAB_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 16, type = Message.Datatype.STRING)
   public final String ad_bear_context;
@@ -136,7 +140,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Double double_;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -269,5 +273,96 @@ public final class DataReq extends Message {
       this.ad_bear_sid = ((Builder)double_).ad_bear_sid;
       this.ad_bear_sid_price = ((Builder)double_).ad_bear_sid_price;
     } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_bear_context;
+    
+    public String ad_bear_sid;
+    
+    public Double ad_bear_sid_price;
+    
+    public String ad_ext_params;
+    
+    public CommonReq common;
+    
+    public Long forum_id;
+    
+    public Integer has_ad_bear;
+    
+    public Integer is_default_navtab;
+    
+    public Integer is_general_tab;
+    
+    public Long last_thread_id;
+    
+    public Integer pn;
+    
+    public Integer rn;
+    
+    public Integer scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public Integer sort_type;
+    
+    public Integer tab_id;
+    
+    public String tab_name;
+    
+    public Integer tab_type;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.tab_id = param1DataReq.tab_id;
+      this.forum_id = param1DataReq.forum_id;
+      this.pn = param1DataReq.pn;
+      this.rn = param1DataReq.rn;
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.scr_dip = param1DataReq.scr_dip;
+      this.last_thread_id = param1DataReq.last_thread_id;
+      this.is_default_navtab = param1DataReq.is_default_navtab;
+      this.tab_name = param1DataReq.tab_name;
+      this.is_general_tab = param1DataReq.is_general_tab;
+      this.sort_type = param1DataReq.sort_type;
+      this.tab_type = param1DataReq.tab_type;
+      this.ad_ext_params = param1DataReq.ad_ext_params;
+      this.ad_bear_context = param1DataReq.ad_bear_context;
+      this.has_ad_bear = param1DataReq.has_ad_bear;
+      this.ad_bear_sid = param1DataReq.ad_bear_sid;
+      this.ad_bear_sid_price = param1DataReq.ad_bear_sid_price;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

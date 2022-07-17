@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ActionControl;
-import tbclient.AdCloseInfo;
 
 public final class AdCloseInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONFIRM_TITLE = "";
   
   public static final List<String> DEFAULT_REASONS;
@@ -18,6 +20,8 @@ public final class AdCloseInfo extends Message {
   public static final Integer DEFAULT_SUPPORT_CLOSE = Integer.valueOf(0);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final ActionControl action_control;
@@ -39,7 +43,7 @@ public final class AdCloseInfo extends Message {
   }
   
   public AdCloseInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Integer integer = paramBuilder.support_close;
       if (integer == null) {
@@ -53,7 +57,7 @@ public final class AdCloseInfo extends Message {
       } else {
         this.title = str2;
       } 
-      List list = paramBuilder.reasons;
+      List<String> list = paramBuilder.reasons;
       if (list == null) {
         this.reasons = DEFAULT_REASONS;
       } else {
@@ -75,6 +79,10 @@ public final class AdCloseInfo extends Message {
     } 
   }
   
+  public AdCloseInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -89,5 +97,50 @@ public final class AdCloseInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AdCloseInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ActionControl action_control;
+    
+    public String confirm_title;
+    
+    public List<String> reasons;
+    
+    public Integer support_close;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(AdCloseInfo param1AdCloseInfo) {
+      super(param1AdCloseInfo);
+      if (param1AdCloseInfo == null)
+        return; 
+      this.support_close = param1AdCloseInfo.support_close;
+      this.title = param1AdCloseInfo.title;
+      this.reasons = Message.copyOf(param1AdCloseInfo.reasons);
+      this.confirm_title = param1AdCloseInfo.confirm_title;
+      this.action_control = param1AdCloseInfo.action_control;
+    }
+    
+    public AdCloseInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AdCloseInfo)interceptResult.objValue; 
+      } 
+      return new AdCloseInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

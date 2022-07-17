@@ -1,4 +1,4 @@
-package NewTopicList;
+package tbclient.NewTopicList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,10 +7,11 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.NewTopicList.PkModule;
 import tbclient.Post;
 
 public final class NewTopicList extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_DISCUSS_NUM;
   
   public static final String DEFAULT_TOPIC_DESC = "";
@@ -20,6 +21,8 @@ public final class NewTopicList extends Message {
   public static final String DEFAULT_TOPIC_IMAGE = "";
   
   public static final String DEFAULT_TOPIC_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT64)
   public final Long discuss_num;
@@ -62,7 +65,7 @@ public final class NewTopicList extends Message {
   }
   
   public NewTopicList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.topic_id;
       if (long_2 == null) {
@@ -105,5 +108,60 @@ public final class NewTopicList extends Message {
       this.top_agree_post = paramBuilder.top_agree_post;
       this.pk_module = paramBuilder.pk_module;
     } 
+  }
+  
+  public NewTopicList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<NewTopicList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long discuss_num;
+    
+    public PkModule pk_module;
+    
+    public Post top_agree_post;
+    
+    public String topic_desc;
+    
+    public Long topic_id;
+    
+    public String topic_image;
+    
+    public String topic_name;
+    
+    public Builder() {}
+    
+    public Builder(NewTopicList param1NewTopicList) {
+      super(param1NewTopicList);
+      if (param1NewTopicList == null)
+        return; 
+      this.topic_id = param1NewTopicList.topic_id;
+      this.topic_name = param1NewTopicList.topic_name;
+      this.topic_desc = param1NewTopicList.topic_desc;
+      this.discuss_num = param1NewTopicList.discuss_num;
+      this.topic_image = param1NewTopicList.topic_image;
+      this.top_agree_post = param1NewTopicList.top_agree_post;
+      this.pk_module = param1NewTopicList.pk_module;
+    }
+    
+    public NewTopicList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NewTopicList)interceptResult.objValue; 
+      } 
+      return new NewTopicList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package Profile;
+package tbclient.Profile;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class UserAgreeInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ALA_AGREE_NUM;
   
   public static final Integer DEFAULT_HAS_USER_AGREE;
@@ -20,6 +22,8 @@ public final class UserAgreeInfo extends Message {
   public static final Long DEFAULT_USER_AGREE_NUM;
   
   public static final Long DEFAULT_VIDEO_AGREE_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT64)
   public final Long ala_agree_num;
@@ -63,7 +67,7 @@ public final class UserAgreeInfo extends Message {
   }
   
   public UserAgreeInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.total_agree_num;
@@ -110,5 +114,57 @@ public final class UserAgreeInfo extends Message {
       this.ala_agree_num = ((Builder)integer).ala_agree_num;
       this.has_user_agree = ((Builder)integer).has_user_agree;
     } 
+  }
+  
+  public UserAgreeInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<UserAgreeInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long ala_agree_num;
+    
+    public Integer has_user_agree;
+    
+    public Long normal_agree_num;
+    
+    public Long total_agree_num;
+    
+    public Long user_agree_num;
+    
+    public Long video_agree_num;
+    
+    public Builder() {}
+    
+    public Builder(UserAgreeInfo param1UserAgreeInfo) {
+      super(param1UserAgreeInfo);
+      if (param1UserAgreeInfo == null)
+        return; 
+      this.total_agree_num = param1UserAgreeInfo.total_agree_num;
+      this.normal_agree_num = param1UserAgreeInfo.normal_agree_num;
+      this.user_agree_num = param1UserAgreeInfo.user_agree_num;
+      this.video_agree_num = param1UserAgreeInfo.video_agree_num;
+      this.ala_agree_num = param1UserAgreeInfo.ala_agree_num;
+      this.has_user_agree = param1UserAgreeInfo.has_user_agree;
+    }
+    
+    public UserAgreeInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserAgreeInfo)interceptResult.objValue; 
+      } 
+      return new UserAgreeInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

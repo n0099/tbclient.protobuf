@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.DealWindow;
-import tbclient.DisplayWindowInfo;
 
 public final class DealWindow extends Message {
+  public static Interceptable $ic;
+  
   public static final List<DisplayWindowInfo> DEFAULT_LIST = Collections.emptyList();
   
   public static final Long DEFAULT_TOTAL = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<DisplayWindowInfo> list;
@@ -22,10 +26,10 @@ public final class DealWindow extends Message {
   public final Long total;
   
   public DealWindow(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
-      List list = paramBuilder.list;
+      List<DisplayWindowInfo> list = paramBuilder.list;
       if (list == null) {
         this.list = DEFAULT_LIST;
       } else {
@@ -43,6 +47,10 @@ public final class DealWindow extends Message {
     } 
   }
   
+  public DealWindow(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -57,5 +65,41 @@ public final class DealWindow extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DealWindow> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<DisplayWindowInfo> list;
+    
+    public Long total;
+    
+    public Builder() {}
+    
+    public Builder(DealWindow param1DealWindow) {
+      super(param1DealWindow);
+      if (param1DealWindow == null)
+        return; 
+      this.list = Message.copyOf(param1DealWindow.list);
+      this.total = param1DealWindow.total;
+    }
+    
+    public DealWindow build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DealWindow)interceptResult.objValue; 
+      } 
+      return new DealWindow(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

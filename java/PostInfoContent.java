@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Abstract;
-import tbclient.PostInfoContent;
 
 public final class PostInfoContent extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_CREATE_TIME;
   
   public static final Integer DEFAULT_IS_AUTHOR_VIEW;
@@ -20,6 +22,8 @@ public final class PostInfoContent extends Message {
   public static final Long DEFAULT_POST_ID;
   
   public static final Long DEFAULT_POST_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT64)
   public final Long create_time;
@@ -45,10 +49,10 @@ public final class PostInfoContent extends Message {
   }
   
   public PostInfoContent(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
-      List list = paramBuilder.post_content;
+      List<Abstract> list = paramBuilder.post_content;
       if (list == null) {
         this.post_content = DEFAULT_POST_CONTENT;
       } else {
@@ -87,6 +91,10 @@ public final class PostInfoContent extends Message {
     } 
   }
   
+  public PostInfoContent(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -101,5 +109,50 @@ public final class PostInfoContent extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PostInfoContent> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long create_time;
+    
+    public Integer is_author_view;
+    
+    public List<Abstract> post_content;
+    
+    public Long post_id;
+    
+    public Long post_type;
+    
+    public Builder() {}
+    
+    public Builder(PostInfoContent param1PostInfoContent) {
+      super(param1PostInfoContent);
+      if (param1PostInfoContent == null)
+        return; 
+      this.post_content = Message.copyOf(param1PostInfoContent.post_content);
+      this.create_time = param1PostInfoContent.create_time;
+      this.post_type = param1PostInfoContent.post_type;
+      this.post_id = param1PostInfoContent.post_id;
+      this.is_author_view = param1PostInfoContent.is_author_view;
+    }
+    
+    public PostInfoContent build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PostInfoContent)interceptResult.objValue; 
+      } 
+      return new PostInfoContent(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

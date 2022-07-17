@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FeatureCardTopic;
-import tbclient.FeatureCardTopicSubNode;
 
 public final class FeatureCardTopic extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FLOOR;
   
   public static final List<FeatureCardTopicSubNode> DEFAULT_SUB_NODES;
@@ -18,6 +20,8 @@ public final class FeatureCardTopic extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer floor;
@@ -52,8 +56,8 @@ public final class FeatureCardTopic extends Message {
   }
   
   public FeatureCardTopic(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<FeatureCardTopicSubNode> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
       if (integer == null) {
@@ -85,5 +89,51 @@ public final class FeatureCardTopic extends Message {
       this.title = ((Builder)list).title;
       this.sub_nodes = Message.immutableCopyOf(((Builder)list).sub_nodes);
     } 
+  }
+  
+  public FeatureCardTopic(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FeatureCardTopic> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer floor;
+    
+    public List<FeatureCardTopicSubNode> sub_nodes;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(FeatureCardTopic param1FeatureCardTopic) {
+      super(param1FeatureCardTopic);
+      if (param1FeatureCardTopic == null)
+        return; 
+      this.type = param1FeatureCardTopic.type;
+      this.floor = param1FeatureCardTopic.floor;
+      this.title = param1FeatureCardTopic.title;
+      this.sub_nodes = Message.copyOf(param1FeatureCardTopic.sub_nodes);
+    }
+    
+    public FeatureCardTopic build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FeatureCardTopic)interceptResult.objValue; 
+      } 
+      return new FeatureCardTopic(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Hottopic.PkView;
 
 public final class PkModule extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_MODULE_NAME = "";
   
   public static final Long DEFAULT_PK_ID;
@@ -21,6 +22,8 @@ public final class PkModule extends Message {
   public static final Long DEFAULT_USER_PK_ID;
   
   public static final Integer DEFAULT_USER_PK_INDEX;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String module_name;
@@ -72,7 +75,7 @@ public final class PkModule extends Message {
   }
   
   public PkModule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.module_name;
@@ -125,5 +128,66 @@ public final class PkModule extends Message {
       this.pk_id = ((Builder)long_).pk_id;
       this.user_pk_id = ((Builder)long_).user_pk_id;
     } 
+  }
+  
+  public PkModule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PkModule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String module_name;
+    
+    public PkView pk_1;
+    
+    public PkView pk_2;
+    
+    public PkView pk_3;
+    
+    public Long pk_id;
+    
+    public Integer pk_type;
+    
+    public String ques_desc;
+    
+    public Long user_pk_id;
+    
+    public Integer user_pk_index;
+    
+    public Builder() {}
+    
+    public Builder(PkModule param1PkModule) {
+      super(param1PkModule);
+      if (param1PkModule == null)
+        return; 
+      this.module_name = param1PkModule.module_name;
+      this.ques_desc = param1PkModule.ques_desc;
+      this.pk_1 = param1PkModule.pk_1;
+      this.pk_2 = param1PkModule.pk_2;
+      this.pk_3 = param1PkModule.pk_3;
+      this.pk_type = param1PkModule.pk_type;
+      this.user_pk_index = param1PkModule.user_pk_index;
+      this.pk_id = param1PkModule.pk_id;
+      this.user_pk_id = param1PkModule.user_pk_id;
+    }
+    
+    public PkModule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PkModule)interceptResult.objValue; 
+      } 
+      return new PkModule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,15 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Abstract;
-import tbclient.Agree;
-import tbclient.Media;
-import tbclient.MediaNum;
-import tbclient.PostList;
-import tbclient.User;
-import tbclient.Voice;
 
 public final class PostList extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Abstract> DEFAULT_ABSTRACT;
   
   public static final Long DEFAULT_AUTHOR_ID;
@@ -27,6 +24,8 @@ public final class PostList extends Message {
   public static final List<MediaNum> DEFAULT_MEDIA_NUM;
   
   public static final List<Voice> DEFAULT_VOICE_INFO;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<Abstract> _abstract;
@@ -76,7 +75,7 @@ public final class PostList extends Message {
   }
   
   public PostList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.id;
       if (long_2 == null) {
@@ -85,25 +84,25 @@ public final class PostList extends Message {
         this.id = long_2;
       } 
       this.author = paramBuilder.author;
-      List list = paramBuilder._abstract;
-      if (list == null) {
+      List<Abstract> list3 = paramBuilder._abstract;
+      if (list3 == null) {
         this._abstract = DEFAULT_ABSTRACT;
       } else {
-        this._abstract = Message.immutableCopyOf(list);
+        this._abstract = Message.immutableCopyOf(list3);
       } 
-      list = paramBuilder.media;
-      if (list == null) {
+      List<Media> list2 = paramBuilder.media;
+      if (list2 == null) {
         this.media = DEFAULT_MEDIA;
       } else {
-        this.media = Message.immutableCopyOf(list);
+        this.media = Message.immutableCopyOf(list2);
       } 
-      list = paramBuilder.media_num;
-      if (list == null) {
+      List<MediaNum> list1 = paramBuilder.media_num;
+      if (list1 == null) {
         this.media_num = DEFAULT_MEDIA_NUM;
       } else {
-        this.media_num = Message.immutableCopyOf(list);
+        this.media_num = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.voice_info;
+      List<Voice> list = paramBuilder.voice_info;
       if (list == null) {
         this.voice_info = DEFAULT_VOICE_INFO;
       } else {
@@ -126,5 +125,63 @@ public final class PostList extends Message {
       this.author_id = paramBuilder.author_id;
       this.agree = paramBuilder.agree;
     } 
+  }
+  
+  public PostList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PostList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Abstract> _abstract;
+    
+    public Agree agree;
+    
+    public User author;
+    
+    public Long author_id;
+    
+    public Long id;
+    
+    public List<Media> media;
+    
+    public List<MediaNum> media_num;
+    
+    public List<Voice> voice_info;
+    
+    public Builder() {}
+    
+    public Builder(PostList param1PostList) {
+      super(param1PostList);
+      if (param1PostList == null)
+        return; 
+      this.id = param1PostList.id;
+      this.author = param1PostList.author;
+      this._abstract = Message.copyOf(param1PostList._abstract);
+      this.media = Message.copyOf(param1PostList.media);
+      this.media_num = Message.copyOf(param1PostList.media_num);
+      this.voice_info = Message.copyOf(param1PostList.voice_info);
+      this.author_id = param1PostList.author_id;
+      this.agree = param1PostList.agree;
+    }
+    
+    public PostList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PostList)interceptResult.objValue; 
+      } 
+      return new PostList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

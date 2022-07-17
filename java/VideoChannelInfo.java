@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.VideoChannelInfo;
 
 public final class VideoChannelInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CHANNEL_AVATAR = "";
   
   public static final Long DEFAULT_CHANNEL_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_CHANNEL_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String channel_avatar;
@@ -24,7 +29,7 @@ public final class VideoChannelInfo extends Message {
   public final String channel_name;
   
   public VideoChannelInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.channel_id;
@@ -52,6 +57,10 @@ public final class VideoChannelInfo extends Message {
     } 
   }
   
+  public VideoChannelInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class VideoChannelInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<VideoChannelInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String channel_avatar;
+    
+    public Long channel_id;
+    
+    public String channel_name;
+    
+    public Builder() {}
+    
+    public Builder(VideoChannelInfo param1VideoChannelInfo) {
+      super(param1VideoChannelInfo);
+      if (param1VideoChannelInfo == null)
+        return; 
+      this.channel_id = param1VideoChannelInfo.channel_id;
+      this.channel_name = param1VideoChannelInfo.channel_name;
+      this.channel_avatar = param1VideoChannelInfo.channel_avatar;
+    }
+    
+    public VideoChannelInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (VideoChannelInfo)interceptResult.objValue; 
+      } 
+      return new VideoChannelInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

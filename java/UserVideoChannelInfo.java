@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.UserVideoChannelInfo;
 
 public final class UserVideoChannelInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FOLLOW_CHANNEL;
   
   public static final Integer DEFAULT_MAN_CHANNEL;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer follow_channel;
@@ -38,7 +43,7 @@ public final class UserVideoChannelInfo extends Message {
   }
   
   public UserVideoChannelInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.man_channel;
@@ -57,5 +62,45 @@ public final class UserVideoChannelInfo extends Message {
       this.man_channel = ((Builder)integer).man_channel;
       this.follow_channel = ((Builder)integer).follow_channel;
     } 
+  }
+  
+  public UserVideoChannelInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<UserVideoChannelInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer follow_channel;
+    
+    public Integer man_channel;
+    
+    public Builder() {}
+    
+    public Builder(UserVideoChannelInfo param1UserVideoChannelInfo) {
+      super(param1UserVideoChannelInfo);
+      if (param1UserVideoChannelInfo == null)
+        return; 
+      this.man_channel = param1UserVideoChannelInfo.man_channel;
+      this.follow_channel = param1UserVideoChannelInfo.follow_channel;
+    }
+    
+    public UserVideoChannelInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserVideoChannelInfo)interceptResult.objValue; 
+      } 
+      return new UserVideoChannelInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

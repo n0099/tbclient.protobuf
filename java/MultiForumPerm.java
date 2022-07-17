@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.MultiForumPerm;
 
 public final class MultiForumPerm extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BAWU_TYPE = "";
   
   public static final Integer DEFAULT_IS_BAWU;
@@ -15,6 +18,8 @@ public final class MultiForumPerm extends Message {
   public static final Integer DEFAULT_IS_BLOCK_BAWU_DELETE;
   
   public static final Integer DEFAULT_IS_DELETED;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String bawu_type;
@@ -49,7 +54,7 @@ public final class MultiForumPerm extends Message {
   }
   
   public MultiForumPerm(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.is_bawu;
@@ -82,5 +87,51 @@ public final class MultiForumPerm extends Message {
       this.is_deleted = ((Builder)integer).is_deleted;
       this.is_block_bawu_delete = ((Builder)integer).is_block_bawu_delete;
     } 
+  }
+  
+  public MultiForumPerm(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<MultiForumPerm> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bawu_type;
+    
+    public Integer is_bawu;
+    
+    public Integer is_block_bawu_delete;
+    
+    public Integer is_deleted;
+    
+    public Builder() {}
+    
+    public Builder(MultiForumPerm param1MultiForumPerm) {
+      super(param1MultiForumPerm);
+      if (param1MultiForumPerm == null)
+        return; 
+      this.is_bawu = param1MultiForumPerm.is_bawu;
+      this.bawu_type = param1MultiForumPerm.bawu_type;
+      this.is_deleted = param1MultiForumPerm.is_deleted;
+      this.is_block_bawu_delete = param1MultiForumPerm.is_block_bawu_delete;
+    }
+    
+    public MultiForumPerm build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MultiForumPerm)interceptResult.objValue; 
+      } 
+      return new MultiForumPerm(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

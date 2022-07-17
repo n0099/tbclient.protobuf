@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.WindowToast;
 
 public final class WindowToast extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_TOAST_CONTENT = "";
   
   public static final String DEFAULT_TOAST_LINK = "";
   
   public static final Integer DEFAULT_TOAST_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String toast_content;
@@ -24,7 +29,7 @@ public final class WindowToast extends Message {
   public final Integer toast_type;
   
   public WindowToast(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.toast_type;
@@ -52,6 +57,10 @@ public final class WindowToast extends Message {
     } 
   }
   
+  public WindowToast(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class WindowToast extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<WindowToast> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String toast_content;
+    
+    public String toast_link;
+    
+    public Integer toast_type;
+    
+    public Builder() {}
+    
+    public Builder(WindowToast param1WindowToast) {
+      super(param1WindowToast);
+      if (param1WindowToast == null)
+        return; 
+      this.toast_type = param1WindowToast.toast_type;
+      this.toast_link = param1WindowToast.toast_link;
+      this.toast_content = param1WindowToast.toast_content;
+    }
+    
+    public WindowToast build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (WindowToast)interceptResult.objValue; 
+      } 
+      return new WindowToast(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

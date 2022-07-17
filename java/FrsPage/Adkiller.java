@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPage.AdkillerAd;
 
 public final class Adkiller extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AD_LEFT_NUM;
   
   public static final List<AdkillerAd> DEFAULT_AD_LIST;
@@ -21,6 +22,8 @@ public final class Adkiller extends Message {
   public static final Integer DEFAULT_SHOW_AD;
   
   public static final Integer DEFAULT_SHOW_HINT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT32)
   public final Integer ad_left_num;
@@ -59,8 +62,8 @@ public final class Adkiller extends Message {
   }
   
   public Adkiller(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<AdkillerAd> list;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.show_hint;
       if (integer2 == null) {
@@ -99,5 +102,54 @@ public final class Adkiller extends Message {
       this.ad_left_num = ((Builder)list).ad_left_num;
       this.ad_list = Message.immutableCopyOf(((Builder)list).ad_list);
     } 
+  }
+  
+  public Adkiller(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Adkiller> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer ad_left_num;
+    
+    public List<AdkillerAd> ad_list;
+    
+    public String hint_url;
+    
+    public Integer show_ad;
+    
+    public Integer show_hint;
+    
+    public Builder() {}
+    
+    public Builder(Adkiller param1Adkiller) {
+      super(param1Adkiller);
+      if (param1Adkiller == null)
+        return; 
+      this.show_hint = param1Adkiller.show_hint;
+      this.show_ad = param1Adkiller.show_ad;
+      this.hint_url = param1Adkiller.hint_url;
+      this.ad_left_num = param1Adkiller.ad_left_num;
+      this.ad_list = Message.copyOf(param1Adkiller.ad_list);
+    }
+    
+    public Adkiller build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Adkiller)interceptResult.objValue; 
+      } 
+      return new Adkiller(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

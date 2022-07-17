@@ -1,4 +1,4 @@
-package UrlParser;
+package tbclient.UrlParser;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,8 +7,11 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.CardLinkInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESCRIPTION = "";
   
   public static final String DEFAULT_IMAGE = "";
@@ -24,6 +27,11 @@ public final class DataRes extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_URL_TYPE;
+  
+  public transient FieldHolder $fh;
+  
+  @ProtoField(tag = 9)
+  public final CardLinkInfo card_link_info;
   
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String description;
@@ -70,8 +78,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    String str;
+    super(paramBuilder);
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.url_type;
       if (integer2 == null) {
@@ -85,29 +92,29 @@ public final class DataRes extends Message {
       } else {
         this.status = integer2;
       } 
-      String str1 = paramBuilder.image;
-      if (str1 == null) {
+      String str2 = paramBuilder.image;
+      if (str2 == null) {
         this.image = "";
       } else {
-        this.image = str1;
+        this.image = str2;
       } 
-      str1 = paramBuilder.link_from;
-      if (str1 == null) {
+      str2 = paramBuilder.link_from;
+      if (str2 == null) {
         this.link_from = "";
       } else {
-        this.link_from = str1;
+        this.link_from = str2;
       } 
-      str1 = paramBuilder.title;
-      if (str1 == null) {
+      str2 = paramBuilder.title;
+      if (str2 == null) {
         this.title = "";
       } else {
-        this.title = str1;
+        this.title = str2;
       } 
-      str1 = paramBuilder.price_txt;
-      if (str1 == null) {
+      str2 = paramBuilder.price_txt;
+      if (str2 == null) {
         this.price_txt = "";
       } else {
-        this.price_txt = str1;
+        this.price_txt = str2;
       } 
       Integer integer1 = paramBuilder.is_recognize;
       if (integer1 == null) {
@@ -115,21 +122,84 @@ public final class DataRes extends Message {
       } else {
         this.is_recognize = integer1;
       } 
-      str = paramBuilder.description;
-      if (str == null) {
+      String str1 = paramBuilder.description;
+      if (str1 == null) {
         this.description = "";
       } else {
-        this.description = str;
+        this.description = str1;
       } 
+      this.card_link_info = paramBuilder.card_link_info;
     } else {
-      this.url_type = ((Builder)str).url_type;
-      this.status = ((Builder)str).status;
-      this.image = ((Builder)str).image;
-      this.link_from = ((Builder)str).link_from;
-      this.title = ((Builder)str).title;
-      this.price_txt = ((Builder)str).price_txt;
-      this.is_recognize = ((Builder)str).is_recognize;
-      this.description = ((Builder)str).description;
+      this.url_type = paramBuilder.url_type;
+      this.status = paramBuilder.status;
+      this.image = paramBuilder.image;
+      this.link_from = paramBuilder.link_from;
+      this.title = paramBuilder.title;
+      this.price_txt = paramBuilder.price_txt;
+      this.is_recognize = paramBuilder.is_recognize;
+      this.description = paramBuilder.description;
+      this.card_link_info = paramBuilder.card_link_info;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CardLinkInfo card_link_info;
+    
+    public String description;
+    
+    public String image;
+    
+    public Integer is_recognize;
+    
+    public String link_from;
+    
+    public String price_txt;
+    
+    public Integer status;
+    
+    public String title;
+    
+    public Integer url_type;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.url_type = param1DataRes.url_type;
+      this.status = param1DataRes.status;
+      this.image = param1DataRes.image;
+      this.link_from = param1DataRes.link_from;
+      this.title = param1DataRes.title;
+      this.price_txt = param1DataRes.price_txt;
+      this.is_recognize = param1DataRes.is_recognize;
+      this.description = param1DataRes.description;
+      this.card_link_info = param1DataRes.card_link_info;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

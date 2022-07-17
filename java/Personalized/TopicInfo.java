@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TopicInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESC = "";
   
   public static final Integer DEFAULT_IS_HOT;
@@ -18,6 +20,8 @@ public final class TopicInfo extends Message {
   public static final Long DEFAULT_TOPIC_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_TOPIC_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String desc;
@@ -41,7 +45,7 @@ public final class TopicInfo extends Message {
   }
   
   public TopicInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.topic_id;
@@ -83,6 +87,10 @@ public final class TopicInfo extends Message {
     } 
   }
   
+  public TopicInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -97,5 +105,50 @@ public final class TopicInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TopicInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String desc;
+    
+    public Integer is_hot;
+    
+    public Integer tag;
+    
+    public Long topic_id;
+    
+    public String topic_name;
+    
+    public Builder() {}
+    
+    public Builder(TopicInfo param1TopicInfo) {
+      super(param1TopicInfo);
+      if (param1TopicInfo == null)
+        return; 
+      this.topic_id = param1TopicInfo.topic_id;
+      this.topic_name = param1TopicInfo.topic_name;
+      this.desc = param1TopicInfo.desc;
+      this.is_hot = param1TopicInfo.is_hot;
+      this.tag = param1TopicInfo.tag;
+    }
+    
+    public TopicInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TopicInfo)interceptResult.objValue; 
+      } 
+      return new TopicInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

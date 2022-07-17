@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ShortUserInfo;
 
 public final class ShortUserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_GENDER;
   
   public static final String DEFAULT_INTRO = "";
@@ -17,6 +20,8 @@ public final class ShortUserInfo extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer gender;
@@ -38,7 +43,7 @@ public final class ShortUserInfo extends Message {
   }
   
   public ShortUserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
@@ -80,6 +85,10 @@ public final class ShortUserInfo extends Message {
     } 
   }
   
+  public ShortUserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -94,5 +103,50 @@ public final class ShortUserInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ShortUserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer gender;
+    
+    public String intro;
+    
+    public String portrait;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(ShortUserInfo param1ShortUserInfo) {
+      super(param1ShortUserInfo);
+      if (param1ShortUserInfo == null)
+        return; 
+      this.user_id = param1ShortUserInfo.user_id;
+      this.portrait = param1ShortUserInfo.portrait;
+      this.user_name = param1ShortUserInfo.user_name;
+      this.gender = param1ShortUserInfo.gender;
+      this.intro = param1ShortUserInfo.intro;
+    }
+    
+    public ShortUserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ShortUserInfo)interceptResult.objValue; 
+      } 
+      return new ShortUserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

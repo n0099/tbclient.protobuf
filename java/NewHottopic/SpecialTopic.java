@@ -1,4 +1,4 @@
-package NewHottopic;
+package tbclient.NewHottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,9 +12,13 @@ import java.util.List;
 import tbclient.ThreadInfo;
 
 public final class SpecialTopic extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<ThreadInfo> thread_list;
@@ -23,8 +27,8 @@ public final class SpecialTopic extends Message {
   public final String title;
   
   public SpecialTopic(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ThreadInfo> list;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
       if (str == null) {
@@ -44,6 +48,10 @@ public final class SpecialTopic extends Message {
     } 
   }
   
+  public SpecialTopic(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +66,41 @@ public final class SpecialTopic extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SpecialTopic> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(SpecialTopic param1SpecialTopic) {
+      super(param1SpecialTopic);
+      if (param1SpecialTopic == null)
+        return; 
+      this.title = param1SpecialTopic.title;
+      this.thread_list = Message.copyOf(param1SpecialTopic.thread_list);
+    }
+    
+    public SpecialTopic build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SpecialTopic)interceptResult.objValue; 
+      } 
+      return new SpecialTopic(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

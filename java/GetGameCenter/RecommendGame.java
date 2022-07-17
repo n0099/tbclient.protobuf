@@ -1,4 +1,4 @@
-package GetGameCenter;
+package tbclient.GetGameCenter;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class RecommendGame extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ANDR_PK_NAME = "";
   
   public static final String DEFAULT_APPLE_ID = "";
@@ -60,6 +62,8 @@ public final class RecommendGame extends Message {
   public static final String DEFAULT_SUPERSCRIPT_COLOR = "";
   
   public static final String DEFAULT_VERSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 17, type = Message.Datatype.STRING)
   public final String andr_pk_name;
@@ -162,7 +166,7 @@ public final class RecommendGame extends Message {
   }
   
   public RecommendGame(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str7 = paramBuilder.game_id;
@@ -243,7 +247,7 @@ public final class RecommendGame extends Message {
       } else {
         this.schema_url = str4;
       } 
-      List list = paramBuilder.game_pic;
+      List<String> list = paramBuilder.game_pic;
       if (list == null) {
         this.game_pic = DEFAULT_GAME_PIC;
       } else {
@@ -342,5 +346,114 @@ public final class RecommendGame extends Message {
       this.deadline = ((Builder)str).deadline;
       this.editor_rec = ((Builder)str).editor_rec;
     } 
+  }
+  
+  public RecommendGame(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendGame> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String andr_pk_name;
+    
+    public String apple_id;
+    
+    public String bundle_id;
+    
+    public Integer category_id;
+    
+    public String category_name;
+    
+    public Integer day_downloads;
+    
+    public Long deadline;
+    
+    public String editor_rec;
+    
+    public String game_id;
+    
+    public String game_link;
+    
+    public String game_name;
+    
+    public List<String> game_pic;
+    
+    public Integer game_type;
+    
+    public String icon_url;
+    
+    public String introduce;
+    
+    public String launch_component;
+    
+    public Integer mark;
+    
+    public String package_link;
+    
+    public String package_size;
+    
+    public Integer player_num;
+    
+    public String schema_url;
+    
+    public String secret_key;
+    
+    public Integer star;
+    
+    public String superscript_color;
+    
+    public String version;
+    
+    public Builder() {}
+    
+    public Builder(RecommendGame param1RecommendGame) {
+      super(param1RecommendGame);
+      if (param1RecommendGame == null)
+        return; 
+      this.game_id = param1RecommendGame.game_id;
+      this.game_name = param1RecommendGame.game_name;
+      this.game_type = param1RecommendGame.game_type;
+      this.icon_url = param1RecommendGame.icon_url;
+      this.secret_key = param1RecommendGame.secret_key;
+      this.player_num = param1RecommendGame.player_num;
+      this.package_link = param1RecommendGame.package_link;
+      this.package_size = param1RecommendGame.package_size;
+      this.game_link = param1RecommendGame.game_link;
+      this.mark = param1RecommendGame.mark;
+      this.apple_id = param1RecommendGame.apple_id;
+      this.bundle_id = param1RecommendGame.bundle_id;
+      this.schema_url = param1RecommendGame.schema_url;
+      this.game_pic = Message.copyOf(param1RecommendGame.game_pic);
+      this.introduce = param1RecommendGame.introduce;
+      this.launch_component = param1RecommendGame.launch_component;
+      this.andr_pk_name = param1RecommendGame.andr_pk_name;
+      this.day_downloads = param1RecommendGame.day_downloads;
+      this.superscript_color = param1RecommendGame.superscript_color;
+      this.star = param1RecommendGame.star;
+      this.category_id = param1RecommendGame.category_id;
+      this.category_name = param1RecommendGame.category_name;
+      this.version = param1RecommendGame.version;
+      this.deadline = param1RecommendGame.deadline;
+      this.editor_rec = param1RecommendGame.editor_rec;
+    }
+    
+    public RecommendGame build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendGame)interceptResult.objValue; 
+      } 
+      return new RecommendGame(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package ActivityPage;
+package tbclient.ActivityPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,14 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ActivityPage.SpecialColumn;
 
 public final class SpecialColumnList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FLOOR_POSITION = Integer.valueOf(0);
   
   public static final List<SpecialColumn> DEFAULT_ITEM_LIST = Collections.emptyList();
   
   public static final String DEFAULT_SPECIAL_COLUMN_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer floor_position;
@@ -28,8 +31,8 @@ public final class SpecialColumnList extends Message {
   public final String special_column_name;
   
   public SpecialColumnList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<SpecialColumn> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.floor_position;
       if (integer == null) {
@@ -56,6 +59,10 @@ public final class SpecialColumnList extends Message {
     } 
   }
   
+  public SpecialColumnList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +77,44 @@ public final class SpecialColumnList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SpecialColumnList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer floor_position;
+    
+    public List<SpecialColumn> item_list;
+    
+    public String special_column_name;
+    
+    public Builder() {}
+    
+    public Builder(SpecialColumnList param1SpecialColumnList) {
+      super(param1SpecialColumnList);
+      if (param1SpecialColumnList == null)
+        return; 
+      this.floor_position = param1SpecialColumnList.floor_position;
+      this.special_column_name = param1SpecialColumnList.special_column_name;
+      this.item_list = Message.copyOf(param1SpecialColumnList.item_list);
+    }
+    
+    public SpecialColumnList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SpecialColumnList)interceptResult.objValue; 
+      } 
+      return new SpecialColumnList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

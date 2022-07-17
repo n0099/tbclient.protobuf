@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.SignActivityInfo;
 
 public final class SignActivityInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTIVITY_DURATION;
   
   public static final String DEFAULT_ACTIVITY_FAIL_MSG = "";
@@ -37,6 +40,8 @@ public final class SignActivityInfo extends Message {
   public static final String DEFAULT_ICON_NAME = "";
   
   public static final String DEFAULT_IMAGE_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer activity_duration;
@@ -93,7 +98,7 @@ public final class SignActivityInfo extends Message {
   }
   
   public SignActivityInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.activity_id;
@@ -205,6 +210,10 @@ public final class SignActivityInfo extends Message {
     } 
   }
   
+  public SignActivityInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -219,5 +228,80 @@ public final class SignActivityInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<SignActivityInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer activity_duration;
+    
+    public String activity_fail_msg;
+    
+    public Long activity_id;
+    
+    public String activity_msg;
+    
+    public String activity_name;
+    
+    public String activity_suc_msg;
+    
+    public Integer activity_time;
+    
+    public String countdown_msg;
+    
+    public Integer countdown_time;
+    
+    public String gift_name;
+    
+    public Integer gift_type;
+    
+    public String gift_url;
+    
+    public Integer icon_lifecycle;
+    
+    public String icon_name;
+    
+    public String image_url;
+    
+    public Builder() {}
+    
+    public Builder(SignActivityInfo param1SignActivityInfo) {
+      super(param1SignActivityInfo);
+      if (param1SignActivityInfo == null)
+        return; 
+      this.activity_id = param1SignActivityInfo.activity_id;
+      this.activity_time = param1SignActivityInfo.activity_time;
+      this.countdown_time = param1SignActivityInfo.countdown_time;
+      this.activity_duration = param1SignActivityInfo.activity_duration;
+      this.countdown_msg = param1SignActivityInfo.countdown_msg;
+      this.activity_msg = param1SignActivityInfo.activity_msg;
+      this.activity_suc_msg = param1SignActivityInfo.activity_suc_msg;
+      this.activity_fail_msg = param1SignActivityInfo.activity_fail_msg;
+      this.gift_type = param1SignActivityInfo.gift_type;
+      this.gift_url = param1SignActivityInfo.gift_url;
+      this.gift_name = param1SignActivityInfo.gift_name;
+      this.icon_name = param1SignActivityInfo.icon_name;
+      this.icon_lifecycle = param1SignActivityInfo.icon_lifecycle;
+      this.activity_name = param1SignActivityInfo.activity_name;
+      this.image_url = param1SignActivityInfo.image_url;
+    }
+    
+    public SignActivityInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SignActivityInfo)interceptResult.objValue; 
+      } 
+      return new SignActivityInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

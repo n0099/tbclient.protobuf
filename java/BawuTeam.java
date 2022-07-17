@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BawuRoleDes;
-import tbclient.BawuTeam;
 
 public final class BawuTeam extends Message {
+  public static Interceptable $ic;
+  
   public static final List<BawuRoleDes> DEFAULT_BAWU_TEAM_LIST;
   
   public static final Integer DEFAULT_TOTAL_NUM = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<BawuRoleDes> bawu_team_list;
@@ -26,8 +30,8 @@ public final class BawuTeam extends Message {
   }
   
   public BawuTeam(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<BawuRoleDes> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.total_num;
       if (integer == null) {
@@ -47,6 +51,10 @@ public final class BawuTeam extends Message {
     } 
   }
   
+  public BawuTeam(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -61,5 +69,41 @@ public final class BawuTeam extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BawuTeam> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<BawuRoleDes> bawu_team_list;
+    
+    public Integer total_num;
+    
+    public Builder() {}
+    
+    public Builder(BawuTeam param1BawuTeam) {
+      super(param1BawuTeam);
+      if (param1BawuTeam == null)
+        return; 
+      this.total_num = param1BawuTeam.total_num;
+      this.bawu_team_list = Message.copyOf(param1BawuTeam.bawu_team_list);
+    }
+    
+    public BawuTeam build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BawuTeam)interceptResult.objValue; 
+      } 
+      return new BawuTeam(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

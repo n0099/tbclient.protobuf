@@ -1,4 +1,4 @@
-package ActivityPage;
+package tbclient.ActivityPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SpecialColumn extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AGREE_NUM;
   
   public static final Integer DEFAULT_FREQ_NUM;
@@ -24,6 +26,8 @@ public final class SpecialColumn extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer agree_num;
@@ -73,7 +77,7 @@ public final class SpecialColumn extends Message {
   }
   
   public SpecialColumn(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.type;
@@ -134,5 +138,63 @@ public final class SpecialColumn extends Message {
       this.freq_num = ((Builder)integer).freq_num;
       this.agree_num = ((Builder)integer).agree_num;
     } 
+  }
+  
+  public SpecialColumn(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<SpecialColumn> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer agree_num;
+    
+    public Integer freq_num;
+    
+    public String image;
+    
+    public Long live_id;
+    
+    public String text;
+    
+    public Long thread_id;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(SpecialColumn param1SpecialColumn) {
+      super(param1SpecialColumn);
+      if (param1SpecialColumn == null)
+        return; 
+      this.type = param1SpecialColumn.type;
+      this.thread_id = param1SpecialColumn.thread_id;
+      this.live_id = param1SpecialColumn.live_id;
+      this.title = param1SpecialColumn.title;
+      this.image = param1SpecialColumn.image;
+      this.text = param1SpecialColumn.text;
+      this.freq_num = param1SpecialColumn.freq_num;
+      this.agree_num = param1SpecialColumn.agree_num;
+    }
+    
+    public SpecialColumn build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SpecialColumn)interceptResult.objValue; 
+      } 
+      return new SpecialColumn(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

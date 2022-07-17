@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.TwAnchorProfitItem;
 
 public final class TwAnchorProfitItem extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AVAILABLE_ANCHOR_LEVEL;
   
   public static final String DEFAULT_ICON_LOCK_URL = "";
@@ -17,6 +20,8 @@ public final class TwAnchorProfitItem extends Message {
   public static final Integer DEFAULT_ID;
   
   public static final String DEFAULT_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer available_anchor_level;
@@ -53,7 +58,7 @@ public final class TwAnchorProfitItem extends Message {
   }
   
   public TwAnchorProfitItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.id;
@@ -93,5 +98,54 @@ public final class TwAnchorProfitItem extends Message {
       this.icon_unlock_url = ((Builder)str).icon_unlock_url;
       this.icon_lock_url = ((Builder)str).icon_lock_url;
     } 
+  }
+  
+  public TwAnchorProfitItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TwAnchorProfitItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer available_anchor_level;
+    
+    public String icon_lock_url;
+    
+    public String icon_unlock_url;
+    
+    public Integer id;
+    
+    public String name;
+    
+    public Builder() {}
+    
+    public Builder(TwAnchorProfitItem param1TwAnchorProfitItem) {
+      super(param1TwAnchorProfitItem);
+      if (param1TwAnchorProfitItem == null)
+        return; 
+      this.id = param1TwAnchorProfitItem.id;
+      this.available_anchor_level = param1TwAnchorProfitItem.available_anchor_level;
+      this.name = param1TwAnchorProfitItem.name;
+      this.icon_unlock_url = param1TwAnchorProfitItem.icon_unlock_url;
+      this.icon_lock_url = param1TwAnchorProfitItem.icon_lock_url;
+    }
+    
+    public TwAnchorProfitItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TwAnchorProfitItem)interceptResult.objValue; 
+      } 
+      return new TwAnchorProfitItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

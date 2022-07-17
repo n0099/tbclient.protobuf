@@ -1,4 +1,4 @@
-package TopicList;
+package tbclient.TopicList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -13,6 +13,8 @@ import tbclient.Media;
 import tbclient.VideoInfo;
 
 public final class TopicList extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_DISCUSS_NUM;
   
   public static final List<Media> DEFAULT_MEDIA;
@@ -36,6 +38,8 @@ public final class TopicList extends Message {
   public static final String DEFAULT_TOPIC_USER_NAME = "";
   
   public static final Long DEFAULT_UPDATE_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT64)
   public final Long discuss_num;
@@ -102,7 +106,7 @@ public final class TopicList extends Message {
   }
   
   public TopicList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_4 = paramBuilder.topic_id;
@@ -153,7 +157,7 @@ public final class TopicList extends Message {
       } else {
         this.topic_user_name = str2;
       } 
-      List list = paramBuilder.media;
+      List<Media> list = paramBuilder.media;
       if (list == null) {
         this.media = DEFAULT_MEDIA;
       } else {
@@ -193,5 +197,78 @@ public final class TopicList extends Message {
       this.video_info = ((Builder)integer).video_info;
       this.topic_thread_types = ((Builder)integer).topic_thread_types;
     } 
+  }
+  
+  public TopicList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TopicList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long discuss_num;
+    
+    public List<Media> media;
+    
+    public Integer tag;
+    
+    public String topic_desc;
+    
+    public String topic_h5_url;
+    
+    public Long topic_id;
+    
+    public String topic_name;
+    
+    public String topic_pic;
+    
+    public Integer topic_thread_types;
+    
+    public Long topic_tid;
+    
+    public String topic_user_name;
+    
+    public Long update_time;
+    
+    public VideoInfo video_info;
+    
+    public Builder() {}
+    
+    public Builder(TopicList param1TopicList) {
+      super(param1TopicList);
+      if (param1TopicList == null)
+        return; 
+      this.topic_id = param1TopicList.topic_id;
+      this.topic_name = param1TopicList.topic_name;
+      this.discuss_num = param1TopicList.discuss_num;
+      this.tag = param1TopicList.tag;
+      this.topic_desc = param1TopicList.topic_desc;
+      this.topic_pic = param1TopicList.topic_pic;
+      this.update_time = param1TopicList.update_time;
+      this.topic_user_name = param1TopicList.topic_user_name;
+      this.media = Message.copyOf(param1TopicList.media);
+      this.topic_tid = param1TopicList.topic_tid;
+      this.topic_h5_url = param1TopicList.topic_h5_url;
+      this.video_info = param1TopicList.video_info;
+      this.topic_thread_types = param1TopicList.topic_thread_types;
+    }
+    
+    public TopicList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TopicList)interceptResult.objValue; 
+      } 
+      return new TopicList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

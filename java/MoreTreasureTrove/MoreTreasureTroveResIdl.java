@@ -1,13 +1,17 @@
-package MoreTreasureTrove;
+package tbclient.MoreTreasureTrove;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-import tbclient.MoreTreasureTrove.DataRes;
 
 public final class MoreTreasureTroveResIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 2)
   public final DataRes data;
   
@@ -15,7 +19,7 @@ public final class MoreTreasureTroveResIdl extends Message {
   public final Error error;
   
   public MoreTreasureTroveResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
@@ -23,5 +27,45 @@ public final class MoreTreasureTroveResIdl extends Message {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
     } 
+  }
+  
+  public MoreTreasureTroveResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<MoreTreasureTroveResIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataRes data;
+    
+    public Error error;
+    
+    public Builder() {}
+    
+    public Builder(MoreTreasureTroveResIdl param1MoreTreasureTroveResIdl) {
+      super(param1MoreTreasureTroveResIdl);
+      if (param1MoreTreasureTroveResIdl == null)
+        return; 
+      this.error = param1MoreTreasureTroveResIdl.error;
+      this.data = param1MoreTreasureTroveResIdl.data;
+    }
+    
+    public MoreTreasureTroveResIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MoreTreasureTroveResIdl)interceptResult.objValue; 
+      } 
+      return new MoreTreasureTroveResIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

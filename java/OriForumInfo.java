@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.OriForumInfo;
 
 public final class OriForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ORI_AVATAR = "";
   
   public static final Long DEFAULT_ORI_FID;
@@ -15,6 +18,8 @@ public final class OriForumInfo extends Message {
   public static final String DEFAULT_ORI_FNAME = "";
   
   public static final Long DEFAULT_ORI_MEMBER_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String ori_avatar;
@@ -48,7 +53,7 @@ public final class OriForumInfo extends Message {
   }
   
   public OriForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_1 = paramBuilder.ori_fid;
@@ -81,5 +86,51 @@ public final class OriForumInfo extends Message {
       this.ori_avatar = ((Builder)long_).ori_avatar;
       this.ori_member_num = ((Builder)long_).ori_member_num;
     } 
+  }
+  
+  public OriForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<OriForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ori_avatar;
+    
+    public Long ori_fid;
+    
+    public String ori_fname;
+    
+    public Long ori_member_num;
+    
+    public Builder() {}
+    
+    public Builder(OriForumInfo param1OriForumInfo) {
+      super(param1OriForumInfo);
+      if (param1OriForumInfo == null)
+        return; 
+      this.ori_fid = param1OriForumInfo.ori_fid;
+      this.ori_fname = param1OriForumInfo.ori_fname;
+      this.ori_avatar = param1OriForumInfo.ori_avatar;
+      this.ori_member_num = param1OriForumInfo.ori_member_num;
+    }
+    
+    public OriForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (OriForumInfo)interceptResult.objValue; 
+      } 
+      return new OriForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

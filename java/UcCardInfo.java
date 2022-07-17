@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.UcCardInfo;
 
 public final class UcCardInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_JMP = "";
   
   public static final String DEFAULT_PIC = "";
@@ -17,6 +20,8 @@ public final class UcCardInfo extends Message {
   public static final String DEFAULT_TIP = "";
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String jmp;
@@ -34,7 +39,7 @@ public final class UcCardInfo extends Message {
   public final String title;
   
   public UcCardInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -76,6 +81,10 @@ public final class UcCardInfo extends Message {
     } 
   }
   
+  public UcCardInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -90,5 +99,50 @@ public final class UcCardInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<UcCardInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String jmp;
+    
+    public String pic;
+    
+    public Integer st;
+    
+    public String tip;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(UcCardInfo param1UcCardInfo) {
+      super(param1UcCardInfo);
+      if (param1UcCardInfo == null)
+        return; 
+      this.title = param1UcCardInfo.title;
+      this.pic = param1UcCardInfo.pic;
+      this.jmp = param1UcCardInfo.jmp;
+      this.tip = param1UcCardInfo.tip;
+      this.st = param1UcCardInfo.st;
+    }
+    
+    public UcCardInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UcCardInfo)interceptResult.objValue; 
+      } 
+      return new UcCardInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

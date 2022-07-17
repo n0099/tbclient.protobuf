@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.TailInfo;
 
 public final class TailInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final String DEFAULT_ICON_LINK = "";
@@ -15,6 +18,8 @@ public final class TailInfo extends Message {
   public static final String DEFAULT_ICON_URL = "";
   
   public static final Integer DEFAULT_TAIL_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String content;
@@ -29,7 +34,7 @@ public final class TailInfo extends Message {
   public final Integer tail_type;
   
   public TailInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.tail_type;
@@ -64,6 +69,10 @@ public final class TailInfo extends Message {
     } 
   }
   
+  public TailInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -78,5 +87,47 @@ public final class TailInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TailInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String content;
+    
+    public String icon_link;
+    
+    public String icon_url;
+    
+    public Integer tail_type;
+    
+    public Builder() {}
+    
+    public Builder(TailInfo param1TailInfo) {
+      super(param1TailInfo);
+      if (param1TailInfo == null)
+        return; 
+      this.tail_type = param1TailInfo.tail_type;
+      this.icon_url = param1TailInfo.icon_url;
+      this.icon_link = param1TailInfo.icon_link;
+      this.content = param1TailInfo.content;
+    }
+    
+    public TailInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TailInfo)interceptResult.objValue; 
+      } 
+      return new TailInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

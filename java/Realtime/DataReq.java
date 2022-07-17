@@ -1,4 +1,4 @@
-package Realtime;
+package tbclient.Realtime;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABTEST_TAG = "";
   
   public static final Integer DEFAULT_LOCATION;
@@ -31,6 +33,8 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_WEIGHT = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String abtest_tag;
@@ -75,7 +79,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -161,6 +165,10 @@ public final class DataReq extends Message {
     } 
   }
   
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -175,5 +183,71 @@ public final class DataReq extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String abtest_tag;
+    
+    public CommonReq common;
+    
+    public Integer location;
+    
+    public String ori_ugc_nid;
+    
+    public String ori_ugc_tid;
+    
+    public String ori_ugc_type;
+    
+    public String ori_ugc_vid;
+    
+    public String page;
+    
+    public String source;
+    
+    public Long tid;
+    
+    public Integer type;
+    
+    public String weight;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.tid = param1DataReq.tid;
+      this.weight = param1DataReq.weight;
+      this.source = param1DataReq.source;
+      this.location = param1DataReq.location;
+      this.abtest_tag = param1DataReq.abtest_tag;
+      this.type = param1DataReq.type;
+      this.page = param1DataReq.page;
+      this.ori_ugc_nid = param1DataReq.ori_ugc_nid;
+      this.ori_ugc_tid = param1DataReq.ori_ugc_tid;
+      this.ori_ugc_type = param1DataReq.ori_ugc_type;
+      this.ori_ugc_vid = param1DataReq.ori_ugc_vid;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

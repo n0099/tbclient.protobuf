@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,15 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.TiebaFieldsInfo;
-import tbclient.User;
 
 public final class TiebaFieldsInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<String> DEFAULT_TIEBA_FIELDS = Collections.emptyList();
   
   public static final String DEFAULT_TIEBA_NAME = "";
   
   public static final List<User> DEFAULT_USER_RANK = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
   public final List<String> tieba_fields;
@@ -27,10 +31,10 @@ public final class TiebaFieldsInfo extends Message {
   public final List<User> user_rank;
   
   public TiebaFieldsInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<User> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.tieba_fields;
+      List<String> list1 = paramBuilder.tieba_fields;
       if (list1 == null) {
         this.tieba_fields = DEFAULT_TIEBA_FIELDS;
       } else {
@@ -55,6 +59,10 @@ public final class TiebaFieldsInfo extends Message {
     } 
   }
   
+  public TiebaFieldsInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -69,5 +77,44 @@ public final class TiebaFieldsInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TiebaFieldsInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<String> tieba_fields;
+    
+    public String tieba_name;
+    
+    public List<User> user_rank;
+    
+    public Builder() {}
+    
+    public Builder(TiebaFieldsInfo param1TiebaFieldsInfo) {
+      super(param1TiebaFieldsInfo);
+      if (param1TiebaFieldsInfo == null)
+        return; 
+      this.tieba_fields = Message.copyOf(param1TiebaFieldsInfo.tieba_fields);
+      this.tieba_name = param1TiebaFieldsInfo.tieba_name;
+      this.user_rank = Message.copyOf(param1TiebaFieldsInfo.user_rank);
+    }
+    
+    public TiebaFieldsInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TiebaFieldsInfo)interceptResult.objValue; 
+      } 
+      return new TiebaFieldsInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

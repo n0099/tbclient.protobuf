@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPage.HeadImgs;
-import tbclient.FrsPage.Size;
 
 public final class ActivityHead extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_TITLE = "";
   
   public static final Integer DEFAULT_ACTIVITY_TYPE;
@@ -38,6 +38,8 @@ public final class ActivityHead extends Message {
   public static final String DEFAULT_PULL_DOWN_SCHEMA = "";
   
   public static final String DEFAULT_PULL_DOWN_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String activity_title;
@@ -87,7 +89,7 @@ public final class ActivityHead extends Message {
   }
   
   public ActivityHead(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.activity_type;
@@ -102,7 +104,7 @@ public final class ActivityHead extends Message {
       } else {
         this.activity_title = str4;
       } 
-      List list = paramBuilder.head_imgs;
+      List<HeadImgs> list = paramBuilder.head_imgs;
       if (list == null) {
         this.head_imgs = DEFAULT_HEAD_IMGS;
       } else {
@@ -187,6 +189,10 @@ public final class ActivityHead extends Message {
     } 
   }
   
+  public ActivityHead(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -203,5 +209,77 @@ public final class ActivityHead extends Message {
     } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ACTIVITY_TYPE = integer;
+  }
+  
+  public static final class Builder extends Message.Builder<ActivityHead> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_title;
+    
+    public Integer activity_type;
+    
+    public List<HeadImgs> head_imgs;
+    
+    public Boolean is_ad;
+    
+    public String obj_id;
+    
+    public String pull_down_click_url;
+    
+    public String pull_down_exposure_url;
+    
+    public Integer pull_down_interval;
+    
+    public String pull_down_package_name;
+    
+    public String pull_down_pic_android;
+    
+    public String pull_down_pic_ios;
+    
+    public String pull_down_schema;
+    
+    public String pull_down_url;
+    
+    public Size top_size;
+    
+    public Builder() {}
+    
+    public Builder(ActivityHead param1ActivityHead) {
+      super(param1ActivityHead);
+      if (param1ActivityHead == null)
+        return; 
+      this.activity_type = param1ActivityHead.activity_type;
+      this.activity_title = param1ActivityHead.activity_title;
+      this.head_imgs = Message.copyOf(param1ActivityHead.head_imgs);
+      this.top_size = param1ActivityHead.top_size;
+      this.obj_id = param1ActivityHead.obj_id;
+      this.pull_down_url = param1ActivityHead.pull_down_url;
+      this.pull_down_interval = param1ActivityHead.pull_down_interval;
+      this.pull_down_pic_ios = param1ActivityHead.pull_down_pic_ios;
+      this.pull_down_pic_android = param1ActivityHead.pull_down_pic_android;
+      this.pull_down_exposure_url = param1ActivityHead.pull_down_exposure_url;
+      this.pull_down_click_url = param1ActivityHead.pull_down_click_url;
+      this.is_ad = param1ActivityHead.is_ad;
+      this.pull_down_schema = param1ActivityHead.pull_down_schema;
+      this.pull_down_package_name = param1ActivityHead.pull_down_package_name;
+    }
+    
+    public ActivityHead build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActivityHead)interceptResult.objValue; 
+      } 
+      return new ActivityHead(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

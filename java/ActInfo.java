@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ActInfo;
-import tbclient.SeniorLottery;
 
 public final class ActInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTIVITY_ID;
   
   public static final Integer DEFAULT_ACTIVITY_TYPE;
@@ -34,6 +36,8 @@ public final class ActInfo extends Message {
   public static final Integer DEFAULT_TOTAL_NUM;
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.INT32)
   public final Integer activity_id;
@@ -105,7 +109,7 @@ public final class ActInfo extends Message {
   }
   
   public ActInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.activity_type;
@@ -203,5 +207,81 @@ public final class ActInfo extends Message {
       this.lottery_senior = ((Builder)integer).lottery_senior;
       this.show_total_num = ((Builder)integer).show_total_num;
     } 
+  }
+  
+  public ActInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ActInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer activity_id;
+    
+    public Integer activity_type;
+    
+    public Integer award_act_id;
+    
+    public String banner_img;
+    
+    public String banner_img_size;
+    
+    public Integer begin_time;
+    
+    public Integer component_id;
+    
+    public Integer end_time;
+    
+    public Boolean is_senior;
+    
+    public SeniorLottery lottery_senior;
+    
+    public Integer show_total_num;
+    
+    public Integer status;
+    
+    public Integer total_num;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(ActInfo param1ActInfo) {
+      super(param1ActInfo);
+      if (param1ActInfo == null)
+        return; 
+      this.activity_type = param1ActInfo.activity_type;
+      this.status = param1ActInfo.status;
+      this.begin_time = param1ActInfo.begin_time;
+      this.end_time = param1ActInfo.end_time;
+      this.url = param1ActInfo.url;
+      this.total_num = param1ActInfo.total_num;
+      this.activity_id = param1ActInfo.activity_id;
+      this.award_act_id = param1ActInfo.award_act_id;
+      this.component_id = param1ActInfo.component_id;
+      this.is_senior = param1ActInfo.is_senior;
+      this.banner_img = param1ActInfo.banner_img;
+      this.banner_img_size = param1ActInfo.banner_img_size;
+      this.lottery_senior = param1ActInfo.lottery_senior;
+      this.show_total_num = param1ActInfo.show_total_num;
+    }
+    
+    public ActInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActInfo)interceptResult.objValue; 
+      } 
+      return new ActInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

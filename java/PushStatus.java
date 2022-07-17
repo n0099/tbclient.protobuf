@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.PushStatus;
-import tbclient.PushType;
 
 public final class PushStatus extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_STATUS = Integer.valueOf(0);
   
   public static final List<PushType> DEFAULT_TYPES = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer status;
@@ -22,8 +26,8 @@ public final class PushStatus extends Message {
   public final List<PushType> types;
   
   public PushStatus(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<PushType> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.status;
       if (integer == null) {
@@ -43,6 +47,10 @@ public final class PushStatus extends Message {
     } 
   }
   
+  public PushStatus(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -57,5 +65,41 @@ public final class PushStatus extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PushStatus> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer status;
+    
+    public List<PushType> types;
+    
+    public Builder() {}
+    
+    public Builder(PushStatus param1PushStatus) {
+      super(param1PushStatus);
+      if (param1PushStatus == null)
+        return; 
+      this.status = param1PushStatus.status;
+      this.types = Message.copyOf(param1PushStatus.types);
+    }
+    
+    public PushStatus build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PushStatus)interceptResult.objValue; 
+      } 
+      return new PushStatus(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

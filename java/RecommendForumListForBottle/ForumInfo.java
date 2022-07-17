@@ -1,4 +1,4 @@
-package RecommendForumListForBottle;
+package tbclient.RecommendForumListForBottle;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final Long DEFAULT_FORUM_ID;
@@ -18,6 +20,8 @@ public final class ForumInfo extends Message {
   public static final Long DEFAULT_MEMBER_COUNT;
   
   public static final Long DEFAULT_THREAD_COUNT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String avatar;
@@ -55,7 +59,7 @@ public final class ForumInfo extends Message {
   }
   
   public ForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str2 = paramBuilder.avatar;
@@ -95,5 +99,54 @@ public final class ForumInfo extends Message {
       this.member_count = ((Builder)long_).member_count;
       this.thread_count = ((Builder)long_).thread_count;
     } 
+  }
+  
+  public ForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Long member_count;
+    
+    public Long thread_count;
+    
+    public Builder() {}
+    
+    public Builder(ForumInfo param1ForumInfo) {
+      super(param1ForumInfo);
+      if (param1ForumInfo == null)
+        return; 
+      this.avatar = param1ForumInfo.avatar;
+      this.forum_id = param1ForumInfo.forum_id;
+      this.forum_name = param1ForumInfo.forum_name;
+      this.member_count = param1ForumInfo.member_count;
+      this.thread_count = param1ForumInfo.thread_count;
+    }
+    
+    public ForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumInfo)interceptResult.objValue; 
+      } 
+      return new ForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

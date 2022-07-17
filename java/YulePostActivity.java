@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.YulePostActivity;
 
 public final class YulePostActivity extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_BANNER = "";
   
   public static final String DEFAULT_ACTIVITY_BUTTON = "";
@@ -19,6 +22,8 @@ public final class YulePostActivity extends Message {
   public static final Long DEFAULT_END_TIME;
   
   public static final Long DEFAULT_START_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String activity_banner;
@@ -58,7 +63,7 @@ public final class YulePostActivity extends Message {
   }
   
   public YulePostActivity(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.start_time;
@@ -105,5 +110,57 @@ public final class YulePostActivity extends Message {
       this.activity_desc = ((Builder)str).activity_desc;
       this.activity_button = ((Builder)str).activity_button;
     } 
+  }
+  
+  public YulePostActivity(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<YulePostActivity> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_banner;
+    
+    public String activity_button;
+    
+    public String activity_desc;
+    
+    public String activity_url;
+    
+    public Long end_time;
+    
+    public Long start_time;
+    
+    public Builder() {}
+    
+    public Builder(YulePostActivity param1YulePostActivity) {
+      super(param1YulePostActivity);
+      if (param1YulePostActivity == null)
+        return; 
+      this.start_time = param1YulePostActivity.start_time;
+      this.end_time = param1YulePostActivity.end_time;
+      this.activity_banner = param1YulePostActivity.activity_banner;
+      this.activity_url = param1YulePostActivity.activity_url;
+      this.activity_desc = param1YulePostActivity.activity_desc;
+      this.activity_button = param1YulePostActivity.activity_button;
+    }
+    
+    public YulePostActivity build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (YulePostActivity)interceptResult.objValue; 
+      } 
+      return new YulePostActivity(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

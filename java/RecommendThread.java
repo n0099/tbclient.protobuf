@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.RecommendThread;
 
 public final class RecommendThread extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_POST_NUM;
   
   public static final List<String> DEFAULT_TERM_LIST;
@@ -17,6 +20,8 @@ public final class RecommendThread extends Message {
   public static final Long DEFAULT_TID;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT64)
   public final Long post_num;
@@ -51,8 +56,8 @@ public final class RecommendThread extends Message {
   }
   
   public RecommendThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.tid;
       if (long_2 == null) {
@@ -84,5 +89,51 @@ public final class RecommendThread extends Message {
       this.post_num = ((Builder)list).post_num;
       this.term_list = Message.immutableCopyOf(((Builder)list).term_list);
     } 
+  }
+  
+  public RecommendThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long post_num;
+    
+    public List<String> term_list;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(RecommendThread param1RecommendThread) {
+      super(param1RecommendThread);
+      if (param1RecommendThread == null)
+        return; 
+      this.tid = param1RecommendThread.tid;
+      this.title = param1RecommendThread.title;
+      this.post_num = param1RecommendThread.post_num;
+      this.term_list = Message.copyOf(param1RecommendThread.term_list);
+    }
+    
+    public RecommendThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendThread)interceptResult.objValue; 
+      } 
+      return new RecommendThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

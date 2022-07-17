@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.NativeApp;
 
 public final class NativeApp extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DOWNLOAD_AND = "";
   
   public static final String DEFAULT_DOWNLOAD_IOS = "";
@@ -12,6 +16,8 @@ public final class NativeApp extends Message {
   public static final String DEFAULT_JUMP_AND = "";
   
   public static final String DEFAULT_JUMP_IOS = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String download_and;
@@ -26,7 +32,7 @@ public final class NativeApp extends Message {
   public final String jump_ios;
   
   public NativeApp(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.jump_and;
@@ -59,5 +65,51 @@ public final class NativeApp extends Message {
       this.download_and = ((Builder)str).download_and;
       this.download_ios = ((Builder)str).download_ios;
     } 
+  }
+  
+  public NativeApp(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<NativeApp> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String download_and;
+    
+    public String download_ios;
+    
+    public String jump_and;
+    
+    public String jump_ios;
+    
+    public Builder() {}
+    
+    public Builder(NativeApp param1NativeApp) {
+      super(param1NativeApp);
+      if (param1NativeApp == null)
+        return; 
+      this.jump_and = param1NativeApp.jump_and;
+      this.jump_ios = param1NativeApp.jump_ios;
+      this.download_and = param1NativeApp.download_and;
+      this.download_ios = param1NativeApp.download_ios;
+    }
+    
+    public NativeApp build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NativeApp)interceptResult.objValue; 
+      } 
+      return new NativeApp(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

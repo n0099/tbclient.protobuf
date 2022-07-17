@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ChapterInfo;
 
 public final class ChapterInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_CHAPTER_ID;
   
   public static final Integer DEFAULT_CHAPTER_NO;
@@ -35,6 +38,8 @@ public final class ChapterInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_WORDS;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long chapter_id;
@@ -106,7 +111,7 @@ public final class ChapterInfo extends Message {
   }
   
   public ChapterInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_1 = paramBuilder.chapter_id;
@@ -151,7 +156,7 @@ public final class ChapterInfo extends Message {
       } else {
         this.pages = integer2;
       } 
-      List list = paramBuilder.paragraphs;
+      List<Integer> list = paramBuilder.paragraphs;
       if (list == null) {
         this.paragraphs = DEFAULT_PARAGRAPHS;
       } else {
@@ -202,5 +207,78 @@ public final class ChapterInfo extends Message {
       this.chapter_no = ((Builder)long_).chapter_no;
       this.thread_id = ((Builder)long_).thread_id;
     } 
+  }
+  
+  public ChapterInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ChapterInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long chapter_id;
+    
+    public Integer chapter_no;
+    
+    public Integer is_buy;
+    
+    public Integer level;
+    
+    public Integer orignal_price;
+    
+    public Integer page_id;
+    
+    public Integer pages;
+    
+    public Integer paragraph_id;
+    
+    public List<Integer> paragraphs;
+    
+    public Integer price;
+    
+    public Long thread_id;
+    
+    public String title;
+    
+    public Integer words;
+    
+    public Builder() {}
+    
+    public Builder(ChapterInfo param1ChapterInfo) {
+      super(param1ChapterInfo);
+      if (param1ChapterInfo == null)
+        return; 
+      this.chapter_id = param1ChapterInfo.chapter_id;
+      this.title = param1ChapterInfo.title;
+      this.level = param1ChapterInfo.level;
+      this.words = param1ChapterInfo.words;
+      this.page_id = param1ChapterInfo.page_id;
+      this.paragraph_id = param1ChapterInfo.paragraph_id;
+      this.pages = param1ChapterInfo.pages;
+      this.paragraphs = Message.copyOf(param1ChapterInfo.paragraphs);
+      this.price = param1ChapterInfo.price;
+      this.is_buy = param1ChapterInfo.is_buy;
+      this.orignal_price = param1ChapterInfo.orignal_price;
+      this.chapter_no = param1ChapterInfo.chapter_no;
+      this.thread_id = param1ChapterInfo.thread_id;
+    }
+    
+    public ChapterInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ChapterInfo)interceptResult.objValue; 
+      } 
+      return new ChapterInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

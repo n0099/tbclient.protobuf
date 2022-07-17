@@ -1,4 +1,4 @@
-package ForumPersonas;
+package tbclient.ForumPersonas;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MembersAge extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_NAME = "";
   
   public static final Double DEFAULT_RATE;
   
   public static final Integer DEFAULT_SEQ = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String name;
@@ -29,7 +33,7 @@ public final class MembersAge extends Message {
   }
   
   public MembersAge(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Double double_;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.seq;
@@ -57,6 +61,10 @@ public final class MembersAge extends Message {
     } 
   }
   
+  public MembersAge(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -71,5 +79,44 @@ public final class MembersAge extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MembersAge> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String name;
+    
+    public Double rate;
+    
+    public Integer seq;
+    
+    public Builder() {}
+    
+    public Builder(MembersAge param1MembersAge) {
+      super(param1MembersAge);
+      if (param1MembersAge == null)
+        return; 
+      this.seq = param1MembersAge.seq;
+      this.name = param1MembersAge.name;
+      this.rate = param1MembersAge.rate;
+    }
+    
+    public MembersAge build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MembersAge)interceptResult.objValue; 
+      } 
+      return new MembersAge(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

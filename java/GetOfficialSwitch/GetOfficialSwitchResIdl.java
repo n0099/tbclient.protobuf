@@ -1,13 +1,17 @@
-package GetOfficialSwitch;
+package tbclient.GetOfficialSwitch;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-import tbclient.GetOfficialSwitch.DataRes;
 
 public final class GetOfficialSwitchResIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 2)
   public final DataRes data;
   
@@ -15,7 +19,7 @@ public final class GetOfficialSwitchResIdl extends Message {
   public final Error error;
   
   public GetOfficialSwitchResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
@@ -23,5 +27,45 @@ public final class GetOfficialSwitchResIdl extends Message {
       this.error = paramBuilder.error;
       this.data = paramBuilder.data;
     } 
+  }
+  
+  public GetOfficialSwitchResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GetOfficialSwitchResIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataRes data;
+    
+    public Error error;
+    
+    public Builder() {}
+    
+    public Builder(GetOfficialSwitchResIdl param1GetOfficialSwitchResIdl) {
+      super(param1GetOfficialSwitchResIdl);
+      if (param1GetOfficialSwitchResIdl == null)
+        return; 
+      this.error = param1GetOfficialSwitchResIdl.error;
+      this.data = param1GetOfficialSwitchResIdl.data;
+    }
+    
+    public GetOfficialSwitchResIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GetOfficialSwitchResIdl)interceptResult.objValue; 
+      } 
+      return new GetOfficialSwitchResIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

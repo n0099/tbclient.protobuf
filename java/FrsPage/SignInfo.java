@@ -1,13 +1,16 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FrsPage.SignForum;
-import tbclient.FrsPage.SignUser;
 
 public final class SignInfo extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 2)
   public final SignForum forum_info;
   
@@ -15,7 +18,7 @@ public final class SignInfo extends Message {
   public final SignUser user_info;
   
   public SignInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.user_info = paramBuilder.user_info;
       this.forum_info = paramBuilder.forum_info;
@@ -23,5 +26,45 @@ public final class SignInfo extends Message {
       this.user_info = paramBuilder.user_info;
       this.forum_info = paramBuilder.forum_info;
     } 
+  }
+  
+  public SignInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<SignInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public SignForum forum_info;
+    
+    public SignUser user_info;
+    
+    public Builder() {}
+    
+    public Builder(SignInfo param1SignInfo) {
+      super(param1SignInfo);
+      if (param1SignInfo == null)
+        return; 
+      this.user_info = param1SignInfo.user_info;
+      this.forum_info = param1SignInfo.forum_info;
+    }
+    
+    public SignInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (SignInfo)interceptResult.objValue; 
+      } 
+      return new SignInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

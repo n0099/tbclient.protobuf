@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.CreationData;
 
 public final class CreationData extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AGREE_COUNT;
   
   public static final Integer DEFAULT_AGREE_COUNT_TREND;
@@ -23,6 +26,8 @@ public final class CreationData extends Message {
   public static final Integer DEFAULT_VIEW_COUNT;
   
   public static final Integer DEFAULT_VIEW_COUNT_TREND;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer agree_count;
@@ -74,7 +79,7 @@ public final class CreationData extends Message {
   }
   
   public CreationData(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.view_count;
@@ -135,5 +140,63 @@ public final class CreationData extends Message {
       this.valid_play_count = ((Builder)integer).valid_play_count;
       this.valid_play_count_trend = ((Builder)integer).valid_play_count_trend;
     } 
+  }
+  
+  public CreationData(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<CreationData> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer agree_count;
+    
+    public Integer agree_count_trend;
+    
+    public Integer comment_count;
+    
+    public Integer comment_trend;
+    
+    public Integer valid_play_count;
+    
+    public Integer valid_play_count_trend;
+    
+    public Integer view_count;
+    
+    public Integer view_count_trend;
+    
+    public Builder() {}
+    
+    public Builder(CreationData param1CreationData) {
+      super(param1CreationData);
+      if (param1CreationData == null)
+        return; 
+      this.view_count = param1CreationData.view_count;
+      this.agree_count = param1CreationData.agree_count;
+      this.view_count_trend = param1CreationData.view_count_trend;
+      this.agree_count_trend = param1CreationData.agree_count_trend;
+      this.comment_count = param1CreationData.comment_count;
+      this.comment_trend = param1CreationData.comment_trend;
+      this.valid_play_count = param1CreationData.valid_play_count;
+      this.valid_play_count_trend = param1CreationData.valid_play_count_trend;
+    }
+    
+    public CreationData build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CreationData)interceptResult.objValue; 
+      } 
+      return new CreationData(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

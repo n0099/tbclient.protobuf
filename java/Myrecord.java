@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Myrecord;
 
 public final class Myrecord extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AGREE_NUM;
   
   public static final String DEFAULT_APPLY_DECLARATION = "";
@@ -31,6 +34,8 @@ public final class Myrecord extends Message {
   public static final Long DEFAULT_UID;
   
   public static final Integer DEFAULT_VOTE_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer agree_num;
@@ -96,7 +101,7 @@ public final class Myrecord extends Message {
   }
   
   public Myrecord(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.apply_id;
@@ -185,5 +190,75 @@ public final class Myrecord extends Message {
       this.apply_declaration = ((Builder)long_).apply_declaration;
       this.tid = ((Builder)long_).tid;
     } 
+  }
+  
+  public Myrecord(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Myrecord> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer agree_num;
+    
+    public String apply_declaration;
+    
+    public Integer apply_id;
+    
+    public Integer forum_level;
+    
+    public String name_show;
+    
+    public String portrait;
+    
+    public Integer post_num;
+    
+    public Integer rank;
+    
+    public Integer thread_num;
+    
+    public Long tid;
+    
+    public Long uid;
+    
+    public Integer vote_num;
+    
+    public Builder() {}
+    
+    public Builder(Myrecord param1Myrecord) {
+      super(param1Myrecord);
+      if (param1Myrecord == null)
+        return; 
+      this.apply_id = param1Myrecord.apply_id;
+      this.uid = param1Myrecord.uid;
+      this.rank = param1Myrecord.rank;
+      this.portrait = param1Myrecord.portrait;
+      this.name_show = param1Myrecord.name_show;
+      this.forum_level = param1Myrecord.forum_level;
+      this.vote_num = param1Myrecord.vote_num;
+      this.agree_num = param1Myrecord.agree_num;
+      this.thread_num = param1Myrecord.thread_num;
+      this.post_num = param1Myrecord.post_num;
+      this.apply_declaration = param1Myrecord.apply_declaration;
+      this.tid = param1Myrecord.tid;
+    }
+    
+    public Myrecord build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Myrecord)interceptResult.objValue; 
+      } 
+      return new Myrecord(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

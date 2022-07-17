@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Portrait;
 
 public final class Portrait extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_END_TIME;
   
   public static final Integer DEFAULT_PROPS_ID;
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer end_time;
@@ -43,7 +48,7 @@ public final class Portrait extends Message {
   }
   
   public Portrait(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.props_id;
@@ -69,5 +74,48 @@ public final class Portrait extends Message {
       this.end_time = ((Builder)str).end_time;
       this.url = ((Builder)str).url;
     } 
+  }
+  
+  public Portrait(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Portrait> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer end_time;
+    
+    public Integer props_id;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(Portrait param1Portrait) {
+      super(param1Portrait);
+      if (param1Portrait == null)
+        return; 
+      this.props_id = param1Portrait.props_id;
+      this.end_time = param1Portrait.end_time;
+      this.url = param1Portrait.url;
+    }
+    
+    public Portrait build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Portrait)interceptResult.objValue; 
+      } 
+      return new Portrait(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

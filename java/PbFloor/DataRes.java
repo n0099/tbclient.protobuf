@@ -1,4 +1,4 @@
-package PbFloor;
+package tbclient.PbFloor;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -17,11 +17,15 @@ import tbclient.SubPostList;
 import tbclient.ThreadInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_BLACK_WHITE;
   
   public static final Integer DEFAULT_SERVER_TIME;
   
   public static final List<SubPostList> DEFAULT_SUBPOST_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final Anti anti;
@@ -57,13 +61,13 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       this.page = paramBuilder.page;
       this.anti = paramBuilder.anti;
       this.post = paramBuilder.post;
-      List list = paramBuilder.subpost_list;
+      List<SubPostList> list = paramBuilder.subpost_list;
       if (list == null) {
         this.subpost_list = DEFAULT_SUBPOST_LIST;
       } else {
@@ -97,6 +101,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -111,5 +119,62 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Anti anti;
+    
+    public SimpleForum display_forum;
+    
+    public SimpleForum forum;
+    
+    public Integer is_black_white;
+    
+    public Page page;
+    
+    public Post post;
+    
+    public Integer server_time;
+    
+    public List<SubPostList> subpost_list;
+    
+    public ThreadInfo thread;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.page = param1DataRes.page;
+      this.anti = param1DataRes.anti;
+      this.post = param1DataRes.post;
+      this.subpost_list = Message.copyOf(param1DataRes.subpost_list);
+      this.thread = param1DataRes.thread;
+      this.forum = param1DataRes.forum;
+      this.server_time = param1DataRes.server_time;
+      this.display_forum = param1DataRes.display_forum;
+      this.is_black_white = param1DataRes.is_black_white;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

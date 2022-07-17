@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class StarSchedule extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESC = "";
   
   public static final Integer DEFAULT_TIME = Integer.valueOf(0);
@@ -16,6 +18,8 @@ public final class StarSchedule extends Message {
   public static final String DEFAULT_TYPE = "";
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String desc;
@@ -30,7 +34,7 @@ public final class StarSchedule extends Message {
   public final String url;
   
   public StarSchedule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.time;
@@ -65,6 +69,10 @@ public final class StarSchedule extends Message {
     } 
   }
   
+  public StarSchedule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class StarSchedule extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<StarSchedule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String desc;
+    
+    public Integer time;
+    
+    public String type;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(StarSchedule param1StarSchedule) {
+      super(param1StarSchedule);
+      if (param1StarSchedule == null)
+        return; 
+      this.time = param1StarSchedule.time;
+      this.type = param1StarSchedule.type;
+      this.desc = param1StarSchedule.desc;
+      this.url = param1StarSchedule.url;
+    }
+    
+    public StarSchedule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (StarSchedule)interceptResult.objValue; 
+      } 
+      return new StarSchedule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

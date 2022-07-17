@@ -1,4 +1,4 @@
-package UpdateTail;
+package tbclient.UpdateTail;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,6 +10,8 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class ReqData extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FONTCOLOR = "";
   
   public static final String DEFAULT_FONTKEYNAME = "";
@@ -17,6 +19,8 @@ public final class ReqData extends Message {
   public static final String DEFAULT_TAILCONTENT = "";
   
   public static final Integer DEFAULT_TAILID = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final CommonReq common;
@@ -34,7 +38,7 @@ public final class ReqData extends Message {
   public final Integer tailId;
   
   public ReqData(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       String str2 = paramBuilder.tailContent;
       if (str2 == null) {
@@ -70,6 +74,10 @@ public final class ReqData extends Message {
     } 
   }
   
+  public ReqData(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -84,5 +92,50 @@ public final class ReqData extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ReqData> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public String fontColor;
+    
+    public String fontKeyName;
+    
+    public String tailContent;
+    
+    public Integer tailId;
+    
+    public Builder() {}
+    
+    public Builder(ReqData param1ReqData) {
+      super(param1ReqData);
+      if (param1ReqData == null)
+        return; 
+      this.tailContent = param1ReqData.tailContent;
+      this.tailId = param1ReqData.tailId;
+      this.fontColor = param1ReqData.fontColor;
+      this.fontKeyName = param1ReqData.fontKeyName;
+      this.common = param1ReqData.common;
+    }
+    
+    public ReqData build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ReqData)interceptResult.objValue; 
+      } 
+      return new ReqData(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

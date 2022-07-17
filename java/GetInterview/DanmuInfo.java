@@ -1,4 +1,4 @@
-package GetInterview;
+package tbclient.GetInterview;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,9 +10,13 @@ import com.squareup.wire.ProtoField;
 import tbclient.User;
 
 public final class DanmuInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CONTENT = "";
   
   public static final Long DEFAULT_POST_ID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final User author;
@@ -24,7 +28,7 @@ public final class DanmuInfo extends Message {
   public final Long post_id;
   
   public DanmuInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.content;
@@ -47,6 +51,10 @@ public final class DanmuInfo extends Message {
     } 
   }
   
+  public DanmuInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -61,5 +69,44 @@ public final class DanmuInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DanmuInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public User author;
+    
+    public String content;
+    
+    public Long post_id;
+    
+    public Builder() {}
+    
+    public Builder(DanmuInfo param1DanmuInfo) {
+      super(param1DanmuInfo);
+      if (param1DanmuInfo == null)
+        return; 
+      this.content = param1DanmuInfo.content;
+      this.author = param1DanmuInfo.author;
+      this.post_id = param1DanmuInfo.post_id;
+    }
+    
+    public DanmuInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DanmuInfo)interceptResult.objValue; 
+      } 
+      return new DanmuInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

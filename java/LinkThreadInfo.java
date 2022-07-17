@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,15 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.LinkThreadContent;
-import tbclient.LinkThreadInfo;
 
 public final class LinkThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<LinkThreadContent> DEFAULT_LINK_CONTENT = Collections.emptyList();
   
   public static final String DEFAULT_LINK_URL = "";
   
   public static final String DEFAULT_LINK_URL_CODE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<LinkThreadContent> link_content;
@@ -27,8 +31,8 @@ public final class LinkThreadInfo extends Message {
   public final String link_url_code;
   
   public LinkThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<LinkThreadContent> list;
     if (paramBoolean == true) {
       String str = paramBuilder.link_url;
       if (str == null) {
@@ -55,6 +59,10 @@ public final class LinkThreadInfo extends Message {
     } 
   }
   
+  public LinkThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -69,5 +77,44 @@ public final class LinkThreadInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<LinkThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<LinkThreadContent> link_content;
+    
+    public String link_url;
+    
+    public String link_url_code;
+    
+    public Builder() {}
+    
+    public Builder(LinkThreadInfo param1LinkThreadInfo) {
+      super(param1LinkThreadInfo);
+      if (param1LinkThreadInfo == null)
+        return; 
+      this.link_url = param1LinkThreadInfo.link_url;
+      this.link_url_code = param1LinkThreadInfo.link_url_code;
+      this.link_content = Message.copyOf(param1LinkThreadInfo.link_content);
+    }
+    
+    public LinkThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LinkThreadInfo)interceptResult.objValue; 
+      } 
+      return new LinkThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

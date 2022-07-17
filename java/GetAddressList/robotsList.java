@@ -1,4 +1,4 @@
-package GetAddressList;
+package tbclient.GetAddressList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetAddressList.friendList;
 
 public final class robotsList extends Message {
+  public static Interceptable $ic;
+  
   public static final List<friendList> DEFAULT_FRIEND_LIST = Collections.emptyList();
   
   public static final String DEFAULT_KEY = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<friendList> friend_list;
@@ -23,8 +26,8 @@ public final class robotsList extends Message {
   public final String key;
   
   public robotsList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<friendList> list;
     if (paramBoolean == true) {
       String str = paramBuilder.key;
       if (str == null) {
@@ -44,6 +47,10 @@ public final class robotsList extends Message {
     } 
   }
   
+  public robotsList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +65,41 @@ public final class robotsList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<robotsList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<friendList> friend_list;
+    
+    public String key;
+    
+    public Builder() {}
+    
+    public Builder(robotsList param1robotsList) {
+      super(param1robotsList);
+      if (param1robotsList == null)
+        return; 
+      this.key = param1robotsList.key;
+      this.friend_list = Message.copyOf(param1robotsList.friend_list);
+    }
+    
+    public robotsList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (robotsList)interceptResult.objValue; 
+      } 
+      return new robotsList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

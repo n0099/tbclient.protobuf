@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BawuRoleDes;
-import tbclient.BawuRoleInfoPub;
 
 public final class BawuRoleDes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<BawuRoleInfoPub> DEFAULT_ROLE_INFO = Collections.emptyList();
   
   public static final String DEFAULT_ROLE_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<BawuRoleInfoPub> role_info;
@@ -22,8 +26,8 @@ public final class BawuRoleDes extends Message {
   public final String role_name;
   
   public BawuRoleDes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<BawuRoleInfoPub> list;
     if (paramBoolean == true) {
       String str = paramBuilder.role_name;
       if (str == null) {
@@ -43,6 +47,10 @@ public final class BawuRoleDes extends Message {
     } 
   }
   
+  public BawuRoleDes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -57,5 +65,41 @@ public final class BawuRoleDes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BawuRoleDes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<BawuRoleInfoPub> role_info;
+    
+    public String role_name;
+    
+    public Builder() {}
+    
+    public Builder(BawuRoleDes param1BawuRoleDes) {
+      super(param1BawuRoleDes);
+      if (param1BawuRoleDes == null)
+        return; 
+      this.role_name = param1BawuRoleDes.role_name;
+      this.role_info = Message.copyOf(param1BawuRoleDes.role_info);
+    }
+    
+    public BawuRoleDes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BawuRoleDes)interceptResult.objValue; 
+      } 
+      return new BawuRoleDes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

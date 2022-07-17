@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Banner;
-import tbclient.ThreadInfo;
 
 public final class Banner extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DESC = "";
   
   public static final Long DEFAULT_END_TIME;
@@ -22,6 +24,8 @@ public final class Banner extends Message {
   public static final Long DEFAULT_START_TIME;
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String desc;
@@ -54,7 +58,7 @@ public final class Banner extends Message {
   }
   
   public Banner(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       String str = paramBuilder.name;
@@ -112,6 +116,10 @@ public final class Banner extends Message {
     } 
   }
   
+  public Banner(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -126,5 +134,59 @@ public final class Banner extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Banner> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String desc;
+    
+    public Long end_time;
+    
+    public Integer id;
+    
+    public String name;
+    
+    public String pic;
+    
+    public Long start_time;
+    
+    public ThreadInfo thread_info;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(Banner param1Banner) {
+      super(param1Banner);
+      if (param1Banner == null)
+        return; 
+      this.name = param1Banner.name;
+      this.desc = param1Banner.desc;
+      this.pic = param1Banner.pic;
+      this.thread_info = param1Banner.thread_info;
+      this.url = param1Banner.url;
+      this.id = param1Banner.id;
+      this.start_time = param1Banner.start_time;
+      this.end_time = param1Banner.end_time;
+    }
+    
+    public Banner build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Banner)interceptResult.objValue; 
+      } 
+      return new Banner(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

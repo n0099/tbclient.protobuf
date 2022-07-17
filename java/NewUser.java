@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,19 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GameAttr;
-import tbclient.Global;
-import tbclient.MparrProps;
-import tbclient.NewUser;
-import tbclient.NoticeMask;
-import tbclient.ParrProps;
-import tbclient.ParrScores;
-import tbclient.Props;
-import tbclient.Rpgoldicon;
-import tbclient.TbmallMonthIcon;
-import tbclient.WapRn;
 
 public final class NewUser extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Props> DEFAULT_APPRAISE;
   
   public static final String DEFAULT_BG_ID = "";
@@ -79,6 +72,8 @@ public final class NewUser extends Message {
   public static final Integer DEFAULT_USER_TYPE;
   
   public static final Integer DEFAULT_USE_SIG;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 22)
   public final List<Props> appraise;
@@ -210,7 +205,7 @@ public final class NewUser extends Message {
   }
   
   public NewUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
@@ -319,7 +314,7 @@ public final class NewUser extends Message {
       } else {
         this.portrait_time = str4;
       } 
-      List list3 = paramBuilder.appraise;
+      List<Props> list3 = paramBuilder.appraise;
       if (list3 == null) {
         this.appraise = DEFAULT_APPRAISE;
       } else {
@@ -349,17 +344,17 @@ public final class NewUser extends Message {
       } else {
         this.is_qun_spring = integer1;
       } 
-      List list2 = paramBuilder.notice_mask;
+      List<NoticeMask> list2 = paramBuilder.notice_mask;
       if (list2 == null) {
         this.notice_mask = DEFAULT_NOTICE_MASK;
       } else {
         this.notice_mask = Message.immutableCopyOf(list2);
       } 
-      list2 = paramBuilder.rpgoldicon;
-      if (list2 == null) {
+      List<Rpgoldicon> list1 = paramBuilder.rpgoldicon;
+      if (list1 == null) {
         this.rpgoldicon = DEFAULT_RPGOLDICON;
       } else {
-        this.rpgoldicon = Message.immutableCopyOf(list2);
+        this.rpgoldicon = Message.immutableCopyOf(list1);
       } 
       String str2 = paramBuilder.is_doudizhu;
       if (str2 == null) {
@@ -373,11 +368,11 @@ public final class NewUser extends Message {
       } else {
         this.cdn_error = str2;
       } 
-      List list1 = paramBuilder.tbmall_month_icon;
-      if (list1 == null) {
+      List<TbmallMonthIcon> list = paramBuilder.tbmall_month_icon;
+      if (list == null) {
         this.tbmall_month_icon = DEFAULT_TBMALL_MONTH_ICON;
       } else {
-        this.tbmall_month_icon = Message.immutableCopyOf(list1);
+        this.tbmall_month_icon = Message.immutableCopyOf(list);
       } 
       String str1 = paramBuilder.is_coreuser;
       if (str1 == null) {
@@ -439,6 +434,10 @@ public final class NewUser extends Message {
     } 
   }
   
+  public NewUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -453,5 +452,143 @@ public final class NewUser extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<NewUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Props> appraise;
+    
+    public String bg_id;
+    
+    public String billboard;
+    
+    public String card;
+    
+    public String cdn_error;
+    
+    public String free_flag;
+    
+    public GameAttr game_attr;
+    
+    public Global global;
+    
+    public String is_coreuser;
+    
+    public String is_doudizhu;
+    
+    public Integer is_group_owner;
+    
+    public Integer is_hardworking;
+    
+    public String is_interestman;
+    
+    public Integer is_member;
+    
+    public Integer is_passer;
+    
+    public Integer is_qun_spring;
+    
+    public Integer is_shengyou;
+    
+    public Integer is_tenyear;
+    
+    public MparrProps m_parr_props;
+    
+    public Integer meizhi_level;
+    
+    public List<NoticeMask> notice_mask;
+    
+    public String paper;
+    
+    public ParrProps parr_props;
+    
+    public ParrScores parr_scores;
+    
+    public String portrait_time;
+    
+    public List<Rpgoldicon> rpgoldicon;
+    
+    public Integer superboy;
+    
+    public List<TbmallMonthIcon> tbmall_month_icon;
+    
+    public String tbscore_repeate_finish_time;
+    
+    public Integer use_sig;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Integer user_sex;
+    
+    public Integer user_status;
+    
+    public Integer user_type;
+    
+    public WapRn wap_rn;
+    
+    public Builder() {}
+    
+    public Builder(NewUser param1NewUser) {
+      super(param1NewUser);
+      if (param1NewUser == null)
+        return; 
+      this.user_id = param1NewUser.user_id;
+      this.user_name = param1NewUser.user_name;
+      this.user_sex = param1NewUser.user_sex;
+      this.user_status = param1NewUser.user_status;
+      this.meizhi_level = param1NewUser.meizhi_level;
+      this.superboy = param1NewUser.superboy;
+      this.card = param1NewUser.card;
+      this.parr_props = param1NewUser.parr_props;
+      this.m_parr_props = param1NewUser.m_parr_props;
+      this.wap_rn = param1NewUser.wap_rn;
+      this.is_tenyear = param1NewUser.is_tenyear;
+      this.is_group_owner = param1NewUser.is_group_owner;
+      this.parr_scores = param1NewUser.parr_scores;
+      this.user_type = param1NewUser.user_type;
+      this.use_sig = param1NewUser.use_sig;
+      this.paper = param1NewUser.paper;
+      this.bg_id = param1NewUser.bg_id;
+      this.is_shengyou = param1NewUser.is_shengyou;
+      this.is_hardworking = param1NewUser.is_hardworking;
+      this.billboard = param1NewUser.billboard;
+      this.portrait_time = param1NewUser.portrait_time;
+      this.appraise = Message.copyOf(param1NewUser.appraise);
+      this.tbscore_repeate_finish_time = param1NewUser.tbscore_repeate_finish_time;
+      this.is_member = param1NewUser.is_member;
+      this.is_passer = param1NewUser.is_passer;
+      this.is_qun_spring = param1NewUser.is_qun_spring;
+      this.notice_mask = Message.copyOf(param1NewUser.notice_mask);
+      this.rpgoldicon = Message.copyOf(param1NewUser.rpgoldicon);
+      this.is_doudizhu = param1NewUser.is_doudizhu;
+      this.cdn_error = param1NewUser.cdn_error;
+      this.tbmall_month_icon = Message.copyOf(param1NewUser.tbmall_month_icon);
+      this.is_coreuser = param1NewUser.is_coreuser;
+      this.game_attr = param1NewUser.game_attr;
+      this.is_interestman = param1NewUser.is_interestman;
+      this.global = param1NewUser.global;
+      this.free_flag = param1NewUser.free_flag;
+    }
+    
+    public NewUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NewUser)interceptResult.objValue; 
+      } 
+      return new NewUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

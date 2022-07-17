@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FrsPage.ShowIcon;
 
 public final class UserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_GENDER;
   
   public static final String DEFAULT_INTRO = "";
@@ -19,6 +20,8 @@ public final class UserInfo extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer gender;
@@ -43,7 +46,7 @@ public final class UserInfo extends Message {
   }
   
   public UserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
       if (long_ == null) {
@@ -86,6 +89,10 @@ public final class UserInfo extends Message {
     } 
   }
   
+  public UserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -100,5 +107,53 @@ public final class UserInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<UserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer gender;
+    
+    public String intro;
+    
+    public String portrait;
+    
+    public ShowIcon tshow_icon;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public Builder() {}
+    
+    public Builder(UserInfo param1UserInfo) {
+      super(param1UserInfo);
+      if (param1UserInfo == null)
+        return; 
+      this.user_id = param1UserInfo.user_id;
+      this.portrait = param1UserInfo.portrait;
+      this.user_name = param1UserInfo.user_name;
+      this.gender = param1UserInfo.gender;
+      this.intro = param1UserInfo.intro;
+      this.tshow_icon = param1UserInfo.tshow_icon;
+    }
+    
+    public UserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserInfo)interceptResult.objValue; 
+      } 
+      return new UserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

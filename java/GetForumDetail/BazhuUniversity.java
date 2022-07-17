@@ -1,4 +1,4 @@
-package GetForumDetail;
+package tbclient.GetForumDetail;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,15 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetForumDetail.UniversityInfo;
-import tbclient.GetForumDetail.UniversityTabInfo;
 
 public final class BazhuUniversity extends Message {
+  public static Interceptable $ic;
+  
   public static final List<UniversityInfo> DEFAULT_BANNER;
   
   public static final List<UniversityInfo> DEFAULT_ENTRANCE = Collections.emptyList();
   
   public static final List<UniversityTabInfo> DEFAULT_TAB;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<UniversityInfo> banner;
@@ -34,10 +36,10 @@ public final class BazhuUniversity extends Message {
   }
   
   public BazhuUniversity(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<UniversityTabInfo> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.entrance;
+      List<UniversityInfo> list1 = paramBuilder.entrance;
       if (list1 == null) {
         this.entrance = DEFAULT_ENTRANCE;
       } else {
@@ -62,6 +64,10 @@ public final class BazhuUniversity extends Message {
     } 
   }
   
+  public BazhuUniversity(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -76,5 +82,44 @@ public final class BazhuUniversity extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BazhuUniversity> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<UniversityInfo> banner;
+    
+    public List<UniversityInfo> entrance;
+    
+    public List<UniversityTabInfo> tab;
+    
+    public Builder() {}
+    
+    public Builder(BazhuUniversity param1BazhuUniversity) {
+      super(param1BazhuUniversity);
+      if (param1BazhuUniversity == null)
+        return; 
+      this.entrance = Message.copyOf(param1BazhuUniversity.entrance);
+      this.banner = Message.copyOf(param1BazhuUniversity.banner);
+      this.tab = Message.copyOf(param1BazhuUniversity.tab);
+    }
+    
+    public BazhuUniversity build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BazhuUniversity)interceptResult.objValue; 
+      } 
+      return new BazhuUniversity(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

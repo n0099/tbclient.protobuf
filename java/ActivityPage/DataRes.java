@@ -1,4 +1,4 @@
-package ActivityPage;
+package tbclient.ActivityPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,20 +9,20 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ActivityPage.HotTopic;
-import tbclient.ActivityPage.RecommendForumList;
-import tbclient.ActivityPage.RecommendUserList;
-import tbclient.ActivityPage.SpecialColumnList;
 import tbclient.BannerImage;
 import tbclient.Page;
 import tbclient.ThreadInfo;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final List<BannerImage> DEFAULT_BANNER_IMAGE = Collections.emptyList();
   
   public static final List<BannerImage> DEFAULT_GRID = Collections.emptyList();
   
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<BannerImage> banner_image;
@@ -49,21 +49,21 @@ public final class DataRes extends Message {
   public final List<ThreadInfo> thread_list;
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list = paramBuilder.banner_image;
-      if (list == null) {
+      List<BannerImage> list1 = paramBuilder.banner_image;
+      if (list1 == null) {
         this.banner_image = DEFAULT_BANNER_IMAGE;
       } else {
-        this.banner_image = Message.immutableCopyOf(list);
+        this.banner_image = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.grid;
-      if (list == null) {
+      list1 = paramBuilder.grid;
+      if (list1 == null) {
         this.grid = DEFAULT_GRID;
       } else {
-        this.grid = Message.immutableCopyOf(list);
+        this.grid = Message.immutableCopyOf(list1);
       } 
-      list = paramBuilder.thread_list;
+      List<ThreadInfo> list = paramBuilder.thread_list;
       if (list == null) {
         this.thread_list = DEFAULT_THREAD_LIST;
       } else {
@@ -86,6 +86,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -100,5 +104,59 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<BannerImage> banner_image;
+    
+    public List<BannerImage> grid;
+    
+    public HotTopic hot_topic;
+    
+    public Page page_info;
+    
+    public RecommendForumList recommend_forum;
+    
+    public RecommendUserList recommend_user;
+    
+    public SpecialColumnList special_column;
+    
+    public List<ThreadInfo> thread_list;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.banner_image = Message.copyOf(param1DataRes.banner_image);
+      this.grid = Message.copyOf(param1DataRes.grid);
+      this.thread_list = Message.copyOf(param1DataRes.thread_list);
+      this.hot_topic = param1DataRes.hot_topic;
+      this.special_column = param1DataRes.special_column;
+      this.recommend_forum = param1DataRes.recommend_forum;
+      this.recommend_user = param1DataRes.recommend_user;
+      this.page_info = param1DataRes.page_info;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

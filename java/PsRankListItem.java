@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,15 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PsRankListItem;
-import tbclient.User;
 
 public final class PsRankListItem extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_GAME_ID;
   
   public static final Long DEFAULT_SCORE;
   
   public static final Long DEFAULT_USER_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long game_id;
@@ -48,7 +52,7 @@ public final class PsRankListItem extends Message {
   }
   
   public PsRankListItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.game_id;
       if (long_ == null) {
@@ -75,5 +79,51 @@ public final class PsRankListItem extends Message {
       this.score = paramBuilder.score;
       this.user = paramBuilder.user;
     } 
+  }
+  
+  public PsRankListItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PsRankListItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long game_id;
+    
+    public Long score;
+    
+    public User user;
+    
+    public Long user_id;
+    
+    public Builder() {}
+    
+    public Builder(PsRankListItem param1PsRankListItem) {
+      super(param1PsRankListItem);
+      if (param1PsRankListItem == null)
+        return; 
+      this.game_id = param1PsRankListItem.game_id;
+      this.user_id = param1PsRankListItem.user_id;
+      this.score = param1PsRankListItem.score;
+      this.user = param1PsRankListItem.user;
+    }
+    
+    public PsRankListItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PsRankListItem)interceptResult.objValue; 
+      } 
+      return new PsRankListItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

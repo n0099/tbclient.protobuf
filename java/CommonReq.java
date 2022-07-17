@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.CommonReq;
 
 public final class CommonReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ACTIVE_TIMESTAMP;
   
   public static final String DEFAULT_AFDI = "";
@@ -139,6 +142,8 @@ public final class CommonReq extends Message {
   public static final String DEFAULT__PHONE_NEWIMEI = "";
   
   public static final Long DEFAULT__TIMESTAMP;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 10, type = Message.Datatype.STRING)
   public final String BDUSS;
@@ -371,7 +376,7 @@ public final class CommonReq extends Message {
   }
   
   public CommonReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer7 = paramBuilder._client_type;
@@ -838,5 +843,237 @@ public final class CommonReq extends Message {
       this.di_diordna = ((Builder)str).di_diordna;
       this.vfdi = ((Builder)str).vfdi;
     } 
+  }
+  
+  public CommonReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<CommonReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String BDUSS;
+    
+    public String _client_id;
+    
+    public Integer _client_type;
+    
+    public String _client_version;
+    
+    public String _os_version;
+    
+    public String _phone_imei;
+    
+    public String _phone_newimei;
+    
+    public Long _timestamp;
+    
+    public Long active_timestamp;
+    
+    public String afdi;
+    
+    public String android_id;
+    
+    public String apid;
+    
+    public String applist;
+    
+    public String brand;
+    
+    public String brand_type;
+    
+    public String c3_aid;
+    
+    public String caid;
+    
+    public String cam;
+    
+    public Integer cmode;
+    
+    public String cuid;
+    
+    public String cuid_galaxy2;
+    
+    public String cuid_gid;
+    
+    public String di_diordna;
+    
+    public String event_day;
+    
+    public String extra;
+    
+    public Long first_install_time;
+    
+    public String framework_ver;
+    
+    public String from;
+    
+    public String idfa;
+    
+    public String idfv;
+    
+    public String iemi;
+    
+    public String iemiwen;
+    
+    public Integer is_teenager;
+    
+    public String ka;
+    
+    public Long last_update_time;
+    
+    public String lego_lib_version;
+    
+    public String m_api;
+    
+    public String m_cost;
+    
+    public String m_logid;
+    
+    public String m_result;
+    
+    public String m_size_d;
+    
+    public String m_size_u;
+    
+    public String mac;
+    
+    public String model;
+    
+    public Integer net_type;
+    
+    public String oaid;
+    
+    public Integer personalized_rec_switch;
+    
+    public String pversion;
+    
+    public Integer q_type;
+    
+    public String sample_id;
+    
+    public Double scr_dip;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public String sdk_ver;
+    
+    public String shoubai_cuid;
+    
+    public String sign;
+    
+    public String smallflow;
+    
+    public String start_scheme;
+    
+    public Integer start_type;
+    
+    public String stoken;
+    
+    public String subapp_type;
+    
+    public String swan_game_ver;
+    
+    public String tbs;
+    
+    public String user_agent;
+    
+    public String vfdi;
+    
+    public String z_id;
+    
+    public Builder() {}
+    
+    public Builder(CommonReq param1CommonReq) {
+      super(param1CommonReq);
+      if (param1CommonReq == null)
+        return; 
+      this._client_type = param1CommonReq._client_type;
+      this._client_version = param1CommonReq._client_version;
+      this._client_id = param1CommonReq._client_id;
+      this.apid = param1CommonReq.apid;
+      this._phone_imei = param1CommonReq._phone_imei;
+      this.from = param1CommonReq.from;
+      this.cuid = param1CommonReq.cuid;
+      this._timestamp = param1CommonReq._timestamp;
+      this.model = param1CommonReq.model;
+      this.BDUSS = param1CommonReq.BDUSS;
+      this.tbs = param1CommonReq.tbs;
+      this.net_type = param1CommonReq.net_type;
+      this.subapp_type = param1CommonReq.subapp_type;
+      this._phone_newimei = param1CommonReq._phone_newimei;
+      this.ka = param1CommonReq.ka;
+      this.m_api = param1CommonReq.m_api;
+      this.m_logid = param1CommonReq.m_logid;
+      this.m_cost = param1CommonReq.m_cost;
+      this.m_result = param1CommonReq.m_result;
+      this.m_size_u = param1CommonReq.m_size_u;
+      this.m_size_d = param1CommonReq.m_size_d;
+      this.smallflow = param1CommonReq.smallflow;
+      this.sign = param1CommonReq.sign;
+      this.pversion = param1CommonReq.pversion;
+      this._os_version = param1CommonReq._os_version;
+      this.brand = param1CommonReq.brand;
+      this.brand_type = param1CommonReq.brand_type;
+      this.lego_lib_version = param1CommonReq.lego_lib_version;
+      this.applist = param1CommonReq.applist;
+      this.stoken = param1CommonReq.stoken;
+      this.z_id = param1CommonReq.z_id;
+      this.cuid_galaxy2 = param1CommonReq.cuid_galaxy2;
+      this.cuid_gid = param1CommonReq.cuid_gid;
+      this.oaid = param1CommonReq.oaid;
+      this.c3_aid = param1CommonReq.c3_aid;
+      this.sample_id = param1CommonReq.sample_id;
+      this.scr_w = param1CommonReq.scr_w;
+      this.scr_h = param1CommonReq.scr_h;
+      this.scr_dip = param1CommonReq.scr_dip;
+      this.q_type = param1CommonReq.q_type;
+      this.is_teenager = param1CommonReq.is_teenager;
+      this.sdk_ver = param1CommonReq.sdk_ver;
+      this.framework_ver = param1CommonReq.framework_ver;
+      this.swan_game_ver = param1CommonReq.swan_game_ver;
+      this.idfa = param1CommonReq.idfa;
+      this.caid = param1CommonReq.caid;
+      this.active_timestamp = param1CommonReq.active_timestamp;
+      this.first_install_time = param1CommonReq.first_install_time;
+      this.last_update_time = param1CommonReq.last_update_time;
+      this.event_day = param1CommonReq.event_day;
+      this.android_id = param1CommonReq.android_id;
+      this.cmode = param1CommonReq.cmode;
+      this.start_scheme = param1CommonReq.start_scheme;
+      this.start_type = param1CommonReq.start_type;
+      this.shoubai_cuid = param1CommonReq.shoubai_cuid;
+      this.mac = param1CommonReq.mac;
+      this.idfv = param1CommonReq.idfv;
+      this.extra = param1CommonReq.extra;
+      this.user_agent = param1CommonReq.user_agent;
+      this.personalized_rec_switch = param1CommonReq.personalized_rec_switch;
+      this.iemi = param1CommonReq.iemi;
+      this.iemiwen = param1CommonReq.iemiwen;
+      this.cam = param1CommonReq.cam;
+      this.afdi = param1CommonReq.afdi;
+      this.di_diordna = param1CommonReq.di_diordna;
+      this.vfdi = param1CommonReq.vfdi;
+    }
+    
+    public CommonReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CommonReq)interceptResult.objValue; 
+      } 
+      return new CommonReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

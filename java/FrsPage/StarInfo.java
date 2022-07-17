@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,18 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrsPage.Fans;
-import tbclient.FrsPage.Focus;
-import tbclient.FrsPage.Good;
-import tbclient.FrsPage.Identify;
-import tbclient.FrsPage.Info;
-import tbclient.FrsPage.Music;
-import tbclient.FrsPage.PhotoInfo;
-import tbclient.FrsPage.Size;
-import tbclient.FrsPage.Ticket;
-import tbclient.FrsPage.Video;
 
 public final class StarInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Focus> DEFAULT_FOCUS;
   
   public static final Integer DEFAULT_GENDER;
@@ -32,6 +24,8 @@ public final class StarInfo extends Message {
   public static final String DEFAULT_STAR_FORUM_HEADIMG = "";
   
   public static final String DEFAULT_TOP = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6)
   public final Fans fans;
@@ -105,7 +99,7 @@ public final class StarInfo extends Message {
   }
   
   public StarInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.has_frs_star;
@@ -134,7 +128,7 @@ public final class StarInfo extends Message {
       } 
       this.info = paramBuilder.info;
       this.fans = paramBuilder.fans;
-      List list = paramBuilder.focus;
+      List<Focus> list = paramBuilder.focus;
       if (list == null) {
         this.focus = DEFAULT_FOCUS;
       } else {
@@ -174,5 +168,90 @@ public final class StarInfo extends Message {
       this.trade = ((Builder)str).trade;
       this.star_forum_headimg = ((Builder)str).star_forum_headimg;
     } 
+  }
+  
+  public StarInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<StarInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Fans fans;
+    
+    public List<Focus> focus;
+    
+    public Integer gender;
+    
+    public Good good;
+    
+    public Integer has_frs_star;
+    
+    public String head;
+    
+    public Size head_size;
+    
+    public Identify identify;
+    
+    public Info info;
+    
+    public Music music;
+    
+    public Music mv;
+    
+    public PhotoInfo photo;
+    
+    public String star_forum_headimg;
+    
+    public String top;
+    
+    public Size top_size;
+    
+    public Ticket trade;
+    
+    public Video video;
+    
+    public Builder() {}
+    
+    public Builder(StarInfo param1StarInfo) {
+      super(param1StarInfo);
+      if (param1StarInfo == null)
+        return; 
+      this.has_frs_star = param1StarInfo.has_frs_star;
+      this.top = param1StarInfo.top;
+      this.head = param1StarInfo.head;
+      this.gender = param1StarInfo.gender;
+      this.info = param1StarInfo.info;
+      this.fans = param1StarInfo.fans;
+      this.focus = Message.copyOf(param1StarInfo.focus);
+      this.photo = param1StarInfo.photo;
+      this.video = param1StarInfo.video;
+      this.music = param1StarInfo.music;
+      this.mv = param1StarInfo.mv;
+      this.good = param1StarInfo.good;
+      this.identify = param1StarInfo.identify;
+      this.top_size = param1StarInfo.top_size;
+      this.head_size = param1StarInfo.head_size;
+      this.trade = param1StarInfo.trade;
+      this.star_forum_headimg = param1StarInfo.star_forum_headimg;
+    }
+    
+    public StarInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (StarInfo)interceptResult.objValue; 
+      } 
+      return new StarInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

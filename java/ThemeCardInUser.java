@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ThemeCardInUser;
 
 public final class ThemeCardInUser extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_COORDINATE = "";
   
   public static final String DEFAULT_IMG_ANDROID = "";
@@ -17,6 +20,8 @@ public final class ThemeCardInUser extends Message {
   public static final Integer DEFAULT_LEVEL;
   
   public static final Long DEFAULT_PROPS_ID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String coordinate;
@@ -38,7 +43,7 @@ public final class ThemeCardInUser extends Message {
   }
   
   public ThemeCardInUser(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.props_id;
@@ -80,6 +85,10 @@ public final class ThemeCardInUser extends Message {
     } 
   }
   
+  public ThemeCardInUser(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -94,5 +103,50 @@ public final class ThemeCardInUser extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ThemeCardInUser> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String coordinate;
+    
+    public String img_android;
+    
+    public String img_ios;
+    
+    public Integer level;
+    
+    public Long props_id;
+    
+    public Builder() {}
+    
+    public Builder(ThemeCardInUser param1ThemeCardInUser) {
+      super(param1ThemeCardInUser);
+      if (param1ThemeCardInUser == null)
+        return; 
+      this.props_id = param1ThemeCardInUser.props_id;
+      this.img_ios = param1ThemeCardInUser.img_ios;
+      this.coordinate = param1ThemeCardInUser.coordinate;
+      this.img_android = param1ThemeCardInUser.img_android;
+      this.level = param1ThemeCardInUser.level;
+    }
+    
+    public ThemeCardInUser build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThemeCardInUser)interceptResult.objValue; 
+      } 
+      return new ThemeCardInUser(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

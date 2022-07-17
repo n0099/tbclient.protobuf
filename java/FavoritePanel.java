@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FavoritePanel;
 
 public final class FavoritePanel extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_IMG_URL = "";
   
   public static final String DEFAULT_MAIN_TITLE = "";
@@ -19,6 +22,8 @@ public final class FavoritePanel extends Message {
   public static final String DEFAULT_ON_OFF = "";
   
   public static final String DEFAULT_SUB_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String img_url;
@@ -43,7 +48,7 @@ public final class FavoritePanel extends Message {
   }
   
   public FavoritePanel(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.main_title;
@@ -92,6 +97,10 @@ public final class FavoritePanel extends Message {
     } 
   }
   
+  public FavoritePanel(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -106,5 +115,53 @@ public final class FavoritePanel extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<FavoritePanel> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String img_url;
+    
+    public String main_title;
+    
+    public Integer max_times;
+    
+    public Long number;
+    
+    public String on_off;
+    
+    public String sub_title;
+    
+    public Builder() {}
+    
+    public Builder(FavoritePanel param1FavoritePanel) {
+      super(param1FavoritePanel);
+      if (param1FavoritePanel == null)
+        return; 
+      this.main_title = param1FavoritePanel.main_title;
+      this.sub_title = param1FavoritePanel.sub_title;
+      this.number = param1FavoritePanel.number;
+      this.img_url = param1FavoritePanel.img_url;
+      this.on_off = param1FavoritePanel.on_off;
+      this.max_times = param1FavoritePanel.max_times;
+    }
+    
+    public FavoritePanel build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FavoritePanel)interceptResult.objValue; 
+      } 
+      return new FavoritePanel(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

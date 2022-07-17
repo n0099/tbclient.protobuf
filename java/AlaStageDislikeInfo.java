@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AlaStageDislikeInfo;
 
 public final class AlaStageDislikeInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_DISLIKE_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_DISLIKE_REASON = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer dislike_id;
@@ -19,7 +24,7 @@ public final class AlaStageDislikeInfo extends Message {
   public final String dislike_reason;
   
   public AlaStageDislikeInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.dislike_reason;
@@ -40,6 +45,10 @@ public final class AlaStageDislikeInfo extends Message {
     } 
   }
   
+  public AlaStageDislikeInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class AlaStageDislikeInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AlaStageDislikeInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer dislike_id;
+    
+    public String dislike_reason;
+    
+    public Builder() {}
+    
+    public Builder(AlaStageDislikeInfo param1AlaStageDislikeInfo) {
+      super(param1AlaStageDislikeInfo);
+      if (param1AlaStageDislikeInfo == null)
+        return; 
+      this.dislike_reason = param1AlaStageDislikeInfo.dislike_reason;
+      this.dislike_id = param1AlaStageDislikeInfo.dislike_id;
+    }
+    
+    public AlaStageDislikeInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AlaStageDislikeInfo)interceptResult.objValue; 
+      } 
+      return new AlaStageDislikeInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

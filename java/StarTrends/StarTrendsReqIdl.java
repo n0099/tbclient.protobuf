@@ -1,21 +1,62 @@
-package StarTrends;
+package tbclient.StarTrends;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.StarTrends.DataReq;
 
 public final class StarTrendsReqIdl extends Message {
+  public static Interceptable $ic;
+  
+  public transient FieldHolder $fh;
+  
   @ProtoField(tag = 1)
   public final DataReq data;
   
   public StarTrendsReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       this.data = paramBuilder.data;
     } else {
       this.data = paramBuilder.data;
     } 
+  }
+  
+  public StarTrendsReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<StarTrendsReqIdl> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public DataReq data;
+    
+    public Builder() {}
+    
+    public Builder(StarTrendsReqIdl param1StarTrendsReqIdl) {
+      super(param1StarTrendsReqIdl);
+      if (param1StarTrendsReqIdl == null)
+        return; 
+      this.data = param1StarTrendsReqIdl.data;
+    }
+    
+    public StarTrendsReqIdl build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (StarTrendsReqIdl)interceptResult.objValue; 
+      } 
+      return new StarTrendsReqIdl(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

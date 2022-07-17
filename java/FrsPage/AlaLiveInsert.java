@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,14 +12,18 @@ import java.util.List;
 import tbclient.ThreadInfo;
 
 public final class AlaLiveInsert extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ThreadInfo> DEFAULT_ALA_LIVE_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<ThreadInfo> ala_live_list;
   
   public AlaLiveInsert(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ThreadInfo> list;
     if (paramBoolean == true) {
       list = paramBuilder.ala_live_list;
       if (list == null) {
@@ -30,6 +34,10 @@ public final class AlaLiveInsert extends Message {
     } else {
       this.ala_live_list = Message.immutableCopyOf(((Builder)list).ala_live_list);
     } 
+  }
+  
+  public AlaLiveInsert(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -46,5 +54,38 @@ public final class AlaLiveInsert extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<AlaLiveInsert> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ThreadInfo> ala_live_list;
+    
+    public Builder() {}
+    
+    public Builder(AlaLiveInsert param1AlaLiveInsert) {
+      super(param1AlaLiveInsert);
+      if (param1AlaLiveInsert == null)
+        return; 
+      this.ala_live_list = Message.copyOf(param1AlaLiveInsert.ala_live_list);
+    }
+    
+    public AlaLiveInsert build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AlaLiveInsert)interceptResult.objValue; 
+      } 
+      return new AlaLiveInsert(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

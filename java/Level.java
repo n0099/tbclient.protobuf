@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Level;
 
 public final class Level extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_END_TIME;
   
   public static final String DEFAULT_EXPIRED_NOTIFY = "";
@@ -31,6 +34,8 @@ public final class Level extends Message {
   public static final Integer DEFAULT_UPDATE_TIME;
   
   public static final String DEFAULT_USED_STATUS = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer end_time;
@@ -90,7 +95,7 @@ public final class Level extends Message {
   }
   
   public Level(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.props_id;
@@ -179,5 +184,75 @@ public final class Level extends Message {
       this.max_free_score = ((Builder)str).max_free_score;
       this.pic_url = ((Builder)str).pic_url;
     } 
+  }
+  
+  public Level(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Level> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer end_time;
+    
+    public String expired_notify;
+    
+    public String expiring_notify;
+    
+    public Integer left_num;
+    
+    public String max_free_score;
+    
+    public String open_status;
+    
+    public String pic_url;
+    
+    public String props_category;
+    
+    public Integer props_id;
+    
+    public String props_type;
+    
+    public Integer update_time;
+    
+    public String used_status;
+    
+    public Builder() {}
+    
+    public Builder(Level param1Level) {
+      super(param1Level);
+      if (param1Level == null)
+        return; 
+      this.props_id = param1Level.props_id;
+      this.props_type = param1Level.props_type;
+      this.props_category = param1Level.props_category;
+      this.end_time = param1Level.end_time;
+      this.left_num = param1Level.left_num;
+      this.update_time = param1Level.update_time;
+      this.used_status = param1Level.used_status;
+      this.open_status = param1Level.open_status;
+      this.expiring_notify = param1Level.expiring_notify;
+      this.expired_notify = param1Level.expired_notify;
+      this.max_free_score = param1Level.max_free_score;
+      this.pic_url = param1Level.pic_url;
+    }
+    
+    public Level build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Level)interceptResult.objValue; 
+      } 
+      return new Level(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

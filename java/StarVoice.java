@@ -1,10 +1,14 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.StarVoice;
 
 public final class StarVoice extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_DESC = "";
@@ -12,6 +16,8 @@ public final class StarVoice extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_VOICE_MD5 = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String avatar;
@@ -26,7 +32,7 @@ public final class StarVoice extends Message {
   public final String voice_md5;
   
   public StarVoice(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.avatar;
@@ -59,5 +65,51 @@ public final class StarVoice extends Message {
       this.desc = ((Builder)str).desc;
       this.voice_md5 = ((Builder)str).voice_md5;
     } 
+  }
+  
+  public StarVoice(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<StarVoice> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String desc;
+    
+    public String title;
+    
+    public String voice_md5;
+    
+    public Builder() {}
+    
+    public Builder(StarVoice param1StarVoice) {
+      super(param1StarVoice);
+      if (param1StarVoice == null)
+        return; 
+      this.avatar = param1StarVoice.avatar;
+      this.title = param1StarVoice.title;
+      this.desc = param1StarVoice.desc;
+      this.voice_md5 = param1StarVoice.voice_md5;
+    }
+    
+    public StarVoice build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (StarVoice)interceptResult.objValue; 
+      } 
+      return new StarVoice(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

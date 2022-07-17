@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.BirthdayInfo;
 
 public final class BirthdayInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AGE;
   
   public static final Integer DEFAULT_BIRTHDAY_SHOW_STATUS;
@@ -15,6 +18,8 @@ public final class BirthdayInfo extends Message {
   public static final Long DEFAULT_BIRTHDAY_TIME = Long.valueOf(0L);
   
   public static final String DEFAULT_CONSTELLATION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT32)
   public final Integer age;
@@ -35,7 +40,7 @@ public final class BirthdayInfo extends Message {
   }
   
   public BirthdayInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.birthday_time;
@@ -70,6 +75,10 @@ public final class BirthdayInfo extends Message {
     } 
   }
   
+  public BirthdayInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -84,5 +93,47 @@ public final class BirthdayInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<BirthdayInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer age;
+    
+    public Integer birthday_show_status;
+    
+    public Long birthday_time;
+    
+    public String constellation;
+    
+    public Builder() {}
+    
+    public Builder(BirthdayInfo param1BirthdayInfo) {
+      super(param1BirthdayInfo);
+      if (param1BirthdayInfo == null)
+        return; 
+      this.birthday_time = param1BirthdayInfo.birthday_time;
+      this.birthday_show_status = param1BirthdayInfo.birthday_show_status;
+      this.constellation = param1BirthdayInfo.constellation;
+      this.age = param1BirthdayInfo.age;
+    }
+    
+    public BirthdayInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BirthdayInfo)interceptResult.objValue; 
+      } 
+      return new BirthdayInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

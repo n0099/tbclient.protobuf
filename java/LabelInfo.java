@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.LabelInfo;
 
 public final class LabelInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_LABELCONTENT = "";
   
   public static final Integer DEFAULT_LABELHOT = Integer.valueOf(0);
   
   public static final String DEFAULT_LABELID = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String labelContent;
@@ -24,7 +29,7 @@ public final class LabelInfo extends Message {
   public final String labelId;
   
   public LabelInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.labelHot;
@@ -52,6 +57,10 @@ public final class LabelInfo extends Message {
     } 
   }
   
+  public LabelInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -66,5 +75,44 @@ public final class LabelInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<LabelInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String labelContent;
+    
+    public Integer labelHot;
+    
+    public String labelId;
+    
+    public Builder() {}
+    
+    public Builder(LabelInfo param1LabelInfo) {
+      super(param1LabelInfo);
+      if (param1LabelInfo == null)
+        return; 
+      this.labelHot = param1LabelInfo.labelHot;
+      this.labelContent = param1LabelInfo.labelContent;
+      this.labelId = param1LabelInfo.labelId;
+    }
+    
+    public LabelInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (LabelInfo)interceptResult.objValue; 
+      } 
+      return new LabelInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

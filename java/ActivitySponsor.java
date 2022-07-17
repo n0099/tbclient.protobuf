@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,12 +7,15 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ActivitySponsor;
 
 public final class ActivitySponsor extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_SPONSOR = Integer.valueOf(0);
   
   public static final String DEFAULT_SPONSOR_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer is_sponsor;
@@ -19,7 +24,7 @@ public final class ActivitySponsor extends Message {
   public final String sponsor_url;
   
   public ActivitySponsor(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.is_sponsor;
@@ -40,6 +45,10 @@ public final class ActivitySponsor extends Message {
     } 
   }
   
+  public ActivitySponsor(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -54,5 +63,41 @@ public final class ActivitySponsor extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ActivitySponsor> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_sponsor;
+    
+    public String sponsor_url;
+    
+    public Builder() {}
+    
+    public Builder(ActivitySponsor param1ActivitySponsor) {
+      super(param1ActivitySponsor);
+      if (param1ActivitySponsor == null)
+        return; 
+      this.is_sponsor = param1ActivitySponsor.is_sponsor;
+      this.sponsor_url = param1ActivitySponsor.sponsor_url;
+    }
+    
+    public ActivitySponsor build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActivitySponsor)interceptResult.objValue; 
+      } 
+      return new ActivitySponsor(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThreadIdListInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_PARTIAL_VISIBLE;
   
   public static final Long DEFAULT_TID = Long.valueOf(0L);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer is_partial_visible;
@@ -24,7 +28,7 @@ public final class ThreadIdListInfo extends Message {
   }
   
   public ThreadIdListInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.tid;
@@ -45,6 +49,10 @@ public final class ThreadIdListInfo extends Message {
     } 
   }
   
+  public ThreadIdListInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -59,5 +67,41 @@ public final class ThreadIdListInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ThreadIdListInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer is_partial_visible;
+    
+    public Long tid;
+    
+    public Builder() {}
+    
+    public Builder(ThreadIdListInfo param1ThreadIdListInfo) {
+      super(param1ThreadIdListInfo);
+      if (param1ThreadIdListInfo == null)
+        return; 
+      this.tid = param1ThreadIdListInfo.tid;
+      this.is_partial_visible = param1ThreadIdListInfo.is_partial_visible;
+    }
+    
+    public ThreadIdListInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThreadIdListInfo)interceptResult.objValue; 
+      } 
+      return new ThreadIdListInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Abstract;
 
 public final class Abstract extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DURING_TIME = "";
   
   public static final String DEFAULT_LINK = "";
@@ -21,6 +24,8 @@ public final class Abstract extends Message {
   public static final String DEFAULT_UN = "";
   
   public static final String DEFAULT_VOICE_MD5 = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String during_time;
@@ -44,7 +49,7 @@ public final class Abstract extends Message {
   public final String voice_md5;
   
   public Abstract(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.type;
@@ -100,6 +105,10 @@ public final class Abstract extends Message {
     } 
   }
   
+  public Abstract(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -114,5 +123,56 @@ public final class Abstract extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Abstract> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String during_time;
+    
+    public String link;
+    
+    public String src;
+    
+    public String text;
+    
+    public Integer type;
+    
+    public String un;
+    
+    public String voice_md5;
+    
+    public Builder() {}
+    
+    public Builder(Abstract param1Abstract) {
+      super(param1Abstract);
+      if (param1Abstract == null)
+        return; 
+      this.type = param1Abstract.type;
+      this.text = param1Abstract.text;
+      this.link = param1Abstract.link;
+      this.src = param1Abstract.src;
+      this.un = param1Abstract.un;
+      this.during_time = param1Abstract.during_time;
+      this.voice_md5 = param1Abstract.voice_md5;
+    }
+    
+    public Abstract build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Abstract)interceptResult.objValue; 
+      } 
+      return new Abstract(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

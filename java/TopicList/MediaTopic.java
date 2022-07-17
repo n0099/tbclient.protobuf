@@ -1,4 +1,4 @@
-package TopicList;
+package tbclient.TopicList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,11 +10,15 @@ import com.squareup.wire.ProtoField;
 import tbclient.VideoInfo;
 
 public final class MediaTopic extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PIC_URL = "";
   
   public static final Long DEFAULT_TOPIC_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_TOPIC_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String pic_url;
@@ -29,7 +33,7 @@ public final class MediaTopic extends Message {
   public final VideoInfo video_info;
   
   public MediaTopic(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.topic_id;
@@ -59,6 +63,10 @@ public final class MediaTopic extends Message {
     } 
   }
   
+  public MediaTopic(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -73,5 +81,47 @@ public final class MediaTopic extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<MediaTopic> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String pic_url;
+    
+    public Long topic_id;
+    
+    public String topic_name;
+    
+    public VideoInfo video_info;
+    
+    public Builder() {}
+    
+    public Builder(MediaTopic param1MediaTopic) {
+      super(param1MediaTopic);
+      if (param1MediaTopic == null)
+        return; 
+      this.topic_id = param1MediaTopic.topic_id;
+      this.topic_name = param1MediaTopic.topic_name;
+      this.video_info = param1MediaTopic.video_info;
+      this.pic_url = param1MediaTopic.pic_url;
+    }
+    
+    public MediaTopic build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (MediaTopic)interceptResult.objValue; 
+      } 
+      return new MediaTopic(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

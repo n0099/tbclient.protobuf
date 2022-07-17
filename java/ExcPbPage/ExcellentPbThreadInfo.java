@@ -1,4 +1,4 @@
-package ExcPbPage;
+package tbclient.ExcPbPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,11 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ExcPbPage.ExcContent;
-import tbclient.ExcPbPage.ZanInfo;
-import tbclient.ExcPbPage.postForumInfo;
 
 public final class ExcellentPbThreadInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_ABTEST = "";
@@ -37,6 +36,8 @@ public final class ExcellentPbThreadInfo extends Message {
   public static final Long DEFAULT_THREAD_ID;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -107,7 +108,7 @@ public final class ExcellentPbThreadInfo extends Message {
   }
   
   public ExcellentPbThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.excid;
@@ -146,7 +147,7 @@ public final class ExcellentPbThreadInfo extends Message {
       } else {
         this._abstract = str2;
       } 
-      List list = paramBuilder.content;
+      List<ExcContent> list = paramBuilder.content;
       if (list == null) {
         this.content = DEFAULT_CONTENT;
       } else {
@@ -200,5 +201,81 @@ public final class ExcellentPbThreadInfo extends Message {
       this.zan = ((Builder)long_).zan;
       this.post_num = ((Builder)long_).post_num;
     } 
+  }
+  
+  public ExcellentPbThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ExcellentPbThreadInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String abtest;
+    
+    public List<ExcContent> content;
+    
+    public Long excid;
+    
+    public postForumInfo forum;
+    
+    public Long post_id;
+    
+    public Long post_num;
+    
+    public Integer publish_time;
+    
+    public Integer source;
+    
+    public Long tag_code;
+    
+    public String tag_name;
+    
+    public Long thread_id;
+    
+    public String title;
+    
+    public ZanInfo zan;
+    
+    public Builder() {}
+    
+    public Builder(ExcellentPbThreadInfo param1ExcellentPbThreadInfo) {
+      super(param1ExcellentPbThreadInfo);
+      if (param1ExcellentPbThreadInfo == null)
+        return; 
+      this.excid = param1ExcellentPbThreadInfo.excid;
+      this.thread_id = param1ExcellentPbThreadInfo.thread_id;
+      this.tag_code = param1ExcellentPbThreadInfo.tag_code;
+      this.tag_name = param1ExcellentPbThreadInfo.tag_name;
+      this.title = param1ExcellentPbThreadInfo.title;
+      this._abstract = param1ExcellentPbThreadInfo._abstract;
+      this.content = Message.copyOf(param1ExcellentPbThreadInfo.content);
+      this.forum = param1ExcellentPbThreadInfo.forum;
+      this.abtest = param1ExcellentPbThreadInfo.abtest;
+      this.source = param1ExcellentPbThreadInfo.source;
+      this.publish_time = param1ExcellentPbThreadInfo.publish_time;
+      this.post_id = param1ExcellentPbThreadInfo.post_id;
+      this.zan = param1ExcellentPbThreadInfo.zan;
+      this.post_num = param1ExcellentPbThreadInfo.post_num;
+    }
+    
+    public ExcellentPbThreadInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ExcellentPbThreadInfo)interceptResult.objValue; 
+      } 
+      return new ExcellentPbThreadInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

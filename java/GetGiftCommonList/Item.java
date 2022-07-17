@@ -1,4 +1,4 @@
-package GetGiftCommonList;
+package tbclient.GetGiftCommonList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Item extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_GIFT_ID;
   
   public static final Integer DEFAULT_IOS_COUNT;
@@ -24,6 +26,8 @@ public final class Item extends Message {
   public static final Integer DEFAULT_PRICE;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer gift_id;
@@ -71,7 +75,7 @@ public final class Item extends Message {
   }
   
   public Item(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.gift_id;
@@ -132,5 +136,63 @@ public final class Item extends Message {
       this.ios_price = ((Builder)integer).ios_price;
       this.ios_count = ((Builder)integer).ios_count;
     } 
+  }
+  
+  public Item(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Item> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer gift_id;
+    
+    public Integer ios_count;
+    
+    public Integer ios_price;
+    
+    public String ios_product_id;
+    
+    public String name;
+    
+    public String play_url;
+    
+    public Integer price;
+    
+    public String thumbnail_url;
+    
+    public Builder() {}
+    
+    public Builder(Item param1Item) {
+      super(param1Item);
+      if (param1Item == null)
+        return; 
+      this.gift_id = param1Item.gift_id;
+      this.name = param1Item.name;
+      this.price = param1Item.price;
+      this.thumbnail_url = param1Item.thumbnail_url;
+      this.play_url = param1Item.play_url;
+      this.ios_product_id = param1Item.ios_product_id;
+      this.ios_price = param1Item.ios_price;
+      this.ios_count = param1Item.ios_count;
+    }
+    
+    public Item build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Item)interceptResult.objValue; 
+      } 
+      return new Item(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

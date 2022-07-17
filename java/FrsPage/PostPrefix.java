@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PostPrefix extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_MODE = Integer.valueOf(0);
   
   public static final String DEFAULT_TEXT = "";
@@ -16,6 +18,8 @@ public final class PostPrefix extends Message {
   public static final String DEFAULT_TIME = "";
   
   public static final String DEFAULT_TYPE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer mode;
@@ -30,7 +34,7 @@ public final class PostPrefix extends Message {
   public final String type;
   
   public PostPrefix(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.mode;
@@ -65,6 +69,10 @@ public final class PostPrefix extends Message {
     } 
   }
   
+  public PostPrefix(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class PostPrefix extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PostPrefix> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer mode;
+    
+    public String text;
+    
+    public String time;
+    
+    public String type;
+    
+    public Builder() {}
+    
+    public Builder(PostPrefix param1PostPrefix) {
+      super(param1PostPrefix);
+      if (param1PostPrefix == null)
+        return; 
+      this.mode = param1PostPrefix.mode;
+      this.text = param1PostPrefix.text;
+      this.type = param1PostPrefix.type;
+      this.time = param1PostPrefix.time;
+    }
+    
+    public PostPrefix build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PostPrefix)interceptResult.objValue; 
+      } 
+      return new PostPrefix(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

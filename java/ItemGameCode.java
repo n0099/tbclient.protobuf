@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GameCodeList;
-import tbclient.ItemGameCode;
 
 public final class ItemGameCode extends Message {
+  public static Interceptable $ic;
+  
   public static final List<GameCodeList> DEFAULT_GAME_CODE_LIST;
   
   public static final Integer DEFAULT_UNCLAIMED_NUM = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<GameCodeList> game_code_list;
@@ -26,8 +30,8 @@ public final class ItemGameCode extends Message {
   }
   
   public ItemGameCode(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<GameCodeList> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.unclaimed_num;
       if (integer == null) {
@@ -47,6 +51,10 @@ public final class ItemGameCode extends Message {
     } 
   }
   
+  public ItemGameCode(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -61,5 +69,41 @@ public final class ItemGameCode extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ItemGameCode> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<GameCodeList> game_code_list;
+    
+    public Integer unclaimed_num;
+    
+    public Builder() {}
+    
+    public Builder(ItemGameCode param1ItemGameCode) {
+      super(param1ItemGameCode);
+      if (param1ItemGameCode == null)
+        return; 
+      this.unclaimed_num = param1ItemGameCode.unclaimed_num;
+      this.game_code_list = Message.copyOf(param1ItemGameCode.game_code_list);
+    }
+    
+    public ItemGameCode build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ItemGameCode)interceptResult.objValue; 
+      } 
+      return new ItemGameCode(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

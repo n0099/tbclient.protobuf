@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,17 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ApkDetail;
-import tbclient.ItemDetail;
-import tbclient.ItemInfo;
-import tbclient.ItemOptions;
-import tbclient.ItemService;
-import tbclient.ItemTable;
-import tbclient.ItemThemeColor;
-import tbclient.Ranking;
-import tbclient.TagInfo;
 
 public final class ItemInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_APK_NAME = "";
   
   public static final String DEFAULT_BRIEF = "";
@@ -53,6 +48,8 @@ public final class ItemInfo extends Message {
   public static final List<TagInfo> DEFAULT_TAG_INFO;
   
   public static final String DEFAULT_TEMPLATE_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 24)
   public final ApkDetail apk_detail;
@@ -135,7 +132,7 @@ public final class ItemInfo extends Message {
   }
   
   public ItemInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.id;
       if (integer3 == null) {
@@ -161,11 +158,11 @@ public final class ItemInfo extends Message {
       } else {
         this.brief = str4;
       } 
-      List list3 = paramBuilder.tags;
-      if (list3 == null) {
+      List<String> list2 = paramBuilder.tags;
+      if (list2 == null) {
         this.tags = DEFAULT_TAGS;
       } else {
-        this.tags = Message.immutableCopyOf(list3);
+        this.tags = Message.immutableCopyOf(list2);
       } 
       Double double_ = paramBuilder.icon_size;
       if (double_ == null) {
@@ -173,11 +170,11 @@ public final class ItemInfo extends Message {
       } else {
         this.icon_size = double_;
       } 
-      List list2 = paramBuilder.item_options;
-      if (list2 == null) {
+      List<ItemOptions> list1 = paramBuilder.item_options;
+      if (list1 == null) {
         this.item_options = DEFAULT_ITEM_OPTIONS;
       } else {
-        this.item_options = Message.immutableCopyOf(list2);
+        this.item_options = Message.immutableCopyOf(list1);
       } 
       this.score = paramBuilder.score;
       Integer integer2 = paramBuilder.is_school;
@@ -199,11 +196,11 @@ public final class ItemInfo extends Message {
       } else {
         this.forum_name = str3;
       } 
-      List list1 = paramBuilder.tag_info;
-      if (list1 == null) {
+      List<TagInfo> list = paramBuilder.tag_info;
+      if (list == null) {
         this.tag_info = DEFAULT_TAG_INFO;
       } else {
-        this.tag_info = Message.immutableCopyOf(list1);
+        this.tag_info = Message.immutableCopyOf(list);
       } 
       String str2 = paramBuilder.category1;
       if (str2 == null) {
@@ -279,6 +276,10 @@ public final class ItemInfo extends Message {
     } 
   }
   
+  public ItemInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -295,5 +296,107 @@ public final class ItemInfo extends Message {
     } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ID = integer;
+  }
+  
+  public static final class Builder extends Message.Builder<ItemInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public ApkDetail apk_detail;
+    
+    public String apk_name;
+    
+    public String brief;
+    
+    public String button_link;
+    
+    public Integer button_link_type;
+    
+    public String button_name;
+    
+    public String category1;
+    
+    public String category2;
+    
+    public ItemDetail detail;
+    
+    public String forum_name;
+    
+    public Double icon_size;
+    
+    public String icon_url;
+    
+    public Integer id;
+    
+    public Integer is_school;
+    
+    public String item_appid;
+    
+    public List<ItemOptions> item_options;
+    
+    public String name;
+    
+    public Ranking ranking;
+    
+    public ItemTable score;
+    
+    public ItemService service;
+    
+    public List<TagInfo> tag_info;
+    
+    public List<String> tags;
+    
+    public String template_name;
+    
+    public ItemThemeColor theme_color;
+    
+    public Builder() {}
+    
+    public Builder(ItemInfo param1ItemInfo) {
+      super(param1ItemInfo);
+      if (param1ItemInfo == null)
+        return; 
+      this.id = param1ItemInfo.id;
+      this.name = param1ItemInfo.name;
+      this.icon_url = param1ItemInfo.icon_url;
+      this.brief = param1ItemInfo.brief;
+      this.tags = Message.copyOf(param1ItemInfo.tags);
+      this.icon_size = param1ItemInfo.icon_size;
+      this.item_options = Message.copyOf(param1ItemInfo.item_options);
+      this.score = param1ItemInfo.score;
+      this.is_school = param1ItemInfo.is_school;
+      this.theme_color = param1ItemInfo.theme_color;
+      this.template_name = param1ItemInfo.template_name;
+      this.forum_name = param1ItemInfo.forum_name;
+      this.tag_info = Message.copyOf(param1ItemInfo.tag_info);
+      this.category1 = param1ItemInfo.category1;
+      this.category2 = param1ItemInfo.category2;
+      this.detail = param1ItemInfo.detail;
+      this.ranking = param1ItemInfo.ranking;
+      this.service = param1ItemInfo.service;
+      this.button_name = param1ItemInfo.button_name;
+      this.button_link = param1ItemInfo.button_link;
+      this.item_appid = param1ItemInfo.item_appid;
+      this.button_link_type = param1ItemInfo.button_link_type;
+      this.apk_name = param1ItemInfo.apk_name;
+      this.apk_detail = param1ItemInfo.apk_detail;
+    }
+    
+    public ItemInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ItemInfo)interceptResult.objValue; 
+      } 
+      return new ItemInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

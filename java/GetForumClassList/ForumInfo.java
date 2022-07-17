@@ -1,4 +1,4 @@
-package GetForumClassList;
+package tbclient.GetForumClassList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_AVATAR = "";
@@ -18,6 +20,8 @@ public final class ForumInfo extends Message {
   public static final String DEFAULT_FORUM_NAME = "";
   
   public static final Integer DEFAULT_IS_LIKE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -35,7 +39,7 @@ public final class ForumInfo extends Message {
   public final Integer is_like;
   
   public ForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -77,6 +81,10 @@ public final class ForumInfo extends Message {
     } 
   }
   
+  public ForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class ForumInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String avatar;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_like;
+    
+    public Builder() {}
+    
+    public Builder(ForumInfo param1ForumInfo) {
+      super(param1ForumInfo);
+      if (param1ForumInfo == null)
+        return; 
+      this.forum_id = param1ForumInfo.forum_id;
+      this.forum_name = param1ForumInfo.forum_name;
+      this.avatar = param1ForumInfo.avatar;
+      this._abstract = param1ForumInfo._abstract;
+      this.is_like = param1ForumInfo.is_like;
+    }
+    
+    public ForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumInfo)interceptResult.objValue; 
+      } 
+      return new ForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

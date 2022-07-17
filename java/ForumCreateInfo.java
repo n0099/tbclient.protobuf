@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ForumCreateInfo;
 
 public final class ForumCreateInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CAN_CREATE_ERRDATA = "";
   
   public static final Integer DEFAULT_CAN_CREATE_ERRNO;
@@ -15,6 +18,8 @@ public final class ForumCreateInfo extends Message {
   public static final Integer DEFAULT_IS_CAN_CREATE;
   
   public static final Integer DEFAULT_IS_SHOW_CREATE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String can_create_errdata;
@@ -49,7 +54,7 @@ public final class ForumCreateInfo extends Message {
   }
   
   public ForumCreateInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.is_show_create;
@@ -82,5 +87,51 @@ public final class ForumCreateInfo extends Message {
       this.can_create_errno = ((Builder)str).can_create_errno;
       this.can_create_errdata = ((Builder)str).can_create_errdata;
     } 
+  }
+  
+  public ForumCreateInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ForumCreateInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String can_create_errdata;
+    
+    public Integer can_create_errno;
+    
+    public Integer is_can_create;
+    
+    public Integer is_show_create;
+    
+    public Builder() {}
+    
+    public Builder(ForumCreateInfo param1ForumCreateInfo) {
+      super(param1ForumCreateInfo);
+      if (param1ForumCreateInfo == null)
+        return; 
+      this.is_show_create = param1ForumCreateInfo.is_show_create;
+      this.is_can_create = param1ForumCreateInfo.is_can_create;
+      this.can_create_errno = param1ForumCreateInfo.can_create_errno;
+      this.can_create_errdata = param1ForumCreateInfo.can_create_errdata;
+    }
+    
+    public ForumCreateInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumCreateInfo)interceptResult.objValue; 
+      } 
+      return new ForumCreateInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

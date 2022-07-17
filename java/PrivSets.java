@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PrivSets;
 
 public final class PrivSets extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_BAZHU_SHOW_INSIDE;
   
   public static final Integer DEFAULT_BAZHU_SHOW_OUTSIDE;
@@ -25,6 +28,8 @@ public final class PrivSets extends Message {
   public static final Integer DEFAULT_POST;
   
   public static final Integer DEFAULT_REPLY;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer bazhu_show_inside;
@@ -80,7 +85,7 @@ public final class PrivSets extends Message {
   }
   
   public PrivSets(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.location;
@@ -148,5 +153,66 @@ public final class PrivSets extends Message {
       this.bazhu_show_inside = ((Builder)integer).bazhu_show_inside;
       this.bazhu_show_outside = ((Builder)integer).bazhu_show_outside;
     } 
+  }
+  
+  public PrivSets(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PrivSets> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer bazhu_show_inside;
+    
+    public Integer bazhu_show_outside;
+    
+    public Integer friend;
+    
+    public Integer group;
+    
+    public Integer like;
+    
+    public Integer live;
+    
+    public Integer location;
+    
+    public Integer post;
+    
+    public Integer reply;
+    
+    public Builder() {}
+    
+    public Builder(PrivSets param1PrivSets) {
+      super(param1PrivSets);
+      if (param1PrivSets == null)
+        return; 
+      this.location = param1PrivSets.location;
+      this.like = param1PrivSets.like;
+      this.group = param1PrivSets.group;
+      this.post = param1PrivSets.post;
+      this.friend = param1PrivSets.friend;
+      this.live = param1PrivSets.live;
+      this.reply = param1PrivSets.reply;
+      this.bazhu_show_inside = param1PrivSets.bazhu_show_inside;
+      this.bazhu_show_outside = param1PrivSets.bazhu_show_outside;
+    }
+    
+    public PrivSets build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PrivSets)interceptResult.objValue; 
+      } 
+      return new PrivSets(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

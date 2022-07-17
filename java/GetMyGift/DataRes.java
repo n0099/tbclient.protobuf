@@ -1,4 +1,4 @@
-package GetMyGift;
+package tbclient.GetMyGift;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,11 +10,12 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FansRankUserInfo;
-import tbclient.GetMyGift.presentMoneyTxt;
 import tbclient.PresentMyList;
 import tbclient.PresetMyGiftPage;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_BLUE_DIAMOND;
   
   public static final Integer DEFAULT_CURRENCY;
@@ -28,6 +29,8 @@ public final class DataRes extends Message {
   public static final Integer DEFAULT_SCENE_ID;
   
   public static final Integer DEFAULT_TOTAL_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.UINT32)
   public final Integer blue_diamond;
@@ -84,7 +87,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.total_num;
@@ -100,11 +103,11 @@ public final class DataRes extends Message {
         this.money = integer2;
       } 
       this.money_txt = paramBuilder.money_txt;
-      List list2 = paramBuilder.gift_list;
-      if (list2 == null) {
+      List<PresentMyList> list1 = paramBuilder.gift_list;
+      if (list1 == null) {
         this.gift_list = DEFAULT_GIFT_LIST;
       } else {
-        this.gift_list = Message.immutableCopyOf(list2);
+        this.gift_list = Message.immutableCopyOf(list1);
       } 
       this.page = paramBuilder.page;
       Integer integer1 = paramBuilder.scene_id;
@@ -120,11 +123,11 @@ public final class DataRes extends Message {
         this.blue_diamond = integer1;
       } 
       this.blue_diamond_txt = paramBuilder.blue_diamond_txt;
-      List list1 = paramBuilder.rank_list;
-      if (list1 == null) {
+      List<FansRankUserInfo> list = paramBuilder.rank_list;
+      if (list == null) {
         this.rank_list = DEFAULT_RANK_LIST;
       } else {
-        this.rank_list = Message.immutableCopyOf(list1);
+        this.rank_list = Message.immutableCopyOf(list);
       } 
       integer = paramBuilder.currency;
       if (integer == null) {
@@ -144,5 +147,69 @@ public final class DataRes extends Message {
       this.rank_list = Message.immutableCopyOf(((Builder)integer).rank_list);
       this.currency = ((Builder)integer).currency;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer blue_diamond;
+    
+    public presentMoneyTxt blue_diamond_txt;
+    
+    public Integer currency;
+    
+    public List<PresentMyList> gift_list;
+    
+    public Integer money;
+    
+    public presentMoneyTxt money_txt;
+    
+    public PresetMyGiftPage page;
+    
+    public List<FansRankUserInfo> rank_list;
+    
+    public Integer scene_id;
+    
+    public Integer total_num;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.total_num = param1DataRes.total_num;
+      this.money = param1DataRes.money;
+      this.money_txt = param1DataRes.money_txt;
+      this.gift_list = Message.copyOf(param1DataRes.gift_list);
+      this.page = param1DataRes.page;
+      this.scene_id = param1DataRes.scene_id;
+      this.blue_diamond = param1DataRes.blue_diamond;
+      this.blue_diamond_txt = param1DataRes.blue_diamond_txt;
+      this.rank_list = Message.copyOf(param1DataRes.rank_list);
+      this.currency = param1DataRes.currency;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class StarTaskInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_TASK_DESC = "";
   
   public static final String DEFAULT_TASK_SCORE_DESC = "";
@@ -16,6 +18,8 @@ public final class StarTaskInfo extends Message {
   public static final Integer DEFAULT_TASK_STATUS = Integer.valueOf(0);
   
   public static final String DEFAULT_TASK_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String task_desc;
@@ -30,7 +34,7 @@ public final class StarTaskInfo extends Message {
   public final String task_title;
   
   public StarTaskInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.task_title;
@@ -65,6 +69,10 @@ public final class StarTaskInfo extends Message {
     } 
   }
   
+  public StarTaskInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class StarTaskInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<StarTaskInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String task_desc;
+    
+    public String task_score_desc;
+    
+    public Integer task_status;
+    
+    public String task_title;
+    
+    public Builder() {}
+    
+    public Builder(StarTaskInfo param1StarTaskInfo) {
+      super(param1StarTaskInfo);
+      if (param1StarTaskInfo == null)
+        return; 
+      this.task_title = param1StarTaskInfo.task_title;
+      this.task_desc = param1StarTaskInfo.task_desc;
+      this.task_score_desc = param1StarTaskInfo.task_score_desc;
+      this.task_status = param1StarTaskInfo.task_status;
+    }
+    
+    public StarTaskInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (StarTaskInfo)interceptResult.objValue; 
+      } 
+      return new StarTaskInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

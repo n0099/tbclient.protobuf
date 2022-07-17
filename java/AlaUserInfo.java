@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AlaUserInfo;
-import tbclient.YyExt;
 
 public final class AlaUserInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ALA_ID;
   
   public static final Integer DEFAULT_ANCHOR_FANS;
@@ -56,6 +58,8 @@ public final class AlaUserInfo extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final String DEFAULT_VERIFY_STATUS = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long ala_id;
@@ -166,7 +170,7 @@ public final class AlaUserInfo extends Message {
   }
   
   public AlaUserInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_5 = paramBuilder.ala_id;
       if (long_5 == null) {
@@ -340,5 +344,114 @@ public final class AlaUserInfo extends Message {
       this.anchor_fans = paramBuilder.anchor_fans;
       this.yy_ext = paramBuilder.yy_ext;
     } 
+  }
+  
+  public AlaUserInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AlaUserInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long ala_id;
+    
+    public Integer anchor_fans;
+    
+    public Long anchor_live;
+    
+    public Long charm_count;
+    
+    public String description;
+    
+    public Long enter_live;
+    
+    public String great_anchor_desc_grade;
+    
+    public String great_anchor_desc_role;
+    
+    public String great_anchor_icon;
+    
+    public Integer is_official;
+    
+    public Double lat;
+    
+    public Long level_exp;
+    
+    public Integer level_id;
+    
+    public String level_name;
+    
+    public Long live_id;
+    
+    public Integer live_status;
+    
+    public Double lng;
+    
+    public String location;
+    
+    public String portrait;
+    
+    public String sex;
+    
+    public Integer update_time;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public String verify_status;
+    
+    public YyExt yy_ext;
+    
+    public Builder() {}
+    
+    public Builder(AlaUserInfo param1AlaUserInfo) {
+      super(param1AlaUserInfo);
+      if (param1AlaUserInfo == null)
+        return; 
+      this.ala_id = param1AlaUserInfo.ala_id;
+      this.user_name = param1AlaUserInfo.user_name;
+      this.portrait = param1AlaUserInfo.portrait;
+      this.description = param1AlaUserInfo.description;
+      this.sex = param1AlaUserInfo.sex;
+      this.enter_live = param1AlaUserInfo.enter_live;
+      this.anchor_live = param1AlaUserInfo.anchor_live;
+      this.live_status = param1AlaUserInfo.live_status;
+      this.live_id = param1AlaUserInfo.live_id;
+      this.location = param1AlaUserInfo.location;
+      this.lng = param1AlaUserInfo.lng;
+      this.lat = param1AlaUserInfo.lat;
+      this.update_time = param1AlaUserInfo.update_time;
+      this.charm_count = param1AlaUserInfo.charm_count;
+      this.level_exp = param1AlaUserInfo.level_exp;
+      this.is_official = param1AlaUserInfo.is_official;
+      this.verify_status = param1AlaUserInfo.verify_status;
+      this.level_id = param1AlaUserInfo.level_id;
+      this.great_anchor_icon = param1AlaUserInfo.great_anchor_icon;
+      this.great_anchor_desc_grade = param1AlaUserInfo.great_anchor_desc_grade;
+      this.great_anchor_desc_role = param1AlaUserInfo.great_anchor_desc_role;
+      this.level_name = param1AlaUserInfo.level_name;
+      this.user_id = param1AlaUserInfo.user_id;
+      this.anchor_fans = param1AlaUserInfo.anchor_fans;
+      this.yy_ext = param1AlaUserInfo.yy_ext;
+    }
+    
+    public AlaUserInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AlaUserInfo)interceptResult.objValue; 
+      } 
+      return new AlaUserInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

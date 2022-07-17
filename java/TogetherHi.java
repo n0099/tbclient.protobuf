@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.TogetherHi;
 
 public final class TogetherHi extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_ALBUM_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_ALBUM_NAME = "";
@@ -27,6 +30,8 @@ public final class TogetherHi extends Message {
   public static final List<String> DEFAULT_POTRAITS;
   
   public static final Integer DEFAULT_START_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT64)
   public final Long album_id;
@@ -66,8 +71,8 @@ public final class TogetherHi extends Message {
   }
   
   public TogetherHi(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       String str2 = paramBuilder.album_name;
       if (str2 == null) {
@@ -105,7 +110,7 @@ public final class TogetherHi extends Message {
       } else {
         this.num_signup = integer2;
       } 
-      List list1 = paramBuilder.potraits;
+      List<String> list1 = paramBuilder.potraits;
       if (list1 == null) {
         this.potraits = DEFAULT_POTRAITS;
       } else {
@@ -136,6 +141,10 @@ public final class TogetherHi extends Message {
     } 
   }
   
+  public TogetherHi(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -150,5 +159,62 @@ public final class TogetherHi extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<TogetherHi> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long album_id;
+    
+    public String album_name;
+    
+    public Integer end_time;
+    
+    public String location;
+    
+    public Integer num_join;
+    
+    public Integer num_signup;
+    
+    public List<String> pic_urls;
+    
+    public List<String> potraits;
+    
+    public Integer start_time;
+    
+    public Builder() {}
+    
+    public Builder(TogetherHi param1TogetherHi) {
+      super(param1TogetherHi);
+      if (param1TogetherHi == null)
+        return; 
+      this.album_name = param1TogetherHi.album_name;
+      this.album_id = param1TogetherHi.album_id;
+      this.start_time = param1TogetherHi.start_time;
+      this.end_time = param1TogetherHi.end_time;
+      this.location = param1TogetherHi.location;
+      this.num_signup = param1TogetherHi.num_signup;
+      this.potraits = Message.copyOf(param1TogetherHi.potraits);
+      this.num_join = param1TogetherHi.num_join;
+      this.pic_urls = Message.copyOf(param1TogetherHi.pic_urls);
+    }
+    
+    public TogetherHi build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TogetherHi)interceptResult.objValue; 
+      } 
+      return new TogetherHi(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

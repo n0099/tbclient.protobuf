@@ -1,4 +1,4 @@
-package GetWorksTags;
+package tbclient.GetWorksTags;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,9 +11,13 @@ import java.util.Collections;
 import java.util.List;
 
 public final class Category extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_FIRST_CLASS = "";
   
   public static final List<String> DEFAULT_SECOND_CLASS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String first_class;
@@ -22,8 +26,8 @@ public final class Category extends Message {
   public final List<String> second_class;
   
   public Category(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<String> list;
     if (paramBoolean == true) {
       String str = paramBuilder.first_class;
       if (str == null) {
@@ -43,6 +47,10 @@ public final class Category extends Message {
     } 
   }
   
+  public Category(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -57,5 +65,41 @@ public final class Category extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Category> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String first_class;
+    
+    public List<String> second_class;
+    
+    public Builder() {}
+    
+    public Builder(Category param1Category) {
+      super(param1Category);
+      if (param1Category == null)
+        return; 
+      this.first_class = param1Category.first_class;
+      this.second_class = Message.copyOf(param1Category.second_class);
+    }
+    
+    public Category build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Category)interceptResult.objValue; 
+      } 
+      return new Category(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

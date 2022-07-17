@@ -1,4 +1,4 @@
-package ActivityPage;
+package tbclient.ActivityPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,15 @@ import java.util.List;
 import tbclient.RecommendForumInfo;
 
 public final class RecommendForumList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CLASS_NAME = "";
   
   public static final Integer DEFAULT_FLOOR_POSITION = Integer.valueOf(0);
   
   public static final List<RecommendForumInfo> DEFAULT_FORUM_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String class_name;
@@ -28,8 +32,8 @@ public final class RecommendForumList extends Message {
   public final List<RecommendForumInfo> forum_list;
   
   public RecommendForumList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<RecommendForumInfo> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.floor_position;
       if (integer == null) {
@@ -56,6 +60,10 @@ public final class RecommendForumList extends Message {
     } 
   }
   
+  public RecommendForumList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +78,44 @@ public final class RecommendForumList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendForumList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String class_name;
+    
+    public Integer floor_position;
+    
+    public List<RecommendForumInfo> forum_list;
+    
+    public Builder() {}
+    
+    public Builder(RecommendForumList param1RecommendForumList) {
+      super(param1RecommendForumList);
+      if (param1RecommendForumList == null)
+        return; 
+      this.floor_position = param1RecommendForumList.floor_position;
+      this.class_name = param1RecommendForumList.class_name;
+      this.forum_list = Message.copyOf(param1RecommendForumList.forum_list);
+    }
+    
+    public RecommendForumList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendForumList)interceptResult.objValue; 
+      } 
+      return new RecommendForumList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

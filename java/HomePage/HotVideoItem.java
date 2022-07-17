@@ -1,4 +1,4 @@
-package HomePage;
+package tbclient.HomePage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HotVideoItem extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
@@ -22,6 +24,8 @@ public final class HotVideoItem extends Message {
   public static final String DEFAULT_VIDEO_MD5 = "";
   
   public static final String DEFAULT_VIDEO_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -45,7 +49,7 @@ public final class HotVideoItem extends Message {
   public final String video_url;
   
   public HotVideoItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.tid;
@@ -101,6 +105,10 @@ public final class HotVideoItem extends Message {
     } 
   }
   
+  public HotVideoItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -115,5 +123,56 @@ public final class HotVideoItem extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HotVideoItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public String thumbnail_url;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public String video_duration;
+    
+    public String video_md5;
+    
+    public String video_url;
+    
+    public Builder() {}
+    
+    public Builder(HotVideoItem param1HotVideoItem) {
+      super(param1HotVideoItem);
+      if (param1HotVideoItem == null)
+        return; 
+      this.tid = param1HotVideoItem.tid;
+      this.title = param1HotVideoItem.title;
+      this._abstract = param1HotVideoItem._abstract;
+      this.thumbnail_url = param1HotVideoItem.thumbnail_url;
+      this.video_url = param1HotVideoItem.video_url;
+      this.video_duration = param1HotVideoItem.video_duration;
+      this.video_md5 = param1HotVideoItem.video_md5;
+    }
+    
+    public HotVideoItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HotVideoItem)interceptResult.objValue; 
+      } 
+      return new HotVideoItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

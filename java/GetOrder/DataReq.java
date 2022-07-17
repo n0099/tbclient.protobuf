@@ -1,4 +1,4 @@
-package GetOrder;
+package tbclient.GetOrder;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,6 +11,8 @@ import tbclient.CommonReq;
 import tbclient.Wares;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_CLICK_ZONE = "";
   
   public static final Integer DEFAULT_IS_AUTOPAY;
@@ -28,6 +30,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_REFER_PAGE = "";
   
   public static final String DEFAULT_WALLET_SDK_UA = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 10, type = Message.Datatype.STRING)
   public final String click_zone;
@@ -83,7 +87,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -155,5 +159,62 @@ public final class DataReq extends Message {
       this.click_zone = ((Builder)str).click_zone;
       this.wallet_sdk_ua = ((Builder)str).wallet_sdk_ua;
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String click_zone;
+    
+    public CommonReq common;
+    
+    public Integer is_autopay;
+    
+    public Integer is_left;
+    
+    public String mobile;
+    
+    public String order_url;
+    
+    public Integer pay_type;
+    
+    public String payment_pos_key;
+    
+    public String refer_page;
+    
+    public String wallet_sdk_ua;
+    
+    public Wares wares;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.pay_type = param1DataReq.pay_type;
+      this.is_left = param1DataReq.is_left;
+      this.order_url = param1DataReq.order_url;
+      this.mobile = param1DataReq.mobile;
+      this.wares = param1DataReq.wares;
+      this.is_autopay = param1DataReq.is_autopay;
+      this.payment_pos_key = param1DataReq.payment_pos_key;
+      this.refer_page = param1DataReq.refer_page;
+      this.click_zone = param1DataReq.click_zone;
+      this.wallet_sdk_ua = param1DataReq.wallet_sdk_ua;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean);
+    }
   }
 }

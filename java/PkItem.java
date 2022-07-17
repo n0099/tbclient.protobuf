@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PkItem;
 
 public final class PkItem extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_HAS_CLICKED;
   
   public static final String DEFAULT_LAST_USERNAME = "";
@@ -21,6 +24,8 @@ public final class PkItem extends Message {
   public static final Long DEFAULT_PK_INDEX;
   
   public static final Long DEFAULT_PK_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT64)
   public final Long has_clicked;
@@ -64,7 +69,7 @@ public final class PkItem extends Message {
   }
   
   public PkItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.pk_num;
@@ -118,5 +123,60 @@ public final class PkItem extends Message {
       this.pk_index = ((Builder)str).pk_index;
       this.pk_icon_after = ((Builder)str).pk_icon_after;
     } 
+  }
+  
+  public PkItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PkItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long has_clicked;
+    
+    public String last_username;
+    
+    public String pk_desc;
+    
+    public String pk_icon;
+    
+    public String pk_icon_after;
+    
+    public Long pk_index;
+    
+    public Long pk_num;
+    
+    public Builder() {}
+    
+    public Builder(PkItem param1PkItem) {
+      super(param1PkItem);
+      if (param1PkItem == null)
+        return; 
+      this.pk_num = param1PkItem.pk_num;
+      this.pk_desc = param1PkItem.pk_desc;
+      this.last_username = param1PkItem.last_username;
+      this.pk_icon = param1PkItem.pk_icon;
+      this.has_clicked = param1PkItem.has_clicked;
+      this.pk_index = param1PkItem.pk_index;
+      this.pk_icon_after = param1PkItem.pk_icon_after;
+    }
+    
+    public PkItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PkItem)interceptResult.objValue; 
+      } 
+      return new PkItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

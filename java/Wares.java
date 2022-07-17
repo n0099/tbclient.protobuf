@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Wares;
 
 public final class Wares extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_MONEY;
   
   public static final String DEFAULT_NEW_PROPS_ID = "";
@@ -19,6 +22,8 @@ public final class Wares extends Message {
   public static final String DEFAULT_WARS_ITEM = "";
   
   public static final String DEFAULT_WARS_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer money;
@@ -59,7 +64,7 @@ public final class Wares extends Message {
   }
   
   public Wares(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.props_id;
@@ -106,5 +111,57 @@ public final class Wares extends Message {
       this.wars_item = ((Builder)str).wars_item;
       this.new_props_id = ((Builder)str).new_props_id;
     } 
+  }
+  
+  public Wares(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Wares> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer money;
+    
+    public String new_props_id;
+    
+    public Integer props_id;
+    
+    public Integer props_mon;
+    
+    public String wars_item;
+    
+    public String wars_name;
+    
+    public Builder() {}
+    
+    public Builder(Wares param1Wares) {
+      super(param1Wares);
+      if (param1Wares == null)
+        return; 
+      this.props_id = param1Wares.props_id;
+      this.money = param1Wares.money;
+      this.props_mon = param1Wares.props_mon;
+      this.wars_name = param1Wares.wars_name;
+      this.wars_item = param1Wares.wars_item;
+      this.new_props_id = param1Wares.new_props_id;
+    }
+    
+    public Wares build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Wares)interceptResult.objValue; 
+      } 
+      return new Wares(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

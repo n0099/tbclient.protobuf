@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.GraffitiRankItem;
 
 public final class GraffitiRankItem extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_GID;
   
   public static final Integer DEFAULT_G_TYPE;
@@ -23,6 +26,8 @@ public final class GraffitiRankItem extends Message {
   public static final String DEFAULT_URL = "";
   
   public static final Long DEFAULT_VOTE_COUNT;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.INT32)
   public final Integer g_type;
@@ -72,7 +77,7 @@ public final class GraffitiRankItem extends Message {
   }
   
   public GraffitiRankItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.gid;
@@ -133,5 +138,63 @@ public final class GraffitiRankItem extends Message {
       this.g_type = ((Builder)str).g_type;
       this.thumb_url = ((Builder)str).thumb_url;
     } 
+  }
+  
+  public GraffitiRankItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GraffitiRankItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer g_type;
+    
+    public Long gid;
+    
+    public Integer is_vote;
+    
+    public String pic_id;
+    
+    public String thumb_url;
+    
+    public Long uid;
+    
+    public String url;
+    
+    public Long vote_count;
+    
+    public Builder() {}
+    
+    public Builder(GraffitiRankItem param1GraffitiRankItem) {
+      super(param1GraffitiRankItem);
+      if (param1GraffitiRankItem == null)
+        return; 
+      this.gid = param1GraffitiRankItem.gid;
+      this.url = param1GraffitiRankItem.url;
+      this.vote_count = param1GraffitiRankItem.vote_count;
+      this.is_vote = param1GraffitiRankItem.is_vote;
+      this.uid = param1GraffitiRankItem.uid;
+      this.pic_id = param1GraffitiRankItem.pic_id;
+      this.g_type = param1GraffitiRankItem.g_type;
+      this.thumb_url = param1GraffitiRankItem.thumb_url;
+    }
+    
+    public GraffitiRankItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GraffitiRankItem)interceptResult.objValue; 
+      } 
+      return new GraffitiRankItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

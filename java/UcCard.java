@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.UcCard;
-import tbclient.UcCardInfo;
 
 public final class UcCard extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_DOC = "";
   
   public static final String DEFAULT_ICON = "";
@@ -20,6 +22,8 @@ public final class UcCard extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final List<UcCardInfo> DEFAULT_UC_CARDS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String doc;
@@ -37,8 +41,8 @@ public final class UcCard extends Message {
   public final List<UcCardInfo> uc_cards;
   
   public UcCard(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<UcCardInfo> list;
     if (paramBoolean == true) {
       String str = paramBuilder.name;
       if (str == null) {
@@ -79,6 +83,10 @@ public final class UcCard extends Message {
     } 
   }
   
+  public UcCard(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -93,5 +101,50 @@ public final class UcCard extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<UcCard> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String doc;
+    
+    public String icon;
+    
+    public String jmp;
+    
+    public String name;
+    
+    public List<UcCardInfo> uc_cards;
+    
+    public Builder() {}
+    
+    public Builder(UcCard param1UcCard) {
+      super(param1UcCard);
+      if (param1UcCard == null)
+        return; 
+      this.name = param1UcCard.name;
+      this.icon = param1UcCard.icon;
+      this.doc = param1UcCard.doc;
+      this.jmp = param1UcCard.jmp;
+      this.uc_cards = Message.copyOf(param1UcCard.uc_cards);
+    }
+    
+    public UcCard build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UcCard)interceptResult.objValue; 
+      } 
+      return new UcCard(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

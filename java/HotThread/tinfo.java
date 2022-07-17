@@ -1,4 +1,4 @@
-package HotThread;
+package tbclient.HotThread;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.HotThread.Pic;
 
 public final class tinfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final Long DEFAULT_CREATE_TIME;
@@ -41,6 +42,8 @@ public final class tinfo extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final Integer DEFAULT_ZAN_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -118,7 +121,7 @@ public final class tinfo extends Message {
   }
   
   public tinfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.thread_id;
@@ -175,7 +178,7 @@ public final class tinfo extends Message {
       } else {
         this.type = integer2;
       } 
-      List list = paramBuilder.pics;
+      List<Pic> list = paramBuilder.pics;
       if (list == null) {
         this.pics = DEFAULT_PICS;
       } else {
@@ -228,5 +231,84 @@ public final class tinfo extends Message {
       this.is_activity = ((Builder)integer).is_activity;
       this.is_livepost = ((Builder)integer).is_livepost;
     } 
+  }
+  
+  public tinfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<tinfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public Long create_time;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer is_activity;
+    
+    public Integer is_good;
+    
+    public Integer is_livepost;
+    
+    public Integer is_membertop;
+    
+    public Integer is_top;
+    
+    public List<Pic> pics;
+    
+    public Integer reply_num;
+    
+    public Long thread_id;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Integer zan_num;
+    
+    public Builder() {}
+    
+    public Builder(tinfo param1tinfo) {
+      super(param1tinfo);
+      if (param1tinfo == null)
+        return; 
+      this.thread_id = param1tinfo.thread_id;
+      this.forum_id = param1tinfo.forum_id;
+      this.forum_name = param1tinfo.forum_name;
+      this.title = param1tinfo.title;
+      this.reply_num = param1tinfo.reply_num;
+      this.create_time = param1tinfo.create_time;
+      this.zan_num = param1tinfo.zan_num;
+      this._abstract = param1tinfo._abstract;
+      this.type = param1tinfo.type;
+      this.pics = Message.copyOf(param1tinfo.pics);
+      this.is_good = param1tinfo.is_good;
+      this.is_top = param1tinfo.is_top;
+      this.is_membertop = param1tinfo.is_membertop;
+      this.is_activity = param1tinfo.is_activity;
+      this.is_livepost = param1tinfo.is_livepost;
+    }
+    
+    public tinfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (tinfo)interceptResult.objValue; 
+      } 
+      return new tinfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

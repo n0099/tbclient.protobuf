@@ -1,4 +1,4 @@
-package GetBaiduAlbumList;
+package tbclient.GetBaiduAlbumList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AlbumList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ALBUM_ID = "";
   
   public static final String DEFAULT_ALBUM_NAME = "";
@@ -26,6 +28,8 @@ public final class AlbumList extends Message {
   public static final Integer DEFAULT_PICTURE_NUM;
   
   public static final Integer DEFAULT_UPDATE_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String album_id;
@@ -77,7 +81,7 @@ public final class AlbumList extends Message {
   }
   
   public AlbumList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str2 = paramBuilder.album_id;
@@ -145,5 +149,66 @@ public final class AlbumList extends Message {
       this.update_time = ((Builder)integer).update_time;
       this.is_netdisk = ((Builder)integer).is_netdisk;
     } 
+  }
+  
+  public AlbumList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AlbumList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String album_id;
+    
+    public String album_name;
+    
+    public String app_id;
+    
+    public String cover_picture_url;
+    
+    public Integer create_time;
+    
+    public Integer is_netdisk;
+    
+    public Integer is_system;
+    
+    public Integer picture_num;
+    
+    public Integer update_time;
+    
+    public Builder() {}
+    
+    public Builder(AlbumList param1AlbumList) {
+      super(param1AlbumList);
+      if (param1AlbumList == null)
+        return; 
+      this.album_id = param1AlbumList.album_id;
+      this.album_name = param1AlbumList.album_name;
+      this.picture_num = param1AlbumList.picture_num;
+      this.cover_picture_url = param1AlbumList.cover_picture_url;
+      this.app_id = param1AlbumList.app_id;
+      this.is_system = param1AlbumList.is_system;
+      this.create_time = param1AlbumList.create_time;
+      this.update_time = param1AlbumList.update_time;
+      this.is_netdisk = param1AlbumList.is_netdisk;
+    }
+    
+    public AlbumList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AlbumList)interceptResult.objValue; 
+      } 
+      return new AlbumList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

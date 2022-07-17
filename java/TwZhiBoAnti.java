@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.TwZhiBoAnti;
 
 public final class TwZhiBoAnti extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CAN_ADD_LIVE_POST;
   
   public static final Integer DEFAULT_CAN_DEL_LIVE_POST;
   
   public static final Integer DEFAULT_CAN_SHOW_PB_HEADLINE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer can_add_live_post;
@@ -44,7 +49,7 @@ public final class TwZhiBoAnti extends Message {
   }
   
   public TwZhiBoAnti(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.can_add_live_post;
@@ -70,5 +75,48 @@ public final class TwZhiBoAnti extends Message {
       this.can_del_live_post = ((Builder)integer).can_del_live_post;
       this.can_show_pb_headline = ((Builder)integer).can_show_pb_headline;
     } 
+  }
+  
+  public TwZhiBoAnti(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TwZhiBoAnti> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer can_add_live_post;
+    
+    public Integer can_del_live_post;
+    
+    public Integer can_show_pb_headline;
+    
+    public Builder() {}
+    
+    public Builder(TwZhiBoAnti param1TwZhiBoAnti) {
+      super(param1TwZhiBoAnti);
+      if (param1TwZhiBoAnti == null)
+        return; 
+      this.can_add_live_post = param1TwZhiBoAnti.can_add_live_post;
+      this.can_del_live_post = param1TwZhiBoAnti.can_del_live_post;
+      this.can_show_pb_headline = param1TwZhiBoAnti.can_show_pb_headline;
+    }
+    
+    public TwZhiBoAnti build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TwZhiBoAnti)interceptResult.objValue; 
+      } 
+      return new TwZhiBoAnti(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

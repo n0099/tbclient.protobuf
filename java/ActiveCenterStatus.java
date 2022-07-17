@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ActiveCenterStatus;
 
 public final class ActiveCenterStatus extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_DAY;
   
   public static final String DEFAULT_DESC = "";
@@ -17,6 +20,8 @@ public final class ActiveCenterStatus extends Message {
   public static final Integer DEFAULT_IS_TODAY_MISSION;
   
   public static final String DEFAULT_MISSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer day;
@@ -54,7 +59,7 @@ public final class ActiveCenterStatus extends Message {
   }
   
   public ActiveCenterStatus(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.day;
@@ -94,5 +99,54 @@ public final class ActiveCenterStatus extends Message {
       this.is_today_mission = ((Builder)str).is_today_mission;
       this.desc = ((Builder)str).desc;
     } 
+  }
+  
+  public ActiveCenterStatus(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ActiveCenterStatus> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer day;
+    
+    public String desc;
+    
+    public Integer is_completed;
+    
+    public Integer is_today_mission;
+    
+    public String mission;
+    
+    public Builder() {}
+    
+    public Builder(ActiveCenterStatus param1ActiveCenterStatus) {
+      super(param1ActiveCenterStatus);
+      if (param1ActiveCenterStatus == null)
+        return; 
+      this.day = param1ActiveCenterStatus.day;
+      this.is_completed = param1ActiveCenterStatus.is_completed;
+      this.mission = param1ActiveCenterStatus.mission;
+      this.is_today_mission = param1ActiveCenterStatus.is_today_mission;
+      this.desc = param1ActiveCenterStatus.desc;
+    }
+    
+    public ActiveCenterStatus build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActiveCenterStatus)interceptResult.objValue; 
+      } 
+      return new ActiveCenterStatus(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

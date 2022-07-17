@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,9 +9,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Size extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_HEIGHT;
   
   public static final Integer DEFAULT_WIDTH;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer height;
@@ -39,7 +43,7 @@ public final class Size extends Message {
   }
   
   public Size(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Integer integer1 = paramBuilder.width;
@@ -58,5 +62,45 @@ public final class Size extends Message {
       this.width = ((Builder)integer).width;
       this.height = ((Builder)integer).height;
     } 
+  }
+  
+  public Size(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<Size> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer height;
+    
+    public Integer width;
+    
+    public Builder() {}
+    
+    public Builder(Size param1Size) {
+      super(param1Size);
+      if (param1Size == null)
+        return; 
+      this.width = param1Size.width;
+      this.height = param1Size.height;
+    }
+    
+    public Size build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Size)interceptResult.objValue; 
+      } 
+      return new Size(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

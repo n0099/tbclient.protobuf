@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,11 +12,15 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 
 public final class NavTabInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final List<FrsTabInfo> DEFAULT_HEAD;
   
   public static final List<FrsTabInfo> DEFAULT_MENU;
   
   public static final List<FrsTabInfo> DEFAULT_TAB = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<FrsTabInfo> head;
@@ -33,10 +37,10 @@ public final class NavTabInfo extends Message {
   }
   
   public NavTabInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<FrsTabInfo> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.tab;
+      List<FrsTabInfo> list1 = paramBuilder.tab;
       if (list1 == null) {
         this.tab = DEFAULT_TAB;
       } else {
@@ -61,6 +65,10 @@ public final class NavTabInfo extends Message {
     } 
   }
   
+  public NavTabInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -75,5 +83,44 @@ public final class NavTabInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<NavTabInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<FrsTabInfo> head;
+    
+    public List<FrsTabInfo> menu;
+    
+    public List<FrsTabInfo> tab;
+    
+    public Builder() {}
+    
+    public Builder(NavTabInfo param1NavTabInfo) {
+      super(param1NavTabInfo);
+      if (param1NavTabInfo == null)
+        return; 
+      this.tab = Message.copyOf(param1NavTabInfo.tab);
+      this.menu = Message.copyOf(param1NavTabInfo.menu);
+      this.head = Message.copyOf(param1NavTabInfo.head);
+    }
+    
+    public NavTabInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NavTabInfo)interceptResult.objValue; 
+      } 
+      return new NavTabInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

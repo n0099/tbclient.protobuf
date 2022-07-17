@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PbLinkInfo;
 
 public final class PbLinkInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_EXT_TXT = "";
   
   public static final String DEFAULT_LINK_FROM = "";
@@ -21,6 +24,8 @@ public final class PbLinkInfo extends Message {
   public static final String DEFAULT_TO_URL = "";
   
   public static final Integer DEFAULT_URL_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String ext_txt;
@@ -63,7 +68,7 @@ public final class PbLinkInfo extends Message {
   }
   
   public PbLinkInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -117,5 +122,60 @@ public final class PbLinkInfo extends Message {
       this.sort = ((Builder)integer).sort;
       this.url_type = ((Builder)integer).url_type;
     } 
+  }
+  
+  public PbLinkInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PbLinkInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ext_txt;
+    
+    public String link_from;
+    
+    public String pic_url;
+    
+    public Integer sort;
+    
+    public String title;
+    
+    public String to_url;
+    
+    public Integer url_type;
+    
+    public Builder() {}
+    
+    public Builder(PbLinkInfo param1PbLinkInfo) {
+      super(param1PbLinkInfo);
+      if (param1PbLinkInfo == null)
+        return; 
+      this.title = param1PbLinkInfo.title;
+      this.to_url = param1PbLinkInfo.to_url;
+      this.pic_url = param1PbLinkInfo.pic_url;
+      this.link_from = param1PbLinkInfo.link_from;
+      this.ext_txt = param1PbLinkInfo.ext_txt;
+      this.sort = param1PbLinkInfo.sort;
+      this.url_type = param1PbLinkInfo.url_type;
+    }
+    
+    public PbLinkInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PbLinkInfo)interceptResult.objValue; 
+      } 
+      return new PbLinkInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

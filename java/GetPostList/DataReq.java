@@ -1,4 +1,4 @@
-package GetPostList;
+package tbclient.GetPostList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,6 +12,8 @@ import java.util.List;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FLOOR_RN;
   
   public static final Integer DEFAULT_IS_COMM_REVERSE;
@@ -27,6 +29,8 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_ST_TYPE;
   
   public static final Integer DEFAULT_WITH_FLOOR;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final CommonReq common;
@@ -67,7 +71,7 @@ public final class DataReq extends Message {
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
@@ -83,7 +87,7 @@ public final class DataReq extends Message {
       } else {
         this.with_floor = integer2;
       } 
-      List list = paramBuilder.post_id;
+      List<Long> list = paramBuilder.post_id;
       if (list == null) {
         this.post_id = DEFAULT_POST_ID;
       } else {
@@ -132,6 +136,10 @@ public final class DataReq extends Message {
     } 
   }
   
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -146,5 +154,62 @@ public final class DataReq extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataReq> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public CommonReq common;
+    
+    public Integer floor_rn;
+    
+    public Integer is_comm_reverse;
+    
+    public Long kz;
+    
+    public List<Long> post_id;
+    
+    public Integer scr_h;
+    
+    public Integer scr_w;
+    
+    public Integer st_type;
+    
+    public Integer with_floor;
+    
+    public Builder() {}
+    
+    public Builder(DataReq param1DataReq) {
+      super(param1DataReq);
+      if (param1DataReq == null)
+        return; 
+      this.common = param1DataReq.common;
+      this.kz = param1DataReq.kz;
+      this.with_floor = param1DataReq.with_floor;
+      this.post_id = Message.copyOf(param1DataReq.post_id);
+      this.scr_w = param1DataReq.scr_w;
+      this.scr_h = param1DataReq.scr_h;
+      this.st_type = param1DataReq.st_type;
+      this.is_comm_reverse = param1DataReq.is_comm_reverse;
+      this.floor_rn = param1DataReq.floor_rn;
+    }
+    
+    public DataReq build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataReq)interceptResult.objValue; 
+      } 
+      return new DataReq(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

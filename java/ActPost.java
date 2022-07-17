@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,16 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ActHot;
-import tbclient.ActPost;
-import tbclient.LinkInfo;
 
 public final class ActPost extends Message {
+  public static Interceptable $ic;
+  
   public static final List<ActHot> DEFAULT_ACT_HOT = Collections.emptyList();
   
   public static final List<LinkInfo> DEFAULT_LINK_INFO = Collections.emptyList();
   
   public static final String DEFAULT_LIST_HEAD = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<ActHot> act_hot;
@@ -28,10 +31,10 @@ public final class ActPost extends Message {
   public final String list_head;
   
   public ActPost(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<LinkInfo> list;
     if (paramBoolean == true) {
-      List list1 = paramBuilder.act_hot;
+      List<ActHot> list1 = paramBuilder.act_hot;
       if (list1 == null) {
         this.act_hot = DEFAULT_ACT_HOT;
       } else {
@@ -56,6 +59,10 @@ public final class ActPost extends Message {
     } 
   }
   
+  public ActPost(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -70,5 +77,44 @@ public final class ActPost extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ActPost> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<ActHot> act_hot;
+    
+    public List<LinkInfo> link_info;
+    
+    public String list_head;
+    
+    public Builder() {}
+    
+    public Builder(ActPost param1ActPost) {
+      super(param1ActPost);
+      if (param1ActPost == null)
+        return; 
+      this.act_hot = Message.copyOf(param1ActPost.act_hot);
+      this.list_head = param1ActPost.list_head;
+      this.link_info = Message.copyOf(param1ActPost.link_info);
+    }
+    
+    public ActPost build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ActPost)interceptResult.objValue; 
+      } 
+      return new ActPost(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

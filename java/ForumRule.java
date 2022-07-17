@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,15 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.ForumRule;
-import tbclient.PbContent;
 
 public final class ForumRule extends Message {
+  public static Interceptable $ic;
+  
   public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
   
   public static final Integer DEFAULT_STATUS = Integer.valueOf(0);
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<PbContent> content;
@@ -27,7 +31,7 @@ public final class ForumRule extends Message {
   public final String title;
   
   public ForumRule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.title;
@@ -36,7 +40,7 @@ public final class ForumRule extends Message {
       } else {
         this.title = str;
       } 
-      List list = paramBuilder.content;
+      List<PbContent> list = paramBuilder.content;
       if (list == null) {
         this.content = DEFAULT_CONTENT;
       } else {
@@ -55,6 +59,10 @@ public final class ForumRule extends Message {
     } 
   }
   
+  public ForumRule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -69,5 +77,44 @@ public final class ForumRule extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ForumRule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<PbContent> content;
+    
+    public Integer status;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(ForumRule param1ForumRule) {
+      super(param1ForumRule);
+      if (param1ForumRule == null)
+        return; 
+      this.title = param1ForumRule.title;
+      this.content = Message.copyOf(param1ForumRule.content);
+      this.status = param1ForumRule.status;
+    }
+    
+    public ForumRule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumRule)interceptResult.objValue; 
+      } 
+      return new ForumRule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

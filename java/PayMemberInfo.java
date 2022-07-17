@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PayMemberInfo;
 
 public final class PayMemberInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_END_TIME;
   
   public static final String DEFAULT_EXPIRE_REMIND = "";
@@ -17,6 +20,8 @@ public final class PayMemberInfo extends Message {
   public static final Integer DEFAULT_PROPS_ID;
   
   public static final String DEFAULT_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer end_time;
@@ -53,7 +58,7 @@ public final class PayMemberInfo extends Message {
   }
   
   public PayMemberInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.props_id;
@@ -93,5 +98,54 @@ public final class PayMemberInfo extends Message {
       this.expire_remind = ((Builder)str).expire_remind;
       this.pic_url = ((Builder)str).pic_url;
     } 
+  }
+  
+  public PayMemberInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PayMemberInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer end_time;
+    
+    public String expire_remind;
+    
+    public String pic_url;
+    
+    public Integer props_id;
+    
+    public String url;
+    
+    public Builder() {}
+    
+    public Builder(PayMemberInfo param1PayMemberInfo) {
+      super(param1PayMemberInfo);
+      if (param1PayMemberInfo == null)
+        return; 
+      this.props_id = param1PayMemberInfo.props_id;
+      this.end_time = param1PayMemberInfo.end_time;
+      this.url = param1PayMemberInfo.url;
+      this.expire_remind = param1PayMemberInfo.expire_remind;
+      this.pic_url = param1PayMemberInfo.pic_url;
+    }
+    
+    public PayMemberInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PayMemberInfo)interceptResult.objValue; 
+      } 
+      return new PayMemberInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

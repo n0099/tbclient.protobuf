@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,10 +7,11 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Hottopic.JoinUser;
 import tbclient.VideoInfo;
 
 public final class TopicInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_BANG_JUMP_DESC = "";
   
   public static final String DEFAULT_BANG_TITLE = "";
@@ -50,6 +51,8 @@ public final class TopicInfo extends Message {
   public static final Integer DEFAULT_TOPIC_TAG;
   
   public static final Long DEFAULT_TOTAL_POST_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.STRING)
   public final String bang_jump_desc;
@@ -145,7 +148,7 @@ public final class TopicInfo extends Message {
   }
   
   public TopicInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_5 = paramBuilder.topic_id;
@@ -294,5 +297,105 @@ public final class TopicInfo extends Message {
       this.play_count = ((Builder)str).play_count;
       this.head_background_url = ((Builder)str).head_background_url;
     } 
+  }
+  
+  public TopicInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TopicInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String bang_jump_desc;
+    
+    public String bang_title;
+    
+    public String desc;
+    
+    public String discuss_forum;
+    
+    public String head_background_url;
+    
+    public String head_photo_jump_url;
+    
+    public String head_photo_url;
+    
+    public Long idx_num;
+    
+    public Long is_deleted;
+    
+    public Integer is_video_topic;
+    
+    public JoinUser join_info;
+    
+    public Integer play_count;
+    
+    public Integer pmy_source;
+    
+    public Long pmy_topic_id;
+    
+    public String share_pic;
+    
+    public String share_title;
+    
+    public String tag_list_type;
+    
+    public Long topic_id;
+    
+    public String topic_name;
+    
+    public Integer topic_tag;
+    
+    public Long total_post_num;
+    
+    public VideoInfo video_info;
+    
+    public Builder() {}
+    
+    public Builder(TopicInfo param1TopicInfo) {
+      super(param1TopicInfo);
+      if (param1TopicInfo == null)
+        return; 
+      this.topic_id = param1TopicInfo.topic_id;
+      this.topic_name = param1TopicInfo.topic_name;
+      this.desc = param1TopicInfo.desc;
+      this.total_post_num = param1TopicInfo.total_post_num;
+      this.head_photo_url = param1TopicInfo.head_photo_url;
+      this.share_title = param1TopicInfo.share_title;
+      this.share_pic = param1TopicInfo.share_pic;
+      this.idx_num = param1TopicInfo.idx_num;
+      this.discuss_forum = param1TopicInfo.discuss_forum;
+      this.bang_title = param1TopicInfo.bang_title;
+      this.bang_jump_desc = param1TopicInfo.bang_jump_desc;
+      this.video_info = param1TopicInfo.video_info;
+      this.tag_list_type = param1TopicInfo.tag_list_type;
+      this.pmy_topic_id = param1TopicInfo.pmy_topic_id;
+      this.pmy_source = param1TopicInfo.pmy_source;
+      this.join_info = param1TopicInfo.join_info;
+      this.head_photo_jump_url = param1TopicInfo.head_photo_jump_url;
+      this.topic_tag = param1TopicInfo.topic_tag;
+      this.is_deleted = param1TopicInfo.is_deleted;
+      this.is_video_topic = param1TopicInfo.is_video_topic;
+      this.play_count = param1TopicInfo.play_count;
+      this.head_background_url = param1TopicInfo.head_background_url;
+    }
+    
+    public TopicInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TopicInfo)interceptResult.objValue; 
+      } 
+      return new TopicInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

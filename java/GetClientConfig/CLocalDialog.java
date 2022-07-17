@@ -1,4 +1,4 @@
-package GetClientConfig;
+package tbclient.GetClientConfig;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CLocalDialog extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_NAME = "";
   
   public static final String DEFAULT_PICTURE = "";
@@ -22,6 +24,8 @@ public final class CLocalDialog extends Message {
   public static final String DEFAULT_URL = "";
   
   public static final String DEFAULT_URL_IOS = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String name;
@@ -45,7 +49,7 @@ public final class CLocalDialog extends Message {
   public final String url_ios;
   
   public CLocalDialog(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.picture;
@@ -101,6 +105,10 @@ public final class CLocalDialog extends Message {
     } 
   }
   
+  public CLocalDialog(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -115,5 +123,56 @@ public final class CLocalDialog extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<CLocalDialog> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String name;
+    
+    public String picture;
+    
+    public Integer show;
+    
+    public String time;
+    
+    public String title;
+    
+    public String url;
+    
+    public String url_ios;
+    
+    public Builder() {}
+    
+    public Builder(CLocalDialog param1CLocalDialog) {
+      super(param1CLocalDialog);
+      if (param1CLocalDialog == null)
+        return; 
+      this.picture = param1CLocalDialog.picture;
+      this.show = param1CLocalDialog.show;
+      this.time = param1CLocalDialog.time;
+      this.title = param1CLocalDialog.title;
+      this.url = param1CLocalDialog.url;
+      this.name = param1CLocalDialog.name;
+      this.url_ios = param1CLocalDialog.url_ios;
+    }
+    
+    public CLocalDialog build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (CLocalDialog)interceptResult.objValue; 
+      } 
+      return new CLocalDialog(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

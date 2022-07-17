@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.TwAnchorTaskItem;
 
 public final class TwAnchorTaskItem extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_COMPLETE;
   
   public static final String DEFAULT_ICON = "";
@@ -19,6 +22,8 @@ public final class TwAnchorTaskItem extends Message {
   public static final String DEFAULT_PROGRESS = "";
   
   public static final String DEFAULT_REMARK = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer complete;
@@ -58,7 +63,7 @@ public final class TwAnchorTaskItem extends Message {
   }
   
   public TwAnchorTaskItem(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.id;
@@ -105,5 +110,57 @@ public final class TwAnchorTaskItem extends Message {
       this.remark = ((Builder)str).remark;
       this.icon = ((Builder)str).icon;
     } 
+  }
+  
+  public TwAnchorTaskItem(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<TwAnchorTaskItem> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer complete;
+    
+    public String icon;
+    
+    public Integer id;
+    
+    public String name;
+    
+    public String progress;
+    
+    public String remark;
+    
+    public Builder() {}
+    
+    public Builder(TwAnchorTaskItem param1TwAnchorTaskItem) {
+      super(param1TwAnchorTaskItem);
+      if (param1TwAnchorTaskItem == null)
+        return; 
+      this.id = param1TwAnchorTaskItem.id;
+      this.name = param1TwAnchorTaskItem.name;
+      this.progress = param1TwAnchorTaskItem.progress;
+      this.complete = param1TwAnchorTaskItem.complete;
+      this.remark = param1TwAnchorTaskItem.remark;
+      this.icon = param1TwAnchorTaskItem.icon;
+    }
+    
+    public TwAnchorTaskItem build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TwAnchorTaskItem)interceptResult.objValue; 
+      } 
+      return new TwAnchorTaskItem(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

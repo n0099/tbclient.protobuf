@@ -1,15 +1,21 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AppTransmitData;
 
 public final class AppTransmitData extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_WISE_SAMPLE_ID = "";
   
   public static final String DEFAULT_YY_HDID = "";
   
   public static final String DEFAULT_YY_VERSION = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String wise_sample_id;
@@ -21,7 +27,7 @@ public final class AppTransmitData extends Message {
   public final String yy_version;
   
   public AppTransmitData(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.wise_sample_id;
@@ -47,5 +53,48 @@ public final class AppTransmitData extends Message {
       this.yy_hdid = ((Builder)str).yy_hdid;
       this.yy_version = ((Builder)str).yy_version;
     } 
+  }
+  
+  public AppTransmitData(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AppTransmitData> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String wise_sample_id;
+    
+    public String yy_hdid;
+    
+    public String yy_version;
+    
+    public Builder() {}
+    
+    public Builder(AppTransmitData param1AppTransmitData) {
+      super(param1AppTransmitData);
+      if (param1AppTransmitData == null)
+        return; 
+      this.wise_sample_id = param1AppTransmitData.wise_sample_id;
+      this.yy_hdid = param1AppTransmitData.yy_hdid;
+      this.yy_version = param1AppTransmitData.yy_version;
+    }
+    
+    public AppTransmitData build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AppTransmitData)interceptResult.objValue; 
+      } 
+      return new AppTransmitData(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

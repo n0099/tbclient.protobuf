@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,13 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BlockPopInfo;
-import tbclient.FrsTabInfo;
-import tbclient.HistoryForumInfo;
-import tbclient.PostPrefix;
-import tbclient.ThemeColorInfo;
 
 public final class HistoryForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final Integer DEFAULT_FOLLOW_NUM;
@@ -39,6 +38,8 @@ public final class HistoryForumInfo extends Message {
   public static final Integer DEFAULT_UNREAD_NUM;
   
   public static final String DEFAULT_VISIT_TIME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -102,7 +103,7 @@ public final class HistoryForumInfo extends Message {
   }
   
   public HistoryForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
@@ -167,7 +168,7 @@ public final class HistoryForumInfo extends Message {
       } else {
         this.level_id = integer1;
       } 
-      List list = paramBuilder.tab_info;
+      List<FrsTabInfo> list = paramBuilder.tab_info;
       if (list == null) {
         this.tab_info = DEFAULT_TAB_INFO;
       } else {
@@ -206,6 +207,10 @@ public final class HistoryForumInfo extends Message {
     } 
   }
   
+  public HistoryForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -220,5 +225,83 @@ public final class HistoryForumInfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HistoryForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public BlockPopInfo block_pop_info;
+    
+    public Integer follow_num;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Boolean has_postpre;
+    
+    public Integer hot_num;
+    
+    public Integer is_forum_business_account;
+    
+    public Integer is_liveforum;
+    
+    public Integer level_id;
+    
+    public Boolean need_trans;
+    
+    public PostPrefix post_prefix;
+    
+    public List<FrsTabInfo> tab_info;
+    
+    public ThemeColorInfo theme_color;
+    
+    public Integer unread_num;
+    
+    public String visit_time;
+    
+    public Builder() {}
+    
+    public Builder(HistoryForumInfo param1HistoryForumInfo) {
+      super(param1HistoryForumInfo);
+      if (param1HistoryForumInfo == null)
+        return; 
+      this.forum_id = param1HistoryForumInfo.forum_id;
+      this.forum_name = param1HistoryForumInfo.forum_name;
+      this.avatar = param1HistoryForumInfo.avatar;
+      this.is_liveforum = param1HistoryForumInfo.is_liveforum;
+      this.unread_num = param1HistoryForumInfo.unread_num;
+      this.visit_time = param1HistoryForumInfo.visit_time;
+      this.follow_num = param1HistoryForumInfo.follow_num;
+      this.theme_color = param1HistoryForumInfo.theme_color;
+      this.need_trans = param1HistoryForumInfo.need_trans;
+      this.block_pop_info = param1HistoryForumInfo.block_pop_info;
+      this.hot_num = param1HistoryForumInfo.hot_num;
+      this.level_id = param1HistoryForumInfo.level_id;
+      this.tab_info = Message.copyOf(param1HistoryForumInfo.tab_info);
+      this.has_postpre = param1HistoryForumInfo.has_postpre;
+      this.post_prefix = param1HistoryForumInfo.post_prefix;
+      this.is_forum_business_account = param1HistoryForumInfo.is_forum_business_account;
+    }
+    
+    public HistoryForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HistoryForumInfo)interceptResult.objValue; 
+      } 
+      return new HistoryForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

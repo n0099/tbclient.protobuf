@@ -1,4 +1,4 @@
-package Personalized;
+package tbclient.Personalized;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TagInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_LEGO_PAGE_ID;
   
   public static final String DEFAULT_LEGO_QS = "";
@@ -20,6 +22,8 @@ public final class TagInfo extends Message {
   public static final String DEFAULT_TAG_NAME = "";
   
   public static final Integer DEFAULT_TAG_TYPE = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT64)
   public final Long lego_page_id;
@@ -44,7 +48,7 @@ public final class TagInfo extends Message {
   }
   
   public TagInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.tag_code;
@@ -93,6 +97,10 @@ public final class TagInfo extends Message {
     } 
   }
   
+  public TagInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -109,5 +117,53 @@ public final class TagInfo extends Message {
     } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_TAG_CODE = long_;
+  }
+  
+  public static final class Builder extends Message.Builder<TagInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long lego_page_id;
+    
+    public String lego_qs;
+    
+    public String stat_key;
+    
+    public Long tag_code;
+    
+    public String tag_name;
+    
+    public Integer tag_type;
+    
+    public Builder() {}
+    
+    public Builder(TagInfo param1TagInfo) {
+      super(param1TagInfo);
+      if (param1TagInfo == null)
+        return; 
+      this.tag_code = param1TagInfo.tag_code;
+      this.tag_name = param1TagInfo.tag_name;
+      this.tag_type = param1TagInfo.tag_type;
+      this.stat_key = param1TagInfo.stat_key;
+      this.lego_page_id = param1TagInfo.lego_page_id;
+      this.lego_qs = param1TagInfo.lego_qs;
+    }
+    
+    public TagInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (TagInfo)interceptResult.objValue; 
+      } 
+      return new TagInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

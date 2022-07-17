@@ -1,11 +1,14 @@
-package GetAlbumPhotoList;
+package tbclient.GetAlbumPhotoList;
 
 import com.baidu.titan.sdk.runtime.FieldHolder;
+import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AlbumPhoList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ALBUM_ID = "";
   
   public static final String DEFAULT_BIG_PIC = "";
@@ -13,6 +16,8 @@ public final class AlbumPhoList extends Message {
   public static final String DEFAULT_PICTURE_ID = "";
   
   public static final String DEFAULT_SMALL_PIC = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String album_id;
@@ -27,7 +32,7 @@ public final class AlbumPhoList extends Message {
   public final String small_pic;
   
   public AlbumPhoList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.picture_id;
@@ -60,5 +65,51 @@ public final class AlbumPhoList extends Message {
       this.small_pic = ((Builder)str).small_pic;
       this.big_pic = ((Builder)str).big_pic;
     } 
+  }
+  
+  public AlbumPhoList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AlbumPhoList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String album_id;
+    
+    public String big_pic;
+    
+    public String picture_id;
+    
+    public String small_pic;
+    
+    public Builder() {}
+    
+    public Builder(AlbumPhoList param1AlbumPhoList) {
+      super(param1AlbumPhoList);
+      if (param1AlbumPhoList == null)
+        return; 
+      this.picture_id = param1AlbumPhoList.picture_id;
+      this.album_id = param1AlbumPhoList.album_id;
+      this.small_pic = param1AlbumPhoList.small_pic;
+      this.big_pic = param1AlbumPhoList.big_pic;
+    }
+    
+    public AlbumPhoList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AlbumPhoList)interceptResult.objValue; 
+      } 
+      return new AlbumPhoList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

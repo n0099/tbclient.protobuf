@@ -1,4 +1,4 @@
-package GetGiftList;
+package tbclient.GetGiftList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,11 +11,15 @@ import java.util.Collections;
 import java.util.List;
 
 public final class PresentCategoryList extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CATEGORY_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_CATEGORY_NAME = "";
   
   public static final List<Integer> DEFAULT_GIFT_IDS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer category_id;
@@ -27,8 +31,8 @@ public final class PresentCategoryList extends Message {
   public final List<Integer> gift_ids;
   
   public PresentCategoryList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<Integer> list;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.category_id;
       if (integer == null) {
@@ -55,6 +59,10 @@ public final class PresentCategoryList extends Message {
     } 
   }
   
+  public PresentCategoryList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -69,5 +77,44 @@ public final class PresentCategoryList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PresentCategoryList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer category_id;
+    
+    public String category_name;
+    
+    public List<Integer> gift_ids;
+    
+    public Builder() {}
+    
+    public Builder(PresentCategoryList param1PresentCategoryList) {
+      super(param1PresentCategoryList);
+      if (param1PresentCategoryList == null)
+        return; 
+      this.category_id = param1PresentCategoryList.category_id;
+      this.category_name = param1PresentCategoryList.category_name;
+      this.gift_ids = Message.copyOf(param1PresentCategoryList.gift_ids);
+    }
+    
+    public PresentCategoryList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PresentCategoryList)interceptResult.objValue; 
+      } 
+      return new PresentCategoryList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

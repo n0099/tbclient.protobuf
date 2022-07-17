@@ -1,4 +1,4 @@
-package Userlike;
+package tbclient.Userlike;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -11,14 +11,17 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-import tbclient.Userlike.PostData;
 
 public final class ConcernData extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_RECOM_TYPE;
   
   public static final List<User> DEFAULT_RECOM_USER_LIST;
   
   public static final Integer DEFAULT_SOURCE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final PostData post_data;
@@ -56,8 +59,8 @@ public final class ConcernData extends Message {
   }
   
   public ConcernData(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<User> list;
     if (paramBoolean == true) {
       this.thread_list = paramBuilder.thread_list;
       this.post_data = paramBuilder.post_data;
@@ -86,5 +89,54 @@ public final class ConcernData extends Message {
       this.source = ((Builder)list).source;
       this.recom_user_list = Message.immutableCopyOf(((Builder)list).recom_user_list);
     } 
+  }
+  
+  public ConcernData(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ConcernData> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public PostData post_data;
+    
+    public Integer recom_type;
+    
+    public List<User> recom_user_list;
+    
+    public Integer source;
+    
+    public ThreadInfo thread_list;
+    
+    public Builder() {}
+    
+    public Builder(ConcernData param1ConcernData) {
+      super(param1ConcernData);
+      if (param1ConcernData == null)
+        return; 
+      this.thread_list = param1ConcernData.thread_list;
+      this.post_data = param1ConcernData.post_data;
+      this.recom_type = param1ConcernData.recom_type;
+      this.source = param1ConcernData.source;
+      this.recom_user_list = Message.copyOf(param1ConcernData.recom_user_list);
+    }
+    
+    public ConcernData build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ConcernData)interceptResult.objValue; 
+      } 
+      return new ConcernData(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

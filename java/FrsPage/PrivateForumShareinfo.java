@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PrivateForumShareinfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_CREATE_TIME = Integer.valueOf(0);
   
   public static final String DEFAULT_MANAGER_PORTRAIT = "";
@@ -16,6 +18,8 @@ public final class PrivateForumShareinfo extends Message {
   public static final String DEFAULT_MANAGER_USER_NAME = "";
   
   public static final String DEFAULT_SHARE_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer create_time;
@@ -30,7 +34,7 @@ public final class PrivateForumShareinfo extends Message {
   public final String share_url;
   
   public PrivateForumShareinfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder.create_time;
@@ -65,6 +69,10 @@ public final class PrivateForumShareinfo extends Message {
     } 
   }
   
+  public PrivateForumShareinfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class PrivateForumShareinfo extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<PrivateForumShareinfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer create_time;
+    
+    public String manager_portrait;
+    
+    public String manager_user_name;
+    
+    public String share_url;
+    
+    public Builder() {}
+    
+    public Builder(PrivateForumShareinfo param1PrivateForumShareinfo) {
+      super(param1PrivateForumShareinfo);
+      if (param1PrivateForumShareinfo == null)
+        return; 
+      this.create_time = param1PrivateForumShareinfo.create_time;
+      this.share_url = param1PrivateForumShareinfo.share_url;
+      this.manager_user_name = param1PrivateForumShareinfo.manager_user_name;
+      this.manager_portrait = param1PrivateForumShareinfo.manager_portrait;
+    }
+    
+    public PrivateForumShareinfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PrivateForumShareinfo)interceptResult.objValue; 
+      } 
+      return new PrivateForumShareinfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

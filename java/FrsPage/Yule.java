@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -7,10 +7,13 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FrsPage.YuleActivity;
 
 public final class Yule extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACTIVITY_SHOW = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer activity_show;
@@ -19,7 +22,7 @@ public final class Yule extends Message {
   public final YuleActivity yule_activity;
   
   public Yule(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       this.yule_activity = paramBuilder.yule_activity;
@@ -33,6 +36,10 @@ public final class Yule extends Message {
       this.yule_activity = ((Builder)integer).yule_activity;
       this.activity_show = ((Builder)integer).activity_show;
     } 
+  }
+  
+  public Yule(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   static {
@@ -49,5 +56,41 @@ public final class Yule extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<Yule> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer activity_show;
+    
+    public YuleActivity yule_activity;
+    
+    public Builder() {}
+    
+    public Builder(Yule param1Yule) {
+      super(param1Yule);
+      if (param1Yule == null)
+        return; 
+      this.yule_activity = param1Yule.yule_activity;
+      this.activity_show = param1Yule.activity_show;
+    }
+    
+    public Yule build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (Yule)interceptResult.objValue; 
+      } 
+      return new Yule(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

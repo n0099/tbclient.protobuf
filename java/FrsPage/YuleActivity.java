@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class YuleActivity extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ACTIVITY_ALL_ICON = "";
   
   public static final String DEFAULT_ACTIVITY_HALF_ICON = "";
@@ -18,6 +20,8 @@ public final class YuleActivity extends Message {
   public static final Integer DEFAULT_ACTIVITY_TYPE = Integer.valueOf(0);
   
   public static final String DEFAULT_ACTIVITY_URL = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String activity_all_icon;
@@ -35,7 +39,7 @@ public final class YuleActivity extends Message {
   public final String activity_url;
   
   public YuleActivity(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.activity_id;
@@ -77,6 +81,10 @@ public final class YuleActivity extends Message {
     } 
   }
   
+  public YuleActivity(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class YuleActivity extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<YuleActivity> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String activity_all_icon;
+    
+    public String activity_half_icon;
+    
+    public Long activity_id;
+    
+    public Integer activity_type;
+    
+    public String activity_url;
+    
+    public Builder() {}
+    
+    public Builder(YuleActivity param1YuleActivity) {
+      super(param1YuleActivity);
+      if (param1YuleActivity == null)
+        return; 
+      this.activity_id = param1YuleActivity.activity_id;
+      this.activity_type = param1YuleActivity.activity_type;
+      this.activity_url = param1YuleActivity.activity_url;
+      this.activity_all_icon = param1YuleActivity.activity_all_icon;
+      this.activity_half_icon = param1YuleActivity.activity_half_icon;
+    }
+    
+    public YuleActivity build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (YuleActivity)interceptResult.objValue; 
+      } 
+      return new YuleActivity(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

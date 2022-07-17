@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.FrsTabInfo;
 
 public final class FrsTabInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_IS_DEFAULT;
   
   public static final Integer DEFAULT_IS_GENERAL_TAB;
@@ -29,6 +32,11 @@ public final class FrsTabInfo extends Message {
   public static final String DEFAULT_TAB_URL = "";
   
   public static final Integer DEFAULT_TAB_VERSION;
+  
+  public transient FieldHolder $fh;
+  
+  @ProtoField(tag = 12)
+  public final TabPic head_pics;
   
   @ProtoField(tag = 10, type = Message.Datatype.INT32)
   public final Integer is_default;
@@ -87,8 +95,7 @@ public final class FrsTabInfo extends Message {
   }
   
   public FrsTabInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    Integer integer;
+    super(paramBuilder);
     if (paramBoolean == true) {
       Integer integer3 = paramBuilder.tab_id;
       if (integer3 == null) {
@@ -150,24 +157,96 @@ public final class FrsTabInfo extends Message {
       } else {
         this.is_default = integer1;
       } 
-      integer = paramBuilder.need_page;
-      if (integer == null) {
+      integer1 = paramBuilder.need_page;
+      if (integer1 == null) {
         this.need_page = DEFAULT_NEED_PAGE;
       } else {
-        this.need_page = integer;
+        this.need_page = integer1;
       } 
+      this.head_pics = paramBuilder.head_pics;
     } else {
-      this.tab_id = ((Builder)integer).tab_id;
-      this.tab_type = ((Builder)integer).tab_type;
-      this.tab_name = ((Builder)integer).tab_name;
-      this.tab_url = ((Builder)integer).tab_url;
-      this.tab_gid = ((Builder)integer).tab_gid;
-      this.tab_title = ((Builder)integer).tab_title;
-      this.is_general_tab = ((Builder)integer).is_general_tab;
-      this.tab_code = ((Builder)integer).tab_code;
-      this.tab_version = ((Builder)integer).tab_version;
-      this.is_default = ((Builder)integer).is_default;
-      this.need_page = ((Builder)integer).need_page;
+      this.tab_id = paramBuilder.tab_id;
+      this.tab_type = paramBuilder.tab_type;
+      this.tab_name = paramBuilder.tab_name;
+      this.tab_url = paramBuilder.tab_url;
+      this.tab_gid = paramBuilder.tab_gid;
+      this.tab_title = paramBuilder.tab_title;
+      this.is_general_tab = paramBuilder.is_general_tab;
+      this.tab_code = paramBuilder.tab_code;
+      this.tab_version = paramBuilder.tab_version;
+      this.is_default = paramBuilder.is_default;
+      this.need_page = paramBuilder.need_page;
+      this.head_pics = paramBuilder.head_pics;
     } 
+  }
+  
+  public FrsTabInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<FrsTabInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public TabPic head_pics;
+    
+    public Integer is_default;
+    
+    public Integer is_general_tab;
+    
+    public Integer need_page;
+    
+    public String tab_code;
+    
+    public String tab_gid;
+    
+    public Integer tab_id;
+    
+    public String tab_name;
+    
+    public String tab_title;
+    
+    public Integer tab_type;
+    
+    public String tab_url;
+    
+    public Integer tab_version;
+    
+    public Builder() {}
+    
+    public Builder(FrsTabInfo param1FrsTabInfo) {
+      super(param1FrsTabInfo);
+      if (param1FrsTabInfo == null)
+        return; 
+      this.tab_id = param1FrsTabInfo.tab_id;
+      this.tab_type = param1FrsTabInfo.tab_type;
+      this.tab_name = param1FrsTabInfo.tab_name;
+      this.tab_url = param1FrsTabInfo.tab_url;
+      this.tab_gid = param1FrsTabInfo.tab_gid;
+      this.tab_title = param1FrsTabInfo.tab_title;
+      this.is_general_tab = param1FrsTabInfo.is_general_tab;
+      this.tab_code = param1FrsTabInfo.tab_code;
+      this.tab_version = param1FrsTabInfo.tab_version;
+      this.is_default = param1FrsTabInfo.is_default;
+      this.need_page = param1FrsTabInfo.need_page;
+      this.head_pics = param1FrsTabInfo.head_pics;
+    }
+    
+    public FrsTabInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FrsTabInfo)interceptResult.objValue; 
+      } 
+      return new FrsTabInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

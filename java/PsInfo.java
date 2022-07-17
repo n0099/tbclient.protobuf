@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.PsInfo;
 
 public final class PsInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_GAME_ID;
   
   public static final String DEFAULT_GAME_INTRO = "";
@@ -17,6 +20,8 @@ public final class PsInfo extends Message {
   public static final Long DEFAULT_GAME_TYPE;
   
   public static final Long DEFAULT_SCORE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long game_id;
@@ -54,7 +59,7 @@ public final class PsInfo extends Message {
   }
   
   public PsInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.game_id;
@@ -94,5 +99,54 @@ public final class PsInfo extends Message {
       this.game_pic_url = ((Builder)str).game_pic_url;
       this.game_intro = ((Builder)str).game_intro;
     } 
+  }
+  
+  public PsInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<PsInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long game_id;
+    
+    public String game_intro;
+    
+    public String game_pic_url;
+    
+    public Long game_type;
+    
+    public Long score;
+    
+    public Builder() {}
+    
+    public Builder(PsInfo param1PsInfo) {
+      super(param1PsInfo);
+      if (param1PsInfo == null)
+        return; 
+      this.game_id = param1PsInfo.game_id;
+      this.score = param1PsInfo.score;
+      this.game_type = param1PsInfo.game_type;
+      this.game_pic_url = param1PsInfo.game_pic_url;
+      this.game_intro = param1PsInfo.game_intro;
+    }
+    
+    public PsInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (PsInfo)interceptResult.objValue; 
+      } 
+      return new PsInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package Person;
+package tbclient.Person;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -10,9 +10,10 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Icon;
-import tbclient.Person.LbsInfo;
 
 public final class UserInfos extends Message {
+  public static Interceptable $ic;
+  
   public static final Double DEFAULT_DISTANCE;
   
   public static final List<Icon> DEFAULT_ICONINFO;
@@ -28,6 +29,8 @@ public final class UserInfos extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.DOUBLE)
   public final Double distance;
@@ -63,7 +66,7 @@ public final class UserInfos extends Message {
   }
   
   public UserInfos(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       Long long_ = paramBuilder.user_id;
       if (long_ == null) {
@@ -101,7 +104,7 @@ public final class UserInfos extends Message {
       } else {
         this.lastest_time = integer;
       } 
-      List list = paramBuilder.iconinfo;
+      List<Icon> list = paramBuilder.iconinfo;
       if (list == null) {
         this.iconinfo = DEFAULT_ICONINFO;
       } else {
@@ -127,6 +130,10 @@ public final class UserInfos extends Message {
     } 
   }
   
+  public UserInfos(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -141,5 +148,62 @@ public final class UserInfos extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<UserInfos> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Double distance;
+    
+    public List<Icon> iconinfo;
+    
+    public Integer lastest_time;
+    
+    public LbsInfo location;
+    
+    public String portrait;
+    
+    public String sex;
+    
+    public Long user_id;
+    
+    public String user_name;
+    
+    public String userdetail;
+    
+    public Builder() {}
+    
+    public Builder(UserInfos param1UserInfos) {
+      super(param1UserInfos);
+      if (param1UserInfos == null)
+        return; 
+      this.user_id = param1UserInfos.user_id;
+      this.user_name = param1UserInfos.user_name;
+      this.portrait = param1UserInfos.portrait;
+      this.sex = param1UserInfos.sex;
+      this.distance = param1UserInfos.distance;
+      this.lastest_time = param1UserInfos.lastest_time;
+      this.iconinfo = Message.copyOf(param1UserInfos.iconinfo);
+      this.userdetail = param1UserInfos.userdetail;
+      this.location = param1UserInfos.location;
+    }
+    
+    public UserInfos build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (UserInfos)interceptResult.objValue; 
+      } 
+      return new UserInfos(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

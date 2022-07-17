@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FeatureCardCompetition;
-import tbclient.FeatureCardCompetitionSubNode;
 
 public final class FeatureCardCompetition extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_FLOOR;
   
   public static final List<FeatureCardCompetitionSubNode> DEFAULT_SUB_NODES = Collections.emptyList();
@@ -18,6 +20,8 @@ public final class FeatureCardCompetition extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer floor;
@@ -38,10 +42,10 @@ public final class FeatureCardCompetition extends Message {
   }
   
   public FeatureCardCompetition(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      List list = paramBuilder.sub_nodes;
+      List<FeatureCardCompetitionSubNode> list = paramBuilder.sub_nodes;
       if (list == null) {
         this.sub_nodes = DEFAULT_SUB_NODES;
       } else {
@@ -73,6 +77,10 @@ public final class FeatureCardCompetition extends Message {
     } 
   }
   
+  public FeatureCardCompetition(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -87,5 +95,47 @@ public final class FeatureCardCompetition extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeatureCardCompetition> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer floor;
+    
+    public List<FeatureCardCompetitionSubNode> sub_nodes;
+    
+    public String title;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(FeatureCardCompetition param1FeatureCardCompetition) {
+      super(param1FeatureCardCompetition);
+      if (param1FeatureCardCompetition == null)
+        return; 
+      this.sub_nodes = Message.copyOf(param1FeatureCardCompetition.sub_nodes);
+      this.floor = param1FeatureCardCompetition.floor;
+      this.type = param1FeatureCardCompetition.type;
+      this.title = param1FeatureCardCompetition.title;
+    }
+    
+    public FeatureCardCompetition build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FeatureCardCompetition)interceptResult.objValue; 
+      } 
+      return new FeatureCardCompetition(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

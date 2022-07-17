@@ -1,4 +1,4 @@
-package Hottopic;
+package tbclient.Hottopic;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GoodThread extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final Long DEFAULT_FID;
@@ -26,6 +28,8 @@ public final class GoodThread extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Long DEFAULT_ZAN_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -77,7 +81,7 @@ public final class GoodThread extends Message {
   }
   
   public GoodThread(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Long long_4 = paramBuilder.tid;
@@ -145,5 +149,66 @@ public final class GoodThread extends Message {
       this.post_id = ((Builder)str).post_id;
       this.head_pic = ((Builder)str).head_pic;
     } 
+  }
+  
+  public GoodThread(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<GoodThread> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String _abstract;
+    
+    public Long fid;
+    
+    public String fname;
+    
+    public String head_pic;
+    
+    public Long post_id;
+    
+    public Long reply_num;
+    
+    public Long tid;
+    
+    public String title;
+    
+    public Long zan_num;
+    
+    public Builder() {}
+    
+    public Builder(GoodThread param1GoodThread) {
+      super(param1GoodThread);
+      if (param1GoodThread == null)
+        return; 
+      this.tid = param1GoodThread.tid;
+      this.title = param1GoodThread.title;
+      this.reply_num = param1GoodThread.reply_num;
+      this._abstract = param1GoodThread._abstract;
+      this.zan_num = param1GoodThread.zan_num;
+      this.fname = param1GoodThread.fname;
+      this.fid = param1GoodThread.fid;
+      this.post_id = param1GoodThread.post_id;
+      this.head_pic = param1GoodThread.head_pic;
+    }
+    
+    public GoodThread build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GoodThread)interceptResult.objValue; 
+      } 
+      return new GoodThread(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class RecommendForum extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_LINK = "";
@@ -20,6 +22,8 @@ public final class RecommendForum extends Message {
   public static final String DEFAULT_ST_PARAM = "";
   
   public static final Integer DEFAULT_THREAD_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String avatar;
@@ -59,7 +63,7 @@ public final class RecommendForum extends Message {
   }
   
   public RecommendForum(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.name;
@@ -106,5 +110,57 @@ public final class RecommendForum extends Message {
       this.member_num = ((Builder)integer).member_num;
       this.thread_num = ((Builder)integer).thread_num;
     } 
+  }
+  
+  public RecommendForum(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RecommendForum> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String avatar;
+    
+    public String link;
+    
+    public Integer member_num;
+    
+    public String name;
+    
+    public String st_param;
+    
+    public Integer thread_num;
+    
+    public Builder() {}
+    
+    public Builder(RecommendForum param1RecommendForum) {
+      super(param1RecommendForum);
+      if (param1RecommendForum == null)
+        return; 
+      this.name = param1RecommendForum.name;
+      this.avatar = param1RecommendForum.avatar;
+      this.link = param1RecommendForum.link;
+      this.st_param = param1RecommendForum.st_param;
+      this.member_num = param1RecommendForum.member_num;
+      this.thread_num = param1RecommendForum.thread_num;
+    }
+    
+    public RecommendForum build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecommendForum)interceptResult.objValue; 
+      } 
+      return new RecommendForum(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

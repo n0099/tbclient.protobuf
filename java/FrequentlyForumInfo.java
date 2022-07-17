@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.FrequentlyForumInfo;
-import tbclient.User;
 
 public final class FrequentlyForumInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_ACCESS_FLAG;
   
   public static final String DEFAULT_AVATAR = "";
@@ -30,6 +32,8 @@ public final class FrequentlyForumInfo extends Message {
   public static final String DEFAULT_NEW_THREAD_NUM = "";
   
   public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 15, type = Message.Datatype.UINT32)
   public final Integer access_flag;
@@ -71,7 +75,7 @@ public final class FrequentlyForumInfo extends Message {
   }
   
   public FrequentlyForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.forum_id;
@@ -86,7 +90,7 @@ public final class FrequentlyForumInfo extends Message {
       } else {
         this.new_thread_num = str2;
       } 
-      List list = paramBuilder.user_list;
+      List<User> list = paramBuilder.user_list;
       if (list == null) {
         this.user_list = DEFAULT_USER_LIST;
       } else {
@@ -148,6 +152,10 @@ public final class FrequentlyForumInfo extends Message {
     } 
   }
   
+  public FrequentlyForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -164,5 +172,65 @@ public final class FrequentlyForumInfo extends Message {
     } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FORUM_ID = long_;
+  }
+  
+  public static final class Builder extends Message.Builder<FrequentlyForumInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer access_flag;
+    
+    public String avatar;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public Integer forum_state;
+    
+    public Integer is_sign;
+    
+    public Long last_access_time;
+    
+    public Integer level_id;
+    
+    public String new_thread_num;
+    
+    public List<User> user_list;
+    
+    public Builder() {}
+    
+    public Builder(FrequentlyForumInfo param1FrequentlyForumInfo) {
+      super(param1FrequentlyForumInfo);
+      if (param1FrequentlyForumInfo == null)
+        return; 
+      this.forum_id = param1FrequentlyForumInfo.forum_id;
+      this.new_thread_num = param1FrequentlyForumInfo.new_thread_num;
+      this.user_list = Message.copyOf(param1FrequentlyForumInfo.user_list);
+      this.last_access_time = param1FrequentlyForumInfo.last_access_time;
+      this.forum_name = param1FrequentlyForumInfo.forum_name;
+      this.avatar = param1FrequentlyForumInfo.avatar;
+      this.level_id = param1FrequentlyForumInfo.level_id;
+      this.forum_state = param1FrequentlyForumInfo.forum_state;
+      this.access_flag = param1FrequentlyForumInfo.access_flag;
+      this.is_sign = param1FrequentlyForumInfo.is_sign;
+    }
+    
+    public FrequentlyForumInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (FrequentlyForumInfo)interceptResult.objValue; 
+      } 
+      return new FrequentlyForumInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetPendantByCategory;
+package tbclient.GetPendantByCategory;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -12,9 +12,13 @@ import java.util.List;
 import tbclient.ThemeBgProp;
 
 public final class ThemePendantInMain extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_PENDANT_CATEGORY = "";
   
   public static final List<ThemeBgProp> DEFAULT_PROPS = Collections.emptyList();
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String pendant_category;
@@ -23,8 +27,8 @@ public final class ThemePendantInMain extends Message {
   public final List<ThemeBgProp> props;
   
   public ThemePendantInMain(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<ThemeBgProp> list;
     if (paramBoolean == true) {
       String str = paramBuilder.pendant_category;
       if (str == null) {
@@ -44,6 +48,10 @@ public final class ThemePendantInMain extends Message {
     } 
   }
   
+  public ThemePendantInMain(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -58,5 +66,41 @@ public final class ThemePendantInMain extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ThemePendantInMain> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String pendant_category;
+    
+    public List<ThemeBgProp> props;
+    
+    public Builder() {}
+    
+    public Builder(ThemePendantInMain param1ThemePendantInMain) {
+      super(param1ThemePendantInMain);
+      if (param1ThemePendantInMain == null)
+        return; 
+      this.pendant_category = param1ThemePendantInMain.pendant_category;
+      this.props = Message.copyOf(param1ThemePendantInMain.props);
+    }
+    
+    public ThemePendantInMain build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThemePendantInMain)interceptResult.objValue; 
+      } 
+      return new ThemePendantInMain(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

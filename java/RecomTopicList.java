@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.Media;
-import tbclient.RecomTopicList;
 
 public final class RecomTopicList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AUTHOR = "";
   
   public static final Long DEFAULT_DISCUSS_NUM;
@@ -32,6 +34,8 @@ public final class RecomTopicList extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final Long DEFAULT_UPDATE_TIME;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String author;
@@ -92,7 +96,7 @@ public final class RecomTopicList extends Message {
   }
   
   public RecomTopicList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.topic_id;
@@ -149,7 +153,7 @@ public final class RecomTopicList extends Message {
       } else {
         this.author = str1;
       } 
-      List list = paramBuilder.media;
+      List<Media> list = paramBuilder.media;
       if (list == null) {
         this.media = DEFAULT_MEDIA;
       } else {
@@ -174,5 +178,72 @@ public final class RecomTopicList extends Message {
       this.media = Message.immutableCopyOf(((Builder)integer).media);
       this.is_video_topic = ((Builder)integer).is_video_topic;
     } 
+  }
+  
+  public RecomTopicList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<RecomTopicList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String author;
+    
+    public Long discuss_num;
+    
+    public Integer is_video_topic;
+    
+    public List<Media> media;
+    
+    public Integer tag;
+    
+    public String topic_desc;
+    
+    public Long topic_id;
+    
+    public String topic_name;
+    
+    public String topic_pic;
+    
+    public Integer type;
+    
+    public Long update_time;
+    
+    public Builder() {}
+    
+    public Builder(RecomTopicList param1RecomTopicList) {
+      super(param1RecomTopicList);
+      if (param1RecomTopicList == null)
+        return; 
+      this.topic_id = param1RecomTopicList.topic_id;
+      this.topic_name = param1RecomTopicList.topic_name;
+      this.type = param1RecomTopicList.type;
+      this.discuss_num = param1RecomTopicList.discuss_num;
+      this.tag = param1RecomTopicList.tag;
+      this.topic_desc = param1RecomTopicList.topic_desc;
+      this.topic_pic = param1RecomTopicList.topic_pic;
+      this.update_time = param1RecomTopicList.update_time;
+      this.author = param1RecomTopicList.author;
+      this.media = Message.copyOf(param1RecomTopicList.media);
+      this.is_video_topic = param1RecomTopicList.is_video_topic;
+    }
+    
+    public RecomTopicList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (RecomTopicList)interceptResult.objValue; 
+      } 
+      return new RecomTopicList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

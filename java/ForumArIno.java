@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,9 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.ForumArIno;
 
 public final class ForumArIno extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ANIMATION_URL = "";
   
   public static final Integer DEFAULT_AR_ID;
@@ -19,6 +22,8 @@ public final class ForumArIno extends Message {
   public static final Integer DEFAULT_SWITCH;
   
   public static final String DEFAULT_TITLE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer _switch;
@@ -59,7 +64,7 @@ public final class ForumArIno extends Message {
   }
   
   public ForumArIno(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       Integer integer = paramBuilder._switch;
@@ -106,5 +111,57 @@ public final class ForumArIno extends Message {
       this.animation_url = ((Builder)str).animation_url;
       this.suspension_url = ((Builder)str).suspension_url;
     } 
+  }
+  
+  public ForumArIno(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<ForumArIno> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer _switch;
+    
+    public String animation_url;
+    
+    public Integer ar_id;
+    
+    public Integer ar_type;
+    
+    public String suspension_url;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(ForumArIno param1ForumArIno) {
+      super(param1ForumArIno);
+      if (param1ForumArIno == null)
+        return; 
+      this._switch = param1ForumArIno._switch;
+      this.ar_id = param1ForumArIno.ar_id;
+      this.ar_type = param1ForumArIno.ar_type;
+      this.title = param1ForumArIno.title;
+      this.animation_url = param1ForumArIno.animation_url;
+      this.suspension_url = param1ForumArIno.suspension_url;
+    }
+    
+    public ForumArIno build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ForumArIno)interceptResult.objValue; 
+      } 
+      return new ForumArIno(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

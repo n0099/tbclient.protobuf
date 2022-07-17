@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,10 +7,10 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.AnchorInfo;
-import tbclient.ZhiBoInfoTW;
 
 public final class AnchorInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_AUTHOR_ID;
   
   public static final String DEFAULT_AUTHOR_NAME = "";
@@ -46,6 +48,8 @@ public final class AnchorInfo extends Message {
   public static final Integer DEFAULT_STATUS;
   
   public static final Integer DEFAULT_TYPE;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT64)
   public final Long author_id;
@@ -137,7 +141,7 @@ public final class AnchorInfo extends Message {
   }
   
   public AnchorInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
       String str5 = paramBuilder.portrait;
       if (str5 == null) {
@@ -276,5 +280,99 @@ public final class AnchorInfo extends Message {
       this.type = paramBuilder.type;
       this.twzhibo_info = paramBuilder.twzhibo_info;
     } 
+  }
+  
+  public AnchorInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<AnchorInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long author_id;
+    
+    public String author_name;
+    
+    public String forumName;
+    
+    public Integer from_type;
+    
+    public Long group_id;
+    
+    public String intro;
+    
+    public Integer is_vip;
+    
+    public Integer label_id;
+    
+    public String label_name;
+    
+    public Integer likers;
+    
+    public Integer listeners;
+    
+    public String name;
+    
+    public String portrait;
+    
+    public Long publisherId;
+    
+    public String publisherName;
+    
+    public String publisherPortrait;
+    
+    public Integer start_time;
+    
+    public Integer status;
+    
+    public ZhiBoInfoTW twzhibo_info;
+    
+    public Integer type;
+    
+    public Builder() {}
+    
+    public Builder(AnchorInfo param1AnchorInfo) {
+      super(param1AnchorInfo);
+      if (param1AnchorInfo == null)
+        return; 
+      this.portrait = param1AnchorInfo.portrait;
+      this.name = param1AnchorInfo.name;
+      this.start_time = param1AnchorInfo.start_time;
+      this.status = param1AnchorInfo.status;
+      this.author_id = param1AnchorInfo.author_id;
+      this.author_name = param1AnchorInfo.author_name;
+      this.listeners = param1AnchorInfo.listeners;
+      this.likers = param1AnchorInfo.likers;
+      this.group_id = param1AnchorInfo.group_id;
+      this.intro = param1AnchorInfo.intro;
+      this.publisherPortrait = param1AnchorInfo.publisherPortrait;
+      this.publisherName = param1AnchorInfo.publisherName;
+      this.publisherId = param1AnchorInfo.publisherId;
+      this.forumName = param1AnchorInfo.forumName;
+      this.from_type = param1AnchorInfo.from_type;
+      this.is_vip = param1AnchorInfo.is_vip;
+      this.label_id = param1AnchorInfo.label_id;
+      this.label_name = param1AnchorInfo.label_name;
+      this.type = param1AnchorInfo.type;
+      this.twzhibo_info = param1AnchorInfo.twzhibo_info;
+    }
+    
+    public AnchorInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (AnchorInfo)interceptResult.objValue; 
+      } 
+      return new AnchorInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

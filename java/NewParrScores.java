@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -5,14 +7,17 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.NewParrScores;
 
 public final class NewParrScores extends Message {
+  public static Interceptable $ic;
+  
   public static final Long DEFAULT_I_TOTAL;
   
   public static final Long DEFAULT_SCORES_TOTAL;
   
   public static final Integer DEFAULT_UPDATE_TIME = Integer.valueOf(0);
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT64)
   public final Long i_total;
@@ -28,7 +33,7 @@ public final class NewParrScores extends Message {
   }
   
   public NewParrScores(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_1 = paramBuilder.scores_total;
@@ -56,6 +61,10 @@ public final class NewParrScores extends Message {
     } 
   }
   
+  public NewParrScores(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -72,5 +81,44 @@ public final class NewParrScores extends Message {
     } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_SCORES_TOTAL = long_;
+  }
+  
+  public static final class Builder extends Message.Builder<NewParrScores> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Long i_total;
+    
+    public Long scores_total;
+    
+    public Integer update_time;
+    
+    public Builder() {}
+    
+    public Builder(NewParrScores param1NewParrScores) {
+      super(param1NewParrScores);
+      if (param1NewParrScores == null)
+        return; 
+      this.scores_total = param1NewParrScores.scores_total;
+      this.update_time = param1NewParrScores.update_time;
+      this.i_total = param1NewParrScores.i_total;
+    }
+    
+    public NewParrScores build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (NewParrScores)interceptResult.objValue; 
+      } 
+      return new NewParrScores(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

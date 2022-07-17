@@ -1,4 +1,4 @@
-package Search;
+package tbclient.Search;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final Integer DEFAULT_AGREE_NUM;
   
   public static final Long DEFAULT_APPLY_ID;
@@ -30,6 +32,8 @@ public final class DataRes extends Message {
   public static final Long DEFAULT_UID;
   
   public static final Integer DEFAULT_VOTE_NUM;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.UINT32)
   public final Integer agree_num;
@@ -92,7 +96,7 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Long long_;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.uid;
@@ -174,5 +178,72 @@ public final class DataRes extends Message {
       this.apply_id = ((Builder)long_).apply_id;
       this.tid = ((Builder)long_).tid;
     } 
+  }
+  
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public Integer agree_num;
+    
+    public Long apply_id;
+    
+    public Integer forum_level;
+    
+    public Boolean is_vote;
+    
+    public String name_show;
+    
+    public String portrait;
+    
+    public Integer post_num;
+    
+    public Integer thread_num;
+    
+    public Long tid;
+    
+    public Long uid;
+    
+    public Integer vote_num;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.uid = param1DataRes.uid;
+      this.portrait = param1DataRes.portrait;
+      this.name_show = param1DataRes.name_show;
+      this.vote_num = param1DataRes.vote_num;
+      this.is_vote = param1DataRes.is_vote;
+      this.forum_level = param1DataRes.forum_level;
+      this.agree_num = param1DataRes.agree_num;
+      this.thread_num = param1DataRes.thread_num;
+      this.post_num = param1DataRes.post_num;
+      this.apply_id = param1DataRes.apply_id;
+      this.tid = param1DataRes.tid;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

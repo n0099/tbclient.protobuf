@@ -1,3 +1,5 @@
+package tbclient;
+
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -7,10 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.BookInfo;
-import tbclient.BookTag;
 
 public final class BookInfo extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_AD_CODE = "";
   
   public static final String DEFAULT_AUTHOR = "";
@@ -100,6 +102,8 @@ public final class BookInfo extends Message {
   public static final Integer DEFAULT_UPDATE_TIME;
   
   public static final Integer DEFAULT_WORDS;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 20, type = Message.Datatype.STRING)
   public final String ad_code;
@@ -273,7 +277,7 @@ public final class BookInfo extends Message {
   }
   
   public BookInfo(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str11 = paramBuilder.book_id;
@@ -348,7 +352,7 @@ public final class BookInfo extends Message {
       } else {
         this.author_intro = str8;
       } 
-      List list = paramBuilder.tags;
+      List<BookTag> list = paramBuilder.tags;
       if (list == null) {
         this.tags = DEFAULT_TAGS;
       } else {
@@ -593,5 +597,174 @@ public final class BookInfo extends Message {
       this.charge_type = ((Builder)integer).charge_type;
       this.member_show_type = ((Builder)integer).member_show_type;
     } 
+  }
+  
+  public BookInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
+  public static final class Builder extends Message.Builder<BookInfo> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String ad_code;
+    
+    public String author;
+    
+    public String author_intro;
+    
+    public String big_cover;
+    
+    public String book_id;
+    
+    public Integer book_size;
+    
+    public Integer book_type;
+    
+    public String book_ver;
+    
+    public String chapter_ver;
+    
+    public Integer charge_type;
+    
+    public Integer class_id;
+    
+    public String class_name;
+    
+    public String copyright;
+    
+    public String copyright_text;
+    
+    public String cover;
+    
+    public String cp_id;
+    
+    public String discount_icon;
+    
+    public String discount_ratio;
+    
+    public Integer discount_type;
+    
+    public String discuss;
+    
+    public Integer first_chapter;
+    
+    public Long forum_id;
+    
+    public String forum_name;
+    
+    public String free_info;
+    
+    public String intro;
+    
+    public Integer is_buy;
+    
+    public Integer is_finish;
+    
+    public String isbn;
+    
+    public Integer member_show_type;
+    
+    public Integer orignal_price;
+    
+    public String paper_price;
+    
+    public Integer price;
+    
+    public String publish_text;
+    
+    public String publish_time;
+    
+    public String publish_type;
+    
+    public String publisher;
+    
+    public Integer read_count;
+    
+    public Integer sub_class_id;
+    
+    public String sub_class_name;
+    
+    public List<BookTag> tags;
+    
+    public String title;
+    
+    public Integer total_chapter;
+    
+    public Integer total_page;
+    
+    public Integer update_time;
+    
+    public Integer words;
+    
+    public Builder() {}
+    
+    public Builder(BookInfo param1BookInfo) {
+      super(param1BookInfo);
+      if (param1BookInfo == null)
+        return; 
+      this.book_id = param1BookInfo.book_id;
+      this.title = param1BookInfo.title;
+      this.cover = param1BookInfo.cover;
+      this.book_type = param1BookInfo.book_type;
+      this.class_id = param1BookInfo.class_id;
+      this.class_name = param1BookInfo.class_name;
+      this.sub_class_id = param1BookInfo.sub_class_id;
+      this.sub_class_name = param1BookInfo.sub_class_name;
+      this.book_size = param1BookInfo.book_size;
+      this.intro = param1BookInfo.intro;
+      this.author = param1BookInfo.author;
+      this.author_intro = param1BookInfo.author_intro;
+      this.tags = Message.copyOf(param1BookInfo.tags);
+      this.total_chapter = param1BookInfo.total_chapter;
+      this.words = param1BookInfo.words;
+      this.orignal_price = param1BookInfo.orignal_price;
+      this.price = param1BookInfo.price;
+      this.discount_ratio = param1BookInfo.discount_ratio;
+      this.is_finish = param1BookInfo.is_finish;
+      this.ad_code = param1BookInfo.ad_code;
+      this.is_buy = param1BookInfo.is_buy;
+      this.free_info = param1BookInfo.free_info;
+      this.publisher = param1BookInfo.publisher;
+      this.isbn = param1BookInfo.isbn;
+      this.copyright = param1BookInfo.copyright;
+      this.publish_text = param1BookInfo.publish_text;
+      this.copyright_text = param1BookInfo.copyright_text;
+      this.publish_time = param1BookInfo.publish_time;
+      this.publish_type = param1BookInfo.publish_type;
+      this.update_time = param1BookInfo.update_time;
+      this.big_cover = param1BookInfo.big_cover;
+      this.discount_type = param1BookInfo.discount_type;
+      this.discount_icon = param1BookInfo.discount_icon;
+      this.read_count = param1BookInfo.read_count;
+      this.total_page = param1BookInfo.total_page;
+      this.book_ver = param1BookInfo.book_ver;
+      this.chapter_ver = param1BookInfo.chapter_ver;
+      this.forum_id = param1BookInfo.forum_id;
+      this.forum_name = param1BookInfo.forum_name;
+      this.discuss = param1BookInfo.discuss;
+      this.cp_id = param1BookInfo.cp_id;
+      this.paper_price = param1BookInfo.paper_price;
+      this.first_chapter = param1BookInfo.first_chapter;
+      this.charge_type = param1BookInfo.charge_type;
+      this.member_show_type = param1BookInfo.member_show_type;
+    }
+    
+    public BookInfo build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (BookInfo)interceptResult.objValue; 
+      } 
+      return new BookInfo(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

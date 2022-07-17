@@ -1,4 +1,4 @@
-package GetGiftList;
+package tbclient.GetGiftList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,12 +9,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetGiftList.PresentCategoryList;
-import tbclient.GetGiftList.PresentGiftList1;
-import tbclient.GetGiftList.PresentNumInfo;
-import tbclient.GetGiftList.UrlTitle;
 
 public final class DataRes extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ADDFREE_URL = "";
   
   public static final Integer DEFAULT_CURRENCY_TYPE;
@@ -28,6 +26,8 @@ public final class DataRes extends Message {
   public static final List<PresentNumInfo> DEFAULT_NUM_INFO = Collections.emptyList();
   
   public static final Integer DEFAULT_SCENE_ID;
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String addfree_url;
@@ -62,19 +62,19 @@ public final class DataRes extends Message {
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     if (paramBoolean == true) {
-      List list2 = paramBuilder.list;
+      List<PresentCategoryList> list2 = paramBuilder.list;
       if (list2 == null) {
         this.list = DEFAULT_LIST;
       } else {
         this.list = Message.immutableCopyOf(list2);
       } 
-      list2 = paramBuilder.num_info;
-      if (list2 == null) {
+      List<PresentNumInfo> list1 = paramBuilder.num_info;
+      if (list1 == null) {
         this.num_info = DEFAULT_NUM_INFO;
       } else {
-        this.num_info = Message.immutableCopyOf(list2);
+        this.num_info = Message.immutableCopyOf(list1);
       } 
       String str = paramBuilder.addfree_url;
       if (str == null) {
@@ -82,11 +82,11 @@ public final class DataRes extends Message {
       } else {
         this.addfree_url = str;
       } 
-      List list1 = paramBuilder.gift_list;
-      if (list1 == null) {
+      List<PresentGiftList1> list = paramBuilder.gift_list;
+      if (list == null) {
         this.gift_list = DEFAULT_GIFT_LIST;
       } else {
-        this.gift_list = Message.immutableCopyOf(list1);
+        this.gift_list = Message.immutableCopyOf(list);
       } 
       Integer integer = paramBuilder.free_chance;
       if (integer == null) {
@@ -119,6 +119,10 @@ public final class DataRes extends Message {
     } 
   }
   
+  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -133,5 +137,59 @@ public final class DataRes extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<DataRes> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String addfree_url;
+    
+    public UrlTitle currency_txt;
+    
+    public Integer currency_type;
+    
+    public Integer free_chance;
+    
+    public List<PresentGiftList1> gift_list;
+    
+    public List<PresentCategoryList> list;
+    
+    public List<PresentNumInfo> num_info;
+    
+    public Integer scene_id;
+    
+    public Builder() {}
+    
+    public Builder(DataRes param1DataRes) {
+      super(param1DataRes);
+      if (param1DataRes == null)
+        return; 
+      this.list = Message.copyOf(param1DataRes.list);
+      this.num_info = Message.copyOf(param1DataRes.num_info);
+      this.addfree_url = param1DataRes.addfree_url;
+      this.gift_list = Message.copyOf(param1DataRes.gift_list);
+      this.free_chance = param1DataRes.free_chance;
+      this.scene_id = param1DataRes.scene_id;
+      this.currency_type = param1DataRes.currency_type;
+      this.currency_txt = param1DataRes.currency_txt;
+    }
+    
+    public DataRes build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (DataRes)interceptResult.objValue; 
+      } 
+      return new DataRes(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

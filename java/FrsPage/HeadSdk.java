@@ -1,4 +1,4 @@
-package FrsPage;
+package tbclient.FrsPage;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HeadSdk extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_HEAD_PIC = "";
   
   public static final String DEFAULT_HEAD_TEXT = "";
@@ -18,6 +20,8 @@ public final class HeadSdk extends Message {
   public static final String DEFAULT_SDK_NAME = "";
   
   public static final String DEFAULT_SDK_PARAMS = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String head_pic;
@@ -35,7 +39,7 @@ public final class HeadSdk extends Message {
   public final String sdk_params;
   
   public HeadSdk(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
       String str = paramBuilder.head_pic;
@@ -77,6 +81,10 @@ public final class HeadSdk extends Message {
     } 
   }
   
+  public HeadSdk(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -91,5 +99,50 @@ public final class HeadSdk extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<HeadSdk> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String head_pic;
+    
+    public String head_text;
+    
+    public Integer head_type;
+    
+    public String sdk_name;
+    
+    public String sdk_params;
+    
+    public Builder() {}
+    
+    public Builder(HeadSdk param1HeadSdk) {
+      super(param1HeadSdk);
+      if (param1HeadSdk == null)
+        return; 
+      this.head_pic = param1HeadSdk.head_pic;
+      this.head_text = param1HeadSdk.head_text;
+      this.sdk_name = param1HeadSdk.sdk_name;
+      this.sdk_params = param1HeadSdk.sdk_params;
+      this.head_type = param1HeadSdk.head_type;
+    }
+    
+    public HeadSdk build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (HeadSdk)interceptResult.objValue; 
+      } 
+      return new HeadSdk(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetThemeList;
+package tbclient.GetThemeList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,6 +9,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThemeList extends Message {
+  public static Interceptable $ic;
+  
   public static final String DEFAULT_ICON = "";
   
   public static final Long DEFAULT_LAST_UPDATE_TIME = Long.valueOf(0L);
@@ -16,6 +18,8 @@ public final class ThemeList extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final String DEFAULT_TYPE = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String icon;
@@ -30,7 +34,7 @@ public final class ThemeList extends Message {
   public final String type;
   
   public ThemeList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
+    super(paramBuilder);
     String str;
     if (paramBoolean == true) {
       String str1 = paramBuilder.name;
@@ -65,6 +69,10 @@ public final class ThemeList extends Message {
     } 
   }
   
+  public ThemeList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -79,5 +87,47 @@ public final class ThemeList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<ThemeList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public String icon;
+    
+    public Long last_update_time;
+    
+    public String name;
+    
+    public String type;
+    
+    public Builder() {}
+    
+    public Builder(ThemeList param1ThemeList) {
+      super(param1ThemeList);
+      if (param1ThemeList == null)
+        return; 
+      this.name = param1ThemeList.name;
+      this.icon = param1ThemeList.icon;
+      this.last_update_time = param1ThemeList.last_update_time;
+      this.type = param1ThemeList.type;
+    }
+    
+    public ThemeList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (ThemeList)interceptResult.objValue; 
+      } 
+      return new ThemeList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }

@@ -1,4 +1,4 @@
-package GetGiftCommonList;
+package tbclient.GetGiftCommonList;
 
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
@@ -9,14 +9,17 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.GetGiftCommonList.Item;
 
 public final class GiftList extends Message {
+  public static Interceptable $ic;
+  
   public static final List<Item> DEFAULT_ITEM;
   
   public static final Integer DEFAULT_TYPE_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_TYPE_NAME = "";
+  
+  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<Item> item;
@@ -32,8 +35,8 @@ public final class GiftList extends Message {
   }
   
   public GiftList(Builder paramBuilder, boolean paramBoolean) {
-    super((Message.Builder)paramBuilder);
-    List list;
+    super(paramBuilder);
+    List<Item> list;
     if (paramBoolean == true) {
       String str = paramBuilder.type_name;
       if (str == null) {
@@ -60,6 +63,10 @@ public final class GiftList extends Message {
     } 
   }
   
+  public GiftList(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
+  }
+  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -74,5 +81,44 @@ public final class GiftList extends Message {
         } 
       } 
     } 
+  }
+  
+  public static final class Builder extends Message.Builder<GiftList> {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
+    
+    public List<Item> item;
+    
+    public Integer type_id;
+    
+    public String type_name;
+    
+    public Builder() {}
+    
+    public Builder(GiftList param1GiftList) {
+      super(param1GiftList);
+      if (param1GiftList == null)
+        return; 
+      this.type_name = param1GiftList.type_name;
+      this.type_id = param1GiftList.type_id;
+      this.item = Message.copyOf(param1GiftList.item);
+    }
+    
+    public GiftList build(boolean param1Boolean) {
+      Interceptable interceptable = $ic;
+      if (interceptable != null) {
+        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
+        if (interceptResult != null)
+          return (GiftList)interceptResult.objValue; 
+      } 
+      return new GiftList(this, param1Boolean, null);
+    }
+  }
+  
+  public static class a {
+    public static Interceptable $ic;
+    
+    public transient FieldHolder $fh;
   }
 }
