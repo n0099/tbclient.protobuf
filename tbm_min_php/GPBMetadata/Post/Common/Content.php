@@ -19,9 +19,9 @@ class Content
         \GPBMetadata\Post\Common\TogetherHi::initOnce();
         $pool->internalAddGeneratedFile(
             '
-æ
+ö
 
-Post/Common/Content.prototbClient.post.commonPost/Common/TiebaPlusInfo.protoPost/Common/TogetherHi.proto"ë	
+Post/Common/Content.prototbClient.post.commonPost/Common/TiebaPlusInfo.protoPost/Common/TogetherHi.proto"û	
 Content
 type (
 text (	
@@ -66,7 +66,8 @@ origin_src (	
 item_id& (
 item_forum_name\' (	;
 tiebaplus_info( (2#.tbClient.post.common.TiebaPlusInfo!
-item) (2.tbClient.item.Item[
+item) (2.tbClient.item.Item
+pic_id* ([
 	NativeApp
 jump_and (	
 jump_ios (	

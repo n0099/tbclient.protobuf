@@ -177,6 +177,10 @@ class Content extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.tbClient.item.Item item = 41;</code>
      */
     protected $item = null;
+    /**
+     * Generated from protobuf field <code>int64 pic_id = 42;</code>
+     */
+    protected $pic_id = 0;
 
     /**
      * Constructor.
@@ -225,6 +229,7 @@ class Content extends \Google\Protobuf\Internal\Message
      *     @type string $item_forum_name
      *     @type \TbClient\Post\Common\TiebaPlusInfo $tiebaplus_info
      *     @type \TbClient\Item\Item $item
+     *     @type int|string $pic_id
      * }
      */
     public function __construct($data = NULL) {
@@ -1190,6 +1195,28 @@ class Content extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \TbClient\Item\Item::class);
         $this->item = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 pic_id = 42;</code>
+     * @return int|string
+     */
+    public function getPicId()
+    {
+        return $this->pic_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 pic_id = 42;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setPicId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->pic_id = $var;
 
         return $this;
     }

@@ -65,4 +65,5 @@ message Content {
     string item_forum_name = 39;
     TiebaPlusInfo tiebaplus_info = 40;
     tbClient.item.Item item = 41;
+    int64 pic_id = 42;
 }

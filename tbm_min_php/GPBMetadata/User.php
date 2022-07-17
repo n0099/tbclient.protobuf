@@ -17,9 +17,9 @@ class User
         \GPBMetadata\UserDeps\Icon::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Þ
+ò
 
-User.prototbClient"½
+User.prototbClient"Ñ
 User
 uid (
 name (	
@@ -29,7 +29,9 @@ User.prototbClient"½
 level_id (
 	bawu_type (	
 gender* (
-fans_nickname9 (	bproto3'
+fans_nickname9 (	
+
+ip_address (	bproto3'
         , true);
 
         static::$is_initialized = true;

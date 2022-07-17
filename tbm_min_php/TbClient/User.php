@@ -49,6 +49,10 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string fans_nickname = 57;</code>
      */
     protected $fans_nickname = '';
+    /**
+     * Generated from protobuf field <code>string ip_address = 127;</code>
+     */
+    protected $ip_address = '';
 
     /**
      * Constructor.
@@ -65,6 +69,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $bawu_type
      *     @type int $gender
      *     @type string $fans_nickname
+     *     @type string $ip_address
      * }
      */
     public function __construct($data = NULL) {
@@ -266,6 +271,28 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->fans_nickname = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ip_address = 127;</code>
+     * @return string
+     */
+    public function getIpAddress()
+    {
+        return $this->ip_address;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ip_address = 127;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIpAddress($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ip_address = $var;
 
         return $this;
     }

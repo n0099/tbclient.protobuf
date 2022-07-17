@@ -12,4 +12,5 @@ message User {
     string bawu_type = 26;
     int32 gender = 42;
     string fans_nickname = 57;
+    string ip_address = 127;
 }

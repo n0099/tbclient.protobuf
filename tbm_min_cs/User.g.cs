@@ -24,16 +24,16 @@ namespace TbClient {
     static UserReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpVc2VyLnByb3RvEgh0YkNsaWVudBoTVXNlckRlcHMvSWNvbi5wcm90byK9",
+            "CgpVc2VyLnByb3RvEgh0YkNsaWVudBoTVXNlckRlcHMvSWNvbi5wcm90byLR",
             "AQoEVXNlchILCgN1aWQYAiABKAMSDAoEbmFtZRgDIAEoCRIRCgluYW1lX3No",
             "b3cYBCABKAkSEAoIcG9ydHJhaXQYBSABKAkSKQoIaWNvbmluZm8YESADKAsy",
             "Fy50YkNsaWVudC51c2VyRGVwcy5JY29uEhAKCGxldmVsX2lkGBcgASgFEhEK",
             "CWJhd3VfdHlwZRgaIAEoCRIOCgZnZW5kZXIYKiABKAUSFQoNZmFuc19uaWNr",
-            "bmFtZRg5IAEoCWIGcHJvdG8z"));
+            "bmFtZRg5IAEoCRISCgppcF9hZGRyZXNzGH8gASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.UserDeps.IconReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.User), global::TbClient.User.Parser, new[]{ "Uid", "Name", "NameShow", "Portrait", "Iconinfo", "LevelId", "BawuType", "Gender", "FansNickname" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.User), global::TbClient.User.Parser, new[]{ "Uid", "Name", "NameShow", "Portrait", "Iconinfo", "LevelId", "BawuType", "Gender", "FansNickname", "IpAddress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -83,6 +83,7 @@ namespace TbClient {
       bawuType_ = other.bawuType_;
       gender_ = other.gender_;
       fansNickname_ = other.fansNickname_;
+      ipAddress_ = other.ipAddress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -199,6 +200,18 @@ namespace TbClient {
       }
     }
 
+    /// <summary>Field number for the "ip_address" field.</summary>
+    public const int IpAddressFieldNumber = 127;
+    private string ipAddress_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string IpAddress {
+      get { return ipAddress_; }
+      set {
+        ipAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -223,6 +236,7 @@ namespace TbClient {
       if (BawuType != other.BawuType) return false;
       if (Gender != other.Gender) return false;
       if (FansNickname != other.FansNickname) return false;
+      if (IpAddress != other.IpAddress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -239,6 +253,7 @@ namespace TbClient {
       if (BawuType.Length != 0) hash ^= BawuType.GetHashCode();
       if (Gender != 0) hash ^= Gender.GetHashCode();
       if (FansNickname.Length != 0) hash ^= FansNickname.GetHashCode();
+      if (IpAddress.Length != 0) hash ^= IpAddress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -290,6 +305,10 @@ namespace TbClient {
         output.WriteRawTag(202, 3);
         output.WriteString(FansNickname);
       }
+      if (IpAddress.Length != 0) {
+        output.WriteRawTag(250, 7);
+        output.WriteString(IpAddress);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -333,6 +352,10 @@ namespace TbClient {
         output.WriteRawTag(202, 3);
         output.WriteString(FansNickname);
       }
+      if (IpAddress.Length != 0) {
+        output.WriteRawTag(250, 7);
+        output.WriteString(IpAddress);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -367,6 +390,9 @@ namespace TbClient {
       }
       if (FansNickname.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(FansNickname);
+      }
+      if (IpAddress.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(IpAddress);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -404,6 +430,9 @@ namespace TbClient {
       }
       if (other.FansNickname.Length != 0) {
         FansNickname = other.FansNickname;
+      }
+      if (other.IpAddress.Length != 0) {
+        IpAddress = other.IpAddress;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -456,6 +485,10 @@ namespace TbClient {
             FansNickname = input.ReadString();
             break;
           }
+          case 1018: {
+            IpAddress = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -505,6 +538,10 @@ namespace TbClient {
           }
           case 458: {
             FansNickname = input.ReadString();
+            break;
+          }
+          case 1018: {
+            IpAddress = input.ReadString();
             break;
           }
         }
