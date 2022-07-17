@@ -4,6 +4,8 @@ import "User.proto";
 import "Item/Item.proto";
 import "Post/SubReply.proto";
 import "Post/Common/Content.proto";
+import "Post/Common/CustomFigure.proto";
+import "Post/Common/CustomState.proto";
 import "Post/Common/Lbs.proto";
 import "Post/Common/Agree.proto";
 import "Post/Common/Zan.proto";
@@ -58,4 +60,20 @@ message Reply {
     tbClient.item.Item outer_item = 54;
     int32 fold_comment_status = 56;
     string fold_comment_apply_url = 57;
+    message CardLinkInfo {
+        string type = 1;
+        string image_url = 2;
+        string tag_text = 3;
+        string tag_color = 4;
+        string title = 5;
+        string content1 = 6;
+        string content2 = 7;
+        string btn_style = 8;
+        string btn_text = 9;
+        string text_btn_status = 10;
+        string url = 11;
+    };
+    repeated CardLinkInfo card_link_info = 59;
+    CustomFigure custom_figure = 60;
+    CustomState custom_state = 61;
 }

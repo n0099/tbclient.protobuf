@@ -13,4 +13,15 @@ message FrsTabInfo {
     uint32 tab_version = 9;
     int32 is_default = 10;
     int32 need_page = 11;
+    message TabPic {
+        message TabPicDesc {
+            string selected_pic_url = 1;
+            string unselected_pic_url = 2;
+            int32 pic_height = 3;
+            int32 pic_width = 4;
+        };
+        TabPicDesc normal = 1;
+        TabPicDesc dark = 2;
+    };
+    TabPic head_pics = 12;
 }

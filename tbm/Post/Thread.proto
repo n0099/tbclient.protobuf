@@ -3,6 +3,8 @@ package tbClient.post;
 import "User.proto";
 import "Item/Item.proto";
 import "Post/Reply.proto";
+import "Post/Common/CustomFigure.proto";
+import "Post/Common/CustomState.proto";
 import "Post/Common/Zan.proto";
 import "Post/Common/Lbs.proto";
 import "Post/Common/Agree.proto";
@@ -84,4 +86,28 @@ message Thread {
     int32 tab_id = 175;
     string tab_name = 176;
     tbClient.item.Item item = 179;
+    int32 is_deleted = 181;
+    string is_tiebaplus_ad = 193;
+    string tiebaplus_order_id = 194;
+    string tiebaplus_token = 195;
+    string tiebaplus_extra_param = 196;
+    int32 tiebaplus_cant_delete = 197;
+    int32 is_frs_mask = 198;
+    message TiebaPlusAd {
+        string cost_url = 1;
+        string show_url = 2;
+        string ad_source = 3;
+    };
+    TiebaPlusAd tiebaplus_ad = 201;
+    message EditInfo {
+        int32 edit_status = 1;
+        int32 edit_enable = 2;
+        string edit_error_msg = 3;
+        int32 last_edit_time = 4;
+        int32 edit_from = 5;
+        int32 edit_error_no = 6;
+    };
+    EditInfo edit_info = 203;
+    CustomFigure custom_figure = 211;
+    CustomState custom_state = 212;
 }
