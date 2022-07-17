@@ -23,20 +23,6 @@ function scanAllDir($dir)
     return $result;
 }
 
-// https://www.reddit.com/r/PHP/comments/3l368d/calculate_the_relative_difference_between_two/
-// https://www.php.net/manual/en/function.realpath.php#105876
-// unused since the path locator of .proto imports is sucks : https://stackoverflow.com/questions/53052911/importing-from-parent-folder-to-child-in-proto
-function relativePath($from, $to, $ps = DIRECTORY_SEPARATOR)
-{
-    $arFrom = explode($ps, rtrim($from, $ps));
-    $arTo = explode($ps, rtrim($to, $ps));
-    while (count($arFrom) && count($arTo) && ($arFrom[0] == $arTo[0])) {
-        array_shift($arFrom);
-        array_shift($arTo);
-    }
-    return str_pad("", count($arFrom) * 3, '..' . $ps) . implode($ps, $arTo);
-}
-
 try {
     ['out' => $outDir, 'in' => $inputDir] = getopt('', ['in:', 'out:']);
 } catch (Exception $e) {
@@ -53,38 +39,50 @@ foreach (scanAllDir($inputDir) as $filePath) {
     $fieldMatches = [];
     preg_match_all('/\s*@ProtoField\((label = Message.Label.(?<label>.*?), |)tag = (?<id>\d+)(, type = Message\.Datatype\.(?<type>.*?)|)\)\s*public final (?<javaType>.*?) (?<name>.*?);/', $file, $fieldMatches, PREG_SET_ORDER);
     $fields = [];
+    $imports = [];
+    $missingImports = [];
     foreach ($fieldMatches as $field) {
         ['label' => $label, 'id' => $id, 'type' => $type, 'javaType' => $javaType, 'name' => $name] = $field;
         $label = strtolower($label);
         $label = empty($label) ? '' : "$label ";
         if (empty($type)) {
-            $repeatedType = [];
-            preg_match('/(List<|)(?<repeatedType>.*)/', $javaType, $repeatedType);
-            $type = trim($repeatedType['repeatedType'], '>');
+            $typeWithoutList = [];
+            preg_match('/(List<|)(?<typeWithoutList>.*[^>])/', $javaType, $typeWithoutList);
+            $type = $typeWithoutList['typeWithoutList'];
+            if (file_exists("{$inputDir}/{$type}.java")) {
+                $imports[] = 'import "' . $type . '.proto";';
+            } else {
+                $package = [];
+                preg_match('/package (?<package>.*?);/', $file, $package);
+                $typePathWithPackagePrefix = str_replace('.', '/', str_replace('tbclient.', '', $package['package'])) . "/{$type}";
+                if (file_exists("{$inputDir}/{$typePathWithPackagePrefix}.java")) {
+                    $imports[] = 'import "' . $typePathWithPackagePrefix . '.proto";';
+                } else {
+                    // insert without package prefix since missing imports usually will be relatively imported by $javaImports
+                    $missingImports[] = 'import "' . $type . '.proto";';
+                }
+            }
         } else {
+            // lowercasing values in `@ProtoField(label = Message.Label.REPEATED, type = Message.Datatype.STRING)` attribute
             $type = strtolower($type);
         }
         $fields[$id] = "$label$type $name = $id;";
     }
-    ksort($fields);
-
-    $pathInfo = pathinfo($filePath);
-    $messageName = $pathInfo['filename'];
 
     $javaImports = [];
     preg_match_all('/import tbclient\.(?<import>.*?);/', $file, $javaImports);
-    $imports = array_filter(array_map(function ($importBeforePathFix)  use ($filePath, $messageName) {
-        if ($importBeforePathFix === $messageName) return null; // some java class will import itself at first, so we need to filter it out of the imports of protobuf
-        $importBeforePathFix = str_replace('.', '/', $importBeforePathFix);
-        return "import \"{$importBeforePathFix}.proto\";";
-        /*
-        $fixedImport = relativePath($filePath, $importBeforePathFix);
-        $trimedStartParentPath = [];
-        preg_match('@../(.*$)@', $fixedImport, $trimedStartParentPath);
-        return "import \"{$trimedStartParentPath[1]}.proto\";";
-        */
-    }, $javaImports['import']));
+    $imports += array_map(fn ($importPath) => 'import "' . str_replace('.', '/', $importPath) . '.proto";', $javaImports['import']);
+    
+    ksort($fields);
+    sort($imports);
+    $imports = array_unique($imports);
+    if (count(array_diff($missingImports, $imports)) !== 0) {
+        echo "  failed to reslove following type names:\n";
+        var_dump(array_diff($missingImports, $imports));
+    }
 
+    $pathInfo = pathinfo($filePath);
+    $messageName = $pathInfo['filename'];
     $indent = "\n    ";
     $importsStr = count($imports) === 0 ? '' : join("\n", $imports) . "\n\n";
     $outputProtoFile = "syntax = \"proto3\";\n\n{$importsStr}message $messageName {" . $indent . join($indent, $fields) . "\n}\n";
