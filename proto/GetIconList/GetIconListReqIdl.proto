@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetIconList/ReqData.proto";
-
-message GetIconListReqIdl {
-    ReqData data = 1;
-}

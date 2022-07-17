@@ -11,4 +11,7 @@ message NovelInfo {
     string h5_url = 8;
     string is_pay = 9;
     int64 chapters = 10;
+    string member_text = 11;
+    string member_img = 12;
+    string buy_url = 13;
 }

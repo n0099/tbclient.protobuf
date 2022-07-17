@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-import "NewHottopic/PkModule.proto";
 import "NewHottopic/RelateThread.proto";
 import "NewHottopic/SpecialTopic.proto";
 import "NewHottopic/TimeLine.proto";
 import "NewHottopic/TopicDetail.proto";
+import "PkModule.proto";
 
 message DataRes {
     TopicDetail topic_info = 1;

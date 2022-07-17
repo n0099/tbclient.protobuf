@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 import "BaijiahaoInfo.proto";
+import "Balv.proto";
 import "BusinessAccountInfo.proto";
-import "GetMyPost/Balv.proto";
 import "GodInfo.proto";
 import "NewGodInfo.proto";
 

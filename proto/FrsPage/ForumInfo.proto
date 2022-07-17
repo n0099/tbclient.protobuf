@@ -1,24 +1,22 @@
 syntax = "proto3";
 
+import "Banner.proto";
 import "BannerList.proto";
 import "DeletedReasonInfo.proto";
 import "FrsPage/AcrossForumIcon.proto";
 import "FrsPage/Adkiller.proto";
 import "FrsPage/AnchorPower.proto";
 import "FrsPage/Badges.proto";
-import "FrsPage/Banner.proto";
 import "FrsPage/Calendar.proto";
 import "FrsPage/Classify.proto";
 import "FrsPage/ForumButton.proto";
 import "FrsPage/Manager.proto";
 import "FrsPage/MemberShowIcon.proto";
-import "FrsPage/PostPrefix.proto";
 import "FrsPage/PostTopic.proto";
 import "FrsPage/RealTime.proto";
 import "FrsPage/RecomUserInfo.proto";
 import "FrsPage/RecommendForum.proto";
 import "FrsPage/SignInfo.proto";
-import "FrsPage/TagInfo.proto";
 import "FrsPage/TipInfo.proto";
 import "FrsPage/TopCode.proto";
 import "FrsPage/TopNews.proto";
@@ -27,6 +25,8 @@ import "FrsPage/WorldCup.proto";
 import "FrsPage/Yule.proto";
 import "FrsPage/Zhibo.proto";
 import "GameInfo.proto";
+import "PostPrefix.proto";
+import "TagInfo.proto";
 import "ThemeColorInfo.proto";
 
 message ForumInfo {

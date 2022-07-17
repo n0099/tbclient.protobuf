@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "RecommendForumListForBottle/DataReq.proto";
-
-message RecommendForumListForBottleReqIdl {
-    DataReq data = 1;
-}

@@ -8,4 +8,5 @@ message DataReq {
     int64 thread_id = 3;
     int32 source_type = 4;
     int32 source_from = 5;
+    string eqid = 6;
 }

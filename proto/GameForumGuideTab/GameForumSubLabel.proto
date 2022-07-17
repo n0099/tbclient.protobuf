@@ -1,7 +1,9 @@
 syntax = "proto3";
 
+import "GameForumGuideTab/GameForumSubLabel.proto";
+
 message GameForumSubLabel {
     int32 id = 1;
     string sub_tab_name = 2;
-    repeated tbclient.GameForumGuideTab.GameForumSubLabel sub_label_list = 3;
+    repeated GameForumSubLabel sub_label_list = 3;
 }

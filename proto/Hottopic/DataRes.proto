@@ -4,11 +4,11 @@ import "Banner.proto";
 import "Hottopic/CommonInteraction.proto";
 import "Hottopic/HotThread.proto";
 import "Hottopic/MagicPost.proto";
-import "Hottopic/PkModule.proto";
 import "Hottopic/RelateForum.proto";
 import "Hottopic/SpecialTopic.proto";
-import "Hottopic/ThreadModule.proto";
 import "Hottopic/TopicInfo.proto";
+import "PkModule.proto";
+import "ThreadModule.proto";
 
 message DataRes {
     repeated RelateForum relate_forum = 1;

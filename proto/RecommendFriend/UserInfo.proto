@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "RecommendFriend/LbsInfo.proto";
+import "LbsInfo.proto";
 import "RecommendFriend/ShowIcon.proto";
 
 message UserInfo {

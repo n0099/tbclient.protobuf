@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message CoverImageColor {
+    string value = 1;
+    int32 model = 2;
+}

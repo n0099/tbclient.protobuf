@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "NewTopicList/PkModule.proto";
+import "PkModule.proto";
 import "Post.proto";
 
 message NewTopicList {

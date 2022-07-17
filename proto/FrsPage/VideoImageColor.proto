@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message VideoImageColor {
+    uint32 time = 1;
+    string color = 2;
+}

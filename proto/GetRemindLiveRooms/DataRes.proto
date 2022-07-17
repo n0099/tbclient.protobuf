@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "GetRemindLiveRooms/YyLiveInfoSimple.proto";
+
+message DataRes {
+    string is_end = 1;
+    repeated YyLiveInfoSimple live_list = 2;
+}

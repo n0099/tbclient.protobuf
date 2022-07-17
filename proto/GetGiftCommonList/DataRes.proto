@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetGiftCommonList/GiftInfo.proto";
-
-message DataRes {
-    GiftInfo gift_info = 1;
-}

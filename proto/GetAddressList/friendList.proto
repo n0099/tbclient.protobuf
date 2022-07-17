@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "GetAddressList/LbsInfo.proto";
+import "LbsInfo.proto";
 
 message friendList {
     string portrait = 1;

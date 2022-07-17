@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "NewHottopic/PkItem.proto";
+import "PkItem.proto";
 
 message PkModule {
     int64 pk_id = 1;

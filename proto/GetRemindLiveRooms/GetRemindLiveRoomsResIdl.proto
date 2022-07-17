@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetRemindLiveRooms/DataRes.proto";
+
+message GetRemindLiveRoomsResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

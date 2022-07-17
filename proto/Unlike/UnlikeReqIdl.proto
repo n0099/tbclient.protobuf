@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "Unlike/DataReq.proto";
-
-message UnlikeReqIdl {
-    DataReq data = 1;
-}

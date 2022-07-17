@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "TestClose/DataReq.proto";
-
-message TestCloseReqIdl {
-    DataReq data = 1;
-}

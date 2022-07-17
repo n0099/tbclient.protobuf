@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "GetGiftCommonList/Item.proto";
+import "Item.proto";
 
 message GiftList {
     string type_name = 1;

@@ -30,4 +30,6 @@ message BusinessPromot {
     string download_item_id = 25;
     string download_package_name = 26;
     string download_appid = 27;
+    string cover_url = 28;
+    string video_url = 29;
 }
