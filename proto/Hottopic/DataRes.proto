@@ -8,6 +8,7 @@ import "Hottopic/RelateForum.proto";
 import "Hottopic/SpecialTopic.proto";
 import "Hottopic/TopicInfo.proto";
 import "PkModule.proto";
+import "RecomTopicList.proto";
 import "ThreadModule.proto";
 
 message DataRes {
@@ -27,4 +28,5 @@ message DataRes {
     string relate_forum_title = 14;
     CommonInteraction weiguan_module = 15;
     repeated Banner banner = 16;
+    RecomTopicList next_topic = 17;
 }

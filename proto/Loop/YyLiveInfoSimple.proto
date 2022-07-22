@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "YyExt.proto";
+
+message YyLiveInfoSimple {
+    string icon_url = 1;
+    string icon_scheme = 2;
+    int32 disappear_type = 3;
+    int32 disappear_second = 4;
+    string desc = 5;
+    int32 desc_global_max_num = 6;
+    int32 single_open_max_num = 7;
+    int32 day_max_num = 8;
+    int32 min_step_second = 9;
+    string user_name = 10;
+    string portrait = 11;
+    string title = 12;
+    YyExt yy_ext = 13;
+    uint64 room_id = 14;
+    string btn_text = 15;
+    string feed_id = 16;
+    int32 remind_type = 17;
+    int32 show_page = 18;
+}

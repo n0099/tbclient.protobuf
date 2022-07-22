@@ -3,6 +3,7 @@ syntax = "proto3";
 import "BlockPopInfo.proto";
 import "FrsTabInfo.proto";
 import "PostPrefix.proto";
+import "RecomTagInfo.proto";
 import "ThemeColorInfo.proto";
 
 message HistoryForumInfo {
@@ -22,4 +23,6 @@ message HistoryForumInfo {
     bool has_postpre = 18;
     PostPrefix post_prefix = 19;
     int32 is_forum_business_account = 20;
+    RecomTagInfo tag_info = 21;
+    string first_category = 22;
 }
