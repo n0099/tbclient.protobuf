@@ -19,11 +19,14 @@ import tbclient.ThreadInfo;
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<FrsTabInfo> DEFAULT_HOT_THREAD_TAB_INFO;
+    public static final List<InnerTabInfo> DEFAULT_INNER_TABS;
     public static final List<ThreadInfo> DEFAULT_THREAD_INFO;
     public static final List<RecomTopicList> DEFAULT_TOPIC_LIST;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<FrsTabInfo> hot_thread_tab_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 4)
+    public final List<InnerTabInfo> inner_tabs;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThreadInfo> thread_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -34,6 +37,7 @@ public final class DataRes extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public List<FrsTabInfo> hot_thread_tab_info;
+        public List<InnerTabInfo> inner_tabs;
         public List<ThreadInfo> thread_info;
         public List<RecomTopicList> topic_list;
 
@@ -75,6 +79,7 @@ public final class DataRes extends Message {
             this.topic_list = Message.copyOf(dataRes.topic_list);
             this.thread_info = Message.copyOf(dataRes.thread_info);
             this.hot_thread_tab_info = Message.copyOf(dataRes.hot_thread_tab_info);
+            this.inner_tabs = Message.copyOf(dataRes.inner_tabs);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -108,6 +113,7 @@ public final class DataRes extends Message {
         DEFAULT_TOPIC_LIST = Collections.emptyList();
         DEFAULT_THREAD_INFO = Collections.emptyList();
         DEFAULT_HOT_THREAD_TAB_INFO = Collections.emptyList();
+        DEFAULT_INNER_TABS = Collections.emptyList();
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -148,14 +154,21 @@ public final class DataRes extends Message {
             List<FrsTabInfo> list3 = builder.hot_thread_tab_info;
             if (list3 == null) {
                 this.hot_thread_tab_info = DEFAULT_HOT_THREAD_TAB_INFO;
-                return;
             } else {
                 this.hot_thread_tab_info = Message.immutableCopyOf(list3);
+            }
+            List<InnerTabInfo> list4 = builder.inner_tabs;
+            if (list4 == null) {
+                this.inner_tabs = DEFAULT_INNER_TABS;
+                return;
+            } else {
+                this.inner_tabs = Message.immutableCopyOf(list4);
                 return;
             }
         }
         this.topic_list = Message.immutableCopyOf(builder.topic_list);
         this.thread_info = Message.immutableCopyOf(builder.thread_info);
         this.hot_thread_tab_info = Message.immutableCopyOf(builder.hot_thread_tab_info);
+        this.inner_tabs = Message.immutableCopyOf(builder.inner_tabs);
     }
 }

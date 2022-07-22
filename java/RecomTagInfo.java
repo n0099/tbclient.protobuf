@@ -1,4 +1,4 @@
-package tbclient.ZoneRight;
+package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -10,23 +10,27 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
-public final class Toast extends Message {
+/* loaded from: classes8.dex */
+public final class RecomTagInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
-    public static final String DEFAULT_CONTENT = "";
-    public static final Integer DEFAULT_TYPE;
+    public static final Integer DEFAULT_ID;
+    public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_PIC = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String content;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer type;
+    public final String name;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String pic;
 
-    /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Toast> {
+    /* loaded from: classes8.dex */
+    public static final class Builder extends Message.Builder<RecomTagInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public String content;
-        public Integer type;
+        public Integer id;
+        public String name;
+        public String pic;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -43,13 +47,13 @@ public final class Toast extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(Toast toast) {
-            super(toast);
+        public Builder(RecomTagInfo recomTagInfo) {
+            super(recomTagInfo);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {toast};
+                Object[] objArr = {recomTagInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -60,23 +64,24 @@ public final class Toast extends Message {
                     return;
                 }
             }
-            if (toast == null) {
+            if (recomTagInfo == null) {
                 return;
             }
-            this.type = toast.type;
-            this.content = toast.content;
+            this.id = recomTagInfo.id;
+            this.name = recomTagInfo.name;
+            this.pic = recomTagInfo.pic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public Toast build(boolean z) {
+        public RecomTagInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Toast(this, z, null) : (Toast) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecomTagInfo(this, z, null) : (RecomTagInfo) invokeZ.objValue;
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -85,25 +90,25 @@ public final class Toast extends Message {
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(18169117, "Ltbclient/ZoneRight/Toast;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1718067785, "Ltbclient/RecomTagInfo;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(18169117, "Ltbclient/ZoneRight/Toast;");
+                classClinitInterceptable.invokePostClinit(-1718067785, "Ltbclient/RecomTagInfo;");
                 return;
             }
         }
-        DEFAULT_TYPE = 0;
+        DEFAULT_ID = 0;
     }
 
-    public /* synthetic */ Toast(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ RecomTagInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Toast(Builder builder, boolean z) {
+    public RecomTagInfo(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -121,22 +126,29 @@ public final class Toast extends Message {
             }
         }
         if (z) {
-            Integer num = builder.type;
+            Integer num = builder.id;
             if (num == null) {
-                this.type = DEFAULT_TYPE;
+                this.id = DEFAULT_ID;
             } else {
-                this.type = num;
+                this.id = num;
             }
-            String str = builder.content;
+            String str = builder.name;
             if (str == null) {
-                this.content = "";
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.pic;
+            if (str2 == null) {
+                this.pic = "";
                 return;
             } else {
-                this.content = str;
+                this.pic = str2;
                 return;
             }
         }
-        this.type = builder.type;
-        this.content = builder.content;
+        this.id = builder.id;
+        this.name = builder.name;
+        this.pic = builder.pic;
     }
 }

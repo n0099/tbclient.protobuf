@@ -14,6 +14,7 @@ import com.squareup.wire.ProtoField;
 public final class Basic extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BEGIN_APPLY_TIME = "";
+    public static final String DEFAULT_BEGIN_AUDIT_TIME = "";
     public static final String DEFAULT_BEGIN_PUBLIC_TIME = "";
     public static final String DEFAULT_BEGIN_VOTE_TIME = "";
     public static final Integer DEFAULT_CANDIDATE_NUM;
@@ -24,6 +25,8 @@ public final class Basic extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String begin_apply_time;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String begin_audit_time;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String begin_public_time;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -46,6 +49,7 @@ public final class Basic extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String begin_apply_time;
+        public String begin_audit_time;
         public String begin_public_time;
         public String begin_vote_time;
         public Integer candidate_num;
@@ -99,6 +103,7 @@ public final class Basic extends Message {
             this.total_vote_num = basic.total_vote_num;
             this.is_voted = basic.is_voted;
             this.notice = basic.notice;
+            this.begin_audit_time = basic.begin_audit_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -207,7 +212,14 @@ public final class Basic extends Message {
                 this.is_voted = bool;
             }
             this.notice = builder.notice;
-            return;
+            String str5 = builder.begin_audit_time;
+            if (str5 == null) {
+                this.begin_audit_time = "";
+                return;
+            } else {
+                this.begin_audit_time = str5;
+                return;
+            }
         }
         this.begin_apply_time = builder.begin_apply_time;
         this.begin_vote_time = builder.begin_vote_time;
@@ -218,5 +230,6 @@ public final class Basic extends Message {
         this.total_vote_num = builder.total_vote_num;
         this.is_voted = builder.is_voted;
         this.notice = builder.notice;
+        this.begin_audit_time = builder.begin_audit_time;
     }
 }

@@ -16,6 +16,7 @@ import java.util.List;
 public final class HistoryForumInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_FIRST_CATEGORY = "";
     public static final Integer DEFAULT_FOLLOW_NUM;
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
@@ -33,6 +34,8 @@ public final class HistoryForumInfo extends Message {
     public final String avatar;
     @ProtoField(tag = 14)
     public final BlockPopInfo block_pop_info;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String first_category;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer follow_num;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -55,6 +58,8 @@ public final class HistoryForumInfo extends Message {
     public final PostPrefix post_prefix;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
     public final List<FrsTabInfo> tab_info;
+    @ProtoField(tag = 21)
+    public final RecomTagInfo tag_info;
     @ProtoField(tag = 8)
     public final ThemeColorInfo theme_color;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -68,6 +73,7 @@ public final class HistoryForumInfo extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
         public BlockPopInfo block_pop_info;
+        public String first_category;
         public Integer follow_num;
         public Long forum_id;
         public String forum_name;
@@ -79,6 +85,7 @@ public final class HistoryForumInfo extends Message {
         public Boolean need_trans;
         public PostPrefix post_prefix;
         public List<FrsTabInfo> tab_info;
+        public RecomTagInfo tag_info;
         public ThemeColorInfo theme_color;
         public Integer unread_num;
         public String visit_time;
@@ -134,6 +141,8 @@ public final class HistoryForumInfo extends Message {
             this.has_postpre = historyForumInfo.has_postpre;
             this.post_prefix = historyForumInfo.post_prefix;
             this.is_forum_business_account = historyForumInfo.is_forum_business_account;
+            this.tag_info = historyForumInfo.tag_info;
+            this.first_category = historyForumInfo.first_category;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -277,9 +286,16 @@ public final class HistoryForumInfo extends Message {
             Integer num6 = builder.is_forum_business_account;
             if (num6 == null) {
                 this.is_forum_business_account = DEFAULT_IS_FORUM_BUSINESS_ACCOUNT;
-                return;
             } else {
                 this.is_forum_business_account = num6;
+            }
+            this.tag_info = builder.tag_info;
+            String str4 = builder.first_category;
+            if (str4 == null) {
+                this.first_category = "";
+                return;
+            } else {
+                this.first_category = str4;
                 return;
             }
         }
@@ -299,5 +315,7 @@ public final class HistoryForumInfo extends Message {
         this.has_postpre = builder.has_postpre;
         this.post_prefix = builder.post_prefix;
         this.is_forum_business_account = builder.is_forum_business_account;
+        this.tag_info = builder.tag_info;
+        this.first_category = builder.first_category;
     }
 }

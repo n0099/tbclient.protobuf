@@ -13,6 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Banner;
+import tbclient.RecomTopicList;
 /* loaded from: classes8.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
@@ -40,6 +41,8 @@ public final class DataRes extends Message {
     public final Integer is_new_url;
     @ProtoField(tag = 2)
     public final MagicPost magic_post;
+    @ProtoField(tag = 17)
+    public final RecomTopicList next_topic;
     @ProtoField(tag = 6)
     public final PkModule pk_module;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
@@ -69,6 +72,7 @@ public final class DataRes extends Message {
         public Integer is_global_block;
         public Integer is_new_url;
         public MagicPost magic_post;
+        public RecomTopicList next_topic;
         public PkModule pk_module;
         public List<RelateForum> post_forum;
         public List<RelateForum> relate_forum;
@@ -129,6 +133,7 @@ public final class DataRes extends Message {
             this.relate_forum_title = dataRes.relate_forum_title;
             this.weiguan_module = dataRes.weiguan_module;
             this.banner = Message.copyOf(dataRes.banner);
+            this.next_topic = dataRes.next_topic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -238,11 +243,11 @@ public final class DataRes extends Message {
             List<Banner> list4 = builder.banner;
             if (list4 == null) {
                 this.banner = DEFAULT_BANNER;
-                return;
             } else {
                 this.banner = Message.immutableCopyOf(list4);
-                return;
             }
+            this.next_topic = builder.next_topic;
+            return;
         }
         this.relate_forum = Message.immutableCopyOf(builder.relate_forum);
         this.magic_post = builder.magic_post;
@@ -260,5 +265,6 @@ public final class DataRes extends Message {
         this.relate_forum_title = builder.relate_forum_title;
         this.weiguan_module = builder.weiguan_module;
         this.banner = Message.immutableCopyOf(builder.banner);
+        this.next_topic = builder.next_topic;
     }
 }

@@ -1,8 +1,6 @@
-package tbclient.ZoneRight;
+package tbclient.HotThreadList;
 
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
 import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
@@ -10,23 +8,27 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
-public final class Toast extends Message {
+/* loaded from: classes8.dex */
+public final class InnerTabInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
-    public static final String DEFAULT_CONTENT = "";
-    public static final Integer DEFAULT_TYPE;
+    public static final String DEFAULT_ICON = "";
+    public static final String DEFAULT_JUMP_SCHEME = "";
+    public static final String DEFAULT_NAME = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String icon;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String content;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer type;
+    public final String jump_scheme;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String name;
 
-    /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Toast> {
+    /* loaded from: classes8.dex */
+    public static final class Builder extends Message.Builder<InnerTabInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public String content;
-        public Integer type;
+        public String icon;
+        public String jump_scheme;
+        public String name;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -43,13 +45,13 @@ public final class Toast extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(Toast toast) {
-            super(toast);
+        public Builder(InnerTabInfo innerTabInfo) {
+            super(innerTabInfo);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {toast};
+                Object[] objArr = {innerTabInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -60,83 +62,75 @@ public final class Toast extends Message {
                     return;
                 }
             }
-            if (toast == null) {
+            if (innerTabInfo == null) {
                 return;
             }
-            this.type = toast.type;
-            this.content = toast.content;
+            this.name = innerTabInfo.name;
+            this.jump_scheme = innerTabInfo.jump_scheme;
+            this.icon = innerTabInfo.icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public Toast build(boolean z) {
+        public InnerTabInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Toast(this, z, null) : (Toast) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new InnerTabInfo(this, z, null) : (InnerTabInfo) invokeZ.objValue;
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(18169117, "Ltbclient/ZoneRight/Toast;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(18169117, "Ltbclient/ZoneRight/Toast;");
-                return;
-            }
-        }
-        DEFAULT_TYPE = 0;
-    }
-
-    public /* synthetic */ Toast(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ InnerTabInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Toast(Builder builder, boolean z) {
+    public InnerTabInfo(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
             InitContext newInitContext = TitanRuntime.newInitContext();
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
+            interceptable.invokeUnInit(65536, newInitContext);
             int i = newInitContext.flag;
             if ((i & 1) != 0) {
                 int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
+                interceptable.invokeInitBody(65536, newInitContext);
                 return;
             }
         }
         if (z) {
-            Integer num = builder.type;
-            if (num == null) {
-                this.type = DEFAULT_TYPE;
-            } else {
-                this.type = num;
-            }
-            String str = builder.content;
+            String str = builder.name;
             if (str == null) {
-                this.content = "";
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.jump_scheme;
+            if (str2 == null) {
+                this.jump_scheme = "";
+            } else {
+                this.jump_scheme = str2;
+            }
+            String str3 = builder.icon;
+            if (str3 == null) {
+                this.icon = "";
                 return;
             } else {
-                this.content = str;
+                this.icon = str3;
                 return;
             }
         }
-        this.type = builder.type;
-        this.content = builder.content;
+        this.name = builder.name;
+        this.jump_scheme = builder.jump_scheme;
+        this.icon = builder.icon;
     }
 }
