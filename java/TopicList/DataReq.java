@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f2081common;
+    public final CommonReq f1367common;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -39,7 +39,7 @@ public final class DataReq extends Message {
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f2082common;
+        public CommonReq f1368common;
         public Long fid;
         public String list_type;
         public String need_tab_list;
@@ -79,7 +79,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f2082common = dataReq.f2081common;
+            this.f1368common = dataReq.f1367common;
             this.call_from = dataReq.call_from;
             this.list_type = dataReq.list_type;
             this.need_tab_list = dataReq.need_tab_list;
@@ -140,7 +140,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f2081common = builder.f2082common;
+            this.f1367common = builder.f1368common;
             String str = builder.call_from;
             if (str == null) {
                 this.call_from = "";
@@ -168,7 +168,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f2081common = builder.f2082common;
+        this.f1367common = builder.f1368common;
         this.call_from = builder.call_from;
         this.list_type = builder.list_type;
         this.need_tab_list = builder.need_tab_list;

@@ -26,7 +26,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f2075common;
+    public final CommonReq f1361common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer load_type;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -50,7 +50,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f2076common;
+        public CommonReq f1362common;
         public Integer load_type;
         public Integer pn;
         public Integer rn;
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f2076common = dataReq.f2075common;
+            this.f1362common = dataReq.f1361common;
             this.tab_name = dataReq.tab_name;
             this.tab_code = dataReq.tab_code;
             this.load_type = dataReq.load_type;
@@ -165,7 +165,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f2075common = builder.f2076common;
+            this.f1361common = builder.f1362common;
             String str = builder.tab_name;
             if (str == null) {
                 this.tab_name = "";
@@ -217,7 +217,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f2075common = builder.f2076common;
+        this.f1361common = builder.f1362common;
         this.tab_name = builder.tab_name;
         this.tab_code = builder.tab_code;
         this.load_type = builder.load_type;

@@ -61,6 +61,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PN;
     public static final String DEFAULT_PORTRAIT = "";
     public static final Integer DEFAULT_Q_TYPE;
+    public static final Integer DEFAULT_REQUEST_TIMES;
     public static final Integer DEFAULT_RESULT_NUM;
     public static final Integer DEFAULT_RN;
     public static final Integer DEFAULT_RN_NEED;
@@ -112,7 +113,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 39)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1859common;
+    public final CommonReq f1145common;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -181,6 +182,8 @@ public final class DataReq extends Message {
     public final String portrait;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer q_type;
+    @ProtoField(tag = 69, type = Message.Datatype.INT32)
+    public final Integer request_times;
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer result_num;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -240,7 +243,7 @@ public final class DataReq extends Message {
         public Integer class_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1860common;
+        public CommonReq f1146common;
         public String cookie;
         public Integer ctime;
         public String da_idfa;
@@ -275,6 +278,7 @@ public final class DataReq extends Message {
         public Integer pn;
         public String portrait;
         public Integer q_type;
+        public Integer request_times;
         public Integer result_num;
         public Integer rn;
         public Integer rn_need;
@@ -368,7 +372,7 @@ public final class DataReq extends Message {
             this.email = dataReq.email;
             this.debug = dataReq.debug;
             this.cookie = dataReq.cookie;
-            this.f1860common = dataReq.f1859common;
+            this.f1146common = dataReq.f1145common;
             this.lastids = dataReq.lastids;
             this.issdk = dataReq.issdk;
             this.da_idfa = dataReq.da_idfa;
@@ -398,6 +402,7 @@ public final class DataReq extends Message {
             this.has_ad_bear = dataReq.has_ad_bear;
             this.ad_bear_sid = dataReq.ad_bear_sid;
             this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
+            this.request_times = dataReq.request_times;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -470,6 +475,7 @@ public final class DataReq extends Message {
         DEFAULT_DEFAULT_SORT_TYPE = 0;
         DEFAULT_HAS_AD_BEAR = 0;
         DEFAULT_AD_BEAR_SID_PRICE = valueOf;
+        DEFAULT_REQUEST_TIMES = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -723,7 +729,7 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = str10;
             }
-            this.f1859common = builder.f1860common;
+            this.f1145common = builder.f1146common;
             String str11 = builder.lastids;
             if (str11 == null) {
                 this.lastids = "";
@@ -880,9 +886,15 @@ public final class DataReq extends Message {
             Double d2 = builder.ad_bear_sid_price;
             if (d2 == null) {
                 this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
-                return;
             } else {
                 this.ad_bear_sid_price = d2;
+            }
+            Integer num32 = builder.request_times;
+            if (num32 == null) {
+                this.request_times = DEFAULT_REQUEST_TIMES;
+                return;
+            } else {
+                this.request_times = num32;
                 return;
             }
         }
@@ -924,7 +936,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.debug = builder.debug;
         this.cookie = builder.cookie;
-        this.f1859common = builder.f1860common;
+        this.f1145common = builder.f1146common;
         this.lastids = builder.lastids;
         this.issdk = builder.issdk;
         this.da_idfa = builder.da_idfa;
@@ -954,5 +966,6 @@ public final class DataReq extends Message {
         this.has_ad_bear = builder.has_ad_bear;
         this.ad_bear_sid = builder.ad_bear_sid;
         this.ad_bear_sid_price = builder.ad_bear_sid_price;
+        this.request_times = builder.request_times;
     }
 }

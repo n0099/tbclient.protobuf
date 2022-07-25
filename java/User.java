@@ -8,6 +8,7 @@ import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
+import com.google.android.exoplayer2.text.cea.Cea708Decoder;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -338,6 +339,8 @@ public final class User extends Message {
     public final Integer type;
     @ProtoField(tag = 107, type = Message.Datatype.STRING)
     public final String uk;
+    @ProtoField(tag = Cea708Decoder.COMMAND_DSW)
+    public final UserGrowth user_growth;
     @ProtoField(label = Message.Label.REPEATED, tag = 44)
     public final List<UserPics> user_pics;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
@@ -482,6 +485,7 @@ public final class User extends Message {
         public TwZhiBoUser tw_anchor_info;
         public Integer type;
         public String uk;
+        public UserGrowth user_growth;
         public List<UserPics> user_pics;
         public Integer user_type;
         public Integer userhide;
@@ -657,6 +661,7 @@ public final class User extends Message {
             this.is_nickname_editing = user.is_nickname_editing;
             this.editing_nickname = user.editing_nickname;
             this.virtual_image_info = user.virtual_image_info;
+            this.user_growth = user.user_growth;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1366,6 +1371,7 @@ public final class User extends Message {
                 this.editing_nickname = str25;
             }
             this.virtual_image_info = builder.virtual_image_info;
+            this.user_growth = builder.user_growth;
             return;
         }
         this.is_login = builder.is_login;
@@ -1495,5 +1501,6 @@ public final class User extends Message {
         this.is_nickname_editing = builder.is_nickname_editing;
         this.editing_nickname = builder.editing_nickname;
         this.virtual_image_info = builder.virtual_image_info;
+        this.user_growth = builder.user_growth;
     }
 }

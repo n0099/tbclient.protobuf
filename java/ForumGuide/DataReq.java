@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1851common;
+    public final CommonReq f1137common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer sort_type;
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1852common;
+        public CommonReq f1138common;
         public Integer sort_type;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1852common = dataReq.f1851common;
+            this.f1138common = dataReq.f1137common;
             this.sort_type = dataReq.sort_type;
             this.call_from = dataReq.call_from;
         }
@@ -131,7 +131,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1851common = builder.f1852common;
+            this.f1137common = builder.f1138common;
             Integer num = builder.sort_type;
             if (num == null) {
                 this.sort_type = DEFAULT_SORT_TYPE;
@@ -147,7 +147,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1851common = builder.f1852common;
+        this.f1137common = builder.f1138common;
         this.sort_type = builder.sort_type;
         this.call_from = builder.call_from;
     }

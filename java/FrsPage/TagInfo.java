@@ -10,6 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.RecomTagInfo;
 /* loaded from: classes8.dex */
 public final class TagInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
@@ -34,6 +35,8 @@ public final class TagInfo extends Message {
     public final Integer influence;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer op_time;
+    @ProtoField(tag = 11)
+    public final RecomTagInfo recom_tag;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer relation_weight;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -54,6 +57,7 @@ public final class TagInfo extends Message {
         public Integer hot_value;
         public Integer influence;
         public Integer op_time;
+        public RecomTagInfo recom_tag;
         public Integer relation_weight;
         public Integer tag_id;
         public Integer tag_level;
@@ -105,6 +109,7 @@ public final class TagInfo extends Message {
             this.influence = tagInfo.influence;
             this.relation_weight = tagInfo.relation_weight;
             this.op_time = tagInfo.op_time;
+            this.recom_tag = tagInfo.recom_tag;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -226,11 +231,11 @@ public final class TagInfo extends Message {
             Integer num8 = builder.op_time;
             if (num8 == null) {
                 this.op_time = DEFAULT_OP_TIME;
-                return;
             } else {
                 this.op_time = num8;
-                return;
             }
+            this.recom_tag = builder.recom_tag;
+            return;
         }
         this.forum_id = builder.forum_id;
         this.tag_id = builder.tag_id;
@@ -242,5 +247,6 @@ public final class TagInfo extends Message {
         this.influence = builder.influence;
         this.relation_weight = builder.relation_weight;
         this.op_time = builder.op_time;
+        this.recom_tag = builder.recom_tag;
     }
 }

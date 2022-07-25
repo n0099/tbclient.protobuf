@@ -24,6 +24,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_GENERAL_TAB;
     public static final Long DEFAULT_LAST_THREAD_ID;
     public static final Integer DEFAULT_PN;
+    public static final Integer DEFAULT_REQUEST_TIMES;
     public static final Integer DEFAULT_RN;
     public static final Integer DEFAULT_SCR_DIP;
     public static final Integer DEFAULT_SCR_H;
@@ -44,7 +45,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1863common;
+    public final CommonReq f1149common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -57,6 +58,8 @@ public final class DataReq extends Message {
     public final Long last_thread_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer pn;
+    @ProtoField(tag = 20, type = Message.Datatype.INT32)
+    public final Integer request_times;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer rn;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -84,13 +87,14 @@ public final class DataReq extends Message {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1864common;
+        public CommonReq f1150common;
         public Long forum_id;
         public Integer has_ad_bear;
         public Integer is_default_navtab;
         public Integer is_general_tab;
         public Long last_thread_id;
         public Integer pn;
+        public Integer request_times;
         public Integer rn;
         public Integer scr_dip;
         public Integer scr_h;
@@ -135,7 +139,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1864common = dataReq.f1863common;
+            this.f1150common = dataReq.f1149common;
             this.tab_id = dataReq.tab_id;
             this.forum_id = dataReq.forum_id;
             this.pn = dataReq.pn;
@@ -154,6 +158,7 @@ public final class DataReq extends Message {
             this.has_ad_bear = dataReq.has_ad_bear;
             this.ad_bear_sid = dataReq.ad_bear_sid;
             this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
+            this.request_times = dataReq.request_times;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -198,6 +203,7 @@ public final class DataReq extends Message {
         DEFAULT_TAB_TYPE = 0;
         DEFAULT_HAS_AD_BEAR = 0;
         DEFAULT_AD_BEAR_SID_PRICE = Double.valueOf(0.0d);
+        DEFAULT_REQUEST_TIMES = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -223,7 +229,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1863common = builder.f1864common;
+            this.f1149common = builder.f1150common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -329,13 +335,19 @@ public final class DataReq extends Message {
             Double d = builder.ad_bear_sid_price;
             if (d == null) {
                 this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
-                return;
             } else {
                 this.ad_bear_sid_price = d;
+            }
+            Integer num12 = builder.request_times;
+            if (num12 == null) {
+                this.request_times = DEFAULT_REQUEST_TIMES;
+                return;
+            } else {
+                this.request_times = num12;
                 return;
             }
         }
-        this.f1863common = builder.f1864common;
+        this.f1149common = builder.f1150common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;
@@ -354,5 +366,6 @@ public final class DataReq extends Message {
         this.has_ad_bear = builder.has_ad_bear;
         this.ad_bear_sid = builder.ad_bear_sid;
         this.ad_bear_sid_price = builder.ad_bear_sid_price;
+        this.request_times = builder.request_times;
     }
 }

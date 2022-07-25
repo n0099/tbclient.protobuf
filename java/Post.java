@@ -90,6 +90,8 @@ public final class Post extends Message {
     public final String fold_tip;
     @ProtoField(tag = 38)
     public final SimpleForum from_forum;
+    @ProtoField(tag = 62)
+    public final FullLengthNovel full_length_novel;
     @ProtoField(tag = 33)
     public final TogetherHi high_together;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -196,6 +198,7 @@ public final class Post extends Message {
         public Integer fold_comment_status;
         public String fold_tip;
         public SimpleForum from_forum;
+        public FullLengthNovel full_length_novel;
         public TogetherHi high_together;
         public Long id;
         public Integer img_num_abtest;
@@ -333,6 +336,7 @@ public final class Post extends Message {
             this.card_link_info = Message.copyOf(post.card_link_info);
             this.custom_figure = post.custom_figure;
             this.custom_state = post.custom_state;
+            this.full_length_novel = post.full_length_novel;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -655,6 +659,7 @@ public final class Post extends Message {
             }
             this.custom_figure = builder.custom_figure;
             this.custom_state = builder.custom_state;
+            this.full_length_novel = builder.full_length_novel;
             return;
         }
         this.id = builder.id;
@@ -717,5 +722,6 @@ public final class Post extends Message {
         this.card_link_info = Message.immutableCopyOf(builder.card_link_info);
         this.custom_figure = builder.custom_figure;
         this.custom_state = builder.custom_state;
+        this.full_length_novel = builder.full_length_novel;
     }
 }

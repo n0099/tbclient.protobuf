@@ -63,6 +63,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_QUERY_WORD = "";
     public static final Integer DEFAULT_Q_TYPE;
     public static final Integer DEFAULT_R;
+    public static final Integer DEFAULT_REQUEST_TIMES;
     public static final Integer DEFAULT_RN;
     public static final Double DEFAULT_SCR_DIP;
     public static final Integer DEFAULT_SCR_H;
@@ -105,7 +106,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f2017common;
+    public final CommonReq f1303common;
     @ProtoField(tag = 42, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 55, type = Message.Datatype.STRING)
@@ -186,6 +187,8 @@ public final class DataReq extends Message {
     public final String query_word;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer r;
+    @ProtoField(tag = 80, type = Message.Datatype.INT32)
+    public final Integer request_times;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer rn;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
@@ -239,7 +242,7 @@ public final class DataReq extends Message {
         public String call_url;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f2018common;
+        public CommonReq f1304common;
         public String da_idfa;
         public String feed_nid;
         public Long fid;
@@ -280,6 +283,7 @@ public final class DataReq extends Message {
         public Integer q_type;
         public String query_word;
         public Integer r;
+        public Integer request_times;
         public Integer rn;
         public Integer s_model;
         public Double scr_dip;
@@ -358,7 +362,7 @@ public final class DataReq extends Message {
             this.arround = dataReq.arround;
             this.last = dataReq.last;
             this.msg_click = dataReq.msg_click;
-            this.f2018common = dataReq.f2017common;
+            this.f1304common = dataReq.f1303common;
             this.lastids = dataReq.lastids;
             this.st_from = dataReq.st_from;
             this.st_link = dataReq.st_link;
@@ -403,6 +407,7 @@ public final class DataReq extends Message {
             this.app_transmit_data = dataReq.app_transmit_data;
             this.is_fold_comment_req = dataReq.is_fold_comment_req;
             this.is_edit_comment_req = dataReq.is_edit_comment_req;
+            this.request_times = dataReq.request_times;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -475,6 +480,7 @@ public final class DataReq extends Message {
         DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE = 0;
         DEFAULT_IS_FOLD_COMMENT_REQ = 0;
         DEFAULT_IS_EDIT_COMMENT_REQ = 0;
+        DEFAULT_REQUEST_TIMES = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -644,7 +650,7 @@ public final class DataReq extends Message {
             } else {
                 this.msg_click = str2;
             }
-            this.f2017common = builder.f2018common;
+            this.f1303common = builder.f1304common;
             String str3 = builder.lastids;
             if (str3 == null) {
                 this.lastids = "";
@@ -891,9 +897,15 @@ public final class DataReq extends Message {
             Integer num34 = builder.is_edit_comment_req;
             if (num34 == null) {
                 this.is_edit_comment_req = DEFAULT_IS_EDIT_COMMENT_REQ;
-                return;
             } else {
                 this.is_edit_comment_req = num34;
+            }
+            Integer num35 = builder.request_times;
+            if (num35 == null) {
+                this.request_times = DEFAULT_REQUEST_TIMES;
+                return;
+            } else {
+                this.request_times = num35;
                 return;
             }
         }
@@ -921,7 +933,7 @@ public final class DataReq extends Message {
         this.arround = builder.arround;
         this.last = builder.last;
         this.msg_click = builder.msg_click;
-        this.f2017common = builder.f2018common;
+        this.f1303common = builder.f1304common;
         this.lastids = builder.lastids;
         this.st_from = builder.st_from;
         this.st_link = builder.st_link;
@@ -966,5 +978,6 @@ public final class DataReq extends Message {
         this.app_transmit_data = builder.app_transmit_data;
         this.is_fold_comment_req = builder.is_fold_comment_req;
         this.is_edit_comment_req = builder.is_edit_comment_req;
+        this.request_times = builder.request_times;
     }
 }

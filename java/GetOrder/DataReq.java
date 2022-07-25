@@ -30,7 +30,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1931common;
+    public final CommonReq f1217common;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
         public String click_zone;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1932common;
+        public CommonReq f1218common;
         public Integer is_autopay;
         public Integer is_left;
         public String mobile;
@@ -110,7 +110,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1932common = dataReq.f1931common;
+            this.f1218common = dataReq.f1217common;
             this.pay_type = dataReq.pay_type;
             this.is_left = dataReq.is_left;
             this.order_url = dataReq.order_url;
@@ -173,7 +173,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1931common = builder.f1932common;
+            this.f1217common = builder.f1218common;
             Integer num = builder.pay_type;
             if (num == null) {
                 this.pay_type = DEFAULT_PAY_TYPE;
@@ -232,7 +232,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1931common = builder.f1932common;
+        this.f1217common = builder.f1218common;
         this.pay_type = builder.pay_type;
         this.is_left = builder.is_left;
         this.order_url = builder.order_url;

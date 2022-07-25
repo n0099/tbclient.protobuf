@@ -30,6 +30,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_PLATFORM = "";
     public static final Integer DEFAULT_PN;
     public static final Integer DEFAULT_Q_TYPE;
+    public static final Integer DEFAULT_REQUEST_TIMES;
     public static final Double DEFAULT_SCR_DIP;
     public static final Integer DEFAULT_SCR_H;
     public static final Integer DEFAULT_SCR_W;
@@ -57,7 +58,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 8)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f2077common;
+    public final CommonReq f1363common;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String da_idfa;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -76,6 +77,8 @@ public final class DataReq extends Message {
     public final Integer pn;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer q_type;
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    public final Integer request_times;
     @ProtoField(tag = 12, type = Message.Datatype.DOUBLE)
     public final Double scr_dip;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -105,7 +108,7 @@ public final class DataReq extends Message {
         public AppTransmitData app_transmit_data;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f2078common;
+        public CommonReq f1364common;
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
@@ -115,6 +118,7 @@ public final class DataReq extends Message {
         public String platform;
         public Integer pn;
         public Integer q_type;
+        public Integer request_times;
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
@@ -165,7 +169,7 @@ public final class DataReq extends Message {
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
-            this.f2078common = dataReq.f2077common;
+            this.f1364common = dataReq.f1363common;
             this.user_id = dataReq.user_id;
             this.da_idfa = dataReq.da_idfa;
             this.platform = dataReq.platform;
@@ -183,6 +187,7 @@ public final class DataReq extends Message {
             this.has_ad_bear = dataReq.has_ad_bear;
             this.ad_bear_sid = dataReq.ad_bear_sid;
             this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
+            this.request_times = dataReq.request_times;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -227,6 +232,7 @@ public final class DataReq extends Message {
         DEFAULT_SORT_TYPE = 0;
         DEFAULT_HAS_AD_BEAR = 0;
         DEFAULT_AD_BEAR_SID_PRICE = valueOf;
+        DEFAULT_REQUEST_TIMES = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -294,7 +300,7 @@ public final class DataReq extends Message {
             } else {
                 this.q_type = num5;
             }
-            this.f2077common = builder.f2078common;
+            this.f1363common = builder.f1364common;
             Long l2 = builder.user_id;
             if (l2 == null) {
                 this.user_id = DEFAULT_USER_ID;
@@ -379,9 +385,15 @@ public final class DataReq extends Message {
             Double d2 = builder.ad_bear_sid_price;
             if (d2 == null) {
                 this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
-                return;
             } else {
                 this.ad_bear_sid_price = d2;
+            }
+            Integer num9 = builder.request_times;
+            if (num9 == null) {
+                this.request_times = DEFAULT_REQUEST_TIMES;
+                return;
+            } else {
+                this.request_times = num9;
                 return;
             }
         }
@@ -392,7 +404,7 @@ public final class DataReq extends Message {
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
-        this.f2077common = builder.f2078common;
+        this.f1363common = builder.f1364common;
         this.user_id = builder.user_id;
         this.da_idfa = builder.da_idfa;
         this.platform = builder.platform;
@@ -410,5 +422,6 @@ public final class DataReq extends Message {
         this.has_ad_bear = builder.has_ad_bear;
         this.ad_bear_sid = builder.ad_bear_sid;
         this.ad_bear_sid_price = builder.ad_bear_sid_price;
+        this.request_times = builder.request_times;
     }
 }
