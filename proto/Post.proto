@@ -8,6 +8,7 @@ import "CardLinkInfo.proto";
 import "CustomFigure.proto";
 import "CustomState.proto";
 import "DealInfo.proto";
+import "FullLengthNovel.proto";
 import "HeadItem.proto";
 import "Item.proto";
 import "Lbs.proto";
@@ -88,4 +89,5 @@ message Post {
     repeated CardLinkInfo card_link_info = 59;
     CustomFigure custom_figure = 60;
     CustomState custom_state = 61;
+    FullLengthNovel full_length_novel = 62;
 }

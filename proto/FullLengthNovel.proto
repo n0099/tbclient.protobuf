@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message FullLengthNovel {
+    string schema = 1;
+    string has_truncate = 2;
+}

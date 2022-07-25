@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message UserGrowth {
+    uint32 level_id = 1;
+}
