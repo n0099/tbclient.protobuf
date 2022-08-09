@@ -28,6 +28,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_FROM_TID = "";
     public static final String DEFAULT_IS_ARTICLE = "";
     public static final String DEFAULT_IS_BOTTLE = "";
+    public static final Integer DEFAULT_IS_CREATE_TAG;
     public static final String DEFAULT_IS_FEEDBACK = "";
     public static final String DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = "";
     public static final String DEFAULT_IS_GENERAL_TAB = "";
@@ -36,6 +37,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_IS_LOCATION = "";
     public static final String DEFAULT_IS_NTITLE = "";
     public static final String DEFAULT_IS_PICTXT = "";
+    public static final Integer DEFAULT_IS_QUESTION;
     public static final String DEFAULT_IS_REPOST_TO_DYNAMIC = "";
     public static final String DEFAULT_IS_SHARE = "";
     public static final String DEFAULT_IS_WORKS = "";
@@ -59,6 +61,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ORI_UGC_VID = "";
     public static final String DEFAULT_POST_PREFIX = "";
     public static final String DEFAULT_PRO_ZONE = "";
+    public static final String DEFAULT_QUESTION_TAG_ID = "";
     public static final String DEFAULT_REAL_LAT = "";
     public static final String DEFAULT_REAL_LNG = "";
     public static final String DEFAULT_RECOMMEND_EXT = "";
@@ -107,7 +110,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1103common;
+    public final CommonReq f1106common;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -126,6 +129,8 @@ public final class DataReq extends Message {
     public final String is_article;
     @ProtoField(tag = 51, type = Message.Datatype.STRING)
     public final String is_bottle;
+    @ProtoField(tag = 85, type = Message.Datatype.INT32)
+    public final Integer is_create_tag;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String is_feedback;
     @ProtoField(tag = 63, type = Message.Datatype.STRING)
@@ -142,6 +147,8 @@ public final class DataReq extends Message {
     public final String is_ntitle;
     @ProtoField(tag = 77, type = Message.Datatype.STRING)
     public final String is_pictxt;
+    @ProtoField(tag = 83, type = Message.Datatype.INT32)
+    public final Integer is_question;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String is_repost_to_dynamic;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -188,6 +195,8 @@ public final class DataReq extends Message {
     public final String post_prefix;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
     public final String pro_zone;
+    @ProtoField(tag = 84, type = Message.Datatype.STRING)
+    public final String question_tag_id;
     @ProtoField(tag = 73, type = Message.Datatype.STRING)
     public final String real_lat;
     @ProtoField(tag = 74, type = Message.Datatype.STRING)
@@ -268,7 +277,7 @@ public final class DataReq extends Message {
         public String comment_head;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1104common;
+        public CommonReq f1107common;
         public String content;
         public String during_time;
         public String entrance_type;
@@ -278,6 +287,7 @@ public final class DataReq extends Message {
         public String from_tid;
         public String is_article;
         public String is_bottle;
+        public Integer is_create_tag;
         public String is_feedback;
         public String is_forum_business_account;
         public String is_general_tab;
@@ -286,6 +296,7 @@ public final class DataReq extends Message {
         public String is_location;
         public String is_ntitle;
         public String is_pictxt;
+        public Integer is_question;
         public String is_repost_to_dynamic;
         public String is_share;
         public String is_works;
@@ -309,6 +320,7 @@ public final class DataReq extends Message {
         public String origin_video_title;
         public String post_prefix;
         public String pro_zone;
+        public String question_tag_id;
         public String real_lat;
         public String real_lng;
         public String recommend_ext;
@@ -379,7 +391,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1104common = dataReq.f1103common;
+            this.f1107common = dataReq.f1106common;
             this.authsid = dataReq.authsid;
             this.sig = dataReq.sig;
             this.tbs = dataReq.tbs;
@@ -459,6 +471,9 @@ public final class DataReq extends Message {
             this.show_custom_figure = dataReq.show_custom_figure;
             this.from_category_id = dataReq.from_category_id;
             this.to_category_id = dataReq.to_category_id;
+            this.is_question = dataReq.is_question;
+            this.question_tag_id = dataReq.question_tag_id;
+            this.is_create_tag = dataReq.is_create_tag;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -490,6 +505,8 @@ public final class DataReq extends Message {
             }
         }
         DEFAULT_SHOW_CUSTOM_FIGURE = 0;
+        DEFAULT_IS_QUESTION = 0;
+        DEFAULT_IS_CREATE_TAG = 0;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -515,7 +532,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1103common = builder.f1104common;
+            this.f1106common = builder.f1107common;
             String str = builder.authsid;
             if (str == null) {
                 this.authsid = "";
@@ -987,13 +1004,31 @@ public final class DataReq extends Message {
             String str78 = builder.to_category_id;
             if (str78 == null) {
                 this.to_category_id = "";
-                return;
             } else {
                 this.to_category_id = str78;
+            }
+            Integer num2 = builder.is_question;
+            if (num2 == null) {
+                this.is_question = DEFAULT_IS_QUESTION;
+            } else {
+                this.is_question = num2;
+            }
+            String str79 = builder.question_tag_id;
+            if (str79 == null) {
+                this.question_tag_id = "";
+            } else {
+                this.question_tag_id = str79;
+            }
+            Integer num3 = builder.is_create_tag;
+            if (num3 == null) {
+                this.is_create_tag = DEFAULT_IS_CREATE_TAG;
+                return;
+            } else {
+                this.is_create_tag = num3;
                 return;
             }
         }
-        this.f1103common = builder.f1104common;
+        this.f1106common = builder.f1107common;
         this.authsid = builder.authsid;
         this.sig = builder.sig;
         this.tbs = builder.tbs;
@@ -1073,5 +1108,8 @@ public final class DataReq extends Message {
         this.show_custom_figure = builder.show_custom_figure;
         this.from_category_id = builder.from_category_id;
         this.to_category_id = builder.to_category_id;
+        this.is_question = builder.is_question;
+        this.question_tag_id = builder.question_tag_id;
+        this.is_create_tag = builder.is_create_tag;
     }
 }

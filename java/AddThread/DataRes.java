@@ -23,6 +23,7 @@ public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_COLOR_MSG = "";
     public static final String DEFAULT_EXT_MSG = "";
+    public static final String DEFAULT_INVITEES_NUMBER = "";
     public static final String DEFAULT_MSG = "";
     public static final String DEFAULT_OPGROUP = "";
     public static final String DEFAULT_PID = "";
@@ -48,6 +49,8 @@ public final class DataRes extends Message {
     public final IconStampInfo icon_stamp_info;
     @ProtoField(tag = 14)
     public final PostAntiInfo info;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String invitees_number;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String msg;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -80,6 +83,7 @@ public final class DataRes extends Message {
         public String ext_msg;
         public IconStampInfo icon_stamp_info;
         public PostAntiInfo info;
+        public String invitees_number;
         public String msg;
         public String opgroup;
         public String pid;
@@ -143,6 +147,7 @@ public final class DataRes extends Message {
             this.tb_hudong = dataRes.tb_hudong;
             this.anti = dataRes.anti;
             this.ext_msg = dataRes.ext_msg;
+            this.invitees_number = dataRes.invitees_number;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -238,9 +243,15 @@ public final class DataRes extends Message {
             String str8 = builder.ext_msg;
             if (str8 == null) {
                 this.ext_msg = "";
-                return;
             } else {
                 this.ext_msg = str8;
+            }
+            String str9 = builder.invitees_number;
+            if (str9 == null) {
+                this.invitees_number = "";
+                return;
+            } else {
+                this.invitees_number = str9;
                 return;
             }
         }
@@ -262,5 +273,6 @@ public final class DataRes extends Message {
         this.tb_hudong = builder.tb_hudong;
         this.anti = builder.anti;
         this.ext_msg = builder.ext_msg;
+        this.invitees_number = builder.invitees_number;
     }
 }

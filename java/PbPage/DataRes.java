@@ -36,7 +36,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
@@ -209,6 +209,8 @@ public final class DataRes extends Message {
     public final List<RecomTopicList> thread_topic;
     @ProtoField(tag = 34)
     public final PbTopAgreePost top_agree_post_list;
+    @ProtoField(tag = 73)
+    public final Post top_answer;
     @ProtoField(tag = 18)
     public final TwZhiBoAnti twzhibo_anti;
     @ProtoField(tag = 1)
@@ -216,7 +218,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<User> user_list;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -286,6 +288,7 @@ public final class DataRes extends Message {
         public Long thread_freq_num;
         public List<RecomTopicList> thread_topic;
         public PbTopAgreePost top_agree_post_list;
+        public Post top_answer;
         public TwZhiBoAnti twzhibo_anti;
         public User user;
         public List<User> user_list;
@@ -394,6 +397,7 @@ public final class DataRes extends Message {
             this.pb_notice = dataRes.pb_notice;
             this.has_fold_comment = dataRes.has_fold_comment;
             this.fold_comment_num = dataRes.fold_comment_num;
+            this.top_answer = dataRes.top_answer;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -405,7 +409,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -731,11 +735,11 @@ public final class DataRes extends Message {
             Long l2 = builder.fold_comment_num;
             if (l2 == null) {
                 this.fold_comment_num = DEFAULT_FOLD_COMMENT_NUM;
-                return;
             } else {
                 this.fold_comment_num = l2;
-                return;
             }
+            this.top_answer = builder.top_answer;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -806,5 +810,6 @@ public final class DataRes extends Message {
         this.pb_notice = builder.pb_notice;
         this.has_fold_comment = builder.has_fold_comment;
         this.fold_comment_num = builder.fold_comment_num;
+        this.top_answer = builder.top_answer;
     }
 }

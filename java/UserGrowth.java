@@ -10,19 +10,37 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+import java.util.Collections;
+import java.util.List;
+/* loaded from: classes9.dex */
 public final class UserGrowth extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_LEVEL_ID;
+    public static final Long DEFAULT_SCORE;
+    public static final Long DEFAULT_TARGET_SCORE;
+    public static final List<UserTaskInfo> DEFAULT_TASK_INFO;
+    public static final Double DEFAULT_TMONEY;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer level_id;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long score;
+    @ProtoField(tag = 3, type = Message.Datatype.INT64)
+    public final Long target_score;
+    @ProtoField(label = Message.Label.REPEATED, tag = 5)
+    public final List<UserTaskInfo> task_info;
+    @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
+    public final Double tmoney;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<UserGrowth> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer level_id;
+        public Long score;
+        public Long target_score;
+        public List<UserTaskInfo> task_info;
+        public Double tmoney;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -60,6 +78,10 @@ public final class UserGrowth extends Message {
                 return;
             }
             this.level_id = userGrowth.level_id;
+            this.score = userGrowth.score;
+            this.target_score = userGrowth.target_score;
+            this.tmoney = userGrowth.tmoney;
+            this.task_info = Message.copyOf(userGrowth.task_info);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -71,7 +93,7 @@ public final class UserGrowth extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -91,6 +113,10 @@ public final class UserGrowth extends Message {
             }
         }
         DEFAULT_LEVEL_ID = 0;
+        DEFAULT_SCORE = 0L;
+        DEFAULT_TARGET_SCORE = 0L;
+        DEFAULT_TMONEY = Double.valueOf(0.0d);
+        DEFAULT_TASK_INFO = Collections.emptyList();
     }
 
     public /* synthetic */ UserGrowth(Builder builder, boolean z, a aVar) {
@@ -119,12 +145,40 @@ public final class UserGrowth extends Message {
             Integer num = builder.level_id;
             if (num == null) {
                 this.level_id = DEFAULT_LEVEL_ID;
-                return;
             } else {
                 this.level_id = num;
+            }
+            Long l = builder.score;
+            if (l == null) {
+                this.score = DEFAULT_SCORE;
+            } else {
+                this.score = l;
+            }
+            Long l2 = builder.target_score;
+            if (l2 == null) {
+                this.target_score = DEFAULT_TARGET_SCORE;
+            } else {
+                this.target_score = l2;
+            }
+            Double d = builder.tmoney;
+            if (d == null) {
+                this.tmoney = DEFAULT_TMONEY;
+            } else {
+                this.tmoney = d;
+            }
+            List<UserTaskInfo> list = builder.task_info;
+            if (list == null) {
+                this.task_info = DEFAULT_TASK_INFO;
+                return;
+            } else {
+                this.task_info = Message.immutableCopyOf(list);
                 return;
             }
         }
         this.level_id = builder.level_id;
+        this.score = builder.score;
+        this.target_score = builder.target_score;
+        this.tmoney = builder.tmoney;
+        this.task_info = Message.immutableCopyOf(builder.task_info);
     }
 }

@@ -13,7 +13,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class User extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_AGREE_NUM;
@@ -28,6 +28,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_CAN_MODIFY_AVATAR;
     public static final Integer DEFAULT_CONCERN_NUM;
     public static final Integer DEFAULT_DISPLAY_AUTH_TYPE;
+    public static final String DEFAULT_DISPLAY_INTRO = "";
     public static final Integer DEFAULT_EACH_OTHER_FRIEND;
     public static final String DEFAULT_EDITING_NICKNAME = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
@@ -81,6 +82,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_MY_LIKE_NUM;
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
+    public static final List<String> DEFAULT_NEW_ICON_URL;
     public static final List<TshowInfo> DEFAULT_NEW_TSHOW_ICON;
     public static final Integer DEFAULT_NICKNAME_UPDATE_TIME;
     public static final Integer DEFAULT_NO_POST_HIGH;
@@ -157,6 +159,8 @@ public final class User extends Message {
     public final CreationData creation_data;
     @ProtoField(tag = 123, type = Message.Datatype.INT32)
     public final Integer display_auth_type;
+    @ProtoField(tag = 138, type = Message.Datatype.STRING)
+    public final String display_intro;
     @ProtoField(tag = 83, type = Message.Datatype.INT32)
     public final Integer each_other_friend;
     @ProtoField(tag = 74)
@@ -275,6 +279,8 @@ public final class User extends Message {
     public final String name_show;
     @ProtoField(tag = 101)
     public final NewGodInfo new_god_data;
+    @ProtoField(label = Message.Label.REPEATED, tag = Cea708Decoder.COMMAND_TGW, type = Message.Datatype.STRING)
+    public final List<String> new_icon_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 65)
     public final List<TshowInfo> new_tshow_icon;
     @ProtoField(tag = 8)
@@ -366,7 +372,7 @@ public final class User extends Message {
     @ProtoField(tag = 119)
     public final CreationData workcreation_data;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<User> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -394,6 +400,7 @@ public final class User extends Message {
         public ConsumeInfo consume_info;
         public CreationData creation_data;
         public Integer display_auth_type;
+        public String display_intro;
         public Integer each_other_friend;
         public Ecom ecom;
         public EditConfig edit_config;
@@ -453,6 +460,7 @@ public final class User extends Message {
         public String name;
         public String name_show;
         public NewGodInfo new_god_data;
+        public List<String> new_icon_url;
         public List<TshowInfo> new_tshow_icon;
         public NewUser new_user_info;
         public Integer nickname_update_time;
@@ -662,6 +670,8 @@ public final class User extends Message {
             this.editing_nickname = user.editing_nickname;
             this.virtual_image_info = user.virtual_image_info;
             this.user_growth = user.user_growth;
+            this.display_intro = user.display_intro;
+            this.new_icon_url = Message.copyOf(user.new_icon_url);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -673,7 +683,7 @@ public final class User extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -759,6 +769,7 @@ public final class User extends Message {
         DEFAULT_MANAGER_FORUM = Collections.emptyList();
         DEFAULT_DISPLAY_AUTH_TYPE = 0;
         DEFAULT_IS_NICKNAME_EDITING = 0;
+        DEFAULT_NEW_ICON_URL = Collections.emptyList();
     }
 
     public /* synthetic */ User(Builder builder, boolean z, a aVar) {
@@ -1372,7 +1383,20 @@ public final class User extends Message {
             }
             this.virtual_image_info = builder.virtual_image_info;
             this.user_growth = builder.user_growth;
-            return;
+            String str26 = builder.display_intro;
+            if (str26 == null) {
+                this.display_intro = "";
+            } else {
+                this.display_intro = str26;
+            }
+            List<String> list12 = builder.new_icon_url;
+            if (list12 == null) {
+                this.new_icon_url = DEFAULT_NEW_ICON_URL;
+                return;
+            } else {
+                this.new_icon_url = Message.immutableCopyOf(list12);
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -1502,5 +1526,7 @@ public final class User extends Message {
         this.editing_nickname = builder.editing_nickname;
         this.virtual_image_info = builder.virtual_image_info;
         this.user_growth = builder.user_growth;
+        this.display_intro = builder.display_intro;
+        this.new_icon_url = Message.immutableCopyOf(builder.new_icon_url);
     }
 }

@@ -16,6 +16,7 @@ import tbclient.PostAntiInfo;
 import tbclient.ReplyExp;
 import tbclient.TbInteraction;
 import tbclient.ThreadEasterEgg;
+import tbclient.Toast;
 import tbclient.VcodeInfo;
 import tbclient.ZhiBoInfoTW;
 /* loaded from: classes8.dex */
@@ -62,6 +63,8 @@ public final class DataRes extends Message {
     public final TbInteraction tb_hudong;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tid;
+    @ProtoField(tag = 19)
+    public final Toast toast;
     @ProtoField(tag = 8)
     public final ZhiBoInfoTW twzhibo_info;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -87,6 +90,7 @@ public final class DataRes extends Message {
         public ThreadEasterEgg star_info;
         public TbInteraction tb_hudong;
         public String tid;
+        public Toast toast;
         public ZhiBoInfoTW twzhibo_info;
         public String video_id;
 
@@ -143,6 +147,7 @@ public final class DataRes extends Message {
             this.tb_hudong = dataRes.tb_hudong;
             this.anti = dataRes.anti;
             this.ext_msg = dataRes.ext_msg;
+            this.toast = dataRes.toast;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -238,11 +243,11 @@ public final class DataRes extends Message {
             String str8 = builder.ext_msg;
             if (str8 == null) {
                 this.ext_msg = "";
-                return;
             } else {
                 this.ext_msg = str8;
-                return;
             }
+            this.toast = builder.toast;
+            return;
         }
         this.opgroup = builder.opgroup;
         this.tid = builder.tid;
@@ -262,5 +267,6 @@ public final class DataRes extends Message {
         this.tb_hudong = builder.tb_hudong;
         this.anti = builder.anti;
         this.ext_msg = builder.ext_msg;
+        this.toast = builder.toast;
     }
 }

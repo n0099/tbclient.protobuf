@@ -15,6 +15,7 @@ import tbclient.RecomTagInfo;
 public final class TagInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_COLOR;
+    public static final String DEFAULT_FIRST_CATEGORY = "";
     public static final Long DEFAULT_FORUM_ID;
     public static final Integer DEFAULT_HOT_VALUE;
     public static final Integer DEFAULT_INFLUENCE;
@@ -27,6 +28,8 @@ public final class TagInfo extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer color;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String first_category;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -53,6 +56,7 @@ public final class TagInfo extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer color;
+        public String first_category;
         public Long forum_id;
         public Integer hot_value;
         public Integer influence;
@@ -110,6 +114,7 @@ public final class TagInfo extends Message {
             this.relation_weight = tagInfo.relation_weight;
             this.op_time = tagInfo.op_time;
             this.recom_tag = tagInfo.recom_tag;
+            this.first_category = tagInfo.first_category;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -235,7 +240,14 @@ public final class TagInfo extends Message {
                 this.op_time = num8;
             }
             this.recom_tag = builder.recom_tag;
-            return;
+            String str2 = builder.first_category;
+            if (str2 == null) {
+                this.first_category = "";
+                return;
+            } else {
+                this.first_category = str2;
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.tag_id = builder.tag_id;
@@ -248,5 +260,6 @@ public final class TagInfo extends Message {
         this.relation_weight = builder.relation_weight;
         this.op_time = builder.op_time;
         this.recom_tag = builder.recom_tag;
+        this.first_category = builder.first_category;
     }
 }

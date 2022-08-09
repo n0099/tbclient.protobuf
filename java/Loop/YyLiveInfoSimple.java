@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.YyExt;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class YyLiveInfoSimple extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BTN_TEXT = "";
@@ -69,7 +69,7 @@ public final class YyLiveInfoSimple extends Message {
     @ProtoField(tag = 13)
     public final YyExt yy_ext;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<YyLiveInfoSimple> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -156,7 +156,7 @@ public final class YyLiveInfoSimple extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

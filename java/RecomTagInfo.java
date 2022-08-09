@@ -10,13 +10,16 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class RecomTagInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_FIRST_CLASS = "";
     public static final Integer DEFAULT_ID;
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_PIC = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String first_class;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -24,10 +27,11 @@ public final class RecomTagInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String pic;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<RecomTagInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String first_class;
         public Integer id;
         public String name;
         public String pic;
@@ -70,6 +74,7 @@ public final class RecomTagInfo extends Message {
             this.id = recomTagInfo.id;
             this.name = recomTagInfo.name;
             this.pic = recomTagInfo.pic;
+            this.first_class = recomTagInfo.first_class;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -81,7 +86,7 @@ public final class RecomTagInfo extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -141,14 +146,21 @@ public final class RecomTagInfo extends Message {
             String str2 = builder.pic;
             if (str2 == null) {
                 this.pic = "";
-                return;
             } else {
                 this.pic = str2;
+            }
+            String str3 = builder.first_class;
+            if (str3 == null) {
+                this.first_class = "";
+                return;
+            } else {
+                this.first_class = str3;
                 return;
             }
         }
         this.id = builder.id;
         this.name = builder.name;
         this.pic = builder.pic;
+        this.first_class = builder.first_class;
     }
 }

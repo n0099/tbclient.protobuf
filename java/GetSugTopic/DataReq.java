@@ -11,7 +11,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FID;
@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1239common;
+    public final CommonReq f1242common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -35,13 +35,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String second_dir;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1240common;
+        public CommonReq f1243common;
         public Long fid;
         public String first_dir;
         public Integer is_video_topic;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1240common = dataReq.f1239common;
+            this.f1243common = dataReq.f1242common;
             this.prefix = dataReq.prefix;
             this.fid = dataReq.fid;
             this.first_dir = dataReq.first_dir;
@@ -100,7 +100,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1239common = builder.f1240common;
+            this.f1242common = builder.f1243common;
             String str = builder.prefix;
             if (str == null) {
                 this.prefix = "";
@@ -180,7 +180,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1239common = builder.f1240common;
+        this.f1242common = builder.f1243common;
         this.prefix = builder.prefix;
         this.fid = builder.fid;
         this.first_dir = builder.first_dir;

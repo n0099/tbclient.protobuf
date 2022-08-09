@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
 import tbclient.User;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class InterviewInfo extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<PbContent> DEFAULT_CONTENT;
@@ -36,7 +36,7 @@ public final class InterviewInfo extends Message {
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<InterviewInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -99,7 +99,7 @@ public final class InterviewInfo extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

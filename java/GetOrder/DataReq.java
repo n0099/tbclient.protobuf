@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.Wares;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CLICK_ZONE = "";
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1217common;
+    public final CommonReq f1220common;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -51,20 +51,20 @@ public final class DataReq extends Message {
     public final Wares wares;
 
     /* renamed from: tbclient.GetOrder.DataReq$1  reason: invalid class name */
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class AnonymousClass1 {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String click_zone;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1218common;
+        public CommonReq f1221common;
         public Integer is_autopay;
         public Integer is_left;
         public String mobile;
@@ -110,7 +110,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1218common = dataReq.f1217common;
+            this.f1221common = dataReq.f1220common;
             this.pay_type = dataReq.pay_type;
             this.is_left = dataReq.is_left;
             this.order_url = dataReq.order_url;
@@ -173,7 +173,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1217common = builder.f1218common;
+            this.f1220common = builder.f1221common;
             Integer num = builder.pay_type;
             if (num == null) {
                 this.pay_type = DEFAULT_PAY_TYPE;
@@ -232,7 +232,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1217common = builder.f1218common;
+        this.f1220common = builder.f1221common;
         this.pay_type = builder.pay_type;
         this.is_left = builder.is_left;
         this.order_url = builder.order_url;

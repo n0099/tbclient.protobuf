@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Page;
 import tbclient.ThreadInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class HotThread extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_HOT_TITLE = "";
@@ -30,7 +30,7 @@ public final class HotThread extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThreadInfo> thread_list;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<HotThread> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -89,7 +89,7 @@ public final class HotThread extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

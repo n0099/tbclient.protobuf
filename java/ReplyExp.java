@@ -8,7 +8,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class ReplyExp extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_COLOR_MSG = "";
@@ -17,6 +17,8 @@ public final class ReplyExp extends Message {
     public static final String DEFAULT_INC = "";
     public static final String DEFAULT_OLD = "";
     public static final String DEFAULT_PRE_MSG = "";
+    public static final String DEFAULT_QUESTION_EXP = "";
+    public static final String DEFAULT_QUESTION_MSG = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String color_msg;
@@ -30,8 +32,12 @@ public final class ReplyExp extends Message {
     public final String old;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pre_msg;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String question_exp;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String question_msg;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ReplyExp> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -41,6 +47,8 @@ public final class ReplyExp extends Message {
         public String inc;
         public String old;
         public String pre_msg;
+        public String question_exp;
+        public String question_msg;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -83,6 +91,8 @@ public final class ReplyExp extends Message {
             this.current_level = replyExp.current_level;
             this.old = replyExp.old;
             this.inc = replyExp.inc;
+            this.question_msg = replyExp.question_msg;
+            this.question_exp = replyExp.question_exp;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -94,7 +104,7 @@ public final class ReplyExp extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -156,9 +166,21 @@ public final class ReplyExp extends Message {
             String str6 = builder.inc;
             if (str6 == null) {
                 this.inc = "";
-                return;
             } else {
                 this.inc = str6;
+            }
+            String str7 = builder.question_msg;
+            if (str7 == null) {
+                this.question_msg = "";
+            } else {
+                this.question_msg = str7;
+            }
+            String str8 = builder.question_exp;
+            if (str8 == null) {
+                this.question_exp = "";
+                return;
+            } else {
+                this.question_exp = str8;
                 return;
             }
         }
@@ -168,5 +190,7 @@ public final class ReplyExp extends Message {
         this.current_level = builder.current_level;
         this.old = builder.old;
         this.inc = builder.inc;
+        this.question_msg = builder.question_msg;
+        this.question_exp = builder.question_exp;
     }
 }

@@ -18,6 +18,7 @@ public final class Agree extends Message {
     public static final Long DEFAULT_DIFF_AGREE_NUM;
     public static final Long DEFAULT_DISAGREE_NUM;
     public static final Integer DEFAULT_HAS_AGREE;
+    public static final Integer DEFAULT_LZ_AGREE;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long agree_num;
@@ -29,6 +30,8 @@ public final class Agree extends Message {
     public final Long disagree_num;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer has_agree;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer lz_agree;
 
     /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<Agree> {
@@ -39,6 +42,7 @@ public final class Agree extends Message {
         public Long diff_agree_num;
         public Long disagree_num;
         public Integer has_agree;
+        public Integer lz_agree;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -80,6 +84,7 @@ public final class Agree extends Message {
             this.agree_type = agree.agree_type;
             this.disagree_num = agree.disagree_num;
             this.diff_agree_num = agree.diff_agree_num;
+            this.lz_agree = agree.lz_agree;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -115,6 +120,7 @@ public final class Agree extends Message {
         DEFAULT_AGREE_TYPE = 0;
         DEFAULT_DISAGREE_NUM = 0L;
         DEFAULT_DIFF_AGREE_NUM = 0L;
+        DEFAULT_LZ_AGREE = 0;
     }
 
     public /* synthetic */ Agree(Builder builder, boolean z, a aVar) {
@@ -167,9 +173,15 @@ public final class Agree extends Message {
             Long l3 = builder.diff_agree_num;
             if (l3 == null) {
                 this.diff_agree_num = DEFAULT_DIFF_AGREE_NUM;
-                return;
             } else {
                 this.diff_agree_num = l3;
+            }
+            Integer num3 = builder.lz_agree;
+            if (num3 == null) {
+                this.lz_agree = DEFAULT_LZ_AGREE;
+                return;
+            } else {
+                this.lz_agree = num3;
                 return;
             }
         }
@@ -178,5 +190,6 @@ public final class Agree extends Message {
         this.agree_type = builder.agree_type;
         this.disagree_num = builder.disagree_num;
         this.diff_agree_num = builder.diff_agree_num;
+        this.lz_agree = builder.lz_agree;
     }
 }
