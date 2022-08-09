@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Loop/DataReq.proto";
+
+message LoopReqIdl {
+    DataReq data = 1;
+}

@@ -29,6 +29,7 @@ import "LinkThreadInfo.proto";
 import "Media.proto";
 import "MediaNum.proto";
 import "MultipleForum.proto";
+import "OriginThreadInfo.proto";
 import "PbContent.proto";
 import "PbGoodsInfo.proto";
 import "PbLinkInfo.proto";
@@ -195,6 +196,7 @@ message ThreadInfo {
     int64 share_num = 135;
     int32 is_called = 136;
     int64 audit_time = 138;
+    OriginThreadInfo origin_thread_info = 141;
     StarRankIcon star_rank_icon = 147;
     int32 is_topic = 148;
     string topic_user_name = 149;

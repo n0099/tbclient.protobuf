@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ToastContent {
+    string text = 1;
+    int32 has_color = 2;
+}

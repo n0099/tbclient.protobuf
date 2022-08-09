@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Loop/IconPop.proto";
+
+message IconRes {
+    IconPop pop = 1;
+}

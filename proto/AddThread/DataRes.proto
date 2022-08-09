@@ -30,4 +30,5 @@ message DataRes {
     TbInteraction tb_hudong = 16;
     VcodeInfo anti = 17;
     string ext_msg = 18;
+    string invitees_number = 19;
 }

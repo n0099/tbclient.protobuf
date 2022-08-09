@@ -14,4 +14,5 @@ message TagInfo {
     int32 relation_weight = 9;
     int32 op_time = 10;
     RecomTagInfo recom_tag = 11;
+    string first_category = 12;
 }

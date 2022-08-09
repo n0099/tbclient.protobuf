@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "Loop/DataRes.proto";
+
+message LoopResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

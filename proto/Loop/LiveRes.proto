@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Loop/NormalConfig.proto";
+import "Loop/YyLiveInfoSimple.proto";
+
+message LiveRes {
+    NormalConfig normal_config = 1;
+    repeated YyLiveInfoSimple live_list = 2;
+    string is_end = 3;
+}

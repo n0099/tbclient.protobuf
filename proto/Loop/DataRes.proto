@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "Loop/IconRes.proto";
+import "Loop/LevelRes.proto";
+import "Loop/LiveRes.proto";
+
+message DataRes {
+    LiveRes live = 1;
+    LevelRes level = 2;
+    IconRes icon = 3;
+}

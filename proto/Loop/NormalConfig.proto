@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message NormalConfig {
+    string icon_url = 1;
+    string icon_scheme = 2;
+}

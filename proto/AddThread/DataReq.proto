@@ -82,4 +82,7 @@ message DataReq {
     int32 show_custom_figure = 80;
     string from_category_id = 81;
     string to_category_id = 82;
+    int32 is_question = 83;
+    string question_tag_id = 84;
+    int32 is_create_tag = 85;
 }
