@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 6)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1198common;
+    public final CommonReq f1199common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1199common;
+        public CommonReq f1200common;
         public Long forum_id;
         public Integer pn;
         public Integer rn;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             this.forum_id = dataReq.forum_id;
             this.rn = dataReq.rn;
             this.pn = dataReq.pn;
-            this.f1199common = dataReq.f1198common;
+            this.f1200common = dataReq.f1199common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -166,13 +166,13 @@ public final class DataReq extends Message {
             } else {
                 this.pn = num2;
             }
-            this.f1198common = builder.f1199common;
+            this.f1199common = builder.f1200common;
             return;
         }
         this.tieba_name = builder.tieba_name;
         this.forum_id = builder.forum_id;
         this.rn = builder.rn;
         this.pn = builder.pn;
-        this.f1198common = builder.f1199common;
+        this.f1199common = builder.f1200common;
     }
 }

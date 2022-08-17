@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.GameInfo;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class CategoryList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<GameInfo> DEFAULT_CATEGORY_GAME_LIST;
@@ -27,7 +27,7 @@ public final class CategoryList extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String category_name;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<CategoryList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -84,7 +84,7 @@ public final class CategoryList extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

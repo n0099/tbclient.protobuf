@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class BazhuUniversity extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<UniversityInfo> DEFAULT_BANNER;
@@ -26,7 +26,7 @@ public final class BazhuUniversity extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<UniversityTabInfo> tab;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BazhuUniversity> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -83,7 +83,7 @@ public final class BazhuUniversity extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

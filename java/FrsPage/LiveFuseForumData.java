@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class LiveFuseForumData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BJIMG_DARK_BIG = "";
@@ -50,7 +50,7 @@ public final class LiveFuseForumData extends Message {
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String yyext;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<LiveFuseForumData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -123,7 +123,7 @@ public final class LiveFuseForumData extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

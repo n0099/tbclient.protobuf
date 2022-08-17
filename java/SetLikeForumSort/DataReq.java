@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1352common;
+    public final CommonReq f1353common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String new_like_list;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1353common;
+        public CommonReq f1354common;
         public String new_like_list;
         public String original_like_list;
         public String tbs;
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1353common = dataReq.f1352common;
+            this.f1354common = dataReq.f1353common;
             this.original_like_list = dataReq.original_like_list;
             this.new_like_list = dataReq.new_like_list;
             this.tbs = dataReq.tbs;
@@ -117,7 +117,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1352common = builder.f1353common;
+            this.f1353common = builder.f1354common;
             String str = builder.original_like_list;
             if (str == null) {
                 this.original_like_list = "";
@@ -139,7 +139,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1352common = builder.f1353common;
+        this.f1353common = builder.f1354common;
         this.original_like_list = builder.original_like_list;
         this.new_like_list = builder.new_like_list;
         this.tbs = builder.tbs;

@@ -26,7 +26,7 @@ public final class PresentCategoryList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.UINT32)
     public final List<Integer> gift_ids;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PresentCategoryList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -83,7 +83,7 @@ public final class PresentCategoryList extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

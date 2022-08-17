@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.GradePoint;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class BazhuGrade extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ESTIMATION_LEFT_TEXT = "";
@@ -33,7 +33,7 @@ public final class BazhuGrade extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String grade_text;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BazhuGrade> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -94,7 +94,7 @@ public final class BazhuGrade extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

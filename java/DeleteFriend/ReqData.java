@@ -19,7 +19,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1126common;
+    public final CommonReq f1127common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
 
@@ -29,7 +29,7 @@ public final class ReqData extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1127common;
+        public CommonReq f1128common;
         public Long friend_id;
 
         public Builder() {
@@ -68,7 +68,7 @@ public final class ReqData extends Message {
                 return;
             }
             this.friend_id = reqData.friend_id;
-            this.f1127common = reqData.f1126common;
+            this.f1128common = reqData.f1127common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -131,10 +131,10 @@ public final class ReqData extends Message {
             } else {
                 this.friend_id = l;
             }
-            this.f1126common = builder.f1127common;
+            this.f1127common = builder.f1128common;
             return;
         }
         this.friend_id = builder.friend_id;
-        this.f1126common = builder.f1127common;
+        this.f1127common = builder.f1128common;
     }
 }
