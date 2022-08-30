@@ -13,7 +13,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_BEAR_CONTEXT = "";
@@ -60,6 +60,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_PLATFORM = "";
     public static final Integer DEFAULT_PN;
     public static final String DEFAULT_PORTRAIT = "";
+    public static final Long DEFAULT_PUSH_TID;
     public static final Integer DEFAULT_Q_TYPE;
     public static final Integer DEFAULT_REQUEST_TIMES;
     public static final Integer DEFAULT_RESULT_NUM;
@@ -180,6 +181,8 @@ public final class DataReq extends Message {
     public final Integer pn;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String portrait;
+    @ProtoField(tag = 70, type = Message.Datatype.INT64)
+    public final Long push_tid;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer q_type;
     @ProtoField(tag = 69, type = Message.Datatype.INT32)
@@ -223,7 +226,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 46, type = Message.Datatype.STRING)
     public final String yuelaou_params;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -277,6 +280,7 @@ public final class DataReq extends Message {
         public String platform;
         public Integer pn;
         public String portrait;
+        public Long push_tid;
         public Integer q_type;
         public Integer request_times;
         public Integer result_num;
@@ -403,6 +407,7 @@ public final class DataReq extends Message {
             this.ad_bear_sid = dataReq.ad_bear_sid;
             this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
             this.request_times = dataReq.request_times;
+            this.push_tid = dataReq.push_tid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -414,7 +419,7 @@ public final class DataReq extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -476,6 +481,7 @@ public final class DataReq extends Message {
         DEFAULT_HAS_AD_BEAR = 0;
         DEFAULT_AD_BEAR_SID_PRICE = valueOf;
         DEFAULT_REQUEST_TIMES = 0;
+        DEFAULT_PUSH_TID = 0L;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -892,9 +898,15 @@ public final class DataReq extends Message {
             Integer num32 = builder.request_times;
             if (num32 == null) {
                 this.request_times = DEFAULT_REQUEST_TIMES;
-                return;
             } else {
                 this.request_times = num32;
+            }
+            Long l4 = builder.push_tid;
+            if (l4 == null) {
+                this.push_tid = DEFAULT_PUSH_TID;
+                return;
+            } else {
+                this.push_tid = l4;
                 return;
             }
         }
@@ -967,5 +979,6 @@ public final class DataReq extends Message {
         this.ad_bear_sid = builder.ad_bear_sid;
         this.ad_bear_sid_price = builder.ad_bear_sid_price;
         this.request_times = builder.request_times;
+        this.push_tid = builder.push_tid;
     }
 }

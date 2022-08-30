@@ -38,6 +38,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_PLATFORM = "";
     public static final Integer DEFAULT_PN;
     public static final Integer DEFAULT_PRE_AD_THREAD_COUNT;
+    public static final Long DEFAULT_PUSH_TID;
     public static final String DEFAULT_QUERY_EQID = "";
     public static final Integer DEFAULT_Q_TYPE;
     public static final Integer DEFAULT_REQUEST_TIMES;
@@ -99,6 +100,8 @@ public final class DataReq extends Message {
     public final Integer pn;
     @ProtoField(tag = 26, type = Message.Datatype.INT32)
     public final Integer pre_ad_thread_count;
+    @ProtoField(tag = 39, type = Message.Datatype.INT64)
+    public final Long push_tid;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer q_type;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
@@ -153,6 +156,7 @@ public final class DataReq extends Message {
         public String platform;
         public Integer pn;
         public Integer pre_ad_thread_count;
+        public Long push_tid;
         public Integer q_type;
         public String query_eqid;
         public Integer request_times;
@@ -236,6 +240,7 @@ public final class DataReq extends Message {
             this.app_pos = dataReq.app_pos;
             this.ad_ext_params = dataReq.ad_ext_params;
             this.app_transmit_data = dataReq.app_transmit_data;
+            this.push_tid = dataReq.push_tid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -286,6 +291,7 @@ public final class DataReq extends Message {
         DEFAULT_PRE_AD_THREAD_COUNT = 0;
         DEFAULT_NEW_INSTALL = 0;
         DEFAULT_REQUEST_TIMES = 0;
+        DEFAULT_PUSH_TID = 0L;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
@@ -506,7 +512,14 @@ public final class DataReq extends Message {
                 this.ad_ext_params = str12;
             }
             this.app_transmit_data = builder.app_transmit_data;
-            return;
+            Long l2 = builder.push_tid;
+            if (l2 == null) {
+                this.push_tid = DEFAULT_PUSH_TID;
+                return;
+            } else {
+                this.push_tid = l2;
+                return;
+            }
         }
         this.f1313common = builder.f1314common;
         this.tag_code = builder.tag_code;
@@ -543,5 +556,6 @@ public final class DataReq extends Message {
         this.app_pos = builder.app_pos;
         this.ad_ext_params = builder.ad_ext_params;
         this.app_transmit_data = builder.app_transmit_data;
+        this.push_tid = builder.push_tid;
     }
 }

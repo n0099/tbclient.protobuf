@@ -105,6 +105,8 @@ public final class DataRes extends Message {
     public final UserGodInfo user_god_info;
     @ProtoField(tag = 11)
     public final UserManChannelInfo video_channel_info;
+    @ProtoField(tag = 39)
+    public final VipBanner vip_banner;
     @ProtoField(tag = 8)
     public final DealWindow window;
     @ProtoField(tag = 34, type = Message.Datatype.UINT32)
@@ -143,6 +145,7 @@ public final class DataRes extends Message {
         public UserAgreeInfo user_agree_info;
         public UserGodInfo user_god_info;
         public UserManChannelInfo video_channel_info;
+        public VipBanner vip_banner;
         public DealWindow window;
         public Integer work_tab_id;
 
@@ -212,6 +215,7 @@ public final class DataRes extends Message {
             this.finance_tab = dataRes.finance_tab;
             this.block_info = dataRes.block_info;
             this.duxiaoman_entry = dataRes.duxiaoman_entry;
+            this.vip_banner = dataRes.vip_banner;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -363,6 +367,7 @@ public final class DataRes extends Message {
             this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
             this.duxiaoman_entry = builder.duxiaoman_entry;
+            this.vip_banner = builder.vip_banner;
             return;
         }
         this.user = builder.user;
@@ -396,5 +401,6 @@ public final class DataRes extends Message {
         this.finance_tab = builder.finance_tab;
         this.block_info = builder.block_info;
         this.duxiaoman_entry = builder.duxiaoman_entry;
+        this.vip_banner = builder.vip_banner;
     }
 }

@@ -52,6 +52,7 @@ public final class AlaLiveInfo extends Message {
     public static final Integer DEFAULT_SCREEN_DIRECTION;
     public static final String DEFAULT_SECOND_HEADLINE = "";
     public static final String DEFAULT_SESSION_ID = "";
+    public static final Integer DEFAULT_SHOW_PAGE;
     public static final List<AlaStageDislikeInfo> DEFAULT_STAGE_DISLIKE_INFO;
     public static final String DEFAULT_THIRD_APP_ID = "";
     public static final String DEFAULT_THIRD_LIVE_TYPE = "";
@@ -138,6 +139,8 @@ public final class AlaLiveInfo extends Message {
     public final String session_id;
     @ProtoField(tag = 19)
     public final AlaShareInfo share_info;
+    @ProtoField(tag = 50, type = Message.Datatype.INT32)
+    public final Integer show_page;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<AlaStageDislikeInfo> stage_dislike_info;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -197,6 +200,7 @@ public final class AlaLiveInfo extends Message {
         public String second_headline;
         public String session_id;
         public AlaShareInfo share_info;
+        public Integer show_page;
         public List<AlaStageDislikeInfo> stage_dislike_info;
         public String third_app_id;
         public String third_live_type;
@@ -287,6 +291,7 @@ public final class AlaLiveInfo extends Message {
             this.forum_user_live_msg = alaLiveInfo.forum_user_live_msg;
             this.cover_wide = alaLiveInfo.cover_wide;
             this.yy_ext = alaLiveInfo.yy_ext;
+            this.show_page = alaLiveInfo.show_page;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -338,6 +343,7 @@ public final class AlaLiveInfo extends Message {
         DEFAULT_DISLIKE_INFO = Collections.emptyList();
         DEFAULT_ROOM_ID = 0L;
         DEFAULT_ROOM_STATUS = 0;
+        DEFAULT_SHOW_PAGE = 0;
     }
 
     public /* synthetic */ AlaLiveInfo(Builder builder, boolean z, a aVar) {
@@ -620,7 +626,14 @@ public final class AlaLiveInfo extends Message {
                 this.cover_wide = str21;
             }
             this.yy_ext = builder.yy_ext;
-            return;
+            Integer num15 = builder.show_page;
+            if (num15 == null) {
+                this.show_page = DEFAULT_SHOW_PAGE;
+                return;
+            } else {
+                this.show_page = num15;
+                return;
+            }
         }
         this.live_id = builder.live_id;
         this.cover = builder.cover;
@@ -669,5 +682,6 @@ public final class AlaLiveInfo extends Message {
         this.forum_user_live_msg = builder.forum_user_live_msg;
         this.cover_wide = builder.cover_wide;
         this.yy_ext = builder.yy_ext;
+        this.show_page = builder.show_page;
     }
 }

@@ -12,9 +12,10 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class BusinessPromot extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_BAN_DIALOG;
     public static final List<BusinessPromotCommentList> DEFAULT_COMMENT_LIST;
     public static final String DEFAULT_COVER_URL = "";
     public static final String DEFAULT_DOWNLOAD_APPID = "";
@@ -45,6 +46,8 @@ public final class BusinessPromot extends Message {
     public static final String DEFAULT_URL = "";
     public static final String DEFAULT_VIDEO_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
+    public final Integer ban_dialog;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<BusinessPromotCommentList> comment_list;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
@@ -104,10 +107,11 @@ public final class BusinessPromot extends Message {
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String video_url;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BusinessPromot> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public Integer ban_dialog;
         public List<BusinessPromotCommentList> comment_list;
         public String cover_url;
         public String download_appid;
@@ -202,6 +206,7 @@ public final class BusinessPromot extends Message {
             this.download_appid = businessPromot.download_appid;
             this.cover_url = businessPromot.cover_url;
             this.video_url = businessPromot.video_url;
+            this.ban_dialog = businessPromot.ban_dialog;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -213,7 +218,7 @@ public final class BusinessPromot extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -242,6 +247,7 @@ public final class BusinessPromot extends Message {
         DEFAULT_IS_ALLOW_SHAKE = bool;
         DEFAULT_IS_AD = bool;
         DEFAULT_IS_DOWNLOAD = bool;
+        DEFAULT_BAN_DIALOG = 0;
     }
 
     public /* synthetic */ BusinessPromot(Builder builder, boolean z, a aVar) {
@@ -438,9 +444,15 @@ public final class BusinessPromot extends Message {
             String str20 = builder.video_url;
             if (str20 == null) {
                 this.video_url = "";
-                return;
             } else {
                 this.video_url = str20;
+            }
+            Integer num4 = builder.ban_dialog;
+            if (num4 == null) {
+                this.ban_dialog = DEFAULT_BAN_DIALOG;
+                return;
+            } else {
+                this.ban_dialog = num4;
                 return;
             }
         }
@@ -473,5 +485,6 @@ public final class BusinessPromot extends Message {
         this.download_appid = builder.download_appid;
         this.cover_url = builder.cover_url;
         this.video_url = builder.video_url;
+        this.ban_dialog = builder.ban_dialog;
     }
 }

@@ -15,6 +15,7 @@ public final class SearchValue extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_DESC = "";
     public static final Long DEFAULT_ID;
+    public static final Integer DEFAULT_IS_VIDEO_TOPIC;
     public static final String DEFAULT_NAME = "";
     public static final Long DEFAULT_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
@@ -22,6 +23,8 @@ public final class SearchValue extends Message {
     public final String desc;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long id;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer is_video_topic;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -33,6 +36,7 @@ public final class SearchValue extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public String desc;
         public Long id;
+        public Integer is_video_topic;
         public String name;
         public Long type;
 
@@ -75,6 +79,7 @@ public final class SearchValue extends Message {
             this.id = searchValue.id;
             this.name = searchValue.name;
             this.desc = searchValue.desc;
+            this.is_video_topic = searchValue.is_video_topic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -107,6 +112,7 @@ public final class SearchValue extends Message {
         }
         DEFAULT_TYPE = 0L;
         DEFAULT_ID = 0L;
+        DEFAULT_IS_VIDEO_TOPIC = 0;
     }
 
     public /* synthetic */ SearchValue(Builder builder, boolean z, a aVar) {
@@ -153,9 +159,15 @@ public final class SearchValue extends Message {
             String str2 = builder.desc;
             if (str2 == null) {
                 this.desc = "";
-                return;
             } else {
                 this.desc = str2;
+            }
+            Integer num = builder.is_video_topic;
+            if (num == null) {
+                this.is_video_topic = DEFAULT_IS_VIDEO_TOPIC;
+                return;
+            } else {
+                this.is_video_topic = num;
                 return;
             }
         }
@@ -163,5 +175,6 @@ public final class SearchValue extends Message {
         this.id = builder.id;
         this.name = builder.name;
         this.desc = builder.desc;
+        this.is_video_topic = builder.is_video_topic;
     }
 }

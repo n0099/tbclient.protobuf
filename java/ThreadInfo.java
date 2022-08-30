@@ -77,6 +77,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_GODTHREAD_RECOMMEND;
     public static final Integer DEFAULT_IS_GOOD;
     public static final Integer DEFAULT_IS_HEADLINEPOST;
+    public static final Integer DEFAULT_IS_HIGHLIGHT;
     public static final Integer DEFAULT_IS_LINK_THREAD;
     public static final Integer DEFAULT_IS_LIVEPOST;
     public static final Integer DEFAULT_IS_LOCAL;
@@ -322,6 +323,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_good;
     @ProtoField(tag = 165, type = Message.Datatype.INT32)
     public final Integer is_headlinepost;
+    @ProtoField(tag = 213, type = Message.Datatype.INT32)
+    public final Integer is_highlight;
     @ProtoField(tag = 128, type = Message.Datatype.INT32)
     public final Integer is_link_thread;
     @ProtoField(tag = 30, type = Message.Datatype.INT32)
@@ -657,6 +660,7 @@ public final class ThreadInfo extends Message {
         public Integer is_godthread_recommend;
         public Integer is_good;
         public Integer is_headlinepost;
+        public Integer is_highlight;
         public Integer is_link_thread;
         public Integer is_livepost;
         public Integer is_local;
@@ -1023,6 +1027,7 @@ public final class ThreadInfo extends Message {
             this.thread_recommend_tag = threadInfo.thread_recommend_tag;
             this.custom_figure = threadInfo.custom_figure;
             this.custom_state = threadInfo.custom_state;
+            this.is_highlight = threadInfo.is_highlight;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1157,6 +1162,7 @@ public final class ThreadInfo extends Message {
         DEFAULT_IS_FRS_MASK = 0;
         DEFAULT_TAB_SHOW_MODE = 0;
         DEFAULT_IS_PICTXT = 0;
+        DEFAULT_IS_HIGHLIGHT = 0;
     }
 
     public /* synthetic */ ThreadInfo(Builder builder, boolean z, a aVar) {
@@ -2134,7 +2140,14 @@ public final class ThreadInfo extends Message {
             this.thread_recommend_tag = builder.thread_recommend_tag;
             this.custom_figure = builder.custom_figure;
             this.custom_state = builder.custom_state;
-            return;
+            Integer num76 = builder.is_highlight;
+            if (num76 == null) {
+                this.is_highlight = DEFAULT_IS_HIGHLIGHT;
+                return;
+            } else {
+                this.is_highlight = num76;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -2338,5 +2351,6 @@ public final class ThreadInfo extends Message {
         this.thread_recommend_tag = builder.thread_recommend_tag;
         this.custom_figure = builder.custom_figure;
         this.custom_state = builder.custom_state;
+        this.is_highlight = builder.is_highlight;
     }
 }
