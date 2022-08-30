@@ -8,6 +8,7 @@ import "PostAntiInfo.proto";
 import "ReplyExp.proto";
 import "TbInteraction.proto";
 import "ThreadEasterEgg.proto";
+import "Toast.proto";
 import "VcodeInfo.proto";
 import "ZhiBoInfoTW.proto";
 
@@ -31,4 +32,5 @@ message DataRes {
     VcodeInfo anti = 17;
     string ext_msg = 18;
     string invitees_number = 19;
+    Toast toast = 20;
 }

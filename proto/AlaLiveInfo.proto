@@ -56,4 +56,5 @@ message AlaLiveInfo {
     string forum_user_live_msg = 47;
     string cover_wide = 48;
     YyExt yy_ext = 49;
+    int32 show_page = 50;
 }

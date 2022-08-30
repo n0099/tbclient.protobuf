@@ -20,6 +20,7 @@ import "Profile/NicknameInfo.proto";
 import "Profile/TAInfo.proto";
 import "Profile/UserAgreeInfo.proto";
 import "Profile/UserGodInfo.proto";
+import "Profile/VipBanner.proto";
 import "SmartApp.proto";
 import "TbBookrack.proto";
 import "ThreadInfo.proto";
@@ -60,4 +61,5 @@ message DataRes {
     FinanceTab finance_tab = 35;
     MemberBlockInfo block_info = 36;
     DuxiaomanEntry duxiaoman_entry = 37;
+    VipBanner vip_banner = 39;
 }

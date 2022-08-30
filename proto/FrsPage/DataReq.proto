@@ -74,4 +74,5 @@ message DataReq {
     string ad_bear_sid = 67;
     double ad_bear_sid_price = 68;
     int32 request_times = 69;
+    int64 push_tid = 70;
 }
