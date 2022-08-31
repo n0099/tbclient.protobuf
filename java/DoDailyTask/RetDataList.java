@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes8.dex */
 public final class RetDataList extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_NEED_DIALOG;
@@ -22,7 +22,7 @@ public final class RetDataList extends Message {
     @ProtoField(tag = 2)
     public final TaskInfoItem task_info;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static final class Builder extends Message.Builder<RetDataList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -79,7 +79,7 @@ public final class RetDataList extends Message {
         }
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes8.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
