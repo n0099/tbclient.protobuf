@@ -3,6 +3,7 @@ syntax = "proto3";
 import "AlaLiveInfo.proto";
 import "Anti.proto";
 import "BannerImage.proto";
+import "BubbleInfo.proto";
 import "DealWindow.proto";
 import "DuxiaomanEntry.proto";
 import "DynamicInfo.proto";
@@ -61,5 +62,6 @@ message DataRes {
     FinanceTab finance_tab = 35;
     MemberBlockInfo block_info = 36;
     DuxiaomanEntry duxiaoman_entry = 37;
+    BubbleInfo bubble_info = 38;
     VipBanner vip_banner = 39;
 }

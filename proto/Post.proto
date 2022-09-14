@@ -90,4 +90,5 @@ message Post {
     CustomFigure custom_figure = 60;
     CustomState custom_state = 61;
     FullLengthNovel full_length_novel = 62;
+    string dynamic_url = 63;
 }

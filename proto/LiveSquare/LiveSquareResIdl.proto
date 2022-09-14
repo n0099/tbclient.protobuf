@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "LiveSquare/DataRes.proto";
-
-message LiveSquareResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}
