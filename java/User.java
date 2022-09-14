@@ -29,6 +29,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_CONCERN_NUM;
     public static final Integer DEFAULT_DISPLAY_AUTH_TYPE;
     public static final String DEFAULT_DISPLAY_INTRO = "";
+    public static final String DEFAULT_DYNAMIC_URL = "";
     public static final Integer DEFAULT_EACH_OTHER_FRIEND;
     public static final String DEFAULT_EDITING_NICKNAME = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
@@ -161,6 +162,8 @@ public final class User extends Message {
     public final Integer display_auth_type;
     @ProtoField(tag = 138, type = Message.Datatype.STRING)
     public final String display_intro;
+    @ProtoField(tag = Cea708Decoder.COMMAND_DLW, type = Message.Datatype.STRING)
+    public final String dynamic_url;
     @ProtoField(tag = 83, type = Message.Datatype.INT32)
     public final Integer each_other_friend;
     @ProtoField(tag = 74)
@@ -401,6 +404,7 @@ public final class User extends Message {
         public CreationData creation_data;
         public Integer display_auth_type;
         public String display_intro;
+        public String dynamic_url;
         public Integer each_other_friend;
         public Ecom ecom;
         public EditConfig edit_config;
@@ -672,6 +676,7 @@ public final class User extends Message {
             this.user_growth = user.user_growth;
             this.display_intro = user.display_intro;
             this.new_icon_url = Message.copyOf(user.new_icon_url);
+            this.dynamic_url = user.dynamic_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1392,9 +1397,15 @@ public final class User extends Message {
             List<String> list12 = builder.new_icon_url;
             if (list12 == null) {
                 this.new_icon_url = DEFAULT_NEW_ICON_URL;
-                return;
             } else {
                 this.new_icon_url = Message.immutableCopyOf(list12);
+            }
+            String str27 = builder.dynamic_url;
+            if (str27 == null) {
+                this.dynamic_url = "";
+                return;
+            } else {
+                this.dynamic_url = str27;
                 return;
             }
         }
@@ -1528,5 +1539,6 @@ public final class User extends Message {
         this.user_growth = builder.user_growth;
         this.display_intro = builder.display_intro;
         this.new_icon_url = Message.immutableCopyOf(builder.new_icon_url);
+        this.dynamic_url = builder.dynamic_url;
     }
 }

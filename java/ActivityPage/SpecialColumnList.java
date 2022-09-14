@@ -12,7 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class SpecialColumnList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_FLOOR_POSITION;
@@ -26,7 +26,7 @@ public final class SpecialColumnList extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String special_column_name;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<SpecialColumnList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -83,7 +83,7 @@ public final class SpecialColumnList extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

@@ -10,7 +10,7 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class BawuRoleInfoPub extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FORUM_ID;
@@ -44,7 +44,7 @@ public final class BawuRoleInfoPub extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BawuRoleInfoPub> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -115,7 +115,7 @@ public final class BawuRoleInfoPub extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;

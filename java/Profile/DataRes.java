@@ -15,6 +15,7 @@ import java.util.List;
 import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerImage;
+import tbclient.BubbleInfo;
 import tbclient.DealWindow;
 import tbclient.DuxiaomanEntry;
 import tbclient.DynamicInfo;
@@ -57,6 +58,8 @@ public final class DataRes extends Message {
     public final List<BannerImage> banner;
     @ProtoField(tag = 36)
     public final MemberBlockInfo block_info;
+    @ProtoField(tag = 38)
+    public final BubbleInfo bubble_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<ForumDynamic> concerned_forum_list;
     @ProtoField(tag = 24)
@@ -121,6 +124,7 @@ public final class DataRes extends Message {
         public Anti anti_stat;
         public List<BannerImage> banner;
         public MemberBlockInfo block_info;
+        public BubbleInfo bubble_info;
         public List<ForumDynamic> concerned_forum_list;
         public Duxiaoman duxiaoman;
         public DuxiaomanEntry duxiaoman_entry;
@@ -215,6 +219,7 @@ public final class DataRes extends Message {
             this.finance_tab = dataRes.finance_tab;
             this.block_info = dataRes.block_info;
             this.duxiaoman_entry = dataRes.duxiaoman_entry;
+            this.bubble_info = dataRes.bubble_info;
             this.vip_banner = dataRes.vip_banner;
         }
 
@@ -367,6 +372,7 @@ public final class DataRes extends Message {
             this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
             this.duxiaoman_entry = builder.duxiaoman_entry;
+            this.bubble_info = builder.bubble_info;
             this.vip_banner = builder.vip_banner;
             return;
         }
@@ -401,6 +407,7 @@ public final class DataRes extends Message {
         this.finance_tab = builder.finance_tab;
         this.block_info = builder.block_info;
         this.duxiaoman_entry = builder.duxiaoman_entry;
+        this.bubble_info = builder.bubble_info;
         this.vip_banner = builder.vip_banner;
     }
 }

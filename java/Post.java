@@ -21,6 +21,7 @@ public final class Post extends Message {
     public static final String DEFAULT_BIMG_URL = "";
     public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO;
     public static final List<PbContent> DEFAULT_CONTENT;
+    public static final String DEFAULT_DYNAMIC_URL = "";
     public static final List<TailInfo> DEFAULT_EXT_TAILS;
     public static final Integer DEFAULT_FLOOR;
     public static final String DEFAULT_FOLD_COMMENT_APPLY_URL = "";
@@ -78,6 +79,8 @@ public final class Post extends Message {
     public final CustomFigure custom_figure;
     @ProtoField(tag = 61)
     public final CustomState custom_state;
+    @ProtoField(tag = 63, type = Message.Datatype.STRING)
+    public final String dynamic_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 32)
     public final List<TailInfo> ext_tails;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -192,6 +195,7 @@ public final class Post extends Message {
         public List<PbContent> content;
         public CustomFigure custom_figure;
         public CustomState custom_state;
+        public String dynamic_url;
         public List<TailInfo> ext_tails;
         public Integer floor;
         public String fold_comment_apply_url;
@@ -337,6 +341,7 @@ public final class Post extends Message {
             this.custom_figure = post.custom_figure;
             this.custom_state = post.custom_state;
             this.full_length_novel = post.full_length_novel;
+            this.dynamic_url = post.dynamic_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -660,7 +665,14 @@ public final class Post extends Message {
             this.custom_figure = builder.custom_figure;
             this.custom_state = builder.custom_state;
             this.full_length_novel = builder.full_length_novel;
-            return;
+            String str10 = builder.dynamic_url;
+            if (str10 == null) {
+                this.dynamic_url = "";
+                return;
+            } else {
+                this.dynamic_url = str10;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -723,5 +735,6 @@ public final class Post extends Message {
         this.custom_figure = builder.custom_figure;
         this.custom_state = builder.custom_state;
         this.full_length_novel = builder.full_length_novel;
+        this.dynamic_url = builder.dynamic_url;
     }
 }

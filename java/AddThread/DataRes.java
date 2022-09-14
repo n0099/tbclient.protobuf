@@ -19,7 +19,7 @@ import tbclient.ThreadEasterEgg;
 import tbclient.Toast;
 import tbclient.VcodeInfo;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes8.dex */
+/* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_COLOR_MSG = "";
@@ -73,7 +73,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String video_id;
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
@@ -164,7 +164,7 @@ public final class DataRes extends Message {
         }
     }
 
-    /* loaded from: classes8.dex */
+    /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
