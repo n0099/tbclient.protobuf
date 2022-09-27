@@ -11,4 +11,5 @@ message ThemeCardPropMain {
     uint32 free_user_level = 8;
     string activity_url = 9;
     uint32 is_finished = 10;
+    string dynamic_url = 11;
 }

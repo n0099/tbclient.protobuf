@@ -67,4 +67,5 @@ message CommonReq {
     string afdi = 67;
     string di_diordna = 68;
     string vfdi = 69;
+    string device_score = 70;
 }

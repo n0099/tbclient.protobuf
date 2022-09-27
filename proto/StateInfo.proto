@@ -3,4 +3,6 @@ syntax = "proto3";
 message StateInfo {
     string icon = 1;
     string text = 2;
+    int32 icon_type = 3;
+    int32 icon_pid = 4;
 }

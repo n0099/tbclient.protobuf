@@ -4,4 +4,5 @@ message CustomFigure {
     string figure_url = 1;
     string background_type = 2;
     string background_value = 3;
+    string dynamic_figure_url = 4;
 }
