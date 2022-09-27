@@ -13,11 +13,14 @@ public final class CustomState extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_ICON = "";
+    public static final String DEFAULT_ICON_TYPE = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String icon;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String icon_type;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<CustomState> {
@@ -25,6 +28,7 @@ public final class CustomState extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public String content;
         public String icon;
+        public String icon_type;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -63,6 +67,7 @@ public final class CustomState extends Message {
             }
             this.icon = customState.icon;
             this.content = customState.content;
+            this.icon_type = customState.icon_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -112,13 +117,20 @@ public final class CustomState extends Message {
             String str2 = builder.content;
             if (str2 == null) {
                 this.content = "";
-                return;
             } else {
                 this.content = str2;
+            }
+            String str3 = builder.icon_type;
+            if (str3 == null) {
+                this.icon_type = "";
+                return;
+            } else {
+                this.icon_type = str3;
                 return;
             }
         }
         this.icon = builder.icon;
         this.content = builder.content;
+        this.icon_type = builder.icon_type;
     }
 }

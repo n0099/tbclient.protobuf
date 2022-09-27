@@ -1,6 +1,8 @@
 package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
 import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
@@ -12,10 +14,16 @@ import com.squareup.wire.ProtoField;
 public final class StateInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ICON = "";
+    public static final Integer DEFAULT_ICON_PID;
+    public static final Integer DEFAULT_ICON_TYPE;
     public static final String DEFAULT_TEXT = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String icon;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer icon_pid;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer icon_type;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String text;
 
@@ -24,6 +32,8 @@ public final class StateInfo extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon;
+        public Integer icon_pid;
+        public Integer icon_type;
         public String text;
 
         public Builder() {
@@ -63,6 +73,8 @@ public final class StateInfo extends Message {
             }
             this.icon = stateInfo.icon;
             this.text = stateInfo.text;
+            this.icon_type = stateInfo.icon_type;
+            this.icon_pid = stateInfo.icon_pid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -80,6 +92,23 @@ public final class StateInfo extends Message {
         public transient /* synthetic */ FieldHolder $fh;
     }
 
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1050880934, "Ltbclient/StateInfo;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(1050880934, "Ltbclient/StateInfo;");
+                return;
+            }
+        }
+        DEFAULT_ICON_TYPE = 0;
+        DEFAULT_ICON_PID = 0;
+    }
+
     public /* synthetic */ StateInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
@@ -92,13 +121,13 @@ public final class StateInfo extends Message {
             InitContext newInitContext = TitanRuntime.newInitContext();
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65536, newInitContext);
+            interceptable.invokeUnInit(65537, newInitContext);
             int i = newInitContext.flag;
             if ((i & 1) != 0) {
                 int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65536, newInitContext);
+                interceptable.invokeInitBody(65537, newInitContext);
                 return;
             }
         }
@@ -112,13 +141,27 @@ public final class StateInfo extends Message {
             String str2 = builder.text;
             if (str2 == null) {
                 this.text = "";
-                return;
             } else {
                 this.text = str2;
+            }
+            Integer num = builder.icon_type;
+            if (num == null) {
+                this.icon_type = DEFAULT_ICON_TYPE;
+            } else {
+                this.icon_type = num;
+            }
+            Integer num2 = builder.icon_pid;
+            if (num2 == null) {
+                this.icon_pid = DEFAULT_ICON_PID;
+                return;
+            } else {
+                this.icon_pid = num2;
                 return;
             }
         }
         this.icon = builder.icon;
         this.text = builder.text;
+        this.icon_type = builder.icon_type;
+        this.icon_pid = builder.icon_pid;
     }
 }

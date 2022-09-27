@@ -16,6 +16,7 @@ import java.util.List;
 public final class VirtualImageInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_ALLOW_CUSTOMIZE;
+    public static final String DEFAULT_DYNAMIC_VIRTUAL_IMAGE_URL = "";
     public static final Integer DEFAULT_IMAGE_AGREE_COUNT;
     public static final Integer DEFAULT_ISSET_VIRTUAL_IMAGE;
     public static final Integer DEFAULT_IS_ALLOW_AGREE;
@@ -30,6 +31,8 @@ public final class VirtualImageInfo extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer allow_customize;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String dynamic_virtual_image_url;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer image_agree_count;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -60,6 +63,7 @@ public final class VirtualImageInfo extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer allow_customize;
+        public String dynamic_virtual_image_url;
         public Integer image_agree_count;
         public Integer is_allow_agree;
         public Integer is_background_firstly;
@@ -121,6 +125,7 @@ public final class VirtualImageInfo extends Message {
             this.allow_customize = virtualImageInfo.allow_customize;
             this.is_display = virtualImageInfo.is_display;
             this.is_background_firstly = virtualImageInfo.is_background_firstly;
+            this.dynamic_virtual_image_url = virtualImageInfo.dynamic_virtual_image_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -256,9 +261,15 @@ public final class VirtualImageInfo extends Message {
             Integer num9 = builder.is_background_firstly;
             if (num9 == null) {
                 this.is_background_firstly = DEFAULT_IS_BACKGROUND_FIRSTLY;
-                return;
             } else {
                 this.is_background_firstly = num9;
+            }
+            String str3 = builder.dynamic_virtual_image_url;
+            if (str3 == null) {
+                this.dynamic_virtual_image_url = "";
+                return;
+            } else {
+                this.dynamic_virtual_image_url = str3;
                 return;
             }
         }
@@ -275,5 +286,6 @@ public final class VirtualImageInfo extends Message {
         this.allow_customize = builder.allow_customize;
         this.is_display = builder.is_display;
         this.is_background_firstly = builder.is_background_firstly;
+        this.dynamic_virtual_image_url = builder.dynamic_virtual_image_url;
     }
 }

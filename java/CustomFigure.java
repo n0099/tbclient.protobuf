@@ -13,12 +13,15 @@ public final class CustomFigure extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BACKGROUND_TYPE = "";
     public static final String DEFAULT_BACKGROUND_VALUE = "";
+    public static final String DEFAULT_DYNAMIC_FIGURE_URL = "";
     public static final String DEFAULT_FIGURE_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String background_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String background_value;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String dynamic_figure_url;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String figure_url;
 
@@ -28,6 +31,7 @@ public final class CustomFigure extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public String background_type;
         public String background_value;
+        public String dynamic_figure_url;
         public String figure_url;
 
         public Builder() {
@@ -68,6 +72,7 @@ public final class CustomFigure extends Message {
             this.figure_url = customFigure.figure_url;
             this.background_type = customFigure.background_type;
             this.background_value = customFigure.background_value;
+            this.dynamic_figure_url = customFigure.dynamic_figure_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -123,14 +128,21 @@ public final class CustomFigure extends Message {
             String str3 = builder.background_value;
             if (str3 == null) {
                 this.background_value = "";
-                return;
             } else {
                 this.background_value = str3;
+            }
+            String str4 = builder.dynamic_figure_url;
+            if (str4 == null) {
+                this.dynamic_figure_url = "";
+                return;
+            } else {
+                this.dynamic_figure_url = str4;
                 return;
             }
         }
         this.figure_url = builder.figure_url;
         this.background_type = builder.background_type;
         this.background_value = builder.background_value;
+        this.dynamic_figure_url = builder.dynamic_figure_url;
     }
 }

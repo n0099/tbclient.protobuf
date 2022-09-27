@@ -28,6 +28,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
+    public static final String DEFAULT_DEVICE_SCORE = "";
     public static final String DEFAULT_DI_DIORDNA = "";
     public static final String DEFAULT_EVENT_DAY = "";
     public static final String DEFAULT_EXTRA = "";
@@ -124,6 +125,8 @@ public final class CommonReq extends Message {
     public final String cuid_galaxy2;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String cuid_gid;
+    @ProtoField(tag = 70, type = Message.Datatype.STRING)
+    public final String device_score;
     @ProtoField(tag = 68, type = Message.Datatype.STRING)
     public final String di_diordna;
     @ProtoField(tag = 53, type = Message.Datatype.STRING)
@@ -239,6 +242,7 @@ public final class CommonReq extends Message {
         public String cuid;
         public String cuid_galaxy2;
         public String cuid_gid;
+        public String device_score;
         public String di_diordna;
         public String event_day;
         public String extra;
@@ -385,6 +389,7 @@ public final class CommonReq extends Message {
             this.afdi = commonReq.afdi;
             this.di_diordna = commonReq.di_diordna;
             this.vfdi = commonReq.vfdi;
+            this.device_score = commonReq.device_score;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -847,9 +852,15 @@ public final class CommonReq extends Message {
             String str52 = builder.vfdi;
             if (str52 == null) {
                 this.vfdi = "";
-                return;
             } else {
                 this.vfdi = str52;
+            }
+            String str53 = builder.device_score;
+            if (str53 == null) {
+                this.device_score = "";
+                return;
+            } else {
+                this.device_score = str53;
                 return;
             }
         }
@@ -919,5 +930,6 @@ public final class CommonReq extends Message {
         this.afdi = builder.afdi;
         this.di_diordna = builder.di_diordna;
         this.vfdi = builder.vfdi;
+        this.device_score = builder.device_score;
     }
 }

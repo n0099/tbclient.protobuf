@@ -15,6 +15,7 @@ public final class ThemeCardPropMain extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_DESCRIPTION = "";
+    public static final String DEFAULT_DYNAMIC_URL = "";
     public static final String DEFAULT_EXAMPLE_URL = "";
     public static final Integer DEFAULT_FREE_USER_LEVEL;
     public static final Integer DEFAULT_IN_USE;
@@ -28,6 +29,8 @@ public final class ThemeCardPropMain extends Message {
     public final String activity_url;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String description;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String dynamic_url;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String example_url;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
@@ -51,6 +54,7 @@ public final class ThemeCardPropMain extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_url;
         public String description;
+        public String dynamic_url;
         public String example_url;
         public Integer free_user_level;
         public Integer in_use;
@@ -105,6 +109,7 @@ public final class ThemeCardPropMain extends Message {
             this.free_user_level = themeCardPropMain.free_user_level;
             this.activity_url = themeCardPropMain.activity_url;
             this.is_finished = themeCardPropMain.is_finished;
+            this.dynamic_url = themeCardPropMain.dynamic_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -221,9 +226,15 @@ public final class ThemeCardPropMain extends Message {
             Integer num3 = builder.is_finished;
             if (num3 == null) {
                 this.is_finished = DEFAULT_IS_FINISHED;
-                return;
             } else {
                 this.is_finished = num3;
+            }
+            String str7 = builder.dynamic_url;
+            if (str7 == null) {
+                this.dynamic_url = "";
+                return;
+            } else {
+                this.dynamic_url = str7;
                 return;
             }
         }
@@ -237,5 +248,6 @@ public final class ThemeCardPropMain extends Message {
         this.free_user_level = builder.free_user_level;
         this.activity_url = builder.activity_url;
         this.is_finished = builder.is_finished;
+        this.dynamic_url = builder.dynamic_url;
     }
 }

@@ -14,6 +14,7 @@ import com.squareup.wire.ProtoField;
 public final class ThemeCardInUser extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_COORDINATE = "";
+    public static final String DEFAULT_DYNAMIC_URL = "";
     public static final String DEFAULT_IMG_ANDROID = "";
     public static final String DEFAULT_IMG_IOS = "";
     public static final Integer DEFAULT_LEVEL;
@@ -21,6 +22,8 @@ public final class ThemeCardInUser extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String coordinate;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String dynamic_url;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String img_android;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -35,6 +38,7 @@ public final class ThemeCardInUser extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String coordinate;
+        public String dynamic_url;
         public String img_android;
         public String img_ios;
         public Integer level;
@@ -80,6 +84,7 @@ public final class ThemeCardInUser extends Message {
             this.coordinate = themeCardInUser.coordinate;
             this.img_android = themeCardInUser.img_android;
             this.level = themeCardInUser.level;
+            this.dynamic_url = themeCardInUser.dynamic_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -164,9 +169,15 @@ public final class ThemeCardInUser extends Message {
             Integer num = builder.level;
             if (num == null) {
                 this.level = DEFAULT_LEVEL;
-                return;
             } else {
                 this.level = num;
+            }
+            String str4 = builder.dynamic_url;
+            if (str4 == null) {
+                this.dynamic_url = "";
+                return;
+            } else {
+                this.dynamic_url = str4;
                 return;
             }
         }
@@ -175,5 +186,6 @@ public final class ThemeCardInUser extends Message {
         this.coordinate = builder.coordinate;
         this.img_android = builder.img_android;
         this.level = builder.level;
+        this.dynamic_url = builder.dynamic_url;
     }
 }
