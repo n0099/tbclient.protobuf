@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message LiveNormalConfig {
+    string icon_url_day = 1;
+    string icon_url_night = 2;
+    string icon_scheme = 3;
+    int32 show_page = 4;
+}

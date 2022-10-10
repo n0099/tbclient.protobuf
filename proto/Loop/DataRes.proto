@@ -11,4 +11,5 @@ message DataRes {
     IconRes icon = 3;
     repeated AlaLiveInfo live_follow_second_floor = 4;
     repeated AlaLiveInfo live_index_second_floor = 5;
+    repeated AlaLiveInfo live_pic_second_floor = 6;
 }
