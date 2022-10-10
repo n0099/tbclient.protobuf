@@ -18,6 +18,7 @@ public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final List<AlaLiveInfo> DEFAULT_LIVE_FOLLOW_SECOND_FLOOR;
     public static final List<AlaLiveInfo> DEFAULT_LIVE_INDEX_SECOND_FLOOR;
+    public static final List<AlaLiveInfo> DEFAULT_LIVE_PIC_SECOND_FLOOR;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3)
     public final IconRes icon;
@@ -29,6 +30,8 @@ public final class DataRes extends Message {
     public final List<AlaLiveInfo> live_follow_second_floor;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<AlaLiveInfo> live_index_second_floor;
+    @ProtoField(label = Message.Label.REPEATED, tag = 6)
+    public final List<AlaLiveInfo> live_pic_second_floor;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -39,6 +42,7 @@ public final class DataRes extends Message {
         public LiveRes live;
         public List<AlaLiveInfo> live_follow_second_floor;
         public List<AlaLiveInfo> live_index_second_floor;
+        public List<AlaLiveInfo> live_pic_second_floor;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -80,6 +84,7 @@ public final class DataRes extends Message {
             this.icon = dataRes.icon;
             this.live_follow_second_floor = Message.copyOf(dataRes.live_follow_second_floor);
             this.live_index_second_floor = Message.copyOf(dataRes.live_index_second_floor);
+            this.live_pic_second_floor = Message.copyOf(dataRes.live_pic_second_floor);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -112,6 +117,7 @@ public final class DataRes extends Message {
         }
         DEFAULT_LIVE_FOLLOW_SECOND_FLOOR = Collections.emptyList();
         DEFAULT_LIVE_INDEX_SECOND_FLOOR = Collections.emptyList();
+        DEFAULT_LIVE_PIC_SECOND_FLOOR = Collections.emptyList();
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
@@ -149,9 +155,15 @@ public final class DataRes extends Message {
             List<AlaLiveInfo> list2 = builder.live_index_second_floor;
             if (list2 == null) {
                 this.live_index_second_floor = DEFAULT_LIVE_INDEX_SECOND_FLOOR;
-                return;
             } else {
                 this.live_index_second_floor = Message.immutableCopyOf(list2);
+            }
+            List<AlaLiveInfo> list3 = builder.live_pic_second_floor;
+            if (list3 == null) {
+                this.live_pic_second_floor = DEFAULT_LIVE_PIC_SECOND_FLOOR;
+                return;
+            } else {
+                this.live_pic_second_floor = Message.immutableCopyOf(list3);
                 return;
             }
         }
@@ -160,5 +172,6 @@ public final class DataRes extends Message {
         this.icon = builder.icon;
         this.live_follow_second_floor = Message.immutableCopyOf(builder.live_follow_second_floor);
         this.live_index_second_floor = Message.immutableCopyOf(builder.live_index_second_floor);
+        this.live_pic_second_floor = Message.immutableCopyOf(builder.live_pic_second_floor);
     }
 }

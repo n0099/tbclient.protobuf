@@ -14,6 +14,7 @@ import tbclient.YyExt;
 /* loaded from: classes9.dex */
 public final class YyLiveInfoSimple extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_AUTHOR_TYPE;
     public static final String DEFAULT_BTN_TEXT = "";
     public static final Integer DEFAULT_DAY_MAX_NUM;
     public static final String DEFAULT_DESC = "";
@@ -32,6 +33,8 @@ public final class YyLiveInfoSimple extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_USER_NAME = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 19, type = Message.Datatype.INT32)
+    public final Integer author_type;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String btn_text;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -73,6 +76,7 @@ public final class YyLiveInfoSimple extends Message {
     public static final class Builder extends Message.Builder<YyLiveInfoSimple> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public Integer author_type;
         public String btn_text;
         public Integer day_max_num;
         public String desc;
@@ -145,6 +149,7 @@ public final class YyLiveInfoSimple extends Message {
             this.feed_id = yyLiveInfoSimple.feed_id;
             this.remind_type = yyLiveInfoSimple.remind_type;
             this.show_page = yyLiveInfoSimple.show_page;
+            this.author_type = yyLiveInfoSimple.author_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -184,6 +189,7 @@ public final class YyLiveInfoSimple extends Message {
         DEFAULT_ROOM_ID = 0L;
         DEFAULT_REMIND_TYPE = 0;
         DEFAULT_SHOW_PAGE = 0;
+        DEFAULT_AUTHOR_TYPE = 0;
     }
 
     public /* synthetic */ YyLiveInfoSimple(Builder builder, boolean z, a aVar) {
@@ -309,9 +315,15 @@ public final class YyLiveInfoSimple extends Message {
             Integer num8 = builder.show_page;
             if (num8 == null) {
                 this.show_page = DEFAULT_SHOW_PAGE;
-                return;
             } else {
                 this.show_page = num8;
+            }
+            Integer num9 = builder.author_type;
+            if (num9 == null) {
+                this.author_type = DEFAULT_AUTHOR_TYPE;
+                return;
+            } else {
+                this.author_type = num9;
                 return;
             }
         }
@@ -333,5 +345,6 @@ public final class YyLiveInfoSimple extends Message {
         this.feed_id = builder.feed_id;
         this.remind_type = builder.remind_type;
         this.show_page = builder.show_page;
+        this.author_type = builder.author_type;
     }
 }

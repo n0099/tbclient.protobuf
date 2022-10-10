@@ -13,6 +13,9 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class FrsTabInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_CLICK_MONITOR_URL = "";
+    public static final String DEFAULT_DEMOTE_URL = "";
+    public static final String DEFAULT_EXPOSURE_MONITOR_URL = "";
     public static final Integer DEFAULT_IS_DEFAULT;
     public static final Integer DEFAULT_IS_GENERAL_TAB;
     public static final Integer DEFAULT_NEED_PAGE;
@@ -25,6 +28,12 @@ public final class FrsTabInfo extends Message {
     public static final String DEFAULT_TAB_URL = "";
     public static final Integer DEFAULT_TAB_VERSION;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String click_monitor_url;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String demote_url;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String exposure_monitor_url;
     @ProtoField(tag = 12)
     public final TabPic head_pics;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -54,6 +63,9 @@ public final class FrsTabInfo extends Message {
     public static final class Builder extends Message.Builder<FrsTabInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String click_monitor_url;
+        public String demote_url;
+        public String exposure_monitor_url;
         public TabPic head_pics;
         public Integer is_default;
         public Integer is_general_tab;
@@ -114,6 +126,9 @@ public final class FrsTabInfo extends Message {
             this.is_default = frsTabInfo.is_default;
             this.need_page = frsTabInfo.need_page;
             this.head_pics = frsTabInfo.head_pics;
+            this.exposure_monitor_url = frsTabInfo.exposure_monitor_url;
+            this.click_monitor_url = frsTabInfo.click_monitor_url;
+            this.demote_url = frsTabInfo.demote_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -242,7 +257,26 @@ public final class FrsTabInfo extends Message {
                 this.need_page = num6;
             }
             this.head_pics = builder.head_pics;
-            return;
+            String str6 = builder.exposure_monitor_url;
+            if (str6 == null) {
+                this.exposure_monitor_url = "";
+            } else {
+                this.exposure_monitor_url = str6;
+            }
+            String str7 = builder.click_monitor_url;
+            if (str7 == null) {
+                this.click_monitor_url = "";
+            } else {
+                this.click_monitor_url = str7;
+            }
+            String str8 = builder.demote_url;
+            if (str8 == null) {
+                this.demote_url = "";
+                return;
+            } else {
+                this.demote_url = str8;
+                return;
+            }
         }
         this.tab_id = builder.tab_id;
         this.tab_type = builder.tab_type;
@@ -256,5 +290,8 @@ public final class FrsTabInfo extends Message {
         this.is_default = builder.is_default;
         this.need_page = builder.need_page;
         this.head_pics = builder.head_pics;
+        this.exposure_monitor_url = builder.exposure_monitor_url;
+        this.click_monitor_url = builder.click_monitor_url;
+        this.demote_url = builder.demote_url;
     }
 }

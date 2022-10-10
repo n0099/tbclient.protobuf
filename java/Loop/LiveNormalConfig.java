@@ -10,32 +10,31 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.Collections;
-import java.util.List;
 /* loaded from: classes9.dex */
-public final class LiveRes extends Message {
+public final class LiveNormalConfig extends Message {
     public static /* synthetic */ Interceptable $ic = null;
-    public static final String DEFAULT_IS_END = "";
-    public static final List<YyLiveInfoSimple> DEFAULT_LIVE_LIST;
-    public static final List<LiveNormalConfig> DEFAULT_NORMAL_CONFIG_LIST;
+    public static final String DEFAULT_ICON_SCHEME = "";
+    public static final String DEFAULT_ICON_URL_DAY = "";
+    public static final String DEFAULT_ICON_URL_NIGHT = "";
+    public static final Integer DEFAULT_SHOW_PAGE;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
-    public final String is_end;
-    @ProtoField(label = Message.Label.REPEATED, tag = 2)
-    public final List<YyLiveInfoSimple> live_list;
-    @ProtoField(tag = 1)
-    public final NormalConfig normal_config;
-    @ProtoField(label = Message.Label.REPEATED, tag = 4)
-    public final List<LiveNormalConfig> normal_config_list;
+    public final String icon_scheme;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String icon_url_day;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String icon_url_night;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer show_page;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LiveRes> {
+    public static final class Builder extends Message.Builder<LiveNormalConfig> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public String is_end;
-        public List<YyLiveInfoSimple> live_list;
-        public NormalConfig normal_config;
-        public List<LiveNormalConfig> normal_config_list;
+        public String icon_scheme;
+        public String icon_url_day;
+        public String icon_url_night;
+        public Integer show_page;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -52,13 +51,13 @@ public final class LiveRes extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(LiveRes liveRes) {
-            super(liveRes);
+        public Builder(LiveNormalConfig liveNormalConfig) {
+            super(liveNormalConfig);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {liveRes};
+                Object[] objArr = {liveNormalConfig};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -69,21 +68,21 @@ public final class LiveRes extends Message {
                     return;
                 }
             }
-            if (liveRes == null) {
+            if (liveNormalConfig == null) {
                 return;
             }
-            this.normal_config = liveRes.normal_config;
-            this.live_list = Message.copyOf(liveRes.live_list);
-            this.is_end = liveRes.is_end;
-            this.normal_config_list = Message.copyOf(liveRes.normal_config_list);
+            this.icon_url_day = liveNormalConfig.icon_url_day;
+            this.icon_url_night = liveNormalConfig.icon_url_night;
+            this.icon_scheme = liveNormalConfig.icon_scheme;
+            this.show_page = liveNormalConfig.show_page;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public LiveRes build(boolean z) {
+        public LiveNormalConfig build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LiveRes(this, z, null) : (LiveRes) invokeZ.objValue;
+            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LiveNormalConfig(this, z, null) : (LiveNormalConfig) invokeZ.objValue;
         }
     }
 
@@ -96,26 +95,25 @@ public final class LiveRes extends Message {
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-651913944, "Ltbclient/Loop/LiveRes;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1792734053, "Ltbclient/Loop/LiveNormalConfig;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-651913944, "Ltbclient/Loop/LiveRes;");
+                classClinitInterceptable.invokePostClinit(1792734053, "Ltbclient/Loop/LiveNormalConfig;");
                 return;
             }
         }
-        DEFAULT_LIVE_LIST = Collections.emptyList();
-        DEFAULT_NORMAL_CONFIG_LIST = Collections.emptyList();
+        DEFAULT_SHOW_PAGE = 0;
     }
 
-    public /* synthetic */ LiveRes(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ LiveNormalConfig(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public LiveRes(Builder builder, boolean z) {
+    public LiveNormalConfig(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -133,31 +131,36 @@ public final class LiveRes extends Message {
             }
         }
         if (z) {
-            this.normal_config = builder.normal_config;
-            List<YyLiveInfoSimple> list = builder.live_list;
-            if (list == null) {
-                this.live_list = DEFAULT_LIVE_LIST;
-            } else {
-                this.live_list = Message.immutableCopyOf(list);
-            }
-            String str = builder.is_end;
+            String str = builder.icon_url_day;
             if (str == null) {
-                this.is_end = "";
+                this.icon_url_day = "";
             } else {
-                this.is_end = str;
+                this.icon_url_day = str;
             }
-            List<LiveNormalConfig> list2 = builder.normal_config_list;
-            if (list2 == null) {
-                this.normal_config_list = DEFAULT_NORMAL_CONFIG_LIST;
+            String str2 = builder.icon_url_night;
+            if (str2 == null) {
+                this.icon_url_night = "";
+            } else {
+                this.icon_url_night = str2;
+            }
+            String str3 = builder.icon_scheme;
+            if (str3 == null) {
+                this.icon_scheme = "";
+            } else {
+                this.icon_scheme = str3;
+            }
+            Integer num = builder.show_page;
+            if (num == null) {
+                this.show_page = DEFAULT_SHOW_PAGE;
                 return;
             } else {
-                this.normal_config_list = Message.immutableCopyOf(list2);
+                this.show_page = num;
                 return;
             }
         }
-        this.normal_config = builder.normal_config;
-        this.live_list = Message.immutableCopyOf(builder.live_list);
-        this.is_end = builder.is_end;
-        this.normal_config_list = Message.immutableCopyOf(builder.normal_config_list);
+        this.icon_url_day = builder.icon_url_day;
+        this.icon_url_night = builder.icon_url_night;
+        this.icon_scheme = builder.icon_scheme;
+        this.show_page = builder.show_page;
     }
 }
